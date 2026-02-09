@@ -221,10 +221,6 @@
       "type":"struct"
     },
     {
-      "name":"CBarrier",
-      "type":"struct"
-    },
-    {
       "name":"CBassPlayer",
       "type":"struct"
     },
@@ -1594,6 +1590,10 @@
     },
     {
       "name":"C3DSLight",
+      "type":"struct"
+    },
+    {
+      "name":"CBarrier",
       "type":"struct"
     },
     {
@@ -3829,10 +3829,6 @@
       "type":"typedef"
     },
     {
-      "name":"CLightActor",
-      "type":"struct"
-    },
-    {
       "name":"CMoon",
       "type":"struct"
     },
@@ -4197,7 +4193,7 @@
       "type":"struct"
     },
     {
-      "name":"SCramWorkingEntry",
+      "name":"CCramTex",
       "type":"struct"
     },
     {
@@ -4285,34 +4281,6 @@
       "type":"struct"
     },
     {
-      "name":"CEnemy",
-      "type":"struct"
-    },
-    {
-      "name":"CDraculaBride",
-      "type":"struct"
-    },
-    {
-      "name":"CDrone",
-      "type":"struct"
-    },
-    {
-      "name":"CGhoul",
-      "type":"struct"
-    },
-    {
-      "name":"CHotDemon",
-      "type":"struct"
-    },
-    {
-      "name":"CImp",
-      "type":"struct"
-    },
-    {
-      "name":"CLarva",
-      "type":"struct"
-    },
-    {
       "name":"CNPC",
       "type":"struct"
     },
@@ -4330,38 +4298,6 @@
     },
     {
       "name":"CPassenger",
-      "type":"struct"
-    },
-    {
-      "name":"CSentinel",
-      "type":"struct"
-    },
-    {
-      "name":"CSmiley",
-      "type":"struct"
-    },
-    {
-      "name":"CSuccubus",
-      "type":"struct"
-    },
-    {
-      "name":"CTVBat",
-      "type":"struct"
-    },
-    {
-      "name":"CTVBat_ptr_48832",
-      "type":"typedef"
-    },
-    {
-      "name":"CWerewolf",
-      "type":"struct"
-    },
-    {
-      "name":"CZombieCow",
-      "type":"struct"
-    },
-    {
-      "name":"CZombieDog",
       "type":"struct"
     },
     {
@@ -4599,6 +4535,14 @@
     {
       "name":"GLOBAL_ALLOC_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"UOrientationVector",
+      "type":"union"
+    },
+    {
+      "name":"CLightActor",
+      "type":"struct"
     },
     {
       "name":"UPDATE_WINDOW_FUNC",
@@ -5797,6 +5741,18 @@
       "type":"typedef"
     },
     {
+      "name":"CEnemy",
+      "type":"struct"
+    },
+    {
+      "name":"CDraculaBride",
+      "type":"struct"
+    },
+    {
+      "name":"CDrone",
+      "type":"struct"
+    },
+    {
       "name":"CFilmReel",
       "type":"struct"
     },
@@ -5829,6 +5785,10 @@
       "type":"struct"
     },
     {
+      "name":"CGhoul",
+      "type":"struct"
+    },
+    {
       "name":"CGlass",
       "type":"struct"
     },
@@ -5857,11 +5817,23 @@
       "type":"struct"
     },
     {
+      "name":"CHotDemon",
+      "type":"struct"
+    },
+    {
+      "name":"CImp",
+      "type":"struct"
+    },
+    {
       "name":"CKeyActor",
       "type":"struct"
     },
     {
       "name":"CLadder",
+      "type":"struct"
+    },
+    {
+      "name":"CLarva",
       "type":"struct"
     },
     {
@@ -5905,7 +5877,15 @@
       "type":"typedef"
     },
     {
+      "name":"CSentinel",
+      "type":"struct"
+    },
+    {
       "name":"CSimBox",
+      "type":"struct"
+    },
+    {
+      "name":"CSmiley",
       "type":"struct"
     },
     {
@@ -5915,6 +5895,18 @@
     {
       "name":"CStairs",
       "type":"struct"
+    },
+    {
+      "name":"CSuccubus",
+      "type":"struct"
+    },
+    {
+      "name":"CTVBat",
+      "type":"struct"
+    },
+    {
+      "name":"CTVBat_ptr_48832",
+      "type":"typedef"
     },
     {
       "name":"CTeleport",
@@ -6049,7 +6041,19 @@
       "type":"typedef"
     },
     {
+      "name":"CWerewolf",
+      "type":"struct"
+    },
+    {
       "name":"CZombie",
+      "type":"struct"
+    },
+    {
+      "name":"CZombieCow",
+      "type":"struct"
+    },
+    {
+      "name":"CZombieDog",
       "type":"struct"
     },
     {
@@ -21461,14 +21465,14 @@
           "type":"int"
         },
         {
-          "len":380,
+          "len":36,
           "name":"open_sound",
           "offset":808,
-          "type":"char[380]"
+          "type":"char[36]"
         }
       ],
       "importable":true,
-      "len":1188,
+      "len":844,
       "name":"CAmmoBox",
       "pack":false,
       "type":"struct"
@@ -21527,16 +21531,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":108,
+          "len":100,
           "name":"unk",
-          "offset":48820,
-          "type":"char[108]"
+          "offset":48828,
+          "type":"char[100]"
         }
       ],
       "importable":true,
@@ -21593,10 +21597,34 @@
           "type":"CHero"
         },
         {
-          "len":256,
-          "name":"unk",
+          "len":100,
+          "name":"summon_event",
           "offset":130004,
-          "type":"char[256]"
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"go_away_event",
+          "offset":130104,
+          "type":"char[100]"
+        },
+        {
+          "len":48,
+          "name":"unk1",
+          "offset":130204,
+          "type":"char[48]"
+        },
+        {
+          "len":4,
+          "name":"summoned",
+          "offset":130252,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":130256,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -21641,10 +21669,22 @@
           "type":"CDemonActor"
         },
         {
-          "len":216,
-          "name":"unk",
+          "len":12,
+          "name":"size",
           "offset":344,
-          "type":"char[216]"
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"add_to_path_grid",
+          "offset":356,
+          "type":"int"
+        },
+        {
+          "len":200,
+          "name":"effect_class_name_list",
+          "offset":360,
+          "type":"char[200]"
         }
       ],
       "importable":true,
@@ -21767,16 +21807,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":80,
+          "len":72,
           "name":"unk",
-          "offset":48820,
-          "type":"char[80]"
+          "offset":48828,
+          "type":"char[72]"
         }
       ],
       "importable":true,
@@ -21791,16 +21831,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":164,
+          "len":156,
           "name":"unk1",
-          "offset":48820,
-          "type":"char[164]"
+          "offset":48828,
+          "type":"char[156]"
         },
         {
           "len":4,
@@ -21881,22 +21921,10 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
-        },
-        {
-          "len":4,
-          "name":"unk1",
-          "offset":48820,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk2",
-          "offset":48824,
-          "type":"int"
         }
       ],
       "importable":true,
@@ -21911,22 +21939,10 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
-        },
-        {
-          "len":4,
-          "name":"unk1",
-          "offset":48820,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk2",
-          "offset":48824,
-          "type":"int"
         },
         {
           "len":380,
@@ -21947,10 +21963,16 @@
           "type":"float"
         },
         {
-          "len":3216,
+          "len":3116,
           "name":"unk3",
           "offset":49216,
-          "type":"char[3216]"
+          "type":"char[3116]"
+        },
+        {
+          "len":100,
+          "name":"morph_event",
+          "offset":52332,
+          "type":"char[100]"
         }
       ],
       "importable":true,
@@ -22253,10 +22275,118 @@
           "type":"CDemonActor"
         },
         {
-          "len":3544,
-          "name":"unk",
+          "len":4,
+          "name":"render_in_background",
           "offset":344,
-          "type":"char[3544]"
+          "type":"int"
+        },
+        {
+          "len":24,
+          "name":"unk1",
+          "offset":348,
+          "type":"char[24]"
+        },
+        {
+          "len":4,
+          "name":"vertex_count",
+          "offset":372,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":376,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk3",
+          "offset":380,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"tri_count",
+          "offset":384,
+          "type":"int"
+        },
+        {
+          "len":8,
+          "name":"unk4",
+          "offset":388,
+          "type":"char[8]"
+        },
+        {
+          "len":4,
+          "name":"texture_count",
+          "offset":396,
+          "type":"int"
+        },
+        {
+          "len":2848,
+          "name":"unk5",
+          "offset":400,
+          "type":"char[2848]"
+        },
+        {
+          "len":4,
+          "name":"dont_use_normals",
+          "offset":3248,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"transparent_geometry_flag",
+          "offset":3252,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"blood_type",
+          "offset":3256,
+          "type":"int"
+        },
+        {
+          "len":8,
+          "name":"unk6",
+          "offset":3260,
+          "type":"char[8]"
+        },
+        {
+          "len":4,
+          "name":"dont_pick_me_up",
+          "offset":3268,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk7",
+          "offset":3272,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sim_box",
+          "offset":3276,
+          "type":"CSimBox*"
+        },
+        {
+          "len":600,
+          "name":"unk8",
+          "offset":3280,
+          "type":"char[600]"
+        },
+        {
+          "len":4,
+          "name":"carried_by_actor",
+          "offset":3880,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"unk9",
+          "offset":3884,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -22271,16 +22401,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":24,
+          "len":16,
           "name":"unk1",
-          "offset":48820,
-          "type":"char[24]"
+          "offset":48828,
+          "type":"char[16]"
         },
         {
           "len":4,
@@ -22610,7 +22740,7 @@
           "len":4,
           "name":"pushed_by_actor",
           "offset":800,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -22640,13 +22770,25 @@
           "len":4,
           "name":"sim_box",
           "offset":916,
+          "type":"CSimBox*"
+        },
+        {
+          "len":592,
+          "name":"unk4",
+          "offset":920,
+          "type":"char[592]"
+        },
+        {
+          "len":4,
+          "name":"unk5",
+          "offset":1512,
           "type":"int"
         },
         {
-          "len":600,
-          "name":"unk4",
-          "offset":920,
-          "type":"char[600]"
+          "len":4,
+          "name":"unk6",
+          "offset":1516,
+          "type":"int"
         },
         {
           "len":4,
@@ -22703,16 +22845,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":56,
+          "len":48,
           "name":"unk",
-          "offset":48820,
-          "type":"char[56]"
+          "offset":48828,
+          "type":"char[48]"
         }
       ],
       "importable":true,
@@ -22727,16 +22869,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":12,
-          "name":"unk1",
-          "offset":48820,
-          "type":"char[12]"
+          "len":4,
+          "name":"unk",
+          "offset":48828,
+          "type":"int"
         },
         {
           "len":4,
@@ -23442,15 +23584,15 @@
         },
         {
           "len":4,
-          "name":"field_10892",
+          "name":"layer_action_index",
           "offset":10892,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_10896",
+          "name":"layer_action_t",
           "offset":10896,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":444,
@@ -24650,6 +24792,132 @@
       "importable":true,
       "len":112,
       "name":"CCourseFrameList",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"width",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"height",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"padded_width",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"padded_height",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"assigned_map_number",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"effective_width",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"effective_height",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"placement_bottom",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"working_right",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"working_top",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"working_width",
+          "offset":40,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"working_map_id",
+          "offset":44,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"final_left",
+          "offset":48,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"final_top",
+          "offset":52,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"final_right",
+          "offset":56,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"final_bottom",
+          "offset":60,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"placement_flags",
+          "offset":64,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"rotation_applied",
+          "offset":68,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"source_entry_ptr",
+          "offset":72,
+          "type":"STextureAtlasEntry*"
+        }
+      ],
+      "importable":true,
+      "len":76,
+      "name":"CCramTex",
       "pack":false,
       "type":"struct"
     },
@@ -27925,16 +28193,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":44,
+          "len":36,
           "name":"unk1",
-          "offset":48820,
-          "type":"char[44]"
+          "offset":48828,
+          "type":"char[36]"
         },
         {
           "len":100,
@@ -28177,16 +28445,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":32,
+          "len":24,
           "name":"unk",
-          "offset":48820,
-          "type":"char[32]"
+          "offset":48828,
+          "type":"char[24]"
         }
       ],
       "importable":true,
@@ -28693,16 +28961,16 @@
           "type":"int"
         },
         {
-          "len":4,
+          "len":100,
           "name":"wav_name",
           "offset":980,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":100,
-          "name":"unk4",
-          "offset":984,
-          "type":"char[100]"
+          "len":4,
+          "name":"sfx_handle",
+          "offset":1080,
+          "type":"uint"
         },
         {
           "len":4,
@@ -28777,10 +29045,28 @@
           "type":"float"
         },
         {
-          "len":16,
+          "len":4,
           "name":"unk2",
           "offset":48696,
-          "type":"char[16]"
+          "type":"char[4]"
+        },
+        {
+          "len":4,
+          "name":"victim",
+          "offset":48700,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"unk3",
+          "offset":48704,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk4",
+          "offset":48708,
+          "type":"int"
         },
         {
           "len":100,
@@ -28790,7 +29076,7 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"unk5",
           "offset":48812,
           "type":"int"
         },
@@ -28799,10 +29085,22 @@
           "name":"victim_height",
           "offset":48816,
           "type":"float"
+        },
+        {
+          "len":4,
+          "name":"script_victim",
+          "offset":48820,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"field_48824",
+          "offset":48824,
+          "type":"int"
         }
       ],
       "importable":true,
-      "len":48820,
+      "len":48828,
       "name":"CEnemy",
       "pack":false,
       "type":"struct"
@@ -31321,16 +31619,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":56,
-          "name":"unk1",
-          "offset":48820,
-          "type":"char[56]"
+          "len":48,
+          "name":"unk",
+          "offset":48828,
+          "type":"char[48]"
         },
         {
           "len":4,
@@ -31405,16 +31703,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":20,
+          "len":12,
           "name":"unk1",
-          "offset":48820,
-          "type":"char[20]"
+          "offset":48828,
+          "type":"char[12]"
         },
         {
           "len":4,
@@ -32335,16 +32633,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":60,
-          "name":"unk",
-          "offset":48820,
-          "type":"char[60]"
+          "len":52,
+          "name":"field_48828",
+          "offset":48828,
+          "type":"char[52]"
         }
       ],
       "importable":true,
@@ -32383,16 +32681,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":64,
+          "len":56,
           "name":"unk",
-          "offset":48820,
-          "type":"char[64]"
+          "offset":48828,
+          "type":"char[56]"
         }
       ],
       "importable":true,
@@ -32639,10 +32937,16 @@
           "name":"key_mask",
           "offset":724,
           "type":"int"
+        },
+        {
+          "len":68,
+          "name":"unk",
+          "offset":728,
+          "type":"char[68]"
         }
       ],
       "importable":true,
-      "len":728,
+      "len":796,
       "name":"CKeyActor",
       "pack":false,
       "type":"struct"
@@ -32936,7 +33240,7 @@
           "len":4,
           "name":"master_actor",
           "offset":736,
-          "type":"char[4]"
+          "type":"CDemonActor*"
         },
         {
           "len":24,
@@ -32963,16 +33267,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":20,
+          "len":12,
           "name":"unk",
-          "offset":48820,
-          "type":"char[20]"
+          "offset":48828,
+          "type":"char[12]"
         }
       ],
       "importable":true,
@@ -33221,10 +33525,64 @@
           "type":"ELightActorType"
         },
         {
-          "len":12296,
-          "name":"unk",
+          "len":56,
+          "name":"unk1",
           "offset":1648,
-          "type":"undefined1[12296]"
+          "type":"char[56]"
+        },
+        {
+          "len":4,
+          "name":"light_fov",
+          "offset":1704,
+          "type":"float"
+        },
+        {
+          "len":260,
+          "name":"unk2",
+          "offset":1708,
+          "type":"char[260]"
+        },
+        {
+          "len":4,
+          "name":"light_falloff",
+          "offset":1968,
+          "type":"float"
+        },
+        {
+          "len":7024,
+          "name":"unk3",
+          "offset":1972,
+          "type":"char[7024]"
+        },
+        {
+          "len":4,
+          "name":"light_status",
+          "offset":8996,
+          "type":"int"
+        },
+        {
+          "len":4852,
+          "name":"unk4",
+          "offset":9000,
+          "type":"char[4852]"
+        },
+        {
+          "len":12,
+          "name":"blight_pos",
+          "offset":13852,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"light_orient",
+          "offset":13864,
+          "type":"UOrientationVector"
+        },
+        {
+          "len":68,
+          "name":"unk5",
+          "offset":13876,
+          "type":"char[68]"
         }
       ],
       "importable":true,
@@ -34361,22 +34719,10 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
-        },
-        {
-          "len":4,
-          "name":"unk1",
-          "offset":48820,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk2",
-          "offset":48824,
-          "type":"int"
         },
         {
           "len":100,
@@ -34517,16 +34863,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":36,
+          "len":28,
           "name":"unk1",
-          "offset":48820,
-          "type":"char[36]"
+          "offset":48828,
+          "type":"char[28]"
         },
         {
           "len":4,
@@ -38015,22 +38361,10 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
-        },
-        {
-          "len":4,
-          "name":"unk1",
-          "offset":48820,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk2",
-          "offset":48824,
-          "type":"int"
         },
         {
           "len":4,
@@ -38489,10 +38823,46 @@
           "type":"CDemonActor"
         },
         {
-          "len":1140,
-          "name":"unk",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char[1140]"
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":4,
+          "name":"type",
+          "offset":724,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"weight",
+          "offset":728,
+          "type":"float"
+        },
+        {
+          "len":100,
+          "name":"trigger_event",
+          "offset":732,
+          "type":"char[100]"
+        },
+        {
+          "len":12,
+          "name":"initial_velocity",
+          "offset":832,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"init_rot_vel",
+          "offset":844,
+          "type":"CVector3f"
+        },
+        {
+          "len":628,
+          "name":"unk",
+          "offset":856,
+          "type":"char[628]"
         }
       ],
       "importable":true,
@@ -38615,16 +38985,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":12,
+          "len":4,
           "name":"unk1",
-          "offset":48820,
-          "type":"char[12]"
+          "offset":48828,
+          "type":"int"
         },
         {
           "len":4,
@@ -39347,10 +39717,22 @@
           "type":"CDemonActor*"
         },
         {
-          "len":20,
+          "len":4,
           "name":"unk5",
           "offset":130084,
-          "type":"char[20]"
+          "type":"char[4]"
+        },
+        {
+          "len":4,
+          "name":"ladder_to_descend",
+          "offset":130088,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"weapon",
+          "offset":130092,
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -39479,16 +39861,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":12468,
+          "len":12460,
           "name":"unk",
-          "offset":48820,
-          "type":"char[12468]"
+          "offset":48828,
+          "type":"char[12460]"
         }
       ],
       "importable":true,
@@ -39659,16 +40041,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":16,
+          "len":8,
           "name":"unk1",
-          "offset":48820,
-          "type":"char[16]"
+          "offset":48828,
+          "type":"char[8]"
         },
         {
           "len":4,
@@ -40049,10 +40431,16 @@
           "type":"int"
         },
         {
-          "len":16,
-          "name":"unk1",
+          "len":12,
+          "name":"trigger_size",
           "offset":352,
-          "type":"char[16]"
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"trigger_state",
+          "offset":364,
+          "type":"int"
         },
         {
           "len":4,
@@ -40277,16 +40665,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":12,
+          "len":4,
           "name":"unk1",
-          "offset":48820,
-          "type":"char[12]"
+          "offset":48828,
+          "type":"int"
         },
         {
           "len":380,
@@ -40427,16 +40815,10 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
-        },
-        {
-          "len":8,
-          "name":"unk1",
-          "offset":48820,
-          "type":"char[8]"
         },
         {
           "len":8884,
@@ -40775,10 +41157,16 @@
           "type":"CDemonActor"
         },
         {
-          "len":2016,
-          "name":"unk1",
+          "len":380,
+          "name":"model",
           "offset":344,
-          "type":"char[2016]"
+          "type":"CKeyFramedModelInstance"
+        },
+        {
+          "len":1636,
+          "name":"unk1",
+          "offset":724,
+          "type":"char[1636]"
         },
         {
           "len":4,
@@ -40811,10 +41199,22 @@
           "type":"char[32]"
         },
         {
-          "len":36,
+          "len":28,
           "name":"unk3",
           "offset":4180,
-          "type":"char[36]"
+          "type":"char[28]"
+        },
+        {
+          "len":4,
+          "name":"last_mobster_left",
+          "offset":4208,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"unk4",
+          "offset":4212,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -40916,7 +41316,7 @@
           "len":4,
           "name":"opacity",
           "offset":356,
-          "type":"undefined4"
+          "type":"int"
         },
         {
           "len":4,
@@ -41261,22 +41661,10 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
-        },
-        {
-          "len":4,
-          "name":"unk1",
-          "offset":48820,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk2",
-          "offset":48824,
-          "type":"int"
         },
         {
           "len":4,
@@ -41309,10 +41697,16 @@
           "type":"uint"
         },
         {
-          "len":16,
+          "len":12,
           "name":"unk4",
           "offset":48860,
-          "type":"char[16]"
+          "type":"char[12]"
+        },
+        {
+          "len":4,
+          "name":"chain_anchor",
+          "offset":48872,
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -41321,10 +41715,16 @@
           "type":"float"
         },
         {
-          "len":8,
-          "name":"unk5",
+          "len":4,
+          "name":"alpha1",
           "offset":48880,
-          "type":"char[8]"
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"alpha2",
+          "offset":48884,
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -41465,16 +41865,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":32,
+          "len":24,
           "name":"unk1",
-          "offset":48820,
-          "type":"char[32]"
+          "offset":48828,
+          "type":"char[24]"
         },
         {
           "len":4,
@@ -41531,16 +41931,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":60,
+          "len":52,
           "name":"unk",
-          "offset":48820,
-          "type":"char[60]"
+          "offset":48828,
+          "type":"char[52]"
         }
       ],
       "importable":true,
@@ -41555,16 +41955,16 @@
       "desc":"",
       "fields":[
         {
-          "len":48820,
+          "len":48828,
           "name":"base",
           "offset":0,
           "type":"CEnemy"
         },
         {
-          "len":20,
-          "name":"unk",
-          "offset":48820,
-          "type":"char[20]"
+          "len":12,
+          "name":"field_48828",
+          "offset":48828,
+          "type":"char[12]"
         }
       ],
       "importable":true,
@@ -46416,16 +46816,10 @@
           "name":"model",
           "offset":24,
           "type":"CKeyFramedModelInstance"
-        },
-        {
-          "len":64,
-          "name":"unk2",
-          "offset":404,
-          "type":"char[64]"
         }
       ],
       "importable":true,
-      "len":468,
+      "len":404,
       "name":"SBodyPartModel",
       "pack":false,
       "type":"struct"
@@ -47789,132 +48183,6 @@
       "importable":true,
       "len":40,
       "name":"SCramRectangle",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"width",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"height",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"padded_width",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"padded_height",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"assigned_map_number",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"effective_width",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"effective_height",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"placement_bottom",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"working_right",
-          "offset":32,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"working_top",
-          "offset":36,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"working_width",
-          "offset":40,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"working_map_id",
-          "offset":44,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"final_left",
-          "offset":48,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"final_top",
-          "offset":52,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"final_right",
-          "offset":56,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"final_bottom",
-          "offset":60,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"placement_flags",
-          "offset":64,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"rotation_applied",
-          "offset":68,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"source_entry_ptr",
-          "offset":72,
-          "type":"STextureAtlasEntry*"
-        }
-      ],
-      "importable":true,
-      "len":76,
-      "name":"SCramWorkingEntry",
       "pack":false,
       "type":"struct"
     },
@@ -53868,16 +54136,10 @@
           "name":"_ios",
           "offset":72,
           "type":"ios"
-        },
-        {
-          "len":4,
-          "name":"unknown",
-          "offset":116,
-          "type":"int"
         }
       ],
       "importable":true,
-      "len":120,
+      "len":116,
       "name":"strstreambase",
       "pack":false,
       "type":"struct"
@@ -53913,7 +54175,7 @@
       "type":"struct"
     },
     {
-      "alig":4,
+      "alig":1,
       "cat":"/Nocturne/Class/System/strstream.h",
       "desc":"",
       "fields":[
@@ -57979,6 +58241,30 @@
       "importable":true,
       "len":16,
       "name":"UCodeCommandData",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"vec",
+          "offset":0,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"orient",
+          "offset":0,
+          "type":"COrientation"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "name":"UOrientationVector",
       "pack":false,
       "type":"union"
     }

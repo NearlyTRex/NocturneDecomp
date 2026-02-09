@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430 at 00455449
+;   core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430 at 00455449
 ;
 ; *****************************************************************************
 

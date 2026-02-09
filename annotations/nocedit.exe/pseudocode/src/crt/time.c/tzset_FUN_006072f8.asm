@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   crt_time.c__mktime_FUN_00600f80 at 0060109b
+;   crt_time.c__strftime_FUN_006002d4 at 006006a3
 ;   crt_time.c_localtime_r_FUN_00600230 at 00600236
-;   crt_time.c_strftime_FUN_006002d4 at 006006a3
 ;
 ; Referenced Globals:
 ;   GET_TIME_ZONE_INFORMATION_FUNC* g_GetTimeZoneInformationFunc = 00211fb0

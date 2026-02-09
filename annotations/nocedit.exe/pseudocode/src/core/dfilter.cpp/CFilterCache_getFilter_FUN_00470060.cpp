@@ -48,7 +48,7 @@ core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
     (*pacVar5)[1] = cVar1;
     pacVar5 = (char (*) [40])(*pacVar5 + 2);
   } while (cVar1 != '\0');
-  this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4c,"..\\core\\dfilter.cpp",0x58);
+  this_ptr_00 = (CDemonFilter *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4c,"..\\core\\dfilter.cpp",0x58);
   pCVar3 = (CDemonFilter *)0x0;
   if (this_ptr_00 != (CDemonFilter *)0x0) {
     pCVar3 = core_dfilter_cpp_CDemonFilter_ctor_FUN_004701f0(this_ptr_00);

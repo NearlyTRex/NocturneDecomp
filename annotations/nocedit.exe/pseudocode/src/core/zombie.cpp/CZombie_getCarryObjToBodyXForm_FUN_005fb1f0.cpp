@@ -47,7 +47,7 @@ void __cdecl core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie
   bVar8 = 0;
   this_ptr_00 = (this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor;
   local_10 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
-  uVar1 = *(uint *)(this_ptr->unk1 + 0x1c);
+  uVar1 = *(uint *)(this_ptr->unk1 + 0x14);
   if ((uVar1 == 0) || ((1 < uVar1 && (uVar1 != 3)))) {
     pCVar4 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&local_c4);
     local_34 = (pCVar4->min).x + (pCVar4->max).x;

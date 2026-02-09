@@ -11,6 +11,6 @@ CDemonFilter * __cdecl core_boxactor_cpp_freeFilters_FUN_004236e0(CDemonFilter *
 {
   CDemonFilter *pCVar1;
   
-  pCVar1 = __arrfini(objs,8,&g_CDemonFilterTypeInfo);
+  pCVar1 = (CDemonFilter *)__arrfini(objs,8,&g_CDemonFilterTypeInfo);
   return pCVar1;
 }

@@ -54,7 +54,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
   g_CDemonLightInstance.light_enabled_flag = 0;
   g_CDemonLightInstance.base.max_distance = 64.0;
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);
-  core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(g_CDemonSetPtr);
+  core_setedit_cpp_CDemonSet_FUN_00576da0(g_CDemonSetPtr);
   core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20(g_CDemonSetPtr);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing actors.");
@@ -70,7 +70,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff44);
   CStack_24.x = g_CDemonCameraInstance.corona_blend_factor;
-  pCVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);
+  pCVar3 = (CBoxActor *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);
   pCStack_18 = (CBoxActor *)0x0;
   if (pCVar3 != (CBoxActor *)0x0) {
     pCStack_18 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(pCVar3);

@@ -11,6 +11,6 @@ CRock * __cdecl core_fire_cpp_freeRocks_FUN_004c9910(CRock *objs)
 {
   CRock *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x40,&g_CRockTypeInfo);
+  pCVar1 = (CRock *)__arrfini(objs,0x40,&g_CRockTypeInfo);
   return pCVar1;
 }

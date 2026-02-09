@@ -21,7 +21,7 @@ section .text
     PUSH 0x31c                          ; 00589530
         ;   Label: core_skeledit.cpp_FUN_00589530
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589535
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     SUB ESP,0x304                       ; 0058953a
     LEA EAX,[ESP + 0x100]               ; 00589540
     PUSH EAX                            ; 00589547

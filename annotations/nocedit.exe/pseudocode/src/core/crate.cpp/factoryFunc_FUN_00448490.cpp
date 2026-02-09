@@ -11,7 +11,7 @@ CCrate * __cdecl core_crate_cpp_factoryFunc_FUN_00448490(void)
 {
   CCrate *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fc,"..\\core\\crate.cpp",0x1f);
+  pCVar1 = (CCrate *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fc,"..\\core\\crate.cpp",0x1f);
   if (pCVar1 == (CCrate *)0x0) {
     return (CCrate *)0x0;
   }

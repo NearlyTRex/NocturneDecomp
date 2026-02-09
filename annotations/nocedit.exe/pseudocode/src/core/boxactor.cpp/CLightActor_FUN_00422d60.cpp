@@ -32,11 +32,11 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  byte *local_18;
+  char *local_18;
   
   EVar1 = this_ptr->light_actor_type;
   if (EVar1 != LIGHT_TYPE_CUSTOM) {
-    local_18 = this_ptr->unk;
+    local_18 = this_ptr->unk1;
     this_ptr_00 = &(this_ptr->base).model;
     if (EVar1 < LIGHT_TYPE_LANTERN) {
       core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -44,15 +44,15 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr_00);
       (*((this_ptr->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr,&local_90);
       fVar2 = 0.5f;
-      *(float *)(this_ptr->unk + 0x2fac) = (local_90.min.z + local_90.max.z) * 0.5f;
-      *(float *)(this_ptr->unk + 0x2fb0) = (local_90.max.x + fStack_78) * fVar2;
-      *(float *)(this_ptr->unk + 0x2fb4) = fStack_74 + (float)0.10000000000000001;
-      *(uint *)(this_ptr->unk + 0x2fc0) = 0;
-      *(uint *)(this_ptr->unk + 0x2fbc) = *(uint *)(this_ptr->unk + 0x2fc0);
-      *(uint *)(this_ptr->unk + 0x2fb8) = *(uint *)(this_ptr->unk + 0x2fbc);
-      *(uint *)(this_ptr->unk + 0x1cb4) = 0;
+      (this_ptr->blight_pos).x = (local_90.min.z + local_90.max.z) * 0.5f;
+      (this_ptr->blight_pos).y = (local_90.max.x + fStack_78) * fVar2;
+      (this_ptr->blight_pos).z = fStack_74 + (float)0.10000000000000001;
+      (this_ptr->light_orient).vec.z = 0.0;
+      (this_ptr->light_orient).vec.y = (this_ptr->light_orient).vec.z;
+      (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
+      this_ptr->light_status = 0;
       *(uint *)(unaff_EBP + 0x38) = 0x42600000;
-      *(uint *)(this_ptr->unk + 0x140) = 0x42000000;
+      this_ptr->light_falloff = 32.0;
       (this_ptr->base).pickup_type = 3;
       return;
     }
@@ -68,22 +68,22 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
       fStack_38 = local_a8.max.y + local_90.min.y;
       fStack_30 = fStack_3c * 0.5f;
       fStack_2c = fStack_38 * 0.5f;
-      *(float *)(this_ptr->unk + 0x2fac) = fStack_34;
+      (this_ptr->blight_pos).x = fStack_34;
       fStack_64 = local_a8.min.z + local_a8.max.z;
       fStack_4c = fStack_64 * fStack_44;
       fStack_60 = local_a8.max.x + local_90.min.x;
       fStack_5c = local_a8.max.y + local_90.min.y;
       fStack_48 = fStack_60 * fStack_44;
       fStack_44 = fStack_5c * fStack_44;
-      *(float *)(this_ptr->unk + 0x2fb0) = fStack_48;
-      *(float *)(this_ptr->unk + 0x2fb4) = local_90.min.y;
-      *(uint *)(this_ptr->unk + 0x2fc0) = 0;
-      *(uint *)(this_ptr->unk + 0x2fbc) = *(uint *)(this_ptr->unk + 0x2fc0);
-      *(uint *)(this_ptr->unk + 0x2fb8) = *(uint *)(this_ptr->unk + 0x2fbc);
-      *(uint *)(this_ptr->unk + 0x2fb8) = 0x3e860a92;
-      *(uint *)(this_ptr->unk + 0x1cb4) = 0;
+      (this_ptr->blight_pos).y = fStack_48;
+      (this_ptr->blight_pos).z = local_90.min.y;
+      (this_ptr->light_orient).vec.z = 0.0;
+      (this_ptr->light_orient).vec.y = (this_ptr->light_orient).vec.z;
+      (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
+      (this_ptr->light_orient).vec.x = 0.2617994;
+      this_ptr->light_status = 0;
       *(uint *)(unaff_EBP + 0x38) = 0x42600000;
-      *(uint *)(this_ptr->unk + 0x140) = 0x42000000;
+      this_ptr->light_falloff = 32.0;
       iVar3 = DAT_008229ac;
       (this_ptr->base).pickup_type = 3;
       if (iVar3 == 0) {
@@ -98,7 +98,7 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
         DAT_008229ac = 1;
       }
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-                ((CDemonLight *)this_ptr->unk,CDemonFilter_ARRAY_008229ec,0,0,0);
+                ((CDemonLight *)this_ptr->unk1,CDemonFilter_ARRAY_008229ec,0,0,0);
       return;
     }
   }

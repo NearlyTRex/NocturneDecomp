@@ -14,7 +14,7 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(CBodyPart *thi
   CBox *pCVar2;
   
   pCVar1 = (CBodyPart *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pvVar1 = __arrinit(pCVar1->unk + 0x138,3,&g_SBodyPartModelTypeInfo);
+  pvVar1 = __arrinit(pCVar1->unk5 + 0x100,3,&g_SBodyPartModelTypeInfo);
   pvVar1 = __arrinit
                      ((void *)((int)pvVar1 + 0x4c0),2,&g_SBodyPartFireTypeInfo);
   pCVar2 = core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)((int)pvVar1 + 0x57c));

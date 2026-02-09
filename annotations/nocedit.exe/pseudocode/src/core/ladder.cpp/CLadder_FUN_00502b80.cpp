@@ -25,12 +25,12 @@ void __cdecl core_ladder_cpp_CLadder_FUN_00502b80(CLadder *this_ptr)
   CVector3f local_18;
   
   bVar5 = 0;
-  if (*(int *)this_ptr->master_actor != 0) {
+  if (this_ptr->master_actor != (CDemonActor *)0x0) {
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_e4,&(this_ptr->base).location.position,(CVector3f *)&(this_ptr->base).orient);
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-              (&local_b4,(CVector3f *)(*(int *)this_ptr->master_actor + 0x20),
-               (CVector3f *)(*(int *)this_ptr->master_actor + 0x30));
+              (&local_b4,&(this_ptr->master_actor->location).position,
+               (CVector3f *)&this_ptr->master_actor->orient);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_e4,&local_b4,&local_54);
     pCVar3 = &local_54;
     pCVar4 = &local_84;

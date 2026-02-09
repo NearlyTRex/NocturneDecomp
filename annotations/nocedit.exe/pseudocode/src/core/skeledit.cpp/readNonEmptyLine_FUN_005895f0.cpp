@@ -14,7 +14,7 @@ core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *file,int req
   char *pcVar2;
   char *in_stack_00000004;
   
-  __STK(0x1c);
+  __STK();
   do {
     do {
       iVar1 = _fgetc((_FILE *)buffer);

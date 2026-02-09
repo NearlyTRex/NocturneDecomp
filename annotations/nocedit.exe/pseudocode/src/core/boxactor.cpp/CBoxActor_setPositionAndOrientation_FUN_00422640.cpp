@@ -24,7 +24,7 @@ core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422640
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   if ((CVector3f *)&this_ptr->sim_box != new_position) {
-    this_ptr->sim_box = (int)new_position->x;
+    this_ptr->sim_box = (CSimBox *)new_position->x;
     *(float *)this_ptr->unk4 = new_position->y;
     *(float *)(this_ptr->unk4 + 4) = new_position->z;
   }

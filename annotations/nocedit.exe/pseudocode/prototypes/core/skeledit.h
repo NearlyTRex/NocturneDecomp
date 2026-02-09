@@ -47,9 +47,9 @@ void __cdecl FUN_00589b10(void);
 // Address: 00589bb0
 void __cdecl FUN_00589bb0(void);
 
-// Original: core_skeledit.cpp_FUN_00589c20
+// Original: core_skeledit.cpp_CLodMesh_FUN_00589c20
 // Address: 00589c20
-int __cdecl FUN_00589c20(void);
+int __cdecl CLodMesh(CLodMesh *this_ptr);
 
 // Original: core_skeledit.cpp_FUN_00589f40
 // Address: 00589f40
@@ -79,9 +79,9 @@ int __cdecl FUN_0058a1b0(void);
 // Address: 0058a260
 void __cdecl CDeformableModelInstance::addFilesToExtract(CDeformableModelInstance *this_ptr,_FILE *file_handle);
 
-// Original: core_skeledit.cpp_FUN_0058a2b0
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058a2b0
 // Address: 0058a2b0
-void __cdecl FUN_0058a2b0(void);
+void __cdecl CDeformableModel(CDeformableModel *this_ptr,_FILE *file_handle);
 
 // Original: core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
 // Address: 0058a3d0
@@ -125,7 +125,7 @@ void __cdecl FUN_0058af40(void);
 
 // Original: core_skeledit.cpp_FUN_0058afe0
 // Address: 0058afe0
-void __cdecl FUN_0058afe0(void);
+void __cdecl FUN_0058afe0(void *ptr);
 
 // Original: core_skeledit.cpp_FUN_0058b160
 // Address: 0058b160
@@ -147,21 +147,21 @@ void __cdecl CSkeleton::save(CSkeleton *this_ptr,_FILE *file_handle);
 // Address: 0058b3a0
 void __cdecl CSkeleton::saveStream(CSkeleton *this_ptr,_FILE *file_handle);
 
-// Original: core_skeledit.cpp_FUN_0058b660
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058b660
 // Address: 0058b660
-void __cdecl FUN_0058b660(void);
+void __cdecl CDeformableModel(CDeformableModel *this_ptr,char *filename);
 
-// Original: core_skeledit.cpp_FUN_0058b8e0
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058b8e0
 // Address: 0058b8e0
-int __cdecl FUN_0058b8e0(void);
+int __cdecl CDeformableModel(CDeformableModel *this_ptr);
 
-// Original: core_skeledit.cpp_FUN_0058b9b0
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058b9b0
 // Address: 0058b9b0
-int __cdecl FUN_0058b9b0(void);
+int __cdecl CDeformableModel(CDeformableModel *this_ptr);
 
-// Original: core_skeledit.cpp_FUN_0058bc40
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058bc40
 // Address: 0058bc40
-int __cdecl FUN_0058bc40(void);
+int __cdecl CDeformableModel(CDeformableModel *this_ptr);
 
 // Original: core_skeledit.cpp_FUN_0058bd00
 // Address: 0058bd00
@@ -187,21 +187,21 @@ void __cdecl FUN_0058de70(void);
 // Address: 0058e0b0
 void __cdecl FUN_0058e0b0(void);
 
-// Original: core_skeledit.cpp_FUN_0058e240
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058e240
 // Address: 0058e240
-void __cdecl FUN_0058e240(void);
+void __cdecl CDeformableModel(CDeformableModel *this_ptr);
 
-// Original: core_skeledit.cpp_FUN_0058e3e0
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058e3e0
 // Address: 0058e3e0
-void __cdecl FUN_0058e3e0(void);
+void __cdecl CDeformableModel(CDeformableModel *this_ptr);
 
 // Original: core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0
 // Address: 0058e4e0
 void __cdecl CDeformable::groundBias(CDeformableModel *this_ptr);
 
-// Original: core_skeledit.cpp_FUN_0058e600
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058e600
 // Address: 0058e600
-void __cdecl FUN_0058e600(void);
+void __cdecl CDeformableModel(CDeformableModel *this_ptr);
 
 // Original: core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
 // Address: 0058e690
@@ -215,9 +215,9 @@ void __cdecl FUN_0058eaa0(void);
 // Address: 0058ec60
 void __cdecl CDeformableModel::removeUnusedTextures(CDeformableModel *this_ptr);
 
-// Original: core_skeledit.cpp_FUN_0058ede0
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058ede0
 // Address: 0058ede0
-void __cdecl FUN_0058ede0(void);
+void __cdecl CDeformableModel(CDeformableModel *this_ptr);
 
 // Original: core_skeledit.cpp_CDeformableModel_save_FUN_0058f040
 // Address: 0058f040
@@ -227,9 +227,9 @@ void __cdecl CDeformableModel::save(CDeformableModel *this_ptr,char *filename);
 // Address: 0058f120
 void __cdecl CDeformableModel::saveStream(CDeformableModel *this_ptr);
 
-// Original: core_skeledit.cpp_FUN_0058f790
+// Original: core_skeledit.cpp_CDeformableModel_FUN_0058f790
 // Address: 0058f790
-int * __cdecl FUN_0058f790(void);
+int * __cdecl CDeformableModel(CDeformableModel *this_ptr);
 
 // Original: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
 // Address: 0058f810
@@ -237,15 +237,15 @@ int __cdecl CDeformableModel::determinePartsFromS3D(CDeformableModel *this_ptr);
 
 // Original: core_skeledit.cpp_FUN_00592520
 // Address: 00592520
-int __cdecl FUN_00592520(void);
+int __cdecl FUN_00592520(void *ptr);
 
 // Original: core_skeledit.cpp_FUN_005925c0
 // Address: 005925c0
-int __cdecl FUN_005925c0(void);
+int __cdecl FUN_005925c0(void *ptr);
 
-// Original: core_skeledit.cpp_FUN_00592690
+// Original: core_skeledit.cpp_CSkeleton_FUN_00592690
 // Address: 00592690
-int __cdecl FUN_00592690(void);
+int __cdecl CSkeleton(CSkeleton *this_ptr,char *filename);
 
 // Original: core_skeledit.cpp_FUN_00595f30
 // Address: 00595f30
@@ -283,9 +283,9 @@ void __cdecl FUN_00599480(void);
 // Address: 00599550
 CLodVert * __cdecl CLodVert::copy(CLodVert *this_ptr,CLodVert *other);
 
-// Original: core_skeledit.cpp_LodVert_dtor_FUN_005995c0
+// Original: core_skeledit.cpp_CLodVert_dtor_FUN_005995c0
 // Address: 005995c0
-CLodVert * __cdecl LodVert::dtor(CLodVert *this_ptr,CLodVert *other,CLodVert *other2);
+CLodVert * __cdecl CLodVert::dtor(CLodVert *this_ptr,uint flags);
 
 // Original: core_skeledit.cpp_FUN_005995d0
 // Address: 005995d0

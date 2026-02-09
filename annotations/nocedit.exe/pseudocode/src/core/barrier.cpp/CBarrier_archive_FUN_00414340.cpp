@@ -10,11 +10,12 @@ void __cdecl core_barrier_cpp_CBarrier_archive_FUN_00414340(CBarrier *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
-  core_actor_cpp_archiveVector_FUN_0040b340((CVector3f *)this_ptr->unk,"size");
+  core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->size,"size");
   if (g_CBarrierClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->unk + 0x10,"effectClassNameList");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)(this_ptr->unk + 0xc),"addToPathGrid");
+  core_actor_cpp_archiveString_FUN_0040b5c0
+            (this_ptr->effect_class_name_list,"effectClassNameList");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->add_to_path_grid,"addToPathGrid");
   return;
 }

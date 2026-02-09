@@ -17,7 +17,7 @@ void __cdecl staticInit(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_ctor_FUN_0048a6c0
 // Address: 0048a6c0
-void __cdecl CDemonRenderer::ctor(CDemonRenderer *this_ptr);
+CDemonRenderer * __cdecl CDemonRenderer::ctor(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_setProjectionMode_FUN_0048a700
 // Address: 0048a700

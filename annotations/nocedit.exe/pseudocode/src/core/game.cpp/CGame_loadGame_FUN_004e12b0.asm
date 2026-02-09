@@ -441,7 +441,7 @@ section .text
     LEA EAX,[ESP + 0x4d4]               ; 004e16e9
     PUSH EAX                            ; 004e16f0
     CALL crt_fstream.cpp_ifstream_dtor_FUN_005ff856 ; 004e16f1
-        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
+        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; ifstream * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e16f6
     PUSH EBX                            ; 004e16f9
         ;   Label: LAB_004e16f9
@@ -543,7 +543,7 @@ section .text
     LEA EAX,[ESP + 0x4d4]               ; 004e1812
     PUSH EAX                            ; 004e1819
     CALL crt_fstream.cpp_ifstream_dtor_FUN_005ff856 ; 004e181a
-        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
+        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; ifstream * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e181f
     ADD ESP,0x628                       ; 004e1822
     POP EBP                             ; 004e1828
@@ -572,7 +572,7 @@ section .text
     LEA EAX,[ESP + 0x4d4]               ; 004e185e
     PUSH EAX                            ; 004e1865
     CALL crt_fstream.cpp_ifstream_dtor_FUN_005ff856 ; 004e1866
-        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
+        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; ifstream * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e186b
     ADD ESP,0x628                       ; 004e186e
     POP EBP                             ; 004e1874
@@ -613,7 +613,7 @@ section .text
     LEA EAX,[ESP + 0x4d4]               ; 004e18cb
     PUSH EAX                            ; 004e18d2
     CALL crt_fstream.cpp_ifstream_dtor_FUN_005ff856 ; 004e18d3
-        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
+        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; ifstream * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e18d8
     ADD ESP,0x628                       ; 004e18db
     POP EBP                             ; 004e18e1

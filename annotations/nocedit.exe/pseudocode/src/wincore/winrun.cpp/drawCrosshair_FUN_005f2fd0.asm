@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[5]:
-;   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 at 0057b1ea
-;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057ea4c
-;   core_setedit.cpp_DementedFogEditor_FUN_00580730 at 00580adb
-;   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 at 0057c992
+;   core_setedit.cpp_CDemonSet_FUN_0057ae50 at 0057b1ea
+;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057ea4c
+;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580adb
+;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057c992
 ;   shape_design.c_showPointEditor_FUN_0045c6c0 at 0045ca7b
 ;
 ; Referenced Globals:

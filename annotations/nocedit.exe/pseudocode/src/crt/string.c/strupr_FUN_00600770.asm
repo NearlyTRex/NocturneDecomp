@@ -9,10 +9,10 @@
 ; XREF[12]:
 ;   core_event.cpp_CEventList_FUN_004b0330 at 004b03db
 ;   core_event.cpp_CEventList_FUN_004b0470 at 004b051b
+;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057ecfd
+;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580eb5
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584e21
-;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057ecfd
-;   core_setedit.cpp_DementedFogEditor_FUN_00580730 at 00580eb5
-;   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 at 0057cd2b
+;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057cd2b
 ;   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 at 004b75fa
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0 at 004cd052
 ;   shape_design.c_cramTextureList_FUN_0046bb80 at 0046cf09

@@ -60,13 +60,13 @@ void __cdecl core_hotdemon_cpp_CHotDemon_setup_FUN_004f6d00(CHotDemon *this_ptr)
   INT_02db88f4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Spine2");
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
-  this_ptr->unk[8] = '\0';
-  this_ptr->unk[9] = '\0';
-  this_ptr->unk[10] = '\0';
-  this_ptr->unk[0xb] = '\0';
-  this_ptr->unk[0xc] = '\0';
-  this_ptr->unk[0xd] = '\0';
-  this_ptr->unk[0xe] = '\0';
-  this_ptr->unk[0xf] = '\0';
+  this_ptr->field1_0xbebc[0] = '\0';
+  this_ptr->field1_0xbebc[1] = '\0';
+  this_ptr->field1_0xbebc[2] = '\0';
+  this_ptr->field1_0xbebc[3] = '\0';
+  this_ptr->field1_0xbebc[4] = '\0';
+  this_ptr->field1_0xbebc[5] = '\0';
+  this_ptr->field1_0xbebc[6] = '\0';
+  this_ptr->field1_0xbebc[7] = '\0';
   return;
 }

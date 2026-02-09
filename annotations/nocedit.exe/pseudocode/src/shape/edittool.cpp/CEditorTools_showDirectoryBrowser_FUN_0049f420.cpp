@@ -110,7 +110,7 @@ LAB_0049f47a:
           memmove(&local_4c4,local_4c3,~uVar5 - 1);
         }
         time_ptr = _localtime((time_t *)&local_18f0.attributes);
-        strftime(local_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
+        _strftime(local_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
         _sprintf
                   (local_fc,"%s\t%s\t%d%s",local_dc4,&local_4c4,local_18f0.timestamp,local_34);
         strupr(local_fc);

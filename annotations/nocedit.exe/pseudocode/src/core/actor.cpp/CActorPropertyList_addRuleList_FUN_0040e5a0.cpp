@@ -29,7 +29,7 @@ core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0
     do {
       _sprintf(local_d8,"%s %d",property_name,iVar1 + 1);
       in_EAX = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
-                         (this_ptr,PROP_RULE,local_d8,data_ptr,(void *)0x0);
+                         (this_ptr,PROP_RULE,local_d8,data_ptr,(CActorPropertyValidatorFunc *)0x0);
       (in_EAX->param1).v_int = iVar1;
       iVar1 = iVar1 + 1;
     } while (iVar1 < max_count);

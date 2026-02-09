@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdlib.c_qsort_FUN_005fdf38
+;   crt_stdlib.c__qsort_FUN_005fdf38
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x8]       ; 004a2f53
     ADD EAX,EBX                         ; 004a2f56
     PUSH EAX                            ; 004a2f58
-    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 004a2f59
-        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
+    CALL crt_stdlib.c__qsort_FUN_005fdf38 ; 004a2f59
+        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 004a2f5e
     POP ESI                             ; 004a2f61
         ;   Label: LAB_004a2f61

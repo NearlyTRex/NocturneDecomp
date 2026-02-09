@@ -69,7 +69,10 @@ void __cdecl core_door_cpp_CDoor_addFilesToExtract_FUN_00481630(CDoor *this_ptr,
 int __cdecl core_door_cpp_FUN_00481650(void);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00481670(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_c_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,char *filename);
-void __cdecl engine_dosio_c_addGetFileInfoHook_FUN_00481710(FileSearchHandler *handler);
+template<typename T_func0>
+inline void engine_dosio_c_addGetFileInfoHook_FUN_00481710(T_func0 handler) {
+    (void)handler;
+}
 int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context);
 int __cdecl engine_dosio_c_findFileNormally_FUN_004817c0(SFoundFileInfo *info);
 int __cdecl engine_dosio_c_getFileSize_FUN_00481880(char *directory,char *filename);
@@ -229,7 +232,7 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getTextWidth_FUN_00489d00(CDrawSur
 void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test_font);
 int __cdecl cockpit_drawsurf_cpp_getFontMaxWidth_FUN_0048a6a0(CBitFont *font_ptr);
 void __cdecl engine_drender_cpp_staticInit_FUN_0048a6b0(void);
-void __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer *this_ptr);
+CDemonRenderer * __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CDemonRenderer *this_ptr,int mode);
 void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740 (CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
@@ -281,7 +284,10 @@ float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890 (CDemonRenderer *this_ptr,int x,int y,int width,int height);
 void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(CDemonRenderer *this_ptr);
-void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,RenderScanlineFunc *scanline_renderer );
+template<typename T_func0>
+inline void engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,T_func0 scanline_renderer) {
+    (void)this_ptr; (void)prim; (void)scanline_renderer;
+}
 void __cdecl engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 (CDemonRenderer *this_ptr,int color);
 void __cdecl engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970 (CDemonRenderer *this_ptr,int red_component,int green_component,int blue_component);
 void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0 (CDemonRenderer *this_ptr,int enabled);

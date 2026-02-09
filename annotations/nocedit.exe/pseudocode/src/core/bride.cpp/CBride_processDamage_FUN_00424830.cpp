@@ -20,7 +20,7 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
   CVector3f local_30;
   CVector3f local_24;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 0x34));
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 0x2c));
   if (damage_info->ammo_type == 7) {
     iVar2 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
@@ -41,7 +41,7 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
     core_charactr_cpp_CCharacter_FUN_0042b5b0((CCharacter *)this_ptr);
   }
   core_bride_cpp_CBride_FUN_00424600(this_ptr);
-  iVar2 = *(int *)(this_ptr->unk + 0x28);
+  iVar2 = *(int *)(this_ptr->unk + 0x20);
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   if ((this_ptr->base).base.model.part_visibility_flags[iVar2] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
@@ -52,7 +52,7 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,(iVar2 == 0) + 7,iVar4);
-    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0x30));
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0x28));
     if (iVar2 != 0) goto LAB_00424955;
     sound_name = "ub-hurt?.wav";
   }
@@ -65,11 +65,11 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,(iVar2 == 0) + 0xb,iVar4);
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 0x30));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 0x28));
     sound_name = "ub-die?.wav";
   }
   uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
-  *(uint *)(this_ptr->unk + 0x30) = uVar3;
+  *(uint *)(this_ptr->unk + 0x28) = uVar3;
 LAB_00424955:
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;

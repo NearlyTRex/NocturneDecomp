@@ -11,6 +11,6 @@ SReflector * __cdecl core_manpuz_cpp_freeReflectors_FUN_0050bad0(SReflector *obj
 {
   SReflector *pSVar1;
   
-  pSVar1 = __arrfini(objs,2,&g_SReflectorTypeInfo);
+  pSVar1 = (SReflector *)__arrfini(objs,2,&g_SReflectorTypeInfo);
   return pSVar1;
 }

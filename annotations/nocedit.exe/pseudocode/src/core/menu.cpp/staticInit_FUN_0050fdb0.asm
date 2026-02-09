@@ -50,7 +50,7 @@ section .text
     ADD ESP,0x4                         ; 0050fde8
     PUSH 0x2f26c70                      ; 0050fdeb | g_MenuBlurLeft
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 0050fdf0
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0050fdf5
     PUSH 0x67d244                       ; 0050fdf8 | DAT_0067d244
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 0050fdfd
@@ -58,7 +58,7 @@ section .text
     ADD ESP,0x4                         ; 0050fe02
     PUSH 0x2f26c84                      ; 0050fe05 | g_MenuBlurMiddle
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 0050fe0a
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0050fe0f
     PUSH 0x67d254                       ; 0050fe12 | DAT_0067d254
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 0050fe17
@@ -66,7 +66,7 @@ section .text
     ADD ESP,0x4                         ; 0050fe1c
     PUSH 0x2f26c98                      ; 0050fe1f | g_MenuBlurRight
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 0050fe24
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0050fe29
     PUSH 0x67d264                       ; 0050fe2c | DAT_0067d264
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 0050fe31
@@ -74,7 +74,7 @@ section .text
     ADD ESP,0x4                         ; 0050fe36
     PUSH 0x2f26cbc                      ; 0050fe39 | g_CalibrationBitmap
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 0050fe3e
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0050fe43
     PUSH 0x67d274                       ; 0050fe46 | DAT_0067d274
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 0050fe4b

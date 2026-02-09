@@ -21,7 +21,7 @@ void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   CDeformableModelInstance *in_stack_fffffee8;
   int local_14;
   
-  __STK(0x134);
+  __STK();
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("skeledit.ini",(char *)0x0,"rt","..\\core\\skeledit.cpp"
                       ,0x124);

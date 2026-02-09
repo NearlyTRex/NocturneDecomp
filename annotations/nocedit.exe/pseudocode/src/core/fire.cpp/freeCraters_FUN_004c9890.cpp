@@ -11,6 +11,6 @@ CCrater * __cdecl core_fire_cpp_freeCraters_FUN_004c9890(CCrater *objs)
 {
   CCrater *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x14,&g_CCraterTypeInfo);
+  pCVar1 = (CCrater *)__arrfini(objs,0x14,&g_CCraterTypeInfo);
   return pCVar1;
 }

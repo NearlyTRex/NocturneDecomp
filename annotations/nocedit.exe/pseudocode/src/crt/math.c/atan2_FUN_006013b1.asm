@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[12]:
-;   core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0 at 004bf8c1
+;   core_fire.cpp_CBulletHole_init_FUN_004bf7f0 at 004bf8c1
 ;   core_gore.cpp_CGore_FUN_004edbb0 at 004edc90
 ;   core_gore.cpp_FUN_004ec390 at 004ec3e5
 ;   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 at 005a1920

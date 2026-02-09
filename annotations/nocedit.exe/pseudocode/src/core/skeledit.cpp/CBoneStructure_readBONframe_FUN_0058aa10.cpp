@@ -18,7 +18,7 @@ core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
   int iVar4;
   int *in_stack_00000004;
   
-  __STK(0x28);
+  __STK();
   for (iVar4 = 0; iVar4 < *in_stack_00000004; iVar4 = iVar4 + 1) {
     iVar2 = in_stack_00000004[iVar4 + 0xce5];
     iVar3 = iVar2 * 0x84;

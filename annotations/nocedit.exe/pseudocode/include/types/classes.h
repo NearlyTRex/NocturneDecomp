@@ -66,6 +66,7 @@
 #include "types/classes/CCourse.h"
 #include "types/classes/CCourseFrame.h"
 #include "types/classes/CCourseFrameList.h"
+#include "types/classes/CCramTex.h"
 #include "types/classes/CCrate.h"
 #include "types/classes/CCrater.h"
 #include "types/classes/CCrossbow.h"

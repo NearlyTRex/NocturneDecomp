@@ -521,6 +521,13 @@ def _format_inline_asm(body_instructions, label_map, global_map):
         if mnemonic in _JUMP_MNEMONICS:
             operands = _convert_jump_operand(operands, label_map)
 
+        # Fix direct CALL targets: Ghidra uses dotted names like
+        # "wincore_wddvmem.cpp_func_FUN_ADDR" but inside __asm blocks
+        # the dot is parsed as struct member access. Replace with underscores
+        # to match the C prototype naming convention.
+        if mnemonic == 'CALL' and operands and '[' not in operands:
+            operands = operands.replace('.', '_')
+
         # Strip segment override prefixes (CS:, ES:, etc.)
         if operands:
             operands = _strip_segment_prefix(operands)

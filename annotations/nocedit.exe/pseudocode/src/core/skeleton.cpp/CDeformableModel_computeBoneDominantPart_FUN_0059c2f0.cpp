@@ -43,7 +43,7 @@ core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
   local_30 = 0;
   local_44 = 0;
   if (1 < this_ptr->num_parts) {
-    pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b4,"..\\core\\skeleton.cpp",0x5ef);
+    pCVar1 = (CDeformableModelInstance *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b4,"..\\core\\skeleton.cpp",0x5ef);
     local_24 = (CDeformableModelInstance *)0x0;
     if (pCVar1 != (CDeformableModelInstance *)0x0) {
       local_24 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(pCVar1);

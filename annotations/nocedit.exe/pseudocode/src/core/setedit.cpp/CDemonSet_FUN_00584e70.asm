@@ -37,7 +37,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_writeModelDependencies_FUN_0047ee30
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0
+;   core_setedit.cpp_CDemonSet_FUN_00576da0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   engine_dosio.c_getFile_FUN_00481a50
@@ -71,8 +71,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x220]     ; 00584eb3
     PUSH EBX                            ; 00584eba
     LEA EDI,[ESP + 0x108]               ; 00584ebb
-    CALL core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0 ; 00584ec2
-        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_FUN_00576da0 ; 00584ec2
+        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00576da0(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 00584ec7
     LEA ESI,[EBX + 0x14d0f0]            ; 00584eca
     MOV DL,0x2e                         ; 00584ed0

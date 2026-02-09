@@ -3,9 +3,9 @@
 // Function prototypes for crt/time.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_time.c_time_FUN_006001f0
+// Original: crt_time.c__time_FUN_006001f0
 // Address: 006001f0
-time_t __cdecl time(time_t *optional_output);
+time_t __cdecl ::time(time_t *optional_output);
 
 // Original: crt_time.c_localtime_r_FUN_00600230
 // Address: 00600230
@@ -15,9 +15,9 @@ _tm * __cdecl localtime::r(time_t *timer,_tm *result);
 // Address: 00600288
 _tm * __cdecl ::localtime(time_t *timer);
 
-// Original: crt_time.c_strftime_FUN_006002d4
+// Original: crt_time.c__strftime_FUN_006002d4
 // Address: 006002d4
-uint __cdecl strftime(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr);
+uint __cdecl ::strftime(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr);
 
 // Original: crt_time.c__mktime_FUN_00600f80
 // Address: 00600f80
@@ -31,9 +31,9 @@ void __watcallStack formatTwoDigits(int number,int position,char *buffer);
 // Address: 00601678
 char * __watcallStack asctimeFormat(_tm *timeptr,char *buffer);
 
-// Original: crt_time.c_asctime_FUN_00601768
+// Original: crt_time.c__asctime_FUN_00601768
 // Address: 00601768
-char * __watcallStack asctime(_tm *timeptr);
+char * __cdecl ::asctime(_tm *timeptr);
 
 // Original: crt_time.c_get_local_time_FUN_00607150
 // Address: 00607150

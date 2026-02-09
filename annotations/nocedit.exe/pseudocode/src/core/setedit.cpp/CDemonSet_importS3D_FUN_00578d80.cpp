@@ -173,7 +173,7 @@ LAB_00578fc0:
       engine_dosio_c_ensureTrailingSlash_FUN_00481f80(".\\GroundTypes",local_14,local_1a0);
       engine_dosio_c_splitPath_FUN_00481f20(local_28,(char *)0x0,(char *)0x0,local_3a0,(char *)0x0);
       engine_dosio_c_makePath_FUN_00481f50(local_6a8,local_14,local_1a0,local_3a0,".txt");
-      core_setedit_cpp_ImportingGroundTextures_FUN_00578420();
+      core_setedit_cpp_FUN_00578420();
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Reading textures");
       if (1000 < local_58) {
@@ -253,7 +253,7 @@ LAB_0057981a:
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x4eb);
             }
             *(uint *)((int)&DAT_03364d18 + iVar2) = 0;
-            core_setedit_cpp_DefineTexturesMaybe_FUN_00578290();
+            core_setedit_cpp_FUN_00578290();
             local_30 = 1;
           }
           else if (uVar4 == 0) {
@@ -284,7 +284,7 @@ LAB_0057981a:
         return;
       }
       if (iVar1 != 0) goto LAB_00579a7e;
-      core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630();
+      core_setedit_cpp_FUN_00578630();
       _fseek(in_stack_00000008,local_34,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_be0,0);
     } while( true );
@@ -656,7 +656,7 @@ LAB_0057a07e:
     }
   }
   if (local_60 != 0) {
-    core_setedit_cpp_BackdropMaybe_FUN_005805a0();
+    core_setedit_cpp_CDemonSet_FUN_005805a0(this_ptr);
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"CDemonSet::importS3D completed OK");

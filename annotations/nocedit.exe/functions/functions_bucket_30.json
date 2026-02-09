@@ -13528,12 +13528,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930",
+    "name":"shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"bounds_entry",
+          "name":"this_ptr",
           "storage":{
             "offset":12,
             "size":4,
@@ -13546,7 +13546,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         }
       ],
       "ret_storage":{
@@ -13572,7 +13572,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0",
+    "name":"shape_cramtex.cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -13610,6 +13610,22 @@
         }
       ],
       "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CCramTex*"
+        },
         {
           "name":"x",
           "storage":{
@@ -15846,7 +15862,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430",
+    "name":"core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430",
     "ret":"void",
     "vars":{
       "params":[
@@ -31690,7 +31706,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CLightningBolt_ctor_FUN_004c5630",
+    "name":"core_fire.cpp_CLightningBolt_reset_FUN_004c5630",
     "ret":"void",
     "vars":{
       "params":[
@@ -63598,7 +63614,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630",
+    "name":"core_setedit.cpp_FUN_00578630",
     "ret":"void",
     "vars":{
       "locals":[
@@ -63712,7 +63728,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_0057e430",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057e430",
     "ret":"void",
     "vars":{
       "locals":[
@@ -63828,6 +63844,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
       ]
     }
   },
@@ -63843,7 +63877,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_setedit.cpp_FUN_005801b0",
-    "ret":"bool",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -63880,12 +63914,12 @@
         }
       ],
       "ret_storage":{
-        "reg":"AL",
-        "size":1,
+        "reg":"EAX",
+        "size":4,
         "varnodes":[
           {
             "addr":"register:00000000",
-            "size":1
+            "size":4
           }
         ]
       }
@@ -63902,7 +63936,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_DementedFogEditor_FUN_00580730",
+    "name":"core_setedit.cpp_CDemonSet_FUN_00580730",
     "ret":"void",
     "vars":{
       "locals":[
@@ -64181,7 +64215,7 @@
       ],
       "params":[
         {
-          "name":"unk",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -64194,7 +64228,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"CDemonSet*"
         }
       ]
     }
@@ -65054,7 +65088,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_simbox.cpp_CSimBox_FUN_005891b0",
+    "name":"core_simbox.cpp_CSimBox_archive_FUN_005891b0",
     "ret":"void",
     "vars":{
       "params":[
@@ -65344,7 +65378,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058a2b0",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058a2b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -65427,6 +65461,40 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ]
     }
@@ -65686,7 +65754,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058b9b0",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058b9b0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -65961,6 +66029,24 @@
             ]
           },
           "type":"undefined8"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
         }
       ],
       "ret_storage":{
@@ -81672,12 +81758,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_texture.cpp_CTextureCache_free_FUN_005dcb30",
+    "name":"engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"cache",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,

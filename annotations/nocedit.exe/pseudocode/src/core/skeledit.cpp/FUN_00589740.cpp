@@ -14,7 +14,7 @@ void __cdecl core_skeledit_cpp_FUN_00589740(void)
   _FILE *in_stack_00000004;
   byte *in_stack_00000008;
   
-  __STK(0x10);
+  __STK();
   *in_stack_00000008 = 0;
   while( true ) {
     iVar1 = _fgetc(in_stack_00000004);

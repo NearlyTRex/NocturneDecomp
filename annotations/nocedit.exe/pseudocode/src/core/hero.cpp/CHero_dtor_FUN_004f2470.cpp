@@ -2,11 +2,11 @@
 // Address: 004f2470
 // Address Range: [[004f2470, 004f2535]]
 // Convention: __cdecl
-// Signature: void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
+// Signature: CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
+CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
 
 {
   int iVar1;
@@ -17,6 +17,7 @@ void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
   CVector3f *pCVar6;
   CClothList *pCVar7;
   CDeformableModelInstance *pCVar8;
+  CHero *pCVar9;
   
   (this_ptr->base).base.vtable._ub = &g_CHeroVTable;
   iVar1 = 0;
@@ -36,7 +37,7 @@ void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
   pCVar7 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80((CClothList *)(pCVar6 + -0x26));
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(pCVar7[-0x18].filenames[2] + 0x10),0);
-  core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-            ((CDemonActor *)(pCVar8[-1].part_visibility_flags + 7),1);
-  return;
+  pCVar9 = (CHero *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30
+                              ((CDemonActor *)(pCVar8[-1].part_visibility_flags + 7),1);
+  return pCVar9;
 }

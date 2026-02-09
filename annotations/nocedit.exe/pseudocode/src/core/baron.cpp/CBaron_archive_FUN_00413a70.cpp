@@ -13,8 +13,8 @@ void __cdecl core_baron_cpp_CBaron_archive_FUN_00413a70(CBaron *this_ptr)
   if (g_CBaronClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->unk,"summonEvent");
-  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->unk + 100,"goAwayEvent");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)(this_ptr->unk + 0xf8),"summoned");
+  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->summon_event,"summonEvent");
+  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->go_away_event,"goAwayEvent");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->summoned,"summoned");
   return;
 }

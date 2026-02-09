@@ -693,13 +693,14 @@ def generate_individual_enum_header(currentProgram, enum, type_to_path_map=None)
     content.append("// Enum: %s" % enum.getName())
     if enum.getDescription():
         content.append("// %s" % enum.getDescription())
-    content.append("typedef enum %s {" % enum.getName())
+    content.append("enum {")
     enum_values = []
     for name in enum.getNames():
         value = enum.getValue(name)
         enum_values.append("    %s = %d" % (name, value))
     content.append(",\n".join(enum_values))
-    content.append("} %s;" % enum.getName())
+    content.append("};")
+    content.append("typedef int %s;" % enum.getName())
     content.append("")
     return "\n".join(content)
 
@@ -922,13 +923,14 @@ def generate_enums_header(currentProgram, enums):
         content.append("// Enum: %s" % enum.getName())
         if enum.getDescription():
             content.append("// %s" % enum.getDescription())
-        content.append("typedef enum %s {" % enum.getName())
+        content.append("enum {")
         enum_values = []
         for name in enum.getNames():
             value = enum.getValue(name)
             enum_values.append("    %s = %d" % (name, value))
         content.append(",\n".join(enum_values))
-        content.append("} %s;" % enum.getName())
+        content.append("};")
+        content.append("typedef int %s;" % enum.getName())
         content.append("")
     return "\n".join(content)
 
@@ -1430,13 +1432,14 @@ def generate_type_definition(currentProgram, dt):
         lines.append("// Enum: %s" % dt_name)
         if dt.getDescription():
             lines.append("// %s" % dt.getDescription())
-        lines.append("typedef enum %s {" % dt_name)
+        lines.append("enum {")
         enum_values = []
         for name in dt.getNames():
             value = dt.getValue(name)
             enum_values.append("    %s = %d" % (name, value))
         lines.append(",\n".join(enum_values))
-        lines.append("} %s;" % dt_name)
+        lines.append("};")
+        lines.append("typedef int %s;" % dt_name)
 
     elif isinstance(dt, TypeDef):
         lines.append("")
@@ -1969,7 +1972,9 @@ def generate_watcom_runtime_inlines():
     lines.append("}")
     lines.append("")
     lines.append("// __arr_op - Generic array operation with function pointer")
-    lines.append("inline void* __arr_op(void* dest, void* src, int count, int size, void* copy_func) {")
+    lines.append("// Templated to accept any function pointer type (callers pass typed copy funcs)")
+    lines.append("template<typename CopyFunc>")
+    lines.append("inline void* __arr_op(void* dest, void* src, int count, int size, CopyFunc copy_func) {")
     lines.append("    char* d = (char*)dest;")
     lines.append("    char* s = (char*)src;")
     lines.append("    void (*func)(void*, void*) = (void (*)(void*, void*))copy_func;")

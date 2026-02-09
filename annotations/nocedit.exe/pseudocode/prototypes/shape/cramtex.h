@@ -9,63 +9,63 @@ int __cdecl generateTextureAtlasLayout(uint texture_count,STextureAtlasEntry *te
 
 // Original: shape_cramtex.cpp_qsortByLargestDimension_FUN_004457f0
 // Address: 004457f0
-int __cdecl qsortByLargestDimension(SCramWorkingEntry *entry_a,SCramWorkingEntry *entry_b);
+int __cdecl qsortByLargestDimension(CCramTex *entry_a,CCramTex *entry_b);
 
 // Original: shape_cramtex.cpp_generateTextureAtlas_FUN_00445820
 // Address: 00445820
 void __cdecl generateTextureAtlas(void);
 
-// Original: shape_cramtex.cpp_addTextureEntry_FUN_00446100
+// Original: shape_cramtex.cpp_CCramTex_addTextureEntry_FUN_00446100
 // Address: 00446100
-int __cdecl addTextureEntry(SCramWorkingEntry *texture_entry);
+int __cdecl CCramTex::addTextureEntry(CCramTex *this_ptr);
 
 // Original: shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140
 // Address: 00446140
-int __cdecl qsortRectanglesByActiveFlag(SCramRectangle **rect_a,SCramRectangle **rect_b);
+int __cdecl qsortRectanglesByActiveFlag(SCramRectangle *rect_a,SCramRectangle *rect_b);
 
-// Original: shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160
+// Original: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
 // Address: 00446160
-int __cdecl runInteractiveAtlasGeneration(SCramWorkingEntry *current_texture_entry);
+int __cdecl CCramTex::runInteractiveAtlasGeneration(CCramTex *this_ptr);
 
 // Original: shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590
 // Address: 00447590
 uint __cdecl performGapFillingOptimization(void);
 
-// Original: shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0
+// Original: shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0
 // Address: 004478c0
-int __cdecl findHighestOverlappingY(SCramWorkingEntry *reference_entry);
+int __cdecl CCramTex::findHighestOverlappingY(CCramTex *this_ptr);
 
-// Original: shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930
+// Original: shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930
 // Address: 00447930
-int __cdecl findLowestOverlappingY(SCramWorkingEntry *bounds_entry);
+int __cdecl CCramTex::findLowestOverlappingY(CCramTex *this_ptr);
 
-// Original: shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0
+// Original: shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0
 // Address: 004479a0
-int __cdecl findRightmostOverlappingX(SCramWorkingEntry *bounds_entry);
+int __cdecl CCramTex::findRightmostOverlappingX(CCramTex *this_ptr);
 
-// Original: shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10
+// Original: shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10
 // Address: 00447a10
-int __cdecl findLeftmostOverlappingX(SCramWorkingEntry *bounds_entry);
+int __cdecl CCramTex::findLeftmostOverlappingX(CCramTex *this_ptr);
 
 // Original: shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80
 // Address: 00447a80
 int __cdecl mapCoordinateToAtlas(int min_coord,int max_coord,int pixel_offset);
 
-// Original: shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0
+// Original: shape_cramtex.cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0
 // Address: 00447ab0
-void __cdecl renderAllTexturesAndRectangles(int x,int y,int width,int height,int render_mode);
+void __cdecl CCramTex::renderAllTexturesAndRectangles(CCramTex *this_ptr,int x,int y,int width,int height,int render_mode);
 
-// Original: shape_cramtex.cpp_renderTextureEntry_FUN_00447c20
+// Original: shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20
 // Address: 00447c20
-void __cdecl renderTextureEntry(SCramWorkingEntry *texture_entry,int visualization_mode,int draw_x,int draw_y, int draw_width,int draw_height);
+void __cdecl CCramTex::renderTextureEntry(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width, int draw_height);
 
 // Original: shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
 // Address: 00447e80
 double __cdecl calculateAtlasEfficiency(void);
 
-// Original: shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20
+// Original: shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20
 // Address: 00447f20
-void __cdecl visualizeTextureAtlas(int visualization_mode,int completion_mode,int display_mode);
+void __cdecl CCramTex::visualizeTextureAtlas(CCramTex *this_ptr,int visualization_mode,int completion_mode,int display_mode);
 
 // Original: shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0
 // Address: 004481d0
@@ -75,13 +75,13 @@ void __cdecl printAtlasLayoutReport(_FILE *output_file);
 // Address: 00448260
 void __cdecl placementCollisionCheck(int layer_id,int start_x,int start_y,int width,int height);
 
-// Original: shape_cramtex.cpp_checkTextureCollision_FUN_00448390
+// Original: shape_cramtex.cpp_CCramTex_checkTextureCollision_FUN_00448390
 // Address: 00448390
-int __cdecl checkTextureCollision(SCramWorkingEntry *placed_texture,SCramWorkingEntry *test_texture);
+int __cdecl CCramTex::checkTextureCollision(CCramTex *this_ptr,CCramTex *other);
 
-// Original: shape_cramtex.cpp_setupTextureForPlacement_FUN_004483e0
+// Original: shape_cramtex.cpp_CCramTex_setupTextureForPlacement_FUN_004483e0
 // Address: 004483e0
-void __cdecl setupTextureForPlacement(SCramWorkingEntry *destination,SCramWorkingEntry *source);
+void __cdecl CCramTex::setupTextureForPlacement(CCramTex *this_ptr,CCramTex *source);
 
 // Original: shape_cramtex.cpp_maxInt_FUN_00448440
 // Address: 00448440

@@ -17,7 +17,7 @@ CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00559160(CScat *this_ptr,uint flags
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_hero_cpp_CHero_dtor_FUN_004f2470(&this_ptr->base,1);
+  ptr = (CScat *)core_hero_cpp_CHero_dtor_FUN_004f2470(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

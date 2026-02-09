@@ -51,7 +51,7 @@
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_stdlib.c_qsort_FUN_005fdf38
+;   crt_stdlib.c__qsort_FUN_005fdf38
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
@@ -279,8 +279,8 @@ section .text
     PUSH dword ptr [0x01626408]         ; 00467a60 | g_VertexCount
     MOV EAX,dword ptr [EBP + -0x8]      ; 00467a66
     PUSH EAX                            ; 00467a69
-    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 00467a6a
-        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
+    CALL crt_stdlib.c__qsort_FUN_005fdf38 ; 00467a6a
+        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 00467a6f
     CMP dword ptr [EBP + -0x10],0x0     ; 00467a72
     JZ 0x00467b40                       ; 00467a76
@@ -548,8 +548,8 @@ section .text
     PUSH dword ptr [0x01626408]         ; 00467cfd | g_VertexCount
     MOV EAX,dword ptr [EBP + -0x8]      ; 00467d03
     PUSH EAX                            ; 00467d06
-    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 00467d07
-        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
+    CALL crt_stdlib.c__qsort_FUN_005fdf38 ; 00467d07
+        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 00467d0c
     MOV dword ptr [EBP + -0x24],0x0     ; 00467d0f
     JMP 0x00467d1b                      ; 00467d16

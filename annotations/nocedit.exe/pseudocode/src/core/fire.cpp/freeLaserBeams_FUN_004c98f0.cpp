@@ -11,6 +11,6 @@ CLaserBeam * __cdecl core_fire_cpp_freeLaserBeams_FUN_004c98f0(CLaserBeam *objs)
 {
   CLaserBeam *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x40,&g_CLaserBeamTypeInfo);
+  pCVar1 = (CLaserBeam *)__arrfini(objs,0x40,&g_CLaserBeamTypeInfo);
   return pCVar1;
 }

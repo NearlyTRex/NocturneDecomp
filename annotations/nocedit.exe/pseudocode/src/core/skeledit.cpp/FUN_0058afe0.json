@@ -2,33 +2,39 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 23,
+        "message": "no matching function for call to '__STK'"
+      },
+      {
         "category": "format_error",
         "column": 49,
-        "line": 37,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
+        "line": 36,
+        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 54,
-        "line": 45,
+        "line": 44,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 51,
+        "line": 50,
         "message": "use of undeclared identifier 'DAT_0366b650'; did you mean 'DAT_0366b64c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 52,
+        "line": 51,
         "message": "use of undeclared identifier 'DAT_0366b650'"
       },
       {
         "category": "undeclared_identifier",
         "column": 86,
-        "line": 61,
+        "line": 60,
         "message": "use of undeclared identifier 'DAT_0366b650'"
       }
     ],
@@ -37,29 +43,30 @@
   },
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 195,
+    "complexity_score": 149,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 9,
-    "pseudocode_lines": 55,
-    "suspect_count": 13,
+    "pseudocode_lines": 54,
+    "suspect_count": 8,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 199
+    "total_lines": 198
   },
   "cross_references": [
+    {
+      "addr": "00592690",
+      "from_addr": "0059386d",
+      "name": "core_skeledit.cpp_CSkeleton_FUN_00592690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0058c190",
       "from_addr": "0058c74a",
       "name": "core_skeledit.cpp_FUN_0058c190",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00592690",
-      "from_addr": "0059386d",
-      "name": "core_skeledit.cpp_FUN_00592690",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -73,7 +80,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_FUN_0058afe0",
-    "signature": "void __cdecl core_skeledit_cpp_FUN_0058afe0(void)"
+    "signature": "void __cdecl core_skeledit_cpp_FUN_0058afe0(void *ptr)"
   },
   "function_calls": [
     {
@@ -204,10 +211,10 @@
     "pcode_op_count": 501
   },
   "stack_frame": {
-    "frame_size": 1160,
+    "frame_size": 1164,
     "local_size": 1160,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -230,6 +237,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
       }
     ]
   },
@@ -237,90 +251,55 @@
     {
       "description": "Unresolved stack parameter",
       "line": 11,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
       "match": "in_stack_00000008",
       "text": "uint in_stack_00000008;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)pvVar6 + 0x24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(void *)((int)",
+      "text": "pvVar6 = (void *)((int)pvVar6 + 0x84);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "piVar5 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "piVar6 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar3 < *in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 37,
       "match": "in_stack_00000008",
       "text": "_sprintf(local_dc,\"Viewing bone heirarchy for %s.\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000008",
       "text": "(&DAT_0366b650,\"Heirarchy for %s\\r\\n\\r\\n\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_0366b650",
       "text": "(&DAT_0366b650,\"Heirarchy for %s\\r\\n\\r\\n\",in_stack_00000008);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 44,
       "match": "DAT_0366b650",
-      "text": "pcVar2 = &DAT_0366b650 + iVar3;",
+      "text": "pcVar3 = &DAT_0366b650 + iVar4;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar4 < *in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_0366b650",
       "text": "shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(g_CEditorToolsPtr,&DAT_0366b650);",
       "type": "undefined_data"

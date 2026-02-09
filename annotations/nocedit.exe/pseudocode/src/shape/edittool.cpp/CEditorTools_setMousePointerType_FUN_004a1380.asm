@@ -21,8 +21,8 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e536
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053998b
 ;   core_msnedit.cpp_FUN_00535e70 at 00536a97
-;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583aee
-;   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 at 0057ab94
+;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057ab94
+;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057e03b
 ;   ... and 5 more
 ;
 ; Referenced Globals:

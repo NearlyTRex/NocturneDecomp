@@ -11,7 +11,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_factoryFunc_FUN_005e5550(void)
 {
   CVampireBoss *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xce920,"..\\core\\vampboss.cpp",0x60);
+  pCVar1 = (CVampireBoss *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xce920,"..\\core\\vampboss.cpp",0x60);
   if (pCVar1 == (CVampireBoss *)0x0) {
     return (CVampireBoss *)0x0;
   }

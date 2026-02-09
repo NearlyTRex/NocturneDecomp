@@ -9,7 +9,7 @@ int __cdecl alignTo4ByteBoundary(int value);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0
 // Address: 0054bcd0
-void __cdecl CPackedBitmapSet::ctor(CPackedBitmapSet *this_ptr);
+CPackedBitmapSet * __cdecl CPackedBitmapSet::ctor(CPackedBitmapSet *this_ptr);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_0054bd00
 // Address: 0054bd00

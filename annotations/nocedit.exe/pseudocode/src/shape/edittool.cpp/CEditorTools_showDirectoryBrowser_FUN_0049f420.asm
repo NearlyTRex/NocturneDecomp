@@ -49,7 +49,7 @@
 ; XREF[11]:
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443264
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e75e
-;   core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20 at 00578a72
+;   core_setedit.cpp_CDemonSet_FUN_00578a20 at 00578a72
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584d1c
 ;   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 at 004b748e
 ;   engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0 at 004b82cb
@@ -86,7 +86,7 @@
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   crt_string.c_strupr_FUN_00600770
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_strftime_FUN_006002d4
+;   crt_time.c__strftime_FUN_006002d4
 ;   engine_dosio.c_CFileFinder_ctor_FUN_00481c30
 ;   engine_dosio.c_CFileFinder_dtor_FUN_00481c50
 ;   engine_dosio.c_CFileFinder_findNext_FUN_00481cf0
@@ -454,8 +454,8 @@ section .text
     PUSH 0x1e                           ; 0049f83f
     LEA EAX,[ESP + 0x1ea8]              ; 0049f841
     PUSH EAX                            ; 0049f848
-    CALL crt_time.c_strftime_FUN_006002d4 ; 0049f849
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 0049f849
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 0049f84e
     LEA EAX,[ESP + 0x1e9c]              ; 0049f851
     PUSH EAX                            ; 0049f858

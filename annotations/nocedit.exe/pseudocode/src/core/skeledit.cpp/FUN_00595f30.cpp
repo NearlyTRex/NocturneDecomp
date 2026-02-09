@@ -18,7 +18,7 @@ void __cdecl core_skeledit_cpp_FUN_00595f30(void)
   int *in_stack_00000008;
   int local_24 [6];
   
-  __STK(0x28);
+  __STK();
   iVar5 = 0;
   if (0 < *in_stack_00000008) {
     piVar3 = in_stack_00000008 + 10;

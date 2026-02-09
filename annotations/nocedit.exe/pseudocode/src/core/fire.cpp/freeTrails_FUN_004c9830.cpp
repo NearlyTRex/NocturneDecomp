@@ -11,6 +11,6 @@ CTrail * __cdecl core_fire_cpp_freeTrails_FUN_004c9830(CTrail *objs)
 {
   CTrail *pCVar1;
   
-  pCVar1 = __arrfini(objs,100,&g_CTrailTypeInfo);
+  pCVar1 = (CTrail *)__arrfini(objs,100,&g_CTrailTypeInfo);
   return pCVar1;
 }

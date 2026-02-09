@@ -17,7 +17,7 @@ CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_00440670(CColonel *this_pt
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  core_hero_cpp_CHero_dtor_FUN_004f2470(&this_ptr->base,1);
+  ptr = (CColonel *)core_hero_cpp_CHero_dtor_FUN_004f2470(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

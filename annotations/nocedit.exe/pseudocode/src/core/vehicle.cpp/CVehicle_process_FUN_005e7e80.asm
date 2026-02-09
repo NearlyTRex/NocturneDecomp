@@ -527,7 +527,7 @@ section .text
         ;   XREF to: 005e845b (CONDITIONAL_JUMP)  ; LAB_005e845b
     PUSH EAX                            ; 005e8452
     CALL core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90 ; 005e8453
-        ;   XREF to: 005dda90 (UNCONDITIONAL_CALL)  ; int core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun * this_ptr)
+        ;   XREF to: 005dda90 (UNCONDITIONAL_CALL)  ; CTommyGun * core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun * this_ptr)
     ADD ESP,0x4                         ; 005e8458
     MOV EDI,EAX                         ; 005e845b
         ;   Label: LAB_005e845b

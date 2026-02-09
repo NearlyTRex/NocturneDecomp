@@ -1,27 +1,58 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 17,
+        "message": "no matching function for call to '__STK'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 18,
+        "message": "no matching function for call to 'strcmp'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 23,
+        "message": "no matching function for call to 'strcmp'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 15,
+        "line": 29,
+        "message": "no matching function for call to 'strcasecmp'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 35,
+        "message": "no matching function for call to 'sscanf'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 207,
+    "complexity_score": 156,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 32,
-    "suspect_count": 17,
+    "pseudocode_lines": 31,
+    "suspect_count": 12,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 110
+    "total_lines": 109
   },
   "cross_references": [
     {
       "addr": "00592690",
       "from_addr": "0059371b",
-      "name": "core_skeledit.cpp_FUN_00592690",
+      "name": "core_skeledit.cpp_CSkeleton_FUN_00592690",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -35,7 +66,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_FUN_00592520",
-    "signature": "int __cdecl core_skeledit_cpp_FUN_00592520(void)"
+    "signature": "int __cdecl core_skeledit_cpp_FUN_00592520(void *ptr)"
   },
   "function_calls": [
     {
@@ -112,129 +143,102 @@
     "pcode_op_count": 249
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
   },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
       "line": 6,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
       "match": "in_stack_00000008",
       "text": "int *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = strcmp(in_stack_00000004,\"(\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "*in_stack_00000008 = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = strcmp(in_stack_00000004,\")\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "*in_stack_00000008 = in_stack_0000000c + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_0000000c",
       "text": "*in_stack_00000008 = in_stack_0000000c + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"patch\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_00000008",
       "text": "*in_stack_00000008 = -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = sscanf(in_stack_00000004,\"%d\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000008",
-      "text": "iVar1 = sscanf(in_stack_00000004,\"%d\",in_stack_00000008);",
+      "text": "iVar1 = sscanf(ptr,\"%d\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "if (((iVar1 != 1) || (*in_stack_00000008 < 0)) || (in_stack_0000000c <= *in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_0000000c",
       "text": "if (((iVar1 != 1) || (*in_stack_00000008 < 0)) || (in_stack_0000000c <= *in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "if (((iVar1 != 1) || (*in_stack_00000008 < 0)) || (in_stack_0000000c <= *in_stack_00000008)) {",
       "type": "stack_param"

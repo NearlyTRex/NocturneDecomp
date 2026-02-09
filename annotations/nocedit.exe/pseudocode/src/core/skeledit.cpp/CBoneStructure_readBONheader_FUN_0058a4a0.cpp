@@ -64,7 +64,7 @@ core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
   int local_14;
   
   bVar14 = 0;
-  __STK(0x25c);
+  __STK();
   iVar5 = 1;
   do {
     iVar4 = _fgetc((_FILE *)this_ptr);

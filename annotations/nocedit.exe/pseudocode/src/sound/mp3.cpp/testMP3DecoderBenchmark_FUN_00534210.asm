@@ -38,7 +38,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   crt_stdio.c_remove_FUN_005ff9d0
-;   crt_time.c_time_FUN_006001f0
+;   crt_time.c__time_FUN_006001f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -158,8 +158,8 @@ section .text
         ;   Label: LAB_00534342
     PUSH EAX                            ; 00534344
     XOR EBX,EBX                         ; 00534345
-    CALL crt_time.c_time_FUN_006001f0   ; 00534347
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c__time_FUN_006001f0  ; 00534347
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 0053434c
     PUSH EDI                            ; 0053434f
         ;   Label: LAB_0053434f
@@ -245,8 +245,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0053443e
         ;   Label: LAB_0053443e
     PUSH EAX                            ; 00534442
-    CALL crt_time.c_time_FUN_006001f0   ; 00534443
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c__time_FUN_006001f0  ; 00534443
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 00534448
     MOV EAX,dword ptr [ESP + 0x4]       ; 0053444b
     SUB EAX,dword ptr [ESP]             ; 0053444f

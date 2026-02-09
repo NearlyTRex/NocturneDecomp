@@ -11,7 +11,7 @@ CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_005447a0(void)
 {
   CNPC *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f708,"..\\core\\npc.cpp",0x2d);
+  pCVar1 = (CNPC *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f708,"..\\core\\npc.cpp",0x2d);
   if (pCVar1 == (CNPC *)0x0) {
     return (CNPC *)0x0;
   }

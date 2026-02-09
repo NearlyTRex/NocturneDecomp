@@ -137,7 +137,7 @@ CFileManager * __cdecl CFileManager::ctor(CFileManager *this_ptr);
 
 // Original: engine_fileio.cpp_CFileManager_dtor_FUN_004b53d0
 // Address: 004b53d0
-void __cdecl CFileManager::dtor(CFileManager *this_ptr);
+CFileManager * __cdecl CFileManager::dtor(CFileManager *this_ptr);
 
 // Original: engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0
 // Address: 004b53e0

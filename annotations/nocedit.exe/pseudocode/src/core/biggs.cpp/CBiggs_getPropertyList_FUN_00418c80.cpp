@@ -19,6 +19,6 @@ core_biggs_cpp_CBiggs_getPropertyList_FUN_00418c80
             (property_list,"Model",data_ptr,0);
   core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(property_list,"State",data_ptr);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
-            (property_list,"Morph cond",this_ptr->unk3 + 0xc2c);
+            (property_list,"Morph cond",this_ptr->morph_event);
   return;
 }

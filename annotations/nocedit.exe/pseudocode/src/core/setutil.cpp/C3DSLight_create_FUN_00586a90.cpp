@@ -20,7 +20,7 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *
   char (*filter_name) [40];
   char *pcVar8;
   
-  pCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fac,"..\\core\\setutil.cpp",0x2f8);
+  pCVar2 = (CDemonLight *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fac,"..\\core\\setutil.cpp",0x2f8);
   this_ptr_00 = (CDemonLight *)0x0;
   if (pCVar2 != (CDemonLight *)0x0) {
     this_ptr_00 = core_dlight_cpp_CDemonLight_ctor_FUN_004726a0

@@ -22,12 +22,9 @@ core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *d
                          (damage_info->attacker,g_CCharacterClassInfo.name_hash);
     }
     if (pCVar1 != (CDemonActor *)0x0) {
-      this_ptr->unk2[8] = '\0';
-      this_ptr->unk2[9] = '\0';
-      this_ptr->unk2[10] = 'p';
-      this_ptr->unk2[0xb] = 'A';
+      this_ptr->unk3 = 0x41700000;
       this_ptr->unk1 = 1;
-      *(CDemonActor **)(this_ptr->unk2 + 4) = pCVar1;
+      this_ptr->victim = pCVar1;
       return;
     }
   }

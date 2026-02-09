@@ -11,8 +11,6 @@ struct CDemonActor;
 // Ghidra size: 0x4ca58 (313944 bytes)
 typedef struct CMimic {
     CEnemy base; // 0x0
-    int unk1; // 0xbeb4
-    int unk2; // 0xbeb8
     char mirror_condition[100]; // 0xbebc
     char attack_condition[100]; // 0xbf20
     char unk3[261744]; // 0xbf84

@@ -17,10 +17,7 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005a2430(CSmiley *this_ptr)
   (pCVar3->base).base.base.vtable._ub = &g_CSmileyVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"smiley.dfm");
-  pCVar3->unk1[8] = '\0';
-  pCVar3->unk1[9] = '\0';
-  pCVar3->unk1[10] = '\0';
-  pCVar3->unk1[0xb] = '\0';
+  pCVar3->unk1 = 0;
   pCVar3->guard_distance = 100.0;
   (pCVar3->base).base.field54_0x2ddc = 0.6;
   (pCVar3->base).base.collision_cylinder_radius = 0.9;

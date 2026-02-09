@@ -12,7 +12,7 @@ void __cdecl core_skeledit_cpp_FUN_00589bb0(void)
   _FILE *p_Var1;
   CLodMesh *in_stack_00000004;
   
-  __STK(0x18);
+  __STK();
   p_Var1 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
                      (in_stack_00000004,"wt");
   in_stack_00000004->precompute_file = p_Var1;

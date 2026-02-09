@@ -16,80 +16,56 @@
       {
         "category": "other",
         "column": 6,
-        "line": 319,
+        "line": 318,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 319,
+        "line": 318,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 360,
+        "line": 359,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 360,
+        "line": 359,
         "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 367,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 367,
-        "message": "expected expression"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 444,
+        "line": 447,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 444,
+        "line": 447,
         "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 464,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 464,
-        "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 580,
+        "line": 584,
         "message": "use of undeclared identifier 'stack0xfffffb6c'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 715,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 37,
+        "line": 721,
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 47,
-        "line": 715,
-        "message": "expected expression"
+        "category": "other",
+        "column": 76,
+        "line": 721,
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -97,19 +73,18 @@
   },
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 923,
+    "complexity_score": 893,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 54,
-    "pseudocode_lines": 743,
-    "suspect_count": 16,
+    "pseudocode_lines": 748,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "stack_ref",
-      "unresolved_funcptr"
+      "stack_ref"
     ],
-    "total_lines": 2536
+    "total_lines": 2541
   },
   "cross_references": [],
   "function": {
@@ -1438,73 +1413,52 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 315,
+      "line": 314,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 360,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 379,
+      "line": 382,
       "match": "SQRT",
       "text": "SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x + local_7c.y * local_7c.y)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 383,
+      "line": 386,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 412,
+      "line": 415,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) break;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 442,
+      "line": 445,
       "match": "extraout_EAX_02",
       "text": "if (extraout_EAX_02 == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 457,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 573,
+      "line": 577,
       "match": "&stack0xfffffb6c",
       "text": "(&stack0xfffffb6c,\"bride-%d?.wav\",this_ptr->freaky_voice_number);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 623,
+      "line": 627,
       "match": "SQRT",
       "text": "if (SQRT(local_194 * local_194 + local_19c * local_19c + local_198 * local_198) <",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 708,
-      "match": "code *",
-      "text": "(pCVar12 = (CDraculaBride *)(**(code **)(*(int *)(iVar9 + 0x154) + 0x108))(),",
-      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

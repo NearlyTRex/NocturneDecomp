@@ -11,6 +11,6 @@ SClipPlane * __cdecl core_mirror_cpp_freeClipPlanes_FUN_00522c10(SClipPlane *obj
 {
   SClipPlane *pSVar1;
   
-  pSVar1 = __arrfini(objs,5,&g_SClipPlaneTypeInfo);
+  pSVar1 = (SClipPlane *)__arrfini(objs,5,&g_SClipPlaneTypeInfo);
   return pSVar1;
 }

@@ -16,7 +16,7 @@
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 at 0044c639
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80 at 00472b3d
 ;   core_mirror.cpp_setupMirrorCamera_FUN_00521480 at 005214b5
-;   core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 at 0057d05b
+;   core_setedit.cpp_FUN_0057ce80 at 0057d05b
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 at 0048c1ed
 ;
 ; Referenced Globals:

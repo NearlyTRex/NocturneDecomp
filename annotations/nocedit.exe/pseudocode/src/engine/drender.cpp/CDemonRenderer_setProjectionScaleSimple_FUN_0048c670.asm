@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70 at 00574ed0
-;   core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 at 0057d044
+;   core_setedit.cpp_FUN_0057ce80 at 0057d044
 ;
 ; Referenced Globals:
 ;   double g_ProjectionRenderScaleDivisor = 65536

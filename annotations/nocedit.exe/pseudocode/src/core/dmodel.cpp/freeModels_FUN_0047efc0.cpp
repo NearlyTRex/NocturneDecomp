@@ -11,6 +11,6 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_freeModels_FUN_0047efc0(CKeyFramedMode
 {
   CKeyFramedModel *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x100,&g_CKeyFramedModelTypeInfo);
+  pCVar1 = (CKeyFramedModel *)__arrfini(objs,0x100,&g_CKeyFramedModelTypeInfo);
   return pCVar1;
 }

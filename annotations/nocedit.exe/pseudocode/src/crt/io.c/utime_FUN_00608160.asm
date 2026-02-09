@@ -23,7 +23,7 @@
 ;   CreateFileA
 ;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_time_FUN_006001f0
+;   crt_time.c__time_FUN_006001f0
 ;   GetFileTime
 ;   LocalFileTimeToFileTime
 ;   SetFileTime
@@ -83,8 +83,8 @@ section .text
     JNZ 0x006081e0                      ; 006081c9
         ;   XREF to: 006081e0 (CONDITIONAL_JUMP)  ; LAB_006081e0
     PUSH EDI                            ; 006081cb
-    CALL crt_time.c_time_FUN_006001f0   ; 006081cc
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c__time_FUN_006001f0  ; 006081cc
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 006081d1
     LEA EDI,[ESP + 0x38]                ; 006081d4
     MOV dword ptr [ESP + 0x3c],EAX      ; 006081d8

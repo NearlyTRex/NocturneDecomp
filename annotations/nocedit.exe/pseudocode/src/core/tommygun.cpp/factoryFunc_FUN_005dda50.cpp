@@ -11,10 +11,10 @@ CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_005dda50(void)
 {
   CTommyGun *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\tommygun.cpp",0x2f);
+  pCVar1 = (CTommyGun *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\tommygun.cpp",0x2f);
   if (pCVar1 == (CTommyGun *)0x0) {
     return (CTommyGun *)0x0;
   }
-  pCVar1 = (CTommyGun *)core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(pCVar1);
+  pCVar1 = core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(pCVar1);
   return pCVar1;
 }

@@ -16,10 +16,7 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   pCVar1 = (CTVBat *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
   ADJ(this_ptr_00).base.base.base.vtable._ub = &g_CTVBatVTable;
-  *(char *)&this_ptr_00[-0xffffffff00000001].model_ptr = '\0';
-  *(char *)((int)&this_ptr_00[-0xffffffff00000001].model_ptr + 1) = '\0';
-  *(char *)((int)&this_ptr_00[-0xffffffff00000001].model_ptr + 2) = '\0';
-  *(char *)((int)&this_ptr_00[-0xffffffff00000001].model_ptr + 3) = '\0';
+  ADJ(this_ptr_00)->unk1 = 0;
   ADJ(this_ptr_00)->unk2 = 0;
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
   ADJ(this_ptr_00)->speed = fVar1;

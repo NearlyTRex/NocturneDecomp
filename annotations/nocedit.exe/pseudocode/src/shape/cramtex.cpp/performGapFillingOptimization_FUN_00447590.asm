@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   SCramWorkingEntry[1] g_CramSortedTextureEntries
+;   CCramTex[1] g_CramSortedTextureEntries
 ;   undefined4 DAT_0083c20c
 ;   undefined4 DAT_0083c210
 ;   undefined4 DAT_0083c214
@@ -25,10 +25,10 @@
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3
-;   shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0
-;   shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10
-;   shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930
-;   shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0
+;   shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0
+;   shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10
+;   shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930
+;   shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0
 ;
 ; *****************************************************************************
 
@@ -37,7 +37,7 @@ section .text
     PUSH 0x2c                           ; 00447590
         ;   Label: shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447595
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0044759a
     PUSH ESI                            ; 0044759b
     PUSH EDI                            ; 0044759c
@@ -69,8 +69,8 @@ section .text
     JLE 0x00447614                      ; 004475e8
         ;   XREF to: 00447614 (CONDITIONAL_JUMP)  ; LAB_00447614
     PUSH EBX                            ; 004475ea | g_CramSortedTextureEntries | DAT_0083c228
-    CALL shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10 ; 004475eb
-        ;   XREF to: 00447a10 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10 ; 004475eb
+        ;   XREF to: 00447a10 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(CCramTex * this_ptr)
     MOV EDX,dword ptr [0x0084a884]      ; 004475f0 | g_CramCurrentAcceptableSize
     ADD ESP,0x4                         ; 004475f6
     CMP EAX,EDX                         ; 004475f9
@@ -116,15 +116,15 @@ section .text
     MOV EBX,0x83c1dc                    ; 00447653 | g_CramSortedTextureEntries
     PUSH EBX                            ; 00447658 | g_CramSortedTextureEntries | DAT_0083c228
         ;   Label: LAB_00447658
-    CALL shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0 ; 00447659
-        ;   XREF to: 004479a0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0 ; 00447659
+        ;   XREF to: 004479a0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0(CCramTex * this_ptr)
     MOV EDX,dword ptr [EBX + 0x30]      ; 0044765e | DAT_0083c20c
     ADD ESP,0x4                         ; 00447661
     SUB EAX,EDX                         ; 00447664
     PUSH EBX                            ; 00447666 | g_CramSortedTextureEntries
     MOV dword ptr [ESP + 0x4],EAX       ; 00447667
-    CALL shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10 ; 0044766b
-        ;   XREF to: 00447a10 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10 ; 0044766b
+        ;   XREF to: 00447a10 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(CCramTex * this_ptr)
     ADD ESP,0x4                         ; 00447670
     MOV ECX,dword ptr [EBX + 0x38]      ; 00447673 | DAT_0083c214
     MOV EDX,dword ptr [ESP]             ; 00447676
@@ -147,15 +147,15 @@ section .text
     MOV dword ptr [EBX + 0x38],ECX      ; 0044769e | DAT_0083c214
     PUSH ESI                            ; 004476a1 | g_CramSortedTextureEntries
         ;   Label: LAB_004476a1
-    CALL shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0 ; 004476a2
-        ;   XREF to: 004478c0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0(SCramWorkingEntry * reference_entry)
+    CALL shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0 ; 004476a2
+        ;   XREF to: 004478c0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0(CCramTex * this_ptr)
     MOV EDX,dword ptr [ESI + 0x34]      ; 004476a7 | DAT_0083c210
     ADD ESP,0x4                         ; 004476aa
     SUB EAX,EDX                         ; 004476ad
     PUSH ESI                            ; 004476af | g_CramSortedTextureEntries
     MOV dword ptr [ESP + 0x8],EAX       ; 004476b0
-    CALL shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930 ; 004476b4
-        ;   XREF to: 00447930 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930 ; 004476b4
+        ;   XREF to: 00447930 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930(CCramTex * this_ptr)
     ADD ESP,0x4                         ; 004476b9
     MOV ECX,dword ptr [ESI + 0x3c]      ; 004476bc | DAT_0083c218
     MOV EDX,dword ptr [ESP + 0x4]       ; 004476bf
@@ -206,8 +206,8 @@ section .text
         ;   Label: LAB_00447727
     ADD EBX,0x83c1dc                    ; 0044772a | g_CramSortedTextureEntries
     PUSH EBX                            ; 00447730 | g_CramSortedTextureEntries
-    CALL shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0 ; 00447731
-        ;   XREF to: 004479a0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0 ; 00447731
+        ;   XREF to: 004479a0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0(CCramTex * this_ptr)
     MOV EDX,dword ptr [EBX + 0x30]      ; 00447736 | DAT_0083c20c
     ADD EDX,EAX                         ; 00447739
     MOV EAX,EDX                         ; 0044773b
@@ -217,8 +217,8 @@ section .text
     ADD ESP,0x4                         ; 00447744
     PUSH EBX                            ; 00447747
     MOV dword ptr [EBX + 0x30],EAX      ; 00447748 | DAT_0083c20c
-    CALL shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0 ; 0044774b
-        ;   XREF to: 004478c0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0(SCramWorkingEntry * reference_entry)
+    CALL shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0 ; 0044774b
+        ;   XREF to: 004478c0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0(CCramTex * this_ptr)
     MOV EDX,dword ptr [EBX + 0x34]      ; 00447750 | DAT_0083c210
     ADD EDX,EAX                         ; 00447753
     MOV EAX,EDX                         ; 00447755
@@ -228,8 +228,8 @@ section .text
     ADD ESP,0x4                         ; 0044775e
     PUSH EBX                            ; 00447761
     MOV dword ptr [EBX + 0x34],EAX      ; 00447762 | DAT_0083c210
-    CALL shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10 ; 00447765
-        ;   XREF to: 00447a10 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10 ; 00447765
+        ;   XREF to: 00447a10 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(CCramTex * this_ptr)
     ADD EAX,dword ptr [EBX + 0x38]      ; 0044776a | DAT_0083c214
     LEA EDX,[EAX + 0x1]                 ; 0044776d
     MOV EAX,EDX                         ; 00447770
@@ -239,8 +239,8 @@ section .text
     ADD ESP,0x4                         ; 00447779
     PUSH EBX                            ; 0044777c
     MOV dword ptr [EBX + 0x38],EAX      ; 0044777d | DAT_0083c214
-    CALL shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930 ; 00447780
-        ;   XREF to: 00447930 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930 ; 00447780
+        ;   XREF to: 00447930 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930(CCramTex * this_ptr)
     ADD EAX,dword ptr [EBX + 0x3c]      ; 00447785 | DAT_0083c218
     LEA EDX,[EAX + 0x1]                 ; 00447788
     MOV EAX,EDX                         ; 0044778b
@@ -270,8 +270,8 @@ section .text
         ;   Label: LAB_004477c3
     PUSH EBX                            ; 004477c5 | g_CramSortedTextureEntries | DAT_0083c228
         ;   Label: LAB_004477c5
-    CALL shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0 ; 004477c6
-        ;   XREF to: 004478c0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0(SCramWorkingEntry * reference_entry)
+    CALL shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0 ; 004477c6
+        ;   XREF to: 004478c0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0(CCramTex * this_ptr)
     ADD ESP,0x4                         ; 004477cb
     MOV EDX,dword ptr [EBX + 0x34]      ; 004477ce | DAT_0083c210
     MOV ECX,dword ptr [EBX + 0x34]      ; 004477d1 | DAT_0083c210
@@ -282,8 +282,8 @@ section .text
     MOV dword ptr [EBX + 0x34],ECX      ; 004477dd | DAT_0083c210
     PUSH EBX                            ; 004477e0 | g_CramSortedTextureEntries
     MOV dword ptr [EBX + 0x3c],EBP      ; 004477e1 | DAT_0083c218
-    CALL shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0 ; 004477e4
-        ;   XREF to: 004479a0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0 ; 004477e4
+        ;   XREF to: 004479a0 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0(CCramTex * this_ptr)
     MOV EDX,dword ptr [EBX + 0x30]      ; 004477e9 | DAT_0083c20c
     SUB EDX,EAX                         ; 004477ec
     MOV ECX,dword ptr [EBX + 0x38]      ; 004477ee | DAT_0083c214
@@ -312,14 +312,14 @@ section .text
     MOV EBX,0x83c1dc                    ; 00447820 | g_CramSortedTextureEntries
     PUSH EBX                            ; 00447825 | g_CramSortedTextureEntries | DAT_0083c228
         ;   Label: LAB_00447825
-    CALL shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10 ; 00447826
-        ;   XREF to: 00447a10 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10 ; 00447826
+        ;   XREF to: 00447a10 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(CCramTex * this_ptr)
     ADD ESP,0x4                         ; 0044782b
     PUSH EBX                            ; 0044782e | g_CramSortedTextureEntries
     INC ESI                             ; 0044782f
     MOV dword ptr [EBX + 0x38],EAX      ; 00447830 | DAT_0083c214
-    CALL shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930 ; 00447833
-        ;   XREF to: 00447930 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930 ; 00447833
+        ;   XREF to: 00447930 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930(CCramTex * this_ptr)
     ADD EBX,0x4c                        ; 00447838 | DAT_0083c228
     MOV EDX,dword ptr [0x0084a854]      ; 0044783b | g_CramTextureCount
     ADD ESP,0x4                         ; 00447841
@@ -338,8 +338,8 @@ section .text
     RET                                 ; 00447857
     PUSH EBX                            ; 00447858 | g_CramSortedTextureEntries
         ;   Label: LAB_00447858
-    CALL shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930 ; 00447859
-        ;   XREF to: 00447930 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930(SCramWorkingEntry * bounds_entry)
+    CALL shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930 ; 00447859
+        ;   XREF to: 00447930 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930(CCramTex * this_ptr)
     MOV ECX,dword ptr [0x0084a884]      ; 0044785e | g_CramCurrentAcceptableSize
     ADD ESP,0x4                         ; 00447864
     CMP EAX,ECX                         ; 00447867

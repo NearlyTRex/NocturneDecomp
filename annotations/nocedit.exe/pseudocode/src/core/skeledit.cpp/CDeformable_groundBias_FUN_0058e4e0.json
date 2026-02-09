@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 17,
-        "line": 21,
-        "message": "assigning to 'CDeformableModelInstance *' from incompatible type 'void *'"
+        "column": 3,
+        "line": 20,
+        "message": "no matching function for call to '__STK'"
       }
     ],
     "success": false,
@@ -13,12 +13,12 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 108,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
     "pseudocode_lines": 43,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
     ],
@@ -46,7 +46,7 @@
     {
       "addr": "0058e600",
       "is_variadic": false,
-      "name": "core_skeledit.cpp_FUN_0058e600"
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058e600"
     },
     {
       "addr": "0059ddc0",
@@ -278,6 +278,13 @@
       "line": 39,
       "match": "in_stack_00000004",
       "text": "} while (iVar3 < in_stack_00000004->vertex_count[0]);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000004",
+      "text": "core_skeledit_cpp_CDeformableModel_FUN_0058e600(in_stack_00000004);",
       "type": "stack_param"
     }
   ]

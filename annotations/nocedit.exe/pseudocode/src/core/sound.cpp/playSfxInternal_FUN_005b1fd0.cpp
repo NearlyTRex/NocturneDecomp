@@ -197,10 +197,10 @@ LAB_005b20b2:
                           "..\\core\\sound.cpp",0x181);
         if (file != (_FILE *)0x0) {
           _fprintf(file,"----------------------------------------------------------------\n");
-          time(&local_28);
+          _time(&local_28);
           _fprintf(file,"Missing: %s\n");
           timeptr = _localtime(&local_28);
-          asctime(timeptr);
+          _asctime(timeptr);
           _fprintf(file,"Time: %s");
           pcVar7 = getenv("USERNAME");
           if (pcVar7 != (char *)0x0) {

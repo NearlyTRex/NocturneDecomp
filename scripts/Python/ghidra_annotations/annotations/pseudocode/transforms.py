@@ -431,6 +431,166 @@ def transform_crt_functions(code):
     return re.sub(pattern, replace_crt_call, code)
 
 
+# =============================================================================
+# VOID POINTER CAST TRANSFORM
+# =============================================================================
+#
+# C++ requires explicit casts from void* to typed pointers, but C doesn't.
+# The decompiler output (targeting C++) omits these casts since the original
+# code was C. This transform inserts C-style casts for known void*-returning
+# functions (allocators and castToClassHash).
+
+# Primitive types that should NOT receive void* casts
+_VOID_CAST_PRIMITIVE_TYPES = {
+    'int', 'uint', 'char', 'uchar', 'short', 'ushort', 'long', 'ulong',
+    'float', 'double', 'void', 'byte', 'bool',
+    'undefined', 'undefined1', 'undefined2', 'undefined4', 'undefined8',
+    'size_t', 'SIZE_T', 'time_t', 'wchar_t',
+    'longlong', 'ulonglong',
+}
+
+# Regex for allocator functions that return void*
+_ALLOCATOR_FUNC_RE = re.compile(
+    r'(?:shape_memdbg_cpp_debug(?:Alloc|Malloc|Calloc|Realloc)_FUN_[0-9a-f]+'
+    r'|__arrfini'
+    r')\s*\('
+)
+
+# Regex for castToClassHash calls
+_CAST_TO_CLASS_HASH_RE = re.compile(
+    r'(core_actor_cpp_castToClassHash_FUN_[0-9a-f]+)\s*\('
+)
+
+# Regex to extract class name from g_C<ClassName>ClassInfo
+_CLASS_INFO_ARG_RE = re.compile(r'g_(C\w+?)ClassInfo\b')
+
+
+def _parse_variable_types(code):
+    """Parse variable declarations from the function body.
+
+    Ghidra always declares locals at the top of the function body.
+    Builds a map of variable name -> base type string.
+
+    Args:
+        code: Decompiled code string (function body)
+
+    Returns:
+        Dict mapping variable names to their declared type (e.g. "CAmmo *")
+    """
+    var_types = {}
+    # Match declarations like: TypeName *pVar1; or TypeName **ppVar2;
+    # Also handles: TypeName * pVar1; (space before var name)
+    # The type is everything before the last whitespace+varname;
+    decl_pattern = re.compile(
+        r'^\s+'                    # leading whitespace (indented = inside function body)
+        r'([\w:][\w:\s]*?)'       # type name (may include spaces for "unsigned int" etc.)
+        r'\s*'
+        r'(\*{1,3})'              # pointer stars (1-3)
+        r'\s*'
+        r'(\w+)'                  # variable name
+        r'\s*;',                   # semicolon
+        re.MULTILINE
+    )
+    for m in decl_pattern.finditer(code):
+        type_name = m.group(1).strip()
+        stars = m.group(2)
+        var_name = m.group(3)
+        # Store as "TypeName *" or "TypeName **"
+        var_types[var_name] = type_name + ' ' + stars
+    return var_types
+
+
+def _is_primitive_pointer_type(type_str):
+    """Check if a type string is a pointer to a primitive type.
+
+    Args:
+        type_str: Type string like "CAmmo *" or "uint *"
+
+    Returns:
+        True if the base type is primitive
+    """
+    # Strip pointer stars and whitespace to get base type
+    base = type_str.replace('*', '').strip()
+    return base in _VOID_CAST_PRIMITIVE_TYPES
+
+
+def transform_void_pointer_casts(code):
+    """Insert C-style casts for void*-returning functions assigned to typed pointers.
+
+    C++ requires explicit casts from void* to T*, but the decompiler omits them.
+    This transform handles:
+    1. Allocator functions (debugAlloc, debugMalloc, etc.) - cast based on LHS type
+    2. castToClassHash calls - cast based on g_C<X>ClassInfo argument
+
+    Args:
+        code: Decompiled code string
+
+    Returns:
+        Transformed code with void* casts inserted
+    """
+    var_types = _parse_variable_types(code)
+    if not var_types:
+        return code
+
+    lines = code.split('\n')
+    result = []
+
+    for line in lines:
+        new_line = _transform_void_cast_line(line, var_types)
+        result.append(new_line)
+
+    return '\n'.join(result)
+
+
+def _transform_void_cast_line(line, var_types):
+    """Transform a single line, inserting void* casts where needed.
+
+    Args:
+        line: A single line of code
+        var_types: Dict of variable name -> type string
+
+    Returns:
+        Transformed line
+    """
+    # Quick check: must contain '=' assignment
+    if '=' not in line:
+        return line
+
+    # Skip lines that already have a cast: = (SomeType *)func(
+    if re.search(r'=\s*\([^)]+\*\)', line):
+        return line
+
+    # Try castToClassHash first (it determines cast type from args, not LHS)
+    cast_match = _CAST_TO_CLASS_HASH_RE.search(line)
+    if cast_match:
+        # Check it's an assignment
+        assign_match = re.match(r'^(\s*\w+\s*=\s*)', line)
+        if assign_match:
+            # Extract class name from g_CXxxClassInfo argument
+            class_info_match = _CLASS_INFO_ARG_RE.search(line)
+            if class_info_match:
+                class_name = class_info_match.group(1)
+                prefix = assign_match.group(1)
+                rest = line[len(prefix):]
+                return prefix + '(%s *)' % class_name + rest
+
+    # Try allocator functions
+    alloc_match = _ALLOCATOR_FUNC_RE.search(line)
+    if alloc_match:
+        # Must be an assignment: varName = func(...)
+        assign_match = re.match(r'^(\s*(\w+)\s*=\s*)', line)
+        if assign_match:
+            var_name = assign_match.group(2)
+            var_type = var_types.get(var_name)
+            if var_type and not _is_primitive_pointer_type(var_type):
+                cast = '(%s)' % var_type
+                prefix = assign_match.group(1)
+                rest = line[len(prefix):]
+                return prefix + cast + rest
+
+    return line
+
+
 def transform_file_pointer_casts(code):
     """Transform stdio function calls to use _FILE* wrapper functions.
 
@@ -814,6 +974,7 @@ def apply_all_transforms(code, transforms=None, var_info=None):
         ('undefined_type', transform_undefined_types),
         ('crt_functions', transform_crt_functions),
         ('file_pointer_casts', transform_file_pointer_casts),
+        ('void_pointer_casts', transform_void_pointer_casts),
     ]
 
     if transforms is None:

@@ -16,12 +16,10 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c66a0(CStranger *this_ptr)
      ((this_ptr->action_pending == 0 || (this_ptr->action_pending == 3)))) {
     iVar1 = core_hero_cpp_CHero_FUN_004f28d0(&this_ptr->base);
     if (iVar1 != 0) {
-      if (*(CDemonActor **)(this_ptr->unk5 + 8) != (this_ptr->base).base.carry_hands[0].carry_actor)
-      {
+      if (this_ptr->weapon != (this_ptr->base).base.carry_hands[0].carry_actor) {
         (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
       }
-      if (*(CDemonActor **)(this_ptr->unk5 + 8) != (this_ptr->base).base.carry_hands[1].carry_actor)
-      {
+      if (this_ptr->weapon != (this_ptr->base).base.carry_hands[1].carry_actor) {
         (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
       }
       this_ptr->unk6[0x98] = '\0';

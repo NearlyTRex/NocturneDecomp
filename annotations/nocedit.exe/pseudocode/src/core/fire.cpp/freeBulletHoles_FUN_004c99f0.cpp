@@ -11,6 +11,6 @@ CBulletHole * __cdecl core_fire_cpp_freeBulletHoles_FUN_004c99f0(CBulletHole *ob
 {
   CBulletHole *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x100,&g_CBulletHoleTypeInfo);
+  pCVar1 = (CBulletHole *)__arrfini(objs,0x100,&g_CBulletHoleTypeInfo);
   return pCVar1;
 }

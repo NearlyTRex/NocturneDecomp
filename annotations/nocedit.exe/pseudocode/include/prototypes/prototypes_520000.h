@@ -250,7 +250,7 @@ CDeformableModelInstance * __cdecl core_morph_cpp_freeDeformableModelInstances_F
 CBoundingBox3D * __cdecl core_morph_cpp_freeBoundingBoxes_FUN_0052ccf0(CBoundingBox3D *objs);
 CMorphModel * __cdecl core_morph_cpp_freeMorphModels_FUN_0052cd10(CMorphModel *objs);
 void __cdecl core_morph_cpp_FUN_0052cd30(void);
-void __cdecl core_motion_cpp_CMotionList_ctor_FUN_0052cd50(CMotionList *this_ptr);
+CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_0052cd50(CMotionList *this_ptr);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_0052cd70(CMotionList *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr,_FILE *file_handle);
 int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList *this_ptr);

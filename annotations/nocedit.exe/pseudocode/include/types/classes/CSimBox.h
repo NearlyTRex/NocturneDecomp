@@ -3,11 +3,19 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CSimBox
 // Ghidra size: 0x5cc (1484 bytes)
 typedef struct CSimBox {
     CDemonActor base; // 0x0
-    char unk[1140]; // 0x158
+    CKeyFramedModelInstance model; // 0x158
+    int type; // 0x2d4
+    float weight; // 0x2d8
+    char trigger_event[100]; // 0x2dc
+    CVector3f initial_velocity; // 0x340
+    CVector3f init_rot_vel; // 0x34c
+    char unk[628]; // 0x358
 } CSimBox;
 

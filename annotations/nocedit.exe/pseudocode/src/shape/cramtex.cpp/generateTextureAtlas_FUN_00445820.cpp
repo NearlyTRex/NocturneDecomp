@@ -19,7 +19,7 @@ void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void)
   int *piVar8;
   uint uVar9;
   uint seed;
-  SCramWorkingEntry *pSVar10;
+  CCramTex *pCVar10;
   int iVar11;
   _FILE *p_Var12;
   int iVar13;
@@ -39,17 +39,17 @@ void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void)
   remove("..\\shape\\cramlog.txt");
   seed = rand();
   srand(0x16);
-  qsort
+  _qsort
             (g_CramSortedTextureEntries,g_CramTextureCount,0x4c,
              shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0);
   iVar13 = 0;
   g_CramTotalPixelArea = 0;
   if (0 < (int)g_CramTextureCount) {
-    pSVar10 = g_CramSortedTextureEntries;
+    pCVar10 = g_CramSortedTextureEntries;
     do {
-      piVar7 = &pSVar10->width;
-      piVar1 = &pSVar10->height;
-      pSVar10 = pSVar10 + 1;
+      piVar7 = &pCVar10->width;
+      piVar1 = &pCVar10->height;
+      pCVar10 = pCVar10 + 1;
       g_CramTotalPixelArea = g_CramTotalPixelArea + *piVar7 * *piVar1;
       iVar13 = iVar13 + 1;
     } while (iVar13 < (int)g_CramTextureCount);
@@ -76,18 +76,18 @@ void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void)
       iVar17 = iVar17 + 1;
       iVar14 = 0;
       if (0 < (int)g_CramTextureCount) {
-        pSVar10 = g_CramSortedTextureEntries;
+        pCVar10 = g_CramSortedTextureEntries;
         do {
-          iVar15 = pSVar10->width + g_CramPaddingCalculation;
+          iVar15 = pCVar10->width + g_CramPaddingCalculation;
           if (g_CramAcceptableSize < iVar15) {
             g_CramAcceptableSize = iVar15;
           }
-          iVar15 = pSVar10->height + g_CramPaddingCalculation;
+          iVar15 = pCVar10->height + g_CramPaddingCalculation;
           if (g_CramAcceptableSize < iVar15) {
             g_CramAcceptableSize = iVar15;
           }
           iVar14 = iVar14 + 1;
-          pSVar10 = pSVar10 + 1;
+          pCVar10 = pCVar10 + 1;
         } while (iVar14 < (int)g_CramTextureCount);
       }
       iVar14 = g_CramAcceptableSize * 5 >> 0x1f;
@@ -117,19 +117,19 @@ void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void)
     g_CramMinPlacementY = 999999;
     g_CramCurrentAcceptableSize = g_CramAcceptableSize;
     if (0 < (int)g_CramTextureCount) {
-      pSVar10 = g_CramSortedTextureEntries;
+      pCVar10 = g_CramSortedTextureEntries;
       do {
         iVar17 = g_CramPaddingCalculation;
-        pSVar10->padded_width = pSVar10->width + g_CramPaddingCalculation;
-        pSVar10->padded_height = pSVar10->height + iVar17;
-        if (pSVar10->padded_width < g_CramMinPlacementX) {
-          g_CramMinPlacementX = pSVar10->padded_width;
+        pCVar10->padded_width = pCVar10->width + g_CramPaddingCalculation;
+        pCVar10->padded_height = pCVar10->height + iVar17;
+        if (pCVar10->padded_width < g_CramMinPlacementX) {
+          g_CramMinPlacementX = pCVar10->padded_width;
         }
-        if (pSVar10->padded_height < g_CramMinPlacementY) {
-          g_CramMinPlacementY = pSVar10->padded_height;
+        if (pCVar10->padded_height < g_CramMinPlacementY) {
+          g_CramMinPlacementY = pCVar10->padded_height;
         }
         iVar11 = iVar11 + 1;
-        pSVar10 = pSVar10 + 1;
+        pCVar10 = pCVar10 + 1;
       } while (iVar11 < (int)g_CramTextureCount);
     }
     iVar11 = g_CramSortedTextureEntries[0].padded_height;
@@ -167,14 +167,14 @@ void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void)
       }
       iVar15 = g_CramPlacedTextureCount + -1;
       if (-1 < iVar15) {
-        pSVar10 = g_CramSortedTextureEntries + iVar15;
+        pCVar10 = g_CramSortedTextureEntries + iVar15;
         do {
-          if (((pSVar10->assigned_map_number == 0) && (0 < pSVar10->working_top)) &&
-             ((iVar11 < pSVar10->working_width &&
-              ((pSVar10->placement_bottom < iVar14 && (pSVar10->working_right < iVar17 + iVar11)))))
+          if (((pCVar10->assigned_map_number == 0) && (0 < pCVar10->working_top)) &&
+             ((iVar11 < pCVar10->working_width &&
+              ((pCVar10->placement_bottom < iVar14 && (pCVar10->working_right < iVar17 + iVar11)))))
              ) break;
           iVar15 = iVar15 + -1;
-          pSVar10 = pSVar10 + -1;
+          pCVar10 = pCVar10 + -1;
         } while (-1 < iVar15);
       }
       if (iVar15 < 0) {
@@ -216,14 +216,14 @@ LAB_00445b8a:
       }
       iVar16 = g_CramPlacedTextureCount + -1;
       if (-1 < iVar16) {
-        pSVar10 = g_CramSortedTextureEntries + iVar16;
+        pCVar10 = g_CramSortedTextureEntries + iVar16;
         do {
-          if (((pSVar10->assigned_map_number == 0) && (iVar17 < pSVar10->working_top)) &&
-             ((iVar11 < pSVar10->working_width &&
-              ((pSVar10->placement_bottom < iVar14 + iVar17 &&
-               (pSVar10->working_right < iVar15 + iVar11)))))) break;
+          if (((pCVar10->assigned_map_number == 0) && (iVar17 < pCVar10->working_top)) &&
+             ((iVar11 < pCVar10->working_width &&
+              ((pCVar10->placement_bottom < iVar14 + iVar17 &&
+               (pCVar10->working_right < iVar15 + iVar11)))))) break;
           iVar16 = iVar16 + -1;
-          pSVar10 = pSVar10 + -1;
+          pCVar10 = pCVar10 + -1;
         } while (-1 < iVar16);
       }
       if (iVar16 < 0) {
@@ -264,14 +264,14 @@ LAB_00445bd9:
           }
           iVar14 = g_CramPlacedTextureCount + -1;
           if (-1 < iVar14) {
-            pSVar10 = g_CramSortedTextureEntries + iVar14;
+            pCVar10 = g_CramSortedTextureEntries + iVar14;
             do {
-              if (((pSVar10->assigned_map_number == local_14) && (0 < pSVar10->working_top)) &&
-                 ((0 < pSVar10->working_width &&
-                  ((pSVar10->placement_bottom < iVar17 && (pSVar10->working_right < iVar11))))))
+              if (((pCVar10->assigned_map_number == local_14) && (0 < pCVar10->working_top)) &&
+                 ((0 < pCVar10->working_width &&
+                  ((pCVar10->placement_bottom < iVar17 && (pCVar10->working_right < iVar11))))))
               break;
               iVar14 = iVar14 + -1;
-              pSVar10 = pSVar10 + -1;
+              pCVar10 = pCVar10 + -1;
             } while (-1 < iVar14);
           }
           if (iVar14 < 0) {
@@ -292,22 +292,22 @@ LAB_00445c34:
         local_14 = local_14 + 1;
       } while (local_14 < g_CramTotalMaps);
     }
-    shape_cramtex_cpp_runInteractiveAtlasGeneration_FUN_00446160((SCramWorkingEntry *)iVar13);
+    shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160((CCramTex *)iVar13);
     if ((g_CramAtlasWidth + -1 + g_CramAtlasHeight * g_CramCurrentAcceptableSize) / g_CramAtlasWidth
         <= g_CramPaddingCalculation) {
       iVar13 = 0;
-      shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(1,0,seed);
+      shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20((CCramTex *)0x1,1,0,seed);
       if (0 < (int)g_CramTextureCount) {
-        pSVar10 = g_CramSortedTextureEntries;
+        pCVar10 = g_CramSortedTextureEntries;
         do {
           iVar11 = g_CramPaddingCalculation / 2;
           iVar13 = iVar13 + 1;
-          pSVar10->final_top = pSVar10->final_top + iVar11;
-          pSVar10->final_right = pSVar10->final_right + iVar11;
-          pSVar10->final_bottom = pSVar10->final_bottom + iVar11;
+          pCVar10->final_top = pCVar10->final_top + iVar11;
+          pCVar10->final_right = pCVar10->final_right + iVar11;
+          pCVar10->final_bottom = pCVar10->final_bottom + iVar11;
           uVar9 = g_CramTextureCount;
-          pSVar10->final_left = pSVar10->final_left + iVar11;
-          pSVar10 = pSVar10 + 1;
+          pCVar10->final_left = pCVar10->final_left + iVar11;
+          pCVar10 = pCVar10 + 1;
         } while (iVar13 < (int)uVar9);
       }
       p_Var12 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -315,18 +315,18 @@ LAB_00445c34:
                            "..\\shape\\cramtex.cpp",0x271);
       if (p_Var12 != (_FILE *)0x0) {
         if (0 < (int)g_CramTextureCount) {
-          pSVar10 = g_CramSortedTextureEntries;
+          pCVar10 = g_CramSortedTextureEntries;
           iVar13 = 0;
           do {
-            piVar1 = &pSVar10->rotation_applied;
-            piVar7 = &pSVar10->final_bottom;
-            piVar2 = &pSVar10->final_right;
-            piVar3 = &pSVar10->final_top;
-            piVar4 = &pSVar10->final_left;
-            piVar5 = &pSVar10->working_map_id;
-            piVar6 = &pSVar10->height;
-            piVar8 = &pSVar10->width;
-            pSVar10 = pSVar10 + 1;
+            piVar1 = &pCVar10->rotation_applied;
+            piVar7 = &pCVar10->final_bottom;
+            piVar2 = &pCVar10->final_right;
+            piVar3 = &pCVar10->final_top;
+            piVar4 = &pCVar10->final_left;
+            piVar5 = &pCVar10->working_map_id;
+            piVar6 = &pCVar10->height;
+            piVar8 = &pCVar10->width;
+            pCVar10 = pCVar10 + 1;
             iVar11 = iVar13 + 1;
             _fprintf(p_Var12,"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar13,*piVar8,*piVar6,*piVar5,
                        *piVar4,*piVar3,*piVar2,*piVar7,*piVar1);

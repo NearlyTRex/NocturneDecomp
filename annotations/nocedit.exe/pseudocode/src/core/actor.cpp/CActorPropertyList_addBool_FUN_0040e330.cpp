@@ -14,6 +14,6 @@ core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
   CActorProperty *pCVar1;
   
   pCVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
-                     (this_ptr,PROP_BOOL,property_name,data_ptr,(void *)0x0);
+                     (this_ptr,PROP_BOOL,property_name,data_ptr,(CActorPropertyValidatorFunc *)0x0);
   return pCVar1;
 }

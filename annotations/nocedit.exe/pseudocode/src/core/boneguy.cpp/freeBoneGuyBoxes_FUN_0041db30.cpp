@@ -11,6 +11,6 @@ SBoneGuyBox * __cdecl core_boneguy_cpp_freeBoneGuyBoxes_FUN_0041db30(SBoneGuyBox
 {
   SBoneGuyBox *pSVar1;
   
-  pSVar1 = __arrfini(objs,0x14,&g_SBoneGuyBoxTypeInfo);
+  pSVar1 = (SBoneGuyBox *)__arrfini(objs,0x14,&g_SBoneGuyBoxTypeInfo);
   return pSVar1;
 }

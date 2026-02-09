@@ -4,49 +4,37 @@
       {
         "category": "other",
         "column": 6,
-        "line": 111,
+        "line": 112,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 111,
+        "line": 112,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 134,
+        "line": 135,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 167,
+        "line": 168,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 167,
+        "line": 168,
         "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 180,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 180,
-        "message": "expected expression"
       },
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 216,
+        "line": 221,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -55,18 +43,17 @@
   },
   "complexity": {
     "assembly_lines": 675,
-    "complexity_score": 420,
+    "complexity_score": 410,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 16,
-    "pseudocode_lines": 315,
-    "suspect_count": 9,
+    "pseudocode_lines": 320,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "unresolved_funcptr"
+      "extra_output"
     ],
-    "total_lines": 990
+    "total_lines": 995
   },
   "cross_references": [],
   "function": {
@@ -666,63 +653,56 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 15,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 16,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 111,
       "match": "SQRT",
       "text": "local_28 = SQRT(local_c4.z * local_c4.z + local_c4.x * local_c4.x + local_c4.y * local_c4.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
+      "line": 117,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 155,
+      "line": 156,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 173,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 180,
+      "line": 182,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_8c * local_8c + local_94 * local_94);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 198,
+      "line": 203,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 242,
+      "line": 247,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"

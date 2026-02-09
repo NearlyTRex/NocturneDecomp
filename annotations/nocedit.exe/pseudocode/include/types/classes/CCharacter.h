@@ -62,8 +62,8 @@ typedef struct CCharacter {
     int field44_0x2624; // 0x2624
     int layer_action_count; // 0x2628
     SLayerAction layer_actions[20]; // 0x262c
-    int field47_0x2a8c; // 0x2a8c
-    int field48_0x2a90; // 0x2a90
+    int layer_action_index; // 0x2a8c
+    float layer_action_t; // 0x2a90
     CClothList cloth_list; // 0x2a94
     CVector3f field50_0x2c50; // 0x2c50
     CVector3f field51_0x2c5c[15]; // 0x2c5c

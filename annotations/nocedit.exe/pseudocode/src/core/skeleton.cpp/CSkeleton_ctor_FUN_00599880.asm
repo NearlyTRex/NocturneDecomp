@@ -21,11 +21,11 @@ section .text
     PUSH 0x10                           ; 00599880
         ;   Label: core_skeleton.cpp_CSkeleton_ctor_FUN_00599880
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00599885
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     MOV EAX,dword ptr [ESP + 0x4]       ; 0059988a
     PUSH EAX                            ; 0059988e
     CALL core_motion.cpp_CMotionList_ctor_FUN_0052cd50 ; 0059988f
-        ;   XREF to: 0052cd50 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionList_ctor_FUN_0052cd50(CMotionList * this_ptr)
+        ;   XREF to: 0052cd50 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionList_ctor_FUN_0052cd50(CMotionList * this_ptr)
     ADD ESP,0x4                         ; 00599894
     PUSH 0x6598c0                       ; 00599897 | g_CVectorTypeInfo
     PUSH 0x64                           ; 0059989c

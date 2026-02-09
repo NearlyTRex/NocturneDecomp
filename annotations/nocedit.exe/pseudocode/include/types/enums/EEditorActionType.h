@@ -1,7 +1,7 @@
 #pragma once
 
 // Enum: EEditorActionType
-typedef enum EEditorActionType {
+enum {
     ACTION_TYPE_CURSOR_LEFT = 0,
     ACTION_TYPE_CURSOR_RIGHT = 1,
     ACTION_TYPE_CURSOR_UP = 2,
@@ -21,5 +21,6 @@ typedef enum EEditorActionType {
     ACTION_TYPE_BACKSPACE = 16,
     ACTION_TYPE_DELETE = 17,
     ACTION_TYPE_ENTER = 18
-} EEditorActionType;
+};
+typedef int EEditorActionType;
 

@@ -11,6 +11,6 @@ CVector3f * __cdecl core_actor_cpp_freeVectors_FUN_00410500(CVector3f *objs)
 {
   CVector3f *pCVar1;
   
-  pCVar1 = __arrfini(objs,10,&g_CVectorTypeInfo);
+  pCVar1 = (CVector3f *)__arrfini(objs,10,&g_CVectorTypeInfo);
   return pCVar1;
 }

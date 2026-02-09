@@ -60,7 +60,7 @@ float * __cdecl core_actor_cpp_copyFloat_FUN_004104d0(float *dst,float *src);
 float * __cdecl core_actor_cpp_copyFloat_FUN_004104e0(float *dst,float *src);
 float * __cdecl core_actor_cpp_copyFloat_FUN_004104f0(float *dst,float *src);
 CVector3f * __cdecl core_actor_cpp_freeVectors_FUN_00410500(CVector3f *objs);
-void __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap *this_ptr);
+CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap *this_ptr);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *this_ptr);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(CAlphaBitmap *this_ptr);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0 (CAlphaBitmap *this_ptr,char *filename,int width,int height);

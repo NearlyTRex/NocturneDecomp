@@ -53,7 +53,7 @@ section .text
     PUSH 0x134                          ; 00598fc0
         ;   Label: core_skeledit.cpp_viewModel_FUN_00598fc0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00598fc5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 00598fca
     PUSH ESI                            ; 00598fcb
     PUSH EDI                            ; 00598fcc

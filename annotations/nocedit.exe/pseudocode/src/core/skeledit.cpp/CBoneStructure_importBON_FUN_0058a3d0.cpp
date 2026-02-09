@@ -15,7 +15,7 @@ core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr
   int iVar2;
   CBoneStructure *in_stack_ffffffe8;
   
-  __STK(0x30);
+  __STK();
   this_ptr_00 = (CBoneStructure *)
                 shape_memdbg_cpp_openFile_FUN_0050f7a0
                           ((char *)this_ptr,(char *)0x0,"rt","..\\core\\skeledit.cpp",

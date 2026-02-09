@@ -19,6 +19,6 @@ void __cdecl core_biggs_cpp_CBiggs_archive_FUN_00418ac0(CBiggs *this_ptr)
             (&model_ptr->motion_controller,"motion state");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->morphing,"morphing");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->morph_timer,"morphTimer");
-  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->unk3 + 0xc2c,"morphEvent");
+  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->morph_event,"morphEvent");
   return;
 }

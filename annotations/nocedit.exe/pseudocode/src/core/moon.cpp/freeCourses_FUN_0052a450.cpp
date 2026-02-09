@@ -11,6 +11,6 @@ CCourse * __cdecl core_moon_cpp_freeCourses_FUN_0052a450(CCourse *objs)
 {
   CCourse *pCVar1;
   
-  pCVar1 = __arrfini(objs,3,&g_CCourseTypeInfo);
+  pCVar1 = (CCourse *)__arrfini(objs,3,&g_CCourseTypeInfo);
   return pCVar1;
 }

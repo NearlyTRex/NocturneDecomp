@@ -10,7 +10,7 @@
 // Ghidra size: 0xc4e4 (50404 bytes)
 typedef struct CBoneGuy {
     CEnemy base; // 0x0
-    char unk1[24]; // 0xbeb4
+    char unk1[16]; // 0xbebc
     uint sfx_handle; // 0xbecc
     char death_event[100]; // 0xbed0
     float recombine_time; // 0xbf34

@@ -99,7 +99,7 @@ section .text
     LEA EDX,[ESP + 0x14]                ; 00503e8f
     PUSH EDX                            ; 00503e93
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 00503e94
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 00503e99
     PUSH 0x1e0                          ; 00503e9c
     PUSH 0x280                          ; 00503ea1
@@ -138,7 +138,7 @@ section .text
     LEA EDX,[ESP + 0x28]                ; 00503f33
     PUSH EDX                            ; 00503f37
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 00503f38
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 00503f3d
     PUSH 0x1e0                          ; 00503f40
     PUSH 0x280                          ; 00503f45
@@ -177,7 +177,7 @@ section .text
     LEA EDX,[ESP + 0x3c]                ; 00503fd6
     PUSH EDX                            ; 00503fda
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 00503fdb
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 00503fe0
     PUSH 0x1e0                          ; 00503fe3
     PUSH 0x280                          ; 00503fe8
@@ -232,7 +232,7 @@ section .text
         ;   Label: LAB_005040b3
     PUSH EDX                            ; 005040b5
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 005040b6
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 005040bb
     PUSH 0x1e0                          ; 005040be
     PUSH 0x280                          ; 005040c3

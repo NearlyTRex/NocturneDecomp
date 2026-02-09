@@ -18,7 +18,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
   byte bVar7;
   CBodyPart *in_stack_00000008;
   int in_stack_0000000c;
-  uint in_stack_00000010;
+  int in_stack_00000010;
   CMatrix3x3f local_9c;
   uint local_70;
   CMatrix3x4f local_6c;
@@ -84,7 +84,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
       iVar3 = iVar3 + 1;
       pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[0].z;
     } while (iVar3 < 2);
-    *(uint *)in_stack_00000008->unk = in_stack_00000010;
+    in_stack_00000008->render_in_background = in_stack_00000010;
     return;
   }
   return;

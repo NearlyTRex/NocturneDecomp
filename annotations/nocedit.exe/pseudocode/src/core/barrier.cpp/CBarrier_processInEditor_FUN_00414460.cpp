@@ -26,46 +26,37 @@ void __cdecl core_barrier_cpp_CBarrier_processInEditor_FUN_00414460(CBarrier *th
   (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
   if (iVar1 != 0) {
-    *(float *)this_ptr->unk = *(float *)this_ptr->unk - in_stack_00000008;
+    (this_ptr->size).x = (this_ptr->size).x - in_stack_00000008;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
   if (iVar1 != 0) {
-    *(float *)this_ptr->unk = *(float *)this_ptr->unk + in_stack_00000010;
+    (this_ptr->size).x = (this_ptr->size).x + in_stack_00000010;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
   if (iVar1 != 0) {
-    *(float *)(this_ptr->unk + 4) = *(float *)(this_ptr->unk + 4) - in_stack_00000018;
+    (this_ptr->size).y = (this_ptr->size).y - in_stack_00000018;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
   if (iVar1 != 0) {
-    *(float *)(this_ptr->unk + 4) = *(float *)(this_ptr->unk + 4) + in_stack_00000020;
+    (this_ptr->size).y = (this_ptr->size).y + in_stack_00000020;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
   if (iVar1 != 0) {
-    *(float *)(this_ptr->unk + 8) = *(float *)(this_ptr->unk + 8) - in_stack_00000028;
+    (this_ptr->size).z = (this_ptr->size).z - in_stack_00000028;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
   if (iVar1 != 0) {
-    *(float *)(this_ptr->unk + 8) = *(float *)(this_ptr->unk + 8) + in_stack_00000030;
+    (this_ptr->size).z = (this_ptr->size).z + in_stack_00000030;
   }
-  if (*(int *)this_ptr->unk < 0x3f000000) {
-    this_ptr->unk[0] = '\0';
-    this_ptr->unk[1] = '\0';
-    this_ptr->unk[2] = '\0';
-    this_ptr->unk[3] = '?';
+  if ((int)(this_ptr->size).x < 0x3f000000) {
+    (this_ptr->size).x = 0.5;
   }
-  if (*(float *)(this_ptr->unk + 4) < 0.5) {
-    this_ptr->unk[4] = '\0';
-    this_ptr->unk[5] = '\0';
-    this_ptr->unk[6] = '\0';
-    this_ptr->unk[7] = '?';
+  if ((this_ptr->size).y < 0.5) {
+    (this_ptr->size).y = 0.5;
   }
-  if (0.5 <= *(float *)(this_ptr->unk + 8)) {
+  if (0.5 <= (this_ptr->size).z) {
     return;
   }
-  this_ptr->unk[8] = '\0';
-  this_ptr->unk[9] = '\0';
-  this_ptr->unk[10] = '\0';
-  this_ptr->unk[0xb] = '?';
+  (this_ptr->size).z = 0.5;
   return;
 }

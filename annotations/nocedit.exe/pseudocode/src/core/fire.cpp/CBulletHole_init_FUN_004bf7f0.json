@@ -1,0 +1,341 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 178,
+    "complexity_score": 153,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 1,
+    "pseudocode_lines": 88,
+    "suspect_count": 5,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "suspect_float"
+    ],
+    "total_lines": 266
+  },
+  "cross_references": [
+    {
+      "addr": "004c76a0",
+      "from_addr": "004c7861",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bf7f0",
+    "address_range": [
+      [
+        "004bf7f0",
+        "004bf9f4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CBulletHole_init_FUN_004bf7f0",
+    "signature": "void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0 (CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal, CDemonActor *hit_actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
+    },
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "005f5390",
+      "is_variadic": false,
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390"
+    },
+    {
+      "addr": "005f54c0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0"
+    },
+    {
+      "addr": "005f6110",
+      "is_variadic": false,
+      "name": "core_xform.cpp_getTranslation_FUN_005f6110"
+    },
+    {
+      "addr": "005f5690",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690"
+    },
+    {
+      "addr": "005f4f10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10"
+    },
+    {
+      "addr": "006013b1",
+      "is_variadic": false,
+      "name": "crt_math.c_atan2_FUN_006013b1"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629c4f",
+      "name": "g_BulletHoleNormalOffset",
+      "type": "float",
+      "value": "0.1000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c7861",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_FUN_004c76a0",
+        "estimated_params": 4,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.759740259740259,
+    "instruction_count": 154,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CBRANCH": 7,
+      "COPY": 297,
+      "FLOAT2FLOAT": 23,
+      "FLOAT_ADD": 4,
+      "FLOAT_MULT": 5,
+      "FLOAT_NEG": 1,
+      "FLOAT_SQRT": 1,
+      "INT_ADD": 89,
+      "INT_AND": 37,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 37,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 18,
+      "INT_SUB": 39,
+      "INT_ZEXT": 2,
+      "LOAD": 46,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 58
+    },
+    "pcode_op_count": 733
+  },
+  "stack_frame": {
+    "frame_size": 296,
+    "local_size": 280,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBulletHole *"
+      },
+      {
+        "is_param": true,
+        "name": "hit_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "surface_normal",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "hit_actor",
+        "offset": 16,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 41,
+      "match": "6.976873e-39",
+      "text": "local_114.m[0].x = 6.976873e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "SQRT",
+      "text": "SQRT((float10)surface_normal->x * (float10)surface_normal->x +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 48,
+      "match": "6.976905e-39",
+      "text": "local_114.m[0].w = 6.976905e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

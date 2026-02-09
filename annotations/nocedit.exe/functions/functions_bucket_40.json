@@ -3636,7 +3636,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"CActorPropertyValidatorFunc*"
         }
       ],
       "ret_storage":{
@@ -15537,7 +15537,7 @@
               }
             ]
           },
-          "type":"SCramRectangle**"
+          "type":"SCramRectangle*"
         },
         {
           "name":"rect_b",
@@ -15553,7 +15553,7 @@
               }
             ]
           },
-          "type":"SCramRectangle**"
+          "type":"SCramRectangle*"
         }
       ],
       "ret_storage":{
@@ -15579,12 +15579,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0",
+    "name":"shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"reference_entry",
+          "name":"this_ptr",
           "storage":{
             "offset":12,
             "size":4,
@@ -15597,7 +15597,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         }
       ],
       "ret_storage":{
@@ -28699,7 +28699,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_drender.cpp_CDemonRenderer_ctor_FUN_0048a6c0",
-    "ret":"void",
+    "ret":"CDemonRenderer*",
     "vars":{
       "params":[
         {
@@ -28718,7 +28718,17 @@
           },
           "type":"CDemonRenderer*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -70797,7 +70807,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057a0c0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -70865,7 +70875,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057a940",
     "ret":"void",
     "vars":{
       "locals":[
@@ -70933,7 +70943,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_0057d340",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057d340",
     "ret":"void",
     "vars":{
       "locals":[
@@ -71673,6 +71683,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
       ]
     }
   },
@@ -71687,7 +71715,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057e7c0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -73643,7 +73671,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058bc40",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058bc40",
     "ret":"int",
     "vars":{
       "locals":[
@@ -73696,6 +73724,24 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -73719,7 +73765,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058e240",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058e240",
     "ret":"void",
     "vars":{
       "locals":[
@@ -73915,6 +73961,24 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        }
       ]
     }
   },
@@ -73982,6 +74046,24 @@
     "name":"core_skeledit.cpp_FUN_005925c0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -74907,7 +74989,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_LodVert_dtor_FUN_005995c0",
+    "name":"core_skeledit.cpp_CLodVert_dtor_FUN_005995c0",
     "ret":"CLodVert*",
     "vars":{
       "params":[
@@ -74928,7 +75010,7 @@
           "type":"CLodVert*"
         },
         {
-          "name":"other",
+          "name":"flags",
           "storage":{
             "offset":8,
             "size":4,
@@ -74941,23 +75023,7 @@
               }
             ]
           },
-          "type":"CLodVert*"
-        },
-        {
-          "name":"other2",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CLodVert*"
+          "type":"uint"
         }
       ],
       "ret_storage":{

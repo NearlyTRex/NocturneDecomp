@@ -14,39 +14,15 @@
         "message": "member reference type 'CTVBat_ptr_48832' (aka 'CTVBat *') is a pointer; did you mean to use '->'?"
       },
       {
-        "category": "missing_member",
-        "column": 46,
-        "line": 19,
-        "message": "no member named 'model_ptr' in 'CTVBat'"
-      },
-      {
-        "category": "missing_member",
-        "column": 52,
-        "line": 20,
-        "message": "no member named 'model_ptr' in 'CTVBat'"
-      },
-      {
-        "category": "missing_member",
-        "column": 52,
-        "line": 21,
-        "message": "no member named 'model_ptr' in 'CTVBat'"
-      },
-      {
-        "category": "missing_member",
-        "column": 52,
-        "line": 22,
-        "message": "no member named 'model_ptr' in 'CTVBat'"
-      },
-      {
         "category": "incompatible_types",
         "column": 3,
-        "line": 26,
+        "line": 23,
         "message": "no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 37,
+        "line": 34,
         "message": "member reference type 'CTVBat_ptr_48832' (aka 'CTVBat *') is a pointer; did you mean to use '->'?"
       }
     ],
@@ -55,17 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 255,
+    "complexity_score": 227,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 35,
-    "suspect_count": 21,
+    "pseudocode_lines": 32,
+    "suspect_count": 19,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 56
+    "total_lines": 53
   },
   "cross_references": [
     {
@@ -189,141 +164,127 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 13,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)&this_ptr_00[-0xffffffff00000001].model_ptr + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)&this_ptr_00[-0xffffffff00000001].model_ptr + 2) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)&this_ptr_00[-0xffffffff00000001].model_ptr + 3) = '\\0';",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->unk1 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 13,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->unk2 = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 15,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->speed = fVar1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 17,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->max_height = 5.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 18,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->max_distance = 15.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 20,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->move_speed = fVar1 * 10.0f;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 22,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->rot_speed = fVar1 * 2.0f;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 24,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->follow_orders = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 25,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->unk4 = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 26,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->state = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 27,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00).base.base.field44_0x2624 = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 28,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->unk11 = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 29,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->periodic_sound[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 30,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->periodic_sound_timer_min = 15.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 31,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->periodic_sound_timer_max = 30.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 32,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->unk10 = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 33,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->unk3 = (int)fVar1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 34,
       "match": "ADJ",
       "text": "return ADJ(this_ptr_00);",
       "type": "decompiler_intrinsic"

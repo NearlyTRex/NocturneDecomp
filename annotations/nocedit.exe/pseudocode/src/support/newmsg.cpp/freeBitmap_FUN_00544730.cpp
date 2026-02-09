@@ -11,6 +11,6 @@ CAlphaBitmap * __cdecl support_newmsg_cpp_freeBitmap_FUN_00544730(CAlphaBitmap *
 {
   CAlphaBitmap *pCVar1;
   
-  pCVar1 = __arrfini(objs,7,&g_CAlphaBitmapTypeInfo);
+  pCVar1 = (CAlphaBitmap *)__arrfini(objs,7,&g_CAlphaBitmapTypeInfo);
   return pCVar1;
 }

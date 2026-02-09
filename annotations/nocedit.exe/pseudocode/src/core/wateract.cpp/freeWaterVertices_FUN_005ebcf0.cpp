@@ -11,6 +11,6 @@ SWaterVertex * __cdecl core_wateract_cpp_freeWaterVertices_FUN_005ebcf0(SWaterVe
 {
   SWaterVertex *pSVar1;
   
-  pSVar1 = __arrfini(objs,1000,&g_SWaterVertexTypeInfo);
+  pSVar1 = (SWaterVertex *)__arrfini(objs,1000,&g_SWaterVertexTypeInfo);
   return pSVar1;
 }

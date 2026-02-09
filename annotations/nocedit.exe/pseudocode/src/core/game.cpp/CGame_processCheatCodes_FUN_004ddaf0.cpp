@@ -1804,7 +1804,7 @@ LAB_004df408:
       }
       if (iStack_100 == iStack_104) {
         g_InputHistory[1] = '\0';
-        this_ptr_02 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\game.cpp",0xbb0)
+        this_ptr_02 = (CGasMask *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\game.cpp",0xbb0)
         ;
         actor = (CGasMask *)0x0;
         if (this_ptr_02 != (CGasMask *)0x0) {

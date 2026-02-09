@@ -11,6 +11,6 @@ CSmokeParticle * __cdecl core_fire_cpp_freeSmokeParticles_FUN_004c9a10(CSmokePar
 {
   CSmokeParticle *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x800,&g_CSmokeParticleTypeInfo);
+  pCVar1 = (CSmokeParticle *)__arrfini(objs,0x800,&g_CSmokeParticleTypeInfo);
   return pCVar1;
 }

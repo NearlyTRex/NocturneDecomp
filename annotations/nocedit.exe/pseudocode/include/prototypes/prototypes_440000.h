@@ -9,6 +9,7 @@
 #include "types/classes/CConsole.h"
 #include "types/classes/CConveyor.h"
 #include "types/classes/CCourse.h"
+#include "types/classes/CCramTex.h"
 #include "types/classes/CCrate.h"
 #include "types/classes/CCrossbow.h"
 #include "types/classes/CCurtain.h"
@@ -25,7 +26,6 @@
 #include "types/classes/CZombieCow.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCramRectangle.h"
-#include "types/structs/SCramWorkingEntry.h"
 #include "types/structs/SCurtainVertex.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFogGrid.h"
@@ -113,25 +113,25 @@ void __cdecl core_cow_cpp_CZombieCow_FUN_00444c90(CZombieCow *this_ptr);
 void __cdecl core_cow_cpp_CZombieCow_addFilesToExtract_FUN_00444ca0(CZombieCow *this_ptr,_FILE *file_handle);
 CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_00444cd0(CZombieCow *this_ptr,uint flags);
 int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90 (uint texture_count,STextureAtlasEntry *texture_entries,int atlas_width,int atlas_height, int acceptable_coverage_threshold,int acceptable_size,int *output_atlas_width, int *output_atlas_height,int padding_size,int fill_gaps,int visualize,int max_iterations);
-int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0 (SCramWorkingEntry *entry_a,SCramWorkingEntry *entry_b);
+int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0(CCramTex *entry_a,CCramTex *entry_b);
 void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void);
-int __cdecl shape_cramtex_cpp_addTextureEntry_FUN_00446100(SCramWorkingEntry *texture_entry);
-int __cdecl shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140 (SCramRectangle **rect_a,SCramRectangle **rect_b);
-int __cdecl shape_cramtex_cpp_runInteractiveAtlasGeneration_FUN_00446160 (SCramWorkingEntry *current_texture_entry);
+int __cdecl shape_cramtex_cpp_CCramTex_addTextureEntry_FUN_00446100(CCramTex *this_ptr);
+int __cdecl shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140 (SCramRectangle *rect_a,SCramRectangle *rect_b);
+int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160(CCramTex *this_ptr);
 uint __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void);
-int __cdecl shape_cramtex_cpp_findHighestOverlappingY_FUN_004478c0(SCramWorkingEntry *reference_entry);
-int __cdecl shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(SCramWorkingEntry *bounds_entry);
-int __cdecl shape_cramtex_cpp_findRightmostOverlappingX_FUN_004479a0(SCramWorkingEntry *bounds_entry);
-int __cdecl shape_cramtex_cpp_findLeftmostOverlappingX_FUN_00447a10(SCramWorkingEntry *bounds_entry);
+int __cdecl shape_cramtex_cpp_CCramTex_findHighestOverlappingY_FUN_004478c0(CCramTex *this_ptr);
+int __cdecl shape_cramtex_cpp_CCramTex_findLowestOverlappingY_FUN_00447930(CCramTex *this_ptr);
+int __cdecl shape_cramtex_cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0(CCramTex *this_ptr);
+int __cdecl shape_cramtex_cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(CCramTex *this_ptr);
 int __cdecl shape_cramtex_cpp_mapCoordinateToAtlas_FUN_00447a80(int min_coord,int max_coord,int pixel_offset);
-void __cdecl shape_cramtex_cpp_renderAllTexturesAndRectangles_FUN_00447ab0 (int x,int y,int width,int height,int render_mode);
-void __cdecl shape_cramtex_cpp_renderTextureEntry_FUN_00447c20 (SCramWorkingEntry *texture_entry,int visualization_mode,int draw_x,int draw_y, int draw_width,int draw_height);
+void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0 (CCramTex *this_ptr,int x,int y,int width,int height,int render_mode);
+void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20 (CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width, int draw_height);
 double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void);
-void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20 (int visualization_mode,int completion_mode,int display_mode);
+void __cdecl shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20 (CCramTex *this_ptr,int visualization_mode,int completion_mode,int display_mode);
 void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file);
 void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260 (int layer_id,int start_x,int start_y,int width,int height);
-int __cdecl shape_cramtex_cpp_checkTextureCollision_FUN_00448390 (SCramWorkingEntry *placed_texture,SCramWorkingEntry *test_texture);
-void __cdecl shape_cramtex_cpp_setupTextureForPlacement_FUN_004483e0 (SCramWorkingEntry *destination,SCramWorkingEntry *source);
+int __cdecl shape_cramtex_cpp_CCramTex_checkTextureCollision_FUN_00448390(CCramTex *this_ptr,CCramTex *other);
+void __cdecl shape_cramtex_cpp_CCramTex_setupTextureForPlacement_FUN_004483e0 (CCramTex *this_ptr,CCramTex *source);
 int __cdecl shape_cramtex_cpp_maxInt_FUN_00448440(int a,int b);
 void __cdecl core_crate_cpp_staticInit_FUN_00448460(void);
 CCrate * __cdecl core_crate_cpp_factoryFunc_FUN_00448490(void);

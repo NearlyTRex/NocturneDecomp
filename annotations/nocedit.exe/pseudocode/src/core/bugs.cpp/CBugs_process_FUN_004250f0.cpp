@@ -23,7 +23,7 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_004250f0(CBugs *this_ptr,float delt
                           (g_CEventListPtr,this_ptr->allow_swarm_event), iVar1 != 0)) {
       this_ptr->allow_swarm = 1;
     }
-    switch(*(uint *)(this_ptr->unk1 + 8)) {
+    switch(this_ptr->unk) {
     case 0:
       core_bugs_cpp_CBugs_FUN_00425cc0(this_ptr);
       break;

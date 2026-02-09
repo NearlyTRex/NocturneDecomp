@@ -20,7 +20,7 @@ int __cdecl spawnvp_with_path_search(int mode,char *program,char **argv)
   uint uStack_18;
   SIZE_T SStack_14;
   
-  __STK(0x130);
+  __STK();
   iVar1 = spawnvp(mode,program,argv);
   if (((iVar1 == -1) &&
       ((((pTVar2 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar2->errno_value == 1 ||

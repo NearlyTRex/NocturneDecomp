@@ -29,7 +29,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   crt_stdlib.c_qsort_FUN_005fdf38
+;   crt_stdlib.c__qsort_FUN_005fdf38
 ;   engine_3d.c_setBlendMode_FUN_00406dd0
 ;   engine_clipper.c_clipAndRasterize_FUN_004371b0
 ;   engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0
@@ -68,8 +68,8 @@ section .text
     MOV EBX,dword ptr [0x00772afc]      ; 00407107 | g_RenderBufferCount
     PUSH EBX                            ; 0040710d
     PUSH 0x81d960                       ; 0040710e | g_RenderBufferSortArray
-    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 00407113
-        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
+    CALL crt_stdlib.c__qsort_FUN_005fdf38 ; 00407113
+        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     MOV ESI,dword ptr [0x02d05248]      ; 00407118 | g_MMXSupported
     ADD ESP,0x10                        ; 0040711e
     TEST ESI,ESI                        ; 00407121

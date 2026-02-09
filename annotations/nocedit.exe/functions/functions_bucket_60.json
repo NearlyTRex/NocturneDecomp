@@ -14140,7 +14140,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160",
+    "name":"shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160",
     "ret":"int",
     "vars":{
       "locals":[
@@ -14771,7 +14771,7 @@
       ],
       "params":[
         {
-          "name":"current_texture_entry",
+          "name":"this_ptr",
           "storage":{
             "offset":12,
             "size":4,
@@ -14784,7 +14784,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         }
       ],
       "ret_storage":{
@@ -14942,12 +14942,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_setupTextureForPlacement_FUN_004483e0",
+    "name":"shape_cramtex.cpp_CCramTex_setupTextureForPlacement_FUN_004483e0",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"destination",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -14960,7 +14960,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         },
         {
           "name":"source",
@@ -14976,7 +14976,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         }
       ]
     }
@@ -29173,7 +29173,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_elephant.cpp_CElephantGun_dtor_FUN_004a7be0",
-    "ret":"void*",
+    "ret":"CElephantGun*",
     "vars":{
       "params":[
         {
@@ -31526,7 +31526,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CSmokeParticle_ctor_FUN_004bf2e0",
+    "name":"core_fire.cpp_CSmokeParticle_reset_FUN_004bf2e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -31830,7 +31830,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CCrater_ctor_FUN_004c41e0",
+    "name":"core_fire.cpp_CCrater_reset_FUN_004c41e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -32030,7 +32030,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CTrail_ctor_FUN_004c5de0",
+    "name":"core_fire.cpp_CTrail_reset_FUN_004c5de0",
     "ret":"void",
     "vars":{
       "params":[
@@ -52016,8 +52016,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_ImportA3DBroken_FUN_00578c60",
-    "ret":"void"
+    "name":"core_setedit.cpp_CDemonSet_FUN_00578c60",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
+      ]
+    }
   },
   {
     "addr":"0057bbe0",
@@ -52030,7 +52050,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057bbe0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -52354,6 +52374,24 @@
           },
           "type":"undefined8"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
       ]
     }
   },
@@ -52368,7 +52406,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_UserInputCreate_FUN_0057d660",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057d660",
     "ret":"int",
     "vars":{
       "locals":[
@@ -52501,6 +52539,24 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -52524,7 +52580,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CallToFreeSomeMemory_FUN_00580560",
+    "name":"core_setedit.cpp_CDemonSet_FUN_00580560",
     "ret":"void",
     "vars":{
       "params":[
@@ -52789,8 +52845,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_simbox.cpp_CSimBox_FUN_00589160",
-    "ret":"float*",
+    "name":"core_simbox.cpp_CSimBox_getBoundingBox_FUN_00589160",
+    "ret":"CBoundingBox3D*",
     "vars":{
       "params":[
         {
@@ -52808,6 +52864,22 @@
             ]
           },
           "type":"CSimBox*"
+        },
+        {
+          "name":"out_box",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBoundingBox3D*"
         }
       ],
       "ret_storage":{
@@ -52833,7 +52905,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_simbox.cpp_CSimBox_FUN_00589260",
+    "name":"core_simbox.cpp_CSimBox_hasCollision_FUN_00589260",
     "ret":"int",
     "vars":{
       "params":[
@@ -52852,6 +52924,22 @@
             ]
           },
           "type":"CSimBox*"
+        },
+        {
+          "name":"collision_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCollisionInfo*"
         }
       ],
       "ret_storage":{
@@ -53053,6 +53141,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        }
       ]
     }
   },
@@ -53115,7 +53221,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058b660",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058b660",
     "ret":"void",
     "vars":{
       "locals":[
@@ -53327,6 +53433,40 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
       ]
     }
   },
@@ -53341,7 +53481,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058b8e0",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058b8e0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -53376,6 +53516,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
         }
       ],
       "ret_storage":{
@@ -53515,7 +53673,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058e3e0",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058e3e0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -53566,6 +53724,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
         }
       ]
     }
@@ -53797,7 +53973,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058ede0",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058ede0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -54072,6 +54248,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
         }
       ]
     }

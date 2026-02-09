@@ -15,7 +15,7 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
-;   core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0 at 0057a1aa
+;   core_setedit.cpp_CDemonSet_FUN_0057a0c0 at 0057a1aa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_d_g_g_g_g_g_g_00649a2d

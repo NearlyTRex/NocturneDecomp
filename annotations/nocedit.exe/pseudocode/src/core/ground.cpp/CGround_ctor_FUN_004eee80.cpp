@@ -2,11 +2,11 @@
 // Address: 004eee80
 // Address Range: [[004eee80, 004eeed5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ground_cpp_CGround_ctor_FUN_004eee80(CGround *this_ptr,int width,int height)
+// Signature: CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004eee80(CGround *this_ptr,int width,int height)
 
 #include "nocturne.h"
 
-void __cdecl core_ground_cpp_CGround_ctor_FUN_004eee80(CGround *this_ptr,int width,int height)
+CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004eee80(CGround *this_ptr,int width,int height)
 
 {
   this_ptr->grid_width = 0x1e;
@@ -20,5 +20,5 @@ void __cdecl core_ground_cpp_CGround_ctor_FUN_004eee80(CGround *this_ptr,int wid
   this_ptr->total_cells = this_ptr->grid_width * this_ptr->grid_height;
   this_ptr->height_minus_1 = height + -1;
   this_ptr->width_minus_1 = width + -1;
-  return;
+  return this_ptr;
 }

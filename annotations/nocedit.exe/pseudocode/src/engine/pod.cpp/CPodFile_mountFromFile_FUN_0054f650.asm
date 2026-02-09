@@ -95,7 +95,7 @@
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   crt_stdio.c_ftell_FUN_00601560
-;   crt_stdlib.c_qsort_FUN_005fdf38
+;   crt_stdlib.c__qsort_FUN_005fdf38
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
 ;   engine_dosio.c_getRelativeFilePath_FUN_004816c0
@@ -457,8 +457,8 @@ section .text
     PUSH EDX                            ; 0054fa62
     MOV ECX,dword ptr [EBX + 0x414]     ; 0054fa63
     PUSH ECX                            ; 0054fa69
-    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 0054fa6a
-        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
+    CALL crt_stdlib.c__qsort_FUN_005fdf38 ; 0054fa6a
+        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     MOV EAX,0x1                         ; 0054fa6f
     ADD ESP,0x10                        ; 0054fa74
     ADD ESP,0x694                       ; 0054fa77

@@ -2,118 +2,112 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 85,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 18,
+        "line": 90,
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 49,
-        "line": 85,
-        "message": "expected expression"
+        "category": "other",
+        "column": 84,
+        "line": 90,
+        "message": "called object type 'void' is not a function or function pointer"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 86,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 22,
+        "line": 92,
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 34,
-        "line": 86,
-        "message": "expected expression"
+        "category": "other",
+        "column": 79,
+        "line": 92,
+        "message": "called object type 'void' is not a function or function pointer"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 88,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 46,
+        "line": 105,
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 30,
-        "line": 88,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 103,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 34,
-        "line": 103,
-        "message": "expected expression"
+        "category": "other",
+        "column": 84,
+        "line": 105,
+        "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 120,
+        "line": 124,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 120,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 127,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 127,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 161,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 161,
+        "line": 124,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 190,
+        "line": 166,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 190,
+        "line": 166,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 197,
+        "line": 195,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 197,
+        "line": 195,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 210,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 8,
+        "line": 202,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 202,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 276,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 276,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 378,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 378,
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -121,18 +115,17 @@
   },
   "complexity": {
     "assembly_lines": 1024,
-    "complexity_score": 617,
+    "complexity_score": 552,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 20,
-    "pseudocode_lines": 432,
-    "suspect_count": 17,
+    "pseudocode_lines": 442,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "unresolved_funcptr"
+      "extra_output"
     ],
-    "total_lines": 1456
+    "total_lines": 1466
   },
   "cross_references": [],
   "function": {
@@ -882,119 +875,70 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 16,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 17,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 78,
-      "match": "code *",
-      "text": "if ((((iVar6 != 0) && (iVar6 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x120))(), iVar6 == 0))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
-      "match": "code *",
-      "text": "&& (iVar6 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x108))()",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 81,
-      "match": "code *",
-      "text": "(iVar6 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xfc))(),",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
-      "match": "SQRT",
-      "text": "fVar3 = SQRT(fVar5 * fVar5 + fVar3 * fVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
-      "match": "ABS",
-      "text": "if (ABS(local_c8.y - *(float *)(iVar6 + 0x24)) <= (float)4) {",
+      "match": "SQRT",
+      "text": "fVar3 = SQRT(fVar7 * fVar7 + fVar3 * fVar3);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 96,
-      "match": "code *",
-      "text": "(iVar6 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x100))(), iVar6 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 120,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x11c))();",
-      "type": "unresolved_funcptr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 97,
+      "match": "ABS",
+      "text": "if (ABS(local_c8.y - (pCVar6->location).position.y) <= (float)4) {",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 158,
+      "line": 163,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 176,
       "match": "SQRT",
       "text": "if (SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58) <= 12.0f)",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 203,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 209,
+      "line": 215,
       "match": "SQRT",
       "text": "local_24 = SQRT(local_d8 * local_d8 + local_e0 * local_e0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 224,
+      "line": 233,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 250,
+      "line": 259,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 275,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 282,
+      "line": 292,
       "match": "SQRT",
       "text": "SQRT(local_114 * local_114 + local_11c * local_11c + local_118 * local_118)) {",
       "type": "decompiler_intrinsic"

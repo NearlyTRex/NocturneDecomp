@@ -2,16 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 9,
+        "category": "other",
+        "column": 6,
         "line": 15,
-        "message": "use of undeclared identifier 'code'"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 16,
+        "category": "other",
+        "column": 55,
         "line": 15,
-        "message": "expected expression"
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -19,16 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 79,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 14,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param",
-      "unresolved_funcptr"
+      "stack_param"
     ],
     "total_lines": 82
   },
@@ -194,13 +193,6 @@
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk2 + 4) + 0x154) + 0x118))();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

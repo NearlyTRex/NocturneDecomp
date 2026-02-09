@@ -21,8 +21,8 @@
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a78e
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b46c
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 at 00574a69
-;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581ca5
-;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583401
+;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057aac9
+;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057dd5b
 ;   ... and 4 more
 ;
 ; Referenced Globals:

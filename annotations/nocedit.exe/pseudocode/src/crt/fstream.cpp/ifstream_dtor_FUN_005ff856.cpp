@@ -2,11 +2,11 @@
 // Address: 005ff856
 // Address Range: [[005ff856, 005ff8ef]]
 // Convention: __cdecl
-// Signature: void * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint flags)
+// Signature: ifstream * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-void * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint flags)
+ifstream * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint flags)
 
 {
   int iVar1;

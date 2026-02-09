@@ -94,7 +94,7 @@ engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
         piVar7 = piVar7 + (uint)bVar9 * -2 + 1;
       }
       time_ptr = _localtime(&local_2e8);
-      strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
+      _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
       pcVar4 = "???";
       if (local_2e4 == 0) {
         pcVar4 = "Add";

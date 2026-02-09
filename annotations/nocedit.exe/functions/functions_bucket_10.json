@@ -14248,12 +14248,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10",
+    "name":"shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"bounds_entry",
+          "name":"this_ptr",
           "storage":{
             "offset":12,
             "size":4,
@@ -14266,7 +14266,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         }
       ],
       "ret_storage":{
@@ -14292,12 +14292,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_checkTextureCollision_FUN_00448390",
+    "name":"shape_cramtex.cpp_CCramTex_checkTextureCollision_FUN_00448390",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"placed_texture",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -14310,10 +14310,10 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         },
         {
-          "name":"test_texture",
+          "name":"other",
           "storage":{
             "offset":8,
             "size":4,
@@ -14326,7 +14326,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         }
       ],
       "ret_storage":{
@@ -63753,7 +63753,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_DefineTexturesMaybe_FUN_00578290",
+    "name":"core_setedit.cpp_FUN_00578290",
     "ret":"void",
     "vars":{
       "locals":[
@@ -63879,8 +63879,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_0057b410",
-    "ret":"void"
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057b410",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
+      ]
+    }
   },
   {
     "addr":"0057b910",
@@ -63959,7 +63979,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310",
+    "name":"core_setedit.cpp_CDemonSet_FUN_00580310",
     "ret":"void",
     "vars":{
       "locals":[
@@ -64058,6 +64078,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
         }
       ]
     }
@@ -65111,7 +65149,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_simbox.cpp_CSimBox_FUN_00589310",
+    "name":"core_simbox.cpp_CSimBox_getPropertyList_FUN_00589310",
     "ret":"void",
     "vars":{
       "params":[
@@ -65130,6 +65168,22 @@
             ]
           },
           "type":"CSimBox*"
+        },
+        {
+          "name":"property_list",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorPropertyList*"
         }
       ]
     }
@@ -67511,9 +67565,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058f790",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058f790",
     "ret":"int*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -70804,7 +70876,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_00592690",
+    "name":"core_skeledit.cpp_CSkeleton_FUN_00592690",
     "ret":"int",
     "vars":{
       "locals":[
@@ -74103,6 +74175,40 @@
         {
           "name":"local_ded4",
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CSkeleton*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -87486,7 +87592,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90",
-    "ret":"int",
+    "ret":"CTommyGun*",
     "vars":{
       "params":[
         {

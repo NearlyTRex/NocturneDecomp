@@ -21,7 +21,7 @@ void __cdecl core_skeledit_cpp_FUN_0058af40(void)
   int *local_c;
   
   bVar4 = 0;
-  __STK(0x4c);
+  __STK();
   local_10 = 0;
   if (0 < *in_stack_00000004) {
     local_c = in_stack_00000004;

@@ -2300,8 +2300,126 @@ def extract_types_from_signature(signature):
     return types_found
 
 
+def _find_funcdef_params(signature, funcdef_types, funcptr_typedefs):
+    """Find parameter indices that use function definition types.
+
+    Detects parameters whose type is a funcdef (function typedef) so they
+    can be replaced with template type parameters. This allows callers to
+    pass function pointers with compatible-but-not-identical signatures
+    (e.g., a factory returning CAmmo* where CDemonActor_FactoryFunc* = void*(*)(void)
+    is expected).
+
+    Args:
+        signature: Function signature string (without trailing semicolon)
+        funcdef_types: Set of type names from types/funcdefs/ directory
+        funcptr_typedefs: Set of additional known function-pointer typedef names
+
+    Returns:
+        List of parameter indices (0-based) that have funcdef types
+    """
+    paren_start = signature.find('(')
+    paren_end = signature.rfind(')')
+    if paren_start == -1 or paren_end == -1:
+        return []
+
+    params_str = signature[paren_start + 1:paren_end].strip()
+    if not params_str or params_str == 'void':
+        return []
+
+    params = params_str.split(',')
+
+    result = []
+    for i, param in enumerate(params):
+        words = re.findall(r'\b([A-Za-z_][A-Za-z0-9_]*)\b', param.strip())
+        # Check type words only (exclude last word which is the param name)
+        type_words = words[:-1] if len(words) > 1 else []
+        for word in type_words:
+            if word in funcdef_types or word in funcptr_typedefs:
+                result.append(i)
+                break
+
+    return result
+
+
+def _generate_template_prototype(signature, funcdef_param_indices):
+    """Generate a template inline function from a signature with funcdef params.
+
+    Replaces funcdef-typed parameters with template type parameters so the
+    function accepts any function pointer type. The body is a no-op stub
+    (returns a zero/null value) since these are only used for -fsyntax-only
+    compilation checking.
+
+    Args:
+        signature: Function signature string (without trailing semicolon)
+        funcdef_param_indices: List of parameter indices to template-ize
+
+    Returns:
+        Multi-line string with the template function definition
+    """
+    paren_start = signature.find('(')
+    paren_end = signature.rfind(')')
+
+    before_paren = signature[:paren_start].strip()
+    params_str = signature[paren_start + 1:paren_end].strip()
+
+    # Parse before_paren: "ReturnType [*] [__convention] func_name"
+    parts = before_paren.split()
+    func_name = parts[-1]
+    return_and_conv = parts[:-1]
+
+    # Remove calling convention for inline template function
+    calling_conventions = {'__cdecl', '__stdcall', '__watcallStack',
+                           '__fastcall', '__thiscall'}
+    return_parts = [p for p in return_and_conv if p not in calling_conventions]
+    return_type = " ".join(return_parts) if return_parts else "void"
+
+    # Split and process params
+    params = params_str.split(',')
+    funcdef_set = set(funcdef_param_indices)
+
+    template_params = []
+    new_params = []
+    all_param_names = []
+
+    for i, param in enumerate(params):
+        param = param.strip()
+        words = re.findall(r'\b([A-Za-z_][A-Za-z0-9_]*)\b', param)
+        param_name = words[-1] if words else "p%d" % i
+        all_param_names.append(param_name)
+
+        if i in funcdef_set:
+            t_name = "T_func%d" % len(template_params)
+            template_params.append(t_name)
+            new_params.append("%s %s" % (t_name, param_name))
+        else:
+            new_params.append(param)
+
+    # Build template function
+    lines = []
+    lines.append("template<%s>" % ", ".join("typename %s" % tp
+                                             for tp in template_params))
+
+    lines.append("inline %s %s(%s) {" % (
+        return_type, func_name, ",".join(new_params)))
+
+    void_casts = " ".join("(void)%s;" % name for name in all_param_names)
+    if return_type.strip() == "void":
+        lines.append("    %s" % void_casts)
+    else:
+        lines.append("    %s return (%s)0;" % (void_casts, return_type))
+
+    lines.append("}")
+    return "\n".join(lines)
+
+
 def generate_prototypes_header_file(functions_list, range_key="", type_to_path_map=None):
     """Generate a header file with function prototype declarations.
+
+    For functions whose parameters use funcdef types (function definition
+    typedefs), generates template inline stubs instead of extern declarations.
+    This allows callers to pass function pointers with compatible but
+    not-identical signatures, which C++ would otherwise reject (e.g.,
+    CAmmo*(*)(void) passed where void*(*)(void) is expected).
 
     Args:
         functions_list: List of function entries for this range
@@ -2356,16 +2474,39 @@ def generate_prototypes_header_file(functions_list, range_key="", type_to_path_m
         content.append("")
         return "\n".join(content)
 
+    # Build set of funcdef type names from type_to_path_map
+    # Types whose header path contains 'funcdefs/' are function definition types
+    funcdef_types = set()
+    # Additional known function-pointer typedefs that are pointer-to-funcdef
+    # types but defined outside types/funcdefs/ (e.g., in system/ headers)
+    funcptr_typedefs = {'QSORT_COMPARATOR'}
+
+    if type_to_path_map:
+        for type_name, type_path in type_to_path_map.items():
+            if 'funcdefs/' in type_path:
+                funcdef_types.add(type_name)
+
     # Sort by address for consistent output
     sorted_funcs = sorted(functions_list, key=lambda f: f['address'])
 
     for func in sorted_funcs:
         # The signature already includes the return type and parameters
-        # Just need to ensure it ends with a semicolon
         sig = func['signature'].strip()
-        if not sig.endswith(';'):
-            sig += ';'
-        content.append(sig)
+        if sig.endswith(';'):
+            sig = sig[:-1].strip()
+
+        # Check for funcdef-typed parameters
+        funcdef_param_indices = _find_funcdef_params(
+            sig, funcdef_types, funcptr_typedefs)
+
+        if funcdef_param_indices:
+            # Generate template inline function that accepts any function
+            # pointer type for the funcdef-typed parameters
+            content.append(_generate_template_prototype(
+                sig, funcdef_param_indices))
+        else:
+            # Regular extern declaration
+            content.append(sig + ';')
 
     content.append("")
     return "\n".join(content)
@@ -2734,6 +2875,32 @@ def generate_crt_header(functions_to_process):
     lines.append("")
     lines.append("inline _tm* _localtime(const void* timer) {")
     lines.append("    return reinterpret_cast<_tm*>(localtime(reinterpret_cast<const time_t*>(timer)));")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline time_t _time(time_t* timer) {")
+    lines.append("    return time(timer);")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline char* _asctime(_tm* timeptr) {")
+    lines.append("    return asctime(reinterpret_cast<tm*>(timeptr));")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_string, _tm* time_ptr) {")
+    lines.append("    return strftime(dest_buffer, buffer_size, format_string, reinterpret_cast<tm*>(time_ptr));")
+    lines.append("}")
+    lines.append("")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// Sorting")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("//")
+    lines.append("// Templated to accept any comparator function pointer type, since Ghidra")
+    lines.append("// types comparators with specific param types (e.g., int(SFace**, SFace**))")
+    lines.append("// instead of the generic int(void*, void*) that qsort expects.")
+    lines.append("//")
+    lines.append("")
+    lines.append("template<typename CompFunc>")
+    lines.append("inline void _qsort(void* base, size_t num, size_t size, CompFunc compar) {")
+    lines.append("    (void)base; (void)num; (void)size; (void)compar;")
     lines.append("}")
     lines.append("")
 

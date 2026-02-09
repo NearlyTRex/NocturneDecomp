@@ -9,11 +9,11 @@
 void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,float delta_time)
 
 {
-  CDemonActor *pCVar1;
-  CTrigger *actor_ptr;
+  float fVar1;
   float fVar2;
   float fVar3;
-  float fVar4;
+  CDemonActor *pCVar4;
+  CTrigger *actor_ptr;
   int iVar5;
   char *pcVar6;
   CBoundingBox3D *pCVar7;
@@ -70,14 +70,14 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
     if (*(CDemonActor **)this_ptr->unk4 != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
                 (*(CDemonActor **)this_ptr->unk4,"..\\core\\trigger.cpp",0xee);
-      pCVar1 = *(CDemonActor **)this_ptr->unk4;
-      if (((pCVar1->was_created == 1) &&
-          (fVar2 = (this_ptr->base).location.position.x - (pCVar1->location).position.x,
-          fVar4 = (this_ptr->base).location.position.y - (pCVar1->location).position.y,
-          fVar3 = (this_ptr->base).location.position.z - (pCVar1->location).position.z,
-          fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <=
+      pCVar4 = *(CDemonActor **)this_ptr->unk4;
+      if (((pCVar4->was_created == 1) &&
+          (fVar1 = (this_ptr->base).location.position.x - (pCVar4->location).position.x,
+          fVar3 = (this_ptr->base).location.position.y - (pCVar4->location).position.y,
+          fVar2 = (this_ptr->base).location.position.z - (pCVar4->location).position.z,
+          fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
           this_ptr->test_radius * this_ptr->test_radius)) &&
-         (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar1), iVar9 != 0)
+         (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar4), iVar9 != 0)
          ) {
         iVar9 = *(int *)this_ptr->unk4;
         local_34 = 1;
@@ -128,16 +128,17 @@ LAB_005dfb52:
   case 6:
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
-      local_1c = *(float *)(this_ptr->unk1 + 8) * *(float *)(this_ptr->unk1 + 8) +
-                 *(float *)(this_ptr->unk1 + 4) * *(float *)(this_ptr->unk1 + 4) +
-                 *(float *)this_ptr->unk1 * *(float *)this_ptr->unk1;
+      fVar1 = (this_ptr->trigger_size).x;
+      fVar2 = (this_ptr->trigger_size).y;
+      fVar3 = (this_ptr->trigger_size).z;
+      local_1c = fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1;
       local_34 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
     }
     break;
   case 7:
-    fVar2 = *(float *)(this_ptr->unk4 + 4) - delta_time;
-    *(float *)(this_ptr->unk4 + 4) = fVar2;
-    if (fVar2 < 0.0) {
+    fVar1 = *(float *)(this_ptr->unk4 + 4) - delta_time;
+    *(float *)(this_ptr->unk4 + 4) = fVar1;
+    if (fVar1 < 0.0) {
       this_ptr->unk4[4] = '\0';
       this_ptr->unk4[5] = '\0';
       this_ptr->unk4[6] = '\0';
@@ -155,12 +156,12 @@ LAB_005dfb52:
     if (iVar9 != 0) {
       local_28 = 0;
       for (iVar9 = 0; iVar9 < (int)g_CDemonSetPtr->actor_list_ptr; iVar9 = iVar9 + 1) {
-        pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_28);
-        iVar10 = (*((pCVar1->vtable)._ub)->isActiveTarget)(pCVar1);
+        pCVar4 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_28);
+        iVar10 = (*((pCVar4->vtable)._ub)->isActiveTarget)(pCVar4);
         if ((iVar10 != 0) &&
-           (iVar10 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar1),
+           (iVar10 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar4),
            iVar10 != 0)) {
-          this_ptr->unk3 = (int)pCVar1;
+          this_ptr->unk3 = (int)pCVar4;
           local_30 = (char *)0x1;
           break;
         }
@@ -177,10 +178,10 @@ LAB_005dfb52:
       local_20 = &(this_ptr->base).location;
       for (iVar9 = 0; iVar9 < (int)g_CDemonSetPtr->actor_list_ptr; iVar9 = iVar9 + 1) {
         actor_ptr = *(CTrigger **)(g_CDemonSetPtr->actor_list_data + local_24);
-        fVar2 = (actor_ptr->base).location.position.x - (local_20->position).x;
-        fVar4 = (actor_ptr->base).location.position.y - (local_20->position).y;
-        fVar3 = (actor_ptr->base).location.position.z - (local_20->position).z;
-        if ((((fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <=
+        fVar1 = (actor_ptr->base).location.position.x - (local_20->position).x;
+        fVar3 = (actor_ptr->base).location.position.y - (local_20->position).y;
+        fVar2 = (actor_ptr->base).location.position.z - (local_20->position).z;
+        if ((((fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
                this_ptr->test_radius * this_ptr->test_radius) && (actor_ptr != this_ptr)) &&
             (iVar10 = core_actor_cpp_isOfClass_FUN_0040c6d0(&actor_ptr->base,local_2c), iVar10 != 0)
             ) && ((iVar10 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
@@ -200,10 +201,7 @@ LAB_005dfb52:
   case 1:
     if (local_34 == 0) {
       if (this_ptr->event_type == 0) {
-        this_ptr->unk1[0xc] = '\0';
-        this_ptr->unk1[0xd] = '\0';
-        this_ptr->unk1[0xe] = '\0';
-        this_ptr->unk1[0xf] = '\0';
+        this_ptr->trigger_state = 0;
       }
       goto switchD_005dfb63_default;
     }
@@ -213,28 +211,18 @@ LAB_005dfb52:
     break;
   case 3:
     if ((*(int *)this_ptr->unk2 == 1) && (local_34 == 0)) {
-      this_ptr->unk1[0xc] = '\x01';
-      this_ptr->unk1[0xd] = '\0';
-      this_ptr->unk1[0xe] = '\0';
-      this_ptr->unk1[0xf] = '\0';
+      this_ptr->trigger_state = 1;
       goto switchD_005dfb63_default;
     }
 LAB_005e0053:
-    this_ptr->unk1[0xc] = '\0';
-    this_ptr->unk1[0xd] = '\0';
-    this_ptr->unk1[0xe] = '\0';
-    this_ptr->unk1[0xf] = '\0';
+    this_ptr->trigger_state = 0;
   default:
     goto switchD_005dfb63_default;
   }
-  this_ptr->unk1[0xc] = '\x01';
-  this_ptr->unk1[0xd] = '\0';
-  this_ptr->unk1[0xe] = '\0';
-  this_ptr->unk1[0xf] = '\0';
+  this_ptr->trigger_state = 1;
 switchD_005dfb63_default:
-  iVar9 = *(int *)(this_ptr->unk1 + 0xc);
   *(int *)this_ptr->unk2 = local_34;
-  if (iVar9 == 0) {
+  if (this_ptr->trigger_state == 0) {
     core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
     this_ptr->unk3 = 0;
     return;

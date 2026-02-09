@@ -11,6 +11,6 @@ CBloodPool * __cdecl core_gore_cpp_freeBloodPools_FUN_004ee440(CBloodPool *objs)
 {
   CBloodPool *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x20,&g_CBloodPoolTypeInfo);
+  pCVar1 = (CBloodPool *)__arrfini(objs,0x20,&g_CBloodPoolTypeInfo);
   return pCVar1;
 }

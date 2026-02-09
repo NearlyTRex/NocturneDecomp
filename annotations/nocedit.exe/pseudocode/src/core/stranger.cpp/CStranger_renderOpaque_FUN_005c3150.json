@@ -3,51 +3,87 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 116,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 14,
-        "line": 116,
-        "message": "expected expression"
+        "column": 32,
+        "line": 62,
+        "message": "use of undeclared identifier 'stack0xfffffdd4'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 9,
-        "line": 142,
-        "message": "use of undeclared identifier 'code'"
+        "column": 24,
+        "line": 63,
+        "message": "use of undeclared identifier 'stack0xfffffdd4'"
       },
       {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 142,
-        "message": "expected expression"
+        "category": "other",
+        "column": 5,
+        "line": 119,
+        "message": "statement requires expression of integer type ('float' invalid)"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 9,
+        "category": "other",
+        "column": 10,
+        "line": 120,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 121,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 123,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 125,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 129,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 131,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 132,
+        "message": "expected statement"
+      },
+      {
+        "category": "other",
+        "column": 6,
+        "line": 140,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 140,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 8,
         "line": 147,
-        "message": "use of undeclared identifier 'code'"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 16,
+        "category": "other",
+        "column": 56,
         "line": 147,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 149,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 149,
-        "message": "expected expression"
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -55,19 +91,19 @@
   },
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 348,
+    "complexity_score": 369,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
-    "pseudocode_lines": 198,
-    "suspect_count": 13,
+    "pseudocode_lines": 199,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_type_propagation"
+      "stack_ref",
+      "suspect_float",
+      "undefined_data"
     ],
-    "total_lines": 702
+    "total_lines": 703
   },
   "cross_references": [],
   "function": {
@@ -586,71 +622,85 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_03f6bb24",
       "text": "if ((this_ptr->base).base.model.part_visibility_flags[DAT_03f6bb24] != 0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
-      "type": "pointer_cast"
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xfffffdd4",
+      "text": "(CMatrix3x4f *)&stack0xfffffdd4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xfffffdd4",
+      "text": "pfVar5 = (float *)&stack0xfffffdd4;",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 61,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 106,
       "match": "DAT_03f6bb24",
       "text": "((this_ptr->base).base.model.part_visibility_flags[DAT_03f6bb24] == 0)) goto LAB_005c33d7;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 109,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 8))();",
-      "type": "unresolved_funcptr"
+      "description": "Likely misinterpreted integer as float",
+      "line": 114,
+      "match": "7.00649e-45",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 135,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0x104))();",
-      "type": "unresolved_funcptr"
+      "description": "Likely misinterpreted integer as float",
+      "line": 116,
+      "match": "1.4013e-45",
+      "text": "case 1.4013e-45:",
+      "type": "suspect_float"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 140,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 8))();",
-      "type": "unresolved_funcptr"
+      "description": "Likely misinterpreted integer as float",
+      "line": 118,
+      "match": "2.8026e-45",
+      "text": "case 2.8026e-45:",
+      "type": "suspect_float"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 142,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0x104))();",
-      "type": "unresolved_funcptr"
+      "description": "Likely misinterpreted integer as float",
+      "line": 122,
+      "match": "5.60519e-45",
+      "text": "case 5.60519e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 124,
+      "match": "9.80909e-45",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 129,
+      "match": "1.4013e-45",
+      "text": "if ((this_ptr->weapon[2].orient.pitch == 1.4013e-45) &&",
+      "type": "suspect_float"
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 146,
       "match": "DAT_03f6bb24",
       "text": "((this_ptr->base).base.model.part_visibility_flags[DAT_03f6bb24] != 0)) &&",
       "type": "undefined_data"
@@ -659,14 +709,14 @@
       "description": "Complex pointer cast",
       "line": 184,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 185,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {

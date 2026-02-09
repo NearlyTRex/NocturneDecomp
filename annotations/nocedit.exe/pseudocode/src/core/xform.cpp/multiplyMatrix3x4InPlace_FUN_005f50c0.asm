@@ -10,7 +10,7 @@
 ; undefined1       Stack[-0x3c]:1  local_3c
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_FUN_00592690 at 005954c7
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 005954c7
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10

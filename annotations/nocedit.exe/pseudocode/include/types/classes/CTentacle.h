@@ -11,7 +11,7 @@ struct CDemonActor;
 // Ghidra size: 0xbf2c (48940 bytes)
 typedef struct CTentacle {
     CEnemy base; // 0x0
-    char unk1[16]; // 0xbeb4
+    char unk1[8]; // 0xbebc
     struct CDemonActor* grave_actor; // 0xbec4
     char unk2[100]; // 0xbec8
 } CTentacle;

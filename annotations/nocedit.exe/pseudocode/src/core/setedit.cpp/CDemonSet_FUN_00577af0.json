@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 124,
+        "line": 125,
         "message": "use of undeclared identifier 'DAT_03365cc0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 145,
+        "line": 146,
         "message": "use of undeclared identifier 'DAT_03365cc0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 165,
+        "line": 166,
         "message": "use of undeclared identifier 'DAT_03365cc0'"
       }
     ],
@@ -25,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 352,
+    "complexity_score": 353,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 18,
-    "pseudocode_lines": 207,
+    "pseudocode_lines": 208,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 748
+    "total_lines": 749
   },
   "cross_references": [
     {
@@ -48,19 +48,19 @@
     {
       "addr": "0057ae50",
       "from_addr": "0057b0aa",
-      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50",
+      "name": "core_setedit.cpp_CDemonSet_FUN_0057ae50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057e7c0",
       "from_addr": "0057ea20",
-      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0",
+      "name": "core_setedit.cpp_CDemonSet_FUN_0057e7c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00580730",
       "from_addr": "00580a39",
-      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730",
+      "name": "core_setedit.cpp_CDemonSet_FUN_00580730",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -192,20 +192,20 @@
     },
     {
       "addr": "03364ce0",
-      "name": "INT_03364ce0",
-      "type": "int",
+      "name": "CEdScrollBar_03364ce0",
+      "type": "CEdScrollBar",
       "value": null
     },
     {
       "addr": "03364ce4",
-      "name": "INT_03364ce4",
-      "type": "int",
+      "name": "CEdScrollBar_03364ce0.current_value",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "03364ce8",
-      "name": "INT_03364ce8",
-      "type": "int",
+      "name": "CEdScrollBar_03364ce0.max_value",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -579,56 +579,56 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 78,
       "match": "in_stack_00000008",
       "text": "local_8c = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 95,
+      "line": 96,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 != (int *)0x0) && (*local_8c != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 114,
       "match": "(int *)((int)",
       "text": "puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 118,
       "match": "DAT_03365cc0",
       "text": "uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 135,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)g_ScreenBufferArray + local_2c) + iVar9 * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 139,
       "match": "DAT_03365cc0",
       "text": "uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 154,
       "match": "(int *)((int)",
       "text": "puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar9 * 4)",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 159,
       "match": "DAT_03365cc0",
       "text": "uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);",
       "type": "undefined_data"

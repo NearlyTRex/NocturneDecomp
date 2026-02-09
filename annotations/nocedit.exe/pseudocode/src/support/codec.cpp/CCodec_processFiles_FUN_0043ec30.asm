@@ -100,7 +100,7 @@ section .text
     PUSH EAX                            ; 0043ed05
     MOV EBX,ESI                         ; 0043ed06
     CALL crt_fstream.cpp_ifstream_dtor_FUN_005ff856 ; 0043ed08
-        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
+        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; ifstream * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
         ;   Label: LAB_0043ed08
     ADD ESP,0x8                         ; 0043ed0d
     MOV EAX,EBX                         ; 0043ed10

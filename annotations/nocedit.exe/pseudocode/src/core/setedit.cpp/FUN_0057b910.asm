@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 at 0057ce3a
+;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057ce3a
 ;
 ; *****************************************************************************
 

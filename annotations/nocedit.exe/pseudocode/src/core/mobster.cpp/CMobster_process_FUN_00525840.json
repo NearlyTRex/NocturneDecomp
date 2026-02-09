@@ -82,37 +82,37 @@
       {
         "category": "other",
         "column": 8,
-        "line": 258,
+        "line": 261,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 258,
+        "line": 261,
         "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 287,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 287,
-        "message": "expected expression"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 401,
+        "line": 406,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 401,
+        "line": 406,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 419,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 419,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -121,19 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 1369,
-    "complexity_score": 746,
+    "complexity_score": 724,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 26,
-    "pseudocode_lines": 586,
-    "suspect_count": 14,
+    "pseudocode_lines": 589,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "stack_ref",
-      "unresolved_funcptr"
+      "stack_ref"
     ],
-    "total_lines": 1955
+    "total_lines": 1958
   },
   "cross_references": [],
   "function": {
@@ -1046,59 +1045,45 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 192,
+      "line": 195,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_10c.z * local_10c.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 199,
+      "line": 202,
       "match": "ABS",
       "text": "if ((ABS(local_14) < (float)0.52359877558333301) && (*(float *)(this_ptr->base).unk2 <= 0.0)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 255,
+      "line": 258,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 280,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 287,
+      "line": 292,
       "match": "SQRT",
       "text": "local_30 = SQRT(local_5c * local_5c + local_64 * local_64);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 303,
+      "line": 308,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 346,
+      "line": 351,
       "match": "ABS",
       "text": "if ((ABS(local_14) < (float)0.52359877558333301) &&",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 537,
-      "match": "code *",
-      "text": "(pCVar10 = (CMobster *)(**(code **)(*(int *)(iVar6 + 0x154) + 0x108))(),",
-      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

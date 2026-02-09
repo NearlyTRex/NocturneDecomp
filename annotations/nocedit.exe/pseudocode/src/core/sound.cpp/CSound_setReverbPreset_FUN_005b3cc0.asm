@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b082
-;   core_setedit.cpp_DementedFogEditor_FUN_00580730 at 00580f7e
+;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580f7e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_sound_cpp_0065281b

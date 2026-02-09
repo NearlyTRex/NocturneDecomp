@@ -45,7 +45,7 @@ void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004a8b30(CEmitter *this_ptr)
   if (g_CEmitterClassVersion < 7) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b5c0((char *)&this_ptr->wav_name,"wavName");
+  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->wav_name,"wavName");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->sfx_type,"sfxType");
   return;
 }

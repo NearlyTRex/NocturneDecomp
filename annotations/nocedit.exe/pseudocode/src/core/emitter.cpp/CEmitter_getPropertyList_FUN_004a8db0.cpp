@@ -69,7 +69,7 @@ core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0
                "CDemonActor",(CActorPropertyValidatorFunc *)0x0);
   }
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
-            (property_list,"Sound",&this_ptr->wav_name);
+            (property_list,"Sound",this_ptr->wav_name);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
             (property_list,"Sound type",2,g_EmitterSoundTypePairs,&this_ptr->sfx_type);
   return;

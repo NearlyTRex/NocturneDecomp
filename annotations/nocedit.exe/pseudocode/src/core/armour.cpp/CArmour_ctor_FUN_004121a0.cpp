@@ -25,7 +25,7 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
   fVar2 = 50.0f;
   (pCVar4->base).base.field54_0x2ddc = 0.6;
   (pCVar4->base).base.collision_cylinder_radius = 2.0;
-  pcVar6 = pCVar4->unk + 8;
+  pcVar6 = pCVar4->unk;
   (pCVar4->base).base.field56_0x2de4 = fVar2;
   (pCVar4->base).base.field57_0x2de8 = fVar3;
   do {

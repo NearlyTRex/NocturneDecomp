@@ -2,16 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 31,
+        "category": "other",
+        "column": 28,
         "line": 144,
-        "message": "use of undeclared identifier 'code'"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 38,
+        "category": "other",
+        "column": 76,
         "line": 144,
-        "message": "expected expression"
+        "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
@@ -121,20 +121,19 @@
   },
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 704,
+    "complexity_score": 689,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 21,
     "pseudocode_lines": 279,
-    "suspect_count": 39,
+    "suspect_count": 38,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
       "suspect_float",
       "unaffected_reg",
-      "unknown_field",
-      "unresolved_funcptr"
+      "unknown_field"
     ],
     "total_lines": 986
   },
@@ -534,13 +533,6 @@
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c + *pfStack_20;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 137,
-      "match": "code *",
-      "text": "(pfVar4 = (float *)(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xf4))(),",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",

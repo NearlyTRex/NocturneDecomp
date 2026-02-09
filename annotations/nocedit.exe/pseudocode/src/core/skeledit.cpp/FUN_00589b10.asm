@@ -29,7 +29,7 @@ section .text
     PUSH 0x10                           ; 00589b10
         ;   Label: core_skeledit.cpp_FUN_00589b10
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589b15
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH ESI                            ; 00589b1a
     CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 ; 00589b1b
         ;   XREF to: 005aaef0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0()

@@ -71,7 +71,7 @@ core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(CDemonCube *
         if (2 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_1c + -0x14)) {
           do {
             pCVar1 = this_ptr->vertex_buffer;
-            core_dcube_cpp_CDemonCubeTriangle_ctor_FUN_00455430
+            core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430
                       ((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + local_10),
                        pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_1c),
                        pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -4),

@@ -158,7 +158,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
         pcVar13[1] = cVar1;
         pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      time(&g_PodCreationTime);
+      _time(&g_PodCreationTime);
       engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xffffe7c8);
       iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650
                         ((CPodFile *)&stack0xffffe7c8,local_290);

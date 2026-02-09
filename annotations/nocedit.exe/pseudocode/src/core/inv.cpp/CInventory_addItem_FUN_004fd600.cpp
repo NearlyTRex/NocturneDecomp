@@ -1067,7 +1067,7 @@ LAB_004fe2af:
   pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_0000001c,g_CWeaponClassInfo.name_hash);
   if (pCVar5 != (CDemonActor *)0x0) {
-    pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar5,g_CMeleeClassInfo.name_hash);
+    pCVar8 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar5,g_CMeleeClassInfo.name_hash);
     if (pCVar8 != (CDemonActor *)0x0) {
       this_ptr->items[this_ptr->item_count] = in_stack_0000001c;
       pCVar3 = g_CDemonMissionPtr;

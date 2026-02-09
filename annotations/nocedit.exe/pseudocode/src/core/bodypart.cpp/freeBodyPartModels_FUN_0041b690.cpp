@@ -11,6 +11,6 @@ SBodyPartModel * __cdecl core_bodypart_cpp_freeBodyPartModels_FUN_0041b690(SBody
 {
   SBodyPartModel *pSVar1;
   
-  pSVar1 = __arrfini(objs,3,&g_SBodyPartModelTypeInfo);
+  pSVar1 = (SBodyPartModel *)__arrfini(objs,3,&g_SBodyPartModelTypeInfo);
   return pSVar1;
 }

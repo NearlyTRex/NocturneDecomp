@@ -11,7 +11,7 @@ void __cdecl core_skeledit_cpp_FUN_00589fc0(void)
 {
   void *in_stack_00000004;
   
-  __STK(0x10);
+  __STK();
   memset(in_stack_00000004,0,0x310);
   return;
 }

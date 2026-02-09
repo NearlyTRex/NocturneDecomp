@@ -55,7 +55,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c76a0(CFireEffect *this_ptr)
       }
       if (unaff_EBP != 0) {
         pCVar4 = core_fire_cpp_allocateBulletHole_FUN_004c6c10();
-        core_fire_cpp_CBulletHole_ctor_FUN_004bf7f0
+        core_fire_cpp_CBulletHole_init_FUN_004bf7f0
                   (pCVar4,in_stack_00000008,in_stack_0000000c,in_stack_00000014);
       }
     }

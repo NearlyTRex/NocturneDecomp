@@ -11,6 +11,6 @@ CGunFlame * __cdecl core_fire_cpp_freeGunFlames_FUN_004c9870(CGunFlame *objs)
 {
   CGunFlame *pCVar1;
   
-  pCVar1 = __arrfini(objs,500,&g_CGunFlameTypeInfo);
+  pCVar1 = (CGunFlame *)__arrfini(objs,500,&g_CGunFlameTypeInfo);
   return pCVar1;
 }

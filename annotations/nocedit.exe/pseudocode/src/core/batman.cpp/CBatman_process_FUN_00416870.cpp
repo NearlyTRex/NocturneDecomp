@@ -102,7 +102,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
     switch(iVar9) {
     case 0:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
-      if (*(int *)((this_ptr->base).unk2 + 4) == 0) {
+      if ((this_ptr->base).victim == (CDemonActor *)0x0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
         if (extraout_EAX != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -112,8 +112,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       else {
         iVar9 = core_actor_cpp_randomChance_FUN_0040cd10(0.25);
         if ((iVar9 != 0) &&
-           (iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                              (*(CDemonActor **)((this_ptr->base).unk2 + 4),"CHero"),
+           (iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0((this_ptr->base).victim,"CHero"),
            iVar9 != 0)) {
           iVar11 = 0;
           iVar9 = 0;
@@ -128,12 +127,12 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
           if (iVar9 == *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c)) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,0xd,1);
-            iVar9 = *(int *)((this_ptr->base).unk2 + 4);
+            pCVar14 = (this_ptr->base).victim;
             this_ptr->mist_state = 1;
-            if (&this_ptr->new_pos != (CVector3f *)(iVar9 + 0x20)) {
-              (this_ptr->new_pos).x = *(float *)(iVar9 + 0x20);
-              (this_ptr->new_pos).y = *(float *)(iVar9 + 0x24);
-              (this_ptr->new_pos).z = *(float *)(iVar9 + 0x28);
+            if ((CLocation *)&this_ptr->new_pos != &pCVar14->location) {
+              (this_ptr->new_pos).x = (pCVar14->location).position.x;
+              (this_ptr->new_pos).y = (pCVar14->location).position.y;
+              (this_ptr->new_pos).z = (pCVar14->location).position.z;
             }
             pCVar7 = (this_ptr->base).base.base.vtable._ub;
             this_ptr->vanish_timer = 0.0;
@@ -142,10 +141,13 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
             break;
           }
         }
-        iVar9 = *(int *)((this_ptr->base).unk2 + 4);
-        local_c8.x = *(float *)(iVar9 + 0x20) - (this_ptr->base).base.base.location.position.x;
-        local_c8.y = *(float *)(iVar9 + 0x24) - (this_ptr->base).base.base.location.position.y;
-        local_c8.z = *(float *)(iVar9 + 0x28) - (this_ptr->base).base.base.location.position.z;
+        pCVar14 = (this_ptr->base).victim;
+        local_c8.x = (pCVar14->location).position.x - (this_ptr->base).base.base.location.position.x
+        ;
+        local_c8.y = (pCVar14->location).position.y - (this_ptr->base).base.base.location.position.y
+        ;
+        local_c8.z = (pCVar14->location).position.z - (this_ptr->base).base.base.location.position.z
+        ;
         if (SQRT(local_c8.z * local_c8.z + local_c8.x * local_c8.x + local_c8.y * local_c8.y) <
             3.5f) {
           core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_c8);
@@ -164,7 +166,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
       fVar5 = 3.5f;
       pCVar3 = &(this_ptr->base).base.model;
-      if (*(int *)((this_ptr->base).unk2 + 4) == 0) {
+      if ((this_ptr->base).victim == (CDemonActor *)0x0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
         if (extraout_EAX_00 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -185,21 +187,25 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         local_110 = 0;
         local_108 = fVar5;
         local_10c = 0;
-        (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();
+        pCVar14 = (this_ptr->base).victim;
+        (*((pCVar14->vtable)._ub)->getPathMap)(pCVar14);
         iVar9 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0((CCharacter *)this_ptr);
         if (-1 < iVar9) {
           pCVar1 = &(this_ptr->base).base.base.location;
-          iVar9 = *(int *)((this_ptr->base).unk2 + 4);
-          local_8c = (pCVar1->position).x - *(float *)(iVar9 + 0x20);
-          local_84 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar9 + 0x28);
+          pCVar14 = (this_ptr->base).victim;
+          local_8c = (pCVar1->position).x - (pCVar14->location).position.x;
+          local_84 = (this_ptr->base).base.base.location.position.z - (pCVar14->location).position.z
+          ;
           local_88 = 0;
           local_38 = SQRT(local_84 * local_84 + local_8c * local_8c);
           local_34 = local_38;
           if ((local_38 <= local_2c) && (*(float *)(this_ptr->base).unk2 <= 0.0)) {
-            iVar9 = *(int *)((this_ptr->base).unk2 + 4);
-            local_5c.x = *(float *)(iVar9 + 0x20) - (pCVar1->position).x;
-            local_5c.y = *(float *)(iVar9 + 0x24) - (this_ptr->base).base.base.location.position.y;
-            local_5c.z = *(float *)(iVar9 + 0x28) - (this_ptr->base).base.base.location.position.z;
+            pCVar14 = (this_ptr->base).victim;
+            local_5c.x = (pCVar14->location).position.x - (pCVar1->position).x;
+            local_5c.y = (pCVar14->location).position.y -
+                         (this_ptr->base).base.base.location.position.y;
+            local_5c.z = (pCVar14->location).position.z -
+                         (this_ptr->base).base.base.location.position.z;
             core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_98,&local_5c);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_98.y - (this_ptr->base).base.base.orient.bank);
@@ -256,9 +262,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       break;
     case 9:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
-      if ((*(int *)((this_ptr->base).unk2 + 4) != 0) ||
+      if (((this_ptr->base).victim != (CDemonActor *)0x0) ||
          (iVar9 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                            (g_CEventListPtr,this_ptr->unk1 + 8), iVar9 != 0)) {
+                            (g_CEventListPtr,this_ptr->unk1), iVar9 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0xb,1);
         iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk2 + 4));
@@ -335,11 +341,13 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
           (pCVar1->position).x = (this_ptr->new_pos).x;
           (this_ptr->base).base.base.location.position.y = (this_ptr->new_pos).y;
           (this_ptr->base).base.base.location.position.z = (this_ptr->new_pos).z;
-          iVar9 = *(int *)((this_ptr->base).unk2 + 4);
-          if (iVar9 != 0) {
-            local_a4.x = *(float *)(iVar9 + 0x20) - (pCVar1->position).x;
-            local_a4.y = *(float *)(iVar9 + 0x24) - (this_ptr->base).base.base.location.position.y;
-            local_a4.z = *(float *)(iVar9 + 0x28) - (this_ptr->base).base.base.location.position.z;
+          pCVar14 = (this_ptr->base).victim;
+          if (pCVar14 != (CDemonActor *)0x0) {
+            local_a4.x = (pCVar14->location).position.x - (pCVar1->position).x;
+            local_a4.y = (pCVar14->location).position.y -
+                         (this_ptr->base).base.base.location.position.y;
+            local_a4.z = (pCVar14->location).position.z -
+                         (this_ptr->base).base.base.location.position.z;
             pCVar2 = &(this_ptr->base).base.base.orient;
             pCVar12 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 (&local_b0,&local_a4);

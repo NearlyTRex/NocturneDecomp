@@ -13,8 +13,7 @@ core_vehicle_cpp_CVehicle_getBoundingBox_FUN_005e86d0(CVehicle *this_ptr,CBoundi
   CVector3f *pCVar1;
   CKeyFramedModel *pCVar2;
   
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->unk1);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   pCVar1 = pCVar2->frame_bounds;
   (out_box->min).x = pCVar1->x;
   (out_box->min).y = pCVar1->y;

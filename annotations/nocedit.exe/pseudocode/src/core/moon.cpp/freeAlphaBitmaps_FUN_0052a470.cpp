@@ -11,6 +11,6 @@ CAlphaBitmap * __cdecl core_moon_cpp_freeAlphaBitmaps_FUN_0052a470(CAlphaBitmap 
 {
   CAlphaBitmap *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x1e,&g_CAlphaBitmapTypeInfo);
+  pCVar1 = (CAlphaBitmap *)__arrfini(objs,0x1e,&g_CAlphaBitmapTypeInfo);
   return pCVar1;
 }

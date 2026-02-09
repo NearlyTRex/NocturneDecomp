@@ -6,13 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 18,
+    "complexity_score": 33,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 18,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "suspect_float"
+    ],
     "total_lines": 62
   },
   "cross_references": [
@@ -104,5 +106,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 13,
+      "match": "4.2039e-45",
+      "text": "((this_ptr->weapon == (CDemonActor *)0x0 || (this_ptr->weapon[2].orient.pitch != 4.2039e-45))))",
+      "type": "suspect_float"
+    }
+  ]
 }

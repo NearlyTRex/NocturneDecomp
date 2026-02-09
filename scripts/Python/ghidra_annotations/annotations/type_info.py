@@ -584,6 +584,19 @@ def export_type_info(currentProgram, path):
                 except Exception as e:
                     log_info("Error processing WatcomTypeInfo at %s: %s" % (data.getAddress(), str(e)))
     log_info("Found %d WatcomTypeInfo structures" % len(watcom_typeinfo_map))
+
+    # Build a map of Ghidra struct/class names to their defined sizes
+    # Used to validate WatcomTypeInfo.instance_size against Ghidra definitions
+    ghidra_struct_sizes = {}
+    dtm = currentProgram.getDataTypeManager()
+    for dt in dtm.getAllDataTypes():
+        dt_name = dt.getName()
+        if dt_name and dt.getLength() > 0:
+            ghidra_struct_sizes[dt_name] = dt.getLength()
+
+    # Track size mismatches for final assertion
+    size_mismatches = []
+
     log_info("Scanning for type information strings")
     for data in listing.getDefinedData(True):
         if is_string_data_type_obj(data.getDataType()):
@@ -606,6 +619,20 @@ def export_type_info(currentProgram, path):
                             typeinfo_data = watcom_typeinfo_map[data_addr_str]
                             type_info_dict[type_name]["typeinfo_size"] = typeinfo_data["size"]
                             type_info_dict[type_name]["typeinfo_addr"] = typeinfo_data["typeinfo_addr"]
+
+                            # Validate: Ghidra struct size must match binary's instance_size
+                            # Only check game types (skip CRT/Watcom stdlib like strstreambuf)
+                            expected_size = typeinfo_data["size"]
+                            is_game_type = type_name in class_files or type_name in structure_files
+                            if expected_size > 0 and is_game_type and type_name in ghidra_struct_sizes:
+                                ghidra_size = ghidra_struct_sizes[type_name]
+                                if ghidra_size != expected_size:
+                                    msg = ("Size mismatch for %s: Ghidra=%d (0x%x), "
+                                           "WatcomTypeInfo=%d (0x%x)" %
+                                           (type_name, ghidra_size, ghidra_size,
+                                            expected_size, expected_size))
+                                    log_info("ERROR: " + msg)
+                                    size_mismatches.append(msg)
                     log_info("Found type info at %s: '%s'" % (data_addr, type_name))
 
                 # Look for Class::method references
@@ -734,6 +761,18 @@ def export_type_info(currentProgram, path):
     log_info("  %d types without addresses, %d with method references" % (len(types_without_addr), types_with_methods_no_addr))
     log_info("  %d types with parent information" % types_with_parents)
     log_info("  %d types with file information" % types_with_files)
+
+    # Assert no struct size mismatches
+    if size_mismatches:
+        log_info("=" * 60)
+        log_info("STRUCT SIZE MISMATCHES (%d):" % len(size_mismatches))
+        for msg in size_mismatches:
+            log_info("  " + msg)
+        log_info("=" * 60)
+        assert False, ("Struct size mismatch: %d type(s) have Ghidra sizes that "
+                        "don't match WatcomTypeInfo.instance_size in the binary. "
+                        "Fix the struct definitions in Ghidra before exporting.\n"
+                        + "\n".join(size_mismatches))
 
     # Export type info
     log_info("Exporting type info entries")

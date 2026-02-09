@@ -48,8 +48,8 @@
 ;
 ; XREF[3]:
 ;   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 at 0058a43f
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592f26
 ;   core_skeledit.cpp_FUN_0058c190 at 0058c235
-;   core_skeledit.cpp_FUN_00592690 at 00592f26
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_0064a2e7
@@ -84,7 +84,7 @@ section .text
     PUSH 0x25c                          ; 0058a4a0
         ;   Label: core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a4a5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058a4aa
     PUSH ESI                            ; 0058a4ab
     PUSH EDI                            ; 0058a4ac

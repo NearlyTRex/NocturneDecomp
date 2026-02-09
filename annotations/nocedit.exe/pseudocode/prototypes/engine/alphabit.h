@@ -5,7 +5,7 @@
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520
 // Address: 00410520
-void __cdecl CAlphaBitmap::ctor(CAlphaBitmap *this_ptr);
+CAlphaBitmap * __cdecl CAlphaBitmap::ctor(CAlphaBitmap *this_ptr);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540
 // Address: 00410540

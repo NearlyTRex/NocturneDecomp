@@ -1,7 +1,7 @@
 #pragma once
 
 // Enum: ECmdParmType
-typedef enum ECmdParmType {
+enum {
     PARM_TYPE_INT = 0,
     PARM_TYPE_FLOAT = 1,
     PARM_TYPE_TEXT = 2,
@@ -34,5 +34,6 @@ typedef enum ECmdParmType {
     PARM_TYPE_REL_OP = 29,
     PARM_TYPE_BODY_PART_LIST = 30,
     PARM_TYPE_INI_VARIABLE = 31
-} ECmdParmType;
+};
+typedef int ECmdParmType;
 

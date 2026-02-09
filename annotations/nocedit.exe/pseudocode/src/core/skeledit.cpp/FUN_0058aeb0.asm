@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 005929b5
 ;   core_skeledit.cpp_FUN_0058c190 at 0058c37c
-;   core_skeledit.cpp_FUN_00592690 at 005929b5
 ;
 ; Called Functions:
 ;   core_skeledit.cpp_FUN_0058ac80
@@ -25,7 +25,7 @@ section .text
     PUSH 0x40                           ; 0058aeb0
         ;   Label: core_skeledit.cpp_FUN_0058aeb0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058aeb5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBP                            ; 0058aeba
     SUB ESP,0x34                        ; 0058aebb
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0058aebe

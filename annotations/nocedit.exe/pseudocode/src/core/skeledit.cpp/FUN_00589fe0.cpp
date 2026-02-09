@@ -13,7 +13,7 @@ void __cdecl core_skeledit_cpp_FUN_00589fe0(void)
   _FILE *in_stack_00000008;
   byte auStack_c [4];
   
-  __STK(0x1c);
+  __STK();
   core_skeledit_cpp_FUN_00589fc0();
   _fscanf(in_stack_00000008,"%*[^\n]\n");
   _fscanf(in_stack_00000008,"%d\n",auStack_c);

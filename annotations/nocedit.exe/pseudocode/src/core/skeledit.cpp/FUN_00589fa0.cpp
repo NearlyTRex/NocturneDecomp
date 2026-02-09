@@ -11,7 +11,7 @@ int __cdecl core_skeledit_cpp_FUN_00589fa0(void)
 {
   int in_stack_00000004;
   
-  __STK(0xc);
+  __STK();
   core_skeledit_cpp_FUN_00589fc0();
   return in_stack_00000004;
 }

@@ -2,28 +2,118 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 124,
-        "message": "use of undeclared identifier 'code'"
+        "category": "missing_member",
+        "column": 23,
+        "line": 23,
+        "message": "no member named 'field_0x1fc34' in 'CStranger'"
       },
       {
-        "category": "syntax_error",
+        "category": "missing_member",
         "column": 28,
-        "line": 124,
-        "message": "expected expression"
+        "line": 86,
+        "message": "no member named 'field_0x1fc30' in 'CStranger'; did you mean 'field9_0x1fc30'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 135,
-        "message": "use of undeclared identifier 'code'"
+        "category": "missing_member",
+        "column": 27,
+        "line": 91,
+        "message": "no member named 'field_0x1fc30' in 'CStranger'; did you mean 'field9_0x1fc30'?"
       },
       {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 135,
-        "message": "expected expression"
+        "category": "missing_member",
+        "column": 69,
+        "line": 91,
+        "message": "no member named 'field_0x1fc30' in 'CStranger'; did you mean 'field9_0x1fc30'?"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 98,
+        "message": "statement requires expression of integer type ('float' invalid)"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 99,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 100,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 102,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 104,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 108,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 110,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 5,
+        "line": 111,
+        "message": "expected statement"
+      },
+      {
+        "category": "missing_member",
+        "column": 29,
+        "line": 116,
+        "message": "no member named 'field_0x1fc30' in 'CStranger'; did you mean 'field9_0x1fc30'?"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 120,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 120,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "missing_member",
+        "column": 29,
+        "line": 123,
+        "message": "no member named 'field_0x1fc30' in 'CStranger'; did you mean 'field9_0x1fc30'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 71,
+        "line": 123,
+        "message": "no member named 'field_0x1fc30' in 'CStranger'; did you mean 'field9_0x1fc30'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 27,
+        "line": 125,
+        "message": "no member named 'field_0x1fc34' in 'CStranger'"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 126,
+        "message": "indirection not permitted on operand of type 'void *'"
       }
     ],
     "success": false,
@@ -31,18 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 196,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 141,
-    "suspect_count": 4,
+    "pseudocode_lines": 129,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
       "suspect_float",
-      "unresolved_funcptr"
+      "unnamed_field"
     ],
-    "total_lines": 426
+    "total_lines": 414
   },
   "cross_references": [
     {
@@ -171,25 +261,116 @@
   },
   "suspects": [
     {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x1fc34",
+      "text": "*(uint *)&this_ptr->field_0x1fc34 = 0;",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
-      "line": 71,
+      "line": 68,
       "match": "9.80909e-45",
       "text": "else if (this_ptr_00[2].orient.pitch == 9.80909e-45) goto LAB_005c5f6e;",
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 117,
-      "match": "code *",
-      "text": "(iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xfc))(), iVar5 != 0))",
-      "type": "unresolved_funcptr"
+      "description": "Likely misinterpreted integer as float",
+      "line": 73,
+      "match": "4.2039e-45",
+      "text": "if (fVar2 == 4.2039e-45) {",
+      "type": "suspect_float"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 128,
-      "match": "code *",
-      "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0xf8))();",
-      "type": "unresolved_funcptr"
+      "description": "Auto-generated struct field name",
+      "line": 79,
+      "match": "field_0x1fc30",
+      "text": "if (*(int *)&this_ptr->field_0x1fc30 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 84,
+      "match": "field_0x1fc30",
+      "text": "*(uint *)&this_ptr->field_0x1fc30 = (uint)(*(int *)&this_ptr->field_0x1fc30 == 0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 84,
+      "match": "field_0x1fc30",
+      "text": "*(uint *)&this_ptr->field_0x1fc30 = (uint)(*(int *)&this_ptr->field_0x1fc30 == 0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 93,
+      "match": "7.00649e-45",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 95,
+      "match": "1.4013e-45",
+      "text": "case 1.4013e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 97,
+      "match": "2.8026e-45",
+      "text": "case 2.8026e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 101,
+      "match": "5.60519e-45",
+      "text": "case 5.60519e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 103,
+      "match": "9.80909e-45",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 109,
+      "match": "field_0x1fc30",
+      "text": "if ((*(int *)&this_ptr->field_0x1fc30 != 0) && (this_ptr->weapon[2].orient.pitch == 0.0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 116,
+      "match": "field_0x1fc30",
+      "text": "*(uint *)&this_ptr->field_0x1fc30 = (uint)(*(int *)&this_ptr->field_0x1fc30 == 0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 116,
+      "match": "field_0x1fc30",
+      "text": "*(uint *)&this_ptr->field_0x1fc30 = (uint)(*(int *)&this_ptr->field_0x1fc30 == 0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 118,
+      "match": "field_0x1fc34",
+      "text": "*(uint *)&this_ptr->field_0x1fc34 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 121,
+      "match": "field_0x1fc34",
+      "text": "*(uint *)&this_ptr->field_0x1fc34 = 1;",
+      "type": "unnamed_field"
     },
     {
       "call_site_count": 1,

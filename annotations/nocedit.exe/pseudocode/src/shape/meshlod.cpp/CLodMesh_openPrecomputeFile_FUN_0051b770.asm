@@ -16,8 +16,8 @@
 ; undefined        Stack[-0xc]:1  local_c
 ;
 ; XREF[6]:
+;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589d8d
 ;   core_skeledit.cpp_FUN_00589bb0 at 00589bc7
-;   core_skeledit.cpp_FUN_00589c20 at 00589d8d
 ;   core_skeledit.cpp_FUN_0058c190 at 0058d11e
 ;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50 at 00516d86
 ;   shape_meshlod.cpp_CLodMesh_loadPrecomputeFile_FUN_0051b6f0 at 0051b6fa

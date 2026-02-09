@@ -57,7 +57,7 @@ section .text
     PUSH 0x74                           ; 0058f120
         ;   Label: core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058f125
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058f12a
     PUSH ESI                            ; 0058f12b
     PUSH EDI                            ; 0058f12c

@@ -40,7 +40,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056b7e0 at 0056b7fe
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00570c70 at 00570c84
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 00575209
-;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 00580675
+;   core_setedit.cpp_CDemonSet_FUN_0057ae50 at 0057aeb7
 ;   ... and 3 more
 ;
 ; Referenced Globals:

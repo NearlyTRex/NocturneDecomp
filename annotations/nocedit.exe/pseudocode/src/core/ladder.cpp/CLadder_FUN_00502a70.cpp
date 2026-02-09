@@ -26,14 +26,14 @@ void __cdecl core_ladder_cpp_CLadder_FUN_00502a70(CLadder *this_ptr)
   CVector3f local_10;
   
   bVar6 = 0;
-  if (*(int *)this_ptr->master_actor == 0) {
+  if (this_ptr->master_actor == (CDemonActor *)0x0) {
     return;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_dc,(CVector3f *)this_ptr->unk1,(CVector3f *)(this_ptr->unk1 + 0xc));
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            (&local_ac,(CVector3f *)(*(int *)this_ptr->master_actor + 0x20),
-             (CVector3f *)(*(int *)this_ptr->master_actor + 0x30));
+            (&local_ac,&(this_ptr->master_actor->location).position,
+             (CVector3f *)&this_ptr->master_actor->orient);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_dc,&local_ac,&local_4c);
   pCVar4 = &local_4c;
   pCVar5 = &local_7c;

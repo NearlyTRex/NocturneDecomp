@@ -37,30 +37,30 @@ int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
   float local_14;
   
   if ((this_ptr->base).unk1 == 0) {
-    fVar9 = *(float *)(this_ptr->unk1 + 0xc) - in_stack_00000008;
-    *(float *)(this_ptr->unk1 + 0xc) = fVar9;
+    fVar9 = *(float *)(this_ptr->unk1 + 4) - in_stack_00000008;
+    *(float *)(this_ptr->unk1 + 4) = fVar9;
     if (0.0 < fVar9) {
-      *(int *)(this_ptr->unk1 + 8) = *(int *)(this_ptr->unk1 + 8) + 1;
+      *(int *)this_ptr->unk1 = *(int *)this_ptr->unk1 + 1;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
-      *(float *)(this_ptr->unk1 + 0xc) = local_14;
+      *(float *)(this_ptr->unk1 + 4) = local_14;
     }
     if (((this_ptr->base).base.model.part_visibility_flags
          [(this_ptr->base).base.carry_hands[1].secondary_bone_index] != 0) &&
        ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
-      if (0.0 < *(float *)(this_ptr->unk1 + 0x10)) {
-        fVar9 = *(float *)(this_ptr->unk1 + 0x10) - in_stack_00000008;
-        *(float *)(this_ptr->unk1 + 0x10) = fVar9;
+      if (0.0 < *(float *)(this_ptr->unk1 + 8)) {
+        fVar9 = *(float *)(this_ptr->unk1 + 8) - in_stack_00000008;
+        *(float *)(this_ptr->unk1 + 8) = fVar9;
         if (fVar9 < 0.0) {
-          this_ptr->unk1[0x10] = '\0';
-          this_ptr->unk1[0x11] = '\0';
-          this_ptr->unk1[0x12] = '\0';
-          this_ptr->unk1[0x13] = '\0';
+          this_ptr->unk1[8] = '\0';
+          this_ptr->unk1[9] = '\0';
+          this_ptr->unk1[10] = '\0';
+          this_ptr->unk1[0xb] = '\0';
           return 0;
         }
       }
       else {
         pCVar1 = &(this_ptr->base).base.base.location;
-        if (*(int *)(this_ptr->unk1 + 0x14) == 0) {
+        if (*(int *)(this_ptr->unk1 + 0xc) == 0) {
           iVar7 = 0;
           iVar8 = 0;
           local_24 = 0;
@@ -92,47 +92,48 @@ int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
           if (0 < local_24) {
             iVar8 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_24 + -1);
             uVar3 = auStack_a4[iVar8 + -1];
-            this_ptr->unk1[0x10] = '\0';
-            this_ptr->unk1[0x11] = '\0';
-            this_ptr->unk1[0x12] = ' ';
-            this_ptr->unk1[0x13] = -0x3e;
-            *(uint *)(this_ptr->unk1 + 0x14) = uVar3;
-            *(int *)(this_ptr->unk1 + 8) = *(int *)(this_ptr->unk1 + 8) + 1;
+            this_ptr->unk1[8] = '\0';
+            this_ptr->unk1[9] = '\0';
+            this_ptr->unk1[10] = ' ';
+            this_ptr->unk1[0xb] = -0x3e;
+            iVar8 = *(int *)this_ptr->unk1;
+            *(uint *)(this_ptr->unk1 + 0xc) = uVar3;
+            *(int *)this_ptr->unk1 = iVar8 + 1;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,1,1);
             return 1;
           }
         }
         else {
-          iVar8 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x14) + 0x154) + 0x8c))();
+          iVar8 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0xc) + 0x154) + 0x8c))();
           if (iVar8 != 0) {
-            this_ptr->unk1[0x14] = '\0';
-            this_ptr->unk1[0x15] = '\0';
-            this_ptr->unk1[0x16] = '\0';
-            this_ptr->unk1[0x17] = '\0';
-            this_ptr->unk1[0x10] = '\0';
-            this_ptr->unk1[0x11] = '\0';
-            this_ptr->unk1[0x12] = '\0';
-            this_ptr->unk1[0x13] = '\0';
+            this_ptr->unk1[0xc] = '\0';
+            this_ptr->unk1[0xd] = '\0';
+            this_ptr->unk1[0xe] = '\0';
+            this_ptr->unk1[0xf] = '\0';
+            this_ptr->unk1[8] = '\0';
+            this_ptr->unk1[9] = '\0';
+            this_ptr->unk1[10] = '\0';
+            this_ptr->unk1[0xb] = '\0';
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,1,1);
             return 0;
           }
-          fVar9 = (pCVar1->position).x - *(float *)(*(int *)(this_ptr->unk1 + 0x14) + 0x20);
+          fVar9 = (pCVar1->position).x - *(float *)(*(int *)(this_ptr->unk1 + 0xc) + 0x20);
           fVar4 = (this_ptr->base).base.base.location.position.z -
-                  *(float *)(*(int *)(this_ptr->unk1 + 0x14) + 0x28);
+                  *(float *)(*(int *)(this_ptr->unk1 + 0xc) + 0x28);
           fVar9 = (float)5 -
                   SQRT(fVar4 * fVar4 + fVar9 * fVar9) * (float)0.33333333333333298;
           if (fVar9 < 1.0) {
             fVar9 = 1.0;
           }
-          fVar9 = in_stack_00000008 * fVar9 + *(float *)(this_ptr->unk1 + 0x10);
+          fVar9 = in_stack_00000008 * fVar9 + *(float *)(this_ptr->unk1 + 8);
           iVar8 = -1;
-          *(float *)(this_ptr->unk1 + 0x10) = fVar9;
+          *(float *)(this_ptr->unk1 + 8) = fVar9;
           if ((fVar9 < 0.0) &&
-             (iVar7 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x14) + 0x154) + 0x7c))(),
+             (iVar7 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0xc) + 0x154) + 0x7c))(),
              iVar7 == 3)) {
-            pCVar2 = *(CDemonActor **)(this_ptr->unk1 + 0x14);
+            pCVar2 = *(CDemonActor **)(this_ptr->unk1 + 0xc);
             (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_88);
             uStack_28 = 0x3f000000;
             core_bodypart_cpp_FUN_0041b540();
@@ -153,14 +154,14 @@ int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
                       (&this_ptr_00->motion_controller,7,1);
             return 1;
           }
-          this_ptr->unk1[0x14] = '\0';
-          this_ptr->unk1[0x15] = '\0';
-          this_ptr->unk1[0x16] = '\0';
-          this_ptr->unk1[0x17] = '\0';
-          this_ptr->unk1[0x10] = '\0';
-          this_ptr->unk1[0x11] = '\0';
-          this_ptr->unk1[0x12] = -0x60;
-          this_ptr->unk1[0x13] = 'A';
+          this_ptr->unk1[0xc] = '\0';
+          this_ptr->unk1[0xd] = '\0';
+          this_ptr->unk1[0xe] = '\0';
+          this_ptr->unk1[0xf] = '\0';
+          this_ptr->unk1[8] = '\0';
+          this_ptr->unk1[9] = '\0';
+          this_ptr->unk1[10] = -0x60;
+          this_ptr->unk1[0xb] = 'A';
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,1,1);
         }

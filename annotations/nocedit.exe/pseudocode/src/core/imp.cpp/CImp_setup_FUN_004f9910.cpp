@@ -56,50 +56,50 @@ void __cdecl core_imp_cpp_CImp_setup_FUN_004f9910(CImp *this_ptr)
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"larm01",1);
-  *(int *)(this_ptr->unk + 0x14) = iVar1;
+  *(int *)(this_ptr->unk + 0xc) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l4arm01",1);
-  *(int *)(this_ptr->unk + 0x18) = iVar1;
+  *(int *)(this_ptr->unk + 0x10) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rarm01",1);
-  *(int *)(this_ptr->unk + 0x1c) = iVar1;
+  *(int *)(this_ptr->unk + 0x14) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r4arm01",1);
-  *(int *)(this_ptr->unk + 0x20) = iVar1;
+  *(int *)(this_ptr->unk + 0x18) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rthigh01",1);
-  *(int *)(this_ptr->unk + 0x24) = iVar1;
+  *(int *)(this_ptr->unk + 0x1c) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rshin01",1);
-  *(int *)(this_ptr->unk + 0x28) = iVar1;
+  *(int *)(this_ptr->unk + 0x20) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lthigh01",1);
-  *(int *)(this_ptr->unk + 0x2c) = iVar1;
+  *(int *)(this_ptr->unk + 0x24) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lshin01",1);
-  *(int *)(this_ptr->unk + 0x30) = iVar1;
+  *(int *)(this_ptr->unk + 0x28) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"ass01",1);
-  *(int *)(this_ptr->unk + 0x34) = iVar1;
+  *(int *)(this_ptr->unk + 0x2c) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"torso01",1);
-  *(int *)(this_ptr->unk + 0x38) = iVar1;
+  *(int *)(this_ptr->unk + 0x30) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"head01",1);
-  this_ptr->unk[8] = '\0';
-  this_ptr->unk[9] = '\0';
-  this_ptr->unk[10] = '\0';
-  this_ptr->unk[0xb] = '\0';
-  this_ptr->unk[0xc] = '\0';
-  this_ptr->unk[0xd] = '\0';
-  this_ptr->unk[0xe] = '\0';
-  this_ptr->unk[0xf] = '\0';
-  *(int *)(this_ptr->unk + 0x3c) = iVar1;
+  this_ptr->unk[0] = '\0';
+  this_ptr->unk[1] = '\0';
+  this_ptr->unk[2] = '\0';
+  this_ptr->unk[3] = '\0';
+  this_ptr->unk[4] = '\0';
+  this_ptr->unk[5] = '\0';
+  this_ptr->unk[6] = '\0';
+  this_ptr->unk[7] = '\0';
+  *(int *)(this_ptr->unk + 0x34) = iVar1;
   (this_ptr->base).base.carry_hands[0].bone_index = INT_02db89f8;
-  (this_ptr->base).base.carry_hands[0].secondary_bone_index = *(int *)(this_ptr->unk + 0x18);
+  (this_ptr->base).base.carry_hands[0].secondary_bone_index = *(int *)(this_ptr->unk + 0x10);
   (this_ptr->base).base.carry_hands[1].bone_index = INT_02db89fc;
-  (this_ptr->base).base.carry_hands[1].secondary_bone_index = *(int *)(this_ptr->unk + 0x20);
+  (this_ptr->base).base.carry_hands[1].secondary_bone_index = *(int *)(this_ptr->unk + 0x18);
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
-  *(float *)(this_ptr->unk + 0x10) = fVar2;
+  *(float *)(this_ptr->unk + 8) = fVar2;
   return;
 }

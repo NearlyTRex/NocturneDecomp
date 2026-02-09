@@ -2,14 +2,15 @@
 // Address: 004a7be0
 // Address Range: [[004a7be0, 004a7c2d]]
 // Convention: __cdecl
-// Signature: void * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint flags)
+// Signature: CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-void * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint flags)
+CElephantGun * __cdecl
+core_elephant_cpp_CElephantGun_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint flags)
 
 {
-  CWeapon *ptr;
+  CElephantGun *ptr;
   void *ptr_00;
   
   if ((flags & 4) != 0) {
@@ -17,7 +18,7 @@ void * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_004a7be0(CElephantGun *th
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  ptr = core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base,1);
+  ptr = (CElephantGun *)core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

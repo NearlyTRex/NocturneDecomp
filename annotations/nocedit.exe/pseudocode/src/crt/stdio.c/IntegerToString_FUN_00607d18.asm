@@ -13,7 +13,7 @@
 ;   crt_stdio.c_FormatFixedPoint_FUN_0060305c at 00603099
 ;   crt_stdio.c_FormatHexWithPadding_FUN_00602ff8 at 00603008
 ;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f9d2
-;   crt_time.c_strftime_FUN_006002d4 at 00600534
+;   crt_time.c__strftime_FUN_006002d4 at 00600534
 ;
 ; Called Functions:
 ;   crt_stdlib.c_itoa_FUN_00607cc0

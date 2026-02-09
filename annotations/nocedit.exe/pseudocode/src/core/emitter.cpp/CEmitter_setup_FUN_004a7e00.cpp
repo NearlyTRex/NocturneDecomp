@@ -19,10 +19,7 @@ void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004a7e00(CEmitter *this_ptr)
   if (this_ptr->dest_actor == 0) {
     this_ptr->dest_actor = (int)g_HeroActors[g_LocalHeroIndex];
   }
-  this_ptr->unk4[0x60] = '\0';
-  this_ptr->unk4[0x61] = '\0';
-  this_ptr->unk4[0x62] = '\0';
-  this_ptr->unk4[99] = '\0';
+  this_ptr->sfx_handle = 0;
   iVar1 = this_ptr->emitter_state;
   this_ptr->unk6[0x44] = '\0';
   this_ptr->unk6[0x45] = '\0';

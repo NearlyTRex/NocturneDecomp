@@ -11,6 +11,6 @@ CTire * __cdecl core_vehicle_cpp_freeTires_FUN_005e8dd0(CTire *objs)
 {
   CTire *pCVar1;
   
-  pCVar1 = __arrfini(objs,4,&g_CTireTypeInfo);
+  pCVar1 = (CTire *)__arrfini(objs,4,&g_CTireTypeInfo);
   return pCVar1;
 }

@@ -52,12 +52,12 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr)
   if (*(int *)(this_ptr->unk4 + 0x40) < 0) {
     return 0;
   }
-  fVar11 = *(float *)(this_ptr->unk1 + 0x10) - in_stack_00000008;
-  *(float *)(this_ptr->unk1 + 0x10) = fVar11;
+  fVar11 = *(float *)(this_ptr->unk1 + 8) - in_stack_00000008;
+  *(float *)(this_ptr->unk1 + 8) = fVar11;
   if (0.0 < fVar11) {
-    *(int *)(this_ptr->unk1 + 0xc) = *(int *)(this_ptr->unk1 + 0xc) + 1;
+    *(int *)(this_ptr->unk1 + 4) = *(int *)(this_ptr->unk1 + 4) + 1;
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
-    *(float *)(this_ptr->unk1 + 0x10) = local_14;
+    *(float *)(this_ptr->unk1 + 8) = local_14;
   }
   if ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {
     return 0;
@@ -65,20 +65,20 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr)
   if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  if (0.0 < *(float *)(this_ptr->unk1 + 0x14)) {
-    fVar11 = *(float *)(this_ptr->unk1 + 0x14) - in_stack_00000008;
-    *(float *)(this_ptr->unk1 + 0x14) = fVar11;
+  if (0.0 < *(float *)(this_ptr->unk1 + 0xc)) {
+    fVar11 = *(float *)(this_ptr->unk1 + 0xc) - in_stack_00000008;
+    *(float *)(this_ptr->unk1 + 0xc) = fVar11;
     if (0.0 <= fVar11) {
       return 0;
     }
-    this_ptr->unk1[0x14] = '\0';
-    this_ptr->unk1[0x15] = '\0';
-    this_ptr->unk1[0x16] = '\0';
-    this_ptr->unk1[0x17] = '\0';
+    this_ptr->unk1[0xc] = '\0';
+    this_ptr->unk1[0xd] = '\0';
+    this_ptr->unk1[0xe] = '\0';
+    this_ptr->unk1[0xf] = '\0';
     return 0;
   }
   pCVar1 = &(this_ptr->base).base.base.location;
-  if (*(int *)(this_ptr->unk1 + 0x18) == 0) {
+  if (*(int *)(this_ptr->unk1 + 0x10) == 0) {
     local_24 = 0;
     local_20 = 0;
     iVar7 = 0;
@@ -98,7 +98,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr)
         if (((local_14 != 0.0) &&
             (iVar8 = core_zombie_cpp_CZombie_FUN_005fbda0(this_ptr), iVar8 != 0)) &&
            ((iVar8 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar2,"CBodyPart"), iVar8 == 0
-            || ((pCVar2->unk1 & 3U) == (*(uint *)(this_ptr->unk1 + 0xc) & 3))))) {
+            || ((pCVar2->unk1 & 3U) == (*(uint *)(this_ptr->unk1 + 4) & 3))))) {
           CStack_80.z = (pCVar2->location).position.x - *unaff_ESI;
           fStack_74 = (pCVar2->location).position.y - unaff_ESI[1];
           fStack_74 = fStack_74 * fStack_74;
@@ -106,7 +106,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr)
           fStack_74 = fStack_74 * fStack_74;
           fVar11 = SQRT(fStack_70 * fStack_70 + CStack_80.z * CStack_80.z + fStack_74 * fStack_74);
           if (((float)5 <= fVar11) &&
-             (fVar11 <= *(float *)(this_ptr->unk1 + 8) * 15.0f)) {
+             (fVar11 <= *(float *)this_ptr->unk1 * 15.0f)) {
             *(float *)((int)afStack_124 + iVar7) = local_14;
             iVar10 = iVar7 + 4;
             *(CDemonActor **)((int)auStack_14c + iVar7) = pCVar2;
@@ -121,55 +121,54 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr)
       return 0;
     }
     iVar10 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_24 + -1);
-    *(uint *)(this_ptr->unk1 + 0x18) = auStack_14c[iVar10 + -5];
-    uVar4 = *(uint *)(this_ptr->unk1 + 0x18);
-    iVar7 = *(int *)(this_ptr->unk1 + 0xc);
+    *(uint *)(this_ptr->unk1 + 0x10) = auStack_14c[iVar10 + -5];
+    uVar4 = *(uint *)(this_ptr->unk1 + 0x10);
+    iVar7 = *(int *)(this_ptr->unk1 + 4);
     fVar11 = afStack_124[iVar10 + -5];
-    this_ptr->unk1[0x14] = '\0';
-    this_ptr->unk1[0x15] = '\0';
-    this_ptr->unk1[0x16] = ' ';
-    this_ptr->unk1[0x17] = -0x3e;
-    *(float *)(this_ptr->unk1 + 0x1c) = fVar11;
-    *(int *)(this_ptr->unk1 + 0xc) = iVar7 + 1;
+    this_ptr->unk1[0xc] = '\0';
+    this_ptr->unk1[0xd] = '\0';
+    this_ptr->unk1[0xe] = ' ';
+    this_ptr->unk1[0xf] = -0x3e;
+    *(float *)(this_ptr->unk1 + 0x14) = fVar11;
+    *(int *)(this_ptr->unk1 + 4) = iVar7 + 1;
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s is going to try to pick up %s\n",this_ptr,uVar4);
     return 1;
   }
-  iVar7 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x18) + 0x154) + 0x8c))();
+  iVar7 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x10) + 0x154) + 0x8c))();
   if (iVar7 != 0) {
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s can't pick up %s, sombody else beat me to it!\n",this_ptr,
-               *(uint *)(this_ptr->unk1 + 0x18));
-    this_ptr->unk1[0x18] = '\0';
-    this_ptr->unk1[0x19] = '\0';
-    this_ptr->unk1[0x1a] = '\0';
-    this_ptr->unk1[0x1b] = '\0';
-    this_ptr->unk1[0x14] = '\0';
-    this_ptr->unk1[0x15] = '\0';
-    this_ptr->unk1[0x16] = '\0';
-    this_ptr->unk1[0x17] = '\0';
+               *(uint *)(this_ptr->unk1 + 0x10));
+    this_ptr->unk1[0x10] = '\0';
+    this_ptr->unk1[0x11] = '\0';
+    this_ptr->unk1[0x12] = '\0';
+    this_ptr->unk1[0x13] = '\0';
+    this_ptr->unk1[0xc] = '\0';
+    this_ptr->unk1[0xd] = '\0';
+    this_ptr->unk1[0xe] = '\0';
+    this_ptr->unk1[0xf] = '\0';
     core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
     return 0;
   }
-  fVar11 = (pCVar1->position).x - *(float *)(*(int *)(this_ptr->unk1 + 0x18) + 0x20);
+  fVar11 = (pCVar1->position).x - *(float *)(*(int *)(this_ptr->unk1 + 0x10) + 0x20);
   fVar5 = (this_ptr->base).base.base.location.position.z -
-          *(float *)(*(int *)(this_ptr->unk1 + 0x18) + 0x28);
+          *(float *)(*(int *)(this_ptr->unk1 + 0x10) + 0x28);
   fVar11 = (float)5 - SQRT(fVar5 * fVar5 + fVar11 * fVar11) * (float)0.33333333333333298;
   if (fVar11 < 1.0) {
     fVar11 = 1.0;
   }
   iVar10 = -1;
-  *(float *)(this_ptr->unk1 + 0x14) = in_stack_00000008 * fVar11 + *(float *)(this_ptr->unk1 + 0x14)
-  ;
+  *(float *)(this_ptr->unk1 + 0xc) = in_stack_00000008 * fVar11 + *(float *)(this_ptr->unk1 + 0xc);
   iVar7 = core_zombie_cpp_CZombie_FUN_005fbd00(this_ptr);
-  if ((((-1 < iVar7) && (*(float *)(this_ptr->unk1 + 0x14) < 0.0)) &&
-      (iVar8 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x18) + 0x154) + 0x7c))(), iVar8 == 3
+  if ((((-1 < iVar7) && (*(float *)(this_ptr->unk1 + 0xc) < 0.0)) &&
+      (iVar8 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x10) + 0x154) + 0x7c))(), iVar8 == 3
       )) && (iVar8 = core_zombie_cpp_CZombie_FUN_005fbda0(this_ptr), iVar8 != 0)) {
-    uVar3 = *(uint *)(this_ptr->unk1 + 0x1c);
+    uVar3 = *(uint *)(this_ptr->unk1 + 0x14);
     if (uVar3 < 2) {
       if (uVar3 == 1) {
 LAB_005fb750:
-        pCVar2 = *(CDemonActor **)(this_ptr->unk1 + 0x18);
+        pCVar2 = *(CDemonActor **)(this_ptr->unk1 + 0x10);
         (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_e8);
         uStack_2c = 0x3f000000;
         core_bodypart_cpp_FUN_0041b540();
@@ -184,7 +183,7 @@ LAB_005fb750:
       }
       else {
 LAB_005fba18:
-        iVar10 = *(int *)(this_ptr->unk1 + 0x18);
+        iVar10 = *(int *)(this_ptr->unk1 + 0x10);
         if (&uStack_ac != (uint *)(iVar10 + 0x20)) {
           uStack_ac = *(uint *)(iVar10 + 0x20);
           uStack_a8 = *(uint *)(iVar10 + 0x24);
@@ -197,7 +196,7 @@ LAB_005fba18:
         if (uVar3 != 3) goto LAB_005fba18;
         goto LAB_005fb750;
       }
-      pCVar2 = *(CDemonActor **)(this_ptr->unk1 + 0x18);
+      pCVar2 = *(CDemonActor **)(this_ptr->unk1 + 0x10);
       (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,(CBoundingBox3D *)(auStack_104 + 4));
       uStack_30 = 0x3f000000;
       core_bodypart_cpp_FUN_0041b540();
@@ -238,15 +237,15 @@ LAB_005fba18:
   if (iVar10 < 0) {
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s can't pick up %s, giving up\n",this_ptr,
-               *(uint *)(this_ptr->unk1 + 0x18));
-    this_ptr->unk1[0x18] = '\0';
-    this_ptr->unk1[0x19] = '\0';
-    this_ptr->unk1[0x1a] = '\0';
-    this_ptr->unk1[0x1b] = '\0';
-    this_ptr->unk1[0x14] = '\0';
-    this_ptr->unk1[0x15] = '\0';
-    this_ptr->unk1[0x16] = -0x60;
-    this_ptr->unk1[0x17] = 'A';
+               *(uint *)(this_ptr->unk1 + 0x10));
+    this_ptr->unk1[0x10] = '\0';
+    this_ptr->unk1[0x11] = '\0';
+    this_ptr->unk1[0x12] = '\0';
+    this_ptr->unk1[0x13] = '\0';
+    this_ptr->unk1[0xc] = '\0';
+    this_ptr->unk1[0xd] = '\0';
+    this_ptr->unk1[0xe] = -0x60;
+    this_ptr->unk1[0xf] = 'A';
     core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
     return 0;
   }
@@ -255,8 +254,8 @@ LAB_005fba18:
   }
   engine_console_cpp_CConsole_printf_FUN_00441890
             (g_CConsolePtr,"%s beginning to pickup %s\n",this_ptr,
-             *(uint *)(this_ptr->unk1 + 0x18));
-  uVar3 = *(uint *)(this_ptr->unk1 + 0x1c);
+             *(uint *)(this_ptr->unk1 + 0x10));
+  uVar3 = *(uint *)(this_ptr->unk1 + 0x14);
   if (uVar3 < 2) {
     if (uVar3 != 1) {
 LAB_005fbae6:

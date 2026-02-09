@@ -13,7 +13,7 @@ void __cdecl core_skeledit_cpp_FUN_00589f40(void)
   char *in_stack_00000004;
   char *in_stack_00000008;
   
-  __STK(0x20);
+  __STK();
   pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
                      ((CPod *)g_CDemonPodPtr,in_stack_00000004,in_stack_00000008,(int *)0x0);
   if (pCVar1 == (CPodFile *)0x0) {

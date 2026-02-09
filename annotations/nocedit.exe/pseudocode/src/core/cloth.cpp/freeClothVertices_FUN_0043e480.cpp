@@ -11,6 +11,6 @@ SClothVertex * __cdecl core_cloth_cpp_freeClothVertices_FUN_0043e480(SClothVerte
 {
   SClothVertex *pSVar1;
   
-  pSVar1 = __arrfini(array,800,&g_SClothVertexTypeInfo);
+  pSVar1 = (SClothVertex *)__arrfini(array,800,&g_SClothVertexTypeInfo);
   return pSVar1;
 }

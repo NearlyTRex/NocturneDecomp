@@ -15,7 +15,7 @@ CLodVert * __cdecl core_skeledit_cpp_CLodVert_copy_FUN_00599550(CLodVert *this_p
   byte bVar4;
   
   bVar4 = 0;
-  __STK(0xc);
+  __STK();
   (this_ptr->position).x = (other->position).x;
   (this_ptr->position).y = (other->position).y;
   (this_ptr->position).z = (other->position).z;

@@ -36,7 +36,7 @@ engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0(SMRGLHeaderPrim
         pSVar5 = pSVar5 + 1;
       } while (iVar2 < iVar3);
     }
-    qsort
+    _qsort
               (g_RenderBufferSortArray,g_RenderBufferCount,4,
                engine_3d_c_qsortByRenderDepth_FUN_00407080);
     if (g_MMXSupported == 0) {

@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_skeledit.cpp_FUN_0058a2b0
+;   core_skeledit.cpp_CDeformableModel_FUN_0058a2b0
 ;   core_skeleton.cpp_CDeformableModel_ctor_FUN_0059a160
 ;   core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270
 ;   core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0
@@ -94,8 +94,8 @@ section .text
     PUSH EDX                            ; 004be0f7
     PUSH EBX                            ; 004be0f8
     MOV ESI,0x147                       ; 004be0f9
-    CALL core_skeledit.cpp_FUN_0058a2b0 ; 004be0fe
-        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058a2b0()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058a2b0 ; 004be0fe
+        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_FUN_0058a2b0(CDeformableModel * this_ptr, _FILE * file_handle)
     MOV ECX,0x629763                    ; 004be103 | = "..\\core\\fileman.cpp"
     ADD ESP,0x8                         ; 004be108
     MOV dword ptr [0x02f0d944],ESI      ; 004be10b | g_CurrentDebugLine

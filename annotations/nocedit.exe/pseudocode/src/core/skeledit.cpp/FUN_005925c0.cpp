@@ -2,38 +2,37 @@
 // Address: 005925c0
 // Address Range: [[005925c0, 00592668]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeledit_cpp_FUN_005925c0(void)
+// Signature: int __cdecl core_skeledit_cpp_FUN_005925c0(void *ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_skeledit_cpp_FUN_005925c0(void)
+int __cdecl core_skeledit_cpp_FUN_005925c0(void *ptr)
 
 {
   int iVar1;
-  char *in_stack_00000004;
   
-  __STK(0x10);
-  iVar1 = stricmp(in_stack_00000004,"skipTo");
+  __STK();
+  iVar1 = stricmp(ptr,"skipTo");
   if (iVar1 == 0) {
     return 1;
   }
-  iVar1 = stricmp(in_stack_00000004,"flowTo");
+  iVar1 = stricmp(ptr,"flowTo");
   if (iVar1 == 0) {
     return 2;
   }
-  iVar1 = stricmp(in_stack_00000004,"tweenPoseToPose");
+  iVar1 = stricmp(ptr,"tweenPoseToPose");
   if (iVar1 == 0) {
     return 3;
   }
-  iVar1 = stricmp(in_stack_00000004,"tweenPoseToMotion");
+  iVar1 = stricmp(ptr,"tweenPoseToMotion");
   if (iVar1 == 0) {
     return 4;
   }
-  iVar1 = stricmp(in_stack_00000004,"tweenMotionToPose");
+  iVar1 = stricmp(ptr,"tweenMotionToPose");
   if (iVar1 == 0) {
     return 5;
   }
-  iVar1 = stricmp(in_stack_00000004,"tweenMotionToMotion");
+  iVar1 = stricmp(ptr,"tweenMotionToMotion");
   if (iVar1 == 0) {
     return 6;
   }

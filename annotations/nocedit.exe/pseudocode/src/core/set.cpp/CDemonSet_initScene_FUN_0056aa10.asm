@@ -14,11 +14,11 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e292
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539184
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a73c
-;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 0058065a
-;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581aca
-;   core_setedit.cpp_CDemonSet_FUN_00583170 at 0058319a
-;   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 at 0057a963
-;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057f475
+;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057a963
+;   core_setedit.cpp_CDemonSet_FUN_0057b410 at 0057b4d1
+;   core_setedit.cpp_CDemonSet_FUN_0057b500 at 0057b5ea
+;   core_setedit.cpp_CDemonSet_FUN_0057b600 at 0057b8f1
+;   core_setedit.cpp_CDemonSet_FUN_0057bbe0 at 0057c07c
 ;   ... and 6 more
 ;
 ; Referenced Globals:

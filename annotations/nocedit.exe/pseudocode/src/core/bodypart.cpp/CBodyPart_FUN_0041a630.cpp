@@ -80,7 +80,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
   local_30 = (int)ROUND(dVar19);
   fVar13 = (float10)(float)local_a4._24_4_ * (float10)65536.0f;
   iVar10 = 0;
-  iVar8 = *(int *)(this_ptr->unk + 0x1c);
+  iVar8 = this_ptr->vertex_count;
   fStack_1d0 = 6.029206e-39;
   dVar19 = round((double)fVar14);
   fVar14 = (float10)dVar19;
@@ -110,7 +110,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
   if (0 < iVar8) {
     iVar8 = 0;
     do {
-      iVar1 = *(int *)(this_ptr->unk + 0x20);
+      iVar1 = this_ptr->unk2;
       lVar2 = (longlong)iStack_50 * (longlong)*(int *)(iVar1 + iVar8);
       lVar3 = (longlong)iStack_5c * (longlong)*(int *)(iVar1 + 4 + iVar8);
       lVar4 = (longlong)iStack_54 * (longlong)*(int *)(iVar1 + 8 + iVar8);
@@ -134,7 +134,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
       *(int *)(iVar1 + 4 + iVar8) = iStack_60;
       iVar10 = iVar10 + 1;
       iVar8 = iVar8 + 0xc;
-    } while (iVar10 < *(int *)(this_ptr->unk + 0x1c));
+    } while (iVar10 < this_ptr->vertex_count);
   }
   euler_angles = &(this_ptr->base).orient;
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
@@ -156,8 +156,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   iVar8 = 0;
-  if (0 < *(int *)(this_ptr->unk + 0x5f4)) {
-    pCVar6 = (CVector3f *)(this_ptr->unk + 0x5f8);
+  if (0 < *(int *)(this_ptr->unk5 + 0x5bc)) {
+    pCVar6 = (CVector3f *)(this_ptr->unk5 + 0x5c0);
     do {
       pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (&CStack_c8,(CVector3f *)(local_a4 + 0x1c),pCVar6);
@@ -173,11 +173,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
       pCVar6[4].x = pCVar7->y;
       pCVar6[4].y = pCVar7->z;
       pCVar6 = (CVector3f *)&pCVar6[0x39].y;
-    } while (iVar8 < *(int *)(this_ptr->unk + 0x5f4));
+    } while (iVar8 < *(int *)(this_ptr->unk5 + 0x5bc));
   }
   local_40 = 0;
-  if (0 < *(int *)(this_ptr->unk + 0x134)) {
-    pCVar6 = (CVector3f *)(this_ptr->unk + 0x138);
+  if (0 < *(int *)(this_ptr->unk5 + 0xfc)) {
+    pCVar6 = (CVector3f *)(this_ptr->unk5 + 0x100);
     do {
       pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (&CStack_c8,&local_7c,pCVar6);
@@ -200,7 +200,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
       }
       pCVar6 = (CVector3f *)&pCVar6[0x21].z;
       local_40 = local_40 + 1;
-    } while (local_40 < *(int *)(this_ptr->unk + 0x134));
+    } while (local_40 < *(int *)(this_ptr->unk5 + 0xfc));
   }
   return;
 }

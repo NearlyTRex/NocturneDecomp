@@ -23,7 +23,7 @@ engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size)
     g_CurrentLineNumber = 0x2e3;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_60);
   }
-  buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250(model_size + 4,"..\\engine\\model.c",0x2e6)
+  buffer = (SMRGLHeaderExtended *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(model_size + 4,"..\\engine\\model.c",0x2e6)
   ;
   if (buffer == (SMRGLHeaderExtended *)0x0) {
     _sprintf(local_60,"Out of partial model mem : %s",filename);

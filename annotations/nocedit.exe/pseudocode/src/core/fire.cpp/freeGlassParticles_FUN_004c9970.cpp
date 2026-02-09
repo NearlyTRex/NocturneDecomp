@@ -11,6 +11,6 @@ CGlassParticle * __cdecl core_fire_cpp_freeGlassParticles_FUN_004c9970(CGlassPar
 {
   CGlassParticle *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x100,&g_CGlassParticleTypeInfo);
+  pCVar1 = (CGlassParticle *)__arrfini(objs,0x100,&g_CGlassParticleTypeInfo);
   return pCVar1;
 }

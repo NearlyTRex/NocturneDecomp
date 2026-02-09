@@ -49,7 +49,6 @@ typedef struct strstreambase {
     strstreambase_core _strstreambase_core;
     char padding[4];
     ios _ios;
-    int unknown;
 } strstreambase;
 
 // Structure: strstreambuf_vtable

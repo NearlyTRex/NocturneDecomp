@@ -14,10 +14,10 @@
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c6b9
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a79c
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b4a2
+;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057aad8
+;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057dd6a
+;   core_setedit.cpp_CDemonSet_FUN_0057fd00 at 0057fe95
 ;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581e15
-;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583add
-;   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 at 0057aad8
-;   core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00 at 0057fe95
 ;   ... and 1 more
 ;
 ; Referenced Globals:

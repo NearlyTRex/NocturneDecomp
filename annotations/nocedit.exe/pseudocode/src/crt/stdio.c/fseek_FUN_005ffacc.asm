@@ -15,8 +15,8 @@
 ;   core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0 at 00494ef6
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e14ae
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579907
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592ba0
 ;   core_skeledit.cpp_FUN_0058bd00 at 0058be34
-;   core_skeledit.cpp_FUN_00592690 at 00592ba0
 ;   crt_stdio.c_OpenFileAndInitialize_FUN_0060190c at 00601a06
 ;   engine_dosio.c_getFile_FUN_00481a50 at 00481b1b
 ;   ... and 23 more

@@ -71,7 +71,7 @@ section .text
     PUSH 0xe4                           ; 0060f39c
         ;   Label: crt_process.c_spawnvp_FUN_0060f39c
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0060f3a1
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0060f3a6
     PUSH ESI                            ; 0060f3a7
     PUSH EDI                            ; 0060f3a8

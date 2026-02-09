@@ -11,7 +11,7 @@ void __cdecl engine_texture_cpp_freeTextureCache_FUN_005dd7a0(void)
 {
   CTextureCache *ptr;
   
-  engine_texture_cpp_CTextureCache_dtor_FUN_005dcb20(g_TextureCacheInstance);
+  engine_texture_cpp_CTextureCache_reset_FUN_005dcb20(g_TextureCacheInstance);
   ptr = g_TextureCacheInstance;
   g_CurrentDebugLine = 0x284;
   g_CurrentDebugFilename = "..\\engine\\texture.cpp";
@@ -19,7 +19,7 @@ void __cdecl engine_texture_cpp_freeTextureCache_FUN_005dd7a0(void)
     g_TextureCacheInstance = (CTextureCache *)0x0;
     return;
   }
-  engine_texture_cpp_CTextureCache_free_FUN_005dcb30(g_TextureCacheInstance);
+  engine_texture_cpp_CTextureCache_freeTextures_FUN_005dcb30(g_TextureCacheInstance);
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   g_TextureCacheInstance = (CTextureCache *)0x0;
   return;

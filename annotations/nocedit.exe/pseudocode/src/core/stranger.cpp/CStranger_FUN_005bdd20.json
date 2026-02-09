@@ -3,86 +3,92 @@
     "errors": [
       {
         "category": "other",
+        "column": 17,
+        "line": 40,
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
         "column": 30,
-        "line": 59,
+        "line": 58,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "incompatible_types",
         "column": 52,
-        "line": 62,
+        "line": 61,
         "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 67,
+        "line": 66,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 70,
+        "line": 69,
         "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 71,
+        "line": 70,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "incompatible_types",
         "column": 56,
-        "line": 74,
+        "line": 73,
         "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 88,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 36,
-        "line": 88,
-        "message": "expected expression"
+        "category": "other",
+        "column": 65,
+        "line": 92,
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 102,
+        "line": 101,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 102,
+        "line": 101,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 103,
+        "line": 102,
         "message": "C-style cast from 'char *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 157,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 75,
-        "line": 196,
+        "line": 191,
         "message": "use of undeclared identifier 'stack0xffffff50'"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 197,
+        "line": 192,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 208,
+        "line": 203,
         "message": "use of undeclared identifier 'stack0xffffff50'"
       }
     ],
@@ -91,22 +97,21 @@
   },
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 632,
+    "complexity_score": 475,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
-    "pseudocode_lines": 297,
-    "suspect_count": 30,
+    "pseudocode_lines": 285,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
       "stack_ref",
-      "suspect_float",
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 876
+    "total_lines": 864
   },
   "cross_references": [
     {
@@ -546,188 +551,90 @@
     {
       "description": "Unresolved stack parameter",
       "line": 15,
-      "match": "in_stack_ffffff34",
-      "text": "float in_stack_ffffff34;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
       "match": "in_stack_ffffff48",
       "text": "char *in_stack_ffffff48;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 81,
-      "match": "code *",
-      "text": "iVar3 = (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 4) + 0x154) + 0x3c))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 85,
-      "match": "in_stack_ffffff34",
-      "text": "(*pCVar1->handleFootstep)((CDemonActor *)this_ptr,pCVar4,iVar3,in_stack_ffffff34);",
+      "match": "in_stack_ffffff48",
+      "text": "((CDemonActor *)this_ptr,pCVar4,iVar3,(float)in_stack_ffffff48);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_ffffff34",
-      "text": "in_stack_ffffff34 = 8.436624e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 91,
-      "match": "8.436624e-39",
-      "text": "in_stack_ffffff34 = 8.436624e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 95,
+      "line": 94,
       "match": "unaff_EBP",
       "text": "(**(code **)(unaff_EBP + 0x20))",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 95,
+      "line": 94,
       "match": "code *",
       "text": "(**(code **)(unaff_EBP + 0x20))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 95,
       "match": "in_stack_ffffff48",
       "text": "((CDemonActor *)this_ptr,pCVar4,iVar3,(float)in_stack_ffffff48);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_ffffff34",
-      "text": "in_stack_ffffff34 = 8.437039e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 109,
-      "match": "8.437039e-39",
-      "text": "in_stack_ffffff34 = 8.437039e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 128,
+      "line": 126,
       "match": "in_stack_ffffff48",
       "text": "in_stack_ffffff48 = pCVar7->actor_name, iVar5 == 4)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 132,
       "match": "in_stack_ffffff48",
       "text": "in_stack_ffffff48 = &g_CEditorToolsPtr->unk;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_ffffff34",
-      "text": "in_stack_ffffff34 = 8.436913e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 158,
-      "match": "8.436913e-39",
-      "text": "in_stack_ffffff34 = 8.436913e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 189,
+      "line": 184,
       "match": "&stack0xffffff50",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff50);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 201,
+      "line": 196,
       "match": "&stack0xffffff50",
       "text": "(local_18,(SDamageInfo *)&stack0xffffff50);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 204,
+      "line": 199,
       "match": "unaff_EBP",
       "text": "unaff_EBP = (int)ROUND(dVar6);",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 204,
+      "line": 199,
       "match": "ROUND",
       "text": "unaff_EBP = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 205,
-      "match": "in_stack_ffffff34",
-      "text": "in_stack_ffffff34 = 8.438212e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 205,
-      "match": "8.438212e-39",
-      "text": "in_stack_ffffff34 = 8.438212e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 207,
+      "line": 201,
       "match": "in_stack_ffffff48",
       "text": "in_stack_ffffff48 = \"kick1.wav\";",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 255,
-      "match": "in_stack_ffffff34",
-      "text": "in_stack_ffffff34 = 8.43738e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 255,
-      "match": "8.43738e-39",
-      "text": "in_stack_ffffff34 = 8.43738e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 266,
-      "match": "in_stack_ffffff34",
-      "text": "in_stack_ffffff34 = 8.438443e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 266,
-      "match": "8.438443e-39",
-      "text": "in_stack_ffffff34 = 8.438443e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 296,
+      "line": 284,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 <= 0.0) {",
       "type": "stack_param"

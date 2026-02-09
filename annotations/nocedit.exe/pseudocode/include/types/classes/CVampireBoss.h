@@ -12,7 +12,6 @@ struct CDemonActor;
 // Ghidra size: 0xce920 (846112 bytes)
 typedef struct CVampireBoss {
     CEnemy base; // 0x0
-    char unk1[8]; // 0xbeb4
     CDeformableModelInstance model; // 0xbebc
     char unk2[785232]; // 0xe170
     int form; // 0xcdcc0

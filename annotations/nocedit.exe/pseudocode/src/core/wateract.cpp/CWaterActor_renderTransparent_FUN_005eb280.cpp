@@ -68,7 +68,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
         } while (iVar6 < *(int *)this_ptr->unk5);
       }
       primitive_array = (SMRGLPrimitiveQuad *)(this_ptr->unk5 + 0x7d10);
-      if ((int)this_ptr->opacity < 0xfde9) {
+      if (this_ptr->opacity < 0xfde9) {
         iVar6 = 0;
         if (0 < *(int *)(this_ptr->unk5 + 0x2af9c)) {
           do {

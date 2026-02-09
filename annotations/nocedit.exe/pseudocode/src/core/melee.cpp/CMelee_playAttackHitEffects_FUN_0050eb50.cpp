@@ -13,7 +13,7 @@ core_melee_cpp_CMelee_playAttackHitEffects_FUN_0050eb50
 {
   CDemonActor *pCVar1;
   
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(victim,g_CCharacterClassInfo.name_hash);
+  pCVar1 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(victim,g_CCharacterClassInfo.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
     core_melee_cpp_CMelee_FUN_0050ebe0(this_ptr);
     if (attack_flags == 1) {

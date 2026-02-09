@@ -1,27 +1,68 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 14,
+        "message": "no matching function for call to '__STK'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 15,
+        "message": "no matching function for call to 'strcasecmp'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 19,
+        "message": "no matching function for call to 'strcasecmp'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 23,
+        "message": "no matching function for call to 'strcasecmp'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 27,
+        "message": "no matching function for call to 'strcasecmp'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 31,
+        "message": "no matching function for call to 'strcasecmp'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 35,
+        "message": "no matching function for call to 'strcasecmp'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 106,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 31,
-    "suspect_count": 7,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 112
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 111
   },
   "cross_references": [
     {
       "addr": "00592690",
       "from_addr": "00593c46",
-      "name": "core_skeledit.cpp_FUN_00592690",
+      "name": "core_skeledit.cpp_CSkeleton_FUN_00592690",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -35,7 +76,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_FUN_005925c0",
-    "signature": "int __cdecl core_skeledit_cpp_FUN_005925c0(void)"
+    "signature": "int __cdecl core_skeledit_cpp_FUN_005925c0(void *ptr)"
   },
   "function_calls": [
     {
@@ -111,62 +152,20 @@
     "pcode_op_count": 250
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"skipTo\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"flowTo\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"tweenPoseToPose\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"tweenPoseToMotion\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"tweenMotionToPose\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = stricmp(in_stack_00000004,\"tweenMotionToMotion\");",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

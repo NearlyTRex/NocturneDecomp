@@ -17,7 +17,7 @@ core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Adding files for %s to extract list...");
   _fprintf((file_manager_ptr->base).file_ptr,"models\\%s\n",model_filename);
-  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x9000,"..\\core\\fileman.cpp",0x143);
+  this_ptr = (CDeformableModel *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x9000,"..\\core\\fileman.cpp",0x143);
   pCVar1 = (CDeformableModel *)0x0;
   if (this_ptr != (CDeformableModel *)0x0) {
     pCVar1 = core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(this_ptr);
@@ -28,7 +28,7 @@ core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
   }
   core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(pCVar1,model_filename);
-  core_skeledit_cpp_FUN_0058a2b0();
+  core_skeledit_cpp_CDeformableModel_FUN_0058a2b0(pCVar1,(file_manager_ptr->base).file_ptr);
   g_CurrentDebugLine = 0x147;
   g_CurrentDebugFilename = "..\\core\\fileman.cpp";
   if (pCVar1 == (CDeformableModel *)0x0) {

@@ -15,7 +15,7 @@ int __cdecl core_skeledit_cpp_FUN_0058ac30(void)
   int *in_stack_00000004;
   char *in_stack_00000008;
   
-  __STK(0x1c);
+  __STK();
   iVar2 = 0;
   if (0 < *in_stack_00000004) {
     str1 = in_stack_00000004 + 1;

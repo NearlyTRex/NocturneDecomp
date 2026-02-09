@@ -11,7 +11,7 @@
 ;   core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0 at 0044c111
 ;   core_game.cpp_CGame_setGameRes_FUN_004dade0 at 004dae7d
 ;   core_set.cpp_CDemonSet_FUN_0056b7e0 at 0056b7ea
-;   core_setedit.cpp_UserInputCreate_FUN_0057d660 at 0057d9a2
+;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057d9a2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_00619eda

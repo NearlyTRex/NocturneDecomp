@@ -12,10 +12,10 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(CZombie *this_ptr)
   CCharacter_full_vtable *pCVar1;
   
   pCVar1 = (this_ptr->base).base.base.vtable._uc;
-  this_ptr->unk1[0x18] = '\0';
-  this_ptr->unk1[0x19] = '\0';
-  this_ptr->unk1[0x1a] = '\0';
-  this_ptr->unk1[0x1b] = '\0';
+  this_ptr->unk1[0x10] = '\0';
+  this_ptr->unk1[0x11] = '\0';
+  this_ptr->unk1[0x12] = '\0';
+  this_ptr->unk1[0x13] = '\0';
   (*(pCVar1->_uc).cfunc21)();
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
   return;

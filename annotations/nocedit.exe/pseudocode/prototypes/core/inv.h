@@ -25,7 +25,7 @@ int __cdecl loadItem(SInventoryItemInfo *item_info,_FILE *file_handle);
 
 // Original: core_inv.cpp_CInventory_ctor_FUN_004fd020
 // Address: 004fd020
-void __cdecl CInventory::ctor(CInventory *this_ptr);
+CInventory * __cdecl CInventory::ctor(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_dtor_FUN_004fd0c0
 // Address: 004fd0c0

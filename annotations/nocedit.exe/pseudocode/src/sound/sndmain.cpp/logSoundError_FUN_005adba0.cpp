@@ -30,10 +30,10 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
     return;
   }
   _fprintf(file,"----------------------------------------------------------------\n");
-  time(&local_c);
+  _time(&local_c);
   _fprintf(file,"Msg: %s\n",local_528);
   timeptr = _localtime(&local_c);
-  pcVar1 = asctime(timeptr);
+  pcVar1 = _asctime(timeptr);
   _fprintf(file,"Time: %s",pcVar1);
   pcVar1 = getenv("USERNAME");
   if (pcVar1 != (char *)0x0) {

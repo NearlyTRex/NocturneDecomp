@@ -245,7 +245,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   int local_18;
   
   bVar30 = 0;
-  __STK(0xa228);
+  __STK();
   if (*in_stack_00000004 != 1) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0xbc8;

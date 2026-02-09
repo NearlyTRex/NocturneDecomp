@@ -34,14 +34,14 @@ core_cow_cpp_CZombieCow_processDamage_FUN_00444b40(CZombieCow *this_ptr,SDamageI
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             (&this_ptr_00->motion_controller,desired_state_index,1);
 LAB_00444b80:
-  core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)(this_ptr->unk + 0x10));
+  core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)(this_ptr->unk + 8));
   if (extraout_EAX != 0) {
     core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
     return;
   }
   uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"cow?.wav");
-  *(uint *)(this_ptr->unk + 0x10) = uVar3;
+  *(uint *)(this_ptr->unk + 8) = uVar3;
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;
 }

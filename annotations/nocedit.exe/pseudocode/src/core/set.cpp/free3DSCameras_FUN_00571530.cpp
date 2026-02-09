@@ -11,6 +11,6 @@ C3DSCamera * __cdecl core_set_cpp_free3DSCameras_FUN_00571530(C3DSCamera *objs)
 {
   C3DSCamera *pCVar1;
   
-  pCVar1 = __arrfini(objs,0xfa,&g_C3DSCameraTypeInfo);
+  pCVar1 = (C3DSCamera *)__arrfini(objs,0xfa,&g_C3DSCameraTypeInfo);
   return pCVar1;
 }

@@ -11,6 +11,6 @@ STrainNoise * __cdecl core_sound_cpp_freeTrainNoises_FUN_005b3e50(STrainNoise *o
 {
   STrainNoise *pSVar1;
   
-  pSVar1 = __arrfini(objs,10,&g_STrainNoiseTypeInfo);
+  pSVar1 = (STrainNoise *)__arrfini(objs,10,&g_STrainNoiseTypeInfo);
   return pSVar1;
 }

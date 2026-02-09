@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   crt_time.c_asctime_FUN_00601768 at 00601777
+;   crt_time.c__asctime_FUN_00601768 at 00601777
 ;
 ; Referenced Globals:
 ;   char[12] g_MonthInitial

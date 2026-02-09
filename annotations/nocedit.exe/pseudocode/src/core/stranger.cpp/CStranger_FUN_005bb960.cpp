@@ -204,7 +204,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
     }
   }
   if (((this_ptr->base).ladder_to_climb != (CDemonActor *)0x0) ||
-     (*(int *)(this_ptr->unk5 + 4) != 0)) {
+     (this_ptr->ladder_to_descend != (CDemonActor *)0x0)) {
     bVar14 = false;
     iStack_80 = 0;
     iStack_24 = 0;
@@ -318,7 +318,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
   }
   iStack_60 = 1;
   if ((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0) {
-    if (*(int *)(this_ptr->unk5 + 4) == 0) {
+    if (this_ptr->ladder_to_descend == (CDemonActor *)0x0) {
       iVar20 = *(int *)(this_ptr->base).unk3;
       if (iVar20 == 0) {
         pCVar10 = (this_ptr->base).base.grabbed_by;
@@ -393,7 +393,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                     *(float *)(this_ptr->unk3 + 0x10) = fVar9 - fVar6;
                     (this_ptr->base).base.field6_0x241c.x =
                          fVar18 * in_stack_00000008 * (fVar21 + (float)pCStack_7c) + fVar5;
-                    if ((iVar20 != 0) && ((this_ptr->base).base.field47_0x2a8c != 0xe)) {
+                    if ((iVar20 != 0) && ((this_ptr->base).base.layer_action_index != 0xe)) {
                       switch(iStack_58) {
                       case 0:
                       case 2:
@@ -663,16 +663,13 @@ LAB_005bd19f:
                          (&(this_ptr->base).base.model.motion_controller,0x2b);
       if (0.0 < fVar18) {
         if ((this_ptr->base).base.base.location.position.y <
-            *(float *)(*(int *)(this_ptr->unk5 + 4) + 0x24) + 1.0) {
+            (this_ptr->ladder_to_descend->location).position.y + 1.0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0,1);
         }
       }
       else {
-        this_ptr->unk5[4] = '\0';
-        this_ptr->unk5[5] = '\0';
-        this_ptr->unk5[6] = '\0';
-        this_ptr->unk5[7] = '\0';
+        this_ptr->ladder_to_descend = (CDemonActor *)0x0;
       }
       if (0.0 < *(float *)(this_ptr->unk7 + 0x10)) {
         if (*(float *)(this_ptr->unk7 + 0x10) <= in_stack_00000008) {
@@ -784,7 +781,7 @@ switchD_005bd22e_caseD_6:
     *(uint *)(this_ptr->unk6 + 0x3c) = *(uint *)(this_ptr->unk6 + 0x40);
   }
   if (((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0) &&
-     (*(int *)(this_ptr->unk5 + 4) == 0)) {
+     (this_ptr->ladder_to_descend == (CDemonActor *)0x0)) {
     if (iStack_80 == 0) goto LAB_005bc1a6;
     pCStack_5c = &(this_ptr->base).base.model.motion_controller;
     pSVar19 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(pCStack_5c);
@@ -1116,8 +1113,8 @@ LAB_005bc1a6:
     core_stranger_cpp_CStranger_FUN_005c5b90(this_ptr);
   }
   core_stranger_cpp_CStranger_FUN_005be520(this_ptr);
-  if ((((this_ptr->base).aim_mode == 2) && (*(int *)(this_ptr->unk5 + 8) != 0)) &&
-     (*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x2e0) == 0)) {
+  if ((((this_ptr->base).aim_mode == 2) && (this_ptr->weapon != (CDemonActor *)0x0)) &&
+     (this_ptr->weapon[2].orient.pitch == 0.0)) {
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
               (&(this_ptr->base).base.model);
     core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
@@ -1160,7 +1157,7 @@ LAB_005bc1a6:
   core_stranger_cpp_CStranger_FUN_005c5f10(this_ptr);
   core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(&(this_ptr->base).inventory);
   core_stranger_cpp_CStranger_FUN_005c6590(this_ptr);
-  if ((*(int *)(this_ptr->unk5 + 8) != 0) && (*(int *)(*(int *)(this_ptr->unk5 + 8) + 0xfc) != 0)) {
+  if ((this_ptr->weapon != (CDemonActor *)0x0) && (this_ptr->weapon->is_transparent != 0)) {
     (this_ptr->base).base.base.is_transparent = 1;
   }
   iVar20 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk6 + 0xc));

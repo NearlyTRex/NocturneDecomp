@@ -2,18 +2,19 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEdScrollBar.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x3360000
 // =============================================================================
 
+// CEdScrollBar
+extern CEdScrollBar CEdScrollBar_03364ce0;
+
 // int
 extern int g_SavedWindowWidth;
 extern int g_SavedWindowHeight;
 extern int g_VDIsActorAreaInvalid;
-extern int INT_03364ce0;
-extern int INT_03364ce4;
-extern int INT_03364ce8;
 
 // int[250]
 extern int g_VDCameraSortIndices[250];

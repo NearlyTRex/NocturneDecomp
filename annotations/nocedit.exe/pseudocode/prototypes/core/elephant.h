@@ -41,4 +41,4 @@ void __cdecl CElephantGun(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_dtor_FUN_004a7be0
 // Address: 004a7be0
-void * __cdecl CElephantGun::dtor(CElephantGun *this_ptr,uint flags);
+CElephantGun * __cdecl CElephantGun::dtor(CElephantGun *this_ptr,uint flags);

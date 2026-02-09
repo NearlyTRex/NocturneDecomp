@@ -29,8 +29,8 @@
 ;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0 at 00494d50
 ;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053ec01
 ;   core_netgame.cpp_CNetGame_FUN_0053fd00 at 005400e0
-;   core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0 at 00576f45
-;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057f55f
+;   core_setedit.cpp_CDemonSet_FUN_00576da0 at 00576f45
+;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057f55f
 ;   ... and 15 more
 ;
 ; Referenced Globals:

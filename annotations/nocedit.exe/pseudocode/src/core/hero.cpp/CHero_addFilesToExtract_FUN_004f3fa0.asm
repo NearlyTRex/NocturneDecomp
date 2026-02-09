@@ -22,7 +22,7 @@
 ;   TerminatedCString s_MODELS_s_0062edc4
 ;
 ; Called Functions:
-;   core_skeledit.cpp_FUN_0058a2b0
+;   core_skeledit.cpp_CDeformableModel_FUN_0058a2b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
@@ -53,8 +53,8 @@ section .text
         ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004f3fd7
     PUSH EAX                            ; 004f3fda
-    CALL core_skeledit.cpp_FUN_0058a2b0 ; 004f3fdb
-        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058a2b0()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058a2b0 ; 004f3fdb
+        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_FUN_0058a2b0(CDeformableModel * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004f3fe0
     POP EBX                             ; 004f3fe3
     RET                                 ; 004f3fe4

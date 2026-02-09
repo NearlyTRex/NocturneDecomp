@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 at 0057ab4c
-;   core_setedit.cpp_UserInputCreate_FUN_0057d660 at 0057dff0
+;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057ab4c
+;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057dff0
 ;
 ; Referenced Globals:
 ;   CDemonCamera g_CDemonCameraInstance
@@ -121,7 +121,7 @@ section .text
     PUSH EAX                            ; 0058017e
     PUSH EBP                            ; 0058017f
     CALL core_setedit.cpp_FUN_005801b0  ; 00580180
-        ;   XREF to: 005801b0 (UNCONDITIONAL_CALL)  ; bool core_setedit.cpp_FUN_005801b0()
+        ;   XREF to: 005801b0 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_FUN_005801b0()
     ADD ESP,0xc                         ; 00580185
     TEST EAX,EAX                        ; 00580188
     JZ 0x00580169                       ; 0058018a

@@ -33,7 +33,7 @@ section .text
     PUSH 0x34                           ; 0058ec60
         ;   Label: core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058ec65
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058ec6a
     PUSH ESI                            ; 0058ec6b
     PUSH EDI                            ; 0058ec6c

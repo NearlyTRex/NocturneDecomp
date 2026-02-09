@@ -11,7 +11,7 @@ CTeleport * __cdecl core_teleport_cpp_factoryFunc_FUN_005da9a0(void)
 {
   CTeleport *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x168,"..\\core\\teleport.cpp",0x8b);
+  pCVar1 = (CTeleport *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x168,"..\\core\\teleport.cpp",0x8b);
   if (pCVar1 == (CTeleport *)0x0) {
     return (CTeleport *)0x0;
   }

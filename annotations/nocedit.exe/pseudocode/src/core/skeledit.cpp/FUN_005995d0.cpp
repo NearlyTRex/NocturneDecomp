@@ -12,7 +12,7 @@ void __cdecl core_skeledit_cpp_FUN_005995d0(void)
   uint *in_stack_00000004;
   uint *in_stack_00000008;
   
-  __STK(4);
+  __STK();
   *in_stack_00000004 = *in_stack_00000008;
   in_stack_00000004[1] = in_stack_00000008[1];
   in_stack_00000004[2] = in_stack_00000008[2];

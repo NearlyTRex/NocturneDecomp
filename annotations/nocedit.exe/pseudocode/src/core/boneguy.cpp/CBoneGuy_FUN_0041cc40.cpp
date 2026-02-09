@@ -35,38 +35,38 @@ int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
   int local_20;
   float local_18;
   
-  fVar3 = *(float *)(this_ptr->unk1 + 0xc) - in_stack_00000008;
-  *(float *)(this_ptr->unk1 + 0xc) = fVar3;
+  fVar3 = *(float *)(this_ptr->unk1 + 4) - in_stack_00000008;
+  *(float *)(this_ptr->unk1 + 4) = fVar3;
   if (0.0 < fVar3) {
-    *(int *)(this_ptr->unk1 + 8) = *(int *)(this_ptr->unk1 + 8) + 1;
+    *(int *)this_ptr->unk1 = *(int *)this_ptr->unk1 + 1;
     local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
-    *(float *)(this_ptr->unk1 + 0xc) = local_18;
+    *(float *)(this_ptr->unk1 + 4) = local_18;
   }
   if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
-    if (*(float *)(this_ptr->unk1 + 0x10) <= 0.0) {
-      if (*(int *)(this_ptr->unk1 + 0x14) != 0) {
-        iVar7 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x14) + 0x154) + 0x8c))();
+    if (*(float *)(this_ptr->unk1 + 8) <= 0.0) {
+      if (*(int *)(this_ptr->unk1 + 0xc) != 0) {
+        iVar7 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0xc) + 0x154) + 0x8c))();
         if (iVar7 != 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s can't pick up %s, sombody else beat me to it!\n",this_ptr,
-                     *(uint *)(this_ptr->unk1 + 0x14));
-          this_ptr->unk1[0x14] = '\0';
-          this_ptr->unk1[0x15] = '\0';
-          this_ptr->unk1[0x16] = '\0';
-          this_ptr->unk1[0x17] = '\0';
-          this_ptr->unk1[0x10] = '\0';
-          this_ptr->unk1[0x11] = '\0';
-          this_ptr->unk1[0x12] = '\0';
-          this_ptr->unk1[0x13] = '\0';
+                     *(uint *)(this_ptr->unk1 + 0xc));
+          this_ptr->unk1[0xc] = '\0';
+          this_ptr->unk1[0xd] = '\0';
+          this_ptr->unk1[0xe] = '\0';
+          this_ptr->unk1[0xf] = '\0';
+          this_ptr->unk1[8] = '\0';
+          this_ptr->unk1[9] = '\0';
+          this_ptr->unk1[10] = '\0';
+          this_ptr->unk1[0xb] = '\0';
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,1,1);
           return 0;
         }
         iVar7 = -1;
-        if (*(float *)(this_ptr->unk1 + 0x10) < 0.0) {
-          iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x14) + 0x154) + 0x7c))();
+        if (*(float *)(this_ptr->unk1 + 8) < 0.0) {
+          iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0xc) + 0x154) + 0x7c))();
           if (iVar5 == 3) {
-            pCVar1 = *(CDemonActor **)(this_ptr->unk1 + 0x14);
+            pCVar1 = *(CDemonActor **)(this_ptr->unk1 + 0xc);
             (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,(CBoundingBox3D *)(auStack_a0 + 4));
             uStack_30 = 0x3f000000;
             core_bodypart_cpp_FUN_0041b540();
@@ -86,22 +86,22 @@ int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
           }
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s beginning to pickup %s\n",this_ptr,
-                     *(uint *)(this_ptr->unk1 + 0x14));
+                     *(uint *)(this_ptr->unk1 + 0xc));
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,7,1);
           return 1;
         }
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s can't pick up %s, giving up!!!!\n",this_ptr,
-                   *(uint *)(this_ptr->unk1 + 0x14));
-        this_ptr->unk1[0x14] = '\0';
-        this_ptr->unk1[0x15] = '\0';
-        this_ptr->unk1[0x16] = '\0';
-        this_ptr->unk1[0x17] = '\0';
-        this_ptr->unk1[0x10] = '\0';
-        this_ptr->unk1[0x11] = '\0';
-        this_ptr->unk1[0x12] = -0x60;
-        this_ptr->unk1[0x13] = 'A';
+                   *(uint *)(this_ptr->unk1 + 0xc));
+        this_ptr->unk1[0xc] = '\0';
+        this_ptr->unk1[0xd] = '\0';
+        this_ptr->unk1[0xe] = '\0';
+        this_ptr->unk1[0xf] = '\0';
+        this_ptr->unk1[8] = '\0';
+        this_ptr->unk1[9] = '\0';
+        this_ptr->unk1[10] = -0x60;
+        this_ptr->unk1[0xb] = 'A';
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,1,1);
         return 0;
@@ -150,26 +150,27 @@ int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
       if (0 < (int)local_2c) {
         iVar7 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,(int)local_2c + -1);
         uVar2 = auStack_c0[iVar7 + -5];
-        this_ptr->unk1[0x10] = '\0';
-        this_ptr->unk1[0x11] = '\0';
-        this_ptr->unk1[0x12] = ' ';
-        this_ptr->unk1[0x13] = -0x3e;
-        *(uint *)(this_ptr->unk1 + 0x14) = uVar2;
-        *(int *)(this_ptr->unk1 + 8) = *(int *)(this_ptr->unk1 + 8) + 1;
+        this_ptr->unk1[8] = '\0';
+        this_ptr->unk1[9] = '\0';
+        this_ptr->unk1[10] = ' ';
+        this_ptr->unk1[0xb] = -0x3e;
+        iVar7 = *(int *)this_ptr->unk1;
+        *(uint *)(this_ptr->unk1 + 0xc) = uVar2;
+        *(int *)this_ptr->unk1 = iVar7 + 1;
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s is going to try to pick up %s\n",this_ptr,
-                   *(uint *)(this_ptr->unk1 + 0x14));
+                   *(uint *)(this_ptr->unk1 + 0xc));
         return 1;
       }
     }
     else {
-      fVar3 = *(float *)(this_ptr->unk1 + 0x10) - in_stack_00000008;
-      *(float *)(this_ptr->unk1 + 0x10) = fVar3;
+      fVar3 = *(float *)(this_ptr->unk1 + 8) - in_stack_00000008;
+      *(float *)(this_ptr->unk1 + 8) = fVar3;
       if (fVar3 < 0.0) {
-        this_ptr->unk1[0x10] = '\0';
-        this_ptr->unk1[0x11] = '\0';
-        this_ptr->unk1[0x12] = '\0';
-        this_ptr->unk1[0x13] = '\0';
+        this_ptr->unk1[8] = '\0';
+        this_ptr->unk1[9] = '\0';
+        this_ptr->unk1[10] = '\0';
+        this_ptr->unk1[0xb] = '\0';
       }
     }
   }

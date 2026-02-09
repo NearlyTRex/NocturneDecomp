@@ -86,7 +86,7 @@ void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00455070(float max_z_plan
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0 (CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00455250 (CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0(CDemonCubeTriangle *this_ptr);
-void __cdecl core_dcube_cpp_CDemonCubeTriangle_ctor_FUN_00455430 (CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2);
+void __cdecl core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430 (CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2);
 float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460 (CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 int __cdecl core_dcube_cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_intersectXZCapsuleWithHeight_FUN_00455990 (SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end);

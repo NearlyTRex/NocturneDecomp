@@ -11180,12 +11180,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_addTextureEntry_FUN_00446100",
+    "name":"shape_cramtex.cpp_CCramTex_addTextureEntry_FUN_00446100",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"texture_entry",
+          "name":"this_ptr",
           "storage":{
             "offset":12,
             "size":4,
@@ -11198,7 +11198,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         }
       ],
       "ret_storage":{
@@ -40062,7 +40062,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_ground.cpp_CGround_ctor_FUN_004eee80",
-    "ret":"void",
+    "ret":"CGround*",
     "vars":{
       "params":[
         {
@@ -40113,7 +40113,17 @@
           },
           "type":"int"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -61211,7 +61221,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_0057b500",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057b500",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61230,6 +61240,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
         }
       ]
     }
@@ -61245,7 +61273,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_0057b600",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057b600",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61265,6 +61293,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
       ]
     }
   },
@@ -61279,7 +61325,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_WriteActBackdrop_FUN_0057ce80",
+    "name":"core_setedit.cpp_FUN_0057ce80",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61457,7 +61503,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057fd00",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61636,6 +61682,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
         }
       ]
     }
@@ -61897,7 +61961,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_simbox.cpp_CSimBox_FUN_00588e00",
+    "name":"core_simbox.cpp_CSimBox_setup_FUN_00588e00",
     "ret":"void",
     "vars":{
       "params":[
@@ -62439,8 +62503,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058e600",
-    "ret":"void"
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058e600",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        }
+      ]
+    }
   },
   {
     "addr":"00599480",

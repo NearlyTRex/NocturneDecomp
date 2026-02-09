@@ -9,7 +9,7 @@
 ; XREF[5]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d810
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db679
-;   shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160 at 004473f8
+;   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 at 004473f8
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 at 005edc43
 ;   wincore_winvideo.cpp_playMovie_FUN_005f4a00 at 005f4d0f
 ;

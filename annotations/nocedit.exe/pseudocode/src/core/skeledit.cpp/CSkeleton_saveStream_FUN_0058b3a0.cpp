@@ -24,7 +24,7 @@ core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,_FILE *f
   int local_18;
   int local_14;
   
-  __STK(0x4c);
+  __STK();
   _fprintf((_FILE *)this_ptr,"// skeleton version\n");
   _fprintf((_FILE *)this_ptr,"%d\n");
   _fprintf((_FILE *)this_ptr,"// bonecount, frameCount\n");

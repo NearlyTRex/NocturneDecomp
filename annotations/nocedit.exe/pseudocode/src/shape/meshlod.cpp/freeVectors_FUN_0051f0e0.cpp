@@ -11,6 +11,6 @@ CVector3f * __cdecl shape_meshlod_cpp_freeVectors_FUN_0051f0e0(CVector3f *objs)
 {
   CVector3f *pCVar1;
   
-  pCVar1 = __arrfini(objs,400,&g_CVectorTypeInfo);
+  pCVar1 = (CVector3f *)__arrfini(objs,400,&g_CVectorTypeInfo);
   return pCVar1;
 }

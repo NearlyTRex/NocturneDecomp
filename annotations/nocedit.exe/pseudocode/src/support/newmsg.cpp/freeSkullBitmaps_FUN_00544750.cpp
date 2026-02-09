@@ -11,6 +11,6 @@ CAlphaBitmap * __cdecl support_newmsg_cpp_freeSkullBitmaps_FUN_00544750(CAlphaBi
 {
   CAlphaBitmap *pCVar1;
   
-  pCVar1 = __arrfini(objs,0xf,&g_CAlphaBitmapTypeInfo);
+  pCVar1 = (CAlphaBitmap *)__arrfini(objs,0xf,&g_CAlphaBitmapTypeInfo);
   return pCVar1;
 }

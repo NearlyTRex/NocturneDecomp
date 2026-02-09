@@ -7,7 +7,7 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_skeledit.cpp_FUN_0058b660 at 0058b68f
+;   core_skeledit.cpp_CDeformableModel_FUN_0058b660 at 0058b68f
 ;   core_skeledit.cpp_FUN_0058c190 at 0058c1eb
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510 at 0059a6f7
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0 at 0059a405

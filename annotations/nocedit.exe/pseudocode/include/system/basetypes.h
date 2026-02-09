@@ -50,6 +50,7 @@
 #define __fpureg_safe
 #define __softfp_double
 #define __fpu_thunk
+#define __stk_probe
 // Unknown conventions
 #define __unknown
 #endif

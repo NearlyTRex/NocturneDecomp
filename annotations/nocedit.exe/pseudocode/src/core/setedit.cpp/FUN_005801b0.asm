@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl bool __cdecl core_setedit_cpp_FUN_005801b0(void)
+; __cdecl int __cdecl core_setedit_cpp_FUN_005801b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -14,7 +14,7 @@
 ;   undefined4 DAT_03659384
 ;
 ; Called Functions:
-;   core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310
+;   core_setedit.cpp_CDemonSet_FUN_00580310
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 005801b7
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005801bb
     PUSH EDX                            ; 005801bf
-    CALL core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 ; 005801c0
-        ;   XREF to: 00580310 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310()
+    CALL core_setedit.cpp_CDemonSet_FUN_00580310 ; 005801c0
+        ;   XREF to: 00580310 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00580310(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005801c5
     IMUL EAX,dword ptr [ESP + 0x24],0x4b030 ; 005801c8
     MOV ECX,dword ptr [0x03659384]      ; 005801d0 | DAT_03659384

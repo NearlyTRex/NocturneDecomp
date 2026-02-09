@@ -49,11 +49,11 @@ LAB_00506f71:
                             0xa4);
         if (p_Var1 != (_FILE *)0x0) {
           _fprintf(p_Var1,"----------------------------------------------------------------\n");
-          time(&local_10);
+          _time(&local_10);
           _fprintf(p_Var1,"Msg: %s\n",g_ErrorMessageBuffer_02dd3130);
           _fprintf(p_Var1,"File: %s line %d\n",g_CurrentFilename,g_CurrentLineNumber);
           timeptr = _localtime(&local_10);
-          pcVar5 = asctime(timeptr);
+          pcVar5 = _asctime(timeptr);
           _fprintf(p_Var1,"Time: %s",pcVar5);
           piVar2 = (int *)_errno();
           pcVar5 = strerror(*piVar2);

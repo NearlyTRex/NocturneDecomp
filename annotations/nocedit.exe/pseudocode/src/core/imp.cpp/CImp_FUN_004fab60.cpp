@@ -18,22 +18,22 @@ void __cdecl core_imp_cpp_CImp_FUN_004fab60(CImp *this_ptr)
     iVar1 = rand();
     switch(iVar1 % 6) {
     case 0:
-      iVar1 = *(int *)(this_ptr->unk + 0x14);
+      iVar1 = *(int *)(this_ptr->unk + 0xc);
       break;
     case 1:
-      iVar1 = *(int *)(this_ptr->unk + 0x18);
+      iVar1 = *(int *)(this_ptr->unk + 0x10);
       break;
     case 2:
-      iVar1 = *(int *)(this_ptr->unk + 0x1c);
+      iVar1 = *(int *)(this_ptr->unk + 0x14);
       break;
     case 3:
-      iVar1 = *(int *)(this_ptr->unk + 0x20);
+      iVar1 = *(int *)(this_ptr->unk + 0x18);
       break;
     case 4:
-      iVar1 = *(int *)(this_ptr->unk + 0x3c);
+      iVar1 = *(int *)(this_ptr->unk + 0x34);
       break;
     case 5:
-      iVar1 = *(int *)(this_ptr->unk + 0x38);
+      iVar1 = *(int *)(this_ptr->unk + 0x30);
       break;
     default:
       goto switchD_004fab96_default;
@@ -42,15 +42,15 @@ void __cdecl core_imp_cpp_CImp_FUN_004fab60(CImp *this_ptr)
   }
 switchD_004fab96_default:
   iVar1 = *in_stack_00000008;
-  if (((((iVar1 == *(int *)(this_ptr->unk + 0x14)) || (iVar1 == *(int *)(this_ptr->unk + 0x18))) ||
-       (iVar1 == *(int *)(this_ptr->unk + 0x1c))) ||
-      ((iVar1 == *(int *)(this_ptr->unk + 0x20) || (iVar1 == *(int *)(this_ptr->unk + 0x38))))) ||
-     (iVar1 == *(int *)(this_ptr->unk + 0x3c))) {
+  if (((((iVar1 == *(int *)(this_ptr->unk + 0xc)) || (iVar1 == *(int *)(this_ptr->unk + 0x10))) ||
+       (iVar1 == *(int *)(this_ptr->unk + 0x14))) ||
+      ((iVar1 == *(int *)(this_ptr->unk + 0x18) || (iVar1 == *(int *)(this_ptr->unk + 0x30))))) ||
+     (iVar1 == *(int *)(this_ptr->unk + 0x34))) {
     local_14 = (float)in_stack_00000008[0xb];
-    if (*(int *)(this_ptr->unk + 0x3c) == *in_stack_00000008) {
+    if (*(int *)(this_ptr->unk + 0x34) == *in_stack_00000008) {
       local_14 = 0.05;
     }
-    if (*(int *)(this_ptr->unk + 0x38) == *in_stack_00000008) {
+    if (*(int *)(this_ptr->unk + 0x30) == *in_stack_00000008) {
       local_14 = 0.02;
     }
     if (g_CGamePtr->unk4 != 0) {
@@ -63,13 +63,13 @@ switchD_004fab96_default:
     if (iVar1 != 0) {
       this_ptr_00 = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
-      if (*in_stack_00000008 == *(int *)(this_ptr->unk + 0x14)) {
+      if (*in_stack_00000008 == *(int *)(this_ptr->unk + 0xc)) {
         core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
       }
-      if (*(int *)(this_ptr->unk + 0x1c) == *in_stack_00000008) {
+      if (*(int *)(this_ptr->unk + 0x14) == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
       }
-      if (*(int *)(this_ptr->unk + 0x38) == *in_stack_00000008) {
+      if (*(int *)(this_ptr->unk + 0x30) == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
         core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
         core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
@@ -82,11 +82,11 @@ switchD_004fab96_default:
     }
   }
   iVar1 = *in_stack_00000008;
-  if (iVar1 == *(int *)(this_ptr->unk + 0x3c)) {
+  if (iVar1 == *(int *)(this_ptr->unk + 0x34)) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)2.5);
     return;
   }
-  if ((iVar1 != *(int *)(this_ptr->unk + 0x34)) && (iVar1 != *(int *)(this_ptr->unk + 0x38))) {
+  if ((iVar1 != *(int *)(this_ptr->unk + 0x2c)) && (iVar1 != *(int *)(this_ptr->unk + 0x30))) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);
     return;
   }

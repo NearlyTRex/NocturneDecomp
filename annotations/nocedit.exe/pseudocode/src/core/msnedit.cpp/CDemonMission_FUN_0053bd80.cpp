@@ -142,7 +142,7 @@ core_msnedit_cpp_CDemonMission_FUN_0053bd80
   }
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,this_ptr_00);
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
-  pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(this_ptr_00,g_CCharacterClassInfo.name_hash);
+  pCVar4 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(this_ptr_00,g_CCharacterClassInfo.name_hash);
   if (pCVar4 != (CDemonActor *)0x0) {
     pCVar5 = pCVar4;
     do {

@@ -5,11 +5,11 @@
 
 // Original: crt_stack.c___STK_FUN_005ff9f3
 // Address: 005ff9f3
-uint __stdcall ::_STK(uint stack_size);
+void __stk_probe ::_STK(void);
 
 // Original: crt_stack.c_check_stack_target_FUN_005ffa03
 // Address: 005ffa03
-void check::stack_target(void *target_stack_ptr);
+void __stk_probe check::stack_target(void);
 
 // Original: crt_stack.c_stack_overflow_handler_FUN_005ffa22
 // Address: 005ffa22

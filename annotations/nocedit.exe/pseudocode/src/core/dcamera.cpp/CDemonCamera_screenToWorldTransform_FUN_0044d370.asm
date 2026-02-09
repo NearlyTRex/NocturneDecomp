@@ -22,8 +22,8 @@
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da30a
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e617
 ;   core_msnedit.cpp_FUN_00535c60 at 00535ca5
+;   core_setedit.cpp_CDemonSet_FUN_0057fd00 at 0057fdf4
 ;   core_setedit.cpp_CDemonSet_FUN_005800d0 at 00580145
-;   core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00 at 0057fdf4
 ;   core_sound.cpp_updateListeners_FUN_005b1870 at 005b1d43
 ;
 ; *****************************************************************************

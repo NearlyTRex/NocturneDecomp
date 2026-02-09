@@ -12,12 +12,13 @@
 typedef DWORD ACCESS_MASK;
 
 // Enum: EXCEPTION_DISPOSITION
-typedef enum EXCEPTION_DISPOSITION {
+enum {
     ExceptionContinueExecution = 0,
     ExceptionContinueSearch = 1,
     ExceptionNestedException = 2,
     ExceptionCollidedUnwind = 3
-} EXCEPTION_DISPOSITION;
+};
+typedef int EXCEPTION_DISPOSITION;
 
 // Function Definition: EXCEPTION_FILTER_FUNC
 typedef int EXCEPTION_FILTER_FUNC(int action, DWORD exceptionCode);

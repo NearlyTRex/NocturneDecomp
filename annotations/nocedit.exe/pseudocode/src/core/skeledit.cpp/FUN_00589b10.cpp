@@ -14,7 +14,7 @@ void __cdecl core_skeledit_cpp_FUN_00589b10(void)
   int iVar3;
   int in_stack_00000004;
   
-  __STK(0x10);
+  __STK();
   sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
   sound_sndmain_cpp_startSfx_FUN_005a8e90("dixie.wav");
   if (in_stack_00000004 == 0) {

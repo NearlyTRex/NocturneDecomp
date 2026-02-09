@@ -11,6 +11,6 @@ SBug * __cdecl core_bugs_cpp_freeBugs_FUN_00427cc0(SBug *objs)
 {
   SBug *pSVar1;
   
-  pSVar1 = __arrfini(objs,400,&g_SBugTypeInfo);
+  pSVar1 = (SBug *)__arrfini(objs,400,&g_SBugTypeInfo);
   return pSVar1;
 }

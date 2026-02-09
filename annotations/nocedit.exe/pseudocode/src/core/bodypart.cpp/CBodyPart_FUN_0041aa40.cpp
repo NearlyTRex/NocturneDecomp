@@ -81,7 +81,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041aa40(CBodyPart *this_ptr)
     local_78 = -1.4013e-45;
     fStack_7c = -1.4013e-45;
     fStack_80 = -1.4013e-45;
-    iVar4 = *(int *)(this_ptr->unk + 0x1c);
+    iVar4 = this_ptr->vertex_count;
     iVar8 = 0;
     dVar16 = round((double)fVar11);
     fVar11 = (float10)dVar16;
@@ -105,7 +105,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041aa40(CBodyPart *this_ptr)
     if (0 < iVar4) {
       local_40 = 0;
       do {
-        piVar5 = (int *)(*(int *)(this_ptr->unk + 0x20) + local_40);
+        piVar5 = (int *)(this_ptr->unk2 + local_40);
         lVar1 = (longlong)(int)ROUND(fVar12) * (longlong)piVar5[1];
         lVar2 = (longlong)(int)ROUND(fVar14) * (longlong)piVar5[2];
         fVar6 = (float)(((uint)((longlong)(int)local_54.z * (longlong)*piVar5) >> 0x10 |
@@ -144,7 +144,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041aa40(CBodyPart *this_ptr)
         }
         iVar8 = iVar8 + 1;
         local_40 = local_40 + 0xc;
-      } while (iVar8 < *(int *)(this_ptr->unk + 0x1c));
+      } while (iVar8 < this_ptr->vertex_count);
     }
     iVar4 = (int)local_b8.m[2].y - (int)local_84;
     if ((int)local_b8.m[2].y - (int)local_84 < (int)local_b8.m[2].z - (int)fStack_80) {

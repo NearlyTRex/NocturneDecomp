@@ -32,8 +32,8 @@
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_strftime_FUN_006002d4
-;   crt_time.c_time_FUN_006001f0
+;   crt_time.c__strftime_FUN_006002d4
+;   crt_time.c__time_FUN_006001f0
 ;   shape_design.c_quantizePaletteColors_FUN_0046b770
 ;
 ; *****************************************************************************
@@ -197,8 +197,8 @@ section .text
     LEA EAX,[EBP + -0x4]                ; 0046baf4
         ;   Label: LAB_0046baf4
     PUSH EAX                            ; 0046baf7
-    CALL crt_time.c_time_FUN_006001f0   ; 0046baf8
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c__time_FUN_006001f0  ; 0046baf8
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 0046bafd
     LEA EAX,[EBP + -0x4]                ; 0046bb00
     PUSH EAX                            ; 0046bb03
@@ -211,8 +211,8 @@ section .text
     PUSH 0xc8                           ; 0046bb13
     LEA EAX,[EBP + 0xffffff34]          ; 0046bb18
     PUSH EAX                            ; 0046bb1e
-    CALL crt_time.c_strftime_FUN_006002d4 ; 0046bb1f
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 0046bb1f
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 0046bb24
     MOV EAX,0x61d45f                    ; 0046bb27 | = "Jan 10 2000"
     PUSH EAX                            ; 0046bb2c | = "Jan 10 2000"

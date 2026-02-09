@@ -11,6 +11,6 @@ CVector3f * __cdecl core_mirror_cpp_freeVectors_FUN_00522c30(CVector3f *objs)
 {
   CVector3f *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x20,&g_CVectorTypeInfo);
+  pCVar1 = (CVector3f *)__arrfini(objs,0x20,&g_CVectorTypeInfo);
   return pCVar1;
 }

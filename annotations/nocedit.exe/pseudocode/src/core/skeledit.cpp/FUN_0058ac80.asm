@@ -12,9 +12,9 @@
 ; XREF[5]:
 ;   core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0 at 0058ae93
 ;   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 at 0058ab6c
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 005954e6
 ;   core_skeledit.cpp_FUN_0058aeb0 at 0058af28
 ;   core_skeledit.cpp_FUN_0058af40 at 0058afc3
-;   core_skeledit.cpp_FUN_00592690 at 005954e6
 ;
 ; Called Functions:
 ;   core_xform.cpp_inverse_FUN_005f6210
@@ -28,7 +28,7 @@ section .text
     PUSH 0xb0                           ; 0058ac80
         ;   Label: core_skeledit.cpp_FUN_0058ac80
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058ac85
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058ac8a
     PUSH ESI                            ; 0058ac8b
     PUSH EDI                            ; 0058ac8c

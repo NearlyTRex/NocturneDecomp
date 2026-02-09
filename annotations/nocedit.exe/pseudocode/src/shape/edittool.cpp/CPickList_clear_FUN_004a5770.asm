@@ -14,8 +14,8 @@
 ;   core_script.cpp_CScript_FUN_00559f80 at 0055a157
 ;   core_script.cpp_CScript_FUN_0055a4b0 at 0055a4d3
 ;   core_script.cpp_CScript_FUN_00566080 at 005660f4
-;   core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0 at 00576e87
-;   core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630 at 00578686
+;   core_setedit.cpp_CDemonSet_FUN_00576da0 at 00576e87
+;   core_setedit.cpp_FUN_00578630 at 00578686
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 at 004a3c94
 ;
 ; Referenced Globals:

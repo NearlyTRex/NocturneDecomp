@@ -23,11 +23,11 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
   float *in_stack_00000008;
   uint *in_stack_0000000c;
   int in_stack_00000010;
-  uint in_stack_00000014;
+  int in_stack_00000014;
   int in_stack_00000018;
-  uint in_stack_0000001c;
+  int in_stack_0000001c;
   
-  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xf30,"..\\core\\bodypart.cpp",0x31);
+  this_ptr = (CBodyPart *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xf30,"..\\core\\bodypart.cpp",0x31);
   this_ptr_00 = (CBodyPart *)0x0;
   if (this_ptr != (CBodyPart *)0x0) {
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(this_ptr);
@@ -55,14 +55,14 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
     fVar6 = (float10)fsin((float10)fVar3);
     fVar7 = (float10)fsin((float10)fVar2);
     fVar8 = (float10)10.0f;
-    *(float *)(this_ptr_00->unk + 300) = (float)(fVar7 * fVar8);
-    *(float *)(this_ptr_00->unk + 0x128) = (float)(fVar4 * fVar8 * fVar5);
-    *(float *)(this_ptr_00->unk + 0x130) = (float)(fVar6 * fVar8 * fVar5);
+    *(float *)(this_ptr_00->unk5 + 0xf4) = (float)(fVar7 * fVar8);
+    *(float *)(this_ptr_00->unk5 + 0xf0) = (float)(fVar4 * fVar8 * fVar5);
+    *(float *)(this_ptr_00->unk5 + 0xf8) = (float)(fVar6 * fVar8 * fVar5);
   }
-  else if (this_ptr_00->unk + 0x128 != (char *)in_stack_0000000c) {
-    *(uint *)(this_ptr_00->unk + 0x128) = *in_stack_0000000c;
-    *(uint *)(this_ptr_00->unk + 300) = in_stack_0000000c[1];
-    *(uint *)(this_ptr_00->unk + 0x130) = in_stack_0000000c[2];
+  else if (this_ptr_00->unk5 + 0xf0 != (char *)in_stack_0000000c) {
+    *(uint *)(this_ptr_00->unk5 + 0xf0) = *in_stack_0000000c;
+    *(uint *)(this_ptr_00->unk5 + 0xf4) = in_stack_0000000c[1];
+    *(uint *)(this_ptr_00->unk5 + 0xf8) = in_stack_0000000c[2];
   }
   core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
             (g_CDemonMissionPtr,&this_ptr_00->base);
@@ -72,9 +72,9 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
     (this_ptr_00->base).scale.y = *(int *)(in_stack_00000010 + 0x10c);
     (this_ptr_00->base).scale.z = *(int *)(in_stack_00000010 + 0x110);
   }
-  *(uint *)(this_ptr_00->unk + 0xb58) = in_stack_00000014;
+  this_ptr_00->dont_use_normals = in_stack_00000014;
   (this_ptr_00->base).is_transparent = in_stack_00000018;
-  *(int *)(this_ptr_00->unk + 0xb5c) = in_stack_00000018;
-  *(uint *)(this_ptr_00->unk + 0xb60) = in_stack_0000001c;
+  this_ptr_00->transparent_geometry_flag = in_stack_00000018;
+  this_ptr_00->blood_type = in_stack_0000001c;
   return this_ptr_00;
 }

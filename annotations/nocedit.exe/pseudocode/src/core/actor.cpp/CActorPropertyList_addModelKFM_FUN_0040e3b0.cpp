@@ -15,7 +15,8 @@ core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
   CActorProperty *pCVar1;
   
   pCVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
-                     (this_ptr,PROP_MODEL_KFM,property_name,data_ptr,(void *)0x0);
+                     (this_ptr,PROP_MODEL_KFM,property_name,data_ptr,
+                      (CActorPropertyValidatorFunc *)0x0);
   pCVar1->auto_update_flag = 1;
   (pCVar1->param1).v_int = allow_none;
   return pCVar1;

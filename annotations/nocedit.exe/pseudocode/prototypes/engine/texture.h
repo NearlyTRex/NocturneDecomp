@@ -11,13 +11,13 @@ CTextureCache * __cdecl CTextureCache::ctor(CTextureCache *this_ptr,int max_text
 // Address: 005dcb00
 int __cdecl CTextureCache::free(CTextureCache *this_ptr);
 
-// Original: engine_texture.cpp_CTextureCache_dtor_FUN_005dcb20
+// Original: engine_texture.cpp_CTextureCache_reset_FUN_005dcb20
 // Address: 005dcb20
-void __cdecl CTextureCache::dtor(CTextureCache *cache);
+void __cdecl CTextureCache::reset(CTextureCache *this_ptr);
 
-// Original: engine_texture.cpp_CTextureCache_free_FUN_005dcb30
+// Original: engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30
 // Address: 005dcb30
-void __cdecl CTextureCache::free(CTextureCache *cache);
+void __cdecl CTextureCache::freeTextures(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
 // Address: 005dcc00

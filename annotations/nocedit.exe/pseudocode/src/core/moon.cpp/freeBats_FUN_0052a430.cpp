@@ -11,6 +11,6 @@ SBat * __cdecl core_moon_cpp_freeBats_FUN_0052a430(SBat *objs)
 {
   SBat *pSVar1;
   
-  pSVar1 = __arrfini(objs,0x1e,&g_SBatTypeInfo);
+  pSVar1 = (SBat *)__arrfini(objs,0x1e,&g_SBatTypeInfo);
   return pSVar1;
 }

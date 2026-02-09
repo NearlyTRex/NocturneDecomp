@@ -24,7 +24,7 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr)
   max_value = 4.0;
   fVar4 = 7.197803e-39;
   dVar3 = round((double)(fVar2 * (float)65536));
-  *(int *)(pCVar1->unk1 + 0xc) = (int)ROUND(dVar3);
+  *(int *)(pCVar1->unk1 + 4) = (int)ROUND(dVar3);
   fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar4,max_value);
   pCVar1->arise_timer = 0xa0000;
   pCVar1->unk2[0] = -1;
@@ -39,7 +39,7 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr)
   pCVar1->spasm_count = 2;
   iVar5 = 0x4e60d7;
   dVar3 = round((double)(fVar4 * fVar2));
-  *(int *)(pCVar1->unk1 + 0x10) = (int)ROUND(dVar3);
+  *(int *)(pCVar1->unk1 + 8) = (int)ROUND(dVar3);
   iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,iVar5);
   (pCVar1->base).base.field54_0x2ddc = 0.75;
   (pCVar1->base).base.collision_cylinder_radius = 1.5;

@@ -29,7 +29,7 @@ section .text
     PUSH 0x1                            ; 0055916c
     PUSH EBX                            ; 0055916e
     CALL core_hero.cpp_CHero_dtor_FUN_004f2470 ; 0055916f
-        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint flags)
+        ;   XREF to: 004f2470 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00559174
     MOV DL,byte ptr [ESP + 0xc]         ; 00559177
     MOV EBX,EAX                         ; 0055917b

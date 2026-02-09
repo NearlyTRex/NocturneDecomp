@@ -1,19 +1,26 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 19,
+        "message": "assigning to 'CPackedBitmapSet *' from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 9,
+    "complexity_score": 11,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 11,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 23
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -39,7 +46,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitmapSet *this_ptr)"
+    "signature": "CPackedBitmapSet * __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitmapSet *this_ptr)"
   },
   "function_calls": [
     {

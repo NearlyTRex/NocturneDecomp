@@ -74,7 +74,7 @@ shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
     } while (local_14 <= iVar5);
   }
   time_ptr = _localtime((time_t *)&stack0x00000014);
-  strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
+  _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
   pcVar7 = g_FilePathBuffer;
   pcVar6 = local_704;
   for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {

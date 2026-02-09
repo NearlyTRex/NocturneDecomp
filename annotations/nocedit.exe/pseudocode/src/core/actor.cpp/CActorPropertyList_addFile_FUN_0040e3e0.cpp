@@ -17,7 +17,7 @@ core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0
   char *pcVar3;
   
   pCVar2 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
-                     (this_ptr,PROP_FILE,property_name,data_ptr,(void *)0x0);
+                     (this_ptr,PROP_FILE,property_name,data_ptr,(CActorPropertyValidatorFunc *)0x0);
   pcVar3 = pCVar2->string1;
   do {
     cVar1 = *search_path;

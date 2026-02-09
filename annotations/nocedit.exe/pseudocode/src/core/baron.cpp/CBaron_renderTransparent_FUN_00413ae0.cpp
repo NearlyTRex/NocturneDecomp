@@ -22,7 +22,7 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_pt
   uint local_18;
   int iStack_14;
   
-  if ((*(int *)(this_ptr->unk + 0xf8) == 0) && ((this_ptr->base).control_type == 2)) {
+  if ((this_ptr->summoned == 0) && ((this_ptr->base).control_type == 2)) {
     return 0;
   }
   pCVar1 = &(this_ptr->base).base.model;
@@ -50,7 +50,7 @@ LAB_00413b43:
   dVar6 = round((double)(fVar3 / (float)pSVar4->frame_count));
   local_1c = (float)(int)ROUND(dVar6);
 LAB_00413b59:
-  if (*(int *)(this_ptr->unk + 0xfc) != 0) {
+  if (this_ptr->unk2 != 0) {
     engine_3d_c_setRenderAlpha_FUN_00406d80(((int)local_1c * 2) / 3);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&(this_ptr->base).base.base.location.position);

@@ -11,6 +11,6 @@ CMuzzleFlash * __cdecl core_fire_cpp_freeMuzzleFlashes_FUN_004c9990(CMuzzleFlash
 {
   CMuzzleFlash *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x14,&g_CMuzzleFlashTypeInfo);
+  pCVar1 = (CMuzzleFlash *)__arrfini(objs,0x14,&g_CMuzzleFlashTypeInfo);
   return pCVar1;
 }

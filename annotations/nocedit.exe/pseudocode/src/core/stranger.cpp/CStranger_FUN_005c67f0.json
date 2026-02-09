@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 6,
-        "line": 22,
+        "line": 18,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 22,
+        "line": 18,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -19,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 41,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 12,
     "suspect_count": 2,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 49
+    "total_lines": 45
   },
   "cross_references": [],
   "function": {
@@ -117,7 +117,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
-      "text": "if ((this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor ==",
+      "text": "if ((this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor == this_ptr->weapon) {",
       "type": "stack_param"
     }
   ],

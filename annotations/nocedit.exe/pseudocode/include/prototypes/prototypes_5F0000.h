@@ -193,7 +193,10 @@ void __cdecl core_zombie_cpp_FUN_005fcd20(void);
 void __cdecl core_zombie_cpp_FUN_005fce40(void);
 SEdgeData * __cdecl core_zombie_cpp_FUN_005fcf80(void);
 void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0 (SRenderVertex *vertex_buffer,int vertex_count,int triangle_count);
-void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0 (SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer);
+template<typename T_func0>
+inline void engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {
+    (void)vertex_buffer; (void)vertex_count; (void)scanline_renderer;
+}
 SIZE_T __cdecl crt_stdio_c_fread_FUN_005fd990(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 void __cdecl crt_stdio_c_StringBufferCallback_FUN_005fdb90(StringOutputContext *context,char character);
 int __cdecl crt_stdio_c__vsprintf_FUN_005fdba8(char *buffer,char *format,va_list_t args);
@@ -203,9 +206,15 @@ void * __cdecl crt_memory_c_memset_FUN_005fde40(void *dest,int value,ulong count
 void __cdecl crt_fltused_c_staticInit_FUN_005fde60(void);
 void __cdecl crt_stub_c_staticInit_FUN_005fde92(void);
 void __cdecl crt_stub_c_staticFinal_FUN_005fde93(void);
-void * __watcallStack crt_stdlib_c_median_of_3_FUN_005fdea0(void *a,void *b,void *c,QSORT_COMPARATOR compar);
+template<typename T_func0>
+inline void * crt_stdlib_c_median_of_3_FUN_005fdea0(void *a,void *b,void *c,T_func0 compar) {
+    (void)a; (void)b; (void)c; (void)compar; return (void *)0;
+}
 void crt_stdlib_c_memory_swap_FUN_005fdf10(void *ptr1,void *ptr2,SIZE_T bytes);
-void __cdecl crt_stdlib_c_qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
+template<typename T_func0>
+inline void crt_stdlib_c__qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,T_func0 compar) {
+    (void)base; (void)num; (void)size; (void)compar;
+}
 void * __cdecl crt_string_c_memmove_FUN_005fe5e0(void *dest,void *src,SIZE_T n);
 void * __cdecl crt_memory_c___vec_delete_FUN_005fe632(void *object_ptr,WatcomTypeInfo *type_info);
 void __cdecl shape_memdbg_cpp_free_FUN_005fe659(void *ptr);
@@ -258,14 +267,14 @@ void __cdecl crt_fstream_cpp_ofstream_constructor_FUN_005ff710 (ofstream *this_p
 void __cdecl crt_fstream_cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e (ostream *this_ptr,int dtor_flags);
 void __cdecl crt_fstream_cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4(ios *this_ptr,int dtor_flags);
 ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint flags);
-void * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint flags);
+ifstream * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint flags);
 ifstream * __cdecl crt_fstream_cpp_ifstream_ctor_FUN_005ff8f0(ifstream *this_ptr,int c1);
 ofstream * __cdecl crt_fstream_cpp_ofstream_ctor_FUN_005ff95c(ofstream *this_ptr,int c1);
 int __watcallStack crt_stdio_c_remove_FUN_005ff9d0(char *filename);
 int __cdecl crt_ctype_c_toupper_FUN_005ff9e0(int c);
 void __cdecl crt_stub_c_staticInit_FUN_005ff9f2(void);
-uint __stdcall crt_stack_c___STK_FUN_005ff9f3(uint stack_size);
-void crt_stack_c_check_stack_target_FUN_005ffa03(void *target_stack_ptr);
+void __stk_probe crt_stack_c___STK_FUN_005ff9f3(void);
+void __stk_probe crt_stack_c_check_stack_target_FUN_005ffa03(void);
 void __watcallStack crt_stack_c_stack_overflow_handler_FUN_005ffa22(SIZE_T required_bytes);
 void __stdcall crt_stack_c_ProbeStackSpace_FUN_005ffa2f(uint size);
 int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,_FILE *file);

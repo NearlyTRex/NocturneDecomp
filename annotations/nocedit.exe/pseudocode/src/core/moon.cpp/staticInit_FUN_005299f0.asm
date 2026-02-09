@@ -31,7 +31,7 @@ section .text
     PUSH 0x2f37f70                      ; 005299f0 | g_MoonCloudTexture
         ;   Label: core_moon.cpp_staticInit_FUN_005299f0
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 005299f5
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 005299fa
     PUSH 0x67d718                       ; 005299fd | DAT_0067d718
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00529a02

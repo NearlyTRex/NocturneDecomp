@@ -13,7 +13,7 @@ core_waypoint_cpp_CWayPoint_onActorDeleted_FUN_005ec610
 {
   CDemonActor *pCVar1;
   
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(deleted_actor,g_CWayPointClassInfo.name_hash)
+  pCVar1 = (CWayPoint *)core_actor_cpp_castToClassHash_FUN_0040c790(deleted_actor,g_CWayPointClassInfo.name_hash)
   ;
   if (pCVar1 == (CDemonActor *)0x0) {
     return;

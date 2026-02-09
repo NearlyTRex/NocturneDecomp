@@ -1,0 +1,208 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 17,
+        "message": "no matching function for call to '__STK'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 79,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 11,
+    "pseudocode_lines": 24,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 75
+  },
+  "cross_references": [
+    {
+      "addr": "00446160",
+      "from_addr": "0044667c",
+      "name": "shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447590",
+      "from_addr": "004476b4",
+      "name": "shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00447930",
+    "address_range": [
+      [
+        "00447930",
+        "00447994"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930",
+    "signature": "int __cdecl shape_cramtex_cpp_CCramTex_findLowestOverlappingY_FUN_00447930(CCramTex *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0083c1dc",
+      "name": "g_CramSortedTextureEntries",
+      "type": "CCramTex[1]",
+      "value": null
+    },
+    {
+      "addr": "0083c1ec",
+      "name": "g_CramSortedTextureEntries[0].assigned_map_number",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c20c",
+      "name": "DAT_0083c20c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c210",
+      "name": "DAT_0083c210",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c214",
+      "name": "DAT_0083c214",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c238",
+      "name": "DAT_0083c238",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c258",
+      "name": "DAT_0083c258",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c25c",
+      "name": "DAT_0083c25c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c260",
+      "name": "DAT_0083c260",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0084a854",
+      "name": "g_CramTextureCount",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "0084a884",
+      "name": "g_CramCurrentAcceptableSize",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.615384615384615,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "CALL": 1,
+      "CBRANCH": 7,
+      "COPY": 34,
+      "INT_ADD": 17,
+      "INT_AND": 21,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 21,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 10,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 180
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "CCramTex *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "if ((((*(int *)(in_stack_00000004 + 0x10) == pCVar1->assigned_map_number) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "(pCVar1->final_top < iVar3)) && (*(int *)(in_stack_00000004 + 0x3c) <= pCVar1->final_top)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": ") && ((pCVar1->final_left < *(int *)(in_stack_00000004 + 0x38) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "(*(int *)(in_stack_00000004 + 0x30) < pCVar1->final_right)))) {",
+      "type": "stack_param"
+    }
+  ]
+}

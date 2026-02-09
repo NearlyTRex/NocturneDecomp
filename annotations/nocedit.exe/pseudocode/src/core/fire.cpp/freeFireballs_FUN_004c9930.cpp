@@ -11,6 +11,6 @@ CFireball * __cdecl core_fire_cpp_freeFireballs_FUN_004c9930(CFireball *objs)
 {
   CFireball *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x40,&g_CFireballTypeInfo);
+  pCVar1 = (CFireball *)__arrfini(objs,0x40,&g_CFireballTypeInfo);
   return pCVar1;
 }

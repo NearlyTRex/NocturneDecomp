@@ -382,7 +382,7 @@ LAB_0054f9a8:
       iVar7 = iVar7 + 0x14;
     } while (iVar2 < this_ptr->file_count);
   }
-  qsort
+  _qsort
             (this_ptr->directory_entries,this_ptr->file_count,0x14,
              engine_pod_cpp_qsortByFilename_FUN_0054f630);
   return 1;

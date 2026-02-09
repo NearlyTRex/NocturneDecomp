@@ -3646,7 +3646,7 @@ WatcomStaticDestructorNode DAT_006816b0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662a1c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&INT_03364ce0
+    .object_instance = (void *)&CEdScrollBar_03364ce0
 };
 WatcomStaticDestructorNode DAT_00681850 = {
     .next = nullptr,

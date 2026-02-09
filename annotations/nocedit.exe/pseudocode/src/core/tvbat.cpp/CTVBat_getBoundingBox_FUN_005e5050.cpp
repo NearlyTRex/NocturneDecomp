@@ -14,7 +14,7 @@ core_tvbat_cpp_CTVBat_getBoundingBox_FUN_005e5050(CTVBat *this_ptr,CBoundingBox3
   CVector3f *pCVar2;
   double dVar3;
   
-  dVar3 = round((double)*(float *)(this_ptr->unk1 + 8));
+  dVar3 = round((double)(float)this_ptr->unk1);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   pCVar2 = pCVar1->frame_bounds + (int)ROUND(dVar3) * 2;
   (out_box->min).x = pCVar2->x;

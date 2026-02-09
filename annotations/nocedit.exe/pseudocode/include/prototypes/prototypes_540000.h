@@ -217,7 +217,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBGHeader_FUN_0054b930 (CPa
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0 (CPackedBitmap *this_ptr,_FILE *file_handle,int param3,int param4, int selected_bitmap_index);
 int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40 (CPackedBitmap *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4, int selected_bitmap_index);
 int __cdecl cockpit_pkbmpset_cpp_alignTo4ByteBoundary_FUN_0054bcc0(int value);
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitmapSet *this_ptr);
+CPackedBitmapSet * __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_0054bd00(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_0054bd60(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_0054bdb0 (CPackedBitmapSet *this_ptr,int bitmap_count);

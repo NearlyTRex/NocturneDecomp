@@ -9,7 +9,6 @@
 void __cdecl core_boxactor_cpp_CBoxActor_FUN_004218d0(CBoxActor *this_ptr)
 
 {
-  float fVar1;
   float fStack_44;
   float fStack_40;
   float fStack_3c;
@@ -23,12 +22,9 @@ void __cdecl core_boxactor_cpp_CBoxActor_FUN_004218d0(CBoxActor *this_ptr)
   float fStack_c;
   float fStack_8;
   
-  fVar1 = this_ptr->weight_in_pounds;
-  this_ptr->unk4[0x250] = '\0';
-  this_ptr->unk4[0x251] = '\0';
-  this_ptr->unk4[0x252] = '\0';
-  this_ptr->unk4[0x253] = '\0';
-  if ((0.0 < fVar1) && ((int *)(this_ptr->base).validation_magic == &g_ActorMagicNumber)) {
+  this_ptr->unk5 = 0;
+  if ((0.0 < this_ptr->weight_in_pounds) &&
+     ((int *)(this_ptr->base).validation_magic == &g_ActorMagicNumber)) {
     if ((this_ptr->model).model_ptr != (CKeyFramedModel *)0x0) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)
                 (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
@@ -46,10 +42,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_FUN_004218d0(CBoxActor *this_ptr)
                  (CVector3f *)&fStack_8,this_ptr->weight_in_pounds);
       return;
     }
-    this_ptr->unk4[0x250] = -1;
-    this_ptr->unk4[0x251] = -1;
-    this_ptr->unk4[0x252] = -1;
-    this_ptr->unk4[0x253] = -1;
+    this_ptr->unk5 = -1;
   }
   return;
 }

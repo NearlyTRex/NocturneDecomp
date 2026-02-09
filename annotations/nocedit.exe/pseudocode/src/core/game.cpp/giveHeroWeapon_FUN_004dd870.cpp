@@ -15,7 +15,7 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1)
   actor = core_actor_cpp_createActorByName_FUN_0040c430(p1);
   core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,actor);
   (*((actor->vtable)._ub)->setup)(actor);
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(actor,g_CWeaponClassInfo.name_hash);
+  pCVar1 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790(actor,g_CWeaponClassInfo.name_hash);
   if (pCVar1 == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\game.cpp";
     g_CurrentLineNumber = 0xa14;

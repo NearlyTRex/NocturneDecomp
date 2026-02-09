@@ -11,6 +11,6 @@ CRainDrop * __cdecl core_fire_cpp_freeRainDrops_FUN_004c97d0(CRainDrop *objs)
 {
   CRainDrop *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x100,&g_CRainDropTypeInfo);
+  pCVar1 = (CRainDrop *)__arrfini(objs,0x100,&g_CRainDropTypeInfo);
   return pCVar1;
 }

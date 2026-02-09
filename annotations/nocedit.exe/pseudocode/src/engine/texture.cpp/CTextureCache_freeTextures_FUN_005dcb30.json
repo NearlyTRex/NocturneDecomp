@@ -1,0 +1,172 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 36,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 106
+  },
+  "cross_references": [
+    {
+      "addr": "005dcb00",
+      "from_addr": "005dcb05",
+      "name": "engine_texture.cpp_CTextureCache_free_FUN_005dcb00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005dcb20",
+      "from_addr": "005dcb25",
+      "name": "engine_texture.cpp_CTextureCache_reset_FUN_005dcb20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005dd8e0",
+      "from_addr": "005dd8e7",
+      "name": "engine_texture.cpp_clearTextureCache_FUN_005dd8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005dd7a0",
+      "from_addr": "005dd7df",
+      "name": "engine_texture.cpp_freeTextureCache_FUN_005dd7a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005dcb30",
+    "address_range": [
+      [
+        "005dcb30",
+        "005dcbf4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30",
+    "signature": "void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005dcb30(CTextureCache *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f460",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00655142",
+      "name": "s_engine_texture_cpp_00655142",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00655158",
+      "name": "s_engine_texture_cpp_00655158",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065516e",
+      "name": "s_engine_texture_cpp_0065516e",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "005dcb25",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_reset_FUN_005dcb20",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005dd8e7",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_clearTextureCache_FUN_005dd8e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005dd7df",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_freeTextureCache_FUN_005dd7a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005dcb05",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_free_FUN_005dcb00",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.166666666666667,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 5,
+      "COPY": 47,
+      "INT_ADD": 23,
+      "INT_AND": 28,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 24,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 12,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 225
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTextureCache *"
+      }
+    ]
+  },
+  "suspects": []
+}

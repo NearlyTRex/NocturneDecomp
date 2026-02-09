@@ -7,7 +7,7 @@
 #include "types/enums/EAmmoBoxType.h"
 
 // Structure: CAmmoBox
-// Ghidra size: 0x4a4 (1188 bytes)
+// Ghidra size: 0x34c (844 bytes)
 typedef struct CAmmoBox {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -17,6 +17,6 @@ typedef struct CAmmoBox {
     float unk1; // 0x31c
     char* item; // 0x320
     int has_collision; // 0x324
-    char open_sound[380]; // 0x328
+    char open_sound[36]; // 0x328
 } CAmmoBox;
 

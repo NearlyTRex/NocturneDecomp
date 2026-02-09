@@ -1,21 +1,28 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 32,
+        "line": 57,
+        "message": "C-style cast from 'struct CSimBox *' to 'float' is not allowed"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 103,
+    "complexity_score": 104,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 7,
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 89,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 264
+    "total_lines": 265
   },
   "cross_references": [],
   "function": {
@@ -244,9 +251,9 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 61,
       "match": "SQRT",
-      "text": "SQRT(*(float *)(this_ptr->unk + 0xbbc) * *(float *)(this_ptr->unk + 0xbbc) +",
+      "text": "SQRT(*(float *)(this_ptr->unk8 + 0x44) * *(float *)(this_ptr->unk8 + 0x44) +",
       "type": "decompiler_intrinsic"
     }
   ],

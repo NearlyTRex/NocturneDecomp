@@ -40,10 +40,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00427400(CBugs *this_ptr)
     (this_ptr->model).part_visibility_flags[0] = (int)(pCVar3 + 1);
   }
   if ((this_ptr->model).part_visibility_flags[0] != 0) {
-    this_ptr->unk1[8] = '\x01';
-    this_ptr->unk1[9] = '\0';
-    this_ptr->unk1[10] = '\0';
-    this_ptr->unk1[0xb] = '\0';
+    this_ptr->unk = 1;
     *(CDemonActor **)(this_ptr->unk3 + 0x830) = in_stack_00000008;
     iVar1 = *(int *)(*(int *)(this_ptr->unk3 + 0x830) + 100);
     (this_ptr->model).part_visibility_flags[0xd] = 0;

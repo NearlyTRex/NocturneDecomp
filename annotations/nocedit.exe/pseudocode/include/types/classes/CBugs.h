@@ -10,7 +10,7 @@
 // Ghidra size: 0x199f8 (104952 bytes)
 typedef struct CBugs {
     CEnemy base; // 0x0
-    char unk1[12]; // 0xbeb4
+    int unk; // 0xbebc
     int count; // 0xbec0
     SBug bugs[400]; // 0xbec4
     int model_count; // 0x122c4

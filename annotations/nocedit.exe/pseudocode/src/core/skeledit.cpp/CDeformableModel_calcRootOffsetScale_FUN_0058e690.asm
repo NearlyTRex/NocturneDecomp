@@ -58,7 +58,7 @@ section .text
     PUSH 0x6c                           ; 0058e690
         ;   Label: core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058e695
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058e69a
     PUSH ESI                            ; 0058e69b
     PUSH EDI                            ; 0058e69c

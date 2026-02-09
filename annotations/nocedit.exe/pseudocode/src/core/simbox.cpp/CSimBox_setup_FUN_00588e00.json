@@ -1,0 +1,117 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 58,
+        "line": 21,
+        "message": "use of undeclared identifier 'stack0xffffffbc'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 61,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 46,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 59
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00588e00",
+    "address_range": [
+      [
+        "00588e00",
+        "00588e1d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_simbox.cpp_CSimBox_setup_FUN_00588e00",
+    "signature": "void __cdecl core_simbox_cpp_CSimBox_setup_FUN_00588e00(CSimBox *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408bb0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    },
+    {
+      "addr": "00478d60",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.1,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 6,
+      "INT_ADD": 3,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 7,
+      "LOAD": 1,
+      "POPCOUNT": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 41
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimBox *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 14,
+      "match": "&stack0xffffffbc",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffbc);",
+      "type": "stack_ref"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSimBox",
+        "offset": 0,
+        "vtable_addr": "00662d24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

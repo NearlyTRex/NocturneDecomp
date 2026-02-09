@@ -11,6 +11,6 @@ SBodyPartFire * __cdecl core_bodypart_cpp_freeBodyPartFires_FUN_0041b6b0(SBodyPa
 {
   SBodyPartFire *pSVar1;
   
-  pSVar1 = __arrfini(objs,2,&g_SBodyPartFireTypeInfo);
+  pSVar1 = (SBodyPartFire *)__arrfini(objs,2,&g_SBodyPartFireTypeInfo);
   return pSVar1;
 }

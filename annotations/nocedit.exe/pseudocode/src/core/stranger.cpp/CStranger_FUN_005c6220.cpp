@@ -23,36 +23,36 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(CStranger *this_ptr)
     iVar6 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).isDamageable)((CCharacter *)this_ptr);
     bVar4 = false;
     if (iVar6 < 2) {
-      if (((this_ptr->base).base.field47_0x2a8c == 0) &&
-         ((float)0.69999999999999996 < (float)(this_ptr->base).base.field48_0x2a90)) {
+      if (((this_ptr->base).base.layer_action_index == 0) &&
+         ((float)0.69999999999999996 < (this_ptr->base).base.layer_action_t)) {
         bVar4 = true;
       }
-      if (((this_ptr->base).base.field47_0x2a8c == 1) &&
-         ((float)(this_ptr->base).base.field48_0x2a90 < (float)0.29999999999999999)) {
+      if (((this_ptr->base).base.layer_action_index == 1) &&
+         ((this_ptr->base).base.layer_action_t < (float)0.29999999999999999)) {
         bVar4 = true;
       }
-      if (((this_ptr->base).base.field47_0x2a8c == 2) &&
-         ((float)0.5 < (float)(this_ptr->base).base.field48_0x2a90)) {
+      if (((this_ptr->base).base.layer_action_index == 2) &&
+         ((float)0.5 < (this_ptr->base).base.layer_action_t)) {
         bVar3 = true;
       }
-      if (((this_ptr->base).base.field47_0x2a8c == 3) &&
-         ((float)(this_ptr->base).base.field48_0x2a90 < (float)0.5)) {
+      if (((this_ptr->base).base.layer_action_index == 3) &&
+         ((this_ptr->base).base.layer_action_t < (float)0.5)) {
         bVar3 = true;
       }
-      if (((this_ptr->base).base.field47_0x2a8c == 4) &&
-         ((float)(this_ptr->base).base.field48_0x2a90 < (float)0.40000000000000002)) {
+      if (((this_ptr->base).base.layer_action_index == 4) &&
+         ((this_ptr->base).base.layer_action_t < (float)0.40000000000000002)) {
         bVar3 = true;
       }
-      if (((this_ptr->base).base.field47_0x2a8c == 5) &&
-         ((float)0.59999999999999998 < (float)(this_ptr->base).base.field48_0x2a90)) {
+      if (((this_ptr->base).base.layer_action_index == 5) &&
+         ((float)0.59999999999999998 < (this_ptr->base).base.layer_action_t)) {
         bVar3 = true;
       }
-      if (((this_ptr->base).base.field47_0x2a8c == 9) &&
-         ((float)(this_ptr->base).base.field48_0x2a90 < (float)0.40000000000000002)) {
+      if (((this_ptr->base).base.layer_action_index == 9) &&
+         ((this_ptr->base).base.layer_action_t < (float)0.40000000000000002)) {
         bVar3 = true;
       }
-      if ((((this_ptr->base).base.field47_0x2a8c == 0xf) &&
-          (fVar1 = (float)(this_ptr->base).base.field48_0x2a90, (float)0.29999999999999999 < fVar1)) &&
+      if ((((this_ptr->base).base.layer_action_index == 0xf) &&
+          (fVar1 = (this_ptr->base).base.layer_action_t, (float)0.29999999999999999 < fVar1)) &&
          ((double)fVar1 < 0.80000000000000004)) {
         bVar3 = true;
       }

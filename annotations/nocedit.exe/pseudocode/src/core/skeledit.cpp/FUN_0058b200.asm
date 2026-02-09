@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592f90
 ;   core_skeledit.cpp_FUN_0058c190 at 0058c274
-;   core_skeledit.cpp_FUN_00592690 at 00592f90
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3
@@ -18,7 +18,7 @@ section .text
     PUSH 0x14                           ; 0058b200
         ;   Label: core_skeledit.cpp_FUN_0058b200
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b205
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058b20a
     PUSH ESI                            ; 0058b20b
     PUSH EDI                            ; 0058b20c

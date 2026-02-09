@@ -69,6 +69,10 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_anvil.cpp_CAnvil_ctor_FUN_00411ce0
       Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
+  core/fileman.cpp (1 remaining of 12)
+    - core_fileman.cpp_preprocessMusicFiles_FUN_004bd750
+      Suspects: pointer_cast, pointer_cast
+
   core/barrier.cpp (1 remaining of 14)
     - core_barrier.cpp_CBarrier_processInEditor_FUN_00414460
       Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
@@ -146,12 +150,6 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: pointer_cast
     - engine_console.cpp_CConsole_printf_FUN_00441890
       Suspects: stack_ref
-
-  core/fileman.cpp (2 remaining of 12)
-    - core_fileman.cpp_CDemonFileManager_dtor_FUN_00508880
-      Suspects: extra_output, extra_output
-    - core_fileman.cpp_preprocessMusicFiles_FUN_004bd750
-      Suspects: pointer_cast, pointer_cast
 
   core/dimage.cpp (2 remaining of 6)
     - core_dimage.cpp_CDemonImage_load_FUN_00471ad0
@@ -238,7 +236,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_2d.c_doNothing_FUN_00402860                      (  4 lines)
     engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048 (  4 lines)
     sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970  (  4 lines)
-    engine_texture.cpp_CTextureCache_dtor_FUN_005dcb20      (  5 lines)
+    engine_texture.cpp_CTextureCache_reset_FUN_005dcb20     (  5 lines)
     engine_palette.cpp_CFont_ctor_FUN_00544eb0              (  5 lines)
     engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d6 (  5 lines)
     ... and 142 more
@@ -334,8 +332,16 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_mission.cpp_CDemonMission_process_FUN_00524250     ( 46 lines)
     ... and 1 more
 
-  [unresolved_funcptr] - 8 functions
-    core_stranger.cpp_CStranger_renderTransparent_FUN_005c3 (  9 lines)
+  [unnamed_param] - 7 functions
+    core_actor.cpp_CActorPropertyList_addGroundType_FUN_004 ( 11 lines)
+    core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0 ( 11 lines)
+    core_actor.cpp_CActorPropertyList_addVector_FUN_0040e26 ( 11 lines)
+    core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e ( 13 lines)
+    core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e ( 13 lines)
+    core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e35 ( 26 lines)
+    core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0  ( 34 lines)
+
+  [unresolved_funcptr] - 7 functions
     core_hero.cpp_CHero_FUN_004f3580                        ( 12 lines)
     core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0 ( 18 lines)
     support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50  ( 20 lines)
@@ -344,19 +350,11 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_dosio.c_findFile_FUN_00481760                    ( 23 lines)
     core_boxactor.cpp_CBoxActor_FUN_00422590                ( 31 lines)
 
-  [unnamed_param] - 7 functions
-    core_actor.cpp_CActorPropertyList_addGroundType_FUN_004 ( 10 lines)
-    core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0 ( 10 lines)
-    core_actor.cpp_CActorPropertyList_addVector_FUN_0040e26 ( 11 lines)
-    core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e ( 12 lines)
-    core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e ( 12 lines)
-    core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e35 ( 26 lines)
-    core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0  ( 34 lines)
-
-  [suspect_float] - 5 functions
+  [suspect_float] - 6 functions
     core_glass.cpp_CGlass_process_FUN_004e98e0              ( 16 lines)
+    core_stranger.cpp_CStranger_FUN_005c5e80                ( 18 lines)
     core_grave.cpp_CGrave_process_FUN_004ee5c0              ( 31 lines)
-    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 45 lines)
+    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 33 lines)
     core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 46 lines)
     core_trigger.cpp_CTrigger_setup_FUN_005df990            ( 46 lines)
 
@@ -393,18 +391,23 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 
   core/barrier.cpp (92.9% complete)
     1 functions remaining:
-      core_barrier.cpp_CBarrier_processInEditor_FUN_0041 (61 lines)
+      core_barrier.cpp_CBarrier_processInEditor_FUN_0041 (52 lines)
         Types: ['stack_param']
 
   core/beast.cpp (92.9% complete)
     1 functions remaining:
-      core_beast.cpp_CBeast_dtor_FUN_00418490 (30 lines)
+      core_beast.cpp_CBeast_dtor_FUN_00418490 (29 lines)
         Types: ['negative_offset']
 
   core/anvil.cpp (92.3% complete)
     1 functions remaining:
       core_anvil.cpp_CAnvil_ctor_FUN_00411ce0 (30 lines)
         Types: ['decompiler_intrinsic']
+
+  core/fileman.cpp (91.7% complete)
+    1 functions remaining:
+      core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 (52 lines)
+        Types: ['pointer_cast']
 
   engine/light.cpp (90.0% complete)
     1 functions remaining:

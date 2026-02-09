@@ -12,23 +12,23 @@ __asm {
         mov EBP,ESP
         sub ESP,0x4c
         mov ESI,dword ptr [EBP + 0x14]
-        call sound_sndmain.cpp_processAudio_FUN_005abe20
-        call wincore_windll.cpp_clearScreen_FUN_005b3e70
-        call wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
+        call sound_sndmain_cpp_processAudio_FUN_005abe20
+        call wincore_windll_cpp_clearScreen_FUN_005b3e70
+        call wincore_windll_cpp_clearZBuffer_FUN_005b3ed4
         push 0x3f87558
         mov EDX,dword ptr [g_CDemonRendererPtr2]
         push EDX
-        call engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
+        call engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
         add ESP,0x8
         mov ECX,dword ptr [g_CDemonRendererPtr2]
         push 0x42e00000
         push ECX
-        call engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
+        call engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
         add ESP,0x8
         push 0x3f87558
         mov EBX,dword ptr [g_CDemonRendererPtr2]
         push EBX
-        call engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
+        call engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
         fld double ptr [DOUBLE_00639f99]
         fld float ptr [ESI + 0x4]
         fadd ST0,ST1
@@ -47,7 +47,7 @@ __asm {
         push EAX
         mov dword ptr [EBP + -0x44],EDI
         fstp float ptr [EBP + -0x48]
-        call engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+        call engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
         mov EAX,[g_CDemonSetPtr]
         add ESP,0x8
         mov dword ptr [DAT_0326f0e8 + EAX],0x1
@@ -59,14 +59,14 @@ __asm {
         mov dword ptr [DAT_0326f0f4 + EAX],0x9088
         push EAX
         mov dword ptr [DAT_0326f0f8 + EAX],0x280
-        call core_set.cpp_CDemonSet_FUN_00570ca0
+        call core_set_cpp_CDemonSet_FUN_00570ca0
         add ESP,0x10
         push 0x205
         push 0x0
         push 0x0
         lea EAX,[ESI + 0x8]
         push EAX
-        call core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
+        call core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
         mov EAX,[g_CDemonSetPtr]
         mov dword ptr [DAT_0326f0ec + EAX],0xffffb7bc
         mov dword ptr [DAT_0326f0f0 + EAX],0xffffb7bc
@@ -94,7 +94,7 @@ __asm {
         add EAX,ESI
         push dword ptr [DAT_02f38210 + EBX]
         push EAX
-        call core_course.cpp_CCourse_FUN_00442710
+        call core_course_cpp_CCourse_FUN_00442710
         fld float ptr [EBP + -0x34]
         fld float ptr [EBP + -0x30]
         fld float ptr [EBP + -0x2c]
@@ -117,28 +117,28 @@ __asm {
         fstp float ptr [EBP + -0x2c]
         push EDI
         fstp float ptr [EBP + -0x3c]
-        call engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+        call engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
         add ESP,0x8
         push 0x0
         lea EAX,[EBP + -0x40]
         push EAX
         mov EAX,[g_CDemonRendererPtr2]
         push EAX
-        call engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
+        call engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
         add ESP,0xc
         fld float ptr [DAT_02f38214 + EBX]
         push -0x1
-        call crt_math.c_round_FUN_005fe6b0
+        call crt_math_c_round_FUN_005fe6b0
         push 0x0
         fistp dword ptr [EBP + -0x4]
         mov EDX,dword ptr [EBP + -0x4]
         push EDX
         push 0x2f384dc
-        call core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
+        call core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
         add ESP,0x10
         mov ECX,dword ptr [g_CDemonRendererPtr2]
         push ECX
-        call engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720
     LAB_0052a11f:
         add EBX,0x18
         cmp EBX,0x2d0
@@ -147,7 +147,7 @@ __asm {
         mov EAX,[g_CDemonSetPtr]
         push 0x2f37f70
         mov dword ptr [DAT_0326f0e8 + EAX],0x0
-        call engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0
+        call engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0
         mov EAX,[g_MoonCloudScrollX]
         add ESP,0x4
         sar EAX,0x10
@@ -217,9 +217,9 @@ __asm {
         jl LAB_0052a17a
     LAB_0052a250:
         push 0x1
-        call engine_3d.c_setBlendMode_FUN_00406dd0
+        call engine_3d_c_setBlendMode_FUN_00406dd0
         fld float ptr [g_MoonAnimationTimer]
-        call crt_math.c_round_FUN_005fe6b0
+        call crt_math_c_round_FUN_005fe6b0
         fistp dword ptr [EBP + -0xc]
         mov ESI,dword ptr [EBP + -0xc]
         add ESP,0x4
@@ -237,10 +237,10 @@ __asm {
         push 0x0
         add EAX,0x2f37f84
         push EAX
-        call engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
+        call engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
         add ESP,0x10
         push 0x0
-        call engine_3d.c_setBlendMode_FUN_00406dd0
+        call engine_3d_c_setBlendMode_FUN_00406dd0
         add ESP,0x4
         mov ESP,EBP
 }

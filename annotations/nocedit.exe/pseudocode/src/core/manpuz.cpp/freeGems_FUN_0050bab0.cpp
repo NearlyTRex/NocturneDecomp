@@ -11,6 +11,6 @@ SGem * __cdecl core_manpuz_cpp_freeGems_FUN_0050bab0(SGem *objs)
 {
   SGem *pSVar1;
   
-  pSVar1 = __arrfini(objs,0xc,&g_SGemTypeInfo);
+  pSVar1 = (SGem *)__arrfini(objs,0xc,&g_SGemTypeInfo);
   return pSVar1;
 }

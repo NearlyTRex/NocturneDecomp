@@ -5,7 +5,7 @@
 
 // Original: core_motion.cpp_CMotionList_ctor_FUN_0052cd50
 // Address: 0052cd50
-void __cdecl CMotionList::ctor(CMotionList *this_ptr);
+CMotionList * __cdecl CMotionList::ctor(CMotionList *this_ptr);
 
 // Original: core_motion.cpp_CMotionList_load_FUN_0052cd70
 // Address: 0052cd70

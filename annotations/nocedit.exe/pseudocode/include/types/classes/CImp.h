@@ -8,6 +8,6 @@
 // Ghidra size: 0xbef4 (48884 bytes)
 typedef struct CImp {
     CEnemy base; // 0x0
-    char unk[64]; // 0xbeb4
+    char unk[56]; // 0xbebc
 } CImp;
 

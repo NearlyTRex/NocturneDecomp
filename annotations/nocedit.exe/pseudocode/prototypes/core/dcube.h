@@ -51,9 +51,9 @@ void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,_FILE 
 // Address: 004552c0
 void __cdecl CDemonCubeTriangle::calculateNormalAndPlane(CDemonCubeTriangle *this_ptr);
 
-// Original: core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430
+// Original: core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430
 // Address: 00455430
-void __cdecl CDemonCubeTriangle::ctor(CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2);
+void __cdecl CDemonCubeTriangle::init(CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460
 // Address: 00455460

@@ -11,7 +11,7 @@ struct CDemonActor;
 // Ghidra size: 0xbfac (49068 bytes)
 typedef struct CZombie {
     CEnemy base; // 0x0
-    char unk1[32]; // 0xbeb4
+    char unk1[24]; // 0xbebc
     struct CDemonActor* grave_actor; // 0xbed4
     int unk2; // 0xbed8
     char rise_from_grave_condition[32]; // 0xbedc

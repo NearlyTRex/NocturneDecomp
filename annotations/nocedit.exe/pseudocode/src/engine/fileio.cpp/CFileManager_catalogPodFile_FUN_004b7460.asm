@@ -39,7 +39,7 @@
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_strupr_FUN_00600770
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_strftime_FUN_006002d4
+;   crt_time.c__strftime_FUN_006002d4
 ;   engine_dosio.c_splitPath_FUN_00481f20
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
@@ -148,8 +148,8 @@ section .text
     PUSH 0x1e                           ; 004b753e
     LEA EAX,[ESP + 0xce4]               ; 004b7540
     PUSH EAX                            ; 004b7547
-    CALL crt_time.c_strftime_FUN_006002d4 ; 004b7548
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 004b7548
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b754d
     LEA EAX,[ESP + 0x9d8]               ; 004b7550
     PUSH EAX                            ; 004b7557

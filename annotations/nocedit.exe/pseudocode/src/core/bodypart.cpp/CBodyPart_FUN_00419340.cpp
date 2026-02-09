@@ -17,45 +17,42 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr)
   int local_14;
   
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-            (g_CDemonSetPtr,*(int *)(this_ptr->unk + 0x1c),*(int **)(this_ptr->unk + 0x20));
+            (g_CDemonSetPtr,this_ptr->vertex_count,(int *)this_ptr->unk2);
   core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
-            (g_CDemonSetPtr,*(int *)(this_ptr->unk + 0x1c),*(int *)(this_ptr->unk + 0x28),
-             *(SInputFace **)(this_ptr->unk + 0x2c),*(int *)(this_ptr->unk + 0x20),3,
-             *(int *)(this_ptr->unk + 0x24));
-  if ((*(int *)(this_ptr->unk + 0x34) == 1) ||
+            (g_CDemonSetPtr,this_ptr->vertex_count,this_ptr->tri_count,
+             *(SInputFace **)this_ptr->unk4,this_ptr->unk2,3,this_ptr->unk3);
+  if ((this_ptr->texture_count == 1) ||
      (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar2 != 0)) {
     iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar2 == 0) {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(this_ptr->unk + 0x38));
+                (g_CDemonRendererPtr2,(SMRGLTextureBasic *)this_ptr->unk5);
     }
     engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
-              (g_CDemonRendererPtr2,*(SMRGLHeaderPrimitive **)(this_ptr->unk + 0x2c),
-               *(int *)(this_ptr->unk + 0x28),in_stack_00000008);
+              (g_CDemonRendererPtr2,*(SMRGLHeaderPrimitive **)this_ptr->unk4,this_ptr->tri_count,
+               in_stack_00000008);
   }
   else {
     iVar2 = 0;
     local_18 = -1;
-    if (0 < *(int *)(this_ptr->unk + 0x28)) {
+    if (0 < this_ptr->tri_count) {
       local_14 = 0;
       iVar3 = 0;
       do {
-        iVar1 = *(int *)(*(int *)(this_ptr->unk + 0x30) + local_14);
+        iVar1 = *(int *)(*(int *)(this_ptr->unk4 + 4) + local_14);
         if (iVar1 != local_18) {
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                    (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(this_ptr->unk + iVar1 * 0x18 + 0x38)
-                    );
+                    (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(this_ptr->unk5 + iVar1 * 0x18));
           local_18 = iVar1;
         }
         engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                  (g_CDemonRendererPtr2,
-                   (SMRGLHeaderPrimitive *)(*(int *)(this_ptr->unk + 0x2c) + iVar3),
+                  (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)(*(int *)this_ptr->unk4 + iVar3),
                    in_stack_00000008);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 0x3c;
         local_14 = local_14 + 4;
-      } while (iVar2 < *(int *)(this_ptr->unk + 0x28));
+      } while (iVar2 < this_ptr->tri_count);
     }
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);

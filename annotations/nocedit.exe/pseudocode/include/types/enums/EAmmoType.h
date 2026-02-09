@@ -1,7 +1,7 @@
 #pragma once
 
 // Enum: EAmmoType
-typedef enum EAmmoType {
+enum {
     AMMO_TYPE_GENERIC = 0,
     AMMO_TYPE_HOLY = 1,
     AMMO_TYPE_WOOD = 2,
@@ -11,5 +11,6 @@ typedef enum EAmmoType {
     AMMO_TYPE_BLANKS = 6,
     AMMO_TYPE_LITHIUM = 7,
     AMMO_TYPE_MERCURY = 8
-} EAmmoType;
+};
+typedef int EAmmoType;
 

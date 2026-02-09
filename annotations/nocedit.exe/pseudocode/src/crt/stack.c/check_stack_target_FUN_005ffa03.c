@@ -1,25 +1,26 @@
 // Name: crt_stack.c_check_stack_target_FUN_005ffa03
 // Address: 005ffa03
 // Address Range: [[005ffa03, 005ffa21]]
-// Convention: __watcallRegister
-// Signature: void crt_stack_c_check_stack_target_FUN_005ffa03(void *target_stack_ptr)
+// Convention: __stk_probe
+// Signature: void __stk_probe crt_stack_c_check_stack_target_FUN_005ffa03(void)
 
 #include "nocturne.h"
 
-void check_stack_target(void *target_stack_ptr)
+void __stk_probe check_stack_target(void)
 
 {
   bool bVar1;
+  byte *unaff_EAX;
   int iVar2;
   ThreadData *pTVar3;
   int iVar4;
   int iVar5;
   
-  if (target_stack_ptr < &stack0xfffffffc) {
-    iVar2 = (int)target_stack_ptr - (int)&stack0xfffffffc;
+  if (unaff_EAX < &stack0xfffffffc) {
+    iVar2 = (int)unaff_EAX - (int)&stack0xfffffffc;
     pTVar3 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
     if (pTVar3->stack_limit < (uint)-iVar2) {
-      ProbeStackSpace((uint)target_stack_ptr);
+      ProbeStackSpace((uint)unaff_EAX);
       return;
     }
   }

@@ -104,7 +104,7 @@ section .text
     PUSH 0x38c                          ; 00595fc0
         ;   Label: core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00595fc5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 00595fca
     PUSH ESI                            ; 00595fcb
     PUSH EDI                            ; 00595fcc

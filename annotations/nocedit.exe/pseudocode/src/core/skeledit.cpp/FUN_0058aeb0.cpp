@@ -21,7 +21,7 @@ void __cdecl core_skeledit_cpp_FUN_0058aeb0(void)
   
   bVar4 = 0;
   local_8 = 0x58aeba;
-  __STK(0x40);
+  __STK();
   local_8 = 0;
   if (0 < *in_stack_00000004) {
     matrix_in = (float *)(in_stack_00000004 + 0x16);

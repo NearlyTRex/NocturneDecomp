@@ -11,6 +11,6 @@ CSpark * __cdecl core_fire_cpp_freeSparks_FUN_004c99b0(CSpark *objs)
 {
   CSpark *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x100,&g_CSparkTypeInfo);
+  pCVar1 = (CSpark *)__arrfini(objs,0x100,&g_CSparkTypeInfo);
   return pCVar1;
 }

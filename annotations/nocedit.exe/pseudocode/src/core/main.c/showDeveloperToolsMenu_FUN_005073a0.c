@@ -82,7 +82,7 @@ LAB_0050740e:
           core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(g_CDemonSetPtr);
         }
         else if (uVar2 < 0x36) {
-          this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x56d8,"..\\core\\main.c",0x274);
+          this_ptr = (CKeyFramedModel *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x56d8,"..\\core\\main.c",0x274);
           pCVar6 = (CKeyFramedModel *)0x0;
           if (this_ptr != (CKeyFramedModel *)0x0) {
             pCVar6 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(this_ptr);

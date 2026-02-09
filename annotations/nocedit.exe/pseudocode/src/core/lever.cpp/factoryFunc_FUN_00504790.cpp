@@ -11,7 +11,7 @@ CLever * __cdecl core_lever_cpp_factoryFunc_FUN_00504790(void)
 {
   CLever *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x814,"..\\core\\lever.cpp",0x29);
+  pCVar1 = (CLever *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x814,"..\\core\\lever.cpp",0x29);
   if (pCVar1 == (CLever *)0x0) {
     return (CLever *)0x0;
   }

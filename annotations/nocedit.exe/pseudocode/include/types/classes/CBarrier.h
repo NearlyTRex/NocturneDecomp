@@ -3,11 +3,14 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CBarrier
 // Ghidra size: 0x230 (560 bytes)
 typedef struct CBarrier {
     CDemonActor base; // 0x0
-    char unk[216]; // 0x158
+    CVector3f size; // 0x158
+    int add_to_path_grid; // 0x164
+    char effect_class_name_list[200]; // 0x168
 } CBarrier;
 

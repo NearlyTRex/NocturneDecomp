@@ -8,7 +8,7 @@
 // Ghidra size: 0xbf38 (48952 bytes)
 typedef struct CGhoul {
     CEnemy base; // 0x0
-    char unk1[20]; // 0xbeb4
+    char unk1[12]; // 0xbebc
     int arise_timer; // 0xbec8
     char unk2[12]; // 0xbecc
     int lives_left; // 0xbed8

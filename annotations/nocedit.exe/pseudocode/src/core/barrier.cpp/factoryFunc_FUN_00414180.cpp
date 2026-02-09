@@ -11,7 +11,7 @@ CBarrier * __cdecl core_barrier_cpp_factoryFunc_FUN_00414180(void)
 {
   CBarrier *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x230,"..\\core\\barrier.cpp",0x26);
+  pCVar1 = (CBarrier *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x230,"..\\core\\barrier.cpp",0x26);
   if (pCVar1 == (CBarrier *)0x0) {
     return (CBarrier *)0x0;
   }

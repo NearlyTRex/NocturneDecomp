@@ -11,7 +11,7 @@ struct CDemonActor;
 // Ghidra size: 0xbf94 (49044 bytes)
 typedef struct CMobster {
     CEnemy base; // 0x0
-    char unk1[36]; // 0xbeb4
+    char unk1[28]; // 0xbebc
     int post_mode; // 0xbed8
     struct CDemonActor* our_post; // 0xbedc
     struct CDemonActor* vehicle; // 0xbee0

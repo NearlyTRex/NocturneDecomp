@@ -11,6 +11,6 @@ CSfxSample * __cdecl sound_sndmain_cpp_freeSfxSamples_FUN_005ade40(CSfxSample *o
 {
   CSfxSample *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x40,&g_SfxSampleTypeInfo);
+  pCVar1 = (CSfxSample *)__arrfini(objs,0x40,&g_SfxSampleTypeInfo);
   return pCVar1;
 }

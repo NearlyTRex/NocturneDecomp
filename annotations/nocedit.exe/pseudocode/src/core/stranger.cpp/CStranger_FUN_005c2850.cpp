@@ -58,7 +58,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
   if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
     return 0;
   }
-  if (((this_ptr->base).base.field47_0x2a8c != 0xe) &&
+  if (((this_ptr->base).base.layer_action_index != 0xe) &&
      (local_18 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr),
      local_18 < (float)0.98999999999999999)) {
     return 0;

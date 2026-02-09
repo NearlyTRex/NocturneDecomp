@@ -97,7 +97,7 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
       if (this_ptr->shape == 1) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
         dVar12 = round
-                           ((double)(*(float *)this_ptr->unk1 * (float)0.10000000000000001 +
+                           ((double)((this_ptr->trigger_size).x * (float)0.10000000000000001 +
                                     (float)12));
         fStack_cc = (float)(int)ROUND(dVar12);
         if (0x28 < (int)fStack_cc) {
@@ -105,7 +105,7 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
         }
         (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_88);
         pCVar2 = g_CDemonRendererPtr2;
-        fVar1 = *(float *)this_ptr->unk1 * (float)0.5;
+        fVar1 = (this_ptr->trigger_size).x * (float)0.5;
         fStack_5c = 0.0;
         CStack_54.x = 0;
         fStack_58 = CStack_88.max.x;

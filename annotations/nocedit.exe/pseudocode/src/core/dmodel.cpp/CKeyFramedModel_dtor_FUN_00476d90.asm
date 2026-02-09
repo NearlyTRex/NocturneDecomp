@@ -11,7 +11,7 @@
 ;   core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 at 0047eeda
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050781c
 ;   core_moon.cpp_CMoon_dtor_FUN_00529ab0 at 00529ac4
-;   core_setedit.cpp_UserInputCreate_FUN_0057d660 at 0057dba7
+;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057dba7
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690

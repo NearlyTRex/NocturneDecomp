@@ -47,9 +47,9 @@
 ;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_string.c_strerror_FUN_00601470
+;   crt_time.c__asctime_FUN_00601768
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_asctime_FUN_00601768
-;   crt_time.c_time_FUN_006001f0
+;   crt_time.c__time_FUN_006001f0
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -199,8 +199,8 @@ section .text
     ADD ESP,0x8                         ; 00507047
     LEA EAX,[ESP + 0x8]                 ; 0050704a
     PUSH EAX                            ; 0050704e
-    CALL crt_time.c_time_FUN_006001f0   ; 0050704f
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c__time_FUN_006001f0  ; 0050704f
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 00507054
     PUSH 0x2dd3130                      ; 00507057 | g_ErrorMessageBuffer_02dd3130
     PUSH 0x631656                       ; 0050705c | = "Msg: %s\n"
@@ -223,8 +223,8 @@ section .text
         ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 00507090
     PUSH EAX                            ; 00507093
-    CALL crt_time.c_asctime_FUN_00601768 ; 00507094
-        ;   XREF to: 00601768 (UNCONDITIONAL_CALL)  ; char * crt_time.c_asctime_FUN_00601768(_tm * timeptr)
+    CALL crt_time.c__asctime_FUN_00601768 ; 00507094
+        ;   XREF to: 00601768 (UNCONDITIONAL_CALL)  ; char * crt_time.c__asctime_FUN_00601768(_tm * timeptr)
     ADD ESP,0x4                         ; 00507099
     PUSH EAX                            ; 0050709c
     PUSH 0x631671                       ; 0050709d | = "Time: %s"

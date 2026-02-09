@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[2]:
-;   core_skeledit.cpp_FUN_00589c20 at 00589dc5
+;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589dc5
 ;   shape_meshlod.cpp_CLodMesh_loadPrecomputedLodData_FUN_0051b720 at 0051b73f
 ;
 ; Referenced Globals:

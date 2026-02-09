@@ -16,7 +16,7 @@
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90 at 0052dba0
 ;   core_npc.cpp_CNPC_FUN_00544c50 at 00544ccf
 ;   core_npc.cpp_CNPC_process_FUN_005448b0 at 00544b37
-;   core_skeledit.cpp_FUN_00592690 at 00592dd6
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592dd6
 ;   ... and 3 more
 ;
 ; Referenced Globals:

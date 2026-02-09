@@ -26,7 +26,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00584e70(CDemonSet *this_ptr)
               (in_stack_00000008,this_ptr->enviro_model_name);
   }
   pcVar4 = local_118;
-  core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
+  core_setedit_cpp_CDemonSet_FUN_00576da0(this_ptr);
   pcVar3 = this_ptr->geometry_filename;
   do {
     cVar1 = *pcVar3;

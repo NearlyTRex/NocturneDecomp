@@ -100,7 +100,7 @@ core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
     if (iVar11 != 0) {
       local_2c.x = (int)((float)local_2c.x + 1.570796f);
     }
-    pCVar14 = core_actor_cpp_castToClassHash_FUN_0040c790(item,g_CMeleeClassInfo.name_hash);
+    pCVar14 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c790(item,g_CMeleeClassInfo.name_hash);
     if (pCVar14 != (CDemonActor *)0x0) {
       iVar11 = stricmp(pCVar14[1].create_event,"axe1.kfm");
       if (iVar11 == 0) {

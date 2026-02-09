@@ -7,11 +7,11 @@
 ; CKeys *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
-;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 005806cc
+;   core_setedit.cpp_CDemonSet_FUN_00578a20 at 00578be6
+;   core_setedit.cpp_CDemonSet_FUN_0057ae50 at 0057b260
+;   core_setedit.cpp_CDemonSet_FUN_005805a0 at 005806cc
 ;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00582479
 ;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583f4b
-;   core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20 at 00578be6
-;   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 at 0057b260
 ;   core_setedit.cpp_FUN_00581590 at 005817bc
 ;   core_setedit.cpp_FUN_00582f30 at 0058315c
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00598de0

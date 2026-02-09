@@ -30,7 +30,7 @@ section .text
     PUSH 0x20                           ; 00598f10
         ;   Label: core_skeledit.cpp_FUN_00598f10
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00598f15
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 00598f1a
     PUSH ESI                            ; 00598f1b
     PUSH EDI                            ; 00598f1c

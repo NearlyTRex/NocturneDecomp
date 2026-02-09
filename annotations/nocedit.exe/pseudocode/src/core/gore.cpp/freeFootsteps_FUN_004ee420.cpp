@@ -11,6 +11,6 @@ CFootstep * __cdecl core_gore_cpp_freeFootsteps_FUN_004ee420(CFootstep *objs)
 {
   CFootstep *pCVar1;
   
-  pCVar1 = __arrfini(objs,1000,&g_CFootstepTypeInfo);
+  pCVar1 = (CFootstep *)__arrfini(objs,1000,&g_CFootstepTypeInfo);
   return pCVar1;
 }

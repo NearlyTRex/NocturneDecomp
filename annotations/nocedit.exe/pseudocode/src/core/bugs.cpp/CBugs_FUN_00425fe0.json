@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 84,
+        "line": 81,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 32,
-        "line": 84,
+        "line": 81,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 98,
+        "line": 95,
         "message": "cannot cast from type 'float' to pointer type 'float *'"
       }
     ],
@@ -25,11 +25,11 @@
   },
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 318,
+    "complexity_score": 315,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 5,
-    "pseudocode_lines": 168,
+    "pseudocode_lines": 165,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -39,7 +39,7 @@
       "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 507
+    "total_lines": 504
   },
   "cross_references": [
     {
@@ -351,63 +351,63 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 60,
       "match": "(float *)((int)",
       "text": "pfVar5 = (float *)((int)pfVar5 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 71,
       "match": "ABS",
       "text": "if ((((float)2 < ABS(local_48)) || ((float)2 < ABS(local_4c))) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 71,
       "match": "ABS",
       "text": "if ((((float)2 < ABS(local_48)) || ((float)2 < ABS(local_4c))) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 72,
       "match": "ABS",
       "text": "((float)2 < ABS(local_44))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 77,
+      "line": 74,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk3 + 0x830) + 0x154) + 0xbc))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 80,
+      "line": 77,
       "match": "extraout_EAX",
       "text": "this_ptr_02 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 88,
+      "line": 85,
       "match": "in_stack_00000008",
       "text": "CStack_94.z = 2.0f * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 114,
+      "line": 111,
       "match": "in_stack_00000008",
       "text": "(fVar1 = *(float *)(this_ptr->unk5 + 0x28) - in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 141,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"

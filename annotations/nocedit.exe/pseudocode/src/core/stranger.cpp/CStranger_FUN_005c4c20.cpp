@@ -37,8 +37,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr)
   float local_1c;
   float local_18;
   
-  if ((*(int *)(this_ptr->unk5 + 8) == 0) || (*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x2e0) != 0))
-  {
+  if ((this_ptr->weapon == (CDemonActor *)0x0) || (this_ptr->weapon[2].orient.pitch != 0.0)) {
     in_stack_0000000c = 0;
   }
   iVar4 = 0;

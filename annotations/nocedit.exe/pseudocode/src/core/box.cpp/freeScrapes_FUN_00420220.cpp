@@ -11,6 +11,6 @@ SScrape * __cdecl core_box_cpp_freeScrapes_FUN_00420220(SScrape *array)
 {
   SScrape *pSVar1;
   
-  pSVar1 = __arrfini(array,8,&g_SScrapeTypeInfo);
+  pSVar1 = (SScrape *)__arrfini(array,8,&g_SScrapeTypeInfo);
   return pSVar1;
 }

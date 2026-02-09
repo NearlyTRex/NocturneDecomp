@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_FUN_0058afe0(void)
+; __cdecl void __cdecl core_skeledit_cpp_FUN_0058afe0(void *ptr)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   ptr
 ; Local Variables:
 ; undefined4       Stack[-0x484]:4  local_484
 ; undefined        Stack[-0xdc]:1  local_dc
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 0059386d
 ;   core_skeledit.cpp_FUN_0058c190 at 0058c74a
-;   core_skeledit.cpp_FUN_00592690 at 0059386d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_no_parent_0064a562
@@ -40,7 +42,7 @@ section .text
     PUSH 0x4a0                          ; 0058afe0
         ;   Label: core_skeledit.cpp_FUN_0058afe0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058afe5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058afea
     PUSH ESI                            ; 0058afeb
     PUSH EDI                            ; 0058afec

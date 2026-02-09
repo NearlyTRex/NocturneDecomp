@@ -10,9 +10,9 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db181
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e250
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539141
-;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 00580651
-;   core_setedit.cpp_FUN_00581320 at 0058135b
-;   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 at 0057c5f4
+;   core_setedit.cpp_CDemonSet_FUN_005805a0 at 00580651
+;   core_setedit.cpp_CDemonSet_FUN_00581320 at 0058135b
+;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057c5f4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_0062b5ed

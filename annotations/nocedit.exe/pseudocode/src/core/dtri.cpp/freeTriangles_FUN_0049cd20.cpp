@@ -11,6 +11,6 @@ CDemonTriangle * __cdecl core_dtri_cpp_freeTriangles_FUN_0049cd20(CDemonTriangle
 {
   CDemonTriangle *pCVar1;
   
-  pCVar1 = __arrfini(objs,8,&g_CDemonTriangleTypeInfo);
+  pCVar1 = (CDemonTriangle *)__arrfini(objs,8,&g_CDemonTriangleTypeInfo);
   return pCVar1;
 }

@@ -44,30 +44,25 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
   
   bVar8 = 0;
   pCVar9 = &(this_ptr->base).base.model;
-  if (*(int *)(this_ptr->unk + 0xf8) == 0) {
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,this_ptr->unk);
+  if (this_ptr->summoned == 0) {
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                      (g_CEventListPtr,this_ptr->summon_event);
     if (iVar3 != 0) {
-      this_ptr->unk[0xf8] = '\x01';
-      this_ptr->unk[0xf9] = '\0';
-      this_ptr->unk[0xfa] = '\0';
-      this_ptr->unk[0xfb] = '\0';
+      this_ptr->summoned = 1;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar9->motion_controller,6,1)
       ;
-      this_ptr->unk[0xfc] = '\x01';
-      this_ptr->unk[0xfd] = '\0';
-      this_ptr->unk[0xfe] = '\0';
-      this_ptr->unk[0xff] = '\0';
+      this_ptr->unk2 = 1;
     }
   }
   else {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                      (g_CEventListPtr,this_ptr->unk + 100);
+                      (g_CEventListPtr,this_ptr->go_away_event);
     if (iVar3 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar9->motion_controller,7,1)
       ;
     }
   }
-  if (((*(int *)(this_ptr->unk + 0xf8) == 0) && ((this_ptr->base).control_type == 2)) ||
+  if (((this_ptr->summoned == 0) && ((this_ptr->base).control_type == 2)) ||
      (iVar3 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr), iVar3 == 0)) {
     return;
   }
@@ -90,7 +85,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   core_baron_cpp_CBaron_FUN_00413a00(this_ptr,delta_time);
-  if (*(int *)(this_ptr->unk + 0xf8) == 0) {
+  if (this_ptr->summoned == 0) {
     return;
   }
   iVar3 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
@@ -116,10 +111,10 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
         iVar3 = 2;
       }
       if ((this_ptr->base).action_bindings.fire_key != 0) {
-        this_ptr->unk[0xdc] = '\x01';
-        this_ptr->unk[0xdd] = '\0';
-        this_ptr->unk[0xde] = '\0';
-        this_ptr->unk[0xdf] = '\0';
+        this_ptr->unk1[0x14] = '\x01';
+        this_ptr->unk1[0x15] = '\0';
+        this_ptr->unk1[0x16] = '\0';
+        this_ptr->unk1[0x17] = '\0';
         iVar3 = 4;
         (this_ptr->base).action_bindings.fire_key = 0;
       }
@@ -152,26 +147,26 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
         local_54.y = pCVar4->y;
         local_54.z = pCVar4->z;
       }
-      if (*(int *)(this_ptr->unk + 0xdc) == 0) {
+      if (*(int *)(this_ptr->unk1 + 0x14) == 0) {
         pCStack_c0 = &local_30;
         core_fire_cpp_CFireEffect_FUN_004c90c0(g_CFireEffectPtr);
         pCStack_c0 = &local_54;
         core_fire_cpp_CFireEffect_FUN_004c90c0(g_CFireEffectPtr);
       }
-      if ((CVector3f *)(this_ptr->unk + 0xe0) != &local_30) {
-        ((CVector3f *)(this_ptr->unk + 0xe0))->x = local_30.x;
-        *(float *)(this_ptr->unk + 0xe4) = local_30.y;
-        *(float *)(this_ptr->unk + 0xe8) = local_30.z;
+      if ((CVector3f *)(this_ptr->unk1 + 0x18) != &local_30) {
+        ((CVector3f *)(this_ptr->unk1 + 0x18))->x = local_30.x;
+        *(float *)(this_ptr->unk1 + 0x1c) = local_30.y;
+        *(float *)(this_ptr->unk1 + 0x20) = local_30.z;
       }
-      if ((CVector3f *)(this_ptr->unk + 0xec) != &local_54) {
-        ((CVector3f *)(this_ptr->unk + 0xec))->x = local_54.x;
-        *(float *)(this_ptr->unk + 0xf0) = local_54.y;
-        *(float *)(this_ptr->unk + 0xf4) = local_54.z;
+      if ((CVector3f *)(this_ptr->unk1 + 0x24) != &local_54) {
+        ((CVector3f *)(this_ptr->unk1 + 0x24))->x = local_54.x;
+        *(float *)(this_ptr->unk1 + 0x28) = local_54.y;
+        *(float *)(this_ptr->unk1 + 0x2c) = local_54.z;
       }
-      this_ptr->unk[0xdc] = '\0';
-      this_ptr->unk[0xdd] = '\0';
-      this_ptr->unk[0xde] = '\0';
-      this_ptr->unk[0xdf] = '\0';
+      this_ptr->unk1[0x14] = '\0';
+      this_ptr->unk1[0x15] = '\0';
+      this_ptr->unk1[0x16] = '\0';
+      this_ptr->unk1[0x17] = '\0';
     }
     goto switchD_0041345d_default;
   }
@@ -219,9 +214,9 @@ switchD_0041345d_default:
   pCVar9 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar9);
   blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-  fVar10 = *(float *)(this_ptr->unk + 0xd4);
+  fVar10 = *(float *)(this_ptr->unk1 + 0xc);
   iVar3 = INT_00822498;
-  core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(this_ptr->unk + 200),&local_a4);
+  core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)this_ptr->unk1,&local_a4);
   source_quaternions = &local_94;
   local_94.w = local_a4.w;
   puVar7 = (uint *)((int)&local_94 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);

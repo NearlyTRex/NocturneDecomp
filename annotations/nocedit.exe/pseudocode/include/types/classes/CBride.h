@@ -8,6 +8,6 @@
 // Ghidra size: 0xbeec (48876 bytes)
 typedef struct CBride {
     CEnemy base; // 0x0
-    char unk[56]; // 0xbeb4
+    char unk[48]; // 0xbebc
 } CBride;
 

@@ -61,7 +61,7 @@ void __cdecl core_skeledit_cpp_FUN_0058d790(void)
   int local_14;
   
   bVar22 = 0;
-  __STK(0x558);
+  __STK();
   pCVar4 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_00000004);
   local_18 = pCVar4->bone_count;
   core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510

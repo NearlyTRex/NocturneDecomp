@@ -30,13 +30,13 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_005c2fe0(CStranger *this_pt
   }
   if (3 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk5 + 4),"ladderToDescend");
+              ((CDemonActor *)&this_ptr->ladder_to_descend,"ladderToDescend");
   }
   if (5 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->guns_drawn,"gunsDrawn");
   }
   if (6 < g_CStrangerClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)(this_ptr->unk5 + 8),"weapon");
+    core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->weapon,"weapon");
   }
   if (7 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->action_pending,"actionPending");
@@ -45,8 +45,8 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_005c2fe0(CStranger *this_pt
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040b7f0
-            (&(this_ptr->base).base.field47_0x2a8c,"layerActionIndex");
+            (&(this_ptr->base).base.layer_action_index,"layerActionIndex");
   core_actor_cpp_archiveFloat_FUN_0040b770
-            ((float *)&(this_ptr->base).base.field48_0x2a90,"layerActionT");
+            (&(this_ptr->base).base.layer_action_t,"layerActionT");
   return;
 }

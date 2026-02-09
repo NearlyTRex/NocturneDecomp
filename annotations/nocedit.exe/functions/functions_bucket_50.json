@@ -37044,7 +37044,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_fileio.cpp_CFileManager_dtor_FUN_004b53d0",
-    "ret":"void",
+    "ret":"CFileManager*",
     "vars":{
       "params":[
         {
@@ -37063,7 +37063,17 @@
           },
           "type":"CFileManager*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -40118,7 +40128,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CToss_init_FUN_004c3ed0",
+    "name":"core_fire.cpp_CToss_reset_FUN_004c3ed0",
     "ret":"void",
     "vars":{
       "params":[
@@ -57620,7 +57630,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_motion.cpp_CMotionList_ctor_FUN_0052cd50",
-    "ret":"void",
+    "ret":"CMotionList*",
     "vars":{
       "params":[
         {
@@ -57639,7 +57649,17 @@
           },
           "type":"CMotionList*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -61720,7 +61740,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0",
-    "ret":"void",
+    "ret":"CPackedBitmapSet*",
     "vars":{
       "params":[
         {
@@ -61739,7 +61759,17 @@
           },
           "type":"CPackedBitmapSet*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -66947,7 +66977,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057ae50",
     "ret":"int",
     "vars":{
       "locals":[
@@ -67016,6 +67046,24 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -67039,9 +67087,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_ResolveMasterLights_FUN_0057c550",
+    "name":"core_setedit.cpp_CDemonSet_FUN_0057c550",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -67065,7 +67131,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0",
+    "name":"core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -68719,9 +68785,26 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_simbox.cpp_FUN_005892d0",
+    "name":"core_simbox.cpp_CSimBox_propertyActionCallback_FUN_005892d0",
     "ret":"int",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSimBox*",
+          "use":13
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -68738,6 +68821,22 @@
             ]
           },
           "type":"CSimBox*"
+        },
+        {
+          "name":"property",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorProperty*"
         }
       ],
       "ret_storage":{

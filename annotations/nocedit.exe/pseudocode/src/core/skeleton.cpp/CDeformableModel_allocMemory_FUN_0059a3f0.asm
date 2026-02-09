@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   num_parts
 ;
 ; XREF[3]:
-;   core_skeledit.cpp_FUN_0058b660 at 0058b7ac
+;   core_skeledit.cpp_CDeformableModel_FUN_0058b660 at 0058b7ac
 ;   core_skeledit.cpp_FUN_0058c190 at 0058c2e7
 ;   core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970 at 0059bb99
 ;

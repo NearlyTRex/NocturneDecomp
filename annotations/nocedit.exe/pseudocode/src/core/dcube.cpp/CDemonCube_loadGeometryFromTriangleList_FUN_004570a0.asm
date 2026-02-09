@@ -41,7 +41,7 @@
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840
-;   core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430
+;   core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_design.c_calculateVertexNormals_FUN_0045be40
@@ -253,8 +253,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2c]      ; 00457374
     ADD EAX,EBP                         ; 00457377
     PUSH EAX                            ; 00457379
-    CALL core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430 ; 0045737a
-        ;   XREF to: 00455430 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430(CDemonCubeTriangle * this_ptr, CVector3f * vertex0, CVector3f * vertex1, CVector3f * vertex2)
+    CALL core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430 ; 0045737a
+        ;   XREF to: 00455430 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430(CDemonCubeTriangle * this_ptr, CVector3f * vertex0, CVector3f * vertex1, CVector3f * vertex2)
     MOV EAX,dword ptr [ESI + 0x30]      ; 0045737f
     ADD ESP,0x10                        ; 00457382
     LEA EDX,[EAX + EBX*0x1]             ; 00457385

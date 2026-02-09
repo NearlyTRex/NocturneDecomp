@@ -37,7 +37,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004c6c80(CFireEffect *this_ptr)
   this_ptr_00 = g_SmokeParticlePool;
   g_SmokeParticleAllocIndex = 0;
   do {
-    core_fire_cpp_CSmokeParticle_ctor_FUN_004bf2e0(this_ptr_00);
+    core_fire_cpp_CSmokeParticle_reset_FUN_004bf2e0(this_ptr_00);
     this_ptr_00 = this_ptr_00 + 1;
   } while (this_ptr_00 != (CSmokeParticle *)&g_BulletHoleActiveCount);
   g_BulletHoleAllocIndex = 0;
@@ -95,31 +95,31 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004c6c80(CFireEffect *this_ptr)
   this_ptr_02 = g_TossPool;
   g_ExplosionActiveListHead = (CExplosion *)0x0;
   do {
-    core_fire_cpp_CToss_init_FUN_004c3ed0(this_ptr_02);
+    core_fire_cpp_CToss_reset_FUN_004c3ed0(this_ptr_02);
     this_ptr_02 = this_ptr_02 + 1;
   } while (this_ptr_02 != (CToss *)&g_TossActiveListHead);
   this_ptr_03 = g_CraterPool;
   g_TossActiveListHead = (CToss *)0x0;
   do {
-    core_fire_cpp_CCrater_ctor_FUN_004c41e0(this_ptr_03);
+    core_fire_cpp_CCrater_reset_FUN_004c41e0(this_ptr_03);
     this_ptr_03 = this_ptr_03 + 1;
   } while (this_ptr_03 != (CCrater *)&g_CraterActiveListHead);
   this_ptr_04 = g_GunFlamePool;
   g_CraterActiveListHead = (CCrater *)0x0;
   do {
-    core_fire_cpp_CGunFlame_ctor_FUN_004c4da0(this_ptr_04);
+    core_fire_cpp_CGunFlame_reset_FUN_004c4da0(this_ptr_04);
     this_ptr_04 = this_ptr_04 + 1;
   } while (this_ptr_04 != (CGunFlame *)&g_GunFlameActiveListHead);
   this_ptr_05 = g_LightningBoltPool;
   g_GunFlameActiveListHead = (CGunFlame *)0x0;
   do {
-    core_fire_cpp_CLightningBolt_ctor_FUN_004c5630(this_ptr_05);
+    core_fire_cpp_CLightningBolt_reset_FUN_004c5630(this_ptr_05);
     this_ptr_05 = this_ptr_05 + 1;
   } while (this_ptr_05 != (CLightningBolt *)&g_LightningBoltActiveListHead);
   this_ptr_06 = g_TrailPool;
   g_LightningBoltActiveListHead = (CLightningBolt *)0x0;
   do {
-    core_fire_cpp_CTrail_ctor_FUN_004c5de0(this_ptr_06);
+    core_fire_cpp_CTrail_reset_FUN_004c5de0(this_ptr_06);
     this_ptr_06 = this_ptr_06 + 1;
   } while (this_ptr_06 != (CTrail *)&g_TrailActiveListHead);
   g_TrailActiveListHead = (CTrail *)0x0;

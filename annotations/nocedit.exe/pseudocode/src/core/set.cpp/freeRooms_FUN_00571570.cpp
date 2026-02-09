@@ -11,6 +11,6 @@ SRoom * __cdecl core_set_cpp_freeRooms_FUN_00571570(SRoom *objs)
 {
   SRoom *pSVar1;
   
-  pSVar1 = __arrfini(objs,0x14,&g_SRoomTypeInfo);
+  pSVar1 = (SRoom *)__arrfini(objs,0x14,&g_SRoomTypeInfo);
   return pSVar1;
 }

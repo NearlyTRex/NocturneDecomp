@@ -1,0 +1,166 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 27,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 6,
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 94
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00589310",
+    "address_range": [
+      [
+        "00589310",
+        "005893bd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_simbox.cpp_CSimBox_getPropertyList_FUN_00589310",
+    "signature": "void __cdecl core_simbox_cpp_CSimBox_getPropertyList_FUN_00589310 (CSimBox *this_ptr,CActorPropertyList *property_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670"
+    },
+    {
+      "addr": "0040e460",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addEvent_FUN_0040e460"
+    },
+    {
+      "addr": "0040e160",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160"
+    },
+    {
+      "addr": "0040e3b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0"
+    },
+    {
+      "addr": "0040e260",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260"
+    },
+    {
+      "addr": "0040d290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649c78",
+      "name": "s_Model_file_kfm_00649c78",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c8a",
+      "name": "s_Weight_lbs_00649c8a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c97",
+      "name": "s_Type_00649c97",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c9c",
+      "name": "s_Event_condition_00649c9c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649caf",
+      "name": "s_Initial_velocity_00649caf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649cc0",
+      "name": "s_Initial_rotation_velocit_00649cc0",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9298245614035086,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "CALL": 7,
+      "CBRANCH": 1,
+      "COPY": 43,
+      "INT_ADD": 21,
+      "INT_AND": 18,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 9,
+      "INT_SUB": 35,
+      "LOAD": 9,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 34
+    },
+    "pcode_op_count": 224
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimBox *"
+      },
+      {
+        "is_param": true,
+        "name": "property_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSimBox",
+        "offset": 212,
+        "vtable_addr": "00662d24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

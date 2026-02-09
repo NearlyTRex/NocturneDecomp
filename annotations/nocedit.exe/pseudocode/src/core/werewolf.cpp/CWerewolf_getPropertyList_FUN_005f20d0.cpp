@@ -25,9 +25,9 @@ core_werewolf_cpp_CWerewolf_getPropertyList_FUN_005f20d0
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Light up eyes",&this_ptr->light_up_eyes);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"chainAnchor",(CDemonActor **)(this_ptr->unk4 + 0xc),1,
-             "CDemonActor",(CActorPropertyValidatorFunc *)0x0);
-  if (*(int *)(this_ptr->unk4 + 0xc) == 0) {
+            (property_list,"chainAnchor",&this_ptr->chain_anchor,1,"CDemonActor",
+             (CActorPropertyValidatorFunc *)0x0);
+  if (this_ptr->chain_anchor == (CDemonActor *)0x0) {
     if (this_ptr->type != WEREWOLF_TYPE_FOREST) {
       return;
     }
@@ -41,10 +41,10 @@ core_werewolf_cpp_CWerewolf_getPropertyList_FUN_005f20d0
     }
   }
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Way Point 1",(CDemonActor **)this_ptr->unk5,1,
-             "CWayPoint",(CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Way Point 1",&this_ptr->alpha1,1,"CWayPoint",
+             (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Way Point 2",(CDemonActor **)(this_ptr->unk5 + 4),1,
-             "CWayPoint",(CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Way Point 2",&this_ptr->alpha2,1,"CWayPoint",
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

@@ -14,7 +14,7 @@ core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel *this_ptr,
   CDeformableModel *this_ptr_00;
   char *in_stack_00000008;
   
-  __STK(0x24);
+  __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Saving model to %s...");
   pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0

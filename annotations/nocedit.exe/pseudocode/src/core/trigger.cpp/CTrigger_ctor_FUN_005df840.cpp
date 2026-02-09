@@ -16,27 +16,15 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005df840(CTrigger *this_pt
   
   pCVar2 = (CTrigger *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   (pCVar2->base).vtable._ub = &g_CTriggerVTable;
-  pCVar2->unk1[0] = '\0';
-  pCVar2->unk1[1] = '\0';
-  pCVar2->unk1[2] = -0x60;
-  pCVar2->unk1[3] = '@';
-  pCVar2->unk1[4] = '\0';
-  pCVar2->unk1[5] = '\0';
-  pCVar2->unk1[6] = '\x10';
-  pCVar2->unk1[7] = 'A';
-  pCVar2->unk1[8] = '\0';
-  pCVar2->unk1[9] = '\0';
-  pCVar2->unk1[10] = -0x60;
-  pCVar2->unk1[0xb] = '@';
+  (pCVar2->trigger_size).x = 5.0;
+  (pCVar2->trigger_size).y = 9.0;
+  (pCVar2->trigger_size).z = 5.0;
   pCVar2->shape = 0;
   pCVar2->event_type = 0;
   pcVar3 = "nobody";
   pCVar2->on_event[0] = '\0';
   pCVar2->off_event[0] = '\0';
-  pCVar2->unk1[0xc] = '\0';
-  pCVar2->unk1[0xd] = '\0';
-  pCVar2->unk1[0xe] = '\0';
-  pCVar2->unk1[0xf] = '\0';
+  pCVar2->trigger_state = 0;
   pcVar4 = pCVar2->actor_name;
   pCVar2->hero_triggers_me = 0;
   do {

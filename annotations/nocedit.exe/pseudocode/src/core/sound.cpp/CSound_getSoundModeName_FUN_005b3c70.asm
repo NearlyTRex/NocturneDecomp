@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   sound_mode_index
 ;
 ; XREF[1]:
-;   core_setedit.cpp_DementedFogEditor_FUN_00580730 at 00580b45
+;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580b45
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_00652816

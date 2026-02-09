@@ -21,10 +21,10 @@ CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004237a0(CBride *this_ptr)
   (pCVar3->base).base.field54_0x2ddc = 0.75;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
-  pCVar3->unk[0x2c] = '\0';
-  pCVar3->unk[0x2d] = '\0';
-  pCVar3->unk[0x2e] = '\0';
-  pCVar3->unk[0x2f] = '\0';
+  pCVar3->unk[0x24] = '\0';
+  pCVar3->unk[0x25] = '\0';
+  pCVar3->unk[0x26] = '\0';
+  pCVar3->unk[0x27] = '\0';
   (pCVar3->base).base.field56_0x2de4 = fVar1;
   (pCVar3->base).base.field57_0x2de8 = fVar2;
   return pCVar3;

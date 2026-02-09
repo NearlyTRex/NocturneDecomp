@@ -8,6 +8,6 @@
 // Ghidra size: 0xbef0 (48880 bytes)
 typedef struct CHotDemon {
     CEnemy base; // 0x0
-    char unk[60]; // 0xbeb4
+    char field1_0xbebc[52]; // 0xbebc
 } CHotDemon;
 

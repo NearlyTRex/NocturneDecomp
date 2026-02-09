@@ -38,7 +38,6 @@
 #include "types/structs/SCorona.h"
 #include "types/structs/SCramConfig.h"
 #include "types/structs/SCramRectangle.h"
-#include "types/structs/SCramWorkingEntry.h"
 #include "types/structs/SCurtainVertex.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SDialogEntry.h"

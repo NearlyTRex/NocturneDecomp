@@ -12,7 +12,7 @@ void __cdecl core_skeledit_cpp_FUN_0058a0f0(void)
   int in_stack_00000004;
   _FILE *in_stack_00000008;
   
-  __STK(0x18);
+  __STK();
   _fprintf(in_stack_00000008,"// version\n");
   _fprintf(in_stack_00000008,"1\n");
   _fprintf(in_stack_00000008,"// posFilename\n");

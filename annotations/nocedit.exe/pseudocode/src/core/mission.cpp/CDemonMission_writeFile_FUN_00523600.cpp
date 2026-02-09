@@ -60,7 +60,7 @@ core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr,_F
   iVar5 = 0;
   _fprintf(file_handle,"// inventory actor count\n");
   for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
-    pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CHeroClassInfo.name_hash);
+    pCVar3 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CHeroClassInfo.name_hash);
     if (pCVar3 != (CDemonActor *)0x0) {
       iVar5 = iVar5 + *(int *)(pCVar3[0x176].create_event + 0x38);
     }
@@ -82,7 +82,7 @@ core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr,_F
     this_ptr->actor_lookup_count = this_ptr->actor_lookup_count + 1;
   }
   for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
-    pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CHeroClassInfo.name_hash);
+    pCVar3 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CHeroClassInfo.name_hash);
     if (pCVar3 != (CDemonActor *)0x0) {
       pCVar6 = (CInventory *)(pCVar3[0x176].create_event + 0x30);
       for (iVar5 = 0; iVar5 < *(int *)(pCVar3[0x176].create_event + 0x38); iVar5 = iVar5 + 1) {

@@ -1,0 +1,267 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 45,
+        "line": 26,
+        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 45,
+        "line": 28,
+        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 156,
+    "complexity_score": 59,
+    "cross_reference_count": 2,
+    "function_call_count": 15,
+    "global_count": 12,
+    "pseudocode_lines": 59,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 215
+  },
+  "cross_references": [
+    {
+      "addr": "00580730",
+      "from_addr": "00580df7",
+      "name": "core_setedit.cpp_CDemonSet_FUN_00580730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578d80",
+      "from_addr": "00579502",
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005805a0",
+    "address_range": [
+      [
+        "005805a0",
+        "00580722"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_CDemonSet_FUN_005805a0",
+    "signature": "void __cdecl core_setedit_cpp_CDemonSet_FUN_005805a0(CDemonSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004dade0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0"
+    },
+    {
+      "addr": "004daed0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0"
+    },
+    {
+      "addr": "0056c1a0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0"
+    },
+    {
+      "addr": "0056d2d0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
+    },
+    {
+      "addr": "0056aa10",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10"
+    },
+    {
+      "addr": "0056ae50",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005ff9d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_remove_FUN_005ff9d0"
+    },
+    {
+      "addr": "00403260",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "00401fd0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "00502460",
+      "is_variadic": false,
+      "name": "engine_keys.cpp_CKeys_getInputKey_FUN_00502460"
+    },
+    {
+      "addr": "0049e6a0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    },
+    {
+      "addr": "0050f460",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    },
+    {
+      "addr": "005eda20",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005f2f00",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006485b2",
+      "name": "s_backdrop_s_fog_006485b2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006485c2",
+      "name": "s_backdrop_s_pvs_006485c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006485d2",
+      "name": "s_core_setedit_cpp_006485d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006485e6",
+      "name": "s_Computing_fog_pvs_d_of_d_006485e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00648618",
+      "name": "s_Not_all_fog_files_were_c_00648618",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d807a4",
+      "name": "g_CDemonLightInstance.light_enabled_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysInstance",
+      "type": "CKeys",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.408333333333333,
+    "instruction_count": 120,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 19,
+      "CBRANCH": 8,
+      "COPY": 83,
+      "INT_ADD": 34,
+      "INT_AND": 71,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 66,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 33,
+      "INT_SUB": 56,
+      "INT_XOR": 4,
+      "LOAD": 12,
+      "POPCOUNT": 33,
+      "RETURN": 1,
+      "STORE": 54
+    },
+    "pcode_op_count": 529
+  },
+  "stack_frame": {
+    "frame_size": 380,
+    "local_size": 376,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_174",
+        "offset": -372,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": []
+}

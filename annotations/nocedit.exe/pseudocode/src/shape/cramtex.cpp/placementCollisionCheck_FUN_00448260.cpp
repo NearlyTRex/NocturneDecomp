@@ -12,7 +12,7 @@ shape_cramtex_cpp_placementCollisionCheck_FUN_00448260
 
 {
   int iVar1;
-  SCramWorkingEntry *pSVar2;
+  CCramTex *pCVar2;
   int iVar3;
   int iVar4;
   int local_18;
@@ -40,14 +40,14 @@ shape_cramtex_cpp_placementCollisionCheck_FUN_00448260
     }
     iVar3 = g_CramPlacedTextureCount + -1;
     if (-1 < iVar3) {
-      pSVar2 = g_CramSortedTextureEntries + iVar3;
+      pCVar2 = g_CramSortedTextureEntries + iVar3;
       do {
-        if (((pSVar2->assigned_map_number == layer_id) && (start_x < pSVar2->working_top)) &&
-           ((start_y < pSVar2->working_width &&
-            ((pSVar2->placement_bottom < iVar4 + start_x &&
-             (pSVar2->working_right < iVar1 + start_y)))))) break;
+        if (((pCVar2->assigned_map_number == layer_id) && (start_x < pCVar2->working_top)) &&
+           ((start_y < pCVar2->working_width &&
+            ((pCVar2->placement_bottom < iVar4 + start_x &&
+             (pCVar2->working_right < iVar1 + start_y)))))) break;
         iVar3 = iVar3 + -1;
-        pSVar2 = pSVar2 + -1;
+        pCVar2 = pCVar2 + -1;
       } while (-1 < iVar3);
     }
     if (iVar3 < 0) {

@@ -9,9 +9,9 @@
 void __cdecl core_enemy_cpp_CEnemy_FUN_004aa0c0(CEnemy *this_ptr)
 
 {
-  int in_stack_00000008;
+  CDemonActor *in_stack_00000008;
   
-  if (in_stack_00000008 != *(int *)(this_ptr->unk2 + 4)) {
+  if (in_stack_00000008 != this_ptr->victim) {
     return;
   }
   (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc9)();

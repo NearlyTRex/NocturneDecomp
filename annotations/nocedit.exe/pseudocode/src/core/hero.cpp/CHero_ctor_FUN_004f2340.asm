@@ -46,7 +46,7 @@ section .text
     ADD EAX,0x138e0                     ; 004f235c
     PUSH EAX                            ; 004f2361
     CALL core_inv.cpp_CInventory_ctor_FUN_004fd020 ; 004f2362
-        ;   XREF to: 004fd020 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_ctor_FUN_004fd020(CInventory * this_ptr)
+        ;   XREF to: 004fd020 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_CInventory_ctor_FUN_004fd020(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004f2367
     PUSH 0x2c                           ; 004f236a
     LEA EBX,[EAX + 0xfffe08c8]          ; 004f236c

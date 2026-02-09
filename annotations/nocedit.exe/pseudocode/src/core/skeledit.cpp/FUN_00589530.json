@@ -2,22 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 24,
-        "message": "use of undeclared identifier 'stack0xfffffffc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 27,
-        "message": "use of undeclared identifier 'stack0xfffffffc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 29,
-        "message": "use of undeclared identifier 'stack0xfffffffc'"
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 25,
+        "message": "no matching function for call to '__STK'"
       }
     ],
     "success": false,
@@ -25,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 113,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 23,
-    "suspect_count": 8,
+    "pseudocode_lines": 24,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 79
+    "total_lines": 80
   },
   "cross_references": [],
   "function": {
@@ -153,45 +140,24 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 19,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,&stack0xfffffffc,local_104,local_304,local_204);",
+      "text": "splitpath(in_stack_00000008,local_4,local_104,local_304,local_204);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xfffffffc",
-      "text": "(in_stack_00000008,&stack0xfffffffc,local_104,local_304,local_204);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 21,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,&stack0xfffffffc,local_104,(char *)0x0,(char *)0x0);",
+      "text": "splitpath(in_stack_00000004,local_4,local_104,(char *)0x0,(char *)0x0)",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xfffffffc",
-      "text": "(in_stack_00000004,&stack0xfffffffc,local_104,(char *)0x0,(char *)0x0);",
-      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 23,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,&stack0xfffffffc,local_104,local_304,local_204);",
+      "text": "makepath(in_stack_00000008,local_4,local_104,local_304,local_204);",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xfffffffc",
-      "text": "(in_stack_00000008,&stack0xfffffffc,local_104,local_304,local_204);",
-      "type": "stack_ref"
     }
   ]
 }

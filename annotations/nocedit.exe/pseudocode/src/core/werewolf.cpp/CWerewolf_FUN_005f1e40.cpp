@@ -30,7 +30,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr)
   float local_18;
   float local_14;
   
-  if ((*(int *)(this_ptr->unk4 + 0xc) != 0) && (*(int *)((this_ptr->base).unk2 + 4) != 0)) {
+  if ((this_ptr->chain_anchor != (CDemonActor *)0x0) &&
+     ((this_ptr->base).victim != (CDemonActor *)0x0)) {
     local_50.x = 0.0;
     local_50.y = -0.3;
     local_50.z = 0.0;
@@ -39,8 +40,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr)
                (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                *(int *)(this_ptr->unk3 + 0xc));
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-              ((CDemonActor *)this_ptr,&local_68,
-               (CVector3f *)(*(int *)(this_ptr->unk4 + 0xc) + 0x20));
+              ((CDemonActor *)this_ptr,&local_68,&(this_ptr->chain_anchor->location).position);
     if (local_68.y < (float)2) {
       local_44 = local_68.x;
       local_3c = local_68.z;

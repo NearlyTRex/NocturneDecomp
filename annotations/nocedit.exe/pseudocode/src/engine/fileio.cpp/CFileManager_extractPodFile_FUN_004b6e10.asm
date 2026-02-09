@@ -54,7 +54,7 @@
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_strftime_FUN_006002d4
+;   crt_time.c__strftime_FUN_006002d4
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
@@ -154,8 +154,8 @@ section .text
     PUSH 0x100                          ; 004b6ec4
     LEA EAX,[ESP + 0xa4c]               ; 004b6ec9
     PUSH EAX                            ; 004b6ed0
-    CALL crt_time.c_strftime_FUN_006002d4 ; 004b6ed1
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 004b6ed1
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b6ed6
     LEA EAX,[ESP + 0xa40]               ; 004b6ed9
     PUSH EAX                            ; 004b6ee0
@@ -259,8 +259,8 @@ section .text
     PUSH 0x100                          ; 004b7014
     LEA EAX,[ESP + 0xb4c]               ; 004b7019
     PUSH EAX                            ; 004b7020
-    CALL crt_time.c_strftime_FUN_006002d4 ; 004b7021
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 004b7021
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b7026
     LEA EAX,[ESP + 0xe4c]               ; 004b7029
     PUSH EAX                            ; 004b7030
@@ -272,8 +272,8 @@ section .text
     PUSH 0x100                          ; 004b703f
     LEA EAX,[ESP + 0xd4c]               ; 004b7044
     PUSH EAX                            ; 004b704b
-    CALL crt_time.c_strftime_FUN_006002d4 ; 004b704c
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 004b704c
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b7051
     LEA EAX,[ESP + 0xd40]               ; 004b7054
     PUSH EAX                            ; 004b705b

@@ -127,7 +127,7 @@ LAB_0056fc73:
       pCVar12 = (CDemonSet *)pCVar12->cameras;
     } while (local_24 < *(int *)(this_ptr->unk4 + 0x9c4c));
   }
-  qsort(&DAT_03342b50,DAT_03342b4c,8,core_set_cpp_FUN_0056fba0);
+  _qsort(&DAT_03342b50,DAT_03342b4c,8,core_set_cpp_FUN_0056fba0);
   iVar8 = local_2c;
   SVar10 = DAT_03342b4c;
   if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {

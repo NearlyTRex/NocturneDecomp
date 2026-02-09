@@ -11,7 +11,7 @@ CBassPlayer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_005da020(void)
 {
   CBassPlayer *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f710,"..\\core\\tbplayer.cpp",0x20);
+  pCVar1 = (CBassPlayer *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f710,"..\\core\\tbplayer.cpp",0x20);
   if (pCVar1 == (CBassPlayer *)0x0) {
     return (CBassPlayer *)0x0;
   }

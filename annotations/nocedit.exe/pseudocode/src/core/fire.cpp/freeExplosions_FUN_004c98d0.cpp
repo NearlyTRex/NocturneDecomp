@@ -11,6 +11,6 @@ CExplosion * __cdecl core_fire_cpp_freeExplosions_FUN_004c98d0(CExplosion *objs)
 {
   CExplosion *pCVar1;
   
-  pCVar1 = __arrfini(objs,10,&g_CExplosionTypeInfo);
+  pCVar1 = (CExplosion *)__arrfini(objs,10,&g_CExplosionTypeInfo);
   return pCVar1;
 }

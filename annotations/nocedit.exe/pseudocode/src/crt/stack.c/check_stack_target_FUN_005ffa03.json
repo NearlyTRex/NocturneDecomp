@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 92,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "pseudocode_lines": 28,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_many",
       "special_crt_function",
-      "stack_ref"
+      "stack_ref",
+      "unaffected_reg"
     ],
-    "total_lines": 46
+    "total_lines": 47
   },
   "cross_references": [
     {
@@ -30,9 +30,9 @@
         "005ffa21"
       ]
     ],
-    "convention": "__watcallRegister",
+    "convention": "__stk_probe",
     "name": "crt_stack.c_check_stack_target_FUN_005ffa03",
-    "signature": "void crt_stack_c_check_stack_target_FUN_005ffa03(void *target_stack_ptr)"
+    "signature": "void __stk_probe crt_stack_c_check_stack_target_FUN_005ffa03(void)"
   },
   "function_calls": [
     {
@@ -67,8 +67,8 @@
         "stack_params": 0
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 0,
     "estimated_params": 0
   },
   "pcode_summary": {
@@ -107,36 +107,53 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 11,
-      "match": "&stack0xfffffffc",
-      "text": "if (target_stack_ptr < &stack0xfffffffc) {",
-      "type": "stack_ref"
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EAX",
+      "text": "byte *unaff_EAX;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
       "line": 12,
       "match": "&stack0xfffffffc",
-      "text": "iVar2 = (int)target_stack_ptr - (int)&stack0xfffffffc;",
+      "text": "if (unaff_EAX < &stack0xfffffffc) {",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EAX",
+      "text": "if (unaff_EAX < &stack0xfffffffc) {",
+      "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffff0",
-      "text": "*(int *)(&stack0xfffffff0 + iVar5) = iVar5;",
+      "line": 13,
+      "match": "&stack0xfffffffc",
+      "text": "iVar2 = (int)unaff_EAX - (int)&stack0xfffffffc;",
       "type": "stack_ref"
     },
     {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 0,
-      "fix_type": "remove_params",
-      "match": "declared:1 vs estimated:0",
-      "param_delta": -1,
-      "text": "Function declares 1 params but call sites push 0 (1 extra)",
-      "type": "param_count_too_many"
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EAX",
+      "text": "iVar2 = (int)unaff_EAX - (int)&stack0xfffffffc;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EAX",
+      "text": "ProbeStackSpace((uint)unaff_EAX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xfffffff0",
+      "text": "*(int *)(&stack0xfffffff0 + iVar5) = iVar5;",
+      "type": "stack_ref"
     },
     {
       "address": "005ffa03",

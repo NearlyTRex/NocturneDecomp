@@ -11,8 +11,8 @@
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053ae4c
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564b68
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005986b2
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00593839
 ;   core_skeledit.cpp_FUN_0058afe0 at 0058b14c
-;   core_skeledit.cpp_FUN_00592690 at 00593839
 ;   shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0049d610 at 0049d649
 ;   shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270 at 004a332e
 ;

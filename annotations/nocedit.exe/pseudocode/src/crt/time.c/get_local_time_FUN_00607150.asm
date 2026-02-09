@@ -7,7 +7,7 @@
 ; _tm *            Stack[0x4]:4   tm_output
 ;
 ; XREF[1]:
-;   crt_time.c_time_FUN_006001f0 at 006001fb
+;   crt_time.c__time_FUN_006001f0 at 006001fb
 ;
 ; Referenced Globals:
 ;   GET_LOCAL_TIME_FUNC* g_GetLocalTimeFunc = 00211f32

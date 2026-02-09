@@ -119,17 +119,17 @@
 ;   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
 ;   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
 ;   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
+;   core_skeledit.cpp_CDeformableModel_FUN_0058b8e0
+;   core_skeledit.cpp_CDeformableModel_FUN_0058b9b0
+;   core_skeledit.cpp_CDeformableModel_FUN_0058bc40
+;   core_skeledit.cpp_CDeformableModel_FUN_0058f790
 ;   core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
-;   core_skeledit.cpp_FUN_00589c20
+;   core_skeledit.cpp_CLodMesh_FUN_00589c20
 ;   core_skeledit.cpp_FUN_0058a0f0
 ;   core_skeledit.cpp_FUN_0058aeb0
 ;   core_skeledit.cpp_FUN_0058afe0
 ;   core_skeledit.cpp_FUN_0058b160
 ;   core_skeledit.cpp_FUN_0058b200
-;   core_skeledit.cpp_FUN_0058b8e0
-;   core_skeledit.cpp_FUN_0058b9b0
-;   core_skeledit.cpp_FUN_0058bc40
-;   core_skeledit.cpp_FUN_0058d790
 ;   ... and 50 more
 ;
 ; *****************************************************************************
@@ -139,7 +139,7 @@ section .text
     PUSH 0xa248                         ; 0058c190
         ;   Label: core_skeledit.cpp_FUN_0058c190
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058c195
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058c19a
     PUSH ESI                            ; 0058c19b
     PUSH EDI                            ; 0058c19c
@@ -281,24 +281,24 @@ section .text
     MOV ESI,dword ptr [ESP + 0xa204]    ; 0058c30c
     PUSH ESI                            ; 0058c313
     PUSH EBP                            ; 0058c314
-    CALL core_skeledit.cpp_FUN_0058b8e0 ; 0058c315
-        ;   XREF to: 0058b8e0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058b8e0()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058b8e0 ; 0058c315
+        ;   XREF to: 0058b8e0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_FUN_0058b8e0(CDeformableModel * this_ptr)
     ADD ESP,0x8                         ; 0058c31a
     TEST EAX,EAX                        ; 0058c31d
     JZ 0x0058c613                       ; 0058c31f
         ;   XREF to: 0058c613 (CONDITIONAL_JUMP)  ; LAB_0058c613
     PUSH ESI                            ; 0058c325
     PUSH EBP                            ; 0058c326
-    CALL core_skeledit.cpp_FUN_0058b9b0 ; 0058c327
-        ;   XREF to: 0058b9b0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058b9b0()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058b9b0 ; 0058c327
+        ;   XREF to: 0058b9b0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel * this_ptr)
     ADD ESP,0x8                         ; 0058c32c
     TEST EAX,EAX                        ; 0058c32f
     JZ 0x0058c613                       ; 0058c331
         ;   XREF to: 0058c613 (CONDITIONAL_JUMP)  ; LAB_0058c613
     PUSH ESI                            ; 0058c337
     PUSH EBP                            ; 0058c338
-    CALL core_skeledit.cpp_FUN_0058bc40 ; 0058c339
-        ;   XREF to: 0058bc40 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058bc40()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058bc40 ; 0058c339
+        ;   XREF to: 0058bc40 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_FUN_0058bc40(CDeformableModel * this_ptr)
     ADD ESP,0x8                         ; 0058c33e
     TEST EAX,EAX                        ; 0058c341
     JZ 0x0058c613                       ; 0058c343
@@ -308,8 +308,8 @@ section .text
     JNZ 0x0058c78b                      ; 0058c357
         ;   XREF to: 0058c78b (CONDITIONAL_JUMP)  ; LAB_0058c78b
     PUSH EBP                            ; 0058c35d
-    CALL core_skeledit.cpp_FUN_0058f790 ; 0058c35e
-        ;   XREF to: 0058f790 (UNCONDITIONAL_CALL)  ; int * core_skeledit.cpp_FUN_0058f790()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058f790 ; 0058c35e
+        ;   XREF to: 0058f790 (UNCONDITIONAL_CALL)  ; int * core_skeledit.cpp_CDeformableModel_FUN_0058f790(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0058c363
     PUSH EBP                            ; 0058c366
         ;   Label: LAB_0058c366
@@ -645,7 +645,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0058c745
     PUSH EAX                            ; 0058c749
     CALL core_skeledit.cpp_FUN_0058afe0 ; 0058c74a
-        ;   XREF to: 0058afe0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058afe0()
+        ;   XREF to: 0058afe0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058afe0(void * ptr)
     ADD ESP,0x8                         ; 0058c74f
     CMP EBX,0x1                         ; 0058c752
         ;   Label: LAB_0058c752
@@ -655,7 +655,7 @@ section .text
     LEA EAX,[ESP + 0x3528]              ; 0058c758
     PUSH EAX                            ; 0058c75f
     CALL core_skeledit.cpp_FUN_0058afe0 ; 0058c760
-        ;   XREF to: 0058afe0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058afe0()
+        ;   XREF to: 0058afe0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058afe0(void * ptr)
     ADD ESP,0x8                         ; 0058c765
     JMP 0x0058c724                      ; 0058c768
         ;   XREF to: 0058c724 (UNCONDITIONAL_JUMP)  ; LAB_0058c724
@@ -1509,8 +1509,8 @@ section .text
     MOV dword ptr [EAX + 0x30c],ECX     ; 0058d2c2
     LEA EAX,[ESP + 0xa03c]              ; 0058d2c8
     PUSH EAX                            ; 0058d2cf
-    CALL core_skeledit.cpp_FUN_00589c20 ; 0058d2d0
-        ;   XREF to: 00589c20 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_00589c20()
+    CALL core_skeledit.cpp_CLodMesh_FUN_00589c20 ; 0058d2d0
+        ;   XREF to: 00589c20 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CLodMesh_FUN_00589c20(CLodMesh * this_ptr)
     ADD ESP,0xc                         ; 0058d2d5
     MOV dword ptr [ESP + 0xa18c],EAX    ; 0058d2d8
     TEST EAX,EAX                        ; 0058d2df
@@ -1838,8 +1838,8 @@ section .text
     LEA EAX,[ESP + 0x9ee0]              ; 0058d6af
     PUSH EAX                            ; 0058d6b6
     MOV dword ptr [0x02f33330],ESI      ; 0058d6b7 | g_LodReplayMode
-    CALL core_skeledit.cpp_FUN_00589c20 ; 0058d6bd
-        ;   XREF to: 00589c20 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_00589c20()
+    CALL core_skeledit.cpp_CLodMesh_FUN_00589c20 ; 0058d6bd
+        ;   XREF to: 00589c20 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CLodMesh_FUN_00589c20(CLodMesh * this_ptr)
     ADD ESP,0xc                         ; 0058d6c2
     TEST EAX,EAX                        ; 0058d6c5
     JL 0x0058d5ef                       ; 0058d6c7

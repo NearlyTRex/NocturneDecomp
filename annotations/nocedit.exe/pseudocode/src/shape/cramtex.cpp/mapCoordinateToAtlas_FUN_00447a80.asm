@@ -21,7 +21,7 @@ section .text
     PUSH 0xc                            ; 00447a80
         ;   Label: shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447a85
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 00447a8a
     PUSH ESI                            ; 00447a8b
     MOV ECX,dword ptr [ESP + 0xc]       ; 00447a8c

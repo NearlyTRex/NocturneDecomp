@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   double g_CramPercentMultiplier = 100
-;   SCramWorkingEntry[1] g_CramSortedTextureEntries
+;   CCramTex[1] g_CramSortedTextureEntries
 ;   undefined4 DAT_0083c20c
 ;   undefined4 DAT_0083c210
 ;   undefined4 DAT_0083c214
@@ -35,7 +35,7 @@ section .text
     PUSH 0x20                           ; 00447e80
         ;   Label: shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447e85
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 00447e8a
     PUSH ESI                            ; 00447e8b
     PUSH EDI                            ; 00447e8c

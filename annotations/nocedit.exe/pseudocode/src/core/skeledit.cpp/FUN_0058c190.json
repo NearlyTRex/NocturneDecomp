@@ -2,117 +2,117 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
+        "category": "incompatible_types",
         "column": 3,
         "line": 105,
+        "message": "no matching function for call to '__STK'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 106,
         "message": "use of undeclared identifier 'DAT_03670650'; did you mean 'DAT_03670950'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 112,
+        "line": 113,
         "message": "use of undeclared identifier 'DAT_03670650'; did you mean 'DAT_03670950'?"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 122,
+        "line": 123,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 132,
+        "line": 133,
         "message": "use of undeclared identifier 'DAT_03670650'; did you mean 'DAT_03670950'?"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 137,
+        "line": 138,
         "message": "format specifies type 'char *' but the argument has type 'CDeformableModel *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 145,
+        "line": 146,
         "message": "use of undeclared identifier 'DAT_03670650'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 149,
+        "message": "use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?"
       },
       {
         "category": "format_error",
         "column": 51,
-        "line": 163,
+        "line": 164,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 64,
-        "line": 163,
+        "line": 164,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 77,
-        "line": 163,
+        "line": 164,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 166,
+        "line": 167,
         "message": "use of undeclared identifier 'DAT_03670650'; did you mean 'DAT_03670950'?"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 171,
+        "line": 172,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 173,
+        "line": 174,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 173,
+        "line": 174,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 293,
+        "line": 296,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 79,
-        "line": 330,
+        "line": 333,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 343,
+        "line": 346,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 578,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 579,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 580,
+        "line": 581,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       }
     ],
@@ -121,20 +121,21 @@
   },
   "complexity": {
     "assembly_lines": 1765,
-    "complexity_score": 1890,
+    "complexity_score": 1948,
     "cross_reference_count": 0,
     "function_call_count": 65,
     "global_count": 65,
-    "pseudocode_lines": 705,
-    "suspect_count": 116,
+    "pseudocode_lines": 708,
+    "suspect_count": 121,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
+      "stack_ref",
       "undefined_data",
       "unknown_field",
       "warning_type_propagation"
     ],
-    "total_lines": 2470
+    "total_lines": 2473
   },
   "cross_references": [],
   "function": {
@@ -171,6 +172,26 @@
       "name": "core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810"
     },
     {
+      "addr": "0058b8e0",
+      "is_variadic": false,
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058b8e0"
+    },
+    {
+      "addr": "0058b9b0",
+      "is_variadic": false,
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058b9b0"
+    },
+    {
+      "addr": "0058bc40",
+      "is_variadic": false,
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058bc40"
+    },
+    {
+      "addr": "0058f790",
+      "is_variadic": false,
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058f790"
+    },
+    {
       "addr": "0058ec60",
       "is_variadic": false,
       "name": "core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60"
@@ -178,7 +199,7 @@
     {
       "addr": "00589c20",
       "is_variadic": false,
-      "name": "core_skeledit.cpp_FUN_00589c20"
+      "name": "core_skeledit.cpp_CLodMesh_FUN_00589c20"
     },
     {
       "addr": "0058a0f0",
@@ -206,21 +227,6 @@
       "name": "core_skeledit.cpp_FUN_0058b200"
     },
     {
-      "addr": "0058b8e0",
-      "is_variadic": false,
-      "name": "core_skeledit.cpp_FUN_0058b8e0"
-    },
-    {
-      "addr": "0058b9b0",
-      "is_variadic": false,
-      "name": "core_skeledit.cpp_FUN_0058b9b0"
-    },
-    {
-      "addr": "0058bc40",
-      "is_variadic": false,
-      "name": "core_skeledit.cpp_FUN_0058bc40"
-    },
-    {
       "addr": "0058d790",
       "is_variadic": false,
       "name": "core_skeledit.cpp_FUN_0058d790"
@@ -234,11 +240,6 @@
       "addr": "0058de70",
       "is_variadic": false,
       "name": "core_skeledit.cpp_FUN_0058de70"
-    },
-    {
-      "addr": "0058f790",
-      "is_variadic": false,
-      "name": "core_skeledit.cpp_FUN_0058f790"
     },
     {
       "addr": "0059a510",
@@ -1589,784 +1590,819 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 99,
       "match": "DAT_03670650",
       "text": "DAT_03670650 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 101,
+      "line": 102,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,(char *)0x0,\"rt\",",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 106,
       "match": "in_stack_00000008",
       "text": "_sprintf(&DAT_03670650,\"Can't open %s\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 106,
       "match": "DAT_03670650",
       "text": "_sprintf(&DAT_03670650,\"Can't open %s\",in_stack_00000008);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
+      "line": 110,
       "match": "in_stack_00000004",
       "text": "core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
+      "line": 118,
       "match": "in_stack_ffff5dd8",
       "text": "(this_ptr,(_FILE *)local_b4,&in_stack_ffff5dd8->num_lods);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 119,
+      "line": 120,
       "match": "in_stack_ffff5dd8",
       "text": "(this_ptr,(_FILE *)0x0,(int)in_stack_ffff5dd8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 120,
+      "line": 121,
       "match": "in_stack_00000004",
       "text": "core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 125,
+      "line": 126,
       "match": "in_stack_00000008",
       "text": "(&DAT_03670650,\"Heirarchy in %s does not match that in skeleton %s\",in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 126,
       "match": "DAT_03670650",
       "text": "(&DAT_03670650,\"Heirarchy in %s does not match that in skeleton %s\",in_stack_00000008,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 126,
+      "line": 127,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->model_name);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 127,
+      "line": 128,
       "match": "in_stack_00000008",
       "text": "if (*(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].texture_name != 2",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 130,
+      "line": 131,
       "match": "in_stack_00000008",
       "text": "_sprintf(local_418,\"Display %s\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 133,
+      "line": 134,
       "match": "in_stack_00000004",
       "text": "(local_418,\"Display %s\",in_stack_00000004->model_name);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 139,
       "match": "DAT_03670650",
       "text": "(&local_1260,&DAT_03670650,iVar14,0);",
       "type": "undefined_data"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 142,
+      "match": "&stack0xffff5dd8",
+      "text": "core_skeledit_cpp_FUN_0058afe0(&stack0xffff5dd8);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 159,
+      "line": 160,
       "match": "in_stack_00000008",
       "text": "_sprintf(&DAT_03670650,\"%s is corrupt!\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 159,
+      "line": 160,
       "match": "DAT_03670650",
       "text": "_sprintf(&DAT_03670650,\"%s is corrupt!\",in_stack_00000008);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 164,
+      "line": 165,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,1,1,local_b4._4_4_,1);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
+      "line": 165,
       "match": "._4_4_",
       "text": "(in_stack_00000004,1,1,local_b4._4_4_,1);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 166,
+      "line": 167,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,0,local_b4._8_4_,local_b4._12_4_,0);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 166,
+      "line": 167,
       "match": "._8_4_",
       "text": "(in_stack_00000004,0,local_b4._8_4_,local_b4._12_4_,0);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 166,
+      "line": 167,
       "match": "._12_4_",
       "text": "(in_stack_00000004,0,local_b4._8_4_,local_b4._12_4_,0);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 168,
+      "match": "in_stack_00000004",
+      "text": "iVar14 = core_skeledit_cpp_CDeformableModel_FUN_0058b8e0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 170,
+      "match": "in_stack_00000004",
+      "text": "(iVar14 = core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(in_stack_00000004), iVar14 == 0)) ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 171,
+      "match": "in_stack_00000004",
+      "text": "(iVar14 = core_skeledit_cpp_CDeformableModel_FUN_0058bc40(in_stack_00000004), iVar14 == 0))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 173,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008->texture_sets[0].textures[4].texture_variants[1].texture_name[0] == '\\0') {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 175,
+      "line": 174,
+      "match": "in_stack_00000004",
+      "text": "core_skeledit_cpp_CDeformableModel_FUN_0058f790(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 178,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
+      "line": 183,
       "match": "in_stack_ffff5dd8",
       "text": "core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(in_stack_ffff5dd8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
+      "line": 187,
       "match": "in_stack_ffff5dd8",
       "text": "if (0 < (int)in_stack_ffff5dd8) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 192,
       "match": "(float *)((int)",
       "text": "pfVar21 = (float *)((int)local_2520 + iVar14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 194,
+      "line": 197,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar24 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 201,
       "match": "(CMatrix3x4f *)((int)",
       "text": "local_70 = &((CMatrix3x4f *)((int)local_70 + 0x60))->m[2].x;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 199,
+      "line": 202,
       "match": "in_stack_ffff5dd8",
       "text": "} while (local_28 < (int)in_stack_ffff5dd8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 202,
+      "line": 205,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,local_14,local_718,(char *)0x0,(char *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 204,
+      "line": 207,
       "match": "in_stack_00000008",
       "text": "if ((*(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].texture_name == 0)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 214,
+      "line": 217,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_texture_sets) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 215,
+      "line": 218,
       "match": "in_stack_00000004",
       "text": "local_6c = in_stack_00000004->texture_sets;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 218,
+      "line": 221,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_textures) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 241,
+      "line": 244,
       "match": "in_stack_00000008",
       "text": "if (*(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 279,
+      "line": 282,
       "match": "in_stack_00000004",
       "text": "} while (local_98 < in_stack_00000004->num_textures);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 283,
+      "line": 286,
       "match": "in_stack_00000004",
       "text": "} while (local_2c < in_stack_00000004->num_texture_sets);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 286,
+      "line": 289,
       "match": "._16_4_",
       "text": "local_b4._16_4_ = 2;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 287,
+      "line": 290,
       "match": "in_stack_00000008",
       "text": "iVar14 = *(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].texture_name;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 320,
+      "line": 323,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,(char *)0x0,(char *)0x0,local_b20,(char *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 323,
+      "line": 326,
       "match": "._16_4_",
       "text": "iVar14 = shape_design_c_calculateTextureQualityLevel_FUN_0046a930(local_b4._16_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 324,
+      "line": 327,
       "match": "in_stack_00000004",
       "text": "if (1 < in_stack_00000004->num_texture_sets) {",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 336,
+      "line": 339,
       "match": "._20_4_",
       "text": "local_b4._20_4_ = shape_design_c_getLastTextureProcessIndex_FUN_0046a860();",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 339,
+      "line": 342,
       "match": "in_stack_00000004",
       "text": "(&local_1f4,in_stack_00000004->vertex_count[0],",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 340,
+      "line": 343,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->tri_count[0] + in_stack_00000004->cap_tri_count[0],",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 340,
+      "line": 343,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->tri_count[0] + in_stack_00000004->cap_tri_count[0],",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 341,
+      "line": 344,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->num_textures);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 349,
+      "line": 352,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->vertex_count[0]) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 353,
+      "line": 356,
       "match": "in_stack_00000004",
       "text": "pSVar2 = in_stack_00000004->vertex_data_ptr[0];",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 355,
+      "line": 358,
       "match": "(uint *)((int)",
       "text": "*(uint *)pcVar22 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 356,
+      "line": 359,
       "match": "(uint *)((int)",
       "text": "*(uint *)(pcVar22 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 357,
+      "line": 360,
       "match": "(uint *)((int)",
       "text": "*(uint *)(pcVar22 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 368,
+      "line": 371,
       "match": "in_stack_ffff5dd8",
       "text": "if (((iVar7 != 1) || (local_94 < 1)) || ((int)in_stack_ffff5dd8 < local_94)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 387,
+      "line": 390,
       "match": "in_stack_00000004",
       "text": "} while (iVar14 < in_stack_00000004->vertex_count[0]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 391,
+      "line": 394,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_parts) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 392,
+      "line": 395,
       "match": "in_stack_00000004",
       "text": "local_54 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 401,
+      "line": 404,
       "match": "(uint *)((int)",
       "text": "puVar15 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_58);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 403,
+      "line": 406,
       "match": "in_stack_00000004",
       "text": "((int)&(in_stack_00000004->tri_data_ptr[0]->vertex_indices).vertex_index_0 +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 406,
+      "line": 409,
       "match": "in_stack_00000004",
       "text": "uVar3 = *(uint *)((int)in_stack_00000004->index_data_ptr[0] + local_60);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 406,
+      "line": 409,
       "match": "(uint *)((int)",
       "text": "uVar3 = *(uint *)((int)in_stack_00000004->index_data_ptr[0] + local_60);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 431,
+      "line": 434,
       "match": "in_stack_00000004",
       "text": "} while (local_30 < in_stack_00000004->num_parts);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 434,
+      "line": 437,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_parts) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 435,
+      "line": 438,
       "match": "in_stack_00000004",
       "text": "local_44 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 444,
+      "line": 447,
       "match": "(uint *)((int)",
       "text": "puVar15 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_48);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 446,
+      "line": 449,
       "match": "in_stack_00000004",
       "text": "((int)&(in_stack_00000004->tri_data_ptr[0]->vertex_indices).vertex_index_0 +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 449,
+      "line": 452,
       "match": "in_stack_00000004",
       "text": "uVar3 = *(uint *)((int)in_stack_00000004->index_data_ptr[0] + local_50);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 449,
+      "line": 452,
       "match": "(uint *)((int)",
       "text": "uVar3 = *(uint *)((int)in_stack_00000004->index_data_ptr[0] + local_50);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 452,
+      "line": 455,
       "match": "in_stack_00000004",
       "text": "puVar15[3] = in_stack_00000004->cap_index_ptr[0][iVar14 - in_stack_00000004->tri_count[0]]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 452,
+      "line": 455,
       "match": "in_stack_00000004",
       "text": "puVar15[3] = in_stack_00000004->cap_index_ptr[0][iVar14 - in_stack_00000004->tri_count[0]]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 475,
+      "line": 478,
       "match": "in_stack_00000004",
       "text": "} while (local_34 < in_stack_00000004->num_parts);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 484,
+      "line": 487,
       "match": "in_stack_00000004",
       "text": "pCVar10 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 485,
+      "line": 488,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_textures) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 491,
+      "line": 494,
       "match": "(STextureSet *)((int)",
       "text": "pSVar19 = (STextureSet *)((int)pSVar19 + (uint)bVar24 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 492,
+      "line": 495,
       "match": "(SLodSubmesh *)((int)",
       "text": "pSVar23 = (SLodSubmesh *)((int)pSVar23 + (uint)bVar24 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 496,
+      "line": 499,
       "match": "in_stack_00000004",
       "text": "} while (iVar14 < in_stack_00000004->num_textures);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 510,
+      "line": 513,
       "match": "in_stack_00000008",
       "text": "if (*(int *)in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].texture_name == 2)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 512,
+      "line": 515,
       "match": "in_stack_00000008",
       "text": "pSVar5 = in_stack_00000008->texture_sets[0].textures + 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 527,
+      "line": 530,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].base.type,2);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 528,
+      "line": 531,
       "match": "in_stack_00000008",
       "text": "pSVar5 = in_stack_00000008->texture_sets[0].textures + 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 544,
+      "line": 547,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->texture_sets[0].textures[8].texture_variants[0].base.count,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 566,
+      "line": 569,
       "match": "in_stack_00000008",
       "text": "pSVar5 = in_stack_00000008->texture_sets[0].textures + 8;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 571,
+      "line": 574,
       "match": "._24_4_",
-      "text": "local_b4._24_4_ = core_skeledit_cpp_FUN_00589c20();",
+      "text": "local_b4._24_4_ = core_skeledit_cpp_CLodMesh_FUN_00589c20(&local_1f4);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 572,
+      "line": 575,
       "match": "._24_4_",
       "text": "if (-1 < (int)local_b4._24_4_) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 573,
+      "line": 576,
       "match": "._24_4_",
       "text": "if (local_b4._24_4_ != 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 575,
+      "line": 578,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->num_lods = iVar14;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 580,
+      "line": 583,
       "match": "in_stack_00000004",
       "text": "pCVar10 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 583,
+      "line": 586,
       "match": "(int *)((int)",
       "text": "iVar8 = *(int *)((int)local_d8 + iVar14);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 589,
+      "line": 592,
       "match": "in_stack_00000004",
       "text": "} while (iVar7 < in_stack_00000004->num_lods);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 593,
+      "line": 596,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_lods) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 594,
+      "line": 597,
       "match": "in_stack_00000004",
       "text": "local_78 = in_stack_00000004->texture_sets;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 600,
+      "line": 603,
       "match": "._24_4_",
       "text": "if (local_b4._24_4_ == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 608,
+      "line": 611,
       "match": "._20_4_",
       "text": "if (local_2dc.submesh_count != local_b4._20_4_) {",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 637,
+      "line": 640,
       "match": "in_stack_00000004",
       "text": "} while (iVar14 < in_stack_00000004->num_lods);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 639,
+      "line": 642,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->lod_info[0].shadow_only_flag = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 640,
+      "line": 643,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->lod_info[0].pixel_height = 999999;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 642,
+      "line": 645,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004->num_lods < 5) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 643,
+      "line": 646,
       "match": "in_stack_00000008",
       "text": "pSVar5 = in_stack_00000008->texture_sets[0].textures + 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 655,
+      "line": 658,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->lod_info[in_stack_00000004->num_lods].pixel_height = 999999;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 655,
+      "line": 658,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->lod_info[in_stack_00000004->num_lods].pixel_height = 999999;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 656,
+      "line": 659,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->lod_info[in_stack_00000004->num_lods].shadow_only_flag = 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 656,
+      "line": 659,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->lod_info[in_stack_00000004->num_lods].shadow_only_flag = 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 657,
+      "line": 660,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->num_lods = in_stack_00000004->num_lods + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 657,
+      "line": 660,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->num_lods = in_stack_00000004->num_lods + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 666,
+      "line": 669,
       "match": "in_stack_00000004",
       "text": "if (1 < in_stack_00000004->num_texture_sets) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 667,
+      "line": 670,
       "match": "in_stack_00000004",
       "text": "local_3c = in_stack_00000004->texture_sets + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 672,
+      "line": 675,
       "match": "._20_4_",
       "text": "if (uVar9 != local_b4._20_4_) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 678,
+      "line": 681,
       "match": "._20_4_",
       "text": "if (0 < (int)local_b4._20_4_) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 694,
+      "line": 697,
       "match": "._20_4_",
       "text": "} while (local_74 < (int)local_b4._20_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 698,
+      "line": 701,
       "match": "in_stack_00000004",
       "text": "} while (local_38 < in_stack_00000004->num_texture_sets);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 700,
+      "line": 703,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->num_textures = local_b4._20_4_;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 700,
+      "line": 703,
       "match": "._20_4_",
       "text": "in_stack_00000004->num_textures = local_b4._20_4_;",
       "type": "unknown_field"

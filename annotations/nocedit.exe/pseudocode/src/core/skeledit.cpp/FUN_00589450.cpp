@@ -17,7 +17,7 @@ void __cdecl core_skeledit_cpp_FUN_00589450(void)
   char *in_stack_00000004;
   
   bVar4 = 0;
-  __STK(0x1c);
+  __STK();
   uVar3 = 0xffffffff;
   pcVar2 = in_stack_00000004;
   do {

@@ -2,61 +2,60 @@
 // Address: 0058afe0
 // Address Range: [[0058afe0, 0058b158]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_FUN_0058afe0(void)
+// Signature: void __cdecl core_skeledit_cpp_FUN_0058afe0(void *ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_skeledit_cpp_FUN_0058afe0(void)
+void __cdecl core_skeledit_cpp_FUN_0058afe0(void *ptr)
 
 {
-  char *pcVar1;
+  int iVar1;
   char *pcVar2;
-  int iVar3;
+  char *pcVar3;
   int iVar4;
-  int *piVar5;
-  int *piVar6;
-  int *in_stack_00000004;
+  int iVar5;
+  void *pvVar6;
   uint in_stack_00000008;
   CPickList local_484;
   char local_dc [200];
-  int *local_14;
+  int local_14;
   
-  __STK(0x4a0);
-  iVar3 = 0;
+  __STK();
+  iVar4 = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_484);
-  if (0 < *in_stack_00000004) {
-    piVar5 = in_stack_00000004 + 1;
-    piVar6 = in_stack_00000004;
-    local_14 = piVar5;
+  if (0 < *(int *)ptr) {
+    iVar5 = (int)ptr + 4;
+    pvVar6 = ptr;
+    local_14 = iVar5;
     do {
-      iVar4 = piVar6[9];
-      pcVar2 = "(no parent)";
-      if (-1 < iVar4) {
-        pcVar2 = (char *)(local_14 + iVar4 * 0x21);
+      iVar1 = *(int *)((int)pvVar6 + 0x24);
+      pcVar3 = "(no parent)";
+      if (-1 < iVar1) {
+        pcVar3 = (char *)(iVar1 * 0x84 + local_14);
       }
-      _sprintf(local_dc,"%2d. %s\t%d. %s",iVar3,piVar5,iVar4,pcVar2);
-      piVar6 = piVar6 + 0x21;
-      piVar5 = piVar5 + 0x21;
-      iVar3 = iVar3 + 1;
+      _sprintf(local_dc,"%2d. %s\t%d. %s",iVar4,iVar5,iVar1,pcVar3);
+      pvVar6 = (void *)((int)pvVar6 + 0x84);
+      iVar5 = iVar5 + 0x84;
+      iVar4 = iVar4 + 1;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_484.base,local_dc);
-    } while (iVar3 < *in_stack_00000004);
+    } while (iVar4 < *(int *)ptr);
   }
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_484.base,"(Dump to the clipboard)");
   _sprintf(local_dc,"Viewing bone heirarchy for %s.",in_stack_00000008);
-  iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+  iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&local_484,local_dc,-1,0);
-  if (iVar3 == local_484.base.item_count + -1) {
-    iVar4 = 0;
-    iVar3 = _sprintf
+  if (iVar4 == local_484.base.item_count + -1) {
+    iVar5 = 0;
+    iVar4 = _sprintf
                       (&DAT_0366b650,"Heirarchy for %s\r\n\r\n",in_stack_00000008);
-    pcVar2 = &DAT_0366b650 + iVar3;
-    if (0 < *in_stack_00000004) {
+    pcVar3 = &DAT_0366b650 + iVar4;
+    if (0 < *(int *)ptr) {
       do {
-        pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_484.base,iVar4);
-        iVar4 = iVar4 + 1;
-        iVar3 = _sprintf(pcVar2,"%s\r\n",pcVar1);
-        pcVar2 = pcVar2 + iVar3;
-      } while (iVar4 < *in_stack_00000004);
+        pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_484.base,iVar5);
+        iVar5 = iVar5 + 1;
+        iVar4 = _sprintf(pcVar3,"%s\r\n",pcVar2);
+        pcVar3 = pcVar3 + iVar4;
+      } while (iVar5 < *(int *)ptr);
     }
     shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(g_CEditorToolsPtr,&DAT_0366b650);
   }

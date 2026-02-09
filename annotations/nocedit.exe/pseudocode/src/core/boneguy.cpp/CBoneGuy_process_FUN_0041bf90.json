@@ -27,38 +27,26 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
-        "line": 255,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 255,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 73,
-        "line": 345,
+        "line": 346,
         "message": "use of undeclared identifier 'stack0xfffffe44'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 386,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 31,
+        "line": 387,
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 41,
-        "line": 386,
-        "message": "expected expression"
+        "category": "other",
+        "column": 69,
+        "line": 387,
+        "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "incompatible_types",
-        "column": 13,
-        "line": 431,
+        "column": 14,
+        "line": 430,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -67,22 +55,21 @@
   },
   "complexity": {
     "assembly_lines": 952,
-    "complexity_score": 626,
+    "complexity_score": 600,
     "cross_reference_count": 0,
     "function_call_count": 37,
     "global_count": 26,
-    "pseudocode_lines": 431,
-    "suspect_count": 16,
+    "pseudocode_lines": 430,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "stack_ref",
       "suspect_float",
-      "undefined_data",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
-    "total_lines": 1383
+    "total_lines": 1382
   },
   "cross_references": [],
   "function": {
@@ -1014,35 +1001,35 @@
       "description": "Complex pointer cast",
       "line": 110,
       "match": "(int *)((int)",
-      "text": "local_44 = *(int *)((int)(pCVar10 + 5) + 8);",
+      "text": "local_44 = *(int *)((int)(pCVar11 + 5) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 124,
       "match": "(uint *)((int)",
-      "text": "puVar12 = (uint *)((int)&local_12c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar13 = (uint *)((int)&local_12c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 125,
       "match": "(uint *)((int)",
-      "text": "puVar11 = (uint *)((int)&local_11c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar12 = (uint *)((int)&local_11c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_12c + (uint)bVar13 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_12c + (uint)bVar14 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 127,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_11c + (uint)bVar13 * -8 + 4);",
+      "text": "*(uint *)((int)&local_11c + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1060,50 +1047,36 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 248,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 261,
+      "line": 262,
       "match": "SQRT",
-      "text": "if ((SQRT(fVar3 * fVar3 + fVar14 * fVar14) <= local_30 + (float)0.5) &&",
+      "text": "if ((SQRT(fVar4 * fVar4 + fVar15 * fVar15) <= local_30 + (float)0.5) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 293,
+      "line": 294,
       "match": "DAT_00822944",
       "text": "[DAT_00822944].m);",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 338,
+      "line": 339,
       "match": "&stack0xfffffe44",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe44);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 379,
-      "match": "code *",
-      "text": "(pCVar8 = (CBoneGuy *)(**(code **)(*(int *)(iVar5 + 0x154) + 0x108))(), pCVar8 == this_ptr))",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 421,
+      "line": 420,
       "match": "2.8026e-45",
-      "text": "fVar14 = 2.8026e-45;",
+      "text": "fVar15 = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 427,
+      "line": 426,
       "match": "6.040276e-39",
       "text": "fStack_1b0 = 6.040276e-39;",
       "type": "suspect_float"

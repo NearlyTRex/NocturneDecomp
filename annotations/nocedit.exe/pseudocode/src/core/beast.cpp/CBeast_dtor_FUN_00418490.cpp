@@ -14,7 +14,7 @@ CBeast * __cdecl core_beast_cpp_CBeast_dtor_FUN_00418490(CBeast *this_ptr,uint f
   CVector3f *pCVar3;
   CClothList *pCVar4;
   CDeformableModelInstance *pCVar5;
-  CBeast *ptr;
+  CDemonActor *ptr;
   void *ptr_00;
   
   if ((flags & 4) != 0) {
@@ -29,12 +29,11 @@ CBeast * __cdecl core_beast_cpp_CBeast_dtor_FUN_00418490(CBeast *this_ptr,uint f
   pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80((CClothList *)(pCVar3 + -0x26));
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(pCVar4[-0x18].filenames[2] + 0x10),0);
-  ptr = (CBeast *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30
+  ptr = core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar5[-1].part_visibility_flags + 7),1);
   if ((flags & 2) == 0) {
-    return ptr;
+    return (CBeast *)ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
-  return ptr;
+  return (CBeast *)ptr;
 }

@@ -11,6 +11,6 @@ SClothBone * __cdecl core_cloth_cpp_freeClothBones_FUN_0043e4a0(SClothBone *arra
 {
   SClothBone *pSVar1;
   
-  pSVar1 = __arrfini(array,0x32,&g_SClothBoneTypeInfo);
+  pSVar1 = (SClothBone *)__arrfini(array,0x32,&g_SClothBoneTypeInfo);
   return pSVar1;
 }

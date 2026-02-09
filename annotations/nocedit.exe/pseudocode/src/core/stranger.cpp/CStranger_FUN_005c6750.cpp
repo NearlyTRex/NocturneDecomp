@@ -13,17 +13,11 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6750(CStranger *this_ptr)
   
   this_ptr_00 = &(this_ptr->base).base.model;
   core_hero_cpp_CHero_FUN_004f3b20(&this_ptr->base);
-  this_ptr->unk5[4] = '\0';
-  this_ptr->unk5[5] = '\0';
-  this_ptr->unk5[6] = '\0';
-  this_ptr->unk5[7] = '\0';
-  this_ptr->unk5[8] = '\0';
-  this_ptr->unk5[9] = '\0';
-  this_ptr->unk5[10] = '\0';
-  this_ptr->unk5[0xb] = '\0';
+  this_ptr->ladder_to_descend = (CDemonActor *)0x0;
+  this_ptr->weapon = (CDemonActor *)0x0;
   this_ptr->action_pending = 0;
-  (this_ptr->base).base.field47_0x2a8c = 0;
-  (this_ptr->base).base.field48_0x2a90 = 0;
+  (this_ptr->base).base.layer_action_index = 0;
+  (this_ptr->base).base.layer_action_t = 0.0;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
             (&this_ptr_00->motion_controller,"stand",0.0);
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

@@ -2,14 +2,14 @@
 // Address: 0040e6c0
 // Address Range: [[0040e6c0, 0040e765]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name, void *data_ptr,void *callback)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name, void *data_ptr,CActorPropertyValidatorFunc *callback)
 
 #include "nocturne.h"
 
 CActorProperty * __cdecl
 core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
           (CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name,
-          void *data_ptr,void *callback)
+          void *data_ptr,CActorPropertyValidatorFunc *callback)
 
 {
   char cVar1;
@@ -40,6 +40,6 @@ core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
   pCVar3->enabled_flag = 1;
   pCVar3->string2[0] = '\0';
   (pCVar3->data).v_ptr = data_ptr;
-  (pCVar3->callback).v_action_func = callback;
+  (pCVar3->callback).v_validator_func = callback;
   return pCVar3;
 }

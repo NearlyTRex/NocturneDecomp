@@ -637,7 +637,7 @@ CActorProperty * __cdecl CActorPropertyList::addFlags(CActorPropertyList *this_p
 
 // Original: core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0
 // Address: 0040e6c0
-CActorProperty * __cdecl CActorPropertyList::snag(CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name, void *data_ptr,void *callback);
+CActorProperty * __cdecl CActorPropertyList::snag(CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name, void *data_ptr,CActorPropertyValidatorFunc *callback);
 
 // Original: core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770
 // Address: 0040e770

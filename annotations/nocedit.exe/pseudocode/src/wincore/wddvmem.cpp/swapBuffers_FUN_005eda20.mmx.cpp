@@ -24,7 +24,7 @@ __asm {
         jz LAB_005edb24
         mov EBX,dword ptr [g_BackBuffer]
         mov dword ptr [g_UseSoftwareRendering],ECX
-        call wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580
+        call wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580
         mov ESI,dword ptr [g_WindowHeight]
         xor EDI,EDI
         test ESI,ESI
@@ -56,7 +56,7 @@ __asm {
         cmp EDI,EAX
         jl LAB_005eda7f
     LAB_005edabf:
-        call wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630
+        call wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630
         mov dword ptr [g_UseSoftwareRendering],0x1
     LAB_005edace:
         mov EBX,dword ptr [g_DirectDrawSurface]
@@ -71,11 +71,11 @@ __asm {
         jz LAB_005edaf2
         cmp EAX,0x887601c2
         jnz LAB_005edaf2
-        call wincore_wddvmem.cpp_videoRestore_FUN_005edc80
+        call wincore_wddvmem_cpp_videoRestore_FUN_005edc80
     LAB_005edaf2:
         xor ESI,ESI
         mov dword ptr [g_RenderingInProgress],ESI
-        call wincore_winrun.cpp_processWindowMessages_FUN_005f35e0
+        call wincore_winrun_cpp_processWindowMessages_FUN_005f35e0
         mov ESP,EBP
         pop EBP
         pop EDI
@@ -84,11 +84,11 @@ __asm {
         ret
     LAB_005edb06:
         push 0x0
-        call wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30
+        call wincore_windll_cpp_presentToExternalRenderer_FUN_005b7c30
         add ESP,0x4
         xor ESI,ESI
         mov dword ptr [g_RenderingInProgress],ESI
-        call wincore_winrun.cpp_processWindowMessages_FUN_005f35e0
+        call wincore_winrun_cpp_processWindowMessages_FUN_005f35e0
         mov ESP,EBP
         pop EBP
         pop EDI
@@ -111,7 +111,7 @@ __asm {
         mov dword ptr [EBP + -0xc],EDX
         lea EAX,[EBP + -0x7c]
         push EAX
-        call crt_memory.c_memset_FUN_005fde40
+        call crt_memory_c_memset_FUN_005fde40
         add ESP,0xc
         push EBX
         push 0x1
@@ -179,11 +179,11 @@ __asm {
         push 0x657a42
         mov dword ptr [g_CurrentFilename],ESI
         mov dword ptr [g_CurrentLineNumber],EDI
-        call core_main.c_displayErrorAndQuit_FUN_00506f10
+        call core_main_c_displayErrorAndQuit_FUN_00506f10
         add ESP,0x4
         xor ESI,ESI
         mov dword ptr [g_RenderingInProgress],ESI
-        call wincore_winrun.cpp_processWindowMessages_FUN_005f35e0
+        call wincore_winrun_cpp_processWindowMessages_FUN_005f35e0
         mov ESP,EBP
 }
 }

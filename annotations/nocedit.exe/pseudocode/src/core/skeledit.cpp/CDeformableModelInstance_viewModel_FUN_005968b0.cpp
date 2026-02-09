@@ -168,7 +168,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   char local_14 [4];
   
   bVar20 = 0;
-  __STK(0x33f0);
+  __STK();
   core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
   core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(in_stack_00000004);
@@ -720,7 +720,7 @@ LAB_005975b4:
         }
         if (0.0 < SQRT(local_110 * local_110 + local_118 * local_118 + local_114 * local_114)) {
           local_40 = 1;
-          core_skeledit_cpp_FUN_0058e600();
+          core_skeledit_cpp_CDeformableModel_FUN_0058e600(local_c0);
         }
       }
     }
@@ -776,7 +776,7 @@ LAB_005975b4:
            (0.0 < SQRT(local_13c.z * local_13c.z +
                        local_13c.x * local_13c.x + local_13c.y * local_13c.y))) {
           local_40 = 1;
-          core_skeledit_cpp_FUN_0058e600();
+          core_skeledit_cpp_CDeformableModel_FUN_0058e600(local_c0);
         }
       }
     }
@@ -837,7 +837,7 @@ LAB_005975b4:
         iVar6 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                           (g_CEditorToolsPtr,local_660,&local_3c,1,0.0001,999999.9,0);
         if ((iVar6 != 0) && (local_3c != 1.0)) {
-          core_skeledit_cpp_FUN_0058e3e0();
+          core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(pCVar7);
           local_94 = 1;
         }
       }

@@ -11,7 +11,7 @@ void __cdecl core_skeledit_cpp_FUN_00589a40(void)
 {
   _FILE *file;
   
-  __STK(0x1c);
+  __STK();
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("skeledit.ini",(char *)0x0,"wt","..\\core\\skeledit.cpp",
                     0x144);

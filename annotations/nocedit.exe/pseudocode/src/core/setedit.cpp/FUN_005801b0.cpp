@@ -2,11 +2,11 @@
 // Address: 005801b0
 // Address Range: [[005801b0, 00580309]]
 // Convention: __cdecl
-// Signature: bool __cdecl core_setedit_cpp_FUN_005801b0(void)
+// Signature: int __cdecl core_setedit_cpp_FUN_005801b0(void)
 
 #include "nocturne.h"
 
-bool __cdecl core_setedit_cpp_FUN_005801b0(void)
+int __cdecl core_setedit_cpp_FUN_005801b0(void)
 
 {
   int iVar1;
@@ -15,10 +15,11 @@ bool __cdecl core_setedit_cpp_FUN_005801b0(void)
   int iVar4;
   int iVar5;
   int iVar6;
+  CDemonSet *in_stack_00000004;
   int *in_stack_00000008;
   int in_stack_0000000c;
   
-  core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310();
+  core_setedit_cpp_CDemonSet_FUN_00580310(in_stack_00000004);
   piVar2 = (int *)(DAT_03659384 + in_stack_0000000c * 0x4b030);
   iVar1 = in_stack_00000008[1] - piVar2[1];
   iVar3 = *in_stack_00000008 - *piVar2;
@@ -49,9 +50,9 @@ bool __cdecl core_setedit_cpp_FUN_005801b0(void)
       iVar6 = (int)(((longlong)iVar1 * 0x78) / (longlong)iVar5);
       iVar1 = iVar6 + 0x78;
       if ((0 < iVar3) && (((0 < iVar1 && (iVar3 < 0x13f)) && (iVar1 < 0xef)))) {
-        return iVar5 + -0x100 < piVar2[iVar3 * 0xf0 + iVar6 + 0x84];
+        return (uint)(iVar5 + -0x100 < piVar2[iVar3 * 0xf0 + iVar6 + 0x84]);
       }
     }
   }
-  return false;
+  return 0;
 }

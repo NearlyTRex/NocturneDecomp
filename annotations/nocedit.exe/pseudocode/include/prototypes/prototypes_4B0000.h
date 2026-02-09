@@ -104,7 +104,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220 (CCheckOut
 int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 (CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer);
 void __cdecl engine_fileio_cpp_remountAllPods_FUN_004b5350(void);
 CFileManager * __cdecl engine_fileio_cpp_CFileManager_ctor_FUN_004b53a0(CFileManager *this_ptr);
-void __cdecl engine_fileio_cpp_CFileManager_dtor_FUN_004b53d0(CFileManager *this_ptr);
+CFileManager * __cdecl engine_fileio_cpp_CFileManager_dtor_FUN_004b53d0(CFileManager *this_ptr);
 void __cdecl engine_fileio_cpp_CFileManager_extractTexture_FUN_004b53e0 (CFileManager *this_ptr,char *texture_filename);
 void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0 (CFileManager *this_ptr,SMRGLHeaderExtended *mrgl_node);
 void __cdecl engine_fileio_cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610 (CFileManager *this_ptr,char *filename);
@@ -185,11 +185,11 @@ CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004beed0(CFil
 void __cdecl core_fire_cpp_staticInit_FUN_004bef20(void);
 float __cdecl core_fire_cpp_FUN_004bf1a0(void);
 int __cdecl core_fire_cpp_CSmokeParticle_initRender_FUN_004bf1f0(CSmokeParticle *this_ptr);
-void __cdecl core_fire_cpp_CSmokeParticle_ctor_FUN_004bf2e0(CSmokeParticle *this_ptr);
+void __cdecl core_fire_cpp_CSmokeParticle_reset_FUN_004bf2e0(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0 (CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence, int alpha_value);
 void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *this_ptr);
-void __cdecl core_fire_cpp_CBulletHole_ctor_FUN_004bf7f0 (CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal, CDemonActor *hit_actor);
+void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0 (CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal, CDemonActor *hit_actor);
 void __cdecl core_fire_cpp_CBulletHole_process_FUN_004bfa00(CBulletHole *this_ptr);
 void __cdecl core_fire_cpp_CBulletHole_initRender_FUN_004bfa40(CBulletHole *this_ptr);
 void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr);

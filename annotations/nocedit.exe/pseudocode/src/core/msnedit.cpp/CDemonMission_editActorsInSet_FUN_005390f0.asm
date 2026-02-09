@@ -175,8 +175,8 @@ section .text
     PUSH EBX                            ; 0053918c
     MOV EAX,[0x006810c8]                ; 0053918d | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 00539192 | g_CDemonSetInstance
-    CALL core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0 ; 00539193
-        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_FUN_00576da0 ; 00539193
+        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00576da0(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 00539198
     MOV EDX,dword ptr [0x006810c8]      ; 0053919b | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 005391a1 | g_CDemonSetInstance

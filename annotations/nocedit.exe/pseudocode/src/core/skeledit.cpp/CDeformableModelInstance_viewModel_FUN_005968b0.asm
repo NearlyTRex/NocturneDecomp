@@ -201,9 +201,9 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_reset_FUN_0052dad0
+;   core_skeledit.cpp_CDeformableModel_FUN_0058e3e0
+;   core_skeledit.cpp_CDeformableModel_FUN_0058e600
 ;   core_skeledit.cpp_CDeformableModel_save_FUN_0058f040
-;   core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0
-;   core_skeledit.cpp_FUN_0058e3e0
 ;   ... and 76 more
 ;
 ; *****************************************************************************
@@ -213,7 +213,7 @@ section .text
     PUSH 0x33f0                         ; 005968b0
         ;   Label: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 005968b5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 005968ba
     PUSH ESI                            ; 005968bb
     PUSH EDI                            ; 005968bc
@@ -1900,8 +1900,8 @@ section .text
     MOV ECX,0x1                         ; 00597c0e
     PUSH EBX                            ; 00597c13
     MOV dword ptr [EBP + 0x4e],ECX      ; 00597c14
-    CALL core_skeledit.cpp_FUN_0058e600 ; 00597c17
-        ;   XREF to: 0058e600 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058e600()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058e600 ; 00597c17
+        ;   XREF to: 0058e600 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_FUN_0058e600(CDeformableModel * this_ptr)
     ADD ESP,0x8                         ; 00597c1c
         ;   Label: LAB_00597c1c
     PUSH 0x30                           ; 00597c1f
@@ -1956,8 +1956,8 @@ section .text
     MOV EBX,0x1                         ; 00597ca0
     PUSH ESI                            ; 00597ca5
     MOV dword ptr [EBP + 0x4e],EBX      ; 00597ca6
-    CALL core_skeledit.cpp_FUN_0058e600 ; 00597ca9
-        ;   XREF to: 0058e600 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058e600()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058e600 ; 00597ca9
+        ;   XREF to: 0058e600 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_FUN_0058e600(CDeformableModel * this_ptr)
     ADD ESP,0x8                         ; 00597cae
     PUSH 0x18                           ; 00597cb1
         ;   Label: LAB_00597cb1
@@ -2175,8 +2175,8 @@ section .text
         ;   XREF to: 00597f54 (CONDITIONAL_JUMP)  ; LAB_00597f54
     PUSH EBX                            ; 00597f42
     PUSH EDI                            ; 00597f43
-    CALL core_skeledit.cpp_FUN_0058e3e0 ; 00597f44
-        ;   XREF to: 0058e3e0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058e3e0()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058e3e0 ; 00597f44
+        ;   XREF to: 0058e3e0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel * this_ptr)
     MOV EDI,0x1                         ; 00597f49
     ADD ESP,0x8                         ; 00597f4e
     MOV dword ptr [EBP + -0x6],EDI      ; 00597f51

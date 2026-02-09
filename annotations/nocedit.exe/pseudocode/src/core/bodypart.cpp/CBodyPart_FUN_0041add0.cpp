@@ -15,10 +15,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041add0(CBodyPart *this_ptr)
   uint *in_stack_0000000c;
   uint *in_stack_00000010;
   
-  iVar1 = *(int *)(this_ptr->unk + 0x134);
+  iVar1 = *(int *)(this_ptr->unk5 + 0xfc);
   if (iVar1 < 3) {
-    pcVar2 = this_ptr->unk + iVar1 * 0x194 + 0x138;
-    *(int *)(this_ptr->unk + 0x134) = iVar1 + 1;
+    pcVar2 = this_ptr->unk5 + iVar1 * 0x194 + 0x100;
+    *(int *)(this_ptr->unk5 + 0xfc) = iVar1 + 1;
     if (pcVar2 != (char *)in_stack_0000000c) {
       *(uint *)pcVar2 = *in_stack_0000000c;
       *(uint *)(pcVar2 + 4) = in_stack_0000000c[1];

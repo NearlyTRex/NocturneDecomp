@@ -11,7 +11,7 @@ CLightGun * __cdecl core_lightgun_cpp_factoryFunc_FUN_005058c0(void)
 {
   CLightGun *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x590,"..\\core\\lightgun.cpp",0x3a);
+  pCVar1 = (CLightGun *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x590,"..\\core\\lightgun.cpp",0x3a);
   if (pCVar1 == (CLightGun *)0x0) {
     return (CLightGun *)0x0;
   }

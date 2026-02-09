@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CSimBox;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
@@ -20,13 +23,15 @@ typedef struct CBoxActor {
     int pickup_type; // 0x314
     struct CDemonActor* carrier_actor; // 0x318
     int can_be_pushed; // 0x31c
-    int pushed_by_actor; // 0x320
+    struct CDemonActor* pushed_by_actor; // 0x320
     int constrain_extents_actor; // 0x324
     int unk3; // 0x328
     char push_sound[100]; // 0x32c
     float weight_in_pounds; // 0x390
-    int sim_box; // 0x394
-    char unk4[600]; // 0x398
+    struct CSimBox* sim_box; // 0x394
+    char unk4[592]; // 0x398
+    int unk5; // 0x5e8
+    int unk6; // 0x5ec
     int ground_type; // 0x5f0
     int plot_in_shadow_flag; // 0x5f4
     int collision_flag; // 0x5f8

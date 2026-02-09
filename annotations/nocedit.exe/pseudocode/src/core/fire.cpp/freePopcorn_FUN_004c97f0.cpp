@@ -11,6 +11,6 @@ CPopcorn * __cdecl core_fire_cpp_freePopcorn_FUN_004c97f0(CPopcorn *objs)
 {
   CPopcorn *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x100,&g_CPopcornTypeInfo);
+  pCVar1 = (CPopcorn *)__arrfini(objs,0x100,&g_CPopcornTypeInfo);
   return pCVar1;
 }

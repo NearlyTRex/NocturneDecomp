@@ -55,10 +55,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425fe0(CBugs *this_ptr)
   
   bVar7 = 0;
   if (*(int *)(this_ptr->unk3 + 0x830) == 0) {
-    this_ptr->unk1[8] = '\0';
-    this_ptr->unk1[9] = '\0';
-    this_ptr->unk1[10] = '\0';
-    this_ptr->unk1[0xb] = '\0';
+    this_ptr->unk = 0;
     return;
   }
   iVar2 = 0;

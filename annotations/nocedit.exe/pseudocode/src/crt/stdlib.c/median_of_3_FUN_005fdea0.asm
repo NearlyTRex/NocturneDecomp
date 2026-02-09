@@ -10,7 +10,7 @@
 ; QSORT_COMPARATOR Stack[0x10]:4   compar
 ;
 ; XREF[1]:
-;   crt_stdlib.c_qsort_FUN_005fdf38 at 005fe202
+;   crt_stdlib.c__qsort_FUN_005fdf38 at 005fe202
 ;
 ; *****************************************************************************
 

@@ -16,7 +16,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneSt
   int *in_stack_00000004;
   int local_28;
   
-  __STK(0x30);
+  __STK();
   piVar1 = in_stack_00000004;
   iVar2 = 0;
   if (0 < *in_stack_00000004) {

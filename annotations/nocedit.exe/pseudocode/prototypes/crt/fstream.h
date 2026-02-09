@@ -33,7 +33,7 @@ ofstream * __cdecl ofstream::dtor(ofstream *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_dtor_FUN_005ff856
 // Address: 005ff856
-void * __cdecl ifstream::dtor(ifstream *this_ptr,uint flags);
+ifstream * __cdecl ifstream::dtor(ifstream *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
 // Address: 005ff8f0

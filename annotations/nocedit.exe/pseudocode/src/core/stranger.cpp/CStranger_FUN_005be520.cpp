@@ -613,7 +613,7 @@ LAB_005be7a1:
     local_88 = 0;
     local_84 = 0;
     local_94._8_4_ = 0.0;
-    if ((this_ptr->guns_drawn != 0) && (*(int *)(this_ptr->unk5 + 8) != 0)) {
+    if ((this_ptr->guns_drawn != 0) && (this_ptr->weapon != (CDemonActor *)0x0)) {
       local_94._8_4_ = *(uint *)(this_ptr->unk1 + 0x18);
     }
     blend_callback_00 = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;

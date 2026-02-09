@@ -42,7 +42,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
     this_ptr->unk2[0x3f] = '\0';
   }
   else {
-    if (*(int *)((this_ptr->base).unk2 + 4) != 0) {
+    if ((this_ptr->base).victim != (CDemonActor *)0x0) {
       iVar1 = core_enemy_cpp_CEnemy_FUN_004a9a50(&this_ptr->base);
       if ((iVar1 == 0) && (this_ptr->hold_pos_flag == 0)) {
         this_ptr->unk2[0x3c] = '\0';
@@ -69,12 +69,12 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
                           INT_02f37ed0);
       pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_44,pCVar3);
-      iVar1 = *(int *)((this_ptr->base).unk2 + 4);
-      local_38.x = *(float *)(iVar1 + 0x20) - pCVar3->x;
-      local_38.y = *(float *)(iVar1 + 0x24) - pCVar3->y;
-      local_38.z = *(float *)(iVar1 + 0x28) - pCVar3->z;
+      pCVar2 = (this_ptr->base).victim;
+      local_38.x = (pCVar2->location).position.x - pCVar3->x;
+      local_38.y = (pCVar2->location).position.y - pCVar3->y;
+      local_38.z = (pCVar2->location).position.z - pCVar3->z;
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)((this_ptr->base).unk2 + 4),g_CHeroClassInfo.name_hash);
+                         ((this_ptr->base).victim,g_CHeroClassInfo.name_hash);
       fVar7 = 3.0f;
       if (pCVar2 != (CDemonActor *)0x0) {
         fVar7 = 4.0f;

@@ -1,7 +1,7 @@
 #pragma once
 
 // Enum: EActorPropertyType
-typedef enum EActorPropertyType {
+enum {
     PROP_INT = 0,
     PROP_FLOAT = 1,
     PROP_VECTOR = 2,
@@ -21,5 +21,6 @@ typedef enum EActorPropertyType {
     PROP_RULE = 16,
     PROP_ACTION = 17,
     PROP_FLAGS = 18
-} EActorPropertyType;
+};
+typedef int EActorPropertyType;
 

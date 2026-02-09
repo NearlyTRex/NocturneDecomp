@@ -18,7 +18,7 @@ CFlies * __cdecl core_gore_cpp_CGore_FUN_004edf30(CGore *this_ptr)
   float in_stack_00000010;
   float *in_stack_00000014;
   
-  this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2a20,"..\\core\\gore.cpp",0x67c);
+  this_ptr_00 = (CFlies *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2a20,"..\\core\\gore.cpp",0x67c);
   this_ptr_01 = (CFlies *)0x0;
   if (this_ptr_00 != (CFlies *)0x0) {
     this_ptr_01 = core_flies_cpp_CFlies_ctor_FUN_004cbd60(this_ptr_00);

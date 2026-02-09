@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 161,
-        "message": "no matching function for call to 'time'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 62,
         "line": 162,
@@ -114,6 +108,12 @@
         "column": 18,
         "line": 308,
         "message": "assigning to 'SIZE_T *' (aka 'unsigned long *') from incompatible type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 351,
+        "message": "assigning to 'char *' from 'byte *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       }
     ],
     "success": false,
@@ -222,7 +222,7 @@
     {
       "addr": "006001f0",
       "is_variadic": false,
-      "name": "crt_time.c_time_FUN_006001f0"
+      "name": "crt_time.c__time_FUN_006001f0"
     },
     {
       "addr": "004817c0",
@@ -712,7 +712,7 @@
     {
       "addr": "02d129b0",
       "name": "g_PodCreationTime",
-      "type": "int",
+      "type": "time_t",
       "value": null
     },
     {

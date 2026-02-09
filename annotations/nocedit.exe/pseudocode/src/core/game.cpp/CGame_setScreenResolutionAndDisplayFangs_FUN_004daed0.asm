@@ -12,9 +12,9 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db886
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e99e
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539e1b
-;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 00580701
-;   core_setedit.cpp_FUN_00581320 at 00581435
-;   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 at 0057ca39
+;   core_setedit.cpp_CDemonSet_FUN_005805a0 at 00580701
+;   core_setedit.cpp_CDemonSet_FUN_00581320 at 00581435
+;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057ca39
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fangs_0062b63b
@@ -68,7 +68,7 @@ section .text
     MOV EAX,ESP                         ; 004daf13
     PUSH EAX                            ; 004daf15
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 004daf16
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004daf1b
     PUSH 0x1e0                          ; 004daf1e
     PUSH 0x280                          ; 004daf23

@@ -36,7 +36,7 @@ core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_ptr,CDemonAc
     CStack_44.z = fStack_24 * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(actor,&CStack_38,&CStack_44);
     if (this_ptr->pressure_plate != 0) {
-      pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790(actor,g_CCharacterClassInfo.name_hash);
+      pCVar6 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(actor,g_CCharacterClassInfo.name_hash);
       if ((pCVar6 != (CDemonActor *)0x0) && (pCVar6[0x1a].unk11 == 0)) {
         return 0;
       }
@@ -78,7 +78,7 @@ core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_ptr,CDemonAc
                   (&this_ptr->base,(CBoundingBox3D *)auStack_8c);
         if (((float)auStack_8c._12_4_ <= fStack_2c) && (fStack_2c <= fStack_74)) {
           if (CStack_38.z * CStack_38.z + fStack_28 * fStack_28 <=
-              *(float *)this_ptr->unk1 * *(float *)(this_ptr->unk1 + 8) * (float)0.25) {
+              (this_ptr->trigger_size).x * (this_ptr->trigger_size).z * (float)0.25) {
             return 1;
           }
           return 0;

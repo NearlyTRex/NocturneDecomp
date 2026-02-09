@@ -11,7 +11,7 @@ struct CDemonActor;
 // Ghidra size: 0xbf18 (48920 bytes)
 typedef struct CGargoyle {
     CEnemy base; // 0x0
-    char unk1[56]; // 0xbeb4
+    char unk[48]; // 0xbebc
     int stone_red; // 0xbeec
     int stone_green; // 0xbef0
     int stone_blue; // 0xbef4

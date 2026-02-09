@@ -11,7 +11,7 @@ CHostage * __cdecl core_hostage_cpp_factoryFunc_FUN_004f4800(void)
 {
   CHostage *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1faf0,"..\\core\\hostage.cpp",0x59);
+  pCVar1 = (CHostage *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1faf0,"..\\core\\hostage.cpp",0x59);
   if (pCVar1 == (CHostage *)0x0) {
     return (CHostage *)0x0;
   }

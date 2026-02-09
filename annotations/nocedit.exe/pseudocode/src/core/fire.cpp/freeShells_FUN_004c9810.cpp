@@ -11,6 +11,6 @@ CShell * __cdecl core_fire_cpp_freeShells_FUN_004c9810(CShell *objs)
 {
   CShell *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x32,&g_CShellTypeInfo);
+  pCVar1 = (CShell *)__arrfini(objs,0x32,&g_CShellTypeInfo);
   return pCVar1;
 }

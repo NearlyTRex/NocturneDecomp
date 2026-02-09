@@ -1,0 +1,169 @@
+{
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 55,
+    "cross_reference_count": 9,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
+    "suspect_types": [
+      "extra_output",
+      "special_crt_function"
+    ],
+    "total_lines": 44
+  },
+  "cross_references": [
+    {
+      "addr": "00506f10",
+      "from_addr": "0050704f",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b1fd0",
+      "from_addr": "005b24c6",
+      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00608160",
+      "from_addr": "006081cc",
+      "name": "crt_io.c_utime_FUN_00608160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b4220",
+      "from_addr": "004b4e5f",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004baf00",
+      "from_addr": "004bbf34",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b5a50",
+      "from_addr": "004b5be9",
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046b9a0",
+      "from_addr": "0046baf8",
+      "name": "shape_design.c_embedCopyrightWatermark_FUN_0046b9a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00534210",
+      "from_addr": "00534347",
+      "name": "sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005adba0",
+      "from_addr": "005adc38",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "006001f0",
+    "address_range": [
+      [
+        "006001f0",
+        "00600226"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c__time_FUN_006001f0",
+    "signature": "time_t __cdecl crt_time_c__time_FUN_006001f0(time_t *optional_output)"
+  },
+  "function_calls": [
+    {
+      "addr": "00600f80",
+      "is_variadic": false,
+      "name": "crt_time.c__mktime_FUN_00600f80"
+    },
+    {
+      "addr": "00607150",
+      "is_variadic": false,
+      "name": "crt_time.c_get_local_time_FUN_00607150"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.636363636363637,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 13,
+      "INT_ADD": 7,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 7,
+      "INT_SUB": 7,
+      "LOAD": 8,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 102
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "optional_output",
+        "offset": 4,
+        "size": 4,
+        "type": "time_t *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX",
+      "text": "if (499 < extraout_EAX) {",
+      "type": "extra_output"
+    },
+    {
+      "address": "006001f0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_time.c__time_FUN_006001f0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006001f0",
+      "type": "special_crt_function"
+    }
+  ]
+}

@@ -41,7 +41,8 @@ int __cdecl core_skeledit_cpp_FUN_0058c190(void)
   CDeformableModel *in_stack_00000008;
   CDeformableModel *in_stack_ffff5dd8;
   float afStack_a1d0 [3279];
-  int aiStack_6e94 [4701];
+  int aiStack_6e94 [100];
+  byte local_6d04 [18404];
   float local_2520 [1200];
   CPickList local_1260;
   char local_eb8 [400];
@@ -101,7 +102,7 @@ int __cdecl core_skeledit_cpp_FUN_0058c190(void)
   int *piVar11;
   
   bVar24 = 0;
-  __STK(0xa248);
+  __STK();
   DAT_03670650 = 0;
   pCVar6 = (CBoneStructure *)
            shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -145,10 +146,10 @@ int __cdecl core_skeledit_cpp_FUN_0058c190(void)
                            (&local_1260,&DAT_03670650,iVar14,0);
         if (iVar14 < 0) break;
         if (iVar14 == 0) {
-          core_skeledit_cpp_FUN_0058afe0();
+          core_skeledit_cpp_FUN_0058afe0(&stack0xffff5dd8);
         }
         if (iVar14 == 1) {
-          core_skeledit_cpp_FUN_0058afe0();
+          core_skeledit_cpp_FUN_0058afe0(local_6d04);
         }
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1260,0);
@@ -171,11 +172,13 @@ LAB_0058c613:
             (in_stack_00000004,1,1,local_b4._4_4_,1);
   core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
             (in_stack_00000004,0,local_b4._8_4_,local_b4._12_4_,0);
-  iVar14 = core_skeledit_cpp_FUN_0058b8e0();
-  if (((iVar14 == 0) || (iVar14 = core_skeledit_cpp_FUN_0058b9b0(), iVar14 == 0)) ||
-     (iVar14 = core_skeledit_cpp_FUN_0058bc40(), iVar14 == 0)) goto LAB_0058c613;
+  iVar14 = core_skeledit_cpp_CDeformableModel_FUN_0058b8e0(in_stack_00000004);
+  if (((iVar14 == 0) ||
+      (iVar14 = core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(in_stack_00000004), iVar14 == 0)) ||
+     (iVar14 = core_skeledit_cpp_CDeformableModel_FUN_0058bc40(in_stack_00000004), iVar14 == 0))
+  goto LAB_0058c613;
   if (in_stack_00000008->texture_sets[0].textures[4].texture_variants[1].texture_name[0] == '\0') {
-    core_skeledit_cpp_FUN_0058f790();
+    core_skeledit_cpp_CDeformableModel_FUN_0058f790(in_stack_00000004);
   }
   else {
     iVar14 = core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
@@ -575,7 +578,7 @@ LAB_0058c601:
   pSVar5->texture_variants[0].texture_name[5] = '\0';
   pSVar5->texture_variants[0].texture_name[6] = '\0';
   pSVar5->texture_variants[0].texture_name[7] = '\0';
-  local_b4._24_4_ = core_skeledit_cpp_FUN_00589c20();
+  local_b4._24_4_ = core_skeledit_cpp_CLodMesh_FUN_00589c20(&local_1f4);
   if (-1 < (int)local_b4._24_4_) {
     if (local_b4._24_4_ != 0) {
       iVar14 = shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(&local_1f4);
@@ -653,7 +656,7 @@ LAB_0058c601:
       pSVar5->texture_variants[0].texture_name[6] = '\0';
       pSVar5->texture_variants[0].texture_name[7] = '\0';
       g_LodReplayMode = 1;
-      iVar14 = core_skeledit_cpp_FUN_00589c20();
+      iVar14 = core_skeledit_cpp_CLodMesh_FUN_00589c20(&local_350);
       if (iVar14 < 0) goto LAB_0058d5ef;
       if (iVar14 != 0) {
         iVar14 = shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(&local_350);

@@ -92,7 +92,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20 at 00578c0d
+;   core_setedit.cpp_CDemonSet_FUN_00578a20 at 00578c0d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Import_geometry_00646bd8
@@ -123,11 +123,11 @@
 ;   core_set.cpp_CDemonSet_clear_FUN_005693c0
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
 ;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60
-;   core_setedit.cpp_BackdropMaybe_FUN_005805a0
-;   core_setedit.cpp_DefineTexturesMaybe_FUN_00578290
-;   core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630
+;   core_setedit.cpp_CDemonSet_FUN_005805a0
+;   core_setedit.cpp_FUN_00578290
+;   core_setedit.cpp_FUN_00578420
+;   core_setedit.cpp_FUN_00578630
 ;   core_setedit.cpp_FUN_00578c90
-;   core_setedit.cpp_ImportingGroundTextures_FUN_00578420
 ;   ... and 30 more
 ;
 ; *****************************************************************************
@@ -809,8 +809,8 @@ section .text
         ;   XREF to: 0057950a (CONDITIONAL_JUMP)  ; LAB_0057950a
     MOV EBX,dword ptr [ESP + 0x247c]    ; 005794fa
     PUSH EBX                            ; 00579501
-    CALL core_setedit.cpp_BackdropMaybe_FUN_005805a0 ; 00579502
-        ;   XREF to: 005805a0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_BackdropMaybe_FUN_005805a0()
+    CALL core_setedit.cpp_CDemonSet_FUN_005805a0 ; 00579502
+        ;   XREF to: 005805a0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_005805a0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00579507
     PUSH 0x6472ed                       ; 0057950a | = "CDemonSet::importS3D completed OK"
         ;   Label: LAB_0057950a
@@ -966,8 +966,8 @@ section .text
     ADD ESP,0x14                        ; 005796e2
     LEA EAX,[ESP + 0x1dd0]              ; 005796e5
     PUSH EAX                            ; 005796ec
-    CALL core_setedit.cpp_ImportingGroundTextures_FUN_00578420 ; 005796ed
-        ;   XREF to: 00578420 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_ImportingGroundTextures_FUN_00578420()
+    CALL core_setedit.cpp_FUN_00578420  ; 005796ed
+        ;   XREF to: 00578420 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_00578420()
     ADD ESP,0x4                         ; 005796f2
     PUSH 0x646e83                       ; 005796f5 | = "Reading textures"
     MOV EBX,dword ptr [0x00678a60]      ; 005796fa | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -1148,8 +1148,8 @@ section .text
         ;   XREF to: 00579a7e (CONDITIONAL_JUMP)  ; LAB_00579a7e
     LEA EAX,[ESP + 0x1dd0]              ; 005798e5
     PUSH EAX                            ; 005798ec
-    CALL core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630 ; 005798ed
-        ;   XREF to: 00578630 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630()
+    CALL core_setedit.cpp_FUN_00578630  ; 005798ed
+        ;   XREF to: 00578630 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_00578630()
     ADD ESP,0x4                         ; 005798f2
     PUSH 0x0                            ; 005798f5
     MOV EAX,dword ptr [ESP + 0x2448]    ; 005798f7
@@ -1202,8 +1202,8 @@ section .text
     PUSH EAX                            ; 0057997b
     MOV ESI,0x1                         ; 0057997c
     MOV dword ptr [EDI + 0x3364d18],ECX ; 00579981 | DAT_03364d18
-    CALL core_setedit.cpp_DefineTexturesMaybe_FUN_00578290 ; 00579987
-        ;   XREF to: 00578290 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_DefineTexturesMaybe_FUN_00578290()
+    CALL core_setedit.cpp_FUN_00578290  ; 00579987
+        ;   XREF to: 00578290 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_00578290()
     ADD ESP,0x8                         ; 0057998c
     MOV dword ptr [ESP + 0x2448],ESI    ; 0057998f
     JMP 0x00579835                      ; 00579996

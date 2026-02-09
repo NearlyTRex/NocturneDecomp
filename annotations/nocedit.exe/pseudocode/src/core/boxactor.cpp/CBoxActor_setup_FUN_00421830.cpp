@@ -22,7 +22,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_00421830(CBoxActor *this_ptr)
   if ((float)iVar1 <= (float)this_ptr->unk2) {
     this_ptr->unk2 = (int)(float)(iVar1 + -1);
   }
-  if (-1 < *(int *)(this_ptr->unk4 + 0x250)) {
+  if (-1 < this_ptr->unk5) {
     this_ptr->unk3 = 0;
     return;
   }

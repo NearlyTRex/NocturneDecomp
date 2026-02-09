@@ -44,7 +44,7 @@ LAB_005379f3:
       if (config_param1 == 0) {
         for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0;
             pCVar1 = pCVar1->next_actor) {
-          pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,g_CEnemyClassInfo.name_hash);
+          pCVar3 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,g_CEnemyClassInfo.name_hash);
           if ((pCVar3 != (CDemonActor *)0x0) && (*(int *)(pCVar3[0x8d].create_event + 0x3c) != 0)) {
             (*(((pCVar3->vtable)._ue)->_ue).enemyfunc3)();
             (*((pCVar3->vtable)._ub)->setup)(pCVar3);

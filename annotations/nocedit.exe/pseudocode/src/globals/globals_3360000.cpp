@@ -4,13 +4,13 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x3360000
 // =============================================================================
 
+// CEdScrollBar
+CEdScrollBar CEdScrollBar_03364ce0 = {};
+
 // int
 int g_SavedWindowWidth = {};
 int g_SavedWindowHeight = {};
 int g_VDIsActorAreaInvalid = {};
-int INT_03364ce0 = {};
-int INT_03364ce4 = {};
-int INT_03364ce8 = {};
 
 // int[250]
 int g_VDCameraSortIndices[250] = {};

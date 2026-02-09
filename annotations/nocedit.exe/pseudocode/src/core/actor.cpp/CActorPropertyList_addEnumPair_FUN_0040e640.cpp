@@ -15,7 +15,8 @@ core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
   CActorProperty *pCVar1;
   
   pCVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
-                     (this_ptr,PROP_ENUM_PAIR,property_name,data_ptr,(void *)0x0);
+                     (this_ptr,PROP_ENUM_PAIR,property_name,data_ptr,
+                      (CActorPropertyValidatorFunc *)0x0);
   (pCVar1->param1).v_int = num_pairs;
   (pCVar1->param2).v_ptr = pairs;
   return pCVar1;

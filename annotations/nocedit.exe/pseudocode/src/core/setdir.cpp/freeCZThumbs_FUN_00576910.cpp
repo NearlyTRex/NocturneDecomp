@@ -11,6 +11,6 @@ CZThumb * __cdecl core_setdir_cpp_freeCZThumbs_FUN_00576910(CZThumb *objs)
 {
   CZThumb *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x5dc,&g_CZThumbTypeInfo);
+  pCVar1 = (CZThumb *)__arrfini(objs,0x5dc,&g_CZThumbTypeInfo);
   return pCVar1;
 }

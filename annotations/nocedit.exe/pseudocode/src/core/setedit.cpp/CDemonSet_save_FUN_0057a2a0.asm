@@ -25,10 +25,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
+;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057ed41
+;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580e54
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584e61
-;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057ed41
-;   core_setedit.cpp_DementedFogEditor_FUN_00580730 at 00580e54
-;   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 at 0057cd6f
+;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057cd6f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wt_0064741d

@@ -4,56 +4,44 @@
       {
         "category": "other",
         "column": 8,
-        "line": 161,
+        "line": 162,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 161,
+        "line": 162,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 193,
+        "line": 196,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 193,
+        "line": 196,
         "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 212,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 212,
-        "message": "expected expression"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 307,
+        "line": 314,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 319,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 30,
+        "line": 326,
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 39,
-        "line": 319,
-        "message": "expected expression"
+        "category": "other",
+        "column": 68,
+        "line": 326,
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -61,20 +49,19 @@
   },
   "complexity": {
     "assembly_lines": 637,
-    "complexity_score": 594,
+    "complexity_score": 575,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 17,
-    "pseudocode_lines": 339,
-    "suspect_count": 23,
+    "pseudocode_lines": 345,
+    "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "unknown_type",
-      "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 976
+    "total_lines": 982
   },
   "cross_references": [],
   "function": {
@@ -808,157 +795,143 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
+      "line": 19,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 20,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
+      "line": 25,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
+      "line": 26,
       "match": "extraout_ST2",
       "text": "float10 extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
+      "line": 28,
       "match": "extraout_ST3",
       "text": "unkbyte10 extraout_ST3;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 27,
+      "line": 28,
       "match": "unkbyte10",
       "text": "unkbyte10 extraout_ST3;",
       "type": "unknown_type"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 105,
       "match": "fsin",
       "text": "fsin((float10)-0.52359877558333301);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 106,
       "match": "fptan",
       "text": "fptan((float10)0.52359877558333301);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 110,
       "match": "SQRT",
       "text": "fVar3 = SQRT(local_ec * local_ec + local_e4 * local_e4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 110,
+      "line": 111,
       "match": "extraout_ST3",
-      "text": "fVar12 = (float10)fcos(extraout_ST3);",
+      "text": "fVar13 = (float10)fcos(extraout_ST3);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
-      "match": "fcos",
-      "text": "fVar12 = (float10)fcos(extraout_ST3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 111,
-      "match": "fsin",
-      "text": "fVar13 = (float10)fsin(fVar14);",
+      "match": "fcos",
+      "text": "fVar13 = (float10)fcos(extraout_ST3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 112,
+      "match": "fsin",
+      "text": "fVar14 = (float10)fsin(fVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 113,
       "match": "fcos",
-      "text": "fVar14 = (float10)fcos(fVar14);",
+      "text": "fVar15 = (float10)fcos(fVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 116,
+      "line": 117,
       "match": "extraout_ST1",
       "text": "(extraout_ST1 * (float10)fVar3 - (float10)local_e8);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 117,
+      "line": 118,
       "match": "extraout_ST2",
       "text": "local_ac = (float)-extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 122,
+      "line": 123,
       "match": "SQRT",
       "text": "local_1c = SQRT(local_24 / local_20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 158,
+      "line": 159,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
+      "line": 176,
       "match": "ABS",
       "text": "if (((float)0.39269908168750001 <= ABS(local_14)) || ((float)12 < local_2c)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 190,
+      "line": 193,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 205,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 233,
+      "line": 240,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 312,
-      "match": "code *",
-      "text": "(pCVar9 = (CLarva *)(**(code **)(*(int *)(iVar7 + 0x154) + 0x108))(), pCVar9 == this_ptr)) {",
-      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

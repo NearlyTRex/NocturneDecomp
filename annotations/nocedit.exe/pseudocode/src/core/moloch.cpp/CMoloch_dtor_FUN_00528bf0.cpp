@@ -23,8 +23,9 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,ui
   core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)this_ptr->unk2);
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(extraout_EAX + -0x2388),0);
-  core_hero_cpp_CHero_dtor_FUN_004f2470
-            ((CHero *)&pCVar1[-0xf].bone_transform.bone_rotations[0x60].y,1);
+  ptr = (CMoloch *)
+        core_hero_cpp_CHero_dtor_FUN_004f2470
+                  ((CHero *)&pCVar1[-0xf].bone_transform.bone_rotations[0x60].y,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

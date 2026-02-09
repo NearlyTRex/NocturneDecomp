@@ -40,7 +40,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00452730
 ;   core_fire.cpp_allocateBulletHole_FUN_004c6c10
-;   core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0
+;   core_fire.cpp_CBulletHole_init_FUN_004bf7f0
 ;   core_fire.cpp_CFireEffect_FUN_004c79d0
 ;   core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 ;   core_ground.cpp_getGroundTypeCode_FUN_004eece0
@@ -217,8 +217,8 @@ section .text
     PUSH ECX                            ; 004c785e
     PUSH EBX                            ; 004c785f
     PUSH EAX                            ; 004c7860
-    CALL core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0 ; 004c7861
-        ;   XREF to: 004bf7f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0(CBulletHole * this_ptr, CVector3f * hit_position, CVector3f * surface_normal, CDemonActor * hit_actor)
+    CALL core_fire.cpp_CBulletHole_init_FUN_004bf7f0 ; 004c7861
+        ;   XREF to: 004bf7f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole * this_ptr, CVector3f * hit_position, CVector3f * surface_normal, CDemonActor * hit_actor)
     ADD ESP,0x10                        ; 004c7866
     JMP 0x004c7785                      ; 004c7869
         ;   XREF to: 004c7785 (UNCONDITIONAL_JUMP)  ; LAB_004c7785

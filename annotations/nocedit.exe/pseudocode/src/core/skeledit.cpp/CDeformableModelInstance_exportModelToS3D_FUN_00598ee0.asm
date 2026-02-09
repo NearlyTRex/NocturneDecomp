@@ -22,7 +22,7 @@ section .text
     PUSH 0x14                           ; 00598ee0
         ;   Label: core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00598ee5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     MOV EDX,dword ptr [ESP + 0x4]       ; 00598eea
     LEA EAX,[EDX + 0xe80]               ; 00598eee
     PUSH EAX                            ; 00598ef4

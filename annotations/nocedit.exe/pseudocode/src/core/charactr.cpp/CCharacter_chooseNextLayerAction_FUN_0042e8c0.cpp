@@ -16,20 +16,20 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
   int in_stack_00000008;
   float local_14;
   
-  if ((this_ptr->field47_0x2a8c < 0) || (this_ptr->layer_action_count <= this_ptr->field47_0x2a8c))
-  {
+  if ((this_ptr->layer_action_index < 0) ||
+     (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
     g_CurrentFilename = "..\\core\\charactr.cpp";
     g_CurrentLineNumber = 4000;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::chooseNextLayerAction - invalid layerActionIndex");
   }
-  if ((float)1.0000000000000001e-05 <= (float)this_ptr->field48_0x2a90) {
-    if ((float)this_ptr->field48_0x2a90 <= (float)0.99999000000000005) {
+  if ((float)1.0000000000000001e-05 <= this_ptr->layer_action_t) {
+    if (this_ptr->layer_action_t <= (float)0.99999000000000005) {
       return;
     }
-    iVar2 = this_ptr->layer_actions[this_ptr->field47_0x2a8c].to_bone_index;
+    iVar2 = this_ptr->layer_actions[this_ptr->layer_action_index].to_bone_index;
   }
   else {
-    iVar2 = this_ptr->layer_actions[this_ptr->field47_0x2a8c].from_bone_index;
+    iVar2 = this_ptr->layer_actions[this_ptr->layer_action_index].from_bone_index;
   }
   if (in_stack_00000008 != iVar2) {
     local_14 = 999.0;
@@ -43,8 +43,8 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
               (fVar1 = pSVar4->duration +
                        this_ptr->motion_transition_costs[pSVar4->from_bone_index][in_stack_00000008]
               , fVar1 < local_14)))) {
-            this_ptr->field48_0x2a90 = 0x3f800000;
-            this_ptr->field47_0x2a8c = iVar3;
+            this_ptr->layer_action_t = 1.0;
+            this_ptr->layer_action_index = iVar3;
             local_14 = fVar1;
           }
         }
@@ -52,8 +52,8 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
           fVar1 = pSVar4->duration +
                   this_ptr->motion_transition_costs[pSVar4->to_bone_index][in_stack_00000008];
           if (fVar1 < local_14) {
-            this_ptr->field48_0x2a90 = 0;
-            this_ptr->field47_0x2a8c = iVar3;
+            this_ptr->layer_action_t = 0.0;
+            this_ptr->layer_action_index = iVar3;
             local_14 = fVar1;
           }
         }

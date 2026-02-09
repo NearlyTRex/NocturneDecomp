@@ -12,6 +12,6 @@ core_skeleton_cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel *objs)
 {
   CDeformableModel *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x40,&g_CDeformableModelTypeInfo);
+  pCVar1 = (CDeformableModel *)__arrfini(objs,0x40,&g_CDeformableModelTypeInfo);
   return pCVar1;
 }

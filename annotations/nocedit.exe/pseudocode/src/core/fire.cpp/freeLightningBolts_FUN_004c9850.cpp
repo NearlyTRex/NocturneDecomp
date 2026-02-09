@@ -11,6 +11,6 @@ CLightningBolt * __cdecl core_fire_cpp_freeLightningBolts_FUN_004c9850(CLightnin
 {
   CLightningBolt *pCVar1;
   
-  pCVar1 = __arrfini(objs,10,&g_CLightningBoltTypeInfo);
+  pCVar1 = (CLightningBolt *)__arrfini(objs,10,&g_CLightningBoltTypeInfo);
   return pCVar1;
 }

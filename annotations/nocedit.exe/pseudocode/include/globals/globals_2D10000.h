@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/time.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFireEffect.h"
 #include "types/classes/CKeyFramedModelInstance.h"
@@ -62,7 +63,6 @@ extern char g_VersionControlDirectory[264];
 extern char g_WorkingDirectoryPath[32];
 
 // int
-extern int g_PodCreationTime;
 extern int g_AuditOperationType;
 extern int g_CurrentFileTimestamp;
 extern int g_CurrentFileSize;
@@ -70,6 +70,9 @@ extern int g_CurrentFileOffset;
 extern int g_CurrentFileCompressedSize;
 extern int g_AuditRecordCount;
 extern int g_SmokeParticleAllocIndex;
+
+// time_t
+extern time_t g_PodCreationTime;
 
 // undefined4
 extern undefined4 DAT_02d13560;

@@ -19,41 +19,41 @@ CDemonActorType * __cdecl CSimBox::getActorType(CSimBox *this_ptr);
 // Address: 00588d40
 CSimBox * __cdecl CSimBox::ctor(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_CSimBox_FUN_00588e00
+// Original: core_simbox.cpp_CSimBox_setup_FUN_00588e00
 // Address: 00588e00
-void __cdecl CSimBox(CSimBox *this_ptr);
+void __cdecl CSimBox::setup(CSimBox *this_ptr);
 
 // Original: core_simbox.cpp_CSimBox_process_FUN_00588f20
 // Address: 00588f20
 void __cdecl CSimBox::process(CSimBox *this_ptr,float delta_time);
 
-// Original: core_simbox.cpp_CSimBox_FUN_005890f0
+// Original: core_simbox.cpp_CSimBox_renderOpaque_FUN_005890f0
 // Address: 005890f0
-int __cdecl CSimBox(CSimBox *this_ptr);
+int __cdecl CSimBox::renderOpaque(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_CSimBox_FUN_00589160
+// Original: core_simbox.cpp_CSimBox_getBoundingBox_FUN_00589160
 // Address: 00589160
-float * __cdecl CSimBox(CSimBox *this_ptr);
+CBoundingBox3D * __cdecl CSimBox::getBoundingBox(CSimBox *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_simbox.cpp_CSimBox_FUN_005891b0
+// Original: core_simbox.cpp_CSimBox_archive_FUN_005891b0
 // Address: 005891b0
-void __cdecl CSimBox(CSimBox *this_ptr);
+void __cdecl CSimBox::archive(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_CSimBox_FUN_00589260
+// Original: core_simbox.cpp_CSimBox_hasCollision_FUN_00589260
 // Address: 00589260
-int __cdecl CSimBox(CSimBox *this_ptr);
+int __cdecl CSimBox::hasCollision(CSimBox *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_simbox.cpp_FUN_00589270
+// Original: core_simbox.cpp_CSimBox_propertyDisplayCallback_FUN_00589270
 // Address: 00589270
-void __cdecl FUN_00589270(CSimBox *this_ptr);
+void __cdecl CSimBox::propertyDisplayCallback(CSimBox *this_ptr,CActorProperty *property,char *output_buffer);
 
-// Original: core_simbox.cpp_FUN_005892d0
+// Original: core_simbox.cpp_CSimBox_propertyActionCallback_FUN_005892d0
 // Address: 005892d0
-int __cdecl FUN_005892d0(CSimBox *this_ptr);
+int __cdecl CSimBox::propertyActionCallback(CSimBox *this_ptr,CActorProperty *property);
 
-// Original: core_simbox.cpp_CSimBox_FUN_00589310
+// Original: core_simbox.cpp_CSimBox_getPropertyList_FUN_00589310
 // Address: 00589310
-void __cdecl CSimBox(CSimBox *this_ptr);
+void __cdecl CSimBox::getPropertyList(CSimBox *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_simbox.cpp_CSimBox_FUN_005893c0
 // Address: 005893c0

@@ -49,7 +49,7 @@
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_strftime_FUN_006002d4
+;   crt_time.c__strftime_FUN_006002d4
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
 ;   engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590
@@ -180,8 +180,8 @@ section .text
     PUSH 0x1e                           ; 004b8094
     LEA EAX,[ESP + 0xcb8]               ; 004b8096
     PUSH EAX                            ; 004b809d
-    CALL crt_time.c_strftime_FUN_006002d4 ; 004b809e
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 004b809e
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b80a3
     MOV ESI,dword ptr [ESP + 0x9fc]     ; 004b80a6
     MOV EBX,0x6281e6                    ; 004b80ad | = "???"

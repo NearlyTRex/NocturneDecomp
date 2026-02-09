@@ -11,6 +11,6 @@ CDemonFilter * __cdecl core_dfilter_cpp_freeFilters_FUN_00470980(CDemonFilter *o
 {
   CDemonFilter *pCVar1;
   
-  pCVar1 = __arrfini(objs,4,&g_CDemonFilterTypeInfo);
+  pCVar1 = (CDemonFilter *)__arrfini(objs,4,&g_CDemonFilterTypeInfo);
   return pCVar1;
 }

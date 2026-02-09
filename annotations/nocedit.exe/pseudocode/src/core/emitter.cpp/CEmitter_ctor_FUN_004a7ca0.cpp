@@ -65,7 +65,7 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004a7ca0(CEmitter *this_pt
   ADJ(this_ptr_00)->periodic_flag = 0;
   ADJ(this_ptr_00)->max_wait_time = 0.0;
   ADJ(this_ptr_00)->dest_actor = 0;
-  *(byte *)&ADJ(this_ptr_00)->wav_name = 0;
+  ADJ(this_ptr_00)->wav_name[0] = '\0';
   ADJ(this_ptr_00)->sfx_type = 1;
   this_ptr_00[1].model_name[0x50] = '\0';
   this_ptr_00[1].model_name[0x51] = '\0';

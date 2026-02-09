@@ -50,7 +50,7 @@ section .text
     PUSH 0x4c                           ; 0058b3a0
         ;   Label: core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b3a5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058b3aa
     PUSH ESI                            ; 0058b3ab
     PUSH EDI                            ; 0058b3ac

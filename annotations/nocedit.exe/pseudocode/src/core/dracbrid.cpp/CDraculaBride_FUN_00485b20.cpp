@@ -20,14 +20,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_00485b20(CDraculaBride *this_pt
     *(CBodyPart **)(this_ptr->unk4 + this_ptr->part_count * 4) = this_ptr_00;
     this_ptr->part_count = this_ptr->part_count + 1;
     (this_ptr_00->base).is_transparent = 1;
-    this_ptr_00->unk[0xb5c] = '\x01';
-    this_ptr_00->unk[0xb5d] = '\0';
-    this_ptr_00->unk[0xb5e] = '\0';
-    this_ptr_00->unk[0xb5f] = '\0';
-    this_ptr_00->unk[0xb68] = -1;
-    this_ptr_00->unk[0xb69] = -1;
-    this_ptr_00->unk[0xb6a] = '\0';
-    this_ptr_00->unk[0xb6b] = '\0';
+    this_ptr_00->transparent_geometry_flag = 1;
+    this_ptr_00->unk6[4] = -1;
+    this_ptr_00->unk6[5] = -1;
+    this_ptr_00->unk6[6] = '\0';
+    this_ptr_00->unk6[7] = '\0';
     return;
   }
   return;

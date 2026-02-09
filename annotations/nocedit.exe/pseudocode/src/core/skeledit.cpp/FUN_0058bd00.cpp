@@ -47,7 +47,7 @@ void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
   SIZE_T local_14;
   
   bVar9 = 0;
-  __STK(0x448);
+  __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing vertex assignments from %s...");
   local_28 = shape_memdbg_cpp_openFile_FUN_0050f7a0

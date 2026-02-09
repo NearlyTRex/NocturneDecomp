@@ -11,6 +11,6 @@ CBulletTrail * __cdecl core_fire_cpp_freeBulletTrails_FUN_004c9950(CBulletTrail 
 {
   CBulletTrail *pCVar1;
   
-  pCVar1 = __arrfini(objs,10,&g_CBulletTrailTypeInfo);
+  pCVar1 = (CBulletTrail *)__arrfini(objs,10,&g_CBulletTrailTypeInfo);
   return pCVar1;
 }

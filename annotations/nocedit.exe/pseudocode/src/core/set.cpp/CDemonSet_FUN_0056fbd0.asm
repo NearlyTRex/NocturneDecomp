@@ -43,7 +43,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_set.cpp_CDemonSet_isCameraPanning_FUN_00571320
-;   crt_stdlib.c_qsort_FUN_005fdf38
+;   crt_stdlib.c__qsort_FUN_005fdf38
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
@@ -123,8 +123,8 @@ section .text
     MOV EBX,dword ptr [0x03342b4c]      ; 0056fc97 | DAT_03342b4c
     PUSH EBX                            ; 0056fc9d
     PUSH 0x3342b50                      ; 0056fc9e | DAT_03342b50
-    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 0056fca3
-        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
+    CALL crt_stdlib.c__qsort_FUN_005fdf38 ; 0056fca3
+        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     MOV EBX,dword ptr [0x02db87d0]      ; 0056fca8 | g_LocalHeroIndex
     SHL EBX,0x2                         ; 0056fcae
     MOV ESI,dword ptr [EBX + 0x2db87c0] ; 0056fcb1 | g_HeroActors

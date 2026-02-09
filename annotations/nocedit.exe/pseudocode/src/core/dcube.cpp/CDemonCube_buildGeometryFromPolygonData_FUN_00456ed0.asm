@@ -37,7 +37,7 @@
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840
 ;   core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
-;   core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430
+;   core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   shape_superopt.cpp_TriListSomething_FUN_005d77a0
 ;
@@ -172,8 +172,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2c]      ; 0045702b
     ADD EAX,ECX                         ; 0045702e
     PUSH EAX                            ; 00457030
-    CALL core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430 ; 00457031
-        ;   XREF to: 00455430 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430(CDemonCubeTriangle * this_ptr, CVector3f * vertex0, CVector3f * vertex1, CVector3f * vertex2)
+    CALL core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430 ; 00457031
+        ;   XREF to: 00455430 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430(CDemonCubeTriangle * this_ptr, CVector3f * vertex0, CVector3f * vertex1, CVector3f * vertex2)
     ADD ESP,0x10                        ; 00457036
     MOV EAX,dword ptr [ESI + 0x30]      ; 00457039
     MOV DL,byte ptr [ESP + 0x10]        ; 0045703c

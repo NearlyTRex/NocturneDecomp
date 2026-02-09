@@ -2,16 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 7,
+        "category": "other",
+        "column": 4,
         "line": 43,
-        "message": "use of undeclared identifier 'code'"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 14,
+        "category": "other",
+        "column": 52,
         "line": 43,
-        "message": "expected expression"
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -19,18 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 400,
-    "complexity_score": 207,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 10,
-    "pseudocode_lines": 132,
-    "suspect_count": 6,
+    "pseudocode_lines": 129,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "suspect_float",
-      "unresolved_funcptr"
+      "suspect_float"
     ],
-    "total_lines": 532
+    "total_lines": 529
   },
   "cross_references": [
     {
@@ -279,43 +278,36 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 36,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xf4))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 51,
+      "line": 49,
       "match": "1.4013e-45",
       "text": "(g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 51,
+      "line": 49,
       "match": "3.57331e-43",
       "text": "(g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 78,
       "match": "SQRT",
       "text": "fVar1 = SQRT(CStack_78.z * CStack_78.z + CStack_78.x * CStack_78.x + CStack_78.y * CStack_78.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 82,
       "match": "SQRT",
       "text": "(dVar2 = (double)(SQRT(fVar1 * fVar1 - fStack_20 * fStack_20) / fVar1), dVar2 < 1.0)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 96,
       "match": "SQRT",
       "text": "(dVar2 = (double)(SQRT(fStack_bc * fStack_bc - local_9c.x * local_9c.x) / fStack_bc),",
       "type": "decompiler_intrinsic"

@@ -20,7 +20,7 @@ core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
-            (property_list,"Model file (.kfm)",(CKeyFramedModelInstance *)this_ptr->unk1,0);
+            (property_list,"Model file (.kfm)",&this_ptr->model,0);
   iVar1 = 0;
   if (0 < this_ptr->tire_count) {
     local_c = this_ptr->unk2;

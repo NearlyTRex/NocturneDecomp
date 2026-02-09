@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   value
 ;
 ; XREF[1]:
-;   crt_time.c_strftime_FUN_006002d4 at 006005e2
+;   crt_time.c__strftime_FUN_006002d4 at 006005e2
 ;
 ; *****************************************************************************
 

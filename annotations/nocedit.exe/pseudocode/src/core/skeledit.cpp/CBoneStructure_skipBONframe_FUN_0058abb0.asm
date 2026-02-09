@@ -7,7 +7,7 @@
 ; CBoneStructure * Stack[0x8]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_FUN_00592690 at 005953fa
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 005953fa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeledit_cpp_0064a490
@@ -27,7 +27,7 @@ section .text
     PUSH 0x18                           ; 0058abb0
         ;   Label: core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058abb5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058abba
     PUSH ESI                            ; 0058abbb
     PUSH EDI                            ; 0058abbc

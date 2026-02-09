@@ -13,7 +13,7 @@ void __cdecl core_skeledit_cpp_FUN_005894c0(void)
   _FILE *in_stack_00000004;
   int in_stack_00000008;
   
-  __STK(0x10);
+  __STK();
   do {
     if (in_stack_00000008 < 1) {
       return;

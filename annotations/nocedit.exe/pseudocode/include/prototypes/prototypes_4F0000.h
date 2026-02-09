@@ -83,7 +83,7 @@ int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location);
 int __cdecl core_hero_cpp_FUN_004f2220(void);
 int __cdecl core_hero_cpp_FUN_004f22a0(void);
 CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr);
-void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags);
+CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags);
 void __cdecl core_hero_cpp_CHero_setup_FUN_004f2540(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580 (CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0 (CHero *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point);
@@ -246,7 +246,7 @@ CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004fcda0(CDemonA
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004fcf00(CDemonActor *actor_ptr);
 char * __cdecl core_inv_cpp_getItemIconName_FUN_004fcf70(CDemonActor *actor_ptr);
 int __cdecl core_inv_cpp_loadItem_FUN_004fcfe0(SInventoryItemInfo *item_info,_FILE *file_handle);
-void __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr);
+CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr);
 CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004fd0c0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_clear_FUN_004fd0e0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_initialize_FUN_004fd190(CInventory *this_ptr);

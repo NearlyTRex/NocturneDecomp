@@ -11,6 +11,6 @@ CVector3f * __cdecl shape_edittool_cpp_freeVectors_FUN_004a6f50(CVector3f *objs)
 {
   CVector3f *pCVar1;
   
-  pCVar1 = __arrfini(objs,8,&g_CVectorTypeInfo);
+  pCVar1 = (CVector3f *)__arrfini(objs,8,&g_CVectorTypeInfo);
   return pCVar1;
 }

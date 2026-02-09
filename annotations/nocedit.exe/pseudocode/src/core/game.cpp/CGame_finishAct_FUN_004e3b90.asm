@@ -167,7 +167,7 @@ section .text
     PUSH EAX                            ; 004e3c96
     MOV dword ptr [EDX + 0x254],ECX     ; 004e3c97
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520 ; 004e3c9d
-        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410520 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004e3ca2
     PUSH 0x1e0                          ; 004e3ca5
     PUSH 0x280                          ; 004e3caa

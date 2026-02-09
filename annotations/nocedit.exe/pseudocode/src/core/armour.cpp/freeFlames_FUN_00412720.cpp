@@ -11,6 +11,6 @@ CFlame * __cdecl core_armour_cpp_freeFlames_FUN_00412720(CFlame *objs)
 {
   CFlame *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x32,&g_CFlameTypeInfo);
+  pCVar1 = (CFlame *)__arrfini(objs,0x32,&g_CFlameTypeInfo);
   return pCVar1;
 }

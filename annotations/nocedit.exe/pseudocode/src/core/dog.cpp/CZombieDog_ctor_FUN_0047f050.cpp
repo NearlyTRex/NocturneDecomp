@@ -21,10 +21,10 @@ CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_0047f050(CZombieDog *this_
   (pCVar3->base).base.field54_0x2ddc = 0.75;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
-  pCVar3->unk[0x10] = '\0';
-  pCVar3->unk[0x11] = '\0';
-  pCVar3->unk[0x12] = '\0';
-  pCVar3->unk[0x13] = '\0';
+  pCVar3->field1_0xbebc[8] = '\0';
+  pCVar3->field1_0xbebc[9] = '\0';
+  pCVar3->field1_0xbebc[10] = '\0';
+  pCVar3->field1_0xbebc[0xb] = '\0';
   (pCVar3->base).base.field56_0x2de4 = fVar1;
   (pCVar3->base).base.field57_0x2de8 = fVar2;
   return pCVar3;

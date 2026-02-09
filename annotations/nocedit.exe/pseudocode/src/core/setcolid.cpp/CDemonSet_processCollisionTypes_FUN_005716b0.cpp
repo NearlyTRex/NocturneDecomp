@@ -120,7 +120,7 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
         pCVar2 = *(CDemonActor **)(local_18->unk4 + 0x7d0c);
         iVar3 = core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,pCVar2);
         if (iVar3 == 0) {
-          pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CSpikeClassInfo.name_hash);
+          pCVar4 = (CSpike *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CSpikeClassInfo.name_hash);
           if (pCVar4 == (CDemonActor *)0x0) {
             SStack_150.cylinder_top_y = (float)pCVar4;
             SStack_150.cylinder_radius = (float)pCVar4;

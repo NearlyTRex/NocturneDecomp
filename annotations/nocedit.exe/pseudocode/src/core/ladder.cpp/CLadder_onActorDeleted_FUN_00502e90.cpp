@@ -10,12 +10,9 @@ void __cdecl
 core_ladder_cpp_CLadder_onActorDeleted_FUN_00502e90(CLadder *this_ptr,CDemonActor *deleted_actor)
 
 {
-  if (deleted_actor != *(CDemonActor **)this_ptr->master_actor) {
+  if (deleted_actor != this_ptr->master_actor) {
     return;
   }
-  this_ptr->master_actor[0] = '\0';
-  this_ptr->master_actor[1] = '\0';
-  this_ptr->master_actor[2] = '\0';
-  this_ptr->master_actor[3] = '\0';
+  this_ptr->master_actor = (CDemonActor *)0x0;
   return;
 }

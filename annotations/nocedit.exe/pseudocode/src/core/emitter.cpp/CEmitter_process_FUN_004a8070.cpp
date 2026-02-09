@@ -70,18 +70,18 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
                        (double)(this_ptr->base).location.position.y,
                        (double)(this_ptr->base).location.position.z,50.0);
     if (((iVar3 == 0) || (iVar7 = 1, g_CGamePtr->foul_language_flag != 0)) ||
-       (iVar3 = strnicmp((char *)&this_ptr->wav_name,"mob",3),
-       iVar3 != 0)) {
+       (iVar3 = strnicmp(this_ptr->wav_name,"mob",3), iVar3 != 0)
+       ) {
       if (iVar7 != 0) goto LAB_004a811d;
     }
     else {
       iVar7 = 0;
     }
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk4 + 0x60));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
   }
 LAB_004a811d:
   if (this_ptr->emitter_state == 0) {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk4 + 0x60));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
     goto LAB_004a8221;
   }
   fVar12 = *(float *)this_ptr->unk5 + delta_time;
@@ -210,12 +210,11 @@ LAB_004a81e2:
       core_fire_cpp_CFireEffect_FUN_004c8fd0(g_CFireEffectPtr);
     }
   }
-  if (((*(char *)&this_ptr->wav_name != '\0') &&
-      (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk4 + 0x60)),
-      iVar7 == 0)) && ((this_ptr->sfx_type != 1 || (*(int *)(this_ptr->unk6 + 0x48) == 0)))) {
-    uVar6 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,(char *)&this_ptr->wav_name)
-    ;
-    *(uint *)(this_ptr->unk4 + 0x60) = uVar6;
+  if (((this_ptr->wav_name[0] != '\0') &&
+      (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle), iVar7 == 0)) &&
+     ((this_ptr->sfx_type != 1 || (*(int *)(this_ptr->unk6 + 0x48) == 0)))) {
+    uVar6 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->wav_name);
+    this_ptr->sfx_handle = uVar6;
   }
 LAB_004a8221:
   *(int *)(this_ptr->unk6 + 0x48) = this_ptr->emitter_state;

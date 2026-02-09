@@ -15371,7 +15371,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         },
         {
           "name":"entry_b",
@@ -15387,7 +15387,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         }
       ],
       "ret_storage":{
@@ -37998,7 +37998,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0",
+    "name":"core_fire.cpp_CBulletHole_init_FUN_004bf7f0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -46708,7 +46708,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_hero.cpp_CHero_dtor_FUN_004f2470",
-    "ret":"void",
+    "ret":"CHero*",
     "vars":{
       "params":[
         {
@@ -46743,7 +46743,17 @@
           },
           "type":"uint"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -73311,7 +73321,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_simbox.cpp_CSimBox_FUN_005890f0",
+    "name":"core_simbox.cpp_CSimBox_renderOpaque_FUN_005890f0",
     "ret":"int",
     "vars":{
       "params":[
@@ -73355,9 +73365,26 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_simbox.cpp_FUN_00589270",
+    "name":"core_simbox.cpp_CSimBox_propertyDisplayCallback_FUN_00589270",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSimBox*",
+          "use":18
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -73374,6 +73401,38 @@
             ]
           },
           "type":"CSimBox*"
+        },
+        {
+          "name":"property",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CActorProperty*"
+        },
+        {
+          "name":"output_buffer",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }
@@ -95562,7 +95621,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"crt_time.c_time_FUN_006001f0",
+    "name":"crt_time.c__time_FUN_006001f0",
     "ret":"time_t",
     "vars":{
       "locals":[

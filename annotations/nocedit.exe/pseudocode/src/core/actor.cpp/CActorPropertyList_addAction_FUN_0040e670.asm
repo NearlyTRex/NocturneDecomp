@@ -19,7 +19,7 @@
 ;   core_lever.cpp_CLever_getPropertyList_FUN_00505240 at 00505293
 ;   core_pendulum.cpp_CPendulum_getPropertyList_FUN_0054a5f0 at 0054a6ee
 ;   core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0 at 0054e8cc
-;   core_simbox.cpp_CSimBox_FUN_00589310 at 00589362
+;   core_simbox.cpp_CSimBox_getPropertyList_FUN_00589310 at 00589362
 ;   ... and 1 more
 ;
 ; Called Functions:

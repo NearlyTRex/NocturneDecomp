@@ -11,6 +11,6 @@ SCurtainVertex * __cdecl core_curtain_cpp_freeCurtainVertices_FUN_0044bad0(SCurt
 {
   SCurtainVertex *pSVar1;
   
-  pSVar1 = __arrfini(objs,1000,&g_SCurtainVertexTypeInfo);
+  pSVar1 = (SCurtainVertex *)__arrfini(objs,1000,&g_SCurtainVertexTypeInfo);
   return pSVar1;
 }

@@ -82,8 +82,8 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
         g_VertexRemapTable[*puVar6] = 1;
       } while (iVar3 < iVar7 * 0x12);
     }
-    local_14 = *(int *)(body_part_ptr->unk + 0x28);
-    iVar3 = *(int *)(body_part_ptr->unk + 0x1c);
+    local_14 = body_part_ptr->tri_count;
+    iVar3 = body_part_ptr->vertex_count;
     for (iVar4 = 0; iVar4 < this_ptr->vertex_count[lod_index]; iVar4 = iVar4 + 1) {
     }
     core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(body_part_ptr);
@@ -97,7 +97,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
         }
         else {
           *(int *)((int)g_VertexRemapTable + iVar5) = iVar3;
-          puVar10 = (uint *)(*(int *)(body_part_ptr->unk + 0x20) + iVar4);
+          puVar10 = (uint *)(body_part_ptr->unk2 + iVar4);
           iVar3 = iVar3 + 1;
           iVar4 = iVar4 + 0xc;
           puVar11 = puVar10 + (uint)bVar12 * -2 + 1;
@@ -112,7 +112,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
         num_parts_to_dismember = num_parts_to_dismember + 0xc;
       } while (local_18 < this_ptr->vertex_count[lod_index]);
     }
-    if (iVar3 != *(int *)(body_part_ptr->unk + 0x1c)) {
+    if (iVar3 != body_part_ptr->vertex_count) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
       g_CurrentLineNumber = 0x688;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - Hell froze 1!");
@@ -123,7 +123,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
       local_28 = local_14 << 2;
       local_2c = local_2c * 4;
       do {
-        iVar4 = *(int *)(body_part_ptr->unk + 0x2c) + iVar3;
+        iVar4 = *(int *)body_part_ptr->unk4 + iVar3;
         puVar6 = (ushort *)
                  ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
                  local_20);
@@ -141,7 +141,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
         iVar4 = core_bodypart_cpp_CBodyPart_FUN_0041af90(body_part_ptr);
         local_20 = local_20 + 0x12;
         local_2c = local_2c + 4;
-        *(int *)(*(int *)(body_part_ptr->unk + 0x30) + local_28) = iVar4;
+        *(int *)(*(int *)(body_part_ptr->unk4 + 4) + local_28) = iVar4;
         local_28 = local_28 + 4;
         local_14 = local_14 + 1;
       } while (local_2c < iVar8 * 4);
@@ -152,7 +152,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
       iVar8 = local_14 << 2;
       local_30 = local_30 << 2;
       do {
-        iVar3 = *(int *)(body_part_ptr->unk + 0x2c) + local_1c;
+        iVar3 = *(int *)body_part_ptr->unk4 + local_1c;
         puVar6 = (ushort *)
                  ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
                  local_24);
@@ -169,13 +169,13 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
         iVar8 = iVar8 + 4;
         local_30 = local_30 + 4;
         iVar3 = core_bodypart_cpp_CBodyPart_FUN_0041af90(body_part_ptr);
-        *(int *)(*(int *)(body_part_ptr->unk + 0x30) + -4 + iVar8) = iVar3;
+        *(int *)(*(int *)(body_part_ptr->unk4 + 4) + -4 + iVar8) = iVar3;
         local_1c = local_1c + 0x3c;
         local_14 = local_14 + 1;
         local_24 = local_24 + 0x12;
       } while (local_30 < iVar7 * 4);
     }
-    if (local_14 != *(int *)(body_part_ptr->unk + 0x28)) {
+    if (local_14 != body_part_ptr->tri_count) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
       g_CurrentLineNumber = 0x6bf;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - Hell froze 2!");

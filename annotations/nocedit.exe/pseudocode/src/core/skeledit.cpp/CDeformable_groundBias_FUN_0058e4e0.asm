@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_skeledit.cpp_FUN_0058e600
+;   core_skeledit.cpp_CDeformableModel_FUN_0058e600
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
@@ -42,7 +42,7 @@ section .text
     PUSH 0x30                           ; 0058e4e0
         ;   Label: core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058e4e5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058e4ea
     PUSH ESI                            ; 0058e4eb
     PUSH EDI                            ; 0058e4ec
@@ -124,8 +124,8 @@ section .text
     FMUL double ptr [0x0064af72]        ; 0058e5b1 | DOUBLE_0064af72
     PUSH EBX                            ; 0058e5b7
     FSTP float ptr [ESP + 0xc]          ; 0058e5b8
-    CALL core_skeledit.cpp_FUN_0058e600 ; 0058e5bc
-        ;   XREF to: 0058e600 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058e600()
+    CALL core_skeledit.cpp_CDeformableModel_FUN_0058e600 ; 0058e5bc
+        ;   XREF to: 0058e600 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_FUN_0058e600(CDeformableModel * this_ptr)
     ADD ESP,0x8                         ; 0058e5c1
     MOV EAX,0x64af5c                    ; 0058e5c4 | = "..\\core\\skeledit.cpp"
     PUSH 0x2                            ; 0058e5c9

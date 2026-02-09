@@ -1,7 +1,7 @@
 #pragma once
 
 // Enum: ETextAlignment
-typedef enum ETextAlignment {
+enum {
     TEXT_ALIGN_LEFT = 0,
     TEXT_ALIGN_RIGHT = 1,
     TEXT_ALIGN_CENTER = 2,
@@ -10,5 +10,6 @@ typedef enum ETextAlignment {
     TEXT_ALIGN_CENTER_IN_BOUNDS = 5,
     TEXT_ALIGN_LEFT_IN_AREA = 6,
     TEXT_ALIGN_CENTER_IN_AREA = 7
-} ETextAlignment;
+};
+typedef int ETextAlignment;
 

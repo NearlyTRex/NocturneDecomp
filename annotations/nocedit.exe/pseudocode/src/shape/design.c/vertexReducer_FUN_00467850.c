@@ -110,7 +110,7 @@ shape_design_c_vertexReducer_FUN_00467850
         *(int *)((int)local_18 + local_34 * 8) = local_34;
         *(int *)((int)local_18 + local_34 * 8 + 4) = local_34;
       }
-      qsort
+      _qsort
                 (local_18,g_VertexCount,8,shape_design_c_qsortByVertexX_FUN_004676f0);
       if (local_20 != 0) {
         local_14 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
@@ -170,7 +170,7 @@ LAB_00467ba8:
         }
 LAB_00467b49:
       }
-      qsort
+      _qsort
                 (local_18,g_VertexCount,8,shape_design_c_qsortByOriginalIndex_FUN_004677c0);
       for (local_34 = 0; local_34 < g_PolygonCount; local_34 = local_34 + 1) {
         local_2c = g_ModelPolygonData + local_34;

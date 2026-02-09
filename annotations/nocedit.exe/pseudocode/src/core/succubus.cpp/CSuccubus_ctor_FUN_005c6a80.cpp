@@ -20,7 +20,7 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
   
   pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-                     ((CDeformableModelInstance *)(pCVar4[1].base.base.actor_name + 8));
+                     ((CDeformableModelInstance *)(pCVar4 + 1));
   core_cloth_cpp_CClothList_ctor_FUN_0043bf40((CClothList *)(pCVar5 + 1));
   core_morph_cpp_FUN_0052b310();
   *(CDemonActor_vtable **)(extraout_EAX + -0xe1e8) = &g_CSuccubusVTable;

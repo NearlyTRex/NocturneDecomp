@@ -2,11 +2,11 @@
 // Address: 004fd020
 // Address Range: [[004fd020, 004fd0b7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr)
+// Signature: CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr)
+CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr)
 
 {
   this_ptr->save_version = 0;
@@ -25,5 +25,5 @@ void __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr)
   this_ptr->ammo_ptr = (CAmmo *)0x0;
   this_ptr->cached_ammo_count = 0;
   this_ptr->item_count = 0;
-  return;
+  return this_ptr;
 }

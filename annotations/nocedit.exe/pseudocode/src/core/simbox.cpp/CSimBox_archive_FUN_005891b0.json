@@ -1,0 +1,165 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 22,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 7,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 83
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005891b0",
+    "address_range": [
+      [
+        "005891b0",
+        "00589258"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_simbox.cpp_CSimBox_archive_FUN_005891b0",
+    "signature": "void __cdecl core_simbox_cpp_CSimBox_archive_FUN_005891b0(CSimBox *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040b5c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b5c0"
+    },
+    {
+      "addr": "0040b340",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b340"
+    },
+    {
+      "addr": "0040c1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c1c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649c22",
+      "name": "s_modelName_00649c22",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c2c",
+      "name": "s_weight_00649c2c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c33",
+      "name": "s_initialVelocity_00649c33",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c43",
+      "name": "s_initRotVel_00649c43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c4e",
+      "name": "s_triggerEvent_00649c4e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c5b",
+      "name": "s_type_00649c5b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0068183c",
+      "name": "g_CSimBoxClassVersion",
+      "type": "int",
+      "value": "0x3"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.291666666666667,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "CALL": 7,
+      "CBRANCH": 3,
+      "COPY": 30,
+      "INT_ADD": 20,
+      "INT_AND": 22,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 25,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 11,
+      "INT_SUB": 24,
+      "LOAD": 7,
+      "POPCOUNT": 11,
+      "RETURN": 3,
+      "STORE": 21
+    },
+    "pcode_op_count": 206
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimBox *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSimBox",
+        "offset": 232,
+        "vtable_addr": "00662d24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

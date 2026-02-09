@@ -18,16 +18,16 @@ void __cdecl core_cow_cpp_CZombieCow_FUN_004448c0(CZombieCow *this_ptr)
     iVar1 = rand();
     switch(iVar1 % 4) {
     case 0:
-      iVar1 = *(int *)(this_ptr->unk + 0x14);
+      iVar1 = *(int *)(this_ptr->unk + 0xc);
       break;
     case 1:
-      iVar1 = *(int *)(this_ptr->unk + 0x30);
+      iVar1 = *(int *)(this_ptr->unk + 0x28);
       break;
     case 2:
-      iVar1 = *(int *)(this_ptr->unk + 0x34);
+      iVar1 = *(int *)(this_ptr->unk + 0x2c);
       break;
     case 3:
-      iVar1 = *(int *)(this_ptr->unk + 0x38);
+      iVar1 = *(int *)(this_ptr->unk + 0x30);
       break;
     default:
       goto switchD_004448f6_default;
@@ -36,9 +36,9 @@ void __cdecl core_cow_cpp_CZombieCow_FUN_004448c0(CZombieCow *this_ptr)
   }
 switchD_004448f6_default:
   iVar1 = *in_stack_00000008;
-  if ((((iVar1 == *(int *)(this_ptr->unk + 0x30)) || (iVar1 == *(int *)(this_ptr->unk + 0x34))) ||
-      (iVar1 == *(int *)(this_ptr->unk + 0x38))) ||
-     ((iVar1 == *(int *)(this_ptr->unk + 0x14) || (iVar1 == *(int *)(this_ptr->unk + 0x2c))))) {
+  if ((((iVar1 == *(int *)(this_ptr->unk + 0x28)) || (iVar1 == *(int *)(this_ptr->unk + 0x2c))) ||
+      (iVar1 == *(int *)(this_ptr->unk + 0x30))) ||
+     ((iVar1 == *(int *)(this_ptr->unk + 0xc) || (iVar1 == *(int *)(this_ptr->unk + 0x24))))) {
     local_14 = (float)in_stack_00000008[0xb];
     if (g_CGamePtr->unk4 != 0) {
       local_14 = 1.0;
@@ -50,7 +50,7 @@ switchD_004448f6_default:
     if (iVar1 != 0) {
       this_ptr_00 = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
-      if (*in_stack_00000008 == *(int *)(this_ptr->unk + 0x2c)) {
+      if (*in_stack_00000008 == *(int *)(this_ptr->unk + 0x24)) {
         core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
         core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
         core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
@@ -63,16 +63,16 @@ switchD_004448f6_default:
       }
       core_charactr_cpp_CCharacter_FUN_0042f300((CCharacter *)this_ptr);
       core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr_00);
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x14)] == 0) {
+      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0xc)] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x30)] == 0) {
+      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x28)] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
       in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);
     }
   }
-  if (*(int *)(this_ptr->unk + 0x14) != *in_stack_00000008) {
+  if (*(int *)(this_ptr->unk + 0xc) != *in_stack_00000008) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);
     return;
   }

@@ -31,31 +31,31 @@ core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float d
   bVar6 = 0;
   core_boxactor_cpp_CBoxActor_process_FUN_004219e0(&this_ptr->base,delta_time);
   if ((this_ptr->light_actor_type == LIGHT_TYPE_LANTERN) &&
-     (fVar1 = *(float *)(this_ptr->unk + 0x2fc4) - delta_time,
-     *(float *)(this_ptr->unk + 0x2fc4) = fVar1, fVar1 <= 0.0)) {
+     (fVar1 = *(float *)this_ptr->unk5 - delta_time, *(float *)this_ptr->unk5 = fVar1, fVar1 <= 0.0)
+     ) {
     filter_pos_y = 0;
     filter_pos_x = 0;
     filter_index = 0;
     iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,7);
     core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-              ((CDemonLight *)this_ptr->unk,CDemonFilter_ARRAY_008229ec + iVar3,filter_index,
+              ((CDemonLight *)this_ptr->unk1,CDemonFilter_ARRAY_008229ec + iVar3,filter_index,
                filter_pos_x,filter_pos_y);
     local_c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,0.15);
-    *(float *)(this_ptr->unk + 0x2fc4) = local_c;
+    *(float *)this_ptr->unk5 = local_c;
   }
   if (this_ptr->light_actor_type != LIGHT_TYPE_GLOBE) {
-    if (*(int *)(this_ptr->unk + 0x1cb4) == 0) {
+    if (this_ptr->light_status == 0) {
       return;
     }
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&local_18,(CVector3f *)(this_ptr->unk + 0x2fac));
-    if ((CVector3f *)(this_ptr->unk + 4) != &local_18) {
-      ((CVector3f *)(this_ptr->unk + 4))->x = local_18.x;
-      *(float *)(this_ptr->unk + 8) = local_18.y;
-      *(float *)(this_ptr->unk + 0xc) = local_18.z;
+              ((CDemonActor *)this_ptr,&local_18,&this_ptr->blight_pos);
+    if ((CVector3f *)(this_ptr->unk1 + 4) != &local_18) {
+      ((CVector3f *)(this_ptr->unk1 + 4))->x = local_18.x;
+      *(float *)(this_ptr->unk1 + 8) = local_18.y;
+      *(float *)(this_ptr->unk1 + 0xc) = local_18.z;
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              (&local_54,&g_ZeroVector,(CVector3f *)(this_ptr->unk + 0x2fb8));
+              (&local_54,&g_ZeroVector,&(this_ptr->light_orient).vec);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_b4,&g_ZeroVector,(CVector3f *)&(this_ptr->base).base.orient);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_54,&local_b4,&local_e4);
@@ -68,19 +68,22 @@ core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float d
     }
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_84,&local_24);
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-              ((CMatrix3x3f *)(this_ptr->unk + 0x10),&local_24);
+              ((CMatrix3x3f *)(this_ptr->unk1 + 0x10),&local_24);
     core_set_cpp_CDemonSet_FUN_0056d090(g_CDemonSetPtr);
     return;
   }
   core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310
-            ((CDemonGlobe *)(this_ptr->unk + 0x2fc8),(CColor3f *)&(this_ptr->base).base.location);
+            ((CDemonGlobe *)(this_ptr->unk5 + 4),(CColor3f *)&(this_ptr->base).base.location);
   uVar2 = rand();
-  *(uint *)(this_ptr->unk + 0x3004) = uVar2 & 0x7fff;
-  this_ptr->unk[0x2fe4] = (char)((int)(uVar2 & 0x7fff) >> 10);
+  *(uint *)(this_ptr->unk5 + 0x40) = uVar2 & 0x7fff;
+  this_ptr->unk5[0x20] = (char)((int)(uVar2 & 0x7fff) >> 10);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
-            ((CDemonGlobe *)(this_ptr->unk + 0x2fc8),2.0);
+            ((CDemonGlobe *)(this_ptr->unk5 + 4),2.0);
   this_ptr_00 = g_CDemonSetPtr;
-  *(uint *)(this_ptr->unk + 0x2fe8) = 0;
+  this_ptr->unk5[0x24] = '\0';
+  this_ptr->unk5[0x25] = '\0';
+  this_ptr->unk5[0x26] = '\0';
+  this_ptr->unk5[0x27] = '\0';
   core_set_cpp_CDemonSet_FUN_0056d110(this_ptr_00);
   return;
 }

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0 (SCramWorkingEntry *entry_a,SCramWorkingEntry *entry_b)
+; __cdecl int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0(CCramTex *entry_a,CCramTex *entry_b)
 ;
 ; Parameters:
-; SCramWorkingEntry * Stack[0x4]:4   entry_a
-; SCramWorkingEntry * Stack[0x8]:4   entry_b
+; CCramTex *       Stack[0x4]:4   entry_a
+; CCramTex *       Stack[0x8]:4   entry_b
 ;
 ; XREF[2]:
 ;   shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 at 00444e64

@@ -207,7 +207,9 @@ inline void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti) {
 }
 
 // __arr_op - Generic array operation with function pointer
-inline void* __arr_op(void* dest, void* src, int count, int size, void* copy_func) {
+// Templated to accept any function pointer type (callers pass typed copy funcs)
+template<typename CopyFunc>
+inline void* __arr_op(void* dest, void* src, int count, int size, CopyFunc copy_func) {
     char* d = (char*)dest;
     char* s = (char*)src;
     void (*func)(void*, void*) = (void (*)(void*, void*))copy_func;

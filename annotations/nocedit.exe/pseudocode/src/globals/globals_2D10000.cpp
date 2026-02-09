@@ -50,7 +50,6 @@ char g_VersionControlDirectory[264] = {};
 char g_WorkingDirectoryPath[32] = {};
 
 // int
-int g_PodCreationTime = {};
 int g_AuditOperationType = {};
 int g_CurrentFileTimestamp = {};
 int g_CurrentFileSize = {};
@@ -58,6 +57,9 @@ int g_CurrentFileOffset = {};
 int g_CurrentFileCompressedSize = {};
 int g_AuditRecordCount = {};
 int g_SmokeParticleAllocIndex = {};
+
+// time_t
+time_t g_PodCreationTime = {};
 
 // undefined4
 undefined4 DAT_02d13560 = {};

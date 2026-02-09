@@ -17,8 +17,8 @@ void __cdecl core_skeledit_cpp_CDeformable_groundBias_FUN_0058e4e0(CDeformableMo
   CDeformableModel *in_stack_00000004;
   float in_stack_0000000c;
   
-  __STK(0x30);
-  this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b4,"..\\core\\skeledit.cpp",0x9bc);
+  __STK();
+  this_ptr_00 = (CDeformableModelInstance *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b4,"..\\core\\skeledit.cpp",0x9bc);
   this_ptr_01 = (CDeformableModelInstance *)0x0;
   if (this_ptr_00 != (CDeformableModelInstance *)0x0) {
     this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(this_ptr_00);
@@ -45,7 +45,7 @@ void __cdecl core_skeledit_cpp_CDeformable_groundBias_FUN_0058e4e0(CDeformableMo
       pCVar1 = pCVar1 + 1;
     } while (iVar3 < in_stack_00000004->vertex_count[0]);
   }
-  core_skeledit_cpp_FUN_0058e600();
+  core_skeledit_cpp_CDeformableModel_FUN_0058e600(in_stack_00000004);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x9d1;
   (*((this_ptr_01->motion_controller).vtable)->dtor)(&this_ptr_01->motion_controller);

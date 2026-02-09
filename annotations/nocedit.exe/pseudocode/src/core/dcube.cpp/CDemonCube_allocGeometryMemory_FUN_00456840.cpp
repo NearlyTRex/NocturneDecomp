@@ -46,14 +46,14 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(CDemonCu
     g_CurrentLineNumber = 0x604;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCube::allocMemory - Out of ground type memory");
   }
-  pSVar6 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,"..\\core\\dcube.cpp",0x605);
+  pSVar6 = (SVoxelGrid *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,"..\\core\\dcube.cpp",0x605);
   this_ptr->voxel_buffer1 = pSVar6;
   if (pSVar6 == (SVoxelGrid *)0x0) {
     g_CurrentFilename = "..\\core\\dcube.cpp";
     g_CurrentLineNumber = 0x606;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCube::allocMemory - Out of voxel memory");
   }
-  pSVar6 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,"..\\core\\dcube.cpp",0x607);
+  pSVar6 = (SVoxelGrid *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,"..\\core\\dcube.cpp",0x607);
   this_ptr->voxel_buffer2 = pSVar6;
   if (pSVar6 != (SVoxelGrid *)0x0) {
     return;

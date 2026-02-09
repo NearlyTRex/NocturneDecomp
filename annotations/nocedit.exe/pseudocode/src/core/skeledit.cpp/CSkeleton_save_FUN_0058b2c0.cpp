@@ -14,7 +14,7 @@ void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,_
   _FILE *unaff_EBP;
   char *in_stack_00000008;
   
-  __STK(0x24);
+  __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Saving skeleton to %s...");
   pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0

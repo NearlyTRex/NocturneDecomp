@@ -23,7 +23,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041b070(CBodyPart *this_ptr)
   CVector3f CStack_14;
   float fStack_8;
   
-  if ((2 < *(int *)(this_ptr->unk + 0x1c)) && (0 < *(int *)(this_ptr->unk + 0x28))) {
+  if ((2 < this_ptr->vertex_count) && (0 < this_ptr->tri_count)) {
     (*((this_ptr->base).vtable._ub)->getBoundingBox)
               (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
     fStack_20 = fStack_44 + fStack_38;
@@ -36,23 +36,23 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041b070(CBodyPart *this_ptr)
     ;
     fStack_8 = fStack_38 - fStack_44;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
-              ((CBox *)(this_ptr->unk + 0xb74),&CStack_14,(CVector3f *)&(this_ptr->base).orient,
+              ((CBox *)&this_ptr->sim_box,&CStack_14,(CVector3f *)&(this_ptr->base).orient,
                (CVector3f *)&fStack_8,5.0);
     return;
   }
   (this_ptr->base).was_created = 2;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(this_ptr);
-  pCVar1 = (CVector3f *)(this_ptr->unk + 0x10);
+  pCVar1 = (CVector3f *)(this_ptr->unk1 + 0xc);
   if (pCVar1 != &g_ZeroVector) {
     pCVar1->x = g_ZeroVector.x;
-    *(float *)(this_ptr->unk + 0x14) = g_ZeroVector.y;
-    *(float *)(this_ptr->unk + 0x18) = g_ZeroVector.z;
+    *(float *)(this_ptr->unk1 + 0x10) = g_ZeroVector.y;
+    *(float *)(this_ptr->unk1 + 0x14) = g_ZeroVector.z;
   }
-  if ((CVector3f *)(this_ptr->unk + 4) == pCVar1) {
+  if ((CVector3f *)this_ptr->unk1 == pCVar1) {
     return;
   }
-  ((CVector3f *)(this_ptr->unk + 4))->x = pCVar1->x;
-  *(uint *)(this_ptr->unk + 8) = *(uint *)(this_ptr->unk + 0x14);
-  *(uint *)(this_ptr->unk + 0xc) = *(uint *)(this_ptr->unk + 0x18);
+  *(float *)this_ptr->unk1 = pCVar1->x;
+  *(uint *)(this_ptr->unk1 + 4) = *(uint *)(this_ptr->unk1 + 0x10);
+  *(uint *)(this_ptr->unk1 + 8) = *(uint *)(this_ptr->unk1 + 0x14);
   return;
 }

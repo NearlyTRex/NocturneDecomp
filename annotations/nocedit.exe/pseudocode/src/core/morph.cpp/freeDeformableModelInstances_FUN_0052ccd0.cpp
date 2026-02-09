@@ -12,6 +12,6 @@ core_morph_cpp_freeDeformableModelInstances_FUN_0052ccd0(CDeformableModelInstanc
 {
   CDeformableModelInstance *pCVar1;
   
-  pCVar1 = __arrfini(objs,2,&g_CDeformableModelInstanceTypeInfo);
+  pCVar1 = (CDeformableModelInstance *)__arrfini(objs,2,&g_CDeformableModelInstanceTypeInfo);
   return pCVar1;
 }

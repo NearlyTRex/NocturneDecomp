@@ -4,62 +4,56 @@
       {
         "category": "other",
         "column": 14,
-        "line": 166,
+        "line": 167,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 166,
+        "line": 167,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 235,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 84,
+        "line": 235,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 266,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 266,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "undeclared_identifier",
-        "column": 30,
-        "line": 235,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 37,
-        "line": 235,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 267,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 32,
-        "line": 267,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 73,
-        "line": 273,
+        "line": 272,
         "message": "use of undeclared identifier 'stack0xfffffc54'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 274,
+        "line": 273,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 13,
+        "column": 84,
         "line": 276,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 276,
-        "message": "expected expression"
+        "message": "use of undeclared identifier 'stack0xfffffc54'"
       },
       {
         "category": "other",
@@ -68,52 +62,58 @@
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 283,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 12,
+        "line": 286,
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 28,
-        "line": 283,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 285,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 285,
-        "message": "expected expression"
+        "category": "other",
+        "column": 69,
+        "line": 286,
+        "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 308,
+        "line": 309,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 308,
+        "line": 309,
+        "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 372,
+        "message": "indirection not permitted on operand of type 'void *'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 372,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "undeclared_identifier",
-        "column": 34,
-        "line": 339,
+        "column": 13,
+        "line": 380,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
-        "column": 41,
-        "line": 339,
+        "column": 20,
+        "line": 380,
         "message": "expected expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 473,
+        "message": "indirection not permitted on operand of type 'void *'"
       }
     ],
     "success": false,
@@ -121,21 +121,22 @@
   },
   "complexity": {
     "assembly_lines": 2463,
-    "complexity_score": 1396,
+    "complexity_score": 1281,
     "cross_reference_count": 0,
     "function_call_count": 48,
     "global_count": 72,
-    "pseudocode_lines": 996,
-    "suspect_count": 37,
+    "pseudocode_lines": 1006,
+    "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
+      "format_string_mismatch",
       "stack_ref",
       "undefined_data",
       "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 3459
+    "total_lines": 3469
   },
   "cross_references": [],
   "function": {
@@ -1914,45 +1915,31 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 210,
+      "line": 211,
       "match": "SQRT",
       "text": "if (SQRT(local_198 * local_198 + local_1a0 * local_1a0) <= 1.0) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 228,
-      "match": "code *",
-      "text": "(iVar13 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x100)",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 253,
       "match": "SQRT",
-      "text": "if ((float)1.5 < SQRT(fVar6 * fVar6 + fVar3 * fVar3)) {",
+      "text": "if ((float)1.5 < SQRT(fVar7 * fVar7 + fVar3 * fVar3)) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 260,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x108))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 266,
+      "line": 265,
       "match": "&stack0xfffffc54",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffc54);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Direct stack address reference",
       "line": 269,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x11c))();",
-      "type": "unresolved_funcptr"
+      "match": "&stack0xfffffc54",
+      "text": "(*(((pCVar5->base).vtable._uc)->_uc).processDamage)(pCVar5,(SDamageInfo *)&stack0xfffffc54);",
+      "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -1962,193 +1949,120 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 276,
-      "match": "code *",
-      "text": "iVar8 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x120))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 278,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x104))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 332,
-      "match": "code *",
-      "text": "pfVar15 = (float *)(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) +",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 345,
+      "line": 346,
       "match": "SQRT",
       "text": "local_2c = SQRT(local_1e8.z * local_1e8.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 372,
+      "line": 373,
       "match": "code *",
       "text": "(**(code **)(*(int *)(this_ptr->unk2 + 0x154) + 0x24))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 462,
+      "line": 463,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 501,
+      "line": 502,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 556,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 571,
+      "line": 576,
       "match": "SQRT",
       "text": "if (SQRT(local_1a4 * local_1a4 + local_1ac * local_1ac + local_1a8 * local_1a8) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 578,
+      "line": 583,
       "match": "ABS",
-      "text": "if (((ABS(pCVar11->y) < (float)0.261799387791667) && (-1 < iVar13)) &&",
+      "text": "if (((ABS(pCVar12->y) < (float)0.261799387791667) && (-1 < iVar9)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 601,
+      "line": 725,
       "match": "code *",
-      "text": "(iVar8 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) +",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 606,
-      "match": "code *",
-      "text": "(iVar8 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) +",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 641,
-      "match": "code *",
-      "text": "(iVar13 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x120)",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 644,
-      "match": "code *",
-      "text": "(iVar13 = (**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x108))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 676,
-      "match": "code *",
-      "text": "if ((iVar8 == 0) || (iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x120))(), 0 < iVar8))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 679,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x108))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 714,
-      "match": "code *",
-      "text": "iVar21 = (**(code **)(*(int *)(iVar13 + 0x154) + 0xf8))();",
+      "text": "iVar21 = (**(code **)(*(int *)(iVar14 + 0x154) + 0xf8))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 719,
+      "line": 730,
       "match": "ABS",
       "text": "if ((ABS(local_1b4) <= (float)10) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 721,
+      "line": 732,
       "match": "SQRT",
       "text": "SQRT(local_1b0 * local_1b0 + local_1b8 * local_1b8) <=",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 745,
+      "line": 757,
       "match": "SQRT",
-      "text": "SQRT(fVar6 * fVar6 + fVar3 * fVar3) <= (float)3)) &&",
+      "text": "SQRT(fVar7 * fVar7 + fVar3 * fVar3) <= (float)3)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 746,
+      "line": 758,
       "match": "ABS",
-      "text": "(ABS((this_ptr->base).base.base.location.position.y - *(float *)(iVar8 + 0x24)) <=",
+      "text": "(ABS((this_ptr->base).base.base.location.position.y - (pCVar19->location).position.y)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 801,
+      "line": 815,
       "match": "fcos",
       "text": "fVar24 = (float10)fcos((float10)local_78);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 802,
+      "line": 816,
       "match": "fsin",
       "text": "fVar25 = (float10)fsin((float10)local_78);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 841,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 896,
-      "match": "code *",
-      "text": "(pCVar12 = (CZombie *)(**(code **)(*(int *)(iVar13 + 0x154) + 0x108))(),",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 924,
+      "line": 934,
       "match": "DAT_00823c50",
       "text": "(DAT_00823c50,g_CDoorClassInfo.name_hash), local_58 = pCVar19,",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 938,
+      "line": 948,
       "match": "ABS",
-      "text": "if (ABS(pCVar11->y) < (float)0.34906585038888899) {",
+      "text": "if (ABS(pCVar12->y) < (float)0.34906585038888899) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s giving up attack\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s giving up attack\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 856,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s giving up attack\\n\")",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ],
   "vtable_info": {

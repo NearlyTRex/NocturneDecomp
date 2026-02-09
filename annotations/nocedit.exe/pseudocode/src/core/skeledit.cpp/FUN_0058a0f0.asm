@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
+;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589e78
 ;   core_skeledit.cpp_FUN_00589bb0 at 00589bdf
-;   core_skeledit.cpp_FUN_00589c20 at 00589e78
 ;   core_skeledit.cpp_FUN_0058c190 at 0058d15d
 ;
 ; Referenced Globals:
@@ -32,7 +32,7 @@ section .text
     PUSH 0x18                           ; 0058a0f0
         ;   Label: core_skeledit.cpp_FUN_0058a0f0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a0f5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058a0fa
     PUSH ESI                            ; 0058a0fb
     MOV ESI,dword ptr [ESP + 0xc]       ; 0058a0fc

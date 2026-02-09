@@ -72,9 +72,9 @@
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   crt_stdlib.c__atexit_FUN_005ff060
+;   crt_time.c__asctime_FUN_00601768
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_asctime_FUN_00601768
-;   crt_time.c_time_FUN_006001f0
+;   crt_time.c__time_FUN_006001f0
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
@@ -564,8 +564,8 @@ section .text
     ADD ESP,0x8                         ; 005b24bb
     LEA EAX,[ESP + 0x158]               ; 005b24be
     PUSH EAX                            ; 005b24c5
-    CALL crt_time.c_time_FUN_006001f0   ; 005b24c6
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c__time_FUN_006001f0  ; 005b24c6
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 005b24cb
     LEA EAX,[ESP + 0x6c]                ; 005b24ce
     PUSH EAX                            ; 005b24d2
@@ -580,8 +580,8 @@ section .text
         ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_00600288(time_t * timer)
     ADD ESP,0x4                         ; 005b24ee
     PUSH EAX                            ; 005b24f1
-    CALL crt_time.c_asctime_FUN_00601768 ; 005b24f2
-        ;   XREF to: 00601768 (UNCONDITIONAL_CALL)  ; char * crt_time.c_asctime_FUN_00601768(_tm * timeptr)
+    CALL crt_time.c__asctime_FUN_00601768 ; 005b24f2
+        ;   XREF to: 00601768 (UNCONDITIONAL_CALL)  ; char * crt_time.c__asctime_FUN_00601768(_tm * timeptr)
     ADD ESP,0x4                         ; 005b24f7
     PUSH EAX                            ; 005b24fa
     PUSH 0x65262e                       ; 005b24fb | = "Time: %s"

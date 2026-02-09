@@ -11,6 +11,6 @@ CPathMap * __cdecl core_path_cpp_freePathMaps_FUN_00548c30(CPathMap *objs)
 {
   CPathMap *pCVar1;
   
-  pCVar1 = __arrfini(objs,0xc,&g_CPathMapTypeInfo);
+  pCVar1 = (CPathMap *)__arrfini(objs,0xc,&g_CPathMapTypeInfo);
   return pCVar1;
 }

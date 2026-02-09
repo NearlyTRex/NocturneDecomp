@@ -23,7 +23,7 @@ void __cdecl core_skeledit_cpp_FUN_0058e0b0(void)
   int local_18;
   int local_14;
   
-  __STK(0x334);
+  __STK();
   if (4 < *(int *)(in_stack_00000004 + 0xb8)) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x912;

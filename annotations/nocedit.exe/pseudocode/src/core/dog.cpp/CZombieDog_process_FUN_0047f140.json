@@ -4,68 +4,56 @@
       {
         "category": "other",
         "column": 10,
-        "line": 84,
+        "line": 85,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 84,
+        "line": 85,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 103,
+        "line": 104,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 116,
+        "line": 117,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 116,
+        "line": 117,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "undeclared_identifier",
-        "column": 13,
-        "line": 145,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 145,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 71,
-        "line": 173,
+        "line": 175,
         "message": "use of undeclared identifier 'stack0xffffff20'"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 186,
+        "line": 188,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 238,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 33,
+        "line": 240,
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 43,
-        "line": 238,
-        "message": "expected expression"
+        "category": "other",
+        "column": 71,
+        "line": 240,
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -83,7 +71,7 @@
       "decompiler_intrinsic",
       "extra_output",
       "stack_ref",
-      "unresolved_funcptr"
+      "suspect_float"
     ],
     "total_lines": 852
   },
@@ -681,59 +669,59 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 76,
+      "line": 77,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 95,
+      "line": 96,
       "match": "extraout_EAX_01",
       "text": "if (extraout_EAX_01 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 114,
+      "line": 115,
       "match": "extraout_EAX_02",
       "text": "if (extraout_EAX_02 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 128,
       "match": "SQRT",
       "text": "if ((8.0f < SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58))",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 138,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
+      "description": "Likely misinterpreted integer as float",
+      "line": 152,
+      "match": "4.2039e-45",
+      "text": "fVar12 = 4.2039e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 155,
+      "match": "5.60519e-45",
+      "text": "fVar12 = 5.60519e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
-      "line": 166,
+      "line": 168,
       "match": "&stack0xffffff20",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff20);",
       "type": "stack_ref"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 178,
+      "line": 180,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) {",
       "type": "extra_output"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 231,
-      "match": "code *",
-      "text": "(pCVar9 = (CZombieDog *)(**(code **)(*(int *)(iVar6 + 0x154) + 0x108))(), pCVar9 == this_ptr)",
-      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

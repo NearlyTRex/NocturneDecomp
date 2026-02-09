@@ -11,6 +11,6 @@ SVDBox * __cdecl core_set_cpp_freeVDBoxes_FUN_00571590(SVDBox *objs)
 {
   SVDBox *pSVar1;
   
-  pSVar1 = __arrfini(objs,0xfa,&g_SVDBoxTypeInfo);
+  pSVar1 = (SVDBox *)__arrfini(objs,0xfa,&g_SVDBoxTypeInfo);
   return pSVar1;
 }

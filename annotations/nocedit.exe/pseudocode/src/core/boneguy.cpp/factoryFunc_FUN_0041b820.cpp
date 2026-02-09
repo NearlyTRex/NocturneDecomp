@@ -11,7 +11,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_factoryFunc_FUN_0041b820(void)
 {
   CBoneGuy *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc4e4,"..\\core\\boneguy.cpp",0x74);
+  pCVar1 = (CBoneGuy *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc4e4,"..\\core\\boneguy.cpp",0x74);
   if (pCVar1 == (CBoneGuy *)0x0) {
     return (CBoneGuy *)0x0;
   }

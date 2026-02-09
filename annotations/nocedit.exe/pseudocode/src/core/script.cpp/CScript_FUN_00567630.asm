@@ -20,7 +20,7 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053ea30
 ;   core_script.cpp_CScript_FUN_0055a370
 ;   core_script.cpp_CScript_FUN_00567080
-;   crt_stdlib.c_qsort_FUN_005fdf38
+;   crt_stdlib.c__qsort_FUN_005fdf38
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
     PUSH ECX                            ; 005676bc
     MOV ESI,dword ptr [EBX + 0x2c]      ; 005676bd
     PUSH ESI                            ; 005676c0
-    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 005676c1
-        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
+    CALL crt_stdlib.c__qsort_FUN_005fdf38 ; 005676c1
+        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 005676c6
     ADD ESP,0x114                       ; 005676c9
     POP EBP                             ; 005676cf

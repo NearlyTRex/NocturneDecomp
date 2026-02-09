@@ -20,7 +20,7 @@ core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActor *this_ptr,uint flags
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_dlight_cpp_CDemonLight_dtor_FUN_00472760((CDemonLight *)this_ptr->unk,0);
+  pCVar1 = core_dlight_cpp_CDemonLight_dtor_FUN_00472760((CDemonLight *)this_ptr->unk1,0);
   pCVar2 = core_box_cpp_CBox_dtor_FUN_0041dd00
                      ((CBox *)(pCVar1[-1].saved_screen_buffer_rows + 0x3ff));
   ptr = (CLightActor *)

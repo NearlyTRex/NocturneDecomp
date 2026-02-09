@@ -103,27 +103,27 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
         }
       }
       else if (uVar3 < 0x34) {
-        core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(this_ptr);
+        core_setedit_cpp_CDemonSet_FUN_00578a20(this_ptr);
       }
       else if (uVar3 < 0x37) {
         if (uVar3 == 0x34) {
-          core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(this_ptr);
+          core_setedit_cpp_CDemonSet_FUN_0057a940(this_ptr);
         }
       }
       else if (uVar3 < 0x38) {
-        core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(this_ptr);
+        core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(this_ptr);
       }
       else if (uVar3 == 0x39) {
-        core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(this_ptr);
+        core_setedit_cpp_CDemonSet_FUN_0057e7c0(this_ptr);
       }
     }
     else if (uVar3 < 0x42) {
-      core_setedit_cpp_DementedFogEditor_FUN_00580730(this_ptr);
+      core_setedit_cpp_CDemonSet_FUN_00580730(this_ptr);
     }
     else if (uVar3 < 0x46) {
       if (0x42 < uVar3) {
         if (uVar3 < 0x44) {
-          core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
+          core_setedit_cpp_CDemonSet_FUN_00576da0(this_ptr);
         }
         else if (uVar3 == 0x44) {
           iVar4 = 2;
@@ -144,7 +144,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
       }
     }
     else if (uVar3 < 0x47) {
-      core_setedit_cpp_CDemonSet_ExportSomething_FUN_0057a0c0(this_ptr);
+      core_setedit_cpp_CDemonSet_FUN_0057a0c0(this_ptr);
     }
     else if (uVar3 < 0x48) {
       core_setedit_cpp_CDemonSet_FUN_00583170(this_ptr);
@@ -177,7 +177,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
       iVar4 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                         (g_CEditorToolsPtr,"Select ground type file to edit",0x648fd8,local_36c);
       if (iVar4 != 0) {
-        core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630();
+        core_setedit_cpp_FUN_00578630();
       }
     }
     if (uVar3 == 0x1b) {

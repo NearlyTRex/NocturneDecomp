@@ -233,3 +233,29 @@ inline _tm* _localtime(const void* timer) {
     return reinterpret_cast<_tm*>(localtime(reinterpret_cast<const time_t*>(timer)));
 }
 
+inline time_t _time(time_t* timer) {
+    return time(timer);
+}
+
+inline char* _asctime(_tm* timeptr) {
+    return asctime(reinterpret_cast<tm*>(timeptr));
+}
+
+inline size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_string, _tm* time_ptr) {
+    return strftime(dest_buffer, buffer_size, format_string, reinterpret_cast<tm*>(time_ptr));
+}
+
+// ---------------------------------------------------------------------------
+// Sorting
+// ---------------------------------------------------------------------------
+//
+// Templated to accept any comparator function pointer type, since Ghidra
+// types comparators with specific param types (e.g., int(SFace**, SFace**))
+// instead of the generic int(void*, void*) that qsort expects.
+//
+
+template<typename CompFunc>
+inline void _qsort(void* base, size_t num, size_t size, CompFunc compar) {
+    (void)base; (void)num; (void)size; (void)compar;
+}
+

@@ -33,11 +33,11 @@
 ;
 ; XREF[6]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538762
+;   core_setedit.cpp_CDemonSet_FUN_0057b410 at 0057b4c8
+;   core_setedit.cpp_CDemonSet_FUN_0057b500 at 0057b5dd
+;   core_setedit.cpp_CDemonSet_FUN_0057b600 at 0057b8e8
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005793f0
-;   core_setedit.cpp_FUN_0057b410 at 0057b4c8
-;   core_setedit.cpp_FUN_0057b500 at 0057b5dd
-;   core_setedit.cpp_FUN_0057b600 at 0057b8e8
-;   core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0 at 0057cb12
+;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057cb12
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Camera_box_7_2f_7_2f_7_2_00645ac5

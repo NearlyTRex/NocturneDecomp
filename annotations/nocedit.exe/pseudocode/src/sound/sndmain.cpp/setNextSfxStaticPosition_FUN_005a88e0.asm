@@ -11,7 +11,7 @@
 ; XREF[6]:
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c1729
 ;   core_manpuz.cpp_FUN_0050a4f0 at 0050a5d7
-;   core_setedit.cpp_DementedFogEditor_FUN_00580730 at 0058111a
+;   core_setedit.cpp_CDemonSet_FUN_00580730 at 0058111a
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b26dd
 ;   sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580 at 005a95b1
 ;   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 at 005ad467

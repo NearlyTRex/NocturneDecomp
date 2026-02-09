@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 205,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 70,
+    "pseudocode_lines": 58,
     "suspect_count": 13,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 230
+    "total_lines": 218
   },
   "cross_references": [
     {
@@ -218,51 +218,51 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 21,
       "match": "in_stack_00000008",
-      "text": "*(float *)this_ptr->unk1 = *(float *)this_ptr->unk1 - in_stack_00000008;",
+      "text": "(this_ptr->trigger_size).x = (this_ptr->trigger_size).x - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 25,
       "match": "in_stack_00000010",
-      "text": "*(float *)this_ptr->unk1 = *(float *)this_ptr->unk1 + in_stack_00000010;",
+      "text": "(this_ptr->trigger_size).x = (this_ptr->trigger_size).x + in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 29,
       "match": "in_stack_00000018",
-      "text": "*(float *)(this_ptr->unk1 + 4) = *(float *)(this_ptr->unk1 + 4) - in_stack_00000018;",
+      "text": "(this_ptr->trigger_size).y = (this_ptr->trigger_size).y - in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 33,
       "match": "in_stack_00000020",
-      "text": "*(float *)(this_ptr->unk1 + 4) = *(float *)(this_ptr->unk1 + 4) + in_stack_00000020;",
+      "text": "(this_ptr->trigger_size).y = (this_ptr->trigger_size).y + in_stack_00000020;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 37,
       "match": "in_stack_00000028",
-      "text": "*(float *)(this_ptr->unk1 + 8) = *(float *)(this_ptr->unk1 + 8) - in_stack_00000028;",
+      "text": "(this_ptr->trigger_size).z = (this_ptr->trigger_size).z - in_stack_00000028;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 41,
       "match": "in_stack_00000030",
-      "text": "*(float *)(this_ptr->unk1 + 8) = *(float *)(this_ptr->unk1 + 8) + in_stack_00000030;",
+      "text": "(this_ptr->trigger_size).z = (this_ptr->trigger_size).z + in_stack_00000030;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 54,
       "match": "in_stack_00000020",
-      "text": "if (in_stack_00000020 != *(float *)this_ptr->unk1) {",
+      "text": "if (in_stack_00000020 != (this_ptr->trigger_size).x) {",
       "type": "stack_param"
     }
   ],

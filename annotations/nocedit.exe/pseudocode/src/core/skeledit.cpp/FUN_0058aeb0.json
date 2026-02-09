@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 24,
+        "message": "no matching function for call to '__STK'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
@@ -21,15 +28,15 @@
   },
   "cross_references": [
     {
-      "addr": "0058c190",
-      "from_addr": "0058c37c",
-      "name": "core_skeledit.cpp_FUN_0058c190",
+      "addr": "00592690",
+      "from_addr": "005929b5",
+      "name": "core_skeledit.cpp_CSkeleton_FUN_00592690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00592690",
-      "from_addr": "005929b5",
-      "name": "core_skeledit.cpp_FUN_00592690",
+      "addr": "0058c190",
+      "from_addr": "0058c37c",
+      "name": "core_skeledit.cpp_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -88,7 +95,7 @@
       {
         "call_addr": "005929b5",
         "call_type": "direct",
-        "caller": "core_skeledit.cpp_FUN_00592690",
+        "caller": "core_skeledit.cpp_CSkeleton_FUN_00592690",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "reg_params": [],

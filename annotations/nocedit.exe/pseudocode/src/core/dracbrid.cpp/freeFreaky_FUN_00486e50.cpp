@@ -11,6 +11,6 @@ SFreaky * __cdecl core_dracbrid_cpp_freeFreaky_FUN_00486e50(SFreaky *objs)
 {
   SFreaky *pSVar1;
   
-  pSVar1 = __arrfini(objs,6,&g_SFreakyTypeInfo);
+  pSVar1 = (SFreaky *)__arrfini(objs,6,&g_SFreakyTypeInfo);
   return pSVar1;
 }

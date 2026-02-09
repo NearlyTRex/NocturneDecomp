@@ -9,7 +9,7 @@
 // Ghidra size: 0xbf78 (49016 bytes)
 typedef struct CBatman {
     CEnemy base; // 0x0
-    char unk1[164]; // 0xbeb4
+    char unk1[156]; // 0xbebc
     int mist_state; // 0xbf58
     float vanish_timer; // 0xbf5c
     CVector3f new_pos; // 0xbf60

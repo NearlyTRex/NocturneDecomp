@@ -14,8 +14,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940 at 0057ab2e
-;   core_setedit.cpp_UserInputCreate_FUN_0057d660 at 0057dfca
+;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057ab2e
+;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057dfca
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

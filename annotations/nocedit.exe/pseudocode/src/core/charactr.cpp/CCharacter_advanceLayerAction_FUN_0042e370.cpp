@@ -20,21 +20,21 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharac
   int in_stack_0000000c;
   float local_18;
   
-  if ((this_ptr->field47_0x2a8c < 0) || (this_ptr->layer_action_count <= this_ptr->field47_0x2a8c))
-  {
+  if ((this_ptr->layer_action_index < 0) ||
+     (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
     g_CurrentFilename = "..\\core\\charactr.cpp";
     g_CurrentLineNumber = 0xeec;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::advanceLayerAction - invalid layerActionIndex");
   }
-  pSVar6 = this_ptr->layer_actions + this_ptr->field47_0x2a8c;
-  if ((float)this_ptr->field48_0x2a90 < 0.0) {
-    this_ptr->field48_0x2a90 = 0;
+  pSVar6 = this_ptr->layer_actions + this_ptr->layer_action_index;
+  if (this_ptr->layer_action_t < 0.0) {
+    this_ptr->layer_action_t = 0.0;
   }
-  if (1.0 < (float)this_ptr->field48_0x2a90) {
-    this_ptr->field48_0x2a90 = 0x3f800000;
+  if (1.0 < this_ptr->layer_action_t) {
+    this_ptr->layer_action_t = 1.0;
   }
-  fVar3 = (float)this_ptr->field48_0x2a90 * pSVar6->duration;
-  local_18 = pSVar6->duration * (1.0 - (float)this_ptr->field48_0x2a90);
+  fVar3 = this_ptr->layer_action_t * pSVar6->duration;
+  local_18 = pSVar6->duration * (1.0 - this_ptr->layer_action_t);
   iVar7 = pSVar6->direction;
   if (iVar7 != 0) goto LAB_0042e486;
   fVar1 = this_ptr->motion_transition_costs[pSVar6->to_bone_index][in_stack_0000000c];
@@ -57,14 +57,13 @@ LAB_0042e486:
     local_18 = fVar3;
   }
   if (*in_stack_00000008 < local_18) {
-    fVar3 = ((float)iVar7 * *in_stack_00000008) / pSVar6->duration + (float)this_ptr->field48_0x2a90
-    ;
-    this_ptr->field48_0x2a90 = (int)fVar3;
+    fVar3 = ((float)iVar7 * *in_stack_00000008) / pSVar6->duration + this_ptr->layer_action_t;
+    this_ptr->layer_action_t = fVar3;
     if (fVar3 < 0.0) {
-      this_ptr->field48_0x2a90 = 0;
+      this_ptr->layer_action_t = 0.0;
     }
-    if (1.0 < (float)this_ptr->field48_0x2a90) {
-      this_ptr->field48_0x2a90 = 0x3f800000;
+    if (1.0 < this_ptr->layer_action_t) {
+      this_ptr->layer_action_t = 1.0;
     }
     *in_stack_00000008 = 0.0;
     return -1;
@@ -72,10 +71,10 @@ LAB_0042e486:
   *in_stack_00000008 = *in_stack_00000008 - local_18;
   if (-1 < iVar7) {
     iVar7 = pSVar6->to_bone_index;
-    this_ptr->field48_0x2a90 = 0x3f800000;
+    this_ptr->layer_action_t = 1.0;
     return iVar7;
   }
   iVar7 = pSVar6->from_bone_index;
-  this_ptr->field48_0x2a90 = 0;
+  this_ptr->layer_action_t = 0.0;
   return iVar7;
 }

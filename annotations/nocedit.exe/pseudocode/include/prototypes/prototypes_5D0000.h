@@ -260,8 +260,8 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
 void __cdecl core_texlist_cpp_CTextureList_renderTexture_FUN_005dca30(CTextureList *this_ptr);
 CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_005dcab0(CTextureCache *this_ptr,int max_texture_count);
 int __cdecl engine_texture_cpp_CTextureCache_free_FUN_005dcb00(CTextureCache *this_ptr);
-void __cdecl engine_texture_cpp_CTextureCache_dtor_FUN_005dcb20(CTextureCache *cache);
-void __cdecl engine_texture_cpp_CTextureCache_free_FUN_005dcb30(CTextureCache *cache);
+void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005dcb20(CTextureCache *this_ptr);
+void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005dcb30(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache *cache,char *texture_name);
 int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_005dd180 (CTextureCache *this_ptr,int hint_index,char *texture_name);
 void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *cache,int texture_index);
@@ -283,7 +283,7 @@ SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_005dd9c0(vo
 void __cdecl core_tommygun_cpp_staticInit_FUN_005dda20(void);
 CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_005dda50(void);
 CDemonActorType * __cdecl core_tommygun_cpp_CTommyGun_getActorType_FUN_005dda80(CTommyGun *this_ptr);
-int __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *this_ptr);
+CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *this_ptr);
 int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr);
 float __cdecl core_tommygun_cpp_CTommyGun_FUN_005de330(CTommyGun *this_ptr);
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_ptr,float delta_time);

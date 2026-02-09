@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name, void *data_ptr,void *callback)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0 (CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name, void *data_ptr,CActorPropertyValidatorFunc *callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ; EActorPropertyType Stack[0x8]:4   property_type
 ; char *           Stack[0xc]:4   property_name
 ; void *           Stack[0x10]:4   data_ptr
-; void *           Stack[0x14]:4   callback
+; CActorPropertyValidatorFunc * Stack[0x14]:4   callback
 ;
 ; XREF[21]:
 ;   core_actor.cpp_CActorPropertyList_addAction_FUN_0040e670 at 0040e680

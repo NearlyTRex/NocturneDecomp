@@ -21,10 +21,10 @@ CZombieCow * __cdecl core_cow_cpp_CZombieCow_ctor_FUN_00444140(CZombieCow *this_
   (pCVar3->base).base.field54_0x2ddc = 1.75;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 3.5;
-  pCVar3->unk[0x10] = '\0';
-  pCVar3->unk[0x11] = '\0';
-  pCVar3->unk[0x12] = '\0';
-  pCVar3->unk[0x13] = '\0';
+  pCVar3->unk[8] = '\0';
+  pCVar3->unk[9] = '\0';
+  pCVar3->unk[10] = '\0';
+  pCVar3->unk[0xb] = '\0';
   (pCVar3->base).base.field56_0x2de4 = fVar1;
   (pCVar3->base).base.field57_0x2de8 = fVar2;
   return pCVar3;

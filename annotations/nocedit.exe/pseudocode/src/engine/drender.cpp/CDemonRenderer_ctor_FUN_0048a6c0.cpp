@@ -2,11 +2,12 @@
 // Address: 0048a6c0
 // Address Range: [[0048a6c0, 0048a6fb]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer *this_ptr)
+// Signature: CDemonRenderer * __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer *this_ptr)
+CDemonRenderer * __cdecl
+engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer *this_ptr)
 
 {
   this_ptr->projection_mode = 0;
@@ -17,5 +18,5 @@ void __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer 
   this_ptr->texture_capture_enabled = 0;
   this_ptr->unk = 0;
   this_ptr->face_count = 0;
-  return;
+  return this_ptr;
 }

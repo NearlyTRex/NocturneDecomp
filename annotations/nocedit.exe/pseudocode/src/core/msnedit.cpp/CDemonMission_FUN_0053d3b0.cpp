@@ -38,7 +38,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr
   local_1c = 0;
   local_24 = 0.0;
   for (; actor_ptr != (CDemonActor *)0x0; actor_ptr = actor_ptr->next_actor) {
-    pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CEnemyClassInfo.name_hash);
+    pCVar5 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CEnemyClassInfo.name_hash);
     if (pCVar5 != (CDemonActor *)0x0) {
       local_14 = 1.0;
       if (pCVar5->create_event[0] != '\0') {
@@ -61,7 +61,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_d1c.base,local_224);
       local_20 = (float)pCVar5[0x1a].next_actor * local_14 + local_20;
     }
-    pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CAmmoClassInfo.name_hash);
+    pCVar5 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CAmmoClassInfo.name_hash);
     if (pCVar5 != (CDemonActor *)0x0) {
       _sprintf
                 (local_224,"%s\t%s\t%s\t%d",pCVar5,&pCVar5[2].location.position.y,&DAT_0063cbe7,
@@ -69,7 +69,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_974.base,local_224);
       local_1c = local_1c + pCVar5[2].health;
     }
-    pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CHealthItemClassInfo.name_hash)
+    pCVar5 = (CHealthItem *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CHealthItemClassInfo.name_hash)
     ;
     if (pCVar5 != (CDemonActor *)0x0) {
       dVar7 = (double)((float)(int)pCVar5[2].location.position.y * pCVar5[2].location.position.z);

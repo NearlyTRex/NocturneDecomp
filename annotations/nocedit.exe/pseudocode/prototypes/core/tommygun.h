@@ -17,7 +17,7 @@ CDemonActorType * __cdecl CTommyGun::getActorType(CTommyGun *this_ptr);
 
 // Original: core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
 // Address: 005dda90
-int __cdecl CTommyGun::ctor(CTommyGun *this_ptr);
+CTommyGun * __cdecl CTommyGun::ctor(CTommyGun *this_ptr);
 
 // Original: core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
 // Address: 005ddb30

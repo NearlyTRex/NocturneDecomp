@@ -17,25 +17,25 @@ void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output
   int *piVar6;
   int *piVar7;
   int *piVar8;
-  SCramWorkingEntry *pSVar9;
+  CCramTex *pCVar9;
   int iVar10;
   int iVar11;
   _FILE *in_stack_00000004;
   
-  __STK(0x40);
+  __STK();
   if (0 < (int)g_CramTextureCount) {
-    pSVar9 = g_CramSortedTextureEntries;
+    pCVar9 = g_CramSortedTextureEntries;
     iVar10 = 0;
     do {
-      piVar1 = &pSVar9->rotation_applied;
-      piVar2 = &pSVar9->final_bottom;
-      piVar3 = &pSVar9->final_right;
-      piVar4 = &pSVar9->final_top;
-      piVar5 = &pSVar9->final_left;
-      piVar6 = &pSVar9->working_map_id;
-      piVar7 = &pSVar9->height;
-      piVar8 = &pSVar9->width;
-      pSVar9 = pSVar9 + 1;
+      piVar1 = &pCVar9->rotation_applied;
+      piVar2 = &pCVar9->final_bottom;
+      piVar3 = &pCVar9->final_right;
+      piVar4 = &pCVar9->final_top;
+      piVar5 = &pCVar9->final_left;
+      piVar6 = &pCVar9->working_map_id;
+      piVar7 = &pCVar9->height;
+      piVar8 = &pCVar9->width;
+      pCVar9 = pCVar9 + 1;
       iVar11 = iVar10 + 1;
       _fprintf(in_stack_00000004,"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar10,*piVar8,*piVar7,
                  *piVar6,*piVar5,*piVar4,*piVar3,*piVar2,*piVar1);

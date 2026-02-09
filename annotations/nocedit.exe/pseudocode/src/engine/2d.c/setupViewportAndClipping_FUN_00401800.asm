@@ -11,7 +11,7 @@
 ;
 ; XREF[6]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053971c
-;   core_setedit.cpp_UserInputCreate_FUN_0057d660 at 0057dbcf
+;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057dbcf
 ;   engine_matrix.c_pushViewport_FUN_0050e320 at 0050e43c
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f2ae
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 at 004a0d66

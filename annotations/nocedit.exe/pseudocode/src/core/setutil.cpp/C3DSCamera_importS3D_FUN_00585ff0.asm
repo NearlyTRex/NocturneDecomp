@@ -12,8 +12,8 @@
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[2]:
+;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057f796
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005791eb
-;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057f796
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_f_f_f_f_0064944f

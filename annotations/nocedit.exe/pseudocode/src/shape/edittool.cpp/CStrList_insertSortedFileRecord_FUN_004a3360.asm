@@ -43,7 +43,7 @@
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;   crt_string.c_strupr_FUN_00600770
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_strftime_FUN_006002d4
+;   crt_time.c__strftime_FUN_006002d4
 ;   engine_dosio.c_makePath_FUN_00481f50
 ;   engine_dosio.c_splitPath_FUN_00481f20
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
@@ -139,8 +139,8 @@ section .text
     PUSH EAX                            ; 004a3460
     LEA EDI,[ESP + 0x410]               ; 004a3461
     MOV ESI,0x679188                    ; 004a3468 | g_FilePathBuffer
-    CALL crt_time.c_strftime_FUN_006002d4 ; 004a346d
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 004a346d
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004a3472
     MOV ECX,0x41                        ; 004a3475
     MOV EBX,dword ptr [ESP + 0xb10]     ; 004a347a

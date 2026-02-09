@@ -4,32 +4,14 @@
       {
         "category": "other",
         "column": 4,
-        "line": 44,
+        "line": 42,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 44,
+        "line": 42,
         "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 61,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 42,
-        "line": 61,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 75,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
       }
     ],
     "success": false,
@@ -37,19 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 237,
+    "complexity_score": 207,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 3,
     "pseudocode_lines": 107,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
-      "stack_param",
-      "unresolved_funcptr",
-      "warning_type_propagation"
+      "stack_param"
     ],
     "total_lines": 400
   },
@@ -243,13 +223,6 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 10,
       "match": "extraout_EAX",
@@ -265,31 +238,24 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 41,
       "match": "ABS",
       "text": "if ((ABS(fStack_70) < (float)2) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 42,
       "match": "ABS",
-      "text": "((ABS(fStack_74) < (float)2 && (ABS(fStack_6c) < (float)2)))) {",
+      "text": "((ABS(CStack_7c.z) < (float)2 && (ABS(fStack_6c) < (float)2)))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 42,
       "match": "ABS",
-      "text": "((ABS(fStack_74) < (float)2 && (ABS(fStack_6c) < (float)2)))) {",
+      "text": "((ABS(CStack_7c.z) < (float)2 && (ABS(fStack_6c) < (float)2)))) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
-      "match": "code *",
-      "text": "this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(iVar2 + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -302,7 +268,7 @@
       "description": "Unresolved stack parameter",
       "line": 65,
       "match": "in_stack_00000008",
-      "text": "CStack_80.z = 2.0f * in_stack_00000008;",
+      "text": "CStack_7c.z = 2.0f * in_stack_00000008;",
       "type": "stack_param"
     },
     {

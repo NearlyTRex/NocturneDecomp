@@ -372,7 +372,7 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
   local_84.x = local_180.x;
   local_84.y = local_180.x;
   local_84.z = local_180.x;
-  if ((this_ptr->base).base.field47_0x2a8c == 0xe) {
+  if ((this_ptr->base).base.layer_action_index == 0xe) {
     pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&local_d8,&g_ZeroVector,
                         (CMatrix3x4f *)

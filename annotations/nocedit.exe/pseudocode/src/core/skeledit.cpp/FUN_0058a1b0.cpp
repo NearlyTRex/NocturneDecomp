@@ -13,7 +13,7 @@ int __cdecl core_skeledit_cpp_FUN_0058a1b0(void)
   char *in_stack_00000008;
   int local_10;
   
-  __STK(0x2c);
+  __STK();
   local_10 = -1;
   sscanf
             (in_stack_00000008,"\"%[^\"]\", \"%[^\"]\", \"%[^\"]\"%n",in_stack_00000004,in_stack_00000004 + 0x100,

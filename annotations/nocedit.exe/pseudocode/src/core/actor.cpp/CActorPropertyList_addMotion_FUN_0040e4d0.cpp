@@ -14,7 +14,8 @@ core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0
   CActorProperty *pCVar1;
   
   pCVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
-                     (this_ptr,PROP_MOTION,property_name,data_ptr,(void *)0x0);
+                     (this_ptr,PROP_MOTION,property_name,data_ptr,(CActorPropertyValidatorFunc *)0x0
+                     );
   pCVar1->auto_update_flag = 1;
   return pCVar1;
 }

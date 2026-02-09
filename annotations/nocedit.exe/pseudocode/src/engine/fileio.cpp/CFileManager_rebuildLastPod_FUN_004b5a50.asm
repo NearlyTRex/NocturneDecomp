@@ -102,7 +102,7 @@
 ;   crt_stdio.c_ftell_FUN_00601560
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   crt_string.c_stricmp_FUN_005fe7f0
-;   crt_time.c_time_FUN_006001f0
+;   crt_time.c__time_FUN_006001f0
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
 ;   engine_dosio.c_getFileTimestamp_FUN_00481960
 ;   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
@@ -276,8 +276,8 @@ section .text
     POP EDI                             ; 004b5be3
         ;   Label: LAB_004b5be3
     PUSH 0x2d129b0                      ; 004b5be4 | g_PodCreationTime
-    CALL crt_time.c_time_FUN_006001f0   ; 004b5be9
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c__time_FUN_006001f0  ; 004b5be9
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 004b5bee
     MOV EAX,ESP                         ; 004b5bf1
     PUSH EAX                            ; 004b5bf3

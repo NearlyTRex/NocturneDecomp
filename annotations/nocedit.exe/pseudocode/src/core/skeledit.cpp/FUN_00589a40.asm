@@ -34,7 +34,7 @@ section .text
     PUSH 0x1c                           ; 00589a40
         ;   Label: core_skeledit.cpp_FUN_00589a40
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589a45
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 00589a4a
     PUSH 0x144                          ; 00589a4b
     PUSH 0x649d66                       ; 00589a50 | = "..\\core\\skeledit.cpp"

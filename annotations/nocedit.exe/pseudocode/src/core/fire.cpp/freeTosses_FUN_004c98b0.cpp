@@ -11,6 +11,6 @@ CToss * __cdecl core_fire_cpp_freeTosses_FUN_004c98b0(CToss *objs)
 {
   CToss *pCVar1;
   
-  pCVar1 = __arrfini(objs,0x14,&g_CTossTypeInfo);
+  pCVar1 = (CToss *)__arrfini(objs,0x14,&g_CTossTypeInfo);
   return pCVar1;
 }

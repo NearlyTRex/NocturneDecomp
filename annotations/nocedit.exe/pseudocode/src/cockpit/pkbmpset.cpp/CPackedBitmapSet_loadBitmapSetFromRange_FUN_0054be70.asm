@@ -41,7 +41,7 @@ section .text
     ADD ESP,0x4                         ; 0054be8f
     PUSH EDI                            ; 0054be92
     CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0 ; 0054be93
-        ;   XREF to: 0054bcd0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitmapSet * this_ptr)
+        ;   XREF to: 0054bcd0 (UNCONDITIONAL_CALL)  ; CPackedBitmapSet * cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitmapSet * this_ptr)
     MOV EAX,EBP                         ; 0054be98
     SUB EAX,ESI                         ; 0054be9a
     ADD ESP,0x4                         ; 0054be9c

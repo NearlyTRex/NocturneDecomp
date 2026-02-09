@@ -62,10 +62,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
       local_14 = local_30;
       this_ptr_00 = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
-      this_ptr_00->unk[0xb6c] = '\x01';
-      this_ptr_00->unk[0xb6d] = '\0';
-      this_ptr_00->unk[0xb6e] = '\0';
-      this_ptr_00->unk[0xb6f] = '\0';
+      this_ptr_00->dont_pick_me_up = 1;
       core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr_00);
       *(CBodyPart **)local_1c->unk2 = this_ptr_00;
       pCVar5 = &(this_ptr_00->base).location;

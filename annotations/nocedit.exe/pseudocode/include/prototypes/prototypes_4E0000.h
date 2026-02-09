@@ -210,7 +210,7 @@ _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0 (char *base_f
 char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004eece0(int type);
 char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004eed80(int type);
 uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004eee20(int type);
-void __cdecl core_ground_cpp_CGround_ctor_FUN_004eee80(CGround *this_ptr,int width,int height);
+CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004eee80(CGround *this_ptr,int width,int height);
 CGround * __cdecl core_ground_cpp_CGround_dtor_FUN_004eeee0(CGround *this_ptr);
 void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr);
 void __cdecl core_ground_cpp_CGround_free_FUN_004eefb0(CGround *this_ptr);

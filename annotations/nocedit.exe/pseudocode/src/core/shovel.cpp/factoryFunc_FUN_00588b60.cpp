@@ -11,7 +11,7 @@ CShovel * __cdecl core_shovel_cpp_factoryFunc_FUN_00588b60(void)
 {
   CShovel *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\shovel.cpp",0x20);
+  pCVar1 = (CShovel *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\shovel.cpp",0x20);
   if (pCVar1 == (CShovel *)0x0) {
     return (CShovel *)0x0;
   }

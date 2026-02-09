@@ -1,0 +1,603 @@
+{
+  "complexity": {
+    "assembly_lines": 533,
+    "complexity_score": 730,
+    "cross_reference_count": 10,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 290,
+    "suspect_count": 40,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "extra_output",
+      "pointer_cast",
+      "register_param",
+      "segment_register",
+      "special_crt_function",
+      "unknown_field",
+      "warning_unreachable"
+    ],
+    "total_lines": 823
+  },
+  "cross_references": [
+    {
+      "addr": "00567630",
+      "from_addr": "005676c1",
+      "name": "core_script.cpp_CScript_FUN_00567630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056fbd0",
+      "from_addr": "0056fca3",
+      "name": "core_set.cpp_CDemonSet_FUN_0056fbd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004070c0",
+      "from_addr": "00407113",
+      "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048da80",
+      "from_addr": "0048dadd",
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f650",
+      "from_addr": "0054fa6a",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00446160",
+      "from_addr": "0044625a",
+      "name": "shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00444d90",
+      "from_addr": "00444e79",
+      "name": "shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00445820",
+      "from_addr": "0044585a",
+      "name": "shape_cramtex.cpp_generateTextureAtlas_FUN_00445820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00467850",
+      "from_addr": "00467d07",
+      "name": "shape_design.c_vertexReducer_FUN_00467850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a2f00",
+      "from_addr": "004a2f59",
+      "name": "shape_edittool.cpp_CStrList_sort_FUN_004a2f00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005fdf38",
+    "address_range": [
+      [
+        "005fdf38",
+        "005fe5de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdlib.c__qsort_FUN_005fdf38",
+    "signature": "void __cdecl crt_stdlib_c__qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdea0",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_median_of_3_FUN_005fdea0"
+    },
+    {
+      "addr": "005fdf10",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_memory_swap_FUN_005fdf10"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.633569739952718,
+    "instruction_count": 423,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 34,
+      "BOOL_OR": 10,
+      "BRANCH": 14,
+      "CALL": 9,
+      "CALLIND": 3,
+      "CALLOTHER": 8,
+      "CBRANCH": 41,
+      "COPY": 319,
+      "INT_ADD": 204,
+      "INT_AND": 257,
+      "INT_CARRY": 22,
+      "INT_DIV": 4,
+      "INT_EQUAL": 203,
+      "INT_LEFT": 6,
+      "INT_LESS": 41,
+      "INT_MULT": 20,
+      "INT_NOTEQUAL": 21,
+      "INT_OR": 25,
+      "INT_REM": 4,
+      "INT_RIGHT": 7,
+      "INT_SBORROW": 49,
+      "INT_SCARRY": 25,
+      "INT_SEXT": 18,
+      "INT_SLESS": 103,
+      "INT_SUB": 102,
+      "INT_XOR": 6,
+      "INT_ZEXT": 18,
+      "LOAD": 157,
+      "POPCOUNT": 98,
+      "RETURN": 1,
+      "STORE": 108,
+      "SUBPIECE": 20
+    },
+    "pcode_op_count": 1960
+  },
+  "stack_frame": {
+    "frame_size": 128,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "SIZE_T"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "QSORT_COMPARATOR"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "SIZE_T"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "base",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "num",
+        "offset": 8,
+        "size": 4,
+        "type": "SIZE_T"
+      },
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 12,
+        "size": 4,
+        "type": "SIZE_T"
+      },
+      {
+        "is_param": true,
+        "name": "compar",
+        "offset": 16,
+        "size": 4,
+        "type": "QSORT_COMPARATOR"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005fe232) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "text": "void *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EAX_00",
+      "text": "void *extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 26,
+      "match": "in_GS",
+      "text": "ushort in_GS;",
+      "type": "register_param"
+    },
+    {
+      "description": "Segment register input (TLS or unusual code)",
+      "line": 26,
+      "match": "in_GS",
+      "text": "ushort in_GS;",
+      "type": "segment_register"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 53,
+      "match": "in_GS",
+      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._2_2_",
+      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "CONCAT22",
+      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Segment register input (TLS or unusual code)",
+      "line": 53,
+      "match": "in_GS",
+      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
+      "type": "segment_register"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)",
+      "text": "b = (int *)((int)local_48 + (num >> 1) * size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(void *)((int)",
+      "text": "pvVar4 = (void *)((int)local_48 + (num - 1) * size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(void *)((int)",
+      "text": "(local_48,(void *)((int)local_48 + iVar8),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(void *)((int)",
+      "text": "(void *)((int)local_48 + local_68),local_3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)b - iVar8),b,(int *)((int)b + iVar8),local_3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(int *)((int)",
+      "text": "((void *)((int)b - iVar8),b,(int *)((int)b + iVar8),local_3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)pvVar4 - local_68),(void *)((int)pvVar4 - iVar8),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)pvVar4 - local_68),(void *)((int)pvVar4 - iVar8),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(void *)((int)",
+      "text": "pvVar7 = (void *)((int)local_48 + (num - 1) * size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 121,
+      "match": "extraout_EAX",
+      "text": "ptr1 = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(void *)((int)",
+      "text": "local_2c = (void *)((int)local_2c + size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(void *)((int)",
+      "text": "local_20 = (void *)((int)local_20 + size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 142,
+      "match": "extraout_EAX_00",
+      "text": "ptr1 = extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(void *)((int)",
+      "text": "local_28 = (void *)((int)local_28 - size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(void *)((int)",
+      "text": "local_28 = (void *)((int)local_28 + size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(void *)((int)",
+      "text": "pvVar4 = (void *)((int)local_2c - size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 171,
+      "match": "(void *)((int)",
+      "text": "pvVar7 = (void *)((int)local_48 + num * size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 178,
+      "match": "(uint *)((int)",
+      "text": "puVar10 = (uint *)((int)local_28 - uVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 197,
+      "match": "(uint *)((int)",
+      "text": "puVar9 = (uint *)((int)puVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 199,
+      "match": "(uint *)((int)",
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 208,
+      "match": "(uint *)((int)",
+      "text": "puVar10 = (uint *)((int)pvVar7 - uVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 227,
+      "match": "(uint *)((int)",
+      "text": "puVar9 = (uint *)((int)puVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 229,
+      "match": "(uint *)((int)",
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 239,
+      "match": "(void *)((int)",
+      "text": "local_48 = (void *)((int)pvVar7 - uVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 253,
+      "match": "(void *)((int)",
+      "text": "local_50 = (void *)((int)local_48 + num * size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 255,
+      "match": "(void *)((int)",
+      "text": "local_4c = (void *)((int)local_48 + local_40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 257,
+      "match": "(void *)((int)",
+      "text": "if ((void *)((int)local_48 + local_40) < local_50) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 262,
+      "match": "(uint *)((int)",
+      "text": "puVar10 = (uint *)((int)local_20 - local_40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 274,
+      "match": "(uint *)((int)",
+      "text": "puStack_18 = (uint *)((int)puStack_18 - local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 278,
+      "match": "(void *)((int)",
+      "text": "local_4c = (void *)((int)local_4c + local_40);",
+      "type": "pointer_cast"
+    },
+    {
+      "address": "005fdf38",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdlib.c__qsort_FUN_005fdf38",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005fdf38",
+      "type": "special_crt_function"
+    }
+  ]
+}

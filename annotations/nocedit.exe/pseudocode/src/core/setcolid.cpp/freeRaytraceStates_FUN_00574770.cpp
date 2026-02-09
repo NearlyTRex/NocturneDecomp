@@ -11,6 +11,6 @@ SRaytraceState * __cdecl core_setcolid_cpp_freeRaytraceStates_FUN_00574770(SRayt
 {
   SRaytraceState *pSVar1;
   
-  pSVar1 = __arrfini(objs,5,&g_SRaytraceStateTypeInfo);
+  pSVar1 = (SRaytraceState *)__arrfini(objs,5,&g_SRaytraceStateTypeInfo);
   return pSVar1;
 }

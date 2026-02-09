@@ -61,7 +61,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
   int local_18;
   uint local_14;
   
-  __STK(0x38c);
+  __STK();
   local_70 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ((char *)this_ptr,(char *)0x0,"wt","..\\core\\skeledit.cpp",
                         0x155d);

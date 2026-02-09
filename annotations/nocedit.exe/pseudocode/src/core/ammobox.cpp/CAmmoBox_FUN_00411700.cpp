@@ -24,7 +24,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr,CInventor
   if (this_ptr->ammo_count == 0) {
     return;
   }
-  pCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x31c,"..\\core\\ammobox.cpp",0xa1);
+  pCVar2 = (CAmmo *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x31c,"..\\core\\ammobox.cpp",0xa1);
   this_ptr_00 = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(pCVar2);

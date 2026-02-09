@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeledit_cpp_FUN_005925c0(void)
+; __cdecl int __cdecl core_skeledit_cpp_FUN_005925c0(void *ptr)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   ptr
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_FUN_00592690 at 00593c46
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00593c46
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_skipTo_0064bfff
@@ -26,7 +28,7 @@ section .text
     PUSH 0x10                           ; 005925c0
         ;   Label: core_skeledit.cpp_FUN_005925c0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 005925c5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 005925ca
     MOV EBX,dword ptr [ESP + 0x8]       ; 005925cb
     PUSH 0x64bfff                       ; 005925cf | = "skipTo"

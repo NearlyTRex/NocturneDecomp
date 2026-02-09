@@ -7,7 +7,7 @@
 ; C3DSCamera *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057fa2e
+;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057fa2e
 ;
 ; Called Functions:
 ;   core_setutil.cpp_C3DSCamera_free_FUN_00585360

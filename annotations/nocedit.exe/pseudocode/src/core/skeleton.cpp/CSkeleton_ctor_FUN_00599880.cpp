@@ -9,18 +9,18 @@
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00599880(CSkeleton *this_ptr)
 
 {
-  int extraout_EAX;
-  uint *puVar1;
+  CMotionList *pCVar1;
+  uint *puVar2;
   
-  __STK(0x10);
-  core_motion_cpp_CMotionList_ctor_FUN_0052cd50(&this_ptr->motion_list);
-  puVar1 = __arrinit
-                     ((void *)(extraout_EAX + 0x2937c),100,&g_CVectorTypeInfo);
-  puVar1[-0x389] = 0;
-  puVar1[-4] = 0;
-  puVar1[-3] = 0;
-  puVar1[-2] = 0;
-  puVar1[-1] = 0;
-  *puVar1 = 0xc7c34f80;
-  return (CSkeleton *)(puVar1 + -0xa4df);
+  __STK();
+  pCVar1 = core_motion_cpp_CMotionList_ctor_FUN_0052cd50(&this_ptr->motion_list);
+  puVar2 = __arrinit
+                     (&pCVar1[1].motions[0].signals[0xc].value,100,&g_CVectorTypeInfo);
+  puVar2[-0x389] = 0;
+  puVar2[-4] = 0;
+  puVar2[-3] = 0;
+  puVar2[-2] = 0;
+  puVar2[-1] = 0;
+  *puVar2 = 0xc7c34f80;
+  return (CSkeleton *)(puVar2 + -0xa4df);
 }

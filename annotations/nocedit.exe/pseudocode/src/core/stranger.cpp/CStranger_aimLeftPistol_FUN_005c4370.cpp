@@ -35,29 +35,26 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
   float fStack_18;
   float fStack_14;
   
-  if (*(int *)(this_ptr->unk5 + 8) == 0) {
+  if (this_ptr->weapon == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\stranger.cpp";
     g_CurrentLineNumber = 0x10c0;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStranger::aimLeftPistol - no weapon?");
   }
-  (**(code **)(*(int *)(*(int *)(this_ptr->unk5 + 8) + 0x154) + 0xf4))();
+  (*(((this_ptr->weapon->vtable)._uc)->_uc).cfunc3)();
   bone_index = INT_03f6bad8;
   fStack_24 = -1.3089969;
   fStack_2c = 0.5235988;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (*(CDemonActor **)(this_ptr->unk5 + 8),&CStack_a8,&local_9c);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr->weapon,&CStack_a8,&local_9c);
   CStack_3c.x = 0.0;
   CStack_3c.y = 0.0;
   CStack_3c.z = 1000.0;
-  core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            (*(CDemonActor **)(this_ptr->unk5 + 8),&CStack_84,&CStack_3c);
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr->weapon,&CStack_84,&CStack_3c);
   CStack_90.x = CStack_a8.x + CStack_84.x;
   CStack_90.y = CStack_a8.y + CStack_84.y;
   CStack_90.z = CStack_a8.z + CStack_84.z;
   core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270
             (g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
-            (g_CDemonSetPtr,*(CDemonActor **)(this_ptr->unk5 + 8));
+  core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr->weapon);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   fStack_bc = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&CStack_a8,&CStack_90)
   ;

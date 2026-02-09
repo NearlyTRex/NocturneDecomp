@@ -15,7 +15,7 @@ section .text
     PUSH 0x14                           ; 00596860
         ;   Label: core_skeledit.cpp_FUN_00596860
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 00596865
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0059686a
     MOV EBX,dword ptr [ESP + 0x8]       ; 0059686b
     LEA EDX,[EBX + 0x1]                 ; 0059686f

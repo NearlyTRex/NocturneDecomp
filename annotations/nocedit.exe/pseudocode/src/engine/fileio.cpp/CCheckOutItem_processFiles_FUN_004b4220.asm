@@ -79,7 +79,7 @@
 ;   crt_stdio.c_rename_FUN_006015d0
 ;   crt_stdio.c_setvbuf_FUN_00601490
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_time_FUN_006001f0
+;   crt_time.c__time_FUN_006001f0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_dosio.c_copyFileTimestamp_FUN_00481910
 ;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
@@ -1203,8 +1203,8 @@ section .text
         ;   XREF to: 004b4d50 (UNCONDITIONAL_JUMP)  ; LAB_004b4d50
     PUSH 0x0                            ; 004b4e5d
         ;   Label: LAB_004b4e5d
-    CALL crt_time.c_time_FUN_006001f0   ; 004b4e5f
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_FUN_006001f0(time_t * optional_output)
+    CALL crt_time.c__time_FUN_006001f0  ; 004b4e5f
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 004b4e64
     MOV dword ptr [ESP + 0x1384],EAX    ; 004b4e67
     LEA EAX,[ESP + 0x1384]              ; 004b4e6e

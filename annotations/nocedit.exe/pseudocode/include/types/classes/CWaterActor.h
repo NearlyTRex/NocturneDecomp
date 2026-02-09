@@ -10,7 +10,7 @@
 typedef struct CWaterActor {
     CDemonActor base; // 0x0
     CVector3f size; // 0x158
-    undefined4 opacity; // 0x164
+    int opacity; // 0x164
     float height_delta; // 0x168
     float time_to_move; // 0x16c
     float time_to_move_down; // 0x170

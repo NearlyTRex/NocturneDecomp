@@ -10,6 +10,6 @@ void __cdecl
 core_bodypart_cpp_CBodyPart_pickup_FUN_00419fc0(CBodyPart *this_ptr,CDemonActor *carrier)
 
 {
-  *(CDemonActor **)(this_ptr->unk + 0xdd0) = carrier;
+  this_ptr->carried_by_actor = carrier;
   return;
 }

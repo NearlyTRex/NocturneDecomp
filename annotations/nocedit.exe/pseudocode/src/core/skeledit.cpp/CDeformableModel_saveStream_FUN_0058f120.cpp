@@ -43,7 +43,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
   int local_1c;
   int local_18;
   
-  __STK(0x74);
+  __STK();
   pCVar16 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_00000004);
   iVar13 = pCVar16->bone_count;
   _fprintf((_FILE *)this_ptr,"// version\n");

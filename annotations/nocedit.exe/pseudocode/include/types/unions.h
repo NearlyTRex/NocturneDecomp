@@ -10,4 +10,5 @@
 #include "types/unions/UActorPropertyParam.h"
 #include "types/unions/UActorVTable.h"
 #include "types/unions/UCodeCommandData.h"
+#include "types/unions/UOrientationVector.h"
 

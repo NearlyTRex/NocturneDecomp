@@ -30,9 +30,9 @@
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da211
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e508
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539525
-;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 00580680
-;   core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 at 0057b033
-;   core_setedit.cpp_FUN_00581320 at 005813b7
+;   core_setedit.cpp_CDemonSet_FUN_0057ae50 at 0057b033
+;   core_setedit.cpp_CDemonSet_FUN_005805a0 at 00580680
+;   core_setedit.cpp_CDemonSet_FUN_00581320 at 005813b7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_comp_3_2f_3_2f_actren_3__00645d6b

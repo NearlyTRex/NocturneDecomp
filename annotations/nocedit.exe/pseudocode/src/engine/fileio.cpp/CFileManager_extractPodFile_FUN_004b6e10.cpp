@@ -75,7 +75,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   iVar2 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);
   if (iVar2 == 0) {
     p_Var3 = _localtime((time_t *)(local_e80 + 0x100));
-    strftime(local_444,0x100,"%m/%d/%Y",p_Var3);
+    _strftime(local_444,0x100,"%m/%d/%Y",p_Var3);
     iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Warning!  This .POD file has an invalid CRC.  If it's date is earlier\nthan 07/28/1998, it has no CRC, and you should ignore this message.\n\n%s %s\n\nDo you wish to continue?");
     if (iVar2 == 0) {
@@ -130,9 +130,9 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
       if ((this_ptr->operation_mode != 0) && (((local_14 == 0 || (local_14 == 1)) && (iVar4 != 0))))
       {
         p_Var3 = _localtime((time_t *)&local_658.timestamp);
-        strftime(local_344,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var3);
+        _strftime(local_344,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var3);
         p_Var3 = _localtime(local_40 + 2);
-        strftime(local_144,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var3);
+        _strftime(local_144,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var3);
         file_size = local_658.file_size;
         _sprintf
                   (local_e80 + 0x428,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_658.target_path);

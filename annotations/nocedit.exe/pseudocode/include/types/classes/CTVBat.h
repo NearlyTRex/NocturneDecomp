@@ -10,7 +10,7 @@
 // Ghidra size: 0xc0f4 (49396 bytes)
 typedef struct CTVBat {
     CEnemy base; // 0x0
-    char unk1[12]; // 0xbeb4
+    int unk1; // 0xbebc
     CKeyFramedModelInstance model; // 0xbec0
     float speed; // 0xc03c
     int unk2; // 0xc040

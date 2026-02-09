@@ -14,7 +14,7 @@ int __cdecl core_skeledit_cpp_FUN_0058b200(void)
   uint *in_stack_00000004;
   uint *in_stack_00000008;
   
-  __STK(0x14);
+  __STK();
   if (*in_stack_00000004 != *in_stack_00000008) {
     return 0;
   }

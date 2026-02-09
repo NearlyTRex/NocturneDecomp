@@ -26,27 +26,15 @@
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 112,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 112,
-        "message": "expected expression"
-      },
-      {
         "category": "incompatible_types",
         "column": 19,
-        "line": 199,
+        "line": 200,
         "message": "assigning to 'CHotDemon *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 264,
+        "line": 265,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -55,19 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 628,
-    "complexity_score": 361,
+    "complexity_score": 347,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
-    "pseudocode_lines": 261,
-    "suspect_count": 8,
+    "pseudocode_lines": 262,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 889
+    "total_lines": 890
   },
   "cross_references": [],
   "function": {
@@ -574,14 +561,14 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 20,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 21,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
@@ -597,7 +584,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "SQRT",
-      "text": "if (SQRT(fVar7 * fVar7 + fVar11 * fVar11 + fVar6 * fVar6) < (this_ptr->base).guard_distance)",
+      "text": "if (SQRT(fVar8 * fVar8 + fVar12 * fVar12 + fVar7 * fVar7) < (this_ptr->base).guard_distance)",
       "type": "decompiler_intrinsic"
     },
     {
@@ -608,17 +595,10 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 105,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 113,
       "match": "SQRT",
-      "text": "SQRT(fVar7 * fVar7 + fVar11 * fVar11 + fVar6 * fVar6) < 15.0f)) &&",
+      "text": "SQRT(fVar8 * fVar8 + fVar12 * fVar12 + fVar7 * fVar7) < 15.0f)) &&",
       "type": "decompiler_intrinsic"
     }
   ],

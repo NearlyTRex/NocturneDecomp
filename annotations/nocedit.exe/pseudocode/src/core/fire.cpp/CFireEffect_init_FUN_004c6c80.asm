@@ -33,13 +33,13 @@
 ;   ... and 49 more
 ;
 ; Called Functions:
-;   core_fire.cpp_CCrater_ctor_FUN_004c41e0
+;   core_fire.cpp_CCrater_reset_FUN_004c41e0
 ;   core_fire.cpp_CExplosion_ctor_FUN_004c38c0
-;   core_fire.cpp_CGunFlame_ctor_FUN_004c4da0
-;   core_fire.cpp_CLightningBolt_ctor_FUN_004c5630
-;   core_fire.cpp_CSmokeParticle_ctor_FUN_004bf2e0
-;   core_fire.cpp_CToss_init_FUN_004c3ed0
-;   core_fire.cpp_CTrail_ctor_FUN_004c5de0
+;   core_fire.cpp_CGunFlame_reset_FUN_004c4da0
+;   core_fire.cpp_CLightningBolt_reset_FUN_004c5630
+;   core_fire.cpp_CSmokeParticle_reset_FUN_004bf2e0
+;   core_fire.cpp_CToss_reset_FUN_004c3ed0
+;   core_fire.cpp_CTrail_reset_FUN_004c5de0
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     MOV dword ptr [0x02d141e8],EDX      ; 004c6c90 | g_SmokeParticleAllocIndex
     PUSH EBX                            ; 004c6c96 | g_SmokeParticlePool | DAT_02d14218
         ;   Label: LAB_004c6c96
-    CALL core_fire.cpp_CSmokeParticle_ctor_FUN_004bf2e0 ; 004c6c97
-        ;   XREF to: 004bf2e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_ctor_FUN_004bf2e0(CSmokeParticle * this_ptr)
+    CALL core_fire.cpp_CSmokeParticle_reset_FUN_004bf2e0 ; 004c6c97
+        ;   XREF to: 004bf2e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_reset_FUN_004bf2e0(CSmokeParticle * this_ptr)
     ADD EBX,0x2c                        ; 004c6c9c | DAT_02d14218
     ADD ESP,0x4                         ; 004c6c9f
     CMP EBX,ESI                         ; 004c6ca2
@@ -144,8 +144,8 @@ section .text
     LEA ESI,[EBX + 0x4dd0]              ; 004c6db1 | g_TossActiveListHead
     PUSH EBX                            ; 004c6db7 | g_TossPool | DAT_02d67cb4
         ;   Label: LAB_004c6db7
-    CALL core_fire.cpp_CToss_init_FUN_004c3ed0 ; 004c6db8
-        ;   XREF to: 004c3ed0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CToss_init_FUN_004c3ed0(CToss * this_ptr)
+    CALL core_fire.cpp_CToss_reset_FUN_004c3ed0 ; 004c6db8
+        ;   XREF to: 004c3ed0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CToss_reset_FUN_004c3ed0(CToss * this_ptr)
     ADD EBX,0x3e4                       ; 004c6dbd | DAT_02d67cb4
     ADD ESP,0x4                         ; 004c6dc3
     CMP EBX,ESI                         ; 004c6dc6
@@ -158,8 +158,8 @@ section .text
     POP EDI                             ; 004c6ddd
     PUSH EBX                            ; 004c6dde | g_CraterPool | DAT_02d6c714
         ;   Label: LAB_004c6dde
-    CALL core_fire.cpp_CCrater_ctor_FUN_004c41e0 ; 004c6ddf
-        ;   XREF to: 004c41e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_ctor_FUN_004c41e0(CCrater * this_ptr)
+    CALL core_fire.cpp_CCrater_reset_FUN_004c41e0 ; 004c6ddf
+        ;   XREF to: 004c41e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_reset_FUN_004c41e0(CCrater * this_ptr)
     ADD EBX,0x70                        ; 004c6de4 | DAT_02d6c714
     ADD ESP,0x4                         ; 004c6de7
     CMP EBX,ESI                         ; 004c6dea
@@ -171,8 +171,8 @@ section .text
     MOV dword ptr [0x02d6cf64],EBP      ; 004c6dfb | g_CraterActiveListHead
     PUSH EBX                            ; 004c6e01 | g_GunFlamePool | DAT_02d6cf8c
         ;   Label: LAB_004c6e01
-    CALL core_fire.cpp_CGunFlame_ctor_FUN_004c4da0 ; 004c6e02
-        ;   XREF to: 004c4da0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_ctor_FUN_004c4da0(CGunFlame * this_ptr)
+    CALL core_fire.cpp_CGunFlame_reset_FUN_004c4da0 ; 004c6e02
+        ;   XREF to: 004c4da0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_reset_FUN_004c4da0(CGunFlame * this_ptr)
     ADD EBX,0x24                        ; 004c6e07 | DAT_02d6cf8c
     ADD ESP,0x4                         ; 004c6e0a
     CMP EBX,ESI                         ; 004c6e0d
@@ -184,8 +184,8 @@ section .text
     MOV [0x02d715b8],EAX                ; 004c6e1e | g_GunFlameActiveListHead
     PUSH EBX                            ; 004c6e23 | g_LightningBoltPool | DAT_02d715e8
         ;   Label: LAB_004c6e23
-    CALL core_fire.cpp_CLightningBolt_ctor_FUN_004c5630 ; 004c6e24
-        ;   XREF to: 004c5630 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_ctor_FUN_004c5630(CLightningBolt * this_ptr)
+    CALL core_fire.cpp_CLightningBolt_reset_FUN_004c5630 ; 004c6e24
+        ;   XREF to: 004c5630 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_reset_FUN_004c5630(CLightningBolt * this_ptr)
     ADD EBX,0x2c                        ; 004c6e29 | DAT_02d715e8
     ADD ESP,0x4                         ; 004c6e2c
     CMP EBX,ESI                         ; 004c6e2f
@@ -197,8 +197,8 @@ section .text
     MOV dword ptr [0x02d71774],EDX      ; 004c6e40 | g_LightningBoltActiveListHead
     PUSH EBX                            ; 004c6e46 | g_TrailPool | DAT_02d7179c
         ;   Label: LAB_004c6e46
-    CALL core_fire.cpp_CTrail_ctor_FUN_004c5de0 ; 004c6e47
-        ;   XREF to: 004c5de0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CTrail_ctor_FUN_004c5de0(CTrail * this_ptr)
+    CALL core_fire.cpp_CTrail_reset_FUN_004c5de0 ; 004c6e47
+        ;   XREF to: 004c5de0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CTrail_reset_FUN_004c5de0(CTrail * this_ptr)
     ADD EBX,0x24                        ; 004c6e4c | DAT_02d7179c
     ADD ESP,0x4                         ; 004c6e4f
     CMP EBX,ESI                         ; 004c6e52

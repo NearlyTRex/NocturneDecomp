@@ -11,7 +11,7 @@ CWayPoint * __cdecl core_waypoint_cpp_factoryFunc_FUN_005ebe30(void)
 {
   CWayPoint *pCVar1;
   
-  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x558,"..\\core\\waypoint.cpp",0x53);
+  pCVar1 = (CWayPoint *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x558,"..\\core\\waypoint.cpp",0x53);
   if (pCVar1 == (CWayPoint *)0x0) {
     return (CWayPoint *)0x0;
   }

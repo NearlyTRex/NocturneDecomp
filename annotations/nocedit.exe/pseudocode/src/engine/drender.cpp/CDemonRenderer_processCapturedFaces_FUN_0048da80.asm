@@ -26,7 +26,7 @@
 ;   SMRGLTextureBasic[100] g_CapturedTextureArray
 ;
 ; Called Functions:
-;   crt_stdlib.c_qsort_FUN_005fdf38
+;   crt_stdlib.c__qsort_FUN_005fdf38
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
@@ -69,8 +69,8 @@ section .text
     PUSH ESI                            ; 0048dad7
     PUSH 0x2c946f4                      ; 0048dad8 | g_CapturedFacePointers
         ;   Label: LAB_0048dad8
-    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 0048dadd
-        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
+    CALL crt_stdlib.c__qsort_FUN_005fdf38 ; 0048dadd
+        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 0048dae2
     MOV EAX,dword ptr [EBP + 0x10]      ; 0048dae5
     MOV dword ptr [EBP + 0x1c],0x0      ; 0048dae8

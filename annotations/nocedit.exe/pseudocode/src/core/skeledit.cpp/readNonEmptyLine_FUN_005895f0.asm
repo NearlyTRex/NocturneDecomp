@@ -9,7 +9,7 @@
 ; int              Stack[0x10]:4   require_content
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_FUN_00592690 at 00592a7a
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592a7a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeledit_cpp_00649cda
@@ -32,7 +32,7 @@ section .text
     PUSH 0x1c                           ; 005895f0
         ;   Label: core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 005895f5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 005895fa
     PUSH ESI                            ; 005895fb
     PUSH EDI                            ; 005895fc

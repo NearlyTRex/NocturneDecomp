@@ -11,6 +11,6 @@ CMorphModel * __cdecl core_morph_cpp_freeMorphModels_FUN_0052cd10(CMorphModel *o
 {
   CMorphModel *pCVar1;
   
-  pCVar1 = __arrfini(objs,2,&g_CMorphModelTypeInfo);
+  pCVar1 = (CMorphModel *)__arrfini(objs,2,&g_CMorphModelTypeInfo);
   return pCVar1;
 }

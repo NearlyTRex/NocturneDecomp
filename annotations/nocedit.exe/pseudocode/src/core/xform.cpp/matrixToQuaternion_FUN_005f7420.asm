@@ -16,7 +16,7 @@
 ; XREF[6]:
 ;   core_course.cpp_CCourse_importMatrices_FUN_00442ea0 at 00443006
 ;   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 at 0054ef87
-;   core_skeledit.cpp_FUN_00592690 at 00595af4
+;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00595af4
 ;   core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70 at 005f7ba2
 ;   core_xform.cpp_eulerToQuaternion_FUN_005f7b20 at 005f7b52
 ;   core_xform.cpp_lerpMatrix3x4_FUN_005f7140 at 005f71ac

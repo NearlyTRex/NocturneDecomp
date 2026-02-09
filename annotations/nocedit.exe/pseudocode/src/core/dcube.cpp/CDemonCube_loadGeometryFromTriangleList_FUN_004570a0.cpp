@@ -130,7 +130,7 @@ core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
       local_20 = ground_types;
       do {
         pCVar3 = this_ptr->vertex_buffer;
-        core_dcube_cpp_CDemonCubeTriangle_ctor_FUN_00455430
+        core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430
                   ((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar8),
                    pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5),
                    pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 4),

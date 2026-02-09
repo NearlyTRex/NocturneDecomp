@@ -25,7 +25,7 @@ CHero * __cdecl CHero::ctor(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_dtor_FUN_004f2470
 // Address: 004f2470
-void __cdecl CHero::dtor(CHero *this_ptr,uint flags);
+CHero * __cdecl CHero::dtor(CHero *this_ptr,uint flags);
 
 // Original: core_hero.cpp_CHero_setup_FUN_004f2540
 // Address: 004f2540

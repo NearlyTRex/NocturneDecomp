@@ -24,7 +24,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005f1980(CWerewolf *this_pt
   }
   if (3 < g_CWerewolfClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)(this_ptr->unk4 + 0xc),"chainAnchor");
+              ((CDemonActor *)&this_ptr->chain_anchor,"chainAnchor");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->chain_length,"chainLength");
   }
   if (4 < g_CWerewolfClassVersion) {
@@ -35,7 +35,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005f1980(CWerewolf *this_pt
   }
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->phase,"phase");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->phase_timer,"phaseTimer");
-  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)this_ptr->unk5,"alpha1");
-  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)(this_ptr->unk5 + 4),"alpha2");
+  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->alpha1,"alpha1");
+  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->alpha2,"alpha2");
   return;
 }

@@ -24,8 +24,7 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr)
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   iVar8 = 0;
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)this_ptr->unk1);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   if (0 < this_ptr->tire_count) {
     this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr->unk2 + 0x14);
     do {
@@ -34,74 +33,73 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr)
       this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
     } while (iVar8 < this_ptr->tire_count);
   }
-  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     ((CKeyFramedModelInstance *)this_ptr->unk1);
+  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   pCVar1 = pCVar4->frame_bounds;
   local_1c = pCVar1[1].x - pCVar1->x;
   local_18 = pCVar1[1].y - pCVar1->y;
   local_14 = pCVar1[1].z - pCVar1->z;
-  if ((float *)(this_ptr->unk1 + 0x7d4) != &local_1c) {
-    *(float *)(this_ptr->unk1 + 0x7d4) = local_1c;
-    *(float *)(this_ptr->unk1 + 0x7d8) = local_18;
-    *(float *)(this_ptr->unk1 + 0x7dc) = local_14;
+  if ((float *)(this_ptr->unk1 + 0x658) != &local_1c) {
+    *(float *)(this_ptr->unk1 + 0x658) = local_1c;
+    *(float *)(this_ptr->unk1 + 0x65c) = local_18;
+    *(float *)(this_ptr->unk1 + 0x660) = local_14;
   }
-  fVar2 = *(float *)(this_ptr->unk1 + 0x7c0) * (float)0.03125;
-  *(float *)(this_ptr->unk1 + 0x7c4) = fVar2;
+  fVar2 = *(float *)(this_ptr->unk1 + 0x644) * (float)0.03125;
+  *(float *)(this_ptr->unk1 + 0x648) = fVar2;
   fVar3 = (float)0.083333333333333301;
-  *(float *)(this_ptr->unk1 + 0x7c8) =
+  *(float *)(this_ptr->unk1 + 0x64c) =
        fVar2 * fVar3 *
-       (*(float *)(this_ptr->unk1 + 0x7dc) * *(float *)(this_ptr->unk1 + 0x7dc) +
-       *(float *)(this_ptr->unk1 + 0x7d8) * *(float *)(this_ptr->unk1 + 0x7d8));
-  *(float *)(this_ptr->unk1 + 0x7cc) =
-       *(float *)(this_ptr->unk1 + 0x7c4) * fVar3 *
-       (*(float *)(this_ptr->unk1 + 0x7dc) * *(float *)(this_ptr->unk1 + 0x7dc) +
-       *(float *)(this_ptr->unk1 + 0x7d4) * *(float *)(this_ptr->unk1 + 0x7d4));
-  *(float *)(this_ptr->unk1 + 2000) =
-       (*(float *)(this_ptr->unk1 + 0x7d8) * *(float *)(this_ptr->unk1 + 0x7d8) +
-       *(float *)(this_ptr->unk1 + 0x7d4) * *(float *)(this_ptr->unk1 + 0x7d4)) *
-       *(float *)(this_ptr->unk1 + 0x7c4) * fVar3;
-  this_ptr->unk1[0x798] = '\0';
-  this_ptr->unk1[0x799] = '\0';
-  this_ptr->unk1[0x79a] = '\0';
-  this_ptr->unk1[0x79b] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x794) = *(uint *)(this_ptr->unk1 + 0x798);
-  *(uint *)(this_ptr->unk1 + 0x790) = *(uint *)(this_ptr->unk1 + 0x794);
-  this_ptr->unk1[0x7bc] = '\0';
-  this_ptr->unk1[0x7bd] = '\0';
-  this_ptr->unk1[0x7be] = '\0';
-  this_ptr->unk1[0x7bf] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x7b8) = *(uint *)(this_ptr->unk1 + 0x7bc);
-  *(uint *)(this_ptr->unk1 + 0x7b4) = *(uint *)(this_ptr->unk1 + 0x7b8);
-  this_ptr->unk1[0x780] = '\0';
-  this_ptr->unk1[0x781] = '\0';
-  this_ptr->unk1[0x782] = '\0';
-  this_ptr->unk1[0x783] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x77c) = *(uint *)(this_ptr->unk1 + 0x780);
-  *(uint *)(this_ptr->unk1 + 0x778) = *(uint *)(this_ptr->unk1 + 0x77c);
-  this_ptr->unk1[0x7a4] = '\0';
-  this_ptr->unk1[0x7a5] = '\0';
-  this_ptr->unk1[0x7a6] = '\0';
-  this_ptr->unk1[0x7a7] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x7a0) = *(uint *)(this_ptr->unk1 + 0x7a4);
-  *(uint *)(this_ptr->unk1 + 0x79c) = *(uint *)(this_ptr->unk1 + 0x7a0);
-  this_ptr->unk1[0x78c] = '\0';
-  this_ptr->unk1[0x78d] = '\0';
-  this_ptr->unk1[0x78e] = '\0';
-  this_ptr->unk1[0x78f] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x788) = *(uint *)(this_ptr->unk1 + 0x78c);
-  *(uint *)(this_ptr->unk1 + 0x784) = *(uint *)(this_ptr->unk1 + 0x788);
-  this_ptr->unk1[0x7b0] = '\0';
-  this_ptr->unk1[0x7b1] = '\0';
-  this_ptr->unk1[0x7b2] = '\0';
-  this_ptr->unk1[0x7b3] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x7ac) = *(uint *)(this_ptr->unk1 + 0x7b0);
-  *(uint *)(this_ptr->unk1 + 0x7a8) = *(uint *)(this_ptr->unk1 + 0x7ac);
-  this_ptr->unk1[0x774] = '\0';
-  this_ptr->unk1[0x775] = '\0';
-  this_ptr->unk1[0x776] = '\0';
-  this_ptr->unk1[0x777] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x770) = *(uint *)(this_ptr->unk1 + 0x774);
-  *(uint *)(this_ptr->unk1 + 0x76c) = *(uint *)(this_ptr->unk1 + 0x770);
+       (*(float *)(this_ptr->unk1 + 0x660) * *(float *)(this_ptr->unk1 + 0x660) +
+       *(float *)(this_ptr->unk1 + 0x65c) * *(float *)(this_ptr->unk1 + 0x65c));
+  *(float *)(this_ptr->unk1 + 0x650) =
+       *(float *)(this_ptr->unk1 + 0x648) * fVar3 *
+       (*(float *)(this_ptr->unk1 + 0x660) * *(float *)(this_ptr->unk1 + 0x660) +
+       *(float *)(this_ptr->unk1 + 0x658) * *(float *)(this_ptr->unk1 + 0x658));
+  *(float *)(this_ptr->unk1 + 0x654) =
+       (*(float *)(this_ptr->unk1 + 0x65c) * *(float *)(this_ptr->unk1 + 0x65c) +
+       *(float *)(this_ptr->unk1 + 0x658) * *(float *)(this_ptr->unk1 + 0x658)) *
+       *(float *)(this_ptr->unk1 + 0x648) * fVar3;
+  this_ptr->unk1[0x61c] = '\0';
+  this_ptr->unk1[0x61d] = '\0';
+  this_ptr->unk1[0x61e] = '\0';
+  this_ptr->unk1[0x61f] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x618) = *(uint *)(this_ptr->unk1 + 0x61c);
+  *(uint *)(this_ptr->unk1 + 0x614) = *(uint *)(this_ptr->unk1 + 0x618);
+  this_ptr->unk1[0x640] = '\0';
+  this_ptr->unk1[0x641] = '\0';
+  this_ptr->unk1[0x642] = '\0';
+  this_ptr->unk1[0x643] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x63c) = *(uint *)(this_ptr->unk1 + 0x640);
+  *(uint *)(this_ptr->unk1 + 0x638) = *(uint *)(this_ptr->unk1 + 0x63c);
+  this_ptr->unk1[0x604] = '\0';
+  this_ptr->unk1[0x605] = '\0';
+  this_ptr->unk1[0x606] = '\0';
+  this_ptr->unk1[0x607] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x600) = *(uint *)(this_ptr->unk1 + 0x604);
+  *(uint *)(this_ptr->unk1 + 0x5fc) = *(uint *)(this_ptr->unk1 + 0x600);
+  this_ptr->unk1[0x628] = '\0';
+  this_ptr->unk1[0x629] = '\0';
+  this_ptr->unk1[0x62a] = '\0';
+  this_ptr->unk1[0x62b] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x624) = *(uint *)(this_ptr->unk1 + 0x628);
+  *(uint *)(this_ptr->unk1 + 0x620) = *(uint *)(this_ptr->unk1 + 0x624);
+  this_ptr->unk1[0x610] = '\0';
+  this_ptr->unk1[0x611] = '\0';
+  this_ptr->unk1[0x612] = '\0';
+  this_ptr->unk1[0x613] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x60c) = *(uint *)(this_ptr->unk1 + 0x610);
+  *(uint *)(this_ptr->unk1 + 0x608) = *(uint *)(this_ptr->unk1 + 0x60c);
+  this_ptr->unk1[0x634] = '\0';
+  this_ptr->unk1[0x635] = '\0';
+  this_ptr->unk1[0x636] = '\0';
+  this_ptr->unk1[0x637] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x630) = *(uint *)(this_ptr->unk1 + 0x634);
+  *(uint *)(this_ptr->unk1 + 0x62c) = *(uint *)(this_ptr->unk1 + 0x630);
+  this_ptr->unk1[0x5f8] = '\0';
+  this_ptr->unk1[0x5f9] = '\0';
+  this_ptr->unk1[0x5fa] = '\0';
+  this_ptr->unk1[0x5fb] = '\0';
+  *(uint *)(this_ptr->unk1 + 0x5f4) = *(uint *)(this_ptr->unk1 + 0x5f8);
+  *(uint *)(this_ptr->unk1 + 0x5f0) = *(uint *)(this_ptr->unk1 + 0x5f4);
   iVar8 = 0;
   if (0 < this_ptr->tire_count) {
     pcVar7 = this_ptr->unk2 + 0x19c;

@@ -26,7 +26,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
     if (iVar2 != 0) {
       (this_ptr->base).base.field43_0x2620 = 1;
       if (iVar1 == 0) {
-        if (*(int *)(this_ptr->unk + 0x2480) == 0) {
+        if (*(int *)(this_ptr->unk + 0x2478) == 0) {
           core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
         }
         else {
@@ -34,15 +34,15 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
           core_morph_cpp_FUN_0052b600();
           core_morph_cpp_FUN_0052b640();
           core_morph_cpp_FUN_0052b640();
-          core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->unk + 0x2488));
+          core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->unk + 0x2480));
         }
       }
       else {
         core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
-                  ((CDeformableModelInstance *)(this_ptr->unk + 8),-1,0xffffffff,1,0);
+                  ((CDeformableModelInstance *)this_ptr->unk,-1,0xffffffff,1,0);
         core_cloth_cpp_CClothList_render_FUN_0043c320
-                  ((CClothList *)(this_ptr->unk + 0x22bc),
-                   (CDeformableModelInstance *)(this_ptr->unk + 8));
+                  ((CClothList *)(this_ptr->unk + 0x22b4),(CDeformableModelInstance *)this_ptr->unk)
+        ;
       }
       if ((DAT_02f43978 != 0) &&
          (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),

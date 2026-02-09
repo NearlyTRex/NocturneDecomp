@@ -438,7 +438,7 @@ section .text
     LEA EAX,[ESP + 0x410]               ; 004e1101
     PUSH EAX                            ; 004e1108
     CALL crt_fstream.cpp_ifstream_dtor_FUN_005ff856 ; 004e1109
-        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
+        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; ifstream * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e110e
     PUSH 0x67b670                       ; 004e1111 | = "save\\$$SAVE$$.TMP"
         ;   Label: LAB_004e1111
@@ -576,7 +576,7 @@ section .text
     LEA EAX,[ESP + 0x410]               ; 004e1258
     PUSH EAX                            ; 004e125f
     CALL crt_fstream.cpp_ifstream_dtor_FUN_005ff856 ; 004e1260
-        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
+        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; ifstream * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e1265
     ADD ESP,0x548                       ; 004e1268
     POP EBP                             ; 004e126e
@@ -601,7 +601,7 @@ section .text
     LEA EAX,[ESP + 0x410]               ; 004e1295
     PUSH EAX                            ; 004e129c
     CALL crt_fstream.cpp_ifstream_dtor_FUN_005ff856 ; 004e129d
-        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; void * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
+        ;   XREF to: 005ff856 (UNCONDITIONAL_CALL)  ; ifstream * crt_fstream.cpp_ifstream_dtor_FUN_005ff856(ifstream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e12a2
     ADD ESP,0x548                       ; 004e12a5
     POP EBP                             ; 004e12ab

@@ -21,7 +21,7 @@ section .text
     PUSH 0x100                          ; 004eeb95
     PUSH 0x2db8668                      ; 004eeb9a | g_CGroundInstance
     CALL core_ground.cpp_CGround_ctor_FUN_004eee80 ; 004eeb9f
-        ;   XREF to: 004eee80 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_ctor_FUN_004eee80(CGround * this_ptr, int width, int height)
+        ;   XREF to: 004eee80 (UNCONDITIONAL_CALL)  ; CGround * core_ground.cpp_CGround_ctor_FUN_004eee80(CGround * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 004eeba4
     PUSH 0x67cbb8                       ; 004eeba7 | g_CGroundDestructorNode
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 004eebac

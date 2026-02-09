@@ -212,7 +212,7 @@ core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0
           g_CurrentLineNumber = 0x14e;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::load - actor list count mismatch #2!");
         }
-        pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar7,g_CHeroClassInfo.name_hash);
+        pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar7,g_CHeroClassInfo.name_hash);
         if (pCVar4 != (CDemonActor *)0x0) {
           core_inv_cpp_CInventory_loadItems_FUN_004ff740
                     ((CInventory *)(pCVar4[0x176].create_event + 0x30));

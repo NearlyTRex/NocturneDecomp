@@ -11,6 +11,6 @@ CLodFace * __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace *objs)
 {
   CLodFace *pCVar1;
   
-  pCVar1 = __arrfini(objs,200,&g_LodFaceTypeInfo);
+  pCVar1 = (CLodFace *)__arrfini(objs,200,&g_LodFaceTypeInfo);
   return pCVar1;
 }

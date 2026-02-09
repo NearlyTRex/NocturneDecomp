@@ -12,13 +12,9 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c67f0(CStranger *this_ptr)
   CEnemy_full_vtable *pCVar1;
   int in_stack_00000008;
   
-  if ((this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor ==
-      *(CDemonActor **)(this_ptr->unk5 + 8)) {
+  if ((this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor == this_ptr->weapon) {
     pCVar1 = (this_ptr->base).base.base.vtable._ue;
-    this_ptr->unk5[8] = '\0';
-    this_ptr->unk5[9] = '\0';
-    this_ptr->unk5[10] = '\0';
-    this_ptr->unk5[0xb] = '\0';
+    this_ptr->weapon = (CDemonActor *)0x0;
     (*(pCVar1->_ue).enemyfunc2)();
   }
   core_charactr_cpp_CCharacter_FUN_0042cfe0((CCharacter *)this_ptr);

@@ -3182,7 +3182,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520",
-    "ret":"void",
+    "ret":"CAlphaBitmap*",
     "vars":{
       "params":[
         {
@@ -3201,7 +3201,17 @@
           },
           "type":"CAlphaBitmap*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -12657,12 +12667,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0",
+    "name":"shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"bounds_entry",
+          "name":"this_ptr",
           "storage":{
             "offset":12,
             "size":4,
@@ -12675,7 +12685,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         }
       ],
       "ret_storage":{
@@ -12701,7 +12711,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_renderTextureEntry_FUN_00447c20",
+    "name":"shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -12836,7 +12846,7 @@
       ],
       "params":[
         {
-          "name":"texture_entry",
+          "name":"this_ptr",
           "storage":{
             "offset":8,
             "size":4,
@@ -12849,7 +12859,7 @@
               }
             ]
           },
-          "type":"SCramWorkingEntry*"
+          "type":"CCramTex*"
         },
         {
           "name":"visualization_mode",
@@ -12945,7 +12955,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20",
+    "name":"shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -13175,6 +13185,22 @@
         }
       ],
       "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CCramTex*"
+        },
         {
           "name":"visualization_mode",
           "storage":{
@@ -34504,7 +34530,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CGunFlame_ctor_FUN_004c4da0",
+    "name":"core_fire.cpp_CGunFlame_reset_FUN_004c4da0",
     "ret":"void",
     "vars":{
       "params":[
@@ -44899,7 +44925,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_inv.cpp_CInventory_ctor_FUN_004fd020",
-    "ret":"void",
+    "ret":"CInventory*",
     "vars":{
       "params":[
         {
@@ -44918,7 +44944,17 @@
           },
           "type":"CInventory*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -63897,7 +63933,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_OpenSomethingBackdropThumbs_FUN_005769a0",
+    "name":"core_setedit.cpp_C3DSCamera_FUN_005769a0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -64109,6 +64145,24 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"C3DSCamera*"
+        }
       ]
     }
   },
@@ -64123,7 +64177,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0",
+    "name":"core_setedit.cpp_CDemonSet_FUN_00576da0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -64413,7 +64467,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_ImportingGroundTextures_FUN_00578420",
+    "name":"core_setedit.cpp_FUN_00578420",
     "ret":"void",
     "vars":{
       "locals":[
@@ -64527,7 +64581,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20",
+    "name":"core_setedit.cpp_CDemonSet_FUN_00578a20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -64967,7 +65021,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_BackdropMaybe_FUN_005805a0",
+    "name":"core_setedit.cpp_CDemonSet_FUN_005805a0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -65003,6 +65057,24 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        }
       ]
     }
   },
@@ -65017,7 +65089,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_00581320",
+    "name":"core_setedit.cpp_CDemonSet_FUN_00581320",
     "ret":"void",
     "vars":{
       "locals":[
@@ -65036,6 +65108,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
         }
       ]
     }
@@ -66669,7 +66759,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_00589c20",
+    "name":"core_skeledit.cpp_CLodMesh_FUN_00589c20",
     "ret":"int",
     "vars":{
       "locals":[
@@ -66720,6 +66810,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
         }
       ],
       "ret_storage":{
@@ -68116,6 +68224,24 @@
     "name":"core_skeledit.cpp_FUN_00592520",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -86308,12 +86434,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_texture.cpp_CTextureCache_dtor_FUN_005dcb20",
+    "name":"engine_texture.cpp_CTextureCache_reset_FUN_005dcb20",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"cache",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,

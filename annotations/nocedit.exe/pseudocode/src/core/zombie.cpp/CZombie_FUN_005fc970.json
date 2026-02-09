@@ -2,28 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 31,
+        "category": "other",
+        "column": 28,
         "line": 20,
-        "message": "use of undeclared identifier 'code'"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 38,
+        "category": "other",
+        "column": 66,
         "line": 20,
-        "message": "expected expression"
+        "message": "called object type 'void' is not a function or function pointer"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 13,
+        "category": "other",
+        "column": 10,
         "line": 22,
-        "message": "use of undeclared identifier 'code'"
+        "message": "indirection not permitted on operand of type 'void *'"
       },
       {
-        "category": "syntax_error",
-        "column": 20,
+        "category": "other",
+        "column": 67,
         "line": 22,
-        "message": "expected expression"
+        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -31,15 +31,14 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 90,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 20,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param",
-      "unresolved_funcptr"
+      "stack_param"
     ],
     "total_lines": 57
   },
@@ -128,20 +127,6 @@
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 1) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code *",
-      "text": "pCVar2 = (CZombie *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x108))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base).unk2 + 4) + 0x154) + 0x104))();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

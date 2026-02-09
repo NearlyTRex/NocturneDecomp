@@ -11,6 +11,6 @@ CBloodSplat * __cdecl core_gore_cpp_freeBloodSplats_FUN_004ee460(CBloodSplat *ob
 {
   CBloodSplat *pCVar1;
   
-  pCVar1 = __arrfini(objs,2000,&g_CBloodSplatTypeInfo);
+  pCVar1 = (CBloodSplat *)__arrfini(objs,2000,&g_CBloodSplatTypeInfo);
   return pCVar1;
 }

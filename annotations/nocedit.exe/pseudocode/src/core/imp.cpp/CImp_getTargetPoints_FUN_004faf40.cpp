@@ -20,7 +20,7 @@ core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVector3f *out_poi
   CVector3f local_18;
   
   iVar3 = 0;
-  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x3c)] != 0) {
+  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x34)] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_30,INT_02db89f4);
     if (out_points_array != pCVar1) {
@@ -30,7 +30,7 @@ core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVector3f *out_poi
     }
     iVar3 = 1;
   }
-  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x14)] != 0) {
+  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0xc)] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_3c,INT_02db8a08);
     pCVar2 = out_points_array + iVar3;
@@ -41,7 +41,7 @@ core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVector3f *out_poi
     }
     iVar3 = iVar3 + 1;
   }
-  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x1c)] != 0) {
+  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x14)] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_18,INT_02db8a0c);
     pCVar2 = out_points_array + iVar3;
@@ -52,7 +52,7 @@ core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVector3f *out_poi
     }
     iVar3 = iVar3 + 1;
   }
-  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x34)] != 0) {
+  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x2c)] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_48,INT_02db8a18);
     pCVar2 = out_points_array + iVar3;
@@ -63,7 +63,7 @@ core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVector3f *out_poi
     }
     iVar3 = iVar3 + 1;
   }
-  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x38)] == 0) {
+  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x30)] == 0) {
     return iVar3;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00

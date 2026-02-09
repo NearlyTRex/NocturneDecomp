@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_2d_5dx_5d_Page_d_5d_5d_00619753
 ;   TerminatedCString s_ux_u_square_found_using__00619790
-;   SCramWorkingEntry[1] g_CramSortedTextureEntries
+;   CCramTex[1] g_CramSortedTextureEntries
 ;   undefined4 DAT_0083c1e0
 ;   undefined4 DAT_0083c208
 ;   undefined4 DAT_0083c20c
@@ -35,7 +35,7 @@ section .text
     PUSH 0x40                           ; 004481d0
         ;   Label: shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 004481d5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c___STK_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 004481da
     PUSH ESI                            ; 004481db
     PUSH EDI                            ; 004481dc

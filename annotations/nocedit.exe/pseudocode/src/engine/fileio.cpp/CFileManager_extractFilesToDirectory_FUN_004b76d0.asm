@@ -50,7 +50,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_time.c__localtime_FUN_00600288
-;   crt_time.c_strftime_FUN_006002d4
+;   crt_time.c__strftime_FUN_006002d4
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
 ;   engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
@@ -256,8 +256,8 @@ section .text
     PUSH 0x100                          ; 004b78df
     LEA EAX,[ESP + 0xdfc]               ; 004b78e4
     PUSH EAX                            ; 004b78eb
-    CALL crt_time.c_strftime_FUN_006002d4 ; 004b78ec
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 004b78ec
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b78f1
     LEA EAX,[ESP + 0x10fc]              ; 004b78f4
     PUSH EAX                            ; 004b78fb
@@ -269,8 +269,8 @@ section .text
     PUSH 0x100                          ; 004b790a
     LEA EAX,[ESP + 0xefc]               ; 004b790f
     PUSH EAX                            ; 004b7916
-    CALL crt_time.c_strftime_FUN_006002d4 ; 004b7917
-        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c_strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
+    CALL crt_time.c__strftime_FUN_006002d4 ; 004b7917
+        ;   XREF to: 006002d4 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_006002d4(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004b791c
     LEA EAX,[ESP + 0xef0]               ; 004b791f
     PUSH EAX                            ; 004b7926

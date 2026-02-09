@@ -4,38 +4,44 @@
       {
         "category": "other",
         "column": 13,
-        "line": 76,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
         "line": 77,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 34,
-        "line": 80,
+        "column": 13,
+        "line": 78,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 51,
+        "column": 34,
         "line": 81,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 45,
-        "line": 139,
+        "column": 51,
+        "line": 82,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 138,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 140,
+        "line": 139,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 143,
+        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
       },
       {
         "category": "other",
@@ -44,46 +50,16 @@
         "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
       },
       {
-        "category": "other",
-        "column": 21,
-        "line": 145,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 189,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 27,
-        "line": 189,
-        "message": "expected expression"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 195,
+        "line": 194,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 25,
-        "line": 195,
+        "line": 194,
         "message": "expected expression"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 198,
-        "message": "assigning to 'CMobster *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 203,
-        "message": "assigning to 'CTommyGun *' from incompatible type 'void *'"
       }
     ],
     "success": false,
@@ -91,18 +67,18 @@
   },
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 411,
+    "complexity_score": 403,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
-    "pseudocode_lines": 266,
-    "suspect_count": 13,
+    "pseudocode_lines": 268,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 952
+    "total_lines": 954
   },
   "cross_references": [],
   "function": {
@@ -630,93 +606,86 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 70,
       "match": "._0_4_",
       "text": "local_58._0_4_ = local_88 * local_50;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 70,
+      "line": 71,
       "match": "._4_4_",
       "text": "local_58._4_4_ = local_84 * local_50;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 74,
       "match": "._0_4_",
-      "text": "pCVar7->x = (float)local_58._0_4_;",
+      "text": "pCVar8->x = (float)local_58._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 75,
       "match": "._4_4_",
-      "text": "*(uint *)(this_ptr->unk1 + 0x770) = local_58._4_4_;",
+      "text": "*(uint *)(this_ptr->unk1 + 0x5f4) = local_58._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 78,
       "match": "SQRT",
-      "text": "local_24 = SQRT(*(float *)(this_ptr->unk1 + 0x774) * *(float *)(this_ptr->unk1 + 0x774) +",
+      "text": "local_24 = SQRT(*(float *)(this_ptr->unk1 + 0x5f8) * *(float *)(this_ptr->unk1 + 0x5f8) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 132,
+      "line": 131,
       "match": "._4_4_",
-      "text": "local_a0.max.y <= (float)local_58._4_4_ + local_a0.min.y)) &&",
+      "text": "), local_a0.max.y <= (float)local_58._4_4_ + local_a0.min.y)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 133,
+      "line": 132,
       "match": "._4_4_",
       "text": "(((float)local_58._4_4_ - local_a0.min.y <= local_84 &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 136,
       "match": "._48_4_",
       "text": "auStack_f4._48_4_ = 4;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 138,
+      "line": 137,
       "match": "._4_4_",
       "text": "auStack_f4._4_4_ = 999.0;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
+      "line": 155,
       "match": "SQRT",
       "text": "if ((SQRT(local_30 * local_30 + fStack_38 * fStack_38 + local_34 * local_34) <=",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 182,
+      "line": 187,
       "match": "code *",
-      "text": "iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->unk3 + 0x1c) + 0x154) + 0x120))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 188,
-      "match": "code *",
-      "text": "iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->unk3 + 0x20) + 0x154) + 0x120))();",
+      "text": "iVar13 = (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0x120))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 261,
+      "line": 263,
       "match": "ABS",
-      "text": "if (((float)0.20000000000000001 < ABS(*(float *)(this_ptr->unk1 + 0x778))) &&",
+      "text": "if (((float)0.20000000000000001 < ABS(*(float *)(this_ptr->unk1 + 0x5fc))) &&",
       "type": "decompiler_intrinsic"
     }
   ],

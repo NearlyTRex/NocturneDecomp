@@ -25,8 +25,8 @@ typedef struct CEmitter {
     int periodic_flag; // 0x3c8
     float max_wait_time; // 0x3cc
     int dest_actor; // 0x3d0
-    char* wav_name; // 0x3d4
-    char unk4[100]; // 0x3d8
+    char wav_name[100]; // 0x3d4
+    uint sfx_handle; // 0x438
     int sfx_type; // 0x43c
     char unk5[4]; // 0x440
     float emit_period; // 0x444
