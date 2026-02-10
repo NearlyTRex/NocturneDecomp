@@ -2,11 +2,13 @@
 // Address: 0042e370
 // Address Range: [[0042e370, 0042e56f]]
 // Convention: __cdecl
-// Signature: int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter *this_ptr)
+// Signature: int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370 (CCharacter *this_ptr,float *remaining_time,int target_bone_index)
 
 #include "nocturne.h"
 
-int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter *this_ptr)
+int __cdecl
+core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370
+          (CCharacter *this_ptr,float *remaining_time,int target_bone_index)
 
 {
   float fVar1;
@@ -16,8 +18,6 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharac
   float fVar5;
   SLayerAction *pSVar6;
   int iVar7;
-  float *in_stack_00000008;
-  int in_stack_0000000c;
   float local_18;
   
   if ((this_ptr->layer_action_index < 0) ||
@@ -37,8 +37,8 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharac
   local_18 = pSVar6->duration * (1.0 - this_ptr->layer_action_t);
   iVar7 = pSVar6->direction;
   if (iVar7 != 0) goto LAB_0042e486;
-  fVar1 = this_ptr->motion_transition_costs[pSVar6->to_bone_index][in_stack_0000000c];
-  fVar2 = this_ptr->motion_transition_costs[pSVar6->from_bone_index][in_stack_0000000c];
+  fVar1 = this_ptr->motion_transition_costs[pSVar6->to_bone_index][target_bone_index];
+  fVar2 = this_ptr->motion_transition_costs[pSVar6->from_bone_index][target_bone_index];
   fVar4 = fVar1 + local_18;
   fVar5 = fVar2 + fVar3;
   if (fVar4 <= fVar5) {
@@ -56,8 +56,8 @@ LAB_0042e486:
   if (iVar7 < 0) {
     local_18 = fVar3;
   }
-  if (*in_stack_00000008 < local_18) {
-    fVar3 = ((float)iVar7 * *in_stack_00000008) / pSVar6->duration + this_ptr->layer_action_t;
+  if (*remaining_time < local_18) {
+    fVar3 = ((float)iVar7 * *remaining_time) / pSVar6->duration + this_ptr->layer_action_t;
     this_ptr->layer_action_t = fVar3;
     if (fVar3 < 0.0) {
       this_ptr->layer_action_t = 0.0;
@@ -65,10 +65,10 @@ LAB_0042e486:
     if (1.0 < this_ptr->layer_action_t) {
       this_ptr->layer_action_t = 1.0;
     }
-    *in_stack_00000008 = 0.0;
+    *remaining_time = 0.0;
     return -1;
   }
-  *in_stack_00000008 = *in_stack_00000008 - local_18;
+  *remaining_time = *remaining_time - local_18;
   if (-1 < iVar7) {
     iVar7 = pSVar6->to_bone_index;
     this_ptr->layer_action_t = 1.0;

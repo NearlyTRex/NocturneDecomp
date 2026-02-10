@@ -5,27 +5,31 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6506
-Successful: 5152 (79.2%)
-Failed: 1354
+Successful: 5186 (79.7%)
+Failed: 1320
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           2865
-  undeclared_identifier           1267
-  incompatible_types              1091
-  format_error                     600
-  syntax_error                     132
+  other                           2684
+  undeclared_identifier           1281
+  incompatible_types              1097
+  format_error                     602
+  syntax_error                     134
   missing_member                    78
   lvalue_required                   26
   type_error                        20
   overload_error                     1
 
 ====================================================================================================
-CATEGORY: other (2865 errors)
+CATEGORY: other (2684 errors)
 ====================================================================================================
 
   core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
     Line 155: C-style cast from 'C3DSCamera *' to 'float' is not allowed
+  core_charactr.cpp_CCharacter_kill_FUN_00428e30
+    Line 33: C-style cast from 'CCharacter *' to 'float' is not allowed
+  core_hostage.cpp_CHostage_process_FUN_004f4bd0
+    Line 695: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
     Line 61: C-style cast from 'CDemonActor *' to 'float' is not allowed
   core_stranger.cpp_CStranger_FUN_005c07b0
@@ -72,6 +76,10 @@ CATEGORY: other (2865 errors)
     Line 37: C-style cast from 'CSpotView *' to 'float' is not allowed
   core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260
     Line 38: C-style cast from 'CTVBat *' to 'float' is not allowed
+  core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
+    Line 95: C-style cast from 'CTrigger *' to 'float' is not allowed
+  core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
+    Line 115: C-style cast from 'CTrigger *' to 'float' is not allowed
   core_actor.cpp_drawBoundingBox_FUN_0040d470
     Line 82: C-style cast from 'CVector3f *' to 'float' is not allowed
   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
@@ -90,6 +98,8 @@ CATEGORY: other (2865 errors)
     Line 32: C-style cast from 'CVector3i *' to 'float' is not allowed
   core_wateract.cpp_CWaterActor_process_FUN_005eb100
     Line 36: C-style cast from 'CWaterActor *' to 'float' is not allowed
+  core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
+    Line 47: C-style cast from 'SCarryHand *' to 'float' is not allowed
   shape_design.c_renderPolygonWireframe_FUN_0045d300
     Line 31: C-style cast from 'SClipPlane *' to 'float' is not allowed
   core_glass.cpp_CGlass_setup_FUN_004e9180
@@ -98,8 +108,12 @@ CATEGORY: other (2865 errors)
     Line 77: C-style cast from 'SMRGLTextureBasic *' to 'float' is not allowed
   shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
     Line 47: C-style cast from 'SRenderVertex *' to 'float' is not allowed
+  core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
+    Line 43: C-style cast from 'UOrientationVector *' to 'float' is not allowed
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
     Line 65: C-style cast from 'WatcomTypeInfo *' to 'float' is not allowed
+  core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190
+    Line 50: C-style cast from 'char *' to 'float' is not allowed
   core_gabriela.cpp_CGabriella_FUN_004d4890
     Line 81: C-style cast from 'char *' to 'float' is not allowed
   core_game.cpp_CGame_runGameSession_FUN_004daf80
@@ -155,7 +169,7 @@ CATEGORY: other (2865 errors)
   core_script.cpp_CScript_editorAction_FUN_00564820
     Line 219: assigning to 'char *' from 'const char *' discards qualifiers
   core_script.cpp_CScript_step_FUN_0055a810
-    Line 235: assigning to 'char *' from 'const char *' discards qualifiers
+    Line 236: assigning to 'char *' from 'const char *' discards qualifiers
   engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180
     Line 105: assigning to 'char *' from 'const char *' discards qualifiers
   shape_design.c_loadModelFile_FUN_00458ac0
@@ -172,7 +186,7 @@ CATEGORY: other (2865 errors)
     Line 35: assigning to 'char *' from 'const char *' discards qualifiers
   shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120
     Line 25: assigning to 'char *' from 'const char *' discards qualifiers
-  core_charactr.cpp_CCharacter_FUN_00429b40
+  core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40
     Line 60: assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not
   core_event.cpp_CEventList_FUN_004add80
     Line 22: assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not
@@ -215,7 +229,7 @@ CATEGORY: other (2865 errors)
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
     Line 142: assigning to 'uint *' (aka 'unsigned int *') from 'int *' converts between pointers to integer types with different sign
   core_colonel.cpp_CColonel_FUN_00440430
-    Line 26: called object type 'float' is not a function or function pointer
+    Line 28: called object type 'float' is not a function or function pointer
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
     Line 71: called object type 'float' is not a function or function pointer
   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00
@@ -223,37 +237,37 @@ CATEGORY: other (2865 errors)
   core_baron.cpp_CBaron_FUN_004136b0
     Line 30: cannot cast from type 'float' to pointer type 'CCharacter *'
   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
-    Line 119: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
-  core_moloch.cpp_CMoloch_process_FUN_00528d20
-    Line 152: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
+    Line 120: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
   core_platfrm.cpp_CPlatform_ctor_FUN_0054c850
     Line 60: cannot cast from type 'float' to pointer type 'CCourseFrameList *'
-  core_charactr.cpp_CCharacter_FUN_0042a830
-    Line 154: cannot cast from type 'float' to pointer type 'CDeformableModel *'
-  core_colonel.cpp_CColonel_process_FUN_0043fa00
-    Line 194: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
+  core_charactr.cpp_CCharacter_processFire_FUN_0042a830
+    Line 153: cannot cast from type 'float' to pointer type 'CDeformableModel *'
   core_gabriela.cpp_CGabriella_FUN_004d4d80
     Line 110: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
-  core_haystack.cpp_CHaystack_process_FUN_004f0e40
-    Line 219: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
+  core_icepick.cpp_CIcePick_process_FUN_004f80b0
+    Line 251: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
     Line 84: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
   core_stranger.cpp_CStranger_FUN_005bfb60
     Line 70: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
-  core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
-    Line 235: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
+  core_elephant.cpp_CElephantGun_fire_FUN_004a7160
+    Line 71: cannot cast from type 'float' to pointer type 'CDemonActor *'
   core_gabriela.cpp_CGabriella_FUN_004d4190
     Line 101: cannot cast from type 'float' to pointer type 'CDemonActor *'
+  core_shotgun.cpp_CShotgun_fire_FUN_00588060
+    Line 73: cannot cast from type 'float' to pointer type 'CDemonActor *'
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
     Line 392: cannot cast from type 'float' to pointer type 'CDemonSet *'
   core_scat.cpp_CScat_FUN_005578e0
     Line 59: cannot cast from type 'float' to pointer type 'CHero *'
+  core_imp.cpp_CImp_process_FUN_004f9c30
+    Line 143: cannot cast from type 'float' to pointer type 'CImp *'
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
     Line 170: cannot cast from type 'float' to pointer type 'CKeyFramedModelInstance *'
   core_setedit.cpp_CDemonSet_FUN_00583170
     Line 176: cannot cast from type 'float' to pointer type 'CKeys *'
   core_stranger.cpp_CStranger_FUN_005bb960
-    Line 374: cannot cast from type 'float' to pointer type 'CMotionController *'
+    Line 375: cannot cast from type 'float' to pointer type 'CMotionController *'
   core_set.cpp_CDemonSet_FUN_0056b810
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'
   core_stranger.cpp_CStranger_FUN_005be520
@@ -267,7 +281,9 @@ CATEGORY: other (2865 errors)
   core_fire.cpp_CStake_spawn_FUN_004bfe90
     Line 80: cannot cast from type 'float' to pointer type 'CVector3f *'
   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
-    Line 252: cannot cast from type 'float' to pointer type 'CVector3f *'
+    Line 248: cannot cast from type 'float' to pointer type 'CVector3f *'
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+    Line 271: cannot cast from type 'float' to pointer type 'CVector3f *'
   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90
     Line 82: cannot cast from type 'float' to pointer type 'CVector3i *'
   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
@@ -282,11 +298,13 @@ CATEGORY: other (2865 errors)
     Line 64: cannot cast from type 'float' to pointer type 'float *'
   core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0
     Line 32: cannot cast from type 'float' to pointer type 'float *'
+  core_tentacle.cpp_CTentacle_process_FUN_005db050
+    Line 65: cannot cast from type 'float' to pointer type 'float *'
   core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
     Line 62: cannot cast from type 'float' to pointer type 'int *'
   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
     Line 57: cannot cast from type 'float' to pointer type 'int *'
-  core_charactr.cpp_CCharacter_FUN_00428f40
+  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
     Line 176: cannot cast from type 'float' to pointer type 'void *'
   support_newmsg.cpp_CMouse_dtor_FUN_005443e0
     Line 17: cannot cast from type 'void' to pointer type 'CMouse *'
@@ -349,7 +367,7 @@ CATEGORY: other (2865 errors)
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
     Line 107: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_flame.cpp_CFlame_FUN_004c9c00
-    Line 83: data argument not used by format string [-Werror,-Wformat-extra-args]
+    Line 84: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_gore.cpp_FUN_004ed1c0
     Line 18: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_msnedit.cpp_FUN_00536e20
@@ -387,71 +405,29 @@ CATEGORY: other (2865 errors)
   engine_ini.cpp_CIni_writeProfileString_FUN_004fb660
     Line 78: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    Line 90: indirection not permitted on operand of type 'void *'
+    Line 91: indirection not permitted on operand of type 'void *'
   core_batman.cpp_CBatman_process_FUN_00416870
-    Line 104: indirection not permitted on operand of type 'void *'
+    Line 105: indirection not permitted on operand of type 'void *'
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
-    Line 225: indirection not permitted on operand of type 'void *'
+    Line 230: indirection not permitted on operand of type 'void *'
   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680
     Line 86: indirection not permitted on operand of type 'void *'
   core_bride.cpp_CBride_process_FUN_00423a30
-    Line 75: indirection not permitted on operand of type 'void *'
+    Line 78: indirection not permitted on operand of type 'void *'
   core_bugs.cpp_CBugs_FUN_00425cc0
     Line 42: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042b190
-    Line 55: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042bd30
-    Line 82: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042bf40
-    Line 21: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042c010
-    Line 28: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042c920
-    Line 37: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042c9d0
-    Line 20: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042ca70
-    Line 46: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042d060
-    Line 17: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042d090
-    Line 51: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_FUN_0042ede0
-    Line 61: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
-    Line 22: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
-    Line 106: indirection not permitted on operand of type 'void *'
-  core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004285d0
-    Line 16: indirection not permitted on operand of type 'void *'
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+    Line 58: indirection not permitted on operand of type 'void *'
   core_cow.cpp_CZombieCow_process_FUN_00444310
-    Line 78: indirection not permitted on operand of type 'void *'
-  core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
-    Line 38: indirection not permitted on operand of type 'void *'
-  core_crossbow.cpp_CCrossbow_process_FUN_00448d30
-    Line 16: indirection not permitted on operand of type 'void *'
+    Line 79: indirection not permitted on operand of type 'void *'
   core_dog.cpp_CZombieDog_process_FUN_0047f140
-    Line 85: indirection not permitted on operand of type 'void *'
+    Line 87: indirection not permitted on operand of type 'void *'
   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
-    Line 220: indirection not permitted on operand of type 'void *'
+    Line 224: indirection not permitted on operand of type 'void *'
   core_drone.cpp_CDrone_process_FUN_0048ec70
-    Line 85: indirection not permitted on operand of type 'void *'
-  core_elephant.cpp_CElephantGun_FUN_004a79f0
-    Line 32: indirection not permitted on operand of type 'void *'
-  core_elephant.cpp_CElephantGun_fire_FUN_004a7160
-    Line 57: indirection not permitted on operand of type 'void *'
-  core_elephant.cpp_CElephantGun_process_FUN_004a7070
-    Line 18: indirection not permitted on operand of type 'void *'
-  core_enemy.cpp_CEnemy_FUN_004a9930
-    Line 15: indirection not permitted on operand of type 'void *'
+    Line 86: indirection not permitted on operand of type 'void *'
   core_enemy.cpp_CEnemy_FUN_004a9a50
     Line 23: indirection not permitted on operand of type 'void *'
-  core_enemy.cpp_CEnemy_FUN_004aa030
-    Line 15: indirection not permitted on operand of type 'void *'
-  core_enemy.cpp_CEnemy_FUN_004aa0c0
-    Line 17: indirection not permitted on operand of type 'void *'
-  core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
-    Line 15: indirection not permitted on operand of type 'void *'
   core_fire.cpp_CFireball_render_FUN_004c0e70
     Line 215: indirection not permitted on operand of type 'void *'
   core_fire.cpp_CPopcorn_render_FUN_004c64c0
@@ -464,142 +440,48 @@ CATEGORY: other (2865 errors)
     Line 103: indirection not permitted on operand of type 'void *'
   core_flame.cpp_CFlame_FUN_004ca110
     Line 135: indirection not permitted on operand of type 'void *'
-  core_flamegun.cpp_CFlameThrower_fire_FUN_004cb920
-    Line 20: indirection not permitted on operand of type 'void *'
-  core_gabriela.cpp_CGabriella_FUN_004d5550
-    Line 56: indirection not permitted on operand of type 'void *'
-  core_gabriela.cpp_CGabriella_FUN_004d5f70
-    Line 17: indirection not permitted on operand of type 'void *'
-  core_gabriela.cpp_CGabriella_FUN_004d5fe0
-    Line 15: indirection not permitted on operand of type 'void *'
-  core_gabriela.cpp_CGabriella_renderOpaque_FUN_004d6140
-    Line 34: indirection not permitted on operand of type 'void *'
   core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
-    Line 93: indirection not permitted on operand of type 'void *'
-  core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-    Line 66: indirection not permitted on operand of type 'void *'
+    Line 94: indirection not permitted on operand of type 'void *'
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
-    Line 148: indirection not permitted on operand of type 'void *'
+    Line 358: indirection not permitted on operand of type 'void *'
   core_gore.cpp_FUN_004ebac0
     Line 136: indirection not permitted on operand of type 'void *'
-  core_gun.cpp_CGun_FUN_004f0350
-    Line 46: indirection not permitted on operand of type 'void *'
   core_hero.cpp_CHero_FUN_004f3760
     Line 21: indirection not permitted on operand of type 'void *'
   core_hero.cpp_CHero_FUN_004f3b20
     Line 30: indirection not permitted on operand of type 'void *'
-  core_hostage.cpp_CHostage_process_FUN_004f4bd0
-    Line 180: indirection not permitted on operand of type 'void *'
   core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
-    Line 112: indirection not permitted on operand of type 'void *'
+    Line 113: indirection not permitted on operand of type 'void *'
   core_icepick.cpp_CIcePick_FUN_004f8c70
     Line 61: indirection not permitted on operand of type 'void *'
-  core_icepick.cpp_CIcePick_FUN_004f93a0
-    Line 54: indirection not permitted on operand of type 'void *'
-  core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0
-    Line 44: indirection not permitted on operand of type 'void *'
-  core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    Line 163: indirection not permitted on operand of type 'void *'
-  core_imp.cpp_CImp_process_FUN_004f9c30
-    Line 98: indirection not permitted on operand of type 'void *'
   core_larva.cpp_CLarva_process_FUN_00503080
-    Line 162: indirection not permitted on operand of type 'void *'
-  core_lightgun.cpp_CLightGun_FUN_00505a20
-    Line 14: indirection not permitted on operand of type 'void *'
-  core_lightgun.cpp_CLightGun_FUN_00505ac0
-    Line 15: indirection not permitted on operand of type 'void *'
-  core_lightgun.cpp_CLightGun_FUN_00505c70
-    Line 58: indirection not permitted on operand of type 'void *'
-  core_lightgun.cpp_CLightGun_FUN_005066b0
-    Line 39: indirection not permitted on operand of type 'void *'
-  core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0
-    Line 18: indirection not permitted on operand of type 'void *'
-  core_melee.cpp_CMelee_process_FUN_0050ec10
-    Line 26: indirection not permitted on operand of type 'void *'
+    Line 163: indirection not permitted on operand of type 'void *'
   core_mission.cpp_CDemonMission_run_FUN_00524420
     Line 38: indirection not permitted on operand of type 'void *'
-  core_mobster.cpp_CMobster_FUN_00527380
-    Line 91: indirection not permitted on operand of type 'void *'
-  core_mobster.cpp_CMobster_processDamage_FUN_00527740
-    Line 37: indirection not permitted on operand of type 'void *'
   core_mobster.cpp_CMobster_process_FUN_00525840
-    Line 90: indirection not permitted on operand of type 'void *'
+    Line 182: indirection not permitted on operand of type 'void *'
   core_moloch.cpp_CMoloch_FUN_005293b0
     Line 62: indirection not permitted on operand of type 'void *'
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
     Line 49: indirection not permitted on operand of type 'void *'
   core_platfrm.cpp_CPlatform_renderBackground_FUN_0054d9b0
     Line 65: indirection not permitted on operand of type 'void *'
-  core_scat.cpp_CScat_FUN_00558060
-    Line 79: indirection not permitted on operand of type 'void *'
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 138: indirection not permitted on operand of type 'void *'
+    Line 137: indirection not permitted on operand of type 'void *'
   core_sentinel.cpp_CSentinel_process_FUN_00568030
-    Line 90: indirection not permitted on operand of type 'void *'
+    Line 171: indirection not permitted on operand of type 'void *'
   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
     Line 42: indirection not permitted on operand of type 'void *'
-  core_shotgun.cpp_CShotgun_FUN_005888f0
-    Line 32: indirection not permitted on operand of type 'void *'
-  core_shotgun.cpp_CShotgun_fire_FUN_00588060
-    Line 59: indirection not permitted on operand of type 'void *'
-  core_shotgun.cpp_CShotgun_process_FUN_00587f70
-    Line 17: indirection not permitted on operand of type 'void *'
-  core_smiley.cpp_CSmiley_processDamage_FUN_005a3580
-    Line 43: indirection not permitted on operand of type 'void *'
-  core_smiley.cpp_CSmiley_process_FUN_005a2800
-    Line 95: indirection not permitted on operand of type 'void *'
-  core_stranger.cpp_CStranger_FUN_005c1f80
-    Line 24: indirection not permitted on operand of type 'void *'
-  core_stranger.cpp_CStranger_FUN_005c3960
-    Line 144: indirection not permitted on operand of type 'void *'
-  core_stranger.cpp_CStranger_FUN_005c48b0
-    Line 56: indirection not permitted on operand of type 'void *'
-  core_stranger.cpp_CStranger_FUN_005c6590
-    Line 35: indirection not permitted on operand of type 'void *'
-  core_stranger.cpp_CStranger_FUN_005c66a0
-    Line 20: indirection not permitted on operand of type 'void *'
-  core_stranger.cpp_CStranger_FUN_005c67f0
-    Line 18: indirection not permitted on operand of type 'void *'
-  core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
-    Line 43: indirection not permitted on operand of type 'void *'
+  core_stranger.cpp_CStranger_dropCarriedObject_FUN_005c67f0
+    Line 19: indirection not permitted on operand of type 'void *'
   core_stranger.cpp_CStranger_drop_FUN_005c6850
     Line 19: indirection not permitted on operand of type 'void *'
   core_succubus.cpp_CSuccubus_process_FUN_005c6e90
-    Line 72: indirection not permitted on operand of type 'void *'
+    Line 85: indirection not permitted on operand of type 'void *'
   core_svetlana.cpp_CSvetlana_FUN_005d9260
     Line 61: indirection not permitted on operand of type 'void *'
-  core_svetlana.cpp_CSvetlana_FUN_005d9a10
-    Line 86: indirection not permitted on operand of type 'void *'
-  core_tentacle.cpp_CTentacle_process_FUN_005db050
-    Line 75: indirection not permitted on operand of type 'void *'
-  core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
-    Line 55: indirection not permitted on operand of type 'void *'
-  core_turret.cpp_CTurret_FUN_005e3560
-    Line 68: indirection not permitted on operand of type 'void *'
-  core_turret.cpp_CTurret_fire_FUN_005e3750
-    Line 31: indirection not permitted on operand of type 'void *'
-  core_turret.cpp_CTurret_process_FUN_005e2430
-    Line 200: indirection not permitted on operand of type 'void *'
-  core_turret.cpp_CTurret_updateInteraction_FUN_005e34d0
-    Line 25: indirection not permitted on operand of type 'void *'
-  core_weapon.cpp_CWeapon_FUN_005ee4a0
-    Line 21: indirection not permitted on operand of type 'void *'
-  core_weapon.cpp_CWeapon_FUN_005ee830
-    Line 24: indirection not permitted on operand of type 'void *'
-  core_weapon.cpp_CWeapon_onDropped_FUN_005ee3f0
-    Line 32: indirection not permitted on operand of type 'void *'
-  core_weapon.cpp_CWeapon_process_FUN_005ee110
-    Line 44: indirection not permitted on operand of type 'void *'
   core_werewolf.cpp_CWerewolf_process_FUN_005efde0
-    Line 220: indirection not permitted on operand of type 'void *'
-  core_zombie.cpp_CZombie_FUN_005fbde0
-    Line 19: indirection not permitted on operand of type 'void *'
-  core_zombie.cpp_CZombie_FUN_005fc970
-    Line 20: indirection not permitted on operand of type 'void *'
-  core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0
-    Line 24: indirection not permitted on operand of type 'void *'
-  core_zombie.cpp_CZombie_process_FUN_005f9470
-    Line 167: indirection not permitted on operand of type 'void *'
+    Line 221: indirection not permitted on operand of type 'void *'
   shape_superopt.cpp_COptimize_FUN_005d7000
     Line 35: indirection not permitted on operand of type 'void *'
   shape_superopt.cpp_COptimize_FUN_005d7290
@@ -626,12 +508,12 @@ CATEGORY: other (2865 errors)
     Line 167: member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union
   core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150
     Line 29: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
-  core_charactr.cpp_CCharacter_FUN_0042c180
-    Line 54: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20
     Line 115: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   core_fire.cpp_CRainDrop_render_FUN_004c6830
     Line 57: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
+  core_lightgun.cpp_CLightGun_FUN_00505c70
+    Line 61: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
     Line 82: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
@@ -639,15 +521,17 @@ CATEGORY: other (2865 errors)
   core_spike.cpp_CSpike_FUN_005b8950
     Line 56: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   core_stranger.cpp_CStranger_FUN_005c1fe0
-    Line 68: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
+    Line 69: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   core_stranger.cpp_CStranger_FUN_005c2400
-    Line 73: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
+    Line 74: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
     Line 58: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
     Line 410: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
     Line 31: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
+  core_colonel.cpp_CColonel_process_FUN_0043fa00
+    Line 176: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_course.cpp_CCourse_showEditorMenu_FUN_00443040
     Line 205: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_course.cpp_FUN_00443bc0
@@ -686,24 +570,34 @@ CATEGORY: other (2865 errors)
     Line 88: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 190: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
+  core_turret.cpp_CTurret_process_FUN_005e2430
+    Line 221: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
     Line 68: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
     Line 134: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
     Line 77: member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union
+  core_haystack.cpp_CHaystack_process_FUN_004f0e40
+    Line 202: member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union
   core_marquee.cpp_CMarquee_renderTransparent_FUN_0050c050
     Line 98: member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union
+  core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
+    Line 206: member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union
   core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0
     Line 79: member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union
   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
     Line 234: member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union
+  core_gun.cpp_CGun_FUN_004f0350
+    Line 154: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
     Line 77: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440
     Line 34: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   core_skeledit.cpp_FUN_0058c190
     Line 172: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
+  core_turret.cpp_CTurret_fire_FUN_005e3750
+    Line 120: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     Line 92: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   core_actor.cpp_CDemonActor_FUN_0040dec0
@@ -724,11 +618,13 @@ CATEGORY: other (2865 errors)
     Line 55: member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union
   core_tvbat.cpp_CTVBat_process_FUN_005e4210
     Line 241: member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union
+  core_moloch.cpp_CMoloch_process_FUN_00528d20
+    Line 131: member reference base type 'byte[6812]' (aka 'unsigned char[6812]') is not a structure or union
   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740
     Line 52: member reference base type 'byte[80]' (aka 'unsigned char[80]') is not a structure or union
   core_trap.cpp_CTrap_process_FUN_005de770
     Line 65: member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union
-  core_charactr.cpp_CCharacter_FUN_0042b9e0
+  core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0
     Line 68: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
     Line 57: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
@@ -757,11 +653,15 @@ CATEGORY: other (2865 errors)
   core_scat.cpp_CScat_FUN_00558cf0
     Line 49: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   core_stranger.cpp_CStranger_FUN_005c1680
-    Line 86: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
+    Line 85: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
+  core_stranger.cpp_CStranger_FUN_005c3960
+    Line 176: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   core_vehicle.cpp_CVehicle_process_FUN_005e7e80
     Line 77: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70
     Line 50: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
+  core_weapon.cpp_CWeapon_FUN_005ee4a0
+    Line 27: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
     Line 115: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
@@ -786,6 +686,8 @@ CATEGORY: other (2865 errors)
     Line 26: member reference base type 'char[84]' is not a structure or union
   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0
     Line 99: member reference base type 'char[84]' is not a structure or union
+  core_weapon.cpp_CWeapon_FUN_005ee830
+    Line 42: member reference base type 'char[84]' is not a structure or union
   core_fire.cpp_CFireEffect_FUN_004c93d0
     Line 16: member reference base type 'char[92]' is not a structure or union
   core_msnedit.cpp_CDemonMission_FUN_0053bd80
@@ -845,7 +747,7 @@ CATEGORY: other (2865 errors)
   core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170
     Line 76: member reference base type 'float' is not a structure or union
   core_mimic.cpp_CMimic_FUN_0051fcc0
-    Line 191: member reference base type 'float' is not a structure or union
+    Line 187: member reference base type 'float' is not a structure or union
   core_dcamera.cpp_processCoronaScanline_FUN_004514b0
     Line 37: member reference base type 'int' is not a structure or union
   core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0
@@ -981,7 +883,7 @@ CATEGORY: other (2865 errors)
   core_dcamera.cpp_saveCameraFog_FUN_00453f10
     Line 13: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_event.cpp_CEventList_FUN_004aacc0
-    Line 267: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 265: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_event.cpp_CEventList_FUN_004addf0
     Line 87: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_event.cpp_CEventList_saveState_FUN_004b1380
@@ -1160,12 +1062,16 @@ CATEGORY: other (2865 errors)
     Line 99: no matching literal operator for call to 'operator""_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
     Line 31: no viable overloaded '='
+  core_scat.cpp_CScat_FUN_00558060
+    Line 58: statement requires expression of integer type ('float' invalid)
+  core_smiley.cpp_CSmiley_process_FUN_005a2800
+    Line 145: statement requires expression of integer type ('float' invalid)
   core_stranger.cpp_CStranger_FUN_005c5270
-    Line 105: statement requires expression of integer type ('float' invalid)
+    Line 123: statement requires expression of integer type ('float' invalid)
   core_stranger.cpp_CStranger_FUN_005c5f10
-    Line 98: statement requires expression of integer type ('float' invalid)
+    Line 100: statement requires expression of integer type ('float' invalid)
   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150
-    Line 119: statement requires expression of integer type ('float' invalid)
+    Line 121: statement requires expression of integer type ('float' invalid)
   core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30
     Line 66: subscripted value is not an array, pointer, or vector
   sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
@@ -1190,13 +1096,13 @@ CATEGORY: other (2865 errors)
     Line 34: use of undeclared label 'ST0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (1267 errors)
+CATEGORY: undeclared_identifier (1281 errors)
 ====================================================================================================
 
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
     Line 250: use of undeclared identifier 'DAT_00000008'
   core_event.cpp_CEventList_FUN_004aacc0
-    Line 150: use of undeclared identifier 'DAT_0062460c'
+    Line 148: use of undeclared identifier 'DAT_0062460c'
   core_game.cpp_CGame_saveGame_FUN_004e0cd0
     Line 136: use of undeclared identifier 'DAT_0062ca5b'
   core_msnedit.cpp_CDemonMission_FUN_0053d3b0
@@ -1207,8 +1113,8 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 227: use of undeclared identifier 'DAT_0063e68c'
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
     Line 31: use of undeclared identifier 'DAT_0066e177'; did you mean 'DAT_0066e158'?
-  core_charactr.cpp_CCharacter_FUN_0042ede0
-    Line 72: use of undeclared identifier 'DAT_0066e740'; did you mean 'DAT_0066e940'?
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+    Line 70: use of undeclared identifier 'DAT_0066e740'; did you mean 'DAT_0066e940'?
   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
     Line 142: use of undeclared identifier 'DAT_0067e6c8'
   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680
@@ -1223,7 +1129,7 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 61: use of undeclared identifier 'DAT_00680660'
   core_msnedit.cpp_CDemonMission_FUN_0053df90
     Line 57: use of undeclared identifier 'DAT_00680730'
-  core_charactr.cpp_CCharacter_FUN_00429b40
+  core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40
     Line 74: use of undeclared identifier 'DAT_00823a78'; did you mean 'DAT_00823a98'?
   core_cloth.cpp_CCloth_render_FUN_0043bae0
     Line 119: use of undeclared identifier 'DAT_00827500'
@@ -1380,21 +1286,15 @@ CATEGORY: undeclared_identifier (1267 errors)
   core_baron.cpp_CBaronWeapon_FUN_00413f20
     Line 32: use of undeclared identifier 'code'
   core_boneguy.cpp_CBoneGuy_FUN_0041cc40
-    Line 48: use of undeclared identifier 'code'
+    Line 46: use of undeclared identifier 'code'
   core_boneguy.cpp_FUN_0041b700
     Line 21: use of undeclared identifier 'code'
   core_boxactor.cpp_CBoxActor_FUN_00422590
     Line 28: use of undeclared identifier 'code'
   core_bugs.cpp_CBugs_FUN_00425fe0
     Line 81: use of undeclared identifier 'code'
-  core_charactr.cpp_CCharacter_FUN_0042c5f0
-    Line 66: use of undeclared identifier 'code'
-  core_charactr.cpp_CCharacter_FUN_0042ca70
-    Line 66: use of undeclared identifier 'code'
-  core_charactr.cpp_CCharacter_FUN_0042e050
-    Line 113: use of undeclared identifier 'code'
-  core_colonel.cpp_CColonel_process_FUN_0043fa00
-    Line 217: use of undeclared identifier 'code'
+  core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050
+    Line 117: use of undeclared identifier 'code'
   core_curtain.cpp_CCurtain_process_FUN_0044a920
     Line 119: use of undeclared identifier 'code'
   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
@@ -1403,8 +1303,10 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 138: use of undeclared identifier 'code'
   core_drip.cpp_CDrip_process_FUN_0048e2a0
     Line 108: use of undeclared identifier 'code'
+  core_elephant.cpp_CElephantGun_fire_FUN_004a7160
+    Line 121: use of undeclared identifier 'code'
   core_emitter.cpp_CEmitter_process_FUN_004a8070
-    Line 192: use of undeclared identifier 'code'
+    Line 193: use of undeclared identifier 'code'
   core_enemy.cpp_CEnemy_FUN_004a9b00
     Line 66: use of undeclared identifier 'code'
   core_event.cpp_FUN_004b1a78
@@ -1415,10 +1317,14 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 22: use of undeclared identifier 'code'
   core_gabriela.cpp_CGabriella_FUN_004d6540
     Line 83: use of undeclared identifier 'code'
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+    Line 526: use of undeclared identifier 'code'
   core_hero.cpp_CHero_FUN_004f3580
     Line 15: use of undeclared identifier 'code'
   core_inv.cpp_CInventory_addItem_FUN_004fd600
     Line 55: use of undeclared identifier 'code'
+  core_lightgun.cpp_CLightGun_FUN_00505c70
+    Line 225: use of undeclared identifier 'code'
   core_mimic.cpp_CMimic_dtor_FUN_0051f2c0
     Line 33: use of undeclared identifier 'code'
   core_mimic.cpp_CMimic_setup_FUN_0051f3e0
@@ -1428,7 +1334,7 @@ CATEGORY: undeclared_identifier (1267 errors)
   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
     Line 28: use of undeclared identifier 'code'
   core_mobster.cpp_CMobster_FUN_00526d90
-    Line 108: use of undeclared identifier 'code'
+    Line 106: use of undeclared identifier 'code'
   core_mobster.cpp_FUN_005250a0
     Line 21: use of undeclared identifier 'code'
   core_msnedit.cpp_CDemonMission_FUN_0053cc30
@@ -1441,14 +1347,12 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 31: use of undeclared identifier 'code'
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
     Line 271: use of undeclared identifier 'code'
-  core_scat.cpp_CScat_FUN_00558060
-    Line 64: use of undeclared identifier 'code'
   core_scat.cpp_CScat_FUN_00558720
     Line 106: use of undeclared identifier 'code'
   core_scat.cpp_CScat_FUN_00558fd0
     Line 65: use of undeclared identifier 'code'
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 117: use of undeclared identifier 'code'
+    Line 116: use of undeclared identifier 'code'
   core_scat.cpp_CScat_renderOpaque_FUN_00557df0
     Line 20: use of undeclared identifier 'code'
   core_script.cpp_CScript_FUN_005677a0
@@ -1471,12 +1375,14 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 17: use of undeclared identifier 'code'
   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
     Line 22: use of undeclared identifier 'code'
+  core_shotgun.cpp_CShotgun_fire_FUN_00588060
+    Line 123: use of undeclared identifier 'code'
   core_smiley.cpp_CSmiley_FUN_005a3160
     Line 22: use of undeclared identifier 'code'
   core_stranger.cpp_CStranger_FUN_005bb960
-    Line 579: use of undeclared identifier 'code'
+    Line 593: use of undeclared identifier 'code'
   core_stranger.cpp_CStranger_FUN_005bdd20
-    Line 101: use of undeclared identifier 'code'
+    Line 102: use of undeclared identifier 'code'
   core_stranger.cpp_FUN_005bafe0
     Line 18: use of undeclared identifier 'code'
   core_tommygun.cpp_CTommyGun_process_FUN_005de360
@@ -1486,7 +1392,7 @@ CATEGORY: undeclared_identifier (1267 errors)
   core_vehicle.cpp_CVehicle_process_FUN_005e7e80
     Line 194: use of undeclared identifier 'code'
   core_zombie.cpp_CZombie_FUN_005fb530
-    Line 138: use of undeclared identifier 'code'
+    Line 135: use of undeclared identifier 'code'
   core_zombie.cpp_FUN_005f8cc0
     Line 18: use of undeclared identifier 'code'
   core_zombie.cpp_FUN_005f8d30
@@ -1554,15 +1460,15 @@ CATEGORY: undeclared_identifier (1267 errors)
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
     Line 146: use of undeclared identifier 'stack0x00000000'
   core_elephant.cpp_CElephantGun_process_FUN_004a7070
-    Line 22: use of undeclared identifier 'stack0x00000000'
+    Line 24: use of undeclared identifier 'stack0x00000000'
   core_lightgun.cpp_CLightGun_FUN_00505ac0
-    Line 20: use of undeclared identifier 'stack0x00000000'
+    Line 23: use of undeclared identifier 'stack0x00000000'
   core_set.cpp_CDemonSet_FUN_0056c990
     Line 49: use of undeclared identifier 'stack0x00000000'
   core_setedit.cpp_CDemonSet_FUN_00581aa0
     Line 118: use of undeclared identifier 'stack0x00000000'
   core_shotgun.cpp_CShotgun_process_FUN_00587f70
-    Line 21: use of undeclared identifier 'stack0x00000000'
+    Line 23: use of undeclared identifier 'stack0x00000000'
   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
     Line 77: use of undeclared identifier 'stack0x00000000'
   core_sound.cpp_CSound_init_FUN_005b2dd0
@@ -1583,6 +1489,10 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 25: use of undeclared identifier 'stack0x00000008'
   sound_sndmain.cpp_logSoundError_FUN_005adba0
     Line 22: use of undeclared identifier 'stack0x00000008'
+  core_scat.cpp_CScat_FUN_00558060
+    Line 81: use of undeclared identifier 'stack0x00000008'; did you mean 'in_stack_00000008'?
+  core_stranger.cpp_CStranger_FUN_005c5270
+    Line 184: use of undeclared identifier 'stack0x00000008'; did you mean 'in_stack_00000008'?
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
     Line 17: use of undeclared identifier 'stack0x0000000c'
   engine_console.cpp_CConsole_printf_FUN_00441890
@@ -1641,8 +1551,6 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 18: use of undeclared identifier 'stack0x00000020'
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 43: use of undeclared identifier 'stack0x0000002c'
-  engine_3d.c_clipAndDrawLine3D_FUN_00408070
-    Line 35: use of undeclared identifier 'stack0x00000034'; did you mean 'in_stack_00000034'?
   core_script.cpp_CScript_FUN_00565130
     Line 156: use of undeclared identifier 'stack0x0000007c'
   core_msnedit.cpp_CDemonMission_FUN_0053d8b0
@@ -1663,7 +1571,7 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 25: use of undeclared identifier 'stack0xffffd9d8'
   core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0
     Line 24: use of undeclared identifier 'stack0xffffdaf8'
-  core_charactr.cpp_CCharacter_FUN_0042af60
+  core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60
     Line 34: use of undeclared identifier 'stack0xffffe550'
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
     Line 112: use of undeclared identifier 'stack0xffffe790'
@@ -1674,7 +1582,7 @@ CATEGORY: undeclared_identifier (1267 errors)
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     Line 66: use of undeclared identifier 'stack0xfffff17c'
   core_stranger.cpp_CStranger_FUN_005c07b0
-    Line 527: use of undeclared identifier 'stack0xfffff2a4'
+    Line 532: use of undeclared identifier 'stack0xfffff2a4'
   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0
     Line 585: use of undeclared identifier 'stack0xfffff584'
   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910
@@ -1682,7 +1590,7 @@ CATEGORY: undeclared_identifier (1267 errors)
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
     Line 77: use of undeclared identifier 'stack0xfffff6c8'; did you mean 'in_stack_fffff6c8'?
   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
-    Line 83: use of undeclared identifier 'stack0xfffff6d0'
+    Line 85: use of undeclared identifier 'stack0xfffff6d0'
   core_game.cpp_CGame_runGameSession_FUN_004daf80
     Line 45: use of undeclared identifier 'stack0xfffff790'
   engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0
@@ -1702,19 +1610,21 @@ CATEGORY: undeclared_identifier (1267 errors)
   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
     Line 32: use of undeclared identifier 'stack0xfffffb34'; did you mean 'in_stack_fffffb34'?
   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
-    Line 584: use of undeclared identifier 'stack0xfffffb6c'
+    Line 608: use of undeclared identifier 'stack0xfffffb6c'; did you mean 'in_stack_fffffb6c'?
   engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0
     Line 49: use of undeclared identifier 'stack0xfffffbc4'; did you mean 'in_stack_fffffbc4'?
   sound_sndmain.cpp_readIni_FUN_005abf20
     Line 41: use of undeclared identifier 'stack0xfffffc4c'; did you mean 'in_stack_fffffc4c'?
+  core_gabriela.cpp_CGabriella_FUN_004d5550
+    Line 95: use of undeclared identifier 'stack0xfffffc54'; did you mean 'in_stack_fffffc54'?
   core_zombie.cpp_CZombie_process_FUN_005f9470
-    Line 272: use of undeclared identifier 'stack0xfffffc54'
+    Line 270: use of undeclared identifier 'stack0xfffffc54'; did you mean 'in_stack_fffffc54'?
   sound_sndmain.cpp_startSfx_FUN_005a8e90
     Line 43: use of undeclared identifier 'stack0xfffffc70'
   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
     Line 60: use of undeclared identifier 'stack0xfffffca0'
   core_werewolf.cpp_CWerewolf_process_FUN_005efde0
-    Line 198: use of undeclared identifier 'stack0xfffffce0'
+    Line 199: use of undeclared identifier 'stack0xfffffce0'
   shape_edittool.cpp_showTextInputDialog_FUN_0049db10
     Line 40: use of undeclared identifier 'stack0xfffffce0'; did you mean 'in_stack_fffffce0'?
   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
@@ -1736,19 +1646,23 @@ CATEGORY: undeclared_identifier (1267 errors)
   core_script.cpp_CScript_FUN_005645d0
     Line 51: use of undeclared identifier 'stack0xfffffdfc'; did you mean 'in_stack_fffffdfc'?
   core_bride.cpp_CBride_process_FUN_00423a30
-    Line 199: use of undeclared identifier 'stack0xfffffe0c'
+    Line 213: use of undeclared identifier 'stack0xfffffe0c'
+  core_larva.cpp_CLarva_process_FUN_00503080
+    Line 318: use of undeclared identifier 'stack0xfffffe10'; did you mean 'in_stack_fffffe10'?
   core_mimic.cpp_CMimic_FUN_0051fcc0
-    Line 192: use of undeclared identifier 'stack0xfffffe1c'
+    Line 188: use of undeclared identifier 'stack0xfffffe1c'
   core_smiley.cpp_CSmiley_process_FUN_005a2800
-    Line 70: use of undeclared identifier 'stack0xfffffe34'
+    Line 68: use of undeclared identifier 'stack0xfffffe34'
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
-    Line 346: use of undeclared identifier 'stack0xfffffe44'
+    Line 355: use of undeclared identifier 'stack0xfffffe44'
   core_game.cpp_CGame_processHotkeys_FUN_004dcee0
     Line 226: use of undeclared identifier 'stack0xfffffe54'
-  core_imp.cpp_CImp_process_FUN_004f9c30
-    Line 377: use of undeclared identifier 'stack0xfffffe60'
+  core_sentinel.cpp_CSentinel_process_FUN_00568030
+    Line 346: use of undeclared identifier 'stack0xfffffe60'; did you mean 'in_stack_fffffe60'?
   core_mobster.cpp_CMobster_process_FUN_00525840
-    Line 82: use of undeclared identifier 'stack0xfffffe64'
+    Line 86: use of undeclared identifier 'stack0xfffffe64'
+  core_batman.cpp_CBatman_process_FUN_00416870
+    Line 244: use of undeclared identifier 'stack0xfffffe78'; did you mean 'in_stack_fffffe78'?
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
     Line 292: use of undeclared identifier 'stack0xfffffe7c'
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
@@ -1762,7 +1676,7 @@ CATEGORY: undeclared_identifier (1267 errors)
   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
     Line 23: use of undeclared identifier 'stack0xfffffe90'; did you mean 'in_stack_fffffe90'?
   core_stranger.cpp_CStranger_FUN_005c1680
-    Line 185: use of undeclared identifier 'stack0xfffffe94'
+    Line 184: use of undeclared identifier 'stack0xfffffe94'
   core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0
     Line 65: use of undeclared identifier 'stack0xfffffe94'
   core_course.cpp_FUN_00443bc0
@@ -1775,10 +1689,14 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 108: use of undeclared identifier 'stack0xfffffeb0'
   shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
     Line 59: use of undeclared identifier 'stack0xfffffeb0'
-  core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
-    Line 63: use of undeclared identifier 'stack0xfffffeb4'
   core_baron.cpp_CBaron_FUN_004136b0
     Line 51: use of undeclared identifier 'stack0xfffffeb8'
+  core_gun.cpp_CGun_FUN_004f0350
+    Line 153: use of undeclared identifier 'stack0xfffffec0'
+  core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
+    Line 169: use of undeclared identifier 'stack0xfffffec0'
+  core_batcreat.cpp_CBatCreature_process_FUN_00415470
+    Line 285: use of undeclared identifier 'stack0xfffffec4'; did you mean 'in_stack_fffffec4'?
   core_netgame.cpp_CNetGame_FUN_00541390
     Line 53: use of undeclared identifier 'stack0xfffffed0'
   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
@@ -1803,12 +1721,18 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 59: use of undeclared identifier 'stack0xfffffef0'; did you mean 'in_stack_fffffef0'?
   support_codec.cpp_CCodec_processFiles_FUN_0043ec30
     Line 22: use of undeclared identifier 'stack0xfffffef0'; did you mean 'in_stack_fffffef0'?
+  core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
+    Line 277: use of undeclared identifier 'stack0xfffffef4'; did you mean 'in_stack_fffffef4'?
+  core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
+    Line 272: use of undeclared identifier 'stack0xfffffefc'; did you mean 'in_stack_fffffefc'?
   shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20
     Line 57: use of undeclared identifier 'stack0xffffff00'; did you mean 'in_stack_ffffff00'?
   core_mimic.cpp_CMimic_FUN_005205f0
     Line 65: use of undeclared identifier 'stack0xffffff0c'
   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210
     Line 192: use of undeclared identifier 'stack0xffffff10'
+  core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
+    Line 134: use of undeclared identifier 'stack0xffffff14'
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
     Line 170: use of undeclared identifier 'stack0xffffff14'
   core_fire.cpp_CLightningBolt_render_FUN_004c5720
@@ -1816,27 +1740,29 @@ CATEGORY: undeclared_identifier (1267 errors)
   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
     Line 92: use of undeclared identifier 'stack0xffffff1c'
   core_dog.cpp_CZombieDog_process_FUN_0047f140
-    Line 175: use of undeclared identifier 'stack0xffffff20'
+    Line 183: use of undeclared identifier 'stack0xffffff20'
   core_glass.cpp_CGlass_setup_FUN_004e9180
     Line 132: use of undeclared identifier 'stack0xffffff20'
   core_actor.cpp_CDemonActor_load_FUN_0040b050
     Line 26: use of undeclared identifier 'stack0xffffff24'
+  core_turret.cpp_CTurret_fire_FUN_005e3750
+    Line 119: use of undeclared identifier 'stack0xffffff24'
+  core_drone.cpp_CDrone_process_FUN_0048ec70
+    Line 149: use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
     Line 40: use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?
   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
     Line 169: use of undeclared identifier 'stack0xffffff28'
   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
     Line 136: use of undeclared identifier 'stack0xffffff28'
-  engine_3d.c_drawLineStrip3D_FUN_00404600
-    Line 57: use of undeclared identifier 'stack0xffffff30'; did you mean 'in_stack_ffffff30'?
   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
     Line 76: use of undeclared identifier 'stack0xffffff34'
-  engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
-    Line 44: use of undeclared identifier 'stack0xffffff38'; did you mean 'in_stack_ffffff38'?
   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220
     Line 165: use of undeclared identifier 'stack0xffffff3c'
   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50
     Line 121: use of undeclared identifier 'stack0xffffff40'
+  core_cow.cpp_CZombieCow_process_FUN_00444310
+    Line 142: use of undeclared identifier 'stack0xffffff40'; did you mean 'in_stack_ffffff40'?
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
     Line 119: use of undeclared identifier 'stack0xffffff44'
   core_gabriela.cpp_CGabriella_FUN_004d5870
@@ -1849,7 +1775,7 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 94: use of undeclared identifier 'stack0xffffff48'
   core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
     Line 130: use of undeclared identifier 'stack0xffffff48'
-  core_charactr.cpp_CCharacter_FUN_0042b9e0
+  core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0
     Line 49: use of undeclared identifier 'stack0xffffff54'
   core_dracbrid.cpp_CDraculaBride_FUN_004858f0
     Line 49: use of undeclared identifier 'stack0xffffff54'
@@ -1865,6 +1791,8 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 40: use of undeclared identifier 'stack0xffffff5c'
   core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70
     Line 67: use of undeclared identifier 'stack0xffffff5c'
+  core_gabriela.cpp_CGabriella_FUN_004d4890
+    Line 118: use of undeclared identifier 'stack0xffffff60'
   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409b90
     Line 26: use of undeclared identifier 'stack0xffffff64'
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
@@ -1881,6 +1809,8 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 22: use of undeclared identifier 'stack0xffffff70'
   support_codec.cpp_CCodec_finalizeBuffer_FUN_0043ed50
     Line 19: use of undeclared identifier 'stack0xffffff74'
+  core_icepick.cpp_CIcePick_process_FUN_004f80b0
+    Line 309: use of undeclared identifier 'stack0xffffff74'; did you mean 'in_stack_ffffff74'?
   core_set.cpp_CDemonSet_FUN_0056fbd0
     Line 108: use of undeclared identifier 'stack0xffffff78'
   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50
@@ -1900,7 +1830,7 @@ CATEGORY: undeclared_identifier (1267 errors)
   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640
     Line 73: use of undeclared identifier 'stack0xffffff84'; did you mean 'in_stack_ffffff84'?
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-    Line 145: use of undeclared identifier 'stack0xffffff88'
+    Line 147: use of undeclared identifier 'stack0xffffff88'
   core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440
     Line 73: use of undeclared identifier 'stack0xffffff88'
   core_tvbat.cpp_CTVBat_renderOpaque_FUN_005e4d80
@@ -1949,14 +1879,14 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 27: use of undeclared identifier 'stack0xffffffa4'
   core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0
     Line 43: use of undeclared identifier 'stack0xffffffa4'; did you mean 'in_stack_ffffffa4'?
-  core_stranger.cpp_CStranger_FUN_005c5270
-    Line 165: use of undeclared identifier 'stack0xffffffa4'; did you mean 'in_stack_ffffffa4'?
   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
     Line 50: use of undeclared identifier 'stack0xffffffac'
   core_turret.cpp_CTurret_FUN_005e3560
     Line 34: use of undeclared identifier 'stack0xffffffac'
   core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720
     Line 50: use of undeclared identifier 'stack0xffffffac'; did you mean 'in_stack_ffffffac'?
+  core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0
+    Line 86: use of undeclared identifier 'stack0xffffffb0'
   core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760
     Line 75: use of undeclared identifier 'stack0xffffffb0'; did you mean 'in_stack_ffffffb0'?
   core_bodypart.cpp_CBodyPart_FUN_0041b070
@@ -1971,12 +1901,16 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 80: use of undeclared identifier 'stack0xffffffba'
   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0
     Line 31: use of undeclared identifier 'stack0xffffffbc'
+  core_charactr.cpp_CCharacter_attractActorToward_FUN_0042c010
+    Line 29: use of undeclared identifier 'stack0xffffffbc'
+  core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
+    Line 87: use of undeclared identifier 'stack0xffffffbc'
   core_simbox.cpp_CSimBox_setup_FUN_00588e00
     Line 21: use of undeclared identifier 'stack0xffffffbc'
   core_boneguy.cpp_FUN_0041b770
     Line 24: use of undeclared identifier 'stack0xffffffc0'
-  core_charactr.cpp_CCharacter_FUN_0042b930
-    Line 18: use of undeclared identifier 'stack0xffffffc0'
+  core_charactr.cpp_CCharacter_explode_FUN_0042b930
+    Line 22: use of undeclared identifier 'stack0xffffffc0'
   core_mobster.cpp_FUN_00525110
     Line 24: use of undeclared identifier 'stack0xffffffc0'
   core_zombie.cpp_FUN_005f8da0
@@ -2141,10 +2075,10 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 31: use of undeclared identifier 'stack0xffffffe4'
   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
     Line 59: use of undeclared identifier 'stack0xffffffe4'; did you mean 'in_stack_ffffffe4'?
-  core_charactr.cpp_CCharacter_FUN_0042c180
-    Line 73: use of undeclared identifier 'stack0xffffffe8'
+  core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180
+    Line 44: use of undeclared identifier 'stack0xffffffe8'
   core_crate.cpp_CCrate_process_FUN_00448660
-    Line 88: use of undeclared identifier 'stack0xffffffe8'
+    Line 90: use of undeclared identifier 'stack0xffffffe8'
   core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
     Line 85: use of undeclared identifier 'stack0xffffffe8'
   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
@@ -2165,10 +2099,14 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 31: use of undeclared identifier 'stack0xffffffec'
   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
     Line 26: use of undeclared identifier 'stack0xffffffec'; did you mean 'in_stack_ffffffec'?
+  core_weapon.cpp_CWeapon_onDropped_FUN_005ee3f0
+    Line 21: use of undeclared identifier 'stack0xffffffec'; did you mean 'in_stack_ffffffec'?
   support_trisock.cpp_acceptConnection_FUN_005e1d80
     Line 31: use of undeclared identifier 'stack0xfffffff0'
   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
     Line 31: use of undeclared identifier 'stack0xfffffff4'
+  core_flamegun.cpp_CFlameThrower_fire_FUN_004cb920
+    Line 22: use of undeclared identifier 'stack0xfffffff4'
   core_main.c_enterMainGameMenu_FUN_00512f40
     Line 106: use of undeclared identifier 'stack0xfffffff4'
   core_menu.cpp_showMainGameMenu_FUN_00512f40
@@ -2187,7 +2125,7 @@ CATEGORY: undeclared_identifier (1267 errors)
     Line 23: use of undeclared identifier 'undefined3'
 
 ====================================================================================================
-CATEGORY: incompatible_types (1091 errors)
+CATEGORY: incompatible_types (1097 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -2198,8 +2136,6 @@ CATEGORY: incompatible_types (1091 errors)
     Line 30: assigning to 'CCloth *' from incompatible type 'void *'
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
     Line 52: assigning to 'CColorQuantizer *' from incompatible type 'void *'
-  core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
-    Line 95: assigning to 'CCrate *' from incompatible type 'double'
   core_actor.cpp_createActorByName_FUN_0040c430
     Line 26: assigning to 'CDemonActor *' from incompatible type 'void *'
   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380
@@ -2213,7 +2149,7 @@ CATEGORY: incompatible_types (1091 errors)
   core_mission.cpp_CDemonMission_FUN_00524c20
     Line 41: assigning to 'CHeroPlaceholder *' from incompatible type 'void *'
   core_succubus.cpp_CSuccubus_process_FUN_005c6e90
-    Line 200: assigning to 'CHotDemon *' from incompatible type 'void *'
+    Line 229: assigning to 'CHotDemon *' from incompatible type 'void *'
   core_bugs.cpp_CBugs_ctor_FUN_00424cb0
     Line 21: assigning to 'CKeyFramedModelInstance *' from incompatible type 'void *'
   support_codec.cpp_CLZWDictionary_init_FUN_0043ee60
@@ -2474,6 +2410,8 @@ CATEGORY: incompatible_types (1091 errors)
     Line 23: assigning to 'char *' from incompatible type 'HANDLE' (aka 'void *')
   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
     Line 40: assigning to 'char *' from incompatible type 'LPVOID' (aka 'void *')
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
+    Line 122: assigning to 'char *' from incompatible type 'byte[52]' (aka 'unsigned char[52]')
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
     Line 17: assigning to 'char *' from incompatible type 'char *[1]'
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
@@ -2564,8 +2502,6 @@ CATEGORY: incompatible_types (1091 errors)
     Line 27: assigning to 'float *' from incompatible type 'void *'
   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
     Line 140: assigning to 'float *' from incompatible type 'void *'
-  engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
-    Line 37: assigning to 'int *' from incompatible type 'uint[12]' (aka 'unsigned int[12]')
   shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0
     Line 42: assigning to 'int *' from incompatible type 'uint[13]' (aka 'unsigned int[13]')
   cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0
@@ -2585,7 +2521,7 @@ CATEGORY: incompatible_types (1091 errors)
   core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600
     Line 18: assigning to 'int *' from incompatible type 'void *'
   core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310
-    Line 116: assigning to 'int *' from incompatible type 'void *'
+    Line 117: assigning to 'int *' from incompatible type 'void *'
   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0
     Line 30: assigning to 'int *' from incompatible type 'void *'
   core_setedit.cpp_CDemonSet_FUN_0057fd00
@@ -2683,37 +2619,37 @@ CATEGORY: incompatible_types (1091 errors)
   core_bat.cpp_CBat_process_FUN_00414a00
     Line 55: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030
-    Line 55: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 56: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    Line 116: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 117: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_batman.cpp_CBatman_processDamage_FUN_004179a0
-    Line 54: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 55: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_batman.cpp_CBatman_process_FUN_00416870
-    Line 224: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 230: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
-    Line 430: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 442: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_bride.cpp_CBride_processDamage_FUN_00424830
-    Line 71: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 72: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_bride.cpp_CBride_process_FUN_00423a30
-    Line 83: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_charactr.cpp_CCharacter_FUN_0042a830
+    Line 86: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_charactr.cpp_CCharacter_processFire_FUN_0042a830
     Line 102: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_cow.cpp_CZombieCow_processDamage_FUN_00444b40
     Line 42: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_cow.cpp_CZombieCow_process_FUN_00444310
-    Line 83: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 84: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_dog.cpp_CZombieDog_FUN_0047f820
     Line 43: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_dog.cpp_CZombieDog_process_FUN_0047f140
-    Line 104: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 106: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_drone.cpp_CDrone_processDamage_FUN_0048f360
     Line 28: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_drone.cpp_CDrone_process_FUN_0048ec70
-    Line 135: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 141: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_dynamite.cpp_CDynamite_FUN_0049cf20
     Line 17: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_emitter.cpp_CEmitter_process_FUN_004a8070
-    Line 216: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 217: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40
     Line 23: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0
@@ -2721,39 +2657,35 @@ CATEGORY: incompatible_types (1091 errors)
   core_gargoyle.cpp_CGargoyle_processDamage_FUN_004e57d0
     Line 36: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
-    Line 102: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 103: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-    Line 117: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 119: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
-    Line 334: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 366: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_hero.cpp_CHero_FUN_004f3120
     Line 85: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_hotdemon.cpp_CHotDemon_processDamage_FUN_004f7720
     Line 49: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
-    Line 135: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 136: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0
-    Line 65: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 66: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    Line 177: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 179: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_imp.cpp_CImp_processDamage_FUN_004fae00
     Line 52: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_imp.cpp_CImp_process_FUN_004f9c30
-    Line 297: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_larva.cpp_CLarva_processDamage_FUN_00503a20
     Line 41: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_larva.cpp_CLarva_process_FUN_00503080
-    Line 314: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_mobster.cpp_CMobster_FUN_005279f0
     Line 54: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_mobster.cpp_CMobster_processDamage_FUN_00527740
-    Line 40: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 41: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_mobster.cpp_CMobster_process_FUN_00525840
-    Line 98: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 108: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
     Line 204: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_stranger.cpp_CStranger_FUN_005c48b0
-    Line 85: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
+    Line 82: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_turret.cpp_CTurret_process_FUN_005e2430
     Line 138: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_werewolf.cpp_CWerewolf_FUN_005f11e0
@@ -2761,9 +2693,11 @@ CATEGORY: incompatible_types (1091 errors)
   core_werewolf.cpp_CWerewolf_processDamage_FUN_005f1ac0
     Line 61: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_werewolf.cpp_CWerewolf_process_FUN_005efde0
-    Line 628: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 647: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0
     Line 48: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+    Line 494: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_door.cpp_CDoor_FUN_00481210
     Line 18: assigning to 'undefined4' (aka 'unsigned int') from incompatible type 'void'
   sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
@@ -2779,7 +2713,7 @@ CATEGORY: incompatible_types (1091 errors)
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     Line 188: cannot convert 'UActorPropertyCallback' to 'int' without a conversion operator
   core_stranger.cpp_CStranger_FUN_005bdd20
-    Line 61: cannot convert 'UActorVTable' to 'float' without a conversion operator
+    Line 62: cannot convert 'UActorVTable' to 'float' without a conversion operator
   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0
     Line 33: incompatible integer to pointer conversion assigning to 'HANDLE' (aka 'void *') from 'long'
   core_mimic.cpp_CMimic_FUN_0051f930
@@ -2794,8 +2728,8 @@ CATEGORY: incompatible_types (1091 errors)
     Line 174: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'ushort *' (aka 'unsigned short *')
   core_script.cpp_CScript_FUN_00566660
     Line 17: incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'
-  core_charactr.cpp_CCharacter_FUN_00428f40
-    Line 82: incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'
+  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
+    Line 83: incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'
   core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00
     Line 44: incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'
   core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30
@@ -2844,8 +2778,6 @@ CATEGORY: incompatible_types (1091 errors)
     Line 1070: incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'
   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
     Line 103: incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'
-  core_stranger.cpp_CStranger_FUN_005c5270
-    Line 219: incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'
   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
     Line 123: incompatible pointer types assigning to 'CDemonActor *' from 'CSpike *'
   core_inv.cpp_clampWeaponAmmoCount_FUN_004fd5d0
@@ -2878,8 +2810,6 @@ CATEGORY: incompatible_types (1091 errors)
     Line 35: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
   core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
     Line 19: invalid conversion specifier '.' [-Werror,-Wformat-invalid-specifier]
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
-    Line 239: invalid operands to binary expression ('double' and 'int')
   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
     Line 18: invalid operands to binary expression ('double' and 'int')
   core_bat.cpp_CBat_FUN_00414ce0
@@ -2890,6 +2820,8 @@ CATEGORY: incompatible_types (1091 errors)
     Line 18: invalid operands to binary expression ('double' and 'int')
   core_course.cpp_CCourse_FUN_004427a0
     Line 75: invalid operands to binary expression ('double' and 'int')
+  core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
+    Line 109: invalid operands to binary expression ('double' and 'int')
   core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
     Line 22: invalid operands to binary expression ('double' and 'int')
   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
@@ -2909,11 +2841,17 @@ CATEGORY: incompatible_types (1091 errors)
   core_event.cpp_CEventList_FUN_004b0db0
     Line 30: invalid operands to binary expression ('double' and 'int')
   core_flame.cpp_CFlame_FUN_004c9c00
-    Line 82: invalid operands to binary expression ('double' and 'int')
+    Line 83: invalid operands to binary expression ('double' and 'int')
   core_game.cpp_CGame_processFrame_FUN_004da100
     Line 258: invalid operands to binary expression ('double' and 'int')
   core_gore.cpp_FUN_004ed1c0
     Line 15: invalid operands to binary expression ('double' and 'int')
+  core_gun.cpp_CGun_FUN_004f0350
+    Line 128: invalid operands to binary expression ('double' and 'int')
+  core_hostage.cpp_CHostage_process_FUN_004f4bd0
+    Line 408: invalid operands to binary expression ('double' and 'int')
+  core_lightgun.cpp_CLightGun_FUN_00505c70
+    Line 122: invalid operands to binary expression ('double' and 'int')
   core_menu.cpp_configureSoundOptions_FUN_00511e50
     Line 79: invalid operands to binary expression ('double' and 'int')
   core_motion.cpp_CMotionList_save_FUN_0052d170
@@ -2925,13 +2863,17 @@ CATEGORY: incompatible_types (1091 errors)
   core_pendulum.cpp_CPendulum_FUN_00549b90
     Line 38: invalid operands to binary expression ('double' and 'int')
   core_script.cpp_CScript_step_FUN_0055a810
-    Line 1370: invalid operands to binary expression ('double' and 'int')
+    Line 1376: invalid operands to binary expression ('double' and 'int')
   core_stranger.cpp_CStranger_FUN_005bb960
-    Line 979: invalid operands to binary expression ('double' and 'int')
+    Line 574: invalid operands to binary expression ('double' and 'int')
   core_stranger.cpp_CStranger_FUN_005c2400
-    Line 121: invalid operands to binary expression ('double' and 'int')
+    Line 122: invalid operands to binary expression ('double' and 'int')
+  core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
+    Line 141: invalid operands to binary expression ('double' and 'int')
   core_tommygun.cpp_CTommyGun_process_FUN_005de360
     Line 32: invalid operands to binary expression ('double' and 'int')
+  core_turret.cpp_CTurret_fire_FUN_005e3750
+    Line 94: invalid operands to binary expression ('double' and 'int')
   core_xform.cpp_inverse_FUN_005f6210
     Line 45: invalid operands to binary expression ('double' and 'int')
   core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
@@ -3294,7 +3236,7 @@ CATEGORY: incompatible_types (1091 errors)
     Line 18: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
 
 ====================================================================================================
-CATEGORY: format_error (600 errors)
+CATEGORY: format_error (602 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -3369,8 +3311,6 @@ CATEGORY: format_error (600 errors)
     Line 27: format specifies type 'char *' but the argument has type 'CTeleportDest *' [-Werror,-Wformat]
   shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
     Line 33: format specifies type 'char *' but the argument has type 'FileTrackingEntry *' [-Werror,-Wformat]
-  core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
-    Line 62: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0
     Line 63: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
   core_cloth.cpp_CCloth_load_FUN_00438cf0
@@ -3398,7 +3338,7 @@ CATEGORY: format_error (600 errors)
   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280
     Line 58: format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]
   core_script.cpp_editParameterValue_FUN_00562920
-    Line 652: format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]
+    Line 650: format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]
   sound_sndmain.cpp_logSoundError_FUN_005adba0
     Line 56: format specifies type 'char *' but the argument has type 'SSoundDeviceInfo *' [-Werror,-Wformat]
   shape_design.c_loadTextureData_FUN_0046b060
@@ -3494,7 +3434,7 @@ CATEGORY: format_error (600 errors)
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
     Line 105: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_flame.cpp_CFlame_FUN_004c9c00
-    Line 82: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
+    Line 83: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_game.cpp_CGame_processFrame_FUN_004da100
     Line 258: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_gore.cpp_FUN_004ed1c0
@@ -3513,8 +3453,6 @@ CATEGORY: format_error (600 errors)
     Line 26: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
   core_actor.cpp_archiveQuaternion_FUN_0040b520
     Line 16: format specifies type 'float *' but the argument has type 'CQuaternion4f *' [-Werror,-Wformat]
-  core_script.cpp_CScript_step_FUN_0055a810
-    Line 875: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
     Line 71: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSLight_load_FUN_00586310
@@ -3522,7 +3460,7 @@ CATEGORY: format_error (600 errors)
   shape_design.c_loadModelFile_FUN_00458ac0
     Line 148: format specifies type 'float *' but the argument has type 'SVertexData *' [-Werror,-Wformat]
   core_event.cpp_CEventList_FUN_004aacc0
-    Line 267: format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+    Line 265: format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_motion.cpp_CMotionController_load_FUN_0052e5d0
     Line 19: format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
@@ -3583,6 +3521,8 @@ CATEGORY: format_error (600 errors)
     Line 23: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
     Line 54: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  core_script.cpp_CScript_step_FUN_0055a810
+    Line 504: format specifies type 'int *' but the argument has type 'char **' [-Werror,-Wformat]
   core_game.cpp_CGame_loadGame_FUN_004e12b0
     Line 314: format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_FUN_0058b9b0
@@ -3621,6 +3561,8 @@ CATEGORY: format_error (600 errors)
     Line 97: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
   engine_ini.cpp_getProfileInteger_FUN_004fb9a0
     Line 18: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
+  core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
+    Line 64: format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]
   core_game.cpp_captureDebugMovieFrame_FUN_004d7810
     Line 52: format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]
   core_mission.cpp_CDemonMission_loadActor_FUN_00523990
@@ -3631,7 +3573,7 @@ CATEGORY: format_error (600 errors)
     Line 39: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: syntax_error (132 errors)
+CATEGORY: syntax_error (134 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -3641,21 +3583,15 @@ CATEGORY: syntax_error (132 errors)
   core_baron.cpp_CBaronWeapon_FUN_00413f20
     Line 32: expected expression
   core_boneguy.cpp_CBoneGuy_FUN_0041cc40
-    Line 48: expected expression
+    Line 46: expected expression
   core_boneguy.cpp_FUN_0041b700
     Line 21: expected expression
   core_boxactor.cpp_CBoxActor_FUN_00422590
     Line 28: expected expression
   core_bugs.cpp_CBugs_FUN_00425fe0
     Line 81: expected expression
-  core_charactr.cpp_CCharacter_FUN_0042c5f0
-    Line 66: expected expression
-  core_charactr.cpp_CCharacter_FUN_0042ca70
-    Line 66: expected expression
-  core_charactr.cpp_CCharacter_FUN_0042e050
-    Line 113: expected expression
-  core_colonel.cpp_CColonel_process_FUN_0043fa00
-    Line 217: expected expression
+  core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050
+    Line 117: expected expression
   core_curtain.cpp_CCurtain_process_FUN_0044a920
     Line 119: expected expression
   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
@@ -3664,8 +3600,10 @@ CATEGORY: syntax_error (132 errors)
     Line 138: expected expression
   core_drip.cpp_CDrip_process_FUN_0048e2a0
     Line 108: expected expression
+  core_elephant.cpp_CElephantGun_fire_FUN_004a7160
+    Line 121: expected expression
   core_emitter.cpp_CEmitter_process_FUN_004a8070
-    Line 192: expected expression
+    Line 193: expected expression
   core_enemy.cpp_CEnemy_FUN_004a9b00
     Line 66: expected expression
   core_event.cpp_FUN_004b19d0
@@ -3678,12 +3616,16 @@ CATEGORY: syntax_error (132 errors)
     Line 22: expected expression
   core_gabriela.cpp_CGabriella_FUN_004d6540
     Line 83: expected expression
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+    Line 526: expected expression
   core_hero.cpp_CHero_FUN_004f2af0
     Line 44: expected expression
   core_hero.cpp_CHero_FUN_004f3580
     Line 15: expected expression
   core_inv.cpp_CInventory_addItem_FUN_004fd600
     Line 55: expected expression
+  core_lightgun.cpp_CLightGun_FUN_00505c70
+    Line 225: expected expression
   core_mimic.cpp_CMimic_dtor_FUN_0051f2c0
     Line 33: expected expression
   core_mimic.cpp_CMimic_setup_FUN_0051f3e0
@@ -3693,7 +3635,7 @@ CATEGORY: syntax_error (132 errors)
   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
     Line 28: expected expression
   core_mobster.cpp_CMobster_FUN_00526d90
-    Line 108: expected expression
+    Line 106: expected expression
   core_mobster.cpp_FUN_005250a0
     Line 21: expected expression
   core_msnedit.cpp_CDemonMission_FUN_0053cc30
@@ -3709,13 +3651,13 @@ CATEGORY: syntax_error (132 errors)
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
     Line 271: expected expression
   core_scat.cpp_CScat_FUN_00558060
-    Line 64: expected expression
+    Line 90: expected expression
   core_scat.cpp_CScat_FUN_00558720
     Line 106: expected expression
   core_scat.cpp_CScat_FUN_00558fd0
     Line 65: expected expression
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 117: expected expression
+    Line 116: expected expression
   core_scat.cpp_CScat_renderOpaque_FUN_00557df0
     Line 20: expected expression
   core_script.cpp_CScript_FUN_005677a0
@@ -3742,14 +3684,16 @@ CATEGORY: syntax_error (132 errors)
     Line 22: expected expression
   core_setedit.cpp_C3DSCamera_FUN_005769a0
     Line 96: expected expression
+  core_shotgun.cpp_CShotgun_fire_FUN_00588060
+    Line 123: expected expression
   core_smiley.cpp_CSmiley_FUN_005a3160
     Line 22: expected expression
   core_smiley.cpp_CSmiley_process_FUN_005a2800
     Line 117: expected expression
   core_stranger.cpp_CStranger_FUN_005bb960
-    Line 579: expected expression
+    Line 593: expected expression
   core_stranger.cpp_CStranger_FUN_005bdd20
-    Line 101: expected expression
+    Line 102: expected expression
   core_stranger.cpp_FUN_005bafe0
     Line 18: expected expression
   core_tommygun.cpp_CTommyGun_process_FUN_005de360
@@ -3759,9 +3703,9 @@ CATEGORY: syntax_error (132 errors)
   core_vehicle.cpp_CVehicle_process_FUN_005e7e80
     Line 194: expected expression
   core_zombie.cpp_CZombie_FUN_005fb530
-    Line 138: expected expression
+    Line 135: expected expression
   core_zombie.cpp_CZombie_process_FUN_005f9470
-    Line 380: expected expression
+    Line 387: expected expression
   core_zombie.cpp_FUN_005f8cc0
     Line 18: expected expression
   core_zombie.cpp_FUN_005f8d30
@@ -3825,10 +3769,6 @@ CATEGORY: missing_member (78 errors)
     Line 79: no member named 'animation_state' in 'CDoor'
   core_turret.cpp_CTurret_ctor_FUN_005e20f0
     Line 65: no member named 'animation_state' in 'CTurret'
-  core_stranger.cpp_CStranger_FUN_005bfb60
-    Line 126: no member named 'field_0x1fc34' in 'CStranger'
-  core_stranger.cpp_CStranger_FUN_005c5f10
-    Line 23: no member named 'field_0x1fc34' in 'CStranger'
   core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0
     Line 47: no member named 'model_name' in 'CEmitter'
   core_ammobox.cpp_CAmmoBox_ctor_FUN_004115a0
@@ -3878,23 +3818,23 @@ CATEGORY: type_error (20 errors)
 ====================================================================================================
 
   core_baron.cpp_CBaron_process_FUN_00412e80
-    Line 27: unknown type name 'code'
+    Line 28: unknown type name 'code'
   core_colonel.cpp_CColonel_process_FUN_0043fa00
-    Line 25: unknown type name 'code'
+    Line 27: unknown type name 'code'
   core_gabriela.cpp_CGabriella_FUN_004d4d80
     Line 24: unknown type name 'code'
   core_haystack.cpp_CHaystack_process_FUN_004f0e40
-    Line 28: unknown type name 'code'
+    Line 27: unknown type name 'code'
   core_icepick.cpp_CIcePick_FUN_004f8810
     Line 21: unknown type name 'code'
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    Line 27: unknown type name 'code'
+    Line 29: unknown type name 'code'
   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
     Line 23: unknown type name 'code'
   core_scat.cpp_CScat_FUN_005584a0
     Line 22: unknown type name 'code'
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 33: unknown type name 'code'
+    Line 34: unknown type name 'code'
   core_stranger.cpp_CStranger_FUN_005be520
     Line 34: unknown type name 'code'
   core_stranger.cpp_CStranger_FUN_005bf720

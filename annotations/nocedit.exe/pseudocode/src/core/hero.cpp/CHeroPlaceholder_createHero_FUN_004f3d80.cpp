@@ -10,7 +10,7 @@ CDemonActor * __cdecl
 core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,int param_2)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   CDemonActor *pCVar2;
   char *class_name;
   uint class_name_hash;
@@ -64,11 +64,11 @@ LAB_004f3db9:
   (pCVar2->location).position.y = (this_ptr->base).location.position.y;
   (pCVar2->location).position.z = (this_ptr->base).location.position.z;
   (pCVar2->location).area_id = (this_ptr->base).location.area_id;
-  pCVar1 = &(this_ptr->base).orient;
-  if (&pCVar2->orient != pCVar1) {
-    (pCVar2->orient).pitch = pCVar1->pitch;
-    (pCVar2->orient).bank = (this_ptr->base).orient.bank;
-    (pCVar2->orient).heading = (this_ptr->base).orient.heading;
+  pUVar1 = &(this_ptr->base).orient;
+  if (&pCVar2->orient != pUVar1) {
+    (pCVar2->orient).vec.x = (pUVar1->vec).x;
+    (pCVar2->orient).vec.y = (this_ptr->base).orient.vec.y;
+    (pCVar2->orient).vec.z = (this_ptr->base).orient.vec.z;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(pCVar2);
   return pCVar2;

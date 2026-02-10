@@ -33,7 +33,7 @@ void __cdecl FUN_004fa900(void);
 
 // Original: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920
 // Address: 004fa920
-void __cdecl CImp::getCarryObjToBodyXForm(CImp *this_ptr);
+void __stack2_esi CImp::getCarryObjToBodyXForm(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_imp.cpp_CImp_FUN_004faaf0
 // Address: 004faaf0

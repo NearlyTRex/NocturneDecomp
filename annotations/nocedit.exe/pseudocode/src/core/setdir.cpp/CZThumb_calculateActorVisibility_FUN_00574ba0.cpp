@@ -33,8 +33,8 @@ core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
   local_24 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&(actor->location).position);
-  local_34.x = (int)(actor->orient).pitch;
-  local_34.z = (int)(actor->orient).heading;
+  local_34.x = (int)(actor->orient).vec.x;
+  local_34.z = (int)(actor->orient).vec.z;
   local_34.y = (int)(this_ptr->look_at_position).y;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_34,(CVector3i *)0x0);

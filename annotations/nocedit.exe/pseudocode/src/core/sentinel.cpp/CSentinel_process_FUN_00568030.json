@@ -3,111 +3,75 @@
     "errors": [
       {
         "category": "other",
-        "column": 18,
-        "line": 90,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 84,
-        "line": 90,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 92,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 79,
-        "line": 92,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 105,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 84,
-        "line": 105,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
         "column": 8,
-        "line": 124,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 124,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 166,
+        "line": 171,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 166,
+        "line": 171,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 195,
+        "line": 200,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 195,
+        "line": 200,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 202,
+        "line": 208,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 202,
+        "line": 208,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 276,
+        "line": 287,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 276,
+        "line": 287,
         "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 71,
+        "line": 346,
+        "message": "use of undeclared identifier 'stack0xfffffe60'; did you mean 'in_stack_fffffe60'?"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 378,
+        "line": 387,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 378,
+        "line": 387,
         "message": "called object type 'void' is not a function or function pointer"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 460,
+        "message": "C-style cast from 'CSentinel *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -115,17 +79,19 @@
   },
   "complexity": {
     "assembly_lines": 1024,
-    "complexity_score": 552,
+    "complexity_score": 642,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 20,
-    "pseudocode_lines": 442,
-    "suspect_count": 10,
+    "pseudocode_lines": 452,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output"
+      "extra_output",
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 1466
+    "total_lines": 1476
   },
   "cross_references": [],
   "function": {
@@ -168,34 +134,34 @@
       "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0"
     },
     {
-      "addr": "00428f40",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
-    },
-    {
       "addr": "004297e0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004297e0"
+      "name": "core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0"
+    },
+    {
+      "addr": "00428f40",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40"
     },
     {
       "addr": "00429820",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429820"
+      "name": "core_charactr.cpp_CCharacter_preProcess_FUN_00429820"
     },
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
-    },
-    {
-      "addr": "0042ca70",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ca70"
+      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
     },
     {
       "addr": "0042ec40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40"
+    },
+    {
+      "addr": "0042ca70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70"
     },
     {
       "addr": "004286e0",
@@ -875,73 +841,122 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
+      "line": 14,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
+      "line": 15,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
-      "match": "SQRT",
-      "text": "fVar3 = SQRT(fVar7 * fVar7 + fVar3 * fVar3);",
-      "type": "decompiler_intrinsic"
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_fffffe60",
+      "text": "CSentinel *in_stack_fffffe60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_fffffe60",
+      "text": "in_stack_fffffe60 = (CSentinel *)(this_ptr->base).victim;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_fffffe60",
+      "text": "pCVar7 = (*(((in_stack_fffffe60->base).base.base.vtable._uc)->_uc).getGrabber)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_fffffe60",
+      "text": "((CCharacter *)in_stack_fffffe60);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_fffffe60",
+      "text": "(pCVar3 = (CCharacter *)(this_ptr->base).victim, in_stack_fffffe60 = this_ptr,",
+      "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 97,
+      "match": "SQRT",
+      "text": "fVar12 = SQRT(fVar11 * fVar11 + fVar12 * fVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 100,
       "match": "ABS",
-      "text": "if (ABS(local_c8.y - (pCVar6->location).position.y) <= (float)4) {",
+      "text": "if (ABS(local_c8.y - (pCVar3->base).location.position.y) <= (float)4) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 163,
+      "line": 168,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 176,
+      "line": 181,
       "match": "SQRT",
       "text": "if (SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58) <= 12.0f)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 215,
+      "line": 225,
       "match": "SQRT",
       "text": "local_24 = SQRT(local_d8 * local_d8 + local_e0 * local_e0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 233,
+      "line": 243,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 259,
+      "line": 269,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 292,
+      "line": 307,
       "match": "SQRT",
       "text": "SQRT(local_114 * local_114 + local_11c * local_11c + local_118 * local_118)) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 339,
+      "match": "&stack0xfffffe60",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe60);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 453,
+      "match": "in_stack_fffffe60",
+      "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe60);",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

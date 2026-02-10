@@ -57,7 +57,7 @@ core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTurret *this_ptr,CBoundingB
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             ((CMatrix3x4f *)auStack_74,&g_ZeroVector,(CVector3f *)this_ptr->unk1);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-            ((CMatrix3x4f *)auStack_104,&g_ZeroVector,(CVector3f *)&(this_ptr->base).base.orient);
+            ((CMatrix3x4f *)auStack_104,&g_ZeroVector,&(this_ptr->base).base.orient.vec);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             ((CMatrix3x4f *)auStack_74,(CMatrix3x4f *)auStack_104,&CStack_a4);
   pCVar4 = &CStack_a4;

@@ -30,7 +30,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_charactr.cpp_CCharacter_FUN_00429aa0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0
 ;   core_motion.cpp_CMotionController_render_FUN_0052e700
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -78,8 +78,8 @@ section .text
         ;   XREF to: 0042a366 (CONDITIONAL_JUMP)  ; LAB_0042a366
     PUSH EBX                            ; 0042a319
     MOV dword ptr [EBX + 0x2620],0x1    ; 0042a31a
-    CALL core_charactr.cpp_CCharacter_FUN_00429aa0 ; 0042a324
-        ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00429aa0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 ; 0042a324
+        ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0(CCharacter * this_ptr)
     MOV EDI,dword ptr [0x02f43978]      ; 0042a329 | DAT_02f43978
     ADD ESP,0x4                         ; 0042a32f
     TEST EDI,EDI                        ; 0042a332

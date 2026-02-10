@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_charactr.cpp_CCharacter_FUN_0042ec40
+;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 00557d64 (CONDITIONAL_JUMP)  ; LAB_00557d64
     PUSH EAX                            ; 00557d47
     PUSH ESI                            ; 00557d48
-    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 00557d49
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 00557d49
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
     ADD ESP,0x8                         ; 00557d4e
         ;   Label: LAB_00557d4e
     FLD float ptr [EBP + 0x18]          ; 00557d51

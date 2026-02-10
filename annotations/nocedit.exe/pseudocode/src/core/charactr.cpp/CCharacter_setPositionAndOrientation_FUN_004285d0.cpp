@@ -12,10 +12,11 @@ core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004285d0
 
 {
   float fVar1;
+  CVector3f *in_stack_00000010;
   
-  (*(((this_ptr->base).vtable._uc)->_uc).cfunc9)();
+  (*(((this_ptr->base).vtable._uc)->_uc).releaseVictim)(this_ptr);
   core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0
-            (&this_ptr->base,new_position,new_orientation);
+            (&this_ptr->base,new_orientation,in_stack_00000010);
   fVar1 = 9999.0f;
   (this_ptr->field7_0x2428).z = 0.0;
   (this_ptr->field7_0x2428).y = (this_ptr->field7_0x2428).z;

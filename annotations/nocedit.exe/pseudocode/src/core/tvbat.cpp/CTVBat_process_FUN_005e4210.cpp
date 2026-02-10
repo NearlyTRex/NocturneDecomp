@@ -112,9 +112,9 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
     fVar3 = (this_ptr->base).base.base.location.position.z;
     (this_ptr->base).base.base.location.position.y = fVar13 + local_90;
     (this_ptr->base).base.base.location.position.z = fVar3 + local_8c;
-    (this_ptr->base).base.base.orient.heading =
-         delta_time * this_ptr->rot_speed * 2.0f +
-         (this_ptr->base).base.base.orient.heading;
+    (this_ptr->base).base.base.orient.vec.z =
+         delta_time * this_ptr->rot_speed * 2.0f + (this_ptr->base).base.base.orient.vec.z
+    ;
     fVar13 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
                        (&g_CDemonRaytraceInstance,&local_dc,&pCVar15->position,&local_a0,(int *)0x0)
     ;
@@ -156,7 +156,7 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
         local_54 = (pCVar9->base).base.location.position.y;
         local_50 = (pCVar9->base).base.location.position.z;
       }
-      local_18 = (float)((this_ptr->base).base.base.unk1 % 8 + -4);
+      local_18 = (float)((this_ptr->base).base.base.direction_hint % 8 + -4);
       local_54 = (float)(int)local_18 * (float)0.5 +
                  (float)this_ptr->unk3 + (float)4 + local_54;
       goto LAB_005e4342;
@@ -249,9 +249,9 @@ LAB_005e4342:
       }
     }
   }
-  fVar17 = (float10)(this_ptr->base).base.base.orient.pitch;
+  fVar17 = (float10)(this_ptr->base).base.base.orient.vec.x;
   fVar18 = (float10)fsin(fVar17);
-  fVar19 = (float10)(this_ptr->base).base.base.orient.bank;
+  fVar19 = (float10)(this_ptr->base).base.base.orient.vec.y;
   fVar20 = (float10)fsin(fVar19);
   fVar17 = (float10)fcos(fVar17);
   fVar19 = (float10)fcos(fVar19);
@@ -259,10 +259,10 @@ LAB_005e4342:
   fStack_2c = (float)(fVar20 * fVar17);
   local_34 = (float)(fVar19 * fVar17);
   fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                        (fStack_14 - (this_ptr->base).base.base.orient.bank);
-  fVar13 = (this_ptr->base).base.base.orient.pitch;
-  (this_ptr->base).base.base.orient.bank =
-       fStack_14 * delta_time * this_ptr->rot_speed + (this_ptr->base).base.base.orient.bank;
+                        (fStack_14 - (this_ptr->base).base.base.orient.vec.y);
+  fVar13 = (this_ptr->base).base.base.orient.vec.x;
+  (this_ptr->base).base.base.orient.vec.y =
+       fStack_14 * delta_time * this_ptr->rot_speed + (this_ptr->base).base.base.orient.vec.y;
   local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_18 - fVar13);
   fVar13 = this_ptr->move_speed;
   fVar3 = this_ptr->move_speed;
@@ -272,15 +272,15 @@ LAB_005e4342:
   this_ptr->unk5 = (int)(this_ptr->move_speed * fStack_2c);
   this_ptr->unk6 = (int)(this_ptr->move_speed * local_28);
   this_ptr->unk7 = (int)(this_ptr->move_speed * local_34);
-  (this_ptr->base).base.base.orient.heading = -fStack_14 * fVar6;
+  (this_ptr->base).base.base.orient.vec.z = -fStack_14 * fVar6;
   fVar6 = (this_ptr->base).base.base.location.position.y;
   fVar7 = (this_ptr->base).base.base.location.position.z;
-  fVar8 = (this_ptr->base).base.base.orient.pitch;
+  fVar8 = (this_ptr->base).base.base.orient.vec.x;
   (this_ptr->base).base.base.location.position.x =
        fStack_2c * fVar13 * delta_time + (this_ptr->base).base.base.location.position.x;
   (this_ptr->base).base.base.location.position.y = local_28 * fVar3 * delta_time + fVar6;
   (this_ptr->base).base.base.location.position.z = local_34 * fVar4 * delta_time + fVar7;
-  (this_ptr->base).base.base.orient.pitch = local_18 * delta_time * fVar5 + fVar8;
+  (this_ptr->base).base.base.orient.vec.x = local_18 * delta_time * fVar5 + fVar8;
   fStack_bc = (this_ptr->base).base.base.location.position.x - local_74;
   local_b8 = (this_ptr->base).base.base.location.position.y - local_70;
   local_b4 = (this_ptr->base).base.base.location.position.z - local_6c;

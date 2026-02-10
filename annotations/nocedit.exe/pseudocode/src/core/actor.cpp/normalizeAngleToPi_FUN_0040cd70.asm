@@ -18,10 +18,10 @@
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 0041707e
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421b49
 ;   core_bugs.cpp_CBugs_FUN_00426420 at 004266cf
-;   core_charactr.cpp_CCharacter_FUN_00428d80 at 00428dbe
-;   core_charactr.cpp_CCharacter_FUN_0042c5f0 at 0042c78f
-;   core_charactr.cpp_CCharacter_FUN_0042ca70 at 0042cc1a
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042dc5c
+;   core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0 at 0042c78f
+;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70 at 0042cc1a
+;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00428d80 at 00428dbe
 ;   ... and 48 more
 ;
 ; Referenced Globals:

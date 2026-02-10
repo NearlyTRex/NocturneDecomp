@@ -14,7 +14,7 @@ core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0
   int iVar1;
   
   if (collision_info->ray_type != 2) {
-    iVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).isDamageable)((CCharacter *)this_ptr);
+    iVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
     if (iVar1 < 2) {
       if (((collision_info->ray_type == 1) || (collision_info->ray_type == 3)) &&
          (this_ptr->form == 2)) {

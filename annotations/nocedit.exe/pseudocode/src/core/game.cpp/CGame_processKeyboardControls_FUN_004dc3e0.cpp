@@ -143,7 +143,7 @@ LAB_004dc4e9:
   if (g_PrevKeyboardState[iVar3] != g_KeyboardState[iVar3]) {
     player_control->action_states[1] = (uint)(byte)g_KeyboardState[iVar3];
   }
-  iVar3 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).isDamageable)
+  iVar3 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                     (&g_HeroActors[g_LocalHeroIndex]->base);
   if (iVar3 == 0) {
     iVar3 = this_ptr->key_fire;
@@ -237,7 +237,7 @@ LAB_004dc4e9:
     uVar4 = (uint)(this_ptr->block_auto_save == 0);
     this_ptr->block_auto_save = uVar4;
     if (((uVar4 == 0) || (this_ptr_00 = g_HeroActors[g_LocalHeroIndex], this_ptr_00 == (CHero *)0x0)
-        ) || (iVar3 = (*(((this_ptr_00->base).base.vtable._uc)->_uc).isDamageable)
+        ) || (iVar3 = (*(((this_ptr_00->base).base.vtable._uc)->_uc).getDeathState)
                                 (&this_ptr_00->base), iVar3 == 0)) {
       if (this_ptr->block_auto_save != 0) {
         return;

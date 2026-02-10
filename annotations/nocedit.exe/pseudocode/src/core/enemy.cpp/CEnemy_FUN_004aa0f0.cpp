@@ -25,7 +25,7 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004aa0f0(CEnemy *this_ptr)
     this_ptr_00 = *(CCharacter **)(g_CDemonSetPtr->unk4 + iVar3 + 8000);
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr_00->base,class_name);
     if (iVar1 != 0) {
-      iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).isDamageable)(this_ptr_00);
+      iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if ((iVar1 == 0) &&
          (*(CHero **)(this_ptr_00[1].base.actor_name + 0x18) == g_HeroActors[g_LocalHeroIndex])) {
         iVar2 = iVar2 + 1;

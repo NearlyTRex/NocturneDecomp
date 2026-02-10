@@ -190,6 +190,6 @@ CDoor * __cdecl core_door_cpp_factoryFunc_FUN_0047fa90(void);
 CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_0047fac0(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setup_FUN_0047fc70(CDoor *this_ptr);
-void __cdecl core_door_cpp_FUN_0047fcf0(void);
+void __cdecl core_door_cpp_FUN_0047fcf0(int event_id);
 void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr);
 

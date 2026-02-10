@@ -99,7 +99,8 @@ LAB_00557a94:
          (*(int *)(this_ptr->unk + 0x28) != 0)) {
         (this_ptr->base).action_bindings.fire_key = 1;
       }
-      core_charactr_cpp_CCharacter_FUN_00428d80((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80
+                ((CCharacter *)this_ptr,&(this_ptr_01->base).base.location.position);
     }
     (this_ptr->base).action_bindings.run_key = 0;
     (this_ptr->base).action_bindings.walk_key = 0;
@@ -112,10 +113,10 @@ LAB_00557a94:
   }
   iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                     (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_50,
-                     (this_ptr->base).base.base.unk1);
+                     (this_ptr->base).base.base.direction_hint);
   if (iVar5 != 0) {
     fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (CStack_50.y - (this_ptr->base).base.base.orient.bank);
+                          (CStack_50.y - (this_ptr->base).base.base.orient.vec.y);
     fVar2 = fStack_14 * (float)0.31830988619288902 * (float)4;
     local_20 = -local_1c;
     *(float *)((this_ptr->base).unk2 + 4) = fVar2;
@@ -149,7 +150,7 @@ LAB_00557b63:
     local_38.z = pCVar6->z;
   }
   fStack_40 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                        (local_38.y - (this_ptr->base).base.base.orient.bank);
+                        (local_38.y - (this_ptr->base).base.base.orient.vec.y);
   if (fStack_18 < fStack_40) {
     fStack_40 = fStack_18;
   }

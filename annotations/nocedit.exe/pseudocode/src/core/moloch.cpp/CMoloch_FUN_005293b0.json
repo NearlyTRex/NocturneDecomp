@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 304,
-    "complexity_score": 206,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 136,
-    "suspect_count": 6,
+    "pseudocode_lines": 137,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 440
+    "total_lines": 441
   },
   "cross_references": [
     {
@@ -61,7 +61,7 @@
     {
       "addr": "0042ede0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ede0"
+      "name": "core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0"
     },
     {
       "addr": "00547d00",
@@ -272,28 +272,35 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 130,
+      "line": 58,
       "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 * (float)3.1415926535000001 < local_74) {",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 131,
       "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 * (float)3.1415926535000001 < local_74) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_00000008",
       "text": "local_74 = in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 133,
+      "line": 134,
       "match": "in_stack_00000008",
       "text": "if (local_74 < in_stack_00000008 * (float)-3.1415926535000001) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 135,
       "match": "in_stack_00000008",
       "text": "local_74 = in_stack_00000008 * (float)-3.1415926535000001;",
       "type": "stack_param"

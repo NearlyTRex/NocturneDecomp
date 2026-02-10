@@ -9,8 +9,8 @@
 ; XREF[31]:
 ;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0 at 0040c9c2
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830 at 0040c8ba
-;   core_charactr.cpp_CCharacter_FUN_00428f40 at 00429455
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d8ed
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 at 00429455
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 00449302
 ;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 at 004a89ca
 ;   core_fire.cpp_CFireEffect_FUN_004c8230 at 004c89c1

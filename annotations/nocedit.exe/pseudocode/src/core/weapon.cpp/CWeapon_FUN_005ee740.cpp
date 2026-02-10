@@ -34,7 +34,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee740(CWeapon *this_ptr)
     CStack_20.y = fStack_34 - fStack_40;
     CStack_20.z = fStack_30 - fStack_3c;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
-              ((CBox *)this_ptr->unk3,&CStack_2c,(CVector3f *)&(this_ptr->base).orient,&CStack_20,
+              ((CBox *)this_ptr->unk3,&CStack_2c,&(this_ptr->base).orient.vec,&CStack_20,
                *(float *)(this_ptr->unk3 + 0x25c));
     return;
   }

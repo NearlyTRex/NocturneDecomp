@@ -83,7 +83,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
       core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_2c,&local_38);
       local_18 = (CDeformableModelInstance *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                           (local_2c.y - (this_ptr->base).base.base.orient.bank);
+                           (local_2c.y - (this_ptr->base).base.base.orient.vec.y);
       local_84 = SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y);
       if ((local_88 <= ABS((float)local_18)) || (local_84 <= (float)2)) {
         fVar7 = *(float *)(this_ptr->unk2 + 0x3c) - in_stack_00000008;

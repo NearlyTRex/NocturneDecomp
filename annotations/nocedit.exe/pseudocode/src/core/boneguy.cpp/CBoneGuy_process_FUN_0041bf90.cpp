@@ -12,22 +12,26 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
   CDemonActor *pCVar3;
+  CCharacter *this_ptr_00;
   float fVar4;
   float fVar5;
   int iVar6;
-  SMotion *pSVar7;
-  int iVar8;
-  CBoneGuy *pCVar9;
-  uint uVar10;
+  uint uVar7;
+  SMotion *pSVar8;
+  int iVar9;
+  CBoneGuy *pCVar10;
   CVector3f *pCVar11;
   int extraout_EAX;
   int extraout_EAX_00;
+  CPathMap *path_map;
   uint *puVar12;
   uint *puVar13;
   byte bVar14;
   float afStackY_1908 [1485];
   CQuaternion4f *quat_in;
+  float in_stack_fffffe48;
   float fVar15;
+  CDemonActor *in_stack_fffffe4c;
   float fStack_1b0;
   SDamageInfo local_180;
   CBoundingBox3D local_144;
@@ -39,9 +43,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   CVector3f local_100;
   CVector3f local_f4;
   CVector3f local_e8;
-  float local_dc;
-  float local_d8;
-  float local_d4;
+  CVector3f local_dc;
   uint local_d0;
   uint local_cc;
   float local_c8;
@@ -89,7 +91,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
               (&(this_ptr->base).base.model.motion_controller,5,0.0);
   }
-  iVar6 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
+  iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) goto LAB_0041c220;
   if ((this_ptr->blown_up == 1) && (0.0 < (this_ptr->base).base.hit_points)) {
     fVar15 = this_ptr->param + delta_time;
@@ -164,17 +166,17 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     iVar6 = 0;
     core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410
               (&(this_ptr->base).base.model);
-    pCVar9 = this_ptr;
+    pCVar10 = this_ptr;
     if (0 < this_ptr->box_count) {
       do {
         core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
-                  (g_CDemonMissionPtr,*(CDemonActor **)pCVar9->unk2,1);
-        pCVar9->unk2[0] = '\0';
-        pCVar9->unk2[1] = '\0';
-        pCVar9->unk2[2] = '\0';
-        pCVar9->unk2[3] = '\0';
+                  (g_CDemonMissionPtr,*(CDemonActor **)pCVar10->unk2,1);
+        pCVar10->unk2[0] = '\0';
+        pCVar10->unk2[1] = '\0';
+        pCVar10->unk2[2] = '\0';
+        pCVar10->unk2[3] = '\0';
         iVar6 = iVar6 + 1;
-        pCVar9 = (CBoneGuy *)((pCVar9->base).base.base.orient_matrix.m + 1);
+        pCVar10 = (CBoneGuy *)((pCVar10->base).base.base.orient_matrix.m + 1);
       } while (iVar6 < this_ptr->box_count);
     }
     this_ptr->blown_up = 0;
@@ -193,18 +195,20 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   local_38 = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
   while (0.0 < local_38) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
-    if (iVar6 == 100) {
-      if (*(int *)(this_ptr->unk1 + 0xc) != 0) {
+    uVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+    if (uVar7 == 100) {
+      pCVar3 = *(CDemonActor **)(this_ptr->unk1 + 0xc);
+      if (pCVar3 != (CDemonActor *)0x0) {
         this_ptr->unk1[0xc] = '\0';
         this_ptr->unk1[0xd] = '\0';
         this_ptr->unk1[0xe] = '\0';
         this_ptr->unk1[0xf] = '\0';
-        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
+                  ((CCharacter *)this_ptr,1,pCVar3,0.2);
       }
     }
     else {
-      core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar7);
     }
   }
   fVar15 = (this_ptr->base).speed;
@@ -212,12 +216,13 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   fVar4 = (float)0.25;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar5 * fVar15 * fVar4;
-  pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+  pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);
-  iVar6 = pSVar7->state_index;
+  iVar6 = pSVar8->state_index;
   local_34 = iVar6;
-  iVar8 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
-  if (iVar8 == 0) {
+  iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
+                    ((CCharacter *)this_ptr,delta_time);
+  if (iVar9 == 0) {
     switch(iVar6) {
     case 0:
       core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
@@ -249,12 +254,16 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
           if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
             local_30 = 3.0f;
           }
+          fVar15 = 0.17453292;
+          pCVar11 = (CVector3f *)0x3f000000;
           local_d0 = 0;
           local_c8 = local_30;
           local_cc = 0;
           pCVar3 = (this_ptr->base).victim;
-          (*((pCVar3->vtable)._ub)->getPathMap)(pCVar3);
-          iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0((CCharacter *)this_ptr);
+          path_map = (*((pCVar3->vtable)._ub)->getPathMap)(pCVar3);
+          iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+                            ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
+                             path_map,pCVar11,fVar15,in_stack_fffffe48);
           pCVar1 = &(this_ptr->base).base.model;
           if (iVar6 < 0) {
             engine_console_cpp_CConsole_printf_FUN_00441890
@@ -350,9 +359,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     }
   }
   else {
-    uVar10 = (this_ptr->base).base.field22_0x25b0;
-    if (uVar10 < 2) {
-      if (uVar10 == 1) {
+    uVar7 = (this_ptr->base).base.is_walking;
+    if (uVar7 < 2) {
+      if (uVar7 == 1) {
 LAB_0041c3c9:
         iVar6 = 1;
       }
@@ -364,8 +373,8 @@ LAB_0041c60c:
                 (&(this_ptr->base).base.model.motion_controller,iVar6,1);
     }
     else {
-      if (uVar10 < 3) goto LAB_0041c3c9;
-      if (uVar10 != 3) goto LAB_0041c60c;
+      if (uVar7 < 3) goto LAB_0041c3c9;
+      if (uVar7 != 3) goto LAB_0041c60c;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,0,1)
       ;
       engine_console_cpp_CConsole_printf_FUN_00441890
@@ -380,12 +389,14 @@ LAB_0041c60c:
   if (0.0 < *(float *)(this_ptr->base).unk2) {
     *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
   }
-  iVar6 = core_charactr_cpp_CCharacter_FUN_004297e0((CCharacter *)this_ptr);
+  iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar6 != 0) {
-    pCVar3 = (this_ptr->base).victim;
-    if ((pCVar3 != (CDemonActor *)0x0) &&
-       (pCVar9 = (CBoneGuy *)(*(((pCVar3->vtable)._uc)->_uc).cfunc8)(), pCVar9 == this_ptr)) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(this_ptr->base).victim);
+    this_ptr_00 = (CCharacter *)(this_ptr->base).victim;
+    if ((this_ptr_00 != (CCharacter *)0x0) &&
+       (pCVar10 = (CBoneGuy *)(*(((this_ptr_00->base).vtable._uc)->_uc).getGrabber)(this_ptr_00),
+       pCVar10 == this_ptr)) {
+      in_stack_fffffe4c = (this_ptr->base).victim;
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_fffffe4c);
     }
     (this_ptr->base).base.field7_0x2428.y =
          (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
@@ -397,9 +408,9 @@ LAB_0041c60c:
     local_88.z = local_64 + pCVar11->x;
     local_78 = local_60 + (this_ptr->base).base.field6_0x241c.y;
     local_74 = local_5c + (this_ptr->base).base.field6_0x241c.z;
-    local_dc = local_88.z + pCVar2->x;
-    local_d8 = local_78 + (this_ptr->base).base.model.accumulated_root_motion.y;
-    local_d4 = local_74 + (this_ptr->base).base.model.accumulated_root_motion.z;
+    local_dc.x = local_88.z + pCVar2->x;
+    local_dc.y = local_78 + (this_ptr->base).base.model.accumulated_root_motion.y;
+    local_dc.z = local_74 + (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.field6_0x241c.z = 0.0;
     (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
     pCVar11->x = (this_ptr->base).base.field6_0x241c.y;
@@ -407,12 +418,13 @@ LAB_0041c60c:
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar2->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_dc);
   }
-  core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
+            ((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe4c);
   if ((local_34 == 1) &&
      (iVar6 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
                         ((double)(this_ptr->base).base.base.location.position.x,
@@ -427,9 +439,9 @@ LAB_0041c60c:
     fVar15 = 2.8026e-45;
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
     sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,(int)fVar15);
-    uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
-                       ((CDemonActor *)this_ptr,"boneGuy-walkloop.wav");
-    this_ptr->sfx_handle = uVar10;
+    uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
+                      ((CDemonActor *)this_ptr,"boneGuy-walkloop.wav");
+    this_ptr->sfx_handle = uVar7;
     fStack_1b0 = 6.040276e-39;
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     return;

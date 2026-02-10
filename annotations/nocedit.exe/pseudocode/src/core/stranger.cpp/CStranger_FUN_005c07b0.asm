@@ -217,7 +217,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_charactr.cpp_CCharacter_FUN_0042e840
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_stranger.cpp_CStranger_FUN_005bb010
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
@@ -405,8 +405,8 @@ section .text
     PUSH ESI                            ; 005c0a08
     PUSH 0x3                            ; 005c0a09
     PUSH EBX                            ; 005c0a0b
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c0a0c
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c0a0c
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 005c0a11
     ADD ESP,0x8                         ; 005c0a14
     FLD float ptr [EBP + 0x76]          ; 005c0a17
@@ -482,8 +482,8 @@ section .text
     PUSH ESI                            ; 005c0b2d
     PUSH 0x3                            ; 005c0b2e
     PUSH EBX                            ; 005c0b30
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c0b31
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c0b31
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 005c0b36
     ADD ESP,0x8                         ; 005c0b39
     FLD float ptr [EBP + 0x76]          ; 005c0b3c
@@ -559,8 +559,8 @@ section .text
     PUSH ESI                            ; 005c0c3a
     PUSH 0x3                            ; 005c0c3b
     PUSH EBX                            ; 005c0c3d
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c0c3e
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c0c3e
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 005c0c43
     ADD ESP,0x8                         ; 005c0c46
     FLD float ptr [EBP + 0x76]          ; 005c0c49
@@ -701,8 +701,8 @@ section .text
     PUSH ESI                            ; 005c0e37
     PUSH 0x0                            ; 005c0e38
     PUSH EBX                            ; 005c0e3a
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c0e3b
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c0e3b
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 005c0e40
     ADD ESP,0x8                         ; 005c0e43
     FLD float ptr [EBP + 0x76]          ; 005c0e46
@@ -923,8 +923,8 @@ section .text
     PUSH EAX                            ; 005c11a1
     PUSH 0x0                            ; 005c11a2
     PUSH EBX                            ; 005c11a4
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c11a5
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c11a5
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 005c11aa
     ADD ESP,0x8                         ; 005c11ad
     FLD float ptr [EBP + 0x76]          ; 005c11b0

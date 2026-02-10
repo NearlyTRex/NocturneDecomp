@@ -17,7 +17,7 @@ int __cdecl core_smiley_cpp_CSmiley_FUN_005a3160(CSmiley *this_ptr)
   if (in_stack_00000008 == 0) {
     return 0;
   }
-  iVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).isDamageable)((CCharacter *)this_ptr);
+  iVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar1 != 0) {
     (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x104))();
     return 1;

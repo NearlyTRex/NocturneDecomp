@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bce69
-;   core_stranger.cpp_CStranger_FUN_005c48b0 at 005c48e4
+;   core_stranger.cpp_CStranger_processDamage_FUN_005c48b0 at 005c48e4
 ;
 ; *****************************************************************************
 

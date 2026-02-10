@@ -22,9 +22,9 @@ void __cdecl core_bugs_cpp_CBugs_processInEditor_FUN_004278d0(CBugs *this_ptr)
   fVar3 = (this_ptr->base).base.base.location.position.y;
   fVar4 = (this_ptr->base).base.base.location.position.z;
   core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800((CCharacter *)this_ptr);
-  (this_ptr->base).base.base.orient.heading = 0.0;
-  (this_ptr->base).base.base.orient.bank = (this_ptr->base).base.base.orient.heading;
-  (this_ptr->base).base.base.orient.pitch = (this_ptr->base).base.base.orient.bank;
+  (this_ptr->base).base.base.orient.vec.z = 0.0;
+  (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.z;
+  (this_ptr->base).base.base.orient.vec.x = (this_ptr->base).base.base.orient.vec.y;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
   (pCVar1->position).x = fVar2;
   (this_ptr->base).base.base.location.position.y = fVar3;

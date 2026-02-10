@@ -7,6 +7,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3d.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CObj.h"
 #include "types/classes/CPoly.h"
 #include "types/classes/CPolyIntersectResult.h"
@@ -38,9 +39,9 @@ void __cdecl core_stranger_cpp_FUN_005c3750(void);
 CVector3f * __cdecl core_stranger_cpp_FUN_005c37e0(void);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c48b0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170(CStranger *this_ptr);
+void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170 (CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 CVector3f * __cdecl core_stranger_cpp_CStranger_FUN_005c51c0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c5b90(CStranger *this_ptr);
@@ -50,10 +51,10 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c6650(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6660(CStranger *this_ptr,int unk);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c66a0(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0 (CStranger *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6750(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_isDamageable_FUN_005c67c0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c67f0(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_005c67c0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005c67f0 (CStranger *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_stranger_cpp_CStranger_drop_FUN_005c6850 (CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 void __cdecl core_stranger_cpp_CStranger_onActorDeleted_FUN_005c68a0 (CStranger *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_stranger_cpp_CStranger_getPropertyList_FUN_005c68f0 (CStranger *this_ptr,CActorPropertyList *property_list);

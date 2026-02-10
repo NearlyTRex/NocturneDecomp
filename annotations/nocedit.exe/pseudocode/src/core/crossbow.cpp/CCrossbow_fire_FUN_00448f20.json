@@ -3,105 +3,75 @@
     "errors": [
       {
         "category": "other",
-        "column": 26,
-        "line": 38,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "column": 19,
+        "line": 95,
+        "message": "C-style cast from 'CTrigger *' to 'float' is not allowed"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 64,
+        "line": 109,
+        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
-        "column": 76,
-        "line": 38,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 69,
+        "column": 72,
+        "line": 113,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
-        "category": "other",
-        "column": 38,
-        "line": 72,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+        "category": "undeclared_identifier",
+        "column": 71,
+        "line": 134,
+        "message": "use of undeclared identifier 'stack0xffffff14'"
       },
       {
         "category": "other",
-        "column": 10,
-        "line": 74,
-        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
+        "column": 17,
+        "line": 135,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 74,
-        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
+        "column": 17,
+        "line": 138,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 46,
-        "line": 101,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "column": 19,
+        "line": 152,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 96,
-        "line": 101,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 19,
+        "line": 153,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 154,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 159,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 115,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "line": 184,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "other",
-        "column": 64,
-        "line": 115,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 127,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 99,
-        "line": 127,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 130,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 171,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 174,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 175,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 176,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+        "column": 16,
+        "line": 186,
+        "message": "cannot cast from type 'float' to pointer type 'CCrossbow *'"
       }
     ],
     "success": false,
@@ -109,19 +79,20 @@
   },
   "complexity": {
     "assembly_lines": 477,
-    "complexity_score": 247,
+    "complexity_score": 339,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 23,
-    "pseudocode_lines": 177,
-    "suspect_count": 5,
+    "pseudocode_lines": 184,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
+      "stack_ref",
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 654
+    "total_lines": 661
   },
   "cross_references": [],
   "function": {
@@ -462,31 +433,87 @@
       "type": "extra_output"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 102,
+      "match": "SUB84",
+      "text": "((CCharacter *)this_ptr,SUB84(dVar3,0),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 110,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 127,
+      "match": "&stack0xffffff14",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff14);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unknown/mangled field access",
-      "line": 123,
+      "line": 128,
+      "match": "._0_4_",
+      "text": "auStack_dc._0_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 131,
       "match": "._4_4_",
-      "text": "auStack_100._4_4_ = local_4c.weapon_damage_modifier;",
+      "text": "auStack_dc._4_4_ = 0.4;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 139,
       "match": "SQRT",
-      "text": "SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4);",
+      "text": "SQRT(CStack_90.x * CStack_90.x +",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 145,
+      "match": "._8_4_",
+      "text": "auStack_dc._8_4_ = fStack_2c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 146,
+      "match": "._12_4_",
+      "text": "auStack_dc._12_4_ = fStack_28;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 147,
+      "match": "._16_4_",
+      "text": "auStack_dc._16_4_ = fStack_24;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 152,
+      "match": "._24_4_",
+      "text": "auStack_dc._24_4_ = pCVar1->x;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
-      "line": 150,
+      "line": 157,
       "match": "1.45735e-43",
-      "text": "SStack_f4.impact_direction.z = 1.45735e-43;",
+      "text": "fStack_b0 = 1.45735e-43;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 161,
+      "match": "6.29812e-39",
+      "text": "grab_type = 6.29812e-39;",
       "type": "suspect_float"
     }
   ],

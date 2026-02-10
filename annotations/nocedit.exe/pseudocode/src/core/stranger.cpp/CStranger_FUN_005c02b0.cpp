@@ -187,7 +187,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (local_1c,&local_13c,local_1e0,local_28,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
-    if ((float)0.0001 < *(float *)(this_ptr->unk6 + 0x50)) {
+    if ((float)0.0001 < *(float *)(this_ptr->unk9 + 0x48)) {
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(1.5707964,&local_5c);
       pCVar2 = &local_fc;
       local_fc.w = local_5c.w;
@@ -206,7 +206,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
       *puVar4 = *puVar3;
       puVar4[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                (local_2c,&local_10c,*(float *)(this_ptr->unk6 + 0x50),&local_cc);
+                (local_2c,&local_10c,*(float *)(this_ptr->unk9 + 0x48),&local_cc);
       pcVar6 = local_30 + (uint)bVar7 * -8 + 0x80c;
       *(float *)(local_30 + 0x808) = local_cc.w;
       puVar3 = (uint *)((int)&local_cc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);

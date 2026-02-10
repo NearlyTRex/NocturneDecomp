@@ -12,7 +12,7 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
 
 {
   CLocation *pCVar1;
-  COrientation *pCVar2;
+  UOrientationVector *pUVar2;
   CDeformableModelInstance *pCVar3;
   byte bVar4;
   char cVar5;
@@ -24,6 +24,7 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   CHero *pCVar11;
   CMotionList *pCVar12;
   SMotion *pSVar13;
+  CCharacter *this_ptr_00;
   CHero *pCVar14;
   uint uVar15;
   uint uVar16;
@@ -37,7 +38,6 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   uint *puVar24;
   byte bVar25;
   byte *in_stack_00000008;
-  char local_163c [255];
   char local_153d [200];
   char local_1475 [200];
   char local_13ad [200];
@@ -75,9 +75,7 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   float local_124;
   float local_120;
   CVector3f local_11c;
-  byte local_110 [4];
-  byte local_10c [4];
-  byte local_108 [12];
+  CVector3f local_110;
   uint local_fc;
   uint uStack_f8;
   int *local_f4;
@@ -101,7 +99,7 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   int local_ac;
   int local_a8;
   int local_a4;
-  byte *local_a0;
+  CVector3f *local_a0;
   float local_9c;
   int local_98;
   int local_94;
@@ -395,7 +393,7 @@ LAB_004aad41:
             }
             local_d0 = -1;
             sscanf
-                      ((char *)local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4);
+                      ((char *)local_ec,"( %[^ ,], %d, %d )%n",&stack0xffffe9c4,&local_d8,&local_d4);
             if (local_d0 < 0) {
               pCVar9 = (CDemonActor *)
                        core_event_cpp_FUN_004aa2a0("Error parsing displayBitmap() parms");
@@ -405,7 +403,7 @@ LAB_004aad41:
             while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
               local_ec = local_ec + 1;
             }
-            iVar7 = engine_dosio_c_getFileSize_FUN_00481880("art",local_163c);
+            iVar7 = engine_dosio_c_getFileSize_FUN_00481880("art",&stack0xffffe9c4);
             if (iVar7 < 0) {
               pCVar9 = (CDemonActor *)core_event_cpp_FUN_004aa2a0("Bitmap doesn't exist");
               return pCVar9;
@@ -727,21 +725,22 @@ LAB_004aaf38:
                                      0) {
                                 local_ec = local_ec + 1;
                               }
-                              local_a0 = local_110;
+                              local_a0 = &local_110;
                               local_a4 = -1;
                               local_9c = 0.0;
                               sscanf
                                         ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n",local_153d + 1,
-                                         local_219 + 1,local_110,local_10c,local_108,&local_9c);
+                                         local_219 + 1,&local_110,&local_110.y,&local_110.z,
+                                         &local_9c);
                               local_9c = local_9c * (float)0.017453292519444399;
                               if (local_a4 < 0) {
                                 local_9c = -1.0;
                                 sscanf
                                           ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f )%n",local_153d + 1,
-                                           local_219 + 1,local_110,local_10c,local_108);
+                                           local_219 + 1,&local_110,&local_110.y,&local_110.z);
                               }
                               if (local_a4 < 0) {
-                                local_a0 = (byte *)0x0;
+                                local_a0 = (CVector3f *)0x0;
                                 sscanf
                                           ((char *)local_ec," ( %[^,], %[^)])%n",local_153d + 1,
                                            local_219 + 1);
@@ -825,7 +824,8 @@ LAB_004aaf38:
                                 return pCVar9;
                               }
                               if (local_f0 != 0) {
-                                (*(((pCVar11->base).base.vtable._uc)->_uc).cfunc2)();
+                                (*(((pCVar11->base).base.vtable._uc)->_uc).kill)
+                                          (&pCVar11->base,local_98,local_a0,local_9c);
                               }
                             }
                             else {
@@ -868,9 +868,10 @@ LAB_004aaf38:
                                   return pCVar9;
                                 }
                                 if ((local_f0 != 0) &&
-                                   (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0)) {
-                                  (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).
-                                    cfunc2)();
+                                   (pCVar11 = g_HeroActors[g_LocalHeroIndex],
+                                   pCVar11 != (CHero *)0x0)) {
+                                  (*(((pCVar11->base).base.vtable._uc)->_uc).kill)
+                                            (&pCVar11->base,local_90,(CVector3f *)0x0,-1.0);
                                 }
                               }
                               else {
@@ -2045,13 +2046,13 @@ LAB_004aaf38:
                                                              &local_134,&local_134.z,&local_134.y);
                                                   if (local_18 < 0) {
                                                     if ((local_f0 != 0) &&
-                                                       (pCVar2 = &(pCVar11->base).base.orient,
-                                                       (COrientation *)&local_134 != pCVar2)) {
-                                                      local_134.x = pCVar2->pitch;
-                                                      local_134.y = (pCVar11->base).base.orient.bank
-                                                      ;
-                                                      local_134.z = (pCVar11->base).base.orient.
-                                                                    heading;
+                                                       (pUVar2 = &(pCVar11->base).base.orient,
+                                                       &local_134 != (CVector3f *)pUVar2)) {
+                                                      local_134.x = (pUVar2->vec).x;
+                                                      local_134.y = (pCVar11->base).base.orient.vec.
+                                                                    y;
+                                                      local_134.z = (pCVar11->base).base.orient.vec.
+                                                                    z;
                                                     }
                                                     sscanf
                                                               (local_59d + 1,"%f,%f,%f,%f%n",
@@ -2060,13 +2061,13 @@ LAB_004aaf38:
                                                   }
                                                   if (local_18 < 0) {
                                                     if ((local_f0 != 0) &&
-                                                       (pCVar2 = &(pCVar11->base).base.orient,
-                                                       (COrientation *)&local_134 != pCVar2)) {
-                                                      local_134.x = pCVar2->pitch;
-                                                      local_134.y = (pCVar11->base).base.orient.bank
-                                                      ;
-                                                      local_134.z = (pCVar11->base).base.orient.
-                                                                    heading;
+                                                       (pUVar2 = &(pCVar11->base).base.orient,
+                                                       &local_134 != (CVector3f *)pUVar2)) {
+                                                      local_134.x = (pUVar2->vec).x;
+                                                      local_134.y = (pCVar11->base).base.orient.vec.
+                                                                    y;
+                                                      local_134.z = (pCVar11->base).base.orient.vec.
+                                                                    z;
                                                     }
                                                     sscanf
                                                               (local_59d + 1,"%f,%f,%f%n",
@@ -2093,13 +2094,13 @@ LAB_004aaf38:
                                                         local_11c.z = (pCVar14->base).base.location.
                                                                       position.z;
                                                       }
-                                                      pCVar2 = &(pCVar14->base).base.orient;
-                                                      if ((COrientation *)&local_134 != pCVar2) {
-                                                        local_134.x = pCVar2->pitch;
+                                                      pUVar2 = &(pCVar14->base).base.orient;
+                                                      if (&local_134 != (CVector3f *)pUVar2) {
+                                                        local_134.x = (pUVar2->vec).x;
                                                         local_134.y = (pCVar14->base).base.orient.
-                                                                      bank;
+                                                                      vec.y;
                                                         local_134.z = (pCVar14->base).base.orient.
-                                                                      heading;
+                                                                      vec.z;
                                                       }
                                                       uVar15 = 0xffffffff;
                                                       pcVar10 = local_59d + 1;
@@ -2121,13 +2122,16 @@ LAB_004aaf38:
                                                   return pCVar9;
                                                   }
                                                   if (local_f0 != 0) {
-                                                    pCVar9 = 
+                                                    this_ptr_00 = (CCharacter *)
+                                                                                                                                    
                                                   core_actor_cpp_castToClassHash_FUN_0040c790
                                                             ((CDemonActor *)pCVar11,
                                                              g_CCharacterClassInfo.name_hash);
-                                                  if (pCVar9 != (CDemonActor *)0x0) {
-                                                    (*(((pCVar9->vtable)._uc)->_uc).cfunc7)();
-                                                    (*(((pCVar9->vtable)._uc)->_uc).cfunc9)();
+                                                  if (this_ptr_00 != (CCharacter *)0x0) {
+                                                    (*(((this_ptr_00->base).vtable._uc)->_uc).
+                                                      releaseFromGrab)(this_ptr_00);
+                                                    (*(((this_ptr_00->base).vtable._uc)->_uc).
+                                                      releaseVictim)(this_ptr_00);
                                                   }
                                                   (*((pCVar11->base).base.vtable._ub)->
                                                     setPositionAndOrientation)

@@ -34,8 +34,7 @@ void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00441d60(CConveyor *this_ptr)
     (this_ptr->base).start_pos.y = (this_ptr->base).end_pos.y;
     (this_ptr->base).start_pos.z = (this_ptr->base).end_pos.z;
   }
-  core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-            ((CVector3f *)&(this_ptr->base).base.orient,&local_1c);
+  core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&(this_ptr->base).base.orient.vec,&local_1c);
   puVar5 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x348);
   (this_ptr->base).end_orient.w = local_1c.w;
   puVar6 = puVar5 + (uint)bVar8 * -2 + 1;

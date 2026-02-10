@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   bone_index
 ;
 ; XREF[2]:
-;   core_charactr.cpp_CCharacter_FUN_0042a520 at 0042a6b0
+;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520 at 0042a6b0
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00598316
 ;
 ; *****************************************************************************

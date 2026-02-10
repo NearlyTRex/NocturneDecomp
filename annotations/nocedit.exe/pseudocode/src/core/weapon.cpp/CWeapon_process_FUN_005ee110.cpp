@@ -9,7 +9,7 @@
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,float delta_time)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   float fVar2;
   
   if ((0.0 < *(float *)(this_ptr->unk2 + 0xc)) &&
@@ -31,17 +31,17 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,floa
     (this_ptr->base).location.position.x = *(float *)this_ptr->unk3;
     (this_ptr->base).location.position.y = *(float *)(this_ptr->unk3 + 4);
     (this_ptr->base).location.position.z = *(float *)(this_ptr->unk3 + 8);
-    pCVar1 = &(this_ptr->base).orient;
-    if (pCVar1 != (COrientation *)(this_ptr->unk3 + 0xc)) {
-      pCVar1->pitch = *(float *)(this_ptr->unk3 + 0xc);
-      (this_ptr->base).orient.bank = *(float *)(this_ptr->unk3 + 0x10);
-      (this_ptr->base).orient.heading = *(float *)(this_ptr->unk3 + 0x14);
+    pUVar1 = &(this_ptr->base).orient;
+    if (pUVar1 != (UOrientationVector *)(this_ptr->unk3 + 0xc)) {
+      (pUVar1->vec).x = *(float *)(this_ptr->unk3 + 0xc);
+      (this_ptr->base).orient.vec.y = *(float *)(this_ptr->unk3 + 0x10);
+      (this_ptr->base).orient.vec.z = *(float *)(this_ptr->unk3 + 0x14);
     }
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   if ((((CHero *)this_ptr->carried_by_actor == g_HeroActors[g_LocalHeroIndex]) &&
       (g_CGamePtr->auto_save_blocked != 0)) && (this_ptr->can_attach_light != 0)) {
-    (*(((this_ptr->base).vtable._uc)->_uc).cfunc8)();
+    (*(((this_ptr->base).vtable._uc)->_uc).getGrabber)((CCharacter *)this_ptr);
     if (0.0 < g_CDemonLightInstance.volumetric_intensity) {
       core_set_cpp_CDemonSet_FUN_0056d090(g_CDemonSetPtr);
       return;

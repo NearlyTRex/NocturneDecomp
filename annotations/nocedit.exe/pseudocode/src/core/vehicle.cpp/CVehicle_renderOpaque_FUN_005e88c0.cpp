@@ -83,7 +83,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (in_stack_0000000c,&CStack_40,&CStack_28);
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
-              (&CStack_40,(CVector3i *)&in_stack_0000000c->orient,56.0,10.0);
+              (&CStack_40,(CVector3i *)&(in_stack_0000000c->orient).vec,56.0,10.0);
     pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (in_stack_0000000c,&CStack_34,&CStack_1c);
     if (&CStack_40 != pCVar4) {
@@ -92,7 +92,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
       CStack_40.z = pCVar4->z;
     }
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
-              (&CStack_40,(CVector3i *)&in_stack_0000000c->orient,56.0,10.0);
+              (&CStack_40,(CVector3i *)&(in_stack_0000000c->orient).vec,56.0,10.0);
     return (int)fVar2;
   }
   return (int)fVar2;

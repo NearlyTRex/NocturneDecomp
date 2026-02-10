@@ -36,7 +36,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041b070(CBodyPart *this_ptr)
     ;
     fStack_8 = fStack_38 - fStack_44;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
-              ((CBox *)&this_ptr->sim_box,&CStack_14,(CVector3f *)&(this_ptr->base).orient,
+              ((CBox *)&this_ptr->sim_box,&CStack_14,&(this_ptr->base).orient.vec,
                (CVector3f *)&fStack_8,5.0);
     return;
   }

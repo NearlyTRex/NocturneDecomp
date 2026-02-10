@@ -28,7 +28,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
     core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(this_ptr);
     return;
   }
-  iVar3 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
+  iVar3 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar3 != 0) {
     if (this_ptr->attack_mode < 2) {
       if ((this_ptr->attack_mode < 1) &&
@@ -46,12 +46,12 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_0051f8da:
           core_mimic_cpp_CMimic_FUN_00520500(this_ptr);
-          core_charactr_cpp_CCharacter_FUN_0042d530((CCharacter *)this_ptr);
+          core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530((CCharacter *)this_ptr);
           return;
         }
         if (uVar2 < 0x11) {
           if (uVar2 != 0x10) {
-            core_charactr_cpp_CCharacter_FUN_0042d530((CCharacter *)this_ptr);
+            core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530((CCharacter *)this_ptr);
             return;
           }
           goto LAB_0051f8da;
@@ -59,7 +59,7 @@ LAB_0051f8da:
         if (uVar2 < 0x12) goto LAB_0051f8da;
         if (0x13 < uVar2) {
           if ((0x14 < uVar2) && (uVar2 != 0x15)) {
-            core_charactr_cpp_CCharacter_FUN_0042d530((CCharacter *)this_ptr);
+            core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530((CCharacter *)this_ptr);
             return;
           }
           goto LAB_0051f8da;
@@ -69,7 +69,7 @@ LAB_0051f8da:
     else {
       core_mimic_cpp_CMimic_FUN_0051fcc0(this_ptr);
     }
-    core_charactr_cpp_CCharacter_FUN_0042d530((CCharacter *)this_ptr);
+    core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530((CCharacter *)this_ptr);
   }
   return;
 }

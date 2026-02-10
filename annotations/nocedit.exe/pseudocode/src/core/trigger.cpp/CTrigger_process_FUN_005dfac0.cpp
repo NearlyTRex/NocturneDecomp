@@ -157,7 +157,7 @@ LAB_005dfb52:
       local_28 = 0;
       for (iVar9 = 0; iVar9 < (int)g_CDemonSetPtr->actor_list_ptr; iVar9 = iVar9 + 1) {
         pCVar4 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_28);
-        iVar10 = (*((pCVar4->vtable)._ub)->isActiveTarget)(pCVar4);
+        iVar10 = (*((pCVar4->vtable)._ub)->canLookAt)(pCVar4);
         if ((iVar10 != 0) &&
            (iVar10 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar4),
            iVar10 != 0)) {

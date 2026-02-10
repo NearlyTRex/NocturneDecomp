@@ -38,7 +38,8 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
                    (&(this_ptr->base).base.model,&local_24,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_30,input_local_point);
-    core_charactr_cpp_CCharacter_FUN_0042b5b0((CCharacter *)this_ptr);
+    core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
+              ((CCharacter *)this_ptr,&local_30,0,0.0,0x41200000,0);
   }
   core_bride_cpp_CBride_FUN_00424600(this_ptr);
   iVar2 = *(int *)(this_ptr->unk + 0x20);

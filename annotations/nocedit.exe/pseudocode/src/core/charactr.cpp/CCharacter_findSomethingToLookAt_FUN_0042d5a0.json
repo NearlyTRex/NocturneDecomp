@@ -121,16 +121,16 @@
   },
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 668,
+    "complexity_score": 628,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
     "pseudocode_lines": 223,
-    "suspect_count": 43,
+    "suspect_count": 39,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
-      "unknown_field"
+      "unknown_field",
+      "unnamed_param"
     ],
     "total_lines": 799
   },
@@ -157,7 +157,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (CCharacter *this_ptr,float delta_time,int param_3)"
   },
   "function_calls": [
     {
@@ -405,10 +405,10 @@
     "pcode_op_count": 2591
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -417,6 +417,20 @@
         "offset": 4,
         "size": 4,
         "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -439,32 +453,25 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "float in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "(CCharacter *this_ptr,float delta_time,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 43,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = 1;",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "param_3 = 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 47,
-      "match": "in_stack_0000000c",
-      "text": "if ((in_stack_0000000c == 0) && (iVar1 = this_ptr->field29_0x25d4, this_ptr->field29_0x25d4 == 0))",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "if ((param_3 == 0) &&",
+      "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
@@ -635,13 +642,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 140,
-      "match": "in_stack_00000008",
-      "text": "this_ptr->field34_0x25e8 = (int)((float)this_ptr->field34_0x25e8 - in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 149,
       "match": "._8_4_",
@@ -719,25 +719,11 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 204,
-      "match": "in_stack_00000008",
-      "text": "fVar7 = in_stack_00000008 / 0.5f + this_ptr->look_at_weight;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 210,
       "match": "._0_4_",
       "text": "((float)auStack_cc._0_4_ - this_ptr->look_at_yaw);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_00000008",
-      "text": "fVar7 = this_ptr->look_at_weight - in_stack_00000008 / 0.5f;",
-      "type": "stack_param"
     }
   ]
 }

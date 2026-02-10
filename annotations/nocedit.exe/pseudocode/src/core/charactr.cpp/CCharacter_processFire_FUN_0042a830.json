@@ -1,0 +1,525 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 102,
+        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 153,
+        "message": "cannot cast from type 'float' to pointer type 'CDeformableModel *'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 158,
+        "message": "C-style cast from 'CDeformableModel *' to 'float' is not allowed"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 422,
+    "complexity_score": 410,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 11,
+    "pseudocode_lines": 195,
+    "suspect_count": 20,
+    "suspect_types": [
+      "pointer_cast",
+      "unaffected_reg",
+      "undefined_data"
+    ],
+    "total_lines": 617
+  },
+  "cross_references": [
+    {
+      "addr": "00429870",
+      "from_addr": "004298a2",
+      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042a830",
+    "address_range": [
+      [
+        "0042a830",
+        "0042acfa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_charactr.cpp_CCharacter_processFire_FUN_0042a830",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0042b9e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0"
+    },
+    {
+      "addr": "0042a520",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520"
+    },
+    {
+      "addr": "005a07a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005a0820",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    },
+    {
+      "addr": "005f4dc0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    },
+    {
+      "addr": "005a8cb0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a8a60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60"
+    },
+    {
+      "addr": "005a9ae0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006170ca",
+      "name": "s_character_onfire_fallapa_006170ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006170e9",
+      "name": "s_character_onfire_loop_wa_006170e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061710a",
+      "name": "DOUBLE_0061710a",
+      "type": "double",
+      "value": "65535"
+    },
+    {
+      "addr": "00617112",
+      "name": "DOUBLE_00617112",
+      "type": "double",
+      "value": "0.600000000000000"
+    },
+    {
+      "addr": "0061711a",
+      "name": "DOUBLE_0061711a",
+      "type": "double",
+      "value": "0.0200000000000000"
+    },
+    {
+      "addr": "00617122",
+      "name": "DOUBLE_00617122",
+      "type": "double",
+      "value": "0.400000000000000"
+    },
+    {
+      "addr": "0061712a",
+      "name": "DOUBLE_0061712a",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0065b82c",
+      "name": "FLOAT_0065b82c",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "0065b830",
+      "name": "FLOAT_0065b830",
+      "type": "float",
+      "value": "3"
+    },
+    {
+      "addr": "00823c54",
+      "name": "DAT_00823c54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00823c58",
+      "name": "DAT_00823c58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.407738095238095,
+    "instruction_count": 336,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 14,
+      "BRANCH": 7,
+      "CALL": 14,
+      "CALLIND": 3,
+      "CBRANCH": 33,
+      "COPY": 489,
+      "FLOAT2FLOAT": 27,
+      "FLOAT_ADD": 3,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 185,
+      "INT_AND": 194,
+      "INT_CARRY": 30,
+      "INT_EQUAL": 166,
+      "INT_LEFT": 12,
+      "INT_LESS": 19,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 36,
+      "INT_OR": 15,
+      "INT_SBORROW": 19,
+      "INT_SCARRY": 41,
+      "INT_SEXT": 12,
+      "INT_SLESS": 83,
+      "INT_SUB": 70,
+      "INT_XOR": 10,
+      "INT_ZEXT": 12,
+      "LOAD": 103,
+      "POPCOUNT": 83,
+      "RETURN": 1,
+      "STORE": 86,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 1817
+  },
+  "stack_frame": {
+    "frame_size": 116,
+    "local_size": 108,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0042a839",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&DAT_00823c54 + iVar5) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_00823c54",
+      "text": "*(uint *)((int)&DAT_00823c54 + iVar5) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_00823c54",
+      "text": "(&DAT_00823c54)[iVar5] =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_00823c54",
+      "text": "(float)(&DAT_00823c54)[iVar5] +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(float *)((int)",
+      "text": "if ((float)65535 <= *(float *)((int)&DAT_00823c54 + iVar5)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_00823c54",
+      "text": "if ((float)65535 <= *(float *)((int)&DAT_00823c54 + iVar5)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(int *)((int)",
+      "text": "[*(int *)((int)pCVar4->bone_to_part_map + iVar5)] == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 139,
+      "match": "(CLocation *)((int)",
+      "text": "pCVar11 = (CLocation *)((int)(pCVar11 + 0x2a) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&local_18->motion_list + 0x14),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&local_18->motion_list + 0x14) = fVar1, 3.0f < fVar1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&local_18->motion_list + 0x14) = 3.0f;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 156,
+      "match": "unaff_EBP",
+      "text": "iVar8 = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 157,
+      "match": "unaff_EBP",
+      "text": "if (0 < *(int *)(unaff_EBP + 0x28558)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 170,
+      "match": "unaff_EBP",
+      "text": "core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(this_ptr,unaff_EBP,iVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 175,
+      "match": "unaff_EBP",
+      "text": "} while (iVar5 < *(int *)(unaff_EBP + 0x28558));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 181,
+      "match": "unaff_EBP",
+      "text": "if (*(int *)(*(int *)(pSStack_14->unk + 4) * 0x24 + unaff_EBP + 0x2857c) ==",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 189,
+      "match": "unaff_EBP",
+      "text": "(this_ptr,unaff_EBP,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 190,
+      "match": "unaff_EBP",
+      "text": "*(int *)(*(int *)(pSStack_14->unk + 4) * 0x24 + unaff_EBP + 0x2857c));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 193,
+      "match": "(CSkeleton *)((int)",
+      "text": "local_18 = (CSkeleton *)((int)local_18 + 0x18);",
+      "type": "pointer_cast"
+    }
+  ]
+}

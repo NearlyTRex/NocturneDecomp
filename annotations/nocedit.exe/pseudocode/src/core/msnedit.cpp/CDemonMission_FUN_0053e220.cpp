@@ -89,9 +89,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
   fVar1 = (pCVar3->base).location.position.z;
   (pCVar3->base).location.position.y = fVar1;
   (pCVar3->base).location.position.x = fVar1;
-  (pCStack_18->base).orient.heading = 0.0;
-  (pCStack_18->base).orient.bank = (pCStack_18->base).orient.heading;
-  (pCStack_18->base).orient.pitch = (pCStack_18->base).orient.bank;
+  (pCStack_18->base).orient.vec.z = 0.0;
+  (pCStack_18->base).orient.vec.y = (pCStack_18->base).orient.vec.z;
+  (pCStack_18->base).orient.vec.x = (pCStack_18->base).orient.vec.y;
   (*((pCStack_18->base).vtable._ub)->setup)(&pCStack_18->base);
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,&actor->base);
   pCStack_18 = (CBoxActor *)&(actor->base).orient;

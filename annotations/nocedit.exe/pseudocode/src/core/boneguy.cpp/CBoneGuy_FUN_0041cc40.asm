@@ -241,7 +241,7 @@ section .text
     PUSH ECX                            ; 0041cea3
     MOV dword ptr [ESP + 0x7c],EDI      ; 0041cea4
     CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0 ; 0041cea8
-        ;   XREF to: 004286e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter * this_ptr)
+        ;   XREF to: 004286e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 0041cead
     MOV EBX,EAX                         ; 0041ceb0
     MOV ESI,dword ptr [EBP + 0x14]      ; 0041ceb2

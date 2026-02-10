@@ -19,7 +19,7 @@
 ;   core_bride.cpp_CBride_FUN_00424600 at 0042469f
 ;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 004249cb
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423db7
-;   core_charactr.cpp_CCharacter_FUN_0042b670 at 0042b6bd
+;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042b670 at 0042b6bd
 ;   ... and 34 more
 ;
 ; Referenced Globals:

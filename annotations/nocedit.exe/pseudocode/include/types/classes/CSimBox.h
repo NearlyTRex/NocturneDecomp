@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBox.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
@@ -16,6 +17,7 @@ typedef struct CSimBox {
     char trigger_event[100]; // 0x2dc
     CVector3f initial_velocity; // 0x340
     CVector3f init_rot_vel; // 0x34c
-    char unk[628]; // 0x358
+    CBox box; // 0x358
+    char unk[28]; // 0x5b0
 } CSimBox;
 

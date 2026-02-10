@@ -81,7 +81,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
           ;
           pCVar1->attach_actors[0].actor = local_18;
           iVar2 = iVar2 + 1;
-          pCVar1 = (CPlatform *)&(pCVar1->base).orient.bank;
+          pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
         } while (iVar2 < local_1c);
       }
     }
@@ -92,7 +92,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
         if (pCVar1->attach_actors[0].actor != (CDemonActor *)0x0) {
           local_14 = local_14 + 1;
         }
-        pCVar1 = (CPlatform *)&(pCVar1->base).orient.bank;
+        pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
       } while (pCVar1 != (CPlatform *)((this_ptr->model).model_name + 0x38));
       iVar2 = 0;
       core_actor_cpp_archiveInteger_FUN_0040b7f0(&local_14,"attachCount");
@@ -103,7 +103,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
                     ((CDemonActor *)(this_ptr->attach_actors + iVar2),"attach actor");
         }
         iVar2 = iVar2 + 1;
-        pCVar1 = (CPlatform *)&(pCVar1->base).orient.bank;
+        pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
       } while (iVar2 < 10);
     }
   }

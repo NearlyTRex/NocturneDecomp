@@ -26,14 +26,14 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
   CMotionList *this_ptr_01;
   char *extraout_EAX_02;
   char *extraout_EAX_03;
-  CCharacter *pCVar9;
-  CPlatform *pCVar10;
-  int *piVar11;
+  CPlatform *pCVar9;
+  int *piVar10;
   CHero *this_ptr_02;
   CEnemy *this_ptr_03;
+  CDemonActor *pCVar11;
   CVector3f *pCVar12;
   char *extraout_EAX_04;
-  CDemonActor *pCVar13;
+  CCharacter *pCVar13;
   CDemonActor *pCVar14;
   uint uVar15;
   uint uVar16;
@@ -145,9 +145,10 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
   C3DSLight *local_118;
   int local_114;
   int local_110;
-  int local_10c;
+  char *local_10c;
   int local_108;
   char *local_104;
+  int local_100;
   int local_fc;
   char *local_f8;
   char *local_f4;
@@ -203,8 +204,8 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
   int local_2c;
   int local_28;
   float local_24;
-  uint local_20;
-  uint local_1c;
+  float local_20;
+  float local_1c;
   uint local_18;
   float local_14;
   
@@ -390,16 +391,16 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
             local_11c = local_11c + local_e8;
             core_script_cpp_trimString_FUN_00559360(local_ee4);
             core_script_cpp_trimString_FUN_00559360(local_27e4);
-            pCVar13 = core_script_cpp_getActor_FUN_005594e0
+            pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                 (local_ee4,g_CHeroClassInfo.name_hash,&g_CHeroClassInfo);
-            if ((pCVar13 == (CDemonActor *)0x0) ||
-               (pCVar14 = core_script_cpp_getActor_FUN_005594e0
+            if ((pCVar14 == (CDemonActor *)0x0) ||
+               (pCVar11 = core_script_cpp_getActor_FUN_005594e0
                                     (local_27e4,g_CDemonActorClassInfo.name_hash,
-                                     &g_CDemonActorClassInfo), pCVar14 == (CDemonActor *)0x0))
+                                     &g_CDemonActorClassInfo), pCVar11 == (CDemonActor *)0x0))
             goto joined_r0x0055c026;
             if (g_ScriptEventsEnabled == 0) {
               core_inv_cpp_CInventory_addItem_FUN_004fd600
-                        ((CInventory *)(pCVar13[0x176].create_event + 0x30),pCVar14,0);
+                        ((CInventory *)(pCVar14[0x176].create_event + 0x30),pCVar11,0);
             }
           }
           else {
@@ -498,28 +499,28 @@ LAB_0055bb9d:
                     if ((iVar6 == 0) &&
                        ((g_CharacterClassificationTable[(byte)(pcVar17[0x15] + 1)] & 0xe0) == 0)) {
                       local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0x15);
-                      local_10c = -1;
+                      local_10c = (char *)0xffffffff;
                       sscanf
                                 (local_11c,"(%[^,], %[^)])%n",local_190c,local_1a9c,&local_10c);
-                      if (local_10c < 2) {
+                      if ((int)local_10c < 2) {
                         _sprintf
                                   (g_ScriptErrorBuffer,"Error parsing attachActorToPlatform command parms");
                         return -1;
                       }
-                      local_11c = local_11c + local_10c;
+                      local_11c = local_11c + (int)local_10c;
                       core_script_cpp_trimString_FUN_00559360(local_190c);
                       core_script_cpp_trimString_FUN_00559360(local_1a9c);
-                      pCVar10 = (CPlatform *)
-                                core_script_cpp_getActor_FUN_005594e0
-                                          (local_1a9c,g_CPlatformClassInfo.name_hash,
-                                           &g_CPlatformClassInfo);
-                      if ((pCVar10 == (CPlatform *)0x0) ||
-                         (pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                      pCVar9 = (CPlatform *)
+                               core_script_cpp_getActor_FUN_005594e0
+                                         (local_1a9c,g_CPlatformClassInfo.name_hash,
+                                          &g_CPlatformClassInfo);
+                      if ((pCVar9 == (CPlatform *)0x0) ||
+                         (pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                               (local_190c,g_CDemonActorClassInfo.name_hash,
                                                &g_CDemonActorClassInfo),
-                         pCVar13 == (CDemonActor *)0x0)) goto joined_r0x0055c026;
+                         pCVar14 == (CDemonActor *)0x0)) goto joined_r0x0055c026;
                       if (g_ScriptEventsEnabled == 0) {
-                        core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(pCVar10);
+                        core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(pCVar9);
                       }
                     }
                     else {
@@ -603,25 +604,29 @@ LAB_0055bb9d:
                                     iVar18 = 0;
                                     for (iVar6 = 0; iVar6 < (int)g_CDemonSetPtr->actor_list_ptr;
                                         iVar6 = iVar6 + 1) {
-                                      pCVar13 = core_actor_cpp_castToClassHash_FUN_0040c790
+                                      pCVar13 = (CCharacter *)
+                                                core_actor_cpp_castToClassHash_FUN_0040c790
                                                           (*(CDemonActor **)
                                                             (g_CDemonSetPtr->actor_list_data +
                                                             iVar18),g_CCharacterClassInfo.name_hash)
                                       ;
-                                      if (pCVar13 != (CDemonActor *)0x0) {
-                                        (*(((pCVar13->vtable)._uc)->_uc).cfunc23)();
+                                      if (pCVar13 != (CCharacter *)0x0) {
+                                        (*(((pCVar13->base).vtable._uc)->_uc).setWalkTarget)
+                                                  (pCVar13,(CDemonActor *)0x0,0.0,0.0);
                                       }
                                       iVar18 = iVar18 + 4;
                                     }
                                   }
                                 }
                                 else {
-                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                  pCVar13 = (CCharacter *)
+                                            core_script_cpp_getActor_FUN_005594e0
                                                       (local_2334,g_CCharacterClassInfo.name_hash,
                                                        &g_CCharacterClassInfo);
-                                  if (pCVar13 == (CDemonActor *)0x0) goto joined_r0x0055c026;
+                                  if (pCVar13 == (CCharacter *)0x0) goto joined_r0x0055c026;
                                   if (g_ScriptEventsEnabled == 0) {
-                                    (*(((pCVar13->vtable)._uc)->_uc).cfunc23)();
+                                    (*(((pCVar13->base).vtable._uc)->_uc).setWalkTarget)
+                                              (pCVar13,(CDemonActor *)0x0,0.0,0.0);
                                   }
                                 }
                               }
@@ -919,8 +924,8 @@ joined_r0x0055f6da:
                                               iVar6 = 0;
                                               do {
                                                 if (*(int *)((int)local_c8c + iVar18) != 0) {
-                                                  core_charactr_cpp_CCharacter_FUN_0042bd30
-                                                            (local_f0);
+                                                  core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                                                            (local_f0,local_ec,iVar6,0);
                                                 }
                                                 iVar6 = iVar6 + 1;
                                                 iVar18 = iVar18 + 4;
@@ -1108,12 +1113,12 @@ LAB_0055cd52:
                                                             (local_32d4);
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_1f4c);
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_32d4,
                                                                        g_CCharacterClassInfo.
                                                                        name_hash,
                                                                        &g_CCharacterClassInfo);
-                                                  if (pCVar13 == (CDemonActor *)0x0)
+                                                  if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
                                                   iVar6 = stricmp
                                                                     (local_1f4c,"false");
@@ -1139,7 +1144,7 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    pCVar13[0x1a].vtable._ub = pCVar8;
+                                                    pCVar14[0x1a].vtable._ub = pCVar8;
                                                   }
                                                   }
                                                   else {
@@ -1237,22 +1242,23 @@ LAB_0055cd52:
                                                             (local_23fc);
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_19d4);
-                                                  pCVar9 = (CCharacter *)
-                                                           core_script_cpp_getActor_FUN_005594e0
-                                                                     (local_23fc,
-                                                                      g_CCharacterClassInfo.
-                                                                      name_hash,
-                                                                      &g_CCharacterClassInfo);
-                                                  if (pCVar9 == (CCharacter *)0x0)
+                                                  pCVar13 = (CCharacter *)
+                                                            core_script_cpp_getActor_FUN_005594e0
+                                                                      (local_23fc,
+                                                                       g_CCharacterClassInfo.
+                                                                       name_hash,
+                                                                       &g_CCharacterClassInfo);
+                                                  if (pCVar13 == (CCharacter *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     uVar15 = 
-                                                  core_charactr_cpp_CCharacter_FUN_0042d390(pCVar9);
+                                                  core_charactr_cpp_CCharacter_initGesture_FUN_0042d390
+                                                            (pCVar13,local_19d4);
                                                   }
                                                   else {
                                                     this_ptr_01 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                                                            (&(pCVar9->model).motion_controller);
+                                                            (&(pCVar13->model).motion_controller);
                                                   iVar6 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                                             (this_ptr_01);
@@ -1337,11 +1343,11 @@ LAB_0055cd52:
                                                   if (iVar6 == 0) {
                                                     return -1;
                                                   }
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_1b64,
                                                                        g_CTriggerClassInfo.name_hash
                                                                        ,&g_CTriggerClassInfo);
-                                                  if (pCVar13 == (CDemonActor *)0x0)
+                                                  if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
                                                                                                         
@@ -1733,19 +1739,20 @@ LAB_0055d708:
                                                   local_11c = local_11c + local_b8;
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_1394);
-                                                  pCVar9 = (CCharacter *)
-                                                           core_script_cpp_getActor_FUN_005594e0
-                                                                     (local_1394,
-                                                                      g_CCharacterClassInfo.
-                                                                      name_hash,
-                                                                      &g_CCharacterClassInfo);
-                                                  if (pCVar9 == (CCharacter *)0x0) {
+                                                  pCVar13 = (CCharacter *)
+                                                            core_script_cpp_getActor_FUN_005594e0
+                                                                      (local_1394,
+                                                                       g_CCharacterClassInfo.
+                                                                       name_hash,
+                                                                       &g_CCharacterClassInfo);
+                                                  if (pCVar13 == (CCharacter *)0x0) {
 joined_r0x0055c026:
                                                     if (g_ActorLookedUpByVariable == 0) {
                                                       return -1;
                                                     }
                                                     goto LAB_0055a8d4;
                                                   }
+                                                  pCVar14 = (CDemonActor *)0x0;
                                                   if (*local_11c == ',') {
                                                     local_b8 = -1;
                                                     sscanf
@@ -1761,12 +1768,12 @@ joined_r0x0055c026:
                                                     local_11c = local_11c + local_b8;
                                                     core_script_cpp_trimString_FUN_00559360
                                                               (local_2fb4);
-                                                    pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                    pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                         (local_2fb4,
                                                                          g_CDemonActorClassInfo.
                                                                          name_hash,
                                                                          &g_CDemonActorClassInfo);
-                                                    if (pCVar13 == (CDemonActor *)0x0)
+                                                    if (pCVar14 == (CDemonActor *)0x0)
                                                     goto joined_r0x0055c026;
                                                   }
                                                   if (*local_11c != ')') {
@@ -1777,8 +1784,9 @@ joined_r0x0055c026:
                                                   }
                                                   local_11c = local_11c + 1;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    core_charactr_cpp_CCharacter_FUN_0042ddd0
-                                                              (pCVar9);
+                                                                                                        
+                                                  core_charactr_cpp_CCharacter_setLookAtTarget_FUN_0042ddd0
+                                                            (pCVar13,pCVar14);
                                                   }
                                                   }
                                                   else {
@@ -1804,13 +1812,12 @@ joined_r0x0055c026:
                                                   local_11c = local_11c + local_b4;
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_2a3c);
-                                                  pCVar10 = (CPlatform *)
-                                                            core_script_cpp_getActor_FUN_005594e0
-                                                                      (local_2a3c,
-                                                                       g_CPlatformClassInfo.
-                                                                       name_hash,
-                                                                       &g_CPlatformClassInfo);
-                                                  if (pCVar10 == (CPlatform *)0x0)
+                                                  pCVar9 = (CPlatform *)
+                                                           core_script_cpp_getActor_FUN_005594e0
+                                                                     (local_2a3c,
+                                                                      g_CPlatformClassInfo.name_hash
+                                                                      ,&g_CPlatformClassInfo);
+                                                  if (pCVar9 == (CPlatform *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if ((local_3f78 < 0.0) || (1.0 < local_3f78)) {
                                                     _sprintf
@@ -1824,8 +1831,7 @@ joined_r0x0055c026:
                                                     goto LAB_0055a97f;
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    core_platfrm_cpp_CPlatform_FUN_0054d690(pCVar10)
-                                                    ;
+                                                    core_platfrm_cpp_CPlatform_FUN_0054d690(pCVar9);
                                                   }
                                                   }
                                                   else {
@@ -1853,29 +1859,31 @@ joined_r0x0055c026:
                                                             (local_2eec);
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_28ac);
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_2eec,
                                                                        g_CDoorClassInfo.name_hash,
                                                                        &g_CDoorClassInfo);
-                                                  if ((pCVar13 == (CDemonActor *)0x0) ||
-                                                     (pCVar13 = 
+                                                  if ((pCVar14 == (CDemonActor *)0x0) ||
+                                                     (pCVar13 = (CCharacter *)
+                                                                                                                                
                                                   core_script_cpp_getActor_FUN_005594e0
                                                             (local_28ac,
                                                              g_CCharacterClassInfo.name_hash,
                                                              &g_CCharacterClassInfo),
-                                                  pCVar13 == (CDemonActor *)0x0))
+                                                  pCVar13 == (CCharacter *)0x0))
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     local_114 = g_ScriptEventsEnabled;
                                                     if (0.0 <= this_ptr->cmd_timer) {
-                                                      iVar6 = (*(((pCVar13->vtable)._uc)->_uc).
-                                                                cfunc20)();
+                                                      iVar6 = (*(((pCVar13->base).vtable._uc)->_uc).
+                                                                hasDoorTarget)(pCVar13);
                                                       if (iVar6 != 0) {
                                                         local_110 = 1;
                                                       }
                                                     }
                                                     else {
-                                                      (*(((pCVar13->vtable)._uc)->_uc).cfunc18)();
+                                                      (*(((pCVar13->base).vtable._uc)->_uc).
+                                                        setDoorTarget)(pCVar13,(uint)pCVar14);
                                                       this_ptr->cmd_timer = 1.0;
                                                     }
                                                   }
@@ -1905,18 +1913,18 @@ joined_r0x0055c026:
                                                   ;
                                                   core_script_cpp_trimString_FUN_00559360(local_50c)
                                                   ;
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_4a8,
                                                                        g_CHeroClassInfo.name_hash,
                                                                        &g_CHeroClassInfo);
-                                                  if (pCVar13 == (CDemonActor *)0x0)
+                                                  if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
-                                                  piVar11 = 
+                                                  piVar10 = 
                                                   core_script_cpp_getActionKeyOffset_FUN_00559660
                                                             ((SActionKeyBindings *)
-                                                             (pCVar13[0x8d].create_event + 0x3c),
+                                                             (pCVar14[0x8d].create_event + 0x3c),
                                                              local_50c);
-                                                  if (piVar11 == (int *)0x0) {
+                                                  if (piVar10 == (int *)0x0) {
                                                     _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Invalid button name: %s",
@@ -1930,7 +1938,7 @@ joined_r0x0055c026:
                                                             (g_CGamePtr);
                                                   g_ScriptInputFlag = 0;
                                                   }
-                                                  *piVar11 = 1;
+                                                  *piVar10 = 1;
                                                   }
                                                   }
                                                   else {
@@ -2002,19 +2010,19 @@ joined_r0x0055c026:
                                                   ;
                                                   core_script_cpp_trimString_FUN_00559360(local_8f4)
                                                   ;
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_700,
                                                                        g_CHeroClassInfo.name_hash,
                                                                        &g_CHeroClassInfo);
-                                                  if (pCVar13 == (CDemonActor *)0x0)
+                                                  if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
-                                                  piVar11 = 
+                                                  piVar10 = 
                                                   core_script_cpp_getActionKeyOffset_FUN_00559660
                                                             ((SActionKeyBindings *)
-                                                             (pCVar13[0x8d].create_event + 0x3c),
+                                                             (pCVar14[0x8d].create_event + 0x3c),
                                                              local_8f4);
                                                   iVar6 = g_ScriptEventsEnabled;
-                                                  if (piVar11 == (int *)0x0) {
+                                                  if (piVar10 == (int *)0x0) {
                                                     _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Invalid button name: %s",
@@ -2028,7 +2036,7 @@ joined_r0x0055c026:
                                                             (g_CGamePtr);
                                                   g_ScriptInputFlag = iVar6;
                                                   }
-                                                  *piVar11 = 0;
+                                                  *piVar10 = 0;
                                                   }
                                                   }
                                                   else {
@@ -2054,16 +2062,16 @@ joined_r0x0055c026:
                                                   local_11c = local_11c + local_9c;
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_271c);
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_271c,
                                                                        g_CHeroClassInfo.name_hash,
                                                                        &g_CHeroClassInfo);
-                                                  if (pCVar13 == (CDemonActor *)0x0)
+                                                  if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     core_inv_cpp_CInventory_initialize_FUN_004fd190
                                                               ((CInventory *)
-                                                               (pCVar13[0x176].create_event + 0x30))
+                                                               (pCVar14[0x176].create_event + 0x30))
                                                     ;
                                                   }
                                                   }
@@ -2092,22 +2100,22 @@ joined_r0x0055c026:
                                                             (local_20dc);
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_2014);
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_20dc,
                                                                        g_CHeroClassInfo.name_hash,
                                                                        &g_CHeroClassInfo);
-                                                  if (pCVar13 == (CDemonActor *)0x0)
+                                                  if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if ((g_ScriptEventsEnabled == 0) &&
-                                                     (pCVar14 = 
+                                                     (pCVar11 = 
                                                   core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0
                                                             (&g_HeroActors[g_LocalHeroIndex]->
                                                               inventory,local_2014),
-                                                  pCVar14 != (CDemonActor *)0x0)) {
+                                                  pCVar11 != (CDemonActor *)0x0)) {
                                                     core_inv_cpp_CInventory_removeItem_FUN_004fea70
                                                               ((CInventory *)
-                                                               (pCVar13[0x176].create_event + 0x30),
-                                                               pCVar14,1);
+                                                               (pCVar14[0x176].create_event + 0x30),
+                                                               pCVar11,1);
                                                   }
                                                   }
                                                   else {
@@ -2282,25 +2290,25 @@ LAB_0055e656:
                                                   core_script_cpp_trimString_FUN_00559360(local_69c)
                                                   ;
                                                   local_11c = local_11c + local_84;
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_ae8,
                                                                        g_CHeroClassInfo.name_hash,
                                                                        &g_CHeroClassInfo);
-                                                  if (pCVar13 == (CDemonActor *)0x0)
+                                                  if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     this_ptr_00 = (CGabriella *)
-                                                                  (pCVar13[0x176].create_event +
+                                                                  (pCVar14[0x176].create_event +
                                                                   0x30);
                                                     local_80 = g_ScriptEventsEnabled;
-                                                    pCVar13 = (CDemonActor *)
+                                                    pCVar14 = (CDemonActor *)
                                                                                                                             
                                                   core_gabriela_cpp_CGabriella_FUN_004d7650
                                                             (this_ptr_00);
-                                                  local_7c = pCVar13;
-                                                  if (pCVar13 != (CDemonActor *)0x0) {
+                                                  local_7c = pCVar14;
+                                                  if (pCVar14 != (CDemonActor *)0x0) {
                                                     do {
-                                                      if (pCVar13 == (CDemonActor *)0x0) {
+                                                      if (pCVar14 == (CDemonActor *)0x0) {
                                                         g_CurrentFilename =
                                                              "..\\core\\script.cpp";
                                                         g_CurrentLineNumber = 0xad9;
@@ -2309,16 +2317,16 @@ LAB_0055e656:
                                                   "script selectWeapon() command - hell froze.");
                                                   }
                                                   iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                                                                    (pCVar13,local_69c);
+                                                                    (pCVar14,local_69c);
                                                   if (iVar6 != 0) goto LAB_0055a8bb;
                                                   core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
                                                             ((CInventory *)this_ptr_00,
                                                              (CDemonActor *)0x0,5,1);
-                                                  pCVar13 = (CDemonActor *)
+                                                  pCVar14 = (CDemonActor *)
                                                                                                                         
                                                   core_gabriela_cpp_CGabriella_FUN_004d7650
                                                             (this_ptr_00);
-                                                  } while (pCVar13 != local_7c);
+                                                  } while (pCVar14 != local_7c);
                                                   }
                                                   if (local_80 == 0) {
                                                     engine_console_cpp_CConsole_printf_FUN_00441890
@@ -2359,7 +2367,7 @@ LAB_0055e656:
                                                   if (iVar6 == 0) {
                                                     return -1;
                                                   }
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_24c4,
                                                                        g_CDemonActorClassInfo.
                                                                        name_hash,
@@ -2369,7 +2377,7 @@ LAB_0055e656:
                                                   core_event_cpp_CEventList_setActorVariable_FUN_004b09a0
                                                             (g_CEventListPtr);
                                                   }
-                                                  else if ((pCVar13 == (CDemonActor *)0x0) &&
+                                                  else if ((pCVar14 == (CDemonActor *)0x0) &&
                                                           (g_ActorLookedUpByVariable == 0)) {
                                                     return -1;
                                                   }
@@ -2453,17 +2461,17 @@ LAB_0055e656:
                                                   local_11c = local_11c + local_68;
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_320c);
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_320c,
                                                                        g_CCharacterClassInfo.
                                                                        name_hash,
                                                                        &g_CCharacterClassInfo);
-                                                  if (pCVar13 == (CDemonActor *)0x0)
+                                                  if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    pCVar13[0x1a].next_actor =
+                                                    pCVar14[0x1a].next_actor =
                                                          (CDemonActor *)
-                                                         ((float)pCVar13[0x1a].prev_actor * local_6c
+                                                         ((float)pCVar14[0x1a].prev_actor * local_6c
                                                          );
                                                   }
                                                   }
@@ -2495,16 +2503,16 @@ LAB_0055e656:
                                                     } while (cVar2 != '\0');
                                                     return -1;
                                                   }
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_9bc,
                                                                        g_CDemonActorClassInfo.
                                                                        name_hash,
                                                                        &g_CDemonActorClassInfo);
-                                                  if (pCVar13 == (CDemonActor *)0x0)
+                                                  if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
-                                                  if (pCVar13 != this_ptr->focus_actor) {
+                                                  if (pCVar14 != this_ptr->focus_actor) {
                                                     this_ptr->unk2 = 1;
-                                                    this_ptr->focus_actor = pCVar13;
+                                                    this_ptr->focus_actor = pCVar14;
                                                   }
                                                   }
                                                   else {
@@ -2701,13 +2709,13 @@ LAB_0055f0a8:
                                                     this_ptr->who_is_speaking = (CDemonActor *)0x0;
                                                   }
                                                   else {
-                                                    pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                    pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                         (local_3e0,
                                                                          g_CCharacterClassInfo.
                                                                          name_hash,
                                                                          &g_CCharacterClassInfo);
-                                                    this_ptr->who_is_speaking = pCVar13;
-                                                    if (pCVar13 == (CDemonActor *)0x0)
+                                                    this_ptr->who_is_speaking = pCVar14;
+                                                    if (pCVar14 == (CDemonActor *)0x0)
                                                     goto joined_r0x0055c026;
                                                   }
                                                   this_ptr->unk1 = (int)this_ptr->who_is_speaking;
@@ -2811,12 +2819,12 @@ LAB_0055f0a8:
                                                                       (local_1204,"disable"
                                                                       );
                                                     if ((iVar6 != 0) &&
-                                                       (pCVar13 = 
+                                                       (pCVar14 = 
                                                   core_script_cpp_getActor_FUN_005594e0
                                                             (local_1204,
                                                              g_CCharacterClassInfo.name_hash,
                                                              &g_CCharacterClassInfo),
-                                                  pCVar13 == (CDemonActor *)0x0))
+                                                  pCVar14 == (CDemonActor *)0x0))
                                                   goto joined_r0x0055c026;
                                                   }
                                                   if (*local_11c != ')') {
@@ -2855,27 +2863,27 @@ LAB_0055f0a8:
                                                             (local_2c94);
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_1c2c);
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar14 = core_script_cpp_getActor_FUN_005594e0
                                                                       (local_2c94,
                                                                        g_CDemonActorClassInfo.
                                                                        name_hash,
                                                                        &g_CDemonActorClassInfo);
-                                                  if ((pCVar13 == (CDemonActor *)0x0) ||
-                                                     (pCVar14 = 
+                                                  if ((pCVar14 == (CDemonActor *)0x0) ||
+                                                     (pCVar11 = 
                                                   core_script_cpp_getActor_FUN_005594e0
                                                             (local_1c2c,
                                                              g_CDemonActorClassInfo.name_hash,
                                                              &g_CDemonActorClassInfo),
-                                                  pCVar14 == (CDemonActor *)0x0))
+                                                  pCVar11 == (CDemonActor *)0x0))
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     core_bodypart_cpp_FUN_0041b510();
                                                     pCVar12 = 
                                                   core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                                             (&local_160,&local_148);
-                                                  (pCVar13->orient).bank = pCVar12->y;
+                                                  (pCVar14->orient).vec.y = pCVar12->y;
                                                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-                                                            (pCVar13);
+                                                            (pCVar14);
                                                   }
                                                   }
                                                   else {
@@ -3128,12 +3136,13 @@ LAB_0055f91c:
                                                             (local_2974);
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_16b4);
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar13 = (CCharacter *)
+                                                            core_script_cpp_getActor_FUN_005594e0
                                                                       (local_2974,
                                                                        g_CCharacterClassInfo.
                                                                        name_hash,
                                                                        &g_CCharacterClassInfo);
-                                                  if ((pCVar13 == (CDemonActor *)0x0) ||
+                                                  if ((pCVar13 == (CCharacter *)0x0) ||
                                                      (pCVar14 = 
                                                   core_script_cpp_getActor_FUN_005594e0
                                                             (local_16b4,
@@ -3142,7 +3151,8 @@ LAB_0055f91c:
                                                   pCVar14 == (CDemonActor *)0x0))
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    (*(((pCVar13->vtable)._uc)->_uc).cfunc24)();
+                                                    (*(((pCVar13->base).vtable._uc)->_uc).
+                                                      setWalkTargetImmediate)(pCVar13,pCVar14);
                                                   }
                                                   }
                                                   else {
@@ -3222,7 +3232,7 @@ LAB_0055f91c:
                                                             (local_2bcc);
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_177c);
-                                                  local_20 = 0;
+                                                  local_20 = 0.0;
                                                   if (*local_11c == ',') {
                                                     local_120 = -1;
                                                     sscanf
@@ -3237,7 +3247,7 @@ LAB_0055f91c:
                                                     }
                                                     local_11c = local_11c + local_120;
                                                   }
-                                                  local_1c = 0x501502f9;
+                                                  local_1c = 1e+10;
                                                   if (*local_11c == ',') {
                                                     local_120 = -1;
                                                     sscanf
@@ -3259,12 +3269,13 @@ LAB_0055f91c:
                                                     return -1;
                                                   }
                                                   local_11c = local_11c + 1;
-                                                  pCVar13 = core_script_cpp_getActor_FUN_005594e0
+                                                  pCVar13 = (CCharacter *)
+                                                            core_script_cpp_getActor_FUN_005594e0
                                                                       (local_2bcc,
                                                                        g_CCharacterClassInfo.
                                                                        name_hash,
                                                                        &g_CCharacterClassInfo);
-                                                  if ((pCVar13 == (CDemonActor *)0x0) ||
+                                                  if ((pCVar13 == (CCharacter *)0x0) ||
                                                      (pCVar14 = 
                                                   core_script_cpp_getActor_FUN_005594e0
                                                             (local_177c,
@@ -3273,7 +3284,9 @@ LAB_0055f91c:
                                                   pCVar14 == (CDemonActor *)0x0))
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    (*(((pCVar13->vtable)._uc)->_uc).cfunc23)();
+                                                    (*(((pCVar13->base).vtable._uc)->_uc).
+                                                      setWalkTarget)(pCVar13,pCVar14,local_20,
+                                                                     local_1c);
                                                   }
                                                   }
                                                   }
@@ -3348,13 +3361,13 @@ LAB_0055f91c:
     }
   }
 LAB_0055a8bb:
-  if ((g_ScriptEventsEnabled != 2) && ((char)local_118->light_type != '\0')) {
+  if ((g_ScriptEventsEnabled != 2) && (*local_10c != '\0')) {
     _sprintf
-              (g_ScriptErrorBuffer,"Extra characters \"%s\" on line %d",local_118,local_120);
+              (g_ScriptErrorBuffer,"Extra characters \"%s\" on line %d",local_10c,local_114);
     return -1;
   }
 LAB_0055a8d4:
-  if (local_110 == 1) {
+  if (local_104 == (char *)0x1) {
     this_ptr->dialog_wav_time = -1.0;
     iVar6 = g_ScriptEventsEnabled;
     this_ptr->cmd_timer = -1.0;
@@ -3363,9 +3376,9 @@ LAB_0055a8d4:
       return -1;
     }
   }
-  else if (-1 < local_110) {
-    this_ptr->next_cmd = local_10c;
-    return local_110;
+  else if (-1 < (int)local_104) {
+    this_ptr->next_cmd = local_100;
+    return (int)local_104;
   }
-  return local_110;
+  return (int)local_104;
 }

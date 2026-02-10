@@ -3,57 +3,75 @@
     "errors": [
       {
         "category": "other",
+        "column": 17,
+        "line": 131,
+        "message": "member reference base type 'byte[6812]' (aka 'unsigned char[6812]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 132,
+        "message": "member reference base type 'byte[6812]' (aka 'unsigned char[6812]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 135,
+        "message": "member reference base type 'byte[6812]' (aka 'unsigned char[6812]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 135,
+        "message": "member reference base type 'byte[6812]' (aka 'unsigned char[6812]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 136,
+        "message": "member reference base type 'byte[6812]' (aka 'unsigned char[6812]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 139,
+        "message": "member reference base type 'byte[6812]' (aka 'unsigned char[6812]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 140,
+        "message": "member reference base type 'byte[6812]' (aka 'unsigned char[6812]') is not a structure or union"
+      },
+      {
+        "category": "other",
         "column": 18,
-        "line": 152,
+        "line": 156,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 154,
+        "line": 158,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 155,
+        "line": 159,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 156,
+        "line": 160,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 162,
-        "message": "cannot cast from type 'float' to pointer type 'char *'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 163,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 164,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 175,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 175,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 65,
+        "line": 247,
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -61,14 +79,17 @@
   },
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 243,
+    "complexity_score": 349,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 21,
-    "pseudocode_lines": 243,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 825
+    "pseudocode_lines": 249,
+    "suspect_count": 9,
+    "suspect_types": [
+      "stack_param",
+      "unknown_field"
+    ],
+    "total_lines": 831
   },
   "cross_references": [],
   "function": {
@@ -108,27 +129,27 @@
     {
       "addr": "00428f40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40"
     },
     {
       "addr": "00429820",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429820"
+      "name": "core_charactr.cpp_CCharacter_preProcess_FUN_00429820"
     },
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
-    },
-    {
-      "addr": "0042ca70",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ca70"
+      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
     },
     {
       "addr": "0042ec40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40"
+    },
+    {
+      "addr": "0042ca70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70"
     },
     {
       "addr": "004adca0",
@@ -551,7 +572,71 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffe4f8",
+      "text": "float in_stack_ffffe4f8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 124,
+      "match": "._6796_4_",
+      "text": "auStack_1b00._6796_4_ = pCVar7->x + pCVar2->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 125,
+      "match": "._6800_4_",
+      "text": "auStack_1b00._6800_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 128,
+      "match": "._6808_4_",
+      "text": "auStack_1b00._6808_4_ = (float)auStack_1b00._6796_4_ + local_38;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 128,
+      "match": "._6796_4_",
+      "text": "auStack_1b00._6808_4_ = (float)auStack_1b00._6796_4_ + local_38;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 129,
+      "match": "._6804_4_",
+      "text": "auStack_1b00._6804_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 132,
+      "match": "._6800_4_",
+      "text": "local_64 = (float)auStack_1b00._6800_4_ + local_34;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 133,
+      "match": "._6804_4_",
+      "text": "local_60 = (float)auStack_1b00._6804_4_ + local_30;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 188,
+      "match": "in_stack_ffffe4f8",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffe4f8);",
+      "type": "stack_param"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

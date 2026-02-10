@@ -10,7 +10,7 @@ void __cdecl core_ghoul_cpp_CGhoul_FUN_004e8520(CGhoul *this_ptr)
 
 {
   int iVar1;
-  CBodyPart *this_ptr_00;
+  CBodyPart *body_part;
   int *in_stack_00000008;
   float local_14;
   
@@ -61,23 +61,32 @@ switchD_004e8556_default:
     }
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
     if (iVar1 != 0) {
-      this_ptr_00 = core_bodypart_cpp_createBodyPart_FUN_00418e10();
-      core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
+      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                ((CCharacter *)this_ptr,body_part,*in_stack_00000008,0);
       if (*in_stack_00000008 == *(int *)this_ptr->unk3) {
-        core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk3 + 4),0);
       }
       if (*(int *)(this_ptr->unk3 + 8) == *in_stack_00000008) {
-        core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk3 + 0xc),0);
       }
       if (*(int *)(this_ptr->unk3 + 0x24) == *in_stack_00000008) {
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk3 + 8));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk3 + 0xc));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)this_ptr->unk3);
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk3 + 4));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk3 + 0x28));
       }
-      core_charactr_cpp_CCharacter_FUN_0042f300((CCharacter *)this_ptr);
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr_00);
+      core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
+                ((CCharacter *)this_ptr,"limb?.wav");
+      core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
       if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk3 + 0x28)] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }

@@ -28,7 +28,7 @@
 ;   undefined4 DAT_02d81c70
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042e050
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
         ;   Label: LAB_004a9ffb
     PUSH dword ptr [ESP + 0x10]         ; 004a9ffd
     PUSH EBX                            ; 004aa001
-    CALL core_charactr.cpp_CCharacter_FUN_0042e050 ; 004aa002
-        ;   XREF to: 0042e050 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042e050(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 ; 004aa002
+        ;   XREF to: 0042e050 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050(CCharacter * this_ptr, float delta_time, char * pattern)
     ADD ESP,0xc                         ; 004aa007
     POP EBX                             ; 004aa00a
     RET                                 ; 004aa00b
@@ -65,8 +65,8 @@ section .text
     PUSH EAX                            ; 004aa012
     PUSH dword ptr [ESP + 0x10]         ; 004aa013
     PUSH EBX                            ; 004aa017
-    CALL core_charactr.cpp_CCharacter_FUN_0042e050 ; 004aa018
-        ;   XREF to: 0042e050 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042e050(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 ; 004aa018
+        ;   XREF to: 0042e050 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050(CCharacter * this_ptr, float delta_time, char * pattern)
     ADD ESP,0xc                         ; 004aa01d
     POP EBX                             ; 004aa020
     RET                                 ; 004aa021

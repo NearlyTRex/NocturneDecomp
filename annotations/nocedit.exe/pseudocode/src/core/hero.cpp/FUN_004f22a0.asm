@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_00429870 at 00429a71
+;   core_charactr.cpp_CCharacter_process_FUN_00429870 at 00429a71
 ;
 ; Referenced Globals:
 ;   int g_HeroCount

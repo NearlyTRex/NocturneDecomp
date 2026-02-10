@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 527,
-    "complexity_score": 573,
+    "complexity_score": 282,
     "cross_reference_count": 27,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 168,
-    "suspect_count": 39,
+    "pseudocode_lines": 162,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "stack_param"
+      "extra_output"
     ],
-    "total_lines": 695
+    "total_lines": 689
   },
   "cross_references": [
     {
@@ -53,25 +52,25 @@
     {
       "addr": "0042c5f0",
       "from_addr": "0042c8c3",
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c5f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042ca70",
-      "from_addr": "0042cb92",
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ca70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042e050",
-      "from_addr": "0042e32c",
-      "name": "core_charactr.cpp_CCharacter_FUN_0042e050",
+      "name": "core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042ede0",
       "from_addr": "0042f2cc",
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ede0",
+      "name": "core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042ca70",
+      "from_addr": "0042cb92",
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042e050",
+      "from_addr": "0042e32c",
+      "name": "core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -194,7 +193,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0",
-    "signature": "int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *this_ptr)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0 (CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction, float min_distance,float max_distance)"
   },
   "function_calls": [
     {
@@ -344,10 +343,10 @@
     "pcode_op_count": 2990
   },
   "stack_frame": {
-    "frame_size": 292,
+    "frame_size": 312,
     "local_size": 288,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -734,6 +733,41 @@
         "offset": 4,
         "size": 4,
         "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "target_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "path_map",
+        "offset": 12,
+        "size": 4,
+        "type": "CPathMap *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "min_distance",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "max_distance",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -757,273 +791,77 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 12,
       "match": "extraout_EAX",
       "text": "CPathMap *extraout_EAX;",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "CVector3f *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "CPathMap *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000010",
-      "text": "CVector3f *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000014",
-      "text": "float in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000018",
-      "text": "float in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000010",
-      "text": "fVar2 = SQRT(in_stack_00000010->x * in_stack_00000010->x +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000010",
-      "text": "fVar2 = SQRT(in_stack_00000010->x * in_stack_00000010->x +",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 48,
       "match": "SQRT",
-      "text": "fVar2 = SQRT(in_stack_00000010->x * in_stack_00000010->x +",
+      "text": "fVar2 = SQRT(direction->x * direction->x + direction->z * direction->z);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010->z * in_stack_00000010->z);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010->z * in_stack_00000010->z);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000010",
-      "text": "(&local_b0,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000008",
-      "text": "(&this_ptr->base,&local_bc,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 52,
       "match": "SQRT",
       "text": "fVar3 = SQRT(local_bc.x * local_bc.x + local_bc.z * local_bc.z);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000010",
-      "text": "if (0.0 < SQRT(in_stack_00000010->z * in_stack_00000010->z +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000010",
-      "text": "if (0.0 < SQRT(in_stack_00000010->z * in_stack_00000010->z +",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 57,
       "match": "SQRT",
-      "text": "if (0.0 < SQRT(in_stack_00000010->z * in_stack_00000010->z +",
+      "text": "if (0.0 < SQRT(direction->z * direction->z +",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010->x * in_stack_00000010->x +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010->x * in_stack_00000010->x +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010->y * in_stack_00000010->y)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010->y * in_stack_00000010->y)) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 60,
       "match": "ABS",
       "text": "local_fc = ABS(local_18);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 68,
-      "match": "in_stack_00000014",
-      "text": "if (((ABS(fVar3 - fVar2) < in_stack_00000014 + (float)0.01) &&",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 62,
       "match": "ABS",
-      "text": "if (((ABS(fVar3 - fVar2) < in_stack_00000014 + (float)0.01) &&",
+      "text": "if (((ABS(fVar3 - fVar2) < min_distance + (float)0.01) &&",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000018",
-      "text": "(local_fc < in_stack_00000018 + (float)0.01)) &&",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 64,
       "match": "ABS",
       "text": "(ABS(local_bc.y) < (float)5)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 71,
       "match": "ABS",
       "text": "ABS(fVar7) * (float)0.31830988619288902 * (float)2 <= fVar3) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 72,
       "match": "ABS",
       "text": "(1.0 < ABS(local_bc.y))) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c == (CPathMap *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = extraout_EAX;",
-      "type": "stack_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 81,
+      "line": 75,
       "match": "extraout_EAX",
-      "text": "in_stack_0000000c = extraout_EAX;",
+      "text": "path_map = extraout_EAX;",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,&(this_ptr->base).location.position,&local_74,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 123,
-      "match": "in_stack_00000010",
-      "text": "(&this_ptr->base,&local_f8,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 124,
-      "match": "in_stack_00000008",
-      "text": "local_a4 = in_stack_00000008->x - pCVar4->x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 125,
-      "match": "in_stack_00000008",
-      "text": "local_a0 = in_stack_00000008->y - pCVar4->y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 127,
-      "match": "in_stack_00000008",
-      "text": "local_9c = in_stack_00000008->z - pCVar4->z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 140,
-      "match": "in_stack_00000010",
-      "text": "local_e0 = local_bc.x - in_stack_00000010->x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 141,
-      "match": "in_stack_00000010",
-      "text": "local_d8 = local_bc.z - in_stack_00000010->z;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 136,
       "match": "SQRT",
       "text": "local_60 = SQRT(local_d8 * local_d8 + local_e0 * local_e0);",
       "type": "decompiler_intrinsic"

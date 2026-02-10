@@ -32,10 +32,10 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e3280(CTurret *this_ptr)
     local_30.x = 1.22173f;
   }
   local_34 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                       (local_30.y - (this_ptr->base).base.orient.bank);
+                       (local_30.y - (this_ptr->base).base.orient.vec.y);
   local_c = local_34;
   local_c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                      (local_30.x - (this_ptr->base).base.orient.pitch);
+                      (local_30.x - (this_ptr->base).base.orient.vec.x);
   local_10 = in_stack_0000000c * this_ptr->rotate_deg_per_sec * (float)0.017453292519444399;
   local_18 = -local_10;
   if (local_34 < local_18) {
@@ -52,9 +52,9 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e3280(CTurret *this_ptr)
   if (local_10 < local_38) {
     local_38 = local_10;
   }
-  fVar1 = (this_ptr->base).base.orient.pitch;
-  (this_ptr->base).base.orient.bank = (this_ptr->base).base.orient.bank + local_34;
-  (this_ptr->base).base.orient.pitch = fVar1 + local_38;
+  fVar1 = (this_ptr->base).base.orient.vec.x;
+  (this_ptr->base).base.orient.vec.y = (this_ptr->base).base.orient.vec.y + local_34;
+  (this_ptr->base).base.orient.vec.x = fVar1 + local_38;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
   if (((float10)0 != ABS((float10)(local_34 < (float)0.001))) &&
      ((float10)0 != ABS((float10)(local_38 < (float)0.001)))) {

@@ -33,7 +33,7 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
       iVar2 = this_ptr->mist_state;
       (this_ptr->base).base.field43_0x2620 = 1;
       if (iVar2 == 0) {
-        core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
       }
       else {
         if (iVar2 == 1) {

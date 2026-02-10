@@ -45,7 +45,7 @@ void __cdecl FUN_004f8b00(void);
 
 // Original: core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20
 // Address: 004f8b20
-void __cdecl CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr);
+void __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_icepick.cpp_CIcePick_FUN_004f8c70
 // Address: 004f8c70

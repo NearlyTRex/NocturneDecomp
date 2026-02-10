@@ -25,7 +25,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f33b0(CHero *this_ptr)
   int local_1c;
   float local_14;
   
-  iVar3 = core_charactr_cpp_CCharacter_FUN_0042d360(&this_ptr->base);
+  iVar3 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_0042d360(&this_ptr->base);
   if (iVar3 == 0) {
     if (*(int *)this_ptr->unk3 != 0) {
       return 1;
@@ -45,7 +45,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f33b0(CHero *this_ptr)
         pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_30,&local_60);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                             (pCVar4->y - (this_ptr->base).base.orient.bank);
+                             (pCVar4->y - (this_ptr->base).base.orient.vec.y);
         if ((((ABS(local_14) <= (float)1.04719755116667) &&
              (pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                                  ((CDemonActor *)this_ptr_00,(CVector3f *)(auStack_40 + 4),

@@ -1,22 +1,22 @@
 // Name: core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20
 // Address: 00526b20
 // Address Range: [[00526b20, 00526d8b]]
-// Convention: __cdecl
-// Signature: void __cdecl core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobster *this_ptr)
+// Convention: __stack2_esi
+// Signature: void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobster *this_ptr)
+void __stack2_esi
+core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20
+          (CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   CDemonActor *pCVar1;
   int iVar2;
-  float *unaff_ESI;
   CMatrix3x4f *pCVar3;
   byte bVar4;
-  int in_stack_00000008;
   CMatrix3x4f local_d8;
   CMatrix3x4f local_a8;
   CVector3f local_78 [2];
@@ -29,10 +29,10 @@ void __cdecl core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobs
   CVector3f local_18;
   
   bVar4 = 0;
-  iVar2 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
-  if (in_stack_00000008 == 1) {
+  iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
+  if (hand_index == 1) {
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
-                       ((this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor,
+                       ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
                         g_CElephantGunClassInfo.name_hash);
     if (pCVar1 == (CDemonActor *)0x0) {
       local_78[0].x = 0.228082;
@@ -95,9 +95,9 @@ void __cdecl core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobs
              &local_a8);
   pCVar3 = &local_a8;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *unaff_ESI = pCVar3->m[0].w;
+    out_matrix->m[0].w = pCVar3->m[0].w;
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
-    unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;
+    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar4 * -2 + 1) * 4);
   }
   return;
 }

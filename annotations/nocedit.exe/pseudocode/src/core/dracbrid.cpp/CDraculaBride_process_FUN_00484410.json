@@ -4,68 +4,80 @@
       {
         "category": "other",
         "column": 6,
-        "line": 220,
+        "line": 224,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 220,
+        "line": 224,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 318,
+        "line": 322,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 318,
+        "line": 322,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 359,
+        "line": 363,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 359,
+        "line": 363,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
+        "column": 51,
+        "line": 376,
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 400,
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 401,
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
         "column": 6,
-        "line": 447,
+        "line": 463,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 447,
+        "line": 463,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 584,
-        "message": "use of undeclared identifier 'stack0xfffffb6c'"
+        "line": 608,
+        "message": "use of undeclared identifier 'stack0xfffffb6c'; did you mean 'in_stack_fffffb6c'?"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 721,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 721,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 48,
+        "line": 781,
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -73,18 +85,19 @@
   },
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 893,
+    "complexity_score": 1096,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 54,
-    "pseudocode_lines": 748,
-    "suspect_count": 13,
+    "pseudocode_lines": 776,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
+      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 2541
+    "total_lines": 2569
   },
   "cross_references": [],
   "function": {
@@ -149,27 +162,27 @@
     {
       "addr": "00428f40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40"
     },
     {
       "addr": "00429820",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429820"
+      "name": "core_charactr.cpp_CCharacter_preProcess_FUN_00429820"
     },
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
-    },
-    {
-      "addr": "0042ca70",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ca70"
+      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
     },
     {
       "addr": "0042ec40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40"
+    },
+    {
+      "addr": "0042ca70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70"
     },
     {
       "addr": "004286e0",
@@ -1371,94 +1384,213 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 19,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 20,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
+      "line": 21,
       "match": "extraout_EAX_01",
       "text": "int extraout_EAX_01;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
+      "line": 23,
       "match": "extraout_EAX_02",
       "text": "int extraout_EAX_02;",
       "type": "extra_output"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_fffffb6c",
+      "text": "char *in_stack_fffffb6c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 111,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (char *)0x4845ee;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 114,
       "match": "ROUND",
-      "text": "*(int *)(iVar11 + 0xcc0) = (int)ROUND(dVar18);",
+      "text": "*(int *)(iVar9 + 0xcc0) = (int)ROUND(dVar17);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 216,
+      "line": 220,
       "match": "extraout_EAX_01",
       "text": "if (extraout_EAX_01 != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 314,
+      "line": 318,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 369,
+      "match": "in_stack_fffffb6c",
+      "text": "pCVar14,pCVar12,fVar18,(float)in_stack_fffffb6c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 373,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (char *)0x1;",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 382,
+      "line": 391,
       "match": "SQRT",
       "text": "SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x + local_7c.y * local_7c.y)) {",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 393,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (char *)(local_70.y - (this_ptr->base).base.base.orient.vec.y);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 394,
+      "match": "in_stack_fffffb6c",
+      "text": "local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)in_stack_fffffb6c);",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 386,
+      "line": 395,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 397,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (char *)0x1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 408,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = \"hotbride-bite?.wav\";",
+      "type": "stack_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 415,
+      "line": 426,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) break;",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 435,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = this_ptr->rise_event;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 437,
+      "match": "in_stack_fffffb6c",
+      "text": "(g_CEventListPtr,in_stack_fffffb6c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 439,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (char *)0x1;",
+      "type": "stack_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 445,
+      "line": 461,
       "match": "extraout_EAX_02",
       "text": "if (extraout_EAX_02 == 0) {",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 535,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = this_ptr->rise_event;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 537,
+      "match": "in_stack_fffffb6c",
+      "text": "(g_CEventListPtr,in_stack_fffffb6c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 539,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (char *)0x1;",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 577,
+      "line": 601,
       "match": "&stack0xfffffb6c",
       "text": "(&stack0xfffffb6c,\"bride-%d?.wav\",this_ptr->freaky_voice_number);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 627,
+      "line": 651,
       "match": "SQRT",
       "text": "if (SQRT(local_194 * local_194 + local_19c * local_19c + local_198 * local_198) <",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 741,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = ((this_ptr->base).victim)->actor_name;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 743,
+      "match": "in_stack_fffffb6c",
+      "text": "(g_CDemonSetPtr,(CDemonActor *)in_stack_fffffb6c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 774,
+      "match": "in_stack_fffffb6c",
+      "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffb6c);",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

@@ -12,9 +12,9 @@ void __cdecl
 core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float delta_time)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   CLocation *pCVar2;
-  COrientation *pCVar3;
+  UOrientationVector *pUVar3;
   CDemonActor *pCVar4;
   CHero *pCVar5;
   float fVar6;
@@ -32,14 +32,14 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
     (this_ptr->unk3).base.location.position.y = (this_ptr->base).location.position.y;
     (this_ptr->unk3).base.location.position.z = (this_ptr->base).location.position.z;
     (this_ptr->unk3).base.location.area_id = (this_ptr->base).location.area_id;
-    pCVar3 = &(this_ptr->unk3).base.orient;
-    pCVar1 = &(this_ptr->base).orient;
+    pUVar3 = &(this_ptr->unk3).base.orient;
+    pUVar1 = &(this_ptr->base).orient;
     (this_ptr->unk3).base.location.position.y =
          (this_ptr->unk3).base.location.position.y + 1.7f;
-    if (pCVar3 != pCVar1) {
-      pCVar3->pitch = pCVar1->pitch;
-      (this_ptr->unk3).base.orient.bank = (this_ptr->base).orient.bank;
-      (this_ptr->unk3).base.orient.heading = (this_ptr->base).orient.heading;
+    if (pUVar3 != pUVar1) {
+      (pUVar3->vec).x = (pUVar1->vec).x;
+      (this_ptr->unk3).base.orient.vec.y = (this_ptr->base).orient.vec.y;
+      (this_ptr->unk3).base.orient.vec.z = (this_ptr->base).orient.vec.z;
     }
     core_flame_cpp_CFlame_FUN_004c9c00(&this_ptr->unk3);
   }
@@ -61,7 +61,7 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
       this_ptr->unk2[3] = '\0';
       return;
     }
-    pCVar1 = &(this_ptr->base).orient;
+    pUVar1 = &(this_ptr->base).orient;
     iVar12 = this_ptr->state;
     pCVar2 = &(this_ptr->base).location;
     if (iVar12 == 1) {
@@ -81,10 +81,10 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
           (this_ptr->base).location.position.z = (pCVar4->location).position.z;
           (this_ptr->base).location.area_id = (pCVar4->location).area_id;
           pCVar4 = this_ptr->start_loc;
-          if (pCVar1 != &pCVar4->orient) {
-            pCVar1->pitch = (pCVar4->orient).pitch;
-            (this_ptr->base).orient.bank = (pCVar4->orient).bank;
-            (this_ptr->base).orient.heading = (pCVar4->orient).heading;
+          if (pUVar1 != &pCVar4->orient) {
+            (pUVar1->vec).x = (pCVar4->orient).vec.x;
+            (this_ptr->base).orient.vec.y = (pCVar4->orient).vec.y;
+            (this_ptr->base).orient.vec.z = (pCVar4->orient).vec.z;
           }
         }
       }
@@ -105,11 +105,11 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
           (this_ptr->base).location.position.z = (pCVar4->location).position.z;
           (this_ptr->base).location.area_id = (pCVar4->location).area_id;
           pCVar4 = this_ptr->start_loc;
-          pCVar1 = &(this_ptr->base).orient;
-          if (pCVar1 != &pCVar4->orient) {
-            pCVar1->pitch = (pCVar4->orient).pitch;
-            (this_ptr->base).orient.bank = (pCVar4->orient).bank;
-            (this_ptr->base).orient.heading = (pCVar4->orient).heading;
+          pUVar1 = &(this_ptr->base).orient;
+          if (pUVar1 != &pCVar4->orient) {
+            (pUVar1->vec).x = (pCVar4->orient).vec.x;
+            (this_ptr->base).orient.vec.y = (pCVar4->orient).vec.y;
+            (this_ptr->base).orient.vec.z = (pCVar4->orient).vec.z;
           }
         }
       }
@@ -139,13 +139,13 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
         (this_ptr->base).location.position.z = (pCVar4->location).position.z;
         (this_ptr->base).location.area_id = (pCVar4->location).area_id;
         pCVar4 = this_ptr->start_loc;
-        if (pCVar1 == &pCVar4->orient) {
+        if (pUVar1 == &pCVar4->orient) {
           this_ptr->state = 2;
         }
         else {
-          pCVar1->pitch = (pCVar4->orient).pitch;
-          (this_ptr->base).orient.bank = (pCVar4->orient).bank;
-          (this_ptr->base).orient.heading = (pCVar4->orient).heading;
+          (pUVar1->vec).x = (pCVar4->orient).vec.x;
+          (this_ptr->base).orient.vec.y = (pCVar4->orient).vec.y;
+          (this_ptr->base).orient.vec.z = (pCVar4->orient).vec.z;
           this_ptr->state = 2;
         }
       }

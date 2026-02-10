@@ -12,14 +12,14 @@ int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_004cb920(CFlameThrower *thi
   int *piVar1;
   float fVar2;
   CVector3f *input_local_point;
-  CVector3f CStack_10;
   
   if ((this_ptr->base).ammo_count < 1) {
     return 0;
   }
-  input_local_point = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc3)();
+  input_local_point =
+       (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            ((CDemonActor *)this_ptr,&CStack_10,input_local_point);
+            ((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffff4,input_local_point);
   core_fire_cpp_CFireEffect_FUN_004c8ef0(g_CFireEffectPtr);
   if (*(int *)(this_ptr->unk + 8) == 0) {
     fVar2 = 1.0 / 4.0f;

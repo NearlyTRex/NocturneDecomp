@@ -10,10 +10,10 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
 
 {
   CLocation *pCVar1;
-  COrientation *pCVar2;
+  UOrientationVector *pUVar2;
   CVector3f *pCVar3;
   CPlatform *pCVar4;
-  COrientation *pCVar5;
+  UOrientationVector *pUVar5;
   float unaff_retaddr;
   float local_c;
   
@@ -22,29 +22,31 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
     return;
   }
   pCVar1 = &(this_ptr->base).location;
-  pCVar3 = &(this_ptr->base).unk3;
+  pCVar3 = &(this_ptr->base).platform_position_delta;
   (pCVar1->position).x = pCVar3->x + (pCVar1->position).x;
   (this_ptr->base).location.position.y =
-       (this_ptr->base).unk3.y + (this_ptr->base).location.position.y;
+       (this_ptr->base).platform_position_delta.y + (this_ptr->base).location.position.y;
   (this_ptr->base).location.position.z =
-       (this_ptr->base).unk3.z + (this_ptr->base).location.position.z;
-  (this_ptr->base).unk3.z = 0.0;
-  pCVar2 = &(this_ptr->base).orient;
-  (this_ptr->base).unk3.y = (this_ptr->base).unk3.z;
-  pCVar3->x = (this_ptr->base).unk3.y;
-  pCVar3 = &(this_ptr->base).unk4;
-  pCVar2->pitch = pCVar3->x + pCVar2->pitch;
-  (this_ptr->base).orient.bank = (this_ptr->base).unk4.y + (this_ptr->base).orient.bank;
-  (this_ptr->base).orient.heading = (this_ptr->base).unk4.z + (this_ptr->base).orient.heading;
-  (this_ptr->base).unk4.z = 0.0;
-  (this_ptr->base).unk4.y = (this_ptr->base).unk4.z;
-  pCVar3->x = (this_ptr->base).unk4.y;
+       (this_ptr->base).platform_position_delta.z + (this_ptr->base).location.position.z;
+  (this_ptr->base).platform_position_delta.z = 0.0;
+  pUVar2 = &(this_ptr->base).orient;
+  (this_ptr->base).platform_position_delta.y = (this_ptr->base).platform_position_delta.z;
+  pCVar3->x = (this_ptr->base).platform_position_delta.y;
+  pCVar3 = &(this_ptr->base).platform_orientation_delta;
+  (pUVar2->vec).x = pCVar3->x + (pUVar2->vec).x;
+  (this_ptr->base).orient.vec.y =
+       (this_ptr->base).platform_orientation_delta.y + (this_ptr->base).orient.vec.y;
+  (this_ptr->base).orient.vec.z =
+       (this_ptr->base).platform_orientation_delta.z + (this_ptr->base).orient.vec.z;
+  (this_ptr->base).platform_orientation_delta.z = 0.0;
+  (this_ptr->base).platform_orientation_delta.y = (this_ptr->base).platform_orientation_delta.z;
+  pCVar3->x = (this_ptr->base).platform_orientation_delta.y;
   if (((((*(float *)this_ptr->unk3 == (this_ptr->base).location.position.x) &&
         (*(float *)(this_ptr->unk3 + 4) == (this_ptr->base).location.position.y)) &&
        (*(float *)(this_ptr->unk3 + 8) == (this_ptr->base).location.position.z)) &&
-      ((*(float *)(this_ptr->unk3 + 0xc) == (this_ptr->base).orient.pitch &&
-       (*(float *)(this_ptr->unk3 + 0x10) == (this_ptr->base).orient.bank)))) &&
-     (*(float *)(this_ptr->unk3 + 0x14) == (this_ptr->base).orient.heading)) {
+      ((*(float *)(this_ptr->unk3 + 0xc) == (this_ptr->base).orient.vec.x &&
+       (*(float *)(this_ptr->unk3 + 0x10) == (this_ptr->base).orient.vec.y)))) &&
+     (*(float *)(this_ptr->unk3 + 0x14) == (this_ptr->base).orient.vec.z)) {
     local_c = *(float *)(this_ptr->unk3 + 0x18);
   }
   else {
@@ -57,11 +59,11 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
       *(float *)(this_ptr->unk3 + 4) = (this_ptr->base).location.position.y;
       *(float *)(this_ptr->unk3 + 8) = (this_ptr->base).location.position.z;
     }
-    pCVar2 = &(this_ptr->base).orient;
-    if ((COrientation *)(this_ptr->unk3 + 0xc) != pCVar2) {
-      *(float *)(this_ptr->unk3 + 0xc) = pCVar2->pitch;
-      *(float *)(this_ptr->unk3 + 0x10) = (this_ptr->base).orient.bank;
-      *(float *)(this_ptr->unk3 + 0x14) = (this_ptr->base).orient.heading;
+    pUVar2 = &(this_ptr->base).orient;
+    if ((UOrientationVector *)(this_ptr->unk3 + 0xc) != pUVar2) {
+      *(float *)(this_ptr->unk3 + 0xc) = (pUVar2->vec).x;
+      *(float *)(this_ptr->unk3 + 0x10) = (this_ptr->base).orient.vec.y;
+      *(float *)(this_ptr->unk3 + 0x14) = (this_ptr->base).orient.vec.z;
     }
     *(float *)(this_ptr->unk3 + 0x18) = unaff_retaddr;
   }
@@ -77,12 +79,12 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
     (this_ptr->base).location.position.z = (pCVar4->base).location.position.z;
     (this_ptr->base).location.area_id = (pCVar4->base).location.area_id;
     pCVar4 = (this_ptr->base).standing_platform;
-    pCVar2 = &(this_ptr->base).orient;
-    pCVar5 = &(pCVar4->base).orient;
-    if (pCVar2 != pCVar5) {
-      pCVar2->pitch = pCVar5->pitch;
-      (this_ptr->base).orient.bank = (pCVar4->base).orient.bank;
-      (this_ptr->base).orient.heading = (pCVar4->base).orient.heading;
+    pUVar2 = &(this_ptr->base).orient;
+    pUVar5 = &(pCVar4->base).orient;
+    if (pUVar2 != pUVar5) {
+      (pUVar2->vec).x = (pUVar5->vec).x;
+      (this_ptr->base).orient.vec.y = (pCVar4->base).orient.vec.y;
+      (this_ptr->base).orient.vec.z = (pCVar4->base).orient.vec.z;
     }
     pCVar4 = (this_ptr->base).standing_platform;
     (*((pCVar4->base).vtable._ub)->getBoundingBox)(&pCVar4->base,(CBoundingBox3D *)&stack0xffffffe8)

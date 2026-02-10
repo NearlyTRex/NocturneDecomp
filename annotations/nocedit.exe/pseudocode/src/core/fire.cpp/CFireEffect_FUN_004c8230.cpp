@@ -12,9 +12,9 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
   CDemonActor *this_ptr_00;
   float fVar1;
   CVector3f *pCVar2;
-  CDemonActor *pCVar3;
-  int iVar4;
-  double dVar5;
+  CCharacter *this_ptr_01;
+  int iVar3;
+  double dVar4;
   CVector3f *in_stack_00000008;
   float *in_stack_0000000c;
   SSurfaceInfo *in_stack_00000010;
@@ -172,10 +172,11 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
           local_18->z = pCVar2->z;
         }
         if ((((in_stack_00000014 == 0) && (in_stack_00000010->unk3 != 0)) &&
-            (pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                                (this_ptr_00,g_CCharacterClassInfo.name_hash),
-            pCVar3 != (CDemonActor *)0x0)) &&
-           (iVar4 = (*(((pCVar3->vtable)._uc)->_uc).cfunc3)(), iVar4 != 0)) {
+            (this_ptr_01 = (CCharacter *)
+                           core_actor_cpp_castToClassHash_FUN_0040c790
+                                     (this_ptr_00,g_CCharacterClassInfo.name_hash),
+            this_ptr_01 != (CCharacter *)0x0)) &&
+           (iVar3 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01), iVar3 != 0)) {
           (in_stack_00000010->color).g = 0xff;
           (in_stack_00000010->color).b = 0;
           (in_stack_00000010->color).r = 0xff;
@@ -200,8 +201,8 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
         local_98 = (double)fVar1;
         if ((float)-1 < fVar1) {
           if (local_98 < 1.0) {
-            dVar5 = acos(local_98);
-            local_2c = (float)dVar5;
+            dVar4 = acos(local_98);
+            local_2c = (float)dVar4;
           }
           else {
             local_2c = 0.0;

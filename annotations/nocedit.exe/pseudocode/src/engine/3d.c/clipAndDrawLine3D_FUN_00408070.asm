@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00408070(SRenderVertex *vertex1,SRenderVertex *vertex2)
+; __cdecl void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00408070(SRenderVertex vertex1,SRenderVertex vertex2)
 ;
 ; Parameters:
-; SRenderVertex *  Stack[0x4]:4   vertex1
-; SRenderVertex *  Stack[0x8]:4   vertex2
+; SRenderVertex    Stack[0x4]:48   vertex1
+; SRenderVertex    Stack[0x34]:48   vertex2
 ; Local Variables:
 ; undefined        Stack[-0x40]:1  local_40
 ;

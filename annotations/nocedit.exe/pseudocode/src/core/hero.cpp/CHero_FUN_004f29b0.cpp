@@ -29,6 +29,6 @@ void __cdecl core_hero_cpp_CHero_FUN_004f29b0(CHero *this_ptr)
       }
     }
   }
-  core_charactr_cpp_CCharacter_FUN_0042bf40(&this_ptr->base);
+  core_charactr_cpp_CCharacter_releaseFromGrab_FUN_0042bf40(&this_ptr->base);
   return;
 }

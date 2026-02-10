@@ -99,9 +99,9 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
             if (pCVar3->unk7 == 0.0) {
               iVar8 = pCVar3->health;
               if (iVar8 == local_24) {
-                local_68 = (CDemonActor *)(pCVar3->orient).pitch;
-                local_64 = (pCVar3->orient).bank;
-                local_60 = (pCVar3->orient).heading;
+                local_68 = (CDemonActor *)(pCVar3->orient).vec.x;
+                local_64 = (pCVar3->orient).vec.y;
+                local_60 = (pCVar3->orient).vec.z;
                 PTR_00821ff4 = pCVar3;
                 if (g_CGamePtr->profile_mode == 2) {
                   local_44 = (float)wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -123,9 +123,9 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                             (this_ptr_00,&(PTR_00821ff4->location).position,0);
                   damage_info = this_ptr_00;
                 }
-                if (((fStack_58 == (PTR_00821ff4->orient).bank) &&
-                    (fStack_5c == (PTR_00821ff4->orient).pitch)) &&
-                   (fStack_54 == (PTR_00821ff4->orient).heading)) {
+                if (((fStack_58 == (PTR_00821ff4->orient).vec.y) &&
+                    (fStack_5c == (PTR_00821ff4->orient).vec.x)) &&
+                   (fStack_54 == (PTR_00821ff4->orient).vec.z)) {
                   PTR_00821ff4 = (CDemonActor *)0x0;
                 }
                 else {
@@ -153,7 +153,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                              (*(CDemonActor **)pCVar6->actor_list_data,
                               g_CCharacterClassInfo.name_hash);
         if ((local_34 != (CCharacter *)0x0) &&
-           (fVar5 = (float)(*(((local_34->base).vtable._uc)->_uc).isDamageable)(local_34),
+           (fVar5 = (float)(*(((local_34->base).vtable._uc)->_uc).getDeathState)(local_34),
            fVar5 == 0.0)) {
           damage_info = (CPathMap *)&fStack_48;
           fStack_48 = fVar5;

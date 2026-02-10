@@ -18,7 +18,7 @@
 ;   core_bride.cpp_CBride_FUN_00424aa0 at 00424af2
 ;   core_bugs.cpp_CBugs_FUN_004268e0 at 00426ace
 ;   core_chain.cpp_CChain_FUN_0042fcc0 at 0042fcf8
-;   core_charactr.cpp_CCharacter_FUN_0042a520 at 0042a754
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 at 0042bf07
 ;   ... and 42 more
 ;
 ; *****************************************************************************

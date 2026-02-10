@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-;   core_charactr.cpp_CCharacter_FUN_0042b0e0
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0
 ;   core_werewolf.cpp_CWerewolf_FUN_005f1230
 ;   core_xform.cpp_getTranslation_FUN_005f6110
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
@@ -130,8 +130,8 @@ section .text
     POP EDI                             ; 005f1932
     PUSH EBX                            ; 005f1933
         ;   Label: LAB_005f1933
-    CALL core_charactr.cpp_CCharacter_FUN_0042b0e0 ; 005f1934
-        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042b0e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0 ; 005f1934
+        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005f1939
     MOV EAX,dword ptr [EBX + 0x2620]    ; 005f193c
     ADD ESP,0x48                        ; 005f1942
@@ -152,8 +152,8 @@ section .text
         ;   XREF to: 005f1856 (UNCONDITIONAL_JUMP)  ; LAB_005f1856
     PUSH EBX                            ; 005f1967
         ;   Label: LAB_005f1967
-    CALL core_charactr.cpp_CCharacter_FUN_0042b0e0 ; 005f1968
-        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042b0e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0 ; 005f1968
+        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005f196d
     ADD ESP,0x48                        ; 005f1970
     POP EBP                             ; 005f1973

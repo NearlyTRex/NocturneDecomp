@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 (CCharacter *this_ptr,float delta_time,float param_3)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
+; float            Stack[0xc]:4   param_3
 ;
 ; XREF[37]:
 ;   core_armour.cpp_CArmour_process_FUN_00412260 at 00412324
@@ -22,8 +24,8 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0
-;   core_charactr.cpp_CCharacter_FUN_0042d090
-;   core_charactr.cpp_CCharacter_FUN_0042d530
+;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
 ;   core_cloth.cpp_CClothList_process_FUN_0043c2d0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 ;
@@ -48,13 +50,13 @@ section .text
         ;   XREF to: 0059fb40 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042dfe3
     PUSH EBX                            ; 0042dfe6
-    CALL core_charactr.cpp_CCharacter_FUN_0042d530 ; 0042dfe7
-        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d530(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530 ; 0042dfe7
+        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042dfec
     PUSH dword ptr [ESP + 0xc]          ; 0042dfef
     PUSH EBX                            ; 0042dff3
-    CALL core_charactr.cpp_CCharacter_FUN_0042d090 ; 0042dff4
-        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d090(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 ; 0042dff4
+        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x2620]    ; 0042dff9
     ADD ESP,0x8                         ; 0042dfff
     TEST EDX,EDX                        ; 0042e002

@@ -21,7 +21,7 @@ core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_ptr,SDamageInfo
   char *sound_name;
   
   core_zombie_cpp_CZombie_FUN_005fc220(this_ptr);
-  (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc9)();
+  (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseVictim)((CCharacter *)this_ptr);
   iVar5 = *(int *)(this_ptr->unk4 + 0x48);
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   if ((this_ptr->base).base.model.part_visibility_flags[iVar5] == 0) {

@@ -20,7 +20,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   char *pcVar8;
   float fVar9;
   CLocation *pCVar10;
-  COrientation *pCVar11;
+  UOrientationVector *pUVar11;
   uint *puVar12;
   int iVar13;
   int iVar14;
@@ -93,11 +93,11 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         local_b0._8_4_ = (pCVar4->base).base.location.position.z;
       }
       pCVar4 = g_HeroActors[g_LocalHeroIndex];
-      pCVar11 = &(pCVar4->base).base.orient;
-      if ((COrientation *)(local_b0 + 0xc) != pCVar11) {
-        local_b0._12_4_ = pCVar11->pitch;
-        local_a0 = (pCVar4->base).base.orient.bank;
-        local_9c = (pCVar4->base).base.orient.heading;
+      pUVar11 = &(pCVar4->base).base.orient;
+      if ((UOrientationVector *)(local_b0 + 0xc) != pUVar11) {
+        local_b0._12_4_ = (pUVar11->vec).x;
+        local_a0 = (pCVar4->base).base.orient.vec.y;
+        local_9c = (pCVar4->base).base.orient.vec.z;
       }
       core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_b0);
       (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->setPositionAndOrientation)
@@ -124,7 +124,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         local_7c.z = (float)local_70.z * 0.00390625f;
         pCVar4 = g_HeroActors[g_LocalHeroIndex];
         (*((pCVar4->base).base.vtable._ub)->setPositionAndOrientation)
-                  ((CDemonActor *)pCVar4,&local_7c,(CVector3f *)&(pCVar4->base).base.orient);
+                  ((CDemonActor *)pCVar4,&local_7c,&(pCVar4->base).base.orient.vec);
         g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;
       }
     }
@@ -311,7 +311,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                   (g_CEditorToolsPtr,local_2dc);
         engine_2d_c_drawText_FUN_00401fd0(local_2dc,0,g_WindowHeight + -0x42);
       }
-      iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).isDamageable)
+      iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                         (&g_HeroActors[g_LocalHeroIndex]->base);
       if (iVar5 == 2) {
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0

@@ -10,7 +10,7 @@ void __cdecl core_emitter_cpp_CEmitter_processInEditor_FUN_004a8fe0(CEmitter *th
 
 {
   CLocation *pCVar1;
-  COrientation *pCVar2;
+  UOrientationVector *pUVar2;
   int iVar3;
   CVector3f *pCVar4;
   float unaff_EBX;
@@ -46,28 +46,28 @@ LAB_004a9009:
           g_EmitterTarget.z = pCVar4->z;
           g_EmitterTarget.y = pCVar4->y;
         }
-        pCVar2 = &(this_ptr->base).orient;
-        if (pCVar2 != (COrientation *)&DAT_02cf2b6c) {
-          DAT_02cf2b6c = pCVar2->pitch;
-          DAT_02cf2b74 = (this_ptr->base).orient.heading;
-          DAT_02cf2b70 = (this_ptr->base).orient.bank;
+        pUVar2 = &(this_ptr->base).orient;
+        if (pUVar2 != (UOrientationVector *)&DAT_02cf2b6c) {
+          DAT_02cf2b6c = (pUVar2->vec).x;
+          DAT_02cf2b74 = (this_ptr->base).orient.vec.z;
+          DAT_02cf2b70 = (this_ptr->base).orient.vec.y;
         }
       }
       pCVar1 = &(this_ptr->base).location;
       fVar5 = (pCVar1->position).x;
       fVar6 = (this_ptr->base).location.position.y;
       fVar7 = (this_ptr->base).location.position.z;
-      pCVar2 = &(this_ptr->base).orient;
-      fStack_1c = pCVar2->pitch;
-      fStack_18 = (this_ptr->base).orient.bank;
-      fStack_14 = (this_ptr->base).orient.heading;
+      pUVar2 = &(this_ptr->base).orient;
+      fStack_1c = (pUVar2->vec).x;
+      fStack_18 = (this_ptr->base).orient.vec.y;
+      fStack_14 = (this_ptr->base).orient.vec.z;
       (pCVar1->position).x = g_EmitterTarget.x;
       (this_ptr->base).location.position.y = g_EmitterTarget.y;
       (this_ptr->base).location.position.z = g_EmitterTarget.z;
-      if (pCVar2 != (COrientation *)&DAT_02cf2b6c) {
-        pCVar2->pitch = DAT_02cf2b6c;
-        (this_ptr->base).orient.bank = DAT_02cf2b70;
-        (this_ptr->base).orient.heading = DAT_02cf2b74;
+      if (pUVar2 != (UOrientationVector *)&DAT_02cf2b6c) {
+        (pUVar2->vec).x = DAT_02cf2b6c;
+        (this_ptr->base).orient.vec.y = DAT_02cf2b70;
+        (this_ptr->base).orient.vec.z = DAT_02cf2b74;
       }
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
       core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
@@ -77,22 +77,22 @@ LAB_004a9009:
         g_EmitterTarget.z = (this_ptr->base).location.position.z;
         g_EmitterTarget.y = (this_ptr->base).location.position.y;
       }
-      pCVar2 = &(this_ptr->base).orient;
-      if (pCVar2 != (COrientation *)&DAT_02cf2b6c) {
-        DAT_02cf2b6c = pCVar2->pitch;
-        DAT_02cf2b74 = (this_ptr->base).orient.heading;
-        DAT_02cf2b70 = (this_ptr->base).orient.bank;
+      pUVar2 = &(this_ptr->base).orient;
+      if (pUVar2 != (UOrientationVector *)&DAT_02cf2b6c) {
+        DAT_02cf2b6c = (pUVar2->vec).x;
+        DAT_02cf2b74 = (this_ptr->base).orient.vec.z;
+        DAT_02cf2b70 = (this_ptr->base).orient.vec.y;
       }
       (this_ptr->base).location.position.x = fVar5;
       (this_ptr->base).location.position.y = fVar6;
       (this_ptr->base).location.position.z = fVar7;
       pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          ((CVector3f *)&stack0xffffffcc,(CVector3f *)&stack0xffffffa8);
-      pCVar2 = &(this_ptr->base).orient;
-      if (pCVar2 != (COrientation *)pCVar4) {
-        pCVar2->pitch = pCVar4->x;
-        (this_ptr->base).orient.bank = pCVar4->y;
-        (this_ptr->base).orient.heading = pCVar4->z;
+      pUVar2 = &(this_ptr->base).orient;
+      if ((CVector3f *)pUVar2 != pCVar4) {
+        (pUVar2->vec).x = pCVar4->x;
+        (this_ptr->base).orient.vec.y = pCVar4->y;
+        (this_ptr->base).orient.vec.z = pCVar4->z;
       }
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
       return;

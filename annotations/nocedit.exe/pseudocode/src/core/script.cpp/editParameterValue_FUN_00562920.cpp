@@ -49,7 +49,7 @@ core_script_cpp_editParameterValue_FUN_00562920
   int local_2c;
   int local_28;
   int local_24;
-  CCharacter *local_20;
+  CDeformableModel *local_20;
   char *local_1c;
   char *local_18;
   int local_14;
@@ -639,16 +639,14 @@ core_script_cpp_editParameterValue_FUN_00562920
                   (g_CEditorToolsPtr,g_ScriptErrorBuffer);
         memset(local_a8,0,0x78);
       }
-      local_20 = (CCharacter *)
-                 core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+      local_20 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                            (&(character->base).model);
       iVar6 = -1;
       while( true ) {
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_2c5c);
-        for (iVar7 = 0; iVar4 = core_charactr_cpp_CCharacter_FUN_0042f9c0(local_20), iVar7 < iVar4;
-            iVar7 = iVar7 + 1) {
-          pSVar5 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220
-                             ((CDeformableModel *)local_20,iVar7);
+        for (iVar7 = 0; iVar4 = core_charactr_cpp_FUN_0042f9c0(), iVar7 < iVar4; iVar7 = iVar7 + 1)
+        {
+          pSVar5 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(local_20,iVar7);
           _sprintf(local_170,"%s\t%s",pSVar5);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c5c.base,local_170);
         }
@@ -669,7 +667,7 @@ core_script_cpp_editParameterValue_FUN_00562920
       local_1c = &s_EmptyChar_00643d07;
       *value_buffer = '\0';
       do {
-        iVar7 = core_charactr_cpp_CCharacter_FUN_0042f9c0(local_20);
+        iVar7 = core_charactr_cpp_FUN_0042f9c0();
         if (iVar7 <= iVar6) {
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2c5c,0);
           return 1;
@@ -696,8 +694,7 @@ core_script_cpp_editParameterValue_FUN_00562920
             pcVar8 = pcVar8 + 2;
           } while (cVar1 != '\0');
           local_1c = " ";
-          pSVar5 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220
-                             ((CDeformableModel *)local_20,iVar6);
+          pSVar5 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(local_20,iVar6);
           iVar7 = -1;
           pcVar3 = value_buffer;
           do {

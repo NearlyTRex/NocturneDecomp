@@ -9,9 +9,9 @@
 void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   int iVar2;
-  CBodyPart *this_ptr_00;
+  CBodyPart *body_part;
   CVector3f *pCVar3;
   CBoneGuy *pCVar4;
   CLocation *pCVar5;
@@ -25,7 +25,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   float local_38;
   float local_34;
   float local_30;
-  COrientation *local_2c;
+  UOrientationVector *local_2c;
   CLocation *local_28;
   CDeformableModel *local_24;
   CVector3f *local_20;
@@ -34,7 +34,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   float local_14;
   
   bVar10 = 0;
-  core_charactr_cpp_CCharacter_FUN_0042d060((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060((CCharacter *)this_ptr);
   this_ptr->blown_up = 1;
   this_ptr->param = 0.0;
   local_24 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -60,27 +60,27 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
       local_14 = local_34;
       local_30 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
       local_14 = local_30;
-      this_ptr_00 = core_bodypart_cpp_createBodyPart_FUN_00418e10();
-      core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
-      this_ptr_00->dont_pick_me_up = 1;
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr_00);
-      *(CBodyPart **)local_1c->unk2 = this_ptr_00;
-      pCVar5 = &(this_ptr_00->base).location;
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
+      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                ((CCharacter *)this_ptr,body_part,local_18,0);
+      body_part->dont_pick_me_up = 1;
+      core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
+      *(CBodyPart **)local_1c->unk2 = body_part;
+      pCVar5 = &(body_part->base).location;
       pCVar3 = local_20 + local_18 * 6;
       if ((CLocation *)pCVar3 != pCVar5) {
         pCVar3->x = (pCVar5->position).x;
-        pCVar3->y = (this_ptr_00->base).location.position.y;
-        pCVar3->z = (this_ptr_00->base).location.position.z;
+        pCVar3->y = (body_part->base).location.position.y;
+        pCVar3->z = (body_part->base).location.position.z;
       }
-      pCVar1 = &(this_ptr_00->base).orient;
-      if ((COrientation *)pCVar6 != pCVar1) {
-        pCVar6->x = pCVar1->pitch;
-        pCVar6->y = (this_ptr_00->base).orient.bank;
-        pCVar6->z = (this_ptr_00->base).orient.heading;
+      pUVar1 = &(body_part->base).orient;
+      if (pCVar6 != (CVector3f *)pUVar1) {
+        pCVar6->x = (pUVar1->vec).x;
+        pCVar6->y = (body_part->base).orient.vec.y;
+        pCVar6->z = (body_part->base).orient.vec.z;
       }
       pCVar6 = pCVar6 + 6;
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-                ((CVector3f *)&(this_ptr_00->base).orient,&local_48);
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&(body_part->base).orient.vec,&local_48);
       pCVar4 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
       local_18 = local_18 + 1;
       puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 49000);

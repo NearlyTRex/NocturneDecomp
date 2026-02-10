@@ -215,9 +215,9 @@ void __cdecl CDemonActor::spawnFlies(CDemonActor *this_ptr,int fly_count,float s
 // Address: 00409ec0
 void __cdecl CDemonActor::calculateChecksum(CDemonActor *this_ptr,uint *out_crc);
 
-// Original: core_actor.cpp_CDemonActor_isActiveTarget_FUN_00409f20
+// Original: core_actor.cpp_CDemonActor_canLookAt_FUN_00409f20
 // Address: 00409f20
-int __cdecl CDemonActor::isActiveTarget(CDemonActor *this_ptr);
+int __cdecl CDemonActor::canLookAt(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40
 // Address: 00409f40

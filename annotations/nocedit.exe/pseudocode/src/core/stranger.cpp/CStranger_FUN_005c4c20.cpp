@@ -37,7 +37,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr)
   float local_1c;
   float local_18;
   
-  if ((this_ptr->weapon == (CDemonActor *)0x0) || (this_ptr->weapon[2].orient.pitch != 0.0)) {
+  if ((this_ptr->weapon == (CDemonActor *)0x0) || (this_ptr->weapon[2].orient.vec.x != 0.0)) {
     in_stack_0000000c = 0;
   }
   iVar4 = 0;
@@ -55,7 +55,7 @@ LAB_005c4c51:
           (ABS(local_68.y) <= (float)4)) &&
          ((0.0 <= local_68.z &&
           ((((int)local_68.z < 0x40c00001 && (this_ptr_00 != this_ptr)) &&
-           (iVar2 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).isDamageable)
+           (iVar2 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
                               ((CCharacter *)this_ptr_00), iVar2 == 0)))))) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)auStack_e0);
         iVar2 = (*((this_ptr_00->base).base.base.vtable._ub)->hasCollision)
@@ -80,7 +80,7 @@ LAB_005c50a7:
   if (1.0 < local_f8) {
     local_f8 = 1.0;
   }
-  local_f4 = local_f8 - *(float *)(this_ptr->unk6 + 0x50);
+  local_f4 = local_f8 - *(float *)(this_ptr->unk9 + 0x48);
   if (0.0 <= local_f4) {
     if ((0.0 < local_f4) && (in_stack_00000008 / 0.05f < local_f4)) {
       local_f4 = in_stack_00000008 / 0.05f;
@@ -92,7 +92,7 @@ LAB_005c50a7:
       local_f4 = fVar1;
     }
   }
-  *(float *)(this_ptr->unk6 + 0x50) = *(float *)(this_ptr->unk6 + 0x50) + local_f4;
+  *(float *)(this_ptr->unk9 + 0x48) = *(float *)(this_ptr->unk9 + 0x48) + local_f4;
   return;
 LAB_005c4d62:
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);

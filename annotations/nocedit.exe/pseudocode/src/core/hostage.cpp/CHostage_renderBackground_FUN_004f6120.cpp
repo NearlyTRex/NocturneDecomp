@@ -13,7 +13,7 @@ core_hostage_cpp_CHostage_renderBackground_FUN_004f6120(CHostage *this_ptr,int l
   int iVar1;
   int in_stack_0000000c;
   
-  iVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).isDamageable)((CCharacter *)this_ptr);
+  iVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (0 < iVar1) {
     iVar1 = stricmp((char *)this_ptr,"ScatDazzle");
     if (iVar1 != 0) {

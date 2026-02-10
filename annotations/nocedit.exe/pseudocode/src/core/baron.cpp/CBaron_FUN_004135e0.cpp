@@ -35,7 +35,7 @@ void __cdecl core_baron_cpp_CBaron_FUN_004135e0(CBaron *this_ptr)
                             (*(CDemonActor **)(this_ptr->unk1 + 0x10),
                              g_CCharacterClassInfo.name_hash);
     if (this_ptr_00 != (CCharacter *)0x0) {
-      iVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).isDamageable)(this_ptr_00);
+      iVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if (iVar3 == 2) {
         core_baron_cpp_CBaron_FUN_004135a0(this_ptr,*(int *)(this_ptr->unk1 + 0x10));
         return;

@@ -22,9 +22,7 @@ int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
   float fVar9;
   uint auStack_a4 [7];
   CBoundingBox3D CStack_88;
-  uint uStack_68;
-  uint uStack_64;
-  uint uStack_60;
+  CVector3f CStack_68;
   float fStack_58;
   float fStack_54;
   CVector3f CStack_50;
@@ -140,10 +138,12 @@ int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
             core_bodypart_cpp_FUN_0041b4e0();
             aCStack_44[0].z = CStack_88.max.y + (float)0.40000000000000002;
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar2,&CStack_50,aCStack_44);
-            uStack_68 = 0x3fc00000;
-            uStack_64 = 0;
-            uStack_60 = 0;
-            iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0((CCharacter *)this_ptr);
+            CStack_68.x = 1.5;
+            CStack_68.y = 0.0;
+            CStack_68.z = 0.0;
+            iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+                              ((CCharacter *)this_ptr,&CStack_50,(CPathMap *)0x0,&CStack_68,0.3,
+                               0.034906585);
           }
           this_ptr_00 = &(this_ptr->base).base.model;
           if (-1 < iVar8) {

@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_charactr.cpp_CCharacter_FUN_0042ec40
+;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40
 ;   core_haystack.cpp_CHaystack_FUN_004f1ab0
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
@@ -152,8 +152,8 @@ section .text
     PUSH EDX                            ; 004f1a97
         ;   Label: default
     PUSH EBX                            ; 004f1a98
-    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 004f1a99
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 004f1a99
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
     ADD ESP,0x8                         ; 004f1a9e
     JMP 0x004f19ca                      ; 004f1aa1
         ;   XREF to: 004f19ca (UNCONDITIONAL_JUMP)  ; LAB_004f19ca

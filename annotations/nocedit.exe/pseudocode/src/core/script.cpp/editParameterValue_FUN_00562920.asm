@@ -65,7 +65,7 @@
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_matchesClassName_FUN_0040c740
-;   core_charactr.cpp_CCharacter_FUN_0042f9c0
+;   core_charactr.cpp_FUN_0042f9c0
 ;   core_script.cpp_CScript_FUN_00566fa0
 ;   core_script.cpp_CScript_FUN_00567630
 ;   core_script.cpp_CScript_FUN_005676e0
@@ -2293,8 +2293,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x3738]    ; 00563def
         ;   Label: LAB_00563def
     PUSH EAX                            ; 00563df6
-    CALL core_charactr.cpp_CCharacter_FUN_0042f9c0 ; 00563df7
-        ;   XREF to: 0042f9c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042f9c0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_FUN_0042f9c0 ; 00563df7
+        ;   XREF to: 0042f9c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f9c0()
     ADD ESP,0x4                         ; 00563dfc
     CMP EBX,EAX                         ; 00563dff
     JGE 0x00563e5f                      ; 00563e01
@@ -2372,8 +2372,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x3738]    ; 00563ecb
         ;   Label: LAB_00563ecb
     PUSH ECX                            ; 00563ed2
-    CALL core_charactr.cpp_CCharacter_FUN_0042f9c0 ; 00563ed3
-        ;   XREF to: 0042f9c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042f9c0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_FUN_0042f9c0 ; 00563ed3
+        ;   XREF to: 0042f9c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f9c0()
     ADD ESP,0x4                         ; 00563ed8
     CMP EBX,EAX                         ; 00563edb
     JGE 0x00563f99                      ; 00563edd

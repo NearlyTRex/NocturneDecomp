@@ -21,8 +21,8 @@ core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290
             (property_list,"Pos",&(this_ptr->location).position,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260
-            (property_list,"PHB",(CVector3f *)&this_ptr->orient,
-             (CActorPropertyValidatorFunc *)0x0);
+            (property_list,"PHB",&(this_ptr->orient).vec,(CActorPropertyValidatorFunc *)0x0
+            );
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
             (property_list,"Creation event",this_ptr->create_event);
   if (this_ptr->create_event[0] != '\0') {

@@ -1,21 +1,21 @@
 // Name: core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20
 // Address: 004f8b20
 // Address Range: [[004f8b20, 004f8c6f]]
-// Convention: __cdecl
-// Signature: void __cdecl core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20(CIcePick *this_ptr)
+// Convention: __stack2_esi
+// Signature: void __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20 (CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20(CIcePick *this_ptr)
+void __stack2_esi
+core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20
+          (CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
-  uint *unaff_ESI;
   CMatrix3x4f *pCVar2;
   byte bVar3;
-  int in_stack_00000008;
   CMatrix3x4f local_a8;
   CMatrix3x4f local_78;
   CVector3f local_3c;
@@ -24,8 +24,8 @@ void __cdecl core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20(CIceP
   CVector3f local_18;
   
   bVar3 = 0;
-  iVar1 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
-  if (in_stack_00000008 == 1) {
+  iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
+  if (hand_index == 1) {
     local_18.x = 0.45;
     local_18.y = -0.229;
     local_18.z = -0.02;
@@ -54,9 +54,9 @@ void __cdecl core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20(CIceP
              &local_a8);
   pCVar2 = &local_a8;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *(uint *)pCVar2;
+    out_matrix->m[0].w = *(float *)pCVar2;
     pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-    unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;
+    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
   }
   return;
 }

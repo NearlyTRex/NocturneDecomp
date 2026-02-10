@@ -1,0 +1,330 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 19,
+        "line": 82,
+        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 117,
+        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 299,
+    "complexity_score": 142,
+    "cross_reference_count": 0,
+    "function_call_count": 14,
+    "global_count": 16,
+    "pseudocode_lines": 117,
+    "suspect_count": 2,
+    "suspect_types": [
+      "suspect_float"
+    ],
+    "total_lines": 416
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005c48b0",
+    "address_range": [
+      [
+        "005c48b0",
+        "005c4b51"
+      ],
+      [
+        "005c4b7c",
+        "005c4c15"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_stranger.cpp_CStranger_processDamage_FUN_005c48b0",
+    "signature": "void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    },
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "0042c3c0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0"
+    },
+    {
+      "addr": "004e0bd0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0"
+    },
+    {
+      "addr": "004ee030",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_FUN_004ee030"
+    },
+    {
+      "addr": "004f3580",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_FUN_004f3580"
+    },
+    {
+      "addr": "00501570",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "00441890",
+      "is_variadic": true,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
+    },
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00653d1c",
+      "name": "s_CBugs_00653d1c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653d22",
+      "name": "s_Using_auto_health_00653d22",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653d35",
+      "name": "s_hit_points_3_2f_00653d35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653d48",
+      "name": "s_stranger_die_wav_00653d48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653d5b",
+      "name": "s_stranger_hit_wav_00653d5b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00663738",
+      "name": "FLOAT_00663738",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "0066e8e0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "0083b1a4"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "0083b1a4",
+      "name": "g_ConsolePtr",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81b64",
+      "name": "DAT_02d81b64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81c6c",
+      "name": "DAT_02d81c6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81cc8",
+      "name": "DAT_02d81cc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    },
+    {
+      "addr": "03f873dc",
+      "name": "g_CTommyGunClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.491379310344827,
+    "instruction_count": 232,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 6,
+      "BRANCH": 3,
+      "CALL": 17,
+      "CALLIND": 5,
+      "CBRANCH": 26,
+      "COPY": 377,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_EQUAL": 5,
+      "FLOAT_LESS": 5,
+      "FLOAT_NAN": 10,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 5,
+      "INT_ADD": 91,
+      "INT_AND": 118,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 89,
+      "INT_LEFT": 20,
+      "INT_LESS": 18,
+      "INT_NOTEQUAL": 26,
+      "INT_OR": 25,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 44,
+      "INT_SUB": 90,
+      "INT_ZEXT": 20,
+      "LOAD": 53,
+      "POPCOUNT": 44,
+      "RETURN": 2,
+      "STORE": 87
+    },
+    "pcode_op_count": 1274
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 58,
+      "match": "1.4013e-45",
+      "text": "force_immediate = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 66,
+      "match": "1.4013e-45",
+      "text": "force_immediate = 1.4013e-45;",
+      "type": "suspect_float"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStranger",
+        "offset": 284,
+        "vtable_addr": "00663784"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

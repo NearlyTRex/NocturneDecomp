@@ -19,7 +19,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_charactr.cpp_CCharacter_FUN_00429aa0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0
 ;   core_motion.cpp_CMotionController_render_FUN_0052e700
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00
@@ -148,8 +148,8 @@ section .text
     RET                                 ; 00485cd8
     PUSH EBX                            ; 00485cd9
         ;   Label: LAB_00485cd9
-    CALL core_charactr.cpp_CCharacter_FUN_00429aa0 ; 00485cda
-        ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00429aa0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 ; 00485cda
+        ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00485cdf
     JMP 0x00485c8e                      ; 00485ce2
         ;   XREF to: 00485c8e (UNCONDITIONAL_JUMP)  ; LAB_00485c8e

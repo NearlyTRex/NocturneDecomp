@@ -7,7 +7,7 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042b0a5
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042b0a5
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c8ab
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 at 005a018b
 ;

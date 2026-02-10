@@ -1,0 +1,182 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 28,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 89
+  },
+  "cross_references": [
+    {
+      "addr": "005f11a0",
+      "from_addr": "005f11cd",
+      "name": "core_werewolf.cpp_CWerewolf_FUN_005f11a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042c920",
+    "address_range": [
+      [
+        "0042c920",
+        "0042c9ce"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920 (CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052dce0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "0052db90",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90"
+    },
+    {
+      "addr": "0052d4f0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00617252",
+      "name": "s_STAND_00617252",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617258",
+      "name": "s_STAND_00617258",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005f11cd",
+        "call_type": "direct",
+        "caller": "core_werewolf.cpp_CWerewolf_FUN_005f11a0",
+        "estimated_params": 4,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.239130434782608,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 34,
+      "INT_ADD": 23,
+      "INT_AND": 19,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 18,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 19,
+      "LOAD": 13,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 195
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "target",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "min_distance",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "max_distance",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGabriella",
+        "offset": 324,
+        "vtable_addr": "0065e804"
+      },
+      {
+        "class_name": "CBassPlayer",
+        "offset": 324,
+        "vtable_addr": "00663f14"
+      },
+      {
+        "class_name": "CBiggs",
+        "offset": 324,
+        "vtable_addr": "0065ac24"
+      },
+      {
+        "class_name": "CBride",
+        "offset": 324,
+        "vtable_addr": "0065b424"
+      },
+      {
+        "class_name": "CMimic",
+        "offset": 324,
+        "vtable_addr": "00661424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 45
+  }
+}

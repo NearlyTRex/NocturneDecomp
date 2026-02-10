@@ -126,7 +126,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
 void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_00486020(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070 (CDraculaBride *this_ptr,SDamageInfo *damage_info);
-int __cdecl core_dracbrid_cpp_CDraculaBride_isDamageable_FUN_00486320(CDraculaBride *this_ptr);
+int __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_00486320(CDraculaBride *this_ptr);
 int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00486360 (CDraculaBride *this_ptr,CVector3f *out_points_array);
 float * __cdecl core_dracbrid_cpp_FUN_00486430(void);
 void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004864c0(CDraculaBride *this_ptr);

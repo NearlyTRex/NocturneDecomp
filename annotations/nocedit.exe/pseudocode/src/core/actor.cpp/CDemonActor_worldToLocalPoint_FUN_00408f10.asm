@@ -19,10 +19,10 @@
 ;   core_boxactor.cpp_CBoxActor_FUN_00422390 at 004223ab
 ;   core_boxactor.cpp_CBoxActor_FUN_00422590 at 004225b1
 ;   core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0 at 00430fa4
-;   core_charactr.cpp_CCharacter_FUN_00428d80 at 00428d93
-;   core_charactr.cpp_CCharacter_FUN_00429b40 at 00429c84
-;   core_charactr.cpp_CCharacter_FUN_0042c180 at 0042c1ae
-;   core_charactr.cpp_CCharacter_FUN_0042ca70 at 0042cbba
+;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_0042c110 at 0042c123
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042ee7f
+;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70 at 0042cbba
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40 at 00429c84
 ;   ... and 66 more
 ;
 ; Called Functions:

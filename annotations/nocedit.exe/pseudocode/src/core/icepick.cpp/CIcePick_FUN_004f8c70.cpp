@@ -102,8 +102,8 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
                              ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
         iVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).enemyfunc3)();
         if ((iVar4 == 0) &&
-           (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0((CCharacter *)this_ptr), uVar8 != 0))
-        {
+           (uVar8 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+                              ((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {
           if (uVar8 < 2) {
             (this_ptr->base).action_bindings.walk_key = 1;
           }
@@ -119,10 +119,10 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
       }
       iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (pCStack_20,&(this_ptr->base).base.base.location.position,&CStack_48,
-                         (this_ptr->base).base.base.unk1);
+                         (this_ptr->base).base.base.direction_hint);
       if (iVar4 != 0) {
         fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                              (CStack_48.y - (this_ptr->base).base.base.orient.bank);
+                              (CStack_48.y - (this_ptr->base).base.base.orient.vec.y);
         fVar3 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_38 = -(float)local_1c;
         *(float *)((this_ptr->base).unk2 + 4) = fVar3;
@@ -167,8 +167,8 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
         }
         iVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).enemyfunc3)();
         if ((iVar4 == 0) &&
-           (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0((CCharacter *)this_ptr), uVar8 != 0))
-        {
+           (uVar8 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+                              ((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {
           if (uVar8 < 2) {
             (this_ptr->base).action_bindings.walk_key = 1;
           }
@@ -182,7 +182,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
         pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&CStack_54,&local_6c);
         fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                              (pCVar6->y - (this_ptr->base).base.base.orient.bank);
+                              (pCVar6->y - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_34 = -(float)local_1c;
         *(float *)((this_ptr->base).unk2 + 4) = fVar1;
@@ -232,7 +232,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
       local_6c.z = pCVar6->z;
     }
     fStack_8c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (local_6c.y - (this_ptr->base).base.base.orient.bank);
+                          (local_6c.y - (this_ptr->base).base.base.orient.vec.y);
     if (local_24 < fStack_8c) {
       fStack_8c = local_24;
     }

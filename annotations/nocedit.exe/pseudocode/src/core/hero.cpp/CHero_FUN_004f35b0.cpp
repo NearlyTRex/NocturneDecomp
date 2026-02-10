@@ -13,7 +13,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
   CActorDestination *this_ptr_00;
   int iVar2;
   CVector3f *pCVar3;
-  COrientation *pCVar4;
+  UOrientationVector *pUVar4;
   int iVar5;
   CVector3f local_48;
   CVector3f local_3c;
@@ -64,11 +64,11 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
               *(float *)(this_ptr->unk3 + 0xc) = (local_1c->position).y;
               *(float *)(this_ptr->unk3 + 0x10) = (local_1c->position).z;
             }
-            pCVar4 = &(local_14->base).orient;
-            if ((COrientation *)(this_ptr->unk3 + 0x14) != pCVar4) {
-              *(float *)(this_ptr->unk3 + 0x14) = pCVar4->pitch;
-              *(float *)(this_ptr->unk3 + 0x18) = (local_14->base).orient.bank;
-              *(float *)(this_ptr->unk3 + 0x1c) = (local_14->base).orient.heading;
+            pUVar4 = &(local_14->base).orient;
+            if ((UOrientationVector *)(this_ptr->unk3 + 0x14) != pUVar4) {
+              *(float *)(this_ptr->unk3 + 0x14) = (pUVar4->vec).x;
+              *(float *)(this_ptr->unk3 + 0x18) = (local_14->base).orient.vec.y;
+              *(float *)(this_ptr->unk3 + 0x1c) = (local_14->base).orient.vec.z;
             }
             return 1;
           }

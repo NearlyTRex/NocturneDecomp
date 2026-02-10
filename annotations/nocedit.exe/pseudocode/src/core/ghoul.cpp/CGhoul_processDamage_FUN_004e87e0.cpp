@@ -12,7 +12,7 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
 {
   CLocation *pCVar1;
   CDeformableModelInstance *this_ptr_00;
-  CDemonActor *pCVar2;
+  CCharacter *pCVar2;
   CDemonActor_vtable *pCVar3;
   float fVar4;
   CGhoul *pCVar5;
@@ -61,10 +61,12 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
     this_ptr->unk3[0x3b] = '@';
   }
   core_ghoul_cpp_CGhoul_FUN_004e8520(this_ptr);
-  pCVar2 = (this_ptr->base).victim;
-  if ((pCVar2 != (CDemonActor *)0x0) &&
-     (pCVar5 = (CGhoul *)(*(((pCVar2->vtable)._uc)->_uc).cfunc8)(), pCVar5 == this_ptr)) {
-    (*(((((this_ptr->base).victim)->vtable)._uc)->_uc).cfunc7)();
+  pCVar2 = (CCharacter *)(this_ptr->base).victim;
+  if ((pCVar2 != (CCharacter *)0x0) &&
+     (pCVar5 = (CGhoul *)(*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
+     pCVar5 == this_ptr)) {
+    pCVar2 = (CCharacter *)(this_ptr->base).victim;
+    (*(((pCVar2->base).vtable._uc)->_uc).releaseFromGrab)(pCVar2);
   }
   iVar10 = *(int *)(this_ptr->unk3 + 0x28);
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -76,7 +78,7 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
     iVar10 = (this_ptr->base).unk5;
     (this_ptr->base).base.hit_points = 0.0;
     if (iVar10 != 0) {
-      core_charactr_cpp_CCharacter_FUN_0042b8e0((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_shatter_FUN_0042b8e0((CCharacter *)this_ptr);
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
     }
@@ -106,7 +108,7 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
               break;
             }
             iVar7 = iVar7 + 1;
-            pCVar5 = (CGhoul *)&(pCVar5->base).base.base.orient.heading;
+            pCVar5 = (CGhoul *)((int)&(pCVar5->base).base.base.orient + 8);
           } while (iVar7 < (this_ptr->base).base.field60_0x2df4);
         }
       }
@@ -141,8 +143,8 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
                 (&(this_ptr->base).base.model.motion_controller,(iVar10 == 0) + 3,iVar7);
     }
     else {
-      iVar10 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
-      _sprintf(&stack0xffffff88,"guul flinch%d",iVar10);
+      core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
+      _sprintf(&stack0xffffff88,"guul flinch%d");
       this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&(this_ptr->base).base.model.motion_controller);
       iVar10 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);

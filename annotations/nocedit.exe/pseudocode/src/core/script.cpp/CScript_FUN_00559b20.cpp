@@ -21,12 +21,12 @@ void __cdecl core_script_cpp_CScript_FUN_00559b20(CScript *this_ptr)
   CBitFont *this_ptr_00;
   
   if (g_CGamePtr->letterbox_mode == 0) {
-    fVar3 = (float)core_charactr_cpp_FUN_0042f9e0(g_CGamePtr);
+    fVar3 = core_charactr_cpp_FUN_0042f9e0();
     g_ScriptTimeScale = g_ScriptTimeScale - fVar3 / 0.35f;
   }
   else {
     INT_031061e0 = g_CGamePtr->letterbox_mode;
-    fVar3 = (float)core_charactr_cpp_FUN_0042f9e0(g_CGamePtr);
+    fVar3 = core_charactr_cpp_FUN_0042f9e0();
     g_ScriptTimeScale = fVar3 / 0.35f + g_ScriptTimeScale;
   }
   iVar8 = g_WindowHeight;

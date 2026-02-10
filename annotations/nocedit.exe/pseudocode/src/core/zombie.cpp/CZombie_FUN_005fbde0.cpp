@@ -16,7 +16,8 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(CZombie *this_ptr)
   this_ptr->unk1[0x11] = '\0';
   this_ptr->unk1[0x12] = '\0';
   this_ptr->unk1[0x13] = '\0';
-  (*(pCVar1->_uc).cfunc21)();
-  (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
+  (*(pCVar1->_uc).dropCarriedObject)((CCharacter *)this_ptr,0,(CVector3f *)0x0);
+  (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+            ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
   return;
 }

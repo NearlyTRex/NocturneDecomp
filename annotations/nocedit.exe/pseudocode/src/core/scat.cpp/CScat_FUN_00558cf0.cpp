@@ -41,10 +41,10 @@ int __cdecl core_scat_cpp_CScat_FUN_00558cf0(CScat *this_ptr)
                     (in_stack_00000008,(CVector3f *)(auStack_fc + 4));
   if ((iVar1 != 0) &&
      (((this_ptr_00 == (CCharacter *)0x0 ||
-       (iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).isDamageable)(this_ptr_00), iVar1 < 1)) &&
-      (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                 ((CDemonActor *)this_ptr,(CVector3f *)(auStack_48 + 4),
-                  &(in_stack_00000008->location).position), 0.0 < fStack_3c)))) {
+       (iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), iVar1 < 1))
+      && (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                    ((CDemonActor *)this_ptr,(CVector3f *)(auStack_48 + 4),
+                     &(in_stack_00000008->location).position), 0.0 < fStack_3c)))) {
     fStack_f0 = SQRT(fStack_3c * fStack_3c +
                      (float)auStack_48._4_4_ * (float)auStack_48._4_4_ + fStack_40 * fStack_40);
     fStack_14 = fStack_f0;

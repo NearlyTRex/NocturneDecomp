@@ -66,6 +66,6 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005fbe70(CZombie *this
   if ((this_ptr->base).base.field43_0x2620 == 0) {
     return (this_ptr->base).base.field43_0x2620;
   }
-  core_charactr_cpp_CCharacter_FUN_0042b0e0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0((CCharacter *)this_ptr);
   return (this_ptr->base).base.field43_0x2620;
 }

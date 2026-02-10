@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 8,
-        "line": 72,
+        "line": 85,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 72,
+        "line": 85,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 93,
+        "line": 107,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 93,
+        "line": 107,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 200,
+        "line": 229,
         "message": "assigning to 'CHotDemon *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 265,
+        "line": 299,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -43,18 +43,20 @@
   },
   "complexity": {
     "assembly_lines": 628,
-    "complexity_score": 347,
+    "complexity_score": 451,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
-    "pseudocode_lines": 262,
-    "suspect_count": 7,
+    "pseudocode_lines": 296,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
+      "stack_param",
+      "suspect_float",
       "warning_unreachable"
     ],
-    "total_lines": 890
+    "total_lines": 924
   },
   "cross_references": [],
   "function": {
@@ -82,34 +84,34 @@
       "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0"
     },
     {
-      "addr": "00428f40",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
-    },
-    {
       "addr": "004297e0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004297e0"
+      "name": "core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0"
+    },
+    {
+      "addr": "00428f40",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40"
     },
     {
       "addr": "00429820",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429820"
+      "name": "core_charactr.cpp_CCharacter_preProcess_FUN_00429820"
     },
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
-    },
-    {
-      "addr": "0042ca70",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ca70"
+      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
     },
     {
       "addr": "0042ec40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40"
+    },
+    {
+      "addr": "0042ca70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70"
     },
     {
       "addr": "004286e0",
@@ -561,45 +563,87 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 19,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 20,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_ffffff8c",
+      "text": "float in_stack_ffffff8c;",
+      "type": "stack_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 69,
+      "line": 82,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 91,
       "match": "SQRT",
-      "text": "if (SQRT(fVar8 * fVar8 + fVar12 * fVar12 + fVar7 * fVar7) < (this_ptr->base).guard_distance)",
+      "text": "if (SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) <",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 99,
+      "match": "8.490399e-39",
+      "text": "fVar19 = 8.490399e-39;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 90,
+      "line": 104,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 128,
+      "match": "in_stack_ffffff8c",
+      "text": "in_stack_ffffff8c =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_ffffff8c",
+      "text": "if ((SQRT(fVar18 * fVar18 + in_stack_ffffff8c * in_stack_ffffff8c + fVar19 * fVar19) <",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_ffffff8c",
+      "text": "if ((SQRT(fVar18 * fVar18 + in_stack_ffffff8c * in_stack_ffffff8c + fVar19 * fVar19) <",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
+      "line": 132,
       "match": "SQRT",
-      "text": "SQRT(fVar8 * fVar8 + fVar12 * fVar12 + fVar7 * fVar7) < 15.0f)) &&",
+      "text": "if ((SQRT(fVar18 * fVar18 + in_stack_ffffff8c * in_stack_ffffff8c + fVar19 * fVar19) <",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 211,
+      "match": "in_stack_ffffff8c",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff8c);",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

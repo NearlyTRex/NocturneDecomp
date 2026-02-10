@@ -32,9 +32,9 @@
 ;
 ; XREF[15]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a50c
-;   core_charactr.cpp_CCharacter_FUN_0042b9e0 at 0042bc0a
-;   core_charactr.cpp_CCharacter_FUN_0042c180 at 0042c2d5
+;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 at 0042bc0a
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c4a5
+;   core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180 at 0042c2d5
 ;   core_dracbrid.cpp_CDraculaBride_FUN_004858f0 at 00485b03
 ;   core_enemy.cpp_CEnemy_FUN_004a9880 at 004a9915
 ;   core_enemy.cpp_CEnemy_FUN_004a9930 at 004a99b4

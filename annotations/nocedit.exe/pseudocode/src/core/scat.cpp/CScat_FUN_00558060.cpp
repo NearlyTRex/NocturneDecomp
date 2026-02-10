@@ -10,13 +10,17 @@ void __cdecl core_scat_cpp_CScat_FUN_00558060(CScat *this_ptr)
 
 {
   CDeformableModelInstance *pCVar1;
-  CWeapon *pCVar2;
+  CCharacter *pCVar2;
   SMotion *pSVar3;
-  uint uVar4;
-  uint uVar5;
-  CWeapon *pCVar6;
+  CVector3f *damage_direction;
+  CVector3f *pCVar4;
+  CCharacter *this_ptr_00;
+  CMotionController *unaff_EDI;
+  CCharacter *pCVar5;
   float in_stack_00000008;
-  int local_14;
+  CMotionController *this_ptr_01;
+  CVector3f *pCVar6;
+  int iVar7;
   
   pCVar1 = &(this_ptr->base).base.model;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -24,12 +28,13 @@ void __cdecl core_scat_cpp_CScat_FUN_00558060(CScat *this_ptr)
   if ((pSVar3->state_index != 0xc) &&
      (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&pCVar1->motion_controller), pSVar3->state_index != 0xd)) {
-    pCVar6 = (this_ptr->base).inventory.selected_weapon;
+    this_ptr_00 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
     if (*(int *)this_ptr->unk == 0) {
-      pCVar6 = (CWeapon *)0x0;
+      this_ptr_00 = (CCharacter *)0x0;
     }
-    pCVar2 = *(CWeapon **)(this_ptr->unk + 0x14);
-    if (((pCVar2 != (CWeapon *)0x0) && (pCVar6 != pCVar2)) && (*(int *)(pCVar2->unk1 + 8) == 8)) {
+    pCVar5 = *(CCharacter **)(this_ptr->unk + 0x14);
+    if (((pCVar5 != (CCharacter *)0x0) && (this_ptr_00 != pCVar5)) &&
+       ((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {
       pCVar1 = &(this_ptr->base).base.model;
       pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&pCVar1->motion_controller);
@@ -44,23 +49,44 @@ void __cdecl core_scat_cpp_CScat_FUN_00558060(CScat *this_ptr)
                   (&pCVar1->motion_controller,0,1);
       }
     }
-    pCVar1 = &(this_ptr->base).base.model;
-    local_14 = 0;
+    this_ptr_01 = &(this_ptr->base).base.model.motion_controller;
+    iVar7 = 0;
     while (0.0 < in_stack_00000008) {
-      pCVar2 = *(CWeapon **)(this_ptr->unk + 0x14);
-      if ((pCVar6 == pCVar2) && (pCVar2 != (CWeapon *)0x0)) {
-        switch(*(uint *)(pCVar2->unk1 + 8)) {
-        default:
-          break;
-        case 8:
+      pCVar5 = *(CCharacter **)(this_ptr->unk + 0x14);
+      if (this_ptr_00 == pCVar5) {
+        if (pCVar5 != (CCharacter *)0x0) {
+          switch((pCVar5->model).transformed_vertices[0x19].y) {
+          default:
+            pCVar5 = (CCharacter *)0x2;
+            break;
+          case 1.12104e-44:
+            pCVar5 = (CCharacter *)0x0;
+          }
         }
       }
-      uVar4 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370((CCharacter *)this_ptr);
-      core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(&pCVar1->motion_controller);
-      if (-1 < (int)uVar4) {
-        pCVar2 = *(CWeapon **)(this_ptr->unk + 0x14);
-        if (pCVar6 != pCVar2) {
-          if ((pCVar2 != (CWeapon *)0x0) && ((*(int *)(pCVar2->unk1 + 8) != 8) == uVar4)) {
+      else if (pCVar5 == (CCharacter *)0x0) {
+        if ((this_ptr_00 != (CCharacter *)0x0) &&
+           ((this_ptr_00->model).transformed_vertices[0x19].y != 1.12104e-44)) {
+LAB_00558263:
+          pCVar5 = (CCharacter *)0x1;
+        }
+      }
+      else {
+        if ((pCVar5->model).transformed_vertices[0x19].y != 1.12104e-44) goto LAB_00558263;
+        pCVar5 = (CCharacter *)0x0;
+      }
+      damage_direction =
+           (CVector3f *)
+           core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370
+                     ((CCharacter *)this_ptr,&stack0x00000008,(int)pCVar5);
+      pCVar6 = damage_direction;
+      core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr_01);
+      if (-1 < (int)damage_direction) {
+        pCVar2 = *(CCharacter **)(this_ptr->unk + 0x14);
+        if (this_ptr_00 != pCVar2) {
+          if ((pCVar2 != (CCharacter *)0x0) &&
+             ((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==
+              pCVar6)) {
             (**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 0xf0))();
             this_ptr->unk[0x14] = '\0';
             this_ptr->unk[0x15] = '\0';
@@ -68,25 +94,30 @@ void __cdecl core_scat_cpp_CScat_FUN_00558060(CScat *this_ptr)
             this_ptr->unk[0x17] = '\0';
           }
           if (*(int *)this_ptr->unk != 0) {
-            if ((pCVar6 == (CWeapon *)0x0) || (*(int *)(pCVar6->unk1 + 8) == 8)) {
-              uVar5 = 0;
+            if ((this_ptr_00 == (CCharacter *)0x0) ||
+               ((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {
+              pCVar4 = (CVector3f *)0x0;
             }
             else {
-              uVar5 = 1;
+              pCVar4 = (CVector3f *)0x1;
             }
-            if (((uVar5 == uVar4) &&
-                (*(CWeapon **)(this_ptr->unk + 0x14) = pCVar6, pCVar6 != (CWeapon *)0x0)) &&
-               ((*(((pCVar6->base).vtable._uc)->_uc).cfunc2)(),
+            if (((pCVar4 == pCVar6) &&
+                (*(CCharacter **)(this_ptr->unk + 0x14) = this_ptr_00,
+                this_ptr_00 != (CCharacter *)0x0)) &&
+               ((*(((this_ptr_00->base).vtable._uc)->_uc).kill)
+                          (this_ptr_00,2,damage_direction,(float)this_ptr_01),
                *(int *)(*(int *)(this_ptr->unk + 0x14) + 0x2e0) == 8)) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        (&pCVar1->motion_controller,6,1);
+              iVar7 = 1;
+              this_ptr_01 = unaff_EDI;
+              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(unaff_EDI,6,1);
             }
           }
         }
-        core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0
+                  ((CCharacter *)this_ptr,(int)pCVar5);
       }
-      local_14 = local_14 + 1;
-      if (1 < local_14) {
+      iVar7 = iVar7 + 1;
+      if (1 < iVar7) {
         return;
       }
     }

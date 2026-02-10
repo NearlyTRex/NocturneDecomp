@@ -33,7 +33,7 @@ core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340
   pcVar5 = pCVar2->create_event;
   pcVar4 = output_buffer;
   do {
-    while (pCVar2[0x1b].unk1 == 0) {
+    while (pCVar2[0x1b].direction_hint == 0) {
       pCVar2 = (CDemonActor *)&(pCVar2->orient_matrix).m[0].z;
       if (pCVar2 == (CDemonActor *)(pcVar5 + 0x10)) {
         return;
@@ -43,7 +43,7 @@ core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340
       iVar3 = _sprintf(pcVar4,", ");
       pcVar4 = pcVar4 + iVar3;
     }
-    iVar3 = _sprintf(pcVar4,"%s",pCVar2[0x1b].unk1);
+    iVar3 = _sprintf(pcVar4,"%s",pCVar2[0x1b].direction_hint);
     pcVar4 = pcVar4 + iVar3;
     pCVar2 = (CDemonActor *)&(pCVar2->orient_matrix).m[0].z;
   } while (pCVar2 != (CDemonActor *)(pcVar5 + 0x10));

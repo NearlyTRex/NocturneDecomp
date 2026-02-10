@@ -20,8 +20,8 @@
 ;   CNetGame g_CNetGameInstance
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_00429870
-;   core_charactr.cpp_CCharacter_FUN_0042d530
+;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530
+;   core_charactr.cpp_CCharacter_process_FUN_00429870
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mimic.cpp_CMimic_FUN_0051f930
@@ -62,8 +62,8 @@ section .text
         ;   XREF to: 0051f840 (CONDITIONAL_JUMP)  ; LAB_0051f840
     PUSH dword ptr [ESP + 0x10]         ; 0051f7e1
     PUSH EBX                            ; 0051f7e5
-    CALL core_charactr.cpp_CCharacter_FUN_00429870 ; 0051f7e6
-        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00429870(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_process_FUN_00429870 ; 0051f7e6
+        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_00429870(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0051f7eb
     TEST EAX,EAX                        ; 0051f7ee
     JZ 0x0051f813                       ; 0051f7f0
@@ -79,8 +79,8 @@ section .text
     ADD ESP,0x8                         ; 0051f807
     PUSH EBX                            ; 0051f80a
         ;   Label: LAB_0051f80a
-    CALL core_charactr.cpp_CCharacter_FUN_0042d530 ; 0051f80b
-        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d530(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530 ; 0051f80b
+        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0051f810
     POP EDI                             ; 0051f813
         ;   Label: LAB_0051f813
@@ -164,8 +164,8 @@ section .text
         ;   XREF to: 00520500 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_FUN_00520500(CMimic * this_ptr)
     ADD ESP,0x4                         ; 0051f8e0
     PUSH EBX                            ; 0051f8e3
-    CALL core_charactr.cpp_CCharacter_FUN_0042d530 ; 0051f8e4
-        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d530(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530 ; 0051f8e4
+        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0051f8e9
     POP EDI                             ; 0051f8ec
     POP EBX                             ; 0051f8ed
@@ -180,8 +180,8 @@ section .text
     JZ 0x0051f8da                       ; 0051f8f9
         ;   XREF to: 0051f8da (CONDITIONAL_JUMP)  ; LAB_0051f8da
     PUSH EBX                            ; 0051f8fb
-    CALL core_charactr.cpp_CCharacter_FUN_0042d530 ; 0051f8fc
-        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d530(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530 ; 0051f8fc
+        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0051f901
     POP EDI                             ; 0051f904
     POP EBX                             ; 0051f905
@@ -198,8 +198,8 @@ section .text
     JZ 0x0051f8da                       ; 0051f917
         ;   XREF to: 0051f8da (CONDITIONAL_JUMP)  ; LAB_0051f8da
     PUSH EBX                            ; 0051f919
-    CALL core_charactr.cpp_CCharacter_FUN_0042d530 ; 0051f91a
-        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d530(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530 ; 0051f91a
+        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0051f91f
     POP EDI                             ; 0051f922
     POP EBX                             ; 0051f923

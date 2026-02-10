@@ -46,7 +46,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_charactr.cpp_CCharacter_FUN_0042a420
+;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420
 ;   core_cloth.cpp_CCloth_render_FUN_0043bae0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   core_morph.cpp_CMorphModel_FUN_0052bae0
@@ -258,8 +258,8 @@ section .text
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
     PUSH EBX                            ; 00520802
         ;   Label: LAB_00520802
-    CALL core_charactr.cpp_CCharacter_FUN_0042a420 ; 00520803
-        ;   XREF to: 0042a420 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a420(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420 ; 00520803
+        ;   XREF to: 0042a420 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCharacter * this_ptr)
     MOV EDI,dword ptr [0x02f43978]      ; 00520808 | DAT_02f43978
     ADD ESP,0x4                         ; 0052080e
     TEST EDI,EDI                        ; 00520811

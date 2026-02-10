@@ -12,7 +12,7 @@ void __cdecl core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(CDemonActor *this_p
   float local_8;
   
   core_actor_cpp_archiveLocation_FUN_0040b480(&this_ptr->location,"location");
-  core_actor_cpp_archiveOrientation_FUN_0040b3e0(&this_ptr->orient,"orient");
+  core_actor_cpp_archiveOrientation_FUN_0040b3e0(&(this_ptr->orient).orient,"orient");
   if (g_CDemonActorClassVersion < 7) {
     core_actor_cpp_archiveFloat_FUN_0040b770(&local_8,"fov");
     if (g_CDemonActorClassVersion < 6) {

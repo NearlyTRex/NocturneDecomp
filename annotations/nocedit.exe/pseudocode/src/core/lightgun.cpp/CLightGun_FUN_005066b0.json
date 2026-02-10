@@ -1,34 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 39,
-        "line": 39,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 89,
-        "line": 39,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 143,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 108,
+    "pseudocode_lines": 109,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 413
+    "total_lines": 414
   },
   "cross_references": [],
   "function": {
@@ -219,23 +206,23 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 52,
       "match": "SQRT",
-      "text": "fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);",
+      "text": "fVar1 = SQRT(fStack_28 * fStack_28 + fStack_30 * fStack_30 + fStack_2c * fStack_2c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 64,
       "match": "fpatan",
       "text": "fpatan((float10)18 / (float10)112.0f,(float10)1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 81,
       "match": "SQRT",
-      "text": "fStack_68 = SQRT(CStack_4c.z * CStack_4c.z +",
+      "text": "fStack_64 = SQRT(CStack_48.z * CStack_48.z +",
       "type": "decompiler_intrinsic"
     }
   ],

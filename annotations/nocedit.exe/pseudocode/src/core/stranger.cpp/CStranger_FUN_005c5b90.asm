@@ -24,7 +24,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042e840
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
 ;   core_hero.cpp_CHero_FUN_004f2af0
 ;   core_hero.cpp_CHero_FUN_004f2c40
 ;   core_hero.cpp_CHero_FUN_004f2d70
@@ -279,8 +279,8 @@ section .text
     PUSH EAX                            ; 005c5dc4
         ;   Label: LAB_005c5dc4
     PUSH EBX                            ; 005c5dc5
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c5dc6
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c5dc6
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 005c5dcb
     FLD float ptr [ESP + 0xc]           ; 005c5dcf
     ADD ESP,0x8                         ; 005c5dd3

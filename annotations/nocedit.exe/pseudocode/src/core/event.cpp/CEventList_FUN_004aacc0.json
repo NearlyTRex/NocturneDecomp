@@ -4,116 +4,116 @@
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 150,
+        "line": 148,
         "message": "use of undeclared identifier 'DAT_0062460c'"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 267,
+        "line": 265,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 267,
+        "line": 265,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 275,
+        "line": 273,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 277,
+        "line": 275,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 306,
+        "line": 304,
         "message": "comparison between pointer and integer ('CHero *' and 'int')"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 329,
+        "line": 327,
         "message": "format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 329,
+        "line": 327,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 369,
+        "line": 367,
         "message": "comparison between pointer and integer ('CHero *' and 'int')"
       },
       {
-        "category": "other",
-        "column": 61,
-        "line": 398,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "undeclared_identifier",
+        "column": 65,
+        "line": 396,
+        "message": "use of undeclared identifier 'stack0xffffe9c4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 68,
+        "line": 406,
+        "message": "use of undeclared identifier 'stack0xffffe9c4'"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 433,
+        "line": 431,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 456,
+        "line": 454,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 508,
+        "line": 506,
         "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 586,
+        "line": 584,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 652,
+        "line": 650,
         "message": "comparison between pointer and integer ('CHero *' and 'int')"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 681,
+        "line": 679,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 735,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+        "line": 733,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
-        "category": "format_error",
-        "column": 66,
-        "line": 735,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 76,
-        "line": 735,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+        "category": "other",
+        "column": 96,
+        "line": 732,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -121,20 +121,21 @@
   },
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 3635,
+    "complexity_score": 3663,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
-    "pseudocode_lines": 2160,
-    "suspect_count": 145,
+    "pseudocode_lines": 2163,
+    "suspect_count": 147,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
+      "stack_ref",
       "undefined_data",
       "warning_type_propagation"
     ],
-    "total_lines": 7217
+    "total_lines": 7220
   },
   "cross_references": [
     {
@@ -2593,455 +2594,469 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 33,
       "match": "in_stack_00000008",
       "text": "byte *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
+      "line": 133,
       "match": "DAT_02d0a460",
       "text": "DAT_02d0a460 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 134,
       "match": "in_stack_00000008",
       "text": "if (((in_stack_00000008 != (byte *)0x0) && (*in_stack_00000008 != 0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 134,
       "match": "in_stack_00000008",
       "text": "if (((in_stack_00000008 != (byte *)0x0) && (*in_stack_00000008 != 0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 135,
       "match": "in_stack_00000008",
       "text": "(iVar7 = stricmp((char *)in_stack_00000008,\"none\"),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 139,
+      "line": 137,
       "match": "in_stack_00000008",
       "text": "if (*in_stack_00000008 == 0x2e) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 138,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 138,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 140,
       "match": "DAT_02d0a45c",
       "text": "local_f0 = (uint)(DAT_02d0a45c == 0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 141,
       "match": "DAT_0062460c",
       "text": "local_ec = &DAT_0062460c;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 142,
       "match": "in_stack_00000008",
       "text": "pbVar19 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 160,
+      "line": 158,
       "match": "in_stack_00000008",
       "text": "iVar8 = stricmp((char *)piVar22,(char *)in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 167,
       "match": "in_stack_00000008",
       "text": "pbVar19 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 189,
+      "line": 187,
       "match": "in_stack_00000008",
       "text": "bVar4 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 193,
+      "line": 191,
       "match": "in_stack_00000008",
       "text": "bVar4 = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 194,
+      "line": 192,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 194,
+      "line": 192,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 193,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)piVar22 + 1) = bVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 194,
       "match": "(int *)((int)",
       "text": "piVar22 = (int *)((int)piVar22 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 206,
+      "line": 204,
       "match": "(int *)((int)",
       "text": "piVar22 = (int *)((int)piVar22 + (uint)bVar25 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 223,
+      "line": 221,
       "match": "(int *)((int)",
       "text": "piVar20 = (int *)((int)piVar20 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 227,
+      "line": 225,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"advanceLightFilter\",0x12);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 229,
+      "line": 227,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[0x12] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 230,
+      "line": 228,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0x12;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 252,
+      "line": 250,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"createExplosion\",0xf);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 254,
+      "line": 252,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xf] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 255,
+      "line": 253,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xf;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 344,
+      "line": 342,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"deleteActor\",0xb);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 346,
+      "line": 344,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xb] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 347,
+      "line": 345,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xb;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 357,
+      "line": 355,
       "match": "DAT_02d0a45c",
       "text": "if (DAT_02d0a45c != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 382,
+      "line": 380,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"displayBitmap\",0xd);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 384,
+      "line": 382,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xd] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 385,
+      "line": 383,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xd;",
       "type": "stack_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 389,
+      "match": "&stack0xffffe9c4",
+      "text": "((char *)local_ec,\"( %[^ ,], %d, %d )%n\",&stack0xffffe9c4,&local_d8,&local_d4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 399,
+      "match": "&stack0xffffe9c4",
+      "text": "iVar7 = engine_dosio_c_getFileSize_FUN_00481880(\"art\",&stack0xffffe9c4);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 417,
+      "line": 415,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"fadeAmbientSound\",0x10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 419,
+      "line": 417,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[0x10] + 1)] & 0xe0) == 0))",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 421,
+      "line": 419,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0x10;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 429,
+      "line": 427,
       "match": "DAT_02d0a460",
       "text": "_sprintf(&DAT_02d0a460,\"Error parsing fadeAmbientSound parms\")",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 440,
+      "line": 438,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"fadeSfx\",7);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 442,
+      "line": 440,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[7] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 443,
+      "line": 441,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 7;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 452,
+      "line": 450,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,\"Error parsing fadeSfx parms\");",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 490,
+      "line": 488,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"flagOn\",6);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 492,
+      "line": 490,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[6] + 1)] & 0xe0) == 0))",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 494,
+      "line": 492,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 6;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 501,
+      "line": 499,
       "match": "DAT_02d0a460",
       "text": "pcVar23 = &DAT_02d0a460;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 521,
+      "line": 519,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"flagOff\",7);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 523,
+      "line": 521,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[7] + 1)] & 0xe0) == 0",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 525,
+      "line": 523,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 7;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 537,
+      "line": 535,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"gameFlagOn\",10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 539,
+      "line": 537,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[10] + 1)] & 0xe0)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 541,
+      "line": 539,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 553,
+      "line": 551,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"gameFlagOff\",0xb);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 555,
+      "line": 553,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xb] + 1)] & 0xe0",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 557,
+      "line": 555,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xb;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 569,
+      "line": 567,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"hurtCharacter\",0xd);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 571,
+      "line": 569,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xd] + 1)] &",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 573,
+      "line": 571,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xd;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 663,
+      "line": 661,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"incCounter\",10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 665,
+      "line": 663,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[10] + 1)] &",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 667,
+      "line": 665,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 10;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 677,
+      "line": 675,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,\"Error parsing incCounter arguments\");",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 713,
+      "line": 711,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"killCharacter\",",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 716,
+      "line": 714,
       "match": "in_stack_00000008",
       "text": "((g_CharacterClassificationTable[(byte)(in_stack_00000008[0xd] + 1)]",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 718,
+      "line": 716,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xd;",
       "type": "stack_param"
@@ -3069,525 +3084,525 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 871,
+      "line": 872,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"killSfx\",7);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 874,
+      "line": 875,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[7] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 875,
+      "line": 876,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 7;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 885,
+      "line": 886,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,\"Error parsing killSfx parms\");",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 921,
+      "line": 922,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,\"Error parsing killSfx parms\");",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 934,
+      "line": 935,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,\"Can't find matching ) in killSfx command\");",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 952,
+      "line": 953,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"lightning\",",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 956,
+      "line": 957,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[9] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 957,
+      "line": 958,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 9;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 966,
+      "line": 967,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,\"Error parsing lightning command\");",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 976,
+      "line": 977,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,\"playSfx\",",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 980,
+      "line": 981,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[7] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 981,
+      "line": 982,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 7;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 991,
+      "line": 992,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,\"Error parsing playSfx parms\"",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1022,
+      "line": 1023,
       "match": "DAT_006793d8",
       "text": "puVar21 = &DAT_006793d8;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1027,
+      "line": 1028,
       "match": "(char *)((int)",
       "text": "pcVar10 = (char *)((int)pcVar10 +",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1036,
+      "line": 1037,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1076,
+      "line": 1077,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1090,
+      "line": 1091,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,\"Can't find matching ) in playSfx command\"",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1124,
+      "line": 1125,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1128,
-      "match": "in_stack_00000008",
-      "text": "[(byte)(in_stack_00000008[0x10] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1129,
       "match": "in_stack_00000008",
+      "text": "[(byte)(in_stack_00000008[0x10] + 1)] & 0xe0) == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1130,
+      "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0x10;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1140,
+      "line": 1141,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1173,
+      "line": 1174,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1179,
+      "line": 1180,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1190,
+      "line": 1191,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1194,
-      "match": "in_stack_00000008",
-      "text": "[(byte)(in_stack_00000008[10] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1195,
       "match": "in_stack_00000008",
+      "text": "[(byte)(in_stack_00000008[10] + 1)] & 0xe0) == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1196,
+      "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 10;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1205,
+      "line": 1206,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1242,
+      "line": 1243,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1254,
+      "line": 1255,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1266,
+      "line": 1267,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1270,
-      "match": "in_stack_00000008",
-      "text": "[(byte)(in_stack_00000008[0xf] + 1)] & 0xe0) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1271,
       "match": "in_stack_00000008",
+      "text": "[(byte)(in_stack_00000008[0xf] + 1)] & 0xe0) == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1272,
+      "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xf;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1282,
+      "line": 1283,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1289,
+      "line": 1290,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1300,
+      "line": 1301,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1304,
+      "line": 1305,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[0x13] + 1)] & 0xe0) == 0)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1306,
+      "line": 1307,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0x13;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1353,
+      "line": 1354,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1357,
+      "line": 1358,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[0xd] + 1)] & 0xe0) == 0",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1359,
+      "line": 1360,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xd;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1370,
+      "line": 1371,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1456,
+      "line": 1457,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1460,
+      "line": 1461,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[0xd] + 1)] & 0xe0) ==",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1462,
+      "line": 1463,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xd;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1473,
+      "line": 1474,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1547,
+      "line": 1548,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1562,
+      "line": 1563,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1566,
+      "line": 1567,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[8] + 1)] & 0xe0) ==",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1568,
+      "line": 1569,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 8;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1579,
+      "line": 1580,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1622,
+      "line": 1623,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1629,
+      "line": 1630,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1641,
+      "line": 1642,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1645,
+      "line": 1646,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[10] + 1)] & 0xe0)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1647,
+      "line": 1648,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 10;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1658,
+      "line": 1659,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1702,
+      "line": 1703,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1713,
+      "line": 1714,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1717,
+      "line": 1718,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[0xb] + 1)] & 0xe0",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1719,
+      "line": 1720,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0xb;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1731,
+      "line": 1732,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1744,
+      "line": 1745,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1749,
+      "line": 1750,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[0x11] + 1)] &",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1751,
+      "line": 1752,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 0x11;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1762,
+      "line": 1763,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1837,
+      "line": 1838,
       "match": "DAT_02d0a460",
       "text": "(&DAT_02d0a460,",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1859,
+      "line": 1860,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1863,
+      "line": 1864,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[0xc] + 1)] & 0xe0",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1865,
+      "line": 1866,
       "match": "in_stack_00000008",
       "text": "pbVar19 = in_stack_00000008 + 0xc;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1871,
+      "line": 1872,
       "match": "DAT_006794a0",
       "text": "puVar21 = &DAT_006794a0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1939,
+      "line": 1940,
       "match": "in_stack_00000008",
       "text": "((char *)in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1943,
+      "line": 1944,
       "match": "in_stack_00000008",
       "text": "[(byte)(in_stack_00000008[6] + 1)] & 0xe0)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1951,
+      "line": 1952,
       "match": "in_stack_00000008",
       "text": "local_ec = in_stack_00000008 + 6;",
       "type": "stack_param"
@@ -3598,7 +3613,7 @@
       "expected_args": 1,
       "format_string": "Can't find CDemonLight for light %s in advanceLightFilter meta-command",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 245,
+      "line_number": 243,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't find CDemonLight for light %s in advanceLightFil",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

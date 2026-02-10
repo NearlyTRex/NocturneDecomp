@@ -50,7 +50,7 @@ void __cdecl core_scat_cpp_CScat_FUN_00558fd0(CScat *this_ptr)
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_160,&(this_ptr->base).base.base.location.position,
-               (CVector3f *)&(this_ptr->base).base.base.orient);
+               &(this_ptr->base).base.base.orient.vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_70,&local_160,&local_100);
     pCVar2 = &local_100;
     pCVar3 = &local_a0;

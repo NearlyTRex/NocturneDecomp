@@ -50,11 +50,11 @@ core_werewolf_cpp_CWerewolf_processDamage_FUN_005f1ac0(CWerewolf *this_ptr,SDama
         fVar1 = (this_ptr->base).base.base.location.position.x;
         if (fVar1 <= (float)5) {
           if ((double)fVar1 < -5) {
-            (this_ptr->base).base.base.orient.bank = 1.5707964;
+            (this_ptr->base).base.base.orient.vec.y = 1.5707964;
           }
         }
         else {
-          (this_ptr->base).base.base.orient.bank = -1.5707964;
+          (this_ptr->base).base.base.orient.vec.y = -1.5707964;
         }
       }
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk4 + 4));

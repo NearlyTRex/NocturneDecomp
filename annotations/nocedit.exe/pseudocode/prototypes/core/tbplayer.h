@@ -29,7 +29,7 @@ void __cdecl FUN_005da100(void);
 
 // Original: core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120
 // Address: 005da120
-void __cdecl CBassPlayer::getCarryObjToBodyXForm(CBassPlayer *this_ptr);
+void __stack2_esi CBassPlayer::getCarryObjToBodyXForm(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_tbplayer.cpp_CBassPlayer_processDamage_FUN_005da240
 // Address: 005da240
@@ -53,7 +53,7 @@ void __cdecl CDrummer::setup(CDrummer *this_ptr);
 
 // Original: core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370
 // Address: 005da370
-void __cdecl CDrummer::getCarryObjToBodyXForm(CDrummer *this_ptr);
+void __stack2_esi CDrummer::getCarryObjToBodyXForm(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_tbplayer.cpp_CDrummer_processDamage_FUN_005da510
 // Address: 005da510

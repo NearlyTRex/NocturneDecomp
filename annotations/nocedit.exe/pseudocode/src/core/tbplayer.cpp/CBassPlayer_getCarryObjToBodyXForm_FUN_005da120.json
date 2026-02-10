@@ -6,19 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 157,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 47,
-    "suspect_count": 9,
+    "pseudocode_lines": 46,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "unaffected_reg",
       "warning_type_propagation"
     ],
-    "total_lines": 127
+    "total_lines": 126
   },
   "cross_references": [],
   "function": {
@@ -29,9 +27,9 @@
         "005da238"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120",
-    "signature": "void __cdecl core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120(CBassPlayer *this_ptr)"
+    "signature": "void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120 (CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -50,8 +48,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.138888888888889,
@@ -85,10 +83,10 @@
     "pcode_op_count": 370
   },
   "stack_frame": {
-    "frame_size": 176,
+    "frame_size": 180,
     "local_size": 172,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -195,6 +193,13 @@
         "offset": 4,
         "size": 4,
         "type": "CBassPlayer *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -207,60 +212,18 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = pCVar2->m[0].w;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

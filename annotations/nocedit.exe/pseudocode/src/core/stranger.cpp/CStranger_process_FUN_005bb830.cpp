@@ -14,7 +14,7 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_pt
   int iVar2;
   SMotion *pSVar3;
   
-  iVar2 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
+  iVar2 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) {
     return;
   }

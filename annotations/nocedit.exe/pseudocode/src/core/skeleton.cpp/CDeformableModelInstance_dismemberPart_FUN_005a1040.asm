@@ -10,7 +10,7 @@
 ;
 ; XREF[3]:
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b49e
-;   core_charactr.cpp_CCharacter_FUN_0042bd30 at 0042bd8c
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 at 0042bd8c
 ;   core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0 at 005a1015
 ;
 ; Called Functions:

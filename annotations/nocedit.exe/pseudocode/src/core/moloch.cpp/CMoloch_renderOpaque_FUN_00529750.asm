@@ -18,7 +18,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_charactr.cpp_CCharacter_FUN_00429aa0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0
 ;   core_morph.cpp_CMorphModel_FUN_0052bae0
 ;   core_morph.cpp_FUN_0052b600
 ;   core_motion.cpp_CMotionController_render_FUN_0052e700
@@ -139,8 +139,8 @@ section .text
     RET                                 ; 00529868
     PUSH EBX                            ; 00529869
         ;   Label: LAB_00529869
-    CALL core_charactr.cpp_CCharacter_FUN_00429aa0 ; 0052986a
-        ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00429aa0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 ; 0052986a
+        ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0052986f
     JMP 0x0052980d                      ; 00529872
         ;   XREF to: 0052980d (UNCONDITIONAL_JUMP)  ; LAB_0052980d

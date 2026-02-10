@@ -80,7 +80,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr)
         if ((int)CStack_88.y < 0x42c60001) {
           core_turret_cpp_CTurret_FUN_005e3280(this_ptr);
           if (*(float *)((this_ptr->base).unk2 + 0xc) <= 0.0) {
-            (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc4)();
+            (*(((this_ptr->base).base.vtable._uc)->_uc).isGrabbable)((CCharacter *)this_ptr);
           }
           this_ptr->unk5[0xc] = '\0';
           this_ptr->unk5[0xd] = '\0';
@@ -103,7 +103,7 @@ LAB_005e2ed6:
       iVar6 = iVar6 + 1;
       iVar5 = iVar5 + 4;
     }
-    iVar3 = (*((pCVar1->vtable)._ub)->isActiveTarget)(pCVar1);
+    iVar3 = (*((pCVar1->vtable)._ub)->canLookAt)(pCVar1);
     if (iVar3 == 0) goto LAB_005e2ed6;
     __arrinit(&stack0xfffffeb0,10,&g_CVectorTypeInfo);
     iVar3 = (*((pCVar1->vtable)._ub)->getTargetPoints)(pCVar1,(CVector3f *)&stack0xfffffeb0);

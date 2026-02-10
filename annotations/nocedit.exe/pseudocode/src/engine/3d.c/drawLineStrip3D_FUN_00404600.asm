@@ -6,8 +6,10 @@
 ; Parameters:
 ; SLineStrip *     Stack[0x4]:4   line_strip
 ; Local Variables:
-; undefined        Stack[-0x70]:1  local_70
-; undefined        Stack[-0x40]:1  local_40
+; SRenderVertex    Stack[-0xd0]:48  local_d0
+; SRenderVertex    Stack[-0xa0]:48  local_a0
+; SRenderVertex    Stack[-0x70]:48  local_70
+; SRenderVertex    Stack[-0x40]:48  local_40
 ;
 ; Referenced Globals:
 ;   SRenderVertex[16] g_RenderVertexBuffer
@@ -74,7 +76,7 @@ section .text
     INC EBP                             ; 00404683
     MOVSD.REP ES:EDI,ESI                ; 00404684
     CALL engine_3d.c_clipAndDrawLine3D_FUN_00408070 ; 00404686
-        ;   XREF to: 00408070 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine3D_FUN_00408070(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00408070 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine3D_FUN_00408070(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0040468b
     JMP 0x00404615                      ; 0040468e
         ;   XREF to: 00404615 (UNCONDITIONAL_JUMP)  ; LAB_00404615

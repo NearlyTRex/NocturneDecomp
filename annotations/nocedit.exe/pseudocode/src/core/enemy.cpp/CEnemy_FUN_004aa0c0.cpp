@@ -14,6 +14,6 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004aa0c0(CEnemy *this_ptr)
   if (in_stack_00000008 != this_ptr->victim) {
     return;
   }
-  (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc9)();
+  (*(((this_ptr->base).base.vtable._uc)->_uc).releaseVictim)(&this_ptr->base);
   return;
 }

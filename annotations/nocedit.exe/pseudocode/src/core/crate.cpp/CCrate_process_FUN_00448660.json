@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 85,
-        "line": 88,
+        "line": 90,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 193,
-    "complexity_score": 103,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 90,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 281
+    "total_lines": 283
   },
   "cross_references": [],
   "function": {
@@ -122,7 +122,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 81,
+      "line": 83,
       "match": "&stack0xffffffe8",
       "text": "(*((pCVar4->base).vtable._ub)->getBoundingBox)(&pCVar4->base,(CBoundingBox3D *)&stack0xffffffe8)",
       "type": "stack_ref"

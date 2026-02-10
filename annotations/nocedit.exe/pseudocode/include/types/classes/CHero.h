@@ -14,7 +14,7 @@ struct CDemonActor;
 // Ghidra size: 0x1fbd4 (130004 bytes)
 typedef struct CHero {
     CCharacter base; // 0x0
-    uint unk1; // 0xbe24
+    float unk1; // 0xbe24
     int control_type; // 0xbe28
     SActionKeyBindings action_bindings; // 0xbe2c
     char unk2[12]; // 0xbe4c

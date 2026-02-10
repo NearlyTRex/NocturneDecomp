@@ -64,7 +64,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_charactr.cpp_CCharacter_FUN_0042d300
+;   core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
 ;
@@ -349,8 +349,8 @@ section .text
     PUSH ESI                            ; 004f6997
     LEA ESI,[ESP + 0x158]               ; 004f6998
     LEA EDI,[ESP + 0x8]                 ; 004f699f
-    CALL core_charactr.cpp_CCharacter_FUN_0042d300 ; 004f69a3
-        ;   XREF to: 0042d300 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d300(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300 ; 004f69a3
+        ;   XREF to: 0042d300 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300(CCharacter * this_ptr, int hand_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 004f69a8
     LEA ESI,[ESP + 0x158]               ; 004f69ad
     JMP 0x004f6696                      ; 004f69b4

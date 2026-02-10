@@ -16,7 +16,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   int iVar4;
   float fVar5;
   int iVar6;
-  COrientation *euler_angles;
+  UOrientationVector *euler_angles;
   char *pcVar7;
   char *pcVar8;
   CLocation *position;
@@ -210,10 +210,10 @@ LAB_0054cd70:
   position = &(this_ptr->base).location;
   fStack_20 = (this_ptr->base).location.position.y;
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-            ((CMatrix3x4f *)auStack_21c,&position->position,(CVector3f *)euler_angles);
+            ((CMatrix3x4f *)auStack_21c,&position->position,&euler_angles->vec);
   core_platfrm_cpp_CPlatform_FUN_0054cab0(this_ptr);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            ((CMatrix3x4f *)(auStack_124 + 0x28),&position->position,(CVector3f *)euler_angles);
+            ((CMatrix3x4f *)(auStack_124 + 0x28),&position->position,&euler_angles->vec);
   iVar2 = 0;
   (*((this_ptr->base).vtable._ub)->getBoundingBox)
             (&this_ptr->base,(CBoundingBox3D *)(auStack_c4 + 0x20));

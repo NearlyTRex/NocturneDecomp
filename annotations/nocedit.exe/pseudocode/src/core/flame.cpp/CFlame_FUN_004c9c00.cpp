@@ -9,13 +9,14 @@
 void __cdecl core_flame_cpp_CFlame_FUN_004c9c00(CFlame *this_ptr)
 
 {
+  CLocation *pCVar1;
   CHero *this_ptr_00;
   CCharacter *this_ptr_01;
-  float fVar1;
-  int iVar2;
+  float fVar2;
+  int iVar3;
   int extraout_EAX;
-  uint uVar3;
-  double dVar4;
+  uint uVar4;
+  double dVar5;
   float in_stack_00000008;
   ulonglong uStack_fc;
   double dStack_f4;
@@ -32,14 +33,14 @@ void __cdecl core_flame_cpp_CFlame_FUN_004c9c00(CFlame *this_ptr)
   float local_14;
   
   if (((this_ptr->on_event[0] != '\0') && (this_ptr->flame_state == 0)) &&
-     (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                        (g_CEventListPtr,this_ptr->on_event), iVar2 != 0)) {
+     (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                        (g_CEventListPtr,this_ptr->on_event), iVar3 != 0)) {
     if ((this_ptr->which_flame != 1) && (this_ptr->which_flame != 3)) {
-      iVar2 = 0;
+      iVar3 = 0;
       do {
-        iVar2 = iVar2 + 1;
+        iVar3 = iVar3 + 1;
         core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
-      } while (iVar2 < 10);
+      } while (iVar3 < 10);
     }
     this_ptr->unk4[0] = '\x01';
     this_ptr->unk4[1] = '\0';
@@ -48,8 +49,8 @@ void __cdecl core_flame_cpp_CFlame_FUN_004c9c00(CFlame *this_ptr)
     this_ptr->flame_state = 1;
   }
   if (((this_ptr->off_event[0] != '\0') && (this_ptr->flame_state != 0)) &&
-     ((iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                         (g_CEventListPtr,this_ptr->off_event), iVar2 != 0 &&
+     ((iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+                         (g_CEventListPtr,this_ptr->off_event), iVar3 != 0 &&
       (this_ptr->flame_state = 0, this_ptr->which_flame != 3)))) {
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
               (g_CFireEffectPtr,&(this_ptr->base).location.position,
@@ -61,9 +62,9 @@ void __cdecl core_flame_cpp_CFlame_FUN_004c9c00(CFlame *this_ptr)
     if (0x40ffffff < *(int *)this_ptr->unk1) {
       *(float *)this_ptr->unk1 = *(float *)this_ptr->unk1 + -8.0f;
     }
-    (this_ptr->base).orient.pitch = 0.0;
-    (this_ptr->base).orient.heading = 0.0;
-    (this_ptr->base).orient.bank = 0.0;
+    (this_ptr->base).orient.vec.x = 0.0;
+    (this_ptr->base).orient.vec.z = 0.0;
+    (this_ptr->base).orient.vec.y = 0.0;
     core_flame_cpp_CFlame_FUN_004cad90(this_ptr);
     if (*(int *)(this_ptr->unk4 + 0x10) == 0) {
       if (*(uint *)this_ptr->unk2 != 0) {
@@ -82,36 +83,37 @@ void __cdecl core_flame_cpp_CFlame_FUN_004c9c00(CFlame *this_ptr)
                   ((char *)((int)&uStack_fc + 4),"torch.wav * %f",SUB84((double)local_14,0),
                    (int)((ulonglong)(double)local_14 >> 0x20));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-        iVar2 = 2;
+        iVar3 = 2;
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-        sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar2);
-        uVar3 = (*((this_ptr->base).vtable._ub)->playSound)
+        sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar3);
+        uVar4 = (*((this_ptr->base).vtable._ub)->playSound)
                           (&this_ptr->base,(char *)((int)&uStack_fc + 4));
-        *(uint *)this_ptr->unk2 = uVar3;
+        *(uint *)this_ptr->unk2 = uVar4;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
     }
     if (this_ptr->burn_hero != 0) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_8c);
-      iVar2 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->hasCollision)
+      iVar3 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->hasCollision)
                         ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&SStack_8c);
-      if (iVar2 == 2) {
+      if (iVar3 == 2) {
         this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
-        fStack_34 = (this_ptr_00->base).base.location.position.x -
-                    (this_ptr->base).location.position.x;
+        pCVar1 = &(this_ptr->base).location;
+        fStack_34 = (this_ptr_00->base).base.location.position.x - (pCVar1->position).x;
         fStack_30 = (this_ptr_00->base).base.location.position.y -
                     (this_ptr->base).location.position.y;
         fStack_2c = (this_ptr_00->base).base.location.position.z -
                     (this_ptr->base).location.position.z;
         if (((float)-0.5 < fStack_30) && (fStack_30 < (float)SStack_8c.result_ptr)) {
           uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4c9e5a);
-          dVar4 = round
+          dVar5 = round
                             ((double)(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
                                      (float)0.25));
-          fVar1 = (float)SStack_8c.result_ptr + (float)(int)ROUND(dVar4);
-          uStack_fc = (double)fVar1;
-          if ((ABS(fStack_38) < fVar1) && (ABS(fStack_30) < fVar1)) {
-            core_charactr_cpp_CCharacter_FUN_0042b5b0(&this_ptr_00->base);
+          fVar2 = (float)SStack_8c.result_ptr + (float)(int)ROUND(dVar5);
+          uStack_fc = (double)fVar2;
+          if ((ABS(fStack_38) < fVar2) && (ABS(fStack_30) < fVar2)) {
+            core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
+                      (&this_ptr_00->base,&pCVar1->position,0,0.0,0x40000000,1);
           }
         }
       }
@@ -133,25 +135,26 @@ void __cdecl core_flame_cpp_CFlame_FUN_004c9c00(CFlame *this_ptr)
         this_ptr_01 = *(CCharacter **)
                        (g_CDemonSetPtr->unk4 + *(int *)(this_ptr->unk4 + 0xc) * 4 + 8000);
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_64);
-        iVar2 = (*((this_ptr_01->base).vtable._ub)->hasCollision)(&this_ptr_01->base,&SStack_64);
-        if (iVar2 == 2) {
-          fStack_28 = (this_ptr_01->base).location.position.x - (this_ptr->base).location.position.x
-          ;
-          fVar1 = (this_ptr_01->base).location.position.y - (this_ptr->base).location.position.y;
+        iVar3 = (*((this_ptr_01->base).vtable._ub)->hasCollision)(&this_ptr_01->base,&SStack_64);
+        if (iVar3 == 2) {
+          pCVar1 = &(this_ptr->base).location;
+          fStack_28 = (this_ptr_01->base).location.position.x - (pCVar1->position).x;
+          fVar2 = (this_ptr_01->base).location.position.y - (this_ptr->base).location.position.y;
           fStack_20 = (this_ptr_01->base).location.position.z - (this_ptr->base).location.position.z
           ;
           uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4ca068);
-          fStack_24 = fVar1;
-          dVar4 = round
+          fStack_24 = fVar2;
+          dVar5 = round
                             ((double)(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
                                      (float)0.25));
-          local_14 = (float)(int)ROUND(dVar4);
-          if (((float)-0.5 < fVar1) && (fStack_28 < SStack_64.cylinder_radius)) {
+          local_14 = (float)(int)ROUND(dVar5);
+          if (((float)-0.5 < fVar2) && (fStack_28 < SStack_64.cylinder_radius)) {
             fStack_18 = (float)(int)local_14;
-            fVar1 = (float)SStack_64.result_ptr + fStack_18;
-            dStack_f4 = (double)fVar1;
-            if ((ABS(fStack_2c) < fVar1) && (ABS(fStack_24) < fVar1)) {
-              core_charactr_cpp_CCharacter_FUN_0042b5b0(this_ptr_01);
+            fVar2 = (float)SStack_64.result_ptr + fStack_18;
+            dStack_f4 = (double)fVar2;
+            if ((ABS(fStack_2c) < fVar2) && (ABS(fStack_24) < fVar2)) {
+              core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
+                        (this_ptr_01,&pCVar1->position,0,0.0,0x40000000,0);
             }
           }
         }

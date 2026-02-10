@@ -1,10 +1,8 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_FUN_0042f9e0(CGame *game_ptr)
+; __cdecl float __cdecl core_charactr_cpp_FUN_0042f9e0(void)
 ;
-; Parameters:
-; CGame *          Stack[0x4]:4   game_ptr
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_FUN_00559b20 at 00559d48

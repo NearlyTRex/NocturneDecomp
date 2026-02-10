@@ -38,6 +38,12 @@
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
+        "category": "incompatible_types",
+        "column": 37,
+        "line": 122,
+        "message": "assigning to 'char *' from incompatible type 'byte[52]' (aka 'unsigned char[52]')"
+      },
+      {
         "category": "other",
         "column": 72,
         "line": 146,
@@ -63,57 +69,51 @@
       },
       {
         "category": "other",
-        "column": 28,
-        "line": 164,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 71,
-        "line": 164,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 208,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 211,
-        "message": "cannot cast from type 'float' to pointer type 'CTrigger *'"
-      },
-      {
-        "category": "other",
         "column": 21,
         "line": 212,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
+        "column": 20,
+        "line": 215,
+        "message": "cannot cast from type 'float' to pointer type 'CTrigger *'"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 216,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
         "column": 17,
-        "line": 221,
+        "line": 225,
         "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 228,
+        "line": 232,
         "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
       },
       {
         "category": "incompatible_types",
         "column": 26,
-        "line": 239,
+        "line": 243,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 246,
+        "line": 250,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 272,
+        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
       }
     ],
     "success": false,
@@ -121,12 +121,12 @@
   },
   "complexity": {
     "assembly_lines": 767,
-    "complexity_score": 749,
+    "complexity_score": 763,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
-    "pseudocode_lines": 299,
-    "suspect_count": 42,
+    "pseudocode_lines": 303,
+    "suspect_count": 43,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -135,7 +135,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 1066
+    "total_lines": 1070
   },
   "cross_references": [],
   "function": {
@@ -578,7 +578,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_fffffd6c",
-      "text": "CCharacter *in_stack_fffffd6c;",
+      "text": "char *in_stack_fffffd6c;",
       "type": "stack_param"
     },
     {
@@ -648,7 +648,7 @@
       "description": "Unresolved stack parameter",
       "line": 115,
       "match": "in_stack_fffffd6c",
-      "text": "in_stack_fffffd6c = (CCharacter *)auStack_240;",
+      "text": "in_stack_fffffd6c = auStack_240;",
       "type": "stack_param"
     },
     {
@@ -704,7 +704,7 @@
       "description": "Unresolved stack parameter",
       "line": 144,
       "match": "in_stack_fffffd6c",
-      "text": "in_stack_fffffd6c = (CCharacter *)g_CConsolePtr;",
+      "text": "in_stack_fffffd6c = (char *)g_CConsolePtr;",
       "type": "stack_param"
     },
     {
@@ -723,133 +723,140 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 163,
-      "match": "in_stack_fffffd70",
-      "text": "in_stack_fffffd70 = (CVector3f *)(auStack_b0 + 4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 164,
+      "line": 159,
       "match": "in_stack_fffffd6c",
-      "text": "in_stack_fffffd6c = pCVar3;",
+      "text": "in_stack_fffffd6c = \"CHero\";",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 166,
       "match": "in_stack_fffffd70",
+      "text": "in_stack_fffffd70 = (CVector3f *)(auStack_b0 + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 167,
+      "match": "in_stack_fffffd6c",
+      "text": "in_stack_fffffd6c = (char *)pCVar3;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 169,
+      "match": "in_stack_fffffd70",
       "text": "(pCVar3,in_stack_fffffd70,2.0,(SDamageInfo *)auStack_184);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 170,
+      "line": 173,
       "match": "in_stack_fffffd70",
       "text": "in_stack_fffffd70 = (CVector3f *)0x40a511;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 180,
+      "line": 184,
       "match": "1.4013e-45",
       "text": "if (fStack_38 == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 232,
+      "line": 236,
       "match": "SUB84",
       "text": "SUB84((double)fStack_144,0),(int)((ulonglong)(double)fStack_144 >> 0x20),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 249,
+      "line": 253,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 261,
+      "line": 265,
       "match": "._0_4_",
       "text": "auStack_20c._0_4_ = g_CDemonSetPtr->unk1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 268,
+      "line": 272,
       "match": "._0_4_",
       "text": "auStack_68._0_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 271,
+      "line": 275,
       "match": "._0_4_",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 271,
+      "line": 275,
       "match": "._0_4_",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 271,
+      "line": 275,
       "match": "SQRT",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 275,
+      "line": 279,
       "match": "._0_4_",
       "text": "fStack_38 = (float)auStack_68._0_4_ * fStack_38;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 277,
+      "line": 281,
       "match": "._4_4_",
       "text": "auStack_1f4._4_4_ = fStack_40;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 278,
+      "line": 282,
       "match": "._8_4_",
       "text": "auStack_1f4._8_4_ = fStack_3c;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 279,
+      "line": 283,
       "match": "._12_4_",
       "text": "auStack_1f4._12_4_ = fStack_38;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 284,
+      "line": 288,
       "match": "._20_4_",
       "text": "auStack_1f4._20_4_ = pCVar2->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 285,
+      "line": 289,
       "match": "._24_4_",
       "text": "auStack_1f4._24_4_ = pCVar2->y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 286,
+      "line": 290,
       "match": "._28_4_",
       "text": "auStack_1f4._28_4_ = pCVar2->z;",
       "type": "unknown_field"

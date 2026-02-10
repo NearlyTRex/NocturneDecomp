@@ -21,9 +21,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
   uint auStack_c0 [8];
   byte auStack_a0 [20];
   float fStack_8c;
-  uint uStack_7c;
-  uint uStack_78;
-  uint uStack_74;
+  CVector3f CStack_7c;
   CVector3f aCStack_70 [2];
   CVector3f CStack_58;
   float fStack_4c;
@@ -73,10 +71,12 @@ int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
             core_bodypart_cpp_FUN_0041b4e0();
             aCStack_70[0].z = fStack_8c + (float)0.40000000000000002;
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar1,&CStack_58,aCStack_70);
-            uStack_78 = 0;
-            uStack_74 = 0;
-            uStack_7c = 0x3fc00000;
-            iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0((CCharacter *)this_ptr);
+            CStack_7c.y = 0.0;
+            CStack_7c.z = 0.0;
+            CStack_7c.x = 1.5;
+            iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+                              ((CCharacter *)this_ptr,&CStack_58,(CPathMap *)0x0,&CStack_7c,0.0,0.0)
+            ;
           }
         }
         this_ptr_00 = &(this_ptr->base).base.model;

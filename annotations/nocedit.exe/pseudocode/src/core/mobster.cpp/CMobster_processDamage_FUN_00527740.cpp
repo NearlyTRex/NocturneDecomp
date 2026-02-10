@@ -34,7 +34,8 @@ core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageI
     if ((pSVar3->state_index != 5) && (pSVar3->state_index != 4)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,4,1);
-      (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
+      (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       if (*(int *)(this_ptr->unk2 + 8) == 0) {
         sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)this_ptr->unk2);
         uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

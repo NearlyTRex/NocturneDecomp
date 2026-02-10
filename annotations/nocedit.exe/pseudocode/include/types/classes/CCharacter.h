@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CDoor;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
@@ -33,18 +36,18 @@ typedef struct CCharacter {
     char talk_to_me_event[100]; // 0x2534
     struct CDemonActor* grabbed_by; // 0x2598
     int grabbed_type; // 0x259c
-    float field18_0x25a0; // 0x25a0
-    float field19_0x25a4; // 0x25a4
-    float field20_0x25a8; // 0x25a8
-    float field21_0x25ac; // 0x25ac
-    int field22_0x25b0; // 0x25b0
-    int field23_0x25b4; // 0x25b4
+    struct CDemonActor* walk_to_target; // 0x25a0
+    float walk_min_distance; // 0x25a4
+    float walk_max_distance; // 0x25a8
+    float walk_timeout; // 0x25ac
+    int is_walking; // 0x25b0
+    struct CDoor* door_target; // 0x25b4
     CVector3f field24_0x25b8; // 0x25b8
     int gesture_branch_root; // 0x25c4
     int gesture_motion_index; // 0x25c8
     float gesture_frame; // 0x25cc
     int field28_0x25d0; // 0x25d0
-    int field29_0x25d4; // 0x25d4
+    struct CDemonActor* lookat_target; // 0x25d4
     float look_at_yaw; // 0x25d8
     float look_at_pitch; // 0x25dc
     float look_at_weight; // 0x25e0
@@ -78,8 +81,8 @@ typedef struct CCharacter {
     int field60_0x2df4; // 0x2df4
     char field61_0x2df8[280]; // 0x2df8
     int fire_count; // 0x2f10
-    int field63_0x2f14; // 0x2f14
-    float field64_0x2f18; // 0x2f18
+    float fire_spread_rate; // 0x2f14
+    int fire_allow_hero; // 0x2f18
     SFire field65_0x2f1c[50]; // 0x2f1c
     CFlame field66_0x33cc[50]; // 0x33cc
     uint sfx_handle; // 0xb7d4

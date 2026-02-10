@@ -64,7 +64,7 @@ core_fire_cpp_CBulletHole_init_FUN_004bf7f0
               (&local_114,&this_ptr->position,&this_ptr->euler_angles);
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
               (&local_e4,&(this_ptr->actor_ptr->location).position,
-               (CVector3f *)&this_ptr->actor_ptr->orient);
+               &(this_ptr->actor_ptr->orient).vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_114,&local_e4,&local_84);
     pCVar3 = &local_84;
     pCVar4 = &local_b4;

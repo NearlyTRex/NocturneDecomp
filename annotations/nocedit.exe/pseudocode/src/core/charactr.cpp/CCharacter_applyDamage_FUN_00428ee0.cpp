@@ -14,7 +14,7 @@ core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0
   int iVar1;
   float fStack_c;
   
-  iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr);
+  iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
   if (0 < iVar1) {
     return;
   }

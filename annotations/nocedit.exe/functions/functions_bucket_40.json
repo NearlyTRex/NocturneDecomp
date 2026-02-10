@@ -6288,7 +6288,7 @@
         "start":"0041ca40"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40",
     "ret":"void",
@@ -6887,6 +6887,37 @@
             ]
           },
           "type":"CBoneGuy*"
+        },
+        {
+          "name":"hand_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"out_matrix",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x4f*"
         }
       ]
     }
@@ -8732,7 +8763,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_00428f40",
+    "name":"core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40",
     "ret":"void",
     "vars":{
       "locals":[
@@ -9361,6 +9392,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"velocity",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -9376,7 +9423,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_00429b40",
+    "name":"core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40",
     "ret":"void",
     "vars":{
       "locals":[
@@ -10258,7 +10305,57 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042bcc0",
+    "name":"core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CCharacter*"
+        },
+        {
+          "name":"part_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
+  },
+  {
+    "addr":"0042bf40",
+    "body":[
+      {
+        "end":"0042bf6f",
+        "size":48,
+        "start":"0042bf40"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40",
     "ret":"void",
     "vars":{
       "params":[
@@ -10279,50 +10376,6 @@
           "type":"CCharacter*"
         }
       ]
-    }
-  },
-  {
-    "addr":"0042bf40",
-    "body":[
-      {
-        "end":"0042bf6f",
-        "size":48,
-        "start":"0042bf40"
-      }
-    ],
-    "conv":"__cdecl",
-    "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042bf40",
-    "ret":"int",
-    "vars":{
-      "params":[
-        {
-          "name":"this_ptr",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"CCharacter*"
-        }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
     }
   },
   {
@@ -10471,6 +10524,38 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"param_3",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -10486,7 +10571,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042e840",
+    "name":"core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840",
     "ret":"float",
     "vars":{
       "locals":[
@@ -10523,6 +10608,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"state_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -10649,6 +10750,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"layer_action_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -10664,7 +10781,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042ea40",
+    "name":"core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40",
     "ret":"void",
     "vars":{
       "locals":[
@@ -10909,6 +11026,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -10924,7 +11057,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042ec40",
+    "name":"core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40",
     "ret":"int",
     "vars":{
       "locals":[
@@ -11009,6 +11142,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"event_id",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ],
       "ret_storage":{
@@ -11100,27 +11249,9 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042f9c0",
+    "name":"core_charactr.cpp_FUN_0042f9c0",
     "ret":"int",
     "vars":{
-      "params":[
-        {
-          "name":"this_ptr",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"CCharacter*"
-        }
-      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -80351,7 +80482,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_isDamageable_FUN_005c67c0",
+    "name":"core_stranger.cpp_CStranger_getDeathState_FUN_005c67c0",
     "ret":"int",
     "vars":{
       "params":[

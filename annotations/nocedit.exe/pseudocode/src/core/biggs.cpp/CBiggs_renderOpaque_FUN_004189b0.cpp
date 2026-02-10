@@ -24,7 +24,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
     iVar2 = this_ptr->morphing;
     (this_ptr->base).base.field43_0x2620 = 1;
     if (iVar2 == 0) {
-      core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
     }
     else {
       core_morph_cpp_FUN_0052b600();

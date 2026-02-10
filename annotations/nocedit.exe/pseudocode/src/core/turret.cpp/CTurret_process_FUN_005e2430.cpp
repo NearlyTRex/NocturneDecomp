@@ -9,7 +9,7 @@
 void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,float delta_time)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   uint uVar2;
   CEventList *pCVar3;
   float fVar4;
@@ -43,11 +43,11 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   (this_ptr->base).unk2[3] = -1;
   switch(iVar5) {
   case 0:
-    pCVar1 = &(this_ptr->base).base.orient;
-    if (pCVar1 != (COrientation *)this_ptr->unk1) {
-      pCVar1->pitch = *(float *)this_ptr->unk1;
-      (this_ptr->base).base.orient.bank = *(float *)(this_ptr->unk1 + 4);
-      (this_ptr->base).base.orient.heading = *(float *)(this_ptr->unk1 + 8);
+    pUVar1 = &(this_ptr->base).base.orient;
+    if (pUVar1 != (UOrientationVector *)this_ptr->unk1) {
+      (pUVar1->vec).x = *(float *)this_ptr->unk1;
+      (this_ptr->base).base.orient.vec.y = *(float *)(this_ptr->unk1 + 4);
+      (this_ptr->base).base.orient.vec.z = *(float *)(this_ptr->unk1 + 8);
     }
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->activate_event);
@@ -185,9 +185,9 @@ LAB_005e24c7:
       this_ptr->state = 0;
       this_ptr->timer = 0.0;
       if (local_18 != local_1c) {
-        ((COrientation *)local_18)->pitch = *(float *)local_1c;
-        (this_ptr->base).base.orient.bank = *(float *)(this_ptr->unk1 + 4);
-        (this_ptr->base).base.orient.heading = *(float *)(this_ptr->unk1 + 8);
+        local_18->x = *(float *)local_1c;
+        (this_ptr->base).base.orient.vec.y = *(float *)(this_ptr->unk1 + 4);
+        (this_ptr->base).base.orient.vec.z = *(float *)(this_ptr->unk1 + 8);
       }
     }
     break;
@@ -197,7 +197,7 @@ LAB_005e24c7:
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::process - invalid state");
   }
   if (-1 < *(int *)(this_ptr->base).unk2) {
-    (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc7)();
+    (*(((this_ptr->base).base.vtable._uc)->_uc).releaseFromGrab)((CCharacter *)this_ptr);
   }
   fVar4 = *(float *)((this_ptr->base).unk2 + 0xc);
   iVar5 = *(int *)(this_ptr->unk5 + 0x50);

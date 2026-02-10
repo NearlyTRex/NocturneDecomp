@@ -28,7 +28,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_charactr.cpp_CCharacter_FUN_0042d360
+;   core_charactr.cpp_CCharacter_isCarryingAnything_FUN_0042d360
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     AND ESP,0xfffffff8                  ; 004f3129
     MOV EDX,dword ptr [EBP + 0x14]      ; 004f312c
     PUSH EDX                            ; 004f312f
-    CALL core_charactr.cpp_CCharacter_FUN_0042d360 ; 004f3130
-        ;   XREF to: 0042d360 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042d360(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_isCarryingAnything_FUN_0042d360 ; 004f3130
+        ;   XREF to: 0042d360 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_isCarryingAnything_FUN_0042d360(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004f3135
     TEST EAX,EAX                        ; 004f3138
     JNZ 0x004f31b0                      ; 004f313a

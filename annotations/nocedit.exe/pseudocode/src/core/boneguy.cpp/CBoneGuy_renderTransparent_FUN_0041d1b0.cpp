@@ -25,7 +25,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d1b0(CBoneGuy *t
     pCVar1 = g_CDemonRendererPtr2;
     g_CDemonSetPtr->unk_lighting_param2 = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar1,0xffff);
-    core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
+    core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
     pCVar1 = g_CDemonRendererPtr2;
     g_CDemonSetPtr->unk_lighting_param2 = 0;
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(pCVar1);

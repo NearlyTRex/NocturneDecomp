@@ -8,7 +8,7 @@
 ; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; XREF[1]:
-;   core_bugs.cpp_CBugs_isDamageable_FUN_00425620 at 00425633
+;   core_bugs.cpp_CBugs_getDeathState_FUN_00425620 at 00425633
 ;
 ; *****************************************************************************
 

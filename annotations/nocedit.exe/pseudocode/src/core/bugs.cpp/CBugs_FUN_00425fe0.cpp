@@ -86,7 +86,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425fe0(CBugs *this_ptr)
       dest_position = &(this_ptr->base).base.base.location;
       iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (this_ptr_02,&dest_position->position,&CStack_64,
-                         (this_ptr->base).base.base.unk1);
+                         (this_ptr->base).base.base.direction_hint);
       if (iVar2 != 0) {
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_bc,&CStack_64);
         CStack_94.z = 2.0f * in_stack_00000008;
@@ -99,7 +99,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425fe0(CBugs *this_ptr)
         fStack_3c = *pfStack_1c;
         local_18 = &(this_ptr->base).base.base.location.position.z;
         fStack_38 = *local_18;
-        core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&CStack_7c);
         fStack_70 = (dest_position->position).x;
         fStack_6c = *pfStack_1c;
         fStack_68 = *local_18;
@@ -139,7 +139,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425fe0(CBugs *this_ptr)
              (CVector3f *)(*(int *)(this_ptr->unk3 + 0x830) + 0x30));
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             (&CStack_14c,&(this_ptr->base).base.base.location.position,
-             (CVector3f *)&(this_ptr->base).base.base.orient);
+             &(this_ptr->base).base.base.orient.vec);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_11c,&CStack_14c,&CStack_ec);
   pCVar4 = &CStack_ec;
   piVar6 = (this_ptr->model).part_visibility_flags + 1;

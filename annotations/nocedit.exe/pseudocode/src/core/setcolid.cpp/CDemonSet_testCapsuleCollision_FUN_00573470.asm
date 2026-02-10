@@ -42,7 +42,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_charactr.cpp_CCharacter_FUN_00428f40 at 004291bc
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 at 004291bc
 ;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e7301
 ;   core_stranger.cpp_CStranger_FUN_005c2850 at 005c2e1e
 ;   core_zombie.cpp_CZombie_process_FUN_005f9470 at 005fa414

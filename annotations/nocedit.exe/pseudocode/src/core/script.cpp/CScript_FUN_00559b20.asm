@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 00559d41 (CONDITIONAL_JUMP)  ; LAB_00559d41
     PUSH EAX                            ; 00559b3e | g_CGameInstance
     CALL core_charactr.cpp_FUN_0042f9e0 ; 00559b3f
-        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f9e0(CGame * game_ptr)
+        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_FUN_0042f9e0()
     MOV dword ptr [ESP + 0x20],EAX      ; 00559b44
     FLD float ptr [ESP + 0x20]          ; 00559b48
     FDIV float ptr [0x00641794]         ; 00559b4c | FLOAT_00641794
@@ -260,7 +260,7 @@ section .text
         ;   Label: LAB_00559d41
     MOV dword ptr [0x031061e0],EDX      ; 00559d42 | INT_031061e0
     CALL core_charactr.cpp_FUN_0042f9e0 ; 00559d48
-        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f9e0(CGame * game_ptr)
+        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_FUN_0042f9e0()
     MOV dword ptr [ESP + 0x20],EAX      ; 00559d4d
     FLD float ptr [ESP + 0x20]          ; 00559d51
     FDIV float ptr [0x00641794]         ; 00559d55 | FLOAT_00641794

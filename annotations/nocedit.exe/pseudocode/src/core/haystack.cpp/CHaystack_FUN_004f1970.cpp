@@ -9,13 +9,14 @@
 void __cdecl core_haystack_cpp_CHaystack_FUN_004f1970(CHaystack *this_ptr)
 
 {
+  uint event_id;
   int iVar1;
   float in_stack_00000008;
   
   do {
-    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&(this_ptr->base).base.model.motion_controller);
-    switch(iVar1) {
+    event_id = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                         (&(this_ptr->base).base.model.motion_controller);
+    switch(event_id) {
     case 0x65:
       core_haystack_cpp_CHaystack_FUN_004f1ab0(this_ptr);
       iVar1 = *(int *)(this_ptr->unk + 4);
@@ -51,7 +52,7 @@ LAB_004f19bc:
       }
       break;
     default:
-      core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,event_id);
     }
     if (in_stack_00000008 <= 0.0) {
       return;

@@ -11,6 +11,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db9d0(CTentacle *this_ptr)
 {
   CDemonActor *pCVar1;
   CVector3f *pCVar2;
+  UOrientationVector *orientation;
   int iVar3;
   float *pfVar4;
   CMatrix3x4f *pCVar5;
@@ -46,7 +47,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db9d0(CTentacle *this_ptr)
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_13c,&(this_ptr->base).base.base.location.position,
-             (CVector3f *)&(this_ptr->base).base.base.orient);
+             &(this_ptr->base).base.base.orient.vec);
   pCVar6 = &local_13c;
   core_tentacle_cpp_CTentacle_FUN_005dbb70(this_ptr);
   pfVar4 = local_4c;
@@ -77,7 +78,10 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db9d0(CTentacle *this_ptr)
   (pCVar1->location).position.x = pCVar2->x;
   (pCVar1->location).position.y = pCVar2->y;
   (pCVar1->location).position.z = pCVar2->z;
-  core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_10c,&local_1c);
-  core_charactr_cpp_CCharacter_FUN_0042ded0((CCharacter *)(this_ptr->base).victim);
+  orientation = (UOrientationVector *)
+                core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_10c,&local_1c)
+  ;
+  core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0
+            ((CCharacter *)(this_ptr->base).victim,orientation);
   return 1;
 }

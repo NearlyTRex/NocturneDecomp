@@ -9,15 +9,15 @@
 void __cdecl core_scat_cpp_CScat_FUN_00557d20(CScat *this_ptr)
 
 {
-  int iVar1;
+  uint event_id;
   CCharacter *this_ptr_00;
   float in_stack_00000008;
   SDamageInfo SStack_50;
   
   do {
-    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&(this_ptr->base).base.model.motion_controller);
-    if (iVar1 == 100) {
+    event_id = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                         (&(this_ptr->base).base.model.motion_controller);
+    if (event_id == 100) {
       this_ptr_00 = (CCharacter *)
                     core_actor_cpp_castToClassHash_FUN_0040c790
                               ((this_ptr->base).base.grabbed_by,g_CEnemyClassInfo.name_hash);
@@ -30,7 +30,7 @@ void __cdecl core_scat_cpp_CScat_FUN_00557d20(CScat *this_ptr)
       }
     }
     else {
-      core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,event_id);
     }
   } while (0.0 < in_stack_00000008);
   return;

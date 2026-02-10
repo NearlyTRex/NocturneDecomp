@@ -41,8 +41,8 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)&local_c8);
   switch(this_ptr->door_type) {
   case 0:
-    (this_ptr->base).orient.pitch = 0.0;
-    (this_ptr->base).orient.heading = 0.0;
+    (this_ptr->base).orient.vec.x = 0.0;
+    (this_ptr->base).orient.vec.z = 0.0;
     (this_ptr->base).location.position.x = (this_ptr->orig_pos).x;
     (this_ptr->base).location.position.y = (this_ptr->orig_pos).y;
     (this_ptr->base).location.position.z = (this_ptr->orig_pos).z;
@@ -52,7 +52,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     else {
       fVar2 = (this_ptr->orig_orient).y - this_ptr->param * (float)1.57079632675;
     }
-    (this_ptr->base).orient.bank = fVar2;
+    (this_ptr->base).orient.vec.y = fVar2;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
     local_c8 = (double)fStack_b4;
     if (ABS(fStack_c0) <= ABS(fStack_b4)) {
@@ -105,7 +105,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
                        (&this_ptr->base,&CStack_60,&CStack_84);
     break;
   case 3:
-    (this_ptr->base).orient.pitch = this_ptr->param * (float)1.57079632675;
+    (this_ptr->base).orient.vec.x = this_ptr->param * (float)1.57079632675;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
     fStack_a8 = fStack_c0 + fStack_b4;
     fStack_a4 = fStack_bc + fStack_b0;

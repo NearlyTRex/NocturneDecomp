@@ -85,9 +85,9 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042fae0
-;   core_charactr.cpp_FUN_0042faf0
-;   core_charactr.cpp_FUN_0042fb00
+;   core_charactr.cpp_copyFloat_FUN_0042fae0
+;   core_charactr.cpp_copyFloat_FUN_0042faf0
+;   core_charactr.cpp_copyFloat_FUN_0042fb00
 ;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
 ;   core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
 ;   core_dcube.cpp_CDemonCube_setBounds_FUN_00456a90
@@ -675,22 +675,22 @@ section .text
     MOV dword ptr [EBP + -0x62],EAX     ; 00495875
     LEA EAX,[EBP + -0x5e]               ; 00495878
     PUSH EAX                            ; 0049587b
-    CALL core_charactr.cpp_FUN_0042fb00 ; 0049587c
-        ;   XREF to: 0042fb00 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042fb00()
+    CALL core_charactr.cpp_copyFloat_FUN_0042fb00 ; 0049587c
+        ;   XREF to: 0042fb00 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042fb00(float * dst, float * src)
     ADD ESP,0x8                         ; 00495881
     LEA EAX,[EBX + 0x4]                 ; 00495884
     PUSH EAX                            ; 00495887
     LEA EAX,[EBP + -0x5a]               ; 00495888
     PUSH EAX                            ; 0049588b
-    CALL core_charactr.cpp_FUN_0042faf0 ; 0049588c
-        ;   XREF to: 0042faf0 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042faf0()
+    CALL core_charactr.cpp_copyFloat_FUN_0042faf0 ; 0049588c
+        ;   XREF to: 0042faf0 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042faf0(float * dst, float * src)
     ADD ESP,0x8                         ; 00495891
     LEA EAX,[EBX + 0x8]                 ; 00495894
     PUSH EAX                            ; 00495897
     LEA EAX,[EBP + -0x56]               ; 00495898
     PUSH EAX                            ; 0049589b
-    CALL core_charactr.cpp_FUN_0042fae0 ; 0049589c
-        ;   XREF to: 0042fae0 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042fae0()
+    CALL core_charactr.cpp_copyFloat_FUN_0042fae0 ; 0049589c
+        ;   XREF to: 0042fae0 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042fae0(float * dst, float * src)
     MOV EAX,dword ptr [EBP + 0x42]      ; 004958a1
     ADD ESP,0x8                         ; 004958a4
     ADD EAX,0x10                        ; 004958a7
@@ -698,24 +698,24 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004958ab
     LEA EAX,[EBP + -0x52]               ; 004958ae
     PUSH EAX                            ; 004958b1
-    CALL core_charactr.cpp_FUN_0042fb00 ; 004958b2
-        ;   XREF to: 0042fb00 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042fb00()
+    CALL core_charactr.cpp_copyFloat_FUN_0042fb00 ; 004958b2
+        ;   XREF to: 0042fb00 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042fb00(float * dst, float * src)
     MOV EAX,dword ptr [EBP + 0x76]      ; 004958b7
     ADD ESP,0x8                         ; 004958ba
     ADD EAX,0x4                         ; 004958bd
     PUSH EAX                            ; 004958c0
     LEA EAX,[EBP + -0x4e]               ; 004958c1
     PUSH EAX                            ; 004958c4
-    CALL core_charactr.cpp_FUN_0042faf0 ; 004958c5
-        ;   XREF to: 0042faf0 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042faf0()
+    CALL core_charactr.cpp_copyFloat_FUN_0042faf0 ; 004958c5
+        ;   XREF to: 0042faf0 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042faf0(float * dst, float * src)
     MOV EAX,dword ptr [EBP + 0x76]      ; 004958ca
     ADD ESP,0x8                         ; 004958cd
     ADD EAX,0x8                         ; 004958d0
     PUSH EAX                            ; 004958d3
     LEA EAX,[EBP + -0x4a]               ; 004958d4
     PUSH EAX                            ; 004958d7
-    CALL core_charactr.cpp_FUN_0042fae0 ; 004958d8
-        ;   XREF to: 0042fae0 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042fae0()
+    CALL core_charactr.cpp_copyFloat_FUN_0042fae0 ; 004958d8
+        ;   XREF to: 0042fae0 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042fae0(float * dst, float * src)
     MOV EAX,dword ptr [EBP + 0x3e]      ; 004958dd
     MOV EDX,dword ptr [EBP + 0x42]      ; 004958e0
     MOV dword ptr [EBP + 0x26],EAX      ; 004958e3
@@ -792,22 +792,22 @@ section .text
     MOV dword ptr [EBP + -0x46],EAX     ; 00495986
     LEA EAX,[EBP + -0x42]               ; 00495989
     PUSH EAX                            ; 0049598c
-    CALL core_charactr.cpp_FUN_0042fb00 ; 0049598d
-        ;   XREF to: 0042fb00 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042fb00()
+    CALL core_charactr.cpp_copyFloat_FUN_0042fb00 ; 0049598d
+        ;   XREF to: 0042fb00 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042fb00(float * dst, float * src)
     ADD ESP,0x8                         ; 00495992
     LEA EAX,[EBX + 0x4]                 ; 00495995
     PUSH EAX                            ; 00495998
     LEA EAX,[EBP + -0x3e]               ; 00495999
     PUSH EAX                            ; 0049599c
-    CALL core_charactr.cpp_FUN_0042faf0 ; 0049599d
-        ;   XREF to: 0042faf0 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042faf0()
+    CALL core_charactr.cpp_copyFloat_FUN_0042faf0 ; 0049599d
+        ;   XREF to: 0042faf0 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042faf0(float * dst, float * src)
     ADD ESP,0x8                         ; 004959a2
     LEA EAX,[EBX + 0x8]                 ; 004959a5
     PUSH EAX                            ; 004959a8
     LEA EAX,[EBP + -0x3a]               ; 004959a9
     PUSH EAX                            ; 004959ac
-    CALL core_charactr.cpp_FUN_0042fae0 ; 004959ad
-        ;   XREF to: 0042fae0 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042fae0()
+    CALL core_charactr.cpp_copyFloat_FUN_0042fae0 ; 004959ad
+        ;   XREF to: 0042fae0 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042fae0(float * dst, float * src)
     MOV EAX,dword ptr [EBP + 0x66]      ; 004959b2
     ADD ESP,0x8                         ; 004959b5
     ADD EAX,0x10                        ; 004959b8
@@ -815,24 +815,24 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004959bc
     LEA EAX,[EBP + -0x36]               ; 004959bf
     PUSH EAX                            ; 004959c2
-    CALL core_charactr.cpp_FUN_0042fb00 ; 004959c3
-        ;   XREF to: 0042fb00 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042fb00()
+    CALL core_charactr.cpp_copyFloat_FUN_0042fb00 ; 004959c3
+        ;   XREF to: 0042fb00 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042fb00(float * dst, float * src)
     MOV EAX,dword ptr [EBP + 0x76]      ; 004959c8
     ADD ESP,0x8                         ; 004959cb
     ADD EAX,0x4                         ; 004959ce
     PUSH EAX                            ; 004959d1
     LEA EAX,[EBP + -0x32]               ; 004959d2
     PUSH EAX                            ; 004959d5
-    CALL core_charactr.cpp_FUN_0042faf0 ; 004959d6
-        ;   XREF to: 0042faf0 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042faf0()
+    CALL core_charactr.cpp_copyFloat_FUN_0042faf0 ; 004959d6
+        ;   XREF to: 0042faf0 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042faf0(float * dst, float * src)
     MOV EAX,dword ptr [EBP + 0x76]      ; 004959db
     ADD ESP,0x8                         ; 004959de
     ADD EAX,0x8                         ; 004959e1
     PUSH EAX                            ; 004959e4
     LEA EAX,[EBP + -0x2e]               ; 004959e5
     PUSH EAX                            ; 004959e8
-    CALL core_charactr.cpp_FUN_0042fae0 ; 004959e9
-        ;   XREF to: 0042fae0 (UNCONDITIONAL_CALL)  ; void * core_charactr.cpp_FUN_0042fae0()
+    CALL core_charactr.cpp_copyFloat_FUN_0042fae0 ; 004959e9
+        ;   XREF to: 0042fae0 (UNCONDITIONAL_CALL)  ; float * core_charactr.cpp_copyFloat_FUN_0042fae0(float * dst, float * src)
     MOV EAX,dword ptr [EBP + 0x5e]      ; 004959ee
     MOV EDX,dword ptr [EBP + 0x66]      ; 004959f1
     MOV dword ptr [EBP + 0x4a],EAX      ; 004959f4

@@ -11,6 +11,6 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_004235c0(CLightActor *this_ptr)
 {
   float in_stack_00000008;
   
-  (this_ptr->base).base.orient.heading = in_stack_00000008;
+  (this_ptr->base).base.orient.vec.z = in_stack_00000008;
   return;
 }

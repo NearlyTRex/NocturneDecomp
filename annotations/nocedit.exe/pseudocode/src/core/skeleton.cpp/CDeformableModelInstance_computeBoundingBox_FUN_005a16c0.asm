@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_charactr.cpp_CCharacter_FUN_0042d530 at 0042d552
+;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530 at 0042d552
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 at 005e620b
 ;
 ; Called Functions:

@@ -13,7 +13,7 @@
     "pseudocode_lines": 21,
     "suspect_count": 2,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
     "total_lines": 75
   },
@@ -251,7 +251,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 (CCharacter *this_ptr,float delta_time,float param_3)"
   },
   "function_calls": [
     {
@@ -265,14 +265,14 @@
       "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0"
     },
     {
-      "addr": "0042d090",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042d090"
-    },
-    {
       "addr": "0042d530",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042d530"
+      "name": "core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530"
+    },
+    {
+      "addr": "0042d090",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090"
     },
     {
       "addr": "0043c2d0",
@@ -312,10 +312,10 @@
     "pcode_op_count": 197
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -324,23 +324,37 @@
         "offset": 4,
         "size": 4,
         "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_0000000c",
-      "text": "float in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "(CCharacter *this_ptr,float delta_time,float param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000000c",
-      "text": "(CVector3f *)&(this_ptr->base).orient,in_stack_0000000c,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_3",
+      "text": "param_3,this_ptr->closest_distance_threshold,&this_ptr->model);",
+      "type": "unnamed_param"
     }
   ]
 }

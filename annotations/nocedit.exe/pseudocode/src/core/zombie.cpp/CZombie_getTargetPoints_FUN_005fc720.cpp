@@ -34,7 +34,7 @@ core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_ptr,CVector3f
   local_18 = 0;
   this_ptr_00 = &(this_ptr->base).base.model;
   do {
-    switch((local_18 + (this_ptr->base).base.base.unk1) % 4) {
+    switch((local_18 + (this_ptr->base).base.base.direction_hint) % 4) {
     case 0:
       if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x30)] != 0) {
         bone_index = *(int *)(this_ptr->unk4 + 0x18);

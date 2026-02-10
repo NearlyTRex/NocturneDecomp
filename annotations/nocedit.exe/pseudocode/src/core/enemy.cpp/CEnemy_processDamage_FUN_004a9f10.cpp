@@ -12,7 +12,7 @@ core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *d
 {
   CDemonActor *pCVar1;
   
-  (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc9)();
+  (*(((this_ptr->base).base.vtable._uc)->_uc).releaseVictim)(&this_ptr->base);
   core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(&this_ptr->base,damage_info);
   if (0.0 < damage_info->damage_amount) {
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790

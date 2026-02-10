@@ -9,6 +9,7 @@
 # - easy_wins.txt - Prioritized action list
 # - stack_pattern_analysis.txt - Stack pattern correlation
 # - param_mismatch_analysis.txt - Parameter count mismatch analysis
+# - pass_by_value_report.txt - Pass-by-value struct argument detection
 # - virtual_files.csv - CSV for graphing
 # - functions.csv - CSV for analysis
 # - completion_pie.svg - Overall completion pie chart
@@ -2268,6 +2269,50 @@ def generate_summary_report(functions, files, output_path):
         log_info("Failed to write functions-by-complexity list: %s" % str(e))
 
 
+def generate_pass_by_value_report(functions, output_path):
+    """Generate report on pass-by-value struct arguments detected from assembly.
+
+    Detects the pattern where structs are bulk-copied onto the stack
+    (via REP MOVSD with MOV EDI,ESP) before a CALL, indicating pass-by-value.
+    Report is grouped by callee function.
+
+    Args:
+        functions: List of function data dicts (with _asm_path)
+        output_path: Directory to write report
+    """
+    from ghidra_annotations.annotations.pseudocode.pass_by_value import (
+        analyze_single_file, format_report
+    )
+
+    all_call_sites = []
+    total_movsd = 0
+    pbv_count = 0
+
+    for func in functions:
+        asm_path = func.get('_asm_path', '')
+        if not asm_path or not os.path.exists(asm_path):
+            continue
+        try:
+            sites, file_movsd, file_pbv = analyze_single_file(asm_path)
+            all_call_sites.extend(sites)
+            total_movsd += file_movsd
+            pbv_count += file_pbv
+        except Exception:
+            pass
+
+    report_text = format_report(all_call_sites, total_movsd, pbv_count)
+
+    report_path = os.path.join(output_path, "pass_by_value_report.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote pass-by-value report: %s" % report_path)
+    except Exception as e:
+        log_info("Failed to write pass-by-value report: %s" % str(e))
+
+    return report_text
+
+
 def generate_analysis_report(pseudocode_src_dir, output_path):
     """Generate all analysis reports from exported function JSON files.
 
@@ -2299,6 +2344,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_param_mismatch_report(functions, output_path)
     generate_compilation_summary_report(functions, output_path)
     generate_compilation_detailed_report(functions, output_path)
+    generate_pass_by_value_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
 
     # Generate SVG graphs for README

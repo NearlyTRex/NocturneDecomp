@@ -49,9 +49,9 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
     }
-    core_charactr_cpp_CCharacter_FUN_0042b0e0((CCharacter *)this_ptr);
+    core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0((CCharacter *)this_ptr);
     return (this_ptr->base).base.field43_0x2620;
   }
-  iVar1 = core_charactr_cpp_CCharacter_FUN_0042b0e0((CCharacter *)this_ptr);
+  iVar1 = core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0((CCharacter *)this_ptr);
   return iVar1;
 }

@@ -51,9 +51,9 @@ void __cdecl CWerewolf::archive(CWerewolf *this_ptr);
 // Address: 005f1ac0
 void __cdecl CWerewolf::processDamage(CWerewolf *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_werewolf.cpp_CWerewolf_isDamageable_FUN_005f1db0
+// Original: core_werewolf.cpp_CWerewolf_getDeathState_FUN_005f1db0
 // Address: 005f1db0
-int __cdecl CWerewolf::isDamageable(CWerewolf *this_ptr);
+int __cdecl CWerewolf::getDeathState(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_getTargetPoints_FUN_005f1df0
 // Address: 005f1df0

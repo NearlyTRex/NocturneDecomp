@@ -16,7 +16,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
   SDamageInfo *in_stack_00000008;
   int force_immediate;
   
-  if (((this_ptr->base).unk1 & 0x7fffffff) != 0) {
+  if (ABS((this_ptr->base).unk1) != 0.0) {
     in_stack_00000008->damage_amount = 0.0;
   }
   if (g_CGamePtr->debug_flag_1 != 0) {
@@ -25,7 +25,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
   if (g_CGamePtr->allow_damage_flag == 0) {
     in_stack_00000008->damage_amount = 0.0;
   }
-  (this_ptr->base).unk1 = (uint)0.5f;
+  (this_ptr->base).unk1 = 0.5f;
   fVar3 = (this_ptr->base).base.hit_points - in_stack_00000008->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar3;

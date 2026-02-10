@@ -1,0 +1,403 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 16,
+        "line": 43,
+        "message": "C-style cast from 'UOrientationVector *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 44,
+        "message": "C-style cast from 'CLocation *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 46,
+        "message": "C-style cast from 'CMatrix3x4f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 49,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 190,
+    "complexity_score": 350,
+    "cross_reference_count": 5,
+    "function_call_count": 7,
+    "global_count": 0,
+    "pseudocode_lines": 125,
+    "suspect_count": 21,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_param",
+      "unaffected_reg"
+    ],
+    "total_lines": 315
+  },
+  "cross_references": [
+    {
+      "addr": "0042dfc0",
+      "from_addr": "0042dff4",
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f800",
+      "from_addr": "0042f825",
+      "name": "core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f3e0",
+      "from_addr": "0042f717",
+      "name": "core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d5550",
+      "from_addr": "004d556c",
+      "name": "core_gabriela.cpp_CGabriella_FUN_004d5550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00525840",
+      "from_addr": "00525889",
+      "name": "core_mobster.cpp_CMobster_process_FUN_00525840",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042d090",
+    "address_range": [
+      [
+        "0042d090",
+        "0042d2fa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090 (CCharacter *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408c10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "005f54c0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0"
+    },
+    {
+      "addr": "005f6110",
+      "is_variadic": false,
+      "name": "core_xform.cpp_getTranslation_FUN_005f6110"
+    },
+    {
+      "addr": "005f6210",
+      "is_variadic": false,
+      "name": "core_xform.cpp_inverse_FUN_005f6210"
+    },
+    {
+      "addr": "005f7140",
+      "is_variadic": false,
+      "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140"
+    },
+    {
+      "addr": "005f5690",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690"
+    },
+    {
+      "addr": "005f4f10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 167,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 8,
+      "CALL": 9,
+      "CALLIND": 1,
+      "CBRANCH": 11,
+      "COPY": 227,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 109,
+      "INT_AND": 62,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 56,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_MULT": 14,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 19,
+      "INT_SEXT": 6,
+      "INT_SLESS": 25,
+      "INT_SUB": 55,
+      "INT_XOR": 1,
+      "INT_ZEXT": 20,
+      "LOAD": 49,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 54,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 835
+  },
+  "stack_frame": {
+    "frame_size": 460,
+    "local_size": 452,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c0",
+        "offset": -448,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0042d09c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_fffffd80",
+      "text": "CMatrix3x4f *in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_fffffd80",
+      "text": "(this_ptr,(int)local_18,in_stack_fffffd80);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "((CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_244);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "(&CStack_184,(CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_124);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 108,
+      "match": "unaff_EBP",
+      "text": "iVar3 = *(int *)(unaff_EBP + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_fffffd80",
+      "text": "in_stack_fffffd80 = (CMatrix3x4f *)0x42d1f9;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 115,
+      "match": "unaff_EBP",
+      "text": "iVar3 = *(int *)(unaff_EBP + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 122,
+      "match": "unaff_EBP",
+      "text": "(*(CDemonActor **)(unaff_EBP + 8));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(CVector3f *)((int)",
+      "text": "local_18 = (CVector3f *)((int)&local_18->x + 1);",
+      "type": "pointer_cast"
+    }
+  ]
+}

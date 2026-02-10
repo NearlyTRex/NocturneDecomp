@@ -175,9 +175,9 @@ void __cdecl CStranger(CStranger *this_ptr);
 // Address: 005c4370
 void __cdecl CStranger::aimLeftPistol(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c48b0
+// Original: core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
 // Address: 005c48b0
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::processDamage(CStranger *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c4c20
 // Address: 005c4c20
@@ -185,7 +185,7 @@ void __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170
 // Address: 005c5170
-void __cdecl CStranger::getCarryObjToBodyXForm(CStranger *this_ptr);
+void __stack2_esi CStranger::getCarryObjToBodyXForm(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c51c0
 // Address: 005c51c0
@@ -223,21 +223,21 @@ int __cdecl CStranger(CStranger *this_ptr);
 // Address: 005c6660
 void __cdecl CStranger(CStranger *this_ptr,int unk);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c66a0
+// Original: core_stranger.cpp_CStranger_getGrabbed_FUN_005c66a0
 // Address: 005c66a0
-int __cdecl CStranger(CStranger *this_ptr);
+int __cdecl CStranger::getGrabbed(CStranger *this_ptr,CDemonActor *grabber,int grab_type);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c6750
 // Address: 005c6750
 void __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_isDamageable_FUN_005c67c0
+// Original: core_stranger.cpp_CStranger_getDeathState_FUN_005c67c0
 // Address: 005c67c0
-int __cdecl CStranger::isDamageable(CStranger *this_ptr);
+int __cdecl CStranger::getDeathState(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c67f0
+// Original: core_stranger.cpp_CStranger_dropCarriedObject_FUN_005c67f0
 // Address: 005c67f0
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::dropCarriedObject(CStranger *this_ptr,int hand_index,CVector3f *drop_direction);
 
 // Original: core_stranger.cpp_CStranger_drop_FUN_005c6850
 // Address: 005c6850

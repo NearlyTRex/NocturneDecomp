@@ -48,7 +48,7 @@ LAB_005e6e2e:
     core_morph_cpp_FUN_0052b640();
     core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)this_ptr->unk3);
   }
-  core_charactr_cpp_CCharacter_FUN_0042a420((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420((CCharacter *)this_ptr);
   if (DAT_02f43978 != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {

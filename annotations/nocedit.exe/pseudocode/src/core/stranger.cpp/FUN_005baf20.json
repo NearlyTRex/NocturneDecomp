@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 87,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param",
-      "suspect_float"
+      "stack_param"
     ],
     "total_lines": 65
   },
@@ -109,15 +108,8 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "fVar1 = in_stack_00000004[2].orient.pitch;",
+      "text": "uVar1 = *(uint *)&in_stack_00000004[2].orient;",
       "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 18,
-      "match": "1.12104e-44",
-      "text": "else if (((uint)fVar1 < 8) || (fVar1 == 1.12104e-44)) {",
-      "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",

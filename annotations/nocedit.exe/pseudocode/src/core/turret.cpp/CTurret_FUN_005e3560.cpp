@@ -65,7 +65,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e3560(CTurret *this_ptr)
     }
   }
   else if (*(float *)((this_ptr->base).unk2 + 0xc) <= 0.0) {
-    (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc4)();
+    (*(((this_ptr->base).base.vtable._uc)->_uc).isGrabbable)((CCharacter *)this_ptr);
   }
   return;
 }

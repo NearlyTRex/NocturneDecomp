@@ -20,7 +20,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(CStranger *this_ptr)
   
   if (0 < (this_ptr->base).base.cloth_list.count) {
     bVar3 = false;
-    iVar6 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).isDamageable)((CCharacter *)this_ptr);
+    iVar6 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
     bVar4 = false;
     if (iVar6 < 2) {
       if (((this_ptr->base).base.layer_action_index == 0) &&

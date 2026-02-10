@@ -40,7 +40,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e48a0(CGargoyle *this_ptr)
         local_24.z = pCVar5->z;
       }
       fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                        ((((this_ptr->base).victim)->orient).bank - local_24.y);
+                        ((((this_ptr->base).victim)->orient).vec.y - local_24.y);
       if ((fVar6 < (float)-0.31415926534999999) || ((float)0.31415926534999999 < fVar6)) {
         return 1;
       }

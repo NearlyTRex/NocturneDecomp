@@ -10,18 +10,14 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(CStranger *this_ptr)
 
 {
   CDemonActor *pCVar1;
-  CDemonActor *pCVar2;
   
   pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
-  pCVar2 = this_ptr->weapon;
-  this_ptr->unk6[4] = '\0';
-  this_ptr->unk6[5] = '\0';
-  this_ptr->unk6[6] = -0x80;
-  this_ptr->unk6[7] = '@';
-  if (pCVar1 == pCVar2) {
+  this_ptr->unk8 = 4.0;
+  if (pCVar1 == this_ptr->weapon) {
     this_ptr->weapon = (CDemonActor *)0x0;
   }
-  (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
+  (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+            ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             (&(this_ptr->base).base.model.motion_controller,0,1);
   return;

@@ -76,7 +76,8 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
-  local_14 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+  local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                       ((CCharacter *)this_ptr,6);
   if ((float)0.98999999999999999 < local_14) {
     pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
     start_pos = (CVector3f *)0x0;
@@ -114,37 +115,46 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   (*((this_ptr->weapon->vtable)._ub)->renderOpaque)(this_ptr->weapon);
   if (this_ptr->weapon == (CDemonActor *)0x0) {
 switchD_005c331f_caseD_3:
+    iVar3 = 0;
   }
   else {
-    switch(this_ptr->weapon[2].orient.pitch) {
+    switch(this_ptr->weapon[2].orient.vec.x) {
     case 0.0:
     case 7.00649e-45:
+      iVar3 = 2;
       break;
     case 1.4013e-45:
+      iVar3 = 4;
       break;
     case 2.8026e-45:
+      iVar3 = 5;
       break;
     default:
       goto switchD_005c331f_caseD_3;
     case 5.60519e-45:
+      iVar3 = 7;
       break;
     case 9.80909e-45:
+      iVar3 = 8;
     }
   }
-  local_14 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+  local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                       ((CCharacter *)this_ptr,iVar3);
   bVar2 = (float)0.94999999999999996 < local_14;
-  if ((this_ptr->weapon[2].orient.pitch == 1.4013e-45) &&
+  if ((this_ptr->weapon[2].orient.vec.x == 1.4013e-45) &&
      ((this_ptr->base).base.layer_action_index == 8)) {
     bVar2 = true;
 LAB_005c336f:
-    (*(((this_ptr->weapon->vtable)._uc)->_uc).cfunc7)();
+    (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).releaseFromGrab)
+              ((CCharacter *)this_ptr->weapon);
   }
   else if (bVar2) goto LAB_005c336f;
-  if (this_ptr->weapon[2].orient.pitch == 0.0) {
+  if (this_ptr->weapon[2].orient.vec.x == 0.0) {
     core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
     (*((this_ptr->weapon->vtable)._ub)->renderOpaque)(this_ptr->weapon);
     if (bVar2) {
-      (*(((this_ptr->weapon->vtable)._uc)->_uc).cfunc7)();
+      (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).releaseFromGrab)
+                ((CCharacter *)this_ptr->weapon);
     }
   }
   core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);

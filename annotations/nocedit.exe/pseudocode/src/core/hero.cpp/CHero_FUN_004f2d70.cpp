@@ -48,7 +48,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2d70(CHero *this_ptr)
         local_18 = core_door_cpp_CDoor_getMoveType_FUN_00481070(this_ptr_00);
         if (local_18 != 0) {
           if (local_18 == 1) {
-            core_door_cpp_FUN_0047fcf0();
+            core_door_cpp_FUN_0047fcf0((int)this_ptr_00);
             return local_18;
           }
           this_ptr->door_to_open = (CDemonActor *)this_ptr_00;

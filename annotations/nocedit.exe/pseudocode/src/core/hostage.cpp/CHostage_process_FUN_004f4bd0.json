@@ -2,40 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 10,
-        "line": 180,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 408,
+        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
-        "column": 66,
-        "line": 180,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 514,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 514,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 685,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 685,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 48,
+        "line": 695,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -43,17 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 821,
+    "complexity_score": 919,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 49,
-    "pseudocode_lines": 701,
-    "suspect_count": 11,
+    "pseudocode_lines": 719,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
+      "stack_param",
+      "suspect_float",
       "undefined_data"
     ],
-    "total_lines": 2357
+    "total_lines": 2375
   },
   "cross_references": [],
   "function": {
@@ -121,39 +99,39 @@
       "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0"
     },
     {
-      "addr": "00428f40",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
-    },
-    {
-      "addr": "00429820",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429820"
-    },
-    {
-      "addr": "00429870",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
-    },
-    {
       "addr": "0042c5f0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c5f0"
+      "name": "core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0"
     },
     {
-      "addr": "0042ca70",
+      "addr": "00428f40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ca70"
-    },
-    {
-      "addr": "0042ec40",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40"
     },
     {
       "addr": "0042ede0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ede0"
+      "name": "core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0"
+    },
+    {
+      "addr": "00429820",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_preProcess_FUN_00429820"
+    },
+    {
+      "addr": "00429870",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
+    },
+    {
+      "addr": "0042ec40",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40"
+    },
+    {
+      "addr": "0042ca70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70"
     },
     {
       "addr": "00427db0",
@@ -1133,81 +1111,130 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_fffffe40",
+      "text": "ulonglong in_stack_fffffe40;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_fffffe40",
+      "text": "while (this_ptr_01 = (CDeformableModelInstance *)in_stack_fffffe40, 0.0 < delta_time) {",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
+      "line": 157,
       "match": "ABS",
       "text": "if ((float)5 < ABS(local_10c)) goto LAB_004f4dd2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 158,
+      "line": 159,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_108 * local_108 + local_110 * local_110);",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 176,
+      "match": "in_stack_fffffe40",
+      "text": "in_stack_fffffe40 = CONCAT44(pCVar18,&g_HeroActors[g_LocalHeroIndex]->inventory);",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 227,
+      "line": 176,
+      "match": "CONCAT44",
+      "text": "in_stack_fffffe40 = CONCAT44(pCVar18,&g_HeroActors[g_LocalHeroIndex]->inventory);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 234,
       "match": "SQRT",
       "text": "SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc))) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 243,
+      "line": 249,
       "match": "SQRT",
-      "text": ", SQRT(fVar3 * fVar3 + fVar8 * fVar8) < (float)40)) {",
+      "text": "SQRT(fVar3 * fVar3 + fVar5 * fVar5) < (float)40)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 402,
-      "match": "SQRT",
-      "text": "fVar8 = SQRT(local_9c * local_9c + local_a4 * local_a4);",
+      "line": 401,
+      "match": "SUB84",
+      "text": "this_ptr_01 = SUB84((double)fVar5,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 430,
+      "line": 417,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT(local_9c * local_9c + local_a4 * local_a4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 445,
       "match": "ABS",
       "text": "(ABS((this_ptr->base).base.turn_angle_accumulator) < (float)0.017453292519444399)) {",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 532,
+      "match": "1.4013e-45",
+      "text": "local_20 = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 585,
+      "line": 603,
       "match": "SQRT",
-      "text": "SQRT((double)local_a8 * (double)local_a8 +",
+      "text": "SQRT((double)local_b0.z * (double)local_b0.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 590,
+      "line": 608,
       "match": "SQRT",
-      "text": "SQRT(dVar11 * dVar11 + dVar10 * dVar10 + dVar9 * dVar9) <=",
+      "text": "SQRT(dVar11 * dVar11 + dVar10 * dVar10 + dVar9 * dVar9) <= dVar23 * 0.40000000000000002))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 637,
+      "line": 655,
       "match": "DAT_02db8888",
       "text": "(&pCVar2->motion_controller,DAT_02db8888,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 642,
+      "line": 660,
       "match": "DAT_02db8888",
       "text": "(pCVar2,DAT_02db8888,local_58,*(float *)(this_ptr->unk4 + 4),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 645,
+      "line": 663,
       "match": "DAT_02db8888",
       "text": "(pCVar2,DAT_02db8888,local_58,*(float *)(this_ptr->unk4 + 4),",
       "type": "undefined_data"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 695,
+      "match": "8.40779e-45",
+      "text": "(pCVar19->model).transformed_vertices[0x4f].z = 8.40779e-45;",
+      "type": "suspect_float"
     }
   ],
   "vtable_info": {

@@ -11,7 +11,7 @@ int __cdecl core_lightgun_cpp_CLightGun_FUN_00505a20(CLightGun *this_ptr)
 {
   int iVar1;
   
-  iVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).cfunc3)();
+  iVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
   if (iVar1 == 0) {
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0((CDemonActor *)this_ptr,"CGhoul");
     if (iVar1 != 0) {

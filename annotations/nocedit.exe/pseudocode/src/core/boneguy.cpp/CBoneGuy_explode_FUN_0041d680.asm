@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_charactr.cpp_CCharacter_FUN_0042d060
+;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;
@@ -47,8 +47,8 @@ section .text
     SUB ESP,0x38                        ; 0041d684
     MOV EDX,dword ptr [ESP + 0x4c]      ; 0041d687
     PUSH EDX                            ; 0041d68b
-    CALL core_charactr.cpp_CCharacter_FUN_0042d060 ; 0041d68c
-        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d060(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060 ; 0041d68c
+        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0041d691
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0041d694
     ADD EAX,0x158                       ; 0041d698

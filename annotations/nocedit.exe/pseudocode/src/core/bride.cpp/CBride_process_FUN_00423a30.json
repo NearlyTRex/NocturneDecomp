@@ -4,86 +4,116 @@
       {
         "category": "other",
         "column": 12,
-        "line": 75,
+        "line": 78,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 75,
+        "line": 78,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "incompatible_types",
-        "column": 24,
-        "line": 83,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 104,
+        "column": 23,
+        "line": 86,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
+        "column": 22,
+        "line": 99,
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 21,
+        "line": 107,
+        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 120,
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
+      },
+      {
+        "category": "other",
         "column": 10,
-        "line": 116,
+        "line": 121,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 116,
+        "line": 121,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 136,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 86,
-        "line": 136,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 53,
+        "line": 139,
+        "message": "C-style cast from 'CBride *' to 'float' is not allowed"
       },
       {
         "category": "incompatible_types",
-        "column": 24,
-        "line": 151,
+        "column": 25,
+        "line": 164,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 166,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "column": 22,
+        "line": 182,
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 166,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 22,
+        "line": 184,
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 186,
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 188,
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 191,
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 192,
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 200,
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 79,
-        "line": 199,
+        "line": 213,
         "message": "use of undeclared identifier 'stack0xfffffe0c'"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 225,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 225,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 35,
+        "line": 214,
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
       }
     ],
     "success": false,
@@ -91,17 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 417,
+    "complexity_score": 568,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 15,
-    "pseudocode_lines": 357,
-    "suspect_count": 5,
+    "pseudocode_lines": 383,
+    "suspect_count": 17,
     "suspect_types": [
       "extra_output",
+      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 982
+    "total_lines": 1008
   },
   "cross_references": [],
   "function": {
@@ -160,39 +191,39 @@
       "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0"
     },
     {
-      "addr": "00428f40",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
-    },
-    {
       "addr": "004297e0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004297e0"
+      "name": "core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0"
+    },
+    {
+      "addr": "00428f40",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40"
     },
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
+      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
     },
     {
       "addr": "0042b670",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b670"
-    },
-    {
-      "addr": "0042b760",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b760"
-    },
-    {
-      "addr": "0042b810",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b810"
+      "name": "core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042b670"
     },
     {
       "addr": "0042ec40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40"
+    },
+    {
+      "addr": "0042b810",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042b810"
+    },
+    {
+      "addr": "0042b760",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042b760"
     },
     {
       "addr": "004286e0",
@@ -756,38 +787,122 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
+      "line": 11,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 13,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_fffffe10",
+      "text": "char *in_stack_fffffe10;",
+      "type": "stack_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 67,
+      "line": 70,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_fffffe10",
+      "text": "in_stack_fffffe10 = (char *)delta_time;",
+      "type": "stack_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 112,
+      "line": 117,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) {",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 150,
+      "match": "in_stack_fffffe10",
+      "text": "in_stack_fffffe10 = *(char **)(this_ptr->unk + 0x28);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 151,
+      "match": "in_stack_fffffe10",
+      "text": "iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)in_stack_fffffe10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 153,
+      "match": "in_stack_fffffe10",
+      "text": "in_stack_fffffe10 = *(char **)(this_ptr->unk + 0x2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 154,
+      "match": "in_stack_fffffe10",
+      "text": "iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)in_stack_fffffe10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 156,
+      "match": "in_stack_fffffe10",
+      "text": "in_stack_fffffe10 = \"ub-attack?.wav\";",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 192,
+      "line": 206,
       "match": "&stack0xfffffe0c",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe0c);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 207,
+      "match": "in_stack_fffffe10",
+      "text": "in_stack_fffffe10 = (char *)core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 208,
+      "match": "in_stack_fffffe10",
+      "text": "local_14 = in_stack_fffffe10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 317,
+      "match": "in_stack_fffffe10",
+      "text": "pCVar10,pCVar12,min_distance,(float)in_stack_fffffe10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 319,
+      "match": "in_stack_fffffe10",
+      "text": "in_stack_fffffe10 = (char *)0x1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 366,
+      "match": "in_stack_fffffe10",
+      "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe10);",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

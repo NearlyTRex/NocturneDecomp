@@ -21,7 +21,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_00559960(CScript *this_ptr)
       this_ptr->script_state = 0;
     }
     iVar4 = 0;
-    fVar2 = (float)core_charactr_cpp_FUN_0042f9e0(g_CGamePtr);
+    fVar2 = core_charactr_cpp_FUN_0042f9e0();
     g_ScriptInputFlag = 0;
     do {
       if (((fVar2 <= 0.0) || (this_ptr->script_state == 2)) || (this_ptr->script_pause_flag != 0))
@@ -53,7 +53,7 @@ LAB_005599d3:
     }
     this_ptr_00 = (CCharacter *)this_ptr->who_is_speaking;
     if (this_ptr_00 != (CCharacter *)0x0) {
-      iVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).isDamageable)(this_ptr_00);
+      iVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if (0 < iVar4) {
         sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->current_sfx_handle);
         return;

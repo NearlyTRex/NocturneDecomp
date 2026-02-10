@@ -33,7 +33,7 @@ void __cdecl CVampireBoss::process(CVampireBoss *this_ptr,float delta_time);
 
 // Original: core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80
 // Address: 005e6b80
-void __cdecl CVampireBoss::getCarryObjToBodyXForm(CVampireBoss *this_ptr);
+void __stack2_esi CVampireBoss::getCarryObjToBodyXForm(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_vampboss.cpp_CVampireBoss_FUN_005e6ca0
 // Address: 005e6ca0
@@ -51,9 +51,9 @@ void __cdecl CVampireBoss::archive(CVampireBoss *this_ptr);
 // Address: 005e7030
 void __cdecl CVampireBoss::processDamage(CVampireBoss *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_vampboss.cpp_CVampireBoss_isDamageable_FUN_005e7270
+// Original: core_vampboss.cpp_CVampireBoss_getDeathState_FUN_005e7270
 // Address: 005e7270
-int __cdecl CVampireBoss::isDamageable(CVampireBoss *this_ptr);
+int __cdecl CVampireBoss::getDeathState(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_CVampireBoss_getTargetPoints_FUN_005e7280
 // Address: 005e7280

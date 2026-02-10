@@ -1,35 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 4,
-        "line": 43,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 43,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 400,
-    "complexity_score": 189,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 10,
-    "pseudocode_lines": 129,
+    "pseudocode_lines": 126,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float"
     ],
-    "total_lines": 529
+    "total_lines": 526
   },
   "cross_references": [
     {
@@ -279,37 +266,37 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 49,
+      "line": 47,
       "match": "1.4013e-45",
       "text": "(g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 49,
+      "line": 47,
       "match": "3.57331e-43",
       "text": "(g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 75,
       "match": "SQRT",
-      "text": "fVar1 = SQRT(CStack_78.z * CStack_78.z + CStack_78.x * CStack_78.x + CStack_78.y * CStack_78.y);",
+      "text": "fVar1 = SQRT(CStack_74.z * CStack_74.z + CStack_74.x * CStack_74.x + CStack_74.y * CStack_74.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 79,
       "match": "SQRT",
-      "text": "(dVar2 = (double)(SQRT(fVar1 * fVar1 - fStack_20 * fStack_20) / fVar1), dVar2 < 1.0)) &&",
+      "text": "(dVar2 = (double)(SQRT(fVar1 * fVar1 - fStack_1c * fStack_1c) / fVar1), dVar2 < 1.0)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 93,
       "match": "SQRT",
-      "text": "(dVar2 = (double)(SQRT(fStack_bc * fStack_bc - local_9c.x * local_9c.x) / fStack_bc),",
+      "text": "(dVar2 = (double)(SQRT(fVar1 * fVar1 - CStack_98.y * CStack_98.y) / fVar1), dVar2 < 1.0)) &&",
       "type": "decompiler_intrinsic"
     }
   ]

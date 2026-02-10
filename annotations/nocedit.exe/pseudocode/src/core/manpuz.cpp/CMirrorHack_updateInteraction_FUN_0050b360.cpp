@@ -12,18 +12,18 @@ core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360
           )
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   
   if (interaction_state->action_multiplier != 0.0) {
     interaction_state->action_multiplier = 0.0;
     return 0;
   }
   if (interaction_state->stop_flag == 0) {
-    pCVar1 = &(this_ptr->base).orient;
-    if (pCVar1 != user_orientation) {
-      pCVar1->pitch = user_orientation->pitch;
-      (this_ptr->base).orient.bank = user_orientation->bank;
-      (this_ptr->base).orient.heading = user_orientation->heading;
+    pUVar1 = &(this_ptr->base).orient;
+    if ((COrientation *)pUVar1 != user_orientation) {
+      (pUVar1->vec).x = user_orientation->pitch;
+      (this_ptr->base).orient.vec.y = user_orientation->bank;
+      (this_ptr->base).orient.vec.z = user_orientation->heading;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
     return 1;

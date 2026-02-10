@@ -7,7 +7,7 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_charactr.cpp_CCharacter_FUN_0042c580 at 0042c5c1
+;   core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580 at 0042c5c1
 ;   core_motion.cpp_CMotionController_render_FUN_0052e700 at 0052e824
 ;   core_msnedit.cpp_FUN_00536e20 at 00536f16
 ;

@@ -110,7 +110,8 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
     pCVar2 = &local_174;
   }
   else {
-    core_charactr_cpp_CCharacter_FUN_0042d300((CCharacter *)this_ptr);
+    core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300
+              ((CCharacter *)this_ptr,in_stack_00000008,&local_144);
     pCVar2 = &local_144;
   }
   pfVar3 = local_294;

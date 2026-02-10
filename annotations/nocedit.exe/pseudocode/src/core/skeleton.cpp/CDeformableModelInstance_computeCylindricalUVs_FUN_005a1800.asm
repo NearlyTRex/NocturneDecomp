@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042b061
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042b061
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_0064efd4

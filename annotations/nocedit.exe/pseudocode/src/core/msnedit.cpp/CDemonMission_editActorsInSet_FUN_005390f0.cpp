@@ -37,7 +37,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
   CKeys *in_stack_fffff638;
   char *pcVar15;
   CQuaternion4f *label_offset;
-  COrientation *param5;
+  UOrientationVector *param5;
   CDemonSet *in_stack_fffff698;
   CDemonSet *pCVar16;
   char local_60c [300];
@@ -276,10 +276,10 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
             local_170._8_4_ = local_a4;
           }
           pCVar5 = this_ptr->selected_actor;
-          if ((COrientation *)(local_170 + 0xc) != &pCVar5->orient) {
-            local_170._12_4_ = (pCVar5->orient).pitch;
-            local_160 = (pCVar5->orient).bank;
-            local_15c = (pCVar5->orient).heading;
+          if ((UOrientationVector *)(local_170 + 0xc) != &pCVar5->orient) {
+            local_170._12_4_ = (pCVar5->orient).vec.x;
+            local_160 = (pCVar5->orient).vec.y;
+            local_15c = (pCVar5->orient).vec.z;
           }
           local_158 = 28.0;
         }
@@ -301,7 +301,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
             local_160 = local_78;
             local_15c = local_74;
           }
-          local_160 = local_160 + (this_ptr->selected_actor->orient).bank;
+          local_160 = local_160 + (this_ptr->selected_actor->orient).vec.y;
           core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                     (&local_198,(CVector3f *)(local_170 + 0xc));
           local_94.z = -local_18;

@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042b045
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042b045
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 at 005a01a8
 ;
 ; Referenced Globals:

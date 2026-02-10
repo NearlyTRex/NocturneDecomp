@@ -47,7 +47,9 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
   this_ptr_00->unk[0x2a] = '\0';
   this_ptr_00->unk[0x2b] = '\0';
   *(uint *)(this_ptr_00->unk + 0x18) = *(uint *)(this_ptr_00->unk + 0x1c);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,0,1,"draw_stand2coatPocket",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,1,2,"draw_coatPocket2aimPistols",0);
   return this_ptr_00;
 }

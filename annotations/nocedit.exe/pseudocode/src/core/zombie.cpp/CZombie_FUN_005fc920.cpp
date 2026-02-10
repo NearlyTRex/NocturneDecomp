@@ -16,6 +16,6 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fc920(CZombie *this_ptr)
   if (iVar1 != 0) {
     return 1;
   }
-  iVar1 = core_charactr_cpp_CCharacter_FUN_0042bf30((CCharacter *)this_ptr);
+  iVar1 = core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30((CCharacter *)this_ptr);
   return iVar1;
 }

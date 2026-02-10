@@ -61,7 +61,8 @@ void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr)
         (float)6) {
       iVar6 = (*(((g_HeroActors[iVar5]->base).base.vtable._ue)->_ue).enemyfunc3)();
       if ((iVar6 == 0) &&
-         (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0((CCharacter *)this_ptr), uVar8 != 0)) {
+         (uVar8 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+                            ((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {
         if (uVar8 < 2) {
           (this_ptr->base).action_bindings.walk_key = 1;
         }
@@ -76,10 +77,10 @@ void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr)
                               ((CDemonActor *)g_HeroActors[iVar5]);
       iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_64,
-                         (this_ptr->base).base.base.unk1);
+                         (this_ptr->base).base.base.direction_hint);
       if (iVar6 != 0) {
         fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                              (CStack_64.y - (this_ptr->base).base.base.orient.bank);
+                              (CStack_64.y - (this_ptr->base).base.base.orient.vec.y);
         fVar2 = fStack_14 * (float)0.31830988619288902 * (float)4;
         local_24 = -fStack_1c;
         *(float *)((this_ptr->base).unk2 + 4) = fVar2;
@@ -126,7 +127,7 @@ void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr)
       local_70.z = pCVar7->z;
     }
     fStack_54 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (local_70.y - (this_ptr->base).base.base.orient.bank);
+                          (local_70.y - (this_ptr->base).base.base.orient.vec.y);
     if (local_20 < fStack_54) {
       fStack_54 = local_20;
     }

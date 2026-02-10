@@ -21,7 +21,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
   CFlameCan *this_ptr_00;
   int extraout_EAX_00;
   CDemonActor *unaff_retaddr;
-  CCharacter *in_stack_fffffd6c;
+  char *in_stack_fffffd6c;
   CVector3f *in_stack_fffffd70;
   ulonglong uStack_26c;
   byte auStack_240 [52];
@@ -119,7 +119,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
                                 (pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);
               if (iVar4 != 0) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_240);
-                in_stack_fffffd6c = (CCharacter *)auStack_240;
+                in_stack_fffffd6c = auStack_240;
                 (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                           (this_ptr,hit_type,(SDamageInfo *)in_stack_fffffd6c,(CDemonActor *)pCVar6)
                 ;
@@ -148,7 +148,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffd84);
                 (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                           (this_ptr,hit_type,(SDamageInfo *)&stack0xfffffd84,(CDemonActor *)pCVar5);
-                in_stack_fffffd6c = (CCharacter *)g_CConsolePtr;
+                in_stack_fffffd6c = (char *)g_CConsolePtr;
                 engine_console_cpp_CConsole_printf_FUN_00441890
                           (g_CConsolePtr,"%s causing %5.2f damage to %s\n",this_ptr,
                            (double)uStack_26c._4_4_,pCVar5);
@@ -160,15 +160,18 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
             }
           }
         }
-        else if (((pCStack_1c == (CDemonActor *)0x0) ||
-                 (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).cfunc3)(), iVar4 == 0)) ||
-                (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCStack_1c,"CHero"),
-                iVar4 == 0)) {
+        else {
+          if ((pCStack_1c != (CDemonActor *)0x0) &&
+             (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).canWalk)(pCVar3), iVar4 != 0)) {
+            in_stack_fffffd6c = "CHero";
+            iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCStack_18,"CHero");
+            if (iVar4 != 0) goto LAB_0040a3e0;
+          }
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)(auStack_1c0 + 0x2c));
           (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                     (this_ptr,hit_type,(SDamageInfo *)(auStack_1c0 + 0x2c),(CDemonActor *)pCVar3);
           in_stack_fffffd70 = (CVector3f *)(auStack_b0 + 4);
-          in_stack_fffffd6c = pCVar3;
+          in_stack_fffffd6c = (char *)pCVar3;
           (*(((pCVar3->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
                     (pCVar3,in_stack_fffffd70,2.0,(SDamageInfo *)auStack_184);
           uStack_26c = (double)fStack_170;
@@ -181,6 +184,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
           }
         }
       }
+LAB_0040a3e0:
       fStack_24 = (float)((int)fStack_24 + 4);
     }
   }
@@ -199,7 +203,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
                core_actor_cpp_castToClassHash_FUN_0040c790
                          (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
       if ((pCVar3 != (CCharacter *)0x0) &&
-         (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).isDamageable)(pCVar3), 0 < iVar4)) {
+         (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).getDeathState)(pCVar3), 0 < iVar4)) {
         pCVar3 = (CCharacter *)0x0;
       }
       pCVar6 = (CGlass *)
@@ -261,8 +265,8 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
         }
       }
       else if (((pCStack_1c == (CDemonActor *)0x0) ||
-               (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).cfunc3)(), iVar4 == 0)) ||
-              (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCStack_1c,"CHero"),
+               (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).canWalk)(pCVar3), iVar4 == 0)) ||
+              (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCStack_18,"CHero"),
               iVar4 == 0)) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_20c);
         auStack_20c._0_4_ = g_CDemonSetPtr->unk1;

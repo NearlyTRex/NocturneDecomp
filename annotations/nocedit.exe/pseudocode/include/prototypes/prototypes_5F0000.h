@@ -40,7 +40,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1230(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005f1980(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005f1ac0(CWerewolf *this_ptr,SDamageInfo *damage_info);
-int __cdecl core_werewolf_cpp_CWerewolf_isDamageable_FUN_005f1db0(CWerewolf *this_ptr);
+int __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_005f1db0(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0 (CWerewolf *this_ptr,CVector3f *out_points_array);
 void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010 (CWerewolf *this_ptr,CActorProperty *property,char *output_buffer);
@@ -167,7 +167,7 @@ CDemonActorType * __cdecl core_zombie_cpp_CZombie_getActorType_FUN_005f8fd0(CZom
 CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,float delta_time);
-void __cdecl core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr);
+void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr);
 int __cdecl core_zombie_cpp_CZombie_FUN_005fbd00(CZombie *this_ptr);
 int __cdecl core_zombie_cpp_CZombie_FUN_005fbda0(CZombie *this_ptr);

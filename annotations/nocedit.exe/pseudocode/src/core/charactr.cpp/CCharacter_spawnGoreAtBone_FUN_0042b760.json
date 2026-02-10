@@ -1,0 +1,196 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 28,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 2,
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 95
+  },
+  "cross_references": [
+    {
+      "addr": "00423a30",
+      "from_addr": "004244b1",
+      "name": "core_bride.cpp_CBride_process_FUN_00423a30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e6600",
+      "from_addr": "004e80ab",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004e6600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005f9470",
+      "from_addr": "005f9f83",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042b760",
+    "address_range": [
+      [
+        "0042b760",
+        "0042b801"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042b760",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760 (CCharacter *this_ptr,int part_index,int bone_index,float chance)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408e80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
+    },
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "004edaa0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_FUN_004edaa0"
+    },
+    {
+      "addr": "0059fb00",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.087719298245614,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 46,
+      "INT_ADD": 30,
+      "INT_AND": 23,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 24,
+      "INT_XOR": 1,
+      "LOAD": 12,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 25
+    },
+    "pcode_op_count": 233
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "part_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "chance",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   count
 ;
 ; XREF[18]:
-;   core_charactr.cpp_CCharacter_FUN_00428f40 at 004294c3
-;   core_charactr.cpp_CCharacter_FUN_0042c580 at 0042c5a8
+;   core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580 at 0042c5a8
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 at 004294c3
 ;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a82c0
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab860
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e171e

@@ -56,7 +56,7 @@ section .text
     PUSH EBP                            ; 004f2f0b
     MOV ESI,0x1                         ; 004f2f0c
     CALL core_door.cpp_FUN_0047fcf0     ; 004f2f11
-        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0047fcf0()
+        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0047fcf0(int event_id)
     ADD ESP,0x4                         ; 004f2f16
     MOV dword ptr [EBX + 0x1fb9c],0x0   ; 004f2f19
     MOV EAX,ESI                         ; 004f2f23

@@ -16,7 +16,7 @@
 ;   core_bride.cpp_CBride_setup_FUN_00423810 at 0042391c
 ;   core_bugs.cpp_CBugs_FUN_004268e0 at 00426b5d
 ;   core_bugs.cpp_CBugs_FUN_00427400 at 00427500
-;   core_charactr.cpp_CCharacter_FUN_0042a3f0 at 0042a3ff
+;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 at 0042ba1d
 ;   ... and 47 more
 ;
 ; Referenced Globals:

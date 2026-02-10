@@ -25,7 +25,7 @@ core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00(CDemonMission
                           core_actor_cpp_castToClassHash_FUN_0040c790
                                     (actor_ptr,g_CEnemyClassInfo.name_hash),
            this_ptr_00 != (CEnemy *)0x0 &&
-           (iVar1 = (*(((this_ptr_00->base).base.vtable._uc)->_uc).isDamageable)
+           (iVar1 = (*(((this_ptr_00->base).base.vtable._uc)->_uc).getDeathState)
                               ((CCharacter *)this_ptr_00), iVar1 != 0))) {
       iVar2 = iVar2 + 1;
       actor_ptr = actor_ptr->next_actor;

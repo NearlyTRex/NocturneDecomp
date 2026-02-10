@@ -22,7 +22,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_batcreat.cpp_CBatCreature_FUN_00415dd0
-;   core_charactr.cpp_CCharacter_FUN_0042b5b0
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_fire.cpp_CFireEffect_FUN_004c79d0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -85,8 +85,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 004160a6
     PUSH EAX                            ; 004160aa
     PUSH ESI                            ; 004160ab
-    CALL core_charactr.cpp_CCharacter_FUN_0042b5b0 ; 004160ac
-        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b5b0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 ; 004160ac
+        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, float spread_rate, ...)
     ADD ESP,0x18                        ; 004160b1
     PUSH EDI                            ; 004160b4
         ;   Label: LAB_004160b4

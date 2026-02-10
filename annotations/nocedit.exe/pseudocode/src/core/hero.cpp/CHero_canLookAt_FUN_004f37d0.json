@@ -1,0 +1,155 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 59,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 24,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 90
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f37d0",
+    "address_range": [
+      [
+        "004f37d0",
+        "004f388b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_canLookAt_FUN_004f37d0",
+    "signature": "int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004f37d0(CHero *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0062ecc6",
+      "name": "DOUBLE_0062ecc6",
+      "type": "double",
+      "value": "0.100000000000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.1020408163265305,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 6,
+      "CALLIND": 1,
+      "CBRANCH": 13,
+      "COPY": 84,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_ABS": 3,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "INT_ADD": 19,
+      "INT_AND": 37,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 12,
+      "INT_LESS": 9,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 11,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "INT_ZEXT": 12,
+      "LOAD": 18,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 348
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ABS",
+      "text": "((float)0.10000000000000001 < ABS(*(float *)this_ptr->unk2))))))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ABS",
+      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 4)) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ABS",
+      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 8)) ||",
+      "type": "decompiler_intrinsic"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGabriella",
+        "offset": 84,
+        "vtable_addr": "0065e804"
+      },
+      {
+        "class_name": "CIcePick",
+        "offset": 84,
+        "vtable_addr": "00660034"
+      },
+      {
+        "class_name": "CMoloch",
+        "offset": 84,
+        "vtable_addr": "00661944"
+      },
+      {
+        "class_name": "CColonel",
+        "offset": 84,
+        "vtable_addr": "0065bd54"
+      },
+      {
+        "class_name": "CScat",
+        "offset": 84,
+        "vtable_addr": "00662464"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 10
+  }
+}

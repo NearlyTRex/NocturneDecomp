@@ -1,21 +1,21 @@
 // Name: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920
 // Address: 004fa920
 // Address Range: [[004fa920, 004faaef]]
-// Convention: __cdecl
-// Signature: void __cdecl core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr)
+// Convention: __stack2_esi
+// Signature: void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920 (CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr)
+void __stack2_esi
+core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920
+          (CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
-  float *unaff_ESI;
   CMatrix3x4f *pCVar2;
   byte bVar3;
-  int in_stack_00000008;
   CMatrix3x4f local_c0;
   CMatrix3x4f local_90;
   CVector3f local_60 [2];
@@ -26,8 +26,8 @@ void __cdecl core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_pt
   CVector3f local_18;
   
   bVar3 = 0;
-  iVar1 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
-  if (in_stack_00000008 == 1) {
+  iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
+  if (hand_index == 1) {
     local_60[0].y = -0.505;
     local_60[0].z = 0.389;
     local_60[0].x = 0.206;
@@ -69,9 +69,9 @@ void __cdecl core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_pt
              &local_c0);
   pCVar2 = &local_c0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = pCVar2->m[0].w;
+    out_matrix->m[0].w = pCVar2->m[0].w;
     pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
-    unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;
+    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
   }
   return;
 }

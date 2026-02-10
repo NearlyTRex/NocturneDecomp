@@ -9,8 +9,8 @@
 void __cdecl core_crate_cpp_CCrate_drop_FUN_00448630(CCrate *this_ptr,CVector3f *drop_position)
 
 {
-  (this_ptr->base).orient.pitch = 0.0;
-  (this_ptr->base).orient.heading = 0.0;
+  (this_ptr->base).orient.vec.x = 0.0;
+  (this_ptr->base).orient.vec.z = 0.0;
   this_ptr->carrier = (CDemonActor *)0x0;
   return;
 }

@@ -45,7 +45,7 @@ void __cdecl CZombie::process(CZombie *this_ptr,float delta_time);
 
 // Original: core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0
 // Address: 005fb1f0
-void __cdecl CZombie::getCarryObjToBodyXForm(CZombie *this_ptr);
+void __stack2_esi CZombie::getCarryObjToBodyXForm(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fb530
 // Address: 005fb530

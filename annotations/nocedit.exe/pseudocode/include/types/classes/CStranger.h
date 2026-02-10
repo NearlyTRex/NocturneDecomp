@@ -20,17 +20,13 @@ typedef struct CStranger {
     char unk5[4]; // 0x1fc24
     struct CDemonActor* ladder_to_descend; // 0x1fc28
     struct CDemonActor* weapon; // 0x1fc2c
-    undefined1 field9_0x1fc30; // 0x1fc30
-    undefined1 field10_0x1fc31; // 0x1fc31
-    undefined1 field11_0x1fc32; // 0x1fc32
-    undefined1 field12_0x1fc33; // 0x1fc33
-    undefined1 field13_0x1fc34; // 0x1fc34
-    undefined1 field14_0x1fc35; // 0x1fc35
-    undefined1 field15_0x1fc36; // 0x1fc36
-    undefined1 field16_0x1fc37; // 0x1fc37
+    char unk6[8]; // 0x1fc30
     int action_pending; // 0x1fc38
-    char unk6[156]; // 0x1fc3c
+    int unk7; // 0x1fc3c
+    float unk8; // 0x1fc40
+    char unk9[144]; // 0x1fc44
+    int unk10; // 0x1fcd4
     CKeyFramedModelInstance model; // 0x1fcd8
-    char unk7[28]; // 0x1fe54
+    char unk11[28]; // 0x1fe54
 } CStranger;
 

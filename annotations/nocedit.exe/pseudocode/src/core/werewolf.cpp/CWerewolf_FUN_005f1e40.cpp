@@ -17,12 +17,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr)
   CVector3f local_68;
   CVector3f local_5c;
   CVector3f local_50;
-  float local_44;
-  uint local_40;
-  float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
+  CVector3f local_44;
+  CVector3f local_38;
   double local_2c;
   float local_24;
   float local_20;
@@ -42,10 +38,10 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr)
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
               ((CDemonActor *)this_ptr,&local_68,&(this_ptr->chain_anchor->location).position);
     if (local_68.y < (float)2) {
-      local_44 = local_68.x;
-      local_3c = local_68.z;
-      local_40 = 0;
-      core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
+      local_44.x = local_68.x;
+      local_44.z = local_68.z;
+      local_44.y = 0.0;
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_44);
       return;
     }
     fVar3 = local_68.y - local_5c.y;
@@ -61,10 +57,10 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr)
       local_14 = SQRT(fVar2 * fVar2 + fVar1 * fVar1);
       if ((0.0 < local_14) && (local_18 = local_14 - local_20, 0.0 < local_18)) {
         local_24 = local_18 / local_14;
-        local_38 = fVar1 * local_24;
-        local_34 = local_24 * 0.0;
-        local_30 = fVar2 * local_24;
-        core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
+        local_38.x = fVar1 * local_24;
+        local_38.y = local_24 * 0.0;
+        local_38.z = fVar2 * local_24;
+        core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_38);
         return;
       }
     }

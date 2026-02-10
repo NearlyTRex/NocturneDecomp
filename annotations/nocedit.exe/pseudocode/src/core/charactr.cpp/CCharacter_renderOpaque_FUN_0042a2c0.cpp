@@ -24,7 +24,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar1 != 0) {
       this_ptr->field43_0x2620 = 1;
-      core_charactr_cpp_CCharacter_FUN_00429aa0(this_ptr);
+      core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0(this_ptr);
       if (DAT_02f43978 != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
         if (iVar2 == 0) {

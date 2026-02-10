@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter *this_ptr)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80 (CCharacter *this_ptr,int hand_index,float blend_time)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
+; float            Stack[0xc]:4   blend_time
 ; Local Variables:
 ; undefined8       Stack[-0x168]:8  local_168
 ; undefined1       Stack[-0x160]:1  local_160
@@ -16,9 +18,9 @@
 ; undefined1       Stack[-0x40]:1  local_40
 ;
 ; XREF[3]:
-;   core_charactr.cpp_CCharacter_FUN_00429870 at 00429a53
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0 at 0042ce6c
 ;   core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800 at 0042f88a
+;   core_charactr.cpp_CCharacter_process_FUN_00429870 at 00429a53
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_00617329

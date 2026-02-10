@@ -11,9 +11,9 @@
 ; XREF[17]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 0040956a
 ;   core_boxactor.cpp_CBoxActor_FUN_00422390 at 004223ba
-;   core_charactr.cpp_CCharacter_FUN_0042c5f0 at 0042c731
-;   core_charactr.cpp_CCharacter_FUN_0042ded0 at 0042df32
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d777
+;   core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0 at 0042c731
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_0042ded0 at 0042df32
 ;   core_fire.cpp_CBulletHole_init_FUN_004bf7f0 at 004bf9ca
 ;   core_fire.cpp_CFireEffect_FUN_004c8230 at 004c8487
 ;   core_flies.cpp_CFlies_process_FUN_004cbf00 at 004cc014

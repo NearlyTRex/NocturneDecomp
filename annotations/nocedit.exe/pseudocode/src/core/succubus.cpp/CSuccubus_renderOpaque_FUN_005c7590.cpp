@@ -27,7 +27,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
       (this_ptr->base).base.field43_0x2620 = 1;
       if (iVar1 == 0) {
         if (*(int *)(this_ptr->unk + 0x2478) == 0) {
-          core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
+          core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
         }
         else {
           core_morph_cpp_FUN_0052b600();

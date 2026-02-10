@@ -7443,7 +7443,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042b110",
+    "name":"core_charactr.cpp_CCharacter_renderFlames_FUN_0042b110",
     "ret":"void",
     "vars":{
       "locals":[
@@ -7500,7 +7500,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042b190",
+    "name":"core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190",
     "ret":"void",
     "vars":{
       "locals":[
@@ -8016,7 +8016,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042b810",
+    "name":"core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042b810",
     "ret":"void",
     "vars":{
       "locals":[
@@ -8117,6 +8117,54 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"part_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"bone_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"chance",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -8198,7 +8246,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042c010",
+    "name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_0042c010",
     "ret":"int",
     "vars":{
       "locals":[
@@ -8427,6 +8475,38 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"target_local_point",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -8562,7 +8642,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042cd90",
+    "name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_0042cd90",
     "ret":"int",
     "vars":{
       "params":[
@@ -8606,7 +8686,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042d090",
+    "name":"core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090",
     "ret":"void",
     "vars":{
       "locals":[
@@ -8723,6 +8803,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -8738,7 +8834,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042d390",
+    "name":"core_charactr.cpp_CCharacter_initGesture_FUN_0042d390",
     "ret":"int",
     "vars":{
       "params":[
@@ -8757,6 +8853,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"motion_name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -42611,6 +42723,22 @@
             ]
           },
           "type":"CHero*"
+        },
+        {
+          "name":"hand_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }

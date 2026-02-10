@@ -2,18 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 37,
-        "line": 21,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 82,
-        "line": 21,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 15,
         "line": 26,
@@ -34,25 +22,25 @@
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 51,
+        "line": 50,
         "message": "use of undeclared identifier 'DAT_03f95d7c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 53,
+        "line": 52,
         "message": "use of undeclared identifier 'DAT_03f95d98'; did you mean 'DAT_03f95df8'?"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 53,
+        "line": 52,
         "message": "array type 'CVector3f[200]' is not assignable"
       },
       {
         "category": "undeclared_identifier",
         "column": 82,
-        "line": 54,
+        "line": 53,
         "message": "use of undeclared identifier 'DAT_03f95d7c'"
       }
     ],
@@ -61,11 +49,11 @@
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 183,
+    "complexity_score": 182,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 23,
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 47,
     "suspect_count": 11,
     "suspect_types": [
       "stack_param",
@@ -74,7 +62,7 @@
       "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 177
+    "total_lines": 176
   },
   "cross_references": [],
   "function": {
@@ -330,76 +318,76 @@
     {
       "description": "Unaffected register variable",
       "line": 7,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
+      "match": "unaff_ESI",
+      "text": "float unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "in_stack_ffffffc8",
-      "text": "uint in_stack_ffffffc8;",
+      "match": "in_stack_ffffffcc",
+      "text": "uint in_stack_ffffffcc;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 19,
       "match": "&stack0x00000000",
-      "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {",
+      "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 20,
       "match": "._0_4_",
-      "text": "g_CDemonLightInstance.base.base.position.x = auStack_20._0_4_;",
+      "text": "g_CDemonLightInstance.base.base.position.x = auStack_1c._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 21,
       "match": "._4_4_",
-      "text": "g_CDemonLightInstance.base.base.position.y = auStack_20._4_4_;",
+      "text": "g_CDemonLightInstance.base.base.position.y = auStack_1c._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_ffffffc8",
-      "text": "pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,in_stack_ffffffc8);",
+      "line": 33,
+      "match": "in_stack_ffffffcc",
+      "text": "pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,in_stack_ffffffcc);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = fStack_10 * 0.06666667f;",
+      "line": 36,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = *(float *)(pCVar1[0x176].create_event + 0x30) * 0.06666667f;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_EBP",
-      "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,unaff_EBP);",
+      "line": 38,
+      "match": "unaff_ESI",
+      "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_03f95d7c",
-      "text": "((CDemonGlobe *)&DAT_03f95d7c,(CColor3f *)(auStack_20 + 4));",
+      "text": "((CDemonGlobe *)&DAT_03f95d7c,(CColor3f *)(auStack_1c + 4));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_03f95d98",
       "text": "DAT_03f95d98 = 0x20;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_03f95d7c",
       "text": "core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360((CDemonGlobe *)&DAT_03f95d7c,3.0);",
       "type": "undefined_data"

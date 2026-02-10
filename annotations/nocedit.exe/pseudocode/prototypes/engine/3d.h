@@ -385,7 +385,7 @@ void __cdecl drawLine3DFromIndices(int vertex_index1,int vertex_index2);
 
 // Original: engine_3d.c_clipAndDrawLine3D_FUN_00408070
 // Address: 00408070
-void __cdecl clipAndDrawLine3D(SRenderVertex *vertex1,SRenderVertex *vertex2);
+void __cdecl clipAndDrawLine3D(SRenderVertex vertex1,SRenderVertex vertex2);
 
 // Original: engine_3d.c_addPolygonEdge_FUN_004d11c0
 // Address: 004d11c0

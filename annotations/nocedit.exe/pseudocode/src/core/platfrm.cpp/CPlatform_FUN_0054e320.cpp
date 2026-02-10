@@ -27,7 +27,7 @@ void __cdecl core_platfrm_cpp_CPlatform_FUN_0054e320(CPlatform *this_ptr)
   
   bVar6 = 0;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            (&local_8c,&(this_ptr->base).location.position,(CVector3f *)&(this_ptr->base).orient);
+            (&local_8c,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
   local_14 = this_ptr->attach_actors;
   iVar3 = 0;
   do {
@@ -48,7 +48,7 @@ void __cdecl core_platfrm_cpp_CPlatform_FUN_0054e320(CPlatform *this_ptr)
       (*pCVar1->setPositionAndOrientation)(this_ptr_00,new_position,new_orientation);
     }
     iVar3 = iVar3 + 1;
-    this_ptr = (CPlatform *)&(this_ptr->base).orient.bank;
+    this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
   } while (iVar3 < 10);
   return;
 }

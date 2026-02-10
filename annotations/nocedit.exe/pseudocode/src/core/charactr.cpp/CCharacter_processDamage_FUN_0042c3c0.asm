@@ -21,7 +21,7 @@
 ;   core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0 at 004f9721
 ;   core_npc.cpp_CNPC_processDamage_FUN_00544d30 at 00544e01
 ;   core_scat.cpp_CScat_processDamage_FUN_00557ea0 at 00557fa2
-;   core_stranger.cpp_CStranger_FUN_005c48b0 at 005c4afd
+;   core_stranger.cpp_CStranger_processDamage_FUN_005c48b0 at 005c4afd
 ;   core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30 at 005d9e80
 ;
 ; Referenced Globals:
@@ -34,12 +34,12 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_charactr.cpp_CCharacter_FUN_0042b190
-;   core_charactr.cpp_CCharacter_FUN_0042b5b0
-;   core_charactr.cpp_CCharacter_FUN_0042b8e0
-;   core_charactr.cpp_CCharacter_FUN_0042b930
-;   core_charactr.cpp_CCharacter_FUN_0042b9e0
-;   core_charactr.cpp_CCharacter_FUN_0042d060
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190
+;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0
+;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060
+;   core_charactr.cpp_CCharacter_explode_FUN_0042b930
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
+;   core_charactr.cpp_CCharacter_shatter_FUN_0042b8e0
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0
 ;   core_gore.cpp_CGore_FUN_004edbb0
 ;   crt_math.c_round_FUN_005fe6b0
@@ -94,8 +94,8 @@ section .text
     PUSH dword ptr [ESI + 0x18]         ; 0042c41c
     PUSH ECX                            ; 0042c41f
     PUSH EBX                            ; 0042c420
-    CALL core_charactr.cpp_CCharacter_FUN_0042b930 ; 0042c421
-        ;   XREF to: 0042b930 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b930(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_explode_FUN_0042b930 ; 0042c421
+        ;   XREF to: 0042b930 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_explode_FUN_0042b930(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
     ADD ESP,0xc                         ; 0042c426
     CMP dword ptr [ESI + 0x28],0x5      ; 0042c429
         ;   Label: LAB_0042c429
@@ -117,8 +117,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0042c44d
     PUSH EAX                            ; 0042c451
     PUSH EBX                            ; 0042c452
-    CALL core_charactr.cpp_CCharacter_FUN_0042b5b0 ; 0042c453
-        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b5b0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 ; 0042c453
+        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, float spread_rate, ...)
     ADD ESP,0x18                        ; 0042c458
     FLD float ptr [ESI + 0x8]           ; 0042c45b
         ;   Label: LAB_0042c45b
@@ -196,15 +196,15 @@ section .text
     PUSH dword ptr [ESI + 0x18]         ; 0042c50e
     PUSH ECX                            ; 0042c511
     PUSH EBX                            ; 0042c512
-    CALL core_charactr.cpp_CCharacter_FUN_0042b9e0 ; 0042c513
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b9e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 ; 0042c513
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
     ADD ESP,0x10                        ; 0042c518
     JMP 0x0042c429                      ; 0042c51b
         ;   XREF to: 0042c429 (UNCONDITIONAL_JUMP)  ; LAB_0042c429
     PUSH EBX                            ; 0042c520
         ;   Label: LAB_0042c520
-    CALL core_charactr.cpp_CCharacter_FUN_0042b190 ; 0042c521
-        ;   XREF to: 0042b190 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b190(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190 ; 0042c521
+        ;   XREF to: 0042b190 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042c526
     JMP 0x0042c429                      ; 0042c529
         ;   XREF to: 0042c429 (UNCONDITIONAL_JUMP)  ; LAB_0042c429
@@ -235,15 +235,15 @@ section .text
         ;   XREF to: 0042c50c (CONDITIONAL_JUMP)  ; LAB_0042c50c
         ;   Label: LAB_0042c55a
     PUSH EBX                            ; 0042c55c
-    CALL core_charactr.cpp_CCharacter_FUN_0042b8e0 ; 0042c55d
-        ;   XREF to: 0042b8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b8e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_shatter_FUN_0042b8e0 ; 0042c55d
+        ;   XREF to: 0042b8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_shatter_FUN_0042b8e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042c562
     JMP 0x0042c429                      ; 0042c565
         ;   XREF to: 0042c429 (UNCONDITIONAL_JUMP)  ; LAB_0042c429
     PUSH EBX                            ; 0042c56a
         ;   Label: LAB_0042c56a
-    CALL core_charactr.cpp_CCharacter_FUN_0042d060 ; 0042c56b
-        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d060(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060 ; 0042c56b
+        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042c570
     ADD ESP,0x1c                        ; 0042c573
     POP EBP                             ; 0042c576

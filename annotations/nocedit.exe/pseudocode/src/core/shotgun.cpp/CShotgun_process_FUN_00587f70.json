@@ -2,21 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 39,
-        "line": 17,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 89,
-        "line": 17,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 21,
+        "line": 23,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -25,16 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 46,
+    "complexity_score": 73,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 31,
-    "suspect_count": 1,
+    "pseudocode_lines": 33,
+    "suspect_count": 3,
     "suspect_types": [
+      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 108
+    "total_lines": 110
   },
   "cross_references": [],
   "function": {
@@ -217,11 +206,25 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "float in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 14,
+      "line": 16,
       "match": "&stack0x00000000",
-      "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {",
+      "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_0000000c",
+      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,in_stack_0000000c);",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

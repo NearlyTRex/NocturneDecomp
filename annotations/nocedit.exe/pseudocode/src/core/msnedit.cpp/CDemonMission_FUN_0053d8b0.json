@@ -516,28 +516,28 @@
       "description": "Unaffected register variable",
       "line": 160,
       "match": "unaff_EDI",
-      "text": "if (&unaff_EDI->orient != (COrientation *)(iVar9 + 0x30)) {",
+      "text": "if (&unaff_EDI->orient != (UOrientationVector *)(iVar9 + 0x30)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 161,
       "match": "unaff_EDI",
-      "text": "(unaff_EDI->orient).pitch = *(float *)(iVar9 + 0x30);",
+      "text": "(unaff_EDI->orient).vec.x = *(float *)(iVar9 + 0x30);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 162,
       "match": "unaff_EDI",
-      "text": "(unaff_EDI->orient).bank = *(float *)(iVar9 + 0x34);",
+      "text": "(unaff_EDI->orient).vec.y = *(float *)(iVar9 + 0x34);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 163,
       "match": "unaff_EDI",
-      "text": "(unaff_EDI->orient).heading = *(float *)(iVar9 + 0x38);",
+      "text": "(unaff_EDI->orient).vec.z = *(float *)(iVar9 + 0x38);",
       "type": "unaffected_reg"
     },
     {

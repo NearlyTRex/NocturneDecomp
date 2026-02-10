@@ -24,7 +24,7 @@ void __cdecl core_baron_cpp_FUN_00413470(int param_1,CDemonActor *param_2)
      ((this_ptr = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (param_2,g_CCharacterClassInfo.name_hash), this_ptr == (CCharacter *)0x0
-      || (iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr), iVar2 < 1)))) {
+      || (iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr), iVar2 < 1)))) {
     *(CDemonActor **)(param_1 + 0x1fcac) = param_2;
     local_18 = 0.0;
     local_14 = 0.0;

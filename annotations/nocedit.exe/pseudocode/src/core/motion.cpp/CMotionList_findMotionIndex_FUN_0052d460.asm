@@ -7,8 +7,8 @@
 ; CMotionList *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[19]:
-;   core_charactr.cpp_CCharacter_FUN_0042d390 at 0042d3b6
-;   core_charactr.cpp_CCharacter_FUN_0042e670 at 0042e6f8
+;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670 at 0042e6f8
+;   core_charactr.cpp_CCharacter_initGesture_FUN_0042d390 at 0042d3b6
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ad5a6
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004d2c40 at 004d2e50
 ;   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0 at 004e8b85

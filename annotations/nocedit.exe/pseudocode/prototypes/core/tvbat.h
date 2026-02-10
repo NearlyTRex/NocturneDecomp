@@ -55,9 +55,9 @@ int __cdecl CTVBat::hasCollision(CTVBat *this_ptr,SCollisionInfo *collision_info
 // Address: 005e50f0
 int __cdecl CTVBat::getTargetPoints(CTVBat *this_ptr,CVector3f *out_points_array);
 
-// Original: core_tvbat.cpp_CTVBat_isDamageable_FUN_005e5100
+// Original: core_tvbat.cpp_CTVBat_getDeathState_FUN_005e5100
 // Address: 005e5100
-int __cdecl CTVBat::isDamageable(CTVBat *this_ptr);
+int __cdecl CTVBat::getDeathState(CTVBat *this_ptr);
 
 // Original: core_tvbat.cpp_CTVBat_processDamage_FUN_005e5130
 // Address: 005e5130

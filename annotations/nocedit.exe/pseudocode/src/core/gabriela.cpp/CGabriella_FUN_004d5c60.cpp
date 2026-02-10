@@ -102,7 +102,7 @@ int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c60(CGabriella *this_ptr)
                              (this_ptr->base).base.base.location.position.z;
                 pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                    (&local_3c,&local_48);
-                (this_ptr->base).base.base.orient.bank = pCVar1->y;
+                (this_ptr->base).base.base.orient.vec.y = pCVar1->y;
                 core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
                           ((CDemonActor *)this_ptr);
                 return 1;

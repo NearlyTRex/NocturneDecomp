@@ -55,9 +55,9 @@ void __cdecl CDraculaBride(CDraculaBride *this_ptr);
 // Address: 00486070
 void __cdecl CDraculaBride::processDamage(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_dracbrid.cpp_CDraculaBride_isDamageable_FUN_00486320
+// Original: core_dracbrid.cpp_CDraculaBride_getDeathState_FUN_00486320
 // Address: 00486320
-int __cdecl CDraculaBride::isDamageable(CDraculaBride *this_ptr);
+int __cdecl CDraculaBride::getDeathState(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_00486360
 // Address: 00486360

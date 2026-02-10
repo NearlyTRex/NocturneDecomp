@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005c66a0 at 005c66db
+;   core_stranger.cpp_CStranger_getGrabbed_FUN_005c66a0 at 005c66db
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_GETGRABBED_0062eb80

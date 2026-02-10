@@ -45,7 +45,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   local_20.z = 0.0;
   local_20.x = local_38.x + (float)0.261799387791667;
   g_CDemonLightInstance.unk2 = 0;
-  local_20.y = local_38.y + (this_ptr_00->base).base.orient.bank;
+  local_20.y = local_38.y + (this_ptr_00->base).base.orient.vec.y;
   if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {
     g_CDemonLightInstance.base.base.position.x = (int)local_2c.x;
     g_CDemonLightInstance.base.base.position.y = (int)local_2c.y;

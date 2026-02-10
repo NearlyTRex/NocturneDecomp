@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   volume
 ;
 ; XREF[7]:
-;   core_charactr.cpp_CCharacter_FUN_0042a830 at 0042a9d5
+;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830 at 0042a9d5
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab6bc
 ;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 0050641b
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506541

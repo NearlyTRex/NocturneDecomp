@@ -14,7 +14,7 @@
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00 at 00421eb7
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00421ef0 at 00421fc9
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 at 004252f3
-;   core_charactr.cpp_CCharacter_FUN_0042a420 at 0042a507
+;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420 at 0042a507
 ;   ... and 59 more
 ;
 ; *****************************************************************************

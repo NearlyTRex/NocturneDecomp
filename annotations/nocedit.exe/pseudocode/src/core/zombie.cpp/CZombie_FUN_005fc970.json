@@ -1,46 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 28,
-        "line": 20,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 20,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 22,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 22,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 65,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 21,
     "suspect_count": 4,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 57
+    "total_lines": 58
   },
   "cross_references": [],
   "function": {
@@ -110,15 +85,15 @@
     {
       "description": "Unresolved stack parameter",
       "line": 7,
-      "match": "in_stack_00000008",
-      "text": "CDemonActor *in_stack_00000008;",
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
@@ -130,9 +105,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "(this_ptr->base).base.grabbed_by = in_stack_00000008;",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "text": "(this_ptr->base).base.grabbed_type = in_stack_00000010;",
       "type": "stack_param"
     }
   ],

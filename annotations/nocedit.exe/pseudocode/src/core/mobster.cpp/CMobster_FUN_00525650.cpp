@@ -27,7 +27,7 @@ void __cdecl core_mobster_cpp_CMobster_FUN_00525650(CMobster *this_ptr)
       local_24.z = -1.6;
       local_24.x = 2.2;
     }
-    fVar1 = (this_ptr->vehicle->orient).bank + (float)1.57079632675;
+    fVar1 = (this_ptr->vehicle->orient).vec.y + (float)1.57079632675;
   }
   else {
     local_18.y = -2.35;
@@ -38,9 +38,9 @@ void __cdecl core_mobster_cpp_CMobster_FUN_00525650(CMobster *this_ptr)
       local_24.z = -1.6;
       local_24.x = -2.2;
     }
-    fVar1 = (this_ptr->vehicle->orient).bank + (float)-1.57079632675;
+    fVar1 = (this_ptr->vehicle->orient).vec.y + (float)-1.57079632675;
   }
-  (this_ptr->base).base.base.orient.bank = fVar1;
+  (this_ptr->base).base.base.orient.vec.y = fVar1;
   pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (this_ptr->vehicle,&local_30,&local_24);
   (this_ptr->base).base.base.location.position.x = pCVar2->x;

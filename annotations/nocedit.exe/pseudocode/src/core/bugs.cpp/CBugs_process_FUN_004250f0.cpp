@@ -11,7 +11,7 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_004250f0(CBugs *this_ptr,float delt
 {
   int iVar1;
   
-  iVar1 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
+  iVar1 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar1 != 0) {
     if ((this_ptr->allow_chase == 0) &&
        (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0

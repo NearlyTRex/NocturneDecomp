@@ -13,12 +13,12 @@
   },
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 303,
+    "complexity_score": 314,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 118,
-    "suspect_count": 16,
+    "pseudocode_lines": 119,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
@@ -26,7 +26,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 401
+    "total_lines": 402
   },
   "cross_references": [],
   "function": {
@@ -50,7 +50,7 @@
     {
       "addr": "0042d300",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042d300"
+      "name": "core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300"
     },
     {
       "addr": "005f54c0",
@@ -592,29 +592,36 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 107,
+      "match": "in_stack_00000008",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008,&local_144);",
+      "type": "stack_param"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 113,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 117,
+      "line": 118,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = *pfVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 119,
+      "line": 120,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 119,
+      "line": 120,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"

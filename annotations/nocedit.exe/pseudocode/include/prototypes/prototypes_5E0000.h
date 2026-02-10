@@ -13,6 +13,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonGlobe.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/COrientation.h"
 #include "types/classes/CTVBat.h"
 #include "types/classes/CTerrain.h"
@@ -131,7 +132,7 @@ int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005e4d80(CTVBat *this_ptr);
 CBoundingBox3D * __cdecl core_tvbat_cpp_CTVBat_getBoundingBox_FUN_005e5050(CTVBat *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_tvbat_cpp_CTVBat_hasCollision_FUN_005e50d0(CTVBat *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_tvbat_cpp_CTVBat_getTargetPoints_FUN_005e50f0(CTVBat *this_ptr,CVector3f *out_points_array);
-int __cdecl core_tvbat_cpp_CTVBat_isDamageable_FUN_005e5100(CTVBat *this_ptr);
+int __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_005e5100(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_005e5130(CTVBat *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_tvbat_cpp_CTVBat_getPropertyList_FUN_005e51a0 (CTVBat *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_tvbat_cpp_CTVBat_processInEditor_FUN_005e5260(CTVBat *this_ptr);
@@ -145,12 +146,12 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampire
 void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_005e56c0(CVampireBoss *this_ptr);
 float __cdecl core_vampboss_cpp_FUN_005e58d0(void);
 void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float delta_time);
-void __cdecl core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr);
+void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80 (CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(CVampireBoss *this_ptr);
 int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_005e6da0(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_005e6f50(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030 (CVampireBoss *this_ptr,SDamageInfo *damage_info);
-int __cdecl core_vampboss_cpp_CVampireBoss_isDamageable_FUN_005e7270(CVampireBoss *this_ptr);
+int __cdecl core_vampboss_cpp_CVampireBoss_getDeathState_FUN_005e7270(CVampireBoss *this_ptr);
 int __cdecl core_vampboss_cpp_CVampireBoss_getTargetPoints_FUN_005e7280 (CVampireBoss *this_ptr,CVector3f *out_points_array);
 void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7320(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7390(CVampireBoss *this_ptr);

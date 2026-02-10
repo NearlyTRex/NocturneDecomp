@@ -13,8 +13,8 @@
 ; XREF[11]:
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413c4c
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 at 0041752e
-;   core_charactr.cpp_CCharacter_FUN_00429aa0 at 00429b15
-;   core_charactr.cpp_CCharacter_FUN_0042ad00 at 0042aec0
+;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042ad00 at 0042aec0
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 at 00429b15
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cae4
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 at 00485d6d
 ;   core_mimic.cpp_CMimic_FUN_005205f0 at 005206f7

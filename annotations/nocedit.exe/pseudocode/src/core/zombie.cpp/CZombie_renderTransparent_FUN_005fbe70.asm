@@ -36,7 +36,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_charactr.cpp_CCharacter_FUN_0042b0e0
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_004760d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
@@ -176,8 +176,8 @@ section .text
     RET                                 ; 005fbfb7
     PUSH EBX                            ; 005fbfb8
         ;   Label: LAB_005fbfb8
-    CALL core_charactr.cpp_CCharacter_FUN_0042b0e0 ; 005fbfb9
-        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042b0e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0 ; 005fbfb9
+        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005fbfbe
     MOV EAX,dword ptr [EBX + 0x2620]    ; 005fbfc1
     LEA ESP,[EBP + 0x7e]                ; 005fbfc7

@@ -10,7 +10,7 @@
 ;   int g_ActorMagicNumber
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_00428f40
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     PUSH EBX                            ; 004aa09d
     MOV dword ptr [ESP + 0xc],EDI       ; 004aa09e
     MOV dword ptr [ESP + 0x10],EDI      ; 004aa0a2
-    CALL core_charactr.cpp_CCharacter_FUN_00428f40 ; 004aa0a6
-        ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00428f40(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 ; 004aa0a6
+        ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004aa0ab
     POP EDI                             ; 004aa0ae
     MOV dword ptr [EBX + 0xbe3c],0x0    ; 004aa0af

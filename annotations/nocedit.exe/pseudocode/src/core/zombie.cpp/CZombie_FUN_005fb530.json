@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 138,
+        "line": 135,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 138,
+        "line": 135,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 165,
+        "line": 162,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 27,
-        "line": 165,
+        "line": 162,
         "message": "expected expression"
       }
     ],
@@ -31,11 +31,11 @@
   },
   "complexity": {
     "assembly_lines": 606,
-    "complexity_score": 425,
+    "complexity_score": 423,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 22,
-    "pseudocode_lines": 270,
+    "pseudocode_lines": 268,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -44,7 +44,7 @@
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 876
+    "total_lines": 874
   },
   "cross_references": [
     {
@@ -405,77 +405,77 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 44,
       "match": "in_stack_00000008",
       "text": "fVar11 = *(float *)(this_ptr->unk1 + 8) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 58,
       "match": "in_stack_00000008",
       "text": "fVar11 = *(float *)(this_ptr->unk1 + 0xc) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 95,
+      "line": 91,
       "match": "unaff_ESI",
       "text": "CStack_80.z = (pCVar2->location).position.x - *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 96,
+      "line": 92,
       "match": "unaff_ESI",
-      "text": "fStack_74 = (pCVar2->location).position.y - unaff_ESI[1];",
+      "text": "aCStack_74[0].x = (pCVar2->location).position.y - unaff_ESI[1];",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 98,
+      "line": 94,
       "match": "unaff_ESI",
-      "text": "fStack_70 = (pCVar2->location).position.z - unaff_ESI[2];",
+      "text": "aCStack_74[0].y = (pCVar2->location).position.z - unaff_ESI[2];",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 96,
       "match": "SQRT",
-      "text": "fVar11 = SQRT(fStack_70 * fStack_70 + CStack_80.z * CStack_80.z + fStack_74 * fStack_74);",
+      "text": "fVar11 = SQRT(aCStack_74[0].y * aCStack_74[0].y +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 100,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_124 + iVar7) = local_14;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 131,
+      "line": 128,
       "match": "code *",
       "text": "iVar7 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x10) + 0x154) + 0x8c))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
+      "line": 147,
       "match": "SQRT",
       "text": "fVar11 = (float)5 - SQRT(fVar5 * fVar5 + fVar11 * fVar11) * (float)0.33333333333333298;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 155,
+      "line": 152,
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->unk1 + 0xc) = in_stack_00000008 * fVar11 + *(float *)(this_ptr->unk1 + 0xc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 158,
+      "line": 155,
       "match": "code *",
       "text": "(iVar8 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0x10) + 0x154) + 0x7c))(), iVar8 == 3",
       "type": "unresolved_funcptr"

@@ -2,12 +2,14 @@
 // Address: 0042f9e0
 // Address Range: [[0042f9e0, 0042f9ea]]
 // Convention: __cdecl
-// Signature: int __cdecl core_charactr_cpp_FUN_0042f9e0(CGame *game_ptr)
+// Signature: float __cdecl core_charactr_cpp_FUN_0042f9e0(void)
 
 #include "nocturne.h"
 
-int __cdecl core_charactr_cpp_FUN_0042f9e0(CGame *game_ptr)
+float __cdecl core_charactr_cpp_FUN_0042f9e0(void)
 
 {
-  return (int)game_ptr->delta_time_float;
+  int in_stack_00000004;
+  
+  return *(float *)(in_stack_00000004 + 0x264);
 }

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 101,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 6,
-    "pseudocode_lines": 56,
-    "suspect_count": 4,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 192
+    "pseudocode_lines": 57,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 193
   },
   "cross_references": [
     {
@@ -42,7 +40,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter *this_ptr)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0 (CCharacter *this_ptr,int layer_action_index)"
   },
   "function_calls": [
     {
@@ -129,10 +127,10 @@
     "pcode_op_count": 780
   },
   "stack_frame": {
-    "frame_size": 48,
+    "frame_size": 52,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -176,6 +174,13 @@
         "offset": 4,
         "size": 4,
         "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_action_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -196,34 +201,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 != iVar2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000008",
-      "text": "this_ptr->motion_transition_costs[pSVar4->from_bone_index][in_stack_00000008]",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000008",
-      "text": "this_ptr->motion_transition_costs[pSVar4->to_bone_index][in_stack_00000008];",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -16,8 +16,8 @@
 ;   core_battery.cpp_CBattery_canPickup_FUN_00417f20 at 00417f2a
 ;   core_boneguy.cpp_CBoneGuy_FUN_0041cc40 at 0041d050
 ;   core_boxactor.cpp_CBoxActor_canPickup_FUN_004224b0 at 004224d2
-;   core_charactr.cpp_CCharacter_FUN_0042b5b0 at 0042b5e4
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d86a
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 at 0042b5e4
 ;   ... and 55 more
 ;
 ; Called Functions:

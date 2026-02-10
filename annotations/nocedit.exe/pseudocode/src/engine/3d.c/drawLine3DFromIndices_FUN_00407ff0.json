@@ -1,33 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 37,
-        "message": "assigning to 'int *' from incompatible type 'uint[12]' (aka 'unsigned int[12]')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 44,
-        "message": "use of undeclared identifier 'stack0xffffff38'; did you mean 'in_stack_ffffff38'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 102,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 42,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 79
   },
@@ -104,25 +90,39 @@
     "pcode_op_count": 254
   },
   "stack_frame": {
-    "frame_size": 116,
-    "local_size": 108,
+    "frame_size": 212,
+    "local_size": 204,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 48,
+        "type": "SRenderVertex"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 48,
+        "type": "SRenderVertex"
+      },
+      {
+        "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 1,
-        "type": "undefined"
+        "size": 48,
+        "type": "SRenderVertex"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 1,
-        "type": "undefined"
+        "size": 48,
+        "type": "SRenderVertex"
       },
       {
         "is_param": true,
@@ -173,39 +173,25 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffff38",
-      "text": "SRenderVertex *in_stack_ffffff38;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffff3c",
-      "text": "SRenderVertex *in_stack_ffffff3c;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffff38",
-      "text": "piVar4 = (int *)&stack0xffffff38;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_ffffff38",
-      "text": "engine_3d_c_clipAndDrawLine3D_FUN_00408070(in_stack_ffffff38,in_stack_ffffff3c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_ffffff3c",
-      "text": "engine_3d_c_clipAndDrawLine3D_FUN_00408070(in_stack_ffffff38,in_stack_ffffff3c);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

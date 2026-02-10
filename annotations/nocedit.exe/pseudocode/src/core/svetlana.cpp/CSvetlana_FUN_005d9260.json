@@ -79,12 +79,12 @@
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 347,
+    "complexity_score": 367,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "pseudocode_lines": 242,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -122,7 +122,7 @@
     {
       "addr": "0042ede0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ede0"
+      "name": "core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0"
     },
     {
       "addr": "004f3960",
@@ -372,11 +372,25 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 99,
+      "match": "in_stack_00000008",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {",
+      "type": "stack_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 111,
       "match": "extraout_EAX",
       "text": "pCStack_20 = extraout_EAX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 164,
+      "match": "in_stack_00000008",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",

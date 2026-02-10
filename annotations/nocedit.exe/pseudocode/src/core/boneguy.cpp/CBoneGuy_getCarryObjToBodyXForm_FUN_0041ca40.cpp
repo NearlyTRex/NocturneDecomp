@@ -1,22 +1,22 @@
 // Name: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
 // Address: 0041ca40
 // Address Range: [[0041ca40, 0041cc36]]
-// Convention: __cdecl
-// Signature: void __cdecl core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr)
+// Convention: __stack2_esi
+// Signature: void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 (CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-void __cdecl core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr)
+void __stack2_esi
+core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
+          (CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   CDemonActor *this_ptr_00;
   CVector3f *pCVar1;
   int iVar2;
-  float *unaff_ESI;
   CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
   byte bVar5;
-  int in_stack_00000008;
   CMatrix3x4f local_f0;
   CMatrix3x4f local_c0;
   CBoundingBox3D local_90;
@@ -33,8 +33,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBone
   CVector3f local_18;
   
   bVar5 = 0;
-  this_ptr_00 = (this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor;
-  iVar2 = (this_ptr->base).base.carry_hands[in_stack_00000008].bone_index;
+  this_ptr_00 = (this_ptr->base).base.carry_hands[hand_index].carry_actor;
+  iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   local_60.z = 2.536;
   local_60.x = -0.771;
   local_60.y = -2.536;
@@ -86,9 +86,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBone
   local_f0.m[2].z = local_f0.m[2].z + local_34;
   pCVar3 = &local_f0;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *unaff_ESI = pCVar3->m[0].w;
+    out_matrix->m[0].w = pCVar3->m[0].w;
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-    unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;
+    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar5 * -2 + 1) * 4);
   }
   return;
 }

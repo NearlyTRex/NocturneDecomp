@@ -15,7 +15,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00524c20(CDemonMission *this_ptr
   CDemonActor *pCVar3;
   CHeroPlaceholder *this_ptr_00;
   CHeroPlaceholder *actor;
-  COrientation *pCVar4;
+  UOrientationVector *pUVar4;
   CPickList local_3b4;
   
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3b4);
@@ -48,12 +48,12 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00524c20(CDemonMission *this_ptr
           (actor->base).location.position.x = (pCVar3->location).position.x;
           (actor->base).location.position.y = (pCVar3->location).position.y;
           (actor->base).location.position.z = (pCVar3->location).position.z;
-          pCVar4 = &(actor->base).orient;
+          pUVar4 = &(actor->base).orient;
           (actor->base).location.area_id = (pCVar3->location).area_id;
-          if (pCVar4 != &pCVar3->orient) {
-            pCVar4->pitch = (pCVar3->orient).pitch;
-            (actor->base).orient.bank = (pCVar3->orient).bank;
-            (actor->base).orient.heading = (pCVar3->orient).heading;
+          if (pUVar4 != &pCVar3->orient) {
+            (pUVar4->vec).x = (pCVar3->orient).vec.x;
+            (actor->base).orient.vec.y = (pCVar3->orient).vec.y;
+            (actor->base).orient.vec.z = (pCVar3->orient).vec.z;
           }
           core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,&actor->base);
           core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,pCVar3,1);

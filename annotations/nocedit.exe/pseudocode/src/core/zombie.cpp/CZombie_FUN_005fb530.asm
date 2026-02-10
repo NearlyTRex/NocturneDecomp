@@ -325,7 +325,7 @@ section .text
     PUSH EAX                            ; 005fb8e4
     PUSH ESI                            ; 005fb8e5
     CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0 ; 005fb8e6
-        ;   XREF to: 004286e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter * this_ptr)
+        ;   XREF to: 004286e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 005fb8eb
     MOV EBX,EAX                         ; 005fb8ee
     TEST EBX,EBX                        ; 005fb8f0

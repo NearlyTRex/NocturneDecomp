@@ -30,14 +30,14 @@ int __cdecl core_platfrm_cpp_CPlatform_FUN_0054df80(CPlatform *this_ptr)
     local_88._0_8_ = (ulonglong)(uint)local_88.unk1 << 0x20;
     iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x34))();
     if (iVar1 == 2) {
-      CStack_1c.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((this_ptr->base).orient.pitch);
-      fVar3 = (this_ptr->base).orient.heading;
-      (this_ptr->base).orient.pitch = CStack_1c.y;
+      CStack_1c.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((this_ptr->base).orient.vec.x);
+      fVar3 = (this_ptr->base).orient.vec.z;
+      (this_ptr->base).orient.vec.x = CStack_1c.y;
       CStack_1c.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fVar3);
-      fVar3 = (this_ptr->base).orient.pitch;
-      (this_ptr->base).orient.heading = CStack_1c.y;
+      fVar3 = (this_ptr->base).orient.vec.x;
+      (this_ptr->base).orient.vec.z = CStack_1c.y;
       if ((ABS(fVar3) <= (float)0.01) &&
-         (ABS((this_ptr->base).orient.heading) <= (float)0.01)) {
+         (ABS((this_ptr->base).orient.vec.z) <= (float)0.01)) {
         (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_60);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                   (&this_ptr->base,&CStack_1c,(CVector3f *)(in_stack_00000008 + 0x20));

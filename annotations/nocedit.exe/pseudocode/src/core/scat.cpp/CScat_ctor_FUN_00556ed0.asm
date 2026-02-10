@@ -64,7 +64,7 @@ section .text
     PUSH EBX                            ; 00556f68
     FSTP float ptr [EBX + 0x1fbec]      ; 00556f69
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0 ; 00556f6f
-        ;   XREF to: 0042e5d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter * this_ptr)
+        ;   XREF to: 0042e5d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00556f74
     PUSH 0x0                            ; 00556f77
     PUSH 0x641230                       ; 00556f79 | = "draw_coatPocket2aimPistols"
@@ -72,7 +72,7 @@ section .text
     PUSH 0x1                            ; 00556f80
     PUSH EBX                            ; 00556f82
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0 ; 00556f83
-        ;   XREF to: 0042e5d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter * this_ptr)
+        ;   XREF to: 0042e5d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00556f88
     MOV EAX,EBX                         ; 00556f8b
     POP EBX                             ; 00556f8d

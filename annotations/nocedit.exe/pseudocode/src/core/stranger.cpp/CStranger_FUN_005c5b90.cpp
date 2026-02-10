@@ -93,8 +93,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5b90(CStranger *this_ptr)
         return;
       }
       if (((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) &&
-         (fVar4 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr),
-         (float)0.98999999999999999 < fVar4)) {
+         (fVar4 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                            ((CCharacter *)this_ptr,0), (float)0.98999999999999999 < fVar4)) {
         iVar3 = core_hero_cpp_CHero_FUN_004f2f50(&this_ptr->base);
         if (iVar3 != 0) {
           (this_ptr->base).action_bindings.fire_key = 0;

@@ -38,7 +38,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_FUN_004218d0(CBoxActor *this_ptr)
                 (&this_ptr->base,&CStack_2c,&CStack_20);
       fStack_8 = fStack_38 - fStack_44;
       core_box_cpp_CBox_setupCorners_FUN_0041dd20
-                ((CBox *)&this_ptr->sim_box,&CStack_2c,(CVector3f *)&(this_ptr->base).orient,
+                ((CBox *)&this_ptr->sim_box,&CStack_2c,&(this_ptr->base).orient.vec,
                  (CVector3f *)&fStack_8,this_ptr->weight_in_pounds);
       return;
     }

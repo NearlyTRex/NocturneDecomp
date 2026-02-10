@@ -10,18 +10,19 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr)
 
 {
   CDeformableModelInstance *this_ptr_00;
-  int iVar1;
-  uint uVar2;
+  CDemonActor *object;
+  uint uVar1;
+  int iVar2;
   float in_stack_00000008;
   
   this_ptr_00 = &(this_ptr->base).base.model;
   do {
-    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
-    switch(iVar1) {
+    uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
+    switch(uVar1) {
     case 100:
-      iVar1 = *(int *)(this_ptr->unk + 4) + 1;
-      *(int *)(this_ptr->unk + 4) = iVar1;
-      if (4 < iVar1) {
+      iVar2 = *(int *)(this_ptr->unk + 4) + 1;
+      *(int *)(this_ptr->unk + 4) = iVar2;
+      if (4 < iVar2) {
         this_ptr->unk[4] = '\0';
         this_ptr->unk[5] = '\0';
         this_ptr->unk[6] = '\0';
@@ -35,26 +36,29 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr)
       core_icepick_cpp_CIcePick_FUN_004f9490(this_ptr);
       break;
     case 0x67:
-      uVar2 = rand();
-      if ((uVar2 & 3) == 0) {
+      uVar1 = rand();
+      if ((uVar1 & 3) == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,0x15,1);
       }
       break;
     case 0x68:
-      if (*(int *)(this_ptr->unk + 0x24) != 0) {
+      object = *(CDemonActor **)(this_ptr->unk + 0x24);
+      if (object != (CDemonActor *)0x0) {
         this_ptr->unk[0x24] = '\0';
         this_ptr->unk[0x25] = '\0';
         this_ptr->unk[0x26] = '\0';
         this_ptr->unk[0x27] = '\0';
-        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
+                  ((CCharacter *)this_ptr,1,object,0.2);
       }
       break;
     case 0x69:
-      (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
+      (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       break;
     default:
-      core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar1);
     }
   } while (0.0 < in_stack_00000008);
   return;

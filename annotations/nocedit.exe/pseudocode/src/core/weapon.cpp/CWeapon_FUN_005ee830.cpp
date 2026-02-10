@@ -21,7 +21,8 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee830(CWeapon *this_ptr)
   if (iVar1 != 0) {
     return;
   }
-  input_local_point = (CVector3f *)(*(((this_ptr->base).vtable._uc)->_uc).cfunc3)();
+  input_local_point =
+       (CVector3f *)(*(((this_ptr->base).vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (&this_ptr->base,&local_28,input_local_point);
   local_1c.z = this_ptr->bolt_velocity;

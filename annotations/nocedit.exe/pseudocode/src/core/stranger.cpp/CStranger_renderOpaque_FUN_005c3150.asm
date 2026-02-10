@@ -62,7 +62,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_charactr.cpp_CCharacter_FUN_0042e840
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 ;   core_cloth.cpp_CClothList_reset_FUN_0043c070
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
@@ -103,8 +103,8 @@ section .text
     PUSH 0x6                            ; 005c3189
         ;   Label: LAB_005c3189
     PUSH EBX                            ; 005c318b
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c318c
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c318c
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x7a],EAX      ; 005c3191
     ADD ESP,0x8                         ; 005c3194
     FLD float ptr [EBP + 0x7a]          ; 005c3197
@@ -250,8 +250,8 @@ section .text
     PUSH EAX                            ; 005c332b
         ;   Label: LAB_005c332b
     PUSH EBX                            ; 005c332c
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c332d
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c332d
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x7a],EAX      ; 005c3332
     ADD ESP,0x8                         ; 005c3335
     FLD float ptr [EBP + 0x7a]          ; 005c3338

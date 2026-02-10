@@ -147,7 +147,7 @@ core_msnedit_cpp_CDemonMission_FUN_0053bd80
     pCVar5 = pCVar4;
     do {
       pfVar6 = &(pCVar5->orient_matrix).m[0].z;
-      pCVar5[0x1b].unk1 = 0;
+      pCVar5[0x1b].direction_hint = 0;
       pCVar5 = (CDemonActor *)pfVar6;
     } while (pfVar6 != (float *)(pCVar4->create_event + 0x10));
   }

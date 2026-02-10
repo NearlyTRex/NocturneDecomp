@@ -9,7 +9,7 @@
 ;
 ; XREF[4]:
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b377
-;   core_charactr.cpp_CCharacter_FUN_0042a3f0 at 0042a408
+;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_0042a3f0 at 0042a408
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 00563f65
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005976f7
 ;

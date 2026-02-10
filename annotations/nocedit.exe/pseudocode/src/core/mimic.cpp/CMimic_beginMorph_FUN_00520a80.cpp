@@ -11,7 +11,7 @@
 void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   int iVar2;
   CConsole *this_ptr_00;
   
@@ -30,11 +30,11 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr)
   *(float *)(iVar2 + 0x28) = (this_ptr->base).base.base.location.position.z;
   *(int *)(iVar2 + 0x2c) = (this_ptr->base).base.base.location.area_id;
   iVar2 = *(int *)(this_ptr->unk4 + 0xc54);
-  pCVar1 = &(this_ptr->base).base.base.orient;
-  if ((COrientation *)(iVar2 + 0x30) != pCVar1) {
-    *(float *)(iVar2 + 0x30) = pCVar1->pitch;
-    *(float *)(iVar2 + 0x34) = (this_ptr->base).base.base.orient.bank;
-    *(float *)(iVar2 + 0x38) = (this_ptr->base).base.base.orient.heading;
+  pUVar1 = &(this_ptr->base).base.base.orient;
+  if ((UOrientationVector *)(iVar2 + 0x30) != pUVar1) {
+    *(float *)(iVar2 + 0x30) = (pUVar1->vec).x;
+    *(float *)(iVar2 + 0x34) = (this_ptr->base).base.base.orient.vec.y;
+    *(float *)(iVar2 + 0x38) = (this_ptr->base).base.base.orient.vec.z;
   }
   this_ptr->unk4[0xc50] = '\0';
   this_ptr->unk4[0xc51] = '\0';

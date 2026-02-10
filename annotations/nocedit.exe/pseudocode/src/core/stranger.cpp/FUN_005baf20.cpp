@@ -9,20 +9,20 @@
 int __cdecl core_stranger_cpp_FUN_005baf20(void)
 
 {
-  float fVar1;
+  uint uVar1;
   CDemonActor *pCVar2;
   CDemonActor *in_stack_00000004;
   
   if (in_stack_00000004 == (CDemonActor *)0x0) {
     return 0;
   }
-  fVar1 = in_stack_00000004[2].orient.pitch;
-  if ((uint)fVar1 < 7) {
-    if (fVar1 == 0.0) {
+  uVar1 = *(uint *)&in_stack_00000004[2].orient;
+  if (uVar1 < 7) {
+    if (uVar1 == 0) {
       return 1;
     }
   }
-  else if (((uint)fVar1 < 8) || (fVar1 == 1.12104e-44)) {
+  else if ((uVar1 < 8) || (uVar1 == 8)) {
     pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (in_stack_00000004,g_CMeleeClassInfo.name_hash);
     if (pCVar2 == (CDemonActor *)0x0) {

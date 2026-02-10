@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 62,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 17,
-    "suspect_count": 4,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 44
+    "total_lines": 45
   },
   "cross_references": [],
   "function": {
@@ -26,9 +26,9 @@
         "005c51b0"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170",
-    "signature": "void __cdecl core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170(CStranger *this_ptr)"
+    "signature": "void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170 (CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -42,8 +42,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.56,
@@ -77,10 +77,10 @@
     "pcode_op_count": 139
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 68,
     "local_size": 60,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -96,37 +96,23 @@
         "offset": 4,
         "size": 4,
         "type": "CStranger *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

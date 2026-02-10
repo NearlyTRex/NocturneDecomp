@@ -7,8 +7,8 @@
 ; CMotionList *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[13]:
-;   core_charactr.cpp_CCharacter_FUN_0042c920 at 0042c9a5
-;   core_charactr.cpp_CCharacter_FUN_0042de50 at 0042de9e
+;   core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50 at 0042de9e
+;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920 at 0042c9a5
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004acfaf
 ;   core_hero.cpp_CHero_FUN_004f2890 at 004f28bf
 ;   core_hero.cpp_CHero_FUN_004f28d0 at 004f2916

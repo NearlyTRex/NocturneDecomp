@@ -11,7 +11,7 @@
 void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   CDeformableModelInstance *this_ptr_00;
   char cVar2;
   CDemonActor *pCVar3;
@@ -39,11 +39,11 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
     *(float *)(iVar4 + 0x28) = (this_ptr->base).base.base.location.position.z;
     *(int *)(iVar4 + 0x2c) = (this_ptr->base).base.base.location.area_id;
     iVar4 = *(int *)(this_ptr->unk + 0x60);
-    pCVar1 = &(this_ptr->base).base.base.orient;
-    if ((COrientation *)(iVar4 + 0x30) != pCVar1) {
-      *(float *)(iVar4 + 0x30) = pCVar1->pitch;
-      *(float *)(iVar4 + 0x34) = (this_ptr->base).base.base.orient.bank;
-      *(float *)(iVar4 + 0x38) = (this_ptr->base).base.base.orient.heading;
+    pUVar1 = &(this_ptr->base).base.base.orient;
+    if ((UOrientationVector *)(iVar4 + 0x30) != pUVar1) {
+      *(float *)(iVar4 + 0x30) = (pUVar1->vec).x;
+      *(float *)(iVar4 + 0x34) = (this_ptr->base).base.base.orient.vec.y;
+      *(float *)(iVar4 + 0x38) = (this_ptr->base).base.base.orient.vec.z;
     }
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
               ((CDeformableModelInstance *)(*(int *)(this_ptr->unk + 0x60) + 0x158),

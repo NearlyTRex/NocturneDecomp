@@ -16,11 +16,11 @@ core_manpuz_cpp_CMirrorHack_process_FUN_0050b1d0(CMirrorHack *this_ptr,float del
   (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x33);
   if (iVar1 != 0) {
-    (this_ptr->base).orient.bank = (this_ptr->base).orient.bank - unaff_retaddr;
+    (this_ptr->base).orient.vec.y = (this_ptr->base).orient.vec.y - unaff_retaddr;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x34);
   if (iVar1 != 0) {
-    (this_ptr->base).orient.bank = (this_ptr->base).orient.bank + delta_time;
+    (this_ptr->base).orient.vec.y = (this_ptr->base).orient.vec.y + delta_time;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   return;

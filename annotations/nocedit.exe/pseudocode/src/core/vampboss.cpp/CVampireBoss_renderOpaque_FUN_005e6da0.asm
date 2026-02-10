@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_charactr.cpp_CCharacter_FUN_0042a420
+;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420
 ;   core_cloth.cpp_CCloth_render_FUN_0043bae0
 ;   core_morph.cpp_CMorphModel_FUN_0052bae0
 ;   core_morph.cpp_FUN_0052b600
@@ -94,8 +94,8 @@ section .text
     ADD ESP,0x8                         ; 005e6e33
         ;   Label: LAB_005e6e33
     PUSH EBX                            ; 005e6e36
-    CALL core_charactr.cpp_CCharacter_FUN_0042a420 ; 005e6e37
-        ;   XREF to: 0042a420 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a420(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420 ; 005e6e37
+        ;   XREF to: 0042a420 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCharacter * this_ptr)
     MOV EDI,dword ptr [0x02f43978]      ; 005e6e3c | DAT_02f43978
     ADD ESP,0x4                         ; 005e6e42
     TEST EDI,EDI                        ; 005e6e45

@@ -1,0 +1,208 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 28,
+        "line": 33,
+        "message": "C-style cast from 'CCharacter *' to 'float' is not allowed"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 26,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 96
+  },
+  "cross_references": [
+    {
+      "addr": "004f3af0",
+      "from_addr": "004f3b0d",
+      "name": "core_hero.cpp_CHero_FUN_004f3af0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00428e30",
+    "address_range": [
+      [
+        "00428e30",
+        "00428ed8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_kill_FUN_00428e30",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_kill_FUN_00428e30 (CCharacter *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042d060",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060"
+    },
+    {
+      "addr": "00427db0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f3b0d",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_FUN_004f3af0",
+        "estimated_params": 4,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "CALL": 3,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 79,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 32,
+      "INT_AND": 29,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 15,
+      "INT_ZEXT": 4,
+      "LOAD": 19,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 295
+  },
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 60,
+        "type": "SDamageInfo"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "damage_direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "impact_force",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00428eb7",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBassPlayer",
+        "offset": 240,
+        "vtable_addr": "00663f14"
+      },
+      {
+        "class_name": "CBiggs",
+        "offset": 240,
+        "vtable_addr": "0065ac24"
+      },
+      {
+        "class_name": "CBride",
+        "offset": 240,
+        "vtable_addr": "0065b424"
+      },
+      {
+        "class_name": "CMimic",
+        "offset": 240,
+        "vtable_addr": "00661424"
+      },
+      {
+        "class_name": "CArmour",
+        "offset": 240,
+        "vtable_addr": "00659d34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 36
+  }
+}

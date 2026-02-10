@@ -79,8 +79,8 @@ void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_
   if (this_ptr->run < this_ptr->bevel_z) {
     this_ptr->bevel_z = this_ptr->run;
   }
-  (this_ptr->base).orient.pitch = 0.0;
-  (this_ptr->base).orient.heading = 0.0;
+  (this_ptr->base).orient.vec.x = 0.0;
+  (this_ptr->base).orient.vec.z = 0.0;
   fVar1 = this_ptr->rise;
   fVar2 = (this_ptr->base).location.position.y;
   (this_ptr->base).location.position.z =

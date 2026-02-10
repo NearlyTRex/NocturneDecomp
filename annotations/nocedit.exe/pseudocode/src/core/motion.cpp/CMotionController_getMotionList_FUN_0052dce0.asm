@@ -9,12 +9,12 @@
 ; XREF[33]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040fa5d
 ;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 at 0040ec35
-;   core_charactr.cpp_CCharacter_FUN_0042c920 at 0042c99c
-;   core_charactr.cpp_CCharacter_FUN_0042d390 at 0042d3ad
-;   core_charactr.cpp_CCharacter_FUN_0042d4d0 at 0042d4f0
-;   core_charactr.cpp_CCharacter_FUN_0042de50 at 0042de95
-;   core_charactr.cpp_CCharacter_FUN_0042e670 at 0042e6ba
+;   core_charactr.cpp_CCharacter_advanceGesture_FUN_0042d4d0 at 0042d4f0
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0 at 0042d404
+;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670 at 0042e6ba
+;   core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50 at 0042de95
+;   core_charactr.cpp_CCharacter_initGesture_FUN_0042d390 at 0042d3ad
+;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920 at 0042c99c
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004acfa6
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004d2c40 at 004d2e47
 ;   ... and 23 more

@@ -24,6 +24,7 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CLightGun.h"
 #include "types/classes/CLocation.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CNPC.h"
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
@@ -107,8 +108,8 @@ int __cdecl core_hero_cpp_CHero_FUN_004f33b0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_FUN_004f3580(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_FUN_004f3760(CHero *this_ptr);
-int __cdecl core_hero_cpp_CHero_isActiveTarget_FUN_004f37d0(CHero *this_ptr);
-void __cdecl core_hero_cpp_CHero_FUN_004f3890(CHero *this_ptr);
+int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004f37d0(CHero *this_ptr);
+void __cdecl core_hero_cpp_CHero_FUN_004f3890(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_FUN_004f38d0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_FUN_004f3910(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_FUN_004f3930(CHero *this_ptr);
@@ -164,7 +165,7 @@ CDemonActorType * __cdecl core_hotdemon_cpp_CHotDemon_getActorType_FUN_004f6c90(
 CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_setup_FUN_004f6d00(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_ptr,float delta_time);
-int __cdecl core_hotdemon_cpp_CHotDemon_isDamageable_FUN_004f7680(CHotDemon *this_ptr);
+int __cdecl core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004f7680(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_archive_FUN_004f76c0(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f78f0 (CHotDemon *this_ptr,CVector3f *out_points_array);
@@ -191,7 +192,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8810(CIcePick *this_ptr);
 int __cdecl core_icepick_cpp_CIcePick_FUN_004f8970(CIcePick *this_ptr);
 int __cdecl core_icepick_cpp_CIcePick_FUN_004f8ad0(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_FUN_004f8b00(void);
-void __cdecl core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20(CIcePick *this_ptr);
+void __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20 (CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_FUN_004f9490(CIcePick *this_ptr);
@@ -211,7 +212,7 @@ CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004f98a0(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_setup_FUN_004f9910(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_time);
 void __cdecl core_imp_cpp_FUN_004fa900(void);
-void __cdecl core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr);
+void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920 (CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_imp_cpp_CImp_FUN_004faaf0(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_archive_FUN_004fab00(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_FUN_004fab60(CImp *this_ptr);

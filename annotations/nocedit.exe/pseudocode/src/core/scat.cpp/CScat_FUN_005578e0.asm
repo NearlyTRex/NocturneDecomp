@@ -38,7 +38,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_charactr.cpp_CCharacter_FUN_00428d80
+;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00428d80
 ;   core_hero.cpp_CHero_FUN_004f3960
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
@@ -417,8 +417,8 @@ section .text
         ;   Label: LAB_00557ce6
     PUSH EAX                            ; 00557ce9
     PUSH EBX                            ; 00557cea
-    CALL core_charactr.cpp_CCharacter_FUN_00428d80 ; 00557ceb
-        ;   XREF to: 00428d80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00428d80(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00428d80 ; 00557ceb
+        ;   XREF to: 00428d80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00428d80(CCharacter * this_ptr, CVector3f * target)
     ADD ESP,0x8                         ; 00557cf0
     MOV dword ptr [EBX + 0xbe34],0x0    ; 00557cf3
         ;   Label: LAB_00557cf3

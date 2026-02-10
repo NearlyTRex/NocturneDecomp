@@ -22,7 +22,7 @@
 ;   core_bugs.cpp_CBugs_FUN_004270f0 at 004272cb
 ;   core_bugs.cpp_CBugs_FUN_00427400 at 0042763b
 ;   core_bugs.cpp_CBugs_setup_FUN_00424e50 at 00424faf
-;   core_charactr.cpp_CCharacter_FUN_0042e050 at 0042e2a5
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 at 0042e2a5
 ;   ... and 26 more
 ;
 ; Referenced Globals:

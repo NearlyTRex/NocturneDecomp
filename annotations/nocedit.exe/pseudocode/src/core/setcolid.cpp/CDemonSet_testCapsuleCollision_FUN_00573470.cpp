@@ -238,7 +238,7 @@ LAB_00573d6f:
                          (void *)((float)user_data2 - (actor->location).position.y));
               SStack_1fc.max_distance = local_144;
               core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00478650
-                        (this_ptr_00,0,&SStack_1fc,(CVector3f *)&actor->orient);
+                        (this_ptr_00,0,&SStack_1fc,&(actor->orient).vec);
               if (SStack_1fc.max_distance < local_144) {
                 if (&local_140 != &SStack_1fc.push_z) {
                   local_140 = SStack_1fc.push_z;

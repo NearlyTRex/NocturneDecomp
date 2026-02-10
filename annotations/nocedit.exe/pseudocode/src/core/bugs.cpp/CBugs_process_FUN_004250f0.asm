@@ -16,7 +16,7 @@
 ;   core_bugs.cpp_CBugs_FUN_00425cc0
 ;   core_bugs.cpp_CBugs_FUN_00425fe0
 ;   core_bugs.cpp_CBugs_FUN_00426410
-;   core_charactr.cpp_CCharacter_FUN_00429870
+;   core_charactr.cpp_CCharacter_process_FUN_00429870
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004250f2
     PUSH dword ptr [ESP + 0x10]         ; 004250f6
     PUSH EBX                            ; 004250fa
-    CALL core_charactr.cpp_CCharacter_FUN_00429870 ; 004250fb
-        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00429870(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_process_FUN_00429870 ; 004250fb
+        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_00429870(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00425100
     TEST EAX,EAX                        ; 00425103
     JZ 0x00425138                       ; 00425105

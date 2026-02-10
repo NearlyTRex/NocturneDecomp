@@ -15,7 +15,7 @@ CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr)
   CInventory *pCVar3;
   
   pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base);
-  pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00546450((CPathMap *)&pCVar1[1].base.orient.bank);
+  pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00546450((CPathMap *)((int)&pCVar1[1].base.orient + 4));
   pCVar3 = core_inv_cpp_CInventory_ctor_FUN_004fd020((CInventory *)&pCVar2[1].current_position.y);
   this_ptr_00 = (CHero *)(pCVar3[-0x74].message_text + 0xfc);
   pCVar3->owner = (CDemonActor *)this_ptr_00;

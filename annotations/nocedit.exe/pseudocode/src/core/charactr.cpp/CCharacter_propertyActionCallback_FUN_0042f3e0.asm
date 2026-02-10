@@ -44,8 +44,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-;   core_charactr.cpp_CCharacter_FUN_0042d090
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
@@ -317,7 +317,7 @@ section .text
     PUSH ESI                            ; 0042f6cd
     PUSH EBP                            ; 0042f6ce
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0 ; 0042f6cf
-        ;   XREF to: 0042cdb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter * this_ptr)
+        ;   XREF to: 0042cdb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time)
     ADD ESP,0x10                        ; 0042f6d4
     PUSH 0x0                            ; 0042f6d7
         ;   Label: LAB_0042f6d7
@@ -344,8 +344,8 @@ section .text
     PUSH 0x0                            ; 0042f70f
     PUSH EBP                            ; 0042f711
     MOV EBX,0x1                         ; 0042f712
-    CALL core_charactr.cpp_CCharacter_FUN_0042d090 ; 0042f717
-        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d090(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 ; 0042f717
+        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0042f71c
     MOV EAX,EBX                         ; 0042f71f
     ADD ESP,0x920                       ; 0042f721

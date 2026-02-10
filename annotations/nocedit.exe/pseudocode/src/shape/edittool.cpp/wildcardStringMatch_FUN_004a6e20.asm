@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   case_sensitive
 ;
 ; XREF[11]:
-;   core_charactr.cpp_CCharacter_FUN_0042e050 at 0042e14e
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 at 0042e14e
 ;   core_msnedit.cpp_CDemonMission_FUN_0053dcf0 at 0053ded2
 ;   core_msnedit.cpp_CDemonMission_FUN_0053df90 at 0053e13a
 ;   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 at 00537cdf

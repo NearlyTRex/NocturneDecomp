@@ -15,7 +15,7 @@ core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *this_ptr,SDama
   SMotion *pSVar2;
   int iVar3;
   
-  if (((this_ptr->base).unk1 & 0x7fffffff) != 0) {
+  if (ABS((this_ptr->base).unk1) != 0.0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->debug_flag_1 != 0) {
@@ -24,7 +24,7 @@ core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *this_ptr,SDama
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).unk1 = (uint)3.0f;
+  (this_ptr->base).unk1 = 3.0f;
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;

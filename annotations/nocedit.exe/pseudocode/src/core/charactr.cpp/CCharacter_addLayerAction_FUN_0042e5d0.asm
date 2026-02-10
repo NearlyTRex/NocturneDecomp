@@ -1,10 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter *this_ptr)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0 (CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name, int direction)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   from_bone_index
+; int              Stack[0xc]:4   to_bone_index
+; char *           Stack[0x10]:4   motion_name
+; int              Stack[0x14]:4   direction
 ;
 ; XREF[2]:
 ;   core_scat.cpp_CScat_ctor_FUN_00556ed0 at 00556f83

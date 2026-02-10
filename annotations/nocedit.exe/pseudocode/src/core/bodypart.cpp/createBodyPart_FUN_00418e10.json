@@ -40,7 +40,7 @@
     {
       "addr": "0042bcc0",
       "from_addr": "0042bcfe",
-      "name": "core_charactr.cpp_CCharacter_FUN_0042bcc0",
+      "name": "core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -324,28 +324,28 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000008",
-      "text": "if (pCVar1 != (COrientation *)in_stack_00000008) {",
+      "text": "if (pUVar1 != (UOrientationVector *)in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000008",
-      "text": "pCVar1->pitch = *in_stack_00000008;",
+      "text": "(pUVar1->vec).x = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000008",
-      "text": "(this_ptr_00->base).orient.bank = in_stack_00000008[1];",
+      "text": "(this_ptr_00->base).orient.vec.y = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000008",
-      "text": "(this_ptr_00->base).orient.heading = in_stack_00000008[2];",
+      "text": "(this_ptr_00->base).orient.vec.z = in_stack_00000008[2];",
       "type": "stack_param"
     },
     {

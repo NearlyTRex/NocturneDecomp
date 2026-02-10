@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 110,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 12,
-    "pseudocode_lines": 110,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 377
+    "pseudocode_lines": 117,
+    "suspect_count": 2,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 384
   },
   "cross_references": [
     {
@@ -50,32 +52,32 @@
     {
       "addr": "00428f40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40"
     },
     {
       "addr": "00429820",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429820"
+      "name": "core_charactr.cpp_CCharacter_preProcess_FUN_00429820"
     },
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
-    },
-    {
-      "addr": "0042ca70",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ca70"
-    },
-    {
-      "addr": "0042ea40",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ea40"
+      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
     },
     {
       "addr": "0042ec40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40"
+    },
+    {
+      "addr": "0042ea40",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40"
+    },
+    {
+      "addr": "0042ca70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70"
     },
     {
       "addr": "004ede30",
@@ -300,7 +302,22 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_ffffffac",
+      "text": "float in_stack_ffffffac;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 118,
+      "match": "in_stack_ffffffac",
+      "text": "(&this_ptr->base,delta_time,in_stack_ffffffac);",
+      "type": "stack_param"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

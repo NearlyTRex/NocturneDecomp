@@ -9,9 +9,63 @@
       },
       {
         "category": "missing_member",
+        "column": 22,
+        "line": 29,
+        "message": "no member named 'heading' in 'UOrientationVector'"
+      },
+      {
+        "category": "missing_member",
+        "column": 22,
+        "line": 30,
+        "message": "no member named 'bank' in 'UOrientationVector'"
+      },
+      {
+        "category": "missing_member",
+        "column": 22,
+        "line": 31,
+        "message": "no member named 'pitch' in 'UOrientationVector'"
+      },
+      {
+        "category": "missing_member",
         "column": 15,
         "line": 40,
         "message": "no member named 'unk2' in 'CDemonActor'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 41,
+        "message": "no member named 'unk3' in 'CDemonActor'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 42,
+        "message": "no member named 'unk3' in 'CDemonActor'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 43,
+        "message": "no member named 'unk3' in 'CDemonActor'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 44,
+        "message": "no member named 'unk4' in 'CDemonActor'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 45,
+        "message": "no member named 'unk4' in 'CDemonActor'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 46,
+        "message": "no member named 'unk4' in 'CDemonActor'"
       },
       {
         "category": "missing_member",
@@ -637,35 +691,35 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->orient).heading = 0.0;",
+      "text": "(ADJ(pCVar2)->orient).vec.z = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->orient).bank = (ADJ(pCVar2)->orient).heading;",
+      "text": "(ADJ(pCVar2)->orient).vec.y = (ADJ(pCVar2)->orient).vec.z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->orient).bank = (ADJ(pCVar2)->orient).heading;",
+      "text": "(ADJ(pCVar2)->orient).vec.y = (ADJ(pCVar2)->orient).vec.z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->orient).pitch = (ADJ(pCVar2)->orient).bank;",
+      "text": "(ADJ(pCVar2)->orient).vec.x = (ADJ(pCVar2)->orient).vec.y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->orient).pitch = (ADJ(pCVar2)->orient).bank;",
+      "text": "(ADJ(pCVar2)->orient).vec.x = (ADJ(pCVar2)->orient).vec.y;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -700,70 +754,70 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk3).z = 0.0;",
+      "text": "(ADJ(pCVar2)->platform_position_delta).z = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk3).y = (ADJ(pCVar2)->unk3).z;",
+      "text": "(ADJ(pCVar2)->platform_position_delta).y = (ADJ(pCVar2)->platform_position_delta).z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk3).y = (ADJ(pCVar2)->unk3).z;",
+      "text": "(ADJ(pCVar2)->platform_position_delta).y = (ADJ(pCVar2)->platform_position_delta).z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk3).x = (ADJ(pCVar2)->unk3).y;",
+      "text": "(ADJ(pCVar2)->platform_position_delta).x = (ADJ(pCVar2)->platform_position_delta).y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk3).x = (ADJ(pCVar2)->unk3).y;",
+      "text": "(ADJ(pCVar2)->platform_position_delta).x = (ADJ(pCVar2)->platform_position_delta).y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk4).z = 0.0;",
+      "text": "(ADJ(pCVar2)->platform_orientation_delta).z = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk4).y = (ADJ(pCVar2)->unk4).z;",
+      "text": "(ADJ(pCVar2)->platform_orientation_delta).y = (ADJ(pCVar2)->platform_orientation_delta).z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk4).y = (ADJ(pCVar2)->unk4).z;",
+      "text": "(ADJ(pCVar2)->platform_orientation_delta).y = (ADJ(pCVar2)->platform_orientation_delta).z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk4).x = (ADJ(pCVar2)->unk4).y;",
+      "text": "(ADJ(pCVar2)->platform_orientation_delta).x = (ADJ(pCVar2)->platform_orientation_delta).y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "ADJ",
-      "text": "(ADJ(pCVar2)->unk4).x = (ADJ(pCVar2)->unk4).y;",
+      "text": "(ADJ(pCVar2)->platform_orientation_delta).x = (ADJ(pCVar2)->platform_orientation_delta).y;",
       "type": "decompiler_intrinsic"
     },
     {

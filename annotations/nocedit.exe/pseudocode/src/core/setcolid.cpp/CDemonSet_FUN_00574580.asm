@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10 at 0040ca8a
-;   core_charactr.cpp_CCharacter_FUN_0042ea40 at 0042eb34
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40 at 0042eb34
 ;
 ; Referenced Globals:
 ;   float FLOAT_006463fa = -10

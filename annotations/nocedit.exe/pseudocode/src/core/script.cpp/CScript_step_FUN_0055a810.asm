@@ -221,9 +221,9 @@
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10
 ;   core_bodypart.cpp_FUN_0041b510
 ;   core_bugs.cpp_FUN_00427b70
-;   core_charactr.cpp_CCharacter_FUN_0042bd30
-;   core_charactr.cpp_CCharacter_FUN_0042d390
-;   core_charactr.cpp_CCharacter_FUN_0042ddd0
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+;   core_charactr.cpp_CCharacter_initGesture_FUN_0042d390
+;   core_charactr.cpp_CCharacter_setLookAtTarget_FUN_0042ddd0
 ;   core_enemy.cpp_CEnemy_FUN_004a9ef0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_event.cpp_CEventList_FUN_004aabe0
@@ -3215,8 +3215,8 @@ section .text
     PUSH EAX                            ; 0055c91c
     MOV EDX,dword ptr [ESP + 0x3ec4]    ; 0055c91d
     PUSH EDX                            ; 0055c924
-    CALL core_charactr.cpp_CCharacter_FUN_0042bd30 ; 0055c925
-        ;   XREF to: 0042bd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042bd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 ; 0055c925
+        ;   XREF to: 0042bd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     ADD ESP,0x10                        ; 0055c92a
     INC ESI                             ; 0055c92d
         ;   Label: LAB_0055c92d
@@ -3878,8 +3878,8 @@ section .text
         ;   Label: LAB_0055d172
     PUSH EDX                            ; 0055d179
     PUSH EAX                            ; 0055d17a
-    CALL core_charactr.cpp_CCharacter_FUN_0042d390 ; 0055d17b
-        ;   XREF to: 0042d390 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042d390(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_initGesture_FUN_0042d390 ; 0055d17b
+        ;   XREF to: 0042d390 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_initGesture_FUN_0042d390(CCharacter * this_ptr, char * motion_name)
     ADD ESP,0x8                         ; 0055d180
     JMP 0x0055d133                      ; 0055d183
         ;   XREF to: 0055d133 (UNCONDITIONAL_JUMP)  ; LAB_0055d133
@@ -4706,8 +4706,8 @@ section .text
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH EAX                            ; 0055dbe5
     PUSH ESI                            ; 0055dbe6
-    CALL core_charactr.cpp_CCharacter_FUN_0042ddd0 ; 0055dbe7
-        ;   XREF to: 0042ddd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ddd0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_setLookAtTarget_FUN_0042ddd0 ; 0055dbe7
+        ;   XREF to: 0042ddd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setLookAtTarget_FUN_0042ddd0(CCharacter * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 0055dbec
     JMP 0x0055a8bb                      ; 0055dbef
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb

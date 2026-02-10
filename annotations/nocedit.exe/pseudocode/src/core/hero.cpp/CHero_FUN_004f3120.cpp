@@ -35,7 +35,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f3120(CHero *this_ptr)
   float fStack_18;
   float fStack_14;
   
-  iVar1 = core_charactr_cpp_CCharacter_FUN_0042d360(&this_ptr->base);
+  iVar1 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_0042d360(&this_ptr->base);
   if (iVar1 == 0) {
     if (this_ptr->pushed_object == (CDemonActor *)0x0) {
       iVar6 = 0;
@@ -45,7 +45,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f3120(CHero *this_ptr)
         pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar1),
                             g_CBoxActorClassInfo.name_hash);
-        if (((pCVar2 != (CDemonActor *)0x0) && (pCVar2[2].unk1 != 0)) &&
+        if (((pCVar2 != (CDemonActor *)0x0) && (pCVar2[2].direction_hint != 0)) &&
            (pCVar2[2].was_created == 0)) {
           (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,(CBoundingBox3D *)&local_80);
           fStack_60 = fStack_78 + fStack_6c;

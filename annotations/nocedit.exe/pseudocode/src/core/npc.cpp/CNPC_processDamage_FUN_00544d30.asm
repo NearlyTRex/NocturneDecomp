@@ -18,7 +18,7 @@
 ;   CDemonActorType g_CNPCClassInfo
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042d060
+;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 ;   core_npc.cpp_CNPC_FUN_00544c50
 ;
@@ -94,8 +94,8 @@ section .text
     CALL dword ptr [EAX + 0xa0]         ; 00544dcf
     ADD ESP,0xc                         ; 00544dd5
     PUSH EBX                            ; 00544dd8
-    CALL core_charactr.cpp_CCharacter_FUN_0042d060 ; 00544dd9
-        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d060(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060 ; 00544dd9
+        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00544dde
     PUSH 0x63e3b8                       ; 00544de1 | = "DIE"
     PUSH ESI                            ; 00544de6

@@ -1,0 +1,273 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 30,
+        "line": 117,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 37,
+        "line": 117,
+        "message": "expected expression"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 262,
+    "complexity_score": 159,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "pseudocode_lines": 119,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 381
+  },
+  "cross_references": [
+    {
+      "addr": "004a9fd0",
+      "from_addr": "004aa002",
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042e050",
+    "address_range": [
+      [
+        "0042e050",
+        "0042e1f4"
+      ],
+      [
+        "0042e20c",
+        "0042e36d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050",
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 (CCharacter *this_ptr,float delta_time,char *pattern)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "004286e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0"
+    },
+    {
+      "addr": "005ec320",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_FUN_005ec320"
+    },
+    {
+      "addr": "004a6e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006174d2",
+      "name": "DOUBLE_006174d2",
+      "type": "double",
+      "value": "4"
+    },
+    {
+      "addr": "006174da",
+      "name": "FLOAT_006174da",
+      "type": "float",
+      "value": "20"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "032690dc",
+      "name": "DAT_032690dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032690e0",
+      "name": "DAT_032690e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032690e4",
+      "name": "DAT_032690e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.15566037735849,
+    "instruction_count": 212,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 4,
+      "BRANCH": 6,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 19,
+      "COPY": 324,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_ADD": 4,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 6,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 7,
+      "INT2FLOAT": 1,
+      "INT_ADD": 107,
+      "INT_AND": 111,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 89,
+      "INT_LEFT": 12,
+      "INT_LESS": 8,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 15,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 19,
+      "INT_SLESS": 44,
+      "INT_SUB": 40,
+      "INT_XOR": 8,
+      "INT_ZEXT": 12,
+      "LOAD": 66,
+      "POPCOUNT": 44,
+      "RETURN": 5,
+      "STORE": 52
+    },
+    "pcode_op_count": 1093
+  },
+  "stack_frame": {
+    "frame_size": 8080,
+    "local_size": 8068,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1f80",
+        "offset": -8064,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "pattern",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "SQRT",
+      "text": "(float)4 <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "SQRT",
+      "text": "20.0f <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 110,
+      "match": "code *",
+      "text": "path_map = (CPathMap *)(**(code **)(*(int *)(this_ptr->field36_0x25f0 + 0x154) + 0xbc))();",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

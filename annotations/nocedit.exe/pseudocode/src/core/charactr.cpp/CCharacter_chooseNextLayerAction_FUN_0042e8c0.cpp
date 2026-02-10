@@ -2,18 +2,19 @@
 // Address: 0042e8c0
 // Address Range: [[0042e8c0, 0042ea31]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter *this_ptr)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0 (CCharacter *this_ptr,int layer_action_index)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter *this_ptr)
+void __cdecl
+core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0
+          (CCharacter *this_ptr,int layer_action_index)
 
 {
   float fVar1;
   int iVar2;
   int iVar3;
   SLayerAction *pSVar4;
-  int in_stack_00000008;
   float local_14;
   
   if ((this_ptr->layer_action_index < 0) ||
@@ -31,7 +32,7 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
   else {
     iVar2 = this_ptr->layer_actions[this_ptr->layer_action_index].from_bone_index;
   }
-  if (in_stack_00000008 != iVar2) {
+  if (layer_action_index != iVar2) {
     local_14 = 999.0;
     iVar3 = 0;
     if (0 < this_ptr->layer_action_count) {
@@ -41,8 +42,8 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
           if ((pSVar4->direction < 1) &&
              ((pSVar4->to_bone_index == iVar2 &&
               (fVar1 = pSVar4->duration +
-                       this_ptr->motion_transition_costs[pSVar4->from_bone_index][in_stack_00000008]
-              , fVar1 < local_14)))) {
+                       this_ptr->motion_transition_costs[pSVar4->from_bone_index]
+                       [layer_action_index], fVar1 < local_14)))) {
             this_ptr->layer_action_t = 1.0;
             this_ptr->layer_action_index = iVar3;
             local_14 = fVar1;
@@ -50,7 +51,7 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
         }
         else {
           fVar1 = pSVar4->duration +
-                  this_ptr->motion_transition_costs[pSVar4->to_bone_index][in_stack_00000008];
+                  this_ptr->motion_transition_costs[pSVar4->to_bone_index][layer_action_index];
           if (fVar1 < local_14) {
             this_ptr->layer_action_t = 0.0;
             this_ptr->layer_action_index = iVar3;

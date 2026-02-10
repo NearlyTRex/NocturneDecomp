@@ -15,9 +15,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
+;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80
-;   core_charactr.cpp_CCharacter_FUN_0042d090
-;   core_charactr.cpp_CCharacter_FUN_0042d530
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
 ;
 ; *****************************************************************************
 
@@ -40,12 +40,12 @@ section .text
     PUSH 0x0                            ; 0042f822
         ;   Label: LAB_0042f822
     PUSH EDI                            ; 0042f824
-    CALL core_charactr.cpp_CCharacter_FUN_0042d090 ; 0042f825
-        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d090(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 ; 0042f825
+        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0042f82a
     PUSH EDI                            ; 0042f82d
-    CALL core_charactr.cpp_CCharacter_FUN_0042d530 ; 0042f82e
-        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d530(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530 ; 0042f82e
+        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530(CCharacter * this_ptr)
     FLD float ptr [EDI + 0x243c]        ; 0042f833
     ADD ESP,0x4                         ; 0042f839
     FSTP float ptr [EDI + 0x2440]       ; 0042f83c
@@ -85,7 +85,7 @@ section .text
     PUSH EBX                            ; 0042f888
     PUSH EDI                            ; 0042f889
     CALL core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 ; 0042f88a
-        ;   XREF to: 0042ce80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter * this_ptr)
+        ;   XREF to: 0042ce80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter * this_ptr, int hand_index, float blend_time)
     ADD ESP,0xc                         ; 0042f88f
     JMP 0x0042f856                      ; 0042f892
         ;   XREF to: 0042f856 (UNCONDITIONAL_JUMP)  ; LAB_0042f856

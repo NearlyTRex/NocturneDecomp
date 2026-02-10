@@ -23,6 +23,7 @@ struct _FILE;
 #include "types/funcdefs/CDemonActor_allowBulletHoles.h"
 #include "types/funcdefs/CDemonActor_archive.h"
 #include "types/funcdefs/CDemonActor_calculateChecksum.h"
+#include "types/funcdefs/CDemonActor_canLookAt.h"
 #include "types/funcdefs/CDemonActor_canPickup.h"
 #include "types/funcdefs/CDemonActor_customGetFloorHeight.h"
 #include "types/funcdefs/CDemonActor_customIntersectCylinderXZ.h"
@@ -46,7 +47,6 @@ struct _FILE;
 #include "types/funcdefs/CDemonActor_handleFootstep.h"
 #include "types/funcdefs/CDemonActor_hasCollision.h"
 #include "types/funcdefs/CDemonActor_initializeInEditor.h"
-#include "types/funcdefs/CDemonActor_isActiveTarget.h"
 #include "types/funcdefs/CDemonActor_onActorDeleted.h"
 #include "types/funcdefs/CDemonActor_onAreaDeleted.h"
 #include "types/funcdefs/CDemonActor_onDropped.h"
@@ -103,7 +103,7 @@ typedef struct CDemonActor_vtable {
     CDemonActor_updateCollisionData* updateCollisionData; // 0x48
     CDemonActor_getTargetPoints* getTargetPoints; // 0x4c
     CDemonActor_renderTargetPoints* renderTargetPoints; // 0x50
-    CDemonActor_isActiveTarget* isActiveTarget; // 0x54
+    CDemonActor_canLookAt* canLookAt; // 0x54
     CDemonActor_evaluateTriggerCondition* evaluateTriggerCondition; // 0x58
     CDemonActor_processActionButton* processActionButton; // 0x5c
     CDemonActor_setPositionAndOrientation* setPositionAndOrientation; // 0x60

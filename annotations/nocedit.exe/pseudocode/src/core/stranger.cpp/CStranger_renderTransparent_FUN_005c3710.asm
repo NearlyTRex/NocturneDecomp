@@ -7,7 +7,7 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042b0e0
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
         ;   Label: core_stranger.cpp_CStranger_renderTransparent_FUN_005c3710
     MOV EBX,dword ptr [ESP + 0x8]       ; 005c3711
     PUSH EBX                            ; 005c3715
-    CALL core_charactr.cpp_CCharacter_FUN_0042b0e0 ; 005c3716
-        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042b0e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0 ; 005c3716
+        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0(CCharacter * this_ptr)
     MOV EDX,dword ptr [EBX + 0x1fc2c]   ; 005c371b
     ADD ESP,0x4                         ; 005c3721
     TEST EDX,EDX                        ; 005c3724

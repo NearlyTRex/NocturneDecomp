@@ -10,7 +10,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056fbd0(CDemonSet *this_ptr)
 
 {
   CLocation *pCVar1;
-  COrientation *pCVar2;
+  UOrientationVector *pUVar2;
   CDemonActorTransformState *pCVar3;
   CHero *this_ptr_00;
   uint uVar4;
@@ -65,17 +65,17 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056fbd0(CDemonSet *this_ptr)
         iVar8 = core_set_cpp_CDemonSet_isCameraPanning_FUN_00571320(this_ptr);
         pCVar1 = &(this_ptr_00->base).base.location;
         pCVar5 = &(this_ptr_00->base).base.previous_transform_state.orientation;
-        pCVar2 = &(this_ptr_00->base).base.orient;
+        pUVar2 = &(this_ptr_00->base).base.orient;
         if (iVar8 == 0) {
           if (((((pCVar1->position).x == (pCVar3->position).x) &&
                ((this_ptr_00->base).base.location.position.y ==
                 (this_ptr_00->base).base.previous_transform_state.position.y)) &&
               ((this_ptr_00->base).base.location.position.z ==
                (this_ptr_00->base).base.previous_transform_state.position.z)) &&
-             (((pCVar2->pitch == pCVar5->x &&
-               ((this_ptr_00->base).base.orient.bank ==
+             ((((pUVar2->vec).x == pCVar5->x &&
+               ((this_ptr_00->base).base.orient.vec.y ==
                 (this_ptr_00->base).base.previous_transform_state.orientation.y)) &&
-              ((this_ptr_00->base).base.orient.heading ==
+              ((this_ptr_00->base).base.orient.vec.z ==
                (this_ptr_00->base).base.previous_transform_state.orientation.z)))) {
             if (((this_ptr_00->base).base.previous_transform_state.dirty_flags & local_28) == 0)
             goto LAB_0056fc73;
@@ -94,10 +94,10 @@ joined_r0x0056fede:
                (this_ptr_00->base).base.previous_transform_state.position.y)) &&
              (((this_ptr_00->base).base.location.position.z ==
                (this_ptr_00->base).base.previous_transform_state.position.z &&
-              (((pCVar2->pitch == pCVar5->x &&
-                ((this_ptr_00->base).base.orient.bank ==
+              ((((pUVar2->vec).x == pCVar5->x &&
+                ((this_ptr_00->base).base.orient.vec.y ==
                  (this_ptr_00->base).base.previous_transform_state.orientation.y)) &&
-               ((this_ptr_00->base).base.orient.heading ==
+               ((this_ptr_00->base).base.orient.vec.z ==
                 (this_ptr_00->base).base.previous_transform_state.orientation.z)))))) {
             uVar4 = (this_ptr_00->base).base.unk13;
             goto joined_r0x0056fede;

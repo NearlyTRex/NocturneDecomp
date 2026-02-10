@@ -9,7 +9,7 @@
 void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_005e56c0(CVampireBoss *this_ptr)
 
 {
-  COrientation *euler;
+  UOrientationVector *euler;
   CLocation *position;
   CDeformableModelInstance *this_ptr_00;
   CDeformableModelInstance *this_ptr_01;
@@ -25,17 +25,15 @@ void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_005e56c0(CVampireBoss *thi
   euler = &(this_ptr->base).base.base.orient;
   position = &(this_ptr->base).base.base.location;
   core_cloth_cpp_CCloth_setup_FUN_00439710
-            ((CCloth *)this_ptr->unk2,&position->position,(CVector3f *)euler,this_ptr_01);
+            ((CCloth *)this_ptr->unk2,&position->position,&euler->vec,this_ptr_01);
   core_cloth_cpp_CCloth_load_FUN_00438cf0
             ((CCloth *)(this_ptr->unk2 + 0x3fe70),"noscape.cth");
   core_cloth_cpp_CCloth_setup_FUN_00439710
-            ((CCloth *)(this_ptr->unk2 + 0x3fe70),&position->position,(CVector3f *)euler,this_ptr_00
-            );
+            ((CCloth *)(this_ptr->unk2 + 0x3fe70),&position->position,&euler->vec,this_ptr_00);
   core_cloth_cpp_CCloth_load_FUN_00438cf0
             ((CCloth *)(this_ptr->unk2 + 0x7fce0),"nosskirt.cth");
   core_cloth_cpp_CCloth_setup_FUN_00439710
-            ((CCloth *)(this_ptr->unk2 + 0x7fce0),&position->position,(CVector3f *)euler,this_ptr_00
-            );
+            ((CCloth *)(this_ptr->unk2 + 0x7fce0),&position->position,&euler->vec,this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_01);

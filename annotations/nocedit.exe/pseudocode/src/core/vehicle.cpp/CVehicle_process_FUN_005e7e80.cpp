@@ -9,8 +9,8 @@
 void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,float delta_time)
 
 {
-  COrientation *pCVar1;
-  COrientation *pCVar2;
+  UOrientationVector *pUVar1;
+  UOrientationVector *pUVar2;
   float fVar3;
   float fVar4;
   CDemonActor_vtable *pCVar5;
@@ -112,12 +112,12 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
     } while (iVar13 < this_ptr->tire_count);
   }
   fVar3 = (this_ptr->base).location.position.y;
-  fVar4 = (this_ptr->base).orient.bank;
-  (this_ptr->base).orient.pitch = 0.0;
+  fVar4 = (this_ptr->base).orient.vec.y;
+  (this_ptr->base).orient.vec.x = 0.0;
   pCVar5 = (this_ptr->base).vtable._ub;
   fVar4 = fVar4 + 1.570796f;
   (this_ptr->base).location.position.y = fVar3 + 3.7f;
-  (this_ptr->base).orient.bank = fVar4;
+  (this_ptr->base).orient.vec.y = fVar4;
   (*pCVar5->getBoundingBox)(&this_ptr->base,&local_a0);
   iVar13 = 0;
   for (iVar14 = 0; iVar14 < g_CDemonSetPtr->damage_listener_count; iVar14 = iVar14 + 1) {
@@ -185,7 +185,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   if (local_14 == 0) {
     pCVar6 = (CCharacter *)this_ptr->last_mobster_left;
     if (pCVar6 != (CCharacter *)0x0) {
-      iVar13 = (*(((pCVar6->base).vtable._uc)->_uc).isDamageable)(pCVar6);
+      iVar13 = (*(((pCVar6->base).vtable._uc)->_uc).getDeathState)(pCVar6);
 joined_r0x005e8664:
       if (iVar13 == 0) goto LAB_005e82f4;
     }
@@ -235,27 +235,28 @@ joined_r0x005e8664:
   (this_ptr_01->base).base.base.location.position.y = (this_ptr->base).location.position.y;
   (this_ptr_01->base).base.base.location.position.z = (this_ptr->base).location.position.z;
   (this_ptr_01->base).base.base.location.area_id = (this_ptr->base).location.area_id;
-  pCVar1 = &(this_ptr_01->base).base.base.orient;
-  pCVar2 = &(this_ptr->base).orient;
-  if (pCVar1 != pCVar2) {
-    pCVar1->pitch = pCVar2->pitch;
-    (this_ptr_01->base).base.base.orient.bank = (this_ptr->base).orient.bank;
-    (this_ptr_01->base).base.base.orient.heading = (this_ptr->base).orient.heading;
+  pUVar1 = &(this_ptr_01->base).base.base.orient;
+  pUVar2 = &(this_ptr->base).orient;
+  if (pUVar1 != pUVar2) {
+    (pUVar1->vec).x = (pUVar2->vec).x;
+    (this_ptr_01->base).base.base.orient.vec.y = (this_ptr->base).orient.vec.y;
+    (this_ptr_01->base).base.base.orient.vec.z = (this_ptr->base).orient.vec.z;
   }
   (actor->base).base.location.position.x = (this_ptr->base).location.position.x;
   (actor->base).base.location.position.y = (this_ptr->base).location.position.y;
   (actor->base).base.location.position.z = (this_ptr->base).location.position.z;
   (actor->base).base.location.area_id = (this_ptr->base).location.area_id;
-  pCVar1 = &(actor->base).base.orient;
-  pCVar2 = &(this_ptr->base).orient;
-  if (pCVar1 != pCVar2) {
-    pCVar1->pitch = pCVar2->pitch;
-    (actor->base).base.orient.bank = (this_ptr->base).orient.bank;
-    (actor->base).base.orient.heading = (this_ptr->base).orient.heading;
+  pUVar1 = &(actor->base).base.orient;
+  pUVar2 = &(this_ptr->base).orient;
+  if (pUVar1 != pUVar2) {
+    (pUVar1->vec).x = (pUVar2->vec).x;
+    (actor->base).base.orient.vec.y = (this_ptr->base).orient.vec.y;
+    (actor->base).base.orient.vec.z = (this_ptr->base).orient.vec.z;
   }
   (*((this_ptr_01->base).base.base.vtable._ub)->setup)((CDemonActor *)this_ptr_01);
   (*((actor->base).base.vtable._ub)->setup)((CDemonActor *)actor);
-  core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0((CCharacter *)this_ptr_01);
+  core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
+            ((CCharacter *)this_ptr_01,1,(CDemonActor *)actor,0.0);
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
             (g_CDemonMissionPtr,(CDemonActor *)this_ptr_01);
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70

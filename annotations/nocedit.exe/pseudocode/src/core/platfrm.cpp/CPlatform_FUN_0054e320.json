@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 69,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 44,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -180,6 +180,13 @@
       "line": 34,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(CPlatform *)((int)",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
       "type": "pointer_cast"
     }
   ]

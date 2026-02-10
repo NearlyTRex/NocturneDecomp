@@ -185,23 +185,40 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             ((CKeyFramedModelInstance *)(*(int *)(pCVar6[-2].model_name + 0x10) + 0x158),
              "gat.kfm");
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,0,1,"draw_stand2holsters",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,1,2,"draw_holsters2aimPistols",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,0,3,"draw_stand2coatPocket",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,3,4,"draw_coatPocket2aimShotgun",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,3,5,"draw_coatPocket2aimFlameThrower",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,1,3,"draw_holsters2CoatPocket",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,0,6,"draw_stand2TossAim",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,6,0,"draw_tossAim2Stand",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,0xb,4,"draw_shotGunRecoil",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,3,7,"draw_coatPocket2aimTommy",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,7,7,"draw_tommyRecoil",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,0,8,"draw_stand2spearhold",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,0xc,8,"draw_spearStab",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,0xc,8,"draw_spearOverheadswing",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,9,9,"draw_holdCrate",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,3,10,"draw_coatPocket2GasMask",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
+            ((CCharacter *)this_ptr_00,10,0,"draw_gasMask2Stand",0);
   core_cloth_cpp_CClothList_add_FUN_0043c0f0
             ((CClothList *)(pCVar6[-0x13b].animation_state + 0x74),"strcoat.cth");
   pCVar6[1].part_visibility_flags[6] = 0;

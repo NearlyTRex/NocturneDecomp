@@ -12,7 +12,7 @@
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_FUN_0041a050
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10
-;   core_charactr.cpp_CCharacter_FUN_0042bd30
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     PUSH EAX                            ; 00485b6f
     PUSH EBX                            ; 00485b70
     MOV ESI,EAX                         ; 00485b71
-    CALL core_charactr.cpp_CCharacter_FUN_0042bd30 ; 00485b73
-        ;   XREF to: 0042bd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042bd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 ; 00485b73
+        ;   XREF to: 0042bd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     ADD ESP,0x10                        ; 00485b78
     PUSH ESI                            ; 00485b7b
     CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 00485b7c

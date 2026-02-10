@@ -17,7 +17,7 @@ core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageI
   int iVar4;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 8));
-  if (((this_ptr->base).unk1 & 0x7fffffff) != 0) {
+  if (ABS((this_ptr->base).unk1) != 0.0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->debug_flag_1 != 0) {
@@ -26,7 +26,7 @@ core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageI
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).unk1 = (uint)3.0f;
+  (this_ptr->base).unk1 = 3.0f;
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
@@ -41,7 +41,8 @@ core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageI
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,8,1);
-        (*(((this_ptr->base).base.base.vtable._uc)->_uc).cfunc21)();
+        (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                  ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
         sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 0xc));
         (*((this_ptr->base).base.base.vtable._ub)->playSound)

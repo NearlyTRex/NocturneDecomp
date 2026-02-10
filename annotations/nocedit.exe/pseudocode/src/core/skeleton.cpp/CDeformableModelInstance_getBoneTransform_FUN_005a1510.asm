@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[5]:
-;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042b013
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042b013
 ;   core_gabriela.cpp_CGabriella_FUN_004d6f80 at 004d6f9e
 ;   core_moloch.cpp_CMoloch_process_FUN_00528d20 at 005292b9
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005972ee

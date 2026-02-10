@@ -30,8 +30,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[13]:
-;   core_charactr.cpp_CCharacter_FUN_0042d090 at 0042d24b
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cf63
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d24b
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0 at 0043a300
 ;   core_mirror.cpp_setupMirrorReflection_FUN_005214c0 at 005218a7
 ;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00595bfa

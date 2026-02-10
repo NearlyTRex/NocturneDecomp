@@ -52,7 +52,8 @@ core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030
           }
         }
       }
-      core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
+                ((CCharacter *)this_ptr,0,this_ptr_00,0.2);
       core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk4 + 0xc));
       core_sound_cpp_CSound_playSound_FUN_005b3a20

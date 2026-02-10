@@ -10,7 +10,7 @@
 ;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043fa64
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042ec40
+;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     PUSH EDX                            ; 00440471
         ;   Label: LAB_00440471
     PUSH ESI                            ; 00440472
-    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 00440473
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 00440473
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
     ADD ESP,0x8                         ; 00440478
     JMP 0x00440457                      ; 0044047b
         ;   XREF to: 00440457 (UNCONDITIONAL_JUMP)  ; LAB_00440457
@@ -67,8 +67,8 @@ section .text
         ;   XREF to: 00440457 (CONDITIONAL_JUMP)  ; LAB_00440457
     PUSH EDX                            ; 00440482
     PUSH ESI                            ; 00440483
-    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 00440484
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 00440484
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
     ADD ESP,0x8                         ; 00440489
     JMP 0x00440457                      ; 0044048c
         ;   XREF to: 00440457 (UNCONDITIONAL_JUMP)  ; LAB_00440457

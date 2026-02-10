@@ -26,7 +26,7 @@ int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_005460c0(CPassenger *th
         core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
         return iVar1;
       }
-      core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
     return iVar1;

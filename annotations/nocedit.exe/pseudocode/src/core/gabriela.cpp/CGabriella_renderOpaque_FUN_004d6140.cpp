@@ -12,6 +12,7 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *t
   float fVar1;
   float fVar2;
   CWeapon *this_ptr_00;
+  CCharacter *this_ptr_01;
   int iVar3;
   CDemonActor *pCVar4;
   
@@ -31,7 +32,8 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *t
         0.0 < SQRT(fVar2 * fVar2 +
                    *(float *)(pCVar4[4].actor_name + 0x1c) * *(float *)(pCVar4[4].actor_name + 0x1c)
                    + fVar1 * fVar1))))) {
-      (*(((((this_ptr->base).inventory.selected_weapon)->base).vtable._uc)->_uc).cfunc7)();
+      this_ptr_01 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
+      (*(((this_ptr_01->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_01);
       return iVar3;
     }
   }

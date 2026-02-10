@@ -141,7 +141,7 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
   local_180.x = (float)core_actor_cpp_castToClassHash_FUN_0040c790
                                  ((CDemonActor *)in_stack_00000008,g_CWeaponClassInfo.name_hash);
   if ((CDemonActor *)local_180.x != (CDemonActor *)0x0) {
-    fVar1 = (((CDemonActor *)((int)local_180.x + 0x2b0))->orient).pitch;
+    fVar1 = (((CDemonActor *)((int)local_180.x + 0x2b0))->orient).vec.x;
     pCVar15 = (this_ptr->base).base.model.bone_transform.bone_world_matrices[iVar6].m;
     if (fVar1 == 1.4013e-45) {
       local_a8.z = 0.969617;
@@ -160,7 +160,8 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
       local_1b0.z = 0.26139;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_6cc,&local_1b0,&local_30);
-      fVar1 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+      fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                        ((CCharacter *)this_ptr,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_87c,&local_6cc,1.0 - fVar1,&local_51c);
       pCVar7 = &local_51c;
       pCVar9 = &local_a8c;
@@ -189,7 +190,8 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
       local_48.z = 0.0731532;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_ccc,&local_48,&local_1e0);
-      fVar1 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+      fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                        ((CCharacter *)this_ptr,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_3cc,&local_ccc,1.0 - fVar1,&local_7bc);
       pCVar7 = &local_7bc;
       pCVar9 = &local_b1c;
@@ -218,7 +220,8 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
       local_cc.z = -0.225393;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_81c,&local_cc,&local_54);
-      fVar1 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+      fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                        ((CCharacter *)this_ptr,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_27c,&local_81c,1.0 - fVar1,&local_5dc);
       pCVar7 = &local_5dc;
       pCVar9 = &local_63c;
@@ -271,7 +274,8 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
       local_f0.y = 0.0649791;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_bdc,&local_f0,&local_6c);
-      fVar1 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+      fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                        ((CCharacter *)this_ptr,0);
       core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_c0c,&local_bdc,1.0 - fVar1,&local_54c);
       pCVar7 = &local_54c;
       pCVar9 = &local_8ac;
@@ -399,7 +403,7 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
     local_2ac.m[0].z = local_108;
     local_2ac.m[1].z = local_104;
     local_2ac.m[2].z = local_100;
-    if (*(int *)(this_ptr->unk6 + 0x4c) != 0) {
+    if (*(int *)(this_ptr->unk9 + 0x44) != 0) {
       pCVar7 = &local_2ac;
       core_xform_cpp_buildRotationY_FUN_005f6cc0(3.1415927,&local_93c);
       pCVar9 = &local_93c;
@@ -514,7 +518,8 @@ LAB_005c10ab:
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_cfc,&local_120,&local_15c);
     pCVar15 = (this_ptr->base).base.model.bone_transform.bone_world_matrices[iVar6].m;
-    fVar1 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+    fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                      ((CCharacter *)this_ptr,0);
     core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_d2c,&local_cfc,1.0 - fVar1,&local_84c);
     pCVar7 = &local_84c;
     pCVar9 = &local_99c;

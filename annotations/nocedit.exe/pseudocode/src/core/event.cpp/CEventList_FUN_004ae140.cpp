@@ -604,7 +604,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                     *in_stack_0000000c = *in_stack_0000000c + local_90;
                   }
                   else {
-                    iVar7 = (*(((pCVar9->base).base.vtable._uc)->_uc).isDamageable)(&pCVar9->base);
+                    iVar7 = (*(((pCVar9->base).base.vtable._uc)->_uc).getDeathState)(&pCVar9->base);
                     local_dc = (uint)(1 < iVar7);
                     *in_stack_0000000c = *in_stack_0000000c + local_8c;
                   }
@@ -1273,7 +1273,8 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                                     *in_stack_0000000c = *in_stack_0000000c + local_cc;
                                   }
                                   else {
-                                    iVar7 = (*(((pCVar9->base).base.vtable._uc)->_uc).cfunc26)();
+                                    iVar7 = (*(((pCVar9->base).base.vtable._uc)->_uc).isWalkComplete
+                                            )(&pCVar9->base);
                                     local_dc = (uint)(iVar7 != 0);
                                     *in_stack_0000000c = *in_stack_0000000c + (int)local_c8;
                                   }

@@ -10,7 +10,7 @@ void __cdecl core_imp_cpp_CImp_FUN_004fab60(CImp *this_ptr)
 
 {
   int iVar1;
-  CBodyPart *this_ptr_00;
+  CBodyPart *body_part;
   int *in_stack_00000008;
   float local_14;
   
@@ -61,23 +61,32 @@ switchD_004fab96_default:
     }
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
     if (iVar1 != 0) {
-      this_ptr_00 = core_bodypart_cpp_createBodyPart_FUN_00418e10();
-      core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
+      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                ((CCharacter *)this_ptr,body_part,*in_stack_00000008,1);
       if (*in_stack_00000008 == *(int *)(this_ptr->unk + 0xc)) {
-        core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk + 0x10),0);
       }
       if (*(int *)(this_ptr->unk + 0x14) == *in_stack_00000008) {
-        core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk + 0x18),0);
       }
       if (*(int *)(this_ptr->unk + 0x30) == *in_stack_00000008) {
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0x14));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0x18));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0xc));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0x10));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0x34));
       }
-      core_charactr_cpp_CCharacter_FUN_0042f300((CCharacter *)this_ptr);
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr_00);
+      core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
+                ((CCharacter *)this_ptr,"limb?.wav");
+      core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
       in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);
     }
   }

@@ -3,75 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 26,
-        "line": 57,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "column": 16,
+        "line": 71,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "other",
-        "column": 76,
-        "line": 57,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 20,
+        "line": 76,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 78,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 38,
+        "line": 79,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 38,
+        "line": 80,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 81,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 82,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 94,
+        "message": "cannot cast from type 'float' to pointer type 'CFlameCan *'"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 95,
+        "message": "C-style cast from 'CFlameCan *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 96,
+        "message": "C-style cast from 'CFlameCan *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 97,
+        "message": "C-style cast from 'CFlameCan *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 109,
+        "line": 112,
         "message": "C-style cast from 'double' to 'byte[8]' (aka 'unsigned char[8]') is not allowed"
       },
       {
         "category": "other",
+        "column": 22,
+        "line": 113,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "other",
         "column": 14,
-        "line": 111,
+        "line": 114,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 111,
+        "line": 114,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
       },
       {
-        "category": "other",
-        "column": 25,
-        "line": 133,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "category": "undeclared_identifier",
+        "column": 23,
+        "line": 121,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 30,
+        "line": 121,
+        "message": "expected expression"
       },
       {
         "category": "other",
-        "column": 75,
-        "line": 133,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 29,
+        "line": 141,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
-        "category": "other",
-        "column": 20,
-        "line": 167,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 167,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 170,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 171,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 202,
-        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
+        "category": "undeclared_identifier",
+        "column": 23,
+        "line": 183,
+        "message": "use of undeclared identifier 'code'"
       }
     ],
     "success": false,
@@ -79,18 +121,20 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 310,
+    "complexity_score": 530,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 215,
-    "suspect_count": 8,
+    "pseudocode_lines": 235,
+    "suspect_count": 27,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "unknown_field"
+      "stack_param",
+      "unknown_field",
+      "unresolved_funcptr"
     ],
-    "total_lines": 320
+    "total_lines": 340
   },
   "cross_references": [],
   "function": {
@@ -280,59 +324,192 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 10,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_fffffec0",
+      "text": "CDemonActor *in_stack_fffffec0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_fffffec4",
+      "text": "CDemonSet *in_stack_fffffec4;",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 62,
       "match": "fptan",
       "text": "fVar4 = (float10)fptan((float10)*(float *)this_ptr->unk * (float10)3.1415926535000001 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 72,
       "match": "fcos",
-      "text": "fVar4 = (float10)fcos((float10)fStack_48);",
+      "text": "fVar4 = (float10)fcos((float10)(float)pCStack_44);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 73,
       "match": "fsin",
-      "text": "fVar5 = (float10)fsin((float10)fStack_48);",
+      "text": "fVar5 = (float10)fsin((float10)(float)pCStack_44);",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 114,
+      "match": "code *",
+      "text": "iVar2 = (**(code **)(this_ptr_00->cameras[0].fog_enabled + 0x120))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_fffffec0",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_fffffec4",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 140,
+      "match": "in_stack_fffffec4",
+      "text": "in_stack_fffffec4 = (CDemonSet *)g_CDemonSetPtr->ground_type;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 141,
+      "match": "in_stack_fffffec0",
+      "text": "in_stack_fffffec0 = (CDemonActor *)&g_CDemonSetPtr->collision_normal;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 145,
+      "match": "in_stack_fffffec4",
+      "text": "in_stack_fffffec4 = (CDemonSet *)0x4a7834;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 149,
+      "match": "in_stack_fffffec4",
+      "text": "in_stack_fffffec4 = (CDemonSet *)0x4a783f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 159,
+      "match": "in_stack_fffffec0",
+      "text": "in_stack_fffffec0 = (CDemonActor *)0x4a7621;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 160,
+      "match": "in_stack_fffffec4",
+      "text": "in_stack_fffffec4 = g_CDemonSetPtr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 165,
+      "match": "in_stack_fffffec4",
+      "text": "in_stack_fffffec4 = (CDemonSet *)0x4a77f0;",
+      "type": "stack_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 154,
+      "line": 167,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 168,
+      "match": "in_stack_fffffec0",
+      "text": "in_stack_fffffec0 = (CDemonActor *)0x4a7813;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 169,
+      "match": "in_stack_fffffec4",
+      "text": "in_stack_fffffec4 = pCStack_2c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 175,
+      "match": "in_stack_fffffec4",
+      "text": "in_stack_fffffec4 = (CDemonSet *)0x4a7636;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 176,
+      "match": "code *",
+      "text": "iVar2 = (**(code **)(this_ptr_00->cameras[0].fog_enabled + 0xf4))",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unknown/mangled field access",
-      "line": 163,
+      "line": 180,
       "match": "._4_4_",
-      "text": "auStack_128._4_4_ = pCStack_34;",
+      "text": "auStack_124._4_4_ = uStack_30;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
+      "line": 181,
       "match": "._0_4_",
-      "text": "auStack_128._0_4_ = g_CDemonSetPtr->unk1;",
+      "text": "auStack_124._0_4_ = g_CDemonSetPtr->unk1;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
+      "line": 191,
       "match": "SQRT",
-      "text": "SQRT(fStack_9c * fStack_9c + fStack_a4 * fStack_a4 + fStack_a0 * fStack_a0);",
+      "text": "SQRT(fStack_98 * fStack_98 + fStack_a0 * fStack_a0 + fStack_9c * fStack_9c));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 200,
+      "match": "in_stack_fffffec0",
+      "text": "in_stack_fffffec0 = (CDemonActor *)0x4a775b;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 201,
+      "match": "in_stack_fffffec4",
+      "text": "in_stack_fffffec4 = this_ptr_00;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 216,
+      "match": "code *",
+      "text": "(**(code **)(this_ptr_00->cameras[0].fog_enabled + 0x11c))",
+      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

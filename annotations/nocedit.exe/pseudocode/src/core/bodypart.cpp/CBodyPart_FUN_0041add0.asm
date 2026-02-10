@@ -7,7 +7,7 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_0042bd30 at 0042bee1
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 at 0042bee1
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60

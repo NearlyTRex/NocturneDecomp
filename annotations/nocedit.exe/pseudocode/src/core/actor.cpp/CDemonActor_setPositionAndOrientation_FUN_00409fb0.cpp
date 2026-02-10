@@ -16,10 +16,10 @@ core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0
   (this_ptr->location).position.x = new_position->x;
   (this_ptr->location).position.y = new_position->y;
   (this_ptr->location).position.z = new_position->z;
-  if (&this_ptr->orient != (COrientation *)new_orientation) {
-    (this_ptr->orient).pitch = new_orientation->x;
-    (this_ptr->orient).bank = new_orientation->y;
-    (this_ptr->orient).heading = new_orientation->z;
+  if ((CVector3f *)&this_ptr->orient != new_orientation) {
+    (this_ptr->orient).vec.x = new_orientation->x;
+    (this_ptr->orient).vec.y = new_orientation->y;
+    (this_ptr->orient).vec.z = new_orientation->z;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr);
   return;

@@ -21,9 +21,9 @@ core_frankgen_cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0(CFrankenstie
   case 2:
   case 3:
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
-    (this_ptr->base).orient.heading = 0.0;
-    (this_ptr->base).orient.bank = (this_ptr->base).orient.heading;
-    (this_ptr->base).orient.pitch = (this_ptr->base).orient.bank;
+    (this_ptr->base).orient.vec.z = 0.0;
+    (this_ptr->base).orient.vec.y = (this_ptr->base).orient.vec.z;
+    (this_ptr->base).orient.vec.x = (this_ptr->base).orient.vec.y;
     break;
   case 4:
   case 5:

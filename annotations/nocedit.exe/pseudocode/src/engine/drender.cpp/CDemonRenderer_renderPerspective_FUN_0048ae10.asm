@@ -10,7 +10,7 @@
 ;
 ; XREF[10]:
 ;   core_box.cpp_CBoundingBox3D_render_FUN_004210b0 at 00421463
-;   core_charactr.cpp_CCharacter_FUN_00429b40 at 00429e6a
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40 at 00429e6a
 ;   core_fire.cpp_CExplosion_render_FUN_004c3b10 at 004c3e5d
 ;   core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004ef970 at 004ef981
 ;   core_inv.cpp_drawItemIconBackground_FUN_005001e0 at 00500318

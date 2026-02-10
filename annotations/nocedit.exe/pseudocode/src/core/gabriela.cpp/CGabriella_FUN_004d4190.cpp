@@ -63,10 +63,10 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (&g_HeroActors[g_LocalHeroIndex]->path_map,
                          &(this_ptr->base).base.base.location.position,&local_c0,
-                         (this_ptr->base).base.base.unk1);
+                         (this_ptr->base).base.base.direction_hint);
       if (iVar5 != 0) {
         fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (local_c0.y - (this_ptr->base).base.base.orient.bank);
+                          (local_c0.y - (this_ptr->base).base.base.orient.vec.y);
         fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
         *(float *)((this_ptr->base).unk2 + 4) = fVar6;
         if (fVar6 < -local_1c) {
@@ -127,7 +127,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
         pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_e4,(CVector3f *)local_6c);
         local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                             (pCVar3->y - (this_ptr->base).base.base.orient.bank);
+                             (pCVar3->y - (this_ptr->base).base.base.orient.vec.y);
         fVar6 = local_18 * (float)0.31830988619288902 * (float)4;
         local_24 = -local_1c;
         *(float *)((this_ptr->base).unk2 + 4) = fVar6;

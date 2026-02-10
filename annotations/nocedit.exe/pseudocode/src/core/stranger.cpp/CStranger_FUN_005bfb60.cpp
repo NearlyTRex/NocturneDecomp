@@ -123,7 +123,7 @@ LAB_005bfd3a:
                        (&pCVar12->motion_controller,local_20,(this_ptr->base).base.layer_action_t);
   local_18 = local_24;
   if ((((this_ptr->base).base.layer_action_index == 9) &&
-      (1.0 <= (this_ptr->base).base.layer_action_t)) && (*(int *)&this_ptr->field_0x1fc34 != 0)) {
+      (1.0 <= (this_ptr->base).base.layer_action_t)) && (*(int *)(this_ptr->unk6 + 4) != 0)) {
     pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar12);
     iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(&pCVar4->motion_list);
     local_20 = iVar5;
@@ -177,7 +177,8 @@ LAB_005bfd3a:
     if (0.0 < fVar2) {
       local_100 = ((fVar2 - 0.2617994) / (1.22173f - 0.2617994)) * 0.6;
     }
-    local_18 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+    local_18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                         ((CCharacter *)this_ptr,3);
     local_100 = (1.0 - local_18) * local_f8 * local_100;
     if (0.0 < local_100) {
       pcVar15 = core_stranger_cpp_FUN_005baee0;
@@ -221,7 +222,8 @@ LAB_005bfd3a:
   iVar5 = (this_ptr->base).base.layer_action_index;
   if ((((iVar5 == 3) || (iVar5 == 4)) || ((iVar5 == 9 || ((iVar5 == 6 || (iVar5 == 7)))))) ||
      (iVar5 == 8)) {
-    local_18 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+    local_18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                         ((CCharacter *)this_ptr,3);
     local_38 = (1.0 - local_18) * local_f8;
     core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(*(float *)(this_ptr->unk1 + 0x18),&local_80);
     fVar2 = local_38;
@@ -257,7 +259,7 @@ LAB_005bfd3a:
   else if ((this_ptr->base).base.layer_action_index != 0xe) {
     return;
   }
-  fVar11 = (float10)fpatan((float10)*(float *)(this_ptr->unk6 + 0x74) / (float10)2.7f,
+  fVar11 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) / (float10)2.7f,
                            (float10)1);
   local_34 = (float)fVar11;
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_34,&local_d0);

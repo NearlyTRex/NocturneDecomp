@@ -11,7 +11,7 @@
 ;   double DOUBLE_0064141c = 0.950000000000000
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042e840
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     PUSH EAX                            ; 00557e4b
         ;   Label: LAB_00557e4b
     PUSH EBX                            ; 00557e4c
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 00557e4d
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 00557e4d
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 00557e52
     FLD float ptr [ESP + 0xc]           ; 00557e56
     ADD ESP,0x8                         ; 00557e5a

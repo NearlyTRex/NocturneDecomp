@@ -3,117 +3,105 @@
     "errors": [
       {
         "category": "other",
-        "column": 37,
-        "line": 58,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 58,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 13,
+        "line": 61,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
         "line": 62,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
         "line": 63,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 34,
         "line": 66,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
         "line": 73,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 39,
         "line": 73,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
         "line": 74,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 105,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "column": 13,
+        "line": 75,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
-        "category": "other",
-        "column": 63,
-        "line": 105,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 120,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 81,
-        "line": 120,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 154,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 154,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 183,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+        "category": "incompatible_types",
+        "column": 45,
+        "line": 122,
+        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 19,
         "line": 187,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 191,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 187,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+        "line": 191,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 213,
+        "line": 193,
+        "message": "cannot cast from type 'float' to pointer type 'CTrigger *'"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 217,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 219,
+        "line": 223,
         "message": "C-style cast from 'CLightGun *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 225,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 34,
+        "line": 225,
+        "message": "expected expression"
       }
     ],
     "success": false,
@@ -121,19 +109,19 @@
   },
   "complexity": {
     "assembly_lines": 629,
-    "complexity_score": 380,
+    "complexity_score": 394,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
-    "pseudocode_lines": 220,
-    "suspect_count": 14,
+    "pseudocode_lines": 224,
+    "suspect_count": 15,
     "suspect_types": [
-      "format_string_mismatch",
+      "decompiler_intrinsic",
       "suspect_float",
-      "unaffected_reg",
-      "unknown_field"
+      "unknown_field",
+      "unresolved_funcptr"
     ],
-    "total_lines": 849
+    "total_lines": 853
   },
   "cross_references": [],
   "function": {
@@ -528,106 +516,109 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "text": "CVector3f *unaff_ESI;",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._8_4_",
+      "text": "auStack_50._8_4_ = (this_ptr->base).bolt_velocity;",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 55,
       "match": "._0_4_",
-      "text": "auStack_54._0_4_ = 0.0;",
+      "text": "auStack_50._0_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 56,
       "match": "._4_4_",
-      "text": "auStack_54._4_4_ = 0.0;",
+      "text": "auStack_50._4_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 59,
-      "match": "._8_4_",
-      "text": "CStack_9c.x = (float)auStack_74._8_4_ + aCStack_90[0].x;",
+      "match": "._4_4_",
+      "text": "CStack_98.x = (float)auStack_6c._4_4_ + aCStack_8c[0].x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 66,
       "match": "._0_4_",
-      "text": "auStack_3c._0_4_ = (float)auStack_74._8_4_ - CStack_b8.max.y;",
+      "text": "auStack_38._0_4_ = (float)auStack_6c._4_4_ - CStack_b0.max.x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 66,
-      "match": "._8_4_",
-      "text": "auStack_3c._0_4_ = (float)auStack_74._8_4_ - CStack_b8.max.y;",
+      "match": "._4_4_",
+      "text": "auStack_38._0_4_ = (float)auStack_6c._4_4_ - CStack_b0.max.x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 67,
       "match": "._4_4_",
-      "text": "auStack_3c._4_4_ = fStack_68 - CStack_b8.max.z;",
+      "text": "auStack_38._4_4_ = fStack_64 - CStack_b0.max.y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 176,
-      "match": "._4_4_",
-      "text": "auStack_54._4_4_ = (pCVar2->min).x + (pCVar2->max).x;",
+      "line": 68,
+      "match": "._8_4_",
+      "text": "auStack_38._8_4_ = fStack_60 - CStack_b0.max.z;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 115,
+      "match": "SUB84",
+      "text": "((CCharacter *)this_ptr,SUB84(dVar6,0),(int)((ulonglong)dVar6 >> 0x20));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 180,
-      "match": "._4_4_",
-      "text": "auStack_3c._4_4_ = (float)auStack_54._4_4_ * 0.5f;",
+      "match": "._8_4_",
+      "text": "auStack_50._8_4_ = (pCVar3->min).x + ((CVector3f *)this_ptr)->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 180,
-      "match": "._4_4_",
-      "text": "auStack_3c._4_4_ = (float)auStack_54._4_4_ * 0.5f;",
+      "line": 184,
+      "match": "._8_4_",
+      "text": "auStack_38._8_4_ = (float)auStack_50._8_4_ * 0.5f;",
       "type": "unknown_field"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 189,
-      "match": "unaff_ESI",
-      "text": "(g_CDemonSetPtr,unaff_ESI,(CVector3f *)auStack_74);",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 184,
+      "match": "._8_4_",
+      "text": "auStack_38._8_4_ = (float)auStack_50._8_4_ * 0.5f;",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 206,
+      "line": 210,
       "match": "._4_4_",
-      "text": "auStack_104._4_4_ = 0.1;",
+      "text": "auStack_fc._4_4_ = 0.1;",
       "type": "unknown_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 207,
+      "line": 211,
       "match": "1.5134e-43",
-      "text": "CStack_d8.min.y = 1.5134e-43;",
+      "text": "CStack_d0.min.y = 1.5134e-43;",
       "type": "suspect_float"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"%s in volume\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s in volume\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 172,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s in volume\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 218,
+      "match": "code *",
+      "text": "(float)(**(code **)((int)pCVar3[0xe].max.y + 0x8c))((CDemonActor *)this_ptr);",
+      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

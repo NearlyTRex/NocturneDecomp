@@ -59,9 +59,9 @@ int __cdecl CMimic::renderOpaque(CMimic *this_ptr);
 // Address: 00520890
 int __cdecl CMimic::renderTransparent(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_CMimic_isDamageable_FUN_005208a0
+// Original: core_mimic.cpp_CMimic_getDeathState_FUN_005208a0
 // Address: 005208a0
-int __cdecl CMimic::isDamageable(CMimic *this_ptr);
+int __cdecl CMimic::getDeathState(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_renderBackground_FUN_005208b0
 // Address: 005208b0

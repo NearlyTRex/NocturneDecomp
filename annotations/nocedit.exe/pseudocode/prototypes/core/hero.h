@@ -119,13 +119,13 @@ int __cdecl CHero(CHero *this_ptr);
 // Address: 004f3760
 int __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_isActiveTarget_FUN_004f37d0
+// Original: core_hero.cpp_CHero_canLookAt_FUN_004f37d0
 // Address: 004f37d0
-int __cdecl CHero::isActiveTarget(CHero *this_ptr);
+int __cdecl CHero::canLookAt(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_FUN_004f3890
 // Address: 004f3890
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero(CHero *this_ptr,int hand_index);
 
 // Original: core_hero.cpp_CHero_FUN_004f38d0
 // Address: 004f38d0

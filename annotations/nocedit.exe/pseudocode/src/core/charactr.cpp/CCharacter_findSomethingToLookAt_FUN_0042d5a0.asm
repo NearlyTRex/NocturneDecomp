@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (CCharacter *this_ptr,float delta_time,int param_3)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
+; int              Stack[0xc]:4   param_3
 ;
 ; XREF[1]:
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f51bb

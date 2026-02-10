@@ -13,10 +13,10 @@
 ;   core_batman.cpp_CBatman_setup_FUN_00416510 at 00416530
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_0041bd90 at 0041bda7
 ;   core_bride.cpp_CBride_setup_FUN_00423810 at 0042382a
-;   core_charactr.cpp_CCharacter_FUN_0042a830 at 0042a846
-;   core_charactr.cpp_CCharacter_FUN_0042ad00 at 0042ad4e
-;   core_charactr.cpp_CCharacter_FUN_0042b110 at 0042b124
-;   core_charactr.cpp_CCharacter_FUN_0042b5b0 at 0042b642
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 at 0042b642
+;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830 at 0042a846
+;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 at 0042ecc9
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40 at 0042eac6
 ;   ... and 66 more
 ;
 ; Called Functions:

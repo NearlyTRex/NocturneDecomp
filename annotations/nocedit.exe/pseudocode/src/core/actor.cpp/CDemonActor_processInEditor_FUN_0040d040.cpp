@@ -28,19 +28,19 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
         fStack_10 = (this_ptr->location).position.y;
         fStack_c = (this_ptr->location).position.z;
       }
-      if ((COrientation *)&fStack_8 != &this_ptr->orient) {
-        fStack_8 = (this_ptr->orient).pitch;
-        unaff_EBX = (this_ptr->orient).bank;
-        unaff_retaddr = (this_ptr->orient).heading;
+      if ((UOrientationVector *)&fStack_8 != &this_ptr->orient) {
+        fStack_8 = (this_ptr->orient).vec.x;
+        unaff_EBX = (this_ptr->orient).vec.y;
+        unaff_retaddr = (this_ptr->orient).vec.z;
       }
       core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffffec);
       (this_ptr->location).position.x = in_stack_ffffffec;
       (this_ptr->location).position.y = fStack_10;
       (this_ptr->location).position.z = fStack_c;
-      if (&this_ptr->orient != (COrientation *)&fStack_8) {
-        (this_ptr->orient).pitch = fStack_8;
-        (this_ptr->orient).bank = unaff_EBX;
-        (this_ptr->orient).heading = unaff_retaddr;
+      if (&this_ptr->orient != (UOrientationVector *)&fStack_8) {
+        (this_ptr->orient).vec.x = fStack_8;
+        (this_ptr->orient).vec.y = unaff_EBX;
+        (this_ptr->orient).vec.z = unaff_retaddr;
       }
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22);

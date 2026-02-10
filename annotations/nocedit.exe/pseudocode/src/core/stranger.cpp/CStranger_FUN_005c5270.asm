@@ -47,7 +47,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0
-;   core_charactr.cpp_CCharacter_FUN_0042e840
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
 ;   core_dynamite.cpp_CDynamite_FUN_0049cf20
 ;   core_dynamite.cpp_CDynamite_FUN_0049cf70
@@ -120,7 +120,7 @@ section .text
     PUSH EAX                            ; 005c530d
     PUSH EBX                            ; 005c530e
     CALL core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370 ; 005c530f
-        ;   XREF to: 0042e370 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter * this_ptr)
+        ;   XREF to: 0042e370 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter * this_ptr, float * remaining_time, int target_bone_index)
     MOV EDX,dword ptr [EBX + 0x2a8c]    ; 005c5314
     MOV EDI,EAX                         ; 005c531a
     IMUL EAX,EDX,0x38                   ; 005c531c
@@ -254,7 +254,7 @@ section .text
     PUSH 0x1                            ; 005c547e
     PUSH EBX                            ; 005c5480
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0 ; 005c5481
-        ;   XREF to: 0042cdb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter * this_ptr)
+        ;   XREF to: 0042cdb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time)
     ADD ESP,0x10                        ; 005c5486
     PUSH 0x653d9d                       ; 005c5489 | = "CTrap"
     MOV EDX,dword ptr [EBX + 0x1fbb4]   ; 005c548e
@@ -302,7 +302,7 @@ section .text
         ;   Label: LAB_005c550d
     PUSH EBX                            ; 005c550e
     CALL core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0 ; 005c550f
-        ;   XREF to: 0042e8c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter * this_ptr)
+        ;   XREF to: 0042e8c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter * this_ptr, int layer_action_index)
     ADD ESP,0x8                         ; 005c5514
     MOV ECX,dword ptr [ESP + 0x2c]      ; 005c5517
         ;   Label: LAB_005c5517
@@ -379,8 +379,8 @@ section .text
     MOV ESI,0x6                         ; 005c55d0
     PUSH ESI                            ; 005c55d5
     PUSH EBX                            ; 005c55d6
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c55d7
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c55d7
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x50],EAX      ; 005c55dc
     FLD float ptr [ESP + 0x50]          ; 005c55e0
     ADD ESP,0x8                         ; 005c55e4

@@ -45,7 +45,7 @@ void __cdecl CBoneGuy::process(CBoneGuy *this_ptr,float delta_time);
 
 // Original: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
 // Address: 0041ca40
-void __cdecl CBoneGuy::getCarryObjToBodyXForm(CBoneGuy *this_ptr);
+void __stack2_esi CBoneGuy::getCarryObjToBodyXForm(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_boneguy.cpp_CBoneGuy_FUN_0041cc40
 // Address: 0041cc40

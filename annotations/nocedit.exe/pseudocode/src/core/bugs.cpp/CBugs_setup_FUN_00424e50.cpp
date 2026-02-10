@@ -24,9 +24,9 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_00424e50(CBugs *this_ptr)
   CKeyFramedModelInstance *local_20;
   char *local_1c;
   
-  (this_ptr->base).base.base.orient.heading = 0.0;
-  (this_ptr->base).base.base.orient.bank = (this_ptr->base).base.base.orient.heading;
-  (this_ptr->base).base.base.orient.pitch = (this_ptr->base).base.base.orient.bank;
+  (this_ptr->base).base.base.orient.vec.z = 0.0;
+  (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.z;
+  (this_ptr->base).base.base.orient.vec.x = (this_ptr->base).base.base.orient.vec.y;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   this_ptr->model_count = 4;
   iVar6 = 0;

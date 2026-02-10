@@ -18,14 +18,18 @@ int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00557df0(CScat *this_ptr)
   if (iVar1 != 0) {
     if (*(int *)(this_ptr->unk + 0x14) != 0) {
       (**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 8))();
+      iVar2 = 0;
       if (*(int *)(this_ptr->unk + 0x14) != 0) {
         switch(*(uint *)(*(int *)(this_ptr->unk + 0x14) + 0x2e0)) {
         default:
+          iVar2 = 2;
           break;
         case 8:
+          iVar2 = 0;
         }
       }
-      fVar3 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+      fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                        ((CCharacter *)this_ptr,iVar2);
       if ((float)0.94999999999999996 < fVar3) {
         (**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 0x104))();
         return 1;

@@ -12,7 +12,7 @@
 ;   CEventList g_CEventListInstance
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042b9e0
+;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_npc.cpp_CNPC_process_FUN_005448b0
 ;
@@ -45,8 +45,8 @@ section .text
     PUSH 0xbf800000                     ; 004f7c30
     PUSH 0x0                            ; 004f7c35
     PUSH EBX                            ; 004f7c37
-    CALL core_charactr.cpp_CCharacter_FUN_0042b9e0 ; 004f7c38
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b9e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 ; 004f7c38
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
     ADD ESP,0x10                        ; 004f7c3d
     POP EBX                             ; 004f7c40
     RET                                 ; 004f7c41

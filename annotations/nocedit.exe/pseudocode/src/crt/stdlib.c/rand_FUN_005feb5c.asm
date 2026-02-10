@@ -14,7 +14,7 @@
 ;   core_batman.cpp_CBatman_FUN_00417660 at 00417680
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422b2a
 ;   core_bride.cpp_CBride_FUN_00424600 at 00424623
-;   core_charactr.cpp_CCharacter_FUN_0042af60 at 0042afca
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042afca
 ;   ... and 31 more
 ;
 ; Called Functions:

@@ -2,21 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 10,
-        "line": 44,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 44,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
         "category": "incompatible_types",
         "column": 15,
-        "line": 65,
+        "line": 66,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -25,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 64,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 8,
-    "pseudocode_lines": 64,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 231
+    "pseudocode_lines": 65,
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 232
   },
   "cross_references": [],
   "function": {
@@ -196,7 +186,15 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ABS",
+      "text": "if (ABS((this_ptr->base).unk1) != 0.0) {",
+      "type": "decompiler_intrinsic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

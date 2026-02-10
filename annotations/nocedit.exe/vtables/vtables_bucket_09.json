@@ -340,7 +340,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"00409f20",
-        "func_name":"core_actor.cpp_CDemonActor_isActiveTarget_FUN_00409f20",
+        "func_name":"core_actor.cpp_CDemonActor_canLookAt_FUN_00409f20",
         "offset":84,
         "param_count":1,
         "ptr_addr":"0065c3e8"
@@ -807,7 +807,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042b0e0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042b0e0",
+        "func_name":"core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0",
         "offset":12,
         "param_count":1,
         "ptr_addr":"0065cda0"
@@ -951,7 +951,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042de50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042de50",
+        "func_name":"core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50",
         "offset":84,
         "param_count":1,
         "ptr_addr":"0065cde8"
@@ -1263,15 +1263,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"00428e30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_00428e30",
+        "func_name":"core_charactr.cpp_CCharacter_kill_FUN_00428e30",
         "offset":240,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"0065ce84"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca60",
+        "func_name":"core_charactr.cpp_CCharacter_canWalk_FUN_0042ca60",
         "offset":244,
         "param_count":1,
         "ptr_addr":"0065ce88"
@@ -1279,7 +1279,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":248,
         "param_count":1,
         "ptr_addr":"0065ce8c"
@@ -1287,7 +1287,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":252,
         "param_count":1,
         "ptr_addr":"0065ce90"
@@ -1295,7 +1295,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":256,
         "param_count":1,
         "ptr_addr":"0065ce94"
@@ -1303,7 +1303,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf40",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf40",
+        "func_name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40",
         "offset":260,
         "param_count":1,
         "ptr_addr":"0065ce98"
@@ -1311,7 +1311,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf80",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf80",
+        "func_name":"core_charactr.cpp_CCharacter_getGrabber_FUN_0042bf80",
         "offset":264,
         "param_count":1,
         "ptr_addr":"0065ce9c"
@@ -1343,9 +1343,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c180",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c180",
+        "func_name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180",
         "offset":280,
-        "param_count":1,
+        "param_count":5,
         "ptr_addr":"0065ceac"
       },
       {
@@ -1359,7 +1359,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"00486320",
-        "func_name":"core_dracbrid.cpp_CDraculaBride_isDamageable_FUN_00486320",
+        "func_name":"core_dracbrid.cpp_CDraculaBride_getDeathState_FUN_00486320",
         "offset":288,
         "param_count":1,
         "ptr_addr":"0065ceb4"
@@ -1367,15 +1367,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c010",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c010",
+        "func_name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_0042c010",
         "offset":292,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"0065ceb8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":296,
         "param_count":1,
         "ptr_addr":"0065cebc"
@@ -1383,23 +1383,23 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042a3f0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042a3f0",
+        "func_name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_0042a3f0",
         "offset":300,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065cec0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd50",
+        "func_name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_0042cd50",
         "offset":304,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065cec4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd60",
+        "func_name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60",
         "offset":308,
         "param_count":1,
         "ptr_addr":"0065cec8"
@@ -1407,7 +1407,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cd90",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd90",
+        "func_name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_0042cd90",
         "offset":312,
         "param_count":1,
         "ptr_addr":"0065cecc"
@@ -1415,47 +1415,47 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cfe0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cfe0",
+        "func_name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_0042cfe0",
         "offset":316,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"0065ced0"
       },
       {
-        "convention":"__cdecl",
+        "convention":"__stack2_esi",
         "func_addr":"0042d300",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042d300",
+        "func_name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300",
         "offset":320,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"0065ced4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c920",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c920",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920",
         "offset":324,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"0065ced8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c9d0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c9d0",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0",
         "offset":328,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065cedc"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca20",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca20",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_0042ca20",
         "offset":332,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065cee0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca30",
+        "func_name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_0042ca30",
         "offset":336,
         "param_count":1,
         "ptr_addr":"0065cee4"
@@ -1890,7 +1890,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042b0e0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042b0e0",
+        "func_name":"core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0",
         "offset":12,
         "param_count":1,
         "ptr_addr":"0065fea0"
@@ -2034,7 +2034,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042de50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042de50",
+        "func_name":"core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50",
         "offset":84,
         "param_count":1,
         "ptr_addr":"0065fee8"
@@ -2346,9 +2346,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"00428e30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_00428e30",
+        "func_name":"core_charactr.cpp_CCharacter_kill_FUN_00428e30",
         "offset":240,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"0065ff84"
       },
       {
@@ -2362,7 +2362,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":248,
         "param_count":1,
         "ptr_addr":"0065ff8c"
@@ -2370,7 +2370,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":252,
         "param_count":1,
         "ptr_addr":"0065ff90"
@@ -2378,7 +2378,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":256,
         "param_count":1,
         "ptr_addr":"0065ff94"
@@ -2386,7 +2386,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf40",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf40",
+        "func_name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40",
         "offset":260,
         "param_count":1,
         "ptr_addr":"0065ff98"
@@ -2394,7 +2394,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf80",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf80",
+        "func_name":"core_charactr.cpp_CCharacter_getGrabber_FUN_0042bf80",
         "offset":264,
         "param_count":1,
         "ptr_addr":"0065ff9c"
@@ -2402,7 +2402,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf70",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf70",
+        "func_name":"core_charactr.cpp_CCharacter_releaseVictim_FUN_0042bf70",
         "offset":268,
         "param_count":1,
         "ptr_addr":"0065ffa0"
@@ -2410,7 +2410,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf70",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf70",
+        "func_name":"core_charactr.cpp_CCharacter_releaseVictim_FUN_0042bf70",
         "offset":272,
         "param_count":1,
         "ptr_addr":"0065ffa4"
@@ -2426,9 +2426,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c180",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c180",
+        "func_name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180",
         "offset":280,
-        "param_count":1,
+        "param_count":5,
         "ptr_addr":"0065ffac"
       },
       {
@@ -2442,7 +2442,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c580",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c580",
+        "func_name":"core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580",
         "offset":288,
         "param_count":1,
         "ptr_addr":"0065ffb4"
@@ -2450,15 +2450,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c010",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c010",
+        "func_name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_0042c010",
         "offset":292,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"0065ffb8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":296,
         "param_count":1,
         "ptr_addr":"0065ffbc"
@@ -2466,23 +2466,23 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042a3f0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042a3f0",
+        "func_name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_0042a3f0",
         "offset":300,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065ffc0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd50",
+        "func_name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_0042cd50",
         "offset":304,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065ffc4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd60",
+        "func_name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60",
         "offset":308,
         "param_count":1,
         "ptr_addr":"0065ffc8"
@@ -2490,7 +2490,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cd90",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd90",
+        "func_name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_0042cd90",
         "offset":312,
         "param_count":1,
         "ptr_addr":"0065ffcc"
@@ -2498,47 +2498,47 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cfe0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cfe0",
+        "func_name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_0042cfe0",
         "offset":316,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"0065ffd0"
       },
       {
-        "convention":"__cdecl",
+        "convention":"__stack2_esi",
         "func_addr":"0042d300",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042d300",
+        "func_name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300",
         "offset":320,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"0065ffd4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c920",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c920",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920",
         "offset":324,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"0065ffd8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c9d0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c9d0",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0",
         "offset":328,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065ffdc"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca20",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca20",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_0042ca20",
         "offset":332,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065ffe0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca30",
+        "func_name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_0042ca30",
         "offset":336,
         "param_count":1,
         "ptr_addr":"0065ffe4"
@@ -2723,7 +2723,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"00409f20",
-        "func_name":"core_actor.cpp_CDemonActor_isActiveTarget_FUN_00409f20",
+        "func_name":"core_actor.cpp_CDemonActor_canLookAt_FUN_00409f20",
         "offset":84,
         "param_count":1,
         "ptr_addr":"00660ee8"
@@ -3126,7 +3126,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042b0e0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042b0e0",
+        "func_name":"core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0",
         "offset":12,
         "param_count":1,
         "ptr_addr":"006617a0"
@@ -3270,7 +3270,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042de50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042de50",
+        "func_name":"core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50",
         "offset":84,
         "param_count":1,
         "ptr_addr":"006617e8"
@@ -3582,15 +3582,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"00428e30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_00428e30",
+        "func_name":"core_charactr.cpp_CCharacter_kill_FUN_00428e30",
         "offset":240,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"00661884"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca60",
+        "func_name":"core_charactr.cpp_CCharacter_canWalk_FUN_0042ca60",
         "offset":244,
         "param_count":1,
         "ptr_addr":"00661888"
@@ -3598,7 +3598,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":248,
         "param_count":1,
         "ptr_addr":"0066188c"
@@ -3606,7 +3606,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":252,
         "param_count":1,
         "ptr_addr":"00661890"
@@ -3614,7 +3614,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":256,
         "param_count":1,
         "ptr_addr":"00661894"
@@ -3622,7 +3622,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf40",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf40",
+        "func_name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40",
         "offset":260,
         "param_count":1,
         "ptr_addr":"00661898"
@@ -3630,7 +3630,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf80",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf80",
+        "func_name":"core_charactr.cpp_CCharacter_getGrabber_FUN_0042bf80",
         "offset":264,
         "param_count":1,
         "ptr_addr":"0066189c"
@@ -3662,9 +3662,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c180",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c180",
+        "func_name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180",
         "offset":280,
-        "param_count":1,
+        "param_count":5,
         "ptr_addr":"006618ac"
       },
       {
@@ -3678,7 +3678,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c580",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c580",
+        "func_name":"core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580",
         "offset":288,
         "param_count":1,
         "ptr_addr":"006618b4"
@@ -3686,15 +3686,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c010",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c010",
+        "func_name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_0042c010",
         "offset":292,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"006618b8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":296,
         "param_count":1,
         "ptr_addr":"006618bc"
@@ -3702,23 +3702,23 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042a3f0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042a3f0",
+        "func_name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_0042a3f0",
         "offset":300,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"006618c0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd50",
+        "func_name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_0042cd50",
         "offset":304,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"006618c4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd60",
+        "func_name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60",
         "offset":308,
         "param_count":1,
         "ptr_addr":"006618c8"
@@ -3726,7 +3726,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cd90",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd90",
+        "func_name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_0042cd90",
         "offset":312,
         "param_count":1,
         "ptr_addr":"006618cc"
@@ -3734,47 +3734,47 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cfe0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cfe0",
+        "func_name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_0042cfe0",
         "offset":316,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"006618d0"
       },
       {
-        "convention":"__cdecl",
+        "convention":"__stack2_esi",
         "func_addr":"00526b20",
         "func_name":"core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20",
         "offset":320,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"006618d4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c920",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c920",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920",
         "offset":324,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"006618d8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c9d0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c9d0",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0",
         "offset":328,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"006618dc"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca20",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca20",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_0042ca20",
         "offset":332,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"006618e0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca30",
+        "func_name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_0042ca30",
         "offset":336,
         "param_count":1,
         "ptr_addr":"006618e4"
@@ -3847,7 +3847,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042b0e0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042b0e0",
+        "func_name":"core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0",
         "offset":12,
         "param_count":1,
         "ptr_addr":"00661da0"
@@ -3991,7 +3991,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042de50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042de50",
+        "func_name":"core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50",
         "offset":84,
         "param_count":1,
         "ptr_addr":"00661de8"
@@ -4303,9 +4303,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"00428e30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_00428e30",
+        "func_name":"core_charactr.cpp_CCharacter_kill_FUN_00428e30",
         "offset":240,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"00661e84"
       },
       {
@@ -4319,7 +4319,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":248,
         "param_count":1,
         "ptr_addr":"00661e8c"
@@ -4327,7 +4327,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":252,
         "param_count":1,
         "ptr_addr":"00661e90"
@@ -4335,7 +4335,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":256,
         "param_count":1,
         "ptr_addr":"00661e94"
@@ -4343,7 +4343,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf40",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf40",
+        "func_name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40",
         "offset":260,
         "param_count":1,
         "ptr_addr":"00661e98"
@@ -4351,7 +4351,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf80",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf80",
+        "func_name":"core_charactr.cpp_CCharacter_getGrabber_FUN_0042bf80",
         "offset":264,
         "param_count":1,
         "ptr_addr":"00661e9c"
@@ -4359,7 +4359,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf70",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf70",
+        "func_name":"core_charactr.cpp_CCharacter_releaseVictim_FUN_0042bf70",
         "offset":268,
         "param_count":1,
         "ptr_addr":"00661ea0"
@@ -4367,7 +4367,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf70",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf70",
+        "func_name":"core_charactr.cpp_CCharacter_releaseVictim_FUN_0042bf70",
         "offset":272,
         "param_count":1,
         "ptr_addr":"00661ea4"
@@ -4383,9 +4383,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c180",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c180",
+        "func_name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180",
         "offset":280,
-        "param_count":1,
+        "param_count":5,
         "ptr_addr":"00661eac"
       },
       {
@@ -4399,7 +4399,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c580",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c580",
+        "func_name":"core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580",
         "offset":288,
         "param_count":1,
         "ptr_addr":"00661eb4"
@@ -4407,15 +4407,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c010",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c010",
+        "func_name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_0042c010",
         "offset":292,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"00661eb8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":296,
         "param_count":1,
         "ptr_addr":"00661ebc"
@@ -4423,23 +4423,23 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042a3f0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042a3f0",
+        "func_name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_0042a3f0",
         "offset":300,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00661ec0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd50",
+        "func_name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_0042cd50",
         "offset":304,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00661ec4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd60",
+        "func_name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60",
         "offset":308,
         "param_count":1,
         "ptr_addr":"00661ec8"
@@ -4447,7 +4447,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cd90",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd90",
+        "func_name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_0042cd90",
         "offset":312,
         "param_count":1,
         "ptr_addr":"00661ecc"
@@ -4455,47 +4455,47 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cfe0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cfe0",
+        "func_name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_0042cfe0",
         "offset":316,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"00661ed0"
       },
       {
-        "convention":"__cdecl",
+        "convention":"__stack2_esi",
         "func_addr":"0042d300",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042d300",
+        "func_name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300",
         "offset":320,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"00661ed4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c920",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c920",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920",
         "offset":324,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"00661ed8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c9d0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c9d0",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0",
         "offset":328,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00661edc"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca20",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca20",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_0042ca20",
         "offset":332,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00661ee0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca30",
+        "func_name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_0042ca30",
         "offset":336,
         "param_count":1,
         "ptr_addr":"00661ee4"
@@ -4536,7 +4536,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042b0e0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042b0e0",
+        "func_name":"core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0",
         "offset":12,
         "param_count":1,
         "ptr_addr":"006626a0"
@@ -4680,7 +4680,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042de50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042de50",
+        "func_name":"core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50",
         "offset":84,
         "param_count":1,
         "ptr_addr":"006626e8"
@@ -4992,15 +4992,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"00428e30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_00428e30",
+        "func_name":"core_charactr.cpp_CCharacter_kill_FUN_00428e30",
         "offset":240,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"00662784"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca60",
+        "func_name":"core_charactr.cpp_CCharacter_canWalk_FUN_0042ca60",
         "offset":244,
         "param_count":1,
         "ptr_addr":"00662788"
@@ -5008,7 +5008,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":248,
         "param_count":1,
         "ptr_addr":"0066278c"
@@ -5016,7 +5016,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":252,
         "param_count":1,
         "ptr_addr":"00662790"
@@ -5024,7 +5024,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":256,
         "param_count":1,
         "ptr_addr":"00662794"
@@ -5032,7 +5032,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf40",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf40",
+        "func_name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40",
         "offset":260,
         "param_count":1,
         "ptr_addr":"00662798"
@@ -5040,7 +5040,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf80",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf80",
+        "func_name":"core_charactr.cpp_CCharacter_getGrabber_FUN_0042bf80",
         "offset":264,
         "param_count":1,
         "ptr_addr":"0066279c"
@@ -5072,9 +5072,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c180",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c180",
+        "func_name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180",
         "offset":280,
-        "param_count":1,
+        "param_count":5,
         "ptr_addr":"006627ac"
       },
       {
@@ -5088,7 +5088,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c580",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c580",
+        "func_name":"core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580",
         "offset":288,
         "param_count":1,
         "ptr_addr":"006627b4"
@@ -5104,7 +5104,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":296,
         "param_count":1,
         "ptr_addr":"006627bc"
@@ -5112,23 +5112,23 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042a3f0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042a3f0",
+        "func_name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_0042a3f0",
         "offset":300,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"006627c0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd50",
+        "func_name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_0042cd50",
         "offset":304,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"006627c4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd60",
+        "func_name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60",
         "offset":308,
         "param_count":1,
         "ptr_addr":"006627c8"
@@ -5136,7 +5136,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cd90",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd90",
+        "func_name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_0042cd90",
         "offset":312,
         "param_count":1,
         "ptr_addr":"006627cc"
@@ -5144,47 +5144,47 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cfe0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cfe0",
+        "func_name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_0042cfe0",
         "offset":316,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"006627d0"
       },
       {
-        "convention":"__cdecl",
+        "convention":"__stack2_esi",
         "func_addr":"0042d300",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042d300",
+        "func_name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300",
         "offset":320,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"006627d4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c920",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c920",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920",
         "offset":324,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"006627d8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c9d0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c9d0",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0",
         "offset":328,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"006627dc"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca20",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca20",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_0042ca20",
         "offset":332,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"006627e0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca30",
+        "func_name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_0042ca30",
         "offset":336,
         "param_count":1,
         "ptr_addr":"006627e4"
@@ -5381,7 +5381,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042b0e0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042b0e0",
+        "func_name":"core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0",
         "offset":12,
         "param_count":1,
         "ptr_addr":"00664ea0"
@@ -5525,7 +5525,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042de50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042de50",
+        "func_name":"core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50",
         "offset":84,
         "param_count":1,
         "ptr_addr":"00664ee8"
@@ -5837,15 +5837,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"00428e30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_00428e30",
+        "func_name":"core_charactr.cpp_CCharacter_kill_FUN_00428e30",
         "offset":240,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"00664f84"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca60",
+        "func_name":"core_charactr.cpp_CCharacter_canWalk_FUN_0042ca60",
         "offset":244,
         "param_count":1,
         "ptr_addr":"00664f88"
@@ -5853,7 +5853,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":248,
         "param_count":1,
         "ptr_addr":"00664f8c"
@@ -5861,7 +5861,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":252,
         "param_count":1,
         "ptr_addr":"00664f90"
@@ -5869,7 +5869,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":256,
         "param_count":1,
         "ptr_addr":"00664f94"
@@ -5877,7 +5877,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf40",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf40",
+        "func_name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40",
         "offset":260,
         "param_count":1,
         "ptr_addr":"00664f98"
@@ -5885,7 +5885,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042bf80",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf80",
+        "func_name":"core_charactr.cpp_CCharacter_getGrabber_FUN_0042bf80",
         "offset":264,
         "param_count":1,
         "ptr_addr":"00664f9c"
@@ -5917,9 +5917,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c180",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c180",
+        "func_name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180",
         "offset":280,
-        "param_count":1,
+        "param_count":5,
         "ptr_addr":"00664fac"
       },
       {
@@ -5933,7 +5933,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"005e7270",
-        "func_name":"core_vampboss.cpp_CVampireBoss_isDamageable_FUN_005e7270",
+        "func_name":"core_vampboss.cpp_CVampireBoss_getDeathState_FUN_005e7270",
         "offset":288,
         "param_count":1,
         "ptr_addr":"00664fb4"
@@ -5941,15 +5941,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042c010",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c010",
+        "func_name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_0042c010",
         "offset":292,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"00664fb8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042bf30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042bf30",
+        "func_name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
         "offset":296,
         "param_count":1,
         "ptr_addr":"00664fbc"
@@ -5957,23 +5957,23 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042a3f0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042a3f0",
+        "func_name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_0042a3f0",
         "offset":300,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00664fc0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd50",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd50",
+        "func_name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_0042cd50",
         "offset":304,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00664fc4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042cd60",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd60",
+        "func_name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60",
         "offset":308,
         "param_count":1,
         "ptr_addr":"00664fc8"
@@ -5981,7 +5981,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cd90",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cd90",
+        "func_name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_0042cd90",
         "offset":312,
         "param_count":1,
         "ptr_addr":"00664fcc"
@@ -5989,47 +5989,47 @@
       {
         "convention":"__cdecl",
         "func_addr":"0042cfe0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042cfe0",
+        "func_name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_0042cfe0",
         "offset":316,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"00664fd0"
       },
       {
-        "convention":"__cdecl",
+        "convention":"__stack2_esi",
         "func_addr":"005e6b80",
         "func_name":"core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80",
         "offset":320,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"00664fd4"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c920",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c920",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920",
         "offset":324,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"00664fd8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042c9d0",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042c9d0",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0",
         "offset":328,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00664fdc"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca20",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca20",
+        "func_name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_0042ca20",
         "offset":332,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00664fe0"
       },
       {
         "convention":"__cdecl",
         "func_addr":"0042ca30",
-        "func_name":"core_charactr.cpp_CCharacter_FUN_0042ca30",
+        "func_name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_0042ca30",
         "offset":336,
         "param_count":1,
         "ptr_addr":"00664fe4"

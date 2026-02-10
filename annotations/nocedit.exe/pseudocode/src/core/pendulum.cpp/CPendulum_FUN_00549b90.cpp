@@ -45,8 +45,8 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
   dVar8 = floor((double)*(float *)(extraout_EBX + 0x3a0));
   local_24._0_4_ = SUB84(dVar8,0);
   local_24._4_4_ = (uint)((ulonglong)dVar8 >> 0x20);
-  fVar4 = (float10)this_ptr_00[2].unk4.y - (float10)dVar8;
-  this_ptr_00[2].unk4.y = (float)fVar4;
+  fVar4 = (float10)this_ptr_00[2].platform_orientation_delta.y - (float10)dVar8;
+  this_ptr_00[2].platform_orientation_delta.y = (float)fVar4;
   fVar5 = (float10)fsin(fVar4 * (float10)2 * (float10)3.1415926535000001);
   fVar1 = (float)this_ptr_00[2].is_renderable;
   fVar6 = (float10)(float)this_ptr_00[3].location.area_id + (float10)in_stack_00000008;
@@ -57,7 +57,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
   fVar7 = (float10)1.4426950408889634 * fVar6 * (float10)fVar2 * fVar7;
   fVar6 = (float10)f2xm1(fVar7 - (fVar7 / fVar4) * fVar4);
   fVar4 = (float10)fscale(fVar6 + fVar4,fVar7);
-  (this_ptr_00->orient).heading = (float)(fVar4 * fVar5 * (float10)fVar1);
+  (this_ptr_00->orient).vec.z = (float)(fVar4 * fVar5 * (float10)fVar1);
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr_00);
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (this_ptr_00,&local_38,(CVector3f *)(this_ptr_00[3].actor_name + 8));
@@ -74,7 +74,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
   fVar4 = (float10)fscale(fVar5 + fVar4,fVar7);
   if ((0.0 < in_stack_00000008) && ((float)0.10000000000000001 < (float)fVar4)) {
     local_50 = local_4c;
-    local_48 = this_ptr_00[2].unk4.y;
+    local_48 = this_ptr_00[2].platform_orientation_delta.y;
     if (local_4c < (float)-0.5) {
       local_50 = local_4c + 1.0;
     }
@@ -100,7 +100,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
     }
     local_14 = *(float *)this_ptr_00[2].footstep_sound_code + (float)0.25;
     local_54 = local_44;
-    local_64 = this_ptr_00[2].unk4.y;
+    local_64 = this_ptr_00[2].platform_orientation_delta.y;
     if (local_44 < local_14 + (float)-0.5) {
       local_54 = local_44 + 1.0;
     }
@@ -127,7 +127,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
       }
     }
     local_4c = local_44;
-    local_60 = this_ptr_00[2].unk4.y;
+    local_60 = this_ptr_00[2].platform_orientation_delta.y;
     if (local_44 < 0.0) {
       local_4c = local_44 + 1.0;
     }
@@ -154,7 +154,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
     }
     local_38.x = *(float *)this_ptr_00[2].footstep_sound_code + (float)0.75;
     local_50 = local_44;
-    local_68 = this_ptr_00[2].unk4.y;
+    local_68 = this_ptr_00[2].platform_orientation_delta.y;
     if (local_44 < local_38.x + (float)-0.5) {
       local_50 = local_44 + 1.0;
     }

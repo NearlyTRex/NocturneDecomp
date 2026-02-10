@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_door_cpp_FUN_0047fcf0(void)
+; __cdecl void __cdecl core_door_cpp_FUN_0047fcf0(int event_id)
 ;
+; Parameters:
+; int              Stack[0x4]:4   event_id
 ;
 ; XREF[3]:
-;   core_charactr.cpp_CCharacter_FUN_0042cd60 at 0042cd72
+;   core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60 at 0042cd72
 ;   core_hero.cpp_CHero_FUN_004f2d70 at 004f2e9a
 ;   core_hero.cpp_CHero_FUN_004f2ed0 at 004f2f11
 ;

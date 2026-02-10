@@ -35,9 +35,9 @@ void __cdecl CBeast::archive(CBeast *this_ptr);
 // Address: 00418380
 void __cdecl CBeast::processDamage(CBeast *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_beast.cpp_CBeast_isDamageable_FUN_004183a0
+// Original: core_beast.cpp_CBeast_getDeathState_FUN_004183a0
 // Address: 004183a0
-int __cdecl CBeast::isDamageable(CBeast *this_ptr);
+int __cdecl CBeast::getDeathState(CBeast *this_ptr);
 
 // Original: core_beast.cpp_CBeast_getTargetPoints_FUN_004183b0
 // Address: 004183b0

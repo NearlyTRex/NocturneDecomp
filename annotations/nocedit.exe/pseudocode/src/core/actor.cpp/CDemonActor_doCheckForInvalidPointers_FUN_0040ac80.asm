@@ -17,6 +17,7 @@
 ; XREF[50]:
 ;   core_actor.cpp_CDemonActor_allowBulletHoles_FUN_004098a0 at 004098af
 ;   core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0 at 00409ed5
+;   core_actor.cpp_CDemonActor_canLookAt_FUN_00409f20 at 00409f2f
 ;   core_actor.cpp_CDemonActor_canPickup_FUN_00409000 at 0040900f
 ;   core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408d50 at 00408d60
 ;   core_actor.cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10 at 00408d20
@@ -24,7 +25,6 @@
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0 at 00408dca
 ;   core_actor.cpp_CDemonActor_drop_FUN_00409080 at 0040908f
 ;   core_actor.cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40 at 00409f4f
-;   core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0 at 0040abd5
 ;   ... and 40 more
 ;
 ; Referenced Globals:

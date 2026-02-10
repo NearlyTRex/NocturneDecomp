@@ -17,7 +17,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2ed0(CHero *this_ptr)
   iVar1 = core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0
                     (&this_ptr->inventory,(uint)this_ptr->door_to_open[7].location.position.z,1);
   if (iVar1 != 0) {
-    core_door_cpp_FUN_0047fcf0();
+    core_door_cpp_FUN_0047fcf0((int)this_ptr->door_to_open);
     this_ptr->door_to_open = (CDemonActor *)0x0;
     return 1;
   }

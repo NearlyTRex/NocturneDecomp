@@ -12,7 +12,7 @@ void __cdecl core_batman_cpp_CBatman_FUN_00417660(CBatman *this_ptr)
   float fVar1;
   CConsole *this_ptr_00;
   int iVar2;
-  CBodyPart *this_ptr_01;
+  CBodyPart *body_part;
   int *in_stack_00000008;
   CVector3f local_34;
   CVector3f local_28;
@@ -65,23 +65,32 @@ switchD_00417696_default:
     }
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
     if (iVar2 != 0) {
-      this_ptr_01 = core_bodypart_cpp_createBodyPart_FUN_00418e10();
-      core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
+      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                ((CCharacter *)this_ptr,body_part,*in_stack_00000008,0);
       if (*in_stack_00000008 == *(int *)(this_ptr->unk1 + 0x6c)) {
-        core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk1 + 0x70),0);
       }
       if (*(int *)(this_ptr->unk1 + 0x74) == *in_stack_00000008) {
-        core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
+                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk1 + 0x78),0);
       }
       if (*(int *)(this_ptr->unk1 + 0x68) == *in_stack_00000008) {
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
-        core_charactr_cpp_CCharacter_FUN_0042bcc0((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0x74));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0x78));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0x6c));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0x70));
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 100));
       }
-      core_charactr_cpp_CCharacter_FUN_0042f300((CCharacter *)this_ptr);
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr_01);
+      core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
+                ((CCharacter *)this_ptr,"limb?.wav");
+      core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
       if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk1 + 100)] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
@@ -112,7 +121,7 @@ LAB_00417851:
       local_28.z = 20.0;
       core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                 ((CDemonActor *)this_ptr,&local_34,&local_28);
-      core_charactr_cpp_CCharacter_FUN_0042b9e0((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0((CCharacter *)this_ptr,&local_34,-1.0);
       return;
     }
   }

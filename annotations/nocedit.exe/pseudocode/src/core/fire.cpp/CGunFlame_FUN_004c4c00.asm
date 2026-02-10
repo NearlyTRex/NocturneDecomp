@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_charactr.cpp_CCharacter_FUN_0042b5b0
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_flamecan.cpp_CFlameCan_FUN_004cb340
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;
@@ -157,8 +157,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004c4d28
     PUSH EAX                            ; 004c4d2c
     PUSH EBX                            ; 004c4d2d
-    CALL core_charactr.cpp_CCharacter_FUN_0042b5b0 ; 004c4d2e
-        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b5b0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 ; 004c4d2e
+        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, float spread_rate, ...)
     ADD ESP,0x18                        ; 004c4d33
     JMP 0x004c4c48                      ; 004c4d36
         ;   XREF to: 004c4c48 (UNCONDITIONAL_JUMP)  ; LAB_004c4c48

@@ -11,8 +11,8 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-;   core_charactr.cpp_CCharacter_FUN_00429820
-;   core_charactr.cpp_CCharacter_FUN_00429870
+;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
+;   core_charactr.cpp_CCharacter_process_FUN_00429870
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 ;
@@ -30,8 +30,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x10]      ; 004182ab
     PUSH dword ptr [EBP + 0x14]         ; 004182ae
     PUSH ESI                            ; 004182b1
-    CALL core_charactr.cpp_CCharacter_FUN_00429870 ; 004182b2
-        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00429870(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_process_FUN_00429870 ; 004182b2
+        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_process_FUN_00429870(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004182b7
     TEST EAX,EAX                        ; 004182ba
     JZ 0x00418320                       ; 004182bc
@@ -64,8 +64,8 @@ section .text
         ;   XREF to: 004182e8 (UNCONDITIONAL_JUMP)  ; LAB_004182e8
     PUSH ESI                            ; 00418302
         ;   Label: LAB_00418302
-    CALL core_charactr.cpp_CCharacter_FUN_00429820 ; 00418303
-        ;   XREF to: 00429820 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00429820(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_00429820 ; 00418303
+        ;   XREF to: 00429820 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_00429820(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00418308
     PUSH EBX                            ; 0041830b
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 0041830c
@@ -74,7 +74,7 @@ section .text
     PUSH dword ptr [EBP + 0x14]         ; 00418314
     PUSH ESI                            ; 00418317
     CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 00418318
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time, float param_3)
     ADD ESP,0x8                         ; 0041831d
     MOV ESP,EBP                         ; 00418320
         ;   Label: LAB_00418320

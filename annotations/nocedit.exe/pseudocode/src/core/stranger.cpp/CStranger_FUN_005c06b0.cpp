@@ -41,7 +41,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c06b0(CStranger *this_ptr)
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_84,&(this_ptr->base).base.base.location.position,
-               (CVector3f *)&(this_ptr->base).base.base.orient);
+               &(this_ptr->base).base.base.orient.vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_b4,&local_84,&local_54);
     pCVar5 = &local_54;
     pCVar6 = &local_e4;

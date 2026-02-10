@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_charactr.cpp_CCharacter_FUN_0042ede0
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
 ;   core_hero.cpp_CHero_FUN_004f3960
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
@@ -431,8 +431,8 @@ section .text
         ;   XREF to: 004f8e77 (CONDITIONAL_JUMP)  ; LAB_004f8e77
     PUSH dword ptr [EBP + 0x18]         ; 004f9158
     PUSH EBX                            ; 004f915b
-    CALL core_charactr.cpp_CCharacter_FUN_0042ede0 ; 004f915c
-        ;   XREF to: 0042ede0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ede0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 ; 004f915c
+        ;   XREF to: 0042ede0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f9161
     CMP EAX,0x1                         ; 004f9164
     JC 0x004f8e77                       ; 004f9167
@@ -554,8 +554,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004f92fe
         ;   Label: LAB_004f92fe
     PUSH EBX                            ; 004f9301
-    CALL core_charactr.cpp_CCharacter_FUN_0042ede0 ; 004f9302
-        ;   XREF to: 0042ede0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ede0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 ; 004f9302
+        ;   XREF to: 0042ede0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f9307
     CMP EAX,0x1                         ; 004f930a
     JC 0x004f91f9                       ; 004f930d

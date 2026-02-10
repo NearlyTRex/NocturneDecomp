@@ -34,7 +34,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
         (this_ptr->base).base.field43_0x2620 = 1;
         if (iVar2 == 0) {
           if (this_ptr->exploded == 0) {
-            core_charactr_cpp_CCharacter_FUN_00429aa0((CCharacter *)this_ptr);
+            core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
           }
         }
         else {

@@ -20,7 +20,7 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_pt
   core_cloth_cpp_CCloth_load_FUN_00438cf0(&this_ptr->coat,"gabcoat.cth");
   core_cloth_cpp_CCloth_setup_FUN_00439710
             (&this_ptr->coat,&(this_ptr->base).base.base.location.position,
-             (CVector3f *)&(this_ptr->base).base.base.orient,this_ptr_00);
+             &(this_ptr->base).base.base.orient.vec,this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   INT_02d7b848 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 head");

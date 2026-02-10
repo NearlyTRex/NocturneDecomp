@@ -14,6 +14,7 @@
 #include "types/classes/CFileBitStream.h"
 #include "types/classes/CLocation.h"
 #include "types/classes/CMP3Decoder.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CMimic.h"
 #include "types/classes/CMineCar.h"
 #include "types/classes/CMirror.h"
@@ -54,7 +55,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_00520500(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderOpaque_FUN_00520870(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderTransparent_FUN_00520890(CMimic *this_ptr);
-int __cdecl core_mimic_cpp_CMimic_isDamageable_FUN_005208a0(CMimic *this_ptr);
+int __cdecl core_mimic_cpp_CMimic_getDeathState_FUN_005208a0(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_ptr,int layer_flag);
 void __cdecl core_mimic_cpp_CMimic_archive_FUN_00520930(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_hasCollision_FUN_00520a00(CMimic *this_ptr,SCollisionInfo *collision_info);
@@ -150,7 +151,7 @@ void __cdecl core_mobster_cpp_CMobster_FUN_00525720(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_FUN_00526b00(void);
-void __cdecl core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobster *this_ptr);
+void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_FUN_005271c0(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_archive_FUN_00527230(CMobster *this_ptr);

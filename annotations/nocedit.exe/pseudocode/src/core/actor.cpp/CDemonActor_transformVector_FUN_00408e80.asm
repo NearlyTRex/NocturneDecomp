@@ -17,8 +17,8 @@
 ;   core_batman.cpp_CBatman_FUN_00417660 at 00417973
 ;   core_bodypart.cpp_CBodyPart_FUN_0041a050 at 0041a2dd
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421d37
-;   core_charactr.cpp_CCharacter_FUN_00428f40 at 00428f5c
-;   core_charactr.cpp_CCharacter_FUN_0042b670 at 0042b72c
+;   core_charactr.cpp_CCharacter_dropCarriedObject_FUN_0042cfe0 at 0042d013
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 at 00428f5c
 ;   ... and 39 more
 ;
 ; Called Functions:

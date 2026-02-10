@@ -65,7 +65,8 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
           CStack_2c.y = 0.0;
           CStack_2c.z = 0.0;
           iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                            (this_ptr_01,local_20,&CStack_2c,(this_ptr->base).base.base.unk1);
+                            (this_ptr_01,local_20,&CStack_2c,
+                             (this_ptr->base).base.base.direction_hint);
           if (0 < iVar2) {
             *(CDemonActor **)(this_ptr->unk3 + 0x3c) = this_ptr_00;
           }

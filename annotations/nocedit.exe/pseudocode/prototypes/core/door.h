@@ -25,7 +25,7 @@ void __cdecl CDoor::setup(CDoor *this_ptr);
 
 // Original: core_door.cpp_FUN_0047fcf0
 // Address: 0047fcf0
-void __cdecl FUN_0047fcf0(void);
+void __cdecl FUN_0047fcf0(int event_id);
 
 // Original: core_door.cpp_CDoor_reposition_FUN_0047fd20
 // Address: 0047fd20

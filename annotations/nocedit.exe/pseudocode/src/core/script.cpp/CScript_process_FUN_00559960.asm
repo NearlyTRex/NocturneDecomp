@@ -64,7 +64,7 @@ section .text
     PUSH EAX                            ; 005599a3 | g_CGameInstance
     XOR ESI,ESI                         ; 005599a4
     CALL core_charactr.cpp_FUN_0042f9e0 ; 005599a6
-        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f9e0(CGame * game_ptr)
+        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_FUN_0042f9e0()
     MOV dword ptr [ESP + 0x8],EAX       ; 005599ab
     XOR EDX,EDX                         ; 005599af
     FLD float ptr [ESP + 0x8]           ; 005599b1

@@ -24,7 +24,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051f930(CMimic *this_ptr)
   int iVar11;
   CVector3f *pCVar12;
   SBoneTransformData *pSVar13;
-  COrientation *pCVar14;
+  UOrientationVector *pUVar14;
   CMimic *pCVar15;
   CVector3i **ppCVar16;
   uint *puVar17;
@@ -118,13 +118,13 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051f930(CMimic *this_ptr)
   pCVar4 = this_ptr->mirror_plane_actor;
   if (pCVar4 != (CDemonActor *)0x0) {
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-              (&local_120,&(pCVar4->location).position,(CVector3f *)&pCVar4->orient);
+              (&local_120,&(pCVar4->location).position,&(pCVar4->orient).vec);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_c0,&(this_ptr->mirror_plane_actor->location).position,
-               (CVector3f *)&this_ptr->mirror_plane_actor->orient);
+               &(this_ptr->mirror_plane_actor->orient).vec);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_f0,&(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
-               (CVector3f *)&(g_HeroActors[g_LocalHeroIndex]->base).base.orient);
+               &(g_HeroActors[g_LocalHeroIndex]->base).base.orient.vec);
     pCVar19 = &local_c0;
     core_xform_cpp_buildZFlipMatrix_FUN_005f6fa0(0.0,&local_90);
     pCVar20 = &local_2a0;
@@ -183,11 +183,11 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051f930(CMimic *this_ptr)
     (this_ptr->base).base.base.location.position.y = local_60.m[1].z;
     (this_ptr->base).base.base.location.position.z = local_60.m[2].z;
     pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_60,&local_24);
-    pCVar14 = &(this_ptr->base).base.base.orient;
-    if (pCVar14 != (COrientation *)pCVar9) {
-      pCVar14->pitch = pCVar9->x;
-      (this_ptr->base).base.base.orient.bank = pCVar9->y;
-      (this_ptr->base).base.base.orient.heading = pCVar9->z;
+    pUVar14 = &(this_ptr->base).base.base.orient;
+    if ((CVector3f *)pUVar14 != pCVar9) {
+      (pUVar14->vec).x = pCVar9->x;
+      (this_ptr->base).base.base.orient.vec.y = pCVar9->y;
+      (this_ptr->base).base.base.orient.vec.z = pCVar9->z;
       return;
     }
   }

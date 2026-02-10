@@ -56,7 +56,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_charactr.cpp_CCharacter_FUN_0042e840
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -400,8 +400,8 @@ section .text
     PUSH 0x3                            ; 005bffba
         ;   Label: LAB_005bffba
     PUSH EBX                            ; 005bffbc
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005bffbd
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005bffbd
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xf8],EAX      ; 005bffc2
     FLD float ptr [ESP + 0xf8]          ; 005bffc9
     FLD1                                ; 005bffd0
@@ -477,8 +477,8 @@ section .text
     PUSH 0x3                            ; 005c00a3
         ;   Label: LAB_005c00a3
     PUSH EBX                            ; 005c00a5
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c00a6
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c00a6
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xf8],EAX      ; 005c00ab
     FLD float ptr [ESP + 0xf8]          ; 005c00b2
     FLD1                                ; 005c00b9

@@ -12,7 +12,7 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_0050ec10(CMelee *this_ptr,float d
   CCharacter_full_vtable *pCVar1;
   float fVar2;
   CVector3f *input_local_point;
-  CVector3f CStack_18;
+  CVector3f CStack_14;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   if ((0 < *(int *)(this_ptr->unk1 + 4)) &&
@@ -23,9 +23,9 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_0050ec10(CMelee *this_ptr,float d
     *(int *)(this_ptr->unk1 + 4) = *(int *)(this_ptr->unk1 + 4) + -1;
     *(float *)(this_ptr->unk1 + 0xc) = fVar2;
     *(float *)(this_ptr->unk1 + 8) = fVar2;
-    input_local_point = (CVector3f *)(*(pCVar1->_uc).cfunc3)();
+    input_local_point = (CVector3f *)(*(pCVar1->_uc).canWalk)((CCharacter *)this_ptr);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&CStack_18,input_local_point);
+              ((CDemonActor *)this_ptr,&CStack_14,input_local_point);
     core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
     return;
   }

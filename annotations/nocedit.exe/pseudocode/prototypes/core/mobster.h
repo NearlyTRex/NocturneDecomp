@@ -53,7 +53,7 @@ void __cdecl FUN_00526b00(void);
 
 // Original: core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20
 // Address: 00526b20
-void __cdecl CMobster::getCarryObjToBodyXForm(CMobster *this_ptr);
+void __stack2_esi CMobster::getCarryObjToBodyXForm(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_mobster.cpp_CMobster_FUN_00526d90
 // Address: 00526d90

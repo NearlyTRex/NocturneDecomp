@@ -10,7 +10,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005e8fc0(CCryptVessel *this_
 
 {
   CLocation *pCVar1;
-  COrientation *pCVar2;
+  UOrientationVector *pUVar2;
   CDemonActor *pCVar3;
   float fVar4;
   float fVar5;
@@ -35,11 +35,11 @@ void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005e8fc0(CCryptVessel *this_
       (this_ptr->base).location.position.z = (pCVar3->location).position.z;
       (this_ptr->base).location.area_id = (pCVar3->location).area_id;
       pCVar3 = this_ptr->start_loc;
-      pCVar2 = &(this_ptr->base).orient;
-      if (pCVar2 != &pCVar3->orient) {
-        pCVar2->pitch = (pCVar3->orient).pitch;
-        (this_ptr->base).orient.bank = (pCVar3->orient).bank;
-        (this_ptr->base).orient.heading = (pCVar3->orient).heading;
+      pUVar2 = &(this_ptr->base).orient;
+      if (pUVar2 != &pCVar3->orient) {
+        (pUVar2->vec).x = (pCVar3->orient).vec.x;
+        (this_ptr->base).orient.vec.y = (pCVar3->orient).vec.y;
+        (this_ptr->base).orient.vec.z = (pCVar3->orient).vec.z;
       }
     }
   }

@@ -9,7 +9,7 @@
 void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_ptr)
 
 {
-  COrientation *euler;
+  UOrientationVector *euler;
   CLocation *position;
   CClothList *this_ptr_00;
   char cVar1;
@@ -19,8 +19,9 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   int iVar4;
   CCharacter *pCVar5;
   CCharacter *pCVar6;
-  char *pcVar7;
+  int iVar7;
   char *pcVar8;
+  char *pcVar9;
   CDeformableModelInstance *model_ptr;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
@@ -52,23 +53,24 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   if ((this_ptr->model).model_name[0] != '\0') {
     (this_ptr->model).scale_factor = this_ptr->size_scale;
     core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(&this_ptr->model);
-    pcVar8 = "bip01 head";
+    pcVar9 = "bip01 head";
     pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                        (&this_ptr->model);
-    iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,pcVar8);
+    iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,pcVar9);
     this_ptr->look_at_head_bone = iVar4;
   }
-  core_charactr_cpp_CCharacter_FUN_0042d530(this_ptr);
+  core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530(this_ptr);
   if (this_ptr->is_ethereal != 0) {
-    iVar4 = 0;
     pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                        (&this_ptr->model);
-    this_ptr->field63_0x2f14 = 4;
+    this_ptr->fire_spread_rate = 5.60519e-45;
+    iVar4 = 0;
     if (0 < pCVar3->bone_count) {
       do {
-        iVar4 = iVar4 + 1;
-        core_charactr_cpp_CCharacter_FUN_0042a520(this_ptr);
-      } while (iVar4 < pCVar3->bone_count);
+        iVar7 = iVar4 + 1;
+        core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(this_ptr,(int)pCVar3,iVar4);
+        iVar4 = iVar7;
+      } while (iVar7 < pCVar3->bone_count);
     }
     iVar4 = 0;
     pCVar5 = this_ptr;
@@ -92,26 +94,26 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   euler = &(this_ptr->base).orient;
   position = &(this_ptr->base).location;
   core_cloth_cpp_CClothList_setup_FUN_0043c290
-            (this_ptr_00,&position->position,(CVector3f *)euler,model_ptr);
+            (this_ptr_00,&position->position,&euler->vec,model_ptr);
   core_cloth_cpp_CClothList_process_FUN_0043c2d0
-            (this_ptr_00,&position->position,(CVector3f *)euler,0.05,
-             this_ptr->closest_distance_threshold,model_ptr);
-  core_charactr_cpp_CCharacter_FUN_0042e670(this_ptr);
+            (this_ptr_00,&position->position,&euler->vec,0.05,this_ptr->closest_distance_threshold,
+             model_ptr);
+  core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670(this_ptr);
   if (this_ptr->descriptive_name[0] != '\0') {
     this_ptr->sfx_handle = 0;
     return;
   }
-  pcVar8 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(&this_ptr->base);
-  pcVar8 = pcVar8 + 1;
-  pcVar7 = this_ptr->descriptive_name;
+  pcVar9 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(&this_ptr->base);
+  pcVar9 = pcVar9 + 1;
+  pcVar8 = this_ptr->descriptive_name;
   do {
-    cVar1 = *pcVar8;
-    *pcVar7 = cVar1;
+    cVar1 = *pcVar9;
+    *pcVar8 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar8[1];
+    cVar1 = pcVar9[1];
+    pcVar9 = pcVar9 + 2;
+    pcVar8[1] = cVar1;
     pcVar8 = pcVar8 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
   this_ptr->sfx_handle = 0;
   return;

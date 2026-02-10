@@ -23,7 +23,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_charactr.cpp_CCharacter_FUN_0042b5b0
+;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_dracbrid.cpp_CDraculaBride_FUN_00486020
 ;   core_dracbrid.cpp_CDraculaBride_FUN_004864c0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
@@ -80,8 +80,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 004860ce
     PUSH EAX                            ; 004860d2
     PUSH ESI                            ; 004860d3
-    CALL core_charactr.cpp_CCharacter_FUN_0042b5b0 ; 004860d4
-        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b5b0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 ; 004860d4
+        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, float spread_rate, ...)
     ADD ESP,0x18                        ; 004860d9
     PUSH EDI                            ; 004860dc
         ;   Label: LAB_004860dc

@@ -47,9 +47,9 @@ void __cdecl CBugs::archive(CBugs *this_ptr);
 // Address: 00425610
 int __cdecl CBugs::hasCollision(CBugs *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_bugs.cpp_CBugs_isDamageable_FUN_00425620
+// Original: core_bugs.cpp_CBugs_getDeathState_FUN_00425620
 // Address: 00425620
-int __cdecl CBugs::isDamageable(CBugs *this_ptr);
+int __cdecl CBugs::getDeathState(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_processDamage_FUN_00425640
 // Address: 00425640

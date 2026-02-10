@@ -1,0 +1,207 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 61,
+    "cross_reference_count": 8,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 36,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 117
+  },
+  "cross_references": [
+    {
+      "addr": "00416030",
+      "from_addr": "004160ac",
+      "name": "core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004179a0",
+      "from_addr": "00417a1c",
+      "name": "core_batman.cpp_CBatman_processDamage_FUN_004179a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00424830",
+      "from_addr": "00424899",
+      "name": "core_bride.cpp_CBride_processDamage_FUN_00424830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c3c0",
+      "from_addr": "0042c453",
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486070",
+      "from_addr": "004860d4",
+      "name": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00486070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8070",
+      "from_addr": "004a8526",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_004a8070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c4c00",
+      "from_addr": "004c4d2e",
+      "name": "core_fire.cpp_CGunFlame_FUN_004c4c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c9c00",
+      "from_addr": "004c9ebd",
+      "name": "core_flame.cpp_CFlame_FUN_004c9c00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042b5b0",
+    "address_range": [
+      [
+        "0042b5b0",
+        "0042b662"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0 (CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero, int param_6)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    },
+    {
+      "addr": "0042a520",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520"
+    },
+    {
+      "addr": "005a1160",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160"
+    },
+    {
+      "addr": "005a0820",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061713e",
+      "name": "s_CHero_0061713e",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.387096774193548,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 7,
+      "COPY": 53,
+      "INT_ADD": 31,
+      "INT_AND": 30,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 29,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 14,
+      "INT_SUB": 21,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 272
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "fire_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "spread_rate",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "allow_hero",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_6",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_6",
+      "text": "int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_6",
+      "text": "(((param_6 != 0 ||",
+      "type": "unnamed_param"
+    }
+  ]
+}

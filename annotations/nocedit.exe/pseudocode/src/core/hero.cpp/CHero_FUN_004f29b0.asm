@@ -14,7 +14,7 @@
 ;   int g_ActorMagicNumber
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042bf40
+;   core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90
@@ -71,8 +71,8 @@ section .text
     ADD ESP,0xc                         ; 004f2a1c
     PUSH ESI                            ; 004f2a1f
         ;   Label: LAB_004f2a1f
-    CALL core_charactr.cpp_CCharacter_FUN_0042bf40 ; 004f2a20
-        ;   XREF to: 0042bf40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042bf40(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40 ; 004f2a20
+        ;   XREF to: 0042bf40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004f2a25
     ADD ESP,0x4                         ; 004f2a28
     POP ESI                             ; 004f2a2b

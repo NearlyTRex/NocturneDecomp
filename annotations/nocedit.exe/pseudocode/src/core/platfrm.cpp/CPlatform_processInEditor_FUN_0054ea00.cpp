@@ -10,7 +10,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
 
 {
   CLocation *pCVar1;
-  COrientation *euler_angles;
+  UOrientationVector *euler_angles;
   int iVar2;
   CVector3f *pCVar3;
   CVector3f *pCVar4;
@@ -77,7 +77,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
           (this_ptr->start_pos).z = (this_ptr->end_pos).z;
         }
         core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-                  ((CVector3f *)&(this_ptr->base).orient,(CQuaternion4f *)(auStack_94 + 8));
+                  (&(this_ptr->base).orient.vec,(CQuaternion4f *)(auStack_94 + 8));
         puVar7 = (uint *)((int)this_ptr + (uint)bVar12 * -8 + 0x348);
         (this_ptr->end_orient).w = (float)auStack_94._8_4_;
         puVar10 = puVar7 + (uint)bVar12 * -2 + 1;
@@ -162,7 +162,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
         euler_angles = &(this_ptr->base).orient;
         pCVar1 = &(this_ptr->base).location;
         core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-                  (&CStack_17c,&pCVar1->position,(CVector3f *)euler_angles);
+                  (&CStack_17c,&pCVar1->position,&euler_angles->vec);
         pCVar4 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            (&CStack_28,(CVector3f *)&this_ptr->orig_orient);
         pCVar3 = &this_ptr->start_pos;
@@ -191,7 +191,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
         }
         core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                  (&CStack_20c,&pCVar1->position,(CVector3f *)euler_angles);
+                  (&CStack_20c,&pCVar1->position,&euler_angles->vec);
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_23c,&CStack_20c,&CStack_26c);
         pCVar6 = &CStack_26c;
         pCVar11 = &CStack_29c;

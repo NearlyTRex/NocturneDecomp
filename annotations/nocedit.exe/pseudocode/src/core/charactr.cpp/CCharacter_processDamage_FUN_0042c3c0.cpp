@@ -11,42 +11,53 @@ core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0
           (CCharacter *this_ptr,SDamageInfo *damage_info)
 
 {
-  uint uVar1;
-  double dVar2;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  uint uVar4;
+  CVector3f *pCVar5;
+  double dVar6;
   CVector3f *output_world_point;
-  CVector3f *input_local_point;
   CVector3f local_28;
   CVector3f local_1c;
   
   if (damage_info->damage_amount <= 0.0) {
     return;
   }
-  uVar1 = damage_info->damage_type;
-  if (uVar1 < 6) {
-    if (uVar1 < 4) {
-      if (uVar1 == 3) {
-        core_charactr_cpp_CCharacter_FUN_0042b930(this_ptr);
+  fVar1 = (damage_info->impact_point).y;
+  fVar2 = (damage_info->impact_point).x;
+  fVar3 = (damage_info->impact_point).z;
+  pCVar5 = (CVector3f *)0x0;
+  if (0.0 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)) {
+    pCVar5 = &damage_info->impact_point;
+  }
+  uVar4 = damage_info->damage_type;
+  if (uVar4 < 6) {
+    if (uVar4 < 4) {
+      if (uVar4 == 3) {
+        core_charactr_cpp_CCharacter_explode_FUN_0042b930(this_ptr,pCVar5,damage_info->impact_force)
+        ;
       }
       goto LAB_0042c429;
     }
-    if (4 < uVar1) {
-      core_charactr_cpp_CCharacter_FUN_0042b8e0(this_ptr);
+    if (4 < uVar4) {
+      core_charactr_cpp_CCharacter_shatter_FUN_0042b8e0(this_ptr);
       goto LAB_0042c429;
     }
 LAB_0042c50c:
-    core_charactr_cpp_CCharacter_FUN_0042b9e0(this_ptr);
+    core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(this_ptr,pCVar5,damage_info->impact_force);
   }
   else {
-    if (6 < uVar1) {
-      if (uVar1 < 0x68) {
-        if (uVar1 != 7) goto LAB_0042c429;
+    if (6 < uVar4) {
+      if (uVar4 < 0x68) {
+        if (uVar4 != 7) goto LAB_0042c429;
         goto LAB_0042c50c;
       }
-      if (uVar1 < 0x69) {
-        core_charactr_cpp_CCharacter_FUN_0042b190(this_ptr);
+      if (uVar4 < 0x69) {
+        core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(this_ptr);
         goto LAB_0042c429;
       }
-      if (uVar1 != 0x6a) goto LAB_0042c429;
+      if (uVar4 != 0x6a) goto LAB_0042c429;
     }
     this_ptr->stagger_amount = 2.0;
   }
@@ -54,16 +65,17 @@ LAB_0042c429:
   if (damage_info->ammo_type == 5) {
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&this_ptr->base,&local_28,&damage_info->impact_direction);
-    core_charactr_cpp_CCharacter_FUN_0042b5b0(this_ptr);
+    core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
+              (this_ptr,&local_28,damage_info->unknown,0.0,0x3f800000,0);
   }
   if (0.0 < (float)damage_info->damage_flags) {
-    input_local_point = &local_1c;
+    pCVar5 = &local_1c;
     output_world_point = (CVector3f *)0x42c47c;
-    dVar2 = round
+    dVar6 = round
                       ((double)(damage_info->damage_amount * (float)damage_info->damage_flags));
-    local_1c.z = (float)(int)ROUND(dVar2);
+    local_1c.z = (float)(int)ROUND(dVar6);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&this_ptr->base,output_world_point,input_local_point);
+              (&this_ptr->base,output_world_point,pCVar5);
     core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
   }
   if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
@@ -74,6 +86,6 @@ LAB_0042c429:
   if (0.0 < this_ptr->hit_points) {
     return;
   }
-  core_charactr_cpp_CCharacter_FUN_0042d060(this_ptr);
+  core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060(this_ptr);
   return;
 }

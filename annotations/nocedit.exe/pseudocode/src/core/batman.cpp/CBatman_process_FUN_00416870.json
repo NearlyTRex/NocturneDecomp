@@ -4,49 +4,55 @@
       {
         "category": "other",
         "column": 8,
-        "line": 104,
+        "line": 105,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 104,
+        "line": 105,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 166,
+        "line": 168,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 166,
+        "line": 168,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "incompatible_types",
         "column": 26,
-        "line": 224,
+        "line": 230,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 71,
+        "line": 244,
+        "message": "use of undeclared identifier 'stack0xfffffe78'; did you mean 'in_stack_fffffe78'?"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 264,
+        "line": 267,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 264,
+        "line": 267,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 276,
+        "line": 279,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -55,17 +61,20 @@
   },
   "complexity": {
     "assembly_lines": 1015,
-    "complexity_score": 546,
+    "complexity_score": 605,
     "cross_reference_count": 0,
     "function_call_count": 32,
     "global_count": 34,
-    "pseudocode_lines": 446,
-    "suspect_count": 9,
+    "pseudocode_lines": 450,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output"
+      "extra_output",
+      "stack_param",
+      "stack_ref",
+      "suspect_float"
     ],
-    "total_lines": 1461
+    "total_lines": 1465
   },
   "cross_references": [],
   "function": {
@@ -123,34 +132,34 @@
       "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0"
     },
     {
-      "addr": "00428f40",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
-    },
-    {
       "addr": "004297e0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004297e0"
+      "name": "core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0"
+    },
+    {
+      "addr": "00428f40",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40"
     },
     {
       "addr": "00429820",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429820"
+      "name": "core_charactr.cpp_CCharacter_preProcess_FUN_00429820"
     },
     {
       "addr": "00429870",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
-    },
-    {
-      "addr": "0042ca70",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ca70"
+      "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
     },
     {
       "addr": "0042ec40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40"
+    },
+    {
+      "addr": "0042ca70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70"
     },
     {
       "addr": "004286e0",
@@ -961,66 +970,94 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 18,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 20,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_fffffe78",
+      "text": "float in_stack_fffffe78;",
+      "type": "stack_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 100,
+      "line": 101,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
+      "line": 145,
       "match": "SQRT",
       "text": "if (SQRT(local_c8.z * local_c8.z + local_c8.x * local_c8.x + local_c8.y * local_c8.y) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
+      "line": 150,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 160,
+      "match": "6.010065e-39",
+      "text": "fVar14 = 6.010065e-39;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 164,
+      "line": 166,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 193,
+      "line": 199,
       "match": "SQRT",
       "text": "local_38 = SQRT(local_84 * local_84 + local_8c * local_8c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 205,
+      "line": 211,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 237,
+      "match": "&stack0xfffffe78",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe78);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 325,
+      "line": 328,
       "match": "SQRT",
       "text": "if (SQRT(local_48 * local_48 + local_50 * local_50 + local_4c * local_4c) <",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 451,
+      "match": "in_stack_fffffe78",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffe78);",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

@@ -9,7 +9,7 @@
 void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
 
 {
-  COrientation *euler_angles;
+  UOrientationVector *euler_angles;
   int iVar1;
   longlong lVar2;
   longlong lVar3;
@@ -138,7 +138,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
   }
   euler_angles = &(this_ptr->base).orient;
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-            (&CStack_188,&g_ZeroVector,(CVector3f *)euler_angles);
+            (&CStack_188,&g_ZeroVector,&euler_angles->vec);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(&CStack_158,&g_ZeroVector,local_1c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_188,&CStack_158,&CStack_f8);
   pCVar9 = &CStack_f8;
@@ -149,10 +149,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
     pCVar11 = (CMatrix3x3f *)((int)pCVar11 + ((uint)bVar12 * -2 + 1) * 4);
   }
   pCVar6 = core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(&CStack_128,&local_70);
-  if (euler_angles != (COrientation *)pCVar6) {
-    euler_angles->pitch = pCVar6->x;
-    (this_ptr->base).orient.bank = pCVar6->y;
-    (this_ptr->base).orient.heading = pCVar6->z;
+  if ((CVector3f *)euler_angles != pCVar6) {
+    (euler_angles->vec).x = pCVar6->x;
+    (this_ptr->base).orient.vec.y = pCVar6->y;
+    (this_ptr->base).orient.vec.z = pCVar6->z;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   iVar8 = 0;

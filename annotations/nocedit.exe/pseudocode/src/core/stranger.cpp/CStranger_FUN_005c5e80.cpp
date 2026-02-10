@@ -17,7 +17,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c5e80(CStranger *this_ptr)
   if (((this_ptr_00 == (CDemonActor *)0x0) ||
       (uVar2 = (*((this_ptr_00->vtable)._ub)->getAllowedMeleeAttackTypes)(this_ptr_00),
       (uVar2 & 4) == 0)) &&
-     ((this_ptr->weapon == (CDemonActor *)0x0 || (this_ptr->weapon[2].orient.pitch != 4.2039e-45))))
+     ((this_ptr->weapon == (CDemonActor *)0x0 || (this_ptr->weapon[2].orient.vec.x != 4.2039e-45))))
   {
     return 0;
   }

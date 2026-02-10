@@ -29,6 +29,7 @@
 #include "types/classes/CEnemy.h"
 #include "types/classes/CFlame.h"
 #include "types/classes/CInventory.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CSlew.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SBodyPartFire.h"
@@ -275,7 +276,7 @@ void __cdecl core_beast_cpp_CBeast_setup_FUN_00418280(CBeast *this_ptr);
 void __cdecl core_beast_cpp_CBeast_process_FUN_004182a0(CBeast *this_ptr,float delta_time);
 void __cdecl core_beast_cpp_CBeast_archive_FUN_00418330(CBeast *this_ptr);
 void __cdecl core_beast_cpp_CBeast_processDamage_FUN_00418380(CBeast *this_ptr,SDamageInfo *damage_info);
-int __cdecl core_beast_cpp_CBeast_isDamageable_FUN_004183a0(CBeast *this_ptr);
+int __cdecl core_beast_cpp_CBeast_getDeathState_FUN_004183a0(CBeast *this_ptr);
 int __cdecl core_beast_cpp_CBeast_getTargetPoints_FUN_004183b0(CBeast *this_ptr,CVector3f *out_points_array);
 int __cdecl core_beast_cpp_CBeast_hasCollision_FUN_00418400(CBeast *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_beast_cpp_CBeast_getPropertyList_FUN_00418420 (CBeast *this_ptr,CActorPropertyList *property_list);
@@ -350,7 +351,7 @@ float * __cdecl core_boneguy_cpp_FUN_0041ba10(void);
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_0041bd90(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,float delta_time);
-void __cdecl core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr);
+void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 (CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr);
 void __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_0041d180(CBoneGuy *this_ptr);
 int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d1b0(CBoneGuy *this_ptr);

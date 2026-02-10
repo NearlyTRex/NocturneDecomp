@@ -37,7 +37,7 @@ float __cdecl core_hero_cpp_CHero_FUN_004f3960(CHero *this_ptr)
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (&this_ptr_00->base,g_CMobsterClassInfo.name_hash);
       if ((pCVar2 == (CDemonActor *)0x0) || (*(int *)(pCVar2[0x8e].actor_name + 0x10) == 0)) {
-        iVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).isDamageable)(this_ptr_00);
+        iVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
         if (iVar3 == 0) {
           iVar3 = (*((this_ptr_00->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr_00->base);
           if (iVar3 == 0) {

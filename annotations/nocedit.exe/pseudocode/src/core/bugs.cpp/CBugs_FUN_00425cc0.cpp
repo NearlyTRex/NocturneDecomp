@@ -66,7 +66,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
     dest_position = &(this_ptr->base).base.base.location;
     iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                       (this_ptr_00,&dest_position->position,&CStack_4c,
-                       (this_ptr->base).base.base.unk1);
+                       (this_ptr->base).base.base.direction_hint);
     if (iVar4 != 0) {
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_a4,&CStack_4c);
       CStack_7c.z = 2.0f * in_stack_00000008;
@@ -78,7 +78,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
       fStack_60 = *pfVar1;
       pfVar2 = &(this_ptr->base).base.base.location.position.z;
       fStack_5c = *pfVar2;
-      core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
+      core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&CStack_28);
       fStack_34 = (dest_position->position).x;
       fStack_30 = *pfVar1;
       fStack_2c = *pfVar2;

@@ -11,7 +11,7 @@
 void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
 
 {
-  COrientation *euler;
+  UOrientationVector *euler;
   CLocation *position;
   CDeformableModelInstance *pCVar1;
   CSkeleton *this_ptr_00;
@@ -38,10 +38,10 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
   euler = &(this_ptr->base).base.base.orient;
   position = &(this_ptr->base).base.base.location;
   core_cloth_cpp_CClothList_setup_FUN_0043c290
-            ((CClothList *)(this_ptr->unk + 0x22b4),&position->position,(CVector3f *)euler,
+            ((CClothList *)(this_ptr->unk + 0x22b4),&position->position,&euler->vec,
              (CDeformableModelInstance *)pcVar2);
   core_cloth_cpp_CClothList_process_FUN_0043c2d0
-            (&(this_ptr->base).base.cloth_list,&position->position,(CVector3f *)euler,0.05,
+            (&(this_ptr->base).base.cloth_list,&position->position,&euler->vec,0.05,
              (this_ptr->base).base.closest_distance_threshold,(CDeformableModelInstance *)pcVar2);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
   INT_03f6bb68 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0

@@ -17,7 +17,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
   CBoundingBox3D *pCVar6;
   int iVar7;
   CVector3f *pCVar8;
-  COrientation *pCVar9;
+  UOrientationVector *pUVar9;
   float fStack_64;
   float in_stack_ffffffa4;
   float in_stack_ffffffa8;
@@ -75,19 +75,19 @@ LAB_0054d802:
     fStack_10 = (pCVar1->position).x;
     fVar3 = (pCVar2->base).location.position.y;
     fVar4 = (pCVar2->base).location.position.z;
-    fStack_34 = (pCVar2->base).orient.pitch;
-    pCVar9 = &(pCVar2->base).orient;
-    fStack_30 = (pCVar2->base).orient.bank;
-    fStack_2c = (pCVar2->base).orient.heading;
+    fStack_34 = (pCVar2->base).orient.vec.x;
+    pUVar9 = &(pCVar2->base).orient;
+    fStack_30 = (pCVar2->base).orient.vec.y;
+    fStack_2c = (pCVar2->base).orient.vec.z;
     (pCVar1->position).x = (this_ptr->start_pos).x;
     (pCVar2->base).location.position.y = (this_ptr->start_pos).y;
     (pCVar2->base).location.position.z = (this_ptr->start_pos).z;
     pCVar8 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                        ((CQuaternion4f *)auStack_28,(CVector3f *)&this_ptr->orig_orient);
-    if (pCVar9 != (COrientation *)pCVar8) {
-      pCVar9->pitch = pCVar8->x;
-      (pCVar2->base).orient.bank = pCVar8->y;
-      (pCVar2->base).orient.heading = pCVar8->z;
+    if ((CVector3f *)pUVar9 != pCVar8) {
+      (pUVar9->vec).x = pCVar8->x;
+      (pCVar2->base).orient.vec.y = pCVar8->y;
+      (pCVar2->base).orient.vec.z = pCVar8->z;
     }
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base,0xfa);
     (this_ptr->base).location.position.x = (this_ptr->end_pos).x;
@@ -95,21 +95,21 @@ LAB_0054d802:
     (this_ptr->base).location.position.z = (this_ptr->end_pos).z;
     pCVar8 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                        ((CQuaternion4f *)(auStack_28 + 0xc),(CVector3f *)&this_ptr->end_orient);
-    pCVar9 = &(this_ptr->base).orient;
-    if (pCVar9 != (COrientation *)pCVar8) {
-      pCVar9->pitch = pCVar8->x;
-      (this_ptr->base).orient.bank = pCVar8->y;
-      (this_ptr->base).orient.heading = pCVar8->z;
+    pUVar9 = &(this_ptr->base).orient;
+    if ((CVector3f *)pUVar9 != pCVar8) {
+      (pUVar9->vec).x = pCVar8->x;
+      (this_ptr->base).orient.vec.y = pCVar8->y;
+      (this_ptr->base).orient.vec.z = pCVar8->z;
     }
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base,0xf9);
     (this_ptr->base).location.position.x = fStack_10;
     (this_ptr->base).location.position.y = fVar3;
-    pCVar9 = &(this_ptr->base).orient;
+    pUVar9 = &(this_ptr->base).orient;
     (this_ptr->base).location.position.z = fVar4;
-    if (pCVar9 != (COrientation *)&fStack_34) {
-      pCVar9->pitch = fStack_34;
-      (this_ptr->base).orient.bank = fStack_30;
-      (this_ptr->base).orient.heading = fStack_2c;
+    if (pUVar9 != (UOrientationVector *)&fStack_34) {
+      (pUVar9->vec).x = fStack_34;
+      (this_ptr->base).orient.vec.y = fStack_30;
+      (this_ptr->base).orient.vec.z = fStack_2c;
     }
   }
   return iVar5;

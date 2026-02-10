@@ -25,11 +25,11 @@
 ;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 at 0041cbb5
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422c14
 ;   core_bugs.cpp_CBugs_FUN_00425fe0 at 004260f9
-;   core_charactr.cpp_CCharacter_FUN_0042a420 at 0042a499
-;   core_charactr.cpp_CCharacter_FUN_0042bd30 at 0042be9c
-;   core_charactr.cpp_CCharacter_FUN_0042d090 at 0042d2e0
-;   core_charactr.cpp_CCharacter_FUN_0042d300 at 0042d344
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cf41
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 at 0042be9c
+;   core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300 at 0042d344
+;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420 at 0042a499
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d2e0
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0 at 0043a32a
 ;   ... and 35 more
 ;

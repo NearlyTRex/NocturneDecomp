@@ -37,7 +37,8 @@ core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_ptr,SDamageInfo
                    (&(this_ptr->base).base.model,(CVector3f *)&stack0xffffffc4,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_24,input_local_point);
-    core_charactr_cpp_CCharacter_FUN_0042b5b0((CCharacter *)this_ptr);
+    core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
+              ((CCharacter *)this_ptr,&local_24,0,0.0,0x41200000,0);
   }
   core_batman_cpp_CBatman_FUN_00417660(this_ptr);
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;

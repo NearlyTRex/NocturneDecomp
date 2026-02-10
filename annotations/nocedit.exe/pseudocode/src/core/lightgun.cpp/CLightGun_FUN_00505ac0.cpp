@@ -10,21 +10,24 @@ void __cdecl core_lightgun_cpp_CLightGun_FUN_00505ac0(CLightGun *this_ptr)
 
 {
   CVector3f *input_local_point;
-  CVector3f CStack_14;
+  int unaff_ESI;
+  float fStack_10;
+  float fStack_c;
   
-  input_local_point = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).cfunc3)();
+  input_local_point =
+       (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            ((CDemonActor *)this_ptr,&CStack_14,input_local_point);
+            ((CDemonActor *)this_ptr,(CVector3f *)&fStack_10,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
   g_CDemonLightInstance.unk2 = 0;
-  if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].z) {
-    g_CDemonLightInstance.base.base.position.x = (int)CStack_14.x;
-    g_CDemonLightInstance.base.base.position.y = (int)CStack_14.y;
-    g_CDemonLightInstance.base.base.position.z = (int)CStack_14.z;
+  if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].y) {
+    g_CDemonLightInstance.base.base.position.x = (int)fStack_10;
+    g_CDemonLightInstance.base.base.position.y = (int)fStack_c;
+    g_CDemonLightInstance.base.base.position.z = unaff_ESI;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)&g_CDemonLightInstance.base.base.rotation_matrix,
-             (CVector3f *)&(this_ptr->base).base.orient);
+             &(this_ptr->base).base.orient.vec);
   g_CDemonLightInstance.base.max_distance = 32.0;
   g_CDemonLightInstance.base.base.projection_scale = 112.0f;
   g_CDemonLightInstance.antialiasing_enabled = 1;

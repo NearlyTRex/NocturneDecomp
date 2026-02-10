@@ -75,10 +75,10 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                     (g_CDemonRendererPtr2,(CVector3i *)&local_34,(CVector3i *)&local_4c);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-                    ((CKeyFramedModelInstance *)&local_14[0x17a].unk3.z,0.0,-1);
+                    ((CKeyFramedModelInstance *)&local_14[0x17a].platform_position_delta.z,0.0,-1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
         }
-        core_charactr_cpp_CCharacter_FUN_0042a420((CCharacter *)this_ptr);
+        core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420((CCharacter *)this_ptr);
         if ((DAT_02f43978 != 0) &&
            (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
                               (g_CDemonRendererPtr2), iVar1 == 0)) {

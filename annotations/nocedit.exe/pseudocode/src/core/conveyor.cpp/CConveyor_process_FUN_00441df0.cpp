@@ -43,14 +43,14 @@ LAB_00441e9d:
             local_24 = local_30.x * delta_time;
             local_20 = local_30.y * delta_time;
             local_1c = local_30.z * delta_time;
-            if (&actor_ptr->unk3 != (CVector3f *)&local_24) {
-              (actor_ptr->unk3).x = local_24;
-              (actor_ptr->unk3).y = local_20;
-              (actor_ptr->unk3).z = local_1c;
+            if (&actor_ptr->platform_position_delta != (CVector3f *)&local_24) {
+              (actor_ptr->platform_position_delta).x = local_24;
+              (actor_ptr->platform_position_delta).y = local_20;
+              (actor_ptr->platform_position_delta).z = local_1c;
             }
-            (actor_ptr->unk4).z = 0.0;
-            (actor_ptr->unk4).y = 0.0;
-            (actor_ptr->unk4).x = 0.0;
+            (actor_ptr->platform_orientation_delta).z = 0.0;
+            (actor_ptr->platform_orientation_delta).y = 0.0;
+            (actor_ptr->platform_orientation_delta).x = 0.0;
             iVar3 = iVar3 + 1;
             iVar1 = iVar1 + 4;
           }

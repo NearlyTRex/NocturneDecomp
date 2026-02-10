@@ -52,7 +52,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr)
   float local_18;
   
   this_ptr->ladder_to_descend = (CDemonActor *)0x0;
-  local_18 = core_charactr_cpp_CCharacter_FUN_0042e840((CCharacter *)this_ptr);
+  local_18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+                       ((CCharacter *)this_ptr,0);
   if ((((float)0.98999999999999999 <= local_18) &&
       ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0)) &&
      ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
@@ -134,21 +135,21 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr)
               fStack_5c = pCVar3->x - (this_ptr->base).base.base.location.position.x;
               fStack_58 = pCVar3->y - (this_ptr->base).base.base.location.position.y;
               fStack_54 = pCVar3->z - (this_ptr->base).base.base.location.position.z;
-              if ((float *)this_ptr->unk7 != &fStack_5c) {
-                *(float *)this_ptr->unk7 = fStack_5c;
-                *(float *)(this_ptr->unk7 + 4) = fStack_58;
-                *(float *)(this_ptr->unk7 + 8) = fStack_54;
+              if ((float *)this_ptr->unk11 != &fStack_5c) {
+                *(float *)this_ptr->unk11 = fStack_5c;
+                *(float *)(this_ptr->unk11 + 4) = fStack_58;
+                *(float *)(this_ptr->unk11 + 8) = fStack_54;
               }
               CStack_44.x = (float)local_d0._8_4_ - (this_ptr->base).base.base.location.position.x;
               CStack_44.y = fStack_c4 - (this_ptr->base).base.base.location.position.y;
               CStack_44.z = fStack_c0 - (this_ptr->base).base.base.location.position.z;
               pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&CStack_bc,&CStack_44);
-              *(float *)(this_ptr->unk7 + 0xc) = pCVar3->y;
-              this_ptr->unk7[0x10] = '\0';
-              this_ptr->unk7[0x11] = '\0';
-              this_ptr->unk7[0x12] = -0x80;
-              this_ptr->unk7[0x13] = '?';
+              *(float *)(this_ptr->unk11 + 0xc) = pCVar3->y;
+              this_ptr->unk11[0x10] = '\0';
+              this_ptr->unk11[0x11] = '\0';
+              this_ptr->unk11[0x12] = -0x80;
+              this_ptr->unk11[0x13] = '?';
               return 1;
             }
           }

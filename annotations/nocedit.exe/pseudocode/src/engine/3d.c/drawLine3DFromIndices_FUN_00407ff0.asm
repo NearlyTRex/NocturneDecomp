@@ -7,8 +7,10 @@
 ; int              Stack[0x4]:4   vertex_index1
 ; int              Stack[0x8]:4   vertex_index2
 ; Local Variables:
-; undefined        Stack[-0x68]:1  local_68
-; undefined        Stack[-0x38]:1  local_38
+; SRenderVertex    Stack[-0xc8]:48  local_c8
+; SRenderVertex    Stack[-0x98]:48  local_98
+; SRenderVertex    Stack[-0x68]:48  local_68
+; SRenderVertex    Stack[-0x38]:48  local_38
 ;
 ; Referenced Globals:
 ;   SRenderVertex[16] g_RenderVertexBuffer
@@ -52,7 +54,7 @@ section .text
     MOV EDI,ESP                         ; 00408051
     MOVSD.REP ES:EDI,ESI                ; 00408053
     CALL engine_3d.c_clipAndDrawLine3D_FUN_00408070 ; 00408055
-        ;   XREF to: 00408070 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine3D_FUN_00408070(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00408070 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine3D_FUN_00408070(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0040805a
     ADD ESP,0x60                        ; 0040805d
     POP EDI                             ; 00408060

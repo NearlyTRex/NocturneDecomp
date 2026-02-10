@@ -28,7 +28,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjecto
   else {
     pCVar3 = (this_ptr->base).dest_actor;
     fVar1 = (float)3.1415926535000001;
-    (pCVar3->orient).heading = (pCVar3->orient).heading - in_stack_00000008 * fVar1;
+    (pCVar3->orient).vec.z = (pCVar3->orient).vec.z - in_stack_00000008 * fVar1;
     *(float *)(this_ptr->unk + 0x68) = *(float *)(this_ptr->unk + 0x68) - in_stack_00000008 * fVar1;
     if (*(int *)(this_ptr->unk + 0x6c) == 0) {
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790

@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[15]:
-;   core_charactr.cpp_CCharacter_FUN_0042d090 at 0042d1c4
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d1c4
 ;   core_fire.cpp_CBulletHole_init_FUN_004bf7f0 at 004bf96f
 ;   core_gabriela.cpp_CGabriella_FUN_004d5550 at 004d56e4
 ;   core_mimic.cpp_CMimic_FUN_005205f0 at 005207af

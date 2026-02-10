@@ -9,7 +9,7 @@
 void __cdecl core_platfrm_cpp_CPlatform_FUN_0054cab0(CPlatform *this_ptr)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   float *pfVar2;
   CVector3f *pCVar3;
   uint *puVar4;
@@ -38,7 +38,7 @@ void __cdecl core_platfrm_cpp_CPlatform_FUN_0054cab0(CPlatform *this_ptr)
   if (1.0 < this_ptr->param) {
     this_ptr->param = 1.0;
   }
-  pCVar1 = &(this_ptr->base).orient;
+  pUVar1 = &(this_ptr->base).orient;
   if (this_ptr->course_filename[0] == '\0') {
     pfVar2 = &this_ptr->param;
     local_48 = (this_ptr->end_pos).x * *pfVar2;
@@ -66,10 +66,10 @@ void __cdecl core_platfrm_cpp_CPlatform_FUN_0054cab0(CPlatform *this_ptr)
     *puVar5 = *puVar4;
     puVar5[(uint)bVar6 * -2 + 1] = puVar4[(uint)bVar6 * -2 + 1];
     pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(quat_in,pCVar3);
-    if (pCVar1 != (COrientation *)pCVar3) {
-      pCVar1->pitch = pCVar3->x;
-      (this_ptr->base).orient.bank = pCVar3->y;
-      (this_ptr->base).orient.heading = pCVar3->z;
+    if ((CVector3f *)pUVar1 != pCVar3) {
+      (pUVar1->vec).x = pCVar3->x;
+      (this_ptr->base).orient.vec.y = pCVar3->y;
+      (this_ptr->base).orient.vec.z = pCVar3->z;
       return;
     }
   }

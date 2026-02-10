@@ -1,0 +1,13 @@
+// Name: core_charactr.cpp_CCharacter_getGrabber_FUN_0042bf80
+// Address: 0042bf80
+// Address Range: [[0042bf80, 0042bf8a]]
+// Convention: __cdecl
+// Signature: CDemonActor * __cdecl core_charactr_cpp_CCharacter_getGrabber_FUN_0042bf80(CCharacter *this_ptr)
+
+#include "nocturne.h"
+
+CDemonActor * __cdecl core_charactr_cpp_CCharacter_getGrabber_FUN_0042bf80(CCharacter *this_ptr)
+
+{
+  return this_ptr->grabbed_by;
+}

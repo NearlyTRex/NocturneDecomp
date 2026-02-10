@@ -16,7 +16,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c61c
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421dbb
 ;   core_bugs.cpp_CBugs_FUN_00425fe0 at 0042607d
-;   core_charactr.cpp_CCharacter_FUN_00428e30 at 00428e69
+;   core_charactr.cpp_CCharacter_applyDamage_FUN_00428ee0 at 00428f04
 ;   ... and 36 more
 ;
 ; *****************************************************************************

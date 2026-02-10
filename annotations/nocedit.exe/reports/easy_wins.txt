@@ -83,7 +83,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/gun.cpp (1 remaining of 7)
     - core_gun.cpp_CGun_FUN_004f0350
-      Suspects: extra_output, unknown_field, unknown_field, unknown_field, extra_output, decompiler_intrinsic, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, suspect_float, unknown_field, unknown_field
+      Suspects: extra_output, stack_param, stack_param, decompiler_intrinsic, extra_output, stack_ref, unknown_field, stack_param, unknown_field, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, suspect_float, stack_param
 
   core/hiram.cpp (1 remaining of 10)
     - core_hiram.cpp_CHiram_dtor_FUN_004f4450
@@ -193,12 +193,6 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_battery.cpp_CBattery_renderOpaque_FUN_00417f80
       Suspects: stack_ref
 
-  core/flamegun.cpp (2 remaining of 10)
-    - core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880
-      Suspects: suspect_float
-    - core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0
-      Suspects: extra_output, extra_output
-
   core/melee.cpp (2 remaining of 17)
     - core_melee.cpp_CMelee_FUN_0050ebe0
       Suspects: stack_param, stack_param, stack_param, stack_param, param_count_too_few
@@ -228,7 +222,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_thread.c_GetTLS_FUN_0060242c                        (  4 lines)
     ... and 247 more
 
-  [param_count_too_few] - 152 functions
+  [param_count_too_few] - 151 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
     support_newmsg.cpp_doNothing_FUN_00544500               (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
@@ -239,9 +233,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_texture.cpp_CTextureCache_reset_FUN_005dcb20     (  5 lines)
     engine_palette.cpp_CFont_ctor_FUN_00544eb0              (  5 lines)
     engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d6 (  5 lines)
-    ... and 142 more
+    ... and 141 more
 
-  [pointer_cast] - 70 functions
+  [pointer_cast] - 71 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
     core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30             (  6 lines)
@@ -252,9 +246,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  6 lines)
     core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  6 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  6 lines)
-    ... and 60 more
+    ... and 61 more
 
-  [stack_ref] - 65 functions
+  [stack_ref] - 62 functions
     engine_2d.c_drawTextColorFormatted_FUN_004024c0         ( 10 lines)
     engine_2d.c_drawTextFormatted_FUN_00402150              ( 10 lines)
     engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 ( 10 lines)
@@ -265,9 +259,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_2d.c_drawTextCenteredAtColorFormatted_FUN_004026 ( 11 lines)
     engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20  ( 11 lines)
     engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20        ( 11 lines)
-    ... and 55 more
+    ... and 52 more
 
-  [decompiler_intrinsic] - 46 functions
+  [decompiler_intrinsic] - 49 functions
     core_actor.cpp_CVector3f_length_FUN_00410380            (  4 lines)
     shape_design.c_floatEpsilonCompare_FUN_004676b0         (  6 lines)
     core_water.cpp_calculateWaveHeight_FUN_005e9dc0         (  7 lines)
@@ -277,8 +271,8 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScaleSim ( 10 lines)
     core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00 ( 10 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScale_FU ( 11 lines)
-    wincore_winrun.cpp_sleep_FUN_005f40e0                   ( 12 lines)
-    ... and 36 more
+    core_hero.cpp_CHero_testCylinderCollision_FUN_004f2580  ( 12 lines)
+    ... and 39 more
 
   [negative_offset] - 39 functions
     core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50             (  6 lines)

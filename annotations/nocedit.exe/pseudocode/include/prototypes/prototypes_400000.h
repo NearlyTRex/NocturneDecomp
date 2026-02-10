@@ -223,7 +223,7 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd);
 void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(int vertex_index1,int vertex_index2);
 void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1,SRenderVertex vertex2);
 void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407ff0(int vertex_index1,int vertex_index2);
-void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00408070(SRenderVertex *vertex1,SRenderVertex *vertex2);
+void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00408070(SRenderVertex vertex1,SRenderVertex vertex2);
 void __cdecl core_actor_cpp_staticInit_FUN_00408320(void);
 float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00408340 (SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
 void __cdecl core_actor_cpp_trimActorName_FUN_004087b0(CDemonActor *actor_ptr);
@@ -277,7 +277,7 @@ void __cdecl core_actor_cpp_draw3DPointMarker_FUN_00409930(CVector3f *world_posi
 void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_spawnFlies_FUN_00409e70 (CDemonActor *this_ptr,int fly_count,float spawn_radius);
 void __cdecl core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409ec0(CDemonActor *this_ptr,uint *out_crc);
-int __cdecl core_actor_cpp_CDemonActor_isActiveTarget_FUN_00409f20(CDemonActor *this_ptr);
+int __cdecl core_actor_cpp_CDemonActor_canLookAt_FUN_00409f20(CDemonActor *this_ptr);
 float __cdecl core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40(CDemonActor *this_ptr);
 int __cdecl core_actor_cpp_CDemonActor_processActionButton_FUN_00409f60(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0 (CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);

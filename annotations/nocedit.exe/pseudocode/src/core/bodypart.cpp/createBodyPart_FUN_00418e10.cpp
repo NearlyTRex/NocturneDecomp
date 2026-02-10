@@ -9,7 +9,7 @@
 CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   CBodyPart *this_ptr;
   CBodyPart *this_ptr_00;
   float fVar2;
@@ -40,11 +40,11 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
   (this_ptr_00->base).location.position.x = *in_stack_00000004;
   (this_ptr_00->base).location.position.y = in_stack_00000004[1];
   (this_ptr_00->base).location.position.z = in_stack_00000004[2];
-  pCVar1 = &(this_ptr_00->base).orient;
-  if (pCVar1 != (COrientation *)in_stack_00000008) {
-    pCVar1->pitch = *in_stack_00000008;
-    (this_ptr_00->base).orient.bank = in_stack_00000008[1];
-    (this_ptr_00->base).orient.heading = in_stack_00000008[2];
+  pUVar1 = &(this_ptr_00->base).orient;
+  if (pUVar1 != (UOrientationVector *)in_stack_00000008) {
+    (pUVar1->vec).x = *in_stack_00000008;
+    (this_ptr_00->base).orient.vec.y = in_stack_00000008[1];
+    (this_ptr_00->base).orient.vec.z = in_stack_00000008[2];
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr_00->base);
   if (in_stack_0000000c == (uint *)0x0) {

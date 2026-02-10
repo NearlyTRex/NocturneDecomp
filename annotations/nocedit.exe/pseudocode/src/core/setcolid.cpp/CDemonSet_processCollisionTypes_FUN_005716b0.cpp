@@ -148,7 +148,7 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                   CStack_24.z = CStack_24.y - (pCVar2->location).position.y;
                   iVar3 = core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
                                     (this_ptr_00,0,(float)&CStack_54.y,in_stack_00000014,
-                                     &CStack_24.z,(CVector3f *)&pCVar2->orient);
+                                     &CStack_24.z,&(pCVar2->orient).vec);
                   if (iVar3 != 0) {
                     *(CDemonActor **)((int)radius + 0x14d144) = pCVar2;
                     CStack_24.y = CStack_24.z + (pCVar2->location).position.y;

@@ -48,7 +48,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_charactr.cpp_CCharacter_FUN_0042d090
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 ;   core_xform.cpp_buildRotationX_FUN_005f6c40
 ;   core_xform.cpp_buildRotationY_FUN_005f6cc0
@@ -71,8 +71,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x92]      ; 004d555f
     PUSH dword ptr [EBP + 0x96]         ; 004d5565
     PUSH EBX                            ; 004d556b
-    CALL core_charactr.cpp_CCharacter_FUN_0042d090 ; 004d556c
-        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d090(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 ; 004d556c
+        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004d5571
     LEA EAX,[EBX + 0x30]                ; 004d5574
     PUSH EAX                            ; 004d5577

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_charactr.cpp_CCharacter_FUN_0042ede0 at 0042ee67
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042ee67
 ;   core_emitter.cpp_CEmitter_FUN_004a7e80 at 004a7e91
 ;
 ; Referenced Globals:

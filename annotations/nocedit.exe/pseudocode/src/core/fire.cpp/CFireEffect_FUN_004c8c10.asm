@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_charactr.cpp_CCharacter_FUN_0042b930 at 0042b9b7
+;   core_charactr.cpp_CCharacter_explode_FUN_0042b930 at 0042b9b7
 ;   core_crate.cpp_CCrate_FUN_00448a70 at 00448af4
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab1f7
 ;   core_fire.cpp_CToss_process_FUN_004c4000 at 004c406d

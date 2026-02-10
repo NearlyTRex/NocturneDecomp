@@ -38,7 +38,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_charactr.cpp_CCharacter_FUN_0042e840
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -81,8 +81,8 @@ section .text
     PUSH EDX                            ; 005c16b4
         ;   Label: LAB_005c16b4
     PUSH ESI                            ; 005c16b5
-    CALL core_charactr.cpp_CCharacter_FUN_0042e840 ; 005c16b6
-        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_FUN_0042e840(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 ; 005c16b6
+        ;   XREF to: 0042e840 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x164],EAX     ; 005c16bb
     FLD float ptr [ESP + 0x164]         ; 005c16c2
     ADD ESP,0x8                         ; 005c16c9

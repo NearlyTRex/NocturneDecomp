@@ -107,7 +107,7 @@ section .text
     PUSH EAX                            ; 0055810f
     PUSH EBX                            ; 00558110
     CALL core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370 ; 00558111
-        ;   XREF to: 0042e370 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter * this_ptr)
+        ;   XREF to: 0042e370 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter * this_ptr, float * remaining_time, int target_bone_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 00558116
     ADD ESP,0xc                         ; 0055811a
     MOV dword ptr [ESP + 0x8],EAX       ; 0055811d
@@ -178,7 +178,7 @@ section .text
         ;   Label: LAB_005581d1
     PUSH EBX                            ; 005581d2
     CALL core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0 ; 005581d3
-        ;   XREF to: 0042e8c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter * this_ptr)
+        ;   XREF to: 0042e8c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter * this_ptr, int layer_action_index)
     ADD ESP,0x8                         ; 005581d8
     MOV EDI,dword ptr [ESP + 0xc]       ; 005581db
         ;   Label: LAB_005581db

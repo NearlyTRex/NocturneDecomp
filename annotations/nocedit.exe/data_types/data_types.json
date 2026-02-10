@@ -265,15 +265,103 @@
       "type":"function_definition"
     },
     {
+      "name":"CCharacter_attractActorToward",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_canBeAttracted",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_canBeGrabbed",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_canWalk",
+      "type":"function_definition"
+    },
+    {
       "name":"CCharacter_checkCylinderCollisionWorld",
       "type":"function_definition"
     },
     {
-      "name":"CCharacter_isDamageable",
+      "name":"CCharacter_clearDoorTarget",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_dropCarriedObject",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_getCarryObjToBodyXForm",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_getGrabbed",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_getGrabber",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_getPartDominantBone",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_hasDoorTarget",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_isDeathState",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_isGrabbable",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_isWalkComplete",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_kill",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_onVictimLost",
       "type":"function_definition"
     },
     {
       "name":"CCharacter_processDamage",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_releaseFromGrab",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_releaseVictim",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_setDoorTarget",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_setWalkTarget",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_setWalkTargetImmediate",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_setWalkTimeout",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_testDamageLine",
       "type":"function_definition"
     },
     {
@@ -377,6 +465,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CDemonActor_canLookAt",
+      "type":"function_definition"
+    },
+    {
       "name":"CDemonActor_canPickup",
       "type":"function_definition"
     },
@@ -470,10 +562,6 @@
     },
     {
       "name":"CDemonActor_initializeInEditor",
-      "type":"function_definition"
-    },
-    {
-      "name":"CDemonActor_isActiveTarget",
       "type":"function_definition"
     },
     {
@@ -7878,6 +7966,78 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CCharacter_attractActorToward",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"actor",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"target_local_point",
+          "type":"CVector3f*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_canBeAttracted",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_canBeGrabbed",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"grabber",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"grab_type",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_canWalk",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CCharacter_checkCylinderCollisionWorld",
       "parameters":[
         {
@@ -7904,7 +8064,119 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CCharacter_isDamageable",
+      "name":"CCharacter_clearDoorTarget",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_dropCarriedObject",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"hand_index",
+          "type":"int"
+        },
+        {
+          "name":"drop_direction",
+          "type":"CVector3f*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_getCarryObjToBodyXForm",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"hand_index",
+          "type":"int"
+        },
+        {
+          "name":"out_matrix",
+          "type":"CMatrix3x4f*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_getGrabbed",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"grabber",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"grab_type",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_getGrabber",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"CDemonActor*",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_getPartDominantBone",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"part_index",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_hasDoorTarget",
       "parameters":[
         {
           "name":"this_ptr",
@@ -7912,6 +8184,92 @@
         }
       ],
       "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_isDeathState",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_isGrabbable",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_isWalkComplete",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_kill",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"damage_type",
+          "type":"int"
+        },
+        {
+          "name":"damage_direction",
+          "type":"CVector3f*"
+        },
+        {
+          "name":"impact_force",
+          "type":"float"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_onVictimLost",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"lost_actor",
+          "type":"CDemonActor*"
+        }
+      ],
+      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -7930,6 +8288,144 @@
         }
       ],
       "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_releaseFromGrab",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_releaseVictim",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_setDoorTarget",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"event_id",
+          "type":"uint"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_setWalkTarget",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"target",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"speed",
+          "type":"float"
+        },
+        {
+          "name":"distance",
+          "type":"float"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_setWalkTargetImmediate",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"target",
+          "type":"CDemonActor*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_setWalkTimeout",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"delay",
+          "type":"float"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_testDamageLine",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"start",
+          "type":"CVector3f*"
+        },
+        {
+          "name":"end",
+          "type":"CVector3f*"
+        },
+        {
+          "name":"damage_info",
+          "type":"SDamageInfo*"
+        },
+        {
+          "name":"out_hit",
+          "type":"CVector3f*"
+        }
+      ],
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -8168,6 +8664,20 @@
         }
       ],
       "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CDemonActor_canLookAt",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonActor*"
+        }
+      ],
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -8638,20 +9148,6 @@
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
       "name":"CDemonActor_initializeInEditor",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CDemonActor*"
-        }
-      ],
-      "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
-      "name":"CDemonActor_isActiveTarget",
       "parameters":[
         {
           "name":"this_ptr",
@@ -23410,39 +23906,39 @@
         },
         {
           "len":4,
-          "name":"field_9632",
+          "name":"walk_to_target",
           "offset":9632,
-          "type":"float"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
-          "name":"field_9636",
+          "name":"walk_min_distance",
           "offset":9636,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_9640",
+          "name":"walk_max_distance",
           "offset":9640,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_9644",
+          "name":"walk_timeout",
           "offset":9644,
           "type":"float"
         },
         {
           "len":4,
-          "name":"field_9648",
+          "name":"is_walking",
           "offset":9648,
           "type":"int"
         },
         {
           "len":4,
-          "name":"field_9652",
+          "name":"door_target",
           "offset":9652,
-          "type":"int"
+          "type":"CDoor*"
         },
         {
           "len":12,
@@ -23476,9 +23972,9 @@
         },
         {
           "len":4,
-          "name":"field_9684",
+          "name":"lookat_target",
           "offset":9684,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -23680,15 +24176,15 @@
         },
         {
           "len":4,
-          "name":"field_12052",
+          "name":"fire_spread_rate",
           "offset":12052,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
-          "name":"field_12056",
+          "name":"fire_allow_hero",
           "offset":12056,
-          "type":"float"
+          "type":"int"
         },
         {
           "len":1200,
@@ -23776,57 +24272,57 @@
         },
         {
           "len":4,
-          "name":"cfunc2",
+          "name":"kill",
           "offset":4,
-          "type":"void*"
+          "type":"CCharacter_kill*"
         },
         {
           "len":4,
-          "name":"cfunc3",
+          "name":"canWalk",
           "offset":8,
-          "type":"void*"
+          "type":"CCharacter_canWalk*"
         },
         {
           "len":4,
-          "name":"cfunc4",
+          "name":"isGrabbable",
           "offset":12,
-          "type":"void*"
+          "type":"CCharacter_isGrabbable*"
         },
         {
           "len":4,
-          "name":"cfunc5",
+          "name":"canBeGrabbed",
           "offset":16,
-          "type":"void*"
+          "type":"CCharacter_canBeGrabbed*"
         },
         {
           "len":4,
-          "name":"cfunc6",
+          "name":"getGrabbed",
           "offset":20,
-          "type":"void*"
+          "type":"CCharacter_getGrabbed*"
         },
         {
           "len":4,
-          "name":"cfunc7",
+          "name":"releaseFromGrab",
           "offset":24,
-          "type":"void*"
+          "type":"CCharacter_releaseFromGrab*"
         },
         {
           "len":4,
-          "name":"cfunc8",
+          "name":"getGrabber",
           "offset":28,
-          "type":"void*"
+          "type":"CCharacter_getGrabber*"
         },
         {
           "len":4,
-          "name":"cfunc9",
+          "name":"releaseVictim",
           "offset":32,
-          "type":"void*"
+          "type":"CCharacter_releaseVictim*"
         },
         {
           "len":4,
-          "name":"cfunc10",
+          "name":"onVictimLost",
           "offset":36,
-          "type":"void*"
+          "type":"CCharacter_onVictimLost*"
         },
         {
           "len":4,
@@ -23836,9 +24332,9 @@
         },
         {
           "len":4,
-          "name":"cfunc12",
+          "name":"testDamageLine",
           "offset":44,
-          "type":"void*"
+          "type":"CCharacter_testDamageLine*"
         },
         {
           "len":4,
@@ -23847,82 +24343,83 @@
           "type":"CCharacter_processDamage*"
         },
         {
+          "comment":"0=alive,1=dying,2=dead",
           "len":4,
-          "name":"isDamageable",
+          "name":"getDeathState",
           "offset":52,
-          "type":"CCharacter_isDamageable*"
+          "type":"CCharacter_isDeathState*"
         },
         {
           "len":4,
-          "name":"cfunc15",
+          "name":"attractActorToward",
           "offset":56,
-          "type":"void*"
+          "type":"CCharacter_attractActorToward*"
         },
         {
           "len":4,
-          "name":"cfunc16",
+          "name":"canBeAttracted",
           "offset":60,
-          "type":"void*"
+          "type":"CCharacter_canBeAttracted*"
         },
         {
           "len":4,
-          "name":"cfunc17",
+          "name":"getPartDominantBone",
           "offset":64,
-          "type":"void*"
+          "type":"CCharacter_getPartDominantBone*"
         },
         {
           "len":4,
-          "name":"cfunc18",
+          "name":"setDoorTarget",
           "offset":68,
-          "type":"void*"
+          "type":"CCharacter_setDoorTarget*"
         },
         {
           "len":4,
-          "name":"cfunc19",
+          "name":"clearDoorTarget",
           "offset":72,
-          "type":"void*"
+          "type":"CCharacter_clearDoorTarget*"
         },
         {
           "len":4,
-          "name":"cfunc20",
+          "name":"hasDoorTarget",
           "offset":76,
-          "type":"void*"
+          "type":"CCharacter_hasDoorTarget*"
         },
         {
           "len":4,
-          "name":"cfunc21",
+          "name":"dropCarriedObject",
           "offset":80,
-          "type":"void*"
+          "type":"CCharacter_dropCarriedObject*"
         },
         {
           "len":4,
           "name":"getCarryObjToBodyXForm",
           "offset":84,
-          "type":"void*"
+          "type":"CCharacter_getCarryObjToBodyXForm*"
         },
         {
           "len":4,
-          "name":"cfunc23",
+          "name":"setWalkTarget",
           "offset":88,
-          "type":"void*"
+          "type":"CCharacter_setWalkTarget*"
         },
         {
           "len":4,
-          "name":"cfunc24",
+          "name":"setWalkTargetImmediate",
           "offset":92,
-          "type":"void*"
+          "type":"CCharacter_setWalkTargetImmediate*"
         },
         {
           "len":4,
-          "name":"cfunc25",
+          "name":"setWalkTimeout",
           "offset":96,
-          "type":"void*"
+          "type":"CCharacter_setWalkTimeout*"
         },
         {
           "len":4,
-          "name":"cfunc26",
+          "name":"isWalkComplete",
           "offset":100,
-          "type":"void*"
+          "type":"CCharacter_isWalkComplete*"
         }
       ],
       "importable":true,
@@ -25590,7 +26087,7 @@
           "len":12,
           "name":"orient",
           "offset":48,
-          "type":"COrientation"
+          "type":"UOrientationVector"
         },
         {
           "len":36,
@@ -25618,7 +26115,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"direction_hint",
           "offset":108,
           "type":"int"
         },
@@ -25648,13 +26145,13 @@
         },
         {
           "len":12,
-          "name":"unk3",
+          "name":"platform_position_delta",
           "offset":224,
           "type":"CVector3f"
         },
         {
           "len":12,
-          "name":"unk4",
+          "name":"platform_orientation_delta",
           "offset":236,
           "type":"CVector3f"
         },
@@ -25696,9 +26193,9 @@
         },
         {
           "len":4,
-          "name":"unk9",
+          "name":"blood_effect_color",
           "offset":280,
-          "type":"int"
+          "type":"uint"
         },
         {
           "len":4,
@@ -25894,9 +26391,9 @@
         },
         {
           "len":4,
-          "name":"isActiveTarget",
+          "name":"canLookAt",
           "offset":84,
-          "type":"CDemonActor_isActiveTarget*"
+          "type":"CDemonActor_canLookAt*"
         },
         {
           "len":4,
@@ -32258,7 +32755,7 @@
           "len":4,
           "name":"unk1",
           "offset":48676,
-          "type":"uint"
+          "type":"float"
         },
         {
           "len":4,
@@ -38859,10 +39356,16 @@
           "type":"CVector3f"
         },
         {
-          "len":628,
-          "name":"unk",
+          "len":600,
+          "name":"box",
           "offset":856,
-          "type":"char[628]"
+          "type":"CBox"
+        },
+        {
+          "len":28,
+          "name":"unk",
+          "offset":1456,
+          "type":"char[28]"
         }
       ],
       "importable":true,
@@ -39735,16 +40238,40 @@
           "type":"CDemonActor*"
         },
         {
+          "len":8,
+          "name":"unk6",
+          "offset":130096,
+          "type":"char[8]"
+        },
+        {
           "len":4,
           "name":"action_pending",
           "offset":130104,
           "type":"int"
         },
         {
-          "len":156,
-          "name":"unk6",
+          "len":4,
+          "name":"unk7",
           "offset":130108,
-          "type":"char[156]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk8",
+          "offset":130112,
+          "type":"float"
+        },
+        {
+          "len":144,
+          "name":"unk9",
+          "offset":130116,
+          "type":"char[144]"
+        },
+        {
+          "len":4,
+          "name":"unk10",
+          "offset":130260,
+          "type":"int"
         },
         {
           "len":380,
@@ -39754,7 +40281,7 @@
         },
         {
           "len":28,
-          "name":"unk7",
+          "name":"unk11",
           "offset":130644,
           "type":"char[28]"
         }

@@ -1,10 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *this_ptr)
+; __cdecl int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0 (CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction, float min_distance,float max_distance)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   target_pos
+; CPathMap *       Stack[0xc]:4   path_map
+; CVector3f *      Stack[0x10]:4   direction
+; float            Stack[0x14]:4   min_distance
+; float            Stack[0x18]:4   max_distance
 ; Local Variables:
 ; undefined4       Stack[-0x11c]:4  local_11c
 ; undefined8       Stack[-0x118]:8  local_118
@@ -67,10 +72,10 @@
 ;   core_boneguy.cpp_CBoneGuy_FUN_0041cc40 at 0041cea8
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c961
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423d6b
-;   core_charactr.cpp_CCharacter_FUN_0042c5f0 at 0042c8c3
-;   core_charactr.cpp_CCharacter_FUN_0042ca70 at 0042cb92
-;   core_charactr.cpp_CCharacter_FUN_0042e050 at 0042e32c
-;   core_charactr.cpp_CCharacter_FUN_0042ede0 at 0042f2cc
+;   core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0 at 0042c8c3
+;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042f2cc
+;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70 at 0042cb92
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 at 0042e32c
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 004447bc
 ;   ... and 17 more
 ;

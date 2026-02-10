@@ -115,8 +115,8 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
             (this_ptr_02 = (*((local_1c->vtable)._ub)->getPathMap)(local_1c),
             this_ptr_02 != (CPathMap *)0x0)) &&
            (iVar7 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                              (this_ptr_02,local_38,&CStack_44,(this_ptr->base).base.unk1),
-           iVar7 == 1)) {
+                              (this_ptr_02,local_38,&CStack_44,(this_ptr->base).base.direction_hint)
+           , iVar7 == 1)) {
           this_ptr->victim = local_18;
           return;
         }
@@ -129,8 +129,8 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
     else {
       this_ptr_00 = (CCharacter *)this_ptr->victim;
       if ((this_ptr_00 != (CCharacter *)0x0) &&
-         (iVar5 = (*(((this_ptr_00->base).vtable._uc)->_uc).isDamageable)(this_ptr_00), iVar5 != 0))
-      {
+         (iVar5 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), iVar5 != 0)
+         ) {
         this_ptr->unk3 = 0;
         this_ptr->unk1 = 0;
         this_ptr->victim = (CDemonActor *)0x0;

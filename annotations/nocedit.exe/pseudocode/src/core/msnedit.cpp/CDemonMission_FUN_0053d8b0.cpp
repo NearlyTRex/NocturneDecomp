@@ -164,10 +164,10 @@ core_msnedit_cpp_CDemonMission_FUN_0053d8b0
     (unaff_EDI->location).position.z = *(float *)(iVar9 + 0x28);
     (unaff_EDI->location).area_id = *(int *)(iVar9 + 0x2c);
     iVar9 = *(int *)(in_stack_00000018 + 0x28);
-    if (&unaff_EDI->orient != (COrientation *)(iVar9 + 0x30)) {
-      (unaff_EDI->orient).pitch = *(float *)(iVar9 + 0x30);
-      (unaff_EDI->orient).bank = *(float *)(iVar9 + 0x34);
-      (unaff_EDI->orient).heading = *(float *)(iVar9 + 0x38);
+    if (&unaff_EDI->orient != (UOrientationVector *)(iVar9 + 0x30)) {
+      (unaff_EDI->orient).vec.x = *(float *)(iVar9 + 0x30);
+      (unaff_EDI->orient).vec.y = *(float *)(iVar9 + 0x34);
+      (unaff_EDI->orient).vec.z = *(float *)(iVar9 + 0x38);
     }
     (*((unaff_EDI->vtable)._ub)->setup)(unaff_EDI);
     pCVar6 = in_stack_0000001c->selected_actor;

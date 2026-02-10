@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 004f2ead (CONDITIONAL_JUMP)  ; LAB_004f2ead
     PUSH EBX                            ; 004f2e99
     CALL core_door.cpp_FUN_0047fcf0     ; 004f2e9a
-        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0047fcf0()
+        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0047fcf0(int event_id)
     ADD ESP,0x4                         ; 004f2e9f
     MOV EAX,dword ptr [ESP + 0x18]      ; 004f2ea2
     MOV ESP,EBP                         ; 004f2ea6

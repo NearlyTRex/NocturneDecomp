@@ -91,10 +91,10 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
       }
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (this_ptr_01,&(this_ptr->base).base.base.location.position,&local_80,
-                         (this_ptr->base).base.base.unk1);
+                         (this_ptr->base).base.base.direction_hint);
       if (iVar5 != 0) {
         fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (local_80.y - (this_ptr->base).base.base.orient.bank);
+                          (local_80.y - (this_ptr->base).base.base.orient.vec.y);
         fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
         local_24 = -local_18;
         *(float *)((this_ptr->base).unk2 + 4) = fVar6;
@@ -135,7 +135,7 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
         pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_3c,(CVector3f *)local_54);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                             (pCVar3->y - (this_ptr->base).base.base.orient.bank);
+                             (pCVar3->y - (this_ptr->base).base.base.orient.vec.y);
         fVar6 = local_14 * (float)0.31830988619288902 * (float)4;
         local_18 = -local_1c;
         *(float *)((this_ptr->base).unk2 + 4) = fVar6;
@@ -174,7 +174,7 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
       fStack_48 = pCVar3->z;
     }
     fStack_40 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (local_4c - (this_ptr->base).base.base.orient.bank);
+                          (local_4c - (this_ptr->base).base.base.orient.vec.y);
     if (local_1c < fStack_40) {
       fStack_40 = local_1c;
     }

@@ -11,16 +11,16 @@ core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422640
           (CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 
 {
-  COrientation *pCVar1;
+  UOrientationVector *pUVar1;
   
   (this_ptr->base).location.position.x = new_position->x;
   (this_ptr->base).location.position.y = new_position->y;
   (this_ptr->base).location.position.z = new_position->z;
-  pCVar1 = &(this_ptr->base).orient;
-  if (pCVar1 != (COrientation *)new_orientation) {
-    pCVar1->pitch = new_orientation->x;
-    (this_ptr->base).orient.bank = new_orientation->y;
-    (this_ptr->base).orient.heading = new_orientation->z;
+  pUVar1 = &(this_ptr->base).orient;
+  if ((CVector3f *)pUVar1 != new_orientation) {
+    (pUVar1->vec).x = new_orientation->x;
+    (this_ptr->base).orient.vec.y = new_orientation->y;
+    (this_ptr->base).orient.vec.z = new_orientation->z;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   if ((CVector3f *)&this_ptr->sim_box != new_position) {

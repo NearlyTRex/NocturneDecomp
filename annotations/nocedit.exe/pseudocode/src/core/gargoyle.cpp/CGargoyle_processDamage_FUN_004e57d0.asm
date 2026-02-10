@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_charactr.cpp_CCharacter_FUN_0042b9e0
+;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_fire.cpp_CFireEffect_FUN_004c79d0
 ;   core_gargoyle.cpp_CGargoyle_FUN_004e5530
@@ -116,8 +116,8 @@ section .text
     PUSH 0xbf800000                     ; 004e58ac
     PUSH 0x0                            ; 004e58b1
     PUSH ESI                            ; 004e58b3
-    CALL core_charactr.cpp_CCharacter_FUN_0042b9e0 ; 004e58b4
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b9e0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 ; 004e58b4
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
     ADD ESP,0x10                        ; 004e58b9
     PUSH EDI                            ; 004e58bc
         ;   Label: LAB_004e58bc

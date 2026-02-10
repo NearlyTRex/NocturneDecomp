@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-;   core_charactr.cpp_CCharacter_FUN_0042ec40
+;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
@@ -105,8 +105,8 @@ section .text
     ADD ESP,0x8                         ; 00545f92
     PUSH EAX                            ; 00545f95
     PUSH EBX                            ; 00545f96
-    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 00545f97
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 00545f97
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
     ADD ESP,0x8                         ; 00545f9c
     JMP 0x00545f79                      ; 00545f9f
         ;   XREF to: 00545f79 (UNCONDITIONAL_JUMP)  ; LAB_00545f79
@@ -208,7 +208,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005460a4
     PUSH EBX                            ; 005460a7
     CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 005460a8
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time, float param_3)
     ADD ESP,0x8                         ; 005460ad
     MOV ESP,EBP                         ; 005460b0
     POP EBP                             ; 005460b2

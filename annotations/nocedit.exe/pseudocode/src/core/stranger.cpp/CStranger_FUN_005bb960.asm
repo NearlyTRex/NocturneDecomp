@@ -40,11 +40,11 @@
 ;   core_ammobox.cpp_CAmmoBox_FUN_00411690
 ;   core_boxactor.cpp_CBoxActor_FUN_00422390
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-;   core_charactr.cpp_CCharacter_FUN_00428f40
-;   core_charactr.cpp_CCharacter_FUN_00429820
-;   core_charactr.cpp_CCharacter_FUN_0042ca70
-;   core_charactr.cpp_CCharacter_FUN_0042ded0
-;   core_charactr.cpp_CCharacter_FUN_0042ea40
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
+;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40
+;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_0042ded0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   ... and 35 more
 ;
@@ -164,8 +164,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005bbaaa
         ;   Label: LAB_005bbaaa
     PUSH EBX                            ; 005bbaad
-    CALL core_charactr.cpp_CCharacter_FUN_0042ea40 ; 005bbaae
-        ;   XREF to: 0042ea40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ea40(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40 ; 005bbaae
+        ;   XREF to: 0042ea40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005bbab3
     MOV EDI,dword ptr [0x0067b654]      ; 005bbab6 | g_CGamePtr
     PUSH dword ptr [EBP + 0x18]         ; 005bbabc
@@ -666,8 +666,8 @@ section .text
     ADD ESP,0x8                         ; 005bc100
     PUSH EBX                            ; 005bc103
         ;   Label: LAB_005bc103
-    CALL core_charactr.cpp_CCharacter_FUN_00429820 ; 005bc104
-        ;   XREF to: 00429820 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00429820(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_00429820 ; 005bc104
+        ;   XREF to: 00429820 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_00429820(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005bc109
     PUSH dword ptr [EBP + 0x18]         ; 005bc10c
     PUSH EBX                            ; 005bc10f
@@ -885,7 +885,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005bc3b7
     PUSH EBX                            ; 005bc3ba
     CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 005bc3bb
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time, float param_3)
     ADD ESP,0x8                         ; 005bc3c0
     PUSH 0x6                            ; 005bc3c3
     LEA ESI,[EBX + 0x158]               ; 005bc3c5
@@ -1265,8 +1265,8 @@ section .text
     FADD float ptr [ESP + 0x24]         ; 005bc841
     PUSH EBX                            ; 005bc845
     FSTP float ptr [EBX + 0x34]         ; 005bc846
-    CALL core_charactr.cpp_CCharacter_FUN_0042ded0 ; 005bc849
-        ;   XREF to: 0042ded0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ded0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_0042ded0 ; 005bc849
+        ;   XREF to: 0042ded0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_0042ded0(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 005bc84e
     MOV EAX,dword ptr [EBX + 0x2598]    ; 005bc851
         ;   Label: LAB_005bc851
@@ -1608,8 +1608,8 @@ section .text
     FADD float ptr [ESP + 0x260]        ; 005bcd3d
     PUSH EBX                            ; 005bcd44
     FSTP float ptr [ESP + 0x264]        ; 005bcd45
-    CALL core_charactr.cpp_CCharacter_FUN_0042ded0 ; 005bcd4c
-        ;   XREF to: 0042ded0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ded0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_0042ded0 ; 005bcd4c
+        ;   XREF to: 0042ded0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_0042ded0(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 005bcd51
     XOR EAX,EAX                         ; 005bcd54
     FLD float ptr [ESP + 0x78]          ; 005bcd56
@@ -1898,8 +1898,8 @@ section .text
     FADD float ptr [ESP + 0x28]         ; 005bd14e
     PUSH EBX                            ; 005bd152
     FSTP float ptr [EBX + 0x34]         ; 005bd153
-    CALL core_charactr.cpp_CCharacter_FUN_0042ded0 ; 005bd156
-        ;   XREF to: 0042ded0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ded0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_setOrientation_FUN_0042ded0 ; 005bd156
+        ;   XREF to: 0042ded0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_0042ded0(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 005bd15b
     JMP 0x005bc090                      ; 005bd15e
         ;   XREF to: 005bc090 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -1912,8 +1912,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005bd172
         ;   Label: LAB_005bd172
     PUSH EBX                            ; 005bd175
-    CALL core_charactr.cpp_CCharacter_FUN_0042ca70 ; 005bd176
-        ;   XREF to: 0042ca70 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042ca70(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70 ; 005bd176
+        ;   XREF to: 0042ca70 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005bd17b
     LEA EDX,[EBX + 0x158]               ; 005bd17e
     TEST EAX,EAX                        ; 005bd184
@@ -2294,8 +2294,8 @@ section .text
     PUSH EBX                            ; 005bd6b9
     MOV EAX,dword ptr [EBX + 0x242c]    ; 005bd6ba
     MOV dword ptr [EBX + 0x1fe6c],EAX   ; 005bd6c0
-    CALL core_charactr.cpp_CCharacter_FUN_00428f40 ; 005bd6c6
-        ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00428f40(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 ; 005bd6c6
+        ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter * this_ptr, CVector3f * velocity)
     FLD float ptr [EBX + 0x2414]        ; 005bd6cb
     FADD double ptr [0x00653664]        ; 005bd6d1 | DOUBLE_00653664
     ADD ESP,0x8                         ; 005bd6d7

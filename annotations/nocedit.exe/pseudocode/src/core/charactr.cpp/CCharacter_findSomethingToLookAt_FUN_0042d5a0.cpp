@@ -2,11 +2,13 @@
 // Address: 0042d5a0
 // Address Range: [[0042d5a0, 0042da01] [0042da1e, 0042dcc2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (CCharacter *this_ptr,float delta_time,int param_3)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr)
+void __cdecl
+core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
+          (CCharacter *this_ptr,float delta_time,int param_3)
 
 {
   int iVar1;
@@ -17,8 +19,6 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   CVector3f *pCVar6;
   float fVar7;
   CLocation *pCVar8;
-  float in_stack_00000008;
-  int in_stack_0000000c;
   float fStack_f4;
   CVector3f CStack_f0;
   byte auStack_e0 [16];
@@ -41,18 +41,18 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   CVector3f CStack_50;
   CVector3f CStack_44;
   byte auStack_38 [28];
-  int iStack_1c;
+  CDemonActor *pCStack_1c;
   float fStack_18;
   CCharacter *pCStack_14;
   
-  iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).isDamageable)(this_ptr);
+  iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
   if (iVar1 != 0) {
-    in_stack_0000000c = 1;
+    param_3 = 1;
   }
-  iStack_1c = 0;
-  iVar1 = iStack_1c;
-  if ((in_stack_0000000c == 0) && (iVar1 = this_ptr->field29_0x25d4, this_ptr->field29_0x25d4 == 0))
-  {
+  pCStack_1c = (CDemonActor *)0x0;
+  pCVar3 = pCStack_1c;
+  if ((param_3 == 0) &&
+     (pCVar3 = this_ptr->lookat_target, this_ptr->lookat_target == (CDemonActor *)0x0)) {
     if ((float)this_ptr->field34_0x25e8 <= 0.0) {
       auStack_a4._4_4_ = 0.0;
       uStack_98 = 0;
@@ -67,7 +67,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
         if ((pCVar5 != this_ptr) &&
            (iVar2 = (*((pCVar5->base).vtable._ub)->shouldIgnoreForTargeting)(&pCVar5->base),
            iVar2 == 0)) {
-          iVar2 = (*(((pCVar5->base).vtable._uc)->_uc).isDamageable)(pCVar5);
+          iVar2 = (*(((pCVar5->base).vtable._uc)->_uc).getDeathState)(pCVar5);
           if ((iVar2 == 0) || ((pCVar5->model).model_name[0] == '\0')) {
             pCVar8 = &(pCVar5->base).location;
             if ((CLocation *)auStack_e0 != pCVar8) {
@@ -143,16 +143,16 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       this_ptr->field34_0x25e8 = (int)fVar7;
     }
     else {
-      iStack_1c = this_ptr->field28_0x25d0;
-      this_ptr->field34_0x25e8 = (int)((float)this_ptr->field34_0x25e8 - in_stack_00000008);
+      pCStack_1c = (CDemonActor *)this_ptr->field28_0x25d0;
+      this_ptr->field34_0x25e8 = (int)((float)this_ptr->field34_0x25e8 - delta_time);
     }
   }
   else {
-    iStack_1c = iVar1;
+    pCStack_1c = pCVar3;
     this_ptr->field34_0x25e8 = 0;
   }
-  this_ptr->field28_0x25d0 = iStack_1c;
-  if (iStack_1c != 0) {
+  this_ptr->field28_0x25d0 = (int)pCStack_1c;
+  if (pCStack_1c != (CDemonActor *)0x0) {
     auStack_cc._8_4_ = 0.0;
     uStack_bc = 0;
     fStack_c0 = 5.5;
@@ -166,7 +166,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       g_CurrentLineNumber = 0xda0;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::findSomethingToLookAt - Should be a character");
     }
-    iVar1 = (*(((pCVar5->base).vtable._uc)->_uc).isDamageable)(pCVar5);
+    iVar1 = (*(((pCVar5->base).vtable._uc)->_uc).getDeathState)(pCVar5);
     if ((iVar1 == 0) || ((pCVar5->model).model_name[0] == '\0')) {
       pCVar8 = &(pCVar5->base).location;
       if ((CLocation *)(auStack_74 + 8) != pCVar8) {
@@ -208,7 +208,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     }
   }
   if (this_ptr->field28_0x25d0 != 0) {
-    fVar7 = in_stack_00000008 / 0.5f + this_ptr->look_at_weight;
+    fVar7 = delta_time / 0.5f + this_ptr->look_at_weight;
     this_ptr->look_at_weight = fVar7;
     if (1.0 < fVar7) {
       this_ptr->look_at_weight = 1.0;
@@ -221,7 +221,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     return;
   }
 LAB_0042d603:
-  fVar7 = this_ptr->look_at_weight - in_stack_00000008 / 0.5f;
+  fVar7 = this_ptr->look_at_weight - delta_time / 0.5f;
   this_ptr->look_at_weight = fVar7;
   if (fVar7 < 0.0) {
     this_ptr->look_at_pitch = 0.0;

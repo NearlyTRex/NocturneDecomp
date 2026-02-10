@@ -35,7 +35,7 @@
         "category": "undeclared_identifier",
         "column": 11,
         "line": 171,
-        "message": "use of undeclared identifier 'unique0x10001489'"
+        "message": "use of undeclared identifier 'unique0x1000147d'"
       },
       {
         "category": "undeclared_identifier",
@@ -59,7 +59,7 @@
         "category": "undeclared_identifier",
         "column": 11,
         "line": 200,
-        "message": "use of undeclared identifier 'unique0x100014a5'"
+        "message": "use of undeclared identifier 'unique0x10001499'"
       },
       {
         "category": "undeclared_identifier",
@@ -83,7 +83,7 @@
         "category": "undeclared_identifier",
         "column": 11,
         "line": 229,
-        "message": "use of undeclared identifier 'unique0x100014c1'"
+        "message": "use of undeclared identifier 'unique0x100014b5'"
       },
       {
         "category": "undeclared_identifier",
@@ -107,7 +107,7 @@
         "category": "undeclared_identifier",
         "column": 11,
         "line": 258,
-        "message": "use of undeclared identifier 'unique0x100014dd'"
+        "message": "use of undeclared identifier 'unique0x100014d1'"
       },
       {
         "category": "undeclared_identifier",
@@ -881,7 +881,7 @@
       "description": "Unresolved stack parameter",
       "line": 395,
       "match": "in_stack_0000000c",
-      "text": "pCStack_28 = &in_stack_0000000c[1].orient;",
+      "text": "pUStack_28 = &in_stack_0000000c[1].orient;",
       "type": "stack_param"
     },
     {
@@ -944,21 +944,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 410,
       "match": "ROUND",
-      "text": "CStack_54.x = (int)ROUND(pCStack_28->pitch * 256.0f);",
+      "text": "CStack_54.x = (int)ROUND((pUStack_28->vec).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 411,
       "match": "ROUND",
-      "text": "CStack_54.y = (int)ROUND(pCStack_28->bank * 256.0f);",
+      "text": "CStack_54.y = (int)ROUND((pUStack_28->vec).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 412,
       "match": "ROUND",
-      "text": "CStack_54.z = (int)ROUND(pCStack_28->heading * 256.0f);",
+      "text": "CStack_54.z = (int)ROUND((pUStack_28->vec).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1006,8 +1006,8 @@
     {
       "description": "Complex pointer cast",
       "line": 428,
-      "match": "(COrientation *)((int)",
-      "text": "pCStack_28 = (COrientation *)((int)(pCStack_28 + 4) + 8);",
+      "match": "(UOrientationVector *)((int)",
+      "text": "pUStack_28 = (UOrientationVector *)((int)pUStack_28 + 0x38);",
       "type": "pointer_cast"
     },
     {
