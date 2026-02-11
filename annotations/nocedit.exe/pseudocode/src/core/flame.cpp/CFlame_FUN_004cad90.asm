@@ -14,8 +14,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_flame.cpp_CFlame_FUN_004c9c00 at 004c9d67
 ;   core_flame.cpp_CFlame_processInEditor_FUN_004caf60 at 004cb08a
+;   core_flame.cpp_CFlame_process_FUN_004c9c00 at 004c9d67
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062a1be = 0.5

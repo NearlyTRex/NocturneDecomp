@@ -163,7 +163,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
   int local_d0;
   int local_cc;
   uint local_c8;
-  CDemonActor *local_c4;
+  CEnemy *local_c4;
   int local_c0;
   int local_bc;
   int local_b8;
@@ -1467,11 +1467,12 @@ LAB_0055a97f:
                                                   local_11c = local_11c + local_c8;
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_1524);
-                                                  local_c4 = core_script_cpp_getActor_FUN_005594e0
+                                                  local_c4 = (CEnemy *)
+                                                             core_script_cpp_getActor_FUN_005594e0
                                                                        (local_1524,
                                                                         g_CHeroClassInfo.name_hash,
                                                                         &g_CHeroClassInfo);
-                                                  if (local_c4 == (CDemonActor *)0x0)
+                                                  if (local_c4 == (CEnemy *)0x0)
                                                   goto joined_r0x0055c026;
                                                   local_c0 = 1;
                                                   if (*local_11c == ',') {
@@ -1531,7 +1532,9 @@ LAB_0055a97f:
                                                   }
                                                   local_11c = local_11c + 1;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    (*(((local_c4->vtable)._ue)->_ue).enemyfunc2)();
+                                                    (*(((local_c4->base).base.vtable._ue)->_ue).
+                                                      updateVictim)(local_c4,(float)(uint)(local_c0 
+                                                  == 0));
                                                   }
                                                   }
                                                   else {

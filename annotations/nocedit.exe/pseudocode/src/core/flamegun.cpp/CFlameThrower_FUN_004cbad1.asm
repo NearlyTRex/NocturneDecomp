@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_flamegun.cpp_CFlameThrower_FUN_004cbab0 at 004cbabe
+;   core_flamegun.cpp_CFlameThrower_getDamage_FUN_004cbab0 at 004cbabe
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

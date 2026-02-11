@@ -1,0 +1,243 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 42,
+        "line": 14,
+        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 60,
+        "line": 14,
+        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 14,
+        "line": 15,
+        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 42,
+        "line": 16,
+        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 63,
+        "line": 16,
+        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 84,
+        "line": 16,
+        "message": "format specifies type 'int *' but the argument has type 'CBloodSplat *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 42,
+        "line": 17,
+        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 63,
+        "line": 17,
+        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 14,
+        "line": 18,
+        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 54,
+        "line": 19,
+        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 75,
+        "line": 19,
+        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 14,
+        "line": 20,
+        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 35,
+        "line": 20,
+        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 56,
+        "line": 20,
+        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 77,
+        "line": 20,
+        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 14,
+        "line": 21,
+        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 68,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 13,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 72
+  },
+  "cross_references": [
+    {
+      "addr": "004ee1e0",
+      "from_addr": "004ee267",
+      "name": "core_gore.cpp_CGore_FUN_004ee1e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ecb00",
+    "address_range": [
+      [
+        "004ecb00",
+        "004ecb81"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CBloodSplat_FUN_004ecb00",
+    "signature": "void __cdecl core_gore_cpp_CBloodSplat_FUN_004ecb00(CBloodSplat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe7c0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e322",
+      "name": "s_f_f_f_0062e322",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e32c",
+      "name": "s_d_d_d_0062e32c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e336",
+      "name": "s_f_f_f_0062e336",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e340",
+      "name": "s_d_d_d_d_d_d_d_0062e340",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3333333333333335,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 46,
+      "INT_ADD": 24,
+      "INT_AND": 10,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 5,
+      "INT_SUB": 30,
+      "LOAD": 5,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 30
+    },
+    "pcode_op_count": 180
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodSplat *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "_FILE *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "_fscanf(in_stack_00000008,\"%f,%f,%f\\n\",this_ptr->unk + 4,this_ptr->unk + 8,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "_fscanf(in_stack_00000008,\"%d,%d,%d\\n\",this_ptr->unk + 0x10,this_ptr->unk + 0x14,this_ptr);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "_fscanf(in_stack_00000008,\"%f,%f,%f\\n\",this_ptr->unk + 0x18,this_ptr->unk + 0x20,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "_fscanf(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",this_ptr->unk + 0x28,this_ptr->unk + 0x2c,",
+      "type": "stack_param"
+    }
+  ]
+}

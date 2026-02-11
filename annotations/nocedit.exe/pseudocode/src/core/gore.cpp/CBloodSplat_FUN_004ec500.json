@@ -1,0 +1,798 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 451,
+    "complexity_score": 649,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 24,
+    "pseudocode_lines": 199,
+    "suspect_count": 43,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "stack_param",
+      "suspect_float",
+      "undefined_data"
+    ],
+    "total_lines": 650
+  },
+  "cross_references": [
+    {
+      "addr": "004ed830",
+      "from_addr": "004ed952",
+      "name": "core_gore.cpp_CGore_FUN_004ed830",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ec500",
+    "address_range": [
+      [
+        "004ec500",
+        "004ecac1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CBloodSplat_FUN_004ec500",
+    "signature": "void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec500(CBloodSplat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048c4f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    },
+    {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048c640",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    },
+    {
+      "addr": "0048c450",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048bcf0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0"
+    },
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e30a",
+      "name": "DOUBLE_0062e30a",
+      "type": "double",
+      "value": "8"
+    },
+    {
+      "addr": "0062e312",
+      "name": "DOUBLE_0062e312",
+      "type": "double",
+      "value": "4"
+    },
+    {
+      "addr": "0065f024",
+      "name": "FLOAT_0065f024",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067b9c8",
+      "name": "DAT_0067b9c8",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "0067ba28",
+      "name": "DAT_0067ba28",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "00688034",
+      "name": "g_RenderVertexBuffer[0].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688038",
+      "name": "g_RenderVertexBuffer[0].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068803c",
+      "name": "g_RenderVertexBuffer[0].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688064",
+      "name": "g_RenderVertexBuffer[1].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688068",
+      "name": "g_RenderVertexBuffer[1].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068806c",
+      "name": "g_RenderVertexBuffer[1].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688094",
+      "name": "g_RenderVertexBuffer[2].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688098",
+      "name": "g_RenderVertexBuffer[2].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068809c",
+      "name": "g_RenderVertexBuffer[2].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c4",
+      "name": "g_RenderVertexBuffer[3].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c8",
+      "name": "g_RenderVertexBuffer[3].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880cc",
+      "name": "g_RenderVertexBuffer[3].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d83368",
+      "name": "DAT_02d83368",
+      "type": "SMRGLHeaderPrimitive",
+      "value": null
+    },
+    {
+      "addr": "02d83370",
+      "name": "DAT_02d83368.surface_normal.A",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83374",
+      "name": "DAT_02d83368.surface_normal.B",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83378",
+      "name": "DAT_02d83368.surface_normal.C",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d8337c",
+      "name": "DAT_02d83368.surface_normal.D",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.798941798941799,
+    "instruction_count": 378,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BOOL_OR": 5,
+      "BRANCH": 14,
+      "CALL": 14,
+      "CBRANCH": 18,
+      "COPY": 732,
+      "FLOAT2FLOAT": 51,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 25,
+      "INT_ADD": 126,
+      "INT_AND": 158,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 125,
+      "INT_LEFT": 6,
+      "INT_LESS": 15,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 15,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 67,
+      "INT_SUB": 62,
+      "INT_XOR": 22,
+      "LOAD": 49,
+      "POPCOUNT": 61,
+      "RETURN": 1,
+      "ROUND": 25,
+      "STORE": 109,
+      "TRUNC": 25
+    },
+    "pcode_op_count": 1814
+  },
+  "stack_frame": {
+    "frame_size": 148,
+    "local_size": 144,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodSplat *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000008",
+      "text": "else if ((0xf < local_18) && (local_18 = 0xf, in_stack_00000008 != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.A = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.C = 0xffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.B = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.D = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_0067ba28",
+      "text": "(g_CDemonRendererPtr2,&DAT_0067ba28 + *(int *)(this_ptr->unk + 0x28) * 0x10 + local_18",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ROUND",
+      "text": "local_6c.x = (int)ROUND(256.0f * -0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "ROUND",
+      "text": "local_6c.y = (int)ROUND(256.0f * -0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "ROUND",
+      "text": "local_6c.z = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "local_54.x = (int)ROUND(256.0f * 0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ROUND",
+      "text": "local_54.y = (int)ROUND(256.0f * -0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ROUND",
+      "text": "local_54.z = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ROUND",
+      "text": "local_3c.x = (int)ROUND(256.0f * 0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "ROUND",
+      "text": "local_3c.y = (int)ROUND(256.0f * 0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 72,
+      "match": "ROUND",
+      "text": "local_3c.z = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "local_84.x = (int)ROUND(256.0f * -0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 79,
+      "match": "ROUND",
+      "text": "local_84.y = (int)ROUND(256.0f * 0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "ROUND",
+      "text": "local_84.z = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.B = 0xffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 91,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.A = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 92,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.C = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 93,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.D = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 95,
+      "match": "DAT_0067b9c8",
+      "text": "(g_CDemonRendererPtr2,&DAT_0067b9c8 + *(int *)(this_ptr->unk + 0x28));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 99,
+      "match": "ROUND",
+      "text": "local_24.x = (int)ROUND(256.0f * -0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 100,
+      "match": "ROUND",
+      "text": "local_24.y = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 101,
+      "match": "ROUND",
+      "text": "local_24.z = (int)ROUND(256.0f * -0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 107,
+      "match": "ROUND",
+      "text": "CStack_90.x = (int)ROUND(256.0f * 0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 108,
+      "match": "ROUND",
+      "text": "CStack_90.y = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 109,
+      "match": "ROUND",
+      "text": "CStack_90.z = (int)ROUND(256.0f * -0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 115,
+      "match": "ROUND",
+      "text": "local_60.x = (int)ROUND(256.0f * 0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "ROUND",
+      "text": "local_60.y = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 117,
+      "match": "ROUND",
+      "text": "local_60.z = (int)ROUND(256.0f * 0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 123,
+      "match": "ROUND",
+      "text": "local_30.x = (int)ROUND(256.0f * -0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 124,
+      "match": "ROUND",
+      "text": "local_30.y = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 125,
+      "match": "ROUND",
+      "text": "local_30.z = (int)ROUND(256.0f * 0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 133,
+      "match": "1.14794e-41",
+      "text": "g_RenderVertexBuffer[0].light = 1.14794e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 149,
+      "match": "1.14794e-41",
+      "text": "g_RenderVertexBuffer[1].light = 1.14794e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 165,
+      "match": "1.14794e-41",
+      "text": "g_RenderVertexBuffer[2].light = 1.14794e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 191,
+      "match": "1.14794e-41",
+      "text": "g_RenderVertexBuffer[3].light = 1.14794e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 196,
+      "match": "DAT_02d83368",
+      "text": "(g_CDemonRendererPtr2,&DAT_02d83368);",
+      "type": "undefined_data"
+    }
+  ]
+}

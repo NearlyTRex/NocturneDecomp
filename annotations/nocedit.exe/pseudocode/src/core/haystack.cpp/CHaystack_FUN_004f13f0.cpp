@@ -59,7 +59,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
        ((iVar5 = (this_ptr->base).ai_task, iVar5 == 2 || (iVar5 == 3)))) {
       pCVar2 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
       if ((pCVar2 == (CHero *)0x0) || ((float)20 <= 9999.9)) {
-        if (*(int *)this_ptr->unk != 0) {
+        if (this_ptr->guns_drawn != 0) {
           (this_ptr->base).action_bindings.draw_key = 1;
         }
       }
@@ -119,7 +119,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
     else {
       this_ptr_00 = &(this_ptr->base).base.model;
       if (bVar1) {
-        if (*(int *)this_ptr->unk == 0) {
+        if (this_ptr->guns_drawn == 0) {
           (this_ptr->base).action_bindings.draw_key = 1;
         }
         else {
@@ -133,7 +133,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
       else {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&this_ptr_00->motion_controller);
-        if ((pSVar4->state_index == 10) && (*(int *)this_ptr->unk != 0)) {
+        if ((pSVar4->state_index == 10) && (this_ptr->guns_drawn != 0)) {
           (this_ptr->base).action_bindings.draw_key = 1;
         }
       }
@@ -187,14 +187,14 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
     if (fStack_4c < -local_1c) {
       fStack_4c = -local_1c;
     }
-    local_88 = fStack_4c - *(float *)(this_ptr->unk + 0xc);
+    local_88 = fStack_4c - *(float *)(this_ptr->unk + 8);
     if (in_stack_00000008 * (float)3.1415926535000001 < local_88) {
       local_88 = in_stack_00000008 * (float)3.1415926535000001;
     }
     if (local_88 < in_stack_00000008 * (float)-3.1415926535000001) {
       local_88 = in_stack_00000008 * (float)-3.1415926535000001;
     }
-    *(float *)(this_ptr->unk + 0xc) = *(float *)(this_ptr->unk + 0xc) + local_88;
+    *(float *)(this_ptr->unk + 8) = *(float *)(this_ptr->unk + 8) + local_88;
   }
   return;
 }

@@ -14,7 +14,7 @@ core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float
   float in_stack_0000000c;
   CVector3f CStack_1c;
   
-  if (*(int *)(this_ptr->unk + 4) != 0) {
+  if (this_ptr->field2_0x57c != 0) {
     g_CDemonLightInstance.light_enabled_flag = 1;
     input_local_point =
          (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
@@ -29,16 +29,13 @@ core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               ((CMatrix3x3f *)&g_CDemonLightInstance.base.base.rotation_matrix,
                &(this_ptr->base).base.orient.vec);
-    g_CDemonLightInstance.base.max_distance = *(float *)(this_ptr->unk + 8);
+    g_CDemonLightInstance.base.max_distance = (float)this_ptr->field3_0x580;
     g_CDemonLightInstance.base.base.projection_scale = 112.0;
     core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,1.0);
     g_CDemonLightInstance.antialiasing_enabled = 0;
     core_set_cpp_CDemonSet_FUN_0056d090(g_CDemonSetPtr);
   }
-  this_ptr->unk[4] = '\0';
-  this_ptr->unk[5] = '\0';
-  this_ptr->unk[6] = '\0';
-  this_ptr->unk[7] = '\0';
+  this_ptr->field2_0x57c = 0;
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,in_stack_0000000c);
   return;
 }

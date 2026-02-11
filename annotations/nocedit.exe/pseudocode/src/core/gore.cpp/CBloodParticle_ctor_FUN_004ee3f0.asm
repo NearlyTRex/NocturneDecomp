@@ -7,7 +7,7 @@
 ; CBloodParticle * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   void* PTR_core_particle.cpp_FUN_0065f044 = 00545680
+;   CParticle_vtable g_CBloodParticleVTable
 ;
 ; Called Functions:
 ;   core_particle.cpp_CParticle_ctor_FUN_00545650
@@ -22,6 +22,6 @@ section .text
     CALL core_particle.cpp_CParticle_ctor_FUN_00545650 ; 004ee3f5
         ;   XREF to: 00545650 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_ctor_FUN_00545650(CParticle * this_ptr)
     ADD ESP,0x4                         ; 004ee3fa
-    MOV dword ptr [EAX + 0x34],0x65f044 ; 004ee3fd | PTR_core_particle.cpp_FUN_0065f044
+    MOV dword ptr [EAX + 0x34],0x65f044 ; 004ee3fd | g_CBloodParticleVTable
     RET                                 ; 004ee404
 

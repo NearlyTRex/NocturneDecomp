@@ -21,7 +21,7 @@ void __cdecl core_course_cpp_CCourse_FUN_00442710(CCourse *this_ptr)
   CVector3f local_18;
   
   bVar5 = 0;
-  core_course_cpp_CCourse_FUN_004427a0();
+  core_course_cpp_CCourse_FUN_004427a0(this_ptr);
   pCVar1 = &local_18;
   core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(&local_28,&local_58);
   pCVar3 = &local_58;

@@ -7,8 +7,8 @@
 ; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_baron.cpp_CBaronWeapon_FUN_00413df0 at 00413df6
-;   core_baron.cpp_CBaronWeapon_FUN_00413e30 at 00413e36
+;   core_baron.cpp_CBaronWeapon_fire_FUN_00413df0 at 00413df6
+;   core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_00413e30 at 00413e36
 ;   core_baron.cpp_CBaronWeapon_process_FUN_00413dc0 at 00413dc5
 ;   core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90 at 00413ee9
 ;

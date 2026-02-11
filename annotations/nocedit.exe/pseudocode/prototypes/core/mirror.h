@@ -31,17 +31,17 @@ CMirror * __cdecl CMirror::dtor(CMirror *this_ptr);
 // Address: 00521400
 void __cdecl CMirror::setupCorners(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3, CVector3f *corner4);
 
-// Original: core_mirror.cpp_setupMirrorCamera_FUN_00521480
+// Original: core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480
 // Address: 00521480
-void __cdecl setupMirrorCamera(SMirrorReflection *reflection);
+void __cdecl CMirrorReflection::setupMirrorCamera(CMirrorReflection *this_ptr);
 
-// Original: core_mirror.cpp_setupMirrorReflection_FUN_005214c0
+// Original: core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
 // Address: 005214c0
-void __cdecl setupMirrorReflection(SMirrorReflection *reflection);
+void __cdecl CMirrorReflection::setupMirrorReflection(CMirrorReflection *this_ptr);
 
-// Original: core_mirror.cpp_applyMirrorTransform_FUN_005222f0
+// Original: core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_005222f0
 // Address: 005222f0
-CVector3f * __cdecl applyMirrorTransform(SMirrorReflection *reflection,CVector3f *output_buffer,CVector3f *input_vector);
+CVector3f * __cdecl CMirrorReflection::applyMirrorTransform(CMirrorReflection *this_ptr,CVector3f *output_buffer,CVector3f *input_vector);
 
 // Original: core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
 // Address: 00522310
@@ -67,13 +67,13 @@ int __cdecl CMirror::renderMirrorQuad(CMirror *this_ptr);
 // Address: 00522800
 void __cdecl CMirror::renderMirrorQuadDepth(CMirror *this_ptr);
 
-// Original: core_mirror.cpp_transformMirrorVertex_FUN_005229b0
+// Original: core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
 // Address: 005229b0
-CVector3f * __stack2_esi transformMirrorVertex(SMirrorReflection *reflection,CVector3f *input_vertex,CVector3f *output_vertex);
+CVector3f * __stack2_esi CMirrorReflection::transformMirrorVertex(CMirrorReflection *this_ptr,CVector3f *input_vertex,CVector3f *output_vertex);
 
-// Original: core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50
+// Original: core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
 // Address: 00522a50
-CVector3i * __stack3_esi transformMirrorEdgeToIntegerSpace(SMirrorReflection *reflection,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
+CVector3i * __stack3_esi CMirrorReflection::transformMirrorEdgeToIntegerSpace(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 
 // Original: core_mirror.cpp_SClipPlane_ctor_FUN_00522bf0
 // Address: 00522bf0

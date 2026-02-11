@@ -26,9 +26,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   CDemonActor *pCVar13;
   int extraout_EAX_00;
   CPathMap *path_map;
-  float min_distance;
   float fVar14;
-  float in_stack_fffffe78;
+  float in_stack_fffffe80;
+  float in_stack_fffffe8c;
   CVector3f local_14c;
   float local_140;
   float local_13c;
@@ -102,7 +102,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   if (iVar9 == 0) {
     switch(iVar7) {
     case 0:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
         if (extraout_EAX != 0) {
@@ -164,8 +164,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       break;
     case 1:
     case 2:
-      fVar14 = 6.010065e-39;
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar5 = 3.5f;
       pCVar3 = &(this_ptr->base).base.model;
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
@@ -180,7 +179,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         }
       }
       else {
-        min_distance = 0.17453292;
+        fVar14 = 0.17453292;
         local_2c = 3.5f;
         pCVar11 = (CVector3f *)0x3f000000;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -195,7 +194,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         path_map = (*((pCVar13->vtable)._ub)->getPathMap)(pCVar13);
         iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                           path_map,pCVar11,min_distance,fVar14);
+                           path_map,pCVar11,fVar14,in_stack_fffffe80);
         if (-1 < iVar7) {
           pCVar1 = &(this_ptr->base).base.base.location;
           pCVar13 = (this_ptr->base).victim;
@@ -264,7 +263,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       }
       break;
     case 9:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if (((this_ptr->base).victim != (CDemonActor *)0x0) ||
          (iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                             (g_CEventListPtr,this_ptr->unk1), iVar7 != 0)) {
@@ -455,6 +454,6 @@ switchD_004173a5_caseD_4:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_fffffe78);
+            ((CCharacter *)this_ptr,delta_time,in_stack_fffffe8c);
   return;
 }

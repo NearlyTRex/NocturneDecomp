@@ -153,7 +153,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
            (float)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
       (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)
                 (this_ptr_00,(SDamageInfo *)auStack_cc);
-      if (*(int *)((this_ptr->base).unk1 + 0xc) == 0) break;
+      if ((this_ptr->base).can_penetrate == 0) break;
 LAB_005e3ae2:
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&actor->base);
     }
@@ -168,6 +168,6 @@ LAB_005e3ae2:
   this_ptr->unk5[0x51] = '\0';
   this_ptr->unk5[0x52] = '\0';
   this_ptr->unk5[0x53] = '\0';
-  *(float *)((this_ptr->base).unk2 + 0xc) = fVar1;
+  (this_ptr->base).fire_cooldown_timer = fVar1;
   return 1;
 }

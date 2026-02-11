@@ -145,7 +145,7 @@ void __cdecl CDemonRenderer::setupSceneRendering(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
 // Address: 0048c200
-void __cdecl CDemonRenderer::setupCameraAndProjection(CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix,CVector3f *rotation_angles);
+void __cdecl CDemonRenderer::setupCameraAndProjection(CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix);
 
 // Original: engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420
 // Address: 0048c420

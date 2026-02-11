@@ -1,0 +1,166 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 94,
+    "complexity_score": 40,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 134
+  },
+  "cross_references": [
+    {
+      "addr": "005c66a0",
+      "from_addr": "005c66db",
+      "name": "core_stranger.cpp_CStranger_getGrabbed_FUN_005c66a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f28d0",
+    "address_range": [
+      [
+        "004f28d0",
+        "004f29a5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_getGrabbed_FUN_004f28d0",
+    "signature": "int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004f28d0(CHero *this_ptr,CDemonActor *grabber,int grab_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0052dce0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "0052db90",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90"
+    },
+    {
+      "addr": "0052d4f0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062eb80",
+      "name": "s_GETGRABBED_0062eb80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062eb8b",
+      "name": "s_GETGRABBED_FRONT_0062eb8b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062eb9c",
+      "name": "s_GETGRABBED_FRONT_0062eb9c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ebad",
+      "name": "s_GETGRABBED_BACK_0062ebad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ebbd",
+      "name": "s_GETGRABBED_0062ebbd",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.698630136986301,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 8,
+      "CBRANCH": 4,
+      "COPY": 67,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 27,
+      "INT_AND": 40,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 33,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 16,
+      "INT_SUB": 31,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 32
+    },
+    "pcode_op_count": 343
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      },
+      {
+        "is_param": true,
+        "name": "grabber",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "grab_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

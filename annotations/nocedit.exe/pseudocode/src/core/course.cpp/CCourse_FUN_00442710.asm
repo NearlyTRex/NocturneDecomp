@@ -13,7 +13,7 @@
 ;
 ; XREF[9]:
 ;   core_bat.cpp_CBat_FUN_00414ce0 at 00414d7f
-;   core_course.cpp_FUN_00443bc0 at 00443c86
+;   core_course.cpp_CCourse_FUN_00443bc0 at 00443c86
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e268
 ;   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430 at 004d24ae
 ;   core_marquee.cpp_CMarquee_FUN_0050bc30 at 0050bca4
@@ -45,7 +45,7 @@ section .text
     PUSH dword ptr [ESP + 0x98]         ; 00442731
     PUSH ECX                            ; 00442738
     CALL core_course.cpp_CCourse_FUN_004427a0 ; 00442739
-        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_004427a0()
+        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_004427a0(CCourse * this_ptr)
     ADD ESP,0x10                        ; 0044273e
     LEA EAX,[ESP + 0x70]                ; 00442741
     PUSH EAX                            ; 00442745

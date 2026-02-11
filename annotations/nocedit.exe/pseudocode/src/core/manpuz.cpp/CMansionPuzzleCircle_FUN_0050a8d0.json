@@ -1,96 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 18,
-        "line": 99,
-        "message": "member reference base type 'char[84]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 100,
-        "message": "member reference base type 'char[84]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 101,
-        "message": "member reference base type 'char[84]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 102,
-        "message": "member reference base type 'char[84]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 167,
-        "message": "member reference base type 'char[84]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 167,
-        "message": "array type 'char[4]' is not assignable"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 168,
-        "message": "member reference base type 'char[84]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 168,
-        "message": "array type 'char[4]' is not assignable"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 169,
-        "message": "member reference base type 'char[84]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 169,
-        "message": "array type 'char[4]' is not assignable"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 170,
-        "message": "member reference base type 'char[84]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 170,
-        "message": "array type 'char[4]' is not assignable"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 241,
-    "complexity_score": 426,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
-    "pseudocode_lines": 171,
-    "suspect_count": 24,
+    "pseudocode_lines": 125,
+    "suspect_count": 15,
     "suspect_types": [
-      "builtin_function",
-      "stack_param",
-      "unknown_field"
+      "stack_param"
     ],
-    "total_lines": 412
+    "total_lines": 366
   },
   "cross_references": [
     {
@@ -716,99 +641,36 @@
       "type": "stack_param"
     },
     {
-      "description": "Ghidra builtin function",
-      "line": 89,
-      "match": "builtin_strncpy",
-      "text": "builtin_strncpy(local_114.unk + 4,\"\\n\u05e3=\\x02\",6);",
-      "type": "builtin_function"
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_00000008",
+      "text": "local_114.color.r = *(int *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xdb8);",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 92,
       "match": "in_stack_00000008",
-      "text": "local_114.unk._12_4_ = *(uint *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xdb8);",
+      "text": "local_114.color.g = *(int *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xde8);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 92,
-      "match": "._12_4_",
-      "text": "local_114.unk._12_4_ = *(uint *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xdb8);",
-      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 93,
       "match": "in_stack_00000008",
-      "text": "local_114.unk._16_4_ = *(uint *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xde8);",
+      "text": "local_114.color.b = *(int *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xe18);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 93,
-      "match": "._16_4_",
-      "text": "local_114.unk._16_4_ = *(uint *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xde8);",
-      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 94,
       "match": "in_stack_00000008",
-      "text": "local_114.unk._20_4_ = *(uint *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xe18);",
+      "text": "local_114.intensity = *(float *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xe48);",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 94,
-      "match": "._20_4_",
-      "text": "local_114.unk._20_4_ = *(uint *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xe18);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_00000008",
-      "text": "local_114.unk._0_4_ = *(uint *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xe48);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 95,
-      "match": "._0_4_",
-      "text": "local_114.unk._0_4_ = *(uint *)(this_ptr->unk3 + in_stack_00000008 * 4 + 0xe48);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 160,
-      "match": "._0_4_",
-      "text": "local_c0 = (char  [4])local_114.unk._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 161,
-      "match": "._12_4_",
-      "text": "local_b4 = (char  [4])local_114.unk._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 162,
-      "match": "._16_4_",
-      "text": "local_b0 = (char  [4])local_114.unk._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 163,
-      "match": "._20_4_",
-      "text": "local_ac = (char  [4])local_114.unk._20_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 168,
+      "line": 122,
       "match": "in_stack_00000008",
       "text": "pcVar1 = this_ptr->unk3 + in_stack_00000008 * 4 + 0xe48;",
       "type": "stack_param"

@@ -11,11 +11,9 @@ engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRendere
 
 {
   CVector3f *in_stack_00000008;
-  CVector3f *in_stack_ffffffd8;
+  CMatrix3x3f local_28;
   
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&stack0xffffffd8,in_stack_00000008);
-  engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (this_ptr,(CMatrix3x3f *)&stack0xffffffd8,in_stack_ffffffd8);
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_28,in_stack_00000008);
+  engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(this_ptr,&local_28);
   return;
 }

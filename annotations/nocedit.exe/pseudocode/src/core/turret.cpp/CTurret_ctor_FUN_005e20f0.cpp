@@ -10,12 +10,11 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
 
 {
   char cVar1;
-  CTurret *pCVar3;
   CTurret *pCVar2;
   CTurret_ptr_1412 this_ptr_00;
-  CVector3f *pCVar4;
+  CVector3f *pCVar3;
+  char *pcVar4;
   char *pcVar5;
-  char *pcVar6;
   CVector3f local_24;
   CVector3f local_18;
   
@@ -33,33 +32,29 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
   ADJ(this_ptr_00)->power_down_time = 3.0;
   ADJ(this_ptr_00)->fire_delay_time = 0.2;
   ADJ(this_ptr_00)->rotate_deg_per_sec = 30.0;
-  pcVar5 = "CCharacter";
+  pcVar4 = "CCharacter";
   ADJ(this_ptr_00)->timer = 0.0;
-  pCVar3 = ADJ(this_ptr_00);
-  (pCVar3->base).unk2[0xc] = '\0';
-  (pCVar3->base).unk2[0xd] = '\0';
-  (pCVar3->base).unk2[0xe] = '\0';
-  (pCVar3->base).unk2[0xf] = '\0';
-  pcVar6 = ADJ(this_ptr_00)->allowed_victim_types;
+  ADJ(this_ptr_00).base.fire_cooldown_timer = 0.0;
+  pcVar5 = ADJ(this_ptr_00)->allowed_victim_types;
   ADJ(this_ptr_00)->guard_zone_box_trigger = (CDemonActor *)0x0;
   do {
-    cVar1 = *pcVar5;
-    *pcVar6 = cVar1;
+    cVar1 = *pcVar4;
+    *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
+    cVar1 = pcVar4[1];
+    pcVar4 = pcVar4 + 2;
+    pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
   local_18.x = 0.0;
   local_18.y = 0.0;
   local_18.z = 1.0;
-  pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+  pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)ADJ(this_ptr_00),&local_24,&local_18);
-  if ((CVector3f *)ADJ(this_ptr_00)->unk4 != pCVar4) {
-    *(float *)ADJ(this_ptr_00)->unk4 = pCVar4->x;
-    *(float *)(ADJ(this_ptr_00)->unk4 + 4) = pCVar4->y;
-    *(float *)(ADJ(this_ptr_00)->unk4 + 8) = pCVar4->z;
+  if ((CVector3f *)ADJ(this_ptr_00)->unk4 != pCVar3) {
+    *(float *)ADJ(this_ptr_00)->unk4 = pCVar3->x;
+    *(float *)(ADJ(this_ptr_00)->unk4 + 4) = pCVar3->y;
+    *(float *)(ADJ(this_ptr_00)->unk4 + 8) = pCVar3->z;
   }
   ADJ(this_ptr_00)->user = (CDemonActor *)0x0;
   this_ptr_00[1].animation_state[0x90] = '\0';

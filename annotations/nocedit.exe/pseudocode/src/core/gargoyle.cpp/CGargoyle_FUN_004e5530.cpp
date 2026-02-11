@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e5530(CGargoyle *this_ptr)
 
 {
@@ -82,7 +84,8 @@ switchD_004e5566_default:
                   ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0x28));
       }
       core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x28)] == 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk + 0x28)] ==
+          0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
       in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);

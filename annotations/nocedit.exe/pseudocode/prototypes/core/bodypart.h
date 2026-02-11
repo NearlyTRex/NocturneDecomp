@@ -33,7 +33,7 @@ void __cdecl CBodyPart::setCounts(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_FUN_00419340
 // Address: 00419340
-void __cdecl CBodyPart(CBodyPart *this_ptr);
+void __cdecl CBodyPart(CBodyPart *this_ptr,int render_flags);
 
 // Original: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0
 // Address: 004194b0

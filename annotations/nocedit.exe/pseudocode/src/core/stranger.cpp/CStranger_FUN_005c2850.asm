@@ -73,7 +73,7 @@
 ;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
 ;   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
-;   core_stranger.cpp_CStranger_FUN_005bb010
+;   core_stranger.cpp_FUN_005bb010
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
 ;
@@ -308,8 +308,8 @@ section .text
     FSUB float ptr [EBX + 0x1fca8]      ; 005c2afb
     PUSH EAX                            ; 005c2b01
     FSTP float ptr [ESP + 0xd8]         ; 005c2b02
-    CALL core_stranger.cpp_CStranger_FUN_005bb010 ; 005c2b09
-        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_CStranger_FUN_005bb010(CStranger * this_ptr)
+    CALL core_stranger.cpp_FUN_005bb010 ; 005c2b09
+        ;   XREF to: 005bb010 (UNCONDITIONAL_CALL)  ; float core_stranger.cpp_FUN_005bb010()
     MOV dword ptr [ESP + 0xdc],EAX      ; 005c2b0e
     FLD float ptr [ESP + 0xdc]          ; 005c2b15
     ADD ESP,0x4                         ; 005c2b1c

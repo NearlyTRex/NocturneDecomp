@@ -15,7 +15,7 @@
 ;   CFootstep[1000] DAT_02da8c2c
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004ed240
+;   core_gore.cpp_CFootstep_FUN_004ed240
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 004ee0cb
     PUSH EAX                            ; 004ee0ce
     PUSH EDX                            ; 004ee0cf
-    CALL core_gore.cpp_FUN_004ed240     ; 004ee0d0
-        ;   XREF to: 004ed240 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed240()
+    CALL core_gore.cpp_CFootstep_FUN_004ed240 ; 004ee0d0
+        ;   XREF to: 004ed240 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_FUN_004ed240(CFootstep * this_ptr)
     ADD ESP,0x18                        ; 004ee0d5
     POP EBP                             ; 004ee0d8
     POP EDI                             ; 004ee0d9

@@ -7,7 +7,7 @@
 ; CAlphaBitmap *   Stack[0x4]:4   objs
 ;
 ; XREF[1]:
-;   support_newmsg.cpp_CMouse_dtor_FUN_005443e0 at 0054440c
+;   engine_ncursfx.cpp_CMouse_dtor_FUN_005443e0 at 0054440c
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CAlphaBitmapTypeInfo

@@ -10,32 +10,31 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,floa
 
 {
   UOrientationVector *pUVar1;
-  float fVar2;
+  CVector3f *pCVar2;
+  float fVar3;
   
-  if ((0.0 < *(float *)(this_ptr->unk2 + 0xc)) &&
-     (fVar2 = *(float *)(this_ptr->unk2 + 0xc) - delta_time,
-     *(float *)(this_ptr->unk2 + 0xc) = fVar2, fVar2 < 0.0)) {
-    this_ptr->unk2[0xc] = '\0';
-    this_ptr->unk2[0xd] = '\0';
-    this_ptr->unk2[0xe] = '\0';
-    this_ptr->unk2[0xf] = '\0';
+  if ((0.0 < this_ptr->fire_cooldown_timer) &&
+     (fVar3 = this_ptr->fire_cooldown_timer - delta_time, this_ptr->fire_cooldown_timer = fVar3,
+     fVar3 < 0.0)) {
+    this_ptr->fire_cooldown_timer = 0.0;
   }
   if (((this_ptr->carried_by_actor == (CDemonActor *)0x0) && (this_ptr->weapon_state == 0)) &&
      (0.0 < this_ptr->sim_timer)) {
-    fVar2 = this_ptr->sim_timer - delta_time;
-    this_ptr->sim_timer = fVar2;
-    if (fVar2 < 0.0) {
+    fVar3 = this_ptr->sim_timer - delta_time;
+    this_ptr->sim_timer = fVar3;
+    if (fVar3 < 0.0) {
       this_ptr->sim_timer = 0.0;
     }
-    core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)this_ptr->unk3,delta_time);
-    (this_ptr->base).location.position.x = *(float *)this_ptr->unk3;
-    (this_ptr->base).location.position.y = *(float *)(this_ptr->unk3 + 4);
-    (this_ptr->base).location.position.z = *(float *)(this_ptr->unk3 + 8);
+    core_box_cpp_CBox_process_FUN_0041e2f0(&this_ptr->physics_box,delta_time);
+    (this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;
+    (this_ptr->base).location.position.y = (this_ptr->physics_box).position.y;
+    (this_ptr->base).location.position.z = (this_ptr->physics_box).position.z;
     pUVar1 = &(this_ptr->base).orient;
-    if (pUVar1 != (UOrientationVector *)(this_ptr->unk3 + 0xc)) {
-      (pUVar1->vec).x = *(float *)(this_ptr->unk3 + 0xc);
-      (this_ptr->base).orient.vec.y = *(float *)(this_ptr->unk3 + 0x10);
-      (this_ptr->base).orient.vec.z = *(float *)(this_ptr->unk3 + 0x14);
+    pCVar2 = &(this_ptr->physics_box).orientation;
+    if ((CVector3f *)pUVar1 != pCVar2) {
+      (pUVar1->vec).x = pCVar2->x;
+      (this_ptr->base).orient.vec.y = (this_ptr->physics_box).orientation.y;
+      (this_ptr->base).orient.vec.z = (this_ptr->physics_box).orientation.z;
     }
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);

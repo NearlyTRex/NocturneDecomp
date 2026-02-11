@@ -46,7 +46,7 @@ core_haystack_cpp_CHaystack_processDamage_FUN_004f1b70(CHaystack *this_ptr,SDama
     }
   }
   else if (0.0 < damage_info->damage_amount) {
-    if (*(int *)this_ptr->unk == 0) {
+    if (this_ptr->guns_drawn == 0) {
       desired_state_index = 4;
     }
     else {

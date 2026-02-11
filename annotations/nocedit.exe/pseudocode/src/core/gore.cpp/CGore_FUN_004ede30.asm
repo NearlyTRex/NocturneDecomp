@@ -20,8 +20,8 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004ed0d0
-;   core_gore.cpp_FUN_004edde0
+;   core_gore.cpp_CBloodPool_FUN_004ed0d0
+;   core_gore.cpp_CGore_FUN_004edde0
 ;
 ; *****************************************************************************
 
@@ -37,16 +37,16 @@ section .text
     PUSH EBX                            ; 004ede39
     MOV ECX,dword ptr [ESP + 0xc]       ; 004ede3a
     PUSH ECX                            ; 004ede3e
-    CALL core_gore.cpp_FUN_004edde0     ; 004ede3f
-        ;   XREF to: 004edde0 (UNCONDITIONAL_CALL)  ; CBloodPool * core_gore.cpp_FUN_004edde0()
+    CALL core_gore.cpp_CGore_FUN_004edde0 ; 004ede3f
+        ;   XREF to: 004edde0 (UNCONDITIONAL_CALL)  ; CBloodPool * core_gore.cpp_CGore_FUN_004edde0(CGore * ptr)
     ADD ESP,0x4                         ; 004ede44
     MOV EBX,dword ptr [ESP + 0x14]      ; 004ede47
     PUSH EBX                            ; 004ede4b
     MOV ESI,dword ptr [ESP + 0x14]      ; 004ede4c
     PUSH ESI                            ; 004ede50
     PUSH EAX                            ; 004ede51
-    CALL core_gore.cpp_FUN_004ed0d0     ; 004ede52
-        ;   XREF to: 004ed0d0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ed0d0()
+    CALL core_gore.cpp_CBloodPool_FUN_004ed0d0 ; 004ede52
+        ;   XREF to: 004ed0d0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_FUN_004ed0d0(CBloodPool * this_ptr)
     ADD ESP,0xc                         ; 004ede57
     POP EBX                             ; 004ede5a
     POP ESI                             ; 004ede5b

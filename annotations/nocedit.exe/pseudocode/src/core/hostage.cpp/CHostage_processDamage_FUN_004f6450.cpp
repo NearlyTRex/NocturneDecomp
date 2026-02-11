@@ -34,11 +34,8 @@ core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this_ptr,SDamageI
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,4,1);
       pCVar2 = PTR_00821ff4;
-      this_ptr->unk4[0xc] = '\0';
-      this_ptr->unk4[0xd] = '\0';
-      this_ptr->unk4[0xe] = '@';
-      this_ptr->unk4[0xf] = '@';
-      *(CDemonActor **)(this_ptr->unk4 + 8) = pCVar2;
+      this_ptr->unk6 = 3.0;
+      this_ptr->grabber = pCVar2;
     }
     iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->unk1);
     if (iVar3 == 0) {

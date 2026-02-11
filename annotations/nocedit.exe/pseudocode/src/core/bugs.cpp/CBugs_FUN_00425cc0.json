@@ -1,37 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 4,
-        "line": 42,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 42,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 207,
+    "complexity_score": 215,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 3,
-    "pseudocode_lines": 107,
-    "suspect_count": 8,
+    "pseudocode_lines": 105,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 400
+    "total_lines": 398
   },
   "cross_references": [
     {
@@ -237,38 +224,45 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000008",
+      "text": "(*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 39,
       "match": "ABS",
-      "text": "if ((ABS(fStack_70) < (float)2) &&",
+      "text": "if ((ABS(fStack_68) < (float)2) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 40,
       "match": "ABS",
-      "text": "((ABS(CStack_7c.z) < (float)2 && (ABS(fStack_6c) < (float)2)))) {",
+      "text": "((ABS(CStack_74.z) < (float)2 && (ABS(fStack_64) < (float)2)))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 40,
       "match": "ABS",
-      "text": "((ABS(CStack_7c.z) < (float)2 && (ABS(fStack_6c) < (float)2)))) {",
+      "text": "((ABS(CStack_74.z) < (float)2 && (ABS(fStack_64) < (float)2)))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
+      "line": 55,
       "match": "extraout_EAX",
       "text": "this_ptr_00 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 63,
       "match": "in_stack_00000008",
-      "text": "CStack_7c.z = 2.0f * in_stack_00000008;",
+      "text": "CStack_74.z = 2.0f * in_stack_00000008;",
       "type": "stack_param"
     },
     {

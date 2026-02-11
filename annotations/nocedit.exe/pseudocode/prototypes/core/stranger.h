@@ -47,9 +47,9 @@ int __cdecl FUN_005bafd2(void);
 // Address: 005bafe0
 bool __cdecl FUN_005bafe0(void);
 
-// Original: core_stranger.cpp_CStranger_FUN_005bb010
+// Original: core_stranger.cpp_FUN_005bb010
 // Address: 005bb010
-float __cdecl CStranger(CStranger *this_ptr);
+float __cdecl FUN_005bb010(void);
 
 // Original: core_stranger.cpp_factoryFunc_FUN_005bb0e0
 // Address: 005bb0e0
@@ -215,21 +215,21 @@ void __cdecl CStranger(CStranger *this_ptr);
 // Address: 005c6590
 void __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c6650
+// Original: core_stranger.cpp_CStranger_areGunsDrawn_FUN_005c6650
 // Address: 005c6650
-int __cdecl CStranger(CStranger *this_ptr);
+int __cdecl CStranger::areGunsDrawn(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c6660
+// Original: core_stranger.cpp_CStranger_drawGuns_FUN_005c6660
 // Address: 005c6660
-void __cdecl CStranger(CStranger *this_ptr,int unk);
+void __cdecl CStranger::drawGuns(CStranger *this_ptr,int drawn);
 
 // Original: core_stranger.cpp_CStranger_getGrabbed_FUN_005c66a0
 // Address: 005c66a0
 int __cdecl CStranger::getGrabbed(CStranger *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c6750
+// Original: core_stranger.cpp_CStranger_reset_FUN_005c6750
 // Address: 005c6750
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::reset(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_getDeathState_FUN_005c67c0
 // Address: 005c67c0

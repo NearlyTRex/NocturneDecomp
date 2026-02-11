@@ -74,7 +74,7 @@ void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr)
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"head01",1);
   *(int *)(this_ptr->unk4 + 0x48) = iVar2;
-  (this_ptr->base).base.model.part_visibility_flags[0x1d] = 0;
+  (this_ptr->base).base.model.part_data.visibility_flags[0x1d] = 0;
   iVar2 = stricmp
                     ((this_ptr->base).base.model.model_name,"newzomb1.dfm");
   if (iVar2 == 0) {

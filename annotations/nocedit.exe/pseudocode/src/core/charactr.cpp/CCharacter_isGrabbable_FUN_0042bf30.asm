@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_zombie.cpp_CZombie_FUN_005fc920 at 005fc947
+;   core_zombie.cpp_CZombie_isGrabbable_FUN_005fc920 at 005fc947
 ;
 ; *****************************************************************************
 

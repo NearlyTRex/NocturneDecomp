@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr)
+; __cdecl int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined1       Stack[-0x17c]:1  local_17c
 ; undefined1       Stack[-0x14]:1  local_14

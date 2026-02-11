@@ -44,7 +44,7 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
   core_bride_cpp_CBride_FUN_00424600(this_ptr);
   iVar2 = *(int *)(this_ptr->unk + 0x20);
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
-  if ((this_ptr->base).base.model.part_visibility_flags[iVar2] == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[iVar2] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
   }
   this_ptr_00 = &(this_ptr->base).base.model;

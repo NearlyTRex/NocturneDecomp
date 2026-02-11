@@ -149,7 +149,8 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr_00,0);
           core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90
                     (local_3c,*(int *)(*(int *)((int)local_8c + local_34) + 0x2c),
-                     (CVector3i *)(&CStack_2af4)[iVar14 + 0xffffffff].texture_set_indices[0x1b]);
+                     (CVector3i *)
+                     (&CStack_2af4)[iVar14 + 0xffffffff].part_data.texture_set_indices[0x1b]);
           iVar8 = 0;
           if (0 < iVar3) {
             pfVar9 = (float *)(auStack_838 + local_48 + 0x398);
@@ -157,8 +158,8 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
             do {
               iVar12 = iVar13 + 0x390;
               iVar13 = iVar13 + 0x20;
-              piVar4 = (int *)((&CStack_2af4)[iVar14 + 0xffffffff].texture_set_indices[0x1b] +
-                              *(int *)(auStack_838 + iVar12) * 0xc);
+              piVar4 = (int *)((&CStack_2af4)[iVar14 + 0xffffffff].part_data.texture_set_indices
+                               [0x1b] + *(int *)(auStack_838 + iVar12) * 0xc);
               iVar8 = iVar8 + 1;
               *pfVar9 = (float)*piVar4 * 0.00390625f;
               pfVar9[1] = (float)piVar4[1] * 0.00390625f;
@@ -235,8 +236,8 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
             } while (iVar13 < iVar3 * 0x20);
           }
           if (local_50 < 0) {
-            piVar4 = (int *)((&CStack_2af4)[local_8 + 0xffffffff].texture_set_indices[0x1b] +
-                            iVar14 * 0xc);
+            piVar4 = (int *)((&CStack_2af4)[local_8 + 0xffffffff].part_data.texture_set_indices
+                             [0x1b] + iVar14 * 0xc);
             local_d4 = (float)*piVar4 * 0.00390625f;
             local_d0 = (float)piVar4[1] * 0.00390625f;
             local_cc = (float)piVar4[2] * 0.00390625f;
@@ -275,7 +276,8 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
             local_d0 = local_d0 + local_128[local_7c].min.y;
             local_cc = local_cc + local_128[local_7c].min.z;
             while (iVar13 < local_8c[-local_8 + 1]->vertex_count[0]) {
-              piVar4 = (int *)((&CStack_2af4)[-local_8].texture_set_indices[0x1b] + iVar8);
+              piVar4 = (int *)((&CStack_2af4)[-local_8].part_data.texture_set_indices[0x1b] + iVar8)
+              ;
               local_b0 = (float)*piVar4 * 0.00390625f;
               local_ac = (float)piVar4[1] * 0.00390625f;
               local_a8 = (float)piVar4[2] * 0.00390625f;

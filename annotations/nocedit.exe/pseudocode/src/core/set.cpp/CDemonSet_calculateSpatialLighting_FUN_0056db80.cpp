@@ -84,7 +84,7 @@ core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
   if (0 < this_ptr->mirror_glass_count) {
     local_14 = this_ptr;
     do {
-      core_mirror_cpp_transformMirrorVertex_FUN_005229b0
+      core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
                 (&(local_14->mirror_glass_actors[0]->mirror).reflection,(CVector3f *)world_position,
                  &local_3c);
       local_48.x = (int)local_3c.x;
@@ -93,7 +93,7 @@ core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
       *(uint *)((int)&local_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            *(uint *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       if (surface_normal != (CVector3i *)0x0) {
-        core_mirror_cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50
+        core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
                   (&(local_14->mirror_glass_actors[0]->mirror).reflection,world_position,
                    surface_normal,&local_30);
         local_24.x = local_30.x;

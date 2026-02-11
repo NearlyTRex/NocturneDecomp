@@ -31,7 +31,7 @@
 ;   float g_SavedProjectionFactor
 ;
 ; Called Functions:
-;   core_mirror.cpp_setupMirrorReflection_FUN_005214c0
+;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
 ;   engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
@@ -100,8 +100,8 @@ section .text
     PUSH 0x33469d0                      ; 00570a8e | g_SavedCameraOrigin
     ADD EAX,0x1ec                       ; 00570a93
     PUSH EAX                            ; 00570a98
-    CALL core_mirror.cpp_setupMirrorReflection_FUN_005214c0 ; 00570a99
-        ;   XREF to: 005214c0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_setupMirrorReflection_FUN_005214c0(SMirrorReflection * reflection)
+    CALL core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 ; 00570a99
+        ;   XREF to: 005214c0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection * this_ptr)
     ADD ESP,0x10                        ; 00570a9e
     PUSH 0x1                            ; 00570aa1
     MOV EBP,dword ptr [0x006703ec]      ; 00570aa3 | g_CDemonRendererPtr2

@@ -15,6 +15,6 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052af30(CMorphModel *this_ptr)
     return;
   }
   core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(this_ptr);
-  core_morph_cpp_FUN_0052b160();
+  core_morph_cpp_CMorphModel_FUN_0052b160(this_ptr);
   return;
 }

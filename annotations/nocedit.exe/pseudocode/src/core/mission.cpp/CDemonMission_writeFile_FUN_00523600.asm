@@ -354,7 +354,7 @@ section .text
     MOV ESI,dword ptr [0x0067b9a0]      ; 00523935 | g_CGorePtr
     PUSH ESI                            ; 0052393b | g_CGoreInstance
     CALL core_gore.cpp_CGore_FUN_004ee290 ; 0052393c
-        ;   XREF to: 004ee290 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee290(CGore * this_ptr)
+        ;   XREF to: 004ee290 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee290(CGore * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00523941
     MOV dword ptr [EBX + 0x88c],0x0     ; 00523944
     ADD ESP,0x4                         ; 0052394e

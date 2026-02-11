@@ -27,8 +27,7 @@ void __cdecl core_scat_cpp_CScat_FUN_00558fd0(CScat *this_ptr)
   CVector3f local_1c;
   
   bVar4 = 0;
-  if ((*(int *)(this_ptr->unk + 0x14) != 0) &&
-     (*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x2e0) != 8)) {
+  if ((this_ptr->unk4 != 0) && (*(int *)(this_ptr->unk4 + 0x2e0) != 8)) {
     local_40.x = 0.0;
     local_40.z = 1.5707964;
     local_40.y = 1.5707964;
@@ -59,7 +58,7 @@ void __cdecl core_scat_cpp_CScat_FUN_00558fd0(CScat *this_ptr)
       pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
       pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
     }
-    iVar1 = *(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154);
+    iVar1 = *(int *)(this_ptr->unk4 + 0x154);
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_a0,&local_34);
     core_xform_cpp_getTranslation_FUN_005f6110(&local_a0,&local_1c);
     (**(code **)(iVar1 + 0x60))();

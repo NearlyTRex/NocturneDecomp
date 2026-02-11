@@ -17,7 +17,7 @@
 ;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 00424957
 ;   core_bugs.cpp_CBugs_processDamage_FUN_00425640 at 00425651
 ;   core_cow.cpp_CZombieCow_processDamage_FUN_00444b40 at 00444be8
-;   core_dog.cpp_CZombieDog_FUN_0047f820 at 0047f8c4
+;   core_dog.cpp_CZombieDog_processDamage_FUN_0047f820 at 0047f8c4
 ;   ... and 14 more
 ;
 ; Referenced Globals:

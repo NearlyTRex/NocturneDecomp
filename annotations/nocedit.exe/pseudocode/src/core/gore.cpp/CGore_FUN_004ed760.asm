@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1bf6
-;   core_gore.cpp_FUN_004ed730 at 004ed736
+;   core_gore.cpp_CGore_ctor_FUN_004ed730 at 004ed736
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 at 00523399
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e8d9
 ;
@@ -18,9 +18,9 @@
 ;   undefined4 DAT_02d833ec
 ;   undefined4 DAT_02d8342c
 ;   undefined4 DAT_02d873d4
-;   undefined4 DAT_02d873d8
+;   int INT_02d873d8
 ;   undefined4 DAT_02da871c
-;   undefined4 DAT_02da8720
+;   int INT_02da8720
 ;   undefined4 DAT_02da8c24
 ;   undefined4 DAT_02da8c28
 ;
@@ -34,9 +34,9 @@ section .text
     MOV EAX,0x2d833d4                   ; 004ed763 | DAT_02d833d4
     MOV dword ptr [0x02d833d0],EDX      ; 004ed768 | DAT_02d833d0
     MOV dword ptr [0x02d873d4],EDX      ; 004ed76e | DAT_02d873d4
-    MOV dword ptr [0x02d873d8],EDX      ; 004ed774 | DAT_02d873d8
+    MOV dword ptr [0x02d873d8],EDX      ; 004ed774 | INT_02d873d8
     MOV dword ptr [0x02da871c],EDX      ; 004ed77a | DAT_02da871c
-    MOV dword ptr [0x02da8720],EDX      ; 004ed780 | DAT_02da8720
+    MOV dword ptr [0x02da8720],EDX      ; 004ed780 | INT_02da8720
     LEA EDX,[EAX + 0x4000]              ; 004ed786 | DAT_02d873d4
     ADD EAX,0x40                        ; 004ed78c
         ;   Label: LAB_004ed78c

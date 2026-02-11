@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_course_cpp_CCourse_FUN_004427a0(void)
+; __cdecl void __cdecl core_course_cpp_CCourse_FUN_004427a0(CCourse *this_ptr)
 ;
+; Parameters:
+; CCourse *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x98]:8  local_98
 ; undefined8       Stack[-0x90]:8  local_90

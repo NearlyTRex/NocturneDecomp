@@ -41,8 +41,8 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
 ;   core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
-;   core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50
-;   core_mirror.cpp_transformMirrorVertex_FUN_005229b0
+;   core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
+;   core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
 ;   core_set.cpp_CDemonSet_FUN_0056d4a0
 ;
 ; *****************************************************************************
@@ -174,8 +174,8 @@ section .text
     PUSH EAX                            ; 0056dcb0
     LEA ESI,[ESP + 0x14]                ; 0056dcb1
     LEA EDI,[ESP + 0x8]                 ; 0056dcb5
-    CALL core_mirror.cpp_transformMirrorVertex_FUN_005229b0 ; 0056dcb9
-        ;   XREF to: 005229b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_transformMirrorVertex_FUN_005229b0(SMirrorReflection * reflection, CVector3f * input_vertex, CVector3f * output_vertex)
+    CALL core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0 ; 0056dcb9
+        ;   XREF to: 005229b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0(CMirrorReflection * this_ptr, CVector3f * input_vertex, CVector3f * output_vertex)
     LEA ESI,[ESP + 0x14]                ; 0056dcbe
     ADD ESP,0x8                         ; 0056dcc2
     MOVSD ES:EDI,ESI                    ; 0056dcc5
@@ -253,8 +253,8 @@ section .text
     PUSH EAX                            ; 0056dd7b
     LEA ESI,[ESP + 0x24]                ; 0056dd7c
     LEA EDI,[ESP + 0x30]                ; 0056dd80
-    CALL core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50 ; 0056dd84
-        ;   XREF to: 00522a50 (UNCONDITIONAL_CALL)  ; CVector3i * core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50(SMirrorReflection * reflection, CVector3i * point_a, CVector3i * point_b, CVector3i * output)
+    CALL core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50 ; 0056dd84
+        ;   XREF to: 00522a50 (UNCONDITIONAL_CALL)  ; CVector3i * core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50(CMirrorReflection * this_ptr, CVector3i * point_a, CVector3i * point_b, CVector3i * output)
     LEA ESI,[ESP + 0x24]                ; 0056dd89
     ADD ESP,0xc                         ; 0056dd8d
     MOVSD ES:EDI,ESI                    ; 0056dd90

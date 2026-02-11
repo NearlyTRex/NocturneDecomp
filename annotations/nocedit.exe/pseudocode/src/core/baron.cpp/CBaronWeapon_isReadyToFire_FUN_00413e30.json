@@ -1,0 +1,118 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 22,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 62
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00413e30",
+    "address_range": [
+      [
+        "00413e30",
+        "00413e5f"
+      ],
+      [
+        "00413e61",
+        "00413e89"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_00413e30",
+    "signature": "int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00413e30(CBaronWeapon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00413f20",
+      "is_variadic": false,
+      "name": "core_baron.cpp_CBaronWeapon_FUN_00413f20"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00413e20",
+      "name": "switchdataD_00413e20",
+      "type": "void*",
+      "value": "00413e65"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.133333333333334,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 27,
+      "INT_ADD": 13,
+      "INT_AND": 16,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 7,
+      "INT_SUB": 6,
+      "INT_XOR": 2,
+      "LOAD": 10,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 124
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBaronWeapon *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBaronWeapon",
+        "offset": 252,
+        "vtable_addr": "0065a1e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

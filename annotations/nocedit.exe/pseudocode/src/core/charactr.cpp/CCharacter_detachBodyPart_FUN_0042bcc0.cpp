@@ -14,7 +14,7 @@ core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,in
   int in_stack_00000010;
   
   if (((this_ptr->model).model_name[0] != '\0') &&
-     ((this_ptr->model).part_visibility_flags[part_index] != 0)) {
+     ((this_ptr->model).part_data.visibility_flags[part_index] != 0)) {
     body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
     core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
               (this_ptr,body_part,part_index,in_stack_00000010);

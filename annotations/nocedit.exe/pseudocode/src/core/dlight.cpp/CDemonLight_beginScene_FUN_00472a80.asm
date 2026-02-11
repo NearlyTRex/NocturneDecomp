@@ -100,7 +100,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 00472b36 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00472b3c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 ; 00472b3d
-        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix, CVector3f * rotation_angles)
+        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix)
     ADD ESP,0x8                         ; 00472b42
     MOV EDX,dword ptr [0x02d052ec]      ; 00472b45 | g_TransformMatrix[0][1]
     MOV EAX,dword ptr [EBX + 0x2fa4]    ; 00472b4b

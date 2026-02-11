@@ -9,6 +9,6 @@
 void __cdecl core_dog_cpp_CZombieDog_FUN_0047f960(CZombieDog *this_ptr)
 
 {
-  core_enemy_cpp_CEnemy_FUN_004aa250(&this_ptr->base);
+  core_enemy_cpp_CEnemy_randomize_FUN_004aa250(&this_ptr->base);
   return;
 }

@@ -93,7 +93,7 @@ section .text
     LEA EAX,[ESI + 0x158]               ; 004f2669
     PUSH EAX                            ; 004f266f
     CALL core_actor.cpp_archivePartStatus_FUN_0040bae0 ; 004f2670
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(void * part, char * property_name)
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f2675
     PUSH 0x62eac5                       ; 004f2678 | = "grabbedBy"
     LEA EAX,[ESI + 0x2598]              ; 004f267d
@@ -122,7 +122,7 @@ section .text
     PUSH 0x62eae6                       ; 004f26b9 | = "partStatus"
     PUSH EBX                            ; 004f26be
     CALL core_actor.cpp_archivePartStatus_FUN_0040bae0 ; 004f26bf
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(void * part, char * property_name)
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     MOV ECX,dword ptr [0x0067cc1c]      ; 004f26c4 | g_CHeroClassVersion
     ADD ESP,0x8                         ; 004f26ca
     CMP ECX,0x8                         ; 004f26cd

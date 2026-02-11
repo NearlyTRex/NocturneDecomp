@@ -15,6 +15,7 @@
 #include "system/winuser.h"
 #include "types/classes/CDemonPod.h"
 #include "types/classes/CDemonSet.h"
+#include "types/classes/CMouse.h"
 #include "types/classes/CNetGame.h"
 #include "types/classes/CProceduralTexture.h"
 #include "types/classes/CScript.h"
@@ -49,6 +50,9 @@ extern CDemonPod* g_CDemonPodPtr;
 
 // CDemonSet*
 extern CDemonSet* g_CDemonSetPtr;
+
+// CMouse*
+extern CMouse* g_CMousePtr;
 
 // CNetGame*
 extern CNetGame* g_CNetGamePtr;

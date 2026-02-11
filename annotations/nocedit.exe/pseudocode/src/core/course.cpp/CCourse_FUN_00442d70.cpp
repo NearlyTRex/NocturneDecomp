@@ -2,25 +2,24 @@
 // Address: 00442d70
 // Address Range: [[00442d70, 00442e9f]]
 // Convention: __cdecl
-// Signature: int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr)
+// Signature: int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr)
+int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr,char *filename)
 
 {
   _FILE *file;
   int iVar1;
-  char *in_stack_00000008;
   char local_17c [360];
   byte local_14 [4];
   byte local_10 [4];
   
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (in_stack_00000008,(char *)0x0,"rt","..\\core\\course.cpp",0x184);
+                   (filename,(char *)0x0,"rt","..\\core\\course.cpp",0x184);
   if (file == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"Can't open %s");
+              (g_CEditorToolsPtr,"Can't open %s",filename);
     return 0;
   }
   do {
@@ -37,7 +36,7 @@ int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr)
     iVar1 = _fgetc(file);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _sprintf(local_17c,"Importing %s");
+  _sprintf(local_17c,"Importing %s",filename);
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
             (g_CEditorToolsPtr,local_17c);
   core_course_cpp_CCourse_importMatrices_FUN_00442ea0(this_ptr);

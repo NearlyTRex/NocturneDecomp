@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_morph_cpp_FUN_0052b310(void)
+; __cdecl void __cdecl core_morph_cpp_FUN_0052b310(CMorphModel *a)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   a
 ;
 ; XREF[7]:
 ;   core_biggs.cpp_CBiggs_ctor_FUN_004185c0 at 004185e4

@@ -98,7 +98,7 @@ void __cdecl core_smiley_cpp_CSmiley_FUN_005a24d0(CSmiley *this_ptr);
 void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,float delta_time);
 int __cdecl core_smiley_cpp_CSmiley_FUN_005a3160(CSmiley *this_ptr);
 void __cdecl core_smiley_cpp_CSmiley_archive_FUN_005a3220(CSmiley *this_ptr);
-int __cdecl core_smiley_cpp_CSmiley_FUN_005a3280(CSmiley *this_ptr);
+void __cdecl core_smiley_cpp_CSmiley_reset_FUN_005a3280(CSmiley *this_ptr);
 void __cdecl core_smiley_cpp_CSmiley_FUN_005a32a0(CSmiley *this_ptr);
 void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_005a3580(CSmiley *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_005a3690(CSmiley *this_ptr,CVector3f *out_points_array);

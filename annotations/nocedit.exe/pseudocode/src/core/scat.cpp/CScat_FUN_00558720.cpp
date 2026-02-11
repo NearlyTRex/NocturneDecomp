@@ -42,18 +42,15 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
   uint local_1c;
   float local_18;
   
-  this_ptr->unk[0x28] = '\0';
-  this_ptr->unk[0x29] = '\0';
-  this_ptr->unk[0x2a] = '\0';
-  this_ptr->unk[0x2b] = '\0';
+  this_ptr->unk9 = 0;
   if ((in_stack_0000000c == 0) &&
      (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller), pSVar3->state_index == 2)
      ) {
     in_stack_0000000c = 1;
   }
-  local_13c = *(float *)(this_ptr->unk + 0x18);
-  local_2c = *(float *)(this_ptr->unk + 0x1c);
+  local_13c = (float)this_ptr->unk5;
+  local_2c = (float)this_ptr->unk6;
   if (((this_ptr->base).aim_mode != 0) && ((this_ptr->base).control_type != 2)) {
     local_13c = *(float *)((this_ptr->base).unk2 + 8) * (float)3.1415926535000001 *
                 (float)2 * in_stack_00000008 + local_13c;
@@ -67,11 +64,8 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
     local_2c = 0.0;
     goto LAB_005587bd;
   }
-  if ((*(int *)this_ptr->unk == 0) || (in_stack_0000000c != 0)) {
-    this_ptr->unk[0x24] = '\0';
-    this_ptr->unk[0x25] = '\0';
-    this_ptr->unk[0x26] = '\0';
-    this_ptr->unk[0x27] = '\0';
+  if ((this_ptr->guns_drawn == 0) || (in_stack_0000000c != 0)) {
+    this_ptr->unk8 = 0;
   }
   else if ((this_ptr->base).action_bindings.fire_key == 0) {
     local_28 = in_stack_0000000c;
@@ -87,25 +81,22 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
       }
       iVar4 = iVar4 + 4;
     }
-    *(int *)(this_ptr->unk + 0x24) = local_28;
+    this_ptr->unk8 = local_28;
   }
   if ((this_ptr->base).action_bindings.fire_key != 0) {
-    if (*(int *)(this_ptr->unk + 0x24) == 0) {
-      this_ptr->unk[0x1c] = '\0';
-      this_ptr->unk[0x1d] = '\0';
-      this_ptr->unk[0x1e] = '\0';
-      this_ptr->unk[0x1f] = '\0';
-      *(uint *)(this_ptr->unk + 0x18) = *(uint *)(this_ptr->unk + 0x1c);
-      local_13c = *(float *)(this_ptr->unk + 0x18);
+    if (this_ptr->unk8 == 0) {
+      this_ptr->unk6 = 0;
+      this_ptr->unk5 = this_ptr->unk6;
+      local_13c = (float)this_ptr->unk5;
       local_2c = local_13c;
     }
     goto LAB_005587bd;
   }
-  if (*(int *)(this_ptr->unk + 0x24) == 0) goto LAB_005587bd;
+  if (this_ptr->unk8 == 0) goto LAB_005587bd;
   __arrinit(local_138,10,&g_CVectorTypeInfo);
-  iVar4 = (**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x24) + 0x154) + 0x4c))();
+  iVar4 = (**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x4c))();
   if (iVar4 < 1) {
-    pfVar6 = (float *)(**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x24) + 0x154) + 0x14))();
+    pfVar6 = (float *)(**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x14))();
     fStack_90 = *pfVar6 + pfVar6[3];
     fStack_8c = pfVar6[1] + pfVar6[4];
     CStack_78.x = fStack_90 * 0.5f;
@@ -128,7 +119,7 @@ LAB_00558aeb:
     CStack_60.z = local_138[0].z;
   }
   pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     (*(CDemonActor **)(this_ptr->unk + 0x24),&CStack_6c,&CStack_60);
+                     ((CDemonActor *)this_ptr->unk8,&CStack_6c,&CStack_60);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
             ((CDemonActor *)this_ptr,&CStack_9c,pCVar5);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
@@ -140,11 +131,9 @@ LAB_00558aeb:
   local_13c = CStack_54.x;
   local_2c = CStack_54.y;
 LAB_005587bd:
-  local_38 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                       (local_2c - *(float *)(this_ptr->unk + 0x1c));
+  local_38 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_2c - (float)this_ptr->unk6);
   local_18 = local_38;
-  local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                       (local_13c - *(float *)(this_ptr->unk + 0x18));
+  local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_13c - (float)this_ptr->unk5);
   local_30 = in_stack_00000008 * (float)3.1415926535000001 * (float)1.5;
   local_3c = -local_30;
   if (local_38 < local_3c) {
@@ -161,21 +150,16 @@ LAB_005587bd:
   if (local_30 < local_34) {
     local_34 = local_30;
   }
-  *(float *)(this_ptr->unk + 0x18) = *(float *)(this_ptr->unk + 0x18) + local_34;
-  *(float *)(this_ptr->unk + 0x1c) = *(float *)(this_ptr->unk + 0x1c) + local_38;
-  if ((*(int *)(this_ptr->unk + 0x24) != 0) && (in_stack_0000000c == 0)) {
-    local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                         (*(float *)(this_ptr->unk + 0x1c) - local_2c);
+  this_ptr->unk5 = (int)((float)this_ptr->unk5 + local_34);
+  this_ptr->unk6 = (int)((float)this_ptr->unk6 + local_38);
+  if ((this_ptr->unk8 != 0) && (in_stack_0000000c == 0)) {
+    local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)this_ptr->unk6 - local_2c);
     if (((float)0.02 <= ABS(local_18)) &&
-       (fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (*(float *)(this_ptr->unk + 0x1c) - local_2c),
+       (fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)this_ptr->unk6 - local_2c),
        (float)0.02 <= ABS(fVar7))) {
       return;
     }
-    this_ptr->unk[0x28] = '\x01';
-    this_ptr->unk[0x29] = '\0';
-    this_ptr->unk[0x2a] = '\0';
-    this_ptr->unk[0x2b] = '\0';
+    this_ptr->unk9 = 1;
     return;
   }
   return;

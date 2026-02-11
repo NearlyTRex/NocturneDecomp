@@ -112,7 +112,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           iVar6 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                             (g_CEditorToolsPtr,"Import .CRS file",0x6192f4,local_4fc);
           if (iVar6 == 0) goto LAB_004431bd;
-          iVar6 = core_course_cpp_CCourse_FUN_00442d70(this_ptr);
+          iVar6 = core_course_cpp_CCourse_FUN_00442d70(this_ptr,local_4fc);
         } while (iVar6 == 0);
         splitpath(local_4fc,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
         ;
@@ -150,7 +150,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           iVar6 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                             (g_CEditorToolsPtr,"Import .BON file",0x619310,local_3f8);
           if (iVar6 == 0) goto LAB_004431bd;
-          iVar6 = core_course_cpp_CCourse_FUN_00442bc0(this_ptr);
+          iVar6 = core_course_cpp_CCourse_FUN_00442bc0(this_ptr,local_3f8);
         } while (iVar6 == 0);
         splitpath(local_3f8,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
         ;
@@ -188,7 +188,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
                            "*.kfm",(int)local_2f4,0);
         if (iVar6 != 0) {
           pCVar5 = core_dmodel_cpp_loadModel_FUN_00478c00(local_2f4);
-          core_course_cpp_FUN_00443bc0(this_ptr,pCVar5);
+          core_course_cpp_CCourse_FUN_00443bc0(this_ptr,pCVar5);
         }
       }
     }

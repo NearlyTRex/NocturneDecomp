@@ -19,7 +19,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00419740(CBodyPart
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
                 (g_CDemonRendererPtr2,*(int *)(this_ptr->unk6 + 4));
-      core_bodypart_cpp_CBodyPart_FUN_00419340(this_ptr);
+      core_bodypart_cpp_CBodyPart_FUN_00419340(this_ptr,0x2e7);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
       g_CDemonSetPtr->unk_lighting_param2 = 0;
     }
@@ -27,7 +27,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00419740(CBodyPart
     if (0 < *(int *)(this_ptr->unk5 + 0x5bc)) {
       this_ptr_00 = (CFlame *)(this_ptr->unk5 + 0x5cc);
       do {
-        core_flame_cpp_CFlame_FUN_004ca110(this_ptr_00);
+        core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(this_ptr_00);
         iVar1 = iVar1 + 1;
         this_ptr_00 = (CFlame *)(this_ptr_00[1].base.actor_name + 0xc);
       } while (iVar1 < *(int *)(this_ptr->unk5 + 0x5bc));

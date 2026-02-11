@@ -28,7 +28,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
     local_14 = (this_ptr->model).bone_transform.bone_world_matrices;
     pcVar2 = this_ptr->field61_0x2df8;
     do {
-      if ((this_ptr->model).part_visibility_flags[*(int *)pcVar2] != 0) {
+      if ((this_ptr->model).part_data.visibility_flags[*(int *)pcVar2] != 0) {
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                   ((CMatrix3x4f *)(pcVar2 + 8),local_14 + *(int *)(pcVar2 + 4),&local_8c);
         pCVar4 = &local_8c;

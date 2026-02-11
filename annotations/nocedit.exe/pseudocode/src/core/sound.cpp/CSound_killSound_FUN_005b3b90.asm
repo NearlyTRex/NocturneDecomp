@@ -9,7 +9,7 @@
 ;
 ; XREF[7]:
 ;   core_dynamite.cpp_CDynamite_process_FUN_0049cfb0 at 0049d039
-;   core_flame.cpp_CFlame_FUN_004c9c00 at 004c9fad
+;   core_flame.cpp_CFlame_process_FUN_004c9c00 at 004c9fad
 ;   core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0 at 004cba8b
 ;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e8037
 ;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30 at 0054d1d2

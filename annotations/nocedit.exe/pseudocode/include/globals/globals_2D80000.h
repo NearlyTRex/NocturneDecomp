@@ -116,6 +116,7 @@ extern int INT_02d833c0;
 extern int INT_02d833c4;
 extern int INT_02d833c8;
 extern int INT_02d833cc;
+extern int INT_02d873d8;
 
 // undefined1
 extern undefined1 DAT_02d82c81;
@@ -140,5 +141,4 @@ extern undefined4 DAT_02d831f4;
 extern undefined4 DAT_02d831f8;
 extern undefined4 DAT_02d833d0;
 extern undefined4 DAT_02d873d4;
-extern undefined4 DAT_02d873d8;
 

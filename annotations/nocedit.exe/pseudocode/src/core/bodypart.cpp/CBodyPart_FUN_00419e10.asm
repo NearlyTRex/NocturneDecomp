@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_flame.cpp_CFlame_FUN_004c9c00
+;   core_flame.cpp_CFlame_process_FUN_004c9c00
 ;
 ; *****************************************************************************
 
@@ -105,8 +105,8 @@ section .text
     PUSH EBX                            ; 00419ef0
     FSTP float ptr [EBX + 0x15c]        ; 00419ef1
     MOV dword ptr [EBX + 0x160],EAX     ; 00419ef7
-    CALL core_flame.cpp_CFlame_FUN_004c9c00 ; 00419efd
-        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_FUN_004c9c00(CFlame * this_ptr)
+    CALL core_flame.cpp_CFlame_process_FUN_004c9c00 ; 00419efd
+        ;   XREF to: 004c9c00 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_process_FUN_004c9c00(CFlame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00419f02
     MOV EAX,dword ptr [EBP + 0x14]      ; 00419f05
     INC EDI                             ; 00419f08

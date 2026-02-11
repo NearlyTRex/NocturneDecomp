@@ -9,6 +9,6 @@
 float __cdecl core_crossbow_cpp_CCrossbow_FUN_00449540(CCrossbow *this_ptr)
 
 {
-  return ((float)0.66600000000000004 - *(float *)((this_ptr->base).unk2 + 0xc)) * (float)1.5015015015015001
-         * (float)11;
+  return ((float)0.66600000000000004 - (this_ptr->base).fire_cooldown_timer) * (float)1.5015015015015001 *
+         (float)11;
 }

@@ -14,7 +14,7 @@
 ;   core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40 at 004bebea
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004df54f
 ;   core_hero.cpp_CHero_FUN_004f2c40 at 004f2d4a
-;   core_hostage.cpp_CHostage_FUN_004f63e0 at 004f6439
+;   core_hostage.cpp_CHostage_getGrabbed_FUN_004f63e0 at 004f6439
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f55b7
 ;   core_inv.cpp_CInventory_select_FUN_004ff800 at 004ffa96
 ;   ... and 7 more

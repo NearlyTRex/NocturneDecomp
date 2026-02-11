@@ -10,7 +10,7 @@
       {
         "category": "other",
         "column": 48,
-        "line": 695,
+        "line": 683,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       }
     ],
@@ -19,11 +19,11 @@
   },
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 919,
+    "complexity_score": 898,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 49,
-    "pseudocode_lines": 719,
+    "pseudocode_lines": 698,
     "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -31,7 +31,7 @@
       "suspect_float",
       "undefined_data"
     ],
-    "total_lines": 2375
+    "total_lines": 2354
   },
   "cross_references": [],
   "function": {
@@ -1210,28 +1210,28 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 655,
+      "line": 652,
       "match": "DAT_02db8888",
       "text": "(&pCVar2->motion_controller,DAT_02db8888,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 660,
+      "line": 657,
       "match": "DAT_02db8888",
-      "text": "(pCVar2,DAT_02db8888,local_58,*(float *)(this_ptr->unk4 + 4),",
+      "text": "(pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 4),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 663,
+      "line": 660,
       "match": "DAT_02db8888",
-      "text": "(pCVar2,DAT_02db8888,local_58,*(float *)(this_ptr->unk4 + 4),",
+      "text": "(pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 8),",
       "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 695,
+      "line": 683,
       "match": "8.40779e-45",
       "text": "(pCVar19->model).transformed_vertices[0x4f].z = 8.40779e-45;",
       "type": "suspect_float"

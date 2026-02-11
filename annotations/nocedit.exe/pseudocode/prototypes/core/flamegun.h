@@ -27,13 +27,13 @@ int __cdecl CFlameThrower::fire(CFlameThrower *this_ptr);
 // Address: 004cb9b0
 void __cdecl CFlameThrower::process(CFlameThrower *this_ptr,float delta_time);
 
-// Original: core_flamegun.cpp_CFlameThrower_FUN_004cbab0
+// Original: core_flamegun.cpp_CFlameThrower_getDamage_FUN_004cbab0
 // Address: 004cbab0
-float __cdecl CFlameThrower(CFlameThrower *this_ptr);
+float __cdecl CFlameThrower::getDamage(CFlameThrower *this_ptr);
 
-// Original: core_flamegun.cpp_CFlameThrower_FUN_004cbad0
+// Original: core_flamegun.cpp_CFlameThrower_fireProjectile_FUN_004cbad0
 // Address: 004cbad0
-void __cdecl CFlameThrower(CFlameThrower *this_ptr);
+void __cdecl CFlameThrower::fireProjectile(CFlameThrower *this_ptr);
 
 // Original: core_flamegun.cpp_CFlameThrower_FUN_004cbad1
 // Address: 004cbad1

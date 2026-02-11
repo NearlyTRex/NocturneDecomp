@@ -23,8 +23,8 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
   CPathMap *pCVar10;
   CVector3f *pCVar11;
   float fVar12;
-  CGargoyle *max_distance;
-  float in_stack_fffffefc;
+  float in_stack_ffffff04;
+  float in_stack_ffffff08;
   CVector3f local_c8;
   CVector3f local_bc;
   CVector3f local_b0;
@@ -91,7 +91,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
   if (iVar7 == 0) {
     switch(iVar4) {
     case 0:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       iVar4 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0(this_ptr);
       if (iVar4 == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
@@ -155,8 +155,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
       break;
     case 1:
     case 2:
-      max_distance = this_ptr;
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       iVar4 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0(this_ptr);
       pCVar1 = &(this_ptr->base).base.model;
       if (iVar4 == 0) {
@@ -202,7 +201,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
             iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                               ((CCharacter *)this_ptr,
                                &(((this_ptr->base).victim)->location).position,pCVar10,pCVar11,
-                               fVar12,(float)max_distance);
+                               fVar12,in_stack_ffffff04);
             if (-1 < iVar7) {
               pCVar2 = (this_ptr->base).victim;
               local_5c = (this_ptr->base).base.base.location.position.x -
@@ -215,13 +214,13 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
               if (10.0f < local_30) {
                 iVar4 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
                 if (iVar4 == 0) {
-                  iVar4 = 2;
+                  fVar12 = 2.8026e-45;
                 }
                 else {
-                  iVar4 = 4;
+                  fVar12 = 5.60519e-45;
                 }
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                          (&pCVar1->motion_controller,iVar4,1);
+                          (&pCVar1->motion_controller,(int)fVar12,1);
               }
               if ((local_24 <= local_20) && (*(float *)(this_ptr->base).unk2 <= 0.0)) {
                 pCVar2 = (this_ptr->base).victim;
@@ -264,7 +263,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
           pCVar10 = (*((this_ptr->home_base->vtable)._ub)->getPathMap)(this_ptr->home_base);
           core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                     ((CCharacter *)this_ptr,&(this_ptr->home_base->location).position,pCVar10,
-                     pCVar11,fVar12,(float)max_distance);
+                     pCVar11,fVar12,in_stack_ffffff04);
         }
       }
       break;
@@ -281,7 +280,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
       core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
       break;
     case 5:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       iVar4 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0(this_ptr);
       if ((iVar4 != 0) &&
          (fVar12 = *(float *)(this_ptr->unk2 + 0x18) - delta_time,
@@ -360,7 +359,7 @@ switchD_004e531f_caseD_4:
             (&(this_ptr->base).base.model);
   iVar4 = local_28;
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_fffffefc);
+            ((CCharacter *)this_ptr,delta_time,in_stack_ffffff08);
   if (iVar4 == 5) {
     *(int *)(this_ptr->unk2 + 8) = this_ptr->stone_red << 8;
     *(int *)(this_ptr->unk2 + 0xc) = this_ptr->stone_green << 8;

@@ -1404,9 +1404,9 @@ LAB_004df408:
         g_InputHistory[1] = (byte)iStack_178 ^ (byte)iStack_17c;
         pCVar4 = (g_HeroActors[g_LocalHeroIndex]->inventory).selected_weapon;
         if (pCVar4 != (CWeapon *)0x0) {
-          if (*(int *)(pCVar4->unk3 + 600 + 0xc) == 5) {
+          if (pCVar4->ammo_type == 5) {
             fVar23 = 5.0;
-            *(int *)(pCVar4->unk3 + 600 + 0xc) = 0;
+            pCVar4->ammo_type = 0;
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                 ("Flaming ammo disabled");
           }
@@ -1419,7 +1419,7 @@ LAB_004df408:
             }
             else {
               fVar23 = 5.0;
-              *(int *)(pCVar4->unk3 + 600 + 0xc) = 5;
+              pCVar4->ammo_type = 5;
               pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                   ("Flaming ammo enabled.");
             }

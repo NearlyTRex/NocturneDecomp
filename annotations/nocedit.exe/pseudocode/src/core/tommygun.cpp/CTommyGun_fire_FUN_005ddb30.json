@@ -4,55 +4,61 @@
       {
         "category": "other",
         "column": 19,
-        "line": 115,
+        "line": 114,
         "message": "C-style cast from 'CTrigger *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 116,
+        "line": 115,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 124,
+        "line": 123,
         "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 132,
+        "line": 131,
         "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
       },
       {
         "category": "incompatible_types",
         "column": 52,
-        "line": 141,
+        "line": 140,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 144,
+        "line": 143,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 169,
+        "line": 168,
         "message": "use of undeclared identifier 'stack0xfffffec0'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 170,
+        "line": 169,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 173,
+        "line": 172,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 185,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
@@ -70,25 +76,19 @@
       {
         "category": "other",
         "column": 20,
-        "line": 188,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 193,
+        "line": 192,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 200,
+        "line": 199,
         "message": "C-style cast from 'CTommyGun *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 202,
+        "line": 201,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -97,11 +97,11 @@
   },
   "complexity": {
     "assembly_lines": 544,
-    "complexity_score": 423,
+    "complexity_score": 422,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 26,
-    "pseudocode_lines": 233,
+    "pseudocode_lines": 232,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -111,7 +111,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 777
+    "total_lines": 776
   },
   "cross_references": [],
   "function": {
@@ -502,98 +502,98 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 131,
       "match": "in_stack_fffffebc",
       "text": "in_stack_fffffebc =",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 133,
       "match": "SUB84",
       "text": "((CCharacter *)this_ptr,SUB84(dVar6,0),(int)((ulonglong)dVar6 >> 0x20));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 143,
+      "line": 142,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) goto LAB_005ddd4e;",
       "type": "extra_output"
     },
     {
       "description": "Direct stack address reference",
-      "line": 162,
+      "line": 161,
       "match": "&stack0xfffffec0",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec0);",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 163,
+      "line": 162,
       "match": "._0_4_",
       "text": "auStack_130._0_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 165,
+      "line": 164,
       "match": "in_stack_fffffebc",
       "text": "((CCharacter *)this_ptr,pCVar7,in_stack_fffffebc);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 166,
+      "line": 165,
       "match": "._4_4_",
       "text": "auStack_130._4_4_ = 0.4;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 174,
+      "line": 173,
       "match": "SQRT",
       "text": "SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 179,
+      "line": 178,
       "match": "._8_4_",
       "text": "auStack_130._8_4_ = fStack_58;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 180,
+      "line": 179,
       "match": "._12_4_",
       "text": "auStack_130._12_4_ = fStack_54;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 181,
+      "line": 180,
       "match": "._16_4_",
       "text": "auStack_130._16_4_ = fStack_50;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 186,
+      "line": 185,
       "match": "._24_4_",
       "text": "auStack_130._24_4_ = pCVar3->x;",
       "type": "unknown_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 191,
+      "line": 190,
       "match": "1.41531e-43",
       "text": "CStack_108.m[0].y = 1.41531e-43;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 196,
+      "line": 195,
       "match": "in_stack_fffffebc",
       "text": "in_stack_fffffebc = 0x5de221;",
       "type": "stack_param"

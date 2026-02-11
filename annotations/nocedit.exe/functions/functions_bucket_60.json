@@ -1728,7 +1728,7 @@
       ],
       "params":[
         {
-          "name":"part",
+          "name":"model_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -1741,7 +1741,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"CDeformableModelInstance*"
         },
         {
           "name":"property_name",
@@ -3734,7 +3734,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_baron.cpp_CBaronWeapon_FUN_00413e60",
+    "name":"core_baron.cpp_CBaronWeapon_fireProjectile_FUN_00413e60",
     "ret":"void",
     "vars":{
       "params":[
@@ -13266,7 +13266,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_colonel.cpp_CColonel_FUN_004405e0",
+    "name":"core_colonel.cpp_CColonel_drawGuns_FUN_004405e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -13285,6 +13285,22 @@
             ]
           },
           "type":"CColonel*"
+        },
+        {
+          "name":"drawn",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -26730,7 +26746,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_drone.cpp_CDrone_FUN_0048f560",
+    "name":"core_drone.cpp_CDrone_randomize_FUN_0048f560",
     "ret":"void",
     "vars":{
       "params":[
@@ -27736,7 +27752,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dynamite.cpp_CDynamite_FUN_0049cee0",
+    "name":"core_dynamite.cpp_CDynamite_getDamage_FUN_0049cee0",
     "ret":"float",
     "vars":{
       "locals":[
@@ -35305,7 +35321,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004ecce0",
+    "name":"core_gore.cpp_CBloodPool_FUN_004ecce0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -35565,6 +35581,24 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBloodPool*"
+        }
       ]
     }
   },
@@ -35579,8 +35613,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004ed160",
-    "ret":"void"
+    "name":"core_gore.cpp_CBloodPool_FUN_004ed160",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBloodPool*"
+        }
+      ]
+    }
   },
   {
     "addr":"004ed760",
@@ -35671,9 +35725,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_FUN_004edde0",
+    "name":"core_gore.cpp_CGore_FUN_004edde0",
     "ret":"CBloodPool*",
     "vars":{
+      "params":[
+        {
+          "name":"ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGore*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -35768,6 +35840,22 @@
             ]
           },
           "type":"CGore*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ],
       "ret_storage":{
@@ -36421,7 +36509,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hostage.cpp_CHostage_FUN_004f63e0",
+    "name":"core_hostage.cpp_CHostage_getGrabbed_FUN_004f63e0",
     "ret":"int",
     "vars":{
       "params":[
@@ -36440,6 +36528,38 @@
             ]
           },
           "type":"CHostage*"
+        },
+        {
+          "name":"grabber",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"grab_type",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -36639,7 +36759,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_icepick.cpp_CIcePick_FUN_004f9760",
+    "name":"core_icepick.cpp_CIcePick_areGunsDrawn_FUN_004f9760",
     "ret":"int",
     "vars":{
       "params":[
@@ -42828,8 +42948,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_FUN_005248e0",
-    "ret":"void"
+    "name":"core_mission.cpp_CDemonMission_FUN_005248e0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonMission*"
+        }
+      ]
+    }
   },
   {
     "addr":"00524e60",
@@ -42908,8 +43048,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mobster.cpp_CMobster_FUN_00527360",
-    "ret":"int",
+    "name":"core_mobster.cpp_CMobster_reset_FUN_00527360",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -42928,17 +43068,7 @@
           },
           "type":"CMobster*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -42952,7 +43082,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_moloch.cpp_CMoloch_FUN_005299e0",
+    "name":"core_moloch.cpp_CMoloch_areGunsDrawn_FUN_005299e0",
     "ret":"int",
     "vars":{
       "params":[
@@ -43279,7 +43409,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_FUN_0052b160",
+    "name":"core_morph.cpp_CMorphModel_FUN_0052b160",
     "ret":"void",
     "vars":{
       "locals":[
@@ -43330,6 +43460,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMorphModel*"
         }
       ]
     }
@@ -47008,7 +47156,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_newmsg.cpp_staticInit_FUN_00544360",
+    "name":"engine_ncursfx.cpp_staticInit_FUN_00544360",
     "ret":"void"
   },
   {
@@ -47022,7 +47170,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"support_newmsg.cpp_CMouse_dtor_FUN_005443e0",
+    "name":"engine_ncursfx.cpp_CMouse_dtor_FUN_005443e0",
     "ret":"CMouse*",
     "vars":{
       "params":[
@@ -62735,7 +62883,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c6660",
+    "name":"core_stranger.cpp_CStranger_drawGuns_FUN_005c6660",
     "ret":"void",
     "vars":{
       "params":[
@@ -62756,7 +62904,7 @@
           "type":"CStranger*"
         },
         {
-          "name":"unk",
+          "name":"drawn",
           "storage":{
             "offset":8,
             "size":4,
@@ -67924,7 +68072,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_weapon.cpp_CWeapon_FUN_005ee860",
+    "name":"core_weapon.cpp_CWeapon_onFired_FUN_005ee860",
     "ret":"void",
     "vars":{
       "params":[
@@ -69564,7 +69712,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_werewolf.cpp_CWerewolf_FUN_005f21e0",
+    "name":"core_werewolf.cpp_CWerewolf_randomize_FUN_005f21e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -71174,8 +71322,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_zombie.cpp_CZombie_FUN_005fc960",
-    "ret":"bool",
+    "name":"core_zombie.cpp_CZombie_canBeGrabbed_FUN_005fc960",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -71193,15 +71341,47 @@
             ]
           },
           "type":"CZombie*"
+        },
+        {
+          "name":"grabber",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"grab_type",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
-        "reg":"AL",
-        "size":1,
+        "reg":"EAX",
+        "size":4,
         "varnodes":[
           {
             "addr":"register:00000000",
-            "size":1
+            "size":4
           }
         ]
       }

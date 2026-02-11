@@ -41,7 +41,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_course.cpp_FUN_00443bc0 at 00443eb8
+;   core_course.cpp_CCourse_FUN_00443bc0 at 00443eb8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_x_0061944f

@@ -431,9 +431,10 @@ LAB_005f9541:
   iVar7 = *(int *)(this_ptr->unk4 + 0x3c);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar27 * fVar26 * fVar6;
-  if (((((this_ptr->base).base.model.part_visibility_flags[iVar7] == 0) &&
-       ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x34)] == 0)) ||
-      ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x48)] == 0)) &&
+  if (((((this_ptr->base).base.model.part_data.visibility_flags[iVar7] == 0) &&
+       ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x34)] == 0
+       )) || ((this_ptr->base).base.model.part_data.visibility_flags
+              [*(int *)(this_ptr->unk4 + 0x48)] == 0)) &&
      ((0.0 <= *(float *)(this_ptr->unk4 + 0x50) &&
       (fVar26 = *(float *)(this_ptr->unk4 + 0x50) + delta_time,
       *(float *)(this_ptr->unk4 + 0x50) = fVar26, (float)6 <= fVar26)))) {
@@ -478,8 +479,9 @@ LAB_005f9541:
         if (extraout_EAX != 0) {
           core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
         }
-        (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+        (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if (((this_ptr->base).victim == (CDemonActor *)0x0) && (local_38 != 0.0)) {
+          in_stack_fffffc54 = (CZombie *)0x5fa75e;
           iVar7 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                             (&g_HeroActors[g_LocalHeroIndex]->base);
           if (iVar7 == 0) goto LAB_005fa18b;
@@ -491,11 +493,13 @@ LAB_005f9541:
           iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk4 + 0x58));
           if (iVar7 == 0) {
             if (*(int *)this_ptr->unk4 == 0) {
+              in_stack_fffffc54 = (CZombie *)0x5fa79e;
               uVar18 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                  ((CDemonActor *)this_ptr,"zom-a0?.wav");
               *(uint *)(this_ptr->unk4 + 0x58) = uVar18;
             }
             else {
+              in_stack_fffffc54 = (CZombie *)0x5fa71f;
               uVar18 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                  ((CDemonActor *)this_ptr,"f-zombie-alert?.wav");
               *(uint *)(this_ptr->unk4 + 0x58) = uVar18;
@@ -505,12 +509,15 @@ LAB_005f9541:
       }
       else if (uVar9 < 2) {
         pCVar19 = (this_ptr->base).victim;
-        (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
-        if ((((this_ptr->base).victim == (CDemonActor *)0x0) && (local_38 != 0.0)) &&
-           (iVar7 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
-                              (&g_HeroActors[g_LocalHeroIndex]->base), iVar7 != 0)) {
-          g_CGamePtr->unk11 = 1;
-          (this_ptr->base).victim = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+        (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
+        if (((this_ptr->base).victim == (CDemonActor *)0x0) && (local_38 != 0.0)) {
+          in_stack_fffffc54 = (CZombie *)0x5fa7f1;
+          iVar7 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                            (&g_HeroActors[g_LocalHeroIndex]->base);
+          if (iVar7 != 0) {
+            g_CGamePtr->unk11 = 1;
+            (this_ptr->base).victim = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+          }
         }
         if ((this_ptr->base).victim == (CDemonActor *)0x0) {
           core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
@@ -536,10 +543,10 @@ LAB_005fa85e:
           core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
         }
         else {
-          cVar22 = (this_ptr->base).base.model.part_visibility_flags
+          cVar22 = (this_ptr->base).base.model.part_data.visibility_flags
                    [*(int *)(this_ptr->unk4 + 0x34)] != 0;
-          if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x3c)] !=
-              0) {
+          if ((this_ptr->base).base.model.part_data.visibility_flags
+              [*(int *)(this_ptr->unk4 + 0x3c)] != 0) {
             cVar22 = cVar22 + '\x01';
           }
           (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -788,7 +795,8 @@ LAB_005fac96:
             }
           }
           else if (uVar9 == 0x14) {
-            (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+            (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
+                      (&this_ptr->base,delta_time);
             pCVar19 = (this_ptr->base).victim;
             if (((pCVar19 != (CDemonActor *)0x0) &&
                 (fVar26 = (pCVar1->position).x - (pCVar19->location).position.x,
@@ -797,6 +805,7 @@ LAB_005fac96:
                 SQRT(fVar6 * fVar6 + fVar26 * fVar26) <= (float)3)) &&
                (ABS((this_ptr->base).base.base.location.position.y - (pCVar19->location).position.y)
                 <= (float)2)) {
+              in_stack_fffffc54 = (CZombie *)0x0;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar2->motion_controller,0,1);
             }
@@ -808,9 +817,10 @@ LAB_005fac96:
                           (&g_HeroActors[g_LocalHeroIndex]->base);
         if ((iVar7 == 0) &&
            (in_stack_fffffc54 = (CZombie *)delta_time,
-           (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)(),
-           (this_ptr->base).victim != (CDemonActor *)0x0)) {
+           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
+                     (&this_ptr->base,delta_time), (this_ptr->base).victim != (CDemonActor *)0x0)) {
 LAB_005fa279:
+          in_stack_fffffc54 = (CZombie *)0x0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0,1);
         }
@@ -823,7 +833,7 @@ LAB_005fa279:
         this_ptr->unk4[0x61] = '\0';
         this_ptr->unk4[0x62] = '\0';
         this_ptr->unk4[99] = '\0';
-        (*(pCVar5->_ue).enemyfunc2)();
+        (*(pCVar5->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar19 = (this_ptr->base).victim;
         if (pCVar19 != (CDemonActor *)0x0) {
           local_254 = (pCVar1->position).x - (pCVar19->location).position.x;
@@ -866,6 +876,7 @@ LAB_005fa279:
                                             (this_ptr->base).base.collision_cylinder_bottom),
                                     (void *)((this_ptr->base).base.base.location.position.y +
                                             local_30));
+              in_stack_fffffc54 = (CZombie *)0x5fa431;
               local_14 = local_18;
               core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
               if ((float)local_18 < 1.0) break;
@@ -1032,7 +1043,7 @@ LAB_005f9f22:
   }
   if ((this_ptr->base).pool_me == 0) {
     iVar7 = *(int *)(this_ptr->unk4 + 0x44);
-    if ((this_ptr->base).base.model.part_visibility_flags[iVar7] == 0) {
+    if ((this_ptr->base).base.model.part_data.visibility_flags[iVar7] == 0) {
       iVar10 = *(int *)(this_ptr->unk4 + 0x2c);
       fVar26 = 0.5;
     }
@@ -1040,7 +1051,8 @@ LAB_005f9f22:
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
                 ((CCharacter *)this_ptr,*(int *)(this_ptr->unk4 + 0x30),
                  *(int *)(this_ptr->unk4 + 0x18),0.2);
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x30)] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x30)] !=
+          0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
                   ((CCharacter *)this_ptr,*(int *)(this_ptr->unk4 + 0x34),
                    *(int *)(this_ptr->unk4 + 0x10),0.2);
@@ -1048,7 +1060,8 @@ LAB_005f9f22:
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
                 ((CCharacter *)this_ptr,*(int *)(this_ptr->unk4 + 0x38),
                  *(int *)(this_ptr->unk4 + 0x1c),0.2);
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x38)] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x38)] !=
+          0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
                   ((CCharacter *)this_ptr,*(int *)(this_ptr->unk4 + 0x3c),
                    *(int *)(this_ptr->unk4 + 0x14),0.2);
@@ -1060,12 +1073,13 @@ LAB_005f9f22:
     core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810
               ((CCharacter *)this_ptr,iVar7,iVar10,fVar26);
     if ((*(int *)(this_ptr->unk4 + 0x40) < 0) &&
-       ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x44)] != 0)) {
-      (this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x44)] = 0;
+       ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x44)] != 0
+       )) {
+      (this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x44)] = 0;
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
                 ((CCharacter *)this_ptr,*(int *)(this_ptr->unk4 + 0x44),
                  *(int *)(this_ptr->unk4 + 0x2c),0.2);
-      (this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x44)] = 1;
+      (this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x44)] = 1;
     }
     core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670((CCharacter *)this_ptr);
   }

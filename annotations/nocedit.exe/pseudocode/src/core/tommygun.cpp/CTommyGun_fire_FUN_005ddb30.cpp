@@ -51,14 +51,13 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   CGlass *pCStack_18;
   float fStack_14;
   
-  fVar1 = *(float *)((this_ptr->base).unk2 + 0xc);
+  fVar1 = (this_ptr->base).fire_cooldown_timer;
   this_ptr->unk = 2;
   if (0.0 < fVar1) {
     return 0;
   }
   pCVar2 = (this_ptr->base).base.vtable._uc;
-  *(float *)((this_ptr->base).unk2 + 0xc) = *(float *)((this_ptr->base).unk2 + 0xc) + 0.1f
-  ;
+  (this_ptr->base).fire_cooldown_timer = (this_ptr->base).fire_cooldown_timer + 0.1f;
   pCVar3 = (CVector3f *)(*(pCVar2->_uc).canWalk)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_80,pCVar3);
@@ -203,7 +202,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
       in_stack_fffffebc = 0x5de221;
       (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)
                 (this_ptr_01,(SDamageInfo *)auStack_130);
-      if (*(int *)((this_ptr->base).unk1 + 0xc) == 0) goto LAB_005ddd4e;
+      if ((this_ptr->base).can_penetrate == 0) goto LAB_005ddd4e;
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
     }
@@ -211,7 +210,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
     if (3 < (int)fStack_1c) {
 LAB_005ddd4e:
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
-      if ((this_ptr->base).unk4 != 0) {
+      if ((this_ptr->base).is_rendered != 0) {
         fStack_98 = CStack_80.x;
         fStack_90 = CStack_80.z;
         fStack_94 = CStack_80.y + -0.125f;

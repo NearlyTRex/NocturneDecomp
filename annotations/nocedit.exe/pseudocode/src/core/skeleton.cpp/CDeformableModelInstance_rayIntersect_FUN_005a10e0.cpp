@@ -15,7 +15,7 @@ core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0
   float fVar2;
   int lod_index;
   CVector3i *skinned_vertices;
-  int *part_visibility_flags;
+  SPartInstanceData *part_visibility_flags;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   lod_index = pCVar1->num_lods + -2;
@@ -25,7 +25,7 @@ core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0
   if (lod_index != this_ptr->cached_skinned_lod_index) {
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr,lod_index);
   }
-  part_visibility_flags = this_ptr->part_visibility_flags;
+  part_visibility_flags = &this_ptr->part_data;
   skinned_vertices = this_ptr->skinned_vertices_buffer;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   fVar2 = core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0

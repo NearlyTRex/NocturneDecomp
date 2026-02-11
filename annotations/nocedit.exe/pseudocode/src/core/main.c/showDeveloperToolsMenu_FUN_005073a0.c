@@ -16,12 +16,12 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   int iVar5;
   CKeyFramedModel *this_ptr;
   CKeyFramedModel *pCVar6;
-  void *pvVar7;
+  CMorphModel *a;
   CMorphModel *this_ptr_00;
   void *ptr;
   CMorphModel *extraout_EAX;
   _FILE *output_file;
-  byte bVar8;
+  byte bVar7;
   int aiStackY_1008 [690];
   char *directory;
   char *mode;
@@ -37,7 +37,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   char local_20 [4];
   int aiStack_1c [3];
   
-  bVar8 = 0;
+  bVar7 = 0;
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
                     (&g_CDemonFileManagerInstance.base);
   if (iVar1 == 0) {
@@ -116,10 +116,10 @@ LAB_0050740e:
                       (&g_CDemonFileManagerInstance);
           }
           else if (uVar2 == 0x42) {
-            pvVar7 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc2c,"..\\core\\main.c",0x292);
+            a = (CMorphModel *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc2c,"..\\core\\main.c",0x292);
             this_ptr_00 = (CMorphModel *)0x0;
-            if (pvVar7 != (void *)0x0) {
-              core_morph_cpp_FUN_0052b310();
+            if (a != (CMorphModel *)0x0) {
+              core_morph_cpp_FUN_0052b310(a);
               this_ptr_00 = extraout_EAX;
             }
             if (this_ptr_00 != (CMorphModel *)0x0) {
@@ -153,9 +153,9 @@ LAB_0050740e:
           local_20[1] = "memdump.txt"[1];
           local_20[2] = "memdump.txt"[2];
           local_20[3] = "memdump.txt"[3];
-          aiStack_1c[(uint)bVar8 * -2] = *(int *)("memdump.txt" + (uint)bVar8 * -8 + 4);
-          aiStack_1c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-               *(int *)("memdump.txt" + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+          aiStack_1c[(uint)bVar7 * -2] = *(int *)("memdump.txt" + (uint)bVar7 * -8 + 4);
+          aiStack_1c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+               *(int *)("memdump.txt" + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
           output_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                   (pcVar3,directory,mode,source_file,iVar1);
           if (output_file == (_FILE *)0x0) {

@@ -43,7 +43,7 @@ section .text
     ADD EAX,0x3fea0                     ; 0051f1ed
     PUSH EAX                            ; 0051f1f2
     CALL core_morph.cpp_FUN_0052b310    ; 0051f1f3
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
     LEA EDX,[EAX + 0xfffb41dc]          ; 0051f1f8
     MOV dword ptr [EDX + 0x154],0x661424 ; 0051f1fe | g_CMimicVTable
     MOV dword ptr [EDX + 0x2ddc],0x3f000000 ; 0051f208

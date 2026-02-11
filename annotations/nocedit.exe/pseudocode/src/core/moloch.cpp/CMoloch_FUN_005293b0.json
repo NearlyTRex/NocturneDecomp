@@ -2,16 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 16,
+        "category": "incompatible_types",
+        "column": 15,
         "line": 62,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 81,
-        "line": 62,
-        "message": "called object type 'void' is not a function or function pointer"
+        "message": "assigning to 'int' from incompatible type 'void'"
       }
     ],
     "success": false,
@@ -19,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 304,
-    "complexity_score": 217,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 137,
+    "pseudocode_lines": 138,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 441
+    "total_lines": 442
   },
   "cross_references": [
     {
@@ -272,35 +266,35 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 59,
       "match": "in_stack_00000008",
       "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 132,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 * (float)3.1415926535000001 < local_74) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 133,
       "match": "in_stack_00000008",
       "text": "local_74 = in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 135,
       "match": "in_stack_00000008",
       "text": "if (local_74 < in_stack_00000008 * (float)-3.1415926535000001) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 136,
       "match": "in_stack_00000008",
       "text": "local_74 = in_stack_00000008 * (float)-3.1415926535000001;",
       "type": "stack_param"

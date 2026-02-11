@@ -38,6 +38,6 @@ CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(pCVar7[-0x18].filenames[2] + 0x10),0);
   pCVar9 = (CHero *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                              ((CDemonActor *)(pCVar8[-1].part_visibility_flags + 7),1);
+                              ((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 7),1);
   return pCVar9;
 }

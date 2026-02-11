@@ -27,9 +27,9 @@ void __cdecl CWerewolf::setup(CWerewolf *this_ptr);
 // Address: 005efde0
 void __cdecl CWerewolf::process(CWerewolf *this_ptr,float delta_time);
 
-// Original: core_werewolf.cpp_CWerewolf_FUN_005f11a0
+// Original: core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_005f11a0
 // Address: 005f11a0
-void __cdecl CWerewolf(CWerewolf *this_ptr);
+void __cdecl CWerewolf::setWalkTarget(CWerewolf *this_ptr,CDemonActor *target,float speed,float distance);
 
 // Original: core_werewolf.cpp_CWerewolf_FUN_005f11e0
 // Address: 005f11e0
@@ -75,9 +75,9 @@ int __cdecl CWerewolf::propertyActionCallback(CWerewolf *this_ptr,CActorProperty
 // Address: 005f20d0
 void __cdecl CWerewolf::getPropertyList(CWerewolf *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_werewolf.cpp_CWerewolf_FUN_005f21e0
+// Original: core_werewolf.cpp_CWerewolf_randomize_FUN_005f21e0
 // Address: 005f21e0
-void __cdecl CWerewolf(CWerewolf *this_ptr);
+void __cdecl CWerewolf::randomize(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_addFilesToExtract_FUN_005f21f0
 // Address: 005f21f0

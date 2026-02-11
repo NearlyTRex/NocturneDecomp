@@ -255,9 +255,9 @@ void __cdecl CGunFlame::initProcess(CGunFlame *this_ptr);
 // Address: 004c4c00
 void __cdecl CGunFlame(CGunFlame *this_ptr);
 
-// Original: core_fire.cpp_loadGunFlameTextures_FUN_004c4d50
+// Original: core_fire.cpp_loadGunFlameAssets_FUN_004c4d50
 // Address: 004c4d50
-void __cdecl loadGunFlameTextures(void);
+void __cdecl loadGunFlameAssets(void);
 
 // Original: core_fire.cpp_CGunFlame_reset_FUN_004c4da0
 // Address: 004c4da0

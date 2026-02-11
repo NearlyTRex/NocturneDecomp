@@ -644,56 +644,44 @@ LAB_004f50f1:
         (local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                               (&pCVar2->motion_controller,0x10), local_18 <= 0.0)) ||
        (local_4c != 0)) {
-      fVar5 = delta_time / local_48 + *(float *)(this_ptr->unk4 + 4);
+      fVar5 = delta_time / local_48 + (float)this_ptr->unk5;
     }
     else {
-      fVar5 = *(float *)(this_ptr->unk4 + 4) - delta_time / local_48;
+      fVar5 = (float)this_ptr->unk5 - delta_time / local_48;
     }
-    *(float *)(this_ptr->unk4 + 4) = fVar5;
-    if (0.0 < *(float *)(this_ptr->unk4 + 4)) {
-      if (1.0 < *(float *)(this_ptr->unk4 + 4)) {
-        this_ptr->unk4[4] = '\0';
-        this_ptr->unk4[5] = '\0';
-        this_ptr->unk4[6] = -0x80;
-        this_ptr->unk4[7] = '?';
+    this_ptr->unk5 = (int)fVar5;
+    if (0.0 < (float)this_ptr->unk5) {
+      if (1.0 < (float)this_ptr->unk5) {
+        this_ptr->unk5 = 0x3f800000;
       }
       pCVar2 = &(this_ptr->base).base.model;
       local_58 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
                            (&pCVar2->motion_controller,DAT_02db8888,
-                            *(float *)this_ptr->unk4 * (float)0.65000000000000002 +
-                            (float)0.34999999999999998);
+                            (float)this_ptr->unk4 * (float)0.65000000000000002 + (float)0.34999999999999998)
+      ;
       local_18 = local_58;
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                (pCVar2,DAT_02db8888,local_58,*(float *)(this_ptr->unk4 + 4),
-                 *(int *)(this_ptr->unk3 + 4),core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+                (pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 4),
+                 core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                (pCVar2,DAT_02db8888,local_58,*(float *)(this_ptr->unk4 + 4),
-                 *(int *)(this_ptr->unk3 + 8),core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
-      if (((1.0 <= *(float *)(this_ptr->unk4 + 4)) && (0.0 < *(float *)this_ptr->unk4)) &&
-         (fVar5 = delta_time / local_54 + *(float *)this_ptr->unk4, *(float *)this_ptr->unk4 = fVar5
-         , 1.0 < fVar5)) {
-        this_ptr->unk4[0] = '\0';
-        this_ptr->unk4[1] = '\0';
-        this_ptr->unk4[2] = -0x80;
-        this_ptr->unk4[3] = '?';
+                (pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 8),
+                 core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+      if (((1.0 <= (float)this_ptr->unk5) && (0.0 < (float)this_ptr->unk4)) &&
+         (fVar5 = delta_time / local_54 + (float)this_ptr->unk4, this_ptr->unk4 = (int)fVar5,
+         1.0 < fVar5)) {
+        this_ptr->unk4 = 0x3f800000;
       }
     }
     else {
-      this_ptr->unk4[0] = '\0';
-      this_ptr->unk4[1] = '\0';
-      this_ptr->unk4[2] = '\0';
-      this_ptr->unk4[3] = '\0';
-      this_ptr->unk4[4] = '\0';
-      this_ptr->unk4[5] = '\0';
-      this_ptr->unk4[6] = '\0';
-      this_ptr->unk4[7] = '\0';
+      this_ptr->unk4 = 0;
+      this_ptr->unk5 = 0;
     }
   }
   core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
             ((CCharacter *)this_ptr,delta_time,uVar15);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
             ((CCharacter *)this_ptr,delta_time,(float)this_ptr_01);
-  if ((1.0 <= *(float *)this_ptr->unk4) &&
+  if ((1.0 <= (float)this_ptr->unk4) &&
      (pCVar19 = (CCharacter *)
                 core_actor_cpp_castToClassHash_FUN_0040c790
                           ((this_ptr->base).base.carry_hands[1].carry_actor,
@@ -704,14 +692,8 @@ LAB_004f50f1:
     (pCVar19->model).transformed_vertices[0x4f].z = fVar5;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,0xc,1);
-    this_ptr->unk4[4] = '\0';
-    this_ptr->unk4[5] = '\0';
-    this_ptr->unk4[6] = '\0';
-    this_ptr->unk4[7] = '\0';
-    this_ptr->unk4[0] = '\0';
-    this_ptr->unk4[1] = '\0';
-    this_ptr->unk4[2] = '\0';
-    this_ptr->unk4[3] = '\0';
+    this_ptr->unk5 = 0;
+    this_ptr->unk4 = 0;
   }
   if (((*(int *)this_ptr->unk2 == 1) &&
       (pCVar18 = core_actor_cpp_castToClassHash_FUN_0040c790
@@ -719,10 +701,7 @@ LAB_004f50f1:
                             g_CWeaponClassInfo.name_hash), pCVar18 != (CDemonActor *)0x0)) &&
      (iVar14 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                          (g_CEventListPtr,"deputeFireShotgun"), iVar14 != 0)) {
-    this_ptr->unk4[0] = '\n';
-    this_ptr->unk4[1] = -0x29;
-    this_ptr->unk4[2] = '#';
-    this_ptr->unk4[3] = '<';
+    this_ptr->unk4 = 0x3c23d70a;
     return;
   }
   return;

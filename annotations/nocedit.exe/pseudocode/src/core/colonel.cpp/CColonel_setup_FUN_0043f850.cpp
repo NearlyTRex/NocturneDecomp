@@ -48,9 +48,6 @@ void __cdecl core_colonel_cpp_CColonel_setup_FUN_0043f850(CColonel *this_ptr)
                            (this_ptr_00,"Bip01 Spine2");
   INT_0083b164 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Spine");
-  this_ptr->unk[0] = '\0';
-  this_ptr->unk[1] = '\0';
-  this_ptr->unk[2] = '\0';
-  this_ptr->unk[3] = '\0';
+  this_ptr->guns_drawn = 0;
   return;
 }

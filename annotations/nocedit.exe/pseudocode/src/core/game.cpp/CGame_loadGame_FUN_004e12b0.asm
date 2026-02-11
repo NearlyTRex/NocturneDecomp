@@ -742,7 +742,7 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 004e1a51 | g_CGorePtr
     PUSH EDI                            ; 004e1a57 | g_CGoreInstance
     CALL core_gore.cpp_CGore_FUN_004ee1e0 ; 004e1a58
-        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee1e0(CGore * this_ptr)
+        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee1e0(CGore * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e1a5d
     CMP dword ptr [ESP + 0x604],0x7     ; 004e1a60
         ;   Label: LAB_004e1a60

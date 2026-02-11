@@ -39,13 +39,13 @@ void __cdecl CGhoul::renderBackground(CGhoul *this_ptr,int layer_flag);
 // Address: 004e81c0
 void __cdecl CGhoul::archive(CGhoul *this_ptr);
 
-// Original: core_ghoul.cpp_CGhoul_FUN_004e82d0
+// Original: core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0
 // Address: 004e82d0
-int __cdecl CGhoul(CGhoul *this_ptr);
+int __cdecl CGhoul::canBeAttracted(CGhoul *this_ptr,CVector3f *param_2);
 
-// Original: core_ghoul.cpp_CGhoul_FUN_004e84a0
+// Original: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
 // Address: 004e84a0
-CVector3f * __cdecl CGhoul(CGhoul *this_ptr);
+CVector3f * __cdecl CGhoul::getTargetPoint(CGhoul *this_ptr,CVector3f *out_point);
 
 // Original: core_ghoul.cpp_CGhoul_FUN_004e8520
 // Address: 004e8520
@@ -63,9 +63,9 @@ int __cdecl CGhoul::getTargetPoints(CGhoul *this_ptr,CVector3f *out_points_array
 // Address: 004e8dc0
 void __cdecl CGhoul::getPropertyList(CGhoul *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_ghoul.cpp_CGhoul_FUN_004e8e40
+// Original: core_ghoul.cpp_CGhoul_randomize_FUN_004e8e40
 // Address: 004e8e40
-void __cdecl CGhoul(CGhoul *this_ptr);
+void __cdecl CGhoul::randomize(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_CGhoul_addFilesToExtract_FUN_004e8ee0
 // Address: 004e8ee0

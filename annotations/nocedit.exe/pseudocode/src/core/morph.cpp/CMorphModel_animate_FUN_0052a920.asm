@@ -9,9 +9,9 @@
 ; XREF[5]:
 ;   core_morph.cpp_CMorphModel_FUN_0052a710 at 0052a801
 ;   core_morph.cpp_CMorphModel_FUN_0052aa00 at 0052aa1d
+;   core_morph.cpp_CMorphModel_FUN_0052aa30 at 0052aa71
+;   core_morph.cpp_CMorphModel_FUN_0052aa80 at 0052aaa8
 ;   core_morph.cpp_CMorphModel_addPart_FUN_0052a580 at 0052a69b
-;   core_morph.cpp_FUN_0052aa30 at 0052aa71
-;   core_morph.cpp_FUN_0052aa80 at 0052aaa8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0063a229

@@ -168,7 +168,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
       grab_type = 6.29812e-39;
       (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)
                 (this_ptr_01,(SDamageInfo *)auStack_dc);
-      if (*(int *)((this_ptr->base).unk1 + 0xc) == 0) break;
+      if ((this_ptr->base).can_penetrate == 0) break;
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
     }
@@ -186,9 +186,6 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   pCStack_ac = (CCrossbow *)(CStack_90.z + fStack_58);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"bow-!.wav",&CStack_6c);
-  (this_ptr->base).unk2[0xc] = -6;
-  (this_ptr->base).unk2[0xd] = '~';
-  (this_ptr->base).unk2[0xe] = '*';
-  (this_ptr->base).unk2[0xf] = '?';
+  (this_ptr->base).fire_cooldown_timer = 0.666;
   return 1;
 }

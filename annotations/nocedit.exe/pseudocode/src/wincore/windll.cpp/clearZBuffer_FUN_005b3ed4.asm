@@ -7,7 +7,7 @@
 ; XREF[19]:
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043ca9f
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d6d9
-;   core_course.cpp_FUN_00443bc0 at 00443ccf
+;   core_course.cpp_CCourse_FUN_00443bc0 at 00443ccf
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 at 0044c658
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047ccab
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 at 0052a2cc

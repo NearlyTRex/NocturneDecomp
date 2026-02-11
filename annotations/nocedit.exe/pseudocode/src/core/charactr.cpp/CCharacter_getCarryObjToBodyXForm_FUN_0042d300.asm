@@ -10,7 +10,7 @@
 ; undefined1       Stack[-0x38]:1  local_38
 ;
 ; XREF[1]:
-;   core_hostage.cpp_CHostage_FUN_004f6550 at 004f69a3
+;   core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550 at 004f69a3
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10

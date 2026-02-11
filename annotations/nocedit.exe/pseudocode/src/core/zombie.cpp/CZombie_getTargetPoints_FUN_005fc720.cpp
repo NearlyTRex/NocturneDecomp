@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl
 core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_ptr,CVector3f *out_points_array)
 
@@ -36,7 +38,8 @@ core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_ptr,CVector3f
   do {
     switch((local_18 + (this_ptr->base).base.base.direction_hint) % 4) {
     case 0:
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x30)] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x30)] !=
+          0) {
         bone_index = *(int *)(this_ptr->unk4 + 0x18);
         pCVar1 = &local_24;
 LAB_005fc7ac:
@@ -60,14 +63,16 @@ LAB_005fc82e:
       }
       break;
     case 1:
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x38)] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x38)] !=
+          0) {
         bone_index = *(int *)(this_ptr->unk4 + 0x1c);
         pCVar1 = &local_54;
         goto LAB_005fc7ac;
       }
       break;
     case 2:
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x48)] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x48)] !=
+          0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr_00,&local_3c,*(int *)(this_ptr->unk4 + 4));
         pCVar2 = out_points_array + iVar3;
@@ -80,7 +85,8 @@ LAB_005fc82e:
       }
       break;
     case 3:
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk4 + 0x44)] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk4 + 0x44)] !=
+          0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr_00,&local_60,*(int *)(this_ptr->unk4 + 0x2c));
         pCVar2 = out_points_array + iVar3;

@@ -12,23 +12,23 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f5ff0(CHostage *this_ptr,float delt
 
 {
   float fVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CVector3f *pCVar3;
   CVector3f local_20;
   CVector3f local_14;
   float local_8;
   
-  if (*(int *)(this_ptr->unk4 + 8) == 0) {
+  if (this_ptr->grabber == (CDemonActor *)0x0) {
     return 0;
   }
-  fVar1 = *(float *)(this_ptr->unk4 + 0xc) - delta_time;
-  *(float *)(this_ptr->unk4 + 0xc) = fVar1;
+  fVar1 = this_ptr->unk6 - delta_time;
+  this_ptr->unk6 = fVar1;
   if ((0.0 < fVar1) &&
      (*(float *)((this_ptr->base).base.field53_0x2dc4 + 0x10) <= (float)1.5)) {
-    iVar2 = *(int *)(this_ptr->unk4 + 8);
-    local_20.x = (this_ptr->base).base.base.location.position.x - *(float *)(iVar2 + 0x20);
-    local_20.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar2 + 0x24);
-    local_20.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar2 + 0x28);
+    pCVar2 = this_ptr->grabber;
+    local_20.x = (this_ptr->base).base.base.location.position.x - (pCVar2->location).position.x;
+    local_20.y = (this_ptr->base).base.base.location.position.y - (pCVar2->location).position.y;
+    local_20.z = (this_ptr->base).base.base.location.position.z - (pCVar2->location).position.z;
     pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_14,&local_20);
     local_8 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                         (pCVar3->y - (this_ptr->base).base.base.orient.vec.y);
@@ -44,10 +44,7 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f5ff0(CHostage *this_ptr,float delt
               (&(this_ptr->base).base.model.motion_controller,2,1);
     return 1;
   }
-  this_ptr->unk4[8] = '\0';
-  this_ptr->unk4[9] = '\0';
-  this_ptr->unk4[10] = '\0';
-  this_ptr->unk4[0xb] = '\0';
+  this_ptr->grabber = (CDemonActor *)0x0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             (&(this_ptr->base).base.model.motion_controller,0,1);
   return 0;

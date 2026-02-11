@@ -5,6 +5,7 @@ struct CCharacter_full_vtable;
 struct CDemonActor_vtable;
 struct CEnemy_full_vtable;
 struct CHero_full_vtable;
+struct CWeapon_full_vtable;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -15,5 +16,6 @@ typedef union UActorVTable {
     struct CCharacter_full_vtable* _uc;
     struct CEnemy_full_vtable* _ue;
     struct CHero_full_vtable* _uh;
+    struct CWeapon_full_vtable* _uw;
 } UActorVTable;
 

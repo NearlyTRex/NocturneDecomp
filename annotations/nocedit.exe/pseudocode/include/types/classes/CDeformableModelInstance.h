@@ -10,6 +10,7 @@ struct CVector3i;
 #include "types/classes/CMotionController.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SBoneTransformData.h"
+#include "types/structs/SPartInstanceData.h"
 
 // Structure: CDeformableModelInstance
 // Ghidra size: 0x22b4 (8884 bytes)
@@ -20,8 +21,7 @@ typedef struct CDeformableModelInstance {
     CVector3f scaled_model_dimensions; // 0x508
     float rest_pose_data[100]; // 0x514
     SBoneTransformData bone_transform; // 0x6a4
-    int part_visibility_flags[30]; // 0x2140
-    int texture_set_indices[30]; // 0x21b8
+    SPartInstanceData part_data; // 0x2140
     int cached_skinned_lod_index; // 0x2230
     struct CVector3i* skinned_vertices_buffer; // 0x2234
     CBoundingBox3D bounding_box; // 0x2238

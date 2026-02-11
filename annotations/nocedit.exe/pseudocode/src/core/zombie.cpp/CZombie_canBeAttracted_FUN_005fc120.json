@@ -1,0 +1,270 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 90,
+    "complexity_score": 93,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 38,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 128
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005fc120",
+    "address_range": [
+      [
+        "005fc120",
+        "005fc1fc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_zombie.cpp_CZombie_canBeAttracted_FUN_005fc120",
+    "signature": "int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0052dd20",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20"
+    },
+    {
+      "addr": "0059fb00",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006589b5",
+      "name": "FLOAT_006589b5",
+      "type": "float",
+      "value": "0.5"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.234567901234568,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 186,
+      "FLOAT2FLOAT": 14,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 40,
+      "INT_AND": 23,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 22,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 28
+    },
+    "pcode_op_count": 424
+  },
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 80,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_2",
+      "text": "if (param_2 != pCVar1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "text": "param_2->x = pCVar1->x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "text": "param_2->y = pCVar1->y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "text": "param_2->z = pCVar1->z;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CZombie",
+        "offset": 296,
+        "vtable_addr": "006659e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

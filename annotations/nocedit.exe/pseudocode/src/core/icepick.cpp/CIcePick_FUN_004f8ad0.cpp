@@ -9,7 +9,7 @@
 int __cdecl core_icepick_cpp_CIcePick_FUN_004f8ad0(CIcePick *this_ptr)
 
 {
-  if (*(int *)(this_ptr->unk + 0x20) == 0) {
+  if (*(int *)(this_ptr->unk + 0x1c) == 0) {
     return 0;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

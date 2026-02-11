@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 11,
-        "line": 58,
+        "line": 55,
         "message": "statement requires expression of integer type ('float' invalid)"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 62,
+        "line": 59,
         "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 81,
+        "line": 78,
         "message": "use of undeclared identifier 'stack0x00000008'; did you mean 'in_stack_00000008'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 90,
+        "line": 87,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 90,
+        "line": 87,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 108,
+        "line": 101,
         "message": "C-style cast from 'CMotionController *' to 'float' is not allowed"
       }
     ],
@@ -43,11 +43,11 @@
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 286,
+    "complexity_score": 279,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 116,
+    "pseudocode_lines": 109,
     "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
@@ -57,7 +57,7 @@
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 359
+    "total_lines": 352
   },
   "cross_references": [
     {
@@ -256,70 +256,70 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 44,
       "match": "in_stack_00000008",
       "text": "while (0.0 < in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 55,
+      "line": 52,
       "match": "1.12104e-44",
       "text": "case 1.12104e-44:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 62,
+      "line": 59,
       "match": "1.12104e-44",
       "text": "((this_ptr_00->model).transformed_vertices[0x19].y != 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 68,
+      "line": 65,
       "match": "1.12104e-44",
       "text": "if ((pCVar5->model).transformed_vertices[0x19].y != 1.12104e-44) goto LAB_00558263;",
       "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
-      "line": 74,
+      "line": 71,
       "match": "&stack0x00000008",
       "text": "((CCharacter *)this_ptr,&stack0x00000008,(int)pCVar5);",
       "type": "stack_ref"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 81,
+      "line": 78,
       "match": "1.12104e-44",
       "text": "((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 83,
+      "line": 80,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 0xf0))();",
+      "text": "(**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xf0))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 91,
+      "line": 85,
       "match": "1.12104e-44",
       "text": "((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 104,
+      "line": 97,
       "match": "unaff_EDI",
       "text": "this_ptr_01 = unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 105,
+      "line": 98,
       "match": "unaff_EDI",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(unaff_EDI,6,1);",
       "type": "unaffected_reg"

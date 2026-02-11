@@ -164,7 +164,7 @@ section .text
     LEA ESI,[EBX + 0x420]               ; 00504fde
     PUSH ESI                            ; 00504fe4
     CALL core_actor.cpp_archiveRules_FUN_0040c000 ; 00504fe5
-        ;   XREF to: 0040c000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveRules_FUN_0040c000(void * rules, char * property_name)
+        ;   XREF to: 0040c000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveRules_FUN_0040c000(CRuleList * rules, char * property_name)
     ADD ESP,0x8                         ; 00504fea
     CMP dword ptr [0x0067cfb4],0x7      ; 00504fed | g_CLeverClassVersion
         ;   Label: LAB_00504fed

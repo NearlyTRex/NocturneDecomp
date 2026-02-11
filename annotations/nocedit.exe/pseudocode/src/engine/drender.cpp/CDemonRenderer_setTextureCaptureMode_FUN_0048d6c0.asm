@@ -13,7 +13,7 @@
 ;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d1b0 at 0041d1ff
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 at 00485d45
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 at 004ff151
-;   core_morph.cpp_FUN_0052b160 at 0052b174
+;   core_morph.cpp_CMorphModel_FUN_0052b160 at 0052b174
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005971ac
 ;
 ; Referenced Globals:

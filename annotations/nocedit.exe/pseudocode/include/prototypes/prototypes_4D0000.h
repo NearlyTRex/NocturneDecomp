@@ -12,9 +12,11 @@
 #include "types/classes/CFrankenstienMachine.h"
 #include "types/classes/CGabriella.h"
 #include "types/classes/CGame.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EAmmoType.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SHardwareEdge.h"
 #include "types/structs/SPlayerControl.h"
 #include "types/structs/SRenderVertex.h"
@@ -89,12 +91,12 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *t
 int __cdecl core_gabriela_cpp_CGabriella_renderTransparent_FUN_004d6230(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_CGabriella_FUN_004d6260(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6540(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30 (CGabriella *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6f80(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d7120(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_CGabriella_FUN_004d7590(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d75b0(CGabriella *this_ptr);
+void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+int __cdecl core_gabriela_cpp_CGabriella_areGunsDrawn_FUN_004d7590(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_drawGun_FUN_004d75b0(CGabriella *this_ptr,int drawn);
 void __cdecl core_gabriela_cpp_CGabriella_onActorDeleted_FUN_004d75e0 (CGabriella *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_gabriela_cpp_CGabriella_getPropertyList_FUN_004d7610 (CGabriella *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_gabriela_cpp_CGabriella_addFilesToExtract_FUN_004d7630(CGabriella *this_ptr,_FILE *file_handle);

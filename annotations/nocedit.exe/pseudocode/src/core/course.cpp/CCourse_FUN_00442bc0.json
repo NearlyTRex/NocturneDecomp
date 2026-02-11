@@ -4,20 +4,14 @@
       {
         "category": "format_error",
         "column": 23,
-        "line": 31,
+        "line": 30,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 36,
+        "line": 35,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 55,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -25,16 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 77,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 11,
-    "pseudocode_lines": 52,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 233
+    "pseudocode_lines": 51,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 232
   },
   "cross_references": [
     {
@@ -54,7 +46,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_course.cpp_CCourse_FUN_00442bc0",
-    "signature": "int __cdecl core_course_cpp_CCourse_FUN_00442bc0(CCourse *this_ptr)"
+    "signature": "int __cdecl core_course_cpp_CCourse_FUN_00442bc0(CCourse *this_ptr,char *filename)"
   },
   "function_calls": [
     {
@@ -198,10 +190,10 @@
     "pcode_op_count": 601
   },
   "stack_frame": {
-    "frame_size": 396,
+    "frame_size": 400,
     "local_size": 392,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -238,23 +230,15 @@
         "offset": 4,
         "size": 4,
         "type": "CCourse *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,(char *)0x0,\"rt\",\"..\\\\core\\\\course.cpp\",0x14b);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

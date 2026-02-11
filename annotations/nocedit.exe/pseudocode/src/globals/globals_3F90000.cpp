@@ -17,6 +17,9 @@ CDemonActorType g_CWeaponClassInfo = {};
 CDemonActorType g_CWerewolfClassInfo = {};
 CDemonActorType g_CZombieClassInfo = {};
 
+// CDemonGlobe
+CDemonGlobe DAT_03f95d7c = {};
+
 // CRITICAL_SECTION[64]
 CRITICAL_SECTION g_StaticCriticalSectionArray[64] = {};
 
@@ -143,8 +146,6 @@ float FLOAT_03f96b58 = {};
 int g_RenderingInProgress = {};
 int g_GraphicsResetFlag = {};
 int g_UseSoftwareRendering = {};
-int INT_03f95d9c = {};
-int INT_03f95db8 = {};
 int g_AccumulatedGameTime = {};
 int g_InputReadIndex = {};
 int g_InputWriteIndex = {};

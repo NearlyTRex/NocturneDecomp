@@ -155,6 +155,7 @@ extern CParticle_vtable g_CGlassParticleVTable;
 extern CParticle_vtable g_CRockVTable;
 extern CParticle_vtable g_CFireballVTable;
 extern CParticle_vtable g_CSparkVTable;
+extern CParticle_vtable g_CBloodParticleVTable;
 
 // CStrList_vtable
 extern CStrList_vtable g_CStrListVTable;

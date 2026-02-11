@@ -34,31 +34,31 @@
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 182,
+        "line": 183,
         "message": "use of undeclared identifier 'stack0xffffb248'"
       },
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 303,
+        "line": 305,
         "message": "use of undeclared identifier 'stack0xffffb248'"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 421,
+        "line": 423,
         "message": "C-style cast from 'CMotionList *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 435,
+        "line": 437,
         "message": "use of undeclared identifier 'stack0xffffb250'"
       },
       {
         "category": "undeclared_identifier",
         "column": 43,
-        "line": 440,
+        "line": 442,
         "message": "use of undeclared identifier 'stack0xffffb248'"
       }
     ],
@@ -67,11 +67,11 @@
   },
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 641,
+    "complexity_score": 643,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 33,
-    "pseudocode_lines": 431,
+    "pseudocode_lines": 433,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
@@ -79,7 +79,7 @@
       "stack_ref",
       "warning_type_propagation"
     ],
-    "total_lines": 1451
+    "total_lines": 1453
   },
   "cross_references": [
     {
@@ -1097,70 +1097,70 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 175,
+      "line": 176,
       "match": "&stack0xffffb248",
       "text": "local_40 = (CDeformableModelInstance *)&stack0xffffb248;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 193,
+      "line": 194,
       "match": "(int *)((int)",
       "text": "while (iVar10 = iVar13, iVar10 < *(int *)(*(int *)((int)local_8c + local_44) + 0x2c)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 194,
+      "line": 195,
       "match": "(int *)((int)",
       "text": "iVar13 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 198,
       "match": "(int *)((int)",
       "text": "(iVar13 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 296,
+      "line": 298,
       "match": "&stack0xffffb248",
       "text": "local_2c = (CDeformableModelInstance *)&stack0xffffb248;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 390,
+      "line": 392,
       "match": "in_stack_00000014",
       "text": "core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)in_stack_00000014);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 392,
+      "line": 394,
       "match": "in_stack_00000014",
       "text": "core_morph_cpp_CMorphModel_FUN_0052b350(in_stack_00000014);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 398,
+      "line": 400,
       "match": "in_stack_00000010",
       "text": "this_ptr_01 = (CMotionController *)(auStack_4da8 + in_stack_00000010 * 0x22b4 + 8);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 428,
+      "line": 430,
       "match": "&stack0xffffb250",
       "text": "((CDeformableModelInstance *)&stack0xffffb250);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 433,
+      "line": 435,
       "match": "&stack0xffffb248",
       "text": "((CDeformableModelInstance *)&stack0xffffb248);",
       "type": "stack_ref"

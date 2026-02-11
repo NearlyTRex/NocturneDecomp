@@ -47,7 +47,7 @@ section .text
     PUSH EAX                            ; 00545b45
     MOV ESI,0x63e784                    ; 00545b46 | = "wolfbrn.dfm"
     CALL core_morph.cpp_FUN_0052b310    ; 00545b4b
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
     LEA EBX,[EAX + 0xfffe07ec]          ; 00545b50
     ADD ESP,0x4                         ; 00545b56
     LEA EDI,[EBX + 0x1f76c]             ; 00545b59

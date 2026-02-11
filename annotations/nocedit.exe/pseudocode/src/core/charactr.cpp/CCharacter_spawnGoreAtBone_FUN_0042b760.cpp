@@ -18,7 +18,7 @@ core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
   CVector3f local_1c;
   CVector3f local_10;
   
-  if ((this_ptr->model).part_visibility_flags[part_index] == 0) {
+  if ((this_ptr->model).part_data.visibility_flags[part_index] == 0) {
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(chance);
     if (iVar1 != 0) {
       input_local_point =

@@ -2,13 +2,13 @@
 // Address: 0048c200
 // Address Range: [[0048c200, 0048c41d]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix,CVector3f *rotation_angles)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix)
 
 #include "nocturne.h"
 
 void __cdecl
 engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-          (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix,CVector3f *rotation_angles)
+          (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix)
 
 {
   longlong lVar1;

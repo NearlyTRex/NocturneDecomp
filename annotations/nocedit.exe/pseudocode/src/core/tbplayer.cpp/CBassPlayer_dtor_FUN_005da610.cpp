@@ -35,7 +35,7 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlaye
                      ((CDeformableModelInstance *)(pCVar5[-0x18].filenames[2] + 0x10),0);
   ptr = (CBassPlayer *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar6[-1].part_visibility_flags + 7),1);
+                  ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 7),1);
   if ((in_stack_00000008 & 2) == 0) {
     return ptr;
   }

@@ -3,21 +3,99 @@
     "errors": [
       {
         "category": "other",
-        "column": 14,
-        "line": 58,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "column": 19,
+        "line": 51,
+        "message": "C-style cast from 'CEnemy *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 56,
-        "line": 58,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 15,
+        "line": 56,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 62,
+        "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 46,
-        "line": 70,
+        "column": 47,
+        "line": 74,
         "message": "use of undeclared identifier 'DAT_0066e740'; did you mean 'DAT_0066e940'?"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 80,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 81,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 82,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 129,
+        "message": "C-style cast from 'CEnemy *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 130,
+        "message": "C-style cast from 'CEnemy *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 131,
+        "message": "C-style cast from 'CEnemy *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 136,
+        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 137,
+        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 138,
+        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 140,
+        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 142,
+        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
       }
     ],
     "success": false,
@@ -25,18 +103,18 @@
   },
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 250,
+    "complexity_score": 321,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 15,
-    "pseudocode_lines": 175,
-    "suspect_count": 6,
+    "pseudocode_lines": 176,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "undefined_data",
-      "warning_type_propagation"
+      "unknown_field"
     ],
-    "total_lines": 582
+    "total_lines": 583
   },
   "cross_references": [
     {
@@ -355,46 +433,95 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
-      "match": "ABS",
-      "text": "if ((iVar2 != 0) && (ABS(fVar1) < (float)0.78539816337500001)) {",
-      "type": "decompiler_intrinsic"
+      "description": "Unknown/mangled field access",
+      "line": 49,
+      "match": "._8_4_",
+      "text": "auStack_4c._8_4_ = (location->position).x - (this_ptr_00->base).base.location.position.x;",
+      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 67,
       "match": "DAT_0066e740",
-      "text": "CStack_80.y = local_24 + *(float *)(&DAT_0066e740 + uVar6 * 4);",
+      "text": "CStack_7c.y = fStack_20 + *(float *)(&DAT_0066e740 + uVar6 * 4);",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._8_4_",
+      "text": "auStack_ac._8_4_ = fStack_10c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._0_4_",
+      "text": "auStack_ac._0_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._4_4_",
+      "text": "auStack_ac._4_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
+      "line": 103,
       "match": "ABS",
-      "text": "if (((ABS(local_a4.y) <= (float)4) && (ABS(fVar1) <= (float)0.52359877558333301)) &&",
+      "text": "if (((ABS(fStack_9c) <= (float)4) && (fStack_110 <= (float)0.52359877558333301)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
-      "match": "ABS",
-      "text": "if (((ABS(local_a4.y) <= (float)4) && (ABS(fVar1) <= (float)0.52359877558333301)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 104,
       "match": "SQRT",
-      "text": "(SQRT(local_a4.z * local_a4.z + local_a4.x * local_a4.x + local_a4.y * local_a4.y) <=",
+      "text": "(SQRT(fStack_98 * fStack_98 + fStack_a0 * fStack_a0 + fStack_9c * fStack_9c) <=",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 129,
+      "match": "._0_4_",
+      "text": "auStack_94._0_4_ = *(float *)(iStack_28 + 0x20) + pCVar5->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 130,
+      "match": "._4_4_",
+      "text": "auStack_94._4_4_ = *(float *)(iStack_28 + 0x24) + pCVar5->y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 131,
+      "match": "._8_4_",
+      "text": "auStack_94._8_4_ = *(float *)(iStack_28 + 0x28) + pCVar5->z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 133,
+      "match": "._0_4_",
+      "text": "pCVar3->x = (float)auStack_94._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 134,
+      "match": "._4_4_",
+      "text": "*(uint *)(this_ptr->field53_0x2dc4 + 8) = auStack_94._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 135,
+      "match": "._8_4_",
+      "text": "*(uint *)(this_ptr->field53_0x2dc4 + 0xc) = auStack_94._8_4_;",
+      "type": "unknown_field"
     }
   ]
 }

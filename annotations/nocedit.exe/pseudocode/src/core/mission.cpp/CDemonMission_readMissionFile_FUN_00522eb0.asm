@@ -53,7 +53,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30
-;   core_mission.cpp_FUN_005248e0
+;   core_mission.cpp_CDemonMission_FUN_005248e0
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0
@@ -529,8 +529,8 @@ section .text
     RET                                 ; 005233b7
     PUSH EBX                            ; 005233b8
         ;   Label: LAB_005233b8
-    CALL core_mission.cpp_FUN_005248e0  ; 005233b9
-        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_005248e0()
+    CALL core_mission.cpp_CDemonMission_FUN_005248e0 ; 005233b9
+        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_005248e0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005233be
     JMP 0x00522ed8                      ; 005233c1
         ;   XREF to: 00522ed8 (UNCONDITIONAL_JUMP)  ; LAB_00522ed8
@@ -633,7 +633,7 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 005234ff | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 00523505 | g_CGoreInstance
     CALL core_gore.cpp_CGore_FUN_004ee1e0 ; 00523506
-        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee1e0(CGore * this_ptr)
+        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee1e0(CGore * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0052350b
     ADD ESP,0x148                       ; 0052350e
     POP EBP                             ; 00523514

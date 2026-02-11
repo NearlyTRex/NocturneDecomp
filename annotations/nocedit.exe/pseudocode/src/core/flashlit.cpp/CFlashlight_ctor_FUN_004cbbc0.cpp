@@ -16,26 +16,14 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashligh
   (pCVar2->base).vtable._ub = &g_CFlashlightVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&pCVar2->model,"flashlit.kfm");
-  pCVar2->unk1[0] = '\0';
-  pCVar2->unk1[1] = '\0';
-  pCVar2->unk1[2] = '\0';
-  pCVar2->unk1[3] = '\0';
-  pCVar2->unk1[4] = '\0';
-  pCVar2->unk1[5] = '\0';
-  pCVar2->unk1[6] = '\0';
-  pCVar2->unk1[7] = '\0';
-  pCVar2->unk1[8] = '\x05';
-  pCVar2->unk1[9] = '\0';
-  pCVar2->unk1[10] = '\0';
-  pCVar2->unk1[0xb] = '\0';
-  pCVar2->unk1[0xc] = '\0';
-  pCVar2->unk1[0xd] = '\0';
-  pCVar2->unk1[0xe] = '\0';
-  pCVar2->unk1[0xf] = '\0';
+  pCVar2->is_spread_weapon = 0;
+  pCVar2->fire_mode = 0;
+  pCVar2->weapon_type = 5;
+  pCVar2->can_penetrate = 0;
   pCVar2->bolt_velocity = 0.0;
   fVar1 = 8.0f;
   pCVar2->fire_cooldown = 0.0;
   pCVar2->ammo_count = 0;
-  *(float *)(pCVar2->unk3 + 0x25c) = fVar1;
+  pCVar2->unk3 = (int)fVar1;
   return (CFlashlight *)pCVar2;
 }

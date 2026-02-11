@@ -15,8 +15,8 @@
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 00449193
 ;   core_elephant.cpp_CElephantGun_fire_FUN_004a7160 at 004a7461
 ;   core_fire.cpp_CFireEffect_FUN_004c8c10 at 004c8c6b
-;   core_gun.cpp_CGun_FUN_004f0350 at 004f05b3
-;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 00506406
+;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f05b3
+;   core_lightgun.cpp_CLightGun_fire_FUN_00505c70 at 00506406
 ;   core_shotgun.cpp_CShotgun_fire_FUN_00588060 at 0058837a
 ;
 ; Called Functions:

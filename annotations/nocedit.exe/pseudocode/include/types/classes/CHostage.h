@@ -30,6 +30,9 @@ typedef struct CHostage {
     struct CDemonActor* sit_down_way_point; // 0x1fac4
     char unk3[20]; // 0x1fac8
     int no_shadows_when_saved; // 0x1fadc
-    char unk4[16]; // 0x1fae0
+    int unk4; // 0x1fae0
+    int unk5; // 0x1fae4
+    struct CDemonActor* grabber; // 0x1fae8
+    float unk6; // 0x1faec
 } CHostage;
 

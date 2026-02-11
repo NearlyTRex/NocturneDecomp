@@ -31,7 +31,7 @@ CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_00412500(CArmour *this_ptr,ui
                      ((CDeformableModelInstance *)(pCVar4[-0x18].filenames[2] + 0x10),0);
   ptr = (CArmour *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar5[-1].part_visibility_flags + 7),1);
+                  ((CDemonActor *)(pCVar5[-1].part_data.visibility_flags + 7),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

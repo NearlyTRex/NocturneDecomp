@@ -27,17 +27,17 @@ void __cdecl CElephantGun::process(CElephantGun *this_ptr,float delta_time);
 // Address: 004a7160
 int __cdecl CElephantGun::fire(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_CElephantGun_FUN_004a78a0
+// Original: core_elephant.cpp_CElephantGun_onFired_FUN_004a78a0
 // Address: 004a78a0
-void __cdecl CElephantGun(CElephantGun *this_ptr);
+void __cdecl CElephantGun::onFired(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_CElephantGun_FUN_004a79b0
+// Original: core_elephant.cpp_CElephantGun_getDamage_FUN_004a79b0
 // Address: 004a79b0
-float __cdecl CElephantGun(CElephantGun *this_ptr);
+float __cdecl CElephantGun::getDamage(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_CElephantGun_FUN_004a79f0
+// Original: core_elephant.cpp_CElephantGun_fireProjectile_FUN_004a79f0
 // Address: 004a79f0
-void __cdecl CElephantGun(CElephantGun *this_ptr);
+void __cdecl CElephantGun::fireProjectile(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_dtor_FUN_004a7be0
 // Address: 004a7be0

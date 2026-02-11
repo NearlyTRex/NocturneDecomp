@@ -25,7 +25,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
       if ((this_ptr->transparent_geometry_flag == 0) ||
          (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
          iVar1 != 0)) {
-        core_bodypart_cpp_CBodyPart_FUN_00419340(this_ptr);
+        core_bodypart_cpp_CBodyPart_FUN_00419340(this_ptr,-1);
       }
       iVar1 = 0;
       if (0 < *(int *)(this_ptr->unk5 + 0xfc)) {

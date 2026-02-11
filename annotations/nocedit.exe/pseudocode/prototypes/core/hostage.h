@@ -43,25 +43,25 @@ void __cdecl CHostage::renderBackground(CHostage *this_ptr,int layer_flag);
 // Address: 004f6170
 void __cdecl CHostage::archive(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_CHostage_FUN_004f6390
+// Original: core_hostage.cpp_CHostage_isGrabbable_FUN_004f6390
 // Address: 004f6390
-int __cdecl CHostage(CHostage *this_ptr);
+int __cdecl CHostage::isGrabbable(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_CHostage_FUN_004f63d0
+// Original: core_hostage.cpp_CHostage_canBeGrabbed_FUN_004f63d0
 // Address: 004f63d0
-int __cdecl CHostage(CHostage *this_ptr);
+int __cdecl CHostage::canBeGrabbed(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_hostage.cpp_CHostage_FUN_004f63e0
+// Original: core_hostage.cpp_CHostage_getGrabbed_FUN_004f63e0
 // Address: 004f63e0
-int __cdecl CHostage(CHostage *this_ptr);
+int __cdecl CHostage::getGrabbed(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 
 // Original: core_hostage.cpp_CHostage_processDamage_FUN_004f6450
 // Address: 004f6450
 void __cdecl CHostage::processDamage(CHostage *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_hostage.cpp_CHostage_FUN_004f6550
+// Original: core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550
 // Address: 004f6550
-void __cdecl CHostage(CHostage *this_ptr);
+void __cdecl CHostage::getCarryObjToBodyXForm(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_hostage.cpp_CHostage_getPropertyList_FUN_004f69c0
 // Address: 004f69c0

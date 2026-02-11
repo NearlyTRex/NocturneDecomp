@@ -35,21 +35,21 @@ void __cdecl CLightGun(CLightGun *this_ptr);
 // Address: 00505b70
 int __cdecl CLightGun(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_CLightGun_FUN_00505c70
+// Original: core_lightgun.cpp_CLightGun_fire_FUN_00505c70
 // Address: 00505c70
-int __cdecl CLightGun(CLightGun *this_ptr);
+int __cdecl CLightGun::fire(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_process_FUN_00506450
 // Address: 00506450
 void __cdecl CLightGun::process(CLightGun *this_ptr,float delta_time);
 
-// Original: core_lightgun.cpp_CLightGun_FUN_00506670
+// Original: core_lightgun.cpp_CLightGun_getDamage_FUN_00506670
 // Address: 00506670
-float __cdecl CLightGun(CLightGun *this_ptr);
+float __cdecl CLightGun::getDamage(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_CLightGun_FUN_005066b0
+// Original: core_lightgun.cpp_CLightGun_fireProjectile_FUN_005066b0
 // Address: 005066b0
-void __cdecl CLightGun(CLightGun *this_ptr);
+void __cdecl CLightGun::fireProjectile(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_addFilesToExtract_FUN_005066f0
 // Address: 005066f0

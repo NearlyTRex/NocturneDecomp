@@ -30,7 +30,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Sec...");
   core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
-  core_mission_cpp_FUN_005248e0();
+  core_mission_cpp_CDemonMission_FUN_005248e0(this_ptr);
   remove("$$UNDO$$.TMP");
   core_inivar_cpp_readIniData_FUN_004fbd90();
   local_14 = this_ptr->mission_name;
@@ -282,7 +282,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Freeing models...");
-      core_mission_cpp_FUN_005248e0();
+      core_mission_cpp_CDemonMission_FUN_005248e0(this_ptr);
       return;
     }
   } while( true );

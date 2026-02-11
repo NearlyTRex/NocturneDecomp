@@ -9,7 +9,7 @@
 ; XREF[26]:
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043c903
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d5d6
-;   core_course.cpp_FUN_00443bc0 at 00443c0b
+;   core_course.cpp_CCourse_FUN_00443bc0 at 00443c0b
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cc04
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3bd8
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3685

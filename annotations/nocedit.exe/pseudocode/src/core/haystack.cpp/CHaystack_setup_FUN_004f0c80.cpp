@@ -48,9 +48,6 @@ void __cdecl core_haystack_cpp_CHaystack_setup_FUN_004f0c80(CHaystack *this_ptr)
                            (this_ptr_00,"Bip01 Spine2");
   INT_02db8740 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Spine");
-  this_ptr->unk[0] = '\0';
-  this_ptr->unk[1] = '\0';
-  this_ptr->unk[2] = '\0';
-  this_ptr->unk[3] = '\0';
+  this_ptr->guns_drawn = 0;
   return;
 }

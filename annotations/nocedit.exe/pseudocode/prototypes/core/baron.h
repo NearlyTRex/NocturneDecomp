@@ -67,9 +67,9 @@ int __cdecl CBaron::renderTransparent(CBaron *this_ptr);
 // Address: 00413cd0
 void __cdecl CBaron::processDamage(CBaron *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_baron.cpp_CBaron_FUN_00413cf0
+// Original: core_baron.cpp_CBaron_drawGun_FUN_00413cf0
 // Address: 00413cf0
-void __cdecl CBaron(CBaron *this_ptr);
+void __cdecl CBaron::drawGun(CBaron *this_ptr,int drawn);
 
 // Original: core_baron.cpp_factoryFunc_FUN_00413d00
 // Address: 00413d00
@@ -95,17 +95,17 @@ void __cdecl CBaronWeapon::process(CBaronWeapon *this_ptr,float delta_time);
 // Address: 00413de0
 void __cdecl CBaronWeapon::renderOpaque(CBaronWeapon *this_ptr);
 
-// Original: core_baron.cpp_CBaronWeapon_FUN_00413df0
+// Original: core_baron.cpp_CBaronWeapon_fire_FUN_00413df0
 // Address: 00413df0
-int __cdecl CBaronWeapon(CBaronWeapon *this_ptr);
+int __cdecl CBaronWeapon::fire(CBaronWeapon *this_ptr);
 
-// Original: core_baron.cpp_CBaronWeapon_FUN_00413e30
+// Original: core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_00413e30
 // Address: 00413e30
-int __cdecl CBaronWeapon(CBaronWeapon *this_ptr);
+int __cdecl CBaronWeapon::isReadyToFire(CBaronWeapon *this_ptr);
 
-// Original: core_baron.cpp_CBaronWeapon_FUN_00413e60
+// Original: core_baron.cpp_CBaronWeapon_fireProjectile_FUN_00413e60
 // Address: 00413e60
-void __cdecl CBaronWeapon(CBaronWeapon *this_ptr);
+void __cdecl CBaronWeapon::fireProjectile(CBaronWeapon *this_ptr);
 
 // Original: core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90
 // Address: 00413e90

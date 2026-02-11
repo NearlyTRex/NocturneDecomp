@@ -2,75 +2,81 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 14,
+        "category": "incompatible_types",
+        "column": 13,
         "line": 61,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 61,
-        "message": "called object type 'void' is not a function or function pointer"
+        "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 67,
+        "line": 69,
         "message": "cannot cast from type 'float' to pointer type 'CHero *'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 103,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "line": 91,
+        "message": "cannot cast from type 'float' to pointer type 'CPathMap *'"
       },
       {
         "category": "other",
-        "column": 94,
-        "line": 103,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 127,
+        "column": 21,
+        "line": 94,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
-        "category": "other",
-        "column": 13,
-        "line": 132,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 105,
+        "message": "assigning to 'int' from incompatible type 'void'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 171,
+        "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 168,
-        "message": "indirection not permitted on operand of type 'void *'"
+        "line": 238,
+        "message": "cannot cast from type 'float' to pointer type 'CPathMap *'"
       },
       {
         "category": "other",
-        "column": 94,
-        "line": 168,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 187,
+        "column": 9,
+        "line": 241,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 13,
-        "line": 192,
+        "column": 29,
+        "line": 241,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 50,
-        "line": 209,
+        "column": 9,
+        "line": 244,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 244,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 245,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 247,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       }
     ],
@@ -79,18 +85,19 @@
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 367,
+    "complexity_score": 467,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 242,
-    "suspect_count": 11,
+    "pseudocode_lines": 247,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "stack_param"
+      "stack_param",
+      "unaffected_reg"
     ],
-    "total_lines": 789
+    "total_lines": 794
   },
   "cross_references": [
     {
@@ -345,10 +352,17 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_EAX",
       "text": "CPathMap *extraout_EAX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "text": "float unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
@@ -361,63 +375,119 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "SQRT",
-      "text": "local_30 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);",
+      "text": "local_30 = SQRT(local_64 * local_64 + local_6c * local_6c + local_68 * local_68);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 85,
       "match": "SQRT",
-      "text": "fVar1 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);",
+      "text": "SQRT(CStack_60.x * CStack_60.x + local_68 * local_68 + local_64 * local_64);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 102,
       "match": "in_stack_00000008",
-      "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar7 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 111,
+      "line": 114,
       "match": "extraout_EAX",
-      "text": "pCStack_20 = extraout_EAX;",
+      "text": "pCStack_14 = extraout_EAX;",
       "type": "extra_output"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 123,
+      "match": "unaff_EBP",
+      "text": "fStack_2c = -unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 128,
+      "match": "unaff_EBP",
+      "text": "if (unaff_EBP < *(float *)((this_ptr->base).unk2 + 4)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 129,
+      "match": "unaff_EBP",
+      "text": "*(float *)((this_ptr->base).unk2 + 4) = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 164,
+      "line": 168,
       "match": "in_stack_00000008",
-      "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar7 != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 184,
+      "match": "unaff_EBP",
+      "text": "local_28 = -unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 189,
+      "match": "unaff_EBP",
+      "text": "if (unaff_EBP < *(float *)((this_ptr->base).unk2 + 4)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 190,
+      "match": "unaff_EBP",
+      "text": "*(float *)((this_ptr->base).unk2 + 4) = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 206,
+      "match": "unaff_EBP",
+      "text": "*(float *)((this_ptr->base).unk2 + 4) = -unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 211,
+      "match": "unaff_EBP",
+      "text": "*(float *)((this_ptr->base).unk2 + 4) = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 241,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 * (float)3.1415926535000001 < fStack_8c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 236,
+      "line": 242,
       "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 * (float)3.1415926535000001 < fStack_98) {",
+      "text": "fStack_8c = in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 237,
+      "line": 244,
       "match": "in_stack_00000008",
-      "text": "fStack_98 = in_stack_00000008 * (float)3.1415926535000001;",
+      "text": "if (fStack_8c < in_stack_00000008 * (float)-3.1415926535000001) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 239,
+      "line": 245,
       "match": "in_stack_00000008",
-      "text": "if (fStack_98 < in_stack_00000008 * (float)-3.1415926535000001) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 240,
-      "match": "in_stack_00000008",
-      "text": "fStack_98 = in_stack_00000008 * (float)-3.1415926535000001;",
+      "text": "fStack_8c = in_stack_00000008 * (float)-3.1415926535000001;",
       "type": "stack_param"
     }
   ]

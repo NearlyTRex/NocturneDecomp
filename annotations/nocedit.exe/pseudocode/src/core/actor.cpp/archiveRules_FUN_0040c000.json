@@ -5,31 +5,31 @@
         "category": "format_error",
         "column": 78,
         "line": 26,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 84,
+        "column": 86,
         "line": 26,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 40,
         "line": 43,
-        "message": "format specifies type 'int *' but the argument has type 'void *' [-Werror,-Wformat]"
+        "message": "format specifies type 'int *' but the argument has type 'CRuleList *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 69,
         "line": 53,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 75,
+        "column": 77,
         "line": 53,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -70,7 +70,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveRules_FUN_0040c000",
-    "signature": "void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(void *rules,char *property_name)"
+    "signature": "void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(CRuleList *rules,char *property_name)"
   },
   "function_calls": [
     {
@@ -230,7 +230,7 @@
         "name": "rules",
         "offset": 4,
         "size": 4,
-        "type": "void *"
+        "type": "CRuleList *"
       },
       {
         "is_param": true,

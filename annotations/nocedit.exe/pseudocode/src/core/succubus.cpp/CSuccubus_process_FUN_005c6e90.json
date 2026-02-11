@@ -2,30 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 8,
-        "line": 85,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 85,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 107,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 107,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
         "category": "incompatible_types",
         "column": 19,
         "line": 229,
@@ -43,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 628,
-    "complexity_score": 451,
+    "complexity_score": 436,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
     "pseudocode_lines": 296,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
-      "suspect_float",
       "warning_unreachable"
     ],
     "total_lines": 924
@@ -563,86 +538,79 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 21,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 22,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_ffffff8c",
-      "text": "float in_stack_ffffff8c;",
+      "line": 31,
+      "match": "in_stack_ffffff94",
+      "text": "float in_stack_ffffff94;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_ffffffa0",
+      "text": "float in_stack_ffffffa0;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 82,
+      "line": 84,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 93,
       "match": "SQRT",
       "text": "if (SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) <",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 99,
-      "match": "8.490399e-39",
-      "text": "fVar19 = 8.490399e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 104,
+      "line": 105,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 128,
-      "match": "in_stack_ffffff8c",
-      "text": "in_stack_ffffff8c =",
+      "line": 123,
+      "match": "in_stack_ffffffa0",
+      "text": "in_stack_ffffffa0 = 1.5f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
-      "match": "in_stack_ffffff8c",
-      "text": "if ((SQRT(fVar18 * fVar18 + in_stack_ffffff8c * in_stack_ffffff8c + fVar19 * fVar19) <",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 132,
-      "match": "in_stack_ffffff8c",
-      "text": "if ((SQRT(fVar18 * fVar18 + in_stack_ffffff8c * in_stack_ffffff8c + fVar19 * fVar19) <",
+      "line": 127,
+      "match": "in_stack_ffffff94",
+      "text": "path_map,pCVar19,fVar20,in_stack_ffffff94);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 133,
       "match": "SQRT",
-      "text": "if ((SQRT(fVar18 * fVar18 + in_stack_ffffff8c * in_stack_ffffff8c + fVar19 * fVar19) <",
+      "text": "SQRT(fVar8 * fVar8 + fVar20 * fVar20 + fVar7 * fVar7) < 15.0f)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 211,
-      "match": "in_stack_ffffff8c",
-      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff8c);",
+      "match": "in_stack_ffffffa0",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffffa0);",
       "type": "stack_param"
     }
   ],

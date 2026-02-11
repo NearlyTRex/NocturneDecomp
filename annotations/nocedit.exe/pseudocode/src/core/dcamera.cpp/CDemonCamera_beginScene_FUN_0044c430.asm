@@ -213,7 +213,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 0044c633 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0044c638 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 ; 0044c639
-        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix, CVector3f * rotation_angles)
+        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix)
     ADD ESP,0x8                         ; 0044c63e
     TEST EDI,EDI                        ; 0044c641
     JNZ 0x0044c670                      ; 0044c643

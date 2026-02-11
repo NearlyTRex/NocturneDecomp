@@ -18,24 +18,12 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr)
   (pCVar2->base).base.vtable._ub = &g_CMeleeVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base).model,"melee.kfm");
-  (pCVar2->base).unk1[8] = '\a';
-  (pCVar2->base).unk1[9] = '\0';
-  (pCVar2->base).unk1[10] = '\0';
-  (pCVar2->base).unk1[0xb] = '\0';
+  (pCVar2->base).weapon_type = 7;
   pCVar2->damage_type = -1;
   (pCVar2->base).ammo_count = 0;
-  (pCVar2->base).unk1[0] = '\0';
-  (pCVar2->base).unk1[1] = '\0';
-  (pCVar2->base).unk1[2] = '\0';
-  (pCVar2->base).unk1[3] = '\0';
-  (pCVar2->base).unk1[4] = '\0';
-  (pCVar2->base).unk1[5] = '\0';
-  (pCVar2->base).unk1[6] = '\0';
-  (pCVar2->base).unk1[7] = '\0';
-  (pCVar2->base).unk1[0xc] = '\0';
-  (pCVar2->base).unk1[0xd] = '\0';
-  (pCVar2->base).unk1[0xe] = '\0';
-  (pCVar2->base).unk1[0xf] = '\0';
+  (pCVar2->base).is_spread_weapon = 0;
+  (pCVar2->base).fire_mode = 0;
+  (pCVar2->base).can_penetrate = 0;
   (pCVar2->base).bolt_velocity = 5.0;
   (pCVar2->base).fire_cooldown = 0.0;
   (pCVar2->base).can_attach_light = 0;

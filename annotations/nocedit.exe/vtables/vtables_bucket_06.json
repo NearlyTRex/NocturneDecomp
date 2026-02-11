@@ -576,7 +576,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"004aa030",
-        "func_name":"core_enemy.cpp_CEnemy_FUN_004aa030",
+        "func_name":"core_enemy.cpp_CEnemy_releaseVictim_FUN_004aa030",
         "offset":268,
         "param_count":1,
         "ptr_addr":"0065ab70"
@@ -584,9 +584,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"004aa0c0",
-        "func_name":"core_enemy.cpp_CEnemy_FUN_004aa0c0",
+        "func_name":"core_enemy.cpp_CEnemy_onVictimLost_FUN_004aa0c0",
         "offset":272,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065ab74"
       },
       {
@@ -720,23 +720,23 @@
       {
         "convention":"__cdecl",
         "func_addr":"004a99d0",
-        "func_name":"core_enemy.cpp_CEnemy_FUN_004a99d0",
+        "func_name":"core_enemy.cpp_CEnemy_getTargetPoint_FUN_004a99d0",
         "offset":340,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065abb8"
       },
       {
         "convention":"__cdecl",
         "func_addr":"004a9b00",
-        "func_name":"core_enemy.cpp_CEnemy_FUN_004a9b00",
+        "func_name":"core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00",
         "offset":344,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"0065abbc"
       },
       {
         "convention":"__cdecl",
         "func_addr":"004aa250",
-        "func_name":"core_enemy.cpp_CEnemy_FUN_004aa250",
+        "func_name":"core_enemy.cpp_CEnemy_randomize_FUN_004aa250",
         "offset":348,
         "param_count":1,
         "ptr_addr":"0065abc0"
@@ -1316,7 +1316,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"004ed730",
-        "func_name":"core_gore.cpp_FUN_004ed730",
+        "func_name":"core_gore.cpp_CGore_ctor_FUN_004ed730",
         "offset":0,
         "param_count":1,
         "ptr_addr":"0065f064"
@@ -1332,7 +1332,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"004ed750",
-        "func_name":"core_gore.cpp_FUN_004ed750",
+        "func_name":"core_gore.cpp_CGore_dtor_FUN_004ed750",
         "offset":8,
         "param_count":1,
         "ptr_addr":"0065f06c"
@@ -1920,7 +1920,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"005ee860",
-        "func_name":"core_weapon.cpp_CWeapon_FUN_005ee860",
+        "func_name":"core_weapon.cpp_CWeapon_onFired_FUN_005ee860",
         "offset":236,
         "param_count":1,
         "ptr_addr":"00660b50"
@@ -1930,21 +1930,21 @@
         "func_addr":"005ee640",
         "func_name":"core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640",
         "offset":240,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00660b54"
       },
       {
         "convention":"__cdecl",
         "func_addr":"005ee670",
-        "func_name":"core_weapon.cpp_CWeapon_FUN_005ee670",
+        "func_name":"core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_005ee670",
         "offset":244,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"00660b58"
       },
       {
         "convention":"__cdecl",
         "func_addr":"00505c70",
-        "func_name":"core_lightgun.cpp_CLightGun_FUN_00505c70",
+        "func_name":"core_lightgun.cpp_CLightGun_fire_FUN_00505c70",
         "offset":248,
         "param_count":1,
         "ptr_addr":"00660b5c"
@@ -1952,7 +1952,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"005ee710",
-        "func_name":"core_weapon.cpp_CWeapon_FUN_005ee710",
+        "func_name":"core_weapon.cpp_CWeapon_isReadyToFire_FUN_005ee710",
         "offset":252,
         "param_count":1,
         "ptr_addr":"00660b60"
@@ -1960,7 +1960,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"00506670",
-        "func_name":"core_lightgun.cpp_CLightGun_FUN_00506670",
+        "func_name":"core_lightgun.cpp_CLightGun_getDamage_FUN_00506670",
         "offset":256,
         "param_count":1,
         "ptr_addr":"00660b64"
@@ -1968,7 +1968,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"005066b0",
-        "func_name":"core_lightgun.cpp_CLightGun_FUN_005066b0",
+        "func_name":"core_lightgun.cpp_CLightGun_fireProjectile_FUN_005066b0",
         "offset":260,
         "param_count":1,
         "ptr_addr":"00660b68"
@@ -1976,7 +1976,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"005ee4a0",
-        "func_name":"core_weapon.cpp_CWeapon_FUN_005ee4a0",
+        "func_name":"core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0",
         "offset":264,
         "param_count":1,
         "ptr_addr":"00660b6c"
@@ -3228,15 +3228,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f3af0",
-        "func_name":"core_hero.cpp_CHero_FUN_004f3af0",
+        "func_name":"core_hero.cpp_CHero_kill_FUN_004f3af0",
         "offset":240,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"00662554"
       },
       {
         "convention":"__cdecl",
         "func_addr":"004f28a0",
-        "func_name":"core_hero.cpp_CHero_FUN_004f28a0",
+        "func_name":"core_hero.cpp_CHero_canWalk_FUN_004f28a0",
         "offset":244,
         "param_count":1,
         "ptr_addr":"00662558"
@@ -3244,7 +3244,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f2880",
-        "func_name":"core_hero.cpp_CHero_FUN_004f2880",
+        "func_name":"core_hero.cpp_CHero_isGrabbable_FUN_004f2880",
         "offset":248,
         "param_count":1,
         "ptr_addr":"0066255c"
@@ -3252,23 +3252,23 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f2890",
-        "func_name":"core_hero.cpp_CHero_FUN_004f2890",
+        "func_name":"core_hero.cpp_CHero_canBeGrabbed_FUN_004f2890",
         "offset":252,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"00662560"
       },
       {
         "convention":"__cdecl",
         "func_addr":"004f28d0",
-        "func_name":"core_hero.cpp_CHero_FUN_004f28d0",
+        "func_name":"core_hero.cpp_CHero_getGrabbed_FUN_004f28d0",
         "offset":256,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"00662564"
       },
       {
         "convention":"__cdecl",
         "func_addr":"004f29b0",
-        "func_name":"core_hero.cpp_CHero_FUN_004f29b0",
+        "func_name":"core_hero.cpp_CHero_releaseFromGrab_FUN_004f29b0",
         "offset":260,
         "param_count":1,
         "ptr_addr":"00662568"
@@ -3428,7 +3428,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"00557150",
-        "func_name":"core_scat.cpp_CScat_FUN_00557150",
+        "func_name":"core_scat.cpp_CScat_createDefaultGun_FUN_00557150",
         "offset":340,
         "param_count":1,
         "ptr_addr":"006625b8"
@@ -3436,15 +3436,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"00558000",
-        "func_name":"core_scat.cpp_CScat_FUN_00558000",
+        "func_name":"core_scat.cpp_CScat_drawGun_FUN_00558000",
         "offset":344,
-        "param_count":1,
+        "param_count":2,
         "ptr_addr":"006625bc"
       },
       {
         "convention":"__cdecl",
         "func_addr":"00557ff0",
-        "func_name":"core_scat.cpp_CScat_FUN_00557ff0",
+        "func_name":"core_scat.cpp_CScat_areGunsDrawn_FUN_00557ff0",
         "offset":348,
         "param_count":1,
         "ptr_addr":"006625c0"
@@ -3452,7 +3452,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f3b20",
-        "func_name":"core_hero.cpp_CHero_FUN_004f3b20",
+        "func_name":"core_hero.cpp_CHero_reset_FUN_004f3b20",
         "offset":352,
         "param_count":1,
         "ptr_addr":"006625c4"
@@ -4961,15 +4961,15 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f3af0",
-        "func_name":"core_hero.cpp_CHero_FUN_004f3af0",
+        "func_name":"core_hero.cpp_CHero_kill_FUN_004f3af0",
         "offset":240,
-        "param_count":1,
+        "param_count":4,
         "ptr_addr":"00663e54"
       },
       {
         "convention":"__cdecl",
         "func_addr":"004f28a0",
-        "func_name":"core_hero.cpp_CHero_FUN_004f28a0",
+        "func_name":"core_hero.cpp_CHero_canWalk_FUN_004f28a0",
         "offset":244,
         "param_count":1,
         "ptr_addr":"00663e58"
@@ -4977,7 +4977,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f2880",
-        "func_name":"core_hero.cpp_CHero_FUN_004f2880",
+        "func_name":"core_hero.cpp_CHero_isGrabbable_FUN_004f2880",
         "offset":248,
         "param_count":1,
         "ptr_addr":"00663e5c"
@@ -4985,9 +4985,9 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f2890",
-        "func_name":"core_hero.cpp_CHero_FUN_004f2890",
+        "func_name":"core_hero.cpp_CHero_canBeGrabbed_FUN_004f2890",
         "offset":252,
-        "param_count":1,
+        "param_count":3,
         "ptr_addr":"00663e60"
       },
       {
@@ -5001,7 +5001,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f29b0",
-        "func_name":"core_hero.cpp_CHero_FUN_004f29b0",
+        "func_name":"core_hero.cpp_CHero_releaseFromGrab_FUN_004f29b0",
         "offset":260,
         "param_count":1,
         "ptr_addr":"00663e68"
@@ -5161,7 +5161,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f2a30",
-        "func_name":"core_hero.cpp_CHero_FUN_004f2a30",
+        "func_name":"core_hero.cpp_CHero_createDefaultGun_FUN_004f2a30",
         "offset":340,
         "param_count":1,
         "ptr_addr":"00663eb8"
@@ -5185,7 +5185,7 @@
       {
         "convention":"__cdecl",
         "func_addr":"004f3b20",
-        "func_name":"core_hero.cpp_CHero_FUN_004f3b20",
+        "func_name":"core_hero.cpp_CHero_reset_FUN_004f3b20",
         "offset":352,
         "param_count":1,
         "ptr_addr":"00663ec4"

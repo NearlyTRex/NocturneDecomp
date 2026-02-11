@@ -111,12 +111,11 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
             desired_state_index = 10;
           }
         }
-        if (((((this_ptr->base).action_bindings.fire_key != 0) && (*(int *)this_ptr->unk != 0)) &&
-            (*(int *)(this_ptr->unk + 0x14) != 0)) &&
-           (iVar11 = (**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 0xfc))(),
-           iVar11 != 0)) {
-          (**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 0xf8))();
-          iVar11 = *(int *)(this_ptr->unk + 0x14);
+        if (((((this_ptr->base).action_bindings.fire_key != 0) && (this_ptr->guns_drawn != 0)) &&
+            (this_ptr->unk4 != 0)) &&
+           (iVar11 = (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xfc))(), iVar11 != 0)) {
+          (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xf8))();
+          iVar11 = this_ptr->unk4;
           (this_ptr->base).action_bindings.fire_key = 0;
           if (*(int *)(iVar11 + 0x2e0) == 8) {
             desired_state_index = 0xb;
@@ -134,7 +133,8 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
         }
         if ((this_ptr->base).action_bindings.draw_key != 0) {
           (this_ptr->base).action_bindings.draw_key = 0;
-          (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+          (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
+                    ((CEnemy *)this_ptr,(float)(uint)(this_ptr->guns_drawn == 0));
         }
       }
       break;
@@ -264,8 +264,8 @@ LAB_005573f5:
   }
 LAB_00557408:
   core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(&(this_ptr->base).inventory);
-  if (*(int *)(this_ptr->unk + 0x14) != 0) {
-    (**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 4))();
+  if (this_ptr->unk4 != 0) {
+    (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 4))();
   }
   core_scat_cpp_CScat_FUN_00558060(this_ptr);
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
@@ -287,9 +287,9 @@ LAB_00557408:
      (iVar11 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)
                          ((CCharacter *)this_ptr), iVar11 == 0)) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar18 = *(float *)(this_ptr->unk + 0x10);
+    fVar18 = this_ptr->unk3;
     iVar11 = INT_0310615c;
-    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(this_ptr->unk + 4),&CStack_6c);
+    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)this_ptr->unk1,&CStack_6c);
     pCVar17 = local_18;
     source_quaternions = &CStack_7c;
     CStack_7c.w = CStack_6c.w;

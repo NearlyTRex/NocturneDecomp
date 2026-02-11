@@ -63,9 +63,9 @@ int __cdecl CBoneGuy::renderTransparent(CBoneGuy *this_ptr);
 // Address: 0041d270
 void __cdecl CBoneGuy::archive(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_CBoneGuy_FUN_0041d4c0
+// Original: core_boneguy.cpp_CBoneGuy_reset_FUN_0041d4c0
 // Address: 0041d4c0
-int __cdecl CBoneGuy(CBoneGuy *this_ptr);
+void __cdecl CBoneGuy::reset(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_processDamage_FUN_0041d4d0
 // Address: 0041d4d0
@@ -91,9 +91,9 @@ int __cdecl CBoneGuy::hasCollision(CBoneGuy *this_ptr,SCollisionInfo *collision_
 // Address: 0041d990
 void __cdecl CBoneGuy::getPropertyList(CBoneGuy *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_boneguy.cpp_CBoneGuy_FUN_0041da00
+// Original: core_boneguy.cpp_CBoneGuy_randomize_FUN_0041da00
 // Address: 0041da00
-void __cdecl CBoneGuy(CBoneGuy *this_ptr);
+void __cdecl CBoneGuy::randomize(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_addFilesToExtract_FUN_0041da10
 // Address: 0041da10

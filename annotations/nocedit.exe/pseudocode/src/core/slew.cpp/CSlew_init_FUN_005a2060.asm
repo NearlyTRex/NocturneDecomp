@@ -7,7 +7,7 @@
 ; CSlew *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[11]:
-;   core_course.cpp_FUN_00443bc0 at 00443bf0
+;   core_course.cpp_CCourse_FUN_00443bc0 at 00443bf0
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da23f
 ;   core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 at 0050b643
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e344

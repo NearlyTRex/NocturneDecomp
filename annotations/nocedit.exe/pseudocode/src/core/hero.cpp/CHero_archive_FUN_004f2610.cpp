@@ -9,18 +9,18 @@
 void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr)
 
 {
-  CDeformableModelInstance *motion_controller;
+  CDeformableModelInstance *model_ptr;
   int iVar1;
   char local_d4 [100];
   char local_70 [100];
   int local_c;
   
-  motion_controller = &(this_ptr->base).model;
+  model_ptr = &(this_ptr->base).model;
   if (g_CHeroClassVersion < 4) {
     core_actor_cpp_CDemonActor_archive_FUN_0040c1c0((CDemonActor *)this_ptr);
     if (1 < g_CHeroClassVersion) {
       core_actor_cpp_archiveMotionState_FUN_0040b9f0
-                (&motion_controller->motion_controller,"motion state");
+                (&model_ptr->motion_controller,"motion state");
     }
     if (2 < g_CHeroClassVersion) {
       core_actor_cpp_archivePartStatus_FUN_0040bae0(&(this_ptr->base).model,"partStatus");
@@ -32,8 +32,8 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr)
   else {
     core_charactr_cpp_CCharacter_archive_FUN_004283a0(&this_ptr->base);
     core_actor_cpp_archiveMotionState_FUN_0040b9f0
-              (&motion_controller->motion_controller,"motion state");
-    core_actor_cpp_archivePartStatus_FUN_0040bae0(motion_controller,"partStatus");
+              (&model_ptr->motion_controller,"motion state");
+    core_actor_cpp_archivePartStatus_FUN_0040bae0(model_ptr,"partStatus");
     if (g_CHeroClassVersion < 8) {
       core_actor_cpp_archiveActor_FUN_0040b870
                 ((CDemonActor *)&(this_ptr->base).grabbed_by,"grabbedBy");

@@ -16,7 +16,7 @@
 ;   core_fire.cpp_CFireball_process_FUN_004c0b30 at 004c0bca
 ;   core_fire.cpp_FUN_004c1940 at 004c196c
 ;   core_keyactor.cpp_CKeyActor_process_FUN_00501710 at 0050178f
-;   core_weapon.cpp_CWeapon_FUN_005ee4a0 at 005ee605
+;   core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0 at 005ee605
 ;
 ; Referenced Globals:
 ;   float FLOAT_0061ec3a = 256

@@ -2,75 +2,27 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 8,
-        "line": 94,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 94,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
         "category": "incompatible_types",
         "column": 19,
         "line": 103,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
-        "category": "other",
-        "column": 8,
-        "line": 159,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 159,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
         "category": "incompatible_types",
         "column": 19,
-        "line": 169,
+        "line": 168,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 205,
-        "message": "C-style cast from 'CGargoyle *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 267,
-        "message": "C-style cast from 'CGargoyle *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 272,
-        "message": "use of undeclared identifier 'stack0xfffffefc'; did you mean 'in_stack_fffffefc'?"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 284,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 284,
-        "message": "called object type 'void' is not a function or function pointer"
+        "line": 271,
+        "message": "use of undeclared identifier 'stack0xfffffefc'"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 297,
+        "line": 296,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -79,19 +31,20 @@
   },
   "complexity": {
     "assembly_lines": 878,
-    "complexity_score": 557,
+    "complexity_score": 611,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 16,
-    "pseudocode_lines": 427,
-    "suspect_count": 11,
+    "pseudocode_lines": 426,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "suspect_float"
     ],
-    "total_lines": 1305
+    "total_lines": 1304
   },
   "cross_references": [],
   "function": {
@@ -719,9 +672,16 @@
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_ffffff04",
+      "text": "float in_stack_ffffff04;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "in_stack_fffffefc",
-      "text": "float in_stack_fffffefc;",
+      "match": "in_stack_ffffff08",
+      "text": "float in_stack_ffffff08;",
       "type": "stack_param"
     },
     {
@@ -747,37 +707,65 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 173,
+      "line": 172,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 197,
+      "match": "in_stack_ffffff04",
+      "text": "fVar12,in_stack_ffffff04);",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 205,
+      "line": 204,
       "match": "SQRT",
       "text": "local_30 = SQRT(local_54 * local_54 + local_5c * local_5c);",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 210,
+      "match": "2.8026e-45",
+      "text": "fVar12 = 2.8026e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 213,
+      "match": "5.60519e-45",
+      "text": "fVar12 = 5.60519e-45;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 231,
+      "line": 230,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 259,
+      "match": "in_stack_ffffff04",
+      "text": "pCVar11,fVar12,in_stack_ffffff04);",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 265,
+      "line": 264,
       "match": "&stack0xfffffefc",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffefc);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 356,
-      "match": "in_stack_fffffefc",
-      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffefc);",
+      "line": 355,
+      "match": "in_stack_ffffff08",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff08);",
       "type": "stack_param"
     }
   ],

@@ -15,18 +15,9 @@ CGun * __cdecl core_gun_cpp_CGun_ctor_FUN_004f02f0(CGun *this_ptr)
   (pCVar1->base).vtable._ub = &g_CGunVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&pCVar1->model,"gat.kfm");
-  pCVar1->unk1[0] = '\0';
-  pCVar1->unk1[1] = '\0';
-  pCVar1->unk1[2] = '\0';
-  pCVar1->unk1[3] = '\0';
-  pCVar1->unk1[4] = '\x01';
-  pCVar1->unk1[5] = '\0';
-  pCVar1->unk1[6] = '\0';
-  pCVar1->unk1[7] = '\0';
-  pCVar1->unk1[0xc] = '\x01';
-  pCVar1->unk1[0xd] = '\0';
-  pCVar1->unk1[0xe] = '\0';
-  pCVar1->unk1[0xf] = '\0';
+  pCVar1->is_spread_weapon = 0;
+  pCVar1->fire_mode = 1;
+  pCVar1->can_penetrate = 1;
   pCVar1->bolt_velocity = 50.0;
   pCVar1->fire_cooldown = 0.0;
   return (CGun *)pCVar1;

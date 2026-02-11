@@ -9,7 +9,7 @@
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this_ptr)
 
 {
-  CHero *actor_ptr;
+  CHero *this_ptr_00;
   int iVar1;
   char *text;
   uint color_value;
@@ -32,10 +32,10 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     g_PendingMissionName[0] = '\0';
     core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_004daf80(g_CGamePtr);
-    actor_ptr = g_HeroActors[g_LocalHeroIndex];
+    this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
     core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0
-              (this_ptr,(CDemonActor *)actor_ptr);
-    (*(((actor_ptr->base).base.vtable._uh)->_uh).herofunc4)();
+              (this_ptr,(CDemonActor *)this_ptr_00);
+    (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
     core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
     if ((iVar1 == 0) || (g_PendingMissionName[0] == '\0')) break;
     iVar1 = stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
@@ -50,7 +50,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     color_value = (uint)!bVar2;
     core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,9,(uint)bVar2,iVar1);
     core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,g_PendingMissionName,0);
-    iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,(int)actor_ptr);
+    iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,(int)this_ptr_00);
     if (iVar1 == 0) goto LAB_005244ee;
     iVar1 = core_mission_cpp_CDemonMission_FUN_00524760(this_ptr);
     if (iVar1 == 0) goto LAB_005244ee;
@@ -66,7 +66,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     }
   }
-  core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,(CDemonActor *)actor_ptr,1);
+  core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,(CDemonActor *)this_ptr_00,1);
 LAB_005244ee:
   if (g_CGamePtr->unk12 == 0) {
     return;

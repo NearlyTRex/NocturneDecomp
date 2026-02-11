@@ -20,10 +20,10 @@ int __cdecl core_icepick_cpp_CIcePick_FUN_004f8970(CIcePick *this_ptr)
   float fStack_18;
   float fStack_14;
   
-  this_ptr->unk[0x24] = '\0';
-  this_ptr->unk[0x25] = '\0';
-  this_ptr->unk[0x26] = '\0';
-  this_ptr->unk[0x27] = '\0';
+  this_ptr->unk[0x20] = '\0';
+  this_ptr->unk[0x21] = '\0';
+  this_ptr->unk[0x22] = '\0';
+  this_ptr->unk[0x23] = '\0';
   local_1c = 0x40800000;
   local_28.x = 1.0;
   local_28.y = 0.0;
@@ -44,7 +44,7 @@ int __cdecl core_icepick_cpp_CIcePick_FUN_004f8970(CIcePick *this_ptr)
         local_34.x = (this_ptr_00->location).position.z - local_28.x;
         if ((ABS((this_ptr_00->location).position.y - local_34.z) <= (float)2) &&
            (fStack_14 = fVar1 * fVar1 + local_34.x * local_34.x, fStack_14 <= fStack_18)) {
-          *(CDemonActor **)(this_ptr->unk + 0x24) = this_ptr_00;
+          *(CDemonActor **)(this_ptr->unk + 0x20) = this_ptr_00;
           fStack_18 = fStack_14;
         }
       }
@@ -52,14 +52,14 @@ int __cdecl core_icepick_cpp_CIcePick_FUN_004f8970(CIcePick *this_ptr)
     iVar3 = iVar3 + 1;
     iVar4 = iVar4 + 4;
   }
-  if (*(int *)(this_ptr->unk + 0x24) == 0) {
+  if (*(int *)(this_ptr->unk + 0x20) == 0) {
     return 0;
   }
   (this_ptr->base).base.base.location.position.x =
-       (*(float *)(*(int *)(this_ptr->unk + 0x24) + 0x20) - local_34.x) +
+       (*(float *)(*(int *)(this_ptr->unk + 0x20) + 0x20) - local_34.x) +
        (this_ptr->base).base.base.location.position.x;
   (this_ptr->base).base.base.location.position.z =
-       (*(float *)(*(int *)(this_ptr->unk + 0x24) + 0x28) - local_34.z) +
+       (*(float *)(*(int *)(this_ptr->unk + 0x20) + 0x28) - local_34.z) +
        (this_ptr->base).base.base.location.position.z;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             (&(this_ptr->base).base.model.motion_controller,0x13,1);

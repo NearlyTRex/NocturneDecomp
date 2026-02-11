@@ -53,31 +53,28 @@ void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004f7e80(CIcePick *this_ptr)
                            (this_ptr_00,"Bip01 Spine");
   (this_ptr->base).base.carry_hands[0].secondary_bone_index = 0;
   (this_ptr->base).base.carry_hands[1].secondary_bone_index = 0;
-  this_ptr->unk[0] = '\0';
-  this_ptr->unk[1] = '\0';
-  this_ptr->unk[2] = '\0';
-  this_ptr->unk[3] = '\0';
+  this_ptr->guns_drawn = 0;
   (this_ptr->base).base.carry_hands[0].bone_index = INT_02db89a4;
   (this_ptr->base).base.carry_hands[1].bone_index = INT_02db89a8;
   iVar1 = g_LocalHeroIndex;
-  this_ptr->unk[0x24] = '\0';
-  this_ptr->unk[0x25] = '\0';
-  this_ptr->unk[0x26] = '\0';
-  this_ptr->unk[0x27] = '\0';
+  this_ptr->unk[0x20] = '\0';
+  this_ptr->unk[0x21] = '\0';
+  this_ptr->unk[0x22] = '\0';
+  this_ptr->unk[0x23] = '\0';
   if (this_ptr == (CIcePick *)g_HeroActors[iVar1]) {
     (((CIcePick *)g_HeroActors[iVar1])->base).base.collision_cylinder_radius = 1.5;
   }
-  this_ptr->unk[0xc] = '\0';
-  this_ptr->unk[0xd] = '\0';
-  this_ptr->unk[0xe] = '\0';
-  this_ptr->unk[0xf] = '\0';
   this_ptr->unk[8] = '\0';
   this_ptr->unk[9] = '\0';
   this_ptr->unk[10] = '\0';
   this_ptr->unk[0xb] = '\0';
-  this_ptr->unk[0x2c] = '\0';
-  this_ptr->unk[0x2d] = '\0';
-  this_ptr->unk[0x2e] = '\0';
-  this_ptr->unk[0x2f] = '\0';
+  this_ptr->unk[4] = '\0';
+  this_ptr->unk[5] = '\0';
+  this_ptr->unk[6] = '\0';
+  this_ptr->unk[7] = '\0';
+  this_ptr->unk[0x28] = '\0';
+  this_ptr->unk[0x29] = '\0';
+  this_ptr->unk[0x2a] = '\0';
+  this_ptr->unk[0x2b] = '\0';
   return;
 }

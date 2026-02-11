@@ -189,7 +189,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 0057d054 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0057d05a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 ; 0057d05b
-        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix, CVector3f * rotation_angles)
+        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix)
     ADD ESP,0x8                         ; 0057d060
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0057d063
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()

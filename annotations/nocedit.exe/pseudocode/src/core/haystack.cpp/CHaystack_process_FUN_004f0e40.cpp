@@ -75,7 +75,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
     case 10:
       if ((this_ptr->base).base.field3_0x2410 != 0) {
         iVar5 = 0;
-        if (*(int *)this_ptr->unk != 0) {
+        if (this_ptr->guns_drawn != 0) {
           iVar5 = 10;
         }
         if ((this_ptr->base).action_bindings.walk_key != 0) {
@@ -90,10 +90,10 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
           iVar5 = 3;
         }
         if ((this_ptr->base).action_bindings.draw_key != 0) {
-          iVar5 = *(int *)this_ptr->unk;
+          iVar5 = this_ptr->guns_drawn;
           (this_ptr->base).action_bindings.draw_key = 0;
           uVar8 = (uint)(iVar5 == 0);
-          *(uint *)this_ptr->unk = uVar8;
+          this_ptr->guns_drawn = uVar8;
           if (uVar8 == 0) {
             iVar5 = 0;
           }
@@ -103,7 +103,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
         }
         if ((this_ptr->base).action_bindings.fire_key != 0) {
           bVar3 = true;
-          if ((*(int *)this_ptr->unk == 0) && ((this_ptr->base).control_type != 2)) {
+          if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
             iVar9 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
             bVar3 = false;
             if (iVar9 != 0) goto LAB_004f11d6;
@@ -124,7 +124,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
 LAB_004f11d6:
             if (!bVar3) goto LAB_004f11f7;
           }
-          iVar5 = *(int *)(this_ptr->unk + 4);
+          iVar5 = *(int *)this_ptr->unk;
           (this_ptr->base).action_bindings.fire_key = 0;
           if (iVar5 == 0) {
             iVar5 = 0xf;
@@ -261,9 +261,9 @@ LAB_004f1054:
      (pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&pCStack_14->motion_controller), pSVar7->state_index != 0x13)) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar11 = *(float *)(this_ptr->unk + 0x14);
+    fVar11 = *(float *)(this_ptr->unk + 0x10);
     iVar5 = INT_02db8700;
-    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(this_ptr->unk + 8),&CStack_7c);
+    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(this_ptr->unk + 4),&CStack_7c);
     source_quaternions = (CQuaternion4f *)local_6c;
     local_6c._0_4_ = CStack_7c.w;
     *(uint *)(local_6c + (uint)bVar10 * -8 + 4) =

@@ -14,7 +14,6 @@ core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(CDemonCamera *this_ptr,int
   uint uVar1;
   uint uVar2;
   int iVar3;
-  CVector3f *unaff_EBP;
   bool bVar4;
   char *format;
   
@@ -106,7 +105,7 @@ switchD_0044c448_caseD_3:
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
             (g_CDemonRendererPtr2,(this_ptr->base).projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr2,(CMatrix3x3f *)&(this_ptr->base).rotation_matrix,unaff_EBP);
+            (g_CDemonRendererPtr2,(CMatrix3x3f *)&(this_ptr->base).rotation_matrix);
   if (skip_clear_buffers == 0) {
     if (g_FullscreenMode != 0) {
       wincore_windll_cpp_beginScene_FUN_005b7280();

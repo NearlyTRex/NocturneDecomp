@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x28]:1  local_28
 ;
 ; XREF[11]:
-;   core_course.cpp_FUN_00443bc0 at 00443cdf
+;   core_course.cpp_CCourse_FUN_00443bc0 at 00443cdf
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cd6b
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 at 004feffb
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 0050420d
@@ -43,7 +43,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x30]      ; 0048c1e8
     PUSH ECX                            ; 0048c1ec
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 ; 0048c1ed
-        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix, CVector3f * rotation_angles)
+        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix)
     ADD ESP,0x8                         ; 0048c1f2
     ADD ESP,0x28                        ; 0048c1f5
     RET                                 ; 0048c1f8

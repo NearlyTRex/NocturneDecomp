@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_gun.cpp_CGun_FUN_004f0350 at 004f0b0a
+;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f0b0a
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30 at 005de323
 ;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3c5e
 ;

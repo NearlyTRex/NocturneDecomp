@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 228,
+    "complexity_score": 213,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 20,
     "pseudocode_lines": 88,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "param_count_too_many"
+      "decompiler_intrinsic"
     ],
     "total_lines": 249
   },
@@ -34,7 +33,7 @@
     {
       "addr": "00521480",
       "from_addr": "005214b5",
-      "name": "core_mirror.cpp_setupMirrorCamera_FUN_00521480",
+      "name": "core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,7 +60,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix,CVector3f *rotation_angles)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix)"
   },
   "function_calls": [
     {
@@ -217,7 +216,7 @@
       {
         "call_addr": "005214b5",
         "call_type": "direct",
-        "caller": "core_mirror.cpp_setupMirrorCamera_FUN_00521480",
+        "caller": "core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -252,7 +251,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 3,
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -295,10 +294,10 @@
     "pcode_op_count": 1011
   },
   "stack_frame": {
-    "frame_size": 48,
+    "frame_size": 44,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -335,13 +334,6 @@
         "offset": 8,
         "size": 4,
         "type": "CMatrix3x3f *"
-      },
-      {
-        "is_param": true,
-        "name": "rotation_angles",
-        "offset": 12,
-        "size": 4,
-        "type": "CVector3f *"
       }
     ]
   },
@@ -446,17 +438,6 @@
       "match": "ROUND",
       "text": "g_CameraRotationRoll = (int)ROUND(dVar15);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 5,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

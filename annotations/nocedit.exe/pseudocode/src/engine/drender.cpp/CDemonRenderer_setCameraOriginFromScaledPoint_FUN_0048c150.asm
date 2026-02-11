@@ -11,13 +11,13 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[16]:
-;   core_course.cpp_FUN_00443bc0 at 00443cf1
+;   core_course.cpp_CCourse_FUN_00443bc0 at 00443cf1
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 at 0044c615
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80 at 00472b18
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cd58
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 at 004fefd4
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 005041cb
-;   core_mirror.cpp_setupMirrorCamera_FUN_00521480 at 00521490
+;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480 at 00521490
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 at 0052a2dd
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0 at 00529ef7
 ;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056ccae

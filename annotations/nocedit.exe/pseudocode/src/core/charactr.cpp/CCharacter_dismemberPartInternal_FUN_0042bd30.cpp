@@ -31,7 +31,7 @@ core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
   
   bVar7 = 0;
   if (((this_ptr->model).model_name[0] != '\0') &&
-     ((this_ptr->model).part_visibility_flags[part_index] != 0)) {
+     ((this_ptr->model).part_data.visibility_flags[part_index] != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
               (&this_ptr->model,body_part,part_index);
     local_14 = 0;

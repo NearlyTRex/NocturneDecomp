@@ -27,7 +27,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   core_mirror.cpp_setupMirrorReflection_FUN_005214c0 at 00522240
+;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 at 00522240
 ;
 ; *****************************************************************************
 

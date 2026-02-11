@@ -451,25 +451,25 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
       for (iVar6 = 0;
           pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(pCVar15),
           iVar6 < pCVar7->num_parts; iVar6 = iVar6 + 1) {
-        pCVar13->part_visibility_flags[0] = 0;
+        (pCVar13->part_data).visibility_flags[0] = 0;
         pCVar13 = (CDeformableModelInstance *)&(pCVar13->motion_controller).current_motion_index;
       }
-      pCVar15->part_visibility_flags[local_44] = 3;
+      (pCVar15->part_data).visibility_flags[local_44] = 3;
     }
     else if (local_b4 == 2) {
       for (iVar6 = 0;
           pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                              (in_stack_00000004), iVar6 < pCVar7->num_parts; iVar6 = iVar6 + 1) {
-        pCVar15->part_visibility_flags[0] = 3;
+        (pCVar15->part_data).visibility_flags[0] = 3;
         pCVar15 = (CDeformableModelInstance *)&(pCVar15->motion_controller).current_motion_index;
       }
-      in_stack_00000004->part_visibility_flags[local_44] = 0;
+      (in_stack_00000004->part_data).visibility_flags[local_44] = 0;
     }
     core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430
               (in_stack_00000004);
     iVar6 = local_a4;
     this_ptr_00 = g_CDemonRendererPtr2;
-    in_stack_00000004->texture_set_indices[local_44] = local_ac;
+    (in_stack_00000004->part_data).texture_set_indices[local_44] = local_ac;
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(this_ptr_00,0);
     if (iVar6 < 2) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150

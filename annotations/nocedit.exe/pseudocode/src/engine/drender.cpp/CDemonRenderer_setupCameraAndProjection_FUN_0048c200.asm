@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix,CVector3f *rotation_angles)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; CMatrix3x3f *    Stack[0x8]:4   transform_matrix
-; CVector3f *      Stack[0xc]:4   rotation_angles
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -15,7 +14,7 @@
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 at 0044c639
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80 at 00472b3d
-;   core_mirror.cpp_setupMirrorCamera_FUN_00521480 at 005214b5
+;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480 at 005214b5
 ;   core_setedit.cpp_FUN_0057ce80 at 0057d05b
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 at 0048c1ed
 ;

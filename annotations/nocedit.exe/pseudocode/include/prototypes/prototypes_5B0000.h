@@ -261,7 +261,7 @@ int __cdecl core_stranger_cpp_FUN_005bafc6(void);
 int __cdecl core_stranger_cpp_FUN_005bafcc(void);
 int __cdecl core_stranger_cpp_FUN_005bafd2(void);
 bool __cdecl core_stranger_cpp_FUN_005bafe0(void);
-float __cdecl core_stranger_cpp_CStranger_FUN_005bb010(CStranger *this_ptr);
+float __cdecl core_stranger_cpp_FUN_005bb010(void);
 CStranger * __cdecl core_stranger_cpp_factoryFunc_FUN_005bb0e0(void);
 CDemonActorType * __cdecl core_stranger_cpp_CStranger_getActorType_FUN_005bb110(CStranger *this_ptr);
 CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *this_ptr);

@@ -14,7 +14,6 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
   CDemonRenderer *this_ptr_00;
   int iVar2;
   CDemonLight *pCVar3;
-  CVector3f *unaff_EBP;
   
   if ((this_ptr->base).scene_open_flag != 0) {
     g_CurrentFilename = "..\\core\\dlight.cpp";
@@ -39,7 +38,7 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
             (g_CDemonRendererPtr2,(this_ptr->base).base.projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr2,(CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,unaff_EBP);
+            (g_CDemonRendererPtr2,(CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix);
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[0].y;
   g_TransformMatrix.m[0].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[1].y;

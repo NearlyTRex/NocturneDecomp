@@ -39,7 +39,7 @@ core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,in
        ((this_ptr->transparent_geometry_flag == 0 ||
         (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
         iVar2 != 0)))) {
-      core_bodypart_cpp_CBodyPart_FUN_00419340(this_ptr);
+      core_bodypart_cpp_CBodyPart_FUN_00419340(this_ptr,-1);
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     g_CDemonSetPtr->unk_lighting_param2 = 0;

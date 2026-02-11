@@ -71,13 +71,13 @@ void __cdecl CIcePick::renderOpaque(CIcePick *this_ptr);
 // Address: 004f95b0
 void __cdecl CIcePick::processDamage(CIcePick *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_icepick.cpp_CIcePick_FUN_004f9760
+// Original: core_icepick.cpp_CIcePick_areGunsDrawn_FUN_004f9760
 // Address: 004f9760
-int __cdecl CIcePick(CIcePick *this_ptr);
+int __cdecl CIcePick::areGunsDrawn(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_CIcePick_FUN_004f9770
+// Original: core_icepick.cpp_CIcePick_drawGuns_FUN_004f9770
 // Address: 004f9770
-void __cdecl CIcePick(CIcePick *this_ptr);
+void __cdecl CIcePick::drawGuns(CIcePick *this_ptr,int drawn);
 
 // Original: core_icepick.cpp_CIcePick_onActorDeleted_FUN_004f9780
 // Address: 004f9780

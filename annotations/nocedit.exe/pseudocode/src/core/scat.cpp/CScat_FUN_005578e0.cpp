@@ -62,7 +62,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
       this_ptr_01 = pCVar3;
     }
   }
-  if (iVar7 != *(int *)this_ptr->unk) {
+  if (iVar7 != this_ptr->guns_drawn) {
     (this_ptr->base).action_bindings.draw_key = 1;
   }
   CStack_68.z = (this_ptr_01->base).base.location.position.x -
@@ -80,13 +80,13 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
   if ((this_ptr->base).ai_task == 3) {
     local_7c = 0.0;
   }
-  if (*(int *)(this_ptr->unk + 0x14) == 0) goto LAB_00557b63;
+  if (this_ptr->unk4 == 0) goto LAB_00557b63;
   local_2c = 0;
-  if (*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x2e0) == 8) {
+  if (*(int *)(this_ptr->unk4 + 0x2e0) == 8) {
     if (local_7c < (float)8) {
       pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
-      if ((pSVar4->state_index == 7) && (*(int *)this_ptr->unk != 0)) {
+      if ((pSVar4->state_index == 7) && (this_ptr->guns_drawn != 0)) {
         (this_ptr->base).action_bindings.fire_key = 1;
       }
 LAB_00557a94:
@@ -94,9 +94,9 @@ LAB_00557a94:
     }
   }
   else if (local_7c < (float)15) {
-    if ((*(int *)this_ptr->unk != 0) && (iVar7 != 0)) {
-      if (((float)0.90000000000000002 < (this_ptr->base).base.layer_action_t) &&
-         (*(int *)(this_ptr->unk + 0x28) != 0)) {
+    if ((this_ptr->guns_drawn != 0) && (iVar7 != 0)) {
+      if (((float)0.90000000000000002 < (this_ptr->base).base.layer_action_t) && (this_ptr->unk9 != 0))
+      {
         (this_ptr->base).action_bindings.fire_key = 1;
       }
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80
@@ -157,13 +157,13 @@ LAB_00557b63:
   if (fStack_40 < -fStack_18) {
     fStack_40 = -fStack_18;
   }
-  local_7c = fStack_40 - *(float *)(this_ptr->unk + 8);
+  local_7c = fStack_40 - *(float *)(this_ptr->unk1 + 4);
   if (in_stack_00000008 * (float)3.1415926535000001 < local_7c) {
     local_7c = in_stack_00000008 * (float)3.1415926535000001;
   }
   if (local_7c < in_stack_00000008 * (float)-3.1415926535000001) {
     local_7c = in_stack_00000008 * (float)-3.1415926535000001;
   }
-  *(float *)(this_ptr->unk + 8) = *(float *)(this_ptr->unk + 8) + local_7c;
+  *(float *)(this_ptr->unk1 + 4) = *(float *)(this_ptr->unk1 + 4) + local_7c;
   return;
 }

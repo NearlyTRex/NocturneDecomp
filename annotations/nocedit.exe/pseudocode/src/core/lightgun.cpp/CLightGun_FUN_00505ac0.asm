@@ -7,7 +7,7 @@
 ; CLightGun *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 00505eb8
+;   core_lightgun.cpp_CLightGun_fire_FUN_00505c70 at 00505eb8
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 0050655d
 ;
 ; Referenced Globals:

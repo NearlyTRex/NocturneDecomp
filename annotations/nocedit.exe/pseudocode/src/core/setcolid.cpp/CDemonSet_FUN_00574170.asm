@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a70b
-;   core_lightgun.cpp_CLightGun_FUN_00505c70 at 00505e2b
+;   core_lightgun.cpp_CLightGun_fire_FUN_00505c70 at 00505e2b
 ;
 ; *****************************************************************************
 

@@ -4,116 +4,56 @@
       {
         "category": "undeclared_identifier",
         "column": 69,
-        "line": 68,
-        "message": "use of undeclared identifier 'stack0xfffffe34'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
         "line": 70,
         "message": "use of undeclared identifier 'stack0xfffffe34'"
       },
       {
         "category": "undeclared_identifier",
+        "column": 55,
+        "line": 72,
+        "message": "use of undeclared identifier 'stack0xfffffe34'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 15,
-        "line": 117,
+        "line": 119,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 117,
+        "line": 119,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 117,
+        "line": 119,
         "message": "use of undeclared identifier 'iRam00000154'"
-      },
-      {
-        "category": "other",
-        "column": 5,
-        "line": 145,
-        "message": "statement requires expression of integer type ('float' invalid)"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 146,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 150,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 150,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 182,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 186,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 186,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 213,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 236,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 238,
+        "line": 237,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 238,
+        "line": 237,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 238,
+        "line": 237,
         "message": "use of undeclared identifier 'iRam00000154'"
       },
       {
         "category": "other",
-        "column": 10,
-        "line": 258,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 269,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+        "column": 48,
+        "line": 397,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -121,12 +61,12 @@
   },
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 674,
+    "complexity_score": 664,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
     "pseudocode_lines": 389,
-    "suspect_count": 26,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
@@ -815,175 +755,168 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_fffffe40",
-      "text": "CDemonActor *in_stack_fffffe40;",
+      "text": "CPathMap *in_stack_fffffe40;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_fffffe4c",
+      "text": "float in_stack_fffffe4c;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 61,
+      "line": 63,
       "match": "&stack0xfffffe34",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe34);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 63,
+      "line": 65,
       "match": "&stack0xfffffe34",
       "text": "((CCharacter *)this_ptr,(SDamageInfo *)&stack0xfffffe34);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 89,
+      "line": 91,
       "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CDemonActor *)pCVar2;",
+      "text": "in_stack_fffffe40 = (CPathMap *)pCVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
+      "line": 112,
       "match": "code *",
       "text": "(**(code **)(iRam00000154 + 0x104))();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 139,
-      "match": "1.4013e-45",
-      "text": "case 1.4013e-45:",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
+      "line": 154,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_58.z * local_58.z +",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
+      "description": "Unresolved stack parameter",
       "line": 159,
+      "match": "in_stack_fffffe40",
+      "text": "in_stack_fffffe40 = (CPathMap *)0x5a2ec1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 162,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 175,
-      "match": "2.8026e-45",
-      "text": "case 2.8026e-45:",
-      "type": "suspect_float"
+      "description": "Unresolved stack parameter",
+      "line": 163,
+      "match": "in_stack_fffffe40",
+      "text": "in_stack_fffffe40 = (CPathMap *)0x9;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 206,
+      "line": 173,
       "match": "in_stack_fffffe40",
-      "text": "path_map,pCVar10,fVar12,(float)in_stack_fffffe40);",
+      "text": "in_stack_fffffe40 = (CPathMap *)0x2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 202,
+      "match": "in_stack_fffffe40",
+      "text": "in_stack_fffffe40 = (*((pCVar4->vtable)._ub)->getPathMap)(pCVar4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 205,
+      "match": "in_stack_fffffe40",
+      "text": "in_stack_fffffe40,pCVar11,fVar13,in_stack_fffffe4c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 205,
+      "match": "in_stack_fffffe4c",
+      "text": "in_stack_fffffe40,pCVar11,fVar13,in_stack_fffffe4c);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 215,
+      "line": 214,
       "match": "SQRT",
       "text": "if ((SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 217,
+      "line": 216,
       "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CDemonActor *)0x1;",
+      "text": "in_stack_fffffe40 = (CPathMap *)0x5a3037;",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 229,
-      "match": "8.40779e-45",
-      "text": "case 8.40779e-45:",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 231,
+      "line": 230,
       "match": "code *",
       "text": "(**(code **)(iRam00000154 + 0x104))();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 251,
-      "match": "1.12104e-44",
-      "text": "case 1.12104e-44:",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 262,
-      "match": "1.26117e-44",
-      "text": "case 1.26117e-44:",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 273,
+      "line": 272,
       "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CDemonActor *)&local_154;",
+      "text": "in_stack_fffffe40 = (CPathMap *)&local_154;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 289,
+      "line": 288,
       "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CDemonActor *)0x1;",
+      "text": "in_stack_fffffe40 = (CPathMap *)0x1;",
       "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 295,
-      "match": "1.4013e-44",
-      "text": "case 1.4013e-44:",
-      "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 301,
+      "line": 300,
       "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CDemonActor *)0x1;",
+      "text": "in_stack_fffffe40 = (CPathMap *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 312,
+      "line": 311,
       "match": "2.8026e-45",
-      "text": "fVar12 = 2.8026e-45;",
+      "text": "fVar13 = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 316,
+      "line": 315,
       "match": "1.4013e-45",
-      "text": "fVar12 = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 338,
-      "match": "1.54143e-44",
-      "text": "if (local_24 == 1.54143e-44) {",
+      "text": "fVar13 = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 360,
+      "line": 359,
       "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (this_ptr->base).victim;",
+      "text": "in_stack_fffffe40 = (CPathMap *)(this_ptr->base).victim;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 361,
       "match": "in_stack_fffffe40",
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_fffffe40);",
+      "text": "(g_CDemonSetPtr,(CDemonActor *)in_stack_fffffe40);",
       "type": "stack_param"
     },
     {

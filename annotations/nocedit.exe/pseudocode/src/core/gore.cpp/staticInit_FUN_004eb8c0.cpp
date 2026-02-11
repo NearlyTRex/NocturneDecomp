@@ -9,7 +9,7 @@
 void __cdecl core_gore_cpp_staticInit_FUN_004eb8c0(void)
 
 {
-  core_gore_cpp_FUN_004ed730(&g_CGoreInstance);
+  core_gore_cpp_CGore_ctor_FUN_004ed730(&g_CGoreInstance);
   _atexit(&g_CGoreDestructorNode);
   __arrinit(DAT_02d833d4,0x100,&g_CBloodParticleTypeInfo);
   _atexit(&DAT_0067b980);

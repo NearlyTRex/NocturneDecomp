@@ -116,7 +116,7 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
     else {
       this_ptr_00 = &(this_ptr->base).base.model;
       if (bVar1) {
-        if (*(int *)this_ptr->unk == 0) {
+        if (this_ptr->guns_drawn == 0) {
           (this_ptr->base).action_bindings.draw_key = 1;
         }
         else {
@@ -181,14 +181,14 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
     if (fStack_40 < -local_1c) {
       fStack_40 = -local_1c;
     }
-    local_88 = fStack_40 - *(float *)(this_ptr->unk + 0xc);
+    local_88 = fStack_40 - *(float *)(this_ptr->field2_0x1fbd8 + 8);
     if (in_stack_00000008 * (float)3.1415926535000001 < local_88) {
       local_88 = in_stack_00000008 * (float)3.1415926535000001;
     }
     if (local_88 < in_stack_00000008 * (float)-3.1415926535000001) {
       local_88 = in_stack_00000008 * (float)-3.1415926535000001;
     }
-    *(float *)(this_ptr->unk + 0xc) = *(float *)(this_ptr->unk + 0xc) + local_88;
+    *(float *)(this_ptr->field2_0x1fbd8 + 8) = *(float *)(this_ptr->field2_0x1fbd8 + 8) + local_88;
   }
   return;
 }

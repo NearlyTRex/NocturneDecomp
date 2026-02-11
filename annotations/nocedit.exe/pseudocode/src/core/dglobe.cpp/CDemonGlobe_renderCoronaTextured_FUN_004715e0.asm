@@ -23,7 +23,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_flame.cpp_CFlame_FUN_004ca110 at 004ca16c
+;   core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 at 004ca16c
 ;
 ; Referenced Globals:
 ;   double g_CoronaVertexScale = 0.00390625

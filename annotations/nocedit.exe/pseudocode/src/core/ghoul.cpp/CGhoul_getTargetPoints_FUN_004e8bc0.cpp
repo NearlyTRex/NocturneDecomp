@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl
 core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e8bc0(CGhoul *this_ptr,CVector3f *out_points_array)
 
@@ -36,7 +38,7 @@ core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e8bc0(CGhoul *this_ptr,CVector3f *o
   do {
     switch((local_18 + (this_ptr->base).base.base.direction_hint) % 4) {
     case 0:
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)this_ptr->unk3] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)this_ptr->unk3] != 0) {
         pCVar1 = &local_24;
         bone_index = INT_02d83310;
 LAB_004e8c4c:
@@ -60,14 +62,16 @@ LAB_004e8cce:
       }
       break;
     case 1:
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk3 + 8)] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk3 + 8)] != 0)
+      {
         pCVar1 = &local_54;
         bone_index = INT_02d83314;
         goto LAB_004e8c4c;
       }
       break;
     case 2:
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk3 + 0x28)] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk3 + 0x28)] !=
+          0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr_00,&local_3c,INT_02d832fc);
         pCVar2 = out_points_array + iVar3;
@@ -80,7 +84,8 @@ LAB_004e8cce:
       }
       break;
     case 3:
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk3 + 0x24)] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk3 + 0x24)] !=
+          0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr_00,&local_60,INT_02d83324);
         pCVar2 = out_points_array + iVar3;

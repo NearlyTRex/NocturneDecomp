@@ -6,90 +6,93 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl
 core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,float delta_time)
 
 {
+  CLocation *location;
   float fVar1;
   int iVar2;
-  CDemonActor *pCVar3;
-  CVector3f *pCVar4;
+  CEnemy *this_ptr_00;
+  CVector3f *pCVar3;
+  int iVar4;
   CVector3f *pCVar5;
   uint uVar6;
-  CLocation *pCVar7;
-  float fStack_118;
+  float *pfVar7;
+  CEnemy *local_114;
   float fStack_110;
-  CMatrix3x3f CStack_10c;
-  CMatrix3x3f CStack_e4;
+  float fStack_10c;
+  CMatrix3x3f CStack_108;
+  CMatrix3x3f CStack_e0;
   CVector3f local_bc;
-  CVector3f CStack_b0;
-  CVector3f local_a4;
-  CVector3f CStack_98;
-  CVector3f local_8c;
-  CVector3f CStack_80;
-  CVector3f CStack_74;
-  CVector3f CStack_68;
-  CVector3f CStack_5c;
-  CVector3f CStack_50;
-  CVector3f local_44;
-  CVector3f CStack_38;
-  CDemonActor *local_2c;
-  uint uStack_28;
+  byte auStack_ac [12];
+  float fStack_a0;
+  float fStack_9c;
+  float fStack_98;
+  byte auStack_94 [24];
+  CVector3f CStack_7c;
+  CVector3f CStack_70;
+  CVector3f CStack_64;
+  CVector3f CStack_58;
+  byte auStack_4c [12];
+  float local_40;
+  float local_3c;
+  CVector3f CStack_34;
+  int iStack_28;
   float local_24;
   float fStack_20;
-  uint uStack_1c;
+  float fStack_1c;
   uint uStack_18;
-  float fStack_14;
+  uint uStack_14;
   
   if (0.0 <= *(float *)this_ptr->field53_0x2dc4) {
-    pCVar7 = &(this_ptr->base).location;
-    pCVar3 = (CDemonActor *)core_hero_cpp_closestHeroToPoint_FUN_004f2170(pCVar7);
-    local_2c = pCVar3;
-    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(pCVar3,&local_a4,&pCVar7->position);
-    pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_a4);
-    fVar1 = pCVar4->y;
-    local_44.x = (pCVar7->position).x - (pCVar3->location).position.x;
-    local_44.y = (this_ptr->base).location.position.y - (pCVar3->location).position.y;
-    local_44.z = (this_ptr->base).location.position.z - (pCVar3->location).position.z;
-    pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_8c,&local_44);
-    local_24 = pCVar4->y;
-    iVar2 = (*(((pCVar3->vtable)._ue)->_ue).enemyfunc3)();
-    pCVar3 = local_2c;
-    if ((iVar2 != 0) && (ABS(fVar1) < (float)0.78539816337500001)) {
-      uStack_28 = (uint)(local_a4.x < 0.0);
-      pCVar4 = (CVector3f *)(this_ptr->field53_0x2dc4 + 4);
-      uStack_1c = 0;
-      pCVar7 = &local_2c->location;
+    location = &(this_ptr->base).location;
+    this_ptr_00 = (CEnemy *)core_hero_cpp_closestHeroToPoint_FUN_004f2170(location);
+    CStack_34.z = (float)this_ptr_00;
+    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+              ((CDemonActor *)this_ptr_00,(CVector3f *)(auStack_ac + 8),&location->position);
+    core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+              (&local_bc,(CVector3f *)(auStack_ac + 8));
+    auStack_4c._8_4_ = (location->position).x - (this_ptr_00->base).base.location.position.x;
+    local_40 = (this_ptr->base).location.position.y - (this_ptr_00->base).base.location.position.y;
+    local_3c = (this_ptr->base).location.position.z - (this_ptr_00->base).base.location.position.z;
+    pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                       ((CVector3f *)(auStack_94 + 8),(CVector3f *)(auStack_4c + 8));
+    local_24 = pCVar3->y;
+    iVar4 = (*(((this_ptr_00->base).base.vtable._ue)->_ue).randomize)(this_ptr_00);
+    iVar2 = iStack_28;
+    if ((iVar4 != 0) && (fStack_110 < (float)0.78539816337500001)) {
+      local_24 = (float)(uint)(fStack_a0 < 0.0);
+      pCVar3 = (CVector3f *)(this_ptr->field53_0x2dc4 + 4);
+      uStack_18 = 0;
+      pfVar7 = (float *)(iStack_28 + 0x20);
       do {
-        uVar6 = uStack_1c;
-        if (uStack_28 != 0) {
-          uVar6 = uStack_1c ^ 1;
+        uVar6 = uStack_18;
+        if (local_24 != 0.0) {
+          uVar6 = uStack_18 ^ 1;
         }
-        CStack_80.y = local_24 + *(float *)(&DAT_0066e740 + uVar6 * 4);
-        CStack_80.x = 0.0;
-        CStack_80.z = 0.0;
-        fStack_14 = CStack_80.y;
-        core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_10c,&CStack_80);
-        for (fStack_110 = 6.5; (float)2.3999999999999999 < fStack_110;
-            fStack_110 = fStack_110 + -1.0f) {
-          CStack_b0.z = fStack_110;
-          CStack_b0.x = 0.0;
-          CStack_b0.y = 0.0;
+        CStack_7c.y = fStack_20 + *(float *)(&DAT_0066e740 + uVar6 * 4);
+        CStack_7c.x = 0.0;
+        CStack_7c.z = 0.0;
+        core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_108,&CStack_7c);
+        for (fStack_10c = 6.5; (float)2.3999999999999999 < fStack_10c;
+            fStack_10c = fStack_10c + -1.0f) {
+          auStack_ac._8_4_ = fStack_10c;
+          auStack_ac._0_4_ = 0.0;
+          auStack_ac._4_4_ = 0.0;
           pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                             (&CStack_10c,&CStack_74,&CStack_b0);
-          CStack_68.x = (pCVar7->position).x + pCVar5->x;
-          CStack_68.y = (pCVar3->location).position.y + pCVar5->y;
-          CStack_68.z = (pCVar3->location).position.z + pCVar5->z;
-          if (pCVar4 != &CStack_68) {
-            pCVar4->x = CStack_68.x;
-            *(float *)(this_ptr->field53_0x2dc4 + 8) = CStack_68.y;
-            *(float *)(this_ptr->field53_0x2dc4 + 0xc) = CStack_68.z;
+                             (&CStack_108,&CStack_70,(CVector3f *)auStack_ac);
+          CStack_64.x = *pfVar7 + pCVar5->x;
+          CStack_64.y = *(float *)(iVar2 + 0x24) + pCVar5->y;
+          CStack_64.z = *(float *)(iVar2 + 0x28) + pCVar5->z;
+          if (pCVar3 != &CStack_64) {
+            pCVar3->x = CStack_64.x;
+            *(float *)(this_ptr->field53_0x2dc4 + 8) = CStack_64.y;
+            *(float *)(this_ptr->field53_0x2dc4 + 0xc) = CStack_64.z;
           }
-          iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                            (this_ptr,pCVar4,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
-          if (-1 < iVar2) {
+          iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+                            (this_ptr,pCVar3,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
+          if (-1 < iVar4) {
             this_ptr->field53_0x2dc4[0x10] = '\0';
             this_ptr->field53_0x2dc4[0x11] = '\0';
             this_ptr->field53_0x2dc4[0x12] = '\0';
@@ -101,48 +104,45 @@ core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,
             return 2;
           }
         }
-        uStack_1c = uStack_1c + 1;
-      } while ((int)uStack_1c < 6);
+        uStack_18 = uStack_18 + 1;
+      } while ((int)uStack_18 < 6);
     }
-    pCVar3 = local_2c;
-    if (((ABS(local_a4.y) <= (float)4) && (ABS(fVar1) <= (float)0.52359877558333301)) &&
-       (SQRT(local_a4.z * local_a4.z + local_a4.x * local_a4.x + local_a4.y * local_a4.y) <=
+    if (((ABS(fStack_9c) <= (float)4) && (fStack_110 <= (float)0.52359877558333301)) &&
+       (SQRT(fStack_98 * fStack_98 + fStack_a0 * fStack_a0 + fStack_9c * fStack_9c) <=
         (float)4.5)) {
       fVar1 = *(float *)this_ptr->field53_0x2dc4 + delta_time;
       *(float *)this_ptr->field53_0x2dc4 = fVar1;
       if (fVar1 < (float)1.75) {
         return 0;
       }
-      pCVar4 = (CVector3f *)(this_ptr->field53_0x2dc4 + 4);
-      uStack_18 = 0;
-      pCVar7 = &local_2c->location;
+      pCVar3 = (CVector3f *)(this_ptr->field53_0x2dc4 + 4);
+      uStack_14 = 0;
       do {
-        fStack_20 = (float)((int)uStack_18 / 2) * (float)1.57079632675 * (float)0.25;
-        if ((uStack_18 & 1) != 0) {
-          fStack_20 = -fStack_20;
+        fStack_1c = (float)((int)uStack_14 / 2) * (float)1.57079632675 * (float)0.25;
+        if ((uStack_14 & 1) != 0) {
+          fStack_1c = -fStack_1c;
         }
-        CStack_5c.y = local_24 + fStack_20;
-        CStack_5c.x = 0.0;
-        CStack_5c.z = 0.0;
-        fStack_14 = CStack_5c.y;
-        core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_e4,&CStack_5c);
-        for (fStack_118 = 4.5; (float)2.3999999999999999 < fStack_118;
-            fStack_118 = fStack_118 + -1.0f) {
-          CStack_38.z = fStack_118;
-          CStack_38.x = 0.0;
-          CStack_38.y = 0.0;
+        CStack_58.y = fStack_20 + fStack_1c;
+        CStack_58.x = 0.0;
+        CStack_58.z = 0.0;
+        core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_e0,&CStack_58);
+        for (local_114 = (CEnemy *)0x40900000; (float)2.3999999999999999 < (float)local_114;
+            local_114 = (CEnemy *)((float)local_114 + -1.0f)) {
+          CStack_34.z = (float)local_114;
+          CStack_34.x = 0.0;
+          CStack_34.y = 0.0;
           pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                             (&CStack_e4,&CStack_50,&CStack_38);
-          CStack_98.x = (pCVar7->position).x + pCVar5->x;
-          CStack_98.y = (pCVar3->location).position.y + pCVar5->y;
-          CStack_98.z = (pCVar3->location).position.z + pCVar5->z;
-          if (pCVar4 != &CStack_98) {
-            pCVar4->x = CStack_98.x;
-            *(float *)(this_ptr->field53_0x2dc4 + 8) = CStack_98.y;
-            *(float *)(this_ptr->field53_0x2dc4 + 0xc) = CStack_98.z;
+                             (&CStack_e0,(CVector3f *)auStack_4c,&CStack_34);
+          auStack_94._0_4_ = *(float *)(iStack_28 + 0x20) + pCVar5->x;
+          auStack_94._4_4_ = *(float *)(iStack_28 + 0x24) + pCVar5->y;
+          auStack_94._8_4_ = *(float *)(iStack_28 + 0x28) + pCVar5->z;
+          if (pCVar3 != (CVector3f *)auStack_94) {
+            pCVar3->x = (float)auStack_94._0_4_;
+            *(uint *)(this_ptr->field53_0x2dc4 + 8) = auStack_94._4_4_;
+            *(uint *)(this_ptr->field53_0x2dc4 + 0xc) = auStack_94._8_4_;
           }
           iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                            (this_ptr,pCVar4,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
+                            (this_ptr,pCVar3,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
           if (-1 < iVar2) {
             this_ptr->field53_0x2dc4[0x10] = '\0';
             this_ptr->field53_0x2dc4[0x11] = '\0';
@@ -155,8 +155,8 @@ core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,
             return 1;
           }
         }
-        uStack_18 = uStack_18 + 1;
-        if (8 < (int)uStack_18) {
+        uStack_14 = uStack_14 + 1;
+        if (8 < (int)uStack_14) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s was in the way, but couldn't figure out where to move!\n",this_ptr);
           this_ptr->field53_0x2dc4[0] = '\0';

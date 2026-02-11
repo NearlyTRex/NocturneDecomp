@@ -264,7 +264,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130 (CDe
 void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 (CDemonRenderer *this_ptr,CVector3i *point_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0 (CDemonRenderer *this_ptr,CVector3i *rotation);
 void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr);
-void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix,CVector3f *rotation_angles);
+void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix);
 void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420 (CDemonRenderer *this_ptr,CVector3f *input_point);
 void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 (CDemonRenderer *this_ptr,CVector3f *world_position);
 void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0 (CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation);
@@ -347,7 +347,7 @@ void __cdecl core_drone_cpp_CDrone_archive_FUN_0048f2f0(CDrone *this_ptr);
 void __cdecl core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_drone_cpp_CDrone_getTargetPoints_FUN_0048f4d0(CDrone *this_ptr,CVector3f *out_points_array);
 void __cdecl core_drone_cpp_CDrone_getPropertyList_FUN_0048f520 (CDrone *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_drone_cpp_CDrone_FUN_0048f560(CDrone *this_ptr);
+void __cdecl core_drone_cpp_CDrone_randomize_FUN_0048f560(CDrone *this_ptr);
 void __cdecl core_drone_cpp_CDrone_addFilesToExtract_FUN_0048f570(CDrone *this_ptr,_FILE *file_handle);
 CDrone * __cdecl core_drone_cpp_CDrone_dtor_FUN_0048f5a0(CDrone *this_ptr,uint flags);
 void __cdecl shape_dsemodel_cpp_CDSEModel_logVertex_FUN_0048f660(CDSEModel *this_ptr,int vertex_id);

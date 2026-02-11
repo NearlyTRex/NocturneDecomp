@@ -1,0 +1,146 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 15,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f2890",
+    "address_range": [
+      [
+        "004f2890",
+        "004f289f"
+      ],
+      [
+        "004f28a6",
+        "004f28cd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_canBeGrabbed_FUN_004f2890",
+    "signature": "int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004f2890(CHero *this_ptr,CDemonActor *grabber,int grab_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052dce0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "0052d4f0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062eb75",
+      "name": "s_GETGRABBED_0062eb75",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.526315789473684,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 14,
+      "INT_ADD": 6,
+      "INT_AND": 14,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 13,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 86
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      },
+      {
+        "is_param": true,
+        "name": "grabber",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "grab_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGabriella",
+        "offset": 252,
+        "vtable_addr": "0065e804"
+      },
+      {
+        "class_name": "CIcePick",
+        "offset": 252,
+        "vtable_addr": "00660034"
+      },
+      {
+        "class_name": "CMoloch",
+        "offset": 252,
+        "vtable_addr": "00661944"
+      },
+      {
+        "class_name": "CColonel",
+        "offset": 252,
+        "vtable_addr": "0065bd54"
+      },
+      {
+        "class_name": "CScat",
+        "offset": 252,
+        "vtable_addr": "00662464"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 10
+  }
+}

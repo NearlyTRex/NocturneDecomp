@@ -6,18 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 63,
+    "complexity_score": 22,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 8,
-    "suspect_count": 4,
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 18
+    "total_lines": 17
   },
   "cross_references": [
     {
@@ -73,7 +71,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_morph.cpp_FUN_0052b310",
-    "signature": "void __cdecl core_morph_cpp_FUN_0052b310(void)"
+    "signature": "void __cdecl core_morph_cpp_FUN_0052b310(CMorphModel *a)"
   },
   "function_calls": [
     {
@@ -158,7 +156,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
+    "declared_params": 1,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -182,45 +180,28 @@
     "pcode_op_count": 30
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "a",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "text": "void *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "pvVar1 = __arrinit(in_stack_00000004,2,&g_CMorphModelTypeInfo);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 9,
+      "line": 8,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar1 + 0xc28) = 1;",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 7,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

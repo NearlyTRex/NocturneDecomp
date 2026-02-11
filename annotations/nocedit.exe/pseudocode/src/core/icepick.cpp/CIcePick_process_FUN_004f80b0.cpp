@@ -57,7 +57,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   }
   fVar3 = (float)12.566370614;
   fVar14 = (this_ptr->base).unk1;
-  *(uint *)(this_ptr->unk + 0x20) =
+  *(uint *)(this_ptr->unk + 0x1c) =
        (uint)((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0);
   fVar14 = fVar14 - delta_time;
   (this_ptr->base).base.turn_speed = delta_time * fVar3;
@@ -91,7 +91,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
 LAB_004f8427:
           if ((this_ptr->base).base.field3_0x2410 != 0) {
             iVar4 = 0;
-            if ((*(int *)this_ptr->unk != 0) && (*(int *)(this_ptr->unk + 0x20) == 0)) {
+            if ((this_ptr->guns_drawn != 0) && (*(int *)(this_ptr->unk + 0x1c) == 0)) {
               iVar4 = 10;
             }
             if ((this_ptr->base).action_bindings.walk_key != 0) {
@@ -106,11 +106,11 @@ LAB_004f8427:
               iVar4 = 3;
             }
             if ((this_ptr->base).action_bindings.draw_key != 0) {
-              iVar4 = *(int *)this_ptr->unk;
+              iVar4 = this_ptr->guns_drawn;
               (this_ptr->base).action_bindings.draw_key = 0;
               uVar8 = (uint)(iVar4 == 0);
-              *(uint *)this_ptr->unk = uVar8;
-              if ((uVar8 == 0) || (*(int *)(this_ptr->unk + 0x20) != 0)) {
+              this_ptr->guns_drawn = uVar8;
+              if ((uVar8 == 0) || (*(int *)(this_ptr->unk + 0x1c) != 0)) {
                 iVar4 = 0;
               }
               else {
@@ -119,7 +119,7 @@ LAB_004f8427:
             }
             if ((this_ptr->base).action_bindings.fire_key != 0) {
               bVar2 = true;
-              if ((*(int *)this_ptr->unk == 0) && ((this_ptr->base).control_type != 2)) {
+              if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
                 iVar10 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
                 bVar2 = false;
                 if (iVar10 != 0) goto LAB_004f84cc;
@@ -140,10 +140,10 @@ LAB_004f8427:
 LAB_004f84cc:
                 if (!bVar2) goto switchD_004f8665_default;
               }
-              if (*(int *)this_ptr->unk != 0) {
-                if (*(int *)(this_ptr->unk + 0x20) == 0) {
+              if (this_ptr->guns_drawn != 0) {
+                if (*(int *)(this_ptr->unk + 0x1c) == 0) {
                   (this_ptr->base).action_bindings.fire_key = 0;
-                  switch(*(uint *)(this_ptr->unk + 4)) {
+                  switch(*(uint *)this_ptr->unk) {
                   case 0:
                   case 2:
                     iVar4 = 0xe;
@@ -174,11 +174,11 @@ switchD_004f8665_default:
                                 (&(this_ptr->base).base.model.motion_controller);
             if (iVar4 != pSVar12->state_index) {
               if ((((iVar4 == 0xe) || (iVar4 == 0xf)) || (iVar4 == 0x10)) &&
-                 (iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 8))
+                 (iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 4))
                  , iVar10 == 0)) {
                 uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                    ((CDemonActor *)this_ptr,"icepick-miss?.wav");
-                *(uint *)(this_ptr->unk + 8) = uVar11;
+                *(uint *)(this_ptr->unk + 4) = uVar11;
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,iVar4,1);
@@ -303,10 +303,10 @@ LAB_004f82f8:
   iVar4 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar4 == 0) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar14 = *(float *)(this_ptr->unk + 0x1c);
+    fVar14 = *(float *)(this_ptr->unk + 0x18);
     iVar4 = INT_02db8970;
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-              ((CVector3f *)(this_ptr->unk + 0x10),(CQuaternion4f *)&stack0xffffff74);
+              ((CVector3f *)(this_ptr->unk + 0xc),(CQuaternion4f *)&stack0xffffff74);
     auStack_7c._0_4_ = in_stack_ffffff74;
     *(uint *)(auStack_7c + (uint)bVar13 * -8 + 4) =
          *(uint *)(&stack0xffffff78 + (uint)bVar13 * -8);

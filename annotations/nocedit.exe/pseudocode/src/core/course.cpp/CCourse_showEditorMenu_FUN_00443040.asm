@@ -60,9 +60,9 @@
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 ;   core_course.cpp_CCourse_FUN_00442bc0
 ;   core_course.cpp_CCourse_FUN_00442d70
+;   core_course.cpp_CCourse_FUN_00443bc0
 ;   core_course.cpp_CCourse_load_FUN_00442580
 ;   core_course.cpp_CCourse_save_FUN_00442a90
-;   core_course.cpp_FUN_00443bc0
 ;   core_dmodel.cpp_loadModel_FUN_00478c00
 ;   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
 ;   core_xform.cpp_multiplyQuaternion_FUN_005f7640
@@ -286,7 +286,7 @@ section .text
     PUSH EAX                            ; 00443276
     PUSH EBP                            ; 00443277
     CALL core_course.cpp_CCourse_FUN_00442d70 ; 00443278
-        ;   XREF to: 00442d70 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_FUN_00442d70(CCourse * this_ptr)
+        ;   XREF to: 00442d70 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_FUN_00442d70(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0044327d
     TEST EAX,EAX                        ; 00443280
     JZ 0x0044324c                       ; 00443282
@@ -360,8 +360,8 @@ section .text
     ADD ESP,0x4                         ; 0044332d
     PUSH EAX                            ; 00443330
     PUSH EBP                            ; 00443331
-    CALL core_course.cpp_FUN_00443bc0   ; 00443332
-        ;   XREF to: 00443bc0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2)
+    CALL core_course.cpp_CCourse_FUN_00443bc0 ; 00443332
+        ;   XREF to: 00443bc0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2)
     JMP 0x004431ba                      ; 00443337
         ;   XREF to: 004431ba (UNCONDITIONAL_JUMP)  ; LAB_004431ba
     MOV EAX,dword ptr [EBP]             ; 0044333c
@@ -640,7 +640,7 @@ section .text
     PUSH EAX                            ; 0044366a
     PUSH EBP                            ; 0044366b
     CALL core_course.cpp_CCourse_FUN_00442bc0 ; 0044366c
-        ;   XREF to: 00442bc0 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_FUN_00442bc0(CCourse * this_ptr)
+        ;   XREF to: 00442bc0 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_FUN_00442bc0(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00443671
     TEST EAX,EAX                        ; 00443674
     JZ 0x00443639                       ; 00443676

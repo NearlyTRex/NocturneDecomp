@@ -44,7 +44,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
                      ((CDeformableModelInstance *)(pCVar6[-0x18].filenames[2] + 0x10),0);
   ptr = (CPassenger *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar7[-1].part_visibility_flags + 7),1);
+                  ((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);
   if ((flags & 2) != 0) {
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
     return ptr;

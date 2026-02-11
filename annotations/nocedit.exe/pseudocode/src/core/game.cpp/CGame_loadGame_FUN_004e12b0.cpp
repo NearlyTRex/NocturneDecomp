@@ -284,7 +284,7 @@ LAB_004e14f5:
           core_gore_cpp_CGore_FUN_004ed760(g_CGorePtr);
         }
         else if (local_34 == 4) {
-          core_gore_cpp_CGore_FUN_004ee1e0(g_CGorePtr);
+          core_gore_cpp_CGore_FUN_004ee1e0(g_CGorePtr,file_handle);
         }
         if (local_34 < 7) {
           core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);

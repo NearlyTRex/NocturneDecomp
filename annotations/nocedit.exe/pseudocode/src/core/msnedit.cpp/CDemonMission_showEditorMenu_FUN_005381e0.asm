@@ -41,12 +41,12 @@
 ;   core_inivar.cpp_readIniData_FUN_004fbd90
 ;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0
+;   core_mission.cpp_CDemonMission_FUN_005248e0
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_005235b0
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_mission.cpp_CDemonMission_save_FUN_00522e30
-;   core_mission.cpp_FUN_005248e0
 ;   core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
 ;   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
@@ -77,8 +77,8 @@ section .text
         ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053820b
     PUSH EBP                            ; 0053820e
-    CALL core_mission.cpp_FUN_005248e0  ; 0053820f
-        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_005248e0()
+    CALL core_mission.cpp_CDemonMission_FUN_005248e0 ; 0053820f
+        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_005248e0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538214
     PUSH 0x680800                       ; 00538217 | = "$$UNDO$$.TMP"
     CALL crt_stdio.c_remove_FUN_005ff9d0 ; 0053821c
@@ -360,8 +360,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00538551
     PUSH EBP                            ; 00538554
-    CALL core_mission.cpp_FUN_005248e0  ; 00538555
-        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_005248e0()
+    CALL core_mission.cpp_CDemonMission_FUN_005248e0 ; 00538555
+        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_005248e0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053855a
     ADD ESP,0x7cc                       ; 0053855d
     POP EBP                             ; 00538563

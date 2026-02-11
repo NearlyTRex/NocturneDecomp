@@ -13,8 +13,8 @@
 ;   double DOUBLE_0063a3ef = 0.0100000000000000
 ;
 ; Called Functions:
+;   core_morph.cpp_CMorphModel_FUN_0052b160
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70
-;   core_morph.cpp_FUN_0052b160
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0052af57
     PUSH dword ptr [ESP + 0xc]          ; 0052af5b
     PUSH EBX                            ; 0052af5f
-    CALL core_morph.cpp_FUN_0052b160    ; 0052af60
-        ;   XREF to: 0052b160 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b160()
+    CALL core_morph.cpp_CMorphModel_FUN_0052b160 ; 0052af60
+        ;   XREF to: 0052b160 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052b160(CMorphModel * this_ptr)
     ADD ESP,0x8                         ; 0052af65
     POP EBX                             ; 0052af68
     RET                                 ; 0052af69

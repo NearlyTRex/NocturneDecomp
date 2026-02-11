@@ -27,7 +27,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 005de5b9
     PUSH EBX                            ; 005de5bd
     CALL core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640 ; 005de5be
-        ;   XREF to: 005ee640 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640(CWeapon * this_ptr)
+        ;   XREF to: 005ee640 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640(CWeapon * this_ptr, int weapon_state)
     ADD ESP,0x8                         ; 005de5c3
     POP EBX                             ; 005de5c6
     RET                                 ; 005de5c7

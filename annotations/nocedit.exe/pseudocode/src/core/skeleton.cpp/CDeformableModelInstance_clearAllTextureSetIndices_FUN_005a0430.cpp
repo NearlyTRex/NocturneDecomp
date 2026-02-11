@@ -17,7 +17,7 @@ core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a043
   pCVar1 = this_ptr;
   do {
     piVar2 = &(pCVar1->motion_controller).current_motion_index;
-    pCVar1->texture_set_indices[0] = 0;
+    (pCVar1->part_data).texture_set_indices[0] = 0;
     pCVar1 = (CDeformableModelInstance *)piVar2;
   } while ((float *)piVar2 != &this_ptr->transformed_vertices[2].z);
   return;

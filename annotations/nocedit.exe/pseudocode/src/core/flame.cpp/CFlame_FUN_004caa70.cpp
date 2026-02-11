@@ -9,9 +9,6 @@
 void __cdecl core_flame_cpp_CFlame_FUN_004caa70(CFlame *this_ptr)
 
 {
-  this_ptr->unk4[0] = '\0';
-  this_ptr->unk4[1] = '\0';
-  this_ptr->unk4[2] = '\0';
-  this_ptr->unk4[3] = '\0';
+  this_ptr->unk4 = 0;
   return;
 }

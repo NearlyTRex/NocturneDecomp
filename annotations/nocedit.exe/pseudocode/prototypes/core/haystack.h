@@ -51,13 +51,13 @@ void __cdecl CHaystack::renderOpaque(CHaystack *this_ptr);
 // Address: 004f1b70
 void __cdecl CHaystack::processDamage(CHaystack *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_haystack.cpp_CHaystack_FUN_004f1c90
+// Original: core_haystack.cpp_CHaystack_areGunsDrawn_FUN_004f1c90
 // Address: 004f1c90
-int __cdecl CHaystack(CHaystack *this_ptr);
+int __cdecl CHaystack::areGunsDrawn(CHaystack *this_ptr);
 
-// Original: core_haystack.cpp_CHaystack_FUN_004f1ca0
+// Original: core_haystack.cpp_CHaystack_drawGun_FUN_004f1ca0
 // Address: 004f1ca0
-void __cdecl CHaystack(CHaystack *this_ptr);
+void __cdecl CHaystack::drawGun(CHaystack *this_ptr,int drawn);
 
 // Original: core_haystack.cpp_CHaystack_onActorDeleted_FUN_004f1cb0
 // Address: 004f1cb0

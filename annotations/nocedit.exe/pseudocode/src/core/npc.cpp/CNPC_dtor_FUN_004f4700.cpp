@@ -33,7 +33,7 @@ CNPC * __cdecl core_npc_cpp_CNPC_dtor_FUN_004f4700(CNPC *this_ptr,uint flags)
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)(pCVar5[-0x18].filenames[2] + 0x10),0);
   ptr = (CNPC *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                          ((CDemonActor *)(pCVar6[-1].part_visibility_flags + 7),1);
+                          ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 7),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

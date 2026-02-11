@@ -19,7 +19,7 @@
 ;   core_bugs.cpp_CBugs_FUN_004257f0 at 004258c4
 ;   core_conveyor.cpp_FUN_00442400 at 00442429
 ;   core_course.cpp_CCourse_FUN_004427a0 at 004429b3
-;   core_course.cpp_FUN_00443bc0 at 00443c51
+;   core_course.cpp_CCourse_FUN_00443bc0 at 00443c51
 ;   core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370 at 0047c3c4
 ;   ... and 29 more
 ;

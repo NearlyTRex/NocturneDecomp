@@ -14,7 +14,7 @@
 ;   core_fire.cpp_FUN_004c1940 at 004c1953
 ;   core_flame.cpp_CFlame_FUN_004cad90 at 004caddc
 ;   core_keyactor.cpp_CKeyActor_process_FUN_00501710 at 00501740
-;   core_weapon.cpp_CWeapon_FUN_005ee4a0 at 005ee5e0
+;   core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0 at 005ee5e0
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0061ec32 = 256

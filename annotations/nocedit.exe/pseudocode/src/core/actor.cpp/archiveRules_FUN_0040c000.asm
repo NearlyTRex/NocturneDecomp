@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(void *rules,char *property_name)
+; __cdecl void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(CRuleList *rules,char *property_name)
 ;
 ; Parameters:
-; void *           Stack[0x4]:4   rules
+; CRuleList *      Stack[0x4]:4   rules
 ; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[2]:

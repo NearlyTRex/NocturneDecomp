@@ -7,11 +7,11 @@
 ; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004ec290 at 004ec2b4
+;   core_gore.cpp_CBloodParticle_onCollision_FUN_004ec290 at 004ec2b4
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004ec2f0
-;   core_gore.cpp_FUN_004edaf0
+;   core_gore.cpp_CBloodSplat_FUN_004ec2f0
+;   core_gore.cpp_CGore_FUN_004edaf0
 ;
 ; *****************************************************************************
 
@@ -27,16 +27,16 @@ section .text
     PUSH EBX                            ; 004edb49
     MOV ECX,dword ptr [ESP + 0xc]       ; 004edb4a
     PUSH ECX                            ; 004edb4e
-    CALL core_gore.cpp_FUN_004edaf0     ; 004edb4f
-        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; CBloodSplat * core_gore.cpp_FUN_004edaf0()
+    CALL core_gore.cpp_CGore_FUN_004edaf0 ; 004edb4f
+        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; CBloodSplat * core_gore.cpp_CGore_FUN_004edaf0(CGore * this_ptr)
     ADD ESP,0x4                         ; 004edb54
     MOV EBX,dword ptr [ESP + 0x14]      ; 004edb57
     PUSH EBX                            ; 004edb5b
     MOV ESI,dword ptr [ESP + 0x14]      ; 004edb5c
     PUSH ESI                            ; 004edb60
     PUSH EAX                            ; 004edb61
-    CALL core_gore.cpp_FUN_004ec2f0     ; 004edb62
-        ;   XREF to: 004ec2f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ec2f0()
+    CALL core_gore.cpp_CBloodSplat_FUN_004ec2f0 ; 004edb62
+        ;   XREF to: 004ec2f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_FUN_004ec2f0(CBloodSplat * this_ptr)
     ADD ESP,0xc                         ; 004edb67
     POP EBX                             ; 004edb6a
     POP ESI                             ; 004edb6b

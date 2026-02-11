@@ -17,6 +17,9 @@ CDemonPod* g_CDemonPodPtr = (CDemonPod*)&g_CDemonPodInstance;
 // CDemonSet*
 CDemonSet* g_CDemonSetPtr = (CDemonSet*)&g_CDemonSetInstance;
 
+// CMouse*
+CMouse* g_CMousePtr = (CMouse*)&g_CMouseInstance;
+
 // CNetGame*
 CNetGame* g_CNetGamePtr = (CNetGame*)&g_CNetGameInstance;
 
@@ -605,7 +608,7 @@ RuntimeHandlerEntry g_InitHandlers[166] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)support_newmsg_cpp_staticInit_FUN_00544360
+        .func = (RUNTIME_HANDLER_FUNC *)engine_ncursfx_cpp_staticInit_FUN_00544360
     },
     {
         .status = 0x00,

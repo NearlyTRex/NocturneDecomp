@@ -1,0 +1,111 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [
+    {
+      "addr": "004eb8c0",
+      "from_addr": "004eb8c5",
+      "name": "core_gore.cpp_staticInit_FUN_004eb8c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ed730",
+    "address_range": [
+      [
+        "004ed730",
+        "004ed741"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_ctor_FUN_004ed730",
+    "signature": "CGore * __cdecl core_gore_cpp_CGore_ctor_FUN_004ed730(CGore *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ed760",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_FUN_004ed760"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004eb8c5",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_staticInit_FUN_004eb8c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 1,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.625,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 6,
+      "INT_ADD": 4,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 29
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGore",
+        "offset": 0,
+        "vtable_addr": "0065f064"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

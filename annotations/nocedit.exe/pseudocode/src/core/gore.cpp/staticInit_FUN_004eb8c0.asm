@@ -19,7 +19,7 @@
 ;   CFootstep[1000] DAT_02da8c2c
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004ed730
+;   core_gore.cpp_CGore_ctor_FUN_004ed730
 ;   crt_memory.c___arrinit_FUN_005fe667
 ;   crt_stdlib.c__atexit_FUN_005ff060
 ;
@@ -29,8 +29,8 @@ section .text
 
     PUSH 0x2d83364                      ; 004eb8c0 | g_CGoreInstance
         ;   Label: core_gore.cpp_staticInit_FUN_004eb8c0
-    CALL core_gore.cpp_FUN_004ed730     ; 004eb8c5
-        ;   XREF to: 004ed730 (UNCONDITIONAL_CALL)  ; CGore * core_gore.cpp_FUN_004ed730(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_ctor_FUN_004ed730 ; 004eb8c5
+        ;   XREF to: 004ed730 (UNCONDITIONAL_CALL)  ; CGore * core_gore.cpp_CGore_ctor_FUN_004ed730(CGore * this_ptr)
     ADD ESP,0x4                         ; 004eb8ca
     PUSH 0x67b970                       ; 004eb8cd | g_CGoreDestructorNode
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 004eb8d2

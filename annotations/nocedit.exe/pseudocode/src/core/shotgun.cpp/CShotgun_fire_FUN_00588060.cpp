@@ -223,7 +223,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
           pCStack_e8 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
           (**(code **)(this_ptr_00->cameras[0].fog_enabled + 0x11c))
                     ((CCharacter *)this_ptr_00,(SDamageInfo *)(auStack_124 + 4));
-          if (*(int *)((this_ptr->base).unk1 + 0xc) == 0) break;
+          if ((this_ptr->base).can_penetrate == 0) break;
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                     (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
         }
@@ -239,9 +239,6 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
   core_fire_cpp_CFireEffect_FUN_004c7a60(g_CFireEffectPtr);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"shotgun.wav",&CStack_b8);
-  (this_ptr->base).unk2[0xc] = -6;
-  (this_ptr->base).unk2[0xd] = '~';
-  (this_ptr->base).unk2[0xe] = '*';
-  (this_ptr->base).unk2[0xf] = '?';
+  (this_ptr->base).fire_cooldown_timer = 0.666;
   return 1;
 }

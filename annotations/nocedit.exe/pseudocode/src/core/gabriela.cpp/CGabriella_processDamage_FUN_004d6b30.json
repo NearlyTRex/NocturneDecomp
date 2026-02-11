@@ -1,0 +1,207 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 134,
+    "complexity_score": 81,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 6,
+    "pseudocode_lines": 66,
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 200
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d6b30",
+    "address_range": [
+      [
+        "004d6b30",
+        "004d6bef"
+      ],
+      [
+        "004d6c76",
+        "004d6ce2"
+      ],
+      [
+        "004d6d03",
+        "004d6d30"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gabriela.cpp_CGabriella_processDamage_FUN_004d6b30",
+    "signature": "void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30 (CGabriella *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0042c3c0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0"
+    },
+    {
+      "addr": "004e0bd0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065e7c4",
+      "name": "FLOAT_0065e7c4",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81b5c",
+      "name": "g_CGameInstance.hero_number",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81c6c",
+      "name": "DAT_02d81c6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81cc8",
+      "name": "DAT_02d81cc8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.215686274509804,
+    "instruction_count": 102,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 3,
+      "CALL": 8,
+      "CBRANCH": 10,
+      "COPY": 175,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 38,
+      "INT_AND": 45,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 28,
+      "INT_LEFT": 12,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 14,
+      "INT_SUB": 33,
+      "INT_ZEXT": 12,
+      "LOAD": 24,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 34
+    },
+    "pcode_op_count": 532
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ABS",
+      "text": "if (ABS((this_ptr->base).unk1) != 0.0) {",
+      "type": "decompiler_intrinsic"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGabriella",
+        "offset": 284,
+        "vtable_addr": "0065e804"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

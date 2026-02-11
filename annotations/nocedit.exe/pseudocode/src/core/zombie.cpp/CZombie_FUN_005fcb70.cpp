@@ -12,7 +12,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(CZombie *this_ptr)
   CDeformableModelInstance *this_ptr_00;
   int iVar1;
   
-  core_enemy_cpp_CEnemy_FUN_004aa250(&this_ptr->base);
+  core_enemy_cpp_CEnemy_randomize_FUN_004aa250(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   iVar1 = stricmp
                     ((this_ptr->base).base.model.model_name,"jeff.dfm");

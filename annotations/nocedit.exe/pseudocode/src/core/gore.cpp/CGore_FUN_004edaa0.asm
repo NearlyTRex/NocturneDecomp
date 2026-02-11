@@ -21,7 +21,7 @@
 ;   CBloodParticle[256] DAT_02d833d4
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004eb9a0
+;   core_gore.cpp_CBloodParticle_FUN_004eb9a0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 004edadd
     PUSH EBP                            ; 004edae1
     PUSH EAX                            ; 004edae2
-    CALL core_gore.cpp_FUN_004eb9a0     ; 004edae3
-        ;   XREF to: 004eb9a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004eb9a0()
+    CALL core_gore.cpp_CBloodParticle_FUN_004eb9a0 ; 004edae3
+        ;   XREF to: 004eb9a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodParticle_FUN_004eb9a0(CBloodParticle * this_ptr)
     ADD ESP,0x10                        ; 004edae8
     POP EDI                             ; 004edaeb
     POP EBP                             ; 004edaec

@@ -39,7 +39,7 @@
 ;   core_course.cpp_CCourse_FUN_00442710 at 0044276b
 ;   core_fire.cpp_CBulletHole_init_FUN_004bf7f0 at 004bf99b
 ;   core_gabriela.cpp_CGabriella_FUN_004d5550 at 004d5790
-;   core_gabriela.cpp_CGabriella_FUN_004d7120 at 004d743f
+;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 at 004d743f
 ;   core_ladder.cpp_CLadder_FUN_00502a70 at 00502b43
 ;   ... and 16 more
 ;

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr)
+; __cdecl void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr,int render_flags)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   render_flags
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

@@ -345,7 +345,7 @@ void __cdecl archiveMotionState(CMotionController *motion_controller,char *prope
 
 // Original: core_actor.cpp_archivePartStatus_FUN_0040bae0
 // Address: 0040bae0
-void __cdecl archivePartStatus(void *part,char *property_name);
+void __cdecl archivePartStatus(CDeformableModelInstance *model_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveSimBox_FUN_0040bd70
 // Address: 0040bd70
@@ -357,7 +357,7 @@ void __cdecl archiveClothList(CClothList *cloth_list,char *property_name);
 
 // Original: core_actor.cpp_archiveRules_FUN_0040c000
 // Address: 0040c000
-void __cdecl archiveRules(void *rules,char *property_name);
+void __cdecl archiveRules(CRuleList *rules,char *property_name);
 
 // Original: core_actor.cpp_CDemonActor_archive_FUN_0040c1c0
 // Address: 0040c1c0

@@ -37,10 +37,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   
   bVar10 = 0;
   iVar5 = this_ptr->state;
-  (this_ptr->base).unk2[0] = -1;
-  (this_ptr->base).unk2[1] = -1;
-  (this_ptr->base).unk2[2] = -1;
-  (this_ptr->base).unk2[3] = -1;
+  (this_ptr->base).muzzle_flash_offset.x = -NAN;
   switch(iVar5) {
   case 0:
     pUVar1 = &(this_ptr->base).base.orient;
@@ -67,26 +64,14 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     if (fVar4 <= 0.0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
-      (this_ptr->base).unk2[0xc] = '\0';
-      (this_ptr->base).unk2[0xd] = '\0';
-      (this_ptr->base).unk2[0xe] = '\0';
-      (this_ptr->base).unk2[0xf] = '\0';
+      (this_ptr->base).fire_cooldown_timer = 0.0;
     }
     break;
   case 2:
-    (this_ptr->base).unk2[0] = -1;
+    (this_ptr->base).muzzle_flash_offset.x = 3.57331e-43;
     pCVar3 = g_CEventListPtr;
-    (this_ptr->base).unk2[1] = '\0';
-    (this_ptr->base).unk2[2] = '\0';
-    (this_ptr->base).unk2[3] = '\0';
-    (this_ptr->base).unk2[4] = '\0';
-    (this_ptr->base).unk2[5] = '\0';
-    (this_ptr->base).unk2[6] = '\0';
-    (this_ptr->base).unk2[7] = '\0';
-    (this_ptr->base).unk2[8] = '\0';
-    (this_ptr->base).unk2[9] = '\0';
-    (this_ptr->base).unk2[10] = '\0';
-    (this_ptr->base).unk2[0xb] = '\0';
+    (this_ptr->base).muzzle_flash_offset.y = 0.0;
+    (this_ptr->base).muzzle_flash_offset.z = 0.0;
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (pCVar3,this_ptr->activate_event);
     if (iVar5 == 0) {
@@ -99,28 +84,16 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     }
     break;
   case 3:
-    (this_ptr->base).unk2[0] = '\0';
+    (this_ptr->base).muzzle_flash_offset.x = 0.0;
     pCVar3 = g_CEventListPtr;
-    (this_ptr->base).unk2[1] = '\0';
-    (this_ptr->base).unk2[2] = '\0';
-    (this_ptr->base).unk2[3] = '\0';
-    (this_ptr->base).unk2[4] = -1;
-    (this_ptr->base).unk2[5] = '\0';
-    (this_ptr->base).unk2[6] = '\0';
-    (this_ptr->base).unk2[7] = '\0';
-    (this_ptr->base).unk2[8] = '\0';
-    (this_ptr->base).unk2[9] = '\0';
-    (this_ptr->base).unk2[10] = '\0';
-    (this_ptr->base).unk2[0xb] = '\0';
+    (this_ptr->base).muzzle_flash_offset.y = 3.57331e-43;
+    (this_ptr->base).muzzle_flash_offset.z = 0.0;
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (pCVar3,this_ptr->activate_event);
     if (iVar5 != 0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
-      (this_ptr->base).unk2[0xc] = '\0';
-      (this_ptr->base).unk2[0xd] = '\0';
-      (this_ptr->base).unk2[0xe] = '\0';
-      (this_ptr->base).unk2[0xf] = '\0';
+      (this_ptr->base).fire_cooldown_timer = 0.0;
       break;
     }
     fVar4 = this_ptr->timer - delta_time;
@@ -196,13 +169,13 @@ LAB_005e24c7:
     g_CurrentLineNumber = 0x15a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::process - invalid state");
   }
-  if (-1 < *(int *)(this_ptr->base).unk2) {
+  if (-1 < (int)(this_ptr->base).muzzle_flash_offset.x) {
     (*(((this_ptr->base).base.vtable._uc)->_uc).releaseFromGrab)((CCharacter *)this_ptr);
   }
-  fVar4 = *(float *)((this_ptr->base).unk2 + 0xc);
+  fVar4 = (this_ptr->base).fire_cooldown_timer;
   iVar5 = *(int *)(this_ptr->unk5 + 0x50);
   *(float *)(this_ptr->unk5 + 0xc) = *(float *)(this_ptr->unk5 + 0xc) - delta_time;
-  *(float *)((this_ptr->base).unk2 + 0xc) = fVar4 - delta_time;
+  (this_ptr->base).fire_cooldown_timer = fVar4 - delta_time;
   if ((0 < iVar5) || (0.0 < *(float *)(this_ptr->unk5 + 0xc))) {
     *(int *)(this_ptr->unk5 + 0x50) = *(int *)(this_ptr->unk5 + 0x50) + -1;
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);

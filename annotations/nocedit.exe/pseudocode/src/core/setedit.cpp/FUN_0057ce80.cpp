@@ -23,7 +23,7 @@ void __cdecl core_setedit_cpp_FUN_0057ce80(void)
   int in_stack_00000018;
   int in_stack_0000001c;
   float in_stack_00000020;
-  CVector3f *in_stack_ffffd990;
+  uint local_2670 [1200];
   uint auStack_13b0 [1200];
   char local_f0 [80];
   char local_a0 [80];
@@ -55,8 +55,8 @@ void __cdecl core_setedit_cpp_FUN_0057ce80(void)
       pvVar3 = local_1c;
       do {
         iVar2 = iVar5 + 4;
-        *(uint *)(&stack0xffffd990 + iVar5) =
-             *(uint *)((int)g_ScreenBufferArray + iVar5);
+        *(uint *)((int)local_2670 + iVar5) = *(uint *)((int)g_ScreenBufferArray + iVar5)
+        ;
         *(void **)((int)g_ScreenBufferArray + iVar5) = pvVar3;
         pvVar3 = (void *)((int)pvVar3 + in_stack_00000018 * 4);
         *(uint *)((int)auStack_13b0 + iVar5) =
@@ -78,7 +78,7 @@ void __cdecl core_setedit_cpp_FUN_0057ce80(void)
   engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
             (g_CDemonRendererPtr2,in_stack_00000020);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr2,&local_50,in_stack_ffffd990);
+            (g_CDemonRendererPtr2,&local_50);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
@@ -131,8 +131,8 @@ void __cdecl core_setedit_cpp_FUN_0057ce80(void)
       iVar5 = 0;
       do {
         iVar2 = iVar5 + 4;
-        *(uint *)((int)g_ScreenBufferArray + iVar5) =
-             *(uint *)(&stack0xffffd990 + iVar5);
+        *(uint *)((int)g_ScreenBufferArray + iVar5) = *(uint *)((int)local_2670 + iVar5)
+        ;
         *(uint *)((int)g_ZBufferScanlineArray + iVar5) =
              *(uint *)((int)auStack_13b0 + iVar5);
         iVar5 = iVar2;

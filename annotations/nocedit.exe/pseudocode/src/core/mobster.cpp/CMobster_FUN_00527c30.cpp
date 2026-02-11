@@ -9,6 +9,6 @@
 void __cdecl core_mobster_cpp_CMobster_FUN_00527c30(CMobster *this_ptr)
 
 {
-  core_enemy_cpp_CEnemy_FUN_004aa250(&this_ptr->base);
+  core_enemy_cpp_CEnemy_randomize_FUN_004aa250(&this_ptr->base);
   return;
 }

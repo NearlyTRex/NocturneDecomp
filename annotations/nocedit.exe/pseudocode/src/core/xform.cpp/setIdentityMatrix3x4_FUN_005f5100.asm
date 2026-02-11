@@ -7,8 +7,8 @@
 ; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; XREF[3]:
-;   core_gabriela.cpp_CGabriella_FUN_004d7120 at 004d74ce
-;   core_mirror.cpp_setupMirrorReflection_FUN_005214c0 at 00521884
+;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 at 004d74ce
+;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 at 00521884
 ;   core_stranger.cpp_CStranger_FUN_005c07b0 at 005c15cc
 ;
 ; *****************************************************************************

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 86,
+    "complexity_score": 60,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 12,
-    "pseudocode_lines": 61,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 214
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 213
   },
   "cross_references": [
     {
@@ -233,20 +231,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "CVector3f *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EBP",
-      "text": "(g_CDemonRendererPtr2,(CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,unaff_EBP);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

@@ -21,6 +21,7 @@ typedef struct CFlame {
     float randomness; // 0x284
     int burn_hero; // 0x288
     int burn_enemy; // 0x28c
-    char unk4[20]; // 0x290
+    int unk4; // 0x290
+    char unk5[16]; // 0x294
 } CFlame;
 

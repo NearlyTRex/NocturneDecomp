@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_ghoul_cpp_CGhoul_FUN_004e8520(CGhoul *this_ptr)
 
 {
@@ -87,7 +89,8 @@ switchD_004e8556_default:
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
                 ((CCharacter *)this_ptr,"limb?.wav");
       core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk3 + 0x28)] == 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk3 + 0x28)] ==
+          0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
       in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);

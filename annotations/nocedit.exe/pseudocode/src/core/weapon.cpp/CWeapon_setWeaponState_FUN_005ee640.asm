@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640(CWeapon *this_ptr)
+; __cdecl void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640(CWeapon *this_ptr,int weapon_state)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   weapon_state
 ;
 ; XREF[3]:
 ;   core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90 at 00413e9d

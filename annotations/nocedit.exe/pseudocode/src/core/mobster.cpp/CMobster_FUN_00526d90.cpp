@@ -42,7 +42,7 @@ int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
       *(float *)(this_ptr->unk1 + 4) = local_14;
     }
-    if (((this_ptr->base).base.model.part_visibility_flags
+    if (((this_ptr->base).base.model.part_data.visibility_flags
          [(this_ptr->base).base.carry_hands[1].secondary_bone_index] != 0) &&
        ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
       if (0.0 < *(float *)(this_ptr->unk1 + 8)) {

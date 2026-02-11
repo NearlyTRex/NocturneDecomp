@@ -55,7 +55,7 @@ section .text
     ADD EAX,0x3fe74                     ; 005e55d6
     PUSH EAX                            ; 005e55db
     CALL core_morph.cpp_FUN_0052b310    ; 005e55dc
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
     ADD ESP,0x4                         ; 005e55e1
     LEA EBX,[EAX + 0xfff3233c]          ; 005e55e4
     PUSH 0x656ac5                       ; 005e55ea | = "nosfer.dfm"

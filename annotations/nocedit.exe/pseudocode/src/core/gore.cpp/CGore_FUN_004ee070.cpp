@@ -9,13 +9,18 @@
 void __cdecl core_gore_cpp_CGore_FUN_004ee070(CGore *this_ptr)
 
 {
-  DAT_02da8c24 = DAT_02da8c24 + 1;
-  if (999 < DAT_02da8c24) {
+  int iVar1;
+  CFootstep *this_ptr_00;
+  
+  iVar1 = DAT_02da8c24 + 1;
+  this_ptr_00 = DAT_02da8c2c + DAT_02da8c24;
+  DAT_02da8c24 = iVar1;
+  if (999 < iVar1) {
     DAT_02da8c24 = 0;
   }
   if (DAT_02da8c28 < 1000) {
     DAT_02da8c28 = DAT_02da8c28 + 1;
   }
-  core_gore_cpp_FUN_004ed240();
+  core_gore_cpp_CFootstep_FUN_004ed240(this_ptr_00);
   return;
 }

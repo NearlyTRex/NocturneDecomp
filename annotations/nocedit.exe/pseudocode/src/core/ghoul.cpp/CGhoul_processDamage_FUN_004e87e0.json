@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 119,
+        "line": 120,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 147,
+        "line": 148,
         "message": "use of undeclared identifier 'stack0xffffff88'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 159,
+        "line": 160,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -25,11 +25,11 @@
   },
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 218,
+    "complexity_score": 219,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 6,
-    "pseudocode_lines": 158,
+    "pseudocode_lines": 159,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -37,7 +37,7 @@
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 489
+    "total_lines": 490
   },
   "cross_references": [],
   "function": {
@@ -253,28 +253,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 105,
       "match": "(CGhoul *)((int)",
       "text": "pCVar5 = (CGhoul *)((int)&(pCVar5->base).base.base.orient + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 120,
+      "line": 121,
       "match": "7.00649e-44",
       "text": "spawn_radius = 7.00649e-44;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 124,
       "match": "ROUND",
       "text": "*(int *)(this_ptr->unk1 + 8) = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 140,
+      "line": 141,
       "match": "&stack0xffffff88",
       "text": "_sprintf(&stack0xffffff88,\"guul flinch%d\");",
       "type": "stack_ref"

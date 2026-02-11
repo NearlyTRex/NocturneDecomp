@@ -17,6 +17,7 @@
 #include "system/winuser.h"
 #include "types/classes/CActorProperty.h"
 #include "types/classes/CActorPropertyList.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMatrix3x4f.h"
@@ -34,7 +35,7 @@
 // FUNCTION PROTOTYPES - Range 0x5F0000
 // =============================================================================
 
-void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f11a0(CWerewolf *this_ptr);
+void __cdecl core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_005f11a0 (CWerewolf *this_ptr,CDemonActor *target,float speed,float distance);
 void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f11e0(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1230(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr);
@@ -46,7 +47,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010 (CWerewolf *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_werewolf_cpp_CWerewolf_propertyActionCallback_FUN_005f2070 (CWerewolf *this_ptr,CActorProperty *property);
 void __cdecl core_werewolf_cpp_CWerewolf_getPropertyList_FUN_005f20d0 (CWerewolf *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f21e0(CWerewolf *this_ptr);
+void __cdecl core_werewolf_cpp_CWerewolf_randomize_FUN_005f21e0(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_addFilesToExtract_FUN_005f21f0(CWerewolf *this_ptr,_FILE *file_handle);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005f2220(CWerewolf *this_ptr,uint flags);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0 (CWinFont *this_ptr,char *font_name,int font_height,int font_width);
@@ -175,13 +176,13 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fbde0(CZombie *this_ptr);
 int __cdecl core_zombie_cpp_CZombie_renderOpaque_FUN_005fbe20(CZombie *this_ptr);
 int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005fbe70(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_archive_FUN_005fbfd0(CZombie *this_ptr);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fc120(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *param_2);
 void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_ptr,CVector3f *out_points_array);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fc920(CZombie *this_ptr);
-bool __cdecl core_zombie_cpp_CZombie_FUN_005fc960(CZombie *this_ptr);
-int __cdecl core_zombie_cpp_CZombie_FUN_005fc970(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_005fc920(CZombie *this_ptr,CDemonActor *param_2);
+int __cdecl core_zombie_cpp_CZombie_canBeGrabbed_FUN_005fc960 (CZombie *this_ptr,CDemonActor *grabber,int grab_type);
+int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970 (CZombie *this_ptr,CDemonActor *grabber,int grab_type,int param_4);
 int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005fc9e0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_FUN_005fca10(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80 (CZombie *this_ptr,CActorPropertyList *property_list);

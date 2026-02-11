@@ -23,9 +23,9 @@ CFlashlight * __cdecl CFlashlight::ctor(CFlashlight *this_ptr);
 // Address: 004cbc40
 int __cdecl CFlashlight::fire(CFlashlight *this_ptr);
 
-// Original: core_flashlit.cpp_CFlashlight_FUN_004cbc50
+// Original: core_flashlit.cpp_CFlashlight_getDamage_FUN_004cbc50
 // Address: 004cbc50
-int __cdecl CFlashlight(CFlashlight *this_ptr);
+float __cdecl CFlashlight::getDamage(CFlashlight *this_ptr);
 
 // Original: core_flashlit.cpp_CFlashlight_dtor_FUN_004cbc60
 // Address: 004cbc60

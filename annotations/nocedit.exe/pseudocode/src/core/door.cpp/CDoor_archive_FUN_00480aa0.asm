@@ -180,7 +180,7 @@ section .text
     LEA EDI,[EBX + 0x478]               ; 00480c60
     PUSH EDI                            ; 00480c66
     CALL core_actor.cpp_archiveRules_FUN_0040c000 ; 00480c67
-        ;   XREF to: 0040c000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveRules_FUN_0040c000(void * rules, char * property_name)
+        ;   XREF to: 0040c000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveRules_FUN_0040c000(CRuleList * rules, char * property_name)
     ADD ESP,0x8                         ; 00480c6c
     CMP dword ptr [0x00670378],0x6      ; 00480c6f | g_CDoorClassVersion
         ;   Label: LAB_00480c6f

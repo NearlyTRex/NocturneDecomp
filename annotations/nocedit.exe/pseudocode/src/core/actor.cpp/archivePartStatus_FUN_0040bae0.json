@@ -2,28 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 52,
-        "message": "no matching function for call to 'core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410'"
-      },
-      {
         "category": "format_error",
         "column": 44,
-        "line": 57,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 67,
-        "message": "no matching function for call to 'core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430'"
-      },
-      {
-        "category": "format_error",
-        "column": 44,
-        "line": 72,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+        "line": 59,
+        "message": "format specifies type 'int *' but the argument has type 'SPartInstanceData *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -31,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 137,
+    "complexity_score": 84,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 23,
-    "pseudocode_lines": 82,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 340
+    "pseudocode_lines": 84,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 342
   },
   "cross_references": [
     {
@@ -90,7 +70,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archivePartStatus_FUN_0040bae0",
-    "signature": "void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0(void *part,char *property_name)"
+    "signature": "void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0 (CDeformableModelInstance *model_ptr,char *property_name)"
   },
   "function_calls": [
     {
@@ -313,10 +293,10 @@
       },
       {
         "is_param": true,
-        "name": "part",
+        "name": "model_ptr",
         "offset": 4,
         "size": 4,
-        "type": "void *"
+        "type": "CDeformableModelInstance *"
       },
       {
         "is_param": true,
@@ -327,41 +307,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)pvVar4 + 0x2140);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(void *)((int)",
-      "text": "pvVar4 = (void *)((int)pvVar4 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(void *)((int)",
-      "text": "} while (pvVar4 != (void *)((int)part + 0x78));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)part + 0x21b8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(void *)((int)",
-      "text": "part = (void *)((int)part + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

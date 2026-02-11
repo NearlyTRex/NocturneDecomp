@@ -13,11 +13,11 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004e036d
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 at 004dd9ba
 ;   core_game.cpp_giveHeroWeapon_FUN_004dd870 at 004dd8f4
-;   core_hero.cpp_CHero_FUN_004f2a30 at 004f2a97
 ;   core_hero.cpp_CHero_FUN_004f38d0 at 004f38fc
+;   core_hero.cpp_CHero_createDefaultGun_FUN_004f2a30 at 004f2a97
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f4ec8
 ;   core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900 at 004fe9c1
-;   core_scat.cpp_CScat_FUN_00557150 at 0055719a
+;   core_scat.cpp_CScat_createDefaultGun_FUN_00557150 at 0055719a
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055bcd8
 ;
 ; Referenced Globals:

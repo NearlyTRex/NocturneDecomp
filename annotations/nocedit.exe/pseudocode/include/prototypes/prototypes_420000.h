@@ -114,7 +114,7 @@ void __cdecl core_bride_cpp_CBride_FUN_00424600(CBride *this_ptr);
 void __cdecl core_bride_cpp_FUN_00424800(void);
 void __cdecl core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_00424a10(CBride *this_ptr,CVector3f *out_points_array);
-CVector3f * __cdecl core_bride_cpp_CBride_FUN_00424aa0(CBride *this_ptr);
+CVector3f * __cdecl core_bride_cpp_CBride_getTargetPoint_FUN_00424aa0(CBride *this_ptr,CVector3f *out_point);
 void __cdecl core_bride_cpp_CBride_getPropertyList_FUN_00424b10 (CBride *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_bride_cpp_CBride_addFilesToExtract_FUN_00424b50(CBride *this_ptr,_FILE *file_handle);
 CBride * __cdecl core_bride_cpp_CBride_dtor_FUN_00424b80(CBride *this_ptr,uint flags);

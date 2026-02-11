@@ -1,0 +1,135 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ec290",
+    "address_range": [
+      [
+        "004ec290",
+        "004ec2e4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CBloodParticle_onCollision_FUN_004ec290",
+    "signature": "int __cdecl core_gore_cpp_CBloodParticle_onCollision_FUN_004ec290 (CBloodParticle *this_ptr,CVector3f *collision_normal)"
+  },
+  "function_calls": [
+    {
+      "addr": "004edb40",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_FUN_004edb40"
+    },
+    {
+      "addr": "004edb70",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_FUN_004edb70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e302",
+      "name": "DOUBLE_0062e302",
+      "type": "double",
+      "value": "0.900000000000000"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.361111111111111,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 51,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 15,
+      "INT_AND": 9,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 13,
+      "INT_ZEXT": 4,
+      "LOAD": 13,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 157
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodParticle *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_normal",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 12,
+        "vtable_addr": "0065f044"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

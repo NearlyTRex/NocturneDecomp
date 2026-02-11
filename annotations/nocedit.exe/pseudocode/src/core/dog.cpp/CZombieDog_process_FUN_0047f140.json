@@ -2,57 +2,27 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 10,
-        "line": 87,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 87,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
         "category": "incompatible_types",
         "column": 22,
-        "line": 106,
+        "line": 107,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 119,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 119,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 154,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 183,
+        "line": 182,
         "message": "use of undeclared identifier 'stack0xffffff20'"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 196,
+        "line": 195,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 279,
+        "line": 278,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -61,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 592,
-    "complexity_score": 486,
+    "complexity_score": 475,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 22,
-    "pseudocode_lines": 271,
-    "suspect_count": 19,
+    "pseudocode_lines": 270,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -74,7 +44,7 @@
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 863
+    "total_lines": 862
   },
   "cross_references": [],
   "function": {
@@ -672,49 +642,49 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_ffffff28",
-      "text": "CDemonActor *in_stack_ffffff28;",
+      "text": "float in_stack_ffffff28;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_ffffff2c",
+      "text": "CDemonActor *in_stack_ffffff2c;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 79,
+      "line": 80,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 98,
+      "line": 99,
       "match": "extraout_EAX_01",
       "text": "if (extraout_EAX_01 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 117,
+      "line": 118,
       "match": "extraout_EAX_02",
       "text": "if (extraout_EAX_02 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
+      "line": 131,
       "match": "SQRT",
       "text": "if ((8.0f < SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 147,
+      "line": 148,
       "match": "in_stack_ffffff28",
-      "text": "path_map,pCVar11,fVar12,(float)in_stack_ffffff28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 152,
-      "match": "in_stack_ffffff28",
-      "text": "in_stack_ffffff28 = (CDemonActor *)0x1;",
+      "text": "path_map,pCVar11,fVar12,in_stack_ffffff28);",
       "type": "stack_param"
     },
     {
@@ -732,45 +702,38 @@
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 164,
-      "match": "in_stack_ffffff28",
-      "text": "in_stack_ffffff28 = (CDemonActor *)0x1;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 176,
+      "line": 175,
       "match": "&stack0xffffff20",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff20);",
       "type": "stack_ref"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 188,
+      "line": 187,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 242,
+      "match": "in_stack_ffffff2c",
+      "text": "in_stack_ffffff2c = (this_ptr->base).victim;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 243,
-      "match": "in_stack_ffffff28",
-      "text": "in_stack_ffffff28 = (this_ptr->base).victim;",
+      "match": "in_stack_ffffff2c",
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_ffffff2c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 244,
-      "match": "in_stack_ffffff28",
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_ffffff28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 272,
-      "match": "in_stack_ffffff28",
-      "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_ffffff28);",
+      "line": 271,
+      "match": "in_stack_ffffff2c",
+      "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_ffffff2c);",
       "type": "stack_param"
     }
   ],

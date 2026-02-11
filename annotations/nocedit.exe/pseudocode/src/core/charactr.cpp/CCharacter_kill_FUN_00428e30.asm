@@ -12,7 +12,7 @@
 ; SDamageInfo      Stack[-0x40]:60  local_40
 ;
 ; XREF[1]:
-;   core_hero.cpp_CHero_FUN_004f3af0 at 004f3b0d
+;   core_hero.cpp_CHero_kill_FUN_004f3af0 at 004f3b0d
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060

@@ -23,9 +23,9 @@ CScat * __cdecl CScat::ctor(CScat *this_ptr);
 // Address: 00556f90
 void __cdecl CScat::setup(CScat *this_ptr);
 
-// Original: core_scat.cpp_CScat_FUN_00557150
+// Original: core_scat.cpp_CScat_createDefaultGun_FUN_00557150
 // Address: 00557150
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::createDefaultGun(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_process_FUN_005571f0
 // Address: 005571f0
@@ -51,13 +51,13 @@ int __cdecl CScat::renderOpaque(CScat *this_ptr);
 // Address: 00557ea0
 void __cdecl CScat::processDamage(CScat *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_scat.cpp_CScat_FUN_00557ff0
+// Original: core_scat.cpp_CScat_areGunsDrawn_FUN_00557ff0
 // Address: 00557ff0
-int __cdecl CScat(CScat *this_ptr);
+int __cdecl CScat::areGunsDrawn(CScat *this_ptr);
 
-// Original: core_scat.cpp_CScat_FUN_00558000
+// Original: core_scat.cpp_CScat_drawGun_FUN_00558000
 // Address: 00558000
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::drawGun(CScat *this_ptr,int drawn);
 
 // Original: core_scat.cpp_CScat_FUN_00558010
 // Address: 00558010

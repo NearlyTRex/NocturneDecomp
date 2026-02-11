@@ -3,10 +3,6 @@
 // Dependencies
 #include <math.h>
 #include "system/basetypes.h"
-#include "constants.h"
-#include "prototypes/prototypes_410000.h"
-#include "prototypes/prototypes_4E0000.h"
-#include "prototypes/prototypes_540000.h"
 #include "system/misc.h"
 
 // =============================================================================
@@ -2469,10 +2465,4 @@ const undefined1 DAT_006590a8 = 0x54;
 
 // undefined4 constants
 const undefined4 DAT_0065d95c = 0x0FFFFFFF;
-
-// void* constants
-const void* DAT_0065B0D4 = (void*)core_boneguy_cpp_CBoneGuy_FUN_0041d4c0;
-const void* DAT_0065F048 = (void*)core_particle_cpp_CParticle_process_FUN_00545760;
-const void* DAT_0065F04C = (void*)core_gore_cpp_FUN_004ebac0;
-const void* DAT_0065F050 = (void*)core_gore_cpp_FUN_004ec290;
 

@@ -101,7 +101,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004e8278
     PUSH EAX                            ; 004e827e
     CALL core_actor.cpp_archivePartStatus_FUN_0040bae0 ; 004e827f
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(void * part, char * property_name)
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e8284
     PUSH 0x62de3a                       ; 004e8287 | = "spasmCount"
     LEA EAX,[EBX + 0xbedc]              ; 004e828c

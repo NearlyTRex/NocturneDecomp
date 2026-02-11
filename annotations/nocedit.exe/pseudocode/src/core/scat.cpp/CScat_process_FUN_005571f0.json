@@ -22,26 +22,14 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 118,
+        "line": 117,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 118,
+        "line": 117,
         "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 137,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 71,
-        "line": 137,
-        "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
@@ -114,6 +102,18 @@
         "column": 52,
         "line": 243,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 268,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 16,
+        "line": 268,
+        "message": "expected expression"
       }
     ],
     "success": false,
@@ -568,14 +568,14 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 109,
       "match": "code *",
-      "text": "(iVar11 = (**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 0xfc))(),",
+      "text": "(iVar11 = (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xfc))(), iVar11 != 0)) {",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 111,
+      "line": 110,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 0xf8))();",
+      "text": "(**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xf8))();",
       "type": "unresolved_funcptr"
     },
     {
@@ -603,7 +603,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 261,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->unk + 0x14) + 0x154) + 4))();",
+      "text": "(**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 4))();",
       "type": "unresolved_funcptr"
     },
     {

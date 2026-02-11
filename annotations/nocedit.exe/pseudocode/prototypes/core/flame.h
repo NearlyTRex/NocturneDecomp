@@ -23,13 +23,13 @@ CFlame * __cdecl CFlame::ctor(CFlame *this_ptr);
 // Address: 004c9b90
 void __cdecl CFlame::setup(CFlame *this_ptr);
 
-// Original: core_flame.cpp_CFlame_FUN_004c9c00
+// Original: core_flame.cpp_CFlame_process_FUN_004c9c00
 // Address: 004c9c00
-void __cdecl CFlame(CFlame *this_ptr);
+void __cdecl CFlame::process(CFlame *this_ptr,float delta_time);
 
-// Original: core_flame.cpp_CFlame_FUN_004ca110
+// Original: core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
 // Address: 004ca110
-float __cdecl CFlame(CFlame *this_ptr);
+int __cdecl CFlame::renderTransparent(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_FUN_004caa70
 // Address: 004caa70

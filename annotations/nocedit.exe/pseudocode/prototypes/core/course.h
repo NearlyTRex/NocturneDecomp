@@ -29,7 +29,7 @@ void __cdecl CCourse(CCourse *this_ptr);
 
 // Original: core_course.cpp_CCourse_FUN_004427a0
 // Address: 004427a0
-void __cdecl CCourse(void);
+void __cdecl CCourse(CCourse *this_ptr);
 
 // Original: core_course.cpp_CCourse_save_FUN_00442a90
 // Address: 00442a90
@@ -37,11 +37,11 @@ void __cdecl CCourse::save(CCourse *this_ptr);
 
 // Original: core_course.cpp_CCourse_FUN_00442bc0
 // Address: 00442bc0
-int __cdecl CCourse(CCourse *this_ptr);
+int __cdecl CCourse(CCourse *this_ptr,char *filename);
 
 // Original: core_course.cpp_CCourse_FUN_00442d70
 // Address: 00442d70
-int __cdecl CCourse(CCourse *this_ptr);
+int __cdecl CCourse(CCourse *this_ptr,char *filename);
 
 // Original: core_course.cpp_CCourse_importMatrices_FUN_00442ea0
 // Address: 00442ea0
@@ -59,6 +59,6 @@ void __cdecl FUN_004436d0(void);
 // Address: 00443760
 void __cdecl FUN_00443760(void);
 
-// Original: core_course.cpp_FUN_00443bc0
+// Original: core_course.cpp_CCourse_FUN_00443bc0
 // Address: 00443bc0
-void __cdecl FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *param_2);
+void __cdecl CCourse(CCourse *this_ptr,CKeyFramedModel *param_2);

@@ -23,7 +23,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CNetGame* g_CNetGamePtr = 02f7c740
-;   void* PTR_g_SpecialBitmapsInstance_00680b80 = 02fd8a80
+;   CMouse* g_CMousePtr = 02fd8a80
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
 ;   ... and 12 more
 ;
@@ -264,10 +264,10 @@ section .text
     CALL core_netgame.cpp_CNetGame_FUN_0053f830 ; 005087b1
         ;   XREF to: 0053f830 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053f830(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 005087b6
-    MOV ESI,dword ptr [0x00680b80]      ; 005087b9 | PTR_g_SpecialBitmapsInstance_00680b80
+    MOV ESI,dword ptr [0x00680b80]      ; 005087b9 | g_CMousePtr
     PUSH ESI                            ; 005087bf | g_CMouseInstance
-    CALL support_newmsg.cpp_doNothing_FUN_00544500 ; 005087c0
-        ;   XREF to: 00544500 (UNCONDITIONAL_CALL)  ; void support_newmsg.cpp_doNothing_FUN_00544500()
+    CALL engine_ncursfx.cpp_CMouse_FUN_00544500 ; 005087c0
+        ;   XREF to: 00544500 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_CMouse_FUN_00544500(CMouse * this_ptr)
     ADD ESP,0x4                         ; 005087c5
     MOV EDI,dword ptr [0x0067d550]      ; 005087c8 | g_CDemonMissionPtr
     PUSH EDI                            ; 005087ce | g_CDemonMissionInstance

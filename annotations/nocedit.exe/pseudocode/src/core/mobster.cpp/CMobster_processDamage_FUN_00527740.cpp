@@ -20,8 +20,9 @@ core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageI
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk2 + 0xc));
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk2 + 4));
   core_mobster_cpp_CMobster_FUN_00527380(this_ptr);
-  if (((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk2 + 0x14)] == 0) &&
-     ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk2 + 0x1c)] == 0)) {
+  if (((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk2 + 0x14)] == 0)
+     && ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk2 + 0x1c)] ==
+         0)) {
     damage_info->damage_amount = 9999.9;
   }
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;

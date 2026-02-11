@@ -18,7 +18,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f3760(CHero *this_ptr)
   }
   iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CHealthItem");
   if (iVar1 == 0) {
-    iVar1 = (*(((this_ptr->base).base.vtable._ue)->_ue).enemyfunc3)();
+    iVar1 = (*(((this_ptr->base).base.vtable._ue)->_ue).randomize)((CEnemy *)this_ptr);
     if (iVar1 != 0) {
       return 0;
     }

@@ -2,28 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 26,
-        "line": 23,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 23,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 51,
         "line": 27,
-        "message": "use of undeclared identifier 'stack0xffffffa4'"
+        "message": "use of undeclared identifier 'stack0xffffffac'"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
         "line": 29,
-        "message": "use of undeclared identifier 'stack0xfffffff4'"
+        "message": "use of undeclared identifier 'stack0xfffffffc'"
       }
     ],
     "success": false,
@@ -31,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 131,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 27,
     "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 99
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -176,7 +164,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == (CDemonActor *)0x0) {",
       "type": "stack_param"
@@ -192,35 +180,35 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,(CBoundingBox3D *)&stack0xffffffa4);",
+      "text": "(in_stack_00000008,(CBoundingBox3D *)&stack0xffffffac);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 20,
-      "match": "&stack0xffffffa4",
-      "text": "(in_stack_00000008,(CBoundingBox3D *)&stack0xffffffa4);",
+      "match": "&stack0xffffffac",
+      "text": "(in_stack_00000008,(CBoundingBox3D *)&stack0xffffffac);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,(CVector3f *)&stack0xfffffff4,aCStack_30);",
+      "text": "(in_stack_00000008,(CVector3f *)&stack0xfffffffc,(CVector3f *)(local_2c + 4));",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 22,
-      "match": "&stack0xfffffff4",
-      "text": "(in_stack_00000008,(CVector3f *)&stack0xfffffff4,aCStack_30);",
+      "match": "&stack0xfffffffc",
+      "text": "(in_stack_00000008,(CVector3f *)&stack0xfffffffc,(CVector3f *)(local_2c + 4));",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 26,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,(CVector3f *)auStack_3c,pCVar1);",
+      "text": "(in_stack_00000008,(CVector3f *)auStack_34,pCVar1);",
       "type": "stack_param"
     },
     {

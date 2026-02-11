@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
-;   core_enemy.cpp_CEnemy_FUN_004aa250
+;   core_enemy.cpp_CEnemy_randomize_FUN_004aa250
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;
@@ -32,8 +32,8 @@ section .text
     MOV EBP,ESP                         ; 005fcb73
     MOV ESI,dword ptr [EBP + 0x10]      ; 005fcb75
     PUSH ESI                            ; 005fcb78
-    CALL core_enemy.cpp_CEnemy_FUN_004aa250 ; 005fcb79
-        ;   XREF to: 004aa250 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004aa250(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_randomize_FUN_004aa250 ; 005fcb79
+        ;   XREF to: 004aa250 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_randomize_FUN_004aa250(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 005fcb7e
     LEA EBX,[ESI + 0x158]               ; 005fcb81
     PUSH 0x658aa7                       ; 005fcb87 | = "jeff.dfm"

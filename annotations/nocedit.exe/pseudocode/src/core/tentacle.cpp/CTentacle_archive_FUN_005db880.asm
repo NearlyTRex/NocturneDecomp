@@ -54,7 +54,7 @@ section .text
     PUSH 0x654e71                       ; 005db8c2 | = "partStatus"
     PUSH ESI                            ; 005db8c7
     CALL core_actor.cpp_archivePartStatus_FUN_0040bae0 ; 005db8c8
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(void * part, char * property_name)
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 005db8cd
     PUSH 0x654e7c                       ; 005db8d0 | = "graveActor"
     ADD EBX,0xbec4                      ; 005db8d5

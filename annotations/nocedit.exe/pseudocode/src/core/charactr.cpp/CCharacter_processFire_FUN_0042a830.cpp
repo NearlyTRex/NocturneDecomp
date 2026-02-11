@@ -80,7 +80,7 @@ core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float
             iVar8 = iVar8 + 1;
           }
           pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(local_44);
-          if ((this_ptr->model).part_visibility_flags
+          if ((this_ptr->model).part_data.visibility_flags
               [*(int *)((int)pCVar4->bone_to_part_map + iVar5)] == 0) {
             iVar8 = iVar8 + 1;
           }
@@ -124,7 +124,7 @@ core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float
     local_1c = this_ptr;
     pCVar11 = &this_ptr->field66_0x33cc[0].base.location;
     do {
-      if ((this_ptr->model).part_visibility_flags[*(int *)pSVar10->unk] != 0) {
+      if ((this_ptr->model).part_data.visibility_flags[*(int *)pSVar10->unk] != 0) {
         (this_ptr->base).is_transparent = 1;
         pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                            (&CStack_54,(CVector3f *)(pSVar10->unk + 8),
@@ -154,10 +154,10 @@ core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float
     local_28 = 0;
     do {
       pSStack_14 = (SFire *)local_18;
-      if (((this_ptr->model).part_visibility_flags[(local_18->motion_list).state_count] != 0) &&
-         (fVar1 = (float)local_34 * (float)this_ptr->fire_allow_hero +
-                  *(float *)((int)&local_18->motion_list + 0x14),
-         *(float *)((int)&local_18->motion_list + 0x14) = fVar1, 3.0f < fVar1)) {
+      if (((this_ptr->model).part_data.visibility_flags[(local_18->motion_list).state_count] != 0)
+         && (fVar1 = (float)local_34 * (float)this_ptr->fire_allow_hero +
+                     *(float *)((int)&local_18->motion_list + 0x14),
+            *(float *)((int)&local_18->motion_list + 0x14) = fVar1, 3.0f < fVar1)) {
         *(float *)((int)&local_18->motion_list + 0x14) = 3.0f;
         iVar5 = 0;
         iVar8 = unaff_EBP;

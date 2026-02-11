@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_flame.cpp_CFlame_FUN_004ca110 at 004ca1e8
+;   core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 at 004ca1e8
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

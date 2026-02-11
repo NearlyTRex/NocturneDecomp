@@ -48,7 +48,7 @@ section .text
     ADD EAX,0x184                       ; 004185de
     PUSH EAX                            ; 004185e3
     CALL core_morph.cpp_FUN_0052b310    ; 004185e4
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
     ADD ESP,0x4                         ; 004185e9
     LEA EBX,[EAX + 0xffff3fc0]          ; 004185ec
     PUSH 0x615aba                       ; 004185f2 | = "biggs.dfm"

@@ -11,24 +11,27 @@ core_weapon_cpp_CWeapon_onDropped_FUN_005ee3f0(CWeapon *this_ptr,CVector3f *drop
 
 {
   CVector3f *pCVar1;
+  CVector3f *pCVar2;
   CVector3f *in_stack_ffffffec;
   float in_stack_fffffff0;
   
   this_ptr->carried_by_actor = (CDemonActor *)0x0;
   core_weapon_cpp_CWeapon_FUN_005ee740(this_ptr);
   if (drop_position != (CVector3f *)0x0) {
-    pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                       ((CMatrix3x3f *)(this_ptr->unk3 + 0x18),(CVector3f *)&stack0xffffffec,
+    pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                       (&(this_ptr->physics_box).rotation_matrix,(CVector3f *)&stack0xffffffec,
                         drop_position);
-    if ((CVector3f *)(this_ptr->unk3 + 0x4c) != pCVar1) {
-      ((CVector3f *)(this_ptr->unk3 + 0x4c))->x = pCVar1->x;
-      *(float *)(this_ptr->unk3 + 0x50) = pCVar1->y;
-      *(float *)(this_ptr->unk3 + 0x54) = pCVar1->z;
+    pCVar1 = &(this_ptr->physics_box).linear_velocity_local;
+    if (pCVar1 != pCVar2) {
+      pCVar1->x = pCVar2->x;
+      (this_ptr->physics_box).linear_velocity_local.y = pCVar2->y;
+      (this_ptr->physics_box).linear_velocity_local.z = pCVar2->z;
     }
-    if ((CVector3f *)(this_ptr->unk3 + 0x40) != drop_position) {
-      ((CVector3f *)(this_ptr->unk3 + 0x40))->x = drop_position->x;
-      *(float *)(this_ptr->unk3 + 0x44) = drop_position->y;
-      *(float *)(this_ptr->unk3 + 0x48) = drop_position->z;
+    pCVar1 = &(this_ptr->physics_box).linear_velocity;
+    if (pCVar1 != drop_position) {
+      pCVar1->x = drop_position->x;
+      (this_ptr->physics_box).linear_velocity.y = drop_position->y;
+      (this_ptr->physics_box).linear_velocity.z = drop_position->z;
     }
   }
   (*(((this_ptr->base).vtable._uc)->_uc).kill)

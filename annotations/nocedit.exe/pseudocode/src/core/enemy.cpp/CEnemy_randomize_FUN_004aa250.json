@@ -1,0 +1,220 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 2,
+    "complexity_score": 4,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 6
+  },
+  "cross_references": [
+    {
+      "addr": "0041da00",
+      "from_addr": "0041da05",
+      "name": "core_boneguy.cpp_CBoneGuy_randomize_FUN_0041da00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00444c90",
+      "from_addr": "00444c95",
+      "name": "core_cow.cpp_CZombieCow_randomize_FUN_00444c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047f960",
+      "from_addr": "0047f965",
+      "name": "core_dog.cpp_CZombieDog_FUN_0047f960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048f560",
+      "from_addr": "0048f565",
+      "name": "core_drone.cpp_CDrone_randomize_FUN_0048f560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e8e40",
+      "from_addr": "004e8e46",
+      "name": "core_ghoul.cpp_CGhoul_randomize_FUN_004e8e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527c30",
+      "from_addr": "00527c35",
+      "name": "core_mobster.cpp_CMobster_FUN_00527c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005f21e0",
+      "from_addr": "005f21e5",
+      "name": "core_werewolf.cpp_CWerewolf_randomize_FUN_005f21e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005fcb70",
+      "from_addr": "005fcb79",
+      "name": "core_zombie.cpp_CZombie_FUN_005fcb70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004aa250",
+    "address_range": [
+      [
+        "004aa250",
+        "004aa250"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_enemy.cpp_CEnemy_randomize_FUN_004aa250",
+    "signature": "void __cdecl core_enemy_cpp_CEnemy_randomize_FUN_004aa250(CEnemy *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0041da05",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_randomize_FUN_0041da00",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047f965",
+        "call_type": "direct",
+        "caller": "core_dog.cpp_CZombieDog_FUN_0047f960",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048f565",
+        "call_type": "direct",
+        "caller": "core_drone.cpp_CDrone_randomize_FUN_0048f560",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005f21e5",
+        "call_type": "direct",
+        "caller": "core_werewolf.cpp_CWerewolf_randomize_FUN_005f21e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e8e46",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_CGhoul_randomize_FUN_004e8e40",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00444c95",
+        "call_type": "direct",
+        "caller": "core_cow.cpp_CZombieCow_randomize_FUN_00444c90",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00527c35",
+        "call_type": "direct",
+        "caller": "core_mobster.cpp_CMobster_FUN_00527c30",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005fcb79",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_CZombie_FUN_005fcb70",
+        "estimated_params": 4,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 3
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEnemy *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBiggs",
+        "offset": 348,
+        "vtable_addr": "0065ac24"
+      },
+      {
+        "class_name": "CBride",
+        "offset": 348,
+        "vtable_addr": "0065b424"
+      },
+      {
+        "class_name": "CMimic",
+        "offset": 348,
+        "vtable_addr": "00661424"
+      },
+      {
+        "class_name": "CArmour",
+        "offset": 348,
+        "vtable_addr": "00659d34"
+      },
+      {
+        "class_name": "CLarva",
+        "offset": 348,
+        "vtable_addr": "00660734"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 20
+  }
+}

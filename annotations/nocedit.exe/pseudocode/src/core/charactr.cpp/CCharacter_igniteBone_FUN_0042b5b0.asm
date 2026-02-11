@@ -19,7 +19,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00486070 at 004860d4
 ;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a8526
 ;   core_fire.cpp_CGunFlame_FUN_004c4c00 at 004c4d2e
-;   core_flame.cpp_CFlame_FUN_004c9c00 at 004c9ebd
+;   core_flame.cpp_CFlame_process_FUN_004c9c00 at 004c9ebd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_0061713e

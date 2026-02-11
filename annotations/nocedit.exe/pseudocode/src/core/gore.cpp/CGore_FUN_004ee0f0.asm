@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0062e43a = 0.5
 ;   double DOUBLE_0062e442 = 1.33300000000000
-;   undefined4 DAT_02d873d8
+;   int INT_02d873d8
 ;   CBloodSplat[2000] DAT_02d873dc
 ;   undefined4 DAT_02d873e0
 ;   undefined4 DAT_02d873e4
@@ -24,7 +24,7 @@
 ;   undefined4 DAT_02d8742c
 ;   undefined4 DAT_02d87430
 ;   undefined4 DAT_02d87434
-;   undefined4 DAT_02da8720
+;   int INT_02da8720
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     PUSH EBP                            ; 004ee0f3
     MOV EBP,ESP                         ; 004ee0f4
     AND ESP,0xfffffff8                  ; 004ee0f6
-    MOV ESI,dword ptr [0x02d873d8]      ; 004ee0f9 | DAT_02d873d8
-    MOV EDI,dword ptr [0x02da8720]      ; 004ee0ff | DAT_02da8720
+    MOV ESI,dword ptr [0x02d873d8]      ; 004ee0f9 | INT_02d873d8
+    MOV EDI,dword ptr [0x02da8720]      ; 004ee0ff | INT_02da8720
     MOV ECX,dword ptr [EBP + 0x18]      ; 004ee105
     XOR EBX,EBX                         ; 004ee108
     TEST EDI,EDI                        ; 004ee10a
@@ -81,8 +81,8 @@ section .text
         ;   Label: LAB_004ee147
     MOV EAX,EDX                         ; 004ee149
         ;   Label: LAB_004ee149
-    MOV dword ptr [0x02da8720],EDI      ; 004ee14b | DAT_02da8720
-    MOV dword ptr [0x02d873d8],ESI      ; 004ee151 | DAT_02d873d8
+    MOV dword ptr [0x02da8720],EDI      ; 004ee14b | INT_02da8720
+    MOV dword ptr [0x02d873d8],ESI      ; 004ee151 | INT_02d873d8
     MOV ESP,EBP                         ; 004ee157
     POP EBP                             ; 004ee159
     POP EDI                             ; 004ee15a

@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *this_ptr)
 
 {
@@ -25,7 +27,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
     iVar3 = iVar4 + 1;
     pCVar2 = &pCVar5->base;
     pCVar5 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);
-    local_84[iVar4] = (pCVar2->base).model.part_visibility_flags[0];
+    local_84[iVar4] = (pCVar2->base).model.part_data.visibility_flags[0];
     iVar4 = iVar3;
   } while (iVar3 < 0x1e);
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
@@ -34,12 +36,12 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
     pCVar5 = this_ptr;
     do {
       pCVar6 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);
-      (pCVar5->base).base.model.part_visibility_flags[0] = 0;
+      (pCVar5->base).base.model.part_data.visibility_flags[0] = 0;
       pCVar5 = pCVar6;
     } while (pCVar6 != (CSvetlana *)(this_ptr->base).base.base.create_event);
-    (this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk6 + 0x10)] = 1;
+    (this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk6 + 0x10)] = 1;
     this_ptr_00 = g_CDemonRendererPtr2;
-    (this_ptr->base).base.model.part_visibility_flags[this_ptr->unk7] = 1;
+    (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->unk7] = 1;
     iVar3 = g_CGamePtr->unk6;
     g_CGamePtr->unk6 = 2;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(this_ptr_00,0);
@@ -53,7 +55,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
     do {
       piVar1 = local_84 + iVar3;
       iVar3 = iVar3 + 1;
-      (pCVar5->base).base.model.part_visibility_flags[0] = *piVar1;
+      (pCVar5->base).base.model.part_data.visibility_flags[0] = *piVar1;
       pCVar5 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);
     } while (iVar3 < 0x1e);
   }

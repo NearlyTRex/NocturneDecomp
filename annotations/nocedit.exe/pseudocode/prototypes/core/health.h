@@ -31,9 +31,9 @@ void __cdecl CHealthItem::process(CHealthItem *this_ptr,float delta_time);
 // Address: 004f1e60
 int __cdecl CHealthItem::renderOpaque(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_CHealthItem_FUN_004f1ed0
+// Original: core_health.cpp_CHealthItem_getBoundingBox_FUN_004f1ed0
 // Address: 004f1ed0
-CBoundingBox3D * __cdecl CHealthItem(CHealthItem *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __cdecl CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_health.cpp_CHealthItem_archive_FUN_004f1f20
 // Address: 004f1f20

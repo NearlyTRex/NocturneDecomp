@@ -31,9 +31,9 @@ void __cdecl CLadder::process(CLadder *this_ptr,float delta_time);
 // Address: 00502620
 int __cdecl CLadder::renderOpaque(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_getBoundingBox_CLadder_FUN_005028c0
+// Original: core_ladder.cpp_CLadder_getBoundingBox_FUN_005028c0
 // Address: 005028c0
-CBoundingBox3D * __cdecl getBoundingBox::CLadder(CLadder *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __cdecl CLadder::getBoundingBox(CLadder *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_ladder.cpp_CLadder_archive_FUN_005029c0
 // Address: 005029c0

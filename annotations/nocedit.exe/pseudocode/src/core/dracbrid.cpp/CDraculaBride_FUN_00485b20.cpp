@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_00485b20(CDraculaBride *this_ptr)
 
 {
@@ -14,7 +16,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_00485b20(CDraculaBride *this_pt
   int in_stack_00000010;
   
   if (((this_ptr->base).base.model.model_name[0] != '\0') &&
-     ((this_ptr->base).base.model.part_visibility_flags[in_stack_00000008] != 0)) {
+     ((this_ptr->base).base.model.part_data.visibility_flags[in_stack_00000008] != 0)) {
     body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
     core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
               ((CCharacter *)this_ptr,body_part,in_stack_00000008,in_stack_00000010);

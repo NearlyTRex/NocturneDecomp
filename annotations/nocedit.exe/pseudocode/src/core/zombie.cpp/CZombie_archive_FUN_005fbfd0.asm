@@ -83,7 +83,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 005fc04d
     PUSH EAX                            ; 005fc053
     CALL core_actor.cpp_archivePartStatus_FUN_0040bae0 ; 005fc054
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(void * part, char * property_name)
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     MOV EDI,dword ptr [0x006849b0]      ; 005fc059 | g_CZombieClassVersion
     ADD ESP,0x8                         ; 005fc05f
     CMP EDI,0x7                         ; 005fc062

@@ -38,7 +38,7 @@ core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0
   bVar11 = 0;
   core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
   if (in_stack_0000000c == 0) {
-    core_mission_cpp_FUN_005248e0();
+    core_mission_cpp_CDemonMission_FUN_005248e0(this_ptr);
   }
   do {
     iVar2 = _fgetc(file_handle);
@@ -250,7 +250,7 @@ core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0
     this_ptr->current_set_index = -1;
     core_gore_cpp_CGore_FUN_004ed760(this_ptr_00);
     if (6 < this_ptr->mission_version_num) {
-      core_gore_cpp_CGore_FUN_004ee1e0(g_CGorePtr);
+      core_gore_cpp_CGore_FUN_004ee1e0(g_CGorePtr,file_handle);
       return;
     }
   }

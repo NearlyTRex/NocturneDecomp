@@ -541,7 +541,7 @@ section .text
     PUSH EAX                            ; 005078e0
         ;   Label: LAB_005078e0
     CALL core_morph.cpp_FUN_0052b310    ; 005078e1
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
     ADD ESP,0x4                         ; 005078e6
     JMP 0x00507896                      ; 005078e9
         ;   XREF to: 00507896 (UNCONDITIONAL_JUMP)  ; LAB_00507896

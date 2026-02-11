@@ -47,9 +47,9 @@ void __cdecl CBride::processDamage(CBride *this_ptr,SDamageInfo *damage_info);
 // Address: 00424a10
 int __cdecl CBride::getTargetPoints(CBride *this_ptr,CVector3f *out_points_array);
 
-// Original: core_bride.cpp_CBride_FUN_00424aa0
+// Original: core_bride.cpp_CBride_getTargetPoint_FUN_00424aa0
 // Address: 00424aa0
-CVector3f * __cdecl CBride(CBride *this_ptr);
+CVector3f * __cdecl CBride::getTargetPoint(CBride *this_ptr,CVector3f *out_point);
 
 // Original: core_bride.cpp_CBride_getPropertyList_FUN_00424b10
 // Address: 00424b10

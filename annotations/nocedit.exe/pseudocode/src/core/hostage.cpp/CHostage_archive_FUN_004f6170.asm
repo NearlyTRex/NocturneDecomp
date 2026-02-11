@@ -75,7 +75,7 @@ section .text
     LEA ESI,[EBX + 0x158]               ; 004f61cf
     PUSH ESI                            ; 004f61d5
     CALL core_actor.cpp_archivePartStatus_FUN_0040bae0 ; 004f61d6
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(void * part, char * property_name)
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f61db
     PUSH 0x62f145                       ; 004f61de | = "rescueDistance"
     LEA ESI,[EBX + 0x1f708]             ; 004f61e3

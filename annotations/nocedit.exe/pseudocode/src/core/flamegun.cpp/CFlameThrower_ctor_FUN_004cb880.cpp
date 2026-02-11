@@ -24,22 +24,10 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004cb880(CFlame
   pCVar2->unk[1] = '\0';
   pCVar2->unk[2] = '\0';
   pCVar2->unk[3] = '\0';
-  (pCVar2->base).unk1[0] = '\0';
-  (pCVar2->base).unk1[1] = '\0';
-  (pCVar2->base).unk1[2] = '\0';
-  (pCVar2->base).unk1[3] = '\0';
-  (pCVar2->base).unk1[4] = '\0';
-  (pCVar2->base).unk1[5] = '\0';
-  (pCVar2->base).unk1[6] = '\0';
-  (pCVar2->base).unk1[7] = '\0';
-  (pCVar2->base).unk1[8] = '\x02';
-  (pCVar2->base).unk1[9] = '\0';
-  (pCVar2->base).unk1[10] = '\0';
-  (pCVar2->base).unk1[0xb] = '\0';
-  (pCVar2->base).unk1[0xc] = '\0';
-  (pCVar2->base).unk1[0xd] = '\0';
-  (pCVar2->base).unk1[0xe] = '\0';
-  (pCVar2->base).unk1[0xf] = '\0';
+  (pCVar2->base).is_spread_weapon = 0;
+  (pCVar2->base).fire_mode = 0;
+  (pCVar2->base).weapon_type = 2;
+  (pCVar2->base).can_penetrate = 0;
   (pCVar2->base).bolt_velocity = 15.0;
   (pCVar2->base).fire_cooldown = 1.4013e-45;
   fVar1 = 8.0f;
@@ -51,6 +39,6 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004cb880(CFlame
   pCVar2->unk[9] = '\0';
   pCVar2->unk[10] = '\0';
   pCVar2->unk[0xb] = '\0';
-  *(float *)((pCVar2->base).unk3 + 0x25c) = fVar1;
+  (pCVar2->base).unk3 = (int)fVar1;
   return pCVar2;
 }

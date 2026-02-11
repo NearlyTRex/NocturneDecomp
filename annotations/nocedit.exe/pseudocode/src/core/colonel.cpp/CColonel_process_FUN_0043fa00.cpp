@@ -90,14 +90,14 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
           iVar5 = 3;
         }
         if ((this_ptr->base).action_bindings.draw_key != 0) {
-          iVar7 = *(int *)this_ptr->unk;
+          iVar7 = this_ptr->guns_drawn;
           (this_ptr->base).action_bindings.draw_key = 0;
           iVar5 = 0;
-          *(uint *)this_ptr->unk = (uint)(iVar7 == 0);
+          this_ptr->guns_drawn = (uint)(iVar7 == 0);
         }
         if ((this_ptr->base).action_bindings.fire_key != 0) {
           bVar4 = true;
-          if ((*(int *)this_ptr->unk == 0) && ((this_ptr->base).control_type != 2)) {
+          if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
             iVar7 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
             bVar4 = false;
             if (iVar7 != 0) goto LAB_0043fd60;
@@ -239,9 +239,10 @@ LAB_0043fc14:
   iVar5 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar5 == 0) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar10 = *(float *)(this_ptr->unk + 0x14);
+    fVar10 = *(float *)(this_ptr->field2_0x1fbd8 + 0x10);
     iVar5 = INT_0083b124;
-    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(this_ptr->unk + 8),&CStack_84);
+    core_xform_cpp_eulerToQuaternion_FUN_005f7b20
+              ((CVector3f *)(this_ptr->field2_0x1fbd8 + 4),&CStack_84);
     source_quaternions = (CQuaternion4f *)local_74;
     local_74._0_4_ = CStack_84.w;
     *(uint *)(local_74 + (uint)bVar9 * -8 + 4) =

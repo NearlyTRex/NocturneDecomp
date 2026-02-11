@@ -24,7 +24,7 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
   CMatrix3x4f *pCVar12;
   CMatrix3x3f *pCVar13;
   byte bVar14;
-  CStranger *in_stack_00000008;
+  CDemonActor *in_stack_00000008;
   int in_stack_0000000c;
   CQuaternion4f *pCVar15;
   CMatrix3x4f local_d2c;
@@ -139,7 +139,7 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
   bVar14 = 0;
   iVar6 = (this_ptr->base).base.carry_hands[in_stack_0000000c].bone_index;
   local_180.x = (float)core_actor_cpp_castToClassHash_FUN_0040c790
-                                 ((CDemonActor *)in_stack_00000008,g_CWeaponClassInfo.name_hash);
+                                 (in_stack_00000008,g_CWeaponClassInfo.name_hash);
   if ((CDemonActor *)local_180.x != (CDemonActor *)0x0) {
     fVar1 = (((CDemonActor *)((int)local_180.x + 0x2b0))->orient).vec.x;
     pCVar15 = (this_ptr->base).base.model.bone_transform.bone_world_matrices[iVar6].m;
@@ -393,11 +393,10 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
     local_190 = pCVar5->z + pCVar4->z;
     local_104 = local_194 * 0.5f;
     local_100 = local_190 * 0.5f;
-    (*((in_stack_00000008->base).base.base.vtable._ub)->getBoundingBox)
-              ((CDemonActor *)in_stack_00000008,&local_204);
+    (*((in_stack_00000008->vtable)._ub)->getBoundingBox)(in_stack_00000008,&local_204);
     local_100 = local_100 + 0.333f;
     local_104 = local_104 - (local_204.max.y - local_204.min.y);
-    fVar1 = core_stranger_cpp_CStranger_FUN_005bb010(in_stack_00000008);
+    fVar1 = core_stranger_cpp_FUN_005bb010();
     local_104 = fVar1 + local_104;
     core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(&local_2ac);
     local_2ac.m[0].z = local_108;
@@ -428,10 +427,9 @@ float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
     goto LAB_005c0946;
   }
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                     ((CDemonActor *)in_stack_00000008,g_CLightActorClassInfo.name_hash);
+                     (in_stack_00000008,g_CLightActorClassInfo.name_hash);
   if (pCVar2 != (CDemonActor *)0x0) {
-    (*((in_stack_00000008->base).base.base.vtable._ub)->getBoundingBox)
-              ((CDemonActor *)in_stack_00000008,&local_21c);
+    (*((in_stack_00000008->vtable)._ub)->getBoundingBox)(in_stack_00000008,&local_21c);
     local_138 = local_21c.min.x + local_21c.max.x;
     local_150.x = local_138 * 0.5f;
     local_134 = local_21c.min.y + local_21c.max.y;
@@ -498,8 +496,7 @@ LAB_005c1504:
     local_180.y = local_21c.max.y;
   }
 LAB_005c10ab:
-  iVar3 = (*((in_stack_00000008->base).base.base.vtable._ub)->getAllowedMeleeAttackTypes)
-                    ((CDemonActor *)in_stack_00000008);
+  iVar3 = (*((in_stack_00000008->vtable)._ub)->getAllowedMeleeAttackTypes)(in_stack_00000008);
   if (iVar3 != 0) {
     local_12c.x = -0.0900813;
     local_12c.z = 0.649052;

@@ -153,8 +153,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
             *(float *)(this_ptr->unk9 + 0x5c) = pCVar7->z;
           }
           fStack_14 = *(float *)(this_ptr->unk9 + 0x70) - *(float *)(this_ptr->unk9 + 100);
-          fVar9 = core_stranger_cpp_CStranger_FUN_005bb010
-                            ((CStranger *)(this_ptr->base).base.carry_hands[1].carry_actor);
+          fVar9 = core_stranger_cpp_FUN_005bb010();
           iVar6 = this_ptr->action_pending;
           *(float *)(this_ptr->unk9 + 0x58) =
                (fStack_14 - fVar9) + *(float *)(this_ptr->unk9 + 0x58);

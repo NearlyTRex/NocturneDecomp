@@ -48,7 +48,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint f
                      ((CDeformableModelInstance *)(pCVar6[-0x18].filenames[2] + 0x10),0);
   ptr = (CMimic *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar7[-1].part_visibility_flags + 7),1);
+                  ((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

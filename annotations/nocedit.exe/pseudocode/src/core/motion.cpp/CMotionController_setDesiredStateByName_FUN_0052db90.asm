@@ -10,8 +10,8 @@
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920 at 0042c9b9
-;   core_hero.cpp_CHero_FUN_004f28d0 at 004f2984
-;   core_hero.cpp_CHero_FUN_004f29b0 at 004f2a17
+;   core_hero.cpp_CHero_getGrabbed_FUN_004f28d0 at 004f2984
+;   core_hero.cpp_CHero_releaseFromGrab_FUN_004f29b0 at 004f2a17
 ;   core_npc.cpp_CNPC_process_FUN_005448b0 at 00544b07
 ;
 ; Called Functions:

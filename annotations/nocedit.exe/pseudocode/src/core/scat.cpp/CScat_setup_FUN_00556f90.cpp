@@ -52,10 +52,7 @@ void __cdecl core_scat_cpp_CScat_setup_FUN_00556f90(CScat *this_ptr)
   INT_0310619c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_00,"Bip01 Spine1");
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"Bip01 Spine1");
-  this_ptr->unk[0] = '\0';
-  this_ptr->unk[1] = '\0';
-  this_ptr->unk[2] = '\0';
-  this_ptr->unk[3] = '\0';
+  this_ptr->guns_drawn = 0;
   (this_ptr->base).base.gesture_branch_root = iVar1;
   return;
 }

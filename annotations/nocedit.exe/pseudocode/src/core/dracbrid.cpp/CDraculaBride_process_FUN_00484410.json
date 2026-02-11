@@ -3,81 +3,21 @@
     "errors": [
       {
         "category": "other",
-        "column": 6,
-        "line": 224,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 224,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 322,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 322,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 363,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 363,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 376,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 400,
-        "message": "cannot cast from type 'float' to pointer type 'char *'"
-      },
-      {
-        "category": "other",
-        "column": 71,
-        "line": 401,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 463,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 463,
-        "message": "called object type 'void' is not a function or function pointer"
+        "column": 36,
+        "line": 251,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 608,
+        "line": 627,
         "message": "use of undeclared identifier 'stack0xfffffb6c'; did you mean 'in_stack_fffffb6c'?"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 781,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
+        "line": 800,
+        "message": "C-style cast from 'CDraculaBride *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -85,19 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 1096,
+    "complexity_score": 1365,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 54,
-    "pseudocode_lines": 776,
-    "suspect_count": 30,
+    "pseudocode_lines": 795,
+    "suspect_count": 55,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 2569
+    "total_lines": 2588
   },
   "cross_references": [],
   "function": {
@@ -1412,182 +1352,357 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 28,
       "match": "in_stack_fffffb6c",
-      "text": "char *in_stack_fffffb6c;",
+      "text": "CDraculaBride *in_stack_fffffb6c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 32,
+      "match": "in_stack_fffffb74",
+      "text": "float in_stack_fffffb74;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
       "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = (char *)0x4845ee;",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x4845ee;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 115,
       "match": "ROUND",
       "text": "*(int *)(iVar9 + 0xcc0) = (int)ROUND(dVar17);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unresolved stack parameter",
       "line": 220,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = this_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 222,
       "match": "extraout_EAX_01",
       "text": "if (extraout_EAX_01 != 0) {",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 223,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0xe;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 248,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = this_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 264,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0xd;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 321,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = this_ptr;",
+      "type": "stack_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 318,
+      "line": 323,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 369,
+      "line": 324,
       "match": "in_stack_fffffb6c",
-      "text": "pCVar14,pCVar12,fVar18,(float)in_stack_fffffb6c);",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0xe;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 373,
+      "line": 339,
       "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = (char *)0x1;",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x9;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 344,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x19;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 369,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x3f000000;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 377,
+      "match": "in_stack_fffffb6c",
+      "text": "pCVar14,(CVector3f *)in_stack_fffffb6c,fVar19,in_stack_fffffb74);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 377,
+      "match": "in_stack_fffffb74",
+      "text": "pCVar14,(CVector3f *)in_stack_fffffb6c,fVar19,in_stack_fffffb74);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 383,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = pCVar10;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 391,
+      "line": 399,
       "match": "SQRT",
       "text": "SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x + local_7c.y * local_7c.y)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 393,
+      "line": 400,
       "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = (char *)(local_70.y - (this_ptr->base).base.base.orient.vec.y);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 394,
-      "match": "in_stack_fffffb6c",
-      "text": "local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)in_stack_fffffb6c);",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x485445;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 395,
+      "line": 404,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 397,
+      "line": 406,
       "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = (char *)0x1;",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)&(this_ptr->base).base.model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 408,
+      "line": 410,
       "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = \"hotbride-bite?.wav\";",
+      "text": "((CMotionController *)in_stack_fffffb6c,3,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 417,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x485387;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 428,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 435,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 426,
+      "line": 437,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) break;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 435,
-      "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = this_ptr->rise_event;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 437,
-      "match": "in_stack_fffffb6c",
-      "text": "(g_CEventListPtr,in_stack_fffffb6c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 439,
       "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = (char *)0x1;",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0xe;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 447,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)this_ptr->rise_event;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 449,
+      "match": "in_stack_fffffb6c",
+      "text": "(g_CEventListPtr,(char *)in_stack_fffffb6c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 451,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 472,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 461,
+      "line": 474,
       "match": "extraout_EAX_02",
       "text": "if (extraout_EAX_02 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 535,
+      "line": 477,
       "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = this_ptr->rise_event;",
+      "text": "in_stack_fffffb6c = pCVar18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 537,
+      "line": 491,
       "match": "in_stack_fffffb6c",
-      "text": "(g_CEventListPtr,in_stack_fffffb6c);",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x3f000000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 539,
+      "line": 496,
       "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = (char *)0x1;",
+      "text": "pCVar14,(CVector3f *)in_stack_fffffb6c,fVar20,in_stack_fffffb74);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 496,
+      "match": "in_stack_fffffb74",
+      "text": "pCVar14,(CVector3f *)in_stack_fffffb6c,fVar20,in_stack_fffffb74);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 502,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = pCVar10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 505,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x48582e;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 510,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = pCVar10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 513,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)&(this_ptr->base).base.model;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 515,
+      "match": "in_stack_fffffb6c",
+      "text": "((CMotionController *)in_stack_fffffb6c,0x14,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 520,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x485879;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 554,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)this_ptr->rise_event;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 556,
+      "match": "in_stack_fffffb6c",
+      "text": "(g_CEventListPtr,(char *)in_stack_fffffb6c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 558,
+      "match": "in_stack_fffffb6c",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 601,
+      "line": 620,
       "match": "&stack0xfffffb6c",
       "text": "(&stack0xfffffb6c,\"bride-%d?.wav\",this_ptr->freaky_voice_number);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 651,
+      "line": 670,
       "match": "SQRT",
       "text": "if (SQRT(local_194 * local_194 + local_19c * local_19c + local_198 * local_198) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 741,
+      "line": 760,
       "match": "in_stack_fffffb6c",
-      "text": "in_stack_fffffb6c = ((this_ptr->base).victim)->actor_name;",
+      "text": "in_stack_fffffb6c = (CDraculaBride *)(this_ptr->base).victim;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 743,
+      "line": 762,
       "match": "in_stack_fffffb6c",
       "text": "(g_CDemonSetPtr,(CDemonActor *)in_stack_fffffb6c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 774,
+      "line": 793,
       "match": "in_stack_fffffb6c",
       "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffb6c);",
       "type": "stack_param"

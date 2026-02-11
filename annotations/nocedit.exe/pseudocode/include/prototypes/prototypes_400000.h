@@ -309,10 +309,10 @@ void __cdecl core_actor_cpp_archiveActor_FUN_0040b870(CDemonActor *actor_ptr,cha
 void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0 (CKeyFramedModelInstance *model_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970 (CDeformableModelInstance *model_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0 (CMotionController *motion_controller,char *property_name);
-void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0(void *part,char *property_name);
+void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0 (CDeformableModelInstance *model_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveSimBox_FUN_0040bd70(CSimBox *simbox_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveClothList_FUN_0040be60(CClothList *cloth_list,char *property_name);
-void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(void *rules,char *property_name);
+void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(CRuleList *rules,char *property_name);
 void __cdecl core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(CDemonActor *this_ptr);
 uint __cdecl core_actor_cpp_updateClassNameHash_FUN_0040c260(uint current_hash,int character);
 uint __cdecl core_actor_cpp_hashClassName_FUN_0040c290(char *class_name);

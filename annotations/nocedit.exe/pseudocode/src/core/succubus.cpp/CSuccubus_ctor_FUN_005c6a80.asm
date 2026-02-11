@@ -53,7 +53,7 @@ section .text
     ADD EAX,0x1cc                       ; 005c6aac
     PUSH EAX                            ; 005c6ab1
     CALL core_morph.cpp_FUN_0052b310    ; 005c6ab2
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310()
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
     ADD ESP,0x4                         ; 005c6ab7
     LEA EBX,[EAX + 0xffff1cc4]          ; 005c6aba
     PUSH 0x653fd8                       ; 005c6ac0 | = "succubus.dfm"

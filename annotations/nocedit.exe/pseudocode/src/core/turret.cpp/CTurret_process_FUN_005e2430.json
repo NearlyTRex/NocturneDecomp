@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 138,
+        "line": 111,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 214,
+        "line": 187,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 221,
+        "line": 194,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 222,
+        "line": 195,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       }
     ],
@@ -31,18 +31,20 @@
   },
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 375,
+    "complexity_score": 388,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
-    "pseudocode_lines": 220,
-    "suspect_count": 14,
+    "pseudocode_lines": 193,
+    "suspect_count": 17,
     "suspect_types": [
+      "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
+      "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 599
+    "total_lines": 572
   },
   "cross_references": [],
   "function": {
@@ -396,92 +398,113 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "NAN",
+      "text": "(this_ptr->base).muzzle_flash_offset.x = -NAN;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 64,
+      "match": "3.57331e-43",
+      "text": "(this_ptr->base).muzzle_flash_offset.x = 3.57331e-43;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 82,
+      "match": "3.57331e-43",
+      "text": "(this_ptr->base).muzzle_flash_offset.y = 3.57331e-43;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 114,
       "match": "(uint *)((int)",
       "text": "puVar8 = (uint *)((int)&local_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 115,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_90 + (uint)bVar10 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 124,
       "match": "(uint *)((int)",
       "text": "puVar9 = (uint *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 125,
       "match": "(uint *)((int)",
       "text": "puVar8 = (uint *)((int)&local_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 126,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_50 + (uint)bVar10 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 127,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_70 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 136,
       "match": "(uint *)((int)",
       "text": "puVar9 = (uint *)((int)&local_80 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 137,
       "match": "(uint *)((int)",
       "text": "puVar8 = (uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 138,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_80 + (uint)bVar10 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 139,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 214,
+      "line": 187,
       "match": "in_stack_ffffff08",
       "text": "local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 214,
+      "line": 187,
       "match": "._12_8_",
       "text": "local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 215,
+      "line": 188,
       "match": "._12_8_",
       "text": "if (0.0 <= (double)local_30._12_8_) {",
       "type": "unknown_field"

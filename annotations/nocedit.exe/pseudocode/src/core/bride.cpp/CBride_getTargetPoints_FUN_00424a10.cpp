@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl
 core_bride_cpp_CBride_getTargetPoints_FUN_00424a10(CBride *this_ptr,CVector3f *out_points_array)
 
@@ -16,7 +18,7 @@ core_bride_cpp_CBride_getTargetPoints_FUN_00424a10(CBride *this_ptr,CVector3f *o
   CVector3f local_10;
   
   this_ptr_00 = &(this_ptr->base).base.model;
-  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk + 0x20)] != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk + 0x20)] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        (this_ptr_00,&local_10,INT_00822cdc);
     if (out_points_array != pCVar1) {

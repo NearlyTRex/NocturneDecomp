@@ -47,29 +47,29 @@ void __cdecl CHero::archive(CHero *this_ptr);
 // Address: 004f2870
 CPathMap * __cdecl CHero::getPathMap(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2880
+// Original: core_hero.cpp_CHero_isGrabbable_FUN_004f2880
 // Address: 004f2880
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::isGrabbable(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2890
+// Original: core_hero.cpp_CHero_canBeGrabbed_FUN_004f2890
 // Address: 004f2890
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::canBeGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_hero.cpp_CHero_FUN_004f28a0
+// Original: core_hero.cpp_CHero_canWalk_FUN_004f28a0
 // Address: 004f28a0
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::canWalk(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f28d0
+// Original: core_hero.cpp_CHero_getGrabbed_FUN_004f28d0
 // Address: 004f28d0
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::getGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_hero.cpp_CHero_FUN_004f29b0
+// Original: core_hero.cpp_CHero_releaseFromGrab_FUN_004f29b0
 // Address: 004f29b0
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::releaseFromGrab(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2a30
+// Original: core_hero.cpp_CHero_createDefaultGun_FUN_004f2a30
 // Address: 004f2a30
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::createDefaultGun(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_FUN_004f2af0
 // Address: 004f2af0
@@ -143,13 +143,13 @@ void __cdecl CHero(CHero *this_ptr);
 // Address: 004f3960
 float __cdecl CHero(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f3af0
+// Original: core_hero.cpp_CHero_kill_FUN_004f3af0
 // Address: 004f3af0
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::kill(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 
-// Original: core_hero.cpp_CHero_FUN_004f3b20
+// Original: core_hero.cpp_CHero_reset_FUN_004f3b20
 // Address: 004f3b20
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::reset(CHero *this_ptr);
 
 // Original: core_hero.cpp_factoryFunc_FUN_004f3bc0
 // Address: 004f3bc0

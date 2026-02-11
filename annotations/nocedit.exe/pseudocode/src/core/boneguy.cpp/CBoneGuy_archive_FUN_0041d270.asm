@@ -123,7 +123,7 @@ section .text
     PUSH 0x616298                       ; 0041d35b | = "partStatus"
     PUSH EBX                            ; 0041d360
     CALL core_actor.cpp_archivePartStatus_FUN_0040bae0 ; 0041d361
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(void * part, char * property_name)
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041d366
     MOV EAX,dword ptr [ESP + 0x20]      ; 0041d369
     MOV EDI,dword ptr [EAX + 0xbf38]    ; 0041d36d

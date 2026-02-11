@@ -106,6 +106,7 @@ int INT_02d833c0 = {};
 int INT_02d833c4 = {};
 int INT_02d833c8 = {};
 int INT_02d833cc = {};
+int INT_02d873d8 = {};
 
 // undefined1
 undefined1 DAT_02d82c81 = {};
@@ -130,5 +131,4 @@ undefined4 DAT_02d831f4 = {};
 undefined4 DAT_02d831f8 = {};
 undefined4 DAT_02d833d0 = {};
 undefined4 DAT_02d873d4 = {};
-undefined4 DAT_02d873d8 = {};
 

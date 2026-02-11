@@ -43,9 +43,9 @@ int __cdecl CDrone::getTargetPoints(CDrone *this_ptr,CVector3f *out_points_array
 // Address: 0048f520
 void __cdecl CDrone::getPropertyList(CDrone *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_drone.cpp_CDrone_FUN_0048f560
+// Original: core_drone.cpp_CDrone_randomize_FUN_0048f560
 // Address: 0048f560
-void __cdecl CDrone(CDrone *this_ptr);
+void __cdecl CDrone::randomize(CDrone *this_ptr);
 
 // Original: core_drone.cpp_CDrone_addFilesToExtract_FUN_0048f570
 // Address: 0048f570

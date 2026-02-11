@@ -38,7 +38,7 @@ CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr)
   pCVar3[1].items[3] = (CDemonActor *)0x0;
   pCVar3[1].items[4] = (CDemonActor *)0x0;
   pCVar3[1].battery_charge = 0.0;
-  core_hero_cpp_CHero_FUN_004f2a30(this_ptr_00);
+  core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30(this_ptr_00);
   pCVar3[1].items[0xb] = (CDemonActor *)0x2;
   pCVar3[-0x6b].item_angles[0x5c] = 0.0;
   pCVar3[-0x6b].items[0x48] = (CDemonActor *)0x1;

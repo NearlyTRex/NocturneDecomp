@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 143,
+    "complexity_score": 139,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 13,
-    "pseudocode_lines": 33,
-    "suspect_count": 10,
+    "pseudocode_lines": 39,
+    "suspect_count": 9,
     "suspect_types": [
       "extra_output",
       "undefined_data"
     ],
-    "total_lines": 114
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -53,19 +53,19 @@
   },
   "function_calls": [
     {
-      "addr": "004ecad0",
-      "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ecad0"
-    },
-    {
       "addr": "004ecc40",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ecc40"
+      "name": "core_gore.cpp_CBloodPool_FUN_004ecc40"
     },
     {
       "addr": "004ed0a0",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ed0a0"
+      "name": "core_gore.cpp_CBloodPool_FUN_004ed0a0"
+    },
+    {
+      "addr": "004ecad0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_FUN_004ecad0"
     }
   ],
   "globals": [
@@ -113,8 +113,8 @@
     },
     {
       "addr": "02d873d8",
-      "name": "DAT_02d873d8",
-      "type": "undefined4",
+      "name": "INT_02d873d8",
+      "type": "int",
       "value": null
     },
     {
@@ -131,8 +131,8 @@
     },
     {
       "addr": "02da8720",
-      "name": "DAT_02da8720",
-      "type": "undefined4",
+      "name": "INT_02da8720",
+      "type": "int",
       "value": null
     },
     {
@@ -270,59 +270,52 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 13,
       "match": "DAT_02d833d4",
       "text": "this_ptr_00 = DAT_02d833d4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 19,
       "match": "DAT_02d873d4",
       "text": "} while (this_ptr_00 != (CBloodParticle *)&DAT_02d873d4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_02d873d8",
-      "text": "if (0 < DAT_02d873d8) {",
+      "line": 22,
+      "match": "DAT_02d873dc",
+      "text": "this_ptr_02 = DAT_02d873dc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_02d873d8",
-      "text": "} while (iVar1 < DAT_02d873d8);",
+      "line": 29,
+      "match": "DAT_02da8724",
+      "text": "core_gore_cpp_CBloodPool_FUN_004ecc40(DAT_02da8724);",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
+      "line": 31,
       "match": "extraout_EAX",
       "text": "iVar1 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_02da8720",
-      "text": "if (0 < DAT_02da8720) {",
+      "line": 33,
+      "match": "DAT_02da8724",
+      "text": "this_ptr_01 = DAT_02da8724;",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
+      "line": 38,
       "match": "extraout_EAX_00",
       "text": "iVar1 = extraout_EAX_00;",
       "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_02da8720",
-      "text": "} while (iVar2 < DAT_02da8720);",
-      "type": "undefined_data"
     }
   ]
 }

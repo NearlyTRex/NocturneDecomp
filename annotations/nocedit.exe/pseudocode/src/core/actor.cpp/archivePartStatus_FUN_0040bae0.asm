@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0(void *part,char *property_name)
+; __cdecl void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0 (CDeformableModelInstance *model_ptr,char *property_name)
 ;
 ; Parameters:
-; void *           Stack[0x4]:4   part
+; CDeformableModelInstance * Stack[0x4]:4   model_ptr
 ; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

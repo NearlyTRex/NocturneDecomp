@@ -23,7 +23,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVe
     return 0;
   }
   if (this_ptr->visual_type == 1) {
-    core_flame_cpp_CFlame_FUN_004ca110(&this_ptr->unk3);
+    core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(&this_ptr->unk3);
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&(this_ptr->base).location.position);

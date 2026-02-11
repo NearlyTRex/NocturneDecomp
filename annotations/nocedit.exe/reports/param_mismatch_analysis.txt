@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5101
 Functions with no callers: 3241
-Parameter mismatches detected: 634
-Signature accuracy rate: 65.9%
+Parameter mismatches detected: 627
+Signature accuracy rate: 66.3%
 
 Mismatches by confidence:
-  High confidence:   48 (multiple call sites agree)
+  High confidence:   45 (multiple call sites agree)
   Medium confidence: 87 (some agreement)
-  Low confidence:    499 (limited data)
+  Low confidence:    495 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -65,7 +65,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_turret.cpp_CTurret_fire_F at 005e3c5e: 0 reg [], 5 stack
       core_tommygun.cpp_CTommyGun_fi at 005de323: 0 reg [], 5 stack
-      core_gun.cpp_CGun_FUN_004f0350 at 004f0b0a: 0 reg [], 5 stack
+      core_gun.cpp_CGun_fire_FUN_004 at 004f0b0a: 0 reg [], 5 stack
 
   core_fire.cpp_CFireEffect_FUN_004c8ef0
     Declared: 1 params, Estimated: 5 params (+4)
@@ -327,26 +327,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_mission.cpp_CDemonMission at 00524801: 0 reg [], 2 stack
       core_set.cpp_CDemonSet_load_FU at 00569d63: 0 reg [], 2 stack
 
-  core_mission.cpp_FUN_005248e0
-    Declared: 0 params, Estimated: 1 params (+1)
-    Call sites: 3, Confidence: high
-    File: core/mission.cpp
-    Signature: void __cdecl core_mission_cpp_FUN_005248e0(void)
-    Sample call sites:
-      core_msnedit.cpp_CDemonMission at 0053820f: 0 reg [], 1 stack
-      core_msnedit.cpp_CDemonMission at 00538555: 0 reg [], 1 stack
-      core_mission.cpp_CDemonMission at 005233b9: 0 reg [], 1 stack
-
-  core_morph.cpp_FUN_0052b310
-    Declared: 0 params, Estimated: 1 params (+1)
-    Call sites: 7, Confidence: high
-    File: core/morph.cpp
-    Signature: void __cdecl core_morph_cpp_FUN_0052b310(void)
-    Sample call sites:
-      core_main.c_showDeveloperTools at 005078e1: 0 reg [], 1 stack
-      core_biggs.cpp_CBiggs_ctor_FUN at 004185e4: 0 reg [], 1 stack
-      core_passngr.cpp_CPassenger_ct at 00545b4b: 0 reg [], 1 stack
-
   core_particle.cpp_CParticle_dtor_FUN_00545670
     Declared: 1 params, Estimated: 2 params (+1)
     Call sites: 8, Confidence: high
@@ -374,7 +354,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: void __cdecl core_set_cpp_CDemonSet_FUN_0056d110(CDemonSet *this_ptr)
     Sample call sites:
       core_fire.cpp_CFireball_proces at 004c0be1: 0 reg [], 2 stack
-      core_weapon.cpp_CWeapon_FUN_00 at 005ee621: 0 reg [], 2 stack
+      core_weapon.cpp_CWeapon_update at 005ee621: 0 reg [], 2 stack
       core_fire.cpp_FUN_004c1940 at 004c1983: 0 reg [], 2 stack
 
   core_set.cpp_FUN_00570af0
@@ -446,16 +426,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       engine_3d.c_renderPrimitiveAda at 004049d0: 0 reg [], 2 stack
       engine_3d.c_renderPolygonTextu at 00406655: 0 reg [], 2 stack
       engine_3d.c_renderPolygonAdapt at 00404b5e: 0 reg [], 2 stack
-
-  engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-    Declared: 3 params, Estimated: 2 params (-1)
-    Call sites: 5, Confidence: high
-    File: engine/drender.cpp
-    Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix,CVector3f *rotation_angles)
-    Sample call sites:
-      engine_drender.cpp_CDemonRende at 0048c1ed: 0 reg [], 2 stack
-      core_mirror.cpp_setupMirrorCam at 005214b5: 0 reg [], 2 stack
-      core_dcamera.cpp_CDemonCamera_ at 0044c639: 0 reg [], 2 stack
 
   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
     Declared: 1 params, Estimated: 2 params (+1)
@@ -568,7 +538,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  499 functions with low-confidence mismatches
+  495 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -585,10 +555,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 90
+Functions where declaration has MORE params than estimated: 89
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 544
+Functions where declaration has FEWER params than estimated: 538
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -600,13 +570,13 @@ Distribution of differences (estimated - declared):
   -4 params: 3 functions
   -3 params: 9 functions
   -2 params: 16 functions
-  -1 params: 55 functions
-  +1 params: 262 functions
-  +2 params: 104 functions
+  -1 params: 54 functions
+  +1 params: 257 functions
+  +2 params: 106 functions
   +3 params: 59 functions
-  +4 params: 80 functions
-  +5 params: 11 functions
-  +6 params: 15 functions
+  +4 params: 77 functions
+  +5 params: 12 functions
+  +6 params: 14 functions
   +7 params: 6 functions
   +8 params: 3 functions
   +9 params: 3 functions

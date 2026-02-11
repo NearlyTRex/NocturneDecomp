@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670(CChar
     local_14 = (this_ptr->model).bone_transform.bone_world_matrices;
     pcVar2 = this_ptr->field61_0x2df8;
     do {
-      if ((this_ptr->model).part_visibility_flags[*(int *)pcVar2] != 0) {
+      if ((this_ptr->model).part_data.visibility_flags[*(int *)pcVar2] != 0) {
         iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
         if (iVar1 != 0) {
           matrix = local_14 + *(int *)(pcVar2 + 4);

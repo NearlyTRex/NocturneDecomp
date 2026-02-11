@@ -106,7 +106,8 @@ LAB_00527413:
     core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
               ((CCharacter *)this_ptr,"limb?.wav");
     core_bodypart_cpp_CBodyPart_FUN_0041a050(unaff_ESI);
-    if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk2 + 0x38)] == 0) {
+    if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk2 + 0x38)] == 0
+       ) {
       in_stack_00000008[1] = 0x461c3c00;
     }
     in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);

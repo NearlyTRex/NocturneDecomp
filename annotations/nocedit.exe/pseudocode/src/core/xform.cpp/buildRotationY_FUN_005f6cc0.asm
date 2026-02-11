@@ -23,7 +23,7 @@
 ;
 ; XREF[3]:
 ;   core_gabriela.cpp_CGabriella_FUN_004d5550 at 004d563d
-;   core_gabriela.cpp_CGabriella_FUN_004d7120 at 004d74b0
+;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 at 004d74b0
 ;   core_stranger.cpp_CStranger_FUN_005c07b0 at 005c0f09
 ;
 ; *****************************************************************************

@@ -23,7 +23,7 @@ core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
     (*(((this_ptr->base).vtable._uc)->_uc).dropCarriedObject)(this_ptr,hand_index,(CVector3f *)0x0);
     pSVar1 = this_ptr->carry_hands + hand_index;
     if ((pSVar1->secondary_bone_index < 0) ||
-       ((this_ptr->model).part_visibility_flags[pSVar1->secondary_bone_index] != 0)) {
+       ((this_ptr->model).part_data.visibility_flags[pSVar1->secondary_bone_index] != 0)) {
       if (pSVar1->bone_index < 0) {
         g_CurrentFilename = "..\\core\\charactr.cpp";
         g_CurrentLineNumber = 0xbeb;

@@ -79,7 +79,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr)
       if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar6) {
         if ((int)CStack_88.y < 0x42c60001) {
           core_turret_cpp_CTurret_FUN_005e3280(this_ptr);
-          if (*(float *)((this_ptr->base).unk2 + 0xc) <= 0.0) {
+          if ((this_ptr->base).fire_cooldown_timer <= 0.0) {
             (*(((this_ptr->base).base.vtable._uc)->_uc).isGrabbable)((CCharacter *)this_ptr);
           }
           this_ptr->unk5[0xc] = '\0';

@@ -9,7 +9,9 @@
 void __cdecl core_tommygun_cpp_CTommyGun_setWeaponState_FUN_005de5a0(CTommyGun *this_ptr)
 
 {
+  int in_stack_00000008;
+  
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
-  core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640(&this_ptr->base);
+  core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640(&this_ptr->base,in_stack_00000008);
   return;
 }

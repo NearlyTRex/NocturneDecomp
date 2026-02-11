@@ -70,7 +70,7 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
   }
   iVar10 = *(int *)(this_ptr->unk3 + 0x28);
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
-  if ((this_ptr->base).base.model.part_visibility_flags[iVar10] == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[iVar10] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -85,7 +85,8 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if ((pSVar6->state_index != 10) && (pSVar6->state_index != 9)) {
-      if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk3 + 0x28)] == 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk3 + 0x28)] ==
+          0) {
         this_ptr->lives_left = 0;
       }
       else {

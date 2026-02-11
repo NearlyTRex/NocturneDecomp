@@ -67,9 +67,9 @@ void __cdecl CMobster(CMobster *this_ptr);
 // Address: 00527230
 void __cdecl CMobster::archive(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_CMobster_FUN_00527360
+// Original: core_mobster.cpp_CMobster_reset_FUN_00527360
 // Address: 00527360
-int __cdecl CMobster(CMobster *this_ptr);
+void __cdecl CMobster::reset(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_FUN_00527380
 // Address: 00527380

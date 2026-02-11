@@ -9,6 +9,10 @@
 void __cdecl core_morph_cpp_FUN_0052b600(void)
 
 {
-  core_morph_cpp_FUN_0052aa30();
+  int in_stack_00000004;
+  int in_stack_00000008;
+  
+  core_morph_cpp_CMorphModel_FUN_0052aa30
+            ((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));
   return;
 }

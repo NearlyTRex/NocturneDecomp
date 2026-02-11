@@ -41,7 +41,7 @@ core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700(CVampireBoss *this_ptr,uint fla
                      ((CDeformableModelInstance *)(pCVar6[-0x18].filenames[2] + 0x10),0);
   ptr = (CVampireBoss *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);
+                  ((CDemonActor *)(pCVar2[-1].part_data.visibility_flags + 7),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

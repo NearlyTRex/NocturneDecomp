@@ -66,7 +66,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
               (g_CSoundPtr,(CDemonActor *)this_ptr,"shotgun-noammo.wav",&CStack_7c);
     return 0;
   }
-  fVar4 = (float10)fptan((float10)*(float *)this_ptr->unk * (float10)3.1415926535000001 *
+  fVar4 = (float10)fptan((float10)(float)this_ptr->unk * (float10)3.1415926535000001 *
                          (float10)0.0055555555555555497);
   pCStack_40 = (CDemonActor *)(float)(fVar4 * (float10)(this_ptr->base).bolt_velocity);
   fStack_34 = (float)core_actor_cpp_getRandomInt_FUN_0040cc70(10,0xf);
@@ -222,7 +222,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
                (float)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
           (**(code **)(this_ptr_00->cameras[0].fog_enabled + 0x11c))
                     ((CCharacter *)this_ptr_00,(SDamageInfo *)(auStack_124 + 4));
-          if (*(int *)((this_ptr->base).unk1 + 0xc) == 0) break;
+          if ((this_ptr->base).can_penetrate == 0) break;
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                     (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
         }
@@ -237,9 +237,6 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   core_fire_cpp_CFireEffect_FUN_004c7a60(g_CFireEffectPtr);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"elephantgun.wav",&CStack_7c);
-  (this_ptr->base).unk2[0xc] = '\0';
-  (this_ptr->base).unk2[0xd] = '\0';
-  (this_ptr->base).unk2[0xe] = -0x80;
-  (this_ptr->base).unk2[0xf] = '?';
+  (this_ptr->base).fire_cooldown_timer = 1.0;
   return 1;
 }

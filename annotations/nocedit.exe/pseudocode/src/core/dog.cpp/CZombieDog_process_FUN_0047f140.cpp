@@ -27,7 +27,8 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
   CPathMap *path_map;
   int extraout_EAX_02;
   float fVar12;
-  CDemonActor *in_stack_ffffff28;
+  float in_stack_ffffff28;
+  CDemonActor *in_stack_ffffff2c;
   CVector3f local_98;
   CVector3f local_8c;
   CVector3f local_80;
@@ -84,7 +85,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
       core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
       pCVar1 = &(this_ptr->base).base.model;
       if (extraout_EAX_00 == 0) {
-        (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+        (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
         if (pCVar3 != (CDemonActor *)0x0) {
           local_74 = (pCVar3->location).position.x - (this_ptr->base).base.base.location.position.x;
@@ -116,7 +117,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
       break;
     case 1:
     case 2:
-      (*(((this_ptr->base).base.base.vtable._ue)->_ue).enemyfunc2)();
+      (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar3 = (this_ptr->base).victim;
       pCVar1 = &(this_ptr->base).base.model;
       if (pCVar3 == (CDemonActor *)0x0) {
@@ -151,12 +152,11 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
         path_map = (*((pCVar3->vtable)._ub)->getPathMap)(pCVar3);
         iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                           path_map,pCVar11,fVar12,(float)in_stack_ffffff28);
+                           path_map,pCVar11,fVar12,in_stack_ffffff28);
         pCVar1 = &(this_ptr->base).base.model;
         if (iVar5 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n");
-          in_stack_ffffff28 = (CDemonActor *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,0,1);
         }
@@ -168,7 +168,6 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
           else {
             fVar12 = 5.60519e-45;
           }
-          in_stack_ffffff28 = (CDemonActor *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,(int)fVar12,1);
           (this_ptr->base).unk2[0] = '\0';
@@ -247,8 +246,8 @@ switchD_0047f7a3_caseD_5:
     if ((this_ptr_00 != (CCharacter *)0x0) &&
        (pCVar8 = (CZombieDog *)(*(((this_ptr_00->base).vtable._uc)->_uc).getGrabber)(this_ptr_00),
        pCVar8 == this_ptr)) {
-      in_stack_ffffff28 = (this_ptr->base).victim;
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_ffffff28);
+      in_stack_ffffff2c = (this_ptr->base).victim;
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_ffffff2c);
     }
     (this_ptr->base).base.field7_0x2428.y =
          (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
@@ -276,6 +275,6 @@ switchD_0047f7a3_caseD_5:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,(float)in_stack_ffffff28);
+            ((CCharacter *)this_ptr,delta_time,(float)in_stack_ffffff2c);
   return;
 }

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   grab_type
 ;
 ; Called Functions:
-;   core_hero.cpp_CHero_FUN_004f28d0
+;   core_hero.cpp_CHero_getGrabbed_FUN_004f28d0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 005c66d5
     PUSH EAX                            ; 005c66d9
     PUSH EBX                            ; 005c66da
-    CALL core_hero.cpp_CHero_FUN_004f28d0 ; 005c66db
-        ;   XREF to: 004f28d0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004f28d0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_getGrabbed_FUN_004f28d0 ; 005c66db
+        ;   XREF to: 004f28d0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_getGrabbed_FUN_004f28d0(CHero * this_ptr, CDemonActor * grabber, int grab_type)
     ADD ESP,0xc                         ; 005c66e0
     MOV ESI,EAX                         ; 005c66e3
     TEST EAX,EAX                        ; 005c66e5

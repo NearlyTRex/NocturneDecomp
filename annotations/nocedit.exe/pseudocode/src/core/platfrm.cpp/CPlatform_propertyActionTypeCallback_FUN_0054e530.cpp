@@ -11,6 +11,7 @@ core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530
           (CPlatform *this_ptr,CActorProperty *property)
 
 {
+  CCourse *this_ptr_00;
   CPlatform *pCVar1;
   int iVar1;
   CPickList local_544;
@@ -36,9 +37,10 @@ core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530
                     (&local_544,local_19c,-1,0);
   if (iVar1 != 0) {
     if (iVar1 == 1) {
-      core_course_cpp_CCourse_FUN_004427a0();
-      core_course_cpp_CCourse_FUN_004427a0();
-      core_course_cpp_CCourse_free_FUN_004426c0(&pCVar1->course);
+      this_ptr_00 = &pCVar1->course;
+      core_course_cpp_CCourse_FUN_004427a0(this_ptr_00);
+      core_course_cpp_CCourse_FUN_004427a0(this_ptr_00);
+      core_course_cpp_CCourse_free_FUN_004426c0(this_ptr_00);
       pCVar1->course_filename[0] = '\0';
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_544,0);
       return 1;

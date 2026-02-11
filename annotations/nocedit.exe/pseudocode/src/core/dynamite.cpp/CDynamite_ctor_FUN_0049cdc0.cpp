@@ -15,10 +15,7 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *thi
   (pCVar1->base).base.vtable._ub = &g_CDynamiteVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar1->base).model,"dynamitestick.kfm");
-  (pCVar1->base).unk3[0x25c] = '\0';
-  (pCVar1->base).unk3[0x25d] = '\0';
-  (pCVar1->base).unk3[0x25e] = -0x80;
-  (pCVar1->base).unk3[0x25f] = '?';
+  (pCVar1->base).unk3 = 0x3f800000;
   pCVar1->unk[0xc] = '\0';
   pCVar1->unk[0xd] = '\0';
   pCVar1->unk[0xe] = '\0';
@@ -29,22 +26,10 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *thi
   pCVar1->unk[1] = '\0';
   pCVar1->unk[2] = -0x80;
   pCVar1->unk[3] = -0x41;
-  (pCVar1->base).unk1[0] = '\0';
-  (pCVar1->base).unk1[1] = '\0';
-  (pCVar1->base).unk1[2] = '\0';
-  (pCVar1->base).unk1[3] = '\0';
-  (pCVar1->base).unk1[4] = '\0';
-  (pCVar1->base).unk1[5] = '\0';
-  (pCVar1->base).unk1[6] = '\0';
-  (pCVar1->base).unk1[7] = '\0';
-  (pCVar1->base).unk1[8] = '\x03';
-  (pCVar1->base).unk1[9] = '\0';
-  (pCVar1->base).unk1[10] = '\0';
-  (pCVar1->base).unk1[0xb] = '\0';
-  (pCVar1->base).unk1[0xc] = '\0';
-  (pCVar1->base).unk1[0xd] = '\0';
-  (pCVar1->base).unk1[0xe] = '\0';
-  (pCVar1->base).unk1[0xf] = '\0';
+  (pCVar1->base).is_spread_weapon = 0;
+  (pCVar1->base).fire_mode = 0;
+  (pCVar1->base).weapon_type = 3;
+  (pCVar1->base).can_penetrate = 0;
   (pCVar1->base).bolt_velocity = 200.0;
   (pCVar1->base).fire_cooldown = 0.0;
   (pCVar1->base).can_attach_light = 0;

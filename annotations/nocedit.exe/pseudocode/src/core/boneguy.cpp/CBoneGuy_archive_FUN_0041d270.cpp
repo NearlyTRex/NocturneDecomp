@@ -9,7 +9,7 @@
 void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_0041d270(CBoneGuy *this_ptr)
 
 {
-  CDeformableModelInstance *motion_controller;
+  CDeformableModelInstance *model_ptr;
   int iVar1;
   CVector3f *vector_ptr;
   CVector3f *vector_ptr_00;
@@ -25,16 +25,16 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_0041d270(CBoneGuy *this_ptr)
     core_actor_cpp_archiveFloat_FUN_0040b770
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
-  motion_controller = &(this_ptr->base).base.model;
+  model_ptr = &(this_ptr->base).base.model;
   core_actor_cpp_archiveMotionState_FUN_0040b9f0
-            (&motion_controller->motion_controller,"motion state");
+            (&model_ptr->motion_controller,"motion state");
   if (1 < g_CBoneGuyClassVersion) {
     core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->death_event,"deathEvent");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->recombine_time,"recombineTime");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->blown_up,"blownUp");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->param,"param");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->box_count,"boxCount");
-    core_actor_cpp_archivePartStatus_FUN_0040bae0(motion_controller,"partStatus");
+    core_actor_cpp_archivePartStatus_FUN_0040bae0(model_ptr,"partStatus");
     iVar1 = 0;
     if (0 < this_ptr->box_count) {
       local_14 = (CDemonActor *)this_ptr->unk2;

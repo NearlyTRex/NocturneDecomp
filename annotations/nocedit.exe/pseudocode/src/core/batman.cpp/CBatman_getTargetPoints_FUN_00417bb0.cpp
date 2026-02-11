@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl
 core_batman_cpp_CBatman_getTargetPoints_FUN_00417bb0(CBatman *this_ptr,CVector3f *out_points_array)
 
@@ -25,7 +27,8 @@ core_batman_cpp_CBatman_getTargetPoints_FUN_00417bb0(CBatman *this_ptr,CVector3f
     out_points_array->y = pCVar1->y;
     out_points_array->z = pCVar1->z;
   }
-  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk1 + 0x7c)] != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk1 + 0x7c)] != 0)
+  {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_28,INT_008227dc);
     if (out_points_array + 1 != pCVar1) {
@@ -35,7 +38,8 @@ core_batman_cpp_CBatman_getTargetPoints_FUN_00417bb0(CBatman *this_ptr,CVector3f
     }
     iVar2 = 2;
   }
-  if ((this_ptr->base).base.model.part_visibility_flags[*(int *)(this_ptr->unk1 + 0x68)] == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk1 + 0x68)] == 0)
+  {
     return iVar2;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00

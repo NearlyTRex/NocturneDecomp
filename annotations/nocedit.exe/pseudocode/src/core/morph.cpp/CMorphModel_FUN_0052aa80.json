@@ -1,0 +1,148 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 69,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 5,
+    "suspect_types": [
+      "param_count_too_few",
+      "stack_param"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "0052b640",
+      "from_addr": "0052b66d",
+      "name": "core_morph.cpp_FUN_0052b640",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052aa80",
+    "address_range": [
+      [
+        "0052aa80",
+        "0052aab2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_FUN_0052aa80",
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_FUN_0052aa80(CMorphModel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00477890",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890"
+    },
+    {
+      "addr": "0052a920",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_animate_FUN_0052a920"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052b66d",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_FUN_0052b640",
+        "estimated_params": 6,
+        "instructions_analyzed": 17,
+        "reg_params": [],
+        "stack_params": 6
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 6
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6666666666666665,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 18,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 11,
+      "LOAD": 8,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 77
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_0000000c",
+      "text": "CKeyFramedModel *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(in_stack_0000000c,in_stack_00000010)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000010",
+      "text": "core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(in_stack_0000000c,in_stack_00000010)",
+      "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:6",
+      "param_delta": 5,
+      "text": "Function declares 1 params but call sites push 6 (5 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

@@ -2,17 +2,16 @@
 // Address: 0052b310
 // Address Range: [[0052b310, 0052b32e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_FUN_0052b310(void)
+// Signature: void __cdecl core_morph_cpp_FUN_0052b310(CMorphModel *a)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_FUN_0052b310(void)
+void __cdecl core_morph_cpp_FUN_0052b310(CMorphModel *a)
 
 {
   void *pvVar1;
-  void *in_stack_00000004;
   
-  pvVar1 = __arrinit(in_stack_00000004,2,&g_CMorphModelTypeInfo);
+  pvVar1 = __arrinit(a,2,&g_CMorphModelTypeInfo);
   *(uint *)((int)pvVar1 + 0xc28) = 1;
   return;
 }

@@ -41,7 +41,7 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
       (this_ptr->unk3).base.orient.vec.y = (this_ptr->base).orient.vec.y;
       (this_ptr->unk3).base.orient.vec.z = (this_ptr->base).orient.vec.z;
     }
-    core_flame_cpp_CFlame_FUN_004c9c00(&this_ptr->unk3);
+    core_flame_cpp_CFlame_process_FUN_004c9c00(&this_ptr->unk3,delta_time);
   }
   else if (this_ptr->visual_type == 0) {
     this_ptr->unk4 = (int)(delta_time * (float)3.1415926535000001 + (float)this_ptr->unk4);

@@ -2,75 +2,57 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 47,
-        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CEnemy *'"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 49,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 49,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 68,
+        "line": 72,
         "message": "use of undeclared identifier 'DAT_00680580'"
       },
       {
         "category": "lvalue_required",
         "column": 73,
-        "line": 75,
+        "line": 79,
         "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "lvalue_required",
         "column": 75,
-        "line": 83,
+        "line": 87,
         "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 99,
+        "line": 103,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 109,
+        "line": 113,
         "message": "use of undeclared identifier 'DAT_00680580'"
       },
       {
         "category": "format_error",
         "column": 52,
-        "line": 116,
+        "line": 120,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 66,
-        "line": 128,
-        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
+        "line": 132,
+        "message": "format specifies type 'int' but the argument has type 'CEnemy *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 130,
+        "line": 134,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 132,
+        "line": 136,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       }
     ],
@@ -79,18 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 309,
+    "complexity_score": 313,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 20,
-    "pseudocode_lines": 134,
+    "pseudocode_lines": 138,
     "suspect_count": 16,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 467
+    "total_lines": 471
   },
   "cross_references": [
     {
@@ -371,114 +353,114 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 11,
       "match": "in_stack_fffff2fc",
       "text": "ulonglong in_stack_fffff2fc;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 25,
       "match": "in_stack_fffff2fc",
-      "text": "string_data = (char *)(in_stack_fffff2fc >> 0x20);",
+      "text": "string_data = (CEnemy *)(in_stack_fffff2fc >> 0x20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 53,
       "match": "in_stack_fffff2fc",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 60,
       "match": "in_stack_fffff2fc",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 65,
       "match": "DAT_00680580",
       "text": "(g_CEditorToolsPtr,\"Enter actor name wildcard\",&DAT_00680580,200,1);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 67,
       "match": "in_stack_fffff2fc",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 75,
       "match": "in_stack_fffff2fc",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 83,
       "match": "in_stack_fffff2fc",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 93,
       "match": "DAT_02f797e0",
       "text": "(&CStack_958,\"Randomize speeds\",DAT_02f797e0,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 95,
       "match": "DAT_02f797e0",
-      "text": "DAT_02f797e0 = iVar4;",
+      "text": "DAT_02f797e0 = iVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 92,
+      "line": 96,
       "match": "&stack0xfffff300",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 102,
       "match": "DAT_02f797e0",
-      "text": "(((DAT_02f797e0 != 0 || (*(int *)(pCVar3[0x8d].create_event + 0x3c) != 0)) &&",
+      "text": "(((DAT_02f797e0 != 0 || (*(int *)(actor_ptr[0x8d].create_event + 0x3c) != 0)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 106,
       "match": "DAT_00680580",
-      "text": "(&DAT_00680580,pCVar3->actor_name,0), iVar4 != 0)) {",
+      "text": "(&DAT_00680580,actor_ptr->actor_name,0), iVar3 != 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 123,
+      "line": 127,
       "match": "&stack0xfffff300",
       "text": "((CPickList *)&stack0xfffff300,acStack_dc,-1,0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 125,
+      "line": 129,
       "match": "&stack0xfffff300",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 135,
       "match": "in_stack_fffff2fc",
-      "text": "in_stack_fffff2fc = uVar5 & 0xffffffff00000000;",
+      "text": "in_stack_fffff2fc = uVar4 & 0xffffffff00000000;",
       "type": "stack_param"
     }
   ]

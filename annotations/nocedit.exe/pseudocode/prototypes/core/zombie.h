@@ -75,9 +75,9 @@ int __cdecl CZombie::renderTransparent(CZombie *this_ptr);
 // Address: 005fbfd0
 void __cdecl CZombie::archive(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fc120
+// Original: core_zombie.cpp_CZombie_canBeAttracted_FUN_005fc120
 // Address: 005fc120
-int __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::canBeAttracted(CZombie *this_ptr,CVector3f *param_2);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fc220
 // Address: 005fc220
@@ -91,17 +91,17 @@ void __cdecl CZombie::processDamage(CZombie *this_ptr,SDamageInfo *damage_info);
 // Address: 005fc720
 int __cdecl CZombie::getTargetPoints(CZombie *this_ptr,CVector3f *out_points_array);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fc920
+// Original: core_zombie.cpp_CZombie_isGrabbable_FUN_005fc920
 // Address: 005fc920
-int __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::isGrabbable(CZombie *this_ptr,CDemonActor *param_2);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fc960
+// Original: core_zombie.cpp_CZombie_canBeGrabbed_FUN_005fc960
 // Address: 005fc960
-bool __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::canBeGrabbed(CZombie *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fc970
+// Original: core_zombie.cpp_CZombie_getGrabbed_FUN_005fc970
 // Address: 005fc970
-int __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::getGrabbed(CZombie *this_ptr,CDemonActor *grabber,int grab_type,int param_4);
 
 // Original: core_zombie.cpp_CZombie_shouldIgnoreForTargeting_FUN_005fc9e0
 // Address: 005fc9e0

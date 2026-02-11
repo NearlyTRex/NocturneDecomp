@@ -45,7 +45,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   if (iVar3 == 0) {
     return 0;
   }
-  if ((this_ptr->base).base.model.part_visibility_flags[DAT_03f6bb24] != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     local_34.y = 3.1415927;
     local_34.x = 0.0;
@@ -111,7 +111,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   if ((((pCVar1 == (CDemonActor *)0x0) ||
        (pCVar1 == (this_ptr->base).base.carry_hands[0].carry_actor)) ||
       (pCVar1 == (this_ptr->base).base.carry_hands[1].carry_actor)) ||
-     ((this_ptr->base).base.model.part_visibility_flags[DAT_03f6bb24] == 0)) goto LAB_005c33d7;
+     ((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] == 0)) goto LAB_005c33d7;
   (*((this_ptr->weapon->vtable)._ub)->renderOpaque)(this_ptr->weapon);
   if (this_ptr->weapon == (CDemonActor *)0x0) {
 switchD_005c331f_caseD_3:
@@ -160,7 +160,7 @@ LAB_005c336f:
   core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
 LAB_005c33d7:
   if ((((this_ptr->base).is_wearing_gas_mask != 0) &&
-      ((this_ptr->base).base.model.part_visibility_flags[DAT_03f6bb24] != 0)) &&
+      ((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] != 0)) &&
      (local_1c = (this_ptr->base).inventory.light_gun_ptr, local_1c != (CLightGun *)0x0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     if ((this_ptr->base).is_wearing_gas_mask == 2) {
@@ -210,7 +210,7 @@ LAB_005c33d7:
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
-  if ((((this_ptr->base).base.model.part_visibility_flags[DAT_03f6bb24] == 0) &&
+  if ((((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] == 0) &&
       (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar3 == 0)) && (0 < (this_ptr->base).base.cloth_list.count)) {
     core_cloth_cpp_CClothList_reset_FUN_0043c070(&(this_ptr->base).base.cloth_list);

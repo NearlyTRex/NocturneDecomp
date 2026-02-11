@@ -43,13 +43,13 @@ void __cdecl CMorphModel::animate(CMorphModel *this_ptr);
 // Address: 0052aa00
 void __cdecl CMorphModel(CMorphModel *this_ptr);
 
-// Original: core_morph.cpp_FUN_0052aa30
+// Original: core_morph.cpp_CMorphModel_FUN_0052aa30
 // Address: 0052aa30
-void __cdecl FUN_0052aa30(void);
+void __cdecl CMorphModel(CMorphModel *this_ptr);
 
-// Original: core_morph.cpp_FUN_0052aa80
+// Original: core_morph.cpp_CMorphModel_FUN_0052aa80
 // Address: 0052aa80
-void __cdecl FUN_0052aa80(void);
+void __cdecl CMorphModel(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_CMorphModel_setFaceList_FUN_0052aac0
 // Address: 0052aac0
@@ -71,9 +71,9 @@ void __cdecl CMorphModel(CMorphModel *this_ptr);
 // Address: 0052af70
 void __cdecl CMorphModel::rotatePoints(CMorphModel *this_ptr);
 
-// Original: core_morph.cpp_FUN_0052b160
+// Original: core_morph.cpp_CMorphModel_FUN_0052b160
 // Address: 0052b160
-void __cdecl FUN_0052b160(void);
+void __cdecl CMorphModel(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_FUN_0052b280
 // Address: 0052b280
@@ -81,7 +81,7 @@ int __cdecl FUN_0052b280(void);
 
 // Original: core_morph.cpp_FUN_0052b310
 // Address: 0052b310
-void __cdecl FUN_0052b310(void);
+void __cdecl FUN_0052b310(CMorphModel *a);
 
 // Original: core_morph.cpp_CMorphModel_FUN_0052b330
 // Address: 0052b330

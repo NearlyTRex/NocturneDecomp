@@ -81,7 +81,7 @@ section .text
         ;   Label: LAB_00419537
     PUSH EBP                            ; 00419539
     CALL core_bodypart.cpp_CBodyPart_FUN_00419340 ; 0041953a
-        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_00419340(CBodyPart * this_ptr)
+        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_00419340(CBodyPart * this_ptr, int render_flags)
     ADD ESP,0x8                         ; 0041953f
     MOV EDI,dword ptr [EBP + 0x28c]     ; 00419542
         ;   Label: LAB_00419542

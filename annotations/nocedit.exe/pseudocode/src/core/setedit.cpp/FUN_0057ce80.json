@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 58,
-        "message": "use of undeclared identifier 'stack0xffffd990'; did you mean 'in_stack_ffffd990'?"
-      },
-      {
         "category": "format_error",
         "column": 30,
         "line": 85,
@@ -18,12 +12,6 @@
         "column": 30,
         "line": 119,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 135,
-        "message": "use of undeclared identifier 'stack0xffffd990'; did you mean 'in_stack_ffffd990'?"
       }
     ],
     "success": false,
@@ -31,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 617,
+    "complexity_score": 592,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
     "pseudocode_lines": 137,
-    "suspect_count": 46,
+    "suspect_count": 44,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
     "total_lines": 487
   },
@@ -613,13 +600,6 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffd990",
-      "text": "CVector3f *in_stack_ffffd990;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000018",
       "text": "if ((g_WindowWidth <= in_stack_00000018) || (g_WindowHeight <= in_stack_0000001c)) {",
@@ -654,17 +634,17 @@
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 51,
-      "match": "&stack0xffffd990",
-      "text": "*(uint *)(&stack0xffffd990 + iVar5) =",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_2670 + iVar5) = *(uint *)((int)g_ScreenBufferArray + iVar5)",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_ScreenBufferArray + iVar5);",
+      "text": "*(uint *)((int)local_2670 + iVar5) = *(uint *)((int)g_ScreenBufferArray + iVar5)",
       "type": "pointer_cast"
     },
     {
@@ -767,13 +747,6 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_ffffd990",
-      "text": "(g_CDemonRendererPtr2,&local_50,in_stack_ffffd990);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 78,
       "match": "in_stack_0000000c",
       "text": "_sprintf(local_f0,\"%s.raw\",in_stack_0000000c);",
@@ -839,15 +812,15 @@
       "description": "Complex pointer cast",
       "line": 127,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_ScreenBufferArray + iVar5) =",
+      "text": "*(uint *)((int)g_ScreenBufferArray + iVar5) = *(uint *)((int)local_2670 + iVar5)",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 128,
-      "match": "&stack0xffffd990",
-      "text": "*(uint *)(&stack0xffffd990 + iVar5);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ScreenBufferArray + iVar5) = *(uint *)((int)local_2670 + iVar5)",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

@@ -1,0 +1,113 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 53,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 8,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 16
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005445a0",
+    "address_range": [
+      [
+        "005445a0",
+        "005445b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_ncursfx.cpp_CMouse_FUN_005445a0",
+    "signature": "void __cdecl engine_ncursfx_cpp_CMouse_FUN_005445a0(CMouse *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.142857142857143,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "COPY": 6,
+      "INT_ADD": 3,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 15
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMouse *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "int *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = g_MouseX;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = g_MouseY;",
+      "type": "stack_param"
+    }
+  ]
+}

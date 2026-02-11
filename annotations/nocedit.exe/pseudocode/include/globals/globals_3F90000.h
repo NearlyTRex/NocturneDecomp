@@ -11,6 +11,7 @@
 #include "system/winnt.h"
 #include "system/winuser.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWeather.h"
@@ -33,6 +34,9 @@ extern CDemonActorType g_CWayPointClassInfo;
 extern CDemonActorType g_CWeaponClassInfo;
 extern CDemonActorType g_CWerewolfClassInfo;
 extern CDemonActorType g_CZombieClassInfo;
+
+// CDemonGlobe
+extern CDemonGlobe DAT_03f95d7c;
 
 // CRITICAL_SECTION[64]
 extern CRITICAL_SECTION g_StaticCriticalSectionArray[64];
@@ -160,8 +164,6 @@ extern float FLOAT_03f96b58;
 extern int g_RenderingInProgress;
 extern int g_GraphicsResetFlag;
 extern int g_UseSoftwareRendering;
-extern int INT_03f95d9c;
-extern int INT_03f95db8;
 extern int g_AccumulatedGameTime;
 extern int g_InputReadIndex;
 extern int g_InputWriteIndex;

@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_gabriela.cpp_CGabriella_FUN_004d6b30 at 004d6d18
+;   core_gabriela.cpp_CGabriella_processDamage_FUN_004d6b30 at 004d6d18
 ;   core_stranger.cpp_CStranger_processDamage_FUN_005c48b0 at 005c4af3
 ;
 ; Referenced Globals:

@@ -15,7 +15,7 @@
 ;   core_moloch.cpp_CMoloch_process_FUN_00528d20 at 00529242
 ;   core_morph.cpp_FUN_0052bcb0 at 0052c9fd
 ;   core_msnedit.cpp_FUN_00536e20 at 005371de
-;   core_stranger.cpp_CStranger_FUN_005c6750 at 005c679e
+;   core_stranger.cpp_CStranger_reset_FUN_005c6750 at 005c679e
 ;   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 at 005c70f3
 ;   core_vampboss.cpp_CVampireBoss_FUN_005e74c0 at 005e74dd
 ;

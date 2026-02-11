@@ -13,7 +13,7 @@
 ;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 at 005e6f0e
 ;
 ; Called Functions:
-;   core_morph.cpp_FUN_0052aa30
+;   core_morph.cpp_CMorphModel_FUN_0052aa30
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH ECX                            ; 0052b623
     ADD EAX,EBX                         ; 0052b624
     PUSH EAX                            ; 0052b626
-    CALL core_morph.cpp_FUN_0052aa30    ; 0052b627
-        ;   XREF to: 0052aa30 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052aa30()
+    CALL core_morph.cpp_CMorphModel_FUN_0052aa30 ; 0052b627
+        ;   XREF to: 0052aa30 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052aa30(CMorphModel * this_ptr)
     ADD ESP,0xc                         ; 0052b62c
     POP EBX                             ; 0052b62f
     RET                                 ; 0052b630

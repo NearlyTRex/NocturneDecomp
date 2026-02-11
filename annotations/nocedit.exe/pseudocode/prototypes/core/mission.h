@@ -135,9 +135,9 @@ int __cdecl CDemonMission(CDemonMission *this_ptr);
 // Address: 005248a0
 void __cdecl CDemonMission::calculateAllActorChecksums(CDemonMission *this_ptr,uint *checksum);
 
-// Original: core_mission.cpp_FUN_005248e0
+// Original: core_mission.cpp_CDemonMission_FUN_005248e0
 // Address: 005248e0
-void __cdecl FUN_005248e0(void);
+void __cdecl CDemonMission(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_createOneHero_FUN_00524920
 // Address: 00524920

@@ -23,13 +23,13 @@ CDynamite * __cdecl CDynamite::ctor(CDynamite *this_ptr);
 // Address: 0049ce70
 int __cdecl CDynamite::fire(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_CDynamite_FUN_0049cee0
+// Original: core_dynamite.cpp_CDynamite_getDamage_FUN_0049cee0
 // Address: 0049cee0
-float __cdecl CDynamite(CDynamite *this_ptr);
+float __cdecl CDynamite::getDamage(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_CDynamite_FUN_0049cf10
+// Original: core_dynamite.cpp_CDynamite_fireProjectile_FUN_0049cf10
 // Address: 0049cf10
-void __cdecl CDynamite(CDynamite *this_ptr);
+void __cdecl CDynamite::fireProjectile(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_FUN_0049cf20
 // Address: 0049cf20

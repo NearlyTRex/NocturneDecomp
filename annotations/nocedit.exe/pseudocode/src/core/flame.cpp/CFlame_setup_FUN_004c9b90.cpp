@@ -27,6 +27,6 @@ void __cdecl core_flame_cpp_CFlame_setup_FUN_004c9b90(CFlame *this_ptr)
     pSVar2 = pSVar2 + 8;
   } while (iVar3 < 5);
   uVar1 = rand();
-  *(uint *)(this_ptr->unk4 + 4) = uVar1 & 1;
+  *(uint *)this_ptr->unk5 = uVar1 & 1;
   return;
 }

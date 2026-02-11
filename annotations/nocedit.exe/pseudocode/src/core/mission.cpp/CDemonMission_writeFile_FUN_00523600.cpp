@@ -103,7 +103,7 @@ core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr,_F
   for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
     core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar2,file_handle);
   }
-  core_gore_cpp_CGore_FUN_004ee290(g_CGorePtr);
+  core_gore_cpp_CGore_FUN_004ee290(g_CGorePtr,file_handle);
   this_ptr->actor_lookup_count = 0;
   return;
 }

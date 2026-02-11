@@ -16,13 +16,13 @@
       {
         "category": "undeclared_identifier",
         "column": 66,
-        "line": 532,
+        "line": 529,
         "message": "use of undeclared identifier 'stack0xfffff2a4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 533,
+        "line": 530,
         "message": "use of undeclared identifier 'stack0xfffff2a4'"
       }
     ],
@@ -31,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 1063,
-    "complexity_score": 1279,
+    "complexity_score": 1266,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
-    "pseudocode_lines": 589,
-    "suspect_count": 66,
+    "pseudocode_lines": 586,
+    "suspect_count": 65,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
@@ -45,7 +45,7 @@
       "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 1652
+    "total_lines": 1649
   },
   "cross_references": [
     {
@@ -93,7 +93,7 @@
     {
       "addr": "005bb010",
       "is_variadic": false,
-      "name": "core_stranger.cpp_CStranger_FUN_005bb010"
+      "name": "core_stranger.cpp_FUN_005bb010"
     },
     {
       "addr": "005f54c0",
@@ -1607,7 +1607,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000008",
-      "text": "CStranger *in_stack_00000008;",
+      "text": "CDemonActor *in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -1628,7 +1628,7 @@
       "description": "Unresolved stack parameter",
       "line": 135,
       "match": "in_stack_00000008",
-      "text": "((CDemonActor *)in_stack_00000008,g_CWeaponClassInfo.name_hash);",
+      "text": "(in_stack_00000008,g_CWeaponClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
@@ -1859,194 +1859,187 @@
       "description": "Unresolved stack parameter",
       "line": 389,
       "match": "in_stack_00000008",
-      "text": "(*((in_stack_00000008->base).base.base.vtable._ub)->getBoundingBox)",
+      "text": "(*((in_stack_00000008->vtable)._ub)->getBoundingBox)(in_stack_00000008,&local_204);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 390,
+      "line": 389,
       "match": "in_stack_00000008",
-      "text": "((CDemonActor *)in_stack_00000008,&local_204);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 393,
-      "match": "in_stack_00000008",
-      "text": "fVar1 = core_stranger_cpp_CStranger_FUN_005bb010(in_stack_00000008);",
+      "text": "(*((in_stack_00000008->vtable)._ub)->getBoundingBox)(in_stack_00000008,&local_204);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 406,
+      "line": 405,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 407,
+      "line": 406,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 414,
+      "line": 413,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 415,
+      "line": 414,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 424,
+      "line": 423,
       "match": "in_stack_00000008",
-      "text": "((CDemonActor *)in_stack_00000008,g_CLightActorClassInfo.name_hash);",
+      "text": "(in_stack_00000008,g_CLightActorClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 426,
+      "line": 425,
       "match": "in_stack_00000008",
-      "text": "(*((in_stack_00000008->base).base.base.vtable._ub)->getBoundingBox)",
+      "text": "(*((in_stack_00000008->vtable)._ub)->getBoundingBox)(in_stack_00000008,&local_21c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 427,
+      "line": 425,
       "match": "in_stack_00000008",
-      "text": "((CDemonActor *)in_stack_00000008,&local_21c);",
+      "text": "(*((in_stack_00000008->vtable)._ub)->getBoundingBox)(in_stack_00000008,&local_21c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 442,
+      "line": 440,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 449,
+      "line": 447,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 450,
+      "line": 448,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 454,
+      "line": 452,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 1) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 470,
+      "line": 468,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 471,
+      "line": 469,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 494,
+      "line": 492,
       "match": "in_stack_00000008",
-      "text": "iVar3 = (*((in_stack_00000008->base).base.base.vtable._ub)->getAllowedMeleeAttackTypes)",
+      "text": "iVar3 = (*((in_stack_00000008->vtable)._ub)->getAllowedMeleeAttackTypes)(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 495,
+      "line": 492,
       "match": "in_stack_00000008",
-      "text": "((CDemonActor *)in_stack_00000008);",
+      "text": "iVar3 = (*((in_stack_00000008->vtable)._ub)->getAllowedMeleeAttackTypes)(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 521,
+      "line": 518,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 522,
+      "line": 519,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 525,
+      "line": 522,
       "match": "&stack0xfffff2a4",
       "text": "(&local_99c,(CMatrix3x4f *)pCVar15,(CMatrix3x4f *)&stack0xfffff2a4);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 526,
+      "line": 523,
       "match": "&stack0xfffff2a4",
       "text": "pfVar10 = (float *)&stack0xfffff2a4;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 531,
+      "line": 528,
       "match": "(CMatrix3x3f *)((int)",
       "text": "pCVar13 = (CMatrix3x3f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 540,
+      "line": 537,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 548,
+      "line": 545,
       "match": "in_stack_0000000c",
       "text": "else if (in_stack_0000000c == 1) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 581,
+      "line": 578,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 585,
+      "line": 582,
       "match": "unaff_ESI",
       "text": "pfVar11 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 591,
+      "line": 588,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
@@ -2057,7 +2050,7 @@
       "expected_args": 1,
       "format_string": "Don't know how to carry light %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 487,
+      "line_number": 485,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Don't know how to carry light %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

@@ -2,17 +2,16 @@
 // Address: 00419340
 // Address Range: [[00419340, 004194ab]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr)
+void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr,int render_flags)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  int in_stack_00000008;
   int local_18;
   int local_14;
   
@@ -31,7 +30,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr)
     }
     engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
               (g_CDemonRendererPtr2,*(SMRGLHeaderPrimitive **)this_ptr->unk4,this_ptr->tri_count,
-               in_stack_00000008);
+               render_flags);
   }
   else {
     iVar2 = 0;
@@ -48,7 +47,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr)
         }
         engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
                   (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)(*(int *)this_ptr->unk4 + iVar3),
-                   in_stack_00000008);
+                   render_flags);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 0x3c;
         local_14 = local_14 + 4;
