@@ -32,11 +32,11 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  char *local_18;
+  CDemonLight *local_18;
   
   EVar1 = this_ptr->light_actor_type;
   if (EVar1 != LIGHT_TYPE_CUSTOM) {
-    local_18 = this_ptr->unk1;
+    local_18 = &this_ptr->light;
     this_ptr_00 = &(this_ptr->base).model;
     if (EVar1 < LIGHT_TYPE_LANTERN) {
       core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -50,9 +50,9 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
       (this_ptr->light_orient).vec.z = 0.0;
       (this_ptr->light_orient).vec.y = (this_ptr->light_orient).vec.z;
       (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
-      this_ptr->light_status = 0;
+      (this_ptr->light).light_enabled_flag = 0;
       *(uint *)(unaff_EBP + 0x38) = 0x42600000;
-      this_ptr->light_falloff = 32.0;
+      (this_ptr->light).base.max_distance = 32.0;
       (this_ptr->base).pickup_type = 3;
       return;
     }
@@ -81,9 +81,9 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
       (this_ptr->light_orient).vec.y = (this_ptr->light_orient).vec.z;
       (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
       (this_ptr->light_orient).vec.x = 0.2617994;
-      this_ptr->light_status = 0;
+      (this_ptr->light).light_enabled_flag = 0;
       *(uint *)(unaff_EBP + 0x38) = 0x42600000;
-      this_ptr->light_falloff = 32.0;
+      (this_ptr->light).base.max_distance = 32.0;
       iVar3 = DAT_008229ac;
       (this_ptr->base).pickup_type = 3;
       if (iVar3 == 0) {
@@ -98,7 +98,7 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
         DAT_008229ac = 1;
       }
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-                ((CDemonLight *)this_ptr->unk1,CDemonFilter_ARRAY_008229ec,0,0,0);
+                (&this_ptr->light,CDemonFilter_ARRAY_008229ec,0,0,0);
       return;
     }
   }

@@ -32,19 +32,19 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_0041d270(CBoneGuy *this_ptr)
     core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->death_event,"deathEvent");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->recombine_time,"recombineTime");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->blown_up,"blownUp");
-    core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->param,"param");
+    core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->recombine_interpolation,"param");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->box_count,"boxCount");
     core_actor_cpp_archivePartStatus_FUN_0040bae0(model_ptr,"partStatus");
     iVar1 = 0;
     if (0 < this_ptr->box_count) {
-      local_14 = (CDemonActor *)this_ptr->unk2;
-      vector_ptr_00 = &this_ptr->source_pos;
-      quat_ptr = &this_ptr->box_list_dest_orient;
-      local_18 = &this_ptr->box_list_start_orient;
-      vector_ptr = &this_ptr->box_list_orient;
+      local_14 = (CDemonActor *)&this_ptr->boxes[0].body_part;
+      vector_ptr_00 = &this_ptr->boxes[0].source_pos;
+      quat_ptr = &this_ptr->boxes[0].dest_orient;
+      local_18 = &this_ptr->boxes[0].start_orient;
+      vector_ptr = &this_ptr->boxes[0].orient;
       do {
-        core_actor_cpp_archiveVector_FUN_0040b340
-                  ((CVector3f *)(this_ptr->unk2 + iVar1 * 0x48 + -0x44),"boxListPos");
+        core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->boxes[iVar1].pos,"boxListPos")
+        ;
         core_actor_cpp_archiveVector_FUN_0040b340(vector_ptr,"boxListOrient");
         core_actor_cpp_archiveQuaternion_FUN_0040b520(quat_ptr,"boxListDestOrient");
         core_actor_cpp_archiveQuaternion_FUN_0040b520(local_18,"boxListStartOrient");

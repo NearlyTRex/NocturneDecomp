@@ -20,10 +20,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041ae50(CBodyPart *this_ptr)
   CVector3f *in_stack_00000008;
   CVector3f local_18;
   
-  iVar5 = *(int *)(this_ptr->unk5 + 0x5bc);
+  iVar5 = this_ptr->fire_count;
   if (iVar5 < 2) {
-    input_local_point = (CVector3f *)(this_ptr->unk5 + iVar5 * 0x2b0 + 0x5c0);
-    *(int *)(this_ptr->unk5 + 0x5bc) = iVar5 + 1;
+    input_local_point = &this_ptr->fires[iVar5].local_position;
+    this_ptr->fire_count = iVar5 + 1;
     if (input_local_point != in_stack_00000008) {
       input_local_point->x = in_stack_00000008->x;
       input_local_point->y = in_stack_00000008->y;
@@ -38,7 +38,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041ae50(CBodyPart *this_ptr)
     input_local_point[0x24].z = 0.0;
     input_local_point[0x1d].z = 1.5;
     input_local_point[0x1e].x = 3.0;
-    pcVar7 = this_ptr->unk5 + 8;
+    pcVar7 = this_ptr->textures[0].texture_name;
     input_local_point[0x1e].y = 1.5;
     (this_ptr->base).is_transparent = 1;
     pcVar6 = "CHAR2.RAW";
@@ -56,13 +56,13 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041ae50(CBodyPart *this_ptr)
     if (0 < this_ptr->tri_count) {
       iVar3 = 0;
       do {
-        *(uint *)(*(int *)(this_ptr->unk4 + 4) + iVar3) = 0;
+        *(uint *)((int)this_ptr->face_texture_indices + iVar3) = 0;
         iVar5 = iVar5 + 1;
         iVar3 = iVar3 + 4;
       } while (iVar5 < this_ptr->tri_count);
     }
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(12.0,20.0);
-    this_ptr->unk7 = (int)fVar4;
+    this_ptr->fire_time_remaining = (int)fVar4;
   }
   return;
 }

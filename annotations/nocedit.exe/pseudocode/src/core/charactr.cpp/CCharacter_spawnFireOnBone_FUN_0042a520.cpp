@@ -74,8 +74,8 @@ core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520
       iVar5 = 0;
       if (0 < local_30) {
         local_44 = (this_ptr->model).bone_transform.bone_world_matrices;
-        local_40 = this_ptr->field66_0x33cc;
-        local_3c = this_ptr->field65_0x2f1c;
+        local_40 = this_ptr->flames;
+        local_3c = this_ptr->fire_effects;
         local_34 = &this_ptr->model;
         local_38 = local_1c + 2;
         while (this_ptr->fire_count < 0x32) {
@@ -111,20 +111,20 @@ core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520
           local_40[iVar6].base.location.position.x = pCVar4->x;
           local_40[iVar6].base.location.position.y = pCVar4->y;
           local_40[iVar6].base.location.position.z = pCVar4->z;
-          *(uint *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;
+          *(uint *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;
           pSVar8->unk[0x14] = '\0';
           pSVar8->unk[0x15] = '\0';
           pSVar8->unk[0x16] = '\0';
           pSVar8->unk[0x17] = '?';
           fVar3 = (float)0.5;
-          *(float *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x364) =
+          *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x364) =
                *(float *)(pSVar8->unk + 0x14) * fVar3;
-          *(uint *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x368) =
+          *(uint *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x368) =
                *(uint *)(pSVar8->unk + 0x14);
-          *(float *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x36c) =
+          *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x36c) =
                fVar3 * *(float *)(pSVar8->unk + 0x14);
           iVar5 = iVar5 + 1;
-          *(float *)((int)this_ptr->field65_0x2f1c + this_ptr->fire_count * 0x2a4 + 0x3b4) =
+          *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x3b4) =
                this_ptr->fire_spread_rate;
           if (local_30 <= iVar5) {
             return;

@@ -178,7 +178,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
       }
       break;
     case 9:
-      if ((this_ptr->base).base.field3_0x2410 != 0) {
+      if ((this_ptr->base).base.is_on_ground != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,10,1);
       }
@@ -245,22 +245,22 @@ switchD_0048f284_caseD_3:
       in_stack_ffffff30 = (this_ptr->base).victim;
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_ffffff30);
     }
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_7c = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_78 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    pCVar10 = &(this_ptr->base).base.field6_0x241c;
-    local_74 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_7c = (this_ptr->base).base.velocity.x * delta_time;
+    local_78 = (this_ptr->base).base.velocity.y * delta_time;
+    pCVar10 = &(this_ptr->base).base.position_delta;
+    local_74 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar1 = &(this_ptr->base).base.model.accumulated_root_motion;
     local_70 = local_7c + pCVar10->x;
-    local_6c = local_78 + (this_ptr->base).base.field6_0x241c.y;
-    local_68 = local_74 + (this_ptr->base).base.field6_0x241c.z;
+    local_6c = local_78 + (this_ptr->base).base.position_delta.y;
+    local_68 = local_74 + (this_ptr->base).base.position_delta.z;
     local_40.x = local_70 + pCVar1->x;
     local_40.y = local_6c + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_40.z = local_68 + (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar10->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar10->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     fVar2 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar2;

@@ -11,7 +11,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670(CChar
 {
   int iVar1;
   CVector3f *input_vector;
-  char *pcVar2;
+  SDamageDecal *pSVar2;
   int iVar3;
   CMatrix3x4f *matrix;
   CVector3f local_5c;
@@ -23,19 +23,19 @@ void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670(CChar
   CMatrix3x4f *local_14;
   
   iVar3 = 0;
-  if (0 < this_ptr->field60_0x2df4) {
+  if (0 < this_ptr->damage_decal_count) {
     local_14 = (this_ptr->model).bone_transform.bone_world_matrices;
-    pcVar2 = this_ptr->field61_0x2df8;
+    pSVar2 = this_ptr->damage_decals;
     do {
-      if ((this_ptr->model).part_data.visibility_flags[*(int *)pcVar2] != 0) {
+      if ((this_ptr->model).part_data.visibility_flags[pSVar2->part_index] != 0) {
         iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
         if (iVar1 != 0) {
-          matrix = local_14 + *(int *)(pcVar2 + 4);
+          matrix = local_14 + pSVar2->bone_index;
           local_2c.x = 0.0;
           local_2c.y = 0.0;
           local_2c.z = -0.2;
           input_vector = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                                   (&local_50,&local_2c,(CMatrix3x4f *)(pcVar2 + 8));
+                                   (&local_50,&local_2c,&pSVar2->transform);
           core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_20,input_vector,matrix);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     (&this_ptr->base,&local_44,&local_20);
@@ -48,8 +48,8 @@ void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670(CChar
         }
       }
       iVar3 = iVar3 + 1;
-      pcVar2 = pcVar2 + 0x38;
-    } while (iVar3 < this_ptr->field60_0x2df4);
+      pSVar2 = pSVar2 + 1;
+    } while (iVar3 < this_ptr->damage_decal_count);
   }
   return;
 }

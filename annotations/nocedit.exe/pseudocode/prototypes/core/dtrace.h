@@ -13,7 +13,7 @@ CDemonRaytrace * __cdecl CDemonRaytrace::ctor(CDemonRaytrace *this_ptr);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240
 // Address: 00494240
-CDemonRaytrace * __cdecl CDemonRaytrace::dtor(CDemonRaytrace *this_ptr);
+CDemonRaytrace * __cdecl CDemonRaytrace::dtor(CDemonRaytrace *this_ptr,uint flags);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00494270
 // Address: 00494270
@@ -201,8 +201,8 @@ STriangleRef * __cdecl STriangleRef::copy(STriangleRef *this_ptr,STriangleRef *o
 
 // Original: core_dtrace.cpp_STriangleRef_dtor_FUN_0049a400
 // Address: 0049a400
-STriangleRef * __cdecl STriangleRef::dtor(STriangleRef *this_ptr);
+STriangleRef * __cdecl STriangleRef::dtor(STriangleRef *this_ptr,uint flags);
 
-// Original: core_dtrace.cpp_freeVectors_FUN_0049a410
+// Original: core_dtrace.cpp_CVector3f_arrdtor_FUN_0049a410
 // Address: 0049a410
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);

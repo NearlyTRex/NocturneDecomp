@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 73,
-        "line": 24,
+        "line": 25,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 79,
+    "complexity_score": 81,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 4,
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 51,
     "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 205
+    "total_lines": 207
   },
   "cross_references": [],
   "function": {
@@ -65,19 +65,19 @@
       "name": "core_cloth.cpp_CClothList_render_FUN_0043c320"
     },
     {
-      "addr": "0052bae0",
-      "is_variadic": false,
-      "name": "core_morph.cpp_CMorphModel_FUN_0052bae0"
-    },
-    {
       "addr": "0052b600",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b600"
+      "name": "core_morph.cpp_CMorph_FUN_0052b600"
     },
     {
       "addr": "0052b640",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b640"
+      "name": "core_morph.cpp_CMorph_FUN_0052b640"
+    },
+    {
+      "addr": "0052bae0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_FUN_0052bae0"
     },
     {
       "addr": "0052e700",
@@ -188,14 +188,14 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 17,
+      "line": 18,
       "match": "&stack0xffffffdc",
       "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 42,
       "match": "DAT_02f43978",
       "text": "if ((DAT_02f43978 != 0) &&",
       "type": "undefined_data"

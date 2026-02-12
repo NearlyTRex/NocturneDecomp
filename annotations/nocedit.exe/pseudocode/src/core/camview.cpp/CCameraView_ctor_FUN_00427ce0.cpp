@@ -10,7 +10,7 @@ CCameraView * __cdecl core_camview_cpp_CCameraView_ctor_FUN_00427ce0(CCameraView
 
 {
   this_ptr->projection_scale = 28.0;
-  this_ptr->unk1 = (void *)0x43800000;
+  this_ptr->unk1 = 256.0;
   this_ptr->vtable = &g_CCameraViewVTable;
   return this_ptr;
 }

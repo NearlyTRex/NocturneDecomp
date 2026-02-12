@@ -14,7 +14,7 @@ void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_pt
   
   if ((this_ptr->base).pool_me != 0) {
     if (layer_flag != 0) {
-      (this_ptr->base).base.field2_0x240c = 1;
+      (this_ptr->base).base.render_active = 1;
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)

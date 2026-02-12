@@ -17,27 +17,25 @@ void __cdecl core_baron_cpp_CBaron_FUN_004135e0(CBaron *this_ptr)
   float local_34;
   CVector3f local_1c;
   
-  if (*(int *)(this_ptr->unk1 + 0x10) != 0) {
-    new_orientation = (CVector3f *)(*(int *)(this_ptr->unk1 + 0x10) + 0x30);
+  if (this_ptr->unk5 != 0) {
+    new_orientation = (CVector3f *)(this_ptr->unk5 + 0x30);
     pCVar1 = (this_ptr->base).base.base.vtable._ub;
     local_1c.z = -2.0;
     local_1c.x = 0.0;
     local_1c.y = 0.0;
     pCVar2 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                       (*(CDemonActor **)(this_ptr->unk1 + 0x10),(CVector3f *)&stack0xffffffd8,
-                        &local_1c);
-    local_34 = *(float *)(*(int *)(this_ptr->unk1 + 0x10) + 0x20) + pCVar2->x;
+                       ((CDemonActor *)this_ptr->unk5,(CVector3f *)&stack0xffffffd8,&local_1c);
+    local_34 = *(float *)(this_ptr->unk5 + 0x20) + pCVar2->x;
     (*pCVar1->setPositionAndOrientation)
               ((CDemonActor *)this_ptr,(CVector3f *)&local_34,new_orientation);
     local_34 = 5.98883e-39;
     this_ptr_00 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
-                            (*(CDemonActor **)(this_ptr->unk1 + 0x10),
-                             g_CCharacterClassInfo.name_hash);
+                            ((CDemonActor *)this_ptr->unk5,g_CCharacterClassInfo.name_hash);
     if (this_ptr_00 != (CCharacter *)0x0) {
       iVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if (iVar3 == 2) {
-        core_baron_cpp_CBaron_FUN_004135a0(this_ptr,*(int *)(this_ptr->unk1 + 0x10));
+        core_baron_cpp_CBaron_FUN_004135a0(this_ptr,this_ptr->unk5);
         return;
       }
     }

@@ -19,9 +19,9 @@ CBeast * __cdecl core_beast_cpp_CBeast_ctor_FUN_00418220(CBeast *this_ptr)
             (&(pCVar3->base).model,"beast.dfm");
   fVar2 = 100.0f;
   fVar1 = 100.0f;
-  (pCVar3->base).field54_0x2ddc = 10.0;
+  (pCVar3->base).collision_cylinder_height = 10.0;
   (pCVar3->base).collision_cylinder_radius = 10.0;
-  (pCVar3->base).field56_0x2de4 = fVar1;
-  (pCVar3->base).field57_0x2de8 = fVar2;
+  (pCVar3->base).ai_detection_range_min = fVar1;
+  (pCVar3->base).ai_detection_range_max = fVar2;
   return (CBeast *)pCVar3;
 }

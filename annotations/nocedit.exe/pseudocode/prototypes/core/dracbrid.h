@@ -89,16 +89,16 @@ SFreaky * __cdecl SFreaky::ctor(SFreaky *this_ptr);
 
 // Original: core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50
 // Address: 00486d50
-SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr);
+SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr,uint flags);
 
 // Original: core_dracbrid.cpp_CDraculaBride_dtor_FUN_00486d70
 // Address: 00486d70
 CDraculaBride * __cdecl CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
 
-// Original: core_dracbrid.cpp_freeVectors_FUN_00486e30
+// Original: core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30
 // Address: 00486e30
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
-// Original: core_dracbrid.cpp_freeFreaky_FUN_00486e50
+// Original: core_dracbrid.cpp_SFreaky_arrdtor_FUN_00486e50
 // Address: 00486e50
-SFreaky * __cdecl freeFreaky(SFreaky *objs);
+SFreaky * __cdecl SFreaky::arrdtor(SFreaky *objs,uint flags);

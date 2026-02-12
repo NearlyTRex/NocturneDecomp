@@ -61,12 +61,12 @@
   },
   "complexity": {
     "assembly_lines": 311,
-    "complexity_score": 521,
+    "complexity_score": 641,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 2,
     "pseudocode_lines": 196,
-    "suspect_count": 30,
+    "suspect_count": 42,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -637,6 +637,90 @@
       "match": "ROUND",
       "text": "local_38 = (int)ROUND(dVar20);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int *)((int)",
+      "text": "lVar2 = (longlong)iStack_50 * (longlong)*(int *)((int)&pCVar1->x + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(int *)((int)",
+      "text": "lVar3 = (longlong)iStack_5c * (longlong)*(int *)((int)&pCVar1->y + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 109,
+      "match": "(int *)((int)",
+      "text": "lVar4 = (longlong)iStack_54 * (longlong)*(int *)((int)&pCVar1->z + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 113,
+      "match": "(int *)((int)",
+      "text": "lVar2 = (longlong)local_4c * (longlong)*(int *)((int)&pCVar1->x + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 114,
+      "match": "(int *)((int)",
+      "text": "lVar3 = (longlong)local_58 * (longlong)*(int *)((int)&pCVar1->y + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(int *)((int)",
+      "text": "lVar4 = (longlong)iStack_44 * (longlong)*(int *)((int)&pCVar1->z + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(int *)((int)",
+      "text": "lVar2 = (longlong)iStack_48 * (longlong)*(int *)((int)&pCVar1->x + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(int *)((int)",
+      "text": "lVar3 = (longlong)local_3c * (longlong)*(int *)((int)&pCVar1->y + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 121,
+      "match": "(int *)((int)",
+      "text": "lVar4 = (longlong)local_38 * (longlong)*(int *)((int)&pCVar1->z + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&pCVar1->x + iVar8) = local_64;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->z + iVar8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&pCVar1->y + iVar8) = iStack_60;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

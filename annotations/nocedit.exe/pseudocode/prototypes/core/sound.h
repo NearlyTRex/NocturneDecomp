@@ -149,7 +149,7 @@ STrainNoise * __cdecl STrainNoise::ctor(STrainNoise *this_ptr);
 
 // Original: core_sound.cpp_STrainNoise_dtor_FUN_005b3e10
 // Address: 005b3e10
-STrainNoise * __cdecl STrainNoise::dtor(STrainNoise *this_ptr);
+STrainNoise * __cdecl STrainNoise::dtor(STrainNoise *this_ptr,uint flags);
 
 // Original: core_sound.cpp_assignInt_FUN_005b3e20
 // Address: 005b3e20
@@ -163,6 +163,6 @@ int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
 // Address: 005b3e40
 int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
 
-// Original: core_sound.cpp_freeTrainNoises_FUN_005b3e50
+// Original: core_sound.cpp_STrainNoise_arrdtor_FUN_005b3e50
 // Address: 005b3e50
-STrainNoise * __cdecl freeTrainNoises(STrainNoise *objs);
+STrainNoise * __cdecl STrainNoise::arrdtor(STrainNoise *objs,uint flags);

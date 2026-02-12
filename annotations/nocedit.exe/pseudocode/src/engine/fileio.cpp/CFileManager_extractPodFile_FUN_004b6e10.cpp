@@ -69,7 +69,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   if (iVar2 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s to extract files!");
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);
     return;
   }
   iVar2 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);
@@ -79,7 +79,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
     iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Warning!  This .POD file has an invalid CRC.  If it's date is earlier\nthan 07/28/1998, it has no CRC, and you should ignore this message.\n\n%s %s\n\nDo you wish to continue?");
     if (iVar2 == 0) {
-      engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);
+      engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);
       return;
     }
   }
@@ -90,7 +90,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   if (local_20 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s");
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);
     return;
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -213,6 +213,6 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
     }
     shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(local_30 + 4),0);
   }
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)local_e80);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)local_e80,0);
   return;
 }

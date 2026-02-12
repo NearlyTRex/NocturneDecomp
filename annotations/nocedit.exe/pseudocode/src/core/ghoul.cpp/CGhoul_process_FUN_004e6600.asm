@@ -1019,7 +1019,7 @@ section .text
     MOV EAX,0x62dcca                    ; 004e6fb5 | = "%s confused while walking to scriptDe..."
     PUSH EAX                            ; 004e6fba | = "%s confused while walking to scriptDe..."
     MOV ECX,dword ptr [0x0066e8e0]      ; 004e6fbb | g_CConsolePtr
-    PUSH ECX                            ; 004e6fc1 | g_ConsolePtr
+    PUSH ECX                            ; 004e6fc1 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e6fc2
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x004e6739                      ; 004e6fc7

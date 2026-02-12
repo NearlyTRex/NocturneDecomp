@@ -367,8 +367,8 @@ section .text
     MOV EAX,[0x006843f8]                ; 0056974e | g_CTerrainInstance | g_CTerrainPtr
     PUSH EAX                            ; 00569753 | g_CTerrainInstance
     MOV dword ptr [EBP + 0x15aca8],0x1  ; 00569754
-    CALL core_terrain.cpp_CTerrain_ctor_FUN_005e1ef0 ; 0056975e
-        ;   XREF to: 005e1ef0 (UNCONDITIONAL_CALL)  ; CTerrain * core_terrain.cpp_CTerrain_ctor_FUN_005e1ef0(CTerrain * this_ptr)
+    CALL core_terrain.cpp_CTerrain_init_FUN_005e1ef0 ; 0056975e
+        ;   XREF to: 005e1ef0 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_init_FUN_005e1ef0(CTerrain * this_ptr)
     ADD ESP,0x4                         ; 00569763
     PUSH EBP                            ; 00569766
         ;   Label: LAB_00569766
@@ -1074,8 +1074,8 @@ section .text
     MOV EDI,dword ptr [0x006843f8]      ; 00569f59 | g_CTerrainPtr
         ;   Label: LAB_00569f59
     PUSH EDI                            ; 00569f5f | g_CTerrainInstance
-    CALL core_terrain.cpp_CTerrain_dtor_FUN_005e1f30 ; 00569f60
-        ;   XREF to: 005e1f30 (UNCONDITIONAL_CALL)  ; CTerrain * core_terrain.cpp_CTerrain_dtor_FUN_005e1f30(CTerrain * this_ptr)
+    CALL core_terrain.cpp_CTerrain_free_FUN_005e1f30 ; 00569f60
+        ;   XREF to: 005e1f30 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_free_FUN_005e1f30(CTerrain * this_ptr)
     ADD ESP,0x4                         ; 00569f65
     MOV dword ptr [EBP + 0x15aca8],0x0  ; 00569f68
     JMP 0x00569766                      ; 00569f72

@@ -8,10 +8,10 @@
 ;
 ; XREF[5]:
 ;   core_morph.cpp_CMorphModel_FUN_0052a8d0 at 0052a90e
-;   core_morph.cpp_FUN_0052b370 at 0052b3b9
-;   core_morph.cpp_FUN_0052b3d0 at 0052b419
-;   core_morph.cpp_FUN_0052b4b0 at 0052b4f0
-;   core_morph.cpp_FUN_0052b500 at 0052b540
+;   core_morph.cpp_CMorph_FUN_0052b370 at 0052b3b9
+;   core_morph.cpp_CMorph_FUN_0052b3d0 at 0052b419
+;   core_morph.cpp_CMorph_FUN_0052b4b0 at 0052b4f0
+;   core_morph.cpp_CMorph_FUN_0052b500 at 0052b540
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0063a103
@@ -145,7 +145,7 @@ section .text
     PUSH EAX                            ; 0052a699
     PUSH ESI                            ; 0052a69a
     CALL core_morph.cpp_CMorphModel_animate_FUN_0052a920 ; 0052a69b
-        ;   XREF to: 0052a920 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animate_FUN_0052a920(CMorphModel * this_ptr)
+        ;   XREF to: 0052a920 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animate_FUN_0052a920(CMorphModel * this_ptr, int part_index)
     ADD ESP,0x14                        ; 0052a6a0
     TEST EBP,EBP                        ; 0052a6a3
         ;   Label: LAB_0052a6a3
@@ -189,7 +189,7 @@ section .text
     PUSH EAX                            ; 0052a6f6
     PUSH ESI                            ; 0052a6f7
     CALL core_morph.cpp_CMorphModel_setFaceList_FUN_0052aac0 ; 0052a6f8
-        ;   XREF to: 0052aac0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_setFaceList_FUN_0052aac0(CMorphModel * this_ptr)
+        ;   XREF to: 0052aac0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_setFaceList_FUN_0052aac0(CMorphModel * this_ptr, int part_index)
     ADD ESP,0x20                        ; 0052a6fd
     POP EBP                             ; 0052a700
     POP EDI                             ; 0052a701

@@ -60,14 +60,14 @@ engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
   if (iVar2 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s to view audit!",local_508);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_cdc);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_cdc,0);
     return;
   }
   local_14 = local_cdc.audit_count;
   if (local_cdc.audit_count < 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"%s doesn't contain any audit information",local_508);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_cdc);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_cdc,0);
     return;
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -132,6 +132,6 @@ engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(&local_8b0,local_508,-1,0)
   ;
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_8b0,0);
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_cdc);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_cdc,0);
   return;
 }

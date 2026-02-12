@@ -52,7 +52,7 @@ engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460
   if (iVar2 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s to catalog files!",local_52c);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_d00);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_d00,0);
     return;
   }
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_8d4);
@@ -91,6 +91,6 @@ engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(&local_8d4,local_52c,-1,0)
   ;
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_8d4,0);
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_d00);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_d00,0);
   return;
 }

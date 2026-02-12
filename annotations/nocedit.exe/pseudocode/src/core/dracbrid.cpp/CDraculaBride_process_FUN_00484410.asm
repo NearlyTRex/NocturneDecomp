@@ -530,7 +530,7 @@ section .text
     MOV EAX,0x6219d0                    ; 004848d7 | = "%s confused while walking to scriptDe..."
     PUSH EAX                            ; 004848dc | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x0066e8e0]      ; 004848dd | g_CConsolePtr
-    PUSH ESI                            ; 004848e3 | g_ConsolePtr
+    PUSH ESI                            ; 004848e3 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004848e4
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x004846b6                      ; 004848e9
@@ -1470,7 +1470,7 @@ section .text
         ;   Label: LAB_00485399
     PUSH 0x621a2d                       ; 0048539a | = "%s gave up chase - I'm confused\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 0048539f | g_CConsolePtr
-    PUSH EDI                            ; 004853a5 | g_ConsolePtr
+    PUSH EDI                            ; 004853a5 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004853a6
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004853ab
@@ -1904,7 +1904,7 @@ section .text
         ;   Label: LAB_0048588b
     PUSH 0x621a9a                       ; 0048588c | = "%s gave up chase - I'm confused\n"
     MOV ECX,dword ptr [0x0066e8e0]      ; 00485891 | g_CConsolePtr
-    PUSH ECX                            ; 00485897 | g_ConsolePtr
+    PUSH ECX                            ; 00485897 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00485898
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0048589d

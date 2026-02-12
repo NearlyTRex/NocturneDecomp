@@ -21,7 +21,7 @@ CKeyFramedModel * __cdecl CKeyFramedModel::ctor(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90
 // Address: 00476d90
-CKeyFramedModel * __cdecl CKeyFramedModel::dtor(CKeyFramedModel *this_ptr);
+CKeyFramedModel * __cdecl CKeyFramedModel::dtor(CKeyFramedModel *this_ptr,uint flags);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0
 // Address: 00476db0
@@ -253,7 +253,7 @@ CDemonTriangle * __cdecl CDemonTriangle::ctor(CDemonTriangle *this_ptr);
 
 // Original: core_dmodel.cpp_CDemonTriangle_dtor_FUN_0047ef00
 // Address: 0047ef00
-CDemonTriangle * __cdecl CDemonTriangle::dtor(CDemonTriangle *this_ptr);
+CDemonTriangle * __cdecl CDemonTriangle::dtor(CDemonTriangle *this_ptr,uint flags);
 
 // Original: core_dmodel.cpp_CDemonTriangle_copy_FUN_0047ef10
 // Address: 0047ef10
@@ -275,6 +275,6 @@ float * __cdecl copyFloat(float *dst,float *src);
 // Address: 0047efb0
 float * __cdecl copyFloat(float *dst,float *src);
 
-// Original: core_dmodel.cpp_freeModels_FUN_0047efc0
+// Original: core_dmodel.cpp_CKeyFramedModel_arrdtor_FUN_0047efc0
 // Address: 0047efc0
-CKeyFramedModel * __cdecl freeModels(CKeyFramedModel *objs);
+CKeyFramedModel * __cdecl CKeyFramedModel::arrdtor(CKeyFramedModel *objs,uint flags);

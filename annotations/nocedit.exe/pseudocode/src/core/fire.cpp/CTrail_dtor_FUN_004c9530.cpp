@@ -2,11 +2,11 @@
 // Address: 004c9530
 // Address Range: [[004c9530, 004c9534]]
 // Convention: __cdecl
-// Signature: CTrail * __cdecl core_fire_cpp_CTrail_dtor_FUN_004c9530(CTrail *this_ptr)
+// Signature: CTrail * __cdecl core_fire_cpp_CTrail_dtor_FUN_004c9530(CTrail *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CTrail * __cdecl core_fire_cpp_CTrail_dtor_FUN_004c9530(CTrail *this_ptr)
+CTrail * __cdecl core_fire_cpp_CTrail_dtor_FUN_004c9530(CTrail *this_ptr,uint flags)
 
 {
   return this_ptr;

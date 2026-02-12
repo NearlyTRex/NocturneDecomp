@@ -137,7 +137,7 @@ CFileManager * __cdecl CFileManager::ctor(CFileManager *this_ptr);
 
 // Original: engine_fileio.cpp_CFileManager_dtor_FUN_004b53d0
 // Address: 004b53d0
-CFileManager * __cdecl CFileManager::dtor(CFileManager *this_ptr);
+CFileManager * __cdecl CFileManager::dtor(CFileManager *this_ptr,uint flags);
 
 // Original: engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0
 // Address: 004b53e0
@@ -293,4 +293,4 @@ CCheckOutList * __cdecl CCheckOutList::ctor(CCheckOutList *this_ptr);
 
 // Original: engine_fileio.cpp_CCheckOutList_dtor_FUN_004bd730
 // Address: 004bd730
-CCheckOutList * __cdecl CCheckOutList::dtor(CCheckOutList *this_ptr);
+CCheckOutList * __cdecl CCheckOutList::dtor(CCheckOutList *this_ptr,uint flags);

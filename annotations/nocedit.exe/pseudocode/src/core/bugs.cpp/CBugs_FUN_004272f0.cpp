@@ -9,45 +9,46 @@
 void __cdecl core_bugs_cpp_CBugs_FUN_004272f0(CBugs *this_ptr)
 
 {
-  char *pcVar1;
+  CVector3f *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
-  CVector3f *point;
-  int iVar7;
+  CVector3f *pCVar7;
+  int iVar8;
   
-  pcVar1 = this_ptr->bugs[0].unk + 8;
-  if (this_ptr->unk5 != pcVar1) {
-    *(uint *)this_ptr->unk5 = *(uint *)pcVar1;
-    *(uint *)(this_ptr->unk5 + 4) = *(uint *)(this_ptr->bugs[0].unk + 0xc);
-    *(uint *)(this_ptr->unk5 + 8) = *(uint *)(this_ptr->bugs[0].unk + 0x10);
+  pCVar7 = &this_ptr->bugs[0].position;
+  if (&this_ptr->bounds != (CBoundingBox3D *)pCVar7) {
+    (this_ptr->bounds).min.x = pCVar7->x;
+    (this_ptr->bounds).min.y = this_ptr->bugs[0].position.y;
+    (this_ptr->bounds).min.z = this_ptr->bugs[0].position.z;
   }
-  if (this_ptr->unk5 + 0xc != pcVar1) {
-    *(uint *)(this_ptr->unk5 + 0xc) = *(uint *)pcVar1;
-    *(uint *)(this_ptr->unk5 + 0x10) = *(uint *)(this_ptr->bugs[0].unk + 0xc);
-    *(uint *)(this_ptr->unk5 + 0x14) = *(uint *)(this_ptr->bugs[0].unk + 0x10);
+  pCVar1 = &(this_ptr->bounds).max;
+  if (pCVar1 != pCVar7) {
+    pCVar1->x = pCVar7->x;
+    (this_ptr->bounds).max.y = this_ptr->bugs[0].position.y;
+    (this_ptr->bounds).max.z = this_ptr->bugs[0].position.z;
   }
-  iVar7 = 1;
+  iVar8 = 1;
   if (1 < this_ptr->count) {
-    point = (CVector3f *)(this_ptr->bugs[1].unk + 8);
+    pCVar7 = &this_ptr->bugs[1].position;
     do {
-      iVar7 = iVar7 + 1;
-      core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)this_ptr->unk5,point);
-      point = (CVector3f *)&point[5].y;
-    } while (iVar7 < this_ptr->count);
+      iVar8 = iVar8 + 1;
+      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&this_ptr->bounds,pCVar7);
+      pCVar7 = (CVector3f *)&pCVar7[5].y;
+    } while (iVar8 < this_ptr->count);
   }
-  fVar2 = *(float *)this_ptr->unk5 + -0.3333333f;
-  fVar3 = *(float *)(this_ptr->unk5 + 8) + -0.3333333f;
-  fVar4 = *(float *)(this_ptr->unk5 + 0xc) + 0.3333333f;
-  fVar5 = *(float *)(this_ptr->unk5 + 0x10) + 0.3333333f;
-  fVar6 = *(float *)(this_ptr->unk5 + 0x14) + 0.3333333f;
-  *(float *)(this_ptr->unk5 + 4) = *(float *)(this_ptr->unk5 + 4) + -0.3333333f;
-  *(float *)(this_ptr->unk5 + 8) = fVar3;
-  *(float *)(this_ptr->unk5 + 0xc) = fVar4;
-  *(float *)(this_ptr->unk5 + 0x10) = fVar5;
-  *(float *)(this_ptr->unk5 + 0x14) = fVar6;
-  *(float *)this_ptr->unk5 = fVar2;
+  fVar2 = (this_ptr->bounds).min.x + -0.3333333f;
+  fVar3 = (this_ptr->bounds).min.z + -0.3333333f;
+  fVar4 = (this_ptr->bounds).max.x + 0.3333333f;
+  fVar5 = (this_ptr->bounds).max.y + 0.3333333f;
+  fVar6 = (this_ptr->bounds).max.z + 0.3333333f;
+  (this_ptr->bounds).min.y = (this_ptr->bounds).min.y + -0.3333333f;
+  (this_ptr->bounds).min.z = fVar3;
+  (this_ptr->bounds).max.x = fVar4;
+  (this_ptr->bounds).max.y = fVar5;
+  (this_ptr->bounds).max.z = fVar6;
+  (this_ptr->bounds).min.x = fVar2;
   return;
 }

@@ -3,8 +3,14 @@
     "errors": [
       {
         "category": "incompatible_types",
+        "column": 27,
+        "line": 117,
+        "message": "assigning to 'CMorph *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
         "column": 12,
-        "line": 176,
+        "line": 174,
         "message": "no matching function for call to 'support_newmsg_cpp_decryptMessage_FUN_00544270'"
       }
     ],
@@ -13,16 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 609,
-    "complexity_score": 238,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 58,
-    "pseudocode_lines": 213,
-    "suspect_count": 2,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 822
+    "pseudocode_lines": 211,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 820
   },
   "cross_references": [
     {
@@ -91,14 +95,14 @@
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
-      "addr": "0052b330",
-      "is_variadic": false,
-      "name": "core_morph.cpp_CMorphModel_FUN_0052b330"
-    },
-    {
       "addr": "0052b310",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b310"
+      "name": "core_morph.cpp_CMorph_ctor_FUN_0052b310"
+    },
+    {
+      "addr": "0052b330",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_dtor_FUN_0052b330"
     },
     {
       "addr": "0052bcb0",
@@ -769,20 +773,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_EAX",
-      "text": "CMorphModel *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 116,
-      "match": "extraout_EAX",
-      "text": "this_ptr_00 = extraout_EAX;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

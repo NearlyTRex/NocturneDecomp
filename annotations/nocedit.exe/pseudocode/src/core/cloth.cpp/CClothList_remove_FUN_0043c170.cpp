@@ -26,7 +26,7 @@ void __cdecl core_cloth_cpp_CClothList_remove_FUN_0043c170(CClothList *this_ptr,
   g_CurrentDebugLine = 0x5e8;
   g_CurrentDebugFilename = "..\\core\\cloth.cpp";
   if (this_ptr->cloths[index] != (CCloth *)0x0) {
-    ptr = core_cloth_cpp_CCloth_dtor_FUN_00438c00(this_ptr->cloths[index]);
+    ptr = core_cloth_cpp_CCloth_dtor_FUN_00438c00(this_ptr->cloths[index],0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   }
   iVar5 = index + 1;

@@ -17,9 +17,9 @@ CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004e44e0(CGargoyle *thi
   (pCVar3->base).base.base.vtable._ub = &g_CGargoyleVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"gargoyle.dfm");
-  (pCVar3->base).base.field54_0x2ddc = 0.6;
+  (pCVar3->base).base.collision_cylinder_height = 0.6;
   (pCVar3->base).base.collision_cylinder_radius = 0.6;
-  (pCVar3->base).base.field39_0x2610 = 2;
+  (pCVar3->base).base.collision_layer = 2;
   (pCVar3->base).base.hit_points = 30.0;
   (pCVar3->base).base.base.scale.x = 0xffff;
   (pCVar3->base).base.base.scale.y = 0xffff;
@@ -50,8 +50,8 @@ CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004e44e0(CGargoyle *thi
   pCVar3->unk2[0x19] = '\0';
   pCVar3->unk2[0x1a] = '\0';
   pCVar3->unk2[0x1b] = '\0';
-  (pCVar3->base).base.field44_0x2624 = 0;
-  (pCVar3->base).base.field56_0x2de4 = fVar1;
-  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  (pCVar3->base).base.show_in_editor = 0;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
 }

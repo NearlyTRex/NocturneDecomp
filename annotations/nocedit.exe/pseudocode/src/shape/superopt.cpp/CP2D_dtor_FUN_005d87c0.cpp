@@ -2,11 +2,11 @@
 // Address: 005d87c0
 // Address Range: [[005d87c0, 005d87c4]]
 // Convention: __cdecl
-// Signature: CP2D * __cdecl shape_superopt_cpp_CP2D_dtor_FUN_005d87c0(CP2D *this_ptr)
+// Signature: CP2D * __cdecl shape_superopt_cpp_CP2D_dtor_FUN_005d87c0(CP2D *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CP2D * __cdecl shape_superopt_cpp_CP2D_dtor_FUN_005d87c0(CP2D *this_ptr)
+CP2D * __cdecl shape_superopt_cpp_CP2D_dtor_FUN_005d87c0(CP2D *this_ptr,uint flags)
 
 {
   return this_ptr;

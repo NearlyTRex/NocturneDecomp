@@ -22,7 +22,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample *th
   g_CurrentDebugFilename = "..\\sound\\sndmain.cpp";
   g_CurrentDebugLine = 0x71d;
   if (this_ptr->mp3_data != (CMP3Decoder *)0x0) {
-    ptr = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(this_ptr->mp3_data);
+    ptr = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(this_ptr->mp3_data,0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   }
   this_ptr->mp3_data = (CMP3Decoder *)0x0;

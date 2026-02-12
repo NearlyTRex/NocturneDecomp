@@ -19,18 +19,18 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
   pCVar2 = (CDoor *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
   core_event_cpp_FUN_004b1670();
-  ADJ(this_ptr_00).base.vtable._ub = &g_CDoorVTable;
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CDoorVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"churchd01.kfm");
   ADJ(this_ptr_00)->door_type = 0;
   ADJ(this_ptr_00)->door_side = 1;
   ADJ(this_ptr_00)->door_state = 0;
-  pCVar1 = &ADJ(this_ptr_00).base.location;
+  pCVar1 = &ADJ(this_ptr_00)->base.location;
   ADJ(this_ptr_00)->door_swing = 0;
   if ((CLocation *)&ADJ(this_ptr_00)->orig_pos != pCVar1) {
     (ADJ(this_ptr_00)->orig_pos).x = (pCVar1->position).x;
-    (ADJ(this_ptr_00)->orig_pos).y = ADJ(this_ptr_00).base.location.position.y;
-    (ADJ(this_ptr_00)->orig_pos).z = ADJ(this_ptr_00).base.location.position.z;
+    (ADJ(this_ptr_00)->orig_pos).y = ADJ(this_ptr_00)->base.location.position.y;
+    (ADJ(this_ptr_00)->orig_pos).z = ADJ(this_ptr_00)->base.location.position.z;
   }
   pcVar3 = "defaultDoorOpen";
   pcVar4 = ADJ(this_ptr_00)->open_condition;

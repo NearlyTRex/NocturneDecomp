@@ -19,9 +19,9 @@ CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_004150f0(CBatCrea
             (&(pCVar3->base).base.model,"batcreat.dfm");
   fVar2 = 100.0f;
   fVar1 = 50.0f;
-  (pCVar3->base).base.field54_0x2ddc = 0.6;
+  (pCVar3->base).base.collision_cylinder_height = 0.6;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
-  (pCVar3->base).base.field56_0x2de4 = fVar1;
-  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
 }

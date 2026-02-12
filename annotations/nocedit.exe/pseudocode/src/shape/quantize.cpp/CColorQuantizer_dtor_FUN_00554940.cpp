@@ -2,12 +2,12 @@
 // Address: 00554940
 // Address Range: [[00554940, 00554a48]]
 // Convention: __cdecl
-// Signature: CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer *this_ptr)
+// Signature: CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 CColorQuantizer * __cdecl
-shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer *this_ptr)
+shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer *this_ptr,uint flags)
 
 {
   if (this_ptr->error_buffer_r != (float *)0x0) {

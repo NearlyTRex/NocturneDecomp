@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *this_ptr)
+; __cdecl CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_displayActStats_FUN_004e3800 at 004e3b7b

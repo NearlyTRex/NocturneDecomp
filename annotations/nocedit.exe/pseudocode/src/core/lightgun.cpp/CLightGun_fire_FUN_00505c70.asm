@@ -264,8 +264,8 @@ section .text
         ;   XREF to: 005060a3 (CONDITIONAL_JUMP)  ; LAB_005060a3
     PUSH ESI                            ; 00505f5c
     PUSH 0x6314ce                       ; 00505f5d | = "%s in volume\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 00505f62 | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 00505f68 | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 00505f62 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 00505f68 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00505f69
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     LEA EAX,[ESP + 0xf0]                ; 00505f6e

@@ -80,9 +80,9 @@ section .text
     MOV EAX,ESP                         ; 005adbd3
     PUSH EAX                            ; 005adbd5
     PUSH 0x65140c                       ; 005adbd6 | = "%s\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 005adbdb | g_ConsolePtr | g_CConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 005adbdb | g_CConsoleInstance | g_CConsolePtr
     XOR ECX,ECX                         ; 005adbe1
-    PUSH EBX                            ; 005adbe3 | g_ConsolePtr
+    PUSH EBX                            ; 005adbe3 | g_CConsoleInstance
     MOV dword ptr [ESP + 0x524],ECX     ; 005adbe4
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005adbeb
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)

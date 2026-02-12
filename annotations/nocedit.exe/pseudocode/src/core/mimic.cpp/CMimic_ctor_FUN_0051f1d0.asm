@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-;   core_morph.cpp_FUN_0052b310
+;   core_morph.cpp_CMorph_ctor_FUN_0052b310
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     ADD ESP,0x4                         ; 0051f1ea
     ADD EAX,0x3fea0                     ; 0051f1ed
     PUSH EAX                            ; 0051f1f2
-    CALL core_morph.cpp_FUN_0052b310    ; 0051f1f3
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
+    CALL core_morph.cpp_CMorph_ctor_FUN_0052b310 ; 0051f1f3
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_0052b310(CMorph * this_ptr)
     LEA EDX,[EAX + 0xfffb41dc]          ; 0051f1f8
     MOV dword ptr [EDX + 0x154],0x661424 ; 0051f1fe | g_CMimicVTable
     MOV dword ptr [EDX + 0x2ddc],0x3f000000 ; 0051f208

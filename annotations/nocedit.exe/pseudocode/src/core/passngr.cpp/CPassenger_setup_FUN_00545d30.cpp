@@ -13,9 +13,10 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
 {
   UOrientationVector *pUVar1;
   CDeformableModelInstance *this_ptr_00;
+  CMorph *this_ptr_01;
   char cVar2;
   CDemonActor *pCVar3;
-  CMotionList *this_ptr_01;
+  CMotionList *this_ptr_02;
   int iVar4;
   char *pcVar5;
   
@@ -50,9 +51,9 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
                this_ptr->wolf_model_name);
     *(float *)(*(int *)(this_ptr->unk + 0x60) + 0x261c) = this_ptr->wolf_size;
     (*(code *)**(uint **)(*(int *)(this_ptr->unk + 0x60) + 0x154))();
-    this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+    this_ptr_02 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             ((CMotionController *)(*(int *)(this_ptr->unk + 0x60) + 0x158));
-    iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);
+    iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_02);
     core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
               ((CMotionController *)(*(int *)(this_ptr->unk + 0x60) + 0x158),iVar4,0.0);
   }
@@ -64,9 +65,10 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
-  core_morph_cpp_FUN_0052b430();
-  core_morph_cpp_FUN_0052b430();
-  core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)(this_ptr->unk + 100));
+  this_ptr_01 = (CMorph *)(this_ptr->unk + 100);
+  core_morph_cpp_CMorph_FUN_0052b430(this_ptr_01,0);
+  core_morph_cpp_CMorph_FUN_0052b430(this_ptr_01,1);
+  core_morph_cpp_CMorph_getReady_FUN_0052b680(this_ptr_01);
   this_ptr->morph_time = 0.0;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000

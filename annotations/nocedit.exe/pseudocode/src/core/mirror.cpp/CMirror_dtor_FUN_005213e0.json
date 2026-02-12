@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 36,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 6,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "param_count_too_few"
+      "negative_offset"
     ],
     "total_lines": 16
   },
@@ -36,13 +35,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_mirror.cpp_CMirror_dtor_FUN_005213e0",
-    "signature": "CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_005213e0(CMirror *this_ptr)"
+    "signature": "CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_005213e0(CMirror *this_ptr,uint flags)"
   },
   "function_calls": [
     {
       "addr": "00522c10",
       "is_variadic": false,
-      "name": "core_mirror.cpp_freeClipPlanes_FUN_00522c10"
+      "name": "core_mirror.cpp_SClipPlane_arrdtor_FUN_00522c10"
     }
   ],
   "globals": [],
@@ -59,8 +58,8 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -86,10 +85,10 @@
     "pcode_op_count": 42
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -98,6 +97,13 @@
         "offset": 4,
         "size": 4,
         "type": "CMirror *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },
@@ -108,17 +114,6 @@
       "match": "pSVar1[-10].",
       "text": "return (CMirror *)&pSVar1[-10].C;",
       "type": "negative_offset"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -45,7 +45,7 @@ void __cdecl CLodMesh::init(CLodMesh *this_ptr);
 
 // Original: shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950
 // Address: 00515950
-CLodMesh * __cdecl CLodMesh::dtor(CLodMesh *this_ptr);
+CLodMesh * __cdecl CLodMesh::dtor(CLodMesh *this_ptr,uint flags);
 
 // Original: shape_meshlod.cpp_CLodMesh_free_FUN_00515970
 // Address: 00515970
@@ -469,7 +469,7 @@ void __cdecl CLodFace::copy(CLodFace *this_ptr,CLodFace *other);
 
 // Original: shape_meshlod.cpp_CLodFace_dtor_FUN_0051efc0
 // Address: 0051efc0
-CLodFace * __cdecl CLodFace::dtor(CLodFace *this_ptr);
+CLodFace * __cdecl CLodFace::dtor(CLodFace *this_ptr,uint flags);
 
 // Original: shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0
 // Address: 0051efe0
@@ -477,7 +477,7 @@ CLodFace * __cdecl CLodFace::copy2(CLodFace *destination,CLodFace *source);
 
 // Original: shape_meshlod.cpp_CSpotView_dtor_FUN_0051f080
 // Address: 0051f080
-CSpotView * __cdecl CSpotView::dtor(CSpotView *this_ptr);
+CSpotView * __cdecl CSpotView::dtor(CSpotView *this_ptr,uint flags);
 
 // Original: shape_meshlod.cpp_copyFloat_FUN_0051f090
 // Address: 0051f090
@@ -491,10 +491,10 @@ float * __cdecl copyFloat(float *dest_ptr,float *src_ptr);
 // Address: 0051f0b0
 float * __cdecl copyFloat(float *dest_ptr,float *src_ptr);
 
-// Original: shape_meshlod.cpp_freeLodFaces_FUN_0051f0c0
+// Original: shape_meshlod.cpp_CLodFace_arrdtor_FUN_0051f0c0
 // Address: 0051f0c0
-CLodFace * __cdecl freeLodFaces(CLodFace *objs);
+CLodFace * __cdecl CLodFace::arrdtor(CLodFace *objs,uint flags);
 
-// Original: shape_meshlod.cpp_freeVectors_FUN_0051f0e0
+// Original: shape_meshlod.cpp_CVector3f_arrdtor_FUN_0051f0e0
 // Address: 0051f0e0
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);

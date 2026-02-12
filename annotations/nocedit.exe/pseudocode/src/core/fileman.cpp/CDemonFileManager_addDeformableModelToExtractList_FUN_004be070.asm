@@ -118,7 +118,7 @@ section .text
         ;   Label: LAB_004be12a
     PUSH EBX                            ; 004be12c
     CALL core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270 ; 004be12d
-        ;   XREF to: 0059a270 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270(CDeformableModel * this_ptr)
+        ;   XREF to: 0059a270 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270(CDeformableModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004be132
     PUSH EAX                            ; 004be135
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004be136

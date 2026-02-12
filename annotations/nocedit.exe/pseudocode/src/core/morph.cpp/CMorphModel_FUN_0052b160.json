@@ -6,18 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 108,
+    "complexity_score": 122,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
-    "pseudocode_lines": 43,
-    "suspect_count": 5,
+    "pseudocode_lines": 42,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
+      "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 148
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -233,6 +234,13 @@
       "match": "ROUND",
       "text": "lVar2 = (longlong)iVar3 * (longlong)(int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(SMRGLHeaderPrimitive *)((int)",
+      "text": "polygon_info = (SMRGLHeaderPrimitive *)((int)this_ptr->faces + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

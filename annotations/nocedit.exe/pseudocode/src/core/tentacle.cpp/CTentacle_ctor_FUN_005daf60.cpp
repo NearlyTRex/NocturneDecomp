@@ -15,8 +15,8 @@ CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_005daf60(CTentacle *thi
   (pCVar1->base).base.base.vtable._ub = &g_CTentacleVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar1->base).base.model,"tentacle.dfm");
-  (pCVar1->base).base.field56_0x2de4 = 50.0;
-  (pCVar1->base).base.field57_0x2de8 = 100.0;
+  (pCVar1->base).base.ai_detection_range_min = 50.0;
+  (pCVar1->base).base.ai_detection_range_max = 100.0;
   pCVar1->unk1[0] = '\0';
   pCVar1->unk1[1] = '\0';
   pCVar1->unk1[2] = '\0';

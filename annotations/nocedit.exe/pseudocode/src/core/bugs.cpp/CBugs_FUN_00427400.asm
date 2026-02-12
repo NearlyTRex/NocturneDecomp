@@ -18,7 +18,7 @@
 ;   undefined4 DAT_00822f48
 ;   undefined4 DAT_00822f4c
 ;   undefined4 DAT_00822f50
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;
@@ -105,8 +105,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x24]      ; 004274e1
     PUSH EBP                            ; 004274e5
     PUSH 0x616e63                       ; 004274e6 | = "%s swarming on %s at LOD %d\n"
-    MOV EAX,[0x0066e8e0]                ; 004274eb | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 004274f0 | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 004274eb | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 004274f0 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004274f1
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004274f6

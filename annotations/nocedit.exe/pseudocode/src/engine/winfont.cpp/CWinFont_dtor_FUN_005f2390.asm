@@ -36,7 +36,7 @@ section .text
     PUSH 0x1                            ; 005f23ab
     PUSH EBX                            ; 005f23ad
     CALL engine_palette.cpp_CFont_dtor_FUN_00544ec0 ; 005f23ae
-        ;   XREF to: 00544ec0 (UNCONDITIONAL_CALL)  ; CFont * engine_palette.cpp_CFont_dtor_FUN_00544ec0(CFont * this_ptr)
+        ;   XREF to: 00544ec0 (UNCONDITIONAL_CALL)  ; CFont * engine_palette.cpp_CFont_dtor_FUN_00544ec0(CFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005f23b3
     MOV DL,byte ptr [ESP + 0xc]         ; 005f23b6
     MOV EBX,EAX                         ; 005f23ba

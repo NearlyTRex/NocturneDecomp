@@ -86,7 +86,7 @@ float __cdecl core_procedur_cpp_CProceduralTexture_calculateWaveOffset_FUN_00554
 void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670 (CProceduralTexture *this_ptr,float wave_x,float wave_y,float wave_offset);
 void __cdecl core_procedur_cpp_CProceduralTexture_showMenu_FUN_00554880(CProceduralTexture *this_ptr);
 CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(CColorQuantizer *this_ptr);
-CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer *this_ptr);
+CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer *this_ptr,uint flags);
 int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50 (CColorQuantizer *this_ptr,CBitmap *bitmap);
 int __cdecl shape_quantize_cpp_CColorQuantizer_quantize_FUN_00554cc0(CColorQuantizer *this_ptr);
 CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr);
@@ -103,7 +103,7 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_quantizeBitmap_FUN_00556470 (CCo
 int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490 (uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height ,uint bit_depth,int line_number,int show_progress);
 int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int total_count,int current_index);
 CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr);
-CBitmap * __cdecl shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(CBitmap *this_ptr);
+CBitmap * __cdecl shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(CBitmap *this_ptr,uint flags);
 void __cdecl shape_quantize_cpp_showError_FUN_00556cb0(char *error);
 void __cdecl shape_quantize_cpp_showError_FUN_00556ce0(char *error);
 void __cdecl shape_quantize_cpp_doNothing_FUN_00556d10(void);
@@ -154,7 +154,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0 (char *actor_specifi
 int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660 (SActionKeyBindings *action_bindings,char *action_name);
 int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730 (CCharacter *character,char *part_names,int *part_mask);
 CScript * __cdecl core_script_cpp_CScript_ctor_FUN_005597f0(CScript *this_ptr);
-CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00559840(CScript *this_ptr);
+CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00559840(CScript *this_ptr,uint flags);
 void __cdecl core_script_cpp_CScript_FUN_00559870(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_FUN_005598f0(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_process_FUN_00559960(CScript *this_ptr);

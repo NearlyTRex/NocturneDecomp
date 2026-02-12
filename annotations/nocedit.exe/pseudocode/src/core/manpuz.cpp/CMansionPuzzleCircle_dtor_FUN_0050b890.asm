@@ -12,9 +12,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
-;   core_manpuz.cpp_freeGems_FUN_0050bab0
-;   core_manpuz.cpp_freePanels_FUN_0050ba90
-;   core_manpuz.cpp_freeReflectors_FUN_0050bad0
+;   core_manpuz.cpp_SGem_arrdtor_FUN_0050bab0
+;   core_manpuz.cpp_SPanel_arrdtor_FUN_0050ba90
+;   core_manpuz.cpp_SReflector_arrdtor_FUN_0050bad0
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
@@ -32,20 +32,20 @@ section .text
     PUSH 0x0                            ; 0050b89c
     ADD EBX,0x1340                      ; 0050b89e
     PUSH EBX                            ; 0050b8a4
-    CALL core_manpuz.cpp_freeReflectors_FUN_0050bad0 ; 0050b8a5
-        ;   XREF to: 0050bad0 (UNCONDITIONAL_CALL)  ; SReflector * core_manpuz.cpp_freeReflectors_FUN_0050bad0(SReflector * objs)
+    CALL core_manpuz.cpp_SReflector_arrdtor_FUN_0050bad0 ; 0050b8a5
+        ;   XREF to: 0050bad0 (UNCONDITIONAL_CALL)  ; SReflector * core_manpuz.cpp_SReflector_arrdtor_FUN_0050bad0(SReflector * objs, uint flags)
     ADD ESP,0x8                         ; 0050b8aa
     PUSH 0x0                            ; 0050b8ad
     SUB EAX,0x8a0                       ; 0050b8af
     PUSH EAX                            ; 0050b8b4
-    CALL core_manpuz.cpp_freeGems_FUN_0050bab0 ; 0050b8b5
-        ;   XREF to: 0050bab0 (UNCONDITIONAL_CALL)  ; SGem * core_manpuz.cpp_freeGems_FUN_0050bab0(SGem * objs)
+    CALL core_manpuz.cpp_SGem_arrdtor_FUN_0050bab0 ; 0050b8b5
+        ;   XREF to: 0050bab0 (UNCONDITIONAL_CALL)  ; SGem * core_manpuz.cpp_SGem_arrdtor_FUN_0050bab0(SGem * objs, uint flags)
     ADD ESP,0x8                         ; 0050b8ba
     PUSH 0x0                            ; 0050b8bd
     SUB EAX,0x4b0                       ; 0050b8bf
     PUSH EAX                            ; 0050b8c4
-    CALL core_manpuz.cpp_freePanels_FUN_0050ba90 ; 0050b8c5
-        ;   XREF to: 0050ba90 (UNCONDITIONAL_CALL)  ; SPanel * core_manpuz.cpp_freePanels_FUN_0050ba90(SPanel * objs)
+    CALL core_manpuz.cpp_SPanel_arrdtor_FUN_0050ba90 ; 0050b8c5
+        ;   XREF to: 0050ba90 (UNCONDITIONAL_CALL)  ; SPanel * core_manpuz.cpp_SPanel_arrdtor_FUN_0050ba90(SPanel * objs, uint flags)
     ADD ESP,0x8                         ; 0050b8ca
     PUSH 0x1                            ; 0050b8cd
     LEA EBX,[EAX + 0xfffffa10]          ; 0050b8cf

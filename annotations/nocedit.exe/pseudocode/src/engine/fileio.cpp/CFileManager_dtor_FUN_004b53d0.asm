@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFileManager * __cdecl engine_fileio_cpp_CFileManager_dtor_FUN_004b53d0(CFileManager *this_ptr)
+; __cdecl CFileManager * __cdecl engine_fileio_cpp_CFileManager_dtor_FUN_004b53d0(CFileManager *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_CDemonFileManager_dtor_FUN_00508880 at 00508887

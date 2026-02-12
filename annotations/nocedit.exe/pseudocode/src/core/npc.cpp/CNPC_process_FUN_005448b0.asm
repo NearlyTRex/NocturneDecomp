@@ -23,7 +23,7 @@
 ;   double DOUBLE_0063e374 = 32
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGore* g_CGorePtr = 02d83364
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
@@ -276,8 +276,8 @@ section .text
     ADD ESP,0xc                         ; 00544b0c
     PUSH EBX                            ; 00544b0f
     PUSH 0x63e325                       ; 00544b10 | = "%s confused while walking to scriptDe..."
-    MOV EDX,dword ptr [0x0066e8e0]      ; 00544b15 | g_ConsolePtr | g_CConsolePtr
-    PUSH EDX                            ; 00544b1b | g_ConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 00544b15 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EDX                            ; 00544b1b | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00544b1c
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x005449f1                      ; 00544b21

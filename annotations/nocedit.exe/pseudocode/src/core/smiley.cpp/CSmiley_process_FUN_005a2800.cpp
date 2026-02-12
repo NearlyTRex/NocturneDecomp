@@ -367,22 +367,22 @@ switchD_005a3055_caseD_7:
         core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                   (g_CDemonSetPtr,(CDemonActor *)in_stack_fffffe40);
       }
-      (this_ptr->base).base.field7_0x2428.y =
-           (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-      local_64 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-      local_60 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-      pCVar11 = &(this_ptr->base).base.field6_0x241c;
-      local_5c = delta_time * (this_ptr->base).base.field7_0x2428.z;
+      (this_ptr->base).base.velocity.y =
+           (this_ptr->base).base.velocity.y - delta_time * (float)32;
+      local_64 = (this_ptr->base).base.velocity.x * delta_time;
+      local_60 = (this_ptr->base).base.velocity.y * delta_time;
+      pCVar11 = &(this_ptr->base).base.position_delta;
+      local_5c = delta_time * (this_ptr->base).base.velocity.z;
       pCVar10 = &(this_ptr->base).base.model.accumulated_root_motion;
       local_7c = local_64 + pCVar11->x;
-      local_78 = local_60 + (this_ptr->base).base.field6_0x241c.y;
-      local_74 = local_5c + (this_ptr->base).base.field6_0x241c.z;
+      local_78 = local_60 + (this_ptr->base).base.position_delta.y;
+      local_74 = local_5c + (this_ptr->base).base.position_delta.z;
       local_ac.x = local_7c + pCVar10->x;
       local_ac.y = local_78 + (this_ptr->base).base.model.accumulated_root_motion.y;
       local_ac.z = local_74 + (this_ptr->base).base.model.accumulated_root_motion.z;
-      (this_ptr->base).base.field6_0x241c.z = 0.0;
-      (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-      pCVar11->x = (this_ptr->base).base.field6_0x241c.y;
+      (this_ptr->base).base.position_delta.z = 0.0;
+      (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+      pCVar11->x = (this_ptr->base).base.position_delta.y;
       (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
       fVar13 = (this_ptr->base).base.model.accumulated_root_motion.z;
       (this_ptr->base).base.model.accumulated_root_motion.y = fVar13;

@@ -38,7 +38,7 @@ section .text
     SUB EAX,0x2dc                       ; 0042360f
     PUSH EAX                            ; 00423614
     CALL core_box.cpp_CBox_dtor_FUN_0041dd00 ; 00423615
-        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr)
+        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0042361a
     PUSH 0x1                            ; 0042361d
     LEA EBX,[EAX + 0xfffffc6c]          ; 0042361f

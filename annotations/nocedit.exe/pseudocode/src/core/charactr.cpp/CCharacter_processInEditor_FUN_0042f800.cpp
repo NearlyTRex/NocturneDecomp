@@ -25,7 +25,7 @@ void __cdecl core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800(CCharacte
       pCVar2 = (CCharacter *)&(pCVar2->base).orient_matrix.m[0].z;
     } while (hand_index < 2);
     fVar1 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                      (&this_ptr->base,this_ptr->field54_0x2ddc,(CVector3f *)0x0);
+                      (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
     this_ptr->closest_distance_threshold = fVar1;
   }
   core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(this_ptr,0.0);

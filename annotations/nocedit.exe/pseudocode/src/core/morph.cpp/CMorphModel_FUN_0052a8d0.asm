@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_morph_cpp_CMorphModel_FUN_0052a8d0(CMorphModel *this_ptr)
+; __cdecl void __cdecl core_morph_cpp_CMorphModel_FUN_0052a8d0 (CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index)
 ;
 ; Parameters:
 ; CMorphModel *    Stack[0x4]:4   this_ptr
+; CKeyFramedModel * Stack[0x8]:4   model_ptr
+; int              Stack[0xc]:4   frame_index
 ;
 ; XREF[2]:
-;   core_morph.cpp_FUN_0052b470 at 0052b4a0
-;   core_morph.cpp_FUN_0052b580 at 0052b5a7
+;   core_morph.cpp_CMorph_FUN_0052b470 at 0052b4a0
+;   core_morph.cpp_CMorph_FUN_0052b580 at 0052b5a7
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890

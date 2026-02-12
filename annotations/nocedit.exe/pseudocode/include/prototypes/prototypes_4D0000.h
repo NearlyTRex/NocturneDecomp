@@ -106,7 +106,7 @@ void __cdecl core_game_cpp_staticInit_FUN_004d76d0(void);
 void __cdecl core_game_cpp_PleaseEnterValidInteger_FUN_004d7730(void);
 void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004d7810(void);
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr);
-CGame * __cdecl core_game_cpp_CGame_dtor_FUN_004d7d70(CGame *this_ptr);
+CGame * __cdecl core_game_cpp_CGame_dtor_FUN_004d7d70(CGame *this_ptr,uint flags);
 void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004d7d80(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(CGame *this_ptr);

@@ -143,49 +143,49 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
-      "text": "if ((this_ptr->model).part_visibility_flags[0xe] <= in_stack_00000008) {",
+      "text": "if (this_ptr->swarm_vertex_count <= in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "(this_ptr->model).part_visibility_flags[0xe] = in_stack_00000008 + 1;",
+      "text": "this_ptr->swarm_vertex_count = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
-      "text": "piVar3 = (this_ptr->model).part_visibility_flags + in_stack_00000008 * 10 + 0xf;",
+      "text": "pSVar3 = this_ptr->swarm_vertices + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000010",
-      "text": "piVar3[1] = in_stack_00000010;",
+      "text": "pSVar3->first_edge_data = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c == piVar4[2]) {",
+      "text": "if (in_stack_0000000c == pSVar4->neighbors[0]) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_0000000c",
-      "text": "piVar3[*piVar3 + 2] = in_stack_0000000c;",
+      "text": "pSVar3->neighbors[pSVar3->edge_count] = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_0000000c",
-      "text": "piVar3[*piVar3 + 2] = in_stack_0000000c;",
+      "text": "pSVar3->neighbors[pSVar3->edge_count] = in_stack_0000000c;",
       "type": "stack_param"
     }
   ]

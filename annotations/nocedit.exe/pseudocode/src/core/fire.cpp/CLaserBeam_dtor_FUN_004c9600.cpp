@@ -2,11 +2,11 @@
 // Address: 004c9600
 // Address Range: [[004c9600, 004c9604]]
 // Convention: __cdecl
-// Signature: CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_dtor_FUN_004c9600(CLaserBeam *this_ptr)
+// Signature: CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_dtor_FUN_004c9600(CLaserBeam *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_dtor_FUN_004c9600(CLaserBeam *this_ptr)
+CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_dtor_FUN_004c9600(CLaserBeam *this_ptr,uint flags)
 
 {
   return this_ptr;

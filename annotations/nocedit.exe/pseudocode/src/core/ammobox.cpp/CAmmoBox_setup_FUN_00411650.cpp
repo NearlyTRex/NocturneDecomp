@@ -11,9 +11,6 @@ void __cdecl core_ammobox_cpp_CAmmoBox_setup_FUN_00411650(CAmmoBox *this_ptr)
 {
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  this_ptr->open_sound[0x20] = '\0';
-  this_ptr->open_sound[0x21] = '\0';
-  this_ptr->open_sound[0x22] = '\0';
-  this_ptr->open_sound[0x23] = '\0';
+  this_ptr->unk2 = 0;
   return;
 }

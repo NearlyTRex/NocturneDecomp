@@ -10,8 +10,8 @@ SBodyPartModel * __cdecl
 core_bodypart_cpp_SBodyPartModel_ctor_FUN_0041b660(SBodyPartModel *this_ptr)
 
 {
-  CKeyFramedModelInstance *pCVar1;
+  SBodyPartModel_ptr_24 pCVar1;
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&this_ptr->model);
-  return (SBodyPartModel *)(pCVar1[-1].animation_state + 0x88);
+  return ADJ(pCVar1);
 }

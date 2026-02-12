@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 168,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 9,
-    "pseudocode_lines": 43,
-    "suspect_count": 12,
+    "pseudocode_lines": 56,
+    "suspect_count": 5,
     "suspect_types": [
-      "extra_output"
+      "negative_offset",
+      "pointer_cast"
     ],
-    "total_lines": 112
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -51,7 +52,7 @@
     {
       "addr": "0052b310",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b310"
+      "name": "core_morph.cpp_CMorph_ctor_FUN_0052b310"
     },
     {
       "addr": "0059ddc0",
@@ -180,88 +181,39 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_EAX",
-      "text": "*(CDemonActor_vtable **)(extraout_EAX + -0xe1e8) = &g_CSuccubusVTable;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EAX",
-      "text": "((CDeformableModelInstance *)(extraout_EAX + -0xe1e4),\"succubus.dfm\");",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_EAX",
-      "text": "pcVar8 = (char *)(extraout_EAX + -0x1c8);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EAX",
-      "text": "((CDeformableModelInstance *)(extraout_EAX + -0x2480),\"hotdemon.dfm\");",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0xb560) = 0x3f19999a;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Negative struct offset (wrong base type)",
       "line": 29,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0xb55c) = 0x3f666666;",
-      "type": "extra_output"
+      "match": "pCVar9[-1].",
+      "text": "piVar11 = &pCVar9[-1].models[1].textures[0xe].base.base.count;",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Negative struct offset (wrong base type)",
       "line": 31,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x1cc) = 1;",
-      "type": "extra_output"
+      "match": "pCVar9[-3].",
+      "text": "((CDeformableModelInstance *)pCVar9[-3].models[0].parts,\"hotdemon.dfm\");",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
-      "match": "extraout_EAX",
-      "text": "*(float *)(extraout_EAX + -0xb558) = fVar2;",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 44,
+      "match": "pCVar9[-1].",
+      "text": "pCVar9[-1].models[1].textures[0xe].base.base.type = 1;",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 33,
-      "match": "extraout_EAX",
-      "text": "*(float *)(extraout_EAX + -0xb554) = fVar3;",
-      "type": "extra_output"
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)piVar11 + 1) = cVar2;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
-      "match": "extraout_EAX",
-      "text": "return (CSuccubus *)(extraout_EAX + -0xe33c);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
-      "match": "extraout_EAX",
-      "text": "return (CSuccubus *)(extraout_EAX + -0xe33c);",
-      "type": "extra_output"
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)",
+      "text": "piVar11 = (int *)((int)piVar11 + 2);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

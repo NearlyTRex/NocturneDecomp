@@ -41,7 +41,7 @@ void __cdecl core_skeleton_cpp_staticInit_FUN_00599670(void);
 void __cdecl core_skeleton_cpp_skipToEndOfLine_FUN_005996c0(_FILE *file_ptr);
 float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005996e0 (CVector3f *line_start,CVector3f *line_end,CVector3f *test_point);
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00599880(CSkeleton *this_ptr);
-CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005998e0(CSkeleton *this_ptr);
+CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005998e0(CSkeleton *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910 (CSkeleton *this_ptr,int bone_count,int frame_count);
 void __cdecl core_skeleton_cpp_CSkeleton_free_FUN_00599a50(CSkeleton *this_ptr);
 void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00599b10(CSkeleton *this_ptr,char *filename);
@@ -52,7 +52,7 @@ CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN
 int __cdecl core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 (CSkeleton *this_ptr,int start_bone_index,int target_bone_index);
 int __cdecl core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140(CSkeleton *this_ptr);
 CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(CDeformableModel *this_ptr);
-CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_dtor_FUN_0059a270(CDeformableModel *this_ptr);
+CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_dtor_FUN_0059a270(CDeformableModel *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(CDeformableModel *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0 (CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures, int num_parts);
 void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510 (CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count );

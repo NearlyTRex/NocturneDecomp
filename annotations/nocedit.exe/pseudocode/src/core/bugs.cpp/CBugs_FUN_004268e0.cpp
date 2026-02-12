@@ -64,13 +64,12 @@ void __cdecl core_bugs_cpp_CBugs_FUN_004268e0(CBugs *this_ptr)
   
   local_118 = in_stack_0000000c;
   if (*(int *)(in_stack_00000008 + 0x2c) < 0) {
-    piVar5 = (int *)(*(int *)((this_ptr->model).part_visibility_flags[0] + 0x2234) +
+    piVar5 = (int *)(this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4] +
                     *(int *)(in_stack_00000008 + 0x30) * 0xc);
     local_6c.x = (float)*piVar5 * 0.00390625f;
     local_6c.y = (float)piVar5[1] * 0.00390625f;
     local_6c.z = (float)piVar5[2] * 0.00390625f;
-    core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20
-              (&local_6c,(CMatrix3x4f *)((this_ptr->model).part_visibility_flags + 1));
+    core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20(&local_6c,&this_ptr->model_world_matrix);
     iVar9 = core_bugs_cpp_CBugs_FUN_00426420(this_ptr);
     if (iVar9 != 0) {
       core_bugs_cpp_CBugs_FUN_004270f0(this_ptr);
@@ -105,12 +104,12 @@ void __cdecl core_bugs_cpp_CBugs_FUN_004268e0(CBugs *this_ptr)
       }
     }
     piVar5 = (int *)(*(int *)(in_stack_00000008 + 0x2c) * 0xc +
-                    *(int *)((this_ptr->model).part_visibility_flags[0] + 0x2234));
+                    this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4]);
     local_84 = (float)*piVar5 * 0.00390625f;
     local_80 = (float)piVar5[1] * 0.00390625f;
     local_7c = (float)piVar5[2] * 0.00390625f;
     piVar5 = (int *)(*(int *)(in_stack_00000008 + 0x30) * 0xc +
-                    *(int *)((this_ptr->model).part_visibility_flags[0] + 0x2234));
+                    this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4]);
     local_30 = (float)*piVar5 * 0.00390625f;
     local_2c = (float)piVar5[1] * 0.00390625f;
     local_28 = (float)piVar5[2] * 0.00390625f;
@@ -126,8 +125,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_004268e0(CBugs *this_ptr)
     local_3c.y = local_74 + local_b0;
     local_3c.z = local_70 + local_ac;
     pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&local_a8,&local_3c,
-                        (CMatrix3x4f *)((this_ptr->model).part_visibility_flags + 1));
+                       (&local_a8,&local_3c,&this_ptr->model_world_matrix);
     if ((CVector3f *)(in_stack_00000008 + 8) != pCVar6) {
       ((CVector3f *)(in_stack_00000008 + 8))->x = pCVar6->x;
       *(float *)(in_stack_00000008 + 0xc) = pCVar6->y;
@@ -136,24 +134,23 @@ void __cdecl core_bugs_cpp_CBugs_FUN_004268e0(CBugs *this_ptr)
     local_d8 = local_30 - local_84;
     local_d4 = local_2c - local_80;
     local_d0 = local_28 - local_7c;
-    iVar9 = *(int *)((this_ptr->model).model_name +
-                    *(int *)(in_stack_00000008 + 0x2c) * 0x28 + -0x38);
-    local_18 = (this_ptr->model).part_visibility_flags[0xd] << 2;
+    iVar9 = this_ptr->swarm_vertices[*(int *)(in_stack_00000008 + 0x2c)].first_edge_data;
+    local_18 = this_ptr->lod_index << 2;
     pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                       ((CDeformableModelInstance *)(this_ptr->model).part_visibility_flags[0]);
+                       ((CDeformableModelInstance *)this_ptr->deformable_model_ptr);
     puVar8 = (ushort *)(*(int *)((int)pCVar7->tri_data_ptr + local_18) + iVar9 * 0x12);
     piVar5 = (int *)((uint)*puVar8 * 0xc +
-                    *(int *)((this_ptr->model).part_visibility_flags[0] + 0x2234));
+                    this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4]);
     local_84 = (float)*piVar5 * 0.00390625f;
     local_80 = (float)piVar5[1] * 0.00390625f;
     local_7c = (float)piVar5[2] * 0.00390625f;
-    piVar5 = (int *)(*(int *)((this_ptr->model).part_visibility_flags[0] + 0x2234) +
+    piVar5 = (int *)(this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4] +
                     (uint)puVar8[1] * 0xc);
     local_30 = (float)*piVar5 * 0.00390625f;
     local_2c = (float)piVar5[1] * 0.00390625f;
     local_28 = (float)piVar5[2] * 0.00390625f;
     piVar5 = (int *)((uint)puVar8[2] * 0xc +
-                    *(int *)((this_ptr->model).part_visibility_flags[0] + 0x2234));
+                    this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4]);
     local_60 = (float)*piVar5 * 0.00390625f;
     local_5c = (float)piVar5[1] * 0.00390625f;
     local_58 = (float)piVar5[2] * 0.00390625f;

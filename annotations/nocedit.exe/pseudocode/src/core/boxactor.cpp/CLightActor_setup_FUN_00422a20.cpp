@@ -11,6 +11,6 @@ void __cdecl core_boxactor_cpp_CLightActor_setup_FUN_00422a20(CLightActor *this_
 {
   core_boxactor_cpp_CLightActor_FUN_00422d60(this_ptr);
   core_boxactor_cpp_CBoxActor_setup_FUN_00421830(&this_ptr->base);
-  core_dlight_cpp_CDemonLight_init_FUN_004727c0((CDemonLight *)this_ptr->unk1);
+  core_dlight_cpp_CDemonLight_init_FUN_004727c0(&this_ptr->light);
   return;
 }

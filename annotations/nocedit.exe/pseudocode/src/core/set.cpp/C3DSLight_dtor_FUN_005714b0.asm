@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl C3DSLight * __cdecl core_set_cpp_C3DSLight_dtor_FUN_005714b0(C3DSLight *this_ptr)
+; __cdecl C3DSLight * __cdecl core_set_cpp_C3DSLight_dtor_FUN_005714b0(C3DSLight *this_ptr,uint flags)
 ;
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

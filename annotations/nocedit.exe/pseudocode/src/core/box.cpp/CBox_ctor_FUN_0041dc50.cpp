@@ -9,28 +9,30 @@
 CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041dc50(CBox *this_ptr)
 
 {
-  void *pvVar1;
+  float fVar1;
+  CBox_ptr_180 pvVar1;
   
   pvVar1 = __arrinit(this_ptr->scrape_points,8,&g_SScrapeTypeInfo);
-  *(uint *)((int)pvVar1 + -0xac) = 0;
-  *(float *)((int)pvVar1 + -0xb0) = *(float *)((int)pvVar1 + -0xac);
-  (((CBox *)((int)pvVar1 + -0xb4))->position).x = *(float *)((int)pvVar1 + -0xac);
-  *(uint *)((int)pvVar1 + -0xa0) = 0;
-  *(uint *)((int)pvVar1 + -0xa4) = *(uint *)((int)pvVar1 + -0xa0);
-  *(uint *)((int)pvVar1 + -0xa8) = *(uint *)((int)pvVar1 + -0xa4);
-  *(uint *)((int)pvVar1 + -8) = 0;
-  *(uint *)((int)pvVar1 + -0xc) = *(uint *)((int)pvVar1 + -8);
-  *(uint *)((int)pvVar1 + -0x10) = *(uint *)((int)pvVar1 + -0xc);
-  *(uint *)((int)pvVar1 + -0x20) = 0;
-  *(uint *)((int)pvVar1 + -0x60) = 0;
-  *(uint *)((int)pvVar1 + -100) = *(uint *)((int)pvVar1 + -0x60);
-  *(uint *)((int)pvVar1 + -0x68) = *(uint *)((int)pvVar1 + -100);
-  *(uint *)((int)pvVar1 + -0x6c) = 0;
-  *(uint *)((int)pvVar1 + -0x70) = *(uint *)((int)pvVar1 + -0x6c);
-  *(uint *)((int)pvVar1 + -0x74) = *(uint *)((int)pvVar1 + -0x70);
-  *(uint *)((int)pvVar1 + -0x3c) = 0;
-  *(uint *)((int)pvVar1 + -0x40) = *(uint *)((int)pvVar1 + -0x3c);
-  *(uint *)((int)pvVar1 + -0x44) = *(uint *)((int)pvVar1 + -0x40);
-  *(uint *)((int)pvVar1 + 0x1a0) = 0;
-  return (CBox *)((int)pvVar1 + -0xb4);
+  ADJ(pvVar1)->position.z = 0.0;
+  fVar1 = ADJ(pvVar1)->position.z;
+  ADJ(pvVar1)->position.y = fVar1;
+  ADJ(pvVar1)->position.x = fVar1;
+  (ADJ(pvVar1)->orientation).z = 0.0;
+  (ADJ(pvVar1)->orientation).y = (ADJ(pvVar1)->orientation).z;
+  (ADJ(pvVar1)->orientation).x = (ADJ(pvVar1)->orientation).y;
+  (ADJ(pvVar1)->extents).z = 0.0;
+  (ADJ(pvVar1)->extents).y = (ADJ(pvVar1)->extents).z;
+  (ADJ(pvVar1)->extents).x = (ADJ(pvVar1)->extents).y;
+  ADJ(pvVar1)->mass = 0;
+  (ADJ(pvVar1)->linear_velocity_local).z = 0.0;
+  (ADJ(pvVar1)->linear_velocity_local).y = (ADJ(pvVar1)->linear_velocity_local).z;
+  (ADJ(pvVar1)->linear_velocity_local).x = (ADJ(pvVar1)->linear_velocity_local).y;
+  (ADJ(pvVar1)->linear_velocity).z = 0.0;
+  (ADJ(pvVar1)->linear_velocity).y = (ADJ(pvVar1)->linear_velocity).z;
+  (ADJ(pvVar1)->linear_velocity).x = (ADJ(pvVar1)->linear_velocity).y;
+  (ADJ(pvVar1)->angular_velocity).z = 0.0;
+  (ADJ(pvVar1)->angular_velocity).y = (ADJ(pvVar1)->angular_velocity).z;
+  (ADJ(pvVar1)->angular_velocity).x = (ADJ(pvVar1)->angular_velocity).y;
+  ADJ(pvVar1)->is_valid = 0;
+  return ADJ(pvVar1);
 }

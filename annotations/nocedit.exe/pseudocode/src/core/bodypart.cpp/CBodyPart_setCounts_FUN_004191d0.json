@@ -1,7 +1,32 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 20,
+        "message": "assigning to 'CVector3i *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 24,
+        "message": "assigning to 'CVector3i *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 28,
+        "message": "assigning to 'SInputFace *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 31,
+        "message": "assigning to 'int *' from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
@@ -190,28 +215,28 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "this_ptr->vertex_count = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_0000000c",
       "text": "this_ptr->tri_count = in_stack_0000000c;",
       "type": "stack_param"

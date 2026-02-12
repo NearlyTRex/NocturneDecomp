@@ -81,4 +81,4 @@ void __cdecl SLaserInfo::copy(SLaserInfo *this_ptr,SLaserInfo *copy);
 
 // Original: core_emitter.cpp_SLaserInfo_dtor_FUN_004a94c0
 // Address: 004a94c0
-SLaserInfo * __cdecl SLaserInfo::dtor(SLaserInfo *this_ptr);
+SLaserInfo * __cdecl SLaserInfo::dtor(SLaserInfo *this_ptr,uint flags);

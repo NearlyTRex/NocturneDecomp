@@ -49,7 +49,7 @@ CScript * __cdecl CScript::ctor(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_dtor_FUN_00559840
 // Address: 00559840
-CScript * __cdecl CScript::dtor(CScript *this_ptr);
+CScript * __cdecl CScript::dtor(CScript *this_ptr,uint flags);
 
 // Original: core_script.cpp_CScript_FUN_00559870
 // Address: 00559870

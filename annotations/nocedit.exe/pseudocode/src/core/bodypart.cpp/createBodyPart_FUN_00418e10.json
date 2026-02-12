@@ -268,7 +268,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_0000000c",
-      "text": "uint *in_stack_0000000c;",
+      "text": "float *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -352,7 +352,7 @@
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c == (uint *)0x0) {",
+      "text": "if (in_stack_0000000c == (float *)0x0) {",
       "type": "stack_param"
     },
     {
@@ -387,28 +387,28 @@
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_0000000c",
-      "text": "else if (this_ptr_00->unk5 + 0xf0 != (char *)in_stack_0000000c) {",
+      "text": "else if (&this_ptr_00->initial_velocity != (CVector3f *)in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 56,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr_00->unk5 + 0xf0) = *in_stack_0000000c;",
+      "text": "(this_ptr_00->initial_velocity).x = *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr_00->unk5 + 0xf4) = in_stack_0000000c[1];",
+      "text": "(this_ptr_00->initial_velocity).y = in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr_00->unk5 + 0xf8) = in_stack_0000000c[2];",
+      "text": "(this_ptr_00->initial_velocity).z = in_stack_0000000c[2];",
       "type": "stack_param"
     },
     {

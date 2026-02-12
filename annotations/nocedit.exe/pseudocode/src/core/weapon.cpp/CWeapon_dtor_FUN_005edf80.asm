@@ -46,7 +46,7 @@ section .text
     PUSH EBX                            ; 005edf94
     MOV dword ptr [EBX + 0xfffffe4c],0x6655b4 ; 005edf95 | g_CWeaponVTable
     CALL core_box.cpp_CBox_dtor_FUN_0041dd00 ; 005edf9f
-        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr)
+        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005edfa4
     PUSH 0x1                            ; 005edfa7
     LEA EBX,[EAX + 0xfffffcf8]          ; 005edfa9

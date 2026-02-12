@@ -14,7 +14,7 @@ CHealthItem * __cdecl core_health_cpp_CHealthItem_ctor_FUN_004f1dd0(CHealthItem 
   
   pCVar1 = (CHealthItem *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
-  ADJ(this_ptr_00).base.vtable._ub = &g_CHealthItemVTable;
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CHealthItemVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"bullet.kfm");
   ADJ(this_ptr_00)->use_count = 1;

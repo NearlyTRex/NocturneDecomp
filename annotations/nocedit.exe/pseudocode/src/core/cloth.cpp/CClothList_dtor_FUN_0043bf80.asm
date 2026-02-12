@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_0043bf80(CClothList *this_ptr)
+; __cdecl CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_0043bf80(CClothList *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CClothList *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[37]:
 ;   core_armour.cpp_CArmour_dtor_FUN_00412500 at 00412559

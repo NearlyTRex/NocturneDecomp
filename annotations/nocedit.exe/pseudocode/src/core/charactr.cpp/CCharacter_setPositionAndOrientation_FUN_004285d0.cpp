@@ -18,9 +18,9 @@ core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004285d0
   core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0
             (&this_ptr->base,new_orientation,in_stack_00000010);
   fVar1 = 9999.0f;
-  (this_ptr->field7_0x2428).z = 0.0;
-  (this_ptr->field7_0x2428).y = (this_ptr->field7_0x2428).z;
-  (this_ptr->field7_0x2428).x = (this_ptr->field7_0x2428).y;
+  (this_ptr->velocity).z = 0.0;
+  (this_ptr->velocity).y = (this_ptr->velocity).z;
+  (this_ptr->velocity).x = (this_ptr->velocity).y;
   this_ptr->closest_distance_threshold = fVar1;
   return;
 }

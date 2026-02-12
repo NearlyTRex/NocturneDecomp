@@ -355,8 +355,8 @@ section .text
     SUB ESP,0x8                         ; 004da3ff
     FSTP double ptr [ESP]               ; 004da402
     PUSH 0x62b462                       ; 004da405 | = "screen paint : %3.2f ms\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 004da40a | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 004da410 | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 004da40a | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 004da410 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004da411
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 004da416
@@ -944,8 +944,8 @@ section .text
     CMP dword ptr [EAX + 0x280],0x0     ; 004daac0
     JZ 0x004daad8                       ; 004daac7
         ;   XREF to: 004daad8 (CONDITIONAL_JUMP)  ; LAB_004daad8
-    MOV ECX,dword ptr [0x0066e8e0]      ; 004daac9 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 004daacf | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 004daac9 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 004daacf | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_render_FUN_00441b00 ; 004daad0
         ;   XREF to: 00441b00 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_render_FUN_00441b00(CConsole * this_ptr)
     ADD ESP,0x4                         ; 004daad5

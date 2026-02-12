@@ -18,7 +18,7 @@ CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005efc10(CWerewolf *thi
   (pCVar4->base).base.base.vtable._ub = &g_CWerewolfVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base).base.model,"wolfbrn.dfm");
-  (pCVar4->base).base.field54_0x2ddc = 1.0;
+  (pCVar4->base).base.collision_cylinder_height = 1.0;
   (pCVar4->base).base.collision_cylinder_radius = 2.0;
   pCVar4->type = WEREWOLF_TYPE_TRAIN;
   pCVar4->light_up_eyes = 1;
@@ -30,8 +30,8 @@ CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005efc10(CWerewolf *thi
   fVar3 = 10.0f;
   pCVar4->alpha2 = (CDemonActor *)0x0;
   pCVar4->phase = 0;
-  (pCVar4->base).base.field56_0x2de4 = fVar1;
-  (pCVar4->base).base.field57_0x2de8 = fVar2;
+  (pCVar4->base).base.ai_detection_range_min = fVar1;
+  (pCVar4->base).base.ai_detection_range_max = fVar2;
   pCVar4->phase_timer = fVar3;
   return pCVar4;
 }

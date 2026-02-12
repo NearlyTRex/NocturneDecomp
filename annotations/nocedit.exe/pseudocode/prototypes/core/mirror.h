@@ -25,7 +25,7 @@ CMirror * __cdecl CMirror::ctor(CMirror *this_ptr);
 
 // Original: core_mirror.cpp_CMirror_dtor_FUN_005213e0
 // Address: 005213e0
-CMirror * __cdecl CMirror::dtor(CMirror *this_ptr);
+CMirror * __cdecl CMirror::dtor(CMirror *this_ptr,uint flags);
 
 // Original: core_mirror.cpp_CMirror_setupCorners_FUN_00521400
 // Address: 00521400
@@ -81,12 +81,12 @@ SClipPlane * __cdecl SClipPlane::ctor(SClipPlane *this_ptr);
 
 // Original: core_mirror.cpp_SClipPlane_dtor_FUN_00522c00
 // Address: 00522c00
-SClipPlane * __cdecl SClipPlane::dtor(SClipPlane *this_ptr);
+SClipPlane * __cdecl SClipPlane::dtor(SClipPlane *this_ptr,uint flags);
 
-// Original: core_mirror.cpp_freeClipPlanes_FUN_00522c10
+// Original: core_mirror.cpp_SClipPlane_arrdtor_FUN_00522c10
 // Address: 00522c10
-SClipPlane * __cdecl freeClipPlanes(SClipPlane *objs);
+SClipPlane * __cdecl SClipPlane::arrdtor(SClipPlane *objs,uint flags);
 
-// Original: core_mirror.cpp_freeVectors_FUN_00522c30
+// Original: core_mirror.cpp_CVector3f_arrdtor_FUN_00522c30
 // Address: 00522c30
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);

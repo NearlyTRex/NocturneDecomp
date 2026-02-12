@@ -97,7 +97,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
         }
         else {
           *(int *)((int)g_VertexRemapTable + iVar5) = iVar3;
-          puVar10 = (uint *)(body_part_ptr->unk2 + iVar4);
+          puVar10 = (uint *)((int)&body_part_ptr->vertices->x + iVar4);
           iVar3 = iVar3 + 1;
           iVar4 = iVar4 + 0xc;
           puVar11 = puVar10 + (uint)bVar12 * -2 + 1;
@@ -123,7 +123,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
       local_28 = local_14 << 2;
       local_2c = local_2c * 4;
       do {
-        iVar4 = *(int *)body_part_ptr->unk4 + iVar3;
+        iVar4 = (int)&(body_part_ptr->faces->vertex_indices).vertex_index_0 + iVar3;
         puVar6 = (ushort *)
                  ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
                  local_20);
@@ -141,7 +141,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
         iVar4 = core_bodypart_cpp_CBodyPart_FUN_0041af90(body_part_ptr);
         local_20 = local_20 + 0x12;
         local_2c = local_2c + 4;
-        *(int *)(*(int *)(body_part_ptr->unk4 + 4) + local_28) = iVar4;
+        *(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar4;
         local_28 = local_28 + 4;
         local_14 = local_14 + 1;
       } while (local_2c < iVar8 * 4);
@@ -149,10 +149,10 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
     if (local_30 < iVar7) {
       local_24 = local_30 * 0x12;
       local_1c = local_14 * 0x3c;
-      iVar8 = local_14 << 2;
       local_30 = local_30 << 2;
+      iVar8 = local_14 << 2;
       do {
-        iVar3 = *(int *)body_part_ptr->unk4 + local_1c;
+        iVar3 = (int)&(body_part_ptr->faces->vertex_indices).vertex_index_0 + local_1c;
         puVar6 = (ushort *)
                  ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
                  local_24);
@@ -166,13 +166,13 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
           *(uint *)(iVar3 + 0x20) = (uint)*puVar1 << 8;
           iVar3 = iVar3 + 0xc;
         } while (puVar6 != puVar9);
-        iVar8 = iVar8 + 4;
         local_30 = local_30 + 4;
         iVar3 = core_bodypart_cpp_CBodyPart_FUN_0041af90(body_part_ptr);
-        *(int *)(*(int *)(body_part_ptr->unk4 + 4) + -4 + iVar8) = iVar3;
+        *(int *)((int)body_part_ptr->face_texture_indices + iVar8) = iVar3;
         local_1c = local_1c + 0x3c;
         local_14 = local_14 + 1;
         local_24 = local_24 + 0x12;
+        iVar8 = iVar8 + 4;
       } while (local_30 < iVar7 * 4);
     }
     if (local_14 != body_part_ptr->tri_count) {

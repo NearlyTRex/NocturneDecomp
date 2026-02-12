@@ -10,39 +10,37 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(CBoxActor *thi
 
 {
   CBoxActor *pCVar1;
-  CKeyFramedModelInstance *pCVar2;
-  CBox *pCVar3;
+  CBoxActor_ptr_344 pCVar2;
+  CBoxActor_ptr_916 pCVar3;
   
   pCVar1 = (CBoxActor *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
-  pCVar3 = core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)(pCVar2[1].model_name + 0x48));
-  pCVar3[-1].rotation_matrix.m[0].x = (float)&g_CBoxActorVTable;
-  pCVar3[-1].is_valid = 0;
-  pCVar3[-1].scrape_points[5].previous_position.x = 20.0;
-  pCVar3[-1].scrape_points[5].previous_position.y = 0.0;
-  pCVar3[-1].scrape_points[5].transformed_position.z = 0.0;
-  pCVar3[-1].scrape_points[5].transformed_position.y =
-       pCVar3[-1].scrape_points[5].transformed_position.z;
-  pCVar3[-1].scrape_points[5].transformed_position.x =
-       pCVar3[-1].scrape_points[5].transformed_position.y;
-  *(byte *)&pCVar3[-1].scrape_points[4].transformed_position.z = 0;
-  *(byte *)&pCVar3[-1].scrape_points[4].raytrace_normal.x = 0;
-  pCVar3[-1].scrape_points[5].local_position.z = 0.0;
-  pCVar3[-1].scrape_points[5].previous_position.z = 0.0;
-  pCVar3[-1].scrape_points[5].raytrace_normal.x = 0.0;
-  pCVar3[-1].scrape_points[5].raytrace_intersection = 0.0;
-  pCVar3[-1].scrape_points[5].raytrace_normal.y = 0.0;
-  *(byte *)&pCVar3[-1].scrape_points[6].local_position.y = 0;
-  pCVar3[-1].scrape_points[5].raytrace_normal.z = 0.0;
-  pCVar3[1].position.y = 0.0;
+  pCVar3 = (CBoxActor_ptr_916)core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)&ADJ(pCVar2)->sim_box);
+  ADJ(pCVar3)->base.vtable._ub = &g_CBoxActorVTable;
+  ADJ(pCVar3)->weight_in_pounds = 0.0;
+  ADJ(pCVar3)->fps = 20.0;
+  ADJ(pCVar3)->unk2 = 0;
+  (ADJ(pCVar3)->rpm).z = 0.0;
+  (ADJ(pCVar3)->rpm).y = (ADJ(pCVar3)->rpm).z;
+  (ADJ(pCVar3)->rpm).x = (ADJ(pCVar3)->rpm).y;
+  ADJ(pCVar3)->loop_wav_name[0] = '\0';
+  ADJ(pCVar3)->collision_wav_name[0] = '\0';
+  ADJ(pCVar3)->unk1 = 0;
+  ADJ(pCVar3)->pickup_type = 0;
+  ADJ(pCVar3)->can_be_pushed = 0;
+  ADJ(pCVar3)->carrier_actor = (CDemonActor *)0x0;
+  ADJ(pCVar3)->pushed_by_actor = (CDemonActor *)0x0;
+  ADJ(pCVar3)->push_sound[0] = '\0';
+  ADJ(pCVar3)->constrain_extents_actor = 0;
+  ADJ(pCVar3)->ground_type = 0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)&pCVar3[-1].rotation_matrix.m[0].y,"question.kfm");
-  pCVar3->is_valid = -1;
-  pCVar3[1].position.z = 1.4013e-45;
-  pCVar3[1].orientation.x = 1.4013e-45;
-  pCVar3[1].orientation.y = 0.0;
-  *(byte *)&pCVar3[1].orientation.z = 0;
-  pCVar3[1].angular_velocity.z = 0.0;
-  pCVar3[1].angular_velocity_temp.x = 0.0;
-  return (CBoxActor *)(pCVar3[-2].scrape_points + 2);
+            (&ADJ(pCVar3)->model,"question.kfm");
+  ADJ(pCVar3)->unk5 = -1;
+  ADJ(pCVar3)->plot_in_shadow_flag = 1;
+  ADJ(pCVar3)->collision_flag = 1;
+  ADJ(pCVar3)->dont_use_normals = 0;
+  ADJ(pCVar3)->use_event[0] = '\0';
+  ADJ(pCVar3)->allowed_melee_attack_types = 0;
+  ADJ(pCVar3)->block_virtual_director_flag = 0;
+  return ADJ(pCVar3);
 }

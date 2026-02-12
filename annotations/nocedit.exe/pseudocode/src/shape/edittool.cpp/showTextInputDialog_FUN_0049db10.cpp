@@ -146,7 +146,7 @@ LAB_0049dddc:
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_InputKeyMask = local_14;
-  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_1e0);
-  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_fc);
+  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_1e0,0);
+  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_fc,0);
   return iVar2;
 }

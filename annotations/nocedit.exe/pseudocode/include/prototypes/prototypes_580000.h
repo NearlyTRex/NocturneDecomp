@@ -57,7 +57,7 @@ void __cdecl core_setutil_cpp_FUN_00585220(void);
 void __cdecl core_setutil_cpp_CSlew_copy_FUN_00585240(CSlew *this_ptr,CSlew *other);
 void __cdecl core_setutil_cpp_readAndParseLine_FUN_00585290 (_FILE *file_handle,char *output_buffer,int max_length);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_00585310(C3DSCamera *this_ptr);
-C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_dtor_FUN_00585340(C3DSCamera *this_ptr);
+C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_dtor_FUN_00585340(C3DSCamera *this_ptr,uint flags);
 void __cdecl core_setutil_cpp_C3DSCamera_free_FUN_00585360(C3DSCamera *this_ptr);
 void __cdecl core_setutil_cpp_C3DSCamera_reset_FUN_005853b0(C3DSCamera *this_ptr);
 void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00585420(C3DSCamera *this_ptr,_FILE *file_handle);

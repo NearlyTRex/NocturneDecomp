@@ -93,7 +93,7 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
         this_ptr->lives_left = this_ptr->lives_left + -1;
       }
       iVar10 = 6;
-      if ((this_ptr->base).base.field60_0x2df4 < 1) {
+      if ((this_ptr->base).base.damage_decal_count < 1) {
         iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
         if (iVar7 != 0) {
           iVar10 = 7;
@@ -102,15 +102,16 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
       else {
         iVar7 = 0;
         pCVar5 = this_ptr;
-        if (0 < (this_ptr->base).base.field60_0x2df4) {
+        if (0 < (this_ptr->base).base.damage_decal_count) {
           do {
-            if (*(int *)(pCVar5->base).base.field61_0x2df8 == *(int *)(this_ptr->unk3 + 0x24)) {
+            if ((pCVar5->base).base.damage_decals[0].part_index == *(int *)(this_ptr->unk3 + 0x24))
+            {
               iVar10 = 8;
               break;
             }
             iVar7 = iVar7 + 1;
             pCVar5 = (CGhoul *)((int)&(pCVar5->base).base.base.orient + 8);
-          } while (iVar7 < (this_ptr->base).base.field60_0x2df4);
+          } while (iVar7 < (this_ptr->base).base.damage_decal_count);
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

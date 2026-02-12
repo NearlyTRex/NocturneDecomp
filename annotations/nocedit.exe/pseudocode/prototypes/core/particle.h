@@ -9,7 +9,7 @@ CParticle * __cdecl CParticle::ctor(CParticle *this_ptr);
 
 // Original: core_particle.cpp_CParticle_dtor_FUN_00545670
 // Address: 00545670
-CParticle * __cdecl CParticle::dtor(CParticle *this_ptr);
+CParticle * __cdecl CParticle::dtor(CParticle *this_ptr,uint flags);
 
 // Original: core_particle.cpp_CParticle_setup_FUN_00545680
 // Address: 00545680

@@ -7,8 +7,8 @@
 ; CMorphModel *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_morph.cpp_FUN_0052b430 at 0052b45b
-;   core_morph.cpp_FUN_0052b550 at 0052b571
+;   core_morph.cpp_CMorph_FUN_0052b430 at 0052b45b
+;   core_morph.cpp_CMorph_FUN_0052b550 at 0052b571
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_FUN_0052a710

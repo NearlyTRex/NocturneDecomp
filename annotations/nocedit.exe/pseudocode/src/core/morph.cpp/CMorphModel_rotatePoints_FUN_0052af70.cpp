@@ -13,7 +13,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *t
   float fVar2;
   float fVar3;
   float fVar4;
-  int iVar5;
+  void *pvVar5;
   uint uVar6;
   float fVar7;
   int iVar8;
@@ -40,13 +40,13 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *t
     iVar9 = 0;
     iVar10 = 0;
     do {
-      iVar8 = *(int *)(*(int *)this_ptr->unk2 + iVar9) * 0x10 + in_stack_0000000c;
+      iVar8 = *(int *)((int)this_ptr->points + iVar9) * 0x10 + in_stack_0000000c;
       fVar1 = *(float *)(iVar8 + 8);
       fVar2 = *(float *)(iVar8 + 0xc);
-      iVar5 = *(int *)this_ptr->unk2;
-      fVar3 = *(float *)(iVar5 + 8 + iVar9);
-      fVar4 = *(float *)(iVar5 + 0xc + iVar9);
-      input->x = (int)ROUND((*(float *)(iVar5 + 4 + iVar9) * in_stack_00000008 +
+      pvVar5 = this_ptr->points;
+      fVar3 = *(float *)((int)pvVar5 + iVar9 + 8);
+      fVar4 = *(float *)((int)pvVar5 + iVar9 + 0xc);
+      input->x = (int)ROUND((*(float *)((int)pvVar5 + iVar9 + 4) * in_stack_00000008 +
                             *(float *)(iVar8 + 4) * fVar7) * 256.0f);
       input->y = (int)ROUND((fVar3 * in_stack_00000008 + fVar1 * fVar7) * 256.0f);
       input->z = (int)ROUND((in_stack_00000008 * fVar4 + fVar7 * fVar2) * 256.0f);
@@ -74,8 +74,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *t
   }
   core_set_cpp_CDemonSet_FUN_0056e5d0(g_CDemonSetPtr);
   core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
-            (g_CDemonSetPtr,this_ptr->num_points,*(int *)(this_ptr->unk2 + 4),
-             *(SInputFace **)(this_ptr->unk2 + 8),0x2f3dbb4,3,0);
+            (g_CDemonSetPtr,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,0x2f3dbb4,3,0);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,local_20);
   return;
 }

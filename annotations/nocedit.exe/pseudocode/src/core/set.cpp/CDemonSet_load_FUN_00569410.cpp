@@ -150,10 +150,10 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   this_ptr_00 = g_CTerrainPtr;
   if (iVar10 == 0) {
     this_ptr->player_on_train = 1;
-    core_terrain_cpp_CTerrain_ctor_FUN_005e1ef0(this_ptr_00);
+    core_terrain_cpp_CTerrain_init_FUN_005e1ef0(this_ptr_00);
   }
   else {
-    core_terrain_cpp_CTerrain_dtor_FUN_005e1f30(g_CTerrainPtr);
+    core_terrain_cpp_CTerrain_free_FUN_005e1f30(g_CTerrainPtr);
     this_ptr->player_on_train = 0;
   }
   if (10 < this_ptr->set_file_version) {

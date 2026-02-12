@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_ptr)
 
 {
@@ -13,30 +15,32 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   float fVar2;
   float fVar3;
   CBoneGuy *pCVar4;
-  void *dest;
+  CBoneGuy_ptr_48956 dest;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
   double dVar7;
-  float local_20;
+  CVector3f local_20;
+  CVector3f local_14;
+  float local_8;
   
   pCVar4 = (CBoneGuy *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  dest = __arrinit(&pCVar4->box_list_pos,0x14,&g_SBoneGuyBoxTypeInfo);
-  *(CDemonActor_vtable **)((int)dest + -0xbde8) = &g_CBoneGuyVTable;
+  dest = __arrinit(pCVar4->boxes,0x14,&g_SBoneGuyBoxTypeInfo);
+  ADJ(dest)->base.base.base.vtable._ub = &g_CBoneGuyVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            ((CDeformableModelInstance *)((int)dest + -0xbde4),"boneguy.dfm");
-  *(uint *)((int)dest + -0x9160) = 0x3f19999a;
-  *(uint *)((int)dest + -0x915c) = 0x3f666666;
+            (&ADJ(dest)->base.base.model,"boneguy.dfm");
+  ADJ(dest)->base.base.collision_cylinder_height = 0.6;
+  ADJ(dest)->base.base.collision_cylinder_radius = 0.9;
   pcVar5 = "boneguydie";
-  *(uint *)((int)dest + -0xbe40) = 1;
-  pcVar6 = (char *)((int)dest + -0x6c);
-  *(uint *)((int)dest + 0x5a0) = 0;
+  ADJ(dest)->base.base.base.is_transparent = 1;
+  pcVar6 = ADJ(dest)->death_event;
+  ADJ(dest)->blown_up = 0;
   fVar2 = 50.0f;
-  *(uint *)((int)dest + -0x992c) = 2;
+  ADJ(dest)->base.base.collision_layer = 2;
   fVar3 = 100.0f;
-  *(uint *)((int)dest + -8) = 0x41200000;
-  *(float *)((int)dest + -0x9158) = fVar2;
-  *(float *)((int)dest + -0x9154) = fVar3;
+  ADJ(dest)->recombine_time = 10.0;
+  ADJ(dest)->base.base.ai_detection_range_min = fVar2;
+  ADJ(dest)->base.base.ai_detection_range_max = fVar3;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -46,24 +50,27 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)((int)dest + -4) = 0;
+  ADJ(dest)->box_count = 0;
   memset(dest,0,0x5a0);
   iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0xff);
-  *(uint *)((int)dest + -0x7c) = 0;
-  *(uint *)((int)dest + -0x78) = 0;
-  *(uint *)((int)dest + -0x74) = 0;
-  *(uint *)((int)dest + -0x8c) = 0x40c00000;
-  *(int *)((int)dest + -0x80) = iVar4;
-  core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,255.0);
-  core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,40.0);
-  core_actor_cpp_getRandomFloat_FUN_0040cc10(106.0,256.0);
-  core_boneguy_cpp_FUN_0041ba10();
+  ADJ(dest)->search_timer = 0.0;
+  ADJ(dest)->pickup_cooldown = 0.0;
+  ADJ(dest)->pickup_target = (CDemonActor *)0x0;
+  ADJ(dest)->base.victim_height = 6.0;
+  ADJ(dest)->pickup_attempt_count = iVar4;
+  local_14.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,255.0);
+  local_8 = local_14.x;
+  local_14.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,40.0);
+  local_8 = local_14.y;
+  local_14.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(106.0,256.0);
+  local_8 = local_14.z;
+  core_boneguy_cpp_hsvToRgb_FUN_0041ba10(&local_20,&local_14);
   fVar2 = 256.0f;
-  dVar7 = round((double)(local_20 * 256.0f));
-  *(int *)((int)dest + -0xbe34) = (int)ROUND(dVar7);
-  dVar7 = round((double)(local_20 * fVar2));
-  *(int *)((int)dest + -0xbe30) = (int)ROUND(dVar7);
-  dVar7 = round((double)(fVar2 * local_20));
-  *(int *)((int)dest + -0xbe2c) = (int)ROUND(dVar7);
-  return (CBoneGuy *)((int)dest + -0xbf3c);
+  dVar7 = round((double)(local_20.x * 256.0f));
+  ADJ(dest)->base.base.base.scale.x = (int)ROUND(dVar7);
+  dVar7 = round((double)(local_20.x * fVar2));
+  ADJ(dest)->base.base.base.scale.y = (int)ROUND(dVar7);
+  dVar7 = round((double)(fVar2 * local_20.x));
+  ADJ(dest)->base.base.base.scale.z = (int)ROUND(dVar7);
+  return ADJ(dest);
 }

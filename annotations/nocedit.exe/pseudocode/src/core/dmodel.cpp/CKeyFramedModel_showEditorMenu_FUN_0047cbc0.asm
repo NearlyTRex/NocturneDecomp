@@ -2249,7 +2249,7 @@ section .text
     LEA EAX,[EBP + -0x62]               ; 0047e38a
     PUSH EAX                            ; 0047e38d
     CALL core_course.cpp_CCourse_dtor_FUN_004424e0 ; 0047e38e
-        ;   XREF to: 004424e0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_dtor_FUN_004424e0(CCourse * this_ptr)
+        ;   XREF to: 004424e0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_dtor_FUN_004424e0(CCourse * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0047e393
     JMP 0x0047d6c7                      ; 0047e396
         ;   XREF to: 0047d6c7 (UNCONDITIONAL_JUMP)  ; LAB_0047d6c7

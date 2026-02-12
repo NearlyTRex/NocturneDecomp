@@ -62,7 +62,7 @@ void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4 (ulonglon
 void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
 void __cdecl core_dtrace_cpp_staticInit_FUN_004941e0(void);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_ctor_FUN_00494200(CDemonRaytrace *this_ptr);
-CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_dtor_FUN_00494240(CDemonRaytrace *this_ptr);
+CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_dtor_FUN_00494240(CDemonRaytrace *this_ptr,uint flags);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00494270(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_004942d0(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(CDemonRaytrace *this_ptr);
@@ -109,8 +109,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10 (CD
 void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160 (CDemonRaytrace *this_ptr,CVector3f *world_position);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280 (CDemonRaytrace *this_ptr,CVector3f *world_position);
 STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_copy_FUN_0049a3b0(STriangleRef *this_ptr,STriangleRef *other);
-STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef *this_ptr);
-CVector3f * __cdecl core_dtrace_cpp_freeVectors_FUN_0049a410(CVector3f *objs);
+STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef *this_ptr,uint flags);
+CVector3f * __cdecl core_dtrace_cpp_CVector3f_arrdtor_FUN_0049a410(CVector3f *objs,uint flags);
 void __cdecl core_dtri_cpp_staticInit_FUN_0049a430(void);
 void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,_FILE *file_handle);
 void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0049a530(CDemonTriangle *this_ptr,_FILE *file_handle);
@@ -139,7 +139,7 @@ CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb5a(int tri
 int __cdecl core_dtri_cpp_getClippedVertexCount_FUN_0049cbb0(void);
 CVector3f * __cdecl core_dtri_cpp_getClippedVertices_FUN_0049cbc0(void);
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *this_ptr);
-CDemonTriangle * __cdecl core_dtri_cpp_freeTriangles_FUN_0049cd20(CDemonTriangle *objs);
+CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_arrdtor_FUN_0049cd20(CDemonTriangle *objs,uint flags);
 void __cdecl core_dynamite_cpp_staticInit_FUN_0049cd40(void);
 CDynamite * __cdecl core_dynamite_cpp_factoryFunc_FUN_0049cd80(void);
 CDemonActorType * __cdecl core_dynamite_cpp_CDynamite_getActorType_FUN_0049cdb0(CDynamite *this_ptr);
@@ -170,7 +170,7 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(CInputString *thi
 void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *this_ptr,int x_pos,int y_pos);
 int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10 (int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
 CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_ctor_FUN_0049df80(CEditorTools *this_ptr);
-CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools *this_ptr);
+CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CEditorTools_init_FUN_0049e020(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,char *message,int color);
 void __cdecl shape_edittool_cpp_CEditorTools_backupScreen_FUN_0049e410(CEditorTools *this_ptr);

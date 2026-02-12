@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 39,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 25,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 83
+    "total_lines": 84
   },
   "cross_references": [],
   "function": {
@@ -39,17 +39,17 @@
     {
       "addr": "0050bab0",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_freeGems_FUN_0050bab0"
+      "name": "core_manpuz.cpp_SGem_arrdtor_FUN_0050bab0"
     },
     {
       "addr": "0050ba90",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_freePanels_FUN_0050ba90"
+      "name": "core_manpuz.cpp_SPanel_arrdtor_FUN_0050ba90"
     },
     {
       "addr": "0050bad0",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_freeReflectors_FUN_0050bad0"
+      "name": "core_manpuz.cpp_SReflector_arrdtor_FUN_0050bad0"
     },
     {
       "addr": "005fe632",
@@ -132,9 +132,9 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 20,
       "match": "pSVar2[-7].",
-      "text": "pSVar3 = core_manpuz_cpp_freePanels_FUN_0050ba90((SPanel *)(pSVar2[-7].unk + 0x58));",
+      "text": "pSVar3 = core_manpuz_cpp_SPanel_arrdtor_FUN_0050ba90((SPanel *)(pSVar2[-7].unk + 0x58),0);",
       "type": "negative_offset"
     }
   ],

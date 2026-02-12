@@ -17,6 +17,7 @@ typedef struct CAmmoBox {
     float unk1; // 0x31c
     char* item; // 0x320
     int has_collision; // 0x324
-    char open_sound[36]; // 0x328
+    char open_sound[32]; // 0x328
+    int unk2; // 0x348
 } CAmmoBox;
 

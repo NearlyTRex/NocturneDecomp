@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 16,
-        "message": "incompatible pointer types assigning to 'CCrate_ptr_344' (aka 'CCrate *') from 'CKeyFramedModelInstance *'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 17,
-        "message": "member reference type 'CCrate_ptr_344' (aka 'CCrate *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 18,
-        "message": "no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -145,7 +126,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 10,
       "match": "ADJ",
-      "text": "ADJ(this_ptr_00).base.vtable._ub = &g_CCrateVTable;",
+      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CCrateVTable;",
       "type": "decompiler_intrinsic"
     },
     {

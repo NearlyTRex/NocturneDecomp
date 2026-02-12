@@ -65,4 +65,4 @@ CDrummer * __cdecl CDrummer::dtor(CDrummer *this_ptr,uint flags);
 
 // Original: core_tbplayer.cpp_CBassPlayer_dtor_FUN_005da610
 // Address: 005da610
-CBassPlayer * __cdecl CBassPlayer::dtor(CBassPlayer *this_ptr);
+CBassPlayer * __cdecl CBassPlayer::dtor(CBassPlayer *this_ptr,uint flags);

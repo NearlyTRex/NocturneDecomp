@@ -93,10 +93,7 @@ void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr)
         }
         (this_ptr->base).action_bindings.walk_key = 1;
       }
-      (this_ptr->base).base.field53_0x2dc4[0] = '\0';
-      (this_ptr->base).base.field53_0x2dc4[1] = '\0';
-      (this_ptr->base).base.field53_0x2dc4[2] = '\0';
-      (this_ptr->base).base.field53_0x2dc4[3] = '\0';
+      (this_ptr->base).base.hero_proximity_timer = 0.0;
     }
     fVar2 = (this_ptr->base).base.turn_angle_accumulator;
     if (fVar2 <= 0.0) {

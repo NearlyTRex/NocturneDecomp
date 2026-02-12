@@ -1,0 +1,231 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 127,
+    "complexity_score": 86,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 7,
+    "pseudocode_lines": 46,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "warning_type_propagation"
+    ],
+    "total_lines": 173
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005f1820",
+    "address_range": [
+      [
+        "005f1820",
+        "005f1975"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005f1820",
+    "signature": "int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005f1820(CWerewolf *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "0042b0e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0"
+    },
+    {
+      "addr": "005f1230",
+      "is_variadic": false,
+      "name": "core_werewolf.cpp_CWerewolf_FUN_005f1230"
+    },
+    {
+      "addr": "005f6110",
+      "is_variadic": false,
+      "name": "core_xform.cpp_getTranslation_FUN_005f6110"
+    },
+    {
+      "addr": "005f5690",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690"
+    },
+    {
+      "addr": "0048c4f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657db0",
+      "name": "FLOAT_00657db0",
+      "type": "float",
+      "value": "-1"
+    },
+    {
+      "addr": "00657db4",
+      "name": "DOUBLE_00657db4",
+      "type": "double",
+      "value": "0.800000000000000"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "03f96b44",
+      "name": "FLOAT_03f96b44",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "03f96b50",
+      "name": "FLOAT_03f96b50",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.728155339805825,
+    "instruction_count": 103,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 12,
+      "CBRANCH": 6,
+      "COPY": 139,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 1,
+      "INT_ADD": 48,
+      "INT_AND": 65,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 46,
+      "INT_LEFT": 10,
+      "INT_LESS": 5,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 15,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 24,
+      "INT_SUB": 45,
+      "INT_XOR": 2,
+      "INT_ZEXT": 10,
+      "LOAD": 21,
+      "POPCOUNT": 22,
+      "RETURN": 3,
+      "STORE": 38
+    },
+    "pcode_op_count": 590
+  },
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWerewolf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWerewolf",
+        "offset": 12,
+        "vtable_addr": "00665784"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

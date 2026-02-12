@@ -246,7 +246,7 @@ LAB_0051fdb4:
     uVar9 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
     if (uVar9 != 0) {
       if (uVar9 < 2) {
-        if ((this_ptr->base).base.field3_0x2410 != 0) {
+        if ((this_ptr->base).base.is_on_ground != 0) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                     (pCVar1,&local_c4,INT_02f33394);
           local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;
@@ -254,7 +254,7 @@ LAB_0051fdb4:
                     ((CDemonActor *)this_ptr,&local_c4,1.0);
         }
       }
-      else if ((uVar9 == 7) && ((this_ptr->base).base.field3_0x2410 != 0)) {
+      else if ((uVar9 == 7) && ((this_ptr->base).base.is_on_ground != 0)) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                   (pCVar1,&local_100,INT_02f33398);
         local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;
@@ -269,14 +269,14 @@ LAB_0051fdb4:
   uVar9 = pSVar7->state_index;
   if (((uVar9 == 0xc) || (uVar9 == 0)) &&
      ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) goto LAB_00520482;
-  (this_ptr->base).base.field7_0x2428.y =
-       (this_ptr->base).base.field7_0x2428.y - in_stack_00000008 * (float)32;
-  local_d0 = (this_ptr->base).base.field7_0x2428.x * in_stack_00000008;
-  local_cc = (this_ptr->base).base.field7_0x2428.y * in_stack_00000008;
-  local_c8 = in_stack_00000008 * (this_ptr->base).base.field7_0x2428.z;
-  local_124.x = local_d0 + (this_ptr->base).base.field6_0x241c.x;
-  local_124.y = local_cc + (this_ptr->base).base.field6_0x241c.y;
-  local_124.z = local_c8 + (this_ptr->base).base.field6_0x241c.z;
+  (this_ptr->base).base.velocity.y =
+       (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;
+  local_d0 = (this_ptr->base).base.velocity.x * in_stack_00000008;
+  local_cc = (this_ptr->base).base.velocity.y * in_stack_00000008;
+  local_c8 = in_stack_00000008 * (this_ptr->base).base.velocity.z;
+  local_124.x = local_d0 + (this_ptr->base).base.position_delta.x;
+  local_124.y = local_cc + (this_ptr->base).base.position_delta.y;
+  local_124.z = local_c8 + (this_ptr->base).base.position_delta.z;
   if (uVar9 < 3) {
     if (uVar9 == 0) {
       bVar13 = true;

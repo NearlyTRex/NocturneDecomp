@@ -9,7 +9,7 @@ CDemonImage * __cdecl CDemonImage::ctor(CDemonImage *this_ptr);
 
 // Original: core_dimage.cpp_CDemonImage_dtor_FUN_004719c0
 // Address: 004719c0
-CDemonImage * __cdecl CDemonImage::dtor(CDemonImage *this_ptr);
+CDemonImage * __cdecl CDemonImage::dtor(CDemonImage *this_ptr,uint flags);
 
 // Original: core_dimage.cpp_CDemonImage_allocMemory_FUN_004719e0
 // Address: 004719e0

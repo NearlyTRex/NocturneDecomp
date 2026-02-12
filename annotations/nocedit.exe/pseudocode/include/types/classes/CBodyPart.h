@@ -1,34 +1,48 @@
 #pragma once
 
 // Forward declarations
-struct CSimBox;
+struct CVector3i;
+struct SInputFace;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CBox.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SBodyPartFire.h"
+#include "types/structs/SBodyPartModel.h"
+#include "types/structs/SMRGLTextureBasic.h"
 
 // Structure: CBodyPart
 // Ghidra size: 0xf30 (3888 bytes)
 typedef struct CBodyPart {
     CDemonActor base; // 0x0
     int render_in_background; // 0x158
-    char unk1[24]; // 0x15c
+    CBoundingBox3D bounding_box; // 0x15c
     int vertex_count; // 0x174
-    int unk2; // 0x178
-    int unk3; // 0x17c
+    struct CVector3i* vertices; // 0x178
+    struct CVector3i* normals; // 0x17c
     int tri_count; // 0x180
-    char unk4[8]; // 0x184
+    struct SInputFace* faces; // 0x184
+    int* face_texture_indices; // 0x188
     int texture_count; // 0x18c
-    char unk5[2848]; // 0x190
+    SMRGLTextureBasic textures[10]; // 0x190
+    CVector3f initial_velocity; // 0x280
+    int attached_model_count; // 0x28c
+    SBodyPartModel attached_models[3]; // 0x290
+    int fire_count; // 0x74c
+    SBodyPartFire fires[2]; // 0x750
     int dont_use_normals; // 0xcb0
     int transparent_geometry_flag; // 0xcb4
     int blood_type; // 0xcb8
-    char unk6[8]; // 0xcbc
+    float physics_timer; // 0xcbc
+    int render_alpha; // 0xcc0
     int dont_pick_me_up; // 0xcc4
-    int unk7; // 0xcc8
-    struct CSimBox* sim_box; // 0xccc
-    char unk8[600]; // 0xcd0
+    int fire_time_remaining; // 0xcc8
+    CBox sim_box; // 0xccc
+    int unk; // 0xf24
     struct CDemonActor* carried_by_actor; // 0xf28
-    int unk9; // 0xf2c
+    int is_visible; // 0xf2c
 } CBodyPart;
 

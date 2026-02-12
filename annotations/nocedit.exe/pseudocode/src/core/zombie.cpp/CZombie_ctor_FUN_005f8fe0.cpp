@@ -22,7 +22,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   (pCVar3->base).base.base.vtable._ub = &g_CZombieVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"zombie1.dfm");
-  (pCVar3->base).base.field54_0x2ddc = 0.5;
+  (pCVar3->base).base.collision_cylinder_height = 0.5;
   pcVar7 = pCVar3->rise_from_grave_condition;
   (pCVar3->base).base.collision_cylinder_radius = 1.0;
   fVar4 = 50.0f;
@@ -35,8 +35,8 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   pCVar3->unk1[0xd] = '\0';
   pCVar3->unk1[0xe] = '\0';
   pCVar3->unk1[0xf] = '\0';
-  (pCVar3->base).base.field56_0x2de4 = fVar4;
-  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  (pCVar3->base).base.ai_detection_range_min = fVar4;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   do {
     cVar1 = *pcVar6;
     *pcVar7 = cVar1;

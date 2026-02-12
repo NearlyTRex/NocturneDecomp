@@ -21,7 +21,7 @@ void __cdecl core_ground_cpp_CGround_free_FUN_004eefb0(CGround *this_ptr)
     this_ptr->texture_list = (CTextureList *)0x0;
     return;
   }
-  ptr = core_texlist_cpp_CTextureList_dtor_FUN_005dbdf0(this_ptr->texture_list);
+  ptr = core_texlist_cpp_CTextureList_dtor_FUN_005dbdf0(this_ptr->texture_list,0);
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   this_ptr->texture_list = (CTextureList *)0x0;
   return;

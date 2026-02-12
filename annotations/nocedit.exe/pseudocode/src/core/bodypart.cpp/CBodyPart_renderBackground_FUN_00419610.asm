@@ -14,7 +14,7 @@
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_0326ef00
 ;
@@ -112,7 +112,7 @@ section .text
     PUSH EBX                            ; 004196fb
     PUSH 0x615cdf                       ; 004196fc | = "%s going into background\n"
     MOV EBP,dword ptr [0x0066e8e0]      ; 00419701 | g_CConsolePtr
-    PUSH EBP                            ; 00419707 | g_ConsolePtr
+    PUSH EBP                            ; 00419707 | g_CConsoleInstance
     MOV dword ptr [EBX + 0x158],0x1     ; 00419708
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00419712
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)

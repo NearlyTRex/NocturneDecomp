@@ -620,7 +620,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
               if (iVar2 != 2) {
                 shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)auStack_1060,0);
                 shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_140c + 4),0);
-                engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)auStack_1834);
+                engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)auStack_1834,0);
                 return;
               }
               engine_fileio_cpp_CFileManager_verifyPodCRC_FUN_004b7c90
@@ -655,7 +655,7 @@ LAB_004b629d:
         shape_memdbg_cpp_debugFree_FUN_0050f460(local_58,"..\\engine\\fileio.cpp",0x85d);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)local_140c,0);
-      engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffe7c8);
+      engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffe7c8,0);
       return;
     }
   }

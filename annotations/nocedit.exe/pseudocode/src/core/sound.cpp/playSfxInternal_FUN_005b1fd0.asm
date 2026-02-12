@@ -496,8 +496,8 @@ section .text
         ;   Label: LAB_005b240e
     PUSH EAX                            ; 005b2412
     PUSH 0x652596                       ; 005b2413 | = "Can't find wav: %s\n"
-    MOV EDX,dword ptr [0x0066e8e0]      ; 005b2418 | g_ConsolePtr | g_CConsolePtr
-    PUSH EDX                            ; 005b241e | g_ConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 005b2418 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EDX                            ; 005b241e | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005b241f
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     MOV DH,byte ptr [0x03f6af60]        ; 005b2424 | g_MissingSoundsInitFlag

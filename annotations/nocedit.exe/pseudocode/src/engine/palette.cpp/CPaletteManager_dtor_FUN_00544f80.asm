@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager *this_ptr)
+; __cdecl CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPaletteManager * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_palette_cpp_0063e46c

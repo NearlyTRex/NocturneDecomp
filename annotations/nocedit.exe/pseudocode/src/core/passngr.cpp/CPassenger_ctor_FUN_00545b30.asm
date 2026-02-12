@@ -26,7 +26,7 @@
 ;   CDemonActor_vtable g_CPassengerVTable
 ;
 ; Called Functions:
-;   core_morph.cpp_FUN_0052b310
+;   core_morph.cpp_CMorph_ctor_FUN_0052b310
 ;   core_npc.cpp_CNPC_ctor_FUN_005447e0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
@@ -46,8 +46,8 @@ section .text
     ADD EAX,0x1f814                     ; 00545b40
     PUSH EAX                            ; 00545b45
     MOV ESI,0x63e784                    ; 00545b46 | = "wolfbrn.dfm"
-    CALL core_morph.cpp_FUN_0052b310    ; 00545b4b
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
+    CALL core_morph.cpp_CMorph_ctor_FUN_0052b310 ; 00545b4b
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_0052b310(CMorph * this_ptr)
     LEA EBX,[EAX + 0xfffe07ec]          ; 00545b50
     ADD ESP,0x4                         ; 00545b56
     LEA EDI,[EBX + 0x1f76c]             ; 00545b59

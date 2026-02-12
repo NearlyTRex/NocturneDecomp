@@ -94,10 +94,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
     if ((float)6 <= (float)pCStack_14) {
       local_1c = 0;
       if (bVar1) {
-        (this_ptr->base).base.field53_0x2dc4[0] = '\0';
-        (this_ptr->base).base.field53_0x2dc4[1] = '\0';
-        (this_ptr->base).base.field53_0x2dc4[2] = '\0';
-        (this_ptr->base).base.field53_0x2dc4[3] = '\0';
+        (this_ptr->base).base.hero_proximity_timer = 0.0;
       }
       else {
         pCStack_18 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
@@ -157,10 +154,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
             (this_ptr->base).action_bindings.fire_key = 1;
           }
         }
-        (this_ptr->base).base.field53_0x2dc4[0] = '\0';
-        (this_ptr->base).base.field53_0x2dc4[1] = '\0';
-        (this_ptr->base).base.field53_0x2dc4[2] = '\0';
-        (this_ptr->base).base.field53_0x2dc4[3] = '\0';
+        (this_ptr->base).base.hero_proximity_timer = 0.0;
       }
       else {
         pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0

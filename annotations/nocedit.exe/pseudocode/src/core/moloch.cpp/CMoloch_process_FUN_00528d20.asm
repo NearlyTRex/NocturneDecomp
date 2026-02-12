@@ -56,8 +56,8 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_moloch.cpp_CMoloch_FUN_005293b0
 ;   core_moloch.cpp_CMoloch_FUN_00529900
+;   core_morph.cpp_CMorph_FUN_0052b430
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
-;   core_morph.cpp_FUN_0052b430
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   ... and 11 more
 ;
@@ -343,8 +343,8 @@ section .text
     ADD ESP,0xc                         ; 00529015
     PUSH EBX                            ; 00529018
     PUSH 0x639da5                       ; 00529019 | = "%s confused while walking to scriptDe..."
-    MOV EAX,[0x0066e8e0]                ; 0052901e | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 00529023 | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 0052901e | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 00529023 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00529024
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x00528e37                      ; 00529029
@@ -600,14 +600,14 @@ section .text
     PUSH 0x0                            ; 00529327
     ADD EBX,0x21f5c                     ; 00529329
     PUSH EBX                            ; 0052932f
-    CALL core_morph.cpp_FUN_0052b430    ; 00529330
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b430()
+    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 00529330
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
     ADD ESP,0xc                         ; 00529335
     PUSH ESI                            ; 00529338
     PUSH 0x1                            ; 00529339
     PUSH EBX                            ; 0052933b
-    CALL core_morph.cpp_FUN_0052b430    ; 0052933c
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b430()
+    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 0052933c
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
     ADD ESP,0xc                         ; 00529341
     PUSH EBX                            ; 00529344
     CALL core_morph.cpp_CMorph_getReady_FUN_0052b680 ; 00529345

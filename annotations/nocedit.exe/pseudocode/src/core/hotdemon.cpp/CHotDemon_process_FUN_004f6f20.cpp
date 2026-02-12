@@ -302,22 +302,22 @@ switchD_004f7654_caseD_e:
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar4 != 0) {
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_58 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_54 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    pCVar9 = &(this_ptr->base).base.field6_0x241c;
-    local_50 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_58 = (this_ptr->base).base.velocity.x * delta_time;
+    local_54 = (this_ptr->base).base.velocity.y * delta_time;
+    pCVar9 = &(this_ptr->base).base.position_delta;
+    local_50 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar2 = &(this_ptr->base).base.model.accumulated_root_motion;
     local_7c = local_58 + pCVar9->x;
-    local_78 = local_54 + (this_ptr->base).base.field6_0x241c.y;
-    local_74 = local_50 + (this_ptr->base).base.field6_0x241c.z;
+    local_78 = local_54 + (this_ptr->base).base.position_delta.y;
+    local_74 = local_50 + (this_ptr->base).base.position_delta.z;
     local_a0.x = local_7c + pCVar2->x;
     local_a0.y = local_78 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_a0.z = local_74 + (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar9->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar9->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     fVar11 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar11;

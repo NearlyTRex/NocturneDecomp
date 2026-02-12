@@ -983,7 +983,7 @@ section .text
     MOV dword ptr [ESP + 0x2b4],ECX     ; 005d54b2
     MOV dword ptr [ESP + 0x298],EBX     ; 005d54b9
     CALL shape_superopt.cpp_CPoly_dtor_FUN_005cc660 ; 005d54c0
-        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
+        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005d54c5
     JMP 0x005d4d21                      ; 005d54c8
         ;   XREF to: 005d4d21 (UNCONDITIONAL_JUMP)  ; LAB_005d4d21
@@ -1162,7 +1162,7 @@ section .text
     LEA EAX,[ESP + 0xe4]                ; 005d57db
     PUSH EAX                            ; 005d57e2
     CALL shape_superopt.cpp_CPoly_dtor_FUN_005cc660 ; 005d57e3
-        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
+        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005d57e8
     MOV EAX,EBX                         ; 005d57eb
     MOV ESP,EBP                         ; 005d57ed

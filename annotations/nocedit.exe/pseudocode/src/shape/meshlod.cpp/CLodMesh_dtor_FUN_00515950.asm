@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(CLodMesh *this_ptr)
+; __cdecl CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(CLodMesh *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
 ;   core_skeledit.cpp_FUN_0058c190 at 0058c60b

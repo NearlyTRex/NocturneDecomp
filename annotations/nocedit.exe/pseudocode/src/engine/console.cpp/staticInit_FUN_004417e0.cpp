@@ -9,7 +9,7 @@
 void __cdecl engine_console_cpp_staticInit_FUN_004417e0(void)
 
 {
-  engine_console_cpp_CConsole_ctor_FUN_00441810(&g_ConsolePtr,0x28,0x20,1,1);
+  engine_console_cpp_CConsole_ctor_FUN_00441810(&g_CConsoleInstance,0x28,0x20,1,1);
   _atexit(&g_ConsoleDestructorNode);
   return;
 }

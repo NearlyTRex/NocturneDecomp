@@ -7,12 +7,12 @@
 ; CMorphModel *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_morph.cpp_CMorphModel_FUN_0052b350 at 0052b367
 ;   core_morph.cpp_CMorphModel_dtor_FUN_0052a4f0 at 0052a4f6
-;   core_morph.cpp_FUN_0052b370 at 0052b390
-;   core_morph.cpp_FUN_0052b3d0 at 0052b3f0
-;   core_morph.cpp_FUN_0052b430 at 0052b44d
-;   core_morph.cpp_FUN_0052b470 at 0052b48d
+;   core_morph.cpp_CMorph_FUN_0052b350 at 0052b367
+;   core_morph.cpp_CMorph_FUN_0052b370 at 0052b390
+;   core_morph.cpp_CMorph_FUN_0052b3d0 at 0052b3f0
+;   core_morph.cpp_CMorph_FUN_0052b430 at 0052b44d
+;   core_morph.cpp_CMorph_FUN_0052b470 at 0052b48d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0063a0df

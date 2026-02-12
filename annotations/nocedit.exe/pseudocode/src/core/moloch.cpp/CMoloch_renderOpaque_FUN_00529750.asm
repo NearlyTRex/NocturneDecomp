@@ -19,8 +19,8 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0
-;   core_morph.cpp_CMorphModel_FUN_0052bae0
-;   core_morph.cpp_FUN_0052b600
+;   core_morph.cpp_CMorph_FUN_0052b600
+;   core_morph.cpp_CMorph_FUN_0052bae0
 ;   core_motion.cpp_CMotionController_render_FUN_0052e700
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -76,24 +76,24 @@ section .text
     PUSH 0x0                            ; 005297cd
     LEA ESI,[EBX + 0x21f5c]             ; 005297cf
     PUSH ESI                            ; 005297d5
-    CALL core_morph.cpp_FUN_0052b600    ; 005297d6
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
+    CALL core_morph.cpp_CMorph_FUN_0052b600 ; 005297d6
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b600(CMorph * this_ptr, int model_index)
     ADD ESP,0x10                        ; 005297db
     PUSH 0x0                            ; 005297de
     LEA EAX,[EBX + 0x1fbd4]             ; 005297e0
     PUSH EAX                            ; 005297e6
     PUSH 0x1                            ; 005297e7
     PUSH ESI                            ; 005297e9
-    CALL core_morph.cpp_FUN_0052b600    ; 005297ea
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
+    CALL core_morph.cpp_CMorph_FUN_0052b600 ; 005297ea
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b600(CMorph * this_ptr, int model_index)
     FLD float ptr [EBX + 0x21e90]       ; 005297ef
     FDIV float ptr [0x00661938]         ; 005297f5 | FLOAT_00661938
     ADD ESP,0x10                        ; 005297fb
     SUB ESP,0x4                         ; 005297fe
     FSTP float ptr [ESP]                ; 00529801
     PUSH ESI                            ; 00529804
-    CALL core_morph.cpp_CMorphModel_FUN_0052bae0 ; 00529805
-        ;   XREF to: 0052bae0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052bae0(CMorphModel * this_ptr)
+    CALL core_morph.cpp_CMorph_FUN_0052bae0 ; 00529805
+        ;   XREF to: 0052bae0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052bae0(CMorph * this_ptr)
     ADD ESP,0x8                         ; 0052980a
     CMP dword ptr [0x02f43978],0x0      ; 0052980d | DAT_02f43978
         ;   Label: LAB_0052980d

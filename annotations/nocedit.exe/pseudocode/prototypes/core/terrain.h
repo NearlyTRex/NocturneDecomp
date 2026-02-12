@@ -3,13 +3,13 @@
 // Function prototypes for core/terrain.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_terrain.cpp_CTerrain_ctor_FUN_005e1ef0
+// Original: core_terrain.cpp_CTerrain_init_FUN_005e1ef0
 // Address: 005e1ef0
-CTerrain * __cdecl CTerrain::ctor(CTerrain *this_ptr);
+void __cdecl CTerrain::init(CTerrain *this_ptr);
 
-// Original: core_terrain.cpp_CTerrain_dtor_FUN_005e1f30
+// Original: core_terrain.cpp_CTerrain_free_FUN_005e1f30
 // Address: 005e1f30
-CTerrain * __cdecl CTerrain::dtor(CTerrain *this_ptr);
+void __cdecl CTerrain::free(CTerrain *this_ptr);
 
 // Original: core_terrain.cpp_CTerrain_render_FUN_005e1f50
 // Address: 005e1f50

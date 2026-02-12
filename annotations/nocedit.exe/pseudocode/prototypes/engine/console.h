@@ -13,7 +13,7 @@ CConsole * __cdecl CConsole::ctor(CConsole *this_ptr,int width,int height,int sc
 
 // Original: engine_console.cpp_CConsole_dtor_FUN_00441880
 // Address: 00441880
-CConsole * __cdecl CConsole::dtor(CConsole *this_ptr);
+CConsole * __cdecl CConsole::dtor(CConsole *this_ptr,uint flags);
 
 // Original: engine_console.cpp_CConsole_printf_FUN_00441890
 // Address: 00441890

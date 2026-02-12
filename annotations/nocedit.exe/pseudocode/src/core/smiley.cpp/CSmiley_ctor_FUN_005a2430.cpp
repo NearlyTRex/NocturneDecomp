@@ -19,7 +19,7 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005a2430(CSmiley *this_ptr)
             (&(pCVar3->base).base.model,"smiley.dfm");
   pCVar3->unk1 = 0;
   pCVar3->guard_distance = 100.0;
-  (pCVar3->base).base.field54_0x2ddc = 0.6;
+  (pCVar3->base).base.collision_cylinder_height = 0.6;
   (pCVar3->base).base.collision_cylinder_radius = 0.9;
   pCVar3->unk2[0x2c] = '\0';
   fVar1 = 50.0f;
@@ -39,7 +39,7 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005a2430(CSmiley *this_ptr)
   pCVar3->unk2[0x39] = '\0';
   pCVar3->unk2[0x3a] = '\0';
   pCVar3->unk2[0x3b] = '\0';
-  (pCVar3->base).base.field56_0x2de4 = fVar1;
-  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
 }

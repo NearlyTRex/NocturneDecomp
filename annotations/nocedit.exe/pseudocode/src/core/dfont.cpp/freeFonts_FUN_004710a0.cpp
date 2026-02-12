@@ -14,35 +14,35 @@ void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void)
   g_CurrentDebugLine = 199;
   g_CurrentDebugFilename = "..\\core\\dfont.cpp";
   if (g_MediumFont != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_MediumFont);
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_MediumFont,0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
   }
   g_CurrentDebugFilename = "..\\core\\dfont.cpp";
   g_CurrentDebugLine = 0xc9;
   g_MediumFont = (CBitFont *)0x0;
   if (g_TinyFont != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_TinyFont);
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_TinyFont,0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
   }
   g_CurrentDebugFilename = "..\\core\\dfont.cpp";
   g_CurrentDebugLine = 0xcb;
   g_TinyFont = (CBitFont *)0x0;
   if (g_ThemeFont != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_ThemeFont);
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_ThemeFont,0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
   }
   g_CurrentDebugFilename = "..\\core\\dfont.cpp";
   g_CurrentDebugLine = 0xcd;
   g_ThemeFont = (CBitFont *)0x0;
   if (g_SmallEditorFont != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_SmallEditorFont);
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_SmallEditorFont,0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
   }
   g_CurrentDebugFilename = "..\\core\\dfont.cpp";
   g_CurrentDebugLine = 0xcf;
   g_SmallEditorFont = (CBitFont *)0x0;
   if (g_ConsoleFont != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_ConsoleFont);
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_ConsoleFont,0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
   }
   g_EditorFont = (CBitFont *)0x0;
@@ -50,7 +50,7 @@ void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void)
   g_CurrentDebugLine = 0xd2;
   g_ConsoleFont = (CBitFont *)0x0;
   if (g_MicroFont != (CBitFont *)0x0) {
-    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_MicroFont);
+    pCVar1 = engine_font_cpp_CBitFont_dtor_FUN_004cceb0(g_MicroFont,0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
   }
   g_MicroFont = (CBitFont *)0x0;

@@ -125,7 +125,7 @@ CPoly * __cdecl CPoly::ctor(CPoly *this_ptr);
 
 // Original: shape_superopt.cpp_CPoly_dtor_FUN_005cc660
 // Address: 005cc660
-CPoly * __cdecl CPoly::dtor(CPoly *this_ptr);
+CPoly * __cdecl CPoly::dtor(CPoly *this_ptr,uint flags);
 
 // Original: shape_superopt.cpp_CPoly_init_FUN_005cc670
 // Address: 005cc670
@@ -273,7 +273,7 @@ CObj * __cdecl CObj::ctor(CObj *this_ptr);
 
 // Original: shape_superopt.cpp_CObj_dtor_FUN_005d2260
 // Address: 005d2260
-CObj * __cdecl CObj::dtor(CObj *this_ptr);
+CObj * __cdecl CObj::dtor(CObj *this_ptr,uint flags);
 
 // Original: shape_superopt.cpp_CObj_reset_FUN_005d2280
 // Address: 005d2280
@@ -541,7 +541,7 @@ COptimize * __cdecl COptimize::ctor(COptimize *this_ptr);
 
 // Original: shape_superopt.cpp_COptimize_dtor_FUN_005d6fd0
 // Address: 005d6fd0
-COptimize * __cdecl COptimize::dtor(COptimize *this_ptr);
+COptimize * __cdecl COptimize::dtor(COptimize *this_ptr,uint flags);
 
 // Original: shape_superopt.cpp_COptimize_FUN_005d7000
 // Address: 005d7000
@@ -629,7 +629,7 @@ CVec * __cdecl CVec::ctor(CVec *this_ptr);
 
 // Original: shape_superopt.cpp_CVec_dtor_FUN_005d8150
 // Address: 005d8150
-CVec * __cdecl CVec::dtor(CVec *this_ptr);
+CVec * __cdecl CVec::dtor(CVec *this_ptr,uint flags);
 
 // Original: shape_superopt.cpp_CVec_copy_FUN_005d8160
 // Address: 005d8160
@@ -741,8 +741,8 @@ void __cdecl FUN_005d8710(void);
 
 // Original: shape_superopt.cpp_CP2D_dtor_FUN_005d87c0
 // Address: 005d87c0
-CP2D * __cdecl CP2D::dtor(CP2D *this_ptr);
+CP2D * __cdecl CP2D::dtor(CP2D *this_ptr,uint flags);
 
 // Original: shape_superopt.cpp_CP3D_dtor_FUN_005d87d0
 // Address: 005d87d0
-CP3D * __cdecl CP3D::dtor(CP3D *this_ptr);
+CP3D * __cdecl CP3D::dtor(CP3D *this_ptr,uint flags);

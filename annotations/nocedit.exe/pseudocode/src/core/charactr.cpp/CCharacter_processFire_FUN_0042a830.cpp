@@ -58,11 +58,11 @@ core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float
         fVar2 = (float)65535;
         pCVar9 = this_ptr;
         do {
-          iVar5 = *(int *)(pCVar9->field65_0x2f1c[0].unk + 4);
+          iVar5 = *(int *)(pCVar9->fire_effects[0].unk + 4);
           iVar8 = iVar8 + 1;
           (&DAT_00823c54)[iVar5] =
                (float)(&DAT_00823c54)[iVar5] +
-               (*(float *)(pCVar9->field65_0x2f1c[0].unk + 0x14) * fVar2) / fVar1;
+               (*(float *)(pCVar9->fire_effects[0].unk + 0x14) * fVar2) / fVar1;
           pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
         } while (iVar8 < this_ptr->fire_count);
       }
@@ -119,10 +119,10 @@ core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float
   local_20 = 0;
   if (0 < this_ptr->fire_count) {
     local_38 = (CSkeleton *)(this_ptr->model).bone_transform.bone_world_matrices;
-    local_40 = this_ptr->field66_0x33cc;
-    pSVar10 = this_ptr->field65_0x2f1c;
+    local_40 = this_ptr->flames;
+    pSVar10 = this_ptr->fire_effects;
     local_1c = this_ptr;
-    pCVar11 = &this_ptr->field66_0x33cc[0].base.location;
+    pCVar11 = &this_ptr->flames[0].base.location;
     do {
       if ((this_ptr->model).part_data.visibility_flags[*(int *)pSVar10->unk] != 0) {
         (this_ptr->base).is_transparent = 1;
@@ -137,9 +137,9 @@ core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float
         (pCVar11->position).y = pCVar6->y;
         (pCVar11->position).z = pCVar6->z;
         fVar1 = (float)0.5;
-        local_1c->field66_0x33cc[0].flame_size.x = *(float *)(pSVar10->unk + 0x14) * fVar1;
-        local_1c->field66_0x33cc[0].flame_size.y = *(float *)(pSVar10->unk + 0x14);
-        local_1c->field66_0x33cc[0].flame_size.z = *(float *)(pSVar10->unk + 0x14) * fVar1;
+        local_1c->flames[0].flame_size.x = *(float *)(pSVar10->unk + 0x14) * fVar1;
+        local_1c->flames[0].flame_size.y = *(float *)(pSVar10->unk + 0x14);
+        local_1c->flames[0].flame_size.z = *(float *)(pSVar10->unk + 0x14) * fVar1;
         (*(local_40[local_20].base.vtable._ub)->process)(&local_40[local_20].base,delta_time);
       }
       pSVar10 = pSVar10 + 1;
@@ -149,7 +149,7 @@ core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float
     } while (local_20 < this_ptr->fire_count);
   }
   if ((this_ptr->is_ethereal == 0) && (0 < this_ptr->fire_count)) {
-    local_18 = (CSkeleton *)this_ptr->field65_0x2f1c;
+    local_18 = (CSkeleton *)this_ptr->fire_effects;
     local_34 = (CDeformableModel *)(delta_time * 2.0f);
     local_28 = 0;
     do {
@@ -168,7 +168,7 @@ core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float
               pCVar9 = this_ptr;
               if (0 < this_ptr->fire_count) {
                 do {
-                  if (iVar5 == *(int *)(pCVar9->field65_0x2f1c[0].unk + 4)) break;
+                  if (iVar5 == *(int *)(pCVar9->fire_effects[0].unk + 4)) break;
                   uVar7 = uVar7 + 1;
                   pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
                 } while ((int)uVar7 < this_ptr->fire_count);
@@ -186,7 +186,7 @@ core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float
           pCVar9 = this_ptr;
           do {
             if (*(int *)(*(int *)(pSStack_14->unk + 4) * 0x24 + unaff_EBP + 0x2857c) ==
-                *(int *)(pCVar9->field65_0x2f1c[0].unk + 4)) break;
+                *(int *)(pCVar9->fire_effects[0].unk + 4)) break;
             iVar8 = iVar8 + 1;
             pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
           } while (iVar8 < this_ptr->fire_count);

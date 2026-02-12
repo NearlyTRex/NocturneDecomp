@@ -74,7 +74,7 @@ section .text
     PUSH 0x0                            ; 005a630f
     PUSH EAX                            ; 005a6311
     CALL sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530 ; 005a6312
-        ;   XREF to: 00534530 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder * this_ptr)
+        ;   XREF to: 00534530 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a6317
     PUSH EAX                            ; 005a631a
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005a631b

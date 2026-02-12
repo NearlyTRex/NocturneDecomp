@@ -6,16 +6,19 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
 
 {
-  int iVar1;
-  CBoundingBox3D *pCVar2;
-  int iVar3;
-  CBoundingBox3D *pCVar4;
-  int iVar5;
+  void *pvVar1;
+  int iVar2;
+  CBoundingBox3D *pCVar3;
+  int iVar4;
+  CBoundingBox3D *pCVar5;
   int iVar6;
   int iVar7;
+  int iVar8;
   CBoundingBox3D local_c8;
   float local_a4 [3];
   float local_98;
@@ -53,7 +56,7 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   CMorph *local_18;
   CMorph *local_14;
   
-  if ((this_ptr[0x15].unk < 3) || (this_ptr[0x197].unk < 3)) {
+  if ((this_ptr->models[0].num_points < 3) || (this_ptr->models[1].num_points < 3)) {
     g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 799;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorph::getReady - can't do this unless we have setup both models!");
@@ -63,92 +66,94 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   local_2c = 0;
   local_24 = &local_c8;
   do {
-    pCVar4 = local_24;
-    iVar1 = local_38[0x16].unk;
-    pCVar2 = (CBoundingBox3D *)(iVar1 + 4);
-    if (pCVar2 != local_24) {
-      (local_24->min).x = (pCVar2->min).x;
-      (pCVar4->min).y = *(float *)(iVar1 + 8);
-      (pCVar4->min).z = *(float *)(iVar1 + 0xc);
+    pCVar5 = local_24;
+    pvVar1 = local_38->models[0].points;
+    pCVar3 = (CBoundingBox3D *)((int)pvVar1 + 4);
+    if (pCVar3 != local_24) {
+      (local_24->min).x = (pCVar3->min).x;
+      (pCVar5->min).y = *(float *)((int)pvVar1 + 8);
+      (pCVar5->min).z = *(float *)((int)pvVar1 + 0xc);
     }
-    if ((CBoundingBox3D *)&pCVar4->max != pCVar2) {
-      (pCVar4->max).x = (pCVar2->min).x;
-      (pCVar4->max).y = *(float *)(iVar1 + 8);
-      (pCVar4->max).z = *(float *)(iVar1 + 0xc);
+    if ((CBoundingBox3D *)&pCVar5->max != pCVar3) {
+      (pCVar5->max).x = (pCVar3->min).x;
+      (pCVar5->max).y = *(float *)((int)pvVar1 + 8);
+      (pCVar5->max).z = *(float *)((int)pvVar1 + 0xc);
     }
-    pCVar4 = local_24;
-    iVar1 = local_2c;
-    iVar6 = 0x10;
-    for (iVar7 = 1; iVar7 < *(int *)((int)&this_ptr[0x15].unk + iVar1); iVar7 = iVar7 + 1) {
-      iVar3 = *(int *)((int)&this_ptr[0x16].unk + iVar1) + iVar6;
-      iVar6 = iVar6 + 0x10;
-      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar4,(CVector3f *)(iVar3 + 4));
+    pCVar5 = local_24;
+    iVar2 = local_2c;
+    iVar7 = 0x10;
+    for (iVar8 = 1;
+        iVar8 < *(int *)(this_ptr->models[0].textures[0].base.texture_name + iVar2 + -0x1c);
+        iVar8 = iVar8 + 1) {
+      iVar4 = *(int *)(this_ptr->models[0].textures[0].base.texture_name + iVar2 + -0x18) + iVar7;
+      iVar7 = iVar7 + 0x10;
+      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar5,(CVector3f *)(iVar4 + 4));
     }
     local_2c = local_2c + 0x608;
     local_24 = local_24 + 1;
-    local_38 = local_38 + 0x182;
+    local_38 = (CMorph *)(local_38->models + 1);
   } while (local_2c != 0xc10);
   local_20 = &local_c8.max;
   local_1c = local_a4;
-  local_34 = this_ptr + 0x182;
+  local_34 = (CMorph *)(this_ptr->models + 1);
   local_28 = 0;
   local_30 = this_ptr;
   do {
-    iVar1 = local_28;
+    iVar2 = local_28;
     local_14 = local_30;
-    iVar6 = 1 - local_28;
+    iVar7 = 1 - local_28;
     local_18 = local_34;
-    pCVar2 = &local_c8 + iVar6;
-    local_8c = *local_1c - (pCVar2->min).x;
-    local_88 = local_1c[1] - (&local_c8)[iVar6].min.y;
-    pCVar4 = &local_c8 + local_28;
-    local_84 = local_1c[2] - (&local_c8)[iVar6].min.z;
-    local_5c = local_20->x - (pCVar4->min).x;
+    pCVar3 = &local_c8 + iVar7;
+    local_8c = *local_1c - (pCVar3->min).x;
+    local_88 = local_1c[1] - (&local_c8)[iVar7].min.y;
+    pCVar5 = &local_c8 + local_28;
+    local_84 = local_1c[2] - (&local_c8)[iVar7].min.z;
+    local_5c = local_20->x - (pCVar5->min).x;
     local_58 = local_20->y - (&local_c8)[local_28].min.y;
     local_54 = local_20->z - (&local_c8)[local_28].min.z;
     local_68 = local_8c / local_5c;
-    local_44 = *local_1c - (pCVar2->min).x;
-    local_40 = local_1c[1] - (&local_c8)[iVar6].min.y;
-    local_3c = local_1c[2] - (&local_c8)[iVar6].min.z;
-    local_74 = local_20->x - (pCVar4->min).x;
+    local_44 = *local_1c - (pCVar3->min).x;
+    local_40 = local_1c[1] - (&local_c8)[iVar7].min.y;
+    local_3c = local_1c[2] - (&local_c8)[iVar7].min.z;
+    local_74 = local_20->x - (pCVar5->min).x;
     local_70 = local_20->y - (&local_c8)[local_28].min.y;
     local_6c = local_20->z - (&local_c8)[local_28].min.z;
     local_64 = local_40 / local_70;
-    local_98 = *local_1c - (pCVar2->min).x;
-    local_94 = local_1c[1] - (&local_c8)[iVar6].min.y;
-    local_90 = local_1c[2] - (&local_c8)[iVar6].min.z;
-    local_80 = local_20->x - (pCVar4->min).x;
+    local_98 = *local_1c - (pCVar3->min).x;
+    local_94 = local_1c[1] - (&local_c8)[iVar7].min.y;
+    local_90 = local_1c[2] - (&local_c8)[iVar7].min.z;
+    local_80 = local_20->x - (pCVar5->min).x;
     local_7c = local_20->y - (&local_c8)[local_28].min.y;
     local_78 = local_20->z - (&local_c8)[local_28].min.z;
     local_60 = local_90 / local_78;
-    iVar7 = 0;
-    if (0 < local_30[0x15].unk) {
-      iVar3 = 0;
+    iVar8 = 0;
+    if (0 < local_30->models[0].num_points) {
+      iVar4 = 0;
       do {
-        iVar5 = local_14[0x16].unk + iVar3;
-        local_50 = *(float *)(iVar5 + 4);
-        local_4c = *(float *)(iVar5 + 8);
-        local_48 = *(float *)(iVar5 + 0xc);
-        if (this_ptr[0x30a].unk != 0) {
-          local_50 = *(float *)(iVar5 + 4) - (pCVar4->min).x;
+        pvVar1 = local_14->models[0].points;
+        local_50 = *(float *)((int)pvVar1 + iVar4 + 4);
+        local_4c = *(float *)((int)pvVar1 + iVar4 + 8);
+        local_48 = *(float *)((int)pvVar1 + iVar4 + 0xc);
+        if (this_ptr->rescale_enabled != 0) {
+          local_50 = local_50 - (pCVar5->min).x;
           local_50 = local_50 * local_68;
-          local_4c = *(float *)(iVar5 + 8) - (&local_c8)[iVar1].min.y;
+          local_4c = local_4c - (&local_c8)[iVar2].min.y;
           local_4c = local_4c * local_64;
-          local_48 = (*(float *)(iVar5 + 0xc) - (&local_c8)[iVar1].min.z) * local_60;
-          local_50 = local_50 + (pCVar2->min).x;
-          local_4c = local_4c + (&local_c8)[iVar6].min.y;
-          local_48 = local_48 + (&local_c8)[iVar6].min.z;
+          local_48 = (local_48 - (&local_c8)[iVar2].min.z) * local_60;
+          local_50 = local_50 + (pCVar3->min).x;
+          local_4c = local_4c + (&local_c8)[iVar7].min.y;
+          local_48 = local_48 + (&local_c8)[iVar7].min.z;
         }
-        iVar5 = core_morph_cpp_FUN_0052b280();
-        *(int *)(local_14[0x16].unk + iVar3) = iVar5;
-        iVar7 = iVar7 + 1;
-        iVar3 = iVar3 + 0x10;
-      } while (iVar7 < local_14[0x15].unk);
+        iVar6 = core_morph_cpp_FUN_0052b280();
+        *(int *)((int)local_14->models[0].points + iVar4) = iVar6;
+        iVar8 = iVar8 + 1;
+        iVar4 = iVar4 + 0x10;
+      } while (iVar8 < local_14->models[0].num_points);
     }
     local_28 = local_28 + 1;
     local_1c = local_1c + -6;
-    local_34 = local_34 + -0x182;
-    local_30 = local_30 + 0x182;
+    local_34 = (CMorph *)((int)(local_34 + 0xffffffff) + 0x624);
+    local_30 = (CMorph *)(local_30->models + 1);
     local_20 = local_20 + 2;
   } while (local_28 < 2);
   return;

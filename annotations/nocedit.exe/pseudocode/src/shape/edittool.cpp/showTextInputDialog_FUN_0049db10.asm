@@ -324,13 +324,13 @@ section .text
     LEA EAX,[ESP + 0x144]               ; 0049ddfe
     PUSH EAX                            ; 0049de05
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 0049de06
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049de0b
     PUSH 0x0                            ; 0049de0e
     LEA EAX,[ESP + 0x228]               ; 0049de10
     PUSH EAX                            ; 0049de17
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 0049de18
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049de1d
     MOV EAX,EBX                         ; 0049de20
     ADD ESP,0x310                       ; 0049de22

@@ -234,19 +234,19 @@ section .text
     LEA EAX,[ESP + 0x204]               ; 005072fa
     PUSH EAX                            ; 00507301
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 00507302
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507307
     PUSH EDI                            ; 0050730a
     LEA EAX,[ESP + 0x2e8]               ; 0050730b
     PUSH EAX                            ; 00507312
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 00507313
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507318
     PUSH EDI                            ; 0050731b
     LEA EAX,[ESP + 0x3cc]               ; 0050731c
     PUSH EAX                            ; 00507323
     CALL shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20 ; 00507324
-        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr)
+        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507329
     MOV EAX,EDI                         ; 0050732c
     ADD ESP,0x400                       ; 0050732e
@@ -269,20 +269,20 @@ section .text
     LEA EAX,[ESP + 0x204]               ; 00507354
     PUSH EAX                            ; 0050735b
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 0050735c
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507361
     PUSH 0x0                            ; 00507364
     LEA EAX,[ESP + 0x2e8]               ; 00507366
     PUSH EAX                            ; 0050736d
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 0050736e
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507373
     PUSH 0x0                            ; 00507376
     LEA EAX,[ESP + 0x3cc]               ; 00507378
     PUSH EAX                            ; 0050737f
     MOV EDI,0x1                         ; 00507380
     CALL shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20 ; 00507385
-        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr)
+        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0050738a
     MOV EAX,EDI                         ; 0050738d
     ADD ESP,0x400                       ; 0050738f

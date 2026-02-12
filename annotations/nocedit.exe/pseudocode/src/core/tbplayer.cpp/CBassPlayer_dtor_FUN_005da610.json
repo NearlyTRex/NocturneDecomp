@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 104,
+    "complexity_score": 70,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 1,
-    "pseudocode_lines": 34,
-    "suspect_count": 6,
+    "pseudocode_lines": 35,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset",
-      "stack_param"
+      "negative_offset"
     ],
-    "total_lines": 117
+    "total_lines": 118
   },
   "cross_references": [],
   "function": {
@@ -29,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_tbplayer.cpp_CBassPlayer_dtor_FUN_005da610",
-    "signature": "CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlayer *this_ptr)"
+    "signature": "CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlayer *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -38,19 +37,19 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30"
     },
     {
-      "addr": "00412700",
-      "is_variadic": false,
-      "name": "core_armour.cpp_freeFires_FUN_00412700"
-    },
-    {
       "addr": "00412720",
       "is_variadic": false,
-      "name": "core_armour.cpp_freeFlames_FUN_00412720"
+      "name": "core_armour.cpp_CFlame_arrdtor_FUN_00412720"
     },
     {
       "addr": "004126e0",
       "is_variadic": false,
-      "name": "core_armour.cpp_freeVectors_FUN_004126e0"
+      "name": "core_armour.cpp_CVector3f_arrdtor_FUN_004126e0"
+    },
+    {
+      "addr": "00412700",
+      "is_variadic": false,
+      "name": "core_armour.cpp_SFire_arrdtor_FUN_00412700"
     },
     {
       "addr": "0043bf80",
@@ -95,8 +94,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.701492537313433,
@@ -123,10 +122,10 @@
     "pcode_op_count": 315
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -135,51 +134,37 @@
         "offset": 4,
         "size": 4,
         "type": "CBassPlayer *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "byte in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 & 4) != 0) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "pCVar1[-1].",
-      "text": "((CFlame *)(pCVar1[-1].height_cache_tags[0xb] + 0x39));",
+      "text": "((CFlame *)(pCVar1[-1].height_cache_tags[0xb] + 0x39),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 24,
       "match": "pCVar2[-2].",
-      "text": "pSVar3 = core_armour_cpp_freeFires_FUN_00412700((SFire *)(pCVar2[-2].base.create_event + 0x20));",
+      "text": "((SFire *)(pCVar2[-2].base.create_event + 0x20),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 31,
+      "line": 32,
       "match": "pCVar6[-1].",
       "text": "((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000008 & 2) == 0) {",
-      "type": "stack_param"
     }
   ],
   "vtable_info": {

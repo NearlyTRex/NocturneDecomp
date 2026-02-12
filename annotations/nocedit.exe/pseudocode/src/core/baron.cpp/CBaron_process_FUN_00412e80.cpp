@@ -52,7 +52,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
       this_ptr->summoned = 1;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar9->motion_controller,6,1)
       ;
-      this_ptr->unk2 = 1;
+      this_ptr->unk13 = 1;
     }
   }
   else {
@@ -114,10 +114,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
         iVar3 = 2;
       }
       if ((this_ptr->base).action_bindings.fire_key != 0) {
-        this_ptr->unk1[0x14] = '\x01';
-        this_ptr->unk1[0x15] = '\0';
-        this_ptr->unk1[0x16] = '\0';
-        this_ptr->unk1[0x17] = '\0';
+        this_ptr->unk6 = 1;
         iVar3 = 4;
         (this_ptr->base).action_bindings.fire_key = 0;
       }
@@ -150,26 +147,23 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
         local_54.y = pCVar4->y;
         local_54.z = pCVar4->z;
       }
-      if (*(int *)(this_ptr->unk1 + 0x14) == 0) {
+      if (this_ptr->unk6 == 0) {
         pCStack_c0 = &local_30;
         core_fire_cpp_CFireEffect_FUN_004c90c0(g_CFireEffectPtr);
         pCStack_c0 = &local_54;
         core_fire_cpp_CFireEffect_FUN_004c90c0(g_CFireEffectPtr);
       }
-      if ((CVector3f *)(this_ptr->unk1 + 0x18) != &local_30) {
-        ((CVector3f *)(this_ptr->unk1 + 0x18))->x = local_30.x;
-        *(float *)(this_ptr->unk1 + 0x1c) = local_30.y;
-        *(float *)(this_ptr->unk1 + 0x20) = local_30.z;
+      if ((CVector3f *)&this_ptr->unk7 != &local_30) {
+        this_ptr->unk7 = (int)local_30.x;
+        this_ptr->unk8 = (int)local_30.y;
+        this_ptr->unk9 = (int)local_30.z;
       }
-      if ((CVector3f *)(this_ptr->unk1 + 0x24) != &local_54) {
-        ((CVector3f *)(this_ptr->unk1 + 0x24))->x = local_54.x;
-        *(float *)(this_ptr->unk1 + 0x28) = local_54.y;
-        *(float *)(this_ptr->unk1 + 0x2c) = local_54.z;
+      if ((CVector3f *)&this_ptr->unk10 != &local_54) {
+        this_ptr->unk10 = (int)local_54.x;
+        this_ptr->unk11 = (int)local_54.y;
+        this_ptr->unk12 = (int)local_54.z;
       }
-      this_ptr->unk1[0x14] = '\0';
-      this_ptr->unk1[0x15] = '\0';
-      this_ptr->unk1[0x16] = '\0';
-      this_ptr->unk1[0x17] = '\0';
+      this_ptr->unk6 = 0;
     }
     goto switchD_0041345d_default;
   }
@@ -205,11 +199,10 @@ switchD_0041345d_default:
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
   pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-  (this_ptr->base).base.field7_0x2428.y =
-       (this_ptr->base).base.field7_0x2428.y - delta_time * fVar10;
-  local_3c = (this_ptr->base).base.field7_0x2428.x * delta_time;
-  local_38 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-  local_34 = (this_ptr->base).base.field7_0x2428.z * delta_time;
+  (this_ptr->base).base.velocity.y = (this_ptr->base).base.velocity.y - delta_time * fVar10;
+  local_3c = (this_ptr->base).base.velocity.x * delta_time;
+  local_38 = (this_ptr->base).base.velocity.y * delta_time;
+  local_34 = (this_ptr->base).base.velocity.z * delta_time;
   local_6c = local_6c + local_3c;
   local_68 = local_68 + local_38;
   local_64 = local_64 + local_34;
@@ -217,9 +210,9 @@ switchD_0041345d_default:
   pCVar9 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar9);
   blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-  fVar10 = *(float *)(this_ptr->unk1 + 0xc);
+  fVar10 = this_ptr->unk4;
   iVar3 = INT_00822498;
-  core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)this_ptr->unk1,&local_a4);
+  core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)&this_ptr->unk1,&local_a4);
   source_quaternions = &local_94;
   local_94.w = local_a4.w;
   puVar7 = (uint *)((int)&local_94 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);

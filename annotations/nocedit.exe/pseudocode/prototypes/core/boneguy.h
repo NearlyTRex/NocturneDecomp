@@ -27,9 +27,9 @@ CDemonActorType * __cdecl CBoneGuy::getActorType(CBoneGuy *this_ptr);
 // Address: 0041b860
 float * __cdecl FUN_0041b860(void);
 
-// Original: core_boneguy.cpp_FUN_0041ba10
+// Original: core_boneguy.cpp_hsvToRgb_FUN_0041ba10
 // Address: 0041ba10
-float * __cdecl FUN_0041ba10(void);
+CVector3f * __cdecl hsvToRgb(CVector3f *out_rgb,CVector3f *in_hsv);
 
 // Original: core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0
 // Address: 0041bbc0
@@ -109,8 +109,8 @@ SBoneGuyBox * __cdecl SBoneGuyBox::ctor(SBoneGuyBox *this_ptr);
 
 // Original: core_boneguy.cpp_SBoneGuyBox_dtor_FUN_0041db20
 // Address: 0041db20
-SBoneGuyBox * __cdecl SBoneGuyBox::dtor(SBoneGuyBox *this_ptr);
+SBoneGuyBox * __cdecl SBoneGuyBox::dtor(SBoneGuyBox *this_ptr,uint flags);
 
-// Original: core_boneguy.cpp_freeBoneGuyBoxes_FUN_0041db30
+// Original: core_boneguy.cpp_SBoneGuyBox_arrdtor_FUN_0041db30
 // Address: 0041db30
-SBoneGuyBox * __cdecl freeBoneGuyBoxes(SBoneGuyBox *objs);
+SBoneGuyBox * __cdecl SBoneGuyBox::arrdtor(SBoneGuyBox *objs,uint flags);

@@ -201,7 +201,7 @@ CMP3Decoder * __cdecl CMP3Decoder::ctor(CMP3Decoder *this_ptr);
 
 // Original: sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530
 // Address: 00534530
-CMP3Decoder * __cdecl CMP3Decoder::dtor(CMP3Decoder *this_ptr);
+CMP3Decoder * __cdecl CMP3Decoder::dtor(CMP3Decoder *this_ptr,uint flags);
 
 // Original: sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
 // Address: 00534550

@@ -183,6 +183,6 @@ CLightActor * __cdecl CLightActor::dtor(CLightActor *this_ptr,uint flags);
 // Address: 00423670
 CBoxActor * __cdecl CBoxActor::dtor(CBoxActor *this_ptr,uint flags);
 
-// Original: core_boxactor.cpp_freeFilters_FUN_004236e0
+// Original: core_boxactor.cpp_CDemonFilter_arrdtor_FUN_004236e0
 // Address: 004236e0
-CDemonFilter * __cdecl freeFilters(CDemonFilter *objs);
+CDemonFilter * __cdecl CDemonFilter::arrdtor(CDemonFilter *objs,uint flags);

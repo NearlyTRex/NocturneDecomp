@@ -2,58 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 22,
-        "message": "incompatible pointer types assigning to 'CTurret_ptr_1412' (aka 'CTurret *') from 'CKeyFramedModelInstance *'"
-      },
-      {
         "category": "other",
-        "column": 19,
-        "line": 23,
-        "message": "member reference type 'CTurret_ptr_1412' (aka 'CTurret *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 25,
-        "message": "member reference type 'CTurret_ptr_1412' (aka 'CTurret *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 26,
-        "message": "no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 37,
-        "message": "member reference type 'CTurret_ptr_1412' (aka 'CTurret *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 18,
+        "column": 14,
         "line": 60,
-        "message": "no member named 'animation_state' in 'CTurret'"
+        "message": "type 'CTurret_ptr_1412' does not provide a subscript operator"
       },
       {
-        "category": "missing_member",
-        "column": 18,
+        "category": "other",
+        "column": 14,
         "line": 61,
-        "message": "no member named 'animation_state' in 'CTurret'"
+        "message": "type 'CTurret_ptr_1412' does not provide a subscript operator"
       },
       {
-        "category": "missing_member",
-        "column": 18,
+        "category": "other",
+        "column": 14,
         "line": 62,
-        "message": "no member named 'animation_state' in 'CTurret'"
+        "message": "type 'CTurret_ptr_1412' does not provide a subscript operator"
       },
       {
-        "category": "missing_member",
-        "column": 18,
+        "category": "other",
+        "column": 14,
         "line": 63,
-        "message": "no member named 'animation_state' in 'CTurret'"
+        "message": "type 'CTurret_ptr_1412' does not provide a subscript operator"
       }
     ],
     "success": false,
@@ -250,14 +220,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "ADJ",
-      "text": "ADJ(this_ptr_00).base.base.vtable._ub = &g_CTurretVTable;",
+      "text": "ADJ(this_ptr_00)->base.base.vtable._ub = &g_CTurretVTable;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "ADJ",
-      "text": "(&ADJ(this_ptr_00).base.model,\"gturret_head.kfm\");",
+      "text": "(&ADJ(this_ptr_00)->base.model,\"gturret_head.kfm\");",
       "type": "decompiler_intrinsic"
     },
     {
@@ -320,7 +290,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "ADJ",
-      "text": "ADJ(this_ptr_00).base.fire_cooldown_timer = 0.0;",
+      "text": "ADJ(this_ptr_00)->base.fire_cooldown_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {

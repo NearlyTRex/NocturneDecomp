@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SRoom * __cdecl core_set_cpp_SRoom_dtor_FUN_00571480(SRoom *this_ptr)
+; __cdecl SRoom * __cdecl core_set_cpp_SRoom_dtor_FUN_00571480(SRoom *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SRoom *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

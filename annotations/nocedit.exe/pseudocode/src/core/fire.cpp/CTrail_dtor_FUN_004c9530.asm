@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTrail * __cdecl core_fire_cpp_CTrail_dtor_FUN_004c9530(CTrail *this_ptr)
+; __cdecl CTrail * __cdecl core_fire_cpp_CTrail_dtor_FUN_004c9530(CTrail *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CTrail *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

@@ -649,7 +649,7 @@ LAB_005efff8:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_005f0010:
-  if ((local_18 == 0x13) && ((this_ptr->base).base.field43_0x2620 != 0)) {
+  if ((local_18 == 0x13) && ((this_ptr->base).base.was_rendered_opaque != 0)) {
     iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk4 + 8));
     if (iVar8 == 0) {
       uVar15 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -684,26 +684,26 @@ LAB_005f0010:
       actor_ptr = (CWerewolf *)(this_ptr->base).victim;
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)actor_ptr);
     }
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_ec = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_e8 = (this_ptr->base).base.field7_0x2428.y * delta_time;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_ec = (this_ptr->base).base.velocity.x * delta_time;
+    local_e8 = (this_ptr->base).base.velocity.y * delta_time;
     pCVar10 = &(this_ptr->base).base.model.accumulated_root_motion;
-    local_e4 = delta_time * (this_ptr->base).base.field7_0x2428.z;
-    pCVar2 = &(this_ptr->base).base.field6_0x241c;
+    local_e4 = delta_time * (this_ptr->base).base.velocity.z;
+    pCVar2 = &(this_ptr->base).base.position_delta;
     local_80 = local_ec + pCVar10->x;
     local_7c = local_e8 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_78 = local_e4 + (this_ptr->base).base.model.accumulated_root_motion.z;
     local_1c4.x = local_80 + pCVar2->x;
-    local_1c4.y = local_7c + (this_ptr->base).base.field6_0x241c.y;
-    local_1c4.z = local_78 + (this_ptr->base).base.field6_0x241c.z;
+    local_1c4.y = local_7c + (this_ptr->base).base.position_delta.y;
+    local_1c4.z = local_78 + (this_ptr->base).base.position_delta.z;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar10->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar2->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar2->x = (this_ptr->base).base.position_delta.y;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_1c4);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);

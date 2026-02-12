@@ -113,7 +113,7 @@ section .text
     MOV dword ptr [EBX + 0x8],ESI       ; 005d24e5
     MOV ESI,0x1                         ; 005d24e8
     CALL shape_superopt.cpp_CPoly_dtor_FUN_005cc660 ; 005d24ed
-        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
+        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005d24f2
     POP EDI                             ; 005d24f5
     MOV EAX,ESI                         ; 005d24f6

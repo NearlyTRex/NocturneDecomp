@@ -5,23 +5,23 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6506
-Successful: 5197 (79.9%)
-Failed: 1309
+Successful: 5209 (80.1%)
+Failed: 1297
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           2560
-  undeclared_identifier           1277
-  incompatible_types              1105
+  other                           2565
+  undeclared_identifier           1276
+  incompatible_types              1081
   format_error                     604
-  syntax_error                     137
-  missing_member                    74
+  syntax_error                     134
+  missing_member                    28
   lvalue_required                   26
   type_error                        20
   overload_error                     1
 
 ====================================================================================================
-CATEGORY: other (2560 errors)
+CATEGORY: other (2565 errors)
 ====================================================================================================
 
   core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
@@ -29,11 +29,11 @@ CATEGORY: other (2560 errors)
   core_charactr.cpp_CCharacter_kill_FUN_00428e30
     Line 33: C-style cast from 'CCharacter *' to 'float' is not allowed...
   core_hostage.cpp_CHostage_process_FUN_004f4bd0
-    Line 683: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
+    Line 667: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
     Line 61: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
-    Line 427: C-style cast from 'CDemonActor *' to 'float' is not allowed...
+    Line 426: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_cow.cpp_CZombieCow_process_FUN_00444310
     Line 231: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_dog.cpp_CZombieDog_process_FUN_0047f140
@@ -42,10 +42,6 @@ CATEGORY: other (2560 errors)
     Line 274: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_stranger.cpp_CStranger_FUN_005c07b0
     Line 141: C-style cast from 'CDemonActor *' to 'float' is not allowed...
-  core_bodypart.cpp_CBodyPart_ctor_FUN_00419010
-    Line 21: C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed...
-  core_boxactor.cpp_CBoxActor_ctor_FUN_00421700
-    Line 19: C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed...
   core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20
     Line 19: C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed...
   core_simbox.cpp_CSimBox_ctor_FUN_00588d40
@@ -61,7 +57,7 @@ CATEGORY: other (2560 errors)
   core_emitter.cpp_CEmitter_processInEditor_FUN_004a8fe0
     Line 109: C-style cast from 'CEmitter *' to 'float' is not allowed...
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
-    Line 51: C-style cast from 'CEnemy *' to 'float' is not allowed...
+    Line 53: C-style cast from 'CEnemy *' to 'float' is not allowed...
   core_frankgen.cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0
     Line 35: C-style cast from 'CFrankenstienMachine *' to 'float' is not allowed...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
@@ -84,11 +80,15 @@ CATEGORY: other (2560 errors)
     Line 48: C-style cast from 'CPlatform *' to 'float' is not allowed...
   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
     Line 45: C-style cast from 'CQuaternion4f *' to 'float' is not allowed...
+  core_sentinel.cpp_CSentinel_process_FUN_00568030
+    Line 241: C-style cast from 'CSentinel *' to 'float' is not allowed...
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
+    Line 88: C-style cast from 'CSfxSample *' to 'float' is not allowed...
 
-  ... and 484 more errors
+  ... and 471 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (1277 errors)
+CATEGORY: undeclared_identifier (1276 errors)
 ====================================================================================================
 
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
@@ -106,7 +106,7 @@ CATEGORY: undeclared_identifier (1277 errors)
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
     Line 31: use of undeclared identifier 'DAT_0066e177'; did you mean 'DAT_0066e158'?...
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
-    Line 74: use of undeclared identifier 'DAT_0066e740'; did you mean 'DAT_0066e940'?...
+    Line 76: use of undeclared identifier 'DAT_0066e740'; did you mean 'DAT_0066e940'?...
   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
     Line 142: use of undeclared identifier 'DAT_0067e6c8'...
   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680
@@ -152,10 +152,10 @@ CATEGORY: undeclared_identifier (1277 errors)
   core_msnedit.cpp_FUN_00536e20
     Line 35: use of undeclared identifier 'DAT_02f7a02c'...
 
-  ... and 479 more errors
+  ... and 478 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (1105 errors)
+CATEGORY: incompatible_types (1081 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -180,8 +180,6 @@ CATEGORY: incompatible_types (1105 errors)
     Line 41: assigning to 'CHeroPlaceholder *' from incompatible type 'void *'...
   core_succubus.cpp_CSuccubus_process_FUN_005c6e90
     Line 229: assigning to 'CHotDemon *' from incompatible type 'void *'...
-  core_bugs.cpp_CBugs_ctor_FUN_00424cb0
-    Line 21: assigning to 'CKeyFramedModelInstance *' from incompatible type 'void *'...
   support_codec.cpp_CLZWDictionary_init_FUN_0043ee60
     Line 20: assigning to 'CLZWDictionaryNode *' from incompatible type 'void *'...
   shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
@@ -194,6 +192,10 @@ CATEGORY: incompatible_types (1105 errors)
     Line 24: assigning to 'CLodVert *' from incompatible type 'void *'...
   sound_sndmain.cpp_startSfx_FUN_005a8e90
     Line 140: assigning to 'CMP3Decoder *' from incompatible type 'void *'...
+  core_main.c_showDeveloperToolsMenu_FUN_005073a0
+    Line 117: assigning to 'CMorph *' from incompatible type 'void *'...
+  core_morph.cpp_CMorph_ctor_FUN_0052b310
+    Line 14: assigning to 'CMorph *' from incompatible type 'void *'...
   cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0
     Line 60: assigning to 'CPackedBitmap *' from incompatible type 'void *'...
   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
@@ -216,10 +218,8 @@ CATEGORY: incompatible_types (1105 errors)
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
   shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
     Line 26: assigning to 'CPoly *' from incompatible type 'void *'...
-  core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910
-    Line 27: assigning to 'CQuaternion4f *' from incompatible type 'void *'...
 
-  ... and 525 more errors
+  ... and 511 more errors
 
 ====================================================================================================
 CATEGORY: format_error (604 errors)
@@ -289,7 +289,7 @@ CATEGORY: format_error (604 errors)
   ... and 136 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (137 errors)
+CATEGORY: syntax_error (134 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -298,14 +298,10 @@ CATEGORY: syntax_error (137 errors)
     Line 250: expected expression...
   core_baron.cpp_CBaronWeapon_FUN_00413f20
     Line 32: expected expression...
-  core_boneguy.cpp_CBoneGuy_FUN_0041cc40
-    Line 46: expected expression...
   core_boneguy.cpp_FUN_0041b700
     Line 21: expected expression...
   core_boxactor.cpp_CBoxActor_FUN_00422590
     Line 28: expected expression...
-  core_bugs.cpp_CBugs_FUN_00425fe0
-    Line 81: expected expression...
   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050
     Line 117: expected expression...
   core_curtain.cpp_CCurtain_process_FUN_0044a920
@@ -352,11 +348,15 @@ CATEGORY: syntax_error (137 errors)
     Line 28: expected expression...
   core_mobster.cpp_CMobster_FUN_00526d90
     Line 106: expected expression...
+  core_mobster.cpp_FUN_005250a0
+    Line 21: expected expression...
+  core_msnedit.cpp_CDemonMission_FUN_0053cc30
+    Line 23: expected expression...
 
-  ... and 56 more errors
+  ... and 54 more errors
 
 ====================================================================================================
-CATEGORY: missing_member (74 errors)
+CATEGORY: missing_member (28 errors)
 ====================================================================================================
 
   wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80
@@ -371,22 +371,12 @@ CATEGORY: missing_member (74 errors)
     Line 171: no member named '_40_8_' in 'SRenderVertex'...
   engine_dosio.c_reopenFileStream_FUN_00481b50
     Line 21: no member named '__unbuffered_get_area' in 'filebuf'...
-  core_door.cpp_CDoor_ctor_FUN_0047fad0
-    Line 79: no member named 'animation_state' in 'CDoor'...
-  core_turret.cpp_CTurret_ctor_FUN_005e20f0
-    Line 60: no member named 'animation_state' in 'CTurret'...
-  core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0
-    Line 47: no member named 'model_name' in 'CEmitter'...
-  core_ammobox.cpp_CAmmoBox_ctor_FUN_004115a0
-    Line 40: no member named 'part_visibility_flags' in 'CAmmoBox'...
-  core_drip.cpp_CDrip_ctor_FUN_0048e000
-    Line 30: no member named 'part_visibility_flags' in 'CDrip'...
-  core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40
-    Line 26: no member named 'part_visibility_flags' in 'CFilmProjector'...
+  core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70
+    Line 25: no member named 'flame_size' in 'CCrossbow'...
+  core_boxactor.cpp_CLightActor_ctor_FUN_00422990
+    Line 18: no member named 'light_enabled_flag' in 'CLightActor'...
   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
     Line 20: no member named 'unk15' in 'CDemonActor'...
-  core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70
-    Line 21: no member named 'unk5' in 'CCrossbow'...
 
 ====================================================================================================
 CATEGORY: lvalue_required (26 errors)
@@ -476,7 +466,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 2.36
-Average suspects in failed compilations: 12.37
+Average suspects in failed compilations: 12.43
 
-Functions that compile but have suspect patterns: 1791
+Functions that compile but have suspect patterns: 1764
 (These may have runtime issues even though syntax is valid)

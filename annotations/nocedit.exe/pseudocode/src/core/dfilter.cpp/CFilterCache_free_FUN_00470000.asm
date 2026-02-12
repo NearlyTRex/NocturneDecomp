@@ -61,7 +61,7 @@ section .text
         ;   Label: LAB_00470046
     PUSH EAX                            ; 00470048
     CALL core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240 ; 00470049
-        ;   XREF to: 00470240 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240(CDemonFilter * this_ptr)
+        ;   XREF to: 00470240 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240(CDemonFilter * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0047004e
     PUSH EAX                            ; 00470051
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00470052

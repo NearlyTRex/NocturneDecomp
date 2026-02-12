@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 408,
+        "line": 401,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 683,
+        "line": 667,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       }
     ],
@@ -19,11 +19,11 @@
   },
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 898,
+    "complexity_score": 882,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 49,
-    "pseudocode_lines": 698,
+    "pseudocode_lines": 682,
     "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -31,7 +31,7 @@
       "suspect_float",
       "undefined_data"
     ],
-    "total_lines": 2354
+    "total_lines": 2338
   },
   "cross_references": [],
   "function": {
@@ -469,7 +469,7 @@
     },
     {
       "addr": "0083b1a4",
-      "name": "g_ConsolePtr",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -1112,128 +1112,128 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_fffffe40",
       "text": "ulonglong in_stack_fffffe40;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 112,
       "match": "in_stack_fffffe40",
       "text": "while (this_ptr_01 = (CDeformableModelInstance *)in_stack_fffffe40, 0.0 < delta_time) {",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
+      "line": 156,
       "match": "ABS",
       "text": "if ((float)5 < ABS(local_10c)) goto LAB_004f4dd2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 159,
+      "line": 158,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_108 * local_108 + local_110 * local_110);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 176,
+      "line": 175,
       "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = CONCAT44(pCVar18,&g_HeroActors[g_LocalHeroIndex]->inventory);",
+      "text": "in_stack_fffffe40 = CONCAT44(pCVar17,&g_HeroActors[g_LocalHeroIndex]->inventory);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 176,
+      "line": 175,
       "match": "CONCAT44",
-      "text": "in_stack_fffffe40 = CONCAT44(pCVar18,&g_HeroActors[g_LocalHeroIndex]->inventory);",
+      "text": "in_stack_fffffe40 = CONCAT44(pCVar17,&g_HeroActors[g_LocalHeroIndex]->inventory);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 234,
+      "line": 233,
       "match": "SQRT",
       "text": "SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc))) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 249,
+      "line": 248,
       "match": "SQRT",
       "text": "SQRT(fVar3 * fVar3 + fVar5 * fVar5) < (float)40)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 401,
+      "line": 394,
       "match": "SUB84",
       "text": "this_ptr_01 = SUB84((double)fVar5,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 417,
+      "line": 410,
       "match": "SQRT",
       "text": "fVar5 = SQRT(local_9c * local_9c + local_a4 * local_a4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 445,
+      "line": 438,
       "match": "ABS",
       "text": "(ABS((this_ptr->base).base.turn_angle_accumulator) < (float)0.017453292519444399)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 532,
+      "line": 525,
       "match": "1.4013e-45",
       "text": "local_20 = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 603,
+      "line": 591,
       "match": "SQRT",
       "text": "SQRT((double)local_b0.z * (double)local_b0.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 608,
+      "line": 596,
       "match": "SQRT",
-      "text": "SQRT(dVar11 * dVar11 + dVar10 * dVar10 + dVar9 * dVar9) <= dVar23 * 0.40000000000000002))",
+      "text": "SQRT(dVar11 * dVar11 + dVar10 * dVar10 + dVar9 * dVar9) <= dVar22 * 0.40000000000000002))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 652,
+      "line": 636,
       "match": "DAT_02db8888",
       "text": "(&pCVar2->motion_controller,DAT_02db8888,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 657,
+      "line": 641,
       "match": "DAT_02db8888",
       "text": "(pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 4),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 660,
+      "line": 644,
       "match": "DAT_02db8888",
       "text": "(pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 8),",
       "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 683,
+      "line": 667,
       "match": "8.40779e-45",
-      "text": "(pCVar19->model).transformed_vertices[0x4f].z = 8.40779e-45;",
+      "text": "(pCVar18->model).transformed_vertices[0x4f].z = 8.40779e-45;",
       "type": "suspect_float"
     }
   ],

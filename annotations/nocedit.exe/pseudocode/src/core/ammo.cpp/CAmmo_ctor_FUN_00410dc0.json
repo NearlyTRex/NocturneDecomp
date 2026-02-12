@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 19,
-        "message": "incompatible pointer types assigning to 'CAmmo_ptr_344' (aka 'CAmmo *') from 'CKeyFramedModelInstance *'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 20,
-        "message": "member reference type 'CAmmo_ptr_344' (aka 'CAmmo *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 21,
-        "message": "no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -174,7 +155,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "ADJ",
-      "text": "ADJ(this_ptr_00).base.vtable._ub = &g_CAmmoVTable;",
+      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CAmmoVTable;",
       "type": "decompiler_intrinsic"
     },
     {

@@ -84,6 +84,6 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
   _fwrite(&local_20,4,1,p_Var3);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\pod.cpp",0x4bb);
 LAB_00551212:
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_44c);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_44c,0);
   return;
 }

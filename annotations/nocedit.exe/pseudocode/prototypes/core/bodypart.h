@@ -165,7 +165,7 @@ SBodyPartFire * __cdecl SBodyPartFire::ctor(SBodyPartFire *this_ptr);
 
 // Original: core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640
 // Address: 0041b640
-SBodyPartFire * __cdecl SBodyPartFire::dtor(SBodyPartFire *this_ptr);
+SBodyPartFire * __cdecl SBodyPartFire::dtor(SBodyPartFire *this_ptr,uint flags);
 
 // Original: core_bodypart.cpp_SBodyPartModel_ctor_FUN_0041b660
 // Address: 0041b660
@@ -173,12 +173,12 @@ SBodyPartModel * __cdecl SBodyPartModel::ctor(SBodyPartModel *this_ptr);
 
 // Original: core_bodypart.cpp_SBodyPartModel_dtor_FUN_0041b680
 // Address: 0041b680
-SBodyPartModel * __cdecl SBodyPartModel::dtor(SBodyPartModel *this_ptr);
+SBodyPartModel * __cdecl SBodyPartModel::dtor(SBodyPartModel *this_ptr,uint flags);
 
-// Original: core_bodypart.cpp_freeBodyPartModels_FUN_0041b690
+// Original: core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_0041b690
 // Address: 0041b690
-SBodyPartModel * __cdecl freeBodyPartModels(SBodyPartModel *objs);
+SBodyPartModel * __cdecl SBodyPartModel::arrdtor(SBodyPartModel *objs,uint flags);
 
-// Original: core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0
+// Original: core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_0041b6b0
 // Address: 0041b6b0
-SBodyPartFire * __cdecl freeBodyPartFires(SBodyPartFire *objs);
+SBodyPartFire * __cdecl SBodyPartFire::arrdtor(SBodyPartFire *objs,uint flags);

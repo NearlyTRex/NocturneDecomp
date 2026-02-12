@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary *this_ptr)
+; __cdecl CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0 at 00452f40

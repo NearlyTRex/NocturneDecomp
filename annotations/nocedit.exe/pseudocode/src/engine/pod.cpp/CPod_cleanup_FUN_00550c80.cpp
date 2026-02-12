@@ -20,7 +20,7 @@ void __cdecl engine_pod_cpp_CPod_cleanup_FUN_00550c80(CPod *this_ptr)
       g_CurrentDebugLine = 0x3f8;
       g_CurrentDebugFilename = "..\\engine\\pod.cpp";
       if (pCVar1->pod_files[0] != (CPodFile *)0x0) {
-        ptr = engine_pod_cpp_CPodFile_dtor_FUN_0054f610(pCVar1->pod_files[0]);
+        ptr = engine_pod_cpp_CPodFile_dtor_FUN_0054f610(pCVar1->pod_files[0],0);
         shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
       }
       pCVar1->pod_files[0] = (CPodFile *)0x0;

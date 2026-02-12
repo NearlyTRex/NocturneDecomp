@@ -29,7 +29,9 @@ core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,
   float fStack_a0;
   float fStack_9c;
   float fStack_98;
-  byte auStack_94 [24];
+  float fStack_94;
+  float fStack_90;
+  CVector3f local_8c;
   CVector3f CStack_7c;
   CVector3f CStack_70;
   CVector3f CStack_64;
@@ -45,7 +47,7 @@ core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,
   uint uStack_18;
   uint uStack_14;
   
-  if (0.0 <= *(float *)this_ptr->field53_0x2dc4) {
+  if (0.0 <= this_ptr->hero_proximity_timer) {
     location = &(this_ptr->base).location;
     this_ptr_00 = (CEnemy *)core_hero_cpp_closestHeroToPoint_FUN_004f2170(location);
     CStack_34.z = (float)this_ptr_00;
@@ -57,13 +59,13 @@ core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,
     local_40 = (this_ptr->base).location.position.y - (this_ptr_00->base).base.location.position.y;
     local_3c = (this_ptr->base).location.position.z - (this_ptr_00->base).base.location.position.z;
     pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                       ((CVector3f *)(auStack_94 + 8),(CVector3f *)(auStack_4c + 8));
+                       (&local_8c,(CVector3f *)(auStack_4c + 8));
     local_24 = pCVar3->y;
     iVar4 = (*(((this_ptr_00->base).base.vtable._ue)->_ue).randomize)(this_ptr_00);
     iVar2 = iStack_28;
     if ((iVar4 != 0) && (fStack_110 < (float)0.78539816337500001)) {
       local_24 = (float)(uint)(fStack_a0 < 0.0);
-      pCVar3 = (CVector3f *)(this_ptr->field53_0x2dc4 + 4);
+      pCVar3 = &this_ptr->move_away_target;
       uStack_18 = 0;
       pfVar7 = (float *)(iStack_28 + 0x20);
       do {
@@ -87,20 +89,14 @@ core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,
           CStack_64.z = *(float *)(iVar2 + 0x28) + pCVar5->z;
           if (pCVar3 != &CStack_64) {
             pCVar3->x = CStack_64.x;
-            *(float *)(this_ptr->field53_0x2dc4 + 8) = CStack_64.y;
-            *(float *)(this_ptr->field53_0x2dc4 + 0xc) = CStack_64.z;
+            (this_ptr->move_away_target).y = CStack_64.y;
+            (this_ptr->move_away_target).z = CStack_64.z;
           }
           iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                             (this_ptr,pCVar3,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
           if (-1 < iVar4) {
-            this_ptr->field53_0x2dc4[0x10] = '\0';
-            this_ptr->field53_0x2dc4[0x11] = '\0';
-            this_ptr->field53_0x2dc4[0x12] = '\0';
-            this_ptr->field53_0x2dc4[0x13] = '\0';
-            this_ptr->field53_0x2dc4[0] = '\0';
-            this_ptr->field53_0x2dc4[1] = '\0';
-            this_ptr->field53_0x2dc4[2] = -0x80;
-            this_ptr->field53_0x2dc4[3] = -0x40;
+            this_ptr->walk_stuck_timer = 0.0;
+            this_ptr->hero_proximity_timer = -4.0;
             return 2;
           }
         }
@@ -110,12 +106,12 @@ core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,
     if (((ABS(fStack_9c) <= (float)4) && (fStack_110 <= (float)0.52359877558333301)) &&
        (SQRT(fStack_98 * fStack_98 + fStack_a0 * fStack_a0 + fStack_9c * fStack_9c) <=
         (float)4.5)) {
-      fVar1 = *(float *)this_ptr->field53_0x2dc4 + delta_time;
-      *(float *)this_ptr->field53_0x2dc4 = fVar1;
+      fVar1 = this_ptr->hero_proximity_timer + delta_time;
+      this_ptr->hero_proximity_timer = fVar1;
       if (fVar1 < (float)1.75) {
         return 0;
       }
-      pCVar3 = (CVector3f *)(this_ptr->field53_0x2dc4 + 4);
+      pCVar3 = &this_ptr->move_away_target;
       uStack_14 = 0;
       do {
         fStack_1c = (float)((int)uStack_14 / 2) * (float)1.57079632675 * (float)0.25;
@@ -133,25 +129,19 @@ core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,
           CStack_34.y = 0.0;
           pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                              (&CStack_e0,(CVector3f *)auStack_4c,&CStack_34);
-          auStack_94._0_4_ = *(float *)(iStack_28 + 0x20) + pCVar5->x;
-          auStack_94._4_4_ = *(float *)(iStack_28 + 0x24) + pCVar5->y;
-          auStack_94._8_4_ = *(float *)(iStack_28 + 0x28) + pCVar5->z;
-          if (pCVar3 != (CVector3f *)auStack_94) {
-            pCVar3->x = (float)auStack_94._0_4_;
-            *(uint *)(this_ptr->field53_0x2dc4 + 8) = auStack_94._4_4_;
-            *(uint *)(this_ptr->field53_0x2dc4 + 0xc) = auStack_94._8_4_;
+          fStack_94 = *(float *)(iStack_28 + 0x20) + pCVar5->x;
+          fStack_90 = *(float *)(iStack_28 + 0x24) + pCVar5->y;
+          local_8c.x = *(float *)(iStack_28 + 0x28) + pCVar5->z;
+          if (pCVar3 != (CVector3f *)&fStack_94) {
+            pCVar3->x = fStack_94;
+            (this_ptr->move_away_target).y = fStack_90;
+            (this_ptr->move_away_target).z = local_8c.x;
           }
           iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                             (this_ptr,pCVar3,(CPathMap *)0x0,&g_ZeroVector,0.0,0.0);
           if (-1 < iVar2) {
-            this_ptr->field53_0x2dc4[0x10] = '\0';
-            this_ptr->field53_0x2dc4[0x11] = '\0';
-            this_ptr->field53_0x2dc4[0x12] = '\0';
-            this_ptr->field53_0x2dc4[0x13] = '\0';
-            this_ptr->field53_0x2dc4[0] = '\0';
-            this_ptr->field53_0x2dc4[1] = '\0';
-            this_ptr->field53_0x2dc4[2] = -0x60;
-            this_ptr->field53_0x2dc4[3] = -0x40;
+            this_ptr->walk_stuck_timer = 0.0;
+            this_ptr->hero_proximity_timer = -5.0;
             return 1;
           }
         }
@@ -159,28 +149,22 @@ core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,
         if (8 < (int)uStack_14) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s was in the way, but couldn't figure out where to move!\n",this_ptr);
-          this_ptr->field53_0x2dc4[0] = '\0';
-          this_ptr->field53_0x2dc4[1] = '\0';
-          this_ptr->field53_0x2dc4[2] = '\0';
-          this_ptr->field53_0x2dc4[3] = '\0';
+          this_ptr->hero_proximity_timer = 0.0;
           return 0;
         }
       } while( true );
     }
   }
   else {
-    fVar1 = *(float *)this_ptr->field53_0x2dc4 + delta_time;
-    *(float *)this_ptr->field53_0x2dc4 = fVar1;
-    if (((fVar1 < 0.0) && (*(float *)(this_ptr->field53_0x2dc4 + 0x10) <= (float)1.5))
-       && (iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                             (this_ptr,(CVector3f *)(this_ptr->field53_0x2dc4 + 4),(CPathMap *)0x0,
-                              &g_ZeroVector,0.0,0.0), iVar2 == 0)) {
+    fVar1 = this_ptr->hero_proximity_timer + delta_time;
+    this_ptr->hero_proximity_timer = fVar1;
+    if (((fVar1 < 0.0) && (this_ptr->walk_stuck_timer <= (float)1.5)) &&
+       (iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+                          (this_ptr,&this_ptr->move_away_target,(CPathMap *)0x0,&g_ZeroVector,0.0,
+                           0.0), iVar2 == 0)) {
       return 1;
     }
   }
-  this_ptr->field53_0x2dc4[0] = '\0';
-  this_ptr->field53_0x2dc4[1] = '\0';
-  this_ptr->field53_0x2dc4[2] = '\0';
-  this_ptr->field53_0x2dc4[3] = '\0';
+  this_ptr->hero_proximity_timer = 0.0;
   return 0;
 }

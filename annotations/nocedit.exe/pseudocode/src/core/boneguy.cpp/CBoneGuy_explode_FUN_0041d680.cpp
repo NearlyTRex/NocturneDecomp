@@ -12,7 +12,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   UOrientationVector *pUVar1;
   int iVar2;
   CBodyPart *body_part;
-  CVector3f *pCVar3;
+  SBoneGuyBox *pSVar3;
   CBoneGuy *pCVar4;
   CLocation *pCVar5;
   CVector3f *pCVar6;
@@ -28,7 +28,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   UOrientationVector *local_2c;
   CLocation *local_28;
   CDeformableModel *local_24;
-  CVector3f *local_20;
+  SBoneGuyBox *local_20;
   CBoneGuy *local_1c;
   int local_18;
   float local_14;
@@ -36,7 +36,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   bVar10 = 0;
   core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060((CCharacter *)this_ptr);
   this_ptr->blown_up = 1;
-  this_ptr->param = 0.0;
+  this_ptr->recombine_interpolation = 0.0;
   local_24 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                        (&(this_ptr->base).base.model);
   iVar2 = local_24->num_parts;
@@ -48,10 +48,10 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   }
   local_18 = 0;
   if (0 < local_24->num_parts) {
-    local_20 = &this_ptr->box_list_pos;
+    local_20 = this_ptr->boxes;
     local_2c = &(this_ptr->base).base.base.orient;
     local_28 = &(this_ptr->base).base.base.location;
-    pCVar6 = &this_ptr->box_list_orient;
+    pCVar6 = &this_ptr->boxes[0].orient;
     local_1c = this_ptr;
     do {
       local_38 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
@@ -65,13 +65,13 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
                 ((CCharacter *)this_ptr,body_part,local_18,0);
       body_part->dont_pick_me_up = 1;
       core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
-      *(CBodyPart **)local_1c->unk2 = body_part;
+      local_1c->boxes[0].body_part = body_part;
       pCVar5 = &(body_part->base).location;
-      pCVar3 = local_20 + local_18 * 6;
-      if ((CLocation *)pCVar3 != pCVar5) {
-        pCVar3->x = (pCVar5->position).x;
-        pCVar3->y = (body_part->base).location.position.y;
-        pCVar3->z = (body_part->base).location.position.z;
+      pSVar3 = local_20 + local_18;
+      if (pSVar3 != (SBoneGuyBox *)pCVar5) {
+        (pSVar3->pos).x = (pCVar5->position).x;
+        (pSVar3->pos).y = (body_part->base).location.position.y;
+        (pSVar3->pos).z = (body_part->base).location.position.z;
       }
       pUVar1 = &(body_part->base).orient;
       if (pCVar6 != (CVector3f *)pUVar1) {
@@ -84,7 +84,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
       pCVar4 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
       local_18 = local_18 + 1;
       puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 49000);
-      (local_1c->box_list_start_orient).w = local_48.w;
+      local_1c->boxes[0].start_orient.w = local_48.w;
       puVar9 = puVar8 + (uint)bVar10 * -2 + 1;
       puVar7 = (uint *)((int)&local_48 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       *puVar8 = *(uint *)((int)&local_48 + (uint)bVar10 * -8 + 4);

@@ -41,7 +41,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
         core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
       } while (iVar3 < 10);
     }
-    this_ptr->unk4 = 1;
+    this_ptr->is_visible = 1;
     this_ptr->flame_state = 1;
   }
   if (((this_ptr->off_event[0] != '\0') && (this_ptr->flame_state != 0)) &&
@@ -53,25 +53,22 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
                (this_ptr->flame_size).y * (float)0.5,(CVector3f *)0x0,0xffff);
   }
   if (this_ptr->flame_state != 0) {
-    *(float *)this_ptr->unk1 = delta_time * (float)16 + *(float *)this_ptr->unk1;
-    if (0x40ffffff < *(int *)this_ptr->unk1) {
-      *(float *)this_ptr->unk1 = *(float *)this_ptr->unk1 + -8.0f;
+    this_ptr->animation_time = delta_time * (float)16 + this_ptr->animation_time;
+    if (0x40ffffff < (int)this_ptr->animation_time) {
+      this_ptr->animation_time = this_ptr->animation_time + -8.0f;
     }
     (this_ptr->base).orient.vec.x = 0.0;
     (this_ptr->base).orient.vec.z = 0.0;
     (this_ptr->base).orient.vec.y = 0.0;
     core_flame_cpp_CFlame_FUN_004cad90(this_ptr);
-    if (*(int *)(this_ptr->unk5 + 0xc) == 0) {
-      if (*(uint *)this_ptr->unk2 != 0) {
-        core_sound_cpp_CSound_killSound_FUN_005b3b90(g_CSoundPtr,*(uint *)this_ptr->unk2);
-        this_ptr->unk2[0] = '\0';
-        this_ptr->unk2[1] = '\0';
-        this_ptr->unk2[2] = '\0';
-        this_ptr->unk2[3] = '\0';
+    if (this_ptr->render_corona == 0) {
+      if (this_ptr->sfx_handle != 0) {
+        core_sound_cpp_CSound_killSound_FUN_005b3b90(g_CSoundPtr,this_ptr->sfx_handle);
+        this_ptr->sfx_handle = 0;
       }
     }
     else {
-      core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)this_ptr->unk2);
+      core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
       if (extraout_EAX == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.95,1.05);
         _sprintf
@@ -83,7 +80,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
         sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar3);
         uVar4 = (*((this_ptr->base).vtable._ub)->playSound)
                           (&this_ptr->base,(char *)((int)&uStack_fc + 4));
-        *(uint *)this_ptr->unk2 = uVar4;
+        this_ptr->sfx_handle = uVar4;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
     }
@@ -114,21 +111,15 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
       }
     }
     if (this_ptr->burn_enemy != 0) {
-      if (*(int *)(this_ptr->unk5 + 8) < 0) {
-        this_ptr->unk5[8] = '\0';
-        this_ptr->unk5[9] = '\0';
-        this_ptr->unk5[10] = '\0';
-        this_ptr->unk5[0xb] = '\0';
+      if (this_ptr->enemy_burn_index < 0) {
+        this_ptr->enemy_burn_index = 0;
       }
-      if (*(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) <= *(int *)(this_ptr->unk5 + 8)) {
-        this_ptr->unk5[8] = '\0';
-        this_ptr->unk5[9] = '\0';
-        this_ptr->unk5[10] = '\0';
-        this_ptr->unk5[0xb] = '\0';
+      if (*(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) <= this_ptr->enemy_burn_index) {
+        this_ptr->enemy_burn_index = 0;
       }
       if (0 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c)) {
-        this_ptr_01 = *(CCharacter **)
-                       (g_CDemonSetPtr->unk4 + *(int *)(this_ptr->unk5 + 8) * 4 + 8000);
+        this_ptr_01 = *(CCharacter **)(g_CDemonSetPtr->unk4 + this_ptr->enemy_burn_index * 4 + 8000)
+        ;
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_64);
         iVar3 = (*((this_ptr_01->base).vtable._ub)->hasCollision)(&this_ptr_01->base,&SStack_64);
         if (iVar3 == 2) {
@@ -153,7 +144,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
             }
           }
         }
-        *(int *)(this_ptr->unk5 + 8) = *(int *)(this_ptr->unk5 + 8) + 1;
+        this_ptr->enemy_burn_index = this_ptr->enemy_burn_index + 1;
         return;
       }
     }

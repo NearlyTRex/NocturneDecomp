@@ -1,0 +1,20 @@
+#pragma once
+
+// Forward declarations
+struct SBodyPartFire;
+
+// Dependencies
+#include "system/basetypes.h"
+
+// Adjusted pointer: SBodyPartFire_ptr_12
+// 32-bit pointer to SBodyPartFire
+struct SBodyPartFire_ptr_12 {
+    void *_raw;
+    SBodyPartFire_ptr_12() : _raw(0) {}
+    template<typename T> SBodyPartFire_ptr_12(T* p) : _raw((void*)p) {}
+    template<typename T> SBodyPartFire_ptr_12& operator=(T* p) { _raw = (void*)p; return *this; }
+    SBodyPartFire* operator->() const { return (SBodyPartFire*)_raw; }
+    template<typename T> operator T*() const { return (T*)_raw; }
+    explicit operator bool() const { return _raw != 0; }
+};
+

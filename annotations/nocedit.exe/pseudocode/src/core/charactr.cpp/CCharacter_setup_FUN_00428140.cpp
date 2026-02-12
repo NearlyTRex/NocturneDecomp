@@ -26,7 +26,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   fVar2 = 9999.0f;
-  this_ptr->field60_0x2df4 = 0;
+  this_ptr->damage_decal_count = 0;
   this_ptr->closest_distance_threshold = fVar2;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&DAT_00823a98,"stake_b.kfm");
@@ -77,11 +77,11 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
     pCVar6 = this_ptr;
     if (0 < this_ptr->fire_count) {
       do {
-        pCVar6->field66_0x33cc[0].which_flame = 4;
-        pCVar5->field65_0x2f1c[0].unk[0x14] = '\0';
-        pCVar5->field65_0x2f1c[0].unk[0x15] = '\0';
-        pCVar5->field65_0x2f1c[0].unk[0x16] = '\0';
-        pCVar5->field65_0x2f1c[0].unk[0x17] = '@';
+        pCVar6->flames[0].which_flame = 4;
+        pCVar5->fire_effects[0].unk[0x14] = '\0';
+        pCVar5->fire_effects[0].unk[0x15] = '\0';
+        pCVar5->fire_effects[0].unk[0x16] = '\0';
+        pCVar5->fire_effects[0].unk[0x17] = '@';
         iVar4 = iVar4 + 1;
         pCVar5 = (CCharacter *)((pCVar5->base).actor_name + 0x18);
         pCVar6 = (CCharacter *)&(pCVar6->model).transformed_vertices[0x14].y;

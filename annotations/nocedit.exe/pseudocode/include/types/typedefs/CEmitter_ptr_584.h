@@ -6,7 +6,15 @@ struct CEmitter;
 // Dependencies
 #include "system/basetypes.h"
 
-// Typedef: CEmitter_ptr_584
+// Adjusted pointer: CEmitter_ptr_584
 // 32-bit pointer to CEmitter
-typedef struct CEmitter* CEmitter_ptr_584;
+struct CEmitter_ptr_584 {
+    void *_raw;
+    CEmitter_ptr_584() : _raw(0) {}
+    template<typename T> CEmitter_ptr_584(T* p) : _raw((void*)p) {}
+    template<typename T> CEmitter_ptr_584& operator=(T* p) { _raw = (void*)p; return *this; }
+    CEmitter* operator->() const { return (CEmitter*)_raw; }
+    template<typename T> operator T*() const { return (T*)_raw; }
+    explicit operator bool() const { return _raw != 0; }
+};
 

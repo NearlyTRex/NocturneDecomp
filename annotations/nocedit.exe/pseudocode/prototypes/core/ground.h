@@ -29,7 +29,7 @@ CGround * __cdecl CGround::ctor(CGround *this_ptr,int width,int height);
 
 // Original: core_ground.cpp_CGround_dtor_FUN_004eeee0
 // Address: 004eeee0
-CGround * __cdecl CGround::dtor(CGround *this_ptr);
+CGround * __cdecl CGround::dtor(CGround *this_ptr,uint flags);
 
 // Original: core_ground.cpp_CGround_init_FUN_004eef00
 // Address: 004eef00

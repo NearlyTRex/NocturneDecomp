@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_005a6150(CSfxSample *this_ptr)
+; __cdecl CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_005a6150(CSfxSample *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0

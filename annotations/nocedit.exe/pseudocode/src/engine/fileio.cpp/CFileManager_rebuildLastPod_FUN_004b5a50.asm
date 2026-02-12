@@ -864,7 +864,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004b633d
     PUSH EAX                            ; 004b6341
     CALL engine_pod.cpp_CPodFile_dtor_FUN_0054f610 ; 004b6342
-        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr)
+        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b6347
     ADD ESP,0x1828                      ; 004b634a
     POP EBP                             ; 004b6350
@@ -1554,7 +1554,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004b6be1
     PUSH EAX                            ; 004b6be5
     CALL engine_pod.cpp_CPodFile_dtor_FUN_0054f610 ; 004b6be6
-        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr)
+        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b6beb
     ADD ESP,0x1828                      ; 004b6bee
     POP EBP                             ; 004b6bf4

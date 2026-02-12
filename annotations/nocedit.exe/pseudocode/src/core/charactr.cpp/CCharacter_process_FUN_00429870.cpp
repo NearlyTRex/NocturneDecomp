@@ -16,13 +16,10 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
   int iVar4;
   CCharacter *pCVar5;
   
-  fVar3 = *(float *)(this_ptr->field53_0x2dc4 + 0x14) - delta_time;
-  *(float *)(this_ptr->field53_0x2dc4 + 0x14) = fVar3;
+  fVar3 = this_ptr->sound_cooldown - delta_time;
+  this_ptr->sound_cooldown = fVar3;
   if (fVar3 < 0.0) {
-    this_ptr->field53_0x2dc4[0x14] = '\0';
-    this_ptr->field53_0x2dc4[0x15] = '\0';
-    this_ptr->field53_0x2dc4[0x16] = '\0';
-    this_ptr->field53_0x2dc4[0x17] = '\0';
+    this_ptr->sound_cooldown = 0.0;
   }
   core_charactr_cpp_CCharacter_processFire_FUN_0042a830(this_ptr,delta_time);
   core_charactr_cpp_CCharacter_advanceGesture_FUN_0042d4d0(this_ptr,delta_time);
@@ -31,10 +28,10 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
   if (fVar3 < 0.0) {
     this_ptr->stagger_amount = 0.0;
   }
-  if ((0.0 < (float)this_ptr->field41_0x2618) &&
-     (fVar3 = (float)this_ptr->field41_0x2618 - delta_time, this_ptr->field41_0x2618 = (int)fVar3,
+  if ((0.0 < this_ptr->speech_timer) &&
+     (fVar3 = this_ptr->speech_timer - delta_time, this_ptr->speech_timer = fVar3,
      this_ptr_00 = g_CScriptPtr, fVar3 < 0.0)) {
-    this_ptr->field41_0x2618 = 0;
+    this_ptr->speech_timer = 0.0;
     core_script_cpp_CScript_setSpeaker_FUN_00560140(this_ptr_00,&this_ptr->base);
   }
   if (this_ptr->health_bar_mode == 2) {
@@ -42,7 +39,7 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
               (g_CGamePtr,this_ptr->descriptive_name,
                (int)(this_ptr->hit_points / this_ptr->max_hit_points),2.0);
   }
-  if (this_ptr->field2_0x240c == 0) {
+  if (this_ptr->render_active == 0) {
     if (this_ptr->closest_distance_threshold == 9999.0f) {
       iVar4 = 0;
       pCVar5 = this_ptr;
@@ -60,15 +57,15 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
     (this_ptr->base).location.position.y = fVar3 + (this_ptr->base).location.position.y;
     if ((fVar1 == 9999.0f) || ((this_ptr->base).standing_platform != (CPlatform *)0x0)) {
       fVar3 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                        (&this_ptr->base,this_ptr->field54_0x2ddc,(CVector3f *)0x0);
+                        (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
       this_ptr->closest_distance_threshold = fVar3;
     }
-    this_ptr->field3_0x2410 =
+    this_ptr->is_on_ground =
          (uint)((this_ptr->base).location.position.y <
                this_ptr->closest_distance_threshold + (float)0.01);
-    (this_ptr->field6_0x241c).z = 0.0;
-    (this_ptr->field6_0x241c).y = (this_ptr->field6_0x241c).z;
-    (this_ptr->field6_0x241c).x = (this_ptr->field6_0x241c).y;
+    (this_ptr->position_delta).z = 0.0;
+    (this_ptr->position_delta).y = (this_ptr->position_delta).z;
+    (this_ptr->position_delta).x = (this_ptr->position_delta).y;
     pCVar2 = (this_ptr->base).standing_platform;
     this_ptr->turn_angle_accumulator = 0.0;
     if (((pCVar2 == (CPlatform *)0x0) && (this_ptr->walk_to_target == (CDemonActor *)0x0)) &&

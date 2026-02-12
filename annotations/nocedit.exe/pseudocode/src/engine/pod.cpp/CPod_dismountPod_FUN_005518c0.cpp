@@ -21,7 +21,7 @@ void __cdecl engine_pod_cpp_CPod_dismountPod_FUN_005518c0(CPod *this_ptr,int ind
   g_CurrentDebugLine = 0x602;
   g_CurrentDebugFilename = "..\\engine\\pod.cpp";
   if (this_ptr->pod_files[index] != (CPodFile *)0x0) {
-    ptr = engine_pod_cpp_CPodFile_dtor_FUN_0054f610(this_ptr->pod_files[index]);
+    ptr = engine_pod_cpp_CPodFile_dtor_FUN_0054f610(this_ptr->pod_files[index],0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   }
   iVar2 = this_ptr->pod_file_count + -1;

@@ -157,12 +157,12 @@ LAB_00556524:
     }
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x443;
-    pCVar3 = shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(pCVar3);
+    pCVar3 = shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(pCVar3,0);
     shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar3);
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x444;
     if (local_14 != (CBitmap *)0x0) {
-      pCVar1 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(local_14);
+      pCVar1 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(local_14,0);
       shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
     }
     iVar7 = 1;

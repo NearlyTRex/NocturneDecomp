@@ -9,7 +9,7 @@ CCourse * __cdecl CCourse::ctor(CCourse *this_ptr);
 
 // Original: core_course.cpp_CCourse_dtor_FUN_004424e0
 // Address: 004424e0
-CCourse * __cdecl CCourse::dtor(CCourse *this_ptr);
+CCourse * __cdecl CCourse::dtor(CCourse *this_ptr,uint flags);
 
 // Original: core_course.cpp_CCourse_allocMemory_FUN_00442500
 // Address: 00442500

@@ -24,7 +24,7 @@
 ;   TerminatedCString s_none_006252ae
 ;   TerminatedCString s_s_006252b3
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_02d0a45c
 ;   undefined1 DAT_02d0a460
 ;
@@ -73,8 +73,8 @@ section .text
         ;   XREF to: 004adcb0 (CONDITIONAL_JUMP)  ; LAB_004adcb0
     PUSH 0x2d0a460                      ; 004adcde | DAT_02d0a460
     PUSH 0x6252b3                       ; 004adce3 | = "%s\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 004adce8 | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 004adcee | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 004adce8 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 004adcee | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004adcef
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004adcf4

@@ -55,7 +55,7 @@ LAB_005bdd85:
             pCVar6 = (this_ptr->base).ladder_to_climb;
             if (pCVar6 == (CDemonActor *)0x0) {
               if (this_ptr->ladder_to_descend == (CDemonActor *)0x0) {
-                if ((this_ptr->base).base.field3_0x2410 != 0) {
+                if ((this_ptr->base).base.is_on_ground != 0) {
                   local_14 = (UActorVTable)
                              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                        (&this_ptr_00->motion_controller,3);
@@ -283,11 +283,11 @@ LAB_005bde44:
         if (event_id != 0x18) goto LAB_005be41a;
       }
       else if (event_id < 0x29b) {
-        (this_ptr->base).base.field7_0x2428.y = 10.0f;
+        (this_ptr->base).base.velocity.y = 10.0f;
       }
       else {
         if (event_id != 0x29b) goto LAB_005be41a;
-        (this_ptr->base).base.field7_0x2428.y = 8.0f;
+        (this_ptr->base).base.velocity.y = 8.0f;
       }
     }
     if (in_stack_00000008 <= 0.0) {

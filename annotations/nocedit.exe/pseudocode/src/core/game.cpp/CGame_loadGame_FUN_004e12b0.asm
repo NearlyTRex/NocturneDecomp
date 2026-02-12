@@ -423,7 +423,7 @@ section .text
     LEA EAX,[ESP + 0x5d4]               ; 004e16b3
     PUSH EAX                            ; 004e16ba
     CALL support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0 ; 004e16bb
-        ;   XREF to: 0043edf0 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr)
+        ;   XREF to: 0043edf0 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e16c0
     PUSH 0x1                            ; 004e16c3
     LEA EAX,[ESP + 0x5d0]               ; 004e16c5
@@ -595,7 +595,7 @@ section .text
     LEA EAX,[ESP + 0x5d4]               ; 004e1897
     PUSH EAX                            ; 004e189e
     CALL support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0 ; 004e189f
-        ;   XREF to: 0043edf0 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr)
+        ;   XREF to: 0043edf0 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e18a4
     PUSH 0x1                            ; 004e18a7
     LEA EAX,[ESP + 0x5d0]               ; 004e18a9

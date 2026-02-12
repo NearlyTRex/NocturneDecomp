@@ -23,11 +23,11 @@ CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00416450(CBatman *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base).base.model,"batman.dfm");
   fVar2 = 50.0f;
-  (pCVar4->base).base.field54_0x2ddc = 0.6;
+  (pCVar4->base).base.collision_cylinder_height = 0.6;
   fVar3 = 100.0f;
   (pCVar4->base).base.collision_cylinder_radius = 2.0;
-  (pCVar4->base).base.field56_0x2de4 = fVar2;
-  (pCVar4->base).base.field57_0x2de8 = fVar3;
+  (pCVar4->base).base.ai_detection_range_min = fVar2;
+  (pCVar4->base).base.ai_detection_range_max = fVar3;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;

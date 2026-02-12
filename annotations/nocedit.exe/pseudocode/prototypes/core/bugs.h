@@ -173,8 +173,8 @@ SBug * __cdecl SBug::ctor(SBug *this_ptr);
 
 // Original: core_bugs.cpp_SBug_dtor_FUN_00427cb0
 // Address: 00427cb0
-SBug * __cdecl SBug::dtor(SBug *this_ptr);
+SBug * __cdecl SBug::dtor(SBug *this_ptr,uint flags);
 
-// Original: core_bugs.cpp_freeBugs_FUN_00427cc0
+// Original: core_bugs.cpp_SBug_arrdtor_FUN_00427cc0
 // Address: 00427cc0
-SBug * __cdecl freeBugs(SBug *objs);
+SBug * __cdecl SBug::arrdtor(SBug *objs,uint flags);

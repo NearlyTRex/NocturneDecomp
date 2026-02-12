@@ -27,7 +27,7 @@ core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
     pCVar3 = this_ptr;
     if (0 < this_ptr->fire_count) {
       do {
-        if (iVar1 == *(int *)(pCVar3->field65_0x2f1c[0].unk + 4)) {
+        if (iVar1 == *(int *)(pCVar3->fire_effects[0].unk + 4)) {
           return;
         }
         iVar2 = iVar2 + 1;

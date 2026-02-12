@@ -13,11 +13,11 @@
   },
   "complexity": {
     "assembly_lines": 494,
-    "complexity_score": 341,
+    "complexity_score": 334,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 19,
-    "pseudocode_lines": 241,
+    "pseudocode_lines": 234,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -25,7 +25,7 @@
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 735
+    "total_lines": 728
   },
   "cross_references": [],
   "function": {
@@ -219,7 +219,7 @@
     },
     {
       "addr": "0083b1a4",
-      "name": "g_ConsolePtr",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -497,35 +497,35 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 218,
+      "line": 211,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)&local_94 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 212,
       "match": "(uint *)((int)",
       "text": "puVar6 = (uint *)((int)&local_a4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 213,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_94 + (uint)bVar8 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 214,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_a4 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 229,
+      "line": 222,
       "match": "unaff_EDI",
       "text": "((CCharacter *)this_ptr,delta_time,unaff_EDI);",
       "type": "unaffected_reg"

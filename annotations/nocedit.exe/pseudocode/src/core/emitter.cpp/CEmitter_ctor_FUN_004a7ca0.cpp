@@ -17,7 +17,7 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004a7ca0(CEmitter *this_pt
   
   pCVar2 = (CEmitter *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
-  ADJ(this_ptr_00).base.vtable._ub = &g_CEmitterVTable;
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CEmitterVTable;
   (ADJ(this_ptr_00)->emitter_size).x = 1.0;
   pcVar2 = "none";
   (ADJ(this_ptr_00)->emitter_size).y = 1.0;

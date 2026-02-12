@@ -13,14 +13,11 @@ core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
 {
   CDemonActor_vtable *pCVar1;
   
-  if (0.0 < *(float *)(this_ptr->field53_0x2dc4 + 0x14)) {
+  if (0.0 < this_ptr->sound_cooldown) {
     return;
   }
   pCVar1 = (this_ptr->base).vtable._ub;
-  this_ptr->field53_0x2dc4[0x14] = -0x33;
-  this_ptr->field53_0x2dc4[0x15] = -0x34;
-  this_ptr->field53_0x2dc4[0x16] = -0x34;
-  this_ptr->field53_0x2dc4[0x17] = '=';
+  this_ptr->sound_cooldown = 0.1;
   (*pCVar1->playSound)(&this_ptr->base,sound_name);
   return;
 }

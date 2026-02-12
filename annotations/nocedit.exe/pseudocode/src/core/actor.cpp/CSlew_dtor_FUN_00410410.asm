@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSlew * __cdecl core_actor_cpp_CSlew_dtor_FUN_00410410(CSlew *this_ptr)
+; __cdecl CSlew * __cdecl core_actor_cpp_CSlew_dtor_FUN_00410410(CSlew *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSlew *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

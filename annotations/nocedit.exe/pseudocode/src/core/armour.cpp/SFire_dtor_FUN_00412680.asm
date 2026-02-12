@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SFire * __cdecl core_armour_cpp_SFire_dtor_FUN_00412680(SFire *this_ptr)
+; __cdecl SFire * __cdecl core_armour_cpp_SFire_dtor_FUN_00412680(SFire *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SFire *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

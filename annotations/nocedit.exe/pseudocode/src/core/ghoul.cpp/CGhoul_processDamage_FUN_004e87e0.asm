@@ -16,7 +16,7 @@
 ;   TerminatedCString s_guul_flinch_d_0062dea5
 ;   TerminatedCString s_ghoul_mad_wav_0062deb3
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
@@ -210,7 +210,7 @@ section .text
     PUSH 0x62de82                       ; 004e8a15 | = "go berzerk\n"
         ;   Label: LAB_004e8a15
     MOV ESI,dword ptr [0x0066e8e0]      ; 004e8a1a | g_CConsolePtr
-    PUSH ESI                            ; 004e8a20 | g_ConsolePtr
+    PUSH ESI                            ; 004e8a20 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e8a21
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e8a26

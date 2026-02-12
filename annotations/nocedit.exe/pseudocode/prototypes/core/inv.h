@@ -29,7 +29,7 @@ CInventory * __cdecl CInventory::ctor(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_dtor_FUN_004fd0c0
 // Address: 004fd0c0
-CInventory * __cdecl CInventory::dtor(CInventory *this_ptr);
+CInventory * __cdecl CInventory::dtor(CInventory *this_ptr,uint flags);
 
 // Original: core_inv.cpp_CInventory_clear_FUN_004fd0e0
 // Address: 004fd0e0

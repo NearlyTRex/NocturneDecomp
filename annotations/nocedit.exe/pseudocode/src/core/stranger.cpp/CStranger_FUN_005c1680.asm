@@ -510,7 +510,7 @@ section .text
     PUSH 0x653a2f                       ; 005c1c2c | = "Rummaging %s\n"
     MOV ECX,dword ptr [0x0066e8e0]      ; 005c1c31 | g_CConsolePtr
         ;   Label: LAB_005c1c31
-    PUSH ECX                            ; 005c1c37 | g_ConsolePtr
+    PUSH ECX                            ; 005c1c37 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005c1c38
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
         ;   Label: LAB_005c1c38
@@ -608,8 +608,8 @@ section .text
     MOV ECX,dword ptr [ESI + 0x1fba0]   ; 005c1d81
     PUSH ECX                            ; 005c1d87
     PUSH 0x6539fa                       ; 005c1d88 | = "Picking up %s waist level\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 005c1d8d | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 005c1d93 | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 005c1d8d | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 005c1d93 | g_CConsoleInstance
     JMP 0x005c1c38                      ; 005c1d94
         ;   XREF to: 005c1c38 (UNCONDITIONAL_JUMP)  ; LAB_005c1c38
     PUSH ESI                            ; 005c1d99
@@ -695,15 +695,15 @@ section .text
     PUSH EDI                            ; 005c1e68
     PUSH 0x6539bb                       ; 005c1e69 | = "Picking up heavy %s crate\n"
     MOV EAX,[0x0066e8e0]                ; 005c1e6e | g_CConsolePtr
-    PUSH EAX                            ; 005c1e73 | g_ConsolePtr
+    PUSH EAX                            ; 005c1e73 | g_CConsoleInstance
     JMP 0x005c1c38                      ; 005c1e74
         ;   XREF to: 005c1c38 (UNCONDITIONAL_JUMP)  ; LAB_005c1c38
     MOV EDI,dword ptr [ESI + 0x1fba0]   ; 005c1e79
         ;   Label: LAB_005c1e79
     PUSH EDI                            ; 005c1e7f
     PUSH 0x6539d6                       ; 005c1e80 | = "%s out of reach - canceling pickup\n"
-    MOV EAX,[0x0066e8e0]                ; 005c1e85 | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 005c1e8a | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 005c1e85 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 005c1e8a | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005c1e8b
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005c1e90
@@ -726,7 +726,7 @@ section .text
     PUSH EBX                            ; 005c1eb9
     PUSH 0x653a15                       ; 005c1eba | = "Picking up %s off ground\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 005c1ebf | g_CConsolePtr
-    PUSH EDI                            ; 005c1ec5 | g_ConsolePtr
+    PUSH EDI                            ; 005c1ec5 | g_CConsoleInstance
     JMP 0x005c1c38                      ; 005c1ec6
         ;   XREF to: 005c1c38 (UNCONDITIONAL_JUMP)  ; LAB_005c1c38
     MOV ECX,dword ptr [ESP + 0x140]     ; 005c1ecb

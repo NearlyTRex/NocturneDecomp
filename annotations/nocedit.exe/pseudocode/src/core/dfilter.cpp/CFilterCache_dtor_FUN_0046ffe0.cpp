@@ -2,11 +2,12 @@
 // Address: 0046ffe0
 // Address Range: [[0046ffe0, 0046fff1]]
 // Convention: __cdecl
-// Signature: CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_dtor_FUN_0046ffe0(CFilterCache *this_ptr)
+// Signature: CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_dtor_FUN_0046ffe0(CFilterCache *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_dtor_FUN_0046ffe0(CFilterCache *this_ptr)
+CFilterCache * __cdecl
+core_dfilter_cpp_CFilterCache_dtor_FUN_0046ffe0(CFilterCache *this_ptr,uint flags)
 
 {
   core_dfilter_cpp_CFilterCache_free_FUN_00470000(this_ptr);

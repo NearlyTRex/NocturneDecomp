@@ -35,7 +35,7 @@
 ;   TerminatedCString s_s_5_2f_5_2f_5_2f_00621c2e
 ;   float FLOAT_00621c42 = -1
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   SFreaky[6] SFreaky_ARRAY_02c6d0c0
 ;   undefined4 DAT_02c6d110
 ;   undefined4 DAT_02c6d114
@@ -251,7 +251,7 @@ section .text
     FSTP double ptr [ESP]               ; 00486c22
     PUSH 0x621c2e                       ; 00486c25 | = "%5.2f %5.2f %5.2f\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 00486c2a | g_CConsolePtr
-    PUSH EDI                            ; 00486c30 | g_ConsolePtr
+    PUSH EDI                            ; 00486c30 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00486c31
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x20                        ; 00486c36

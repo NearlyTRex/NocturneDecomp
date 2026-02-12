@@ -13,7 +13,7 @@ CPackedBitmap * __cdecl CPackedBitmap::init(CPackedBitmap *this_ptr,char *filena
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890
 // Address: 0054a890
-CPackedBitmap * __cdecl CPackedBitmap::dtor(CPackedBitmap *this_ptr);
+CPackedBitmap * __cdecl CPackedBitmap::dtor(CPackedBitmap *this_ptr,uint flags);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0
 // Address: 0054a8b0

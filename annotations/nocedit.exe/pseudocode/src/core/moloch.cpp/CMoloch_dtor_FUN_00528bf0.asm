@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_dtor_FUN_004f2470
-;   core_morph.cpp_CMorphModel_FUN_0052b330
+;   core_morph.cpp_CMorph_dtor_FUN_0052b330
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
@@ -33,8 +33,8 @@ section .text
     ADD EBX,0x21f5c                     ; 00528bfe
     PUSH EBX                            ; 00528c04
     MOV dword ptr [EBX + 0xfffde1f8],0x661944 ; 00528c05 | g_CMolochVTable
-    CALL core_morph.cpp_CMorphModel_FUN_0052b330 ; 00528c0f
-        ;   XREF to: 0052b330 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052b330(CMorphModel * this_ptr)
+    CALL core_morph.cpp_CMorph_dtor_FUN_0052b330 ; 00528c0f
+        ;   XREF to: 0052b330 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_dtor_FUN_0052b330(CMorph * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00528c14
     PUSH 0x0                            ; 00528c17
     SUB EAX,0x2388                      ; 00528c19

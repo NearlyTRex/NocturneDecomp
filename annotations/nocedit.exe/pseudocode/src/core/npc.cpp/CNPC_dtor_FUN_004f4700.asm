@@ -12,9 +12,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
-;   core_armour.cpp_freeFires_FUN_00412700
-;   core_armour.cpp_freeFlames_FUN_00412720
-;   core_armour.cpp_freeVectors_FUN_004126e0
+;   core_armour.cpp_CFlame_arrdtor_FUN_00412720
+;   core_armour.cpp_CVector3f_arrdtor_FUN_004126e0
+;   core_armour.cpp_SFire_arrdtor_FUN_00412700
 ;   core_cloth.cpp_CClothList_dtor_FUN_0043bf80
 ;   core_path.cpp_CPathMap_dtor_FUN_005464d0
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
@@ -36,37 +36,37 @@ section .text
     ADD EBX,0xbe24                      ; 004f4712
     PUSH EBX                            ; 004f4718
     CALL core_path.cpp_CPathMap_dtor_FUN_005464d0 ; 004f4719
-        ;   XREF to: 005464d0 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_CPathMap_dtor_FUN_005464d0(CPathMap * this_ptr)
+        ;   XREF to: 005464d0 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_CPathMap_dtor_FUN_005464d0(CPathMap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f471e
     PUSH 0x0                            ; 004f4721
     SUB EAX,0x8a58                      ; 004f4723
     PUSH EAX                            ; 004f4728
-    CALL core_armour.cpp_freeFlames_FUN_00412720 ; 004f4729
-        ;   XREF to: 00412720 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_freeFlames_FUN_00412720(CFlame * objs)
+    CALL core_armour.cpp_CFlame_arrdtor_FUN_00412720 ; 004f4729
+        ;   XREF to: 00412720 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor_FUN_00412720(CFlame * objs, uint flags)
     ADD ESP,0x8                         ; 004f472e
     PUSH 0x0                            ; 004f4731
     SUB EAX,0x4b0                       ; 004f4733
     PUSH EAX                            ; 004f4738
-    CALL core_armour.cpp_freeFires_FUN_00412700 ; 004f4739
-        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_freeFires_FUN_00412700(SFire * objs)
+    CALL core_armour.cpp_SFire_arrdtor_FUN_00412700 ; 004f4739
+        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor_FUN_00412700(SFire * objs, uint flags)
     ADD ESP,0x8                         ; 004f473e
     PUSH 0x0                            ; 004f4741
     SUB EAX,0x20c                       ; 004f4743
     PUSH EAX                            ; 004f4748
-    CALL core_armour.cpp_freeVectors_FUN_004126e0 ; 004f4749
-        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * objs)
+    CALL core_armour.cpp_CVector3f_arrdtor_FUN_004126e0 ; 004f4749
+        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_CVector3f_arrdtor_FUN_004126e0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 004f474e
     PUSH 0x0                            ; 004f4751
     SUB EAX,0xb4                        ; 004f4753
     PUSH EAX                            ; 004f4758
-    CALL core_armour.cpp_freeVectors_FUN_004126e0 ; 004f4759
-        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * objs)
+    CALL core_armour.cpp_CVector3f_arrdtor_FUN_004126e0 ; 004f4759
+        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_CVector3f_arrdtor_FUN_004126e0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 004f475e
     PUSH 0x0                            ; 004f4761
     SUB EAX,0x1c8                       ; 004f4763
     PUSH EAX                            ; 004f4768
     CALL core_cloth.cpp_CClothList_dtor_FUN_0043bf80 ; 004f4769
-        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043bf80(CClothList * this_ptr)
+        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043bf80(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f476e
     PUSH 0x0                            ; 004f4771
     SUB EAX,0x293c                      ; 004f4773

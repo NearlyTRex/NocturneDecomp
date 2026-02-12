@@ -2,52 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 16,
-        "message": "incompatible pointer types assigning to 'CCrossbow_ptr_1404' (aka 'CCrossbow *') from 'CFlame *'"
-      },
-      {
         "category": "other",
-        "column": 14,
-        "line": 17,
-        "message": "member reference type 'CCrossbow_ptr_1404' (aka 'CCrossbow *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 19,
-        "message": "member reference type 'CCrossbow_ptr_1404' (aka 'CCrossbow *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 20,
-        "message": "member reference type 'CCrossbow_ptr_1404' (aka 'CCrossbow *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 31,
+        "column": 19,
         "line": 21,
-        "message": "no member named 'unk5' in 'CCrossbow'"
+        "message": "type 'CCrossbow_ptr_1404' does not provide a subscript operator"
       },
       {
-        "category": "missing_member",
-        "column": 31,
+        "category": "other",
+        "column": 25,
         "line": 22,
-        "message": "no member named 'unk5' in 'CCrossbow'"
+        "message": "type 'CCrossbow_ptr_1404' does not provide a subscript operator"
       },
       {
-        "category": "missing_member",
-        "column": 31,
+        "category": "other",
+        "column": 25,
         "line": 23,
-        "message": "no member named 'unk5' in 'CCrossbow'"
+        "message": "type 'CCrossbow_ptr_1404' does not provide a subscript operator"
       },
       {
-        "category": "missing_member",
-        "column": 31,
+        "category": "other",
+        "column": 25,
         "line": 24,
-        "message": "no member named 'unk5' in 'CCrossbow'"
+        "message": "type 'CCrossbow_ptr_1404' does not provide a subscript operator"
       },
       {
         "category": "missing_member",
@@ -66,42 +42,6 @@
         "column": 12,
         "line": 27,
         "message": "no member named 'flame_size' in 'CCrossbow'"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 28,
-        "message": "member reference type 'CCrossbow_ptr_1404' (aka 'CCrossbow *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 29,
-        "message": "member reference type 'CCrossbow_ptr_1404' (aka 'CCrossbow *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 30,
-        "message": "member reference type 'CCrossbow_ptr_1404' (aka 'CCrossbow *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 31,
-        "message": "member reference type 'CCrossbow_ptr_1404' (aka 'CCrossbow *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 32,
-        "message": "member reference type 'CCrossbow_ptr_1404' (aka 'CCrossbow *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 33,
-        "message": "member reference type 'CCrossbow_ptr_1404' (aka 'CCrossbow *') is a pointer; did you mean to use '->'?"
       }
     ],
     "success": false,
@@ -109,14 +49,15 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 130,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 25,
-    "suspect_count": 10,
+    "suspect_count": 13,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "pointer_cast"
     ],
     "total_lines": 59
   },
@@ -229,63 +170,84 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 10,
       "match": "ADJ",
-      "text": "ADJ(pCVar3).base.base.vtable._ub = &g_CCrossbowVTable;",
+      "text": "ADJ(pCVar3)->base.base.vtable._ub = &g_CCrossbowVTable;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 12,
       "match": "ADJ",
-      "text": "(&ADJ(pCVar3).base.model,\"crossbow.kfm\");",
+      "text": "(&ADJ(pCVar3)->base.model,\"crossbow.kfm\");",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "ADJ",
-      "text": "ADJ(pCVar3).base.fire_cooldown_timer = 0.0;",
+      "text": "ADJ(pCVar3)->base.fire_cooldown_timer = 0.0;",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)&pCVar3[-0xffffffff00000001].render_corona + 1) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)&pCVar3[-0xffffffff00000001].render_corona + 2) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)&pCVar3[-0xffffffff00000001].render_corona + 3) = '\\0';",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "ADJ",
-      "text": "ADJ(pCVar3).base.is_spread_weapon = 0;",
+      "text": "ADJ(pCVar3)->base.is_spread_weapon = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "ADJ",
-      "text": "ADJ(pCVar3).base.fire_mode = 0;",
+      "text": "ADJ(pCVar3)->base.fire_mode = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ADJ",
-      "text": "ADJ(pCVar3).base.weapon_type = 1;",
+      "text": "ADJ(pCVar3)->base.weapon_type = 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ADJ",
-      "text": "ADJ(pCVar3).base.can_penetrate = 0;",
+      "text": "ADJ(pCVar3)->base.can_penetrate = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "ADJ",
-      "text": "ADJ(pCVar3).base.bolt_velocity = 50.0;",
+      "text": "ADJ(pCVar3)->base.bolt_velocity = 50.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ADJ",
-      "text": "ADJ(pCVar3).base.fire_cooldown = 0.0;",
+      "text": "ADJ(pCVar3)->base.fire_cooldown = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {

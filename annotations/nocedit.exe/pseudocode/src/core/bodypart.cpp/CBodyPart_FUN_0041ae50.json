@@ -6,14 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 128,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 58,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "stack_param"
     ],
     "total_lines": 157
@@ -198,6 +199,13 @@
       "match": "in_stack_00000008",
       "text": "input_local_point->z = in_stack_00000008->z;",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->face_texture_indices + iVar3) = 0;",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

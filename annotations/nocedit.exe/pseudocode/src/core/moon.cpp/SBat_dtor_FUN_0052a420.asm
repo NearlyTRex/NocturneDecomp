@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SBat * __cdecl core_moon_cpp_SBat_dtor_FUN_0052a420(SBat *this_ptr)
+; __cdecl SBat * __cdecl core_moon_cpp_SBat_dtor_FUN_0052a420(SBat *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SBat *           Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

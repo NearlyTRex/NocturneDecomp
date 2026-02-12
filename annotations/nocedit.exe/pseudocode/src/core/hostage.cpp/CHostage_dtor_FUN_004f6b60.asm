@@ -12,9 +12,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
-;   core_armour.cpp_freeFires_FUN_00412700
-;   core_armour.cpp_freeFlames_FUN_00412720
-;   core_armour.cpp_freeVectors_FUN_004126e0
+;   core_armour.cpp_CFlame_arrdtor_FUN_00412720
+;   core_armour.cpp_CVector3f_arrdtor_FUN_004126e0
+;   core_armour.cpp_SFire_arrdtor_FUN_00412700
 ;   core_cloth.cpp_CClothList_dtor_FUN_0043bf80
 ;   core_path.cpp_CPathMap_dtor_FUN_005464d0
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
@@ -36,37 +36,37 @@ section .text
     ADD EBX,0xbe24                      ; 004f6b72
     PUSH EBX                            ; 004f6b78
     CALL core_path.cpp_CPathMap_dtor_FUN_005464d0 ; 004f6b79
-        ;   XREF to: 005464d0 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_CPathMap_dtor_FUN_005464d0(CPathMap * this_ptr)
+        ;   XREF to: 005464d0 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_CPathMap_dtor_FUN_005464d0(CPathMap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f6b7e
     PUSH 0x0                            ; 004f6b81
     SUB EAX,0x8a58                      ; 004f6b83
     PUSH EAX                            ; 004f6b88
-    CALL core_armour.cpp_freeFlames_FUN_00412720 ; 004f6b89
-        ;   XREF to: 00412720 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_freeFlames_FUN_00412720(CFlame * objs)
+    CALL core_armour.cpp_CFlame_arrdtor_FUN_00412720 ; 004f6b89
+        ;   XREF to: 00412720 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor_FUN_00412720(CFlame * objs, uint flags)
     ADD ESP,0x8                         ; 004f6b8e
     PUSH 0x0                            ; 004f6b91
     SUB EAX,0x4b0                       ; 004f6b93
     PUSH EAX                            ; 004f6b98
-    CALL core_armour.cpp_freeFires_FUN_00412700 ; 004f6b99
-        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_freeFires_FUN_00412700(SFire * objs)
+    CALL core_armour.cpp_SFire_arrdtor_FUN_00412700 ; 004f6b99
+        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor_FUN_00412700(SFire * objs, uint flags)
     ADD ESP,0x8                         ; 004f6b9e
     PUSH 0x0                            ; 004f6ba1
     SUB EAX,0x20c                       ; 004f6ba3
     PUSH EAX                            ; 004f6ba8
-    CALL core_armour.cpp_freeVectors_FUN_004126e0 ; 004f6ba9
-        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * objs)
+    CALL core_armour.cpp_CVector3f_arrdtor_FUN_004126e0 ; 004f6ba9
+        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_CVector3f_arrdtor_FUN_004126e0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 004f6bae
     PUSH 0x0                            ; 004f6bb1
     SUB EAX,0xb4                        ; 004f6bb3
     PUSH EAX                            ; 004f6bb8
-    CALL core_armour.cpp_freeVectors_FUN_004126e0 ; 004f6bb9
-        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_freeVectors_FUN_004126e0(CVector3f * objs)
+    CALL core_armour.cpp_CVector3f_arrdtor_FUN_004126e0 ; 004f6bb9
+        ;   XREF to: 004126e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_CVector3f_arrdtor_FUN_004126e0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 004f6bbe
     PUSH 0x0                            ; 004f6bc1
     SUB EAX,0x1c8                       ; 004f6bc3
     PUSH EAX                            ; 004f6bc8
     CALL core_cloth.cpp_CClothList_dtor_FUN_0043bf80 ; 004f6bc9
-        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043bf80(CClothList * this_ptr)
+        ;   XREF to: 0043bf80 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043bf80(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f6bce
     PUSH 0x0                            ; 004f6bd1
     SUB EAX,0x293c                      ; 004f6bd3

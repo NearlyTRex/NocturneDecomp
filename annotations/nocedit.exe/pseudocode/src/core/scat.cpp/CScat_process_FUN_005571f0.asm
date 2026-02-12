@@ -34,7 +34,7 @@
 ;   double DOUBLE_006413d4 = 3.14159265350000
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGame* g_CGamePtr = 02d81a9c
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_02d81cc4
 ;   int INT_0310615c
 ;
@@ -441,8 +441,8 @@ section .text
     PUSH EBX                            ; 005575d1
         ;   Label: LAB_005575d1
     PUSH 0x64136f                       ; 005575d2 | = "%s confused while walking to scriptDe..."
-    MOV ECX,dword ptr [0x0066e8e0]      ; 005575d7 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 005575dd | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 005575d7 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 005575dd | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005575de
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005575e3

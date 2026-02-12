@@ -243,6 +243,6 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
   engine_2d_c_clearInputAndWait_FUN_00403260();
   wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)auStack_5c);
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)auStack_5c,0);
   return;
 }

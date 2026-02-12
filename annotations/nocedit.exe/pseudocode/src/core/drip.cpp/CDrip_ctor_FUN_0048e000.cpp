@@ -17,7 +17,7 @@ CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_0048e000(CDrip *this_ptr)
   
   pCVar2 = (CDrip *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
-  ADJ(this_ptr_00).base.vtable._ub = &g_CDripVTable;
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CDripVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"stalag.kfm");
   ADJ(this_ptr_00)->type = DRIP_TYPE_STALAG;

@@ -6,29 +6,26 @@
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 69,
+    "complexity_score": 8,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 9,
-    "suspect_count": 5,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 40
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
   },
   "cross_references": [
     {
       "addr": "0052b470",
       "from_addr": "0052b4a0",
-      "name": "core_morph.cpp_FUN_0052b470",
+      "name": "core_morph.cpp_CMorph_FUN_0052b470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052b580",
       "from_addr": "0052b5a7",
-      "name": "core_morph.cpp_FUN_0052b580",
+      "name": "core_morph.cpp_CMorph_FUN_0052b580",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,7 +40,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_morph.cpp_CMorphModel_FUN_0052a8d0",
-    "signature": "void __cdecl core_morph_cpp_CMorphModel_FUN_0052a8d0(CMorphModel *this_ptr)"
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_FUN_0052a8d0 (CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index)"
   },
   "function_calls": [
     {
@@ -64,7 +61,7 @@
       {
         "call_addr": "0052b4a0",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_0052b470",
+        "caller": "core_morph.cpp_CMorph_FUN_0052b470",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "reg_params": [],
@@ -73,15 +70,15 @@
       {
         "call_addr": "0052b5a7",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_0052b580",
+        "caller": "core_morph.cpp_CMorph_FUN_0052b580",
         "estimated_params": 4,
         "instructions_analyzed": 14,
         "reg_params": [],
         "stack_params": 4
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 3,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -105,10 +102,10 @@
     "pcode_op_count": 95
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -117,48 +114,22 @@
         "offset": 4,
         "size": 4,
         "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "frame_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000008",
-      "text": "CKeyFramedModel *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "text": "core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(in_stack_00000008,in_stack_0000000c)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(in_stack_00000008,in_stack_0000000c)",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:3",
-      "param_delta": 2,
-      "text": "Function declares 1 params but call sites push 3 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

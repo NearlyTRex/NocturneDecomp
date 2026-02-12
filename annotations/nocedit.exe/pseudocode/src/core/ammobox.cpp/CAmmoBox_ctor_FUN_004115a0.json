@@ -1,65 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 19,
-        "message": "incompatible pointer types assigning to 'CAmmoBox_ptr_344' (aka 'CAmmoBox *') from 'CKeyFramedModelInstance *'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 20,
-        "message": "member reference type 'CAmmoBox_ptr_344' (aka 'CAmmoBox *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 21,
-        "message": "no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 40,
-        "message": "no member named 'part_visibility_flags' in 'CAmmoBox'"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 41,
-        "message": "no member named 'part_visibility_flags' in 'CAmmoBox'"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 42,
-        "message": "no member named 'part_visibility_flags' in 'CAmmoBox'"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 43,
-        "message": "no member named 'part_visibility_flags' in 'CAmmoBox'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 165,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 35,
-    "suspect_count": 12,
+    "pseudocode_lines": 32,
+    "suspect_count": 10,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 87
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -198,7 +154,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "ADJ",
-      "text": "ADJ(this_ptr_00).base.vtable._ub = &g_CAmmoBoxVTable;",
+      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CAmmoBoxVTable;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -251,29 +207,15 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 2) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 3) = '\\0';",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->unk2 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 34,
       "match": "ADJ",
       "text": "return ADJ(this_ptr_00);",
       "type": "decompiler_intrinsic"

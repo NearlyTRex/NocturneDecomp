@@ -89,8 +89,8 @@ SWaterVertex * __cdecl SWaterVertex::ctor(SWaterVertex *this_ptr);
 
 // Original: core_wateract.cpp_SWaterVertex_dtor_FUN_005ebce0
 // Address: 005ebce0
-SWaterVertex * __cdecl SWaterVertex::dtor(SWaterVertex *this_ptr);
+SWaterVertex * __cdecl SWaterVertex::dtor(SWaterVertex *this_ptr,uint flags);
 
-// Original: core_wateract.cpp_freeWaterVertices_FUN_005ebcf0
+// Original: core_wateract.cpp_SWaterVertex_arrdtor_FUN_005ebcf0
 // Address: 005ebcf0
-SWaterVertex * __cdecl freeWaterVertices(SWaterVertex *objs);
+SWaterVertex * __cdecl SWaterVertex::arrdtor(SWaterVertex *objs,uint flags);

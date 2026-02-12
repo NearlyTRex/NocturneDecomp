@@ -6,14 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 5,
+    "complexity_score": 6,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 6,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 15
+    "total_lines": 16
   },
   "cross_references": [
     {
@@ -63,7 +63,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540",
-    "signature": "CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *this_ptr)"
+    "signature": "CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -94,10 +94,10 @@
     "pcode_op_count": 29
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -106,6 +106,13 @@
         "offset": 4,
         "size": 4,
         "type": "CAlphaBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

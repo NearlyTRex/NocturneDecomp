@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CRock * __cdecl core_fire_cpp_CRock_dtor_FUN_004c96d0(CRock *this_ptr)
+; __cdecl CRock * __cdecl core_fire_cpp_CRock_dtor_FUN_004c96d0(CRock *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CRock *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_particle.cpp_CParticle_dtor_FUN_00545670
@@ -18,7 +19,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004c96d2
     PUSH EDX                            ; 004c96d6
     CALL core_particle.cpp_CParticle_dtor_FUN_00545670 ; 004c96d7
-        ;   XREF to: 00545670 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr)
+        ;   XREF to: 00545670 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004c96dc
     RET                                 ; 004c96df
 

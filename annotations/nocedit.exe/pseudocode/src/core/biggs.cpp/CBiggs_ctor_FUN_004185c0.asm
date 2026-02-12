@@ -24,7 +24,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-;   core_morph.cpp_FUN_0052b310
+;   core_morph.cpp_CMorph_ctor_FUN_0052b310
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     ADD ESP,0x4                         ; 004185db
     ADD EAX,0x184                       ; 004185de
     PUSH EAX                            ; 004185e3
-    CALL core_morph.cpp_FUN_0052b310    ; 004185e4
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
+    CALL core_morph.cpp_CMorph_ctor_FUN_0052b310 ; 004185e4
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_0052b310(CMorph * this_ptr)
     ADD ESP,0x4                         ; 004185e9
     LEA EBX,[EAX + 0xffff3fc0]          ; 004185ec
     PUSH 0x615aba                       ; 004185f2 | = "biggs.dfm"

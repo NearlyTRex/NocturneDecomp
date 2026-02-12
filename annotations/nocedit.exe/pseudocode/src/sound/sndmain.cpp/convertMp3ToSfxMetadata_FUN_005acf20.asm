@@ -152,7 +152,7 @@ section .text
     MOV [0x0067d20c],EAX                ; 005ad003 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EDX      ; 005ad008 | g_CurrentDebugLine
     CALL sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530 ; 005ad00e
-        ;   XREF to: 00534530 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder * this_ptr)
+        ;   XREF to: 00534530 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ad013
     PUSH EAX                            ; 005ad016
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005ad017

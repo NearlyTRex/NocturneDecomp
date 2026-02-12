@@ -728,11 +728,35 @@ def generate_individual_typedef_header(currentProgram, typedef, type_to_path_map
         content.extend(dep_lines)
 
     content.append("")
-    content.append("// Typedef: %s" % typedef.getName())
-    if typedef.getDescription():
-        content.append("// %s" % typedef.getDescription())
+    td_name = typedef.getName()
     base_type = resolve_data_type_name_for_headers(currentProgram, typedef.getDataType())
-    content.append("typedef %s %s;" % (base_type, typedef.getName()))
+
+    # Check if this is a _ptr_N adjusted pointer type (e.g., CCharacter_ptr_344)
+    import re as _re
+    ptr_match = _re.match(r'^(\w+)_ptr_\d+$', td_name)
+    if ptr_match and base_type.startswith('struct ') and base_type.endswith('*'):
+        # Generate a struct with operator overloads instead of a typedef.
+        # This allows Ghidra's adjusted pointer code to compile without
+        # text transforms for declarations, assignments, or function args.
+        struct_name = ptr_match.group(1)
+        content.append("// Adjusted pointer: %s" % td_name)
+        if typedef.getDescription():
+            content.append("// %s" % typedef.getDescription())
+        content.append("struct %s {" % td_name)
+        content.append("    void *_raw;")
+        content.append("    %s() : _raw(0) {}" % td_name)
+        content.append("    template<typename T> %s(T* p) : _raw((void*)p) {}" % td_name)
+        content.append("    template<typename T> %s& operator=(T* p) { _raw = (void*)p; return *this; }" % td_name)
+        content.append("    %s* operator->() const { return (%s*)_raw; }" % (struct_name, struct_name))
+        content.append("    template<typename T> operator T*() const { return (T*)_raw; }")
+        content.append("    explicit operator bool() const { return _raw != 0; }")
+        content.append("};")
+    else:
+        content.append("// Typedef: %s" % td_name)
+        if typedef.getDescription():
+            content.append("// %s" % typedef.getDescription())
+        content.append("typedef %s %s;" % (base_type, td_name))
+
     content.append("")
     return "\n".join(content)
 

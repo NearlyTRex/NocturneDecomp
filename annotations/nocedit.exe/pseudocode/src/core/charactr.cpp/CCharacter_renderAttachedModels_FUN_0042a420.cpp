@@ -10,7 +10,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
 
 {
   int iVar1;
-  char *pcVar2;
+  SDamageDecal *pSVar2;
   int iVar3;
   CMatrix3x4f *pCVar4;
   CMatrix3x3f *pCVar5;
@@ -24,13 +24,13 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
   
   bVar6 = 0;
   iVar3 = 0;
-  if (0 < this_ptr->field60_0x2df4) {
+  if (0 < this_ptr->damage_decal_count) {
     local_14 = (this_ptr->model).bone_transform.bone_world_matrices;
-    pcVar2 = this_ptr->field61_0x2df8;
+    pSVar2 = this_ptr->damage_decals;
     do {
-      if ((this_ptr->model).part_data.visibility_flags[*(int *)pcVar2] != 0) {
+      if ((this_ptr->model).part_data.visibility_flags[pSVar2->part_index] != 0) {
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                  ((CMatrix3x4f *)(pcVar2 + 8),local_14 + *(int *)(pcVar2 + 4),&local_8c);
+                  (&pSVar2->transform,local_14 + pSVar2->bone_index,&local_8c);
         pCVar4 = &local_8c;
         pCVar5 = &local_5c;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -49,8 +49,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
       }
       iVar3 = iVar3 + 1;
-      pcVar2 = pcVar2 + 0x38;
-    } while (iVar3 < this_ptr->field60_0x2df4);
+      pSVar2 = pSVar2 + 1;
+    } while (iVar3 < this_ptr->damage_decal_count);
   }
   return;
 }

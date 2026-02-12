@@ -45,7 +45,7 @@
 ;   int INT_008224cc
 ;   int INT_008224d0
 ;   float FLOAT_008224dc
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -365,7 +365,7 @@ section .text
     PUSH EBP                            ; 00413211
     PUSH 0x614ff9                       ; 00413212 | = "%s confused while walking to scriptDe..."
     MOV EAX,[0x0066e8e0]                ; 00413217 | g_CConsolePtr
-    PUSH EAX                            ; 0041321c | g_ConsolePtr
+    PUSH EAX                            ; 0041321c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0041321d
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x00413011                      ; 00413222

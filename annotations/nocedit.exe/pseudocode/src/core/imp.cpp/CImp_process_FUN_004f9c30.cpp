@@ -505,22 +505,22 @@ switchD_004fa8ed_caseD_8:
   }
   iVar7 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if ((iVar7 != 0) && (local_24 != 9)) {
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_bc = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_b8 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    pCVar10 = &(this_ptr->base).base.field6_0x241c;
-    local_b4 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_bc = (this_ptr->base).base.velocity.x * delta_time;
+    local_b8 = (this_ptr->base).base.velocity.y * delta_time;
+    pCVar10 = &(this_ptr->base).base.position_delta;
+    local_b4 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar1 = &(this_ptr->base).base.model.accumulated_root_motion;
     local_128 = local_bc + pCVar10->x;
-    local_124 = local_b8 + (this_ptr->base).base.field6_0x241c.y;
-    local_120 = local_b4 + (this_ptr->base).base.field6_0x241c.z;
+    local_124 = local_b8 + (this_ptr->base).base.position_delta.y;
+    local_120 = local_b4 + (this_ptr->base).base.position_delta.z;
     local_110.x = local_128 + pCVar1->x;
     local_110.y = local_124 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_110.z = local_120 + (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar10->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar10->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;

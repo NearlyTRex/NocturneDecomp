@@ -17,7 +17,7 @@ CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_ctor_FUN_004115a0(CAmmoBox *this_pt
   
   pCVar2 = (CAmmoBox *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
-  ADJ(this_ptr_00).base.vtable._ub = &g_CAmmoBoxVTable;
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CAmmoBoxVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"ammobag.kfm");
   pcVar2 = "CGun";
@@ -37,9 +37,6 @@ CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_ctor_FUN_004115a0(CAmmoBox *this_pt
   ADJ(this_ptr_00)->item = (char *)0x0;
   ADJ(this_ptr_00)->has_collision = 0;
   ADJ(this_ptr_00)->open_sound[0] = '\0';
-  *(char *)(this_ptr_00[1].part_visibility_flags + 0x1d) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 1) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 2) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1d) + 3) = '\0';
+  ADJ(this_ptr_00)->unk2 = 0;
   return ADJ(this_ptr_00);
 }

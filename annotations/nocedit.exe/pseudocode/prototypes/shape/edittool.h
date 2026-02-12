@@ -77,7 +77,7 @@ CEditorTools * __cdecl CEditorTools::ctor(CEditorTools *this_ptr);
 
 // Original: shape_edittool.cpp_CEditorTools_dtor_FUN_0049dfb0
 // Address: 0049dfb0
-CEditorTools * __cdecl CEditorTools::dtor(CEditorTools *this_ptr);
+CEditorTools * __cdecl CEditorTools::dtor(CEditorTools *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CEditorTools_init_FUN_0049e020
 // Address: 0049e020
@@ -465,7 +465,7 @@ CEdScrollBar * __cdecl CEdScrollBar::ctor(CEdScrollBar *this_ptr);
 
 // Original: shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20
 // Address: 004a5b20
-CEdScrollBar * __cdecl CEdScrollBar::dtor(CEdScrollBar *this_ptr);
+CEdScrollBar * __cdecl CEdScrollBar::dtor(CEdScrollBar *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40
 // Address: 004a5b40
@@ -521,7 +521,7 @@ CEdButton * __cdecl CEdButton::ctor(CEdButton *this_ptr);
 
 // Original: shape_edittool.cpp_CEdButton_dtor_FUN_004a6510
 // Address: 004a6510
-CEdButton * __cdecl CEdButton::dtor(CEdButton *this_ptr);
+CEdButton * __cdecl CEdButton::dtor(CEdButton *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530
 // Address: 004a6530
@@ -557,7 +557,7 @@ CEdCheck * __cdecl CEdCheck::ctor(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_CEdCheck_dtor_FUN_004a6a40
 // Address: 004a6a40
-CEdCheck * __cdecl CEdCheck::dtor(CEdCheck *this_ptr);
+CEdCheck * __cdecl CEdCheck::dtor(CEdCheck *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CEdCheck_setupWithText_FUN_004a6a60
 // Address: 004a6a60
@@ -623,6 +623,6 @@ int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
 // Address: 004a6f40
 int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
 
-// Original: shape_edittool.cpp_freeVectors_FUN_004a6f50
+// Original: shape_edittool.cpp_CVector3f_arrdtor_FUN_004a6f50
 // Address: 004a6f50
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);

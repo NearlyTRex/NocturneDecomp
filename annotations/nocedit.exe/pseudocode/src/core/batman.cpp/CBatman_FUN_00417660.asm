@@ -25,7 +25,7 @@
 ;   double DOUBLE_00615975 = 20
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGame* g_CGamePtr = 02d81a9c
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.blood_flag
 ;   undefined4 g_CGameInstance.unk4
@@ -327,10 +327,10 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 0041791c
         ;   Label: LAB_0041791c
     PUSH 0x615943                       ; 0041791f | = "Shot thru the heart\n"
-    MOV EDX,dword ptr [0x0066e8e0]      ; 00417924 | g_ConsolePtr | g_CConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 00417924 | g_CConsoleInstance | g_CConsolePtr
     FLD ST0                             ; 0041792a
     FMUL double ptr [0x00615975]        ; 0041792c | DOUBLE_00615975
-    PUSH EDX                            ; 00417932 | g_ConsolePtr
+    PUSH EDX                            ; 00417932 | g_CConsoleInstance
     FSTP ST1                            ; 00417933
     FSTP float ptr [ESI + 0x4]          ; 00417935
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00417938

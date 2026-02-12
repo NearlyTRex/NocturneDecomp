@@ -15,7 +15,7 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   
   pCVar1 = (CTVBat *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
-  ADJ(this_ptr_00).base.base.base.vtable._ub = &g_CTVBatVTable;
+  ADJ(this_ptr_00)->base.base.base.vtable._ub = &g_CTVBatVTable;
   ADJ(this_ptr_00)->unk1 = 0;
   ADJ(this_ptr_00)->unk2 = 0;
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
@@ -31,7 +31,7 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   ADJ(this_ptr_00)->follow_orders = 0;
   ADJ(this_ptr_00)->unk4 = 0.0;
   ADJ(this_ptr_00)->state = 0;
-  ADJ(this_ptr_00).base.base.field44_0x2624 = 0;
+  ADJ(this_ptr_00)->base.base.show_in_editor = 0;
   ADJ(this_ptr_00)->unk11 = 0;
   ADJ(this_ptr_00)->periodic_sound[0] = '\0';
   ADJ(this_ptr_00)->periodic_sound_timer_min = 15.0;

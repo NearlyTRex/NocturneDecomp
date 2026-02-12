@@ -13,7 +13,7 @@
     "pseudocode_lines": 39,
     "suspect_count": 11,
     "suspect_types": [
-      "extra_output"
+      "decompiler_intrinsic"
     ],
     "total_lines": 102
   },
@@ -56,7 +56,7 @@
     {
       "addr": "0052b310",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b310"
+      "name": "core_morph.cpp_CMorph_ctor_FUN_0052b310"
     },
     {
       "addr": "005a0840",
@@ -180,81 +180,81 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "text": "pCVar7 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar6)->morph);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 17,
-      "match": "extraout_EAX",
-      "text": "*(CDemonActor_vtable **)(extraout_EAX + -0xbeec) = &g_CBiggsVTable;",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "ADJ(pCVar7)->base.base.base.vtable._ub = &g_CBiggsVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
-      "match": "extraout_EAX",
-      "text": "((CDeformableModelInstance *)(extraout_EAX + -0xbee8),\"biggs.dfm\");",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar7)->base.base.model,\"biggs.dfm\");",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 21,
-      "match": "extraout_EAX",
-      "text": "pcVar7 = (char *)(extraout_EAX + 0xc2c);",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "pcVar5 = ADJ(pCVar7)->morph_event;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 23,
-      "match": "extraout_EAX",
-      "text": "((CKeyFramedModelInstance *)(extraout_EAX + -0x184),\"question.kfm\");",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar7)->model,\"question.kfm\");",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 25,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x9264) = 0x3f19999a;",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "ADJ(pCVar7)->base.base.collision_cylinder_height = 0.6;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 27,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x9260) = 0x3f666666;",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "ADJ(pCVar7)->base.base.collision_cylinder_radius = 0.9;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 28,
-      "match": "extraout_EAX",
-      "text": "*(float *)(extraout_EAX + -0x925c) = fVar2;",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "ADJ(pCVar7)->base.base.ai_detection_range_min = fVar2;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 29,
-      "match": "extraout_EAX",
-      "text": "*(float *)(extraout_EAX + -0x9258) = fVar3;",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "ADJ(pCVar7)->base.base.ai_detection_range_max = fVar3;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 34,
-      "match": "extraout_EAX",
-      "text": "return (CBiggs *)(extraout_EAX + -0xc040);",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "return ADJ(pCVar7);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 41,
-      "match": "extraout_EAX",
-      "text": "return (CBiggs *)(extraout_EAX + -0xc040);",
-      "type": "extra_output"
+      "match": "ADJ",
+      "text": "return ADJ(pCVar7);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

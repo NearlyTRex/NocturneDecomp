@@ -6,14 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 4,
+    "complexity_score": 5,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 4,
+    "pseudocode_lines": 5,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 7
+    "total_lines": 8
   },
   "cross_references": [],
   "function": {
@@ -26,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndmain.cpp_CSfxOptions_dtor_FUN_005ade30",
-    "signature": "CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_005ade30(CSfxOptions *this_ptr)"
+    "signature": "CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_005ade30(CSfxOptions *this_ptr,uint flags)"
   },
   "function_calls": [],
   "globals": [],
@@ -34,8 +34,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.0,
@@ -49,10 +49,10 @@
     "pcode_op_count": 6
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -61,6 +61,13 @@
         "offset": 4,
         "size": 4,
         "type": "CSfxOptions *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

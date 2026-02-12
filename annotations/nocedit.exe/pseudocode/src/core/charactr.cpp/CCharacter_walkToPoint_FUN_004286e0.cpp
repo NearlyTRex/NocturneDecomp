@@ -92,7 +92,7 @@ core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                 (g_CConsolePtr,"CCharacter::walkToPoint - go somewhere failed\n");
       return -1;
     }
-    pfVar1 = &(this_ptr->field6_0x241c).z;
+    pfVar1 = &(this_ptr->position_delta).z;
     local_54 = -fVar6;
     local_50 = fVar3 - fVar2;
     local_44 = local_54;
@@ -110,7 +110,7 @@ core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
   }
   else {
     if (fVar6 * (float)4 + fVar2 <= fVar3) {
-      pfVar1 = &(this_ptr->field6_0x241c).z;
+      pfVar1 = &(this_ptr->position_delta).z;
       local_64 = -fVar6;
       local_3c = fVar3 - fVar2;
       local_30 = local_64;
@@ -119,7 +119,7 @@ core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
       }
       *pfVar1 = *pfVar1 + local_30;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                (&this_ptr->base,&local_8c,&this_ptr->field6_0x241c);
+                (&this_ptr->base,&local_8c,&this_ptr->position_delta);
       pCVar4 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base,&local_f8,direction);
       local_a4 = target_pos->x - pCVar4->x;
@@ -148,13 +148,13 @@ core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
         local_dc = local_48 * 0.0;
         local_d8 = local_d8 * local_48;
       }
-      pCVar4 = &this_ptr->field6_0x241c;
+      pCVar4 = &this_ptr->position_delta;
       pCVar4->x = pCVar4->x + local_e0;
-      (this_ptr->field6_0x241c).y = (this_ptr->field6_0x241c).y + local_dc;
-      (this_ptr->field6_0x241c).z = (this_ptr->field6_0x241c).z + local_d8;
+      (this_ptr->position_delta).y = (this_ptr->position_delta).y + local_dc;
+      (this_ptr->position_delta).z = (this_ptr->position_delta).z + local_d8;
       local_80.x = local_bc.x - pCVar4->x;
-      local_80.y = local_bc.y - (this_ptr->field6_0x241c).y;
-      local_80.z = local_bc.z - (this_ptr->field6_0x241c).z;
+      local_80.y = local_bc.y - (this_ptr->position_delta).y;
+      local_80.z = local_bc.z - (this_ptr->position_delta).z;
       pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          (&local_c8,&local_80);
       fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar4->y - fVar7);

@@ -47,7 +47,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
        ((ABS(CStack_74.z) < (float)2 && (ABS(fStack_64) < (float)2)))) {
       core_bugs_cpp_CBugs_FUN_004257f0(this_ptr);
       core_bugs_cpp_CBugs_FUN_00427400(this_ptr);
-      if (this_ptr->unk == 1) {
+      if (this_ptr->state == 1) {
         core_bugs_cpp_CBugs_FUN_00425fe0(this_ptr);
         return;
       }
@@ -85,18 +85,15 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
       (this_ptr->base).base.base.location.position.z = fStack_54;
       fStack_38 = fStack_2c - (dest_position->position).x;
       fStack_30 = fStack_24 - (this_ptr->base).base.base.location.position.z;
-      fStack_14 = *(float *)this_ptr->unk5 + *(float *)(this_ptr->unk5 + 0xc);
+      fStack_14 = (this_ptr->bounds).min.x + (this_ptr->bounds).max.x;
       fStack_50 = fStack_14 * 0.5f;
-      fStack_4c = (*(float *)(this_ptr->unk5 + 4) + *(float *)(this_ptr->unk5 + 0x10)) *
-                  0.5f;
-      fStack_48 = (*(float *)(this_ptr->unk5 + 8) + *(float *)(this_ptr->unk5 + 0x14)) *
-                  0.5f;
+      fStack_4c = ((this_ptr->bounds).min.y + (this_ptr->bounds).max.y) * 0.5f;
+      fStack_48 = ((this_ptr->bounds).min.z + (this_ptr->bounds).max.z) * 0.5f;
       fStack_34 = fStack_4c;
-      if ((((*(float *)this_ptr->unk5 <= fStack_38) && (*(float *)(this_ptr->unk5 + 4) <= fStack_4c)
-           ) && (*(float *)(this_ptr->unk5 + 8) <= fStack_30)) &&
-         (((fStack_38 <= *(float *)(this_ptr->unk5 + 0xc) &&
-           (fStack_4c <= *(float *)(this_ptr->unk5 + 0x10))) &&
-          (fStack_30 <= *(float *)(this_ptr->unk5 + 0x14))))) {
+      if (((((this_ptr->bounds).min.x <= fStack_38) && ((this_ptr->bounds).min.y <= fStack_4c)) &&
+          ((this_ptr->bounds).min.z <= fStack_30)) &&
+         (((fStack_38 <= (this_ptr->bounds).max.x && (fStack_4c <= (this_ptr->bounds).max.y)) &&
+          (fStack_30 <= (this_ptr->bounds).max.z)))) {
         core_bugs_cpp_CBugs_FUN_004276c0(this_ptr);
       }
     }

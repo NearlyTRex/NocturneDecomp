@@ -32,7 +32,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CGame g_CGameInstance
 ;   undefined4 DAT_02d81ca8
@@ -407,8 +407,8 @@ section .text
     FSTP double ptr [ESP]               ; 0056ffbe
     PUSH EBP                            ; 0056ffc1
     PUSH 0x645feb                       ; 0056ffc2 | = "buildDispList %d items : %3.2f ms\n"
-    MOV EAX,[0x0066e8e0]                ; 0056ffc7 | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 0056ffcc | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 0056ffc7 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 0056ffcc | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0056ffcd
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 0056ffd2

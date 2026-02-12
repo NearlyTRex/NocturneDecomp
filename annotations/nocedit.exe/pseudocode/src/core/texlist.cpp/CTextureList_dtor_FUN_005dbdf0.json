@@ -6,14 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 4,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 4,
+    "pseudocode_lines": 5,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 7
+    "total_lines": 8
   },
   "cross_references": [
     {
@@ -33,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0",
-    "signature": "CTextureList * __cdecl core_texlist_cpp_CTextureList_dtor_FUN_005dbdf0(CTextureList *this_ptr)"
+    "signature": "CTextureList * __cdecl core_texlist_cpp_CTextureList_dtor_FUN_005dbdf0(CTextureList *this_ptr,uint flags)"
   },
   "function_calls": [],
   "globals": [],
@@ -50,8 +50,8 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -66,10 +66,10 @@
     "pcode_op_count": 6
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -78,6 +78,13 @@
         "offset": 4,
         "size": 4,
         "type": "CTextureList *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

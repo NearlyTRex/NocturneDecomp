@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_0047ef00(CDemonTriangle *this_ptr)
+; __cdecl CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_0047ef00(CDemonTriangle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

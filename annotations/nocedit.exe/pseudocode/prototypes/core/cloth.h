@@ -13,7 +13,7 @@ CCloth * __cdecl CCloth::ctor(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_CCloth_dtor_FUN_00438c00
 // Address: 00438c00
-CCloth * __cdecl CCloth::dtor(CCloth *this_ptr);
+CCloth * __cdecl CCloth::dtor(CCloth *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_CCloth_allocMemory_FUN_00438c50
 // Address: 00438c50
@@ -81,7 +81,7 @@ CClothList * __cdecl CClothList::ctor(CClothList *this_ptr);
 
 // Original: core_cloth.cpp_CClothList_dtor_FUN_0043bf80
 // Address: 0043bf80
-CClothList * __cdecl CClothList::dtor(CClothList *this_ptr);
+CClothList * __cdecl CClothList::dtor(CClothList *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_CClothList_load_FUN_0043bfa0
 // Address: 0043bfa0
@@ -201,7 +201,7 @@ SClothBone * __cdecl SClothBone::ctor(SClothBone *this_ptr);
 
 // Original: core_cloth.cpp_SClothBone_dtor_FUN_0043e410
 // Address: 0043e410
-SClothBone * __cdecl SClothBone::dtor(SClothBone *this_ptr);
+SClothBone * __cdecl SClothBone::dtor(SClothBone *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_SClothVertex_ctor_FUN_0043e420
 // Address: 0043e420
@@ -209,16 +209,16 @@ SClothVertex * __cdecl SClothVertex::ctor(SClothVertex *this_ptr);
 
 // Original: core_cloth.cpp_SClothVertex_dtor_FUN_0043e440
 // Address: 0043e440
-SClothVertex * __cdecl SClothVertex::dtor(SClothVertex *this_ptr);
+SClothVertex * __cdecl SClothVertex::dtor(SClothVertex *this_ptr,uint flags);
 
-// Original: core_cloth.cpp_freeVectors_FUN_0043e460
+// Original: core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460
 // Address: 0043e460
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
-// Original: core_cloth.cpp_freeClothVertices_FUN_0043e480
+// Original: core_cloth.cpp_SClothVertex_arrdtor_FUN_0043e480
 // Address: 0043e480
-SClothVertex * __cdecl freeClothVertices(SClothVertex *array);
+SClothVertex * __cdecl SClothVertex::arrdtor(SClothVertex *objs,uint flags);
 
-// Original: core_cloth.cpp_freeClothBones_FUN_0043e4a0
+// Original: core_cloth.cpp_SClothBone_arrdtor_FUN_0043e4a0
 // Address: 0043e4a0
-SClothBone * __cdecl freeClothBones(SClothBone *array);
+SClothBone * __cdecl SClothBone::arrdtor(SClothBone *objs,uint flags);

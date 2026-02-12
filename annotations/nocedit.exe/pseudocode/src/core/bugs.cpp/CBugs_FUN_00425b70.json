@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 91,
+    "complexity_score": 90,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 138
+    "total_lines": 137
   },
   "cross_references": [
     {
@@ -170,28 +170,28 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000008",
-      "text": "((double)((in_stack_00000008 - *(float *)(this_ptr->unk5 + 0x20)) * fVar1));",
+      "text": "round((double)((in_stack_00000008 - this_ptr->grid_origin_x) * fVar1));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_0000000c",
       "text": "dVar3 = round((double)((in_stack_0000000c - fVar2) * fVar1));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 15,
       "match": "ROUND",
       "text": "if ((-1 < (int)ROUND(dVar3)) && ((int)ROUND(dVar3) < 0xb)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 15,
       "match": "ROUND",
       "text": "if ((-1 < (int)ROUND(dVar3)) && ((int)ROUND(dVar3) < 0xb)) {",
       "type": "decompiler_intrinsic"

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_dtor_FUN_00470240(CDemonFilter *this_ptr)
+; __cdecl CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_dtor_FUN_00470240(CDemonFilter *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonFilter *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_dfilter.cpp_CFilterCache_free_FUN_00470000 at 00470049

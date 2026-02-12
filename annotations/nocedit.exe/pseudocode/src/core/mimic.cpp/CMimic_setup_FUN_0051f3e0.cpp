@@ -93,7 +93,7 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   pCVar1 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(pCVar1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);
-  core_morph_cpp_FUN_0052b430();
+  core_morph_cpp_CMorph_FUN_0052b430((CMorph *)(this_ptr->unk4 + 0x24),0);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar1);
   iVar6 = 0;
   if (0 < *(int *)(this_ptr->unk4 + 0x78)) {
@@ -142,7 +142,7 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
             ((CDeformableModelInstance *)(*(int *)(this_ptr->unk4 + 0xc54) + 0x158));
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
             ((CDeformableModelInstance *)(*(int *)(this_ptr->unk4 + 0xc54) + 0x158));
-  core_morph_cpp_FUN_0052b430();
+  core_morph_cpp_CMorph_FUN_0052b430((CMorph *)(this_ptr->unk4 + 0x24),1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
             ((CDeformableModelInstance *)(*(int *)(this_ptr->unk4 + 0xc54) + 0x158));
   core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)(this_ptr->unk4 + 0x24));

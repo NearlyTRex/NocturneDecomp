@@ -50,7 +50,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   stream = engine_dosio_c_getFile_FUN_00481a50("data","credits.txt","rt")
   ;
   if (stream == (_FILE *)0x0) {
-    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)(auStack_38 + 4));
+    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)(auStack_38 + 4),0);
     return;
   }
   for (iVar7 = (int)local_14 << 2; ((stream->_flag & 0x10) == 0 && (iVar7 < 0x1000));
@@ -152,7 +152,7 @@ LAB_004e43c1:
                       (*(void **)((int)local_1134 + iVar3),"..\\core\\game.cpp",0x1294);
           } while (iVar7 < local_10 * 4);
         }
-        engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&CStack_30);
+        engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&CStack_30,0);
         return;
       }
       engine_2d_c_fillRectColor_FUN_00403170(0x19e,0,0x27f,0x1e,0);

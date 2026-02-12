@@ -41,7 +41,7 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr)
   dVar3 = round((double)(fVar4 * fVar2));
   *(int *)(pCVar1->unk1 + 8) = (int)ROUND(dVar3);
   iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,iVar5);
-  (pCVar1->base).base.field54_0x2ddc = 0.75;
+  (pCVar1->base).base.collision_cylinder_height = 0.75;
   (pCVar1->base).base.collision_cylinder_radius = 1.5;
   pCVar1->unk3[0x38] = '\0';
   pCVar1->unk3[0x39] = '\0';
@@ -66,7 +66,7 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr)
   pCVar1->unk3[0x4a] = '\0';
   pCVar1->unk3[0x4b] = '\0';
   pCVar1->lives_left = iVar5;
-  (pCVar1->base).base.field56_0x2de4 = fVar2;
-  (pCVar1->base).base.field57_0x2de8 = fVar4;
+  (pCVar1->base).base.ai_detection_range_min = fVar2;
+  (pCVar1->base).base.ai_detection_range_max = fVar4;
   return pCVar1;
 }

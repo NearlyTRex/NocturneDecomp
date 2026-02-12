@@ -338,7 +338,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                 case 3:
                 case 4:
                 case 5:
-                  if ((this_ptr->base).base.field3_0x2410 != 0) {
+                  if ((this_ptr->base).base.is_on_ground != 0) {
                     pSVar20 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                         (&(this_ptr->base).base.model.motion_controller);
                     iStack_58 = pSVar20->state_index;
@@ -391,9 +391,9 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                     *(float *)(this_ptr->unk1 + 0x14) = fVar7 - fVar14;
                     *(float *)(this_ptr->unk3 + 8) = fVar8 - fVar5;
                     *(float *)(this_ptr->unk1 + 0x1c) = fVar9 - fVar5;
-                    fVar5 = (this_ptr->base).base.field6_0x241c.x;
+                    fVar5 = (this_ptr->base).base.position_delta.x;
                     *(float *)(this_ptr->unk3 + 0x10) = fVar10 - fVar6;
-                    (this_ptr->base).base.field6_0x241c.x =
+                    (this_ptr->base).base.position_delta.x =
                          fVar19 * in_stack_00000008 * (fVar22 + (float)pCStack_7c) + fVar5;
                     if ((iVar21 != 0) && ((this_ptr->base).base.layer_action_index != 0xe)) {
                       switch(iStack_58) {
@@ -401,15 +401,15 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                       case 2:
                       case 4:
                       case 5:
-                        (this_ptr->base).base.field3_0x2410 = 0;
+                        (this_ptr->base).base.is_on_ground = 0;
                         iStack_18 = 0xb;
                         break;
                       case 1:
-                        (this_ptr->base).base.field3_0x2410 = 0;
+                        (this_ptr->base).base.is_on_ground = 0;
                         iStack_18 = 0xb;
                         break;
                       case 3:
-                        (this_ptr->base).base.field3_0x2410 = 0;
+                        (this_ptr->base).base.is_on_ground = 0;
                         iStack_18 = 7;
                       }
                     }
@@ -433,7 +433,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                 case 0xc:
                 case 0xd:
                 case 0xe:
-                  (this_ptr->base).base.field3_0x2410 = 0;
+                  (this_ptr->base).base.is_on_ground = 0;
                 }
               }
             }
@@ -720,7 +720,7 @@ LAB_005bd19f:
         (this_ptr->base).base.turn_angle_accumulator = fVar19 * fStack_2c0;
       }
       fVar19 = (*((this_ptr->base).base.base.vtable._ub)->cylinderGroundCheck)
-                         ((CDemonActor *)this_ptr,(this_ptr->base).base.field54_0x2ddc,
+                         ((CDemonActor *)this_ptr,(this_ptr->base).base.collision_cylinder_height,
                           (CVector3f *)0x0);
       (this_ptr->base).base.closest_distance_threshold = fVar19;
     }
@@ -801,21 +801,21 @@ switchD_005bd22e_caseD_6:
     pCStack_5c = &(this_ptr->base).base.model.motion_controller;
     pSVar20 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(pCStack_5c);
     pCVar18 = &(this_ptr->base).base.model.accumulated_root_motion;
-    pCVar4 = &(this_ptr->base).base.field6_0x241c;
+    pCVar4 = &(this_ptr->base).base.position_delta;
     CStack_218.x = pCVar18->x + pCVar4->x;
     iStack_20 = pSVar20->state_index;
     CStack_218.y = (this_ptr->base).base.model.accumulated_root_motion.y +
-                   (this_ptr->base).base.field6_0x241c.y;
+                   (this_ptr->base).base.position_delta.y;
     CStack_218.z = (this_ptr->base).base.model.accumulated_root_motion.z +
-                   (this_ptr->base).base.field6_0x241c.z;
+                   (this_ptr->base).base.position_delta.z;
     fStack_44 = 18.0f * in_stack_00000008;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     fVar19 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar19;
     pCVar18->x = fVar19;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar4->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar4->x = (this_ptr->base).base.position_delta.y;
     if (iStack_20 == 7) {
       CStack_218.x = 0.0;
       CStack_218.y = 0.0;
@@ -829,7 +829,7 @@ switchD_005bd22e_caseD_6:
     else {
       if (iStack_20 == 8) {
         fVar5 = (float)32;
-        fVar19 = (this_ptr->base).base.field7_0x2428.y;
+        fVar19 = (this_ptr->base).base.velocity.y;
         *(float *)(this_ptr->unk9 + 0x50) = 18.0f;
         fVar19 = fVar19 - in_stack_00000008 * fVar5;
         this_ptr->unk9[0x4c] = '\0';
@@ -849,11 +849,11 @@ switchD_005bd22e_caseD_6:
         this_ptr->unk9[0x4d] = '\0';
         this_ptr->unk9[0x4e] = '\0';
         this_ptr->unk9[0x4f] = '\0';
-        fVar19 = (this_ptr->base).base.field7_0x2428.y;
+        fVar19 = (this_ptr->base).base.velocity.y;
         *(float *)(this_ptr->unk9 + 0x50) =
              *(float *)(this_ptr->unk9 + 0x50) - fVar5 * in_stack_00000008;
         fVar5 = *(float *)(this_ptr->unk9 + 0x50);
-        (this_ptr->base).base.field7_0x2428.y = fVar19 - in_stack_00000008 * fVar6;
+        (this_ptr->base).base.velocity.y = fVar19 - in_stack_00000008 * fVar6;
         if (fVar5 < 0.0) {
           this_ptr->unk9[0x50] = '\0';
           this_ptr->unk9[0x51] = '\0';
@@ -877,7 +877,7 @@ switchD_005bd22e_caseD_6:
       else if (iStack_20 == 0xc) {
         CStack_218.z = 10.0f * in_stack_00000008;
         fVar5 = (float)32;
-        fVar19 = (this_ptr->base).base.field7_0x2428.y;
+        fVar19 = (this_ptr->base).base.velocity.y;
         *(float *)(this_ptr->unk9 + 0x50) = 10.0f;
         fVar19 = fVar19 - in_stack_00000008 * fVar5;
         this_ptr->unk9[0x4c] = '\0';
@@ -888,7 +888,7 @@ LAB_005bd5e4:
         CStack_218.y = 0.0;
         CStack_218.x = 0.0;
 LAB_005bd5e6:
-        (this_ptr->base).base.field7_0x2428.y = fVar19;
+        (this_ptr->base).base.velocity.y = fVar19;
       }
       else if (iStack_20 == 0xd) {
         fVar6 = (float)32;
@@ -900,11 +900,11 @@ LAB_005bd5e6:
         this_ptr->unk9[0x4d] = '\0';
         this_ptr->unk9[0x4e] = '\0';
         this_ptr->unk9[0x4f] = '\0';
-        fVar19 = (this_ptr->base).base.field7_0x2428.y;
+        fVar19 = (this_ptr->base).base.velocity.y;
         *(float *)(this_ptr->unk9 + 0x50) =
              *(float *)(this_ptr->unk9 + 0x50) - fVar5 * in_stack_00000008;
         fVar5 = *(float *)(this_ptr->unk9 + 0x50);
-        (this_ptr->base).base.field7_0x2428.y = fVar19 - in_stack_00000008 * fVar6;
+        (this_ptr->base).base.velocity.y = fVar19 - in_stack_00000008 * fVar6;
         if (fVar5 < 0.0) {
           this_ptr->unk9[0x50] = '\0';
           this_ptr->unk9[0x51] = '\0';
@@ -917,8 +917,7 @@ LAB_005bd5e6:
         if (iStack_20 != 0xe) {
           if (iStack_20 == 0xf) {
             CStack_218.z = 0.0;
-            fVar19 = (this_ptr->base).base.field7_0x2428.y -
-                     in_stack_00000008 * (float)32;
+            fVar19 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;
             this_ptr->unk9[0x4c] = -0x66;
             this_ptr->unk9[0x4d] = '?';
             this_ptr->unk9[0x4e] = '\x1c';
@@ -929,12 +928,10 @@ LAB_005bd5e6:
             CStack_218.z = 0.0;
             CStack_218.y = 0.0;
             CStack_218.x = 0.0;
-            fVar19 = (this_ptr->base).base.field7_0x2428.y -
-                     in_stack_00000008 * (float)32;
+            fVar19 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;
           }
           else {
-            fVar19 = (this_ptr->base).base.field7_0x2428.y -
-                     in_stack_00000008 * (float)32;
+            fVar19 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;
           }
           goto LAB_005bd5e6;
         }
@@ -943,26 +940,26 @@ LAB_005bd5e6:
     }
     pCVar18 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                         ((CDemonActor *)this_ptr,&CStack_224,(CVector3f *)(this_ptr->unk9 + 0x34));
-    fStack_158 = (this_ptr->base).base.field7_0x2428.x * in_stack_00000008;
-    fStack_154 = (this_ptr->base).base.field7_0x2428.y * in_stack_00000008;
-    fStack_150 = in_stack_00000008 * (this_ptr->base).base.field7_0x2428.z;
+    fStack_158 = (this_ptr->base).base.velocity.x * in_stack_00000008;
+    fStack_154 = (this_ptr->base).base.velocity.y * in_stack_00000008;
+    fStack_150 = in_stack_00000008 * (this_ptr->base).base.velocity.z;
     fStack_1c4 = fStack_158 + pCVar18->x;
     fStack_1c0 = fStack_154 + pCVar18->y;
     CStack_218.x = CStack_218.x + fStack_1c4;
     fStack_1bc = fStack_150 + pCVar18->z;
     CStack_218.y = CStack_218.y + fStack_1c0;
     CStack_218.z = CStack_218.z + fStack_1bc;
-    *(float *)(this_ptr->unk11 + 0x18) = (this_ptr->base).base.field7_0x2428.y;
+    *(float *)(this_ptr->unk11 + 0x18) = (this_ptr->base).base.velocity.y;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&CStack_218);
     if ((this_ptr->base).base.base.location.position.y <
         (this_ptr->base).base.closest_distance_threshold + (float)0.10000000000000001) {
-      (this_ptr->base).base.field3_0x2410 = 1;
+      (this_ptr->base).base.is_on_ground = 1;
     }
     if (((iStack_20 == 0xf) || (iStack_20 == 9)) || (iStack_20 == 0xd)) {
-      if ((this_ptr->base).base.field3_0x2410 != 0) {
+      if ((this_ptr->base).base.is_on_ground != 0) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"Splat at %3.2f fps\n",
-                   (double)(this_ptr->base).base.field7_0x2428.y);
+                   (double)(this_ptr->base).base.velocity.y);
         fVar19 = -*(float *)(this_ptr->unk11 + 0x18);
         if (fVar19 < (float)20) {
           if (((iStack_20 == 0xd) || (iStack_20 == 9)) || (iStack_20 == 0xf)) goto LAB_005bd763;
@@ -985,7 +982,7 @@ LAB_005bd5e6:
             in_stack_fffffd10 = (double)ZEXT48(this_ptr);
             (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"fall-?.wav");
-            iVar21 = (this_ptr->base).base.field3_0x2410;
+            iVar21 = (this_ptr->base).base.is_on_ground;
             fStack_2c4 = 0.5f;
             goto joined_r0x005bdb44;
           }
@@ -998,11 +995,11 @@ LAB_005bd763:
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                   ((CDemonActor *)this_ptr,&g_ZeroVector,fVar19 * 0.025f + 1.0);
       }
-      iVar21 = (this_ptr->base).base.field3_0x2410;
+      iVar21 = (this_ptr->base).base.is_on_ground;
       fStack_2c4 = 0.5f;
     }
     else {
-      iVar21 = (this_ptr->base).base.field3_0x2410;
+      iVar21 = (this_ptr->base).base.is_on_ground;
       fStack_2c4 = 0.5f;
     }
 joined_r0x005bdb44:
@@ -1018,7 +1015,7 @@ joined_r0x005bdb44:
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0xf,1);
         }
-        (this_ptr->base).base.field3_0x2410 = 0;
+        (this_ptr->base).base.is_on_ground = 0;
       }
       goto LAB_005bc1a6;
     }

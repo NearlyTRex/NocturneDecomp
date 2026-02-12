@@ -15,20 +15,13 @@ core_bodypart_cpp_CBodyPart_onDropped_FUN_00419fd0(CBodyPart *this_ptr,CVector3f
   this_ptr->carried_by_actor = (CDemonActor *)0x0;
   core_bodypart_cpp_CBodyPart_FUN_0041b070(this_ptr);
   if (drop_position == (CVector3f *)0x0) {
-    this_ptr->unk6[0] = '\0';
-    this_ptr->unk6[1] = '\0';
-    this_ptr->unk6[2] = ' ';
-    this_ptr->unk6[3] = 'A';
+    this_ptr->physics_timer = 10.0;
     return;
   }
   local_10.z = 0.0;
   local_10.y = 0.0;
   local_10.x = 9.424778;
-  core_box_cpp_CBox_setupVelocities_FUN_00420180((CBox *)&this_ptr->sim_box,drop_position,&local_10)
-  ;
-  this_ptr->unk6[0] = '\0';
-  this_ptr->unk6[1] = '\0';
-  this_ptr->unk6[2] = ' ';
-  this_ptr->unk6[3] = 'A';
+  core_box_cpp_CBox_setupVelocities_FUN_00420180(&this_ptr->sim_box,drop_position,&local_10);
+  this_ptr->physics_timer = 10.0;
   return;
 }

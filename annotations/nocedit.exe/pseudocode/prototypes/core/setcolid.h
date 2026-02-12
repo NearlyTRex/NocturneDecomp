@@ -137,7 +137,7 @@ SRaytraceState * __cdecl SRaytraceState::ctor(SRaytraceState *this_ptr);
 
 // Original: core_setcolid.cpp_SRaytraceState_dtor_FUN_005746a0
 // Address: 005746a0
-SRaytraceState * __cdecl SRaytraceState::dtor(SRaytraceState *this_ptr);
+SRaytraceState * __cdecl SRaytraceState::dtor(SRaytraceState *this_ptr,uint flags);
 
 // Original: core_setcolid.cpp_SIntersectXZCylinder_ctor_FUN_005746b0
 // Address: 005746b0
@@ -145,7 +145,7 @@ SIntersectXZCylinder * __cdecl SIntersectXZCylinder::ctor(SIntersectXZCylinder *
 
 // Original: core_setcolid.cpp_SIntersectXZCylinder_dtor_FUN_005746c0
 // Address: 005746c0
-SIntersectXZCylinder * __cdecl SIntersectXZCylinder::dtor(SIntersectXZCylinder *this_ptr);
+SIntersectXZCylinder * __cdecl SIntersectXZCylinder::dtor(SIntersectXZCylinder *this_ptr,uint flags);
 
 // Original: core_setcolid.cpp_SDamageInfo_copy_FUN_005746d0
 // Address: 005746d0
@@ -157,8 +157,8 @@ SCollisionReturnInfo * __cdecl SCollisionReturnInfo::ctor(SCollisionReturnInfo *
 
 // Original: core_setcolid.cpp_SCollisionReturnInfo_dtor_FUN_00574760
 // Address: 00574760
-SCollisionReturnInfo * __cdecl SCollisionReturnInfo::dtor(SCollisionReturnInfo *this_ptr);
+SCollisionReturnInfo * __cdecl SCollisionReturnInfo::dtor(SCollisionReturnInfo *this_ptr,uint flags);
 
-// Original: core_setcolid.cpp_freeRaytraceStates_FUN_00574770
+// Original: core_setcolid.cpp_SRaytraceState_arrdtor_FUN_00574770
 // Address: 00574770
-SRaytraceState * __cdecl freeRaytraceStates(SRaytraceState *objs);
+SRaytraceState * __cdecl SRaytraceState::arrdtor(SRaytraceState *objs,uint flags);

@@ -75,7 +75,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_cloth.cpp_CCloth_dtor_FUN_00438c00",
-    "signature": "CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_00438c00(CCloth *this_ptr)"
+    "signature": "CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_00438c00(CCloth *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -86,12 +86,12 @@
     {
       "addr": "0043e4a0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_freeClothBones_FUN_0043e4a0"
+      "name": "core_cloth.cpp_SClothBone_arrdtor_FUN_0043e4a0"
     },
     {
       "addr": "0043e480",
       "is_variadic": false,
-      "name": "core_cloth.cpp_freeClothVertices_FUN_0043e480"
+      "name": "core_cloth.cpp_SClothVertex_arrdtor_FUN_0043e480"
     },
     {
       "addr": "00476d90",
@@ -123,10 +123,10 @@
     "pcode_op_count": 102
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -135,6 +135,13 @@
         "offset": 4,
         "size": 4,
         "type": "CCloth *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

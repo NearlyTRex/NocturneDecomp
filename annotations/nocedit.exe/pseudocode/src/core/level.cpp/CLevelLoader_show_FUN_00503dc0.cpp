@@ -57,7 +57,7 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
     (this_ptr->color).r = 0x82;
     (this_ptr->color).g = 200;
     (this_ptr->color).b = 0xf4;
-    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_44);
+    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_44,0);
   }
   if (image_variant == 1) {
     engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_30);
@@ -71,7 +71,7 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
     (this_ptr->color).g = 0xbd;
     (this_ptr->color).b = 0xff;
     this_ptr->use_custom_viewport = 1;
-    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_30);
+    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_30,0);
   }
   if (image_variant == 2) {
     engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_1c);
@@ -85,7 +85,7 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
     (this_ptr->color).r = 0x9e;
     (this_ptr->color).g = 0xe1;
     (this_ptr->color).b = 0xff;
-    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_1c);
+    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_1c,0);
   }
   if (image_variant != 3) {
     return;
@@ -101,6 +101,6 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
   (this_ptr->color).r = 0x6b;
   (this_ptr->color).g = 0x9a;
   (this_ptr->color).b = 0xff;
-  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_58);
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_58,0);
   return;
 }

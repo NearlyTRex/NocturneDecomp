@@ -21,7 +21,7 @@ CGame * __cdecl CGame::ctor(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_dtor_FUN_004d7d70
 // Address: 004d7d70
-CGame * __cdecl CGame::dtor(CGame *this_ptr);
+CGame * __cdecl CGame::dtor(CGame *this_ptr,uint flags);
 
 // Original: core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 // Address: 004d7d80

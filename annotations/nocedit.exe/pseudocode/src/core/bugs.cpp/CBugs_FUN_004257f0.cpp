@@ -42,9 +42,9 @@ void __cdecl core_bugs_cpp_CBugs_FUN_004257f0(CBugs *this_ptr)
   
   bVar8 = 0;
   local_c = 1.0 / 0.5f;
-  local_5c.y = *(float *)this_ptr->unk5 + *(float *)(this_ptr->unk5 + 0xc);
-  local_5c.z = *(float *)(this_ptr->unk5 + 4) + *(float *)(this_ptr->unk5 + 0x10);
-  local_50 = *(float *)(this_ptr->unk5 + 8) + *(float *)(this_ptr->unk5 + 0x14);
+  local_5c.y = (this_ptr->bounds).min.x + (this_ptr->bounds).max.x;
+  local_5c.z = (this_ptr->bounds).min.y + (this_ptr->bounds).max.y;
+  local_50 = (this_ptr->bounds).min.z + (this_ptr->bounds).max.z;
   fVar7 = local_5c.z * 0.5f;
   local_5c.x = local_50 * 0.5f;
   fVar5 = (this_ptr->base).base.base.location.position.y;

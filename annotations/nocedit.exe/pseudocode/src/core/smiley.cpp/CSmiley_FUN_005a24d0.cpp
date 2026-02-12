@@ -115,6 +115,6 @@ void __cdecl core_smiley_cpp_CSmiley_FUN_005a24d0(CSmiley *this_ptr)
   this_ptr->unk2[0x39] = '\0';
   this_ptr->unk2[0x3a] = '\0';
   this_ptr->unk2[0x3b] = '\0';
-  (this_ptr->base).base.field44_0x2624 = 0;
+  (this_ptr->base).base.show_in_editor = 0;
   return;
 }

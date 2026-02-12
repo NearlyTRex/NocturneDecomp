@@ -108,7 +108,7 @@ section .text
         ;   Label: LAB_0047eed7
     PUSH EBX                            ; 0047eed9
     CALL core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90 ; 0047eeda
-        ;   XREF to: 00476d90 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr)
+        ;   XREF to: 00476d90 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0047eedf
     PUSH EAX                            ; 0047eee2
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0047eee3

@@ -11,7 +11,7 @@ core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
           (CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 
 {
-  char *pcVar1;
+  SDamageDecal *pSVar1;
   SFire *pSVar2;
   int iVar3;
   CCharacter *pCVar4;
@@ -35,13 +35,13 @@ core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
     core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
               (&this_ptr->model,body_part,part_index);
     local_14 = 0;
-    if (0 < this_ptr->field60_0x2df4) {
+    if (0 < this_ptr->damage_decal_count) {
       local_18 = (this_ptr->model).bone_transform.bone_world_matrices;
-      pcVar1 = this_ptr->field61_0x2df8;
+      pSVar1 = this_ptr->damage_decals;
       do {
-        if (part_index == *(int *)pcVar1) {
+        if (part_index == pSVar1->part_index) {
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                    ((CMatrix3x4f *)(pcVar1 + 8),local_18 + *(int *)(pcVar1 + 4),&local_6c);
+                    (&pSVar1->transform,local_18 + pSVar1->bone_index,&local_6c);
           pCVar5 = &local_6c;
           pCVar6 = &local_9c;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -55,13 +55,13 @@ core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
           local_34 = local_70;
           core_bodypart_cpp_CBodyPart_FUN_0041add0(body_part);
         }
-        pcVar1 = pcVar1 + 0x38;
+        pSVar1 = pSVar1 + 1;
         local_14 = local_14 + 1;
-      } while (local_14 < this_ptr->field60_0x2df4);
+      } while (local_14 < this_ptr->damage_decal_count);
     }
     iVar3 = 0;
     if (0 < this_ptr->fire_count) {
-      pSVar2 = this_ptr->field65_0x2f1c;
+      pSVar2 = this_ptr->fire_effects;
       do {
         if ((part_index == *(int *)pSVar2->unk) && (-1 < *(int *)(pSVar2->unk + 4))) {
           core_xform_cpp_transformVector3x4_FUN_005f4dc0

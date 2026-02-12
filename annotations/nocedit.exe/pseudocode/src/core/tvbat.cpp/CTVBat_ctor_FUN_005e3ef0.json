@@ -1,32 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 17,
-        "message": "incompatible pointer types assigning to 'CTVBat_ptr_48832' (aka 'CTVBat *') from 'CKeyFramedModelInstance *'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 18,
-        "message": "member reference type 'CTVBat_ptr_48832' (aka 'CTVBat *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 23,
-        "message": "no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 34,
-        "message": "member reference type 'CTVBat_ptr_48832' (aka 'CTVBat *') is a pointer; did you mean to use '->'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -160,7 +135,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "ADJ",
-      "text": "ADJ(this_ptr_00).base.base.base.vtable._ub = &g_CTVBatVTable;",
+      "text": "ADJ(this_ptr_00)->base.base.base.vtable._ub = &g_CTVBatVTable;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -237,7 +212,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ADJ",
-      "text": "ADJ(this_ptr_00).base.base.field44_0x2624 = 0;",
+      "text": "ADJ(this_ptr_00)->base.base.show_in_editor = 0;",
       "type": "decompiler_intrinsic"
     },
     {

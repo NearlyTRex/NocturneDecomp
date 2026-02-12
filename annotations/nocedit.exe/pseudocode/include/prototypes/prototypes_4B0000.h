@@ -104,7 +104,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220 (CCheckOut
 int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 (CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer);
 void __cdecl engine_fileio_cpp_remountAllPods_FUN_004b5350(void);
 CFileManager * __cdecl engine_fileio_cpp_CFileManager_ctor_FUN_004b53a0(CFileManager *this_ptr);
-CFileManager * __cdecl engine_fileio_cpp_CFileManager_dtor_FUN_004b53d0(CFileManager *this_ptr);
+CFileManager * __cdecl engine_fileio_cpp_CFileManager_dtor_FUN_004b53d0(CFileManager *this_ptr,uint flags);
 void __cdecl engine_fileio_cpp_CFileManager_extractTexture_FUN_004b53e0 (CFileManager *this_ptr,char *texture_filename);
 void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0 (CFileManager *this_ptr,SMRGLHeaderExtended *mrgl_node);
 void __cdecl engine_fileio_cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610 (CFileManager *this_ptr,char *filename);
@@ -143,7 +143,7 @@ void __cdecl engine_fileio_cpp_logOffVersionControl_FUN_004b2830(void);
 void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileManager *this_ptr);
 void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190 (CFileManager *this_ptr,char *pod_file_path);
 CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_ctor_FUN_004bd710(CCheckOutList *this_ptr);
-CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr);
+CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr,uint flags);
 void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_directory);
 void __cdecl core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0 (CDemonFileManager *file_manager_ptr,char *set_filename);
 void __cdecl core_fileman_cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930(CDemonFileManager *this_ptr);

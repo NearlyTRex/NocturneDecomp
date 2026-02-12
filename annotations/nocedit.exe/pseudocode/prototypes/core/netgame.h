@@ -49,7 +49,7 @@ CNetGame * __cdecl CNetGame::ctor(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_dtor_FUN_0053f760
 // Address: 0053f760
-CNetGame * __cdecl CNetGame::dtor(CNetGame *this_ptr);
+CNetGame * __cdecl CNetGame::dtor(CNetGame *this_ptr,uint flags);
 
 // Original: core_netgame.cpp_CNetGame_FUN_0053f780
 // Address: 0053f780
@@ -233,7 +233,7 @@ SChatHistory * __cdecl SChatHistory::ctor(SChatHistory *this_ptr);
 
 // Original: core_netgame.cpp_SChatHistory_dtor_FUN_00543cd0
 // Address: 00543cd0
-SChatHistory * __cdecl SChatHistory::dtor(SChatHistory *this_ptr);
+SChatHistory * __cdecl SChatHistory::dtor(SChatHistory *this_ptr,uint flags);
 
 // Original: core_netgame.cpp_SNetPlayer_ctor_FUN_00543ce0
 // Address: 00543ce0

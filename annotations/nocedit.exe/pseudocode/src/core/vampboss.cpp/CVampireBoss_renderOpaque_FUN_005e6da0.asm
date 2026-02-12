@@ -19,9 +19,9 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420
 ;   core_cloth.cpp_CCloth_render_FUN_0043bae0
-;   core_morph.cpp_CMorphModel_FUN_0052bae0
-;   core_morph.cpp_FUN_0052b600
-;   core_morph.cpp_FUN_0052b640
+;   core_morph.cpp_CMorph_FUN_0052b600
+;   core_morph.cpp_CMorph_FUN_0052b640
+;   core_morph.cpp_CMorph_FUN_0052bae0
 ;   core_motion.cpp_CMotionController_render_FUN_0052e700
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -152,24 +152,24 @@ section .text
     PUSH 0x0                            ; 005e6eaf
     LEA ESI,[EBX + 0xcdcc4]             ; 005e6eb1
     PUSH ESI                            ; 005e6eb7
-    CALL core_morph.cpp_FUN_0052b600    ; 005e6eb8
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
+    CALL core_morph.cpp_CMorph_FUN_0052b600 ; 005e6eb8
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b600(CMorph * this_ptr, int model_index)
     ADD ESP,0x10                        ; 005e6ebd
     PUSH 0x1                            ; 005e6ec0
     PUSH 0x0                            ; 005e6ec2
     PUSH EDI                            ; 005e6ec4
     PUSH 0x0                            ; 005e6ec5
     PUSH ESI                            ; 005e6ec7
-    CALL core_morph.cpp_FUN_0052b640    ; 005e6ec8
-        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b640()
+    CALL core_morph.cpp_CMorph_FUN_0052b640 ; 005e6ec8
+        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b640(CMorph * this_ptr, int model_index)
     ADD ESP,0x14                        ; 005e6ecd
     PUSH 0x2                            ; 005e6ed0
     PUSH 0x0                            ; 005e6ed2
     PUSH EDI                            ; 005e6ed4
     PUSH 0x0                            ; 005e6ed5
     PUSH ESI                            ; 005e6ed7
-    CALL core_morph.cpp_FUN_0052b640    ; 005e6ed8
-        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b640()
+    CALL core_morph.cpp_CMorph_FUN_0052b640 ; 005e6ed8
+        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b640(CMorph * this_ptr, int model_index)
     ADD ESP,0x14                        ; 005e6edd
     PUSH 0x3                            ; 005e6ee0
     PUSH 0x0                            ; 005e6ee2
@@ -177,45 +177,45 @@ section .text
     PUSH EDI                            ; 005e6ee8
     PUSH 0x0                            ; 005e6ee9
     PUSH ESI                            ; 005e6eeb
-    CALL core_morph.cpp_FUN_0052b640    ; 005e6eec
-        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b640()
+    CALL core_morph.cpp_CMorph_FUN_0052b640 ; 005e6eec
+        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b640(CMorph * this_ptr, int model_index)
     ADD ESP,0x14                        ; 005e6ef1
     PUSH 0x4                            ; 005e6ef4
     PUSH 0x0                            ; 005e6ef6
     PUSH EDI                            ; 005e6ef8
     PUSH 0x0                            ; 005e6ef9
     PUSH ESI                            ; 005e6efb
-    CALL core_morph.cpp_FUN_0052b640    ; 005e6efc
-        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b640()
+    CALL core_morph.cpp_CMorph_FUN_0052b640 ; 005e6efc
+        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b640(CMorph * this_ptr, int model_index)
     ADD ESP,0x14                        ; 005e6f01
     PUSH 0x0                            ; 005e6f04
     MOV EDX,dword ptr [ESP + 0x28]      ; 005e6f06
     PUSH EDX                            ; 005e6f0a
     PUSH 0x1                            ; 005e6f0b
     PUSH ESI                            ; 005e6f0d
-    CALL core_morph.cpp_FUN_0052b600    ; 005e6f0e
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b600()
+    CALL core_morph.cpp_CMorph_FUN_0052b600 ; 005e6f0e
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b600(CMorph * this_ptr, int model_index)
     ADD ESP,0x10                        ; 005e6f13
     PUSH 0x1                            ; 005e6f16
     PUSH 0x0                            ; 005e6f18
     PUSH EBP                            ; 005e6f1a
     PUSH 0x1                            ; 005e6f1b
     PUSH ESI                            ; 005e6f1d
-    CALL core_morph.cpp_FUN_0052b640    ; 005e6f1e
-        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b640()
+    CALL core_morph.cpp_CMorph_FUN_0052b640 ; 005e6f1e
+        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b640(CMorph * this_ptr, int model_index)
     ADD ESP,0x14                        ; 005e6f23
     PUSH 0x2                            ; 005e6f26
     PUSH 0x0                            ; 005e6f28
     PUSH EBP                            ; 005e6f2a
     PUSH 0x1                            ; 005e6f2b
     PUSH ESI                            ; 005e6f2d
-    CALL core_morph.cpp_FUN_0052b640    ; 005e6f2e
-        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b640()
+    CALL core_morph.cpp_CMorph_FUN_0052b640 ; 005e6f2e
+        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b640(CMorph * this_ptr, int model_index)
     ADD ESP,0x14                        ; 005e6f33
     PUSH dword ptr [EBX + 0xce8f0]      ; 005e6f36
     PUSH ESI                            ; 005e6f3c
-    CALL core_morph.cpp_CMorphModel_FUN_0052bae0 ; 005e6f3d
-        ;   XREF to: 0052bae0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052bae0(CMorphModel * this_ptr)
+    CALL core_morph.cpp_CMorph_FUN_0052bae0 ; 005e6f3d
+        ;   XREF to: 0052bae0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052bae0(CMorph * this_ptr)
     JMP 0x005e6e33                      ; 005e6f42
         ;   XREF to: 005e6e33 (UNCONDITIONAL_JUMP)  ; LAB_005e6e33
 

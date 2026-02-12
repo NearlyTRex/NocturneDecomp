@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 450,
+    "complexity_score": 460,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 160,
-    "suspect_count": 26,
+    "suspect_count": 27,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -541,6 +541,13 @@
       "match": "ROUND",
       "text": "iStack_64 = (int)ROUND(dVar17);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(int *)((int)",
+      "text": "piVar5 = (int *)((int)&this_ptr->vertices->x + local_40);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

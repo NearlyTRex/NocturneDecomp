@@ -17,8 +17,7 @@ core_bat_cpp_CBat_getPropertyList_FUN_00414dc0(CBat *this_ptr,CActorPropertyList
   core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0
             (property_list,"Course file",this_ptr->course_filename,"data",
              "*.pth",0);
-  _sprintf
-            (local_6c,"Parameter (0..%d)",*(uint *)(this_ptr->course_filename + 0x20));
+  _sprintf(local_6c,"Parameter (0..%d)",(this_ptr->course).len);
   pCVar1 = core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
                      (property_list,local_6c,&this_ptr->param,(CActorPropertyValidatorFunc *)0x0);
   pCVar1->auto_update_flag = 1;

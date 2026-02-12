@@ -9,7 +9,7 @@ CColorQuantizer * __cdecl CColorQuantizer::ctor(CColorQuantizer *this_ptr);
 
 // Original: shape_quantize.cpp_CColorQuantizer_dtor_FUN_00554940
 // Address: 00554940
-CColorQuantizer * __cdecl CColorQuantizer::dtor(CColorQuantizer *this_ptr);
+CColorQuantizer * __cdecl CColorQuantizer::dtor(CColorQuantizer *this_ptr,uint flags);
 
 // Original: shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
 // Address: 00554a50
@@ -77,7 +77,7 @@ CBitmap * __cdecl CBitmap::ctor(CBitmap *this_ptr);
 
 // Original: shape_quantize.cpp_CBitmap_dtor_FUN_00556c20
 // Address: 00556c20
-CBitmap * __cdecl CBitmap::dtor(CBitmap *this_ptr);
+CBitmap * __cdecl CBitmap::dtor(CBitmap *this_ptr,uint flags);
 
 // Original: shape_quantize.cpp_showError_FUN_00556cb0
 // Address: 00556cb0

@@ -63,8 +63,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
   
   iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar5 != 0) {
-    if (0.0 <= *(float *)(this_ptr->unk + 0x24)) {
-      *(float *)(this_ptr->unk + 0x24) = *(float *)(this_ptr->unk + 0x24) - delta_time;
+    if (0.0 <= (float)this_ptr->unk2) {
+      this_ptr->unk2 = (int)((float)this_ptr->unk2 - delta_time);
     }
     pCVar1 = &(this_ptr->base).base.model;
     local_18 = -1.0;
@@ -80,16 +80,16 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
           if ((this_ptr->base).victim != (CDemonActor *)0x0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,1,1);
-            in_stack_fffffe10 = *(char **)(this_ptr->unk + 0x28);
+            in_stack_fffffe10 = *(char **)this_ptr->unk3;
             iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)in_stack_fffffe10);
             if (iVar5 == 0) {
-              in_stack_fffffe10 = *(char **)(this_ptr->unk + 0x2c);
+              in_stack_fffffe10 = *(char **)(this_ptr->unk3 + 4);
               iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)in_stack_fffffe10);
               if (iVar5 == 0) {
                 in_stack_fffffe10 = "ub-attack?.wav";
                 uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"ub-attack?.wav");
-                *(uint *)(this_ptr->unk + 0x2c) = uVar9;
+                *(uint *)(this_ptr->unk3 + 4) = uVar9;
               }
             }
           }
@@ -100,18 +100,18 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         }
       }
       else if (uVar7 == 1) {
-        if (*(float *)(this_ptr->unk + 0x24) <= 0.0) {
+        if ((float)this_ptr->unk2 <= 0.0) {
           local_14 = (char *)core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
-          *(char **)(this_ptr->unk + 0x24) = local_14;
+          this_ptr->unk2 = (int)local_14;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,3,1);
-          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0x28));
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->unk3);
           if ((iVar5 == 0) &&
-             (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0x2c)),
+             (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 4)),
              iVar5 == 0)) {
             uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"ub-howl?.wav");
-            *(uint *)(this_ptr->unk + 0x2c) = uVar9;
+            *(uint *)(this_ptr->unk3 + 4) = uVar9;
           }
         }
         fVar11 = (this_ptr->base).speed;
@@ -157,16 +157,16 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,iVar5,1);
-            in_stack_fffffe10 = *(char **)(this_ptr->unk + 0x28);
+            in_stack_fffffe10 = *(char **)this_ptr->unk3;
             iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)in_stack_fffffe10);
             if (iVar5 == 0) {
-              in_stack_fffffe10 = *(char **)(this_ptr->unk + 0x2c);
+              in_stack_fffffe10 = *(char **)(this_ptr->unk3 + 4);
               iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)in_stack_fffffe10);
               if (iVar5 == 0) {
                 in_stack_fffffe10 = "ub-attack?.wav";
                 uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"ub-attack?.wav");
-                *(uint *)(this_ptr->unk + 0x2c) = uVar9;
+                *(uint *)(this_ptr->unk3 + 4) = uVar9;
               }
             }
           }
@@ -195,7 +195,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
               if (((float)3 <= (float)local_20) &&
                  ((local_44 <= 4 &&
                   ((this_ptr->base).base.model.part_data.visibility_flags
-                   [*(int *)(this_ptr->unk + 4)] != 0)))) {
+                   [*(int *)(this_ptr->unk1 + 4)] != 0)))) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_140);
                 local_140.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
                 local_140.attacker = (CDemonActor *)this_ptr;
@@ -212,7 +212,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
               }
             }
             else if ((this_ptr->base).base.model.part_data.visibility_flags
-                     [*(int *)(this_ptr->unk + 0xc)] != 0) {
+                     [*(int *)(this_ptr->unk1 + 0xc)] != 0) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe0c);
               in_stack_fffffe10 = (char *)core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
               local_14 = in_stack_fffffe10;
@@ -254,7 +254,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                ((local_2c = (double)(float)local_1c, (float)5 <= (float)local_1c &&
                 (local_2c <= 6)))) {
               if ((this_ptr->base).base.model.part_data.visibility_flags
-                  [*(int *)(this_ptr->unk + 0xc)] != 0) {
+                  [*(int *)(this_ptr->unk1 + 0xc)] != 0) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_17c);
                 local_17c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
                 local_17c.attacker = (CDemonActor *)this_ptr;
@@ -276,7 +276,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                   ((local_34 = (double)(float)local_1c, (float)7 <= (float)local_1c &&
                    (local_34 <= 8)))) &&
                  ((this_ptr->base).base.model.part_data.visibility_flags
-                  [*(int *)(this_ptr->unk + 4)] != 0)) {
+                  [*(int *)(this_ptr->unk1 + 4)] != 0)) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1b8);
                 local_1b8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
                 local_1b8.attacker = (CDemonActor *)this_ptr;
@@ -353,14 +353,14 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
     if (iVar5 != 0) {
-      (this_ptr->base).base.field7_0x2428.y =
-           (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-      local_bc = (this_ptr->base).base.field7_0x2428.x * delta_time;
-      local_b8 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-      local_b4 = delta_time * (this_ptr->base).base.field7_0x2428.z;
-      local_ec.x = local_bc + (this_ptr->base).base.field6_0x241c.x;
-      local_ec.y = local_b8 + (this_ptr->base).base.field6_0x241c.y;
-      local_ec.z = local_b4 + (this_ptr->base).base.field6_0x241c.z;
+      (this_ptr->base).base.velocity.y =
+           (this_ptr->base).base.velocity.y - delta_time * (float)32;
+      local_bc = (this_ptr->base).base.velocity.x * delta_time;
+      local_b8 = (this_ptr->base).base.velocity.y * delta_time;
+      local_b4 = delta_time * (this_ptr->base).base.velocity.z;
+      local_ec.x = local_bc + (this_ptr->base).base.position_delta.x;
+      local_ec.y = local_b8 + (this_ptr->base).base.position_delta.y;
+      local_ec.z = local_b4 + (this_ptr->base).base.position_delta.z;
       pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if (pSVar6->state_index != 1) {
@@ -376,20 +376,20 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
               ((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe10);
     if ((this_ptr->base).pool_me == 0) {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                ((CCharacter *)this_ptr,*(int *)this_ptr->unk,INT_00822cf0,0.2);
-      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)this_ptr->unk] != 0) {
+                ((CCharacter *)this_ptr,*(int *)this_ptr->unk1,INT_00822cf0,0.2);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)this_ptr->unk1] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 4),INT_00822ce8,0.2);
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 4),INT_00822ce8,0.2);
       }
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 8),INT_00822cf4,0.2);
-      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk + 8)] != 0)
+                ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 8),INT_00822cf4,0.2);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk1 + 8)] != 0)
       {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0xc),INT_00822cec,0.2);
+                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0xc),INT_00822cec,0.2);
       }
       core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810
-                ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0x20),INT_00822cdc,0.7);
+                ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0x20),INT_00822cdc,0.7);
       core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670((CCharacter *)this_ptr);
     }
   }

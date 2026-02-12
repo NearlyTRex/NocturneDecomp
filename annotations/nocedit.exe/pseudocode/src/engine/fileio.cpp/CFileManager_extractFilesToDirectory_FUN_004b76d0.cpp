@@ -50,7 +50,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   if (iVar2 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s");
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1108);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1108,0);
     return;
   }
   local_c = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -59,7 +59,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   if (local_c == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s");
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1108);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1108,0);
     return;
   }
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_8dc);
@@ -158,6 +158,6 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_c,"..\\engine\\fileio.cpp",0xa4b);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_8dc,0);
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1108);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1108,0);
   return;
 }

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_dtor_FUN_004c9550(CLightningBolt *this_ptr)
+; __cdecl CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_dtor_FUN_004c9550(CLightningBolt *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLightningBolt * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

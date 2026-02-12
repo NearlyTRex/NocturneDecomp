@@ -29,22 +29,21 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052b160(CMorphModel *this_ptr)
             (g_CDemonRendererPtr2,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
   local_18 = -1;
   iVar3 = 0;
-  if (0 < *(int *)(this_ptr->unk2 + 4)) {
+  if (0 < this_ptr->num_faces) {
     iVar4 = 0;
     do {
-      iVar1 = *(int *)(iVar4 + *(int *)(this_ptr->unk2 + 8));
+      iVar1 = *(int *)(iVar4 + (int)this_ptr->faces);
       if (iVar1 != local_18) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                  (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(this_ptr->unk2 + iVar1 * 0x48 + 0x10))
-        ;
+                  (g_CDemonRendererPtr2,&this_ptr->textures[iVar1].base);
         local_18 = iVar1;
       }
-      polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(this_ptr->unk2 + 8) + iVar4);
+      polygon_info = (SMRGLHeaderPrimitive *)((int)this_ptr->faces + iVar4);
       iVar3 = iVar3 + 1;
       iVar4 = iVar4 + 0x3c;
       engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
                 (g_CDemonRendererPtr2,polygon_info,0x267);
-    } while (iVar3 < *(int *)(this_ptr->unk2 + 4));
+    } while (iVar3 < this_ptr->num_faces);
   }
   engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_0054f610(CPodFile *this_ptr)
+; __cdecl CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_0054f610(CPodFile *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPodFile *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[14]:
 ;   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 at 004b76b2

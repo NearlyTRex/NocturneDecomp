@@ -62,7 +62,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   } while (iVar5 == iVar2);
   g_CurrentDebugFilename = "..\\sound\\sndmain.cpp";
   g_CurrentDebugLine = 0x1784;
-  pCVar4 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(pCVar4);
+  pCVar4 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(pCVar4,0);
   shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar4);
   splitpath(mp3_filename,local_14,local_12c,local_22c,(char *)0x0);
   makepath(local_330,local_14,local_12c,local_22c,"sfx");

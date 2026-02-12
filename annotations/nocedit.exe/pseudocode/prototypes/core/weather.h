@@ -37,8 +37,8 @@ void __cdecl CWeather(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_dtor_FUN_005efb40
 // Address: 005efb40
-CWeather * __cdecl CWeather::dtor(CWeather *this_ptr);
+CWeather * __cdecl CWeather::dtor(CWeather *this_ptr,uint flags);
 
-// Original: core_weather.cpp_freeVectors_FUN_005efb50
+// Original: core_weather.cpp_CVector3f_arrdtor_FUN_005efb50
 // Address: 005efb50
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);

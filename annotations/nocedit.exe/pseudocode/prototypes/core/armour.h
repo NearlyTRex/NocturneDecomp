@@ -61,20 +61,20 @@ CEnemy * __cdecl CEnemy::dtor(CEnemy *this_ptr,uint flags);
 
 // Original: core_armour.cpp_SFire_dtor_FUN_00412680
 // Address: 00412680
-SFire * __cdecl SFire::dtor(SFire *this_ptr);
+SFire * __cdecl SFire::dtor(SFire *this_ptr,uint flags);
 
 // Original: core_armour.cpp_CFlame_dtor_FUN_00412690
 // Address: 00412690
 CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint flags);
 
-// Original: core_armour.cpp_freeVectors_FUN_004126e0
+// Original: core_armour.cpp_CVector3f_arrdtor_FUN_004126e0
 // Address: 004126e0
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
-// Original: core_armour.cpp_freeFires_FUN_00412700
+// Original: core_armour.cpp_SFire_arrdtor_FUN_00412700
 // Address: 00412700
-SFire * __cdecl freeFires(SFire *objs);
+SFire * __cdecl SFire::arrdtor(SFire *objs,uint flags);
 
-// Original: core_armour.cpp_freeFlames_FUN_00412720
+// Original: core_armour.cpp_CFlame_arrdtor_FUN_00412720
 // Address: 00412720
-CFlame * __cdecl freeFlames(CFlame *objs);
+CFlame * __cdecl CFlame::arrdtor(CFlame *objs,uint flags);

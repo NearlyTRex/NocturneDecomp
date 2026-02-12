@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel *this_ptr)
+; __cdecl CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
 ;   core_cloth.cpp_CCloth_dtor_FUN_00438c00 at 00438c38

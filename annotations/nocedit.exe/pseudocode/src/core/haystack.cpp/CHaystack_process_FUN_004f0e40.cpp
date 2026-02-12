@@ -73,7 +73,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
     case 2:
     case 3:
     case 10:
-      if ((this_ptr->base).base.field3_0x2410 != 0) {
+      if ((this_ptr->base).base.is_on_ground != 0) {
         iVar5 = 0;
         if (this_ptr->guns_drawn != 0) {
           iVar5 = 10;
@@ -177,21 +177,21 @@ switchD_004f12ce_caseD_8:
   pCVar2 = (this_ptr->base).base.grabbed_by;
   if (pCVar2 == (CDemonActor *)0x0) {
     pCVar6 = &(this_ptr->base).base.model.accumulated_root_motion;
-    pCVar1 = &(this_ptr->base).base.field6_0x241c;
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
+    pCVar1 = &(this_ptr->base).base.position_delta;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
     local_3c.x = pCVar6->x + pCVar1->x;
     local_3c.y = (this_ptr->base).base.model.accumulated_root_motion.y +
-                 (this_ptr->base).base.field6_0x241c.y;
+                 (this_ptr->base).base.position_delta.y;
     local_3c.z = (this_ptr->base).base.model.accumulated_root_motion.z +
-                 (this_ptr->base).base.field6_0x241c.z;
+                 (this_ptr->base).base.position_delta.z;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar6->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar1->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar1->x = (this_ptr->base).base.position_delta.y;
     pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
     if ((pSVar7->state_index == 0xe) || (pSVar7->state_index == 0xf)) {
@@ -199,9 +199,9 @@ switchD_004f12ce_caseD_8:
       local_3c.x = 0.0;
       local_3c.z = 0.0;
     }
-    local_6c._0_4_ = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_6c._4_4_ = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    local_6c._8_4_ = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    local_6c._0_4_ = (this_ptr->base).base.velocity.x * delta_time;
+    local_6c._4_4_ = (this_ptr->base).base.velocity.y * delta_time;
+    local_6c._8_4_ = delta_time * (this_ptr->base).base.velocity.z;
     local_3c.x = local_3c.x + (float)local_6c._0_4_;
     local_3c.y = local_3c.y + (float)local_6c._4_4_;
     local_3c.z = local_3c.z + (float)local_6c._8_4_;

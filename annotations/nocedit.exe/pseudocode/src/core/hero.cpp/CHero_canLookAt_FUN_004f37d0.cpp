@@ -26,7 +26,7 @@ int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004f37d0(CHero *this_ptr)
           ((float)0.10000000000000001 < ABS(*(float *)this_ptr->unk2))))))) ||
        (((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 4)) ||
         (((float)0.10000000000000001 < ABS(*(float *)(this_ptr->unk2 + 8)) ||
-         ((this_ptr->base).field3_0x2410 == 0)))))) {
+         ((this_ptr->base).is_on_ground == 0)))))) {
       return 1;
     }
   }

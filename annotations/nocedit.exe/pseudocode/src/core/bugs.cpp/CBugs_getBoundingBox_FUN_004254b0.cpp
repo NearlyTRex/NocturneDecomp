@@ -10,11 +10,11 @@ CBoundingBox3D * __cdecl
 core_bugs_cpp_CBugs_getBoundingBox_FUN_004254b0(CBugs *this_ptr,CBoundingBox3D *out_box)
 
 {
-  (out_box->min).x = *(float *)this_ptr->unk5;
-  (out_box->min).y = *(float *)(this_ptr->unk5 + 4);
-  (out_box->min).z = *(float *)(this_ptr->unk5 + 8);
-  (out_box->max).x = *(float *)(this_ptr->unk5 + 0xc);
-  (out_box->max).y = *(float *)(this_ptr->unk5 + 0x10);
-  (out_box->max).z = *(float *)(this_ptr->unk5 + 0x14);
+  (out_box->min).x = (this_ptr->bounds).min.x;
+  (out_box->min).y = (this_ptr->bounds).min.y;
+  (out_box->min).z = (this_ptr->bounds).min.z;
+  (out_box->max).x = (this_ptr->bounds).max.x;
+  (out_box->max).y = (this_ptr->bounds).max.y;
+  (out_box->max).z = (this_ptr->bounds).max.z;
   return out_box;
 }

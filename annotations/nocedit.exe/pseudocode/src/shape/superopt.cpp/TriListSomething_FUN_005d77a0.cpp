@@ -176,7 +176,7 @@ LAB_005d7a1a:
           local_14 = local_14 + 0x68;
         } while (local_18 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_24 + -0x14));
       }
-      shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_168);
+      shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_168,0);
       local_2c = local_2c + 0x184;
       local_28 = local_28 + 0x184;
       local_30 = local_30 + 1;
@@ -204,7 +204,7 @@ LAB_005d7a1a:
     remove(local_100);
   }
   shape_superopt_cpp_CObj_free_FUN_005d2600(&local_58);
-  shape_superopt_cpp_COptimize_dtor_FUN_005d6fd0(&local_9c);
-  shape_superopt_cpp_CObj_dtor_FUN_005d2260(&local_58);
+  shape_superopt_cpp_COptimize_dtor_FUN_005d6fd0(&local_9c,0);
+  shape_superopt_cpp_CObj_dtor_FUN_005d2260(&local_58,0);
   return;
 }

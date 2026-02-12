@@ -76,7 +76,7 @@ section .text
         ;   Label: LAB_00516fab
     PUSH EAX                            ; 00516fad
     CALL shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950 ; 00516fae
-        ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr)
+        ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00516fb3
     PUSH EAX                            ; 00516fb6
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00516fb7

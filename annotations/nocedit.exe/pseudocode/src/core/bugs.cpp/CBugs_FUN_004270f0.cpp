@@ -9,14 +9,15 @@
 void __cdecl core_bugs_cpp_CBugs_FUN_004270f0(CBugs *this_ptr)
 
 {
-  int iVar1;
+  int *piVar1;
   int iVar2;
   int iVar3;
   int iVar4;
-  int *piVar5;
-  int iVar6;
-  int *piVar7;
-  byte bVar8;
+  int iVar5;
+  SSwarmVertex *pSVar6;
+  int iVar7;
+  int *piVar8;
+  byte bVar9;
   int in_stack_00000008;
   int aiStackY_1030 [1008];
   int local_48;
@@ -25,73 +26,73 @@ void __cdecl core_bugs_cpp_CBugs_FUN_004270f0(CBugs *this_ptr)
   int local_3c;
   int local_38;
   int local_34;
-  int *local_30;
+  SSwarmVertex *local_30;
   int local_2c;
   int local_28;
-  int *local_24;
+  SSwarmVertex *local_24;
   int local_20;
   int local_1c;
   uint local_18;
   
-  bVar8 = 0;
+  bVar9 = 0;
   local_2c = *(int *)(in_stack_00000008 + 0x2c);
   *(uint *)(in_stack_00000008 + 0x34) = 0;
   *(uint *)(in_stack_00000008 + 0x2c) = *(uint *)(in_stack_00000008 + 0x30);
-  local_30 = (this_ptr->model).part_visibility_flags + 0xf;
+  local_30 = this_ptr->swarm_vertices;
   local_20 = 0;
   do {
-    piVar5 = local_30 + *(int *)(in_stack_00000008 + 0x2c) * 10;
-    local_28 = *(int *)(*(int *)((this_ptr->model).part_visibility_flags[0] + 0x2234) + 4 +
+    pSVar6 = local_30 + *(int *)(in_stack_00000008 + 0x2c);
+    local_28 = *(int *)(this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4] + 4 +
                        *(int *)(in_stack_00000008 + 0x2c) * 0xc);
-    iVar6 = 0;
-    iVar4 = 0;
-    local_24 = piVar5;
-    if (0 < *piVar5) {
-      iVar2 = 0;
+    iVar7 = 0;
+    iVar5 = 0;
+    local_24 = pSVar6;
+    if (0 < pSVar6->edge_count) {
+      iVar3 = 0;
       do {
-        iVar1 = piVar5[2];
-        local_1c = *(int *)(*(int *)((this_ptr->model).part_visibility_flags[0] + 0x2234) +
-                            iVar1 * 0xc + 4);
+        iVar2 = pSVar6->neighbors[0];
+        local_1c = *(int *)(this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4] +
+                            iVar2 * 0xc + 4);
         local_18 = 1;
         if ((local_20 != 0) ||
-           ((iVar3 = iVar2, iVar1 != local_2c &&
+           ((iVar4 = iVar3, iVar2 != local_2c &&
             ((*(int *)(in_stack_00000008 + 0x3c) < 1 || (local_28 <= local_1c)))))) {
-          iVar3 = iVar2 + 4;
-          iVar6 = iVar6 + 1;
-          *(int *)(&stack0xffffff98 + iVar2) = iVar1;
+          iVar4 = iVar3 + 4;
+          iVar7 = iVar7 + 1;
+          *(int *)(&stack0xffffff98 + iVar3) = iVar2;
         }
-        iVar4 = iVar4 + 1;
-        piVar5 = piVar5 + 1;
-        iVar2 = iVar3;
-      } while (iVar4 < *local_24);
+        iVar5 = iVar5 + 1;
+        pSVar6 = (SSwarmVertex *)&pSVar6->first_edge_data;
+        iVar3 = iVar4;
+      } while (iVar5 < local_24->edge_count);
     }
-  } while ((iVar6 < 1) && (local_20 = local_20 + 1, local_20 < 2));
+  } while ((iVar7 < 1) && (local_20 = local_20 + 1, local_20 < 2));
   if (0 < *(int *)(in_stack_00000008 + 0x3c)) {
     *(int *)(in_stack_00000008 + 0x3c) = *(int *)(in_stack_00000008 + 0x3c) + -1;
   }
-  if (iVar6 < 1) {
+  if (iVar7 < 1) {
     *(int *)(in_stack_00000008 + 0x30) = local_2c;
     if (local_2c < 0) {
       *(uint *)(in_stack_00000008 + 0x30) = *(uint *)(in_stack_00000008 + 0x2c);
     }
   }
   else {
-    iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,iVar6 + -1);
-    *(uint *)(in_stack_00000008 + 0x30) = *(uint *)(&stack0xffffff98 + iVar4 * 4);
+    iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,iVar7 + -1);
+    *(uint *)(in_stack_00000008 + 0x30) = *(uint *)(&stack0xffffff98 + iVar5 * 4);
   }
-  iVar4 = *(int *)((this_ptr->model).part_visibility_flags[0] + 0x2234);
-  piVar5 = (int *)(iVar4 + *(int *)(in_stack_00000008 + 0x2c) * 0xc);
-  piVar7 = piVar5 + (uint)bVar8 * -2 + 1;
-  local_3c = *piVar5;
-  *(int *)((int)&stack0xffffffc8 + (uint)bVar8 * -8) = *piVar7;
-  *(int *)((int)&stack0xffffffcc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-       piVar7[(uint)bVar8 * -2 + 1];
-  piVar5 = (int *)(iVar4 + *(int *)(in_stack_00000008 + 0x30) * 0xc);
-  piVar7 = piVar5 + (uint)bVar8 * -2 + 1;
-  local_48 = *piVar5;
-  *(int *)((int)&stack0xffffffbc + (uint)bVar8 * -8) = *piVar7;
-  *(int *)((int)&stack0xffffffc0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-       piVar7[(uint)bVar8 * -2 + 1];
+  iVar5 = this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4];
+  piVar1 = (int *)(iVar5 + *(int *)(in_stack_00000008 + 0x2c) * 0xc);
+  piVar8 = piVar1 + (uint)bVar9 * -2 + 1;
+  local_3c = *piVar1;
+  *(int *)((int)&stack0xffffffc8 + (uint)bVar9 * -8) = *piVar8;
+  *(int *)((int)&stack0xffffffcc + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
+       piVar8[(uint)bVar9 * -2 + 1];
+  piVar1 = (int *)(iVar5 + *(int *)(in_stack_00000008 + 0x30) * 0xc);
+  piVar8 = piVar1 + (uint)bVar9 * -2 + 1;
+  local_48 = *piVar1;
+  *(int *)((int)&stack0xffffffbc + (uint)bVar9 * -8) = *piVar8;
+  *(int *)((int)&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
+       piVar8[(uint)bVar9 * -2 + 1];
   *(float *)(in_stack_00000008 + 0x38) =
        SQRT((float)((local_34 - local_40) * (local_34 - local_40) +
                    (local_3c - local_48) * (local_3c - local_48) +

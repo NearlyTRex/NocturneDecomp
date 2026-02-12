@@ -9,32 +9,34 @@
 int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *this_ptr)
 
 {
+  CMorph *this_ptr_00;
   int iVar1;
-  CBoundingBox3D *this_ptr_00;
+  CBoundingBox3D *this_ptr_01;
   int iVar2;
   int unaff_retaddr;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
-    (this_ptr->base).base.field43_0x2620 = 0;
+    (this_ptr->base).base.was_rendered_opaque = 0;
   }
-  if ((this_ptr->base).base.field2_0x240c == 0) {
+  if ((this_ptr->base).base.render_active == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-    this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
+    this_ptr_01 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                             ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);
-    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if (iVar2 != 0) {
-      (this_ptr->base).base.field43_0x2620 = 1;
+      (this_ptr->base).base.was_rendered_opaque = 1;
       if (iVar1 == 0) {
         if (*(int *)(this_ptr->unk + 0x2478) == 0) {
           core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
         }
         else {
-          core_morph_cpp_FUN_0052b600();
-          core_morph_cpp_FUN_0052b600();
-          core_morph_cpp_FUN_0052b640();
-          core_morph_cpp_FUN_0052b640();
-          core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)(this_ptr->unk + 0x2480));
+          this_ptr_00 = (CMorph *)(this_ptr->unk + 0x2480);
+          core_morph_cpp_CMorph_FUN_0052b600(this_ptr_00,0);
+          core_morph_cpp_CMorph_FUN_0052b600(this_ptr_00,1);
+          core_morph_cpp_CMorph_FUN_0052b640(this_ptr_00,1);
+          core_morph_cpp_CMorph_FUN_0052b640(this_ptr_00,1);
+          core_morph_cpp_CMorph_FUN_0052bae0(this_ptr_00);
         }
       }
       else {

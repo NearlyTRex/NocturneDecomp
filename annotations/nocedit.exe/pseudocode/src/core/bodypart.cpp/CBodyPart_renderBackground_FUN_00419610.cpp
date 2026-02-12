@@ -17,7 +17,7 @@ core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,in
   
   if (this_ptr->render_in_background == 0) {
     if ((((layer_flag != 0) && (this_ptr->carried_by_actor == (CDemonActor *)0x0)) &&
-        (*(int *)(this_ptr->unk8 + 0x250) == 0)) &&
+        ((this_ptr->sim_box).is_valid == 0)) &&
        (iVar1 = (*((this_ptr->base).vtable._ub)->getAllowedMeleeAttackTypes)(&this_ptr->base),
        this_ptr_00 = g_CConsolePtr, iVar1 == 0)) {
       this_ptr->render_in_background = 1;
@@ -28,7 +28,7 @@ core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,in
       return;
     }
   }
-  if ((this_ptr->render_in_background != 1) || (*(int *)(this_ptr->unk8 + 0x250) == 0)) {
+  if ((this_ptr->render_in_background != 1) || ((this_ptr->sim_box).is_valid == 0)) {
     this_ptr->render_in_background = 2;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     g_CDemonSetPtr->unk_lighting_param2 = this_ptr->dont_use_normals;
@@ -43,7 +43,7 @@ core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,in
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     g_CDemonSetPtr->unk_lighting_param2 = 0;
-    this_ptr->unk9 = iVar1;
+    this_ptr->is_visible = iVar1;
   }
   return;
 }

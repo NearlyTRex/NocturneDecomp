@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_terrain.cpp_CTerrain_ctor_FUN_005e1ef0 at 005e1f1b
+;   core_terrain.cpp_CTerrain_init_FUN_005e1ef0 at 005e1f1b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ground_cpp_0062e571

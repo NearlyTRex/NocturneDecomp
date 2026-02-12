@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004fd0c0(CInventory *this_ptr)
+; __cdecl CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004fd0c0(CInventory *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_hero.cpp_CHero_dtor_FUN_004f2470 at 004f249e

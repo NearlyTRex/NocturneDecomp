@@ -2,12 +2,12 @@
 // Address: 0041b680
 // Address Range: [[0041b680, 0041b684]]
 // Convention: __cdecl
-// Signature: SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_dtor_FUN_0041b680(SBodyPartModel *this_ptr)
+// Signature: SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_dtor_FUN_0041b680(SBodyPartModel *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 SBodyPartModel * __cdecl
-core_bodypart_cpp_SBodyPartModel_dtor_FUN_0041b680(SBodyPartModel *this_ptr)
+core_bodypart_cpp_SBodyPartModel_dtor_FUN_0041b680(SBodyPartModel *this_ptr,uint flags)
 
 {
   return this_ptr;

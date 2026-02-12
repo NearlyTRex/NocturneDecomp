@@ -1052,7 +1052,7 @@ section .text
     LEA EAX,[ESP + 0xcc]                ; 00536ba2
     PUSH EAX                            ; 00536ba9
     CALL shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20 ; 00536baa
-        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr)
+        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00536baf
     ADD ESP,0x100                       ; 00536bb2
     POP EBP                             ; 00536bb8

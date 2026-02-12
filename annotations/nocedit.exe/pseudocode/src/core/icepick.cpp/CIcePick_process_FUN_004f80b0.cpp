@@ -89,7 +89,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
       if (uVar8 < 0xf) {
         if (uVar8 < 0xb) {
 LAB_004f8427:
-          if ((this_ptr->base).base.field3_0x2410 != 0) {
+          if ((this_ptr->base).base.is_on_ground != 0) {
             iVar4 = 0;
             if ((this_ptr->guns_drawn != 0) && (*(int *)(this_ptr->unk + 0x1c) == 0)) {
               iVar4 = 10;
@@ -230,15 +230,15 @@ LAB_004f81b6:
     local_34.x = (this_ptr->base).base.model.accumulated_root_motion.x;
     local_34.y = (this_ptr->base).base.model.accumulated_root_motion.y;
     local_34.z = (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_4c = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_48 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    local_44 = delta_time * (this_ptr->base).base.field7_0x2428.z;
-    local_58 = local_4c + (this_ptr->base).base.field6_0x241c.x;
-    local_54 = local_48 + (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_4c = (this_ptr->base).base.velocity.x * delta_time;
+    local_48 = (this_ptr->base).base.velocity.y * delta_time;
+    local_44 = delta_time * (this_ptr->base).base.velocity.z;
+    local_58 = local_4c + (this_ptr->base).base.position_delta.x;
+    local_54 = local_48 + (this_ptr->base).base.position_delta.y;
     local_34.x = local_34.x + local_58;
-    local_50 = local_44 + (this_ptr->base).base.field6_0x241c.z;
+    local_50 = local_44 + (this_ptr->base).base.position_delta.z;
     local_34.y = local_34.y + local_54;
     local_34.z = local_34.z + local_50;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_34);

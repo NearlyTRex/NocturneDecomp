@@ -28,13 +28,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_flies.cpp_SFly_dtor_FUN_004ccd40",
-    "signature": "SFly * __cdecl core_flies_cpp_SFly_dtor_FUN_004ccd40(SFly *this_ptr)"
+    "signature": "SFly * __cdecl core_flies_cpp_SFly_dtor_FUN_004ccd40(SFly *this_ptr,uint flags)"
   },
   "function_calls": [
     {
       "addr": "00486e30",
       "is_variadic": false,
-      "name": "core_dracbrid.cpp_freeVectors_FUN_00486e30"
+      "name": "core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30"
     }
   ],
   "globals": [],
@@ -42,8 +42,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.25,
@@ -68,10 +68,10 @@
     "pcode_op_count": 42
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -80,6 +80,13 @@
         "offset": 4,
         "size": 4,
         "type": "SFly *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

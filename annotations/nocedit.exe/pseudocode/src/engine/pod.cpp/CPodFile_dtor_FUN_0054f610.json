@@ -111,7 +111,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_pod.cpp_CPodFile_dtor_FUN_0054f610",
-    "signature": "CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_0054f610(CPodFile *this_ptr)"
+    "signature": "CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_0054f610(CPodFile *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -142,10 +142,10 @@
     "pcode_op_count": 29
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -154,6 +154,13 @@
         "offset": 4,
         "size": 4,
         "type": "CPodFile *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

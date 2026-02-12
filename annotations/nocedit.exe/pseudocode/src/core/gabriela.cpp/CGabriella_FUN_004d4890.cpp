@@ -47,7 +47,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
                 (this_ptr_00,(CVector3f *)local_58,iVar4);
       pCVar2 = (this_ptr->base).ladder_to_climb;
       if (pCVar2 == (CDemonActor *)0x0) {
-        if ((this_ptr->base).base.field3_0x2410 != 0) {
+        if ((this_ptr->base).base.is_on_ground != 0) {
           local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                (&this_ptr_00->motion_controller,2);
           if ((float)0.40000000000000002 < local_18) {

@@ -17,7 +17,7 @@
 ;   TerminatedCString s_s_00624603
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   uchar[257] g_CharacterClassificationTable
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_02d0a45c
 ;   undefined1 DAT_02d0a460
 ;
@@ -112,8 +112,8 @@ section .text
     PUSH 0x2d0a460                      ; 004aac8f | DAT_02d0a460
         ;   Label: LAB_004aac8f
     PUSH 0x624603                       ; 004aac94 | = "%s\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 004aac99 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 004aac9f | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 004aac99 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 004aac9f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004aaca0
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004aaca5

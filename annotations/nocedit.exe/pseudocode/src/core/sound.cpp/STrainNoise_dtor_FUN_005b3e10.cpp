@@ -2,11 +2,11 @@
 // Address: 005b3e10
 // Address Range: [[005b3e10, 005b3e14]]
 // Convention: __cdecl
-// Signature: STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_005b3e10(STrainNoise *this_ptr)
+// Signature: STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_005b3e10(STrainNoise *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_005b3e10(STrainNoise *this_ptr)
+STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_005b3e10(STrainNoise *this_ptr,uint flags)
 
 {
   return this_ptr;

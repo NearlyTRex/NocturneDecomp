@@ -259,7 +259,7 @@ LAB_0057db4e:
         g_CurrentDebugLine = 0xd80;
         g_CurrentDebugFilename = "..\\core\\setedit.cpp";
         if (unaff_ESI != (CKeyFramedModel *)0x0) {
-          ptr = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(unaff_ESI);
+          ptr = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(unaff_ESI,0);
           shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
         }
         engine_2d_c_clearInputAndWait_FUN_00403260();

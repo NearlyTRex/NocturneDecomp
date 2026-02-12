@@ -10,12 +10,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
 
 {
   uint *puVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  int iVar5;
-  char *pcVar6;
+  uint *puVar2;
+  uint *puVar3;
+  CVector3i *pCVar4;
+  SInputFace *pSVar5;
+  int iVar6;
   int iVar7;
+  char *pcVar8;
+  int iVar9;
   int local_18;
   int local_14;
   
@@ -25,83 +27,91 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->texture_count,"textureCount");
   if (g_ActorReadingMode == 1) {
     core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(this_ptr);
-    iVar4 = 0;
+    iVar6 = 0;
     if (0 < this_ptr->vertex_count) {
-      iVar7 = 0;
+      iVar9 = 0;
       do {
-        iVar5 = this_ptr->unk2 + iVar7;
-        iVar4 = iVar4 + 1;
-        iVar7 = iVar7 + 0xc;
-        _fscanf(g_ActorDataFile,"%d,%d,%d\n",iVar5,iVar5 + 4,iVar5 + 8);
-      } while (iVar4 < this_ptr->vertex_count);
+        iVar7 = (int)&this_ptr->vertices->x + iVar9;
+        iVar6 = iVar6 + 1;
+        iVar9 = iVar9 + 0xc;
+        _fscanf(g_ActorDataFile,"%d,%d,%d\n",iVar7,iVar7 + 4,iVar7 + 8);
+      } while (iVar6 < this_ptr->vertex_count);
     }
     local_14 = 0;
     if (0 < this_ptr->tri_count) {
-      iVar4 = 0;
-      iVar7 = 0;
+      iVar9 = 0;
+      iVar6 = 0;
       do {
-        iVar5 = *(int *)this_ptr->unk4 + iVar4;
-        iVar4 = iVar4 + 0x3c;
+        pSVar5 = this_ptr->faces;
         _fscanf(g_ActorDataFile,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                   *(int *)(this_ptr->unk4 + 4) + iVar7,iVar5 + 0x18,iVar5 + 0x1c,iVar5 + 0x20,
-                   iVar5 + 0x24,iVar5 + 0x28,iVar5 + 0x2c,iVar5 + 0x30,iVar5 + 0x34,iVar5 + 0x38);
-        iVar7 = iVar7 + 4;
-        *(uint *)(iVar5 + 4) = 3;
+                   (int)this_ptr->face_texture_indices + iVar9,(int)&pSVar5[1].u_coord_0 + iVar6,
+                   (int)&pSVar5[1].u_coord_2 + iVar6,(int)&pSVar5[1].v_coord_1 + iVar6,
+                   (int)&pSVar5[2].vertex_indices.vertex_index_0 + iVar6,
+                   (int)&pSVar5[2].vertex_indices.vertex_index_2 + iVar6,
+                   (int)&pSVar5[2].u_coord_1 + iVar6,(int)&pSVar5[2].v_coord_0 + iVar6,
+                   (int)&pSVar5[2].v_coord_2 + iVar6,
+                   (int)&pSVar5[3].vertex_indices.vertex_index_1 + iVar6);
+        iVar9 = iVar9 + 4;
+        *(uint *)((int)&(pSVar5->vertex_indices).vertex_index_2 + iVar6) = 3;
         local_14 = local_14 + 1;
+        iVar6 = iVar6 + 0x3c;
       } while (local_14 < this_ptr->tri_count);
     }
-    iVar4 = 0;
+    iVar6 = 0;
     if (0 < this_ptr->texture_count) {
-      pcVar6 = this_ptr->unk5 + 8;
+      pcVar8 = this_ptr->textures[0].texture_name;
       do {
-        iVar4 = iVar4 + 1;
-        _fscanf(g_ActorDataFile," \"%[^\"]\"\n",pcVar6);
-        pcVar6 = pcVar6 + 0x18;
-      } while (iVar4 < this_ptr->texture_count);
+        iVar6 = iVar6 + 1;
+        _fscanf(g_ActorDataFile," \"%[^\"]\"\n",pcVar8);
+        pcVar8 = pcVar8 + 0x18;
+      } while (iVar6 < this_ptr->texture_count);
     }
     core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr);
   }
   else {
-    iVar4 = 0;
+    iVar6 = 0;
     if (0 < this_ptr->vertex_count) {
-      iVar7 = 0;
+      iVar9 = 0;
       do {
-        iVar3 = this_ptr->unk2;
-        iVar5 = iVar7 + 8;
-        iVar2 = iVar7 + 4;
-        puVar1 = (uint *)(iVar7 + iVar3);
-        iVar7 = iVar7 + 0xc;
-        iVar4 = iVar4 + 1;
-        _fprintf(g_ActorDataFile,"\t%d,%d,%d\n",*puVar1,*(uint *)(iVar2 + iVar3),
-                   *(uint *)(iVar5 + iVar3));
-      } while (iVar4 < this_ptr->vertex_count);
+        pCVar4 = this_ptr->vertices;
+        puVar2 = (uint *)((int)&pCVar4->z + iVar9);
+        puVar3 = (uint *)((int)&pCVar4->y + iVar9);
+        puVar1 = (uint *)((int)&pCVar4->x + iVar9);
+        iVar9 = iVar9 + 0xc;
+        iVar6 = iVar6 + 1;
+        _fprintf(g_ActorDataFile,"\t%d,%d,%d\n",*puVar1,*puVar3,*puVar2);
+      } while (iVar6 < this_ptr->vertex_count);
     }
-    iVar4 = 0;
+    iVar6 = 0;
     if (0 < this_ptr->tri_count) {
       local_18 = 0;
-      iVar7 = 0;
+      iVar9 = 0;
       do {
-        iVar5 = *(int *)this_ptr->unk4 + local_18;
+        pSVar5 = this_ptr->faces;
         _fprintf(g_ActorDataFile,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                   *(uint *)(iVar7 + *(int *)(this_ptr->unk4 + 4)),
-                   *(uint *)(iVar5 + 0x18),*(uint *)(iVar5 + 0x1c),
-                   *(uint *)(iVar5 + 0x20),*(uint *)(iVar5 + 0x24),
-                   *(uint *)(iVar5 + 0x28),*(uint *)(iVar5 + 0x2c),
-                   *(uint *)(iVar5 + 0x30),*(uint *)(iVar5 + 0x34),
-                   *(uint *)(iVar5 + 0x38));
-        iVar7 = iVar7 + 4;
-        iVar4 = iVar4 + 1;
+                   *(uint *)(iVar9 + (int)this_ptr->face_texture_indices),
+                   *(uint *)((int)&pSVar5[1].u_coord_0 + local_18),
+                   *(uint *)((int)&pSVar5[1].u_coord_2 + local_18),
+                   *(uint *)((int)&pSVar5[1].v_coord_1 + local_18),
+                   *(uint *)((int)&pSVar5[2].vertex_indices.vertex_index_0 + local_18),
+                   *(uint *)((int)&pSVar5[2].vertex_indices.vertex_index_2 + local_18),
+                   *(uint *)((int)&pSVar5[2].u_coord_1 + local_18),
+                   *(uint *)((int)&pSVar5[2].v_coord_0 + local_18),
+                   *(uint *)((int)&pSVar5[2].v_coord_2 + local_18),
+                   *(uint *)((int)&pSVar5[3].vertex_indices.vertex_index_1 + local_18));
+        iVar9 = iVar9 + 4;
+        iVar6 = iVar6 + 1;
         local_18 = local_18 + 0x3c;
-      } while (iVar4 < this_ptr->tri_count);
+      } while (iVar6 < this_ptr->tri_count);
     }
-    iVar4 = 0;
+    iVar6 = 0;
     if (0 < this_ptr->texture_count) {
-      pcVar6 = this_ptr->unk5 + 8;
+      pcVar8 = this_ptr->textures[0].texture_name;
       do {
-        iVar4 = iVar4 + 1;
-        _fprintf(g_ActorDataFile,"\t\"%s\"\n",pcVar6);
-        pcVar6 = pcVar6 + 0x18;
-      } while (iVar4 < this_ptr->texture_count);
+        iVar6 = iVar6 + 1;
+        _fprintf(g_ActorDataFile,"\t\"%s\"\n",pcVar8);
+        pcVar8 = pcVar8 + 0x18;
+      } while (iVar6 < this_ptr->texture_count);
     }
   }
   if (1 < g_CBodyPartClassVersion) {

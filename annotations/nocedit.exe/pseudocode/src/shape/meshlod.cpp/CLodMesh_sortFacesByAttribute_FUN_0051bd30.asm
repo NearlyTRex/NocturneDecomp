@@ -36,7 +36,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;
 ; Called Functions:
-;   core_cloth.cpp_freeVectors_FUN_0043e460
+;   core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460
 ;   crt_memory.c___arr_op_FUN_006020c2
 ;   crt_memory.c___arrcopy_FUN_00600bc2
 ;   shape_meshlod.cpp_copyFloat_FUN_0051f090
@@ -309,8 +309,8 @@ section .text
     MOV dword ptr [EBX + 0x88],EAX      ; 0051c051
     LEA EAX,[ESP + 0x58]                ; 0051c057
     PUSH EAX                            ; 0051c05b
-    CALL core_cloth.cpp_freeVectors_FUN_0043e460 ; 0051c05c
-        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)  ; CVector3f * core_cloth.cpp_freeVectors_FUN_0043e460(CVector3f * objs)
+    CALL core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460 ; 0051c05c
+        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)  ; CVector3f * core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 0051c061
     JMP 0x0051bdc3                      ; 0051c064
         ;   XREF to: 0051bdc3 (UNCONDITIONAL_JUMP)  ; LAB_0051bdc3

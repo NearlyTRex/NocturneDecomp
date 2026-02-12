@@ -60,7 +60,7 @@ section .text
     PUSH EDI                            ; 004710ef
     PUSH EDX                            ; 004710f0
     CALL engine_font.cpp_CBitFont_dtor_FUN_004cceb0 ; 004710f1
-        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr)
+        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004710f6
     PUSH EAX                            ; 004710f9
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004710fa
@@ -80,7 +80,7 @@ section .text
     PUSH EBX                            ; 0047112a
     PUSH EBP                            ; 0047112b
     CALL engine_font.cpp_CBitFont_dtor_FUN_004cceb0 ; 0047112c
-        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr)
+        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00471131
     PUSH EAX                            ; 00471134
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00471135
@@ -100,7 +100,7 @@ section .text
     PUSH EDX                            ; 00471165
     PUSH ESI                            ; 00471166
     CALL engine_font.cpp_CBitFont_dtor_FUN_004cceb0 ; 00471167
-        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr)
+        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0047116c
     PUSH EAX                            ; 0047116f
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00471170
@@ -120,7 +120,7 @@ section .text
     PUSH EBP                            ; 0047119f
     PUSH ECX                            ; 004711a0
     CALL engine_font.cpp_CBitFont_dtor_FUN_004cceb0 ; 004711a1
-        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr)
+        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004711a6
     PUSH EAX                            ; 004711a9
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004711aa
@@ -141,7 +141,7 @@ section .text
     PUSH ESI                            ; 004711df
     PUSH EDX                            ; 004711e0
     CALL engine_font.cpp_CBitFont_dtor_FUN_004cceb0 ; 004711e1
-        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr)
+        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004711e6
     PUSH EAX                            ; 004711e9
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004711ea
@@ -224,7 +224,7 @@ section .text
         ;   Label: LAB_004712cf
     PUSH EBX                            ; 004712d1
     CALL engine_font.cpp_CBitFont_dtor_FUN_004cceb0 ; 004712d2
-        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr)
+        ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004712d7
     PUSH EAX                            ; 004712da
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004712db

@@ -343,6 +343,6 @@ void __cdecl CDemonCamera::restoreZBufferScanlines(CDemonCamera *this_ptr);
 // Address: 004544f0
 int __cdecl CDemonCamera::testBoxOcclusion(CDemonCamera *this_ptr,CVector3i *corners);
 
-// Original: core_dcamera.cpp_freeVectors_FUN_00454700
+// Original: core_dcamera.cpp_CVector3f_arrdtor_FUN_00454700
 // Address: 00454700
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);

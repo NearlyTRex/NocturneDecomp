@@ -29,7 +29,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
   int iVar14;
   CMotionController *this_ptr_01;
   int in_stack_00000010;
-  CMorphModel *in_stack_00000014;
+  CMorph *in_stack_00000014;
   byte auStack_4da8 [8884];
   CDeformableModelInstance CStack_2af4;
   byte auStack_838 [920];
@@ -394,11 +394,11 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
                     ((CDeformableModelInstance *)auStack_4da8);
           core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
                     (&CStack_2af4);
-          core_morph_cpp_FUN_0052b430();
-          core_morph_cpp_FUN_0052b430();
-          core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)in_stack_00000014);
-          core_morph_cpp_FUN_0052ca90();
-          core_morph_cpp_CMorphModel_FUN_0052b350(in_stack_00000014);
+          core_morph_cpp_CMorph_FUN_0052b430(in_stack_00000014,0);
+          core_morph_cpp_CMorph_FUN_0052b430(in_stack_00000014,1);
+          core_morph_cpp_CMorph_getReady_FUN_0052b680(in_stack_00000014);
+          core_morph_cpp_CMorph_FUN_0052ca90(in_stack_00000014);
+          core_morph_cpp_CMorph_FUN_0052b350(in_stack_00000014);
         }
         iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32);
         if (iVar14 != 0) {
@@ -431,14 +431,14 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
       }
       g_CDemonSetPtr->lighting_quality_mode = local_78;
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      core_morph_cpp_freeMorphControlPoints_FUN_0052ccb0
-                ((SMorphControlPoint *)(auStack_838 + 0x398));
-      core_morph_cpp_freeDeformableModelInstances_FUN_0052ccd0
-                ((CDeformableModelInstance *)&stack0xffffb250);
+      core_morph_cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0
+                ((SMorphControlPoint *)(auStack_838 + 0x398),0);
+      core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0
+                ((CDeformableModelInstance *)&stack0xffffb250,0);
       return;
     }
   }
-  core_morph_cpp_freeDeformableModelInstances_FUN_0052ccd0
-            ((CDeformableModelInstance *)&stack0xffffb248);
+  core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0
+            ((CDeformableModelInstance *)&stack0xffffb248,0);
   return;
 }

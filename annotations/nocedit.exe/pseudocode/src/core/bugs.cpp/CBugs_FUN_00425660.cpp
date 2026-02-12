@@ -12,9 +12,9 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425660(CBugs *this_ptr)
   int iVar1;
   int in_stack_00000008;
   
-  (this_ptr->model).part_visibility_flags[0xe] = 0;
+  this_ptr->swarm_vertex_count = 0;
   iVar1 = 0;
-  memset((this_ptr->model).part_visibility_flags + 0xf,0,28000);
+  memset(this_ptr->swarm_vertices,0,28000);
   if (0 < in_stack_00000008) {
     do {
       core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(this_ptr);

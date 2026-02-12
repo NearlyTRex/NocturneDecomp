@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 480,
-    "complexity_score": 286,
+    "complexity_score": 316,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 12,
     "pseudocode_lines": 176,
-    "suspect_count": 10,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast"
@@ -424,6 +424,27 @@
       "line": 92,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_VertexRemapTable + iVar5) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(uint *)((int)",
+      "text": "puVar10 = (uint *)((int)&body_part_ptr->vertices->x + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar8) = iVar3;",
       "type": "pointer_cast"
     },
     {

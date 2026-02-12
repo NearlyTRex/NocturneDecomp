@@ -98,22 +98,21 @@ LAB_00544b62:
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
 LAB_00544a0c:
-  (this_ptr->base).field7_0x2428.y =
-       (this_ptr->base).field7_0x2428.y - delta_time * (float)32;
-  fStack_38 = (this_ptr->base).field7_0x2428.x * delta_time;
-  fStack_34 = (this_ptr->base).field7_0x2428.y * delta_time;
-  pCVar6 = &(this_ptr->base).field6_0x241c;
-  fStack_30 = (this_ptr->base).field7_0x2428.z * delta_time;
+  (this_ptr->base).velocity.y = (this_ptr->base).velocity.y - delta_time * (float)32;
+  fStack_38 = (this_ptr->base).velocity.x * delta_time;
+  fStack_34 = (this_ptr->base).velocity.y * delta_time;
+  pCVar6 = &(this_ptr->base).position_delta;
+  fStack_30 = (this_ptr->base).velocity.z * delta_time;
   pCVar2 = &(this_ptr->base).model.accumulated_root_motion;
   fStack_20 = fStack_38 + pCVar6->x;
-  fStack_1c = fStack_34 + (this_ptr->base).field6_0x241c.y;
-  fStack_18 = fStack_30 + (this_ptr->base).field6_0x241c.z;
+  fStack_1c = fStack_34 + (this_ptr->base).position_delta.y;
+  fStack_18 = fStack_30 + (this_ptr->base).position_delta.z;
   CStack_50.x = fStack_20 + pCVar2->x;
   CStack_50.y = fStack_1c + (this_ptr->base).model.accumulated_root_motion.y;
   CStack_50.z = fStack_18 + (this_ptr->base).model.accumulated_root_motion.z;
-  (this_ptr->base).field6_0x241c.z = 0.0;
-  (this_ptr->base).field6_0x241c.y = (this_ptr->base).field6_0x241c.z;
-  pCVar6->x = (this_ptr->base).field6_0x241c.y;
+  (this_ptr->base).position_delta.z = 0.0;
+  (this_ptr->base).position_delta.y = (this_ptr->base).position_delta.z;
+  pCVar6->x = (this_ptr->base).position_delta.y;
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).model.accumulated_root_motion.y =
        (this_ptr->base).model.accumulated_root_motion.z;

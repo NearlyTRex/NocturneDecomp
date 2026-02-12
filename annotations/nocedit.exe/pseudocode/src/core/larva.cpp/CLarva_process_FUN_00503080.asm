@@ -80,7 +80,7 @@
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGore* g_CGorePtr = 02d83364
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   int INT_02d7a7b8
 ;   ... and 2 more
 ;
@@ -373,7 +373,7 @@ section .text
     PUSH EBX                            ; 005034df
     PUSH 0x630ef5                       ; 005034e0 | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x0066e8e0]      ; 005034e5 | g_CConsolePtr
-    PUSH ESI                            ; 005034eb | g_ConsolePtr
+    PUSH ESI                            ; 005034eb | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005034ec
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x00503169                      ; 005034f1
@@ -685,7 +685,7 @@ section .text
         ;   Label: LAB_00503867
     PUSH 0x630f1f                       ; 00503868 | = "%s gave up chase - I'm confused\n"
     MOV ECX,dword ptr [0x0066e8e0]      ; 0050386d | g_CConsolePtr
-    PUSH ECX                            ; 00503873 | g_ConsolePtr
+    PUSH ECX                            ; 00503873 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00503874
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00503879

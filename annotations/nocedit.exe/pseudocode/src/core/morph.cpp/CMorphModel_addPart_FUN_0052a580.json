@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 207,
+    "complexity_score": 200,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 8,
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 50,
     "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 220
+    "total_lines": 213
   },
   "cross_references": [
     {
@@ -28,25 +28,25 @@
     {
       "addr": "0052b370",
       "from_addr": "0052b3b9",
-      "name": "core_morph.cpp_FUN_0052b370",
+      "name": "core_morph.cpp_CMorph_FUN_0052b370",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052b3d0",
       "from_addr": "0052b419",
-      "name": "core_morph.cpp_FUN_0052b3d0",
+      "name": "core_morph.cpp_CMorph_FUN_0052b3d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052b4b0",
       "from_addr": "0052b4f0",
-      "name": "core_morph.cpp_FUN_0052b4b0",
+      "name": "core_morph.cpp_CMorph_FUN_0052b4b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052b500",
       "from_addr": "0052b540",
-      "name": "core_morph.cpp_FUN_0052b500",
+      "name": "core_morph.cpp_CMorph_FUN_0052b500",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -149,7 +149,7 @@
       {
         "call_addr": "0052b3b9",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_0052b370",
+        "caller": "core_morph.cpp_CMorph_FUN_0052b370",
         "estimated_params": 8,
         "instructions_analyzed": 16,
         "reg_params": [],
@@ -158,7 +158,7 @@
       {
         "call_addr": "0052b4f0",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_0052b4b0",
+        "caller": "core_morph.cpp_CMorph_FUN_0052b4b0",
         "estimated_params": 12,
         "instructions_analyzed": 26,
         "reg_params": [],
@@ -167,7 +167,7 @@
       {
         "call_addr": "0052b540",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_0052b500",
+        "caller": "core_morph.cpp_CMorph_FUN_0052b500",
         "estimated_params": 12,
         "instructions_analyzed": 26,
         "reg_params": [],
@@ -176,7 +176,7 @@
       {
         "call_addr": "0052b419",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_0052b3d0",
+        "caller": "core_morph.cpp_CMorph_FUN_0052b3d0",
         "estimated_params": 8,
         "instructions_analyzed": 16,
         "reg_params": [],
@@ -240,7 +240,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -310,19 +310,19 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(this_ptr->unk1 + *(int *)this_ptr->unk1 * 0x10 + 4) = in_stack_00000008;",
+      "text": "this_ptr->parts[this_ptr->part_count].vertex_count = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 45,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 48,
       "match": "in_stack_00000014",
       "text": "if (in_stack_00000014 == 0) {",
       "type": "stack_param"

@@ -19,10 +19,10 @@ core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector *this_ptr)
   pCVar2 = (CFilmProjector *)core_dest_cpp_CActorDestination_ctor_FUN_0046f900(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
   pcVar2 = "CFilmReel";
-  ADJ(this_ptr_00).base.base.vtable._ub = &g_CFilmProjectorVTable;
+  ADJ(this_ptr_00)->base.base.vtable._ub = &g_CFilmProjectorVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"filmreel.kfm");
-  pcVar3 = ADJ(this_ptr_00).base.dest_class;
+  pcVar3 = ADJ(this_ptr_00)->base.dest_class;
   *(char *)(this_ptr_00[1].part_visibility_flags + 0x1a) = '\0';
   *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1a) + 1) = '\0';
   *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1a) + 2) = '\0';

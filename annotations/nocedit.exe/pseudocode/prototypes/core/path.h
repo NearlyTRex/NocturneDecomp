@@ -25,7 +25,7 @@ CPathMap * __cdecl CPathMap::ctor(CPathMap *this_ptr);
 
 // Original: core_path.cpp_CPathMap_dtor_FUN_005464d0
 // Address: 005464d0
-CPathMap * __cdecl CPathMap::dtor(CPathMap *this_ptr);
+CPathMap * __cdecl CPathMap::dtor(CPathMap *this_ptr,uint flags);
 
 // Original: core_path.cpp_CPathMap_getDirection_FUN_005465b0
 // Address: 005465b0
@@ -99,6 +99,6 @@ void __cdecl CPathMap::CallToQueuePop(CPathMap *this_ptr);
 // Address: 005487a0
 uint __cdecl CPathMap::queuePop(CPathMap *this_ptr,int start_height);
 
-// Original: core_path.cpp_freePathMaps_FUN_00548c30
+// Original: core_path.cpp_CPathMap_arrdtor_FUN_00548c30
 // Address: 00548c30
-CPathMap * __cdecl freePathMaps(CPathMap *objs);
+CPathMap * __cdecl CPathMap::arrdtor(CPathMap *objs,uint flags);

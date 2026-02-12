@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CRainDrop * __cdecl core_fire_cpp_CRainDrop_dtor_FUN_004c94b0(CRainDrop *this_ptr)
+; __cdecl CRainDrop * __cdecl core_fire_cpp_CRainDrop_dtor_FUN_004c94b0(CRainDrop *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CRainDrop *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_particle.cpp_CParticle_dtor_FUN_00545670
@@ -18,7 +19,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004c94b2
     PUSH EDX                            ; 004c94b6
     CALL core_particle.cpp_CParticle_dtor_FUN_00545670 ; 004c94b7
-        ;   XREF to: 00545670 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr)
+        ;   XREF to: 00545670 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004c94bc
     RET                                 ; 004c94bf
 

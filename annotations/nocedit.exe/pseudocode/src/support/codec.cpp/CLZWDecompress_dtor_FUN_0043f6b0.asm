@@ -31,7 +31,7 @@ section .text
     ADD EBX,0x4                         ; 0043f6be
     PUSH EBX                            ; 0043f6c1
     CALL support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0 ; 0043f6c2
-        ;   XREF to: 0043edf0 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr)
+        ;   XREF to: 0043edf0 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043f6c7
     PUSH 0x1                            ; 0043f6ca
     LEA EBX,[EAX + -0x4]                ; 0043f6cc

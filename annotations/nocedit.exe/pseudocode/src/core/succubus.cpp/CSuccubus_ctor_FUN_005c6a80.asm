@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_CClothList_ctor_FUN_0043bf40
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-;   core_morph.cpp_FUN_0052b310
+;   core_morph.cpp_CMorph_ctor_FUN_0052b310
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
@@ -52,8 +52,8 @@ section .text
     ADD ESP,0x4                         ; 005c6aa9
     ADD EAX,0x1cc                       ; 005c6aac
     PUSH EAX                            ; 005c6ab1
-    CALL core_morph.cpp_FUN_0052b310    ; 005c6ab2
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
+    CALL core_morph.cpp_CMorph_ctor_FUN_0052b310 ; 005c6ab2
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_0052b310(CMorph * this_ptr)
     ADD ESP,0x4                         ; 005c6ab7
     LEA EBX,[EAX + 0xffff1cc4]          ; 005c6aba
     PUSH 0x653fd8                       ; 005c6ac0 | = "succubus.dfm"

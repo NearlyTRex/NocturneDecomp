@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 130,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 1,
-    "pseudocode_lines": 40,
-    "suspect_count": 8,
+    "pseudocode_lines": 41,
+    "suspect_count": 6,
     "suspect_types": [
-      "extra_output",
       "negative_offset"
     ],
-    "total_lines": 147
+    "total_lines": 148
   },
   "cross_references": [],
   "function": {
@@ -38,19 +37,19 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30"
     },
     {
-      "addr": "00412700",
-      "is_variadic": false,
-      "name": "core_armour.cpp_freeFires_FUN_00412700"
-    },
-    {
       "addr": "00412720",
       "is_variadic": false,
-      "name": "core_armour.cpp_freeFlames_FUN_00412720"
+      "name": "core_armour.cpp_CFlame_arrdtor_FUN_00412720"
     },
     {
       "addr": "004126e0",
       "is_variadic": false,
-      "name": "core_armour.cpp_freeVectors_FUN_004126e0"
+      "name": "core_armour.cpp_CVector3f_arrdtor_FUN_004126e0"
+    },
+    {
+      "addr": "00412700",
+      "is_variadic": false,
+      "name": "core_armour.cpp_SFire_arrdtor_FUN_00412700"
     },
     {
       "addr": "00438c00",
@@ -65,7 +64,7 @@
     {
       "addr": "0052b330",
       "is_variadic": false,
-      "name": "core_morph.cpp_CMorphModel_FUN_0052b330"
+      "name": "core_morph.cpp_CMorph_dtor_FUN_0052b330"
     },
     {
       "addr": "0059de40",
@@ -152,59 +151,45 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EAX",
-      "text": "pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)(extraout_EAX + -0x3fe74));",
-      "type": "extra_output"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 23,
-      "match": "pCVar1[-2].",
-      "text": "pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar1[-2].last_euler.y);",
+      "match": "pCVar2[-2].",
+      "text": "pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar2[-2].last_euler.y,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 24,
-      "match": "pCVar1[-2].",
-      "text": "pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar1[-2].last_euler.y);",
+      "match": "pCVar2[-2].",
+      "text": "pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar2[-2].last_euler.y,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 27,
-      "match": "pCVar1[-1].",
-      "text": "&pCVar1[-1].collide_bones[0x13].world_matrix.m[1].x,0);",
+      "match": "pCVar2[-1].",
+      "text": "&pCVar2[-1].collide_bones[0x13].world_matrix.m[1].x,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 28,
-      "match": "pCVar2[-5].",
-      "text": "pCVar3 = core_armour_cpp_freeFlames_FUN_00412720((CFlame *)(pCVar2[-5].model_name + 0x34));",
+      "match": "pCVar3[-5].",
+      "text": "pCVar4 = core_armour_cpp_CFlame_arrdtor_FUN_00412720((CFlame *)(pCVar3[-5].model_name + 0x34),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
-      "match": "pCVar3[-2].",
-      "text": "pSVar4 = core_armour_cpp_freeFires_FUN_00412700((SFire *)(pCVar3[-2].base.create_event + 0x20));",
+      "line": 30,
+      "match": "pCVar4[-2].",
+      "text": "((SFire *)(pCVar4[-2].base.create_event + 0x20),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 37,
-      "match": "pCVar2[-1].",
-      "text": "((CDemonActor *)(pCVar2[-1].part_data.visibility_flags + 7),1);",
+      "line": 38,
+      "match": "pCVar3[-1].",
+      "text": "((CDemonActor *)(pCVar3[-1].part_data.visibility_flags + 7),1);",
       "type": "negative_offset"
     }
   ],

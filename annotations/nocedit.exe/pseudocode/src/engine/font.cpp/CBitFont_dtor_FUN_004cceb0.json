@@ -33,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_dtor_FUN_004cceb0",
-    "signature": "CBitFont * __cdecl engine_font_cpp_CBitFont_dtor_FUN_004cceb0(CBitFont *this_ptr)"
+    "signature": "CBitFont * __cdecl engine_font_cpp_CBitFont_dtor_FUN_004cceb0(CBitFont *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -64,10 +64,10 @@
     "pcode_op_count": 29
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -76,6 +76,13 @@
         "offset": 4,
         "size": 4,
         "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

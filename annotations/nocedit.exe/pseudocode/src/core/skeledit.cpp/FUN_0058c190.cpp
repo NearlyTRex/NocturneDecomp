@@ -377,7 +377,7 @@ LAB_0058c4df:
       iVar7 = _fscanf((_FILE *)local_24,"%d\n",&local_94);
       if (((iVar7 != 1) || (local_94 < 1)) || ((int)in_stack_ffff5dd8 < local_94)) {
 LAB_0058c601:
-        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4);
+        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4,0);
         goto LAB_0058c613;
       }
       iVar7 = 0;
@@ -569,8 +569,8 @@ LAB_0058c601:
     } while (iVar7 < 0x360000);
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
-    shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_350);
-    shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4);
+    shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_350,0);
+    shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4,0);
     return 1;
   }
   pSVar5 = in_stack_00000008->texture_sets[0].textures + 8;
@@ -641,7 +641,7 @@ LAB_0058c601:
           }
         }
         core_skeledit_cpp_FUN_0058d790();
-        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_2dc);
+        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_2dc,0);
         iVar14 = iVar14 + 1;
         local_40 = local_40 + 4;
       } while (iVar14 < in_stack_00000004->num_lods);
@@ -668,7 +668,7 @@ LAB_0058c601:
           shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840(&local_268);
           shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(&local_350);
           core_skeledit_cpp_FUN_0058d790();
-          shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_268);
+          shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_268,0);
         }
       }
     }
@@ -708,12 +708,12 @@ LAB_0058c601:
       } while (local_38 < in_stack_00000004->num_texture_sets);
     }
     in_stack_00000004->num_textures = local_b4._20_4_;
-    shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_350);
-    shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4);
+    shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_350,0);
+    shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4,0);
     return 1;
   }
 LAB_0058d5ef:
-  shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_350);
-  shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4);
+  shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_350,0);
+  shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4,0);
   return 0;
 }

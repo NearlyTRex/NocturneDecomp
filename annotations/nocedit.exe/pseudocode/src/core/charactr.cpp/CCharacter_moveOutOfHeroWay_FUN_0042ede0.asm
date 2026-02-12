@@ -37,7 +37,7 @@
 ;   float FLOAT_006176aa = -1
 ;   undefined4 DAT_0066e740
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
@@ -371,8 +371,8 @@ section .text
         ;   XREF to: 0042f124 (CONDITIONAL_JUMP)  ; LAB_0042f124
     PUSH EDI                            ; 0042f1db
     PUSH 0x617626                       ; 0042f1dc | = "%s was in the way, but couldn't figur..."
-    MOV EDX,dword ptr [0x0066e8e0]      ; 0042f1e1 | g_ConsolePtr | g_CConsolePtr
-    PUSH EDX                            ; 0042f1e7 | g_ConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 0042f1e1 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EDX                            ; 0042f1e7 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0042f1e8
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0042f1ed

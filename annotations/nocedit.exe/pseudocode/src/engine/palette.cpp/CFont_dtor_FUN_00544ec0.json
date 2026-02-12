@@ -33,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_palette.cpp_CFont_dtor_FUN_00544ec0",
-    "signature": "CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_00544ec0(CFont *this_ptr)"
+    "signature": "CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_00544ec0(CFont *this_ptr,uint flags)"
   },
   "function_calls": [],
   "globals": [
@@ -57,8 +57,8 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -74,10 +74,10 @@
     "pcode_op_count": 8
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -86,6 +86,13 @@
         "offset": 4,
         "size": 4,
         "type": "CFont *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

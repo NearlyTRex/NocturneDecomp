@@ -116,7 +116,7 @@ section .text
     PUSH 0x62d415                       ; 004e324b | = "gFilterFX->process()"
     PUSH 0x62d3e9                       ; 004e3250 | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 004e3255 | g_CConsolePtr
-    PUSH EDI                            ; 004e325b | g_ConsolePtr
+    PUSH EDI                            ; 004e325b | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e325c
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004e3261
@@ -157,7 +157,7 @@ section .text
     PUSH 0x62d42a                       ; 004e32d6 | = "gScript->process()"
     PUSH 0x62d3e9                       ; 004e32db | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 004e32e0 | g_CConsolePtr
-    PUSH EDI                            ; 004e32e6 | g_ConsolePtr
+    PUSH EDI                            ; 004e32e6 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e32e7
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004e32ec
@@ -208,7 +208,7 @@ section .text
     PUSH 0x62d43d                       ; 004e337d | = "gSet->process()"
     PUSH 0x62d3e9                       ; 004e3382 | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 004e3387 | g_CConsolePtr
-    PUSH EDI                            ; 004e338d | g_ConsolePtr
+    PUSH EDI                            ; 004e338d | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e338e
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004e3393
@@ -249,7 +249,7 @@ section .text
     PUSH 0x62d44d                       ; 004e3408 | = "gGore->process()"
     PUSH 0x62d3e9                       ; 004e340d | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 004e3412 | g_CConsolePtr
-    PUSH EDI                            ; 004e3418 | g_ConsolePtr
+    PUSH EDI                            ; 004e3418 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e3419
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004e341e
@@ -295,8 +295,8 @@ section .text
     FSTP double ptr [ESP]               ; 004e34a2
     PUSH 0x62d45e                       ; 004e34a5 | = "gFire->process()"
     PUSH 0x62d3e9                       ; 004e34aa | = "%s : %3.2f ms\n"
-    MOV EAX,[0x0066e8e0]                ; 004e34af | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 004e34b4 | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 004e34af | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 004e34b4 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e34b5
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004e34ba
@@ -336,8 +336,8 @@ section .text
     FSTP double ptr [ESP]               ; 004e352d
     PUSH 0x62d46f                       ; 004e3530 | = "gEventList->process()"
     PUSH 0x62d3e9                       ; 004e3535 | = "%s : %3.2f ms\n"
-    MOV EAX,[0x0066e8e0]                ; 004e353a | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 004e353f | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 004e353a | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 004e353f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e3540
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004e3545
@@ -398,7 +398,7 @@ section .text
     PUSH 0x62d485                       ; 004e35f2 | = "gSit->process()"
     PUSH 0x62d3e9                       ; 004e35f7 | = "%s : %3.2f ms\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 004e35fc | g_CConsolePtr
-    PUSH EDI                            ; 004e3602 | g_ConsolePtr
+    PUSH EDI                            ; 004e3602 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e3603
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004e3608
@@ -469,8 +469,8 @@ section .text
     SUB ESP,0x8                         ; 004e36ce
     FSTP double ptr [ESP]               ; 004e36d1
     PUSH 0x62d495                       ; 004e36d4 | = "simulate : %3.2f ms\n"
-    MOV EAX,[0x0066e8e0]                ; 004e36d9 | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 004e36de | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 004e36d9 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 004e36de | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004e36df
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 004e36e4

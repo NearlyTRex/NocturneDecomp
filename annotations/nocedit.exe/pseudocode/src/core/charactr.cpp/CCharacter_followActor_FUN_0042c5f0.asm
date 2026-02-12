@@ -38,7 +38,7 @@
 ;   double DOUBLE_0061723a = 0.0100000000000000
 ;   double DOUBLE_0061724a = 0.174532925194444
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
@@ -162,8 +162,8 @@ section .text
     PUSH ESI                            ; 0042c700
         ;   Label: LAB_0042c700
     PUSH 0x6171ab                       ; 0042c701 | = "%s tried to follow NULL actor!\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 0042c706 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 0042c70c | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 0042c706 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 0042c70c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0042c70d
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0042c712
@@ -252,8 +252,8 @@ section .text
         ;   Label: LAB_0042c83e
     PUSH ESI                            ; 0042c83f
     PUSH 0x6171cb                       ; 0042c840 | = "%s confused while following %s\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 0042c845 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 0042c84b | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 0042c845 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 0042c84b | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0042c84c
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0042c851
@@ -326,8 +326,8 @@ section .text
         ;   Label: LAB_0042c8e8
     PUSH ESI                            ; 0042c8e9
     PUSH 0x6171eb                       ; 0042c8ea | = "%s confused after pathmap call while ..."
-    MOV EDX,dword ptr [0x0066e8e0]      ; 0042c8ef | g_ConsolePtr | g_CConsolePtr
-    PUSH EDX                            ; 0042c8f5 | g_ConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 0042c8ef | g_CConsoleInstance | g_CConsolePtr
+    PUSH EDX                            ; 0042c8f5 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0042c8f6
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0042c8fb

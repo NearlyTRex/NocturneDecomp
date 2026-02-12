@@ -52,8 +52,8 @@ core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
   pCStack_1c = (CDemonActor *)0x0;
   pCVar3 = pCStack_1c;
   if ((param_3 == 0) &&
-     (pCVar3 = this_ptr->lookat_target, this_ptr->lookat_target == (CDemonActor *)0x0)) {
-    if ((float)this_ptr->field34_0x25e8 <= 0.0) {
+     (pCVar3 = this_ptr->look_at_target, this_ptr->look_at_target == (CDemonActor *)0x0)) {
+    if ((float)this_ptr->unk7 <= 0.0) {
       auStack_a4._4_4_ = 0.0;
       uStack_98 = 0;
       fStack_9c = 5.5;
@@ -118,7 +118,7 @@ core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
             }
             fStack_f4 = ((float)20 / (SQRT(CStack_f0.x) + (float)20)) *
                         fStack_f4;
-            if (pCVar5 == (CCharacter *)this_ptr->field28_0x25d0) {
+            if (pCVar5 == (CCharacter *)this_ptr->collision_enabled) {
               fStack_f4 = fStack_f4 * (float)1.1000000000000001;
             }
             if (-1.0f <= fStack_f4) {
@@ -140,18 +140,18 @@ core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
       }
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,2.0);
-      this_ptr->field34_0x25e8 = (int)fVar7;
+      this_ptr->unk7 = (int)fVar7;
     }
     else {
-      pCStack_1c = (CDemonActor *)this_ptr->field28_0x25d0;
-      this_ptr->field34_0x25e8 = (int)((float)this_ptr->field34_0x25e8 - delta_time);
+      pCStack_1c = (CDemonActor *)this_ptr->collision_enabled;
+      this_ptr->unk7 = (int)((float)this_ptr->unk7 - delta_time);
     }
   }
   else {
     pCStack_1c = pCVar3;
-    this_ptr->field34_0x25e8 = 0;
+    this_ptr->unk7 = 0;
   }
-  this_ptr->field28_0x25d0 = (int)pCStack_1c;
+  this_ptr->collision_enabled = (int)pCStack_1c;
   if (pCStack_1c != (CDemonActor *)0x0) {
     auStack_cc._8_4_ = 0.0;
     uStack_bc = 0;
@@ -160,7 +160,7 @@ core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
               (&this_ptr->base,(CVector3f *)(auStack_90 + 8),(CVector3f *)(auStack_cc + 8));
     pCVar5 = (CCharacter *)
              core_actor_cpp_castToClassHash_FUN_0040c790
-                       ((CDemonActor *)this_ptr->field28_0x25d0,g_CCharacterClassInfo.name_hash);
+                       ((CDemonActor *)this_ptr->collision_enabled,g_CCharacterClassInfo.name_hash);
     if (pCVar5 == (CCharacter *)0x0) {
       g_CurrentFilename = "..\\core\\charactr.cpp";
       g_CurrentLineNumber = 0xda0;
@@ -200,14 +200,14 @@ core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
       auStack_cc._8_4_ = pCVar6->z;
     }
     if ((float)1.3962634015555599 < ABS((float)auStack_cc._4_4_)) {
-      this_ptr->field28_0x25d0 = 0;
+      this_ptr->collision_enabled = 0;
     }
     if ((float)0.78539816337500001 < ABS((float)auStack_cc._0_4_)) {
-      this_ptr->field28_0x25d0 = 0;
+      this_ptr->collision_enabled = 0;
       goto LAB_0042d603;
     }
   }
-  if (this_ptr->field28_0x25d0 != 0) {
+  if (this_ptr->collision_enabled != 0) {
     fVar7 = delta_time / 0.5f + this_ptr->look_at_weight;
     this_ptr->look_at_weight = fVar7;
     if (1.0 < fVar7) {

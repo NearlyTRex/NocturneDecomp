@@ -93,7 +93,7 @@ CDemonCube * __cdecl CDemonCube::ctor(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CDemonCube_dtor_FUN_00456790
 // Address: 00456790
-CDemonCube * __cdecl CDemonCube::dtor(CDemonCube *this_ptr);
+CDemonCube * __cdecl CDemonCube::dtor(CDemonCube *this_ptr,uint flags);
 
 // Original: core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_004567b0
 // Address: 004567b0
@@ -155,6 +155,6 @@ int __cdecl CDemonCube::testAABBIntersection(CDemonCube *this_ptr,CVector3f *aab
 // Address: 00457cf0
 void __cdecl CDemonCube::buildVoxelOccupancyGrid(SVoxelGridParams *params);
 
-// Original: core_dcube.cpp_freeVectors_FUN_00457eb0
+// Original: core_dcube.cpp_CVector3f_arrdtor_FUN_00457eb0
 // Address: 00457eb0
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);

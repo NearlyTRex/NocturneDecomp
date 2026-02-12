@@ -18,6 +18,6 @@ void __cdecl shape_meshlod_cpp_testLodGeneration_FUN_0051ed60(void)
   engine_2d_c_clearInputAndWait_FUN_00403260();
   shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(&local_74,1,0);
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_74);
+  shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_74,0);
   return;
 }

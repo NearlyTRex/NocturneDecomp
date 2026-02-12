@@ -134,7 +134,7 @@ core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float del
                        (&(this_ptr->base).base.model.motion_controller,0x12);
   bVar12 = (float)local_14 <= 0.0;
   (this_ptr->base).base.turn_speed = 0.0;
-  iVar15 = (this_ptr->base).base.field3_0x2410;
+  iVar15 = (this_ptr->base).base.is_on_ground;
   (this_ptr->base).base.walk_step_speed = 0.0;
   local_20 = 0.0;
   if (iVar15 != 0) {
@@ -248,7 +248,7 @@ LAB_004d385a:
           else if (uVar7 < 0x11) {
             if (uVar7 == 0x10) {
 LAB_004d3af9:
-              if ((this_ptr->base).base.field3_0x2410 != 0) {
+              if ((this_ptr->base).base.is_on_ground != 0) {
                 iVar15 = 0;
                 if ((this_ptr->base).action_bindings.walk_key != 0) {
                   if ((this_ptr->base).action_bindings.run_key == 0) {
@@ -262,13 +262,13 @@ LAB_004d3af9:
                   iVar15 = 3;
                 }
                 fVar2 = (this_ptr->base).base.walk_step_speed;
-                fVar3 = (this_ptr->base).base.field6_0x241c.x;
+                fVar3 = (this_ptr->base).base.position_delta.x;
                 local_3c = &(this_ptr->base).base.model.motion_controller;
-                fVar4 = (this_ptr->base).base.field6_0x241c.z;
+                fVar4 = (this_ptr->base).base.position_delta.z;
                 (this_ptr->base).base.turn_angle_accumulator =
                      *(float *)((this_ptr->base).unk2 + 4) * (this_ptr->base).base.turn_speed;
-                (this_ptr->base).base.field6_0x241c.z = fVar2 + fVar4;
-                (this_ptr->base).base.field6_0x241c.x = fVar3 + local_20;
+                (this_ptr->base).base.position_delta.z = fVar2 + fVar4;
+                (this_ptr->base).base.position_delta.x = fVar3 + local_20;
                 pSVar19 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(local_3c);
                 if (iVar15 != pSVar19->state_index) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_3c,iVar15,1);
@@ -375,12 +375,12 @@ LAB_004d3af9:
     pCVar16 = (CVector3f *)0x0;
     (this_ptr->base).base.base.location.position.z =
          pCVar17->z + (this_ptr->base).base.base.location.position.z;
-    radius = (CGabriella *)(this_ptr->base).base.field54_0x2ddc;
+    radius = (CGabriella *)(this_ptr->base).base.collision_cylinder_height;
     local_14 = (CCharacter_full_vtable *)
                (*((this_ptr->base).base.base.vtable._ub)->cylinderGroundCheck)
                          ((CDemonActor *)this_ptr,(float)radius,(CVector3f *)0x0);
     (this_ptr->base).base.closest_distance_threshold = (float)local_14;
-    (this_ptr->base).base.field3_0x2410 =
+    (this_ptr->base).base.is_on_ground =
          (uint)((this_ptr->base).base.base.location.position.y <
                (this_ptr->base).base.closest_distance_threshold + (float)0.01);
 LAB_004d320e:
@@ -398,9 +398,9 @@ LAB_004d321d:
                              (&(this_ptr->base).base.model.motion_controller),
         pSVar19->state_index == 0xd)) ||
        ((this_ptr->base).base.base.standing_platform != (CPlatform *)0x0)) {
-      local_178.x = (this_ptr->base).base.field6_0x241c.x;
-      local_178.y = (this_ptr->base).base.field6_0x241c.y;
-      local_178.z = (this_ptr->base).base.field6_0x241c.z;
+      local_178.x = (this_ptr->base).base.position_delta.x;
+      local_178.y = (this_ptr->base).base.position_delta.y;
+      local_178.z = (this_ptr->base).base.position_delta.z;
       pSVar19 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&(this_ptr->base).base.model.motion_controller);
       uVar7 = pSVar19->state_index;
@@ -429,11 +429,11 @@ LAB_004d3cb4:
           }
         }
       }
-      (this_ptr->base).base.field7_0x2428.y =
-           (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-      local_160 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-      local_15c = (this_ptr->base).base.field7_0x2428.y * delta_time;
-      local_158 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+      (this_ptr->base).base.velocity.y =
+           (this_ptr->base).base.velocity.y - delta_time * (float)32;
+      local_160 = (this_ptr->base).base.velocity.x * delta_time;
+      local_15c = (this_ptr->base).base.velocity.y * delta_time;
+      local_158 = delta_time * (this_ptr->base).base.velocity.z;
       local_178.x = local_178.x + local_160;
       local_178.y = local_178.y + local_15c;
       local_178.z = local_178.z + local_158;

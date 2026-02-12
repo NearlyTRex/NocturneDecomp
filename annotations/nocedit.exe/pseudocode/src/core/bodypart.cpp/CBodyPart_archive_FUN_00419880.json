@@ -4,43 +4,19 @@
       {
         "category": "format_error",
         "column": 46,
-        "line": 35,
+        "line": 37,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 52,
-        "line": 35,
+        "line": 37,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 62,
-        "line": 35,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 20,
-        "line": 46,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 57,
-        "line": 46,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 70,
-        "line": 46,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 83,
-        "line": 46,
+        "line": 37,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
@@ -51,32 +27,56 @@
       },
       {
         "category": "format_error",
-        "column": 33,
+        "column": 64,
         "line": 47,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 46,
-        "line": 47,
+        "column": 20,
+        "line": 48,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 59,
-        "line": 47,
+        "column": 54,
+        "line": 48,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 72,
-        "line": 47,
+        "column": 20,
+        "line": 49,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 85,
-        "line": 47,
+        "column": 20,
+        "line": 50,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 51,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 54,
+        "line": 51,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 52,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 53,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       }
     ],
@@ -85,14 +85,16 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 118,
+    "complexity_score": 263,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 19,
-    "pseudocode_lines": 118,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 440
+    "pseudocode_lines": 128,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 450
   },
   "cross_references": [],
   "function": {
@@ -330,7 +332,99 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(pSVar5->vertex_indices).vertex_index_2 + iVar6) = 3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(uint *)((int)",
+      "text": "puVar2 = (uint *)((int)&pCVar4->z + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)&pCVar4->y + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)&pCVar4->x + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar5[1].u_coord_0 + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar5[1].u_coord_2 + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar5[1].v_coord_1 + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar5[2].vertex_indices.vertex_index_0 + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar5[2].vertex_indices.vertex_index_2 + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar5[2].u_coord_1 + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar5[2].v_coord_0 + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar5[2].v_coord_2 + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pSVar5[3].vertex_indices.vertex_index_1 + local_18));",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

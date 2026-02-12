@@ -1,17 +1,24 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 76,
+        "message": "no matching function for call to 'core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 226,
+    "complexity_score": 265,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 15,
-    "pseudocode_lines": 71,
-    "suspect_count": 13,
+    "pseudocode_lines": 70,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -19,7 +26,7 @@
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 243
+    "total_lines": 242
   },
   "cross_references": [
     {
@@ -356,21 +363,49 @@
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_0000000c",
-      "text": "iVar8 = *(int *)(*(int *)this_ptr->unk2 + iVar9) * 0x10 + in_stack_0000000c;",
+      "text": "iVar8 = *(int *)((int)this_ptr->points + iVar9) * 0x10 + in_stack_0000000c;",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(int *)((int)",
+      "text": "iVar8 = *(int *)((int)this_ptr->points + iVar9) * 0x10 + in_stack_0000000c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(float *)((int)",
+      "text": "fVar3 = *(float *)((int)pvVar5 + iVar9 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(float *)((int)",
+      "text": "fVar4 = *(float *)((int)pvVar5 + iVar9 + 0xc);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000008",
-      "text": "input->x = (int)ROUND((*(float *)(iVar5 + 4 + iVar9) * in_stack_00000008 +",
+      "text": "input->x = (int)ROUND((*(float *)((int)pvVar5 + iVar9 + 4) * in_stack_00000008 +",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(float *)((int)",
+      "text": "input->x = (int)ROUND((*(float *)((int)pvVar5 + iVar9 + 4) * in_stack_00000008 +",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ROUND",
-      "text": "input->x = (int)ROUND((*(float *)(iVar5 + 4 + iVar9) * in_stack_00000008 +",
+      "text": "input->x = (int)ROUND((*(float *)((int)pvVar5 + iVar9 + 4) * in_stack_00000008 +",
       "type": "decompiler_intrinsic"
     },
     {

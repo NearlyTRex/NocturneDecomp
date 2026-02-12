@@ -20,7 +20,7 @@ void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_00470000(CFilterCache *this_
       g_CurrentDebugLine = 0x4b;
       g_CurrentDebugFilename = "..\\core\\dfilter.cpp";
       if (pCVar1->filters[0] != (CDemonFilter *)0x0) {
-        ptr = core_dfilter_cpp_CDemonFilter_dtor_FUN_00470240(pCVar1->filters[0]);
+        ptr = core_dfilter_cpp_CDemonFilter_dtor_FUN_00470240(pCVar1->filters[0],0);
         shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
       }
       iVar2 = iVar2 + 1;

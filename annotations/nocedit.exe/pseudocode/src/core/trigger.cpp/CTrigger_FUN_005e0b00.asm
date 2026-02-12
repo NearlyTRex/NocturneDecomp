@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_received_g_damage_hitp_006557a7
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
@@ -62,8 +62,8 @@ section .text
     FSTP double ptr [ESP]               ; 005e0b53
     PUSH EBX                            ; 005e0b56
     PUSH 0x6557a7                       ; 005e0b57 | = "%s received %g damage, hitpoints %g\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 005e0b5c | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 005e0b62 | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 005e0b5c | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 005e0b62 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005e0b63
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x1c                        ; 005e0b68

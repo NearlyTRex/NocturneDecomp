@@ -18,14 +18,14 @@ CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_0047f050(CZombieDog *this_
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"dog.dfm");
   fVar1 = 50.0f;
-  (pCVar3->base).base.field54_0x2ddc = 0.75;
+  (pCVar3->base).base.collision_cylinder_height = 0.75;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
   pCVar3->field1_0xbebc[8] = '\0';
   pCVar3->field1_0xbebc[9] = '\0';
   pCVar3->field1_0xbebc[10] = '\0';
   pCVar3->field1_0xbebc[0xb] = '\0';
-  (pCVar3->base).base.field56_0x2de4 = fVar1;
-  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
 }

@@ -14,7 +14,7 @@
 ;   core_ghoul.cpp_CGhoul_randomize_FUN_004e8e40 at 004e8e46
 ;   core_mobster.cpp_CMobster_FUN_00527c30 at 00527c35
 ;   core_werewolf.cpp_CWerewolf_randomize_FUN_005f21e0 at 005f21e5
-;   core_zombie.cpp_CZombie_FUN_005fcb70 at 005fcb79
+;   core_zombie.cpp_CZombie_randomize_FUN_005fcb70 at 005fcb79
 ;
 ; *****************************************************************************
 

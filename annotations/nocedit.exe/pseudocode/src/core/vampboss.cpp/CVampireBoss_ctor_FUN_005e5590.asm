@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-;   core_morph.cpp_FUN_0052b310
+;   core_morph.cpp_CMorph_ctor_FUN_0052b310
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
@@ -54,8 +54,8 @@ section .text
     ADD ESP,0x4                         ; 005e55d3
     ADD EAX,0x3fe74                     ; 005e55d6
     PUSH EAX                            ; 005e55db
-    CALL core_morph.cpp_FUN_0052b310    ; 005e55dc
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
+    CALL core_morph.cpp_CMorph_ctor_FUN_0052b310 ; 005e55dc
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_0052b310(CMorph * this_ptr)
     ADD ESP,0x4                         ; 005e55e1
     LEA EBX,[EAX + 0xfff3233c]          ; 005e55e4
     PUSH 0x656ac5                       ; 005e55ea | = "nosfer.dfm"

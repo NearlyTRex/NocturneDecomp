@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SGem * __cdecl core_manpuz_cpp_SGem_dtor_FUN_0050b960(SGem *this_ptr)
+; __cdecl SGem * __cdecl core_manpuz_cpp_SGem_dtor_FUN_0050b960(SGem *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SGem *           Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   core_manpuz.cpp_freeTriangles_FUN_0050ba70
+;   core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_0050ba70
 ;
 ; *****************************************************************************
 
@@ -18,8 +19,8 @@ section .text
     PUSH 0x0                            ; 0050b964
     ADD EAX,0x3c                        ; 0050b966
     PUSH EAX                            ; 0050b969
-    CALL core_manpuz.cpp_freeTriangles_FUN_0050ba70 ; 0050b96a
-        ;   XREF to: 0050ba70 (UNCONDITIONAL_CALL)  ; CDemonTriangle * core_manpuz.cpp_freeTriangles_FUN_0050ba70(CDemonTriangle * objs)
+    CALL core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_0050ba70 ; 0050b96a
+        ;   XREF to: 0050ba70 (UNCONDITIONAL_CALL)  ; CDemonTriangle * core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_0050ba70(CDemonTriangle * objs, uint flags)
     ADD ESP,0x8                         ; 0050b96f
     SUB EAX,0x3c                        ; 0050b972
     RET                                 ; 0050b975

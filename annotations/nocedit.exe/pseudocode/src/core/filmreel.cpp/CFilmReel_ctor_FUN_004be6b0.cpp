@@ -17,7 +17,7 @@ CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_004be6b0(CFilmReel *thi
   
   pCVar2 = (CFilmReel *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
-  ADJ(this_ptr_00).base.vtable._ub = &g_CFilmReelVTable;
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CFilmReelVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"filmreel.kfm");
   pcVar2 = "movie3";

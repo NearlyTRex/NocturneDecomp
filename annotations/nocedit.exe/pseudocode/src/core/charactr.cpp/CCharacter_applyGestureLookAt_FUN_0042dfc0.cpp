@@ -18,7 +18,7 @@ core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(&this_ptr->model);
   core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530(this_ptr);
   core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(this_ptr,delta_time);
-  if (this_ptr->field43_0x2620 == 0) {
+  if (this_ptr->was_rendered_opaque == 0) {
     iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
     if (iVar1 != 1) {
       return;

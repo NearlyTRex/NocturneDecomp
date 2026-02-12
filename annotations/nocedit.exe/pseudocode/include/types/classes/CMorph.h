@@ -2,10 +2,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMorphModel.h"
 
 // Structure: CMorph
-// Ghidra size: 0x4 (4 bytes)
+// Ghidra size: 0xc2c (3116 bytes)
 typedef struct CMorph {
-    int unk; // 0x0
+    CMorphModel models[2]; // 0x0
+    char unk[24]; // 0xc10
+    int rescale_enabled; // 0xc28
 } CMorph;
 

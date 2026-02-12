@@ -109,4 +109,4 @@ CDemonGlobe * __cdecl CDemonGlobe::ctor(CDemonGlobe *this_ptr);
 
 // Original: core_weapon.cpp_CDemonGlobe_dtor_FUN_005eea90
 // Address: 005eea90
-CDemonGlobe * __cdecl CDemonGlobe::dtor(CDemonGlobe *this_ptr);
+CDemonGlobe * __cdecl CDemonGlobe::dtor(CDemonGlobe *this_ptr,uint flags);

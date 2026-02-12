@@ -23,17 +23,17 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
   CVert *pCVar10;
   CVert *pCVar11;
   uint uVar12;
-  int iVar13;
-  uint uVar14;
-  CVector2d *pCVar15;
-  uint *puVar16;
-  CVector2d *pCVar17;
-  CVector3d *pCVar18;
-  byte bVar19;
+  uint uVar13;
+  int iVar14;
+  uint uVar15;
+  CVector2d *pCVar16;
+  uint *puVar17;
+  CVector2d *pCVar18;
+  CVector3d *pCVar19;
+  byte bVar20;
   int aiStackY_18c0 [1396];
   uint local_2e0;
   uint local_2c8;
-  uint local_2c0;
   uint uStack_2bc;
   uint local_2b8;
   uint uStack_2b4;
@@ -106,12 +106,12 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
   uint local_1c;
   uint local_18;
   uint local_14;
-  int iVar20;
+  int iVar21;
   
-  bVar19 = 0;
+  bVar20 = 0;
   if (validate_first != 0) {
-    iVar20 = (*this_ptr->vtable->weldVertices)(this_ptr,0.0001,1);
-    if (iVar20 == 0) {
+    iVar21 = (*this_ptr->vtable->weldVertices)(this_ptr,0.0001,1);
+    if (iVar21 == 0) {
       return 0;
     }
   }
@@ -293,37 +293,37 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         }
         uVar12 = *(uint *)((int)&(pCVar11->position).z + 4);
       }
-      uVar14 = 0;
+      uVar15 = 0;
       dVar6 = (double)CONCAT44(uVar12,local_268) + 0.0001;
       if (this_ptr->vertex_count != 0) {
         local_2c = local_20->uv_coords + 2;
         local_28 = local_20->uv_coords + 1;
         local_34 = local_20->uv_coords;
-        iVar20 = 0;
+        iVar21 = 0;
         do {
-          if (((uVar14 != local_18) && (uVar14 != local_14)) && (uVar14 != local_1c)) {
-            puVar16 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar20);
-            pCVar18 = &local_fc;
-            for (iVar13 = 6; iVar13 != 0; iVar13 = iVar13 + -1) {
-              *(uint *)&pCVar18->x = *puVar16;
-              puVar16 = puVar16 + (uint)bVar19 * -2 + 1;
-              pCVar18 = (CVector3d *)((int)pCVar18 + (uint)bVar19 * -8 + 4);
+          if (((uVar15 != local_18) && (uVar15 != local_14)) && (uVar15 != local_1c)) {
+            puVar17 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar21);
+            pCVar19 = &local_fc;
+            for (iVar14 = 6; iVar14 != 0; iVar14 = iVar14 + -1) {
+              *(uint *)&pCVar19->x = *puVar17;
+              puVar17 = puVar17 + (uint)bVar20 * -2 + 1;
+              pCVar19 = (CVector3d *)((int)pCVar19 + (uint)bVar20 * -8 + 4);
             }
             if ((((dVar1 <= local_fc.x) && (local_fc.x <= dVar4)) &&
                 ((dVar2 <= local_fc.y && ((local_fc.y <= dVar5 && (dVar3 <= local_fc.z)))))) &&
                (local_fc.z <= dVar6)) {
               local_2e0 = 0x5d5081;
-              iVar13 = shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10
+              iVar14 = shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10
                                  (&local_fc,&segStart->position,&segEnd->position);
-              if (iVar13 == 0) {
+              if (iVar14 == 0) {
                 local_2e0 = 0x5d54ea;
-                iVar13 = shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10
+                iVar14 = shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10
                                    (&local_fc,&segEnd->position,&pCVar10->position);
-                if (iVar13 == 0) {
+                if (iVar14 == 0) {
                   local_2e0 = 0x5d566f;
-                  iVar13 = shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10
+                  iVar14 = shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10
                                      (&local_fc,&pCVar10->position,&segStart->position);
-                  if (iVar13 == 0) goto LAB_005d4d06;
+                  if (iVar14 == 0) goto LAB_005d4d06;
                   local_114 = *(uint *)&(pCVar10->position).x;
                   uStack_110 = *(uint *)((int)&(pCVar10->position).x + 4);
                   local_10c = *(uint *)&(pCVar10->position).y;
@@ -332,7 +332,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
                   uStack_100 = *(uint *)((int)&(pCVar10->position).z + 4);
                   local_238 = *(uint *)&local_2c->x;
                   uStack_234 = *(uint *)((int)&local_2c->x + 4);
-                  local_2c0 = *(uint *)&local_2c->y;
+                  uVar12 = *(uint *)&local_2c->y;
                   uStack_2bc = *(uint *)((int)&local_2c->y + 4);
                   local_12c = *(uint *)&(segStart->position).x;
                   uStack_128 = *(uint *)((int)&(segStart->position).x + 4);
@@ -344,7 +344,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
                   uStack_22c = *(uint *)((int)&local_34->x + 4);
                   local_248 = *(uint *)&local_34->y;
                   local_38 = 1;
-                  uVar12 = *(uint *)((int)&local_34->y + 4);
+                  uVar13 = *(uint *)((int)&local_34->y + 4);
                   local_30 = 0;
                 }
                 else {
@@ -356,7 +356,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
                   uStack_100 = *(uint *)((int)&(segEnd->position).z + 4);
                   local_238 = *(uint *)&local_28->x;
                   uStack_234 = *(uint *)((int)&local_28->x + 4);
-                  local_2c0 = *(uint *)&local_28->y;
+                  uVar12 = *(uint *)&local_28->y;
                   uStack_2bc = *(uint *)((int)&local_28->y + 4);
                   local_12c = *(uint *)&(pCVar10->position).x;
                   uStack_128 = *(uint *)((int)&(pCVar10->position).x + 4);
@@ -368,7 +368,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
                   uStack_22c = *(uint *)((int)&local_2c->x + 4);
                   local_248 = *(uint *)&local_2c->y;
                   local_38 = 0;
-                  uVar12 = *(uint *)((int)&local_2c->y + 4);
+                  uVar13 = *(uint *)((int)&local_2c->y + 4);
                   local_30 = 2;
                 }
               }
@@ -382,7 +382,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
                 uStack_100 = *(uint *)((int)&(segStart->position).z + 4);
                 local_238 = *(uint *)&local_34->x;
                 uStack_234 = *(uint *)((int)&local_34->x + 4);
-                local_2c0 = *(uint *)&local_34->y;
+                uVar12 = *(uint *)&local_34->y;
                 uStack_2bc = *(uint *)((int)&local_34->y + 4);
                 local_12c = *(uint *)&(segEnd->position).x;
                 uStack_128 = *(uint *)((int)&(segEnd->position).x + 4);
@@ -393,7 +393,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
                 local_230 = *(uint *)&local_28->x;
                 uStack_22c = *(uint *)((int)&local_28->x + 4);
                 local_248 = *(uint *)&local_28->y;
-                uVar12 = *(uint *)((int)&local_28->y + 4);
+                uVar13 = *(uint *)((int)&local_28->y + 4);
                 local_38 = 2;
               }
               local_3c = (void *)((int)local_3c + -1);
@@ -407,32 +407,32 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
               pCVar9 = local_20;
               dVar1 = (double)CONCAT44(uStack_128,local_12c) -
                       (double)CONCAT44(uStack_110,local_114);
-              local_1f0._4_4_ = uVar14;
+              local_1f0._4_4_ = uVar15;
               dVar6 = (double)CONCAT44(uStack_120,local_124) -
                       (double)CONCAT44(uStack_108,local_10c);
               local_1f0._8_4_ = *(int *)((int)local_20->uv_coords + local_30 * 4 + -0xc);
               dVar5 = (double)CONCAT44(uStack_118,local_11c) -
                       (double)CONCAT44(uStack_100,local_104);
               local_1e4 = *(int *)((int)local_20->uv_coords + local_38 * 4 + -0xc);
-              *(uint *)((int)local_20->uv_coords + local_30 * 4 + -0xc) = uVar14;
+              *(uint *)((int)local_20->uv_coords + local_30 * 4 + -0xc) = uVar15;
               dVar2 = local_fc.x - (double)CONCAT44(uStack_110,local_114);
               dVar3 = local_fc.y - (double)CONCAT44(uStack_108,local_10c);
               dVar4 = local_fc.z - (double)CONCAT44(uStack_100,local_104);
               local_e4 = (double)CONCAT44(uStack_22c,local_230) -
                          (double)CONCAT44(uStack_234,local_238);
-              dVar7 = (double)CONCAT44(uStack_2bc,local_2c0);
+              dVar7 = (double)CONCAT44(uStack_2bc,uVar12);
               dVar8 = local_e4;
-              local_dc = (double)CONCAT44(uVar12,local_248) - dVar7;
+              local_dc = (double)CONCAT44(uVar13,local_248) - dVar7;
               local_b4 = (uint)local_e4;
-              (&uStack_b0)[(uint)bVar19 * -2] =
-                   *(uint *)((int)&local_e4 + (uint)bVar19 * -8 + 4);
+              (&uStack_b0)[(uint)bVar20 * -2] =
+                   *(uint *)((int)&local_e4 + (uint)bVar20 * -8 + 4);
               local_e4 = dVar8;
-              *(uint *)(&local_ac + (-(uint)bVar19 - (uint)bVar19)) =
-                   *(uint *)(&local_dc + (-(uint)bVar19 - (uint)bVar19));
+              *(uint *)(&local_ac + (-(uint)bVar20 - (uint)bVar20)) =
+                   *(uint *)(&local_dc + (-(uint)bVar20 - (uint)bVar20));
               *(uint *)
-               ((int)(&local_ac + (-(uint)bVar19 - (uint)bVar19)) + ((uint)bVar19 * -2 + 1) * 4) =
+               ((int)(&local_ac + (-(uint)bVar20 - (uint)bVar20)) + ((uint)bVar20 * -2 + 1) * 4) =
                    *(uint *)
-                    ((int)(&local_dc + (-(uint)bVar19 - (uint)bVar19)) + ((uint)bVar19 * -2 + 1) * 4
+                    ((int)(&local_dc + (-(uint)bVar20 - (uint)bVar20)) + ((uint)bVar20 * -2 + 1) * 4
                     );
               dVar1 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2) /
                       SQRT(dVar5 * dVar5 + dVar6 * dVar6 + dVar1 * dVar1);
@@ -441,64 +441,63 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
               adStack_8c[0] = local_ac * dVar1;
               local_cc[2] = (uint)uStack_94;
               uStack_94 = dVar2;
-              local_cc[(uint)bVar19 * -2 + 3] = *(int *)((int)&uStack_94 + (uint)bVar19 * -8 + 4);
-              *(uint *)(&local_bc + (-(uint)bVar19 - (uint)bVar19)) =
-                   *(uint *)(adStack_8c + (-(uint)bVar19 - (uint)bVar19));
+              local_cc[(uint)bVar20 * -2 + 3] = *(int *)((int)&uStack_94 + (uint)bVar20 * -8 + 4);
+              *(uint *)(&local_bc + (-(uint)bVar20 - (uint)bVar20)) =
+                   *(uint *)(adStack_8c + (-(uint)bVar20 - (uint)bVar20));
               *(uint *)
-               ((int)(&local_bc + (-(uint)bVar19 - (uint)bVar19)) + ((uint)bVar19 * -2 + 1) * 4) =
+               ((int)(&local_bc + (-(uint)bVar20 - (uint)bVar20)) + ((uint)bVar20 * -2 + 1) * 4) =
                    *(uint *)
-                    ((int)(adStack_8c + (-(uint)bVar19 - (uint)bVar19)) +
-                    ((uint)bVar19 * -2 + 1) * 4);
+                    ((int)(adStack_8c + (-(uint)bVar20 - (uint)bVar20)) +
+                    ((uint)bVar20 * -2 + 1) * 4);
               local_a4 = (double)CONCAT44(uStack_234,local_238) +
                          (double)CONCAT44(local_cc[3],local_cc[2]);
               dVar1 = local_a4;
               local_9c = dVar7 + local_bc;
               local_d4 = (uint)local_a4;
               local_a4 = dVar1;
-              (&pCStack_d0)[(uint)bVar19 * -2] = *(CObj **)((int)&local_a4 + (uint)bVar19 * -8 + 4);
-              local_cc[(uint)bVar19 * -2 + (uint)bVar19 * -2] =
-                   *(int *)(&local_9c + (-(uint)bVar19 - (uint)bVar19));
-              (local_cc + (uint)bVar19 * -2 + (uint)bVar19 * -2)[(uint)bVar19 * -2 + 1] =
-                   *(int *)((int)(&local_9c + (-(uint)bVar19 - (uint)bVar19)) +
-                           ((uint)bVar19 * -2 + 1) * 4);
+              (&pCStack_d0)[(uint)bVar20 * -2] = *(CObj **)((int)&local_a4 + (uint)bVar20 * -8 + 4);
+              local_cc[(uint)bVar20 * -2 + (uint)bVar20 * -2] =
+                   *(int *)(&local_9c + (-(uint)bVar20 - (uint)bVar20));
+              (local_cc + (uint)bVar20 * -2 + (uint)bVar20 * -2)[(uint)bVar20 * -2 + 1] =
+                   *(int *)((int)(&local_9c + (-(uint)bVar20 - (uint)bVar20)) +
+                           ((uint)bVar20 * -2 + 1) * 4);
               local_1e0 = local_d4;
               local_1dc.parent_obj = pCStack_d0;
               local_1dc.vertex_idx_0 = local_cc[0];
-              pCVar15 = pCVar9->uv_coords + local_30;
+              pCVar16 = pCVar9->uv_coords + local_30;
               local_1dc.vertex_idx_1 = local_cc[1];
-              local_1dc.vertex_idx_2 = *(int *)&pCVar15->x;
-              local_1dc.uv_coords[0].x._0_4_ = *(uint *)((int)&pCVar15->x + 4);
-              local_1dc.uv_coords[0].x._4_4_ = *(uint *)&pCVar15->y;
-              local_1dc.uv_coords[0].y._0_4_ = *(uint *)((int)&pCVar15->y + 4);
-              pCVar17 = pCVar9->uv_coords + local_38;
-              local_1dc.uv_coords[0].y._4_4_ = *(uint *)&pCVar17->x;
-              local_1dc.uv_coords[1].x._0_4_ = *(uint *)((int)&pCVar17->x + 4);
-              local_1dc.uv_coords[1].x._4_4_ = *(uint *)&pCVar17->y;
-              local_1dc.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar17->y + 4);
-              *(uint *)&pCVar15->x = local_d4;
-              *(CObj **)((int)&pCVar15->x + 4) = pCStack_d0;
-              *(int *)&pCVar15->y = local_cc[0];
-              *(int *)((int)&pCVar15->y + 4) = local_cc[1];
-              iVar20 = this_ptr->poly_count;
-              iVar13 = (*this_ptr->vtable->addPolygons)(this_ptr,1);
-              if (iVar13 == 0) {
+              local_1dc.vertex_idx_2 = *(int *)&pCVar16->x;
+              local_1dc.uv_coords[0].x._0_4_ = *(uint *)((int)&pCVar16->x + 4);
+              local_1dc.uv_coords[0].x._4_4_ = *(uint *)&pCVar16->y;
+              local_1dc.uv_coords[0].y._0_4_ = *(uint *)((int)&pCVar16->y + 4);
+              pCVar18 = pCVar9->uv_coords + local_38;
+              local_1dc.uv_coords[0].y._4_4_ = *(uint *)&pCVar18->x;
+              local_1dc.uv_coords[1].x._0_4_ = *(uint *)((int)&pCVar18->x + 4);
+              local_1dc.uv_coords[1].x._4_4_ = *(uint *)&pCVar18->y;
+              local_1dc.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar18->y + 4);
+              *(uint *)&pCVar16->x = local_d4;
+              *(CObj **)((int)&pCVar16->x + 4) = pCStack_d0;
+              *(int *)&pCVar16->y = local_cc[0];
+              *(int *)((int)&pCVar16->y + 4) = local_cc[1];
+              iVar21 = this_ptr->poly_count;
+              iVar14 = (*this_ptr->vtable->addPolygons)(this_ptr,1);
+              if (iVar14 == 0) {
                 shape_memdbg_cpp_debugFree_FUN_0050f210(local_3c);
-                shape_superopt_cpp_CPoly_dtor_FUN_005cc660((CPoly *)(local_1f0 + 8));
+                shape_superopt_cpp_CPoly_dtor_FUN_005cc660((CPoly *)(local_1f0 + 8),0);
                 return 0;
               }
-              (*(this_ptr->poly_array[iVar20].vtable)->copyFrom)
-                        (this_ptr->poly_array + iVar20,(CPoly *)(local_1f0 + 8),this_ptr);
-              local_2c0 = 0;
+              (*(this_ptr->poly_array[iVar21].vtable)->copyFrom)
+                        (this_ptr->poly_array + iVar21,(CPoly *)(local_1f0 + 8),this_ptr);
               local_2c = (CVector2d *)((int)&local_2c->x + 1);
               local_2c8 = 0x5d54c5;
-              shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_1dc);
+              shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_1dc,0);
               break;
             }
           }
 LAB_005d4d06:
-          uVar14 = uVar14 + 1;
-          iVar20 = iVar20 + 0x38;
-        } while (uVar14 < (uint)this_ptr->vertex_count);
+          uVar15 = uVar15 + 1;
+          iVar21 = iVar21 + 0x38;
+        } while (uVar15 < (uint)this_ptr->vertex_count);
       }
       local_24 = local_24 + 1;
     } while (local_24 < (uint)this_ptr->poly_count);

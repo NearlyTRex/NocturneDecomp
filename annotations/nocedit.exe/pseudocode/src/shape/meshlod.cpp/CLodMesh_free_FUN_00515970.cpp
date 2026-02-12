@@ -49,7 +49,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_free_FUN_00515970(CLodMesh *this_ptr)
     shape_meshlod_cpp_CLodMesh_init_FUN_00515880(this_ptr);
     return;
   }
-  ptr = shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(this_ptr->next_lod);
+  ptr = shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(this_ptr->next_lod,0);
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   shape_meshlod_cpp_CLodMesh_init_FUN_00515880(this_ptr);
   return;

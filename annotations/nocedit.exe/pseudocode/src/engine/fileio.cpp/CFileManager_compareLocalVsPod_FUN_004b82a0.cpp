@@ -51,7 +51,7 @@ engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
   if (iVar2 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s to compare!",local_1208);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_a08);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_a08,0);
     return;
   }
   iVar2 = 0;
@@ -140,6 +140,6 @@ engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
             (&local_5dc,local_1208,-1,0);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5dc,0);
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_a08);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_a08,0);
   return;
 }

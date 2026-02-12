@@ -968,22 +968,22 @@ LAB_005fa14f:
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                     (g_CDemonSetPtr,(CDemonActor *)in_stack_fffffc54);
         }
-        (this_ptr->base).base.field7_0x2428.y =
-             (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-        local_260 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-        local_25c = (this_ptr->base).base.field7_0x2428.y * delta_time;
-        pCVar11 = &(this_ptr->base).base.field6_0x241c;
-        local_258 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+        (this_ptr->base).base.velocity.y =
+             (this_ptr->base).base.velocity.y - delta_time * (float)32;
+        local_260 = (this_ptr->base).base.velocity.x * delta_time;
+        local_25c = (this_ptr->base).base.velocity.y * delta_time;
+        pCVar11 = &(this_ptr->base).base.position_delta;
+        local_258 = delta_time * (this_ptr->base).base.velocity.z;
         pCVar14 = &(this_ptr->base).base.model.accumulated_root_motion;
         local_110 = local_260 + pCVar11->x;
-        local_10c = local_25c + (this_ptr->base).base.field6_0x241c.y;
-        local_108 = local_258 + (this_ptr->base).base.field6_0x241c.z;
+        local_10c = local_25c + (this_ptr->base).base.position_delta.y;
+        local_108 = local_258 + (this_ptr->base).base.position_delta.z;
         local_284.x = local_110 + pCVar14->x;
         local_284.y = local_10c + (this_ptr->base).base.model.accumulated_root_motion.y;
         local_284.z = local_108 + (this_ptr->base).base.model.accumulated_root_motion.z;
-        (this_ptr->base).base.field6_0x241c.z = 0.0;
-        (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-        pCVar11->x = (this_ptr->base).base.field6_0x241c.y;
+        (this_ptr->base).base.position_delta.z = 0.0;
+        (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+        pCVar11->x = (this_ptr->base).base.position_delta.y;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         fVar26 = (this_ptr->base).base.model.accumulated_root_motion.z;
         (this_ptr->base).base.model.accumulated_root_motion.y = fVar26;

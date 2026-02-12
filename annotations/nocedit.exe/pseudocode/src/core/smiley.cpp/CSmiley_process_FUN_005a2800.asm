@@ -71,7 +71,7 @@
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CGore* g_CGorePtr = 02d83364
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CEventList g_CEventListInstance
 ;   ... and 4 more
 ;
@@ -410,7 +410,7 @@ section .text
     MOV EAX,0x64f2ca                    ; 005a2b6c | = "%s confused while walking to scriptDe..."
     PUSH EAX                            ; 005a2b71 | = "%s confused while walking to scriptDe..."
     MOV EDX,dword ptr [0x0066e8e0]      ; 005a2b72 | g_CConsolePtr
-    PUSH EDX                            ; 005a2b78 | g_ConsolePtr
+    PUSH EDX                            ; 005a2b78 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a2b79
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x005a2aa0                      ; 005a2b7e

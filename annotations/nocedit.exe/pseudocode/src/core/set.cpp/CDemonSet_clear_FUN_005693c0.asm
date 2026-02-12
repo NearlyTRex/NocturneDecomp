@@ -20,7 +20,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
 ;   core_setdir.cpp_CDemonSet_freeThumbs_FUN_00575df0
 ;   core_setutil.cpp_C3DSCamera_free_FUN_00585360
-;   core_terrain.cpp_CTerrain_dtor_FUN_005e1f30
+;   core_terrain.cpp_CTerrain_free_FUN_005e1f30
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 005693de (CONDITIONAL_JUMP)  ; LAB_005693de
     MOV EDX,dword ptr [0x006843f8]      ; 005693f1 | g_CTerrainInstance | g_CTerrainPtr
     PUSH EDX                            ; 005693f7 | g_CTerrainInstance
-    CALL core_terrain.cpp_CTerrain_dtor_FUN_005e1f30 ; 005693f8
-        ;   XREF to: 005e1f30 (UNCONDITIONAL_CALL)  ; CTerrain * core_terrain.cpp_CTerrain_dtor_FUN_005e1f30(CTerrain * this_ptr)
+    CALL core_terrain.cpp_CTerrain_free_FUN_005e1f30 ; 005693f8
+        ;   XREF to: 005e1f30 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_free_FUN_005e1f30(CTerrain * this_ptr)
     ADD ESP,0x4                         ; 005693fd
     MOV ECX,dword ptr [ESP + 0xc]       ; 00569400
     PUSH ECX                            ; 00569404

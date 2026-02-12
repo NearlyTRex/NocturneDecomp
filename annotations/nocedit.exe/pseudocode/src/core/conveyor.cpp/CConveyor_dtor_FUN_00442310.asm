@@ -31,7 +31,7 @@ section .text
     ADD EBX,0x310                       ; 0044231e
     PUSH EBX                            ; 00442324
     CALL core_course.cpp_CCourse_dtor_FUN_004424e0 ; 00442325
-        ;   XREF to: 004424e0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_dtor_FUN_004424e0(CCourse * this_ptr)
+        ;   XREF to: 004424e0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_dtor_FUN_004424e0(CCourse * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044232a
     PUSH 0x1                            ; 0044232d
     LEA EBX,[EAX + 0xfffffcf0]          ; 0044232f

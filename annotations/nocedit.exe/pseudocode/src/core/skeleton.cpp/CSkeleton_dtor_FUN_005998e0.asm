@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005998e0(CSkeleton *this_ptr)
+; __cdecl CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005998e0(CSkeleton *this_ptr,uint flags)
 ;
 ; Parameters:
-; CSkeleton *      Stack[0x8]:4   this_ptr
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   core_curtain.cpp_freeVectors_FUN_0044baf0
+;   core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0
 ;   core_skeleton.cpp_CSkeleton_free_FUN_00599a50
 ;   crt_stack.c___STK_FUN_005ff9f3
 ;
@@ -28,8 +29,8 @@ section .text
     PUSH 0x0                            ; 005998f8
     ADD EBX,0x2937c                     ; 005998fa
     PUSH EBX                            ; 00599900
-    CALL core_curtain.cpp_freeVectors_FUN_0044baf0 ; 00599901
-        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_freeVectors_FUN_0044baf0(CVector3f * objs)
+    CALL core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0 ; 00599901
+        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 00599906
     SUB EAX,0x2937c                     ; 00599909
     POP EBX                             ; 0059990e

@@ -91,7 +91,7 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
   auStack_c0._48_4_ = 6;
   auStack_c0._4_4_ = 100.0;
   auStack_c0._52_4_ = this_ptr;
-  pCStack_88 = *(CBaron **)(this_ptr->unk1 + 0x10);
+  pCStack_88 = (CBaron *)this_ptr->unk5;
   if (pCStack_88 == (CBaron *)0x0) {
     pCStack_88 = this_ptr;
   }

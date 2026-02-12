@@ -104,7 +104,7 @@ section .text
         ;   Label: LAB_0043c056
     PUSH EAX                            ; 0043c058
     CALL core_cloth.cpp_CCloth_dtor_FUN_00438c00 ; 0043c059
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr)
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043c05e
     PUSH EAX                            ; 0043c061
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0043c062

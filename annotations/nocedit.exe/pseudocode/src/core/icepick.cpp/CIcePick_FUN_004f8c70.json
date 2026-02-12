@@ -28,55 +28,55 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 105,
+        "line": 102,
         "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 171,
+        "line": 165,
         "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 238,
+        "line": 232,
         "message": "cannot cast from type 'float' to pointer type 'CPathMap *'"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 241,
+        "line": 235,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 241,
+        "line": 235,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 244,
+        "line": 238,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 244,
+        "line": 238,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 245,
+        "line": 239,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 247,
+        "line": 241,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       }
     ],
@@ -85,11 +85,11 @@
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 482,
+    "complexity_score": 476,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 247,
+    "pseudocode_lines": 241,
     "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -98,7 +98,7 @@
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 794
+    "total_lines": 788
   },
   "cross_references": [
     {
@@ -405,105 +405,105 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 102,
+      "line": 99,
       "match": "in_stack_00000008",
       "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar7 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 114,
+      "line": 111,
       "match": "extraout_EAX",
       "text": "pCStack_14 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unaffected register variable",
-      "line": 123,
+      "line": 120,
       "match": "unaff_EBP",
       "text": "fStack_2c = -unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 128,
+      "line": 125,
       "match": "unaff_EBP",
       "text": "if (unaff_EBP < *(float *)((this_ptr->base).unk2 + 4)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 129,
+      "line": 126,
       "match": "unaff_EBP",
       "text": "*(float *)((this_ptr->base).unk2 + 4) = unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 168,
+      "line": 162,
       "match": "in_stack_00000008",
       "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar7 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 184,
+      "line": 178,
       "match": "unaff_EBP",
       "text": "local_28 = -unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 189,
+      "line": 183,
       "match": "unaff_EBP",
       "text": "if (unaff_EBP < *(float *)((this_ptr->base).unk2 + 4)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 190,
+      "line": 184,
       "match": "unaff_EBP",
       "text": "*(float *)((this_ptr->base).unk2 + 4) = unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 206,
+      "line": 200,
       "match": "unaff_EBP",
       "text": "*(float *)((this_ptr->base).unk2 + 4) = -unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 211,
+      "line": 205,
       "match": "unaff_EBP",
       "text": "*(float *)((this_ptr->base).unk2 + 4) = unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 241,
+      "line": 235,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 * (float)3.1415926535000001 < fStack_8c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 242,
+      "line": 236,
       "match": "in_stack_00000008",
       "text": "fStack_8c = in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 244,
+      "line": 238,
       "match": "in_stack_00000008",
       "text": "if (fStack_8c < in_stack_00000008 * (float)-3.1415926535000001) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 245,
+      "line": 239,
       "match": "in_stack_00000008",
       "text": "fStack_8c = in_stack_00000008 * (float)-3.1415926535000001;",
       "type": "stack_param"

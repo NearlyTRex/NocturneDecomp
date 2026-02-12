@@ -77,21 +77,21 @@ LAB_004187db:
   }
   iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar5 != 0) {
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    pCVar1 = &(this_ptr->base).base.field6_0x241c;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    pCVar1 = &(this_ptr->base).base.position_delta;
     pCVar2 = &(this_ptr->base).base.model.accumulated_root_motion;
-    local_24 = (this_ptr->base).base.field7_0x2428.x * delta_time + pCVar1->x;
-    local_20 = (this_ptr->base).base.field7_0x2428.y * delta_time +
-               (this_ptr->base).base.field6_0x241c.y;
-    local_1c = delta_time * (this_ptr->base).base.field7_0x2428.z +
-               (this_ptr->base).base.field6_0x241c.z;
+    local_24 = (this_ptr->base).base.velocity.x * delta_time + pCVar1->x;
+    local_20 = (this_ptr->base).base.velocity.y * delta_time +
+               (this_ptr->base).base.position_delta.y;
+    local_1c = delta_time * (this_ptr->base).base.velocity.z +
+               (this_ptr->base).base.position_delta.z;
     local_30.x = local_24 + pCVar2->x;
     local_30.y = local_20 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_30.z = local_1c + (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar1->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar1->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;

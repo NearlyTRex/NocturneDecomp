@@ -24,7 +24,7 @@
 ;   CGore* g_CGorePtr = 02d83364
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CCharacterClassInfo.name_hash
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 g_CCrateClassInfo.name_hash
 ;   undefined4 g_CFlameCanClassInfo.name_hash
 ;   undefined4 g_CGlassClassInfo.name_hash
@@ -333,8 +333,8 @@ section .text
     FSTP double ptr [ESP]               ; 0040a5d1
     PUSH EBX                            ; 0040a5d4
     PUSH 0x613a58                       ; 0040a5d5 | = "%s causing %5.2f damage to %s\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 0040a5da | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 0040a5e0 | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 0040a5da | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 0040a5e0 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0040a5e1
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x18                        ; 0040a5e6
@@ -783,8 +783,8 @@ section .text
     FSTP double ptr [ESP]               ; 0040ab47
     PUSH EBX                            ; 0040ab4a
     PUSH 0x613a7d                       ; 0040ab4b | = "%s causing %5.2f damage to %s\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 0040ab50 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 0040ab56 | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 0040ab50 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 0040ab56 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0040ab57
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x18                        ; 0040ab5c

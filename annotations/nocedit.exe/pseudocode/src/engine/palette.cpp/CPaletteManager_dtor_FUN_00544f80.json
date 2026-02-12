@@ -26,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_palette.cpp_CPaletteManager_dtor_FUN_00544f80",
-    "signature": "CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager *this_ptr)"
+    "signature": "CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -59,8 +59,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.8666666666666667,
@@ -83,10 +83,10 @@
     "pcode_op_count": 43
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -95,6 +95,13 @@
         "offset": 4,
         "size": 4,
         "type": "CPaletteManager *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

@@ -21,7 +21,7 @@ engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s to delete local files.",pod_filename);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_438);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_438,0);
     return 0;
   }
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -40,6 +40,6 @@ engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
     } while (iVar1 < local_438.file_count);
   }
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_438);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_438,0);
   return 1;
 }

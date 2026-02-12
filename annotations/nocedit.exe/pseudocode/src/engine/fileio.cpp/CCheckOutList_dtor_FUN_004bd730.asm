@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr)
+; __cdecl CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCheckOutList *  Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860

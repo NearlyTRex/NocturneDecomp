@@ -1653,7 +1653,7 @@ section .text
     PUSH EAX                            ; 0057fa26
     DEC dword ptr [ESP + 0x4744]        ; 0057fa27
     CALL core_setutil.cpp_C3DSCamera_dtor_FUN_00585340 ; 0057fa2e
-        ;   XREF to: 00585340 (UNCONDITIONAL_CALL)  ; C3DSCamera * core_setutil.cpp_C3DSCamera_dtor_FUN_00585340(C3DSCamera * this_ptr)
+        ;   XREF to: 00585340 (UNCONDITIONAL_CALL)  ; C3DSCamera * core_setutil.cpp_C3DSCamera_dtor_FUN_00585340(C3DSCamera * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0057fa33
     CMP dword ptr [ESP + 0x473c],0x0    ; 0057fa36
     JG 0x0057f776                       ; 0057fa3e

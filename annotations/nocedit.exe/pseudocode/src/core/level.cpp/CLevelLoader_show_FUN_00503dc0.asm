@@ -129,7 +129,7 @@ section .text
     PUSH EDX                            ; 00503f17
     MOV dword ptr [ESI + 0x12c],0xf4    ; 00503f18
     CALL engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540 ; 00503f22
-        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00503f27
     CMP EDI,0x1                         ; 00503f2a
         ;   Label: LAB_00503f2a
@@ -168,7 +168,7 @@ section .text
     PUSH EDX                            ; 00503fbe
     MOV dword ptr [ESI + 0x110],EDI     ; 00503fbf
     CALL engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540 ; 00503fc5
-        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00503fca
     CMP EDI,0x2                         ; 00503fcd
         ;   Label: LAB_00503fcd
@@ -207,7 +207,7 @@ section .text
     PUSH EDX                            ; 00504061
     MOV dword ptr [ESI + 0x12c],0xff    ; 00504062
     CALL engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540 ; 0050406c
-        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00504071
     CMP EDI,0x3                         ; 00504074
         ;   Label: LAB_00504074
@@ -262,7 +262,7 @@ section .text
     PUSH EDX                            ; 0050413c
     MOV dword ptr [ESI + 0x12c],0xff    ; 0050413d
     CALL engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540 ; 00504147
-        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0050414c
     ADD ESP,0x50                        ; 0050414f
     POP EDI                             ; 00504152

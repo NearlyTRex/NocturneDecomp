@@ -115,6 +115,6 @@ CVector3f * __cdecl getClippedVertices(void);
 // Address: 0049cbd0
 void __cdecl CDemonTriangle::render(CDemonTriangle *this_ptr);
 
-// Original: core_dtri.cpp_freeTriangles_FUN_0049cd20
+// Original: core_dtri.cpp_CDemonTriangle_arrdtor_FUN_0049cd20
 // Address: 0049cd20
-CDemonTriangle * __cdecl freeTriangles(CDemonTriangle *objs);
+CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *objs,uint flags);

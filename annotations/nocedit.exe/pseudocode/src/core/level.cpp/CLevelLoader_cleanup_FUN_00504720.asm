@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_gLevelIndicator_Used_d_c_00631038
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CKeyFramedModel g_LoadingMoonModel
 ;
 ; Called Functions:
@@ -28,8 +28,8 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 00504724
     PUSH EDX                            ; 00504726
     PUSH 0x631038                       ; 00504727 | = "gLevelIndicator: Used %d calls\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 0050472c | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 00504732 | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 0050472c | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 00504732 | g_CConsoleInstance
     MOV dword ptr [EAX + 0xc],0x0       ; 00504733
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0050473a
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)

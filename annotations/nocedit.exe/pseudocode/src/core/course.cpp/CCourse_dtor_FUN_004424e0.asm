@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_004424e0(CCourse *this_ptr)
+; __cdecl CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_004424e0(CCourse *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[9]:
 ;   core_bat.cpp_CBat_dtor_FUN_00414fe0 at 00414ff5

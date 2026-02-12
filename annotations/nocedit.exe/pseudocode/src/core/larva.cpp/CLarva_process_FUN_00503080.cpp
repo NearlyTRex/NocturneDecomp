@@ -345,22 +345,22 @@ LAB_00503184:
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,(CDemonActor *)in_stack_fffffe10);
     }
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_104 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_100 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    pCVar10 = &(this_ptr->base).base.field6_0x241c;
-    local_fc = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_104 = (this_ptr->base).base.velocity.x * delta_time;
+    local_100 = (this_ptr->base).base.velocity.y * delta_time;
+    pCVar10 = &(this_ptr->base).base.position_delta;
+    local_fc = delta_time * (this_ptr->base).base.velocity.z;
     pCVar2 = &(this_ptr->base).base.model.accumulated_root_motion;
     local_98 = local_104 + pCVar10->x;
-    local_94 = local_100 + (this_ptr->base).base.field6_0x241c.y;
-    local_90 = local_fc + (this_ptr->base).base.field6_0x241c.z;
+    local_94 = local_100 + (this_ptr->base).base.position_delta.y;
+    local_90 = local_fc + (this_ptr->base).base.position_delta.z;
     local_bc.x = local_98 + pCVar2->x;
     local_bc.y = local_94 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_bc.z = local_90 + (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar10->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar10->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     fVar3 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar3;

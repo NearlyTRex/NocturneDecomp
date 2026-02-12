@@ -19,7 +19,7 @@ support_codec_cpp_CLZWCompress_dtor_FUN_0043f710(CLZWCompress *this_ptr,uint fla
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&this_ptr->dictionary);
+  pCVar1 = support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&this_ptr->dictionary,0);
   ptr = (CLZWCompress *)
         support_codec_cpp_CCodec_dtor_FUN_0043e9b0
                   ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);

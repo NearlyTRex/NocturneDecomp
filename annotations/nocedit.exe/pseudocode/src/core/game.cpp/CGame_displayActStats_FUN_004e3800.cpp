@@ -222,6 +222,6 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
     } while (iVar7 < local_28);
   }
   *(uint *)(unaff_EDI + 0x250) = 0;
-  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)auStack_58);
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)auStack_58,0);
   return;
 }

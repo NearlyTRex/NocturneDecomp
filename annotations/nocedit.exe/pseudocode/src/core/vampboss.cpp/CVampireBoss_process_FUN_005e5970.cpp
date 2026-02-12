@@ -626,18 +626,18 @@ LAB_005e6560:
     }
   }
   if ((g_CGamePtr->letterbox_mode == 0) && (iVar8 != 2)) {
-    local_100.x = (this_ptr->base).base.field6_0x241c.x +
+    local_100.x = (this_ptr->base).base.position_delta.x +
                   (this_ptr->base).base.model.accumulated_root_motion.x;
-    local_100.z = (this_ptr->base).base.field6_0x241c.z +
+    local_100.z = (this_ptr->base).base.position_delta.z +
                   (this_ptr->base).base.model.accumulated_root_motion.z;
-    local_100.y = ((this_ptr->base).base.field6_0x241c.y +
+    local_100.y = ((this_ptr->base).base.position_delta.y +
                   (this_ptr->base).base.model.accumulated_root_motion.y) -
                   delta_time * (float)3;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_100);
   }
-  (this_ptr->base).base.field6_0x241c.z = 0.0;
-  (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-  (this_ptr->base).base.field6_0x241c.x = (this_ptr->base).base.field6_0x241c.y;
+  (this_ptr->base).base.position_delta.z = 0.0;
+  (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+  (this_ptr->base).base.position_delta.x = (this_ptr->base).base.position_delta.y;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;

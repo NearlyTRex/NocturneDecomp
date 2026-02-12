@@ -220,7 +220,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
       }
       support_codec_cpp_CLZWCompress_finalize_FUN_0043f440
                 ((CLZWCompress *)auStack_a0,(_FILE *)(local_174 + 0x38));
-      support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0((CLZWDictionary *)(auStack_a0 + 4));
+      support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0((CLZWDictionary *)(auStack_a0 + 4),0);
       support_codec_cpp_CCodec_dtor_FUN_0043e9b0((CCodec *)auStack_a0,1);
     }
     crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc((ofstream *)local_174,flags);

@@ -7,7 +7,7 @@
 ; CGround *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_terrain.cpp_CTerrain_ctor_FUN_005e1ef0 at 005e1f02
+;   core_terrain.cpp_CTerrain_init_FUN_005e1ef0 at 005e1f02
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ground_cpp_0062e696

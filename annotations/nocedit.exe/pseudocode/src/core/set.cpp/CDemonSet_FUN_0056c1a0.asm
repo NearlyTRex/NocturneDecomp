@@ -47,7 +47,7 @@
 ;   CTerrain* g_CTerrainPtr = 03f8749c
 ;   CWater* g_CWaterPtr = 03f875e0
 ;   CWeather* g_CWeatherPtr = 03f95dc0
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CFireEffect g_CFireEffectInstance
 ;   CDemonLight g_CDemonLightInstance
 ;   ... and 32 more
@@ -660,7 +660,7 @@ section .text
     FSTP double ptr [ESP]               ; 0056c788
     PUSH 0x645d6b                       ; 0056c78b | = "comp: %3.2f/%3.2f actren : %3.2f\n"
     MOV ESI,dword ptr [0x0066e8e0]      ; 0056c790 | g_CConsolePtr
-    PUSH ESI                            ; 0056c796 | g_ConsolePtr
+    PUSH ESI                            ; 0056c796 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0056c797
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x20                        ; 0056c79c

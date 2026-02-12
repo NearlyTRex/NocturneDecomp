@@ -39,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_superopt.cpp_CObj_dtor_FUN_005d2260",
-    "signature": "CObj * __cdecl shape_superopt_cpp_CObj_dtor_FUN_005d2260(CObj *this_ptr)"
+    "signature": "CObj * __cdecl shape_superopt_cpp_CObj_dtor_FUN_005d2260(CObj *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -78,8 +78,8 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 1,
+    "confidence": "high",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -103,10 +103,10 @@
     "pcode_op_count": 32
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -115,6 +115,13 @@
         "offset": 4,
         "size": 4,
         "type": "CObj *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

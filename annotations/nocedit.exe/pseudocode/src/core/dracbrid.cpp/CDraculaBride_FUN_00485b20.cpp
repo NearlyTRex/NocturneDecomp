@@ -25,10 +25,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_00485b20(CDraculaBride *this_pt
     this_ptr->part_count = this_ptr->part_count + 1;
     (body_part->base).is_transparent = 1;
     body_part->transparent_geometry_flag = 1;
-    body_part->unk6[4] = -1;
-    body_part->unk6[5] = -1;
-    body_part->unk6[6] = '\0';
-    body_part->unk6[7] = '\0';
+    body_part->render_alpha = 0xffff;
     return;
   }
   return;

@@ -38,7 +38,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonActor* PTR_00821ff4
 ;   undefined4 g_CCharacterClassInfo.name_hash
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CFireEffect g_CFireEffectInstance
 ;   undefined4 g_CFlameCanClassInfo.name_hash
 ;   ... and 10 more
@@ -573,8 +573,8 @@ section .text
     PUSH ECX                            ; 0056bdbe
     PUSH ESI                            ; 0056bdbf
     PUSH 0x645ccf                       ; 0056bdc0 | = "%d. %s : %3.2f ms\n"
-    MOV EAX,[0x0066e8e0]                ; 0056bdc5 | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 0056bdca | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 0056bdc5 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 0056bdca | g_CConsoleInstance
     ADD EBX,0x4                         ; 0056bdcb
     INC ESI                             ; 0056bdce
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0056bdcf
@@ -601,8 +601,8 @@ section .text
     FSTP double ptr [ESP]               ; 0056be18
     PUSH ECX                            ; 0056be1b
     PUSH 0x645ce2                       ; 0056be1c | = "Process time (%d actors) : %3.2f ms\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 0056be21 | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 0056be27 | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 0056be21 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 0056be27 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0056be28
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 0056be2d

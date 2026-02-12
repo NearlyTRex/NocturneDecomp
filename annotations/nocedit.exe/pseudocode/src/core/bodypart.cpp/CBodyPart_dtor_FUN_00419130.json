@@ -44,12 +44,12 @@
     {
       "addr": "0041b6b0",
       "is_variadic": false,
-      "name": "core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0"
+      "name": "core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_0041b6b0"
     },
     {
       "addr": "0041b690",
       "is_variadic": false,
-      "name": "core_bodypart.cpp_freeBodyPartModels_FUN_0041b690"
+      "name": "core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_0041b690"
     },
     {
       "addr": "0041dd00",
@@ -145,14 +145,14 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar1[-3].",
-      "text": "((SBodyPartFire *)&pCVar1[-3].scrape_points[4].local_position.z);",
+      "text": "((SBodyPartFire *)&pCVar1[-3].scrape_points[4].local_position.z,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "pSVar2[-2].",
-      "text": "((SBodyPartModel *)(pSVar2[-2].unk2.base.create_event + 0x1c));",
+      "text": "((SBodyPartModel *)(pSVar2[-2].flame.base.create_event + 0x1c),0);",
       "type": "negative_offset"
     },
     {

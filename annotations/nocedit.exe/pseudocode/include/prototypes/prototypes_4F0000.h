@@ -239,7 +239,7 @@ void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(CIniFile *this_ptr,
 void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile *this_ptr,char *key,float *output);
 void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile *this_ptr,char *key,float value);
 CIni * __cdecl engine_ini_cpp_CIni_ctor_FUN_004fbd70(CIni *this_ptr);
-CIni * __cdecl engine_ini_cpp_CIni_dtor_FUN_004fbd80(CIni *this_ptr);
+CIni * __cdecl engine_ini_cpp_CIni_dtor_FUN_004fbd80(CIni *this_ptr,uint flags);
 void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void);
 void __cdecl core_inivar_cpp_writeIniData_FUN_004fc510(void);
 void __cdecl core_inv_cpp_staticInit_FUN_004fcc30(void);
@@ -248,7 +248,7 @@ char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004fcf00(CDemonActor *actor_p
 char * __cdecl core_inv_cpp_getItemIconName_FUN_004fcf70(CDemonActor *actor_ptr);
 int __cdecl core_inv_cpp_loadItem_FUN_004fcfe0(SInventoryItemInfo *item_info,_FILE *file_handle);
 CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004fd020(CInventory *this_ptr);
-CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004fd0c0(CInventory *this_ptr);
+CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004fd0c0(CInventory *this_ptr,uint flags);
 void __cdecl core_inv_cpp_CInventory_clear_FUN_004fd0e0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_initialize_FUN_004fd190(CInventory *this_ptr);
 void __cdecl core_inv_cpp_loadAssets_FUN_004fd220(void);

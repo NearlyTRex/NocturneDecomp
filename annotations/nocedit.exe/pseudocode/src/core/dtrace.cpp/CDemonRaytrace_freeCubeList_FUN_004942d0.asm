@@ -70,7 +70,7 @@ section .text
     PUSH 0x0                            ; 0049433e
     PUSH EAX                            ; 00494340
     CALL core_dpart.cpp_CDemonPart_dtor_FUN_00482160 ; 00494341
-        ;   XREF to: 00482160 (UNCONDITIONAL_CALL)  ; CDemonPart * core_dpart.cpp_CDemonPart_dtor_FUN_00482160(CDemonPart * this_ptr)
+        ;   XREF to: 00482160 (UNCONDITIONAL_CALL)  ; CDemonPart * core_dpart.cpp_CDemonPart_dtor_FUN_00482160(CDemonPart * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00494346
     PUSH EAX                            ; 00494349
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0049434a

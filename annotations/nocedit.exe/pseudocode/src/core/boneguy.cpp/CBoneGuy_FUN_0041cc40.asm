@@ -27,7 +27,7 @@
 ;   double DOUBLE_00616235 = 6
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 g_CDemonSetInstance.actor_list_ptr
 ;   undefined4 g_CDemonSetInstance.actor_list_data[0]
 ;   ... and 1 more
@@ -267,7 +267,7 @@ section .text
     PUSH 0x616175                       ; 0041cedc | = "%s can't pick up %s, sombody else bea..."
     MOV EDI,EAX                         ; 0041cee1
     MOV EAX,[0x0066e8e0]                ; 0041cee3 | g_CConsolePtr
-    PUSH EAX                            ; 0041cee8 | g_ConsolePtr
+    PUSH EAX                            ; 0041cee8 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0041cee9
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0041ceee
@@ -294,8 +294,8 @@ section .text
     PUSH EDX                            ; 0041cf2b
     PUSH EAX                            ; 0041cf2c
     PUSH 0x6161a7                       ; 0041cf2d | = "%s can't pick up %s, giving up!!!!\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 0041cf32 | g_CConsolePtr | g_ConsolePtr
-    PUSH EBX                            ; 0041cf38 | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 0041cf32 | g_CConsolePtr | g_CConsoleInstance
+    PUSH EBX                            ; 0041cf38 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0041cf39
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0041cf3e
@@ -322,7 +322,7 @@ section .text
     PUSH EAX                            ; 0041cf78
     PUSH 0x6161cb                       ; 0041cf79 | = "%s beginning to pickup %s\n"
     MOV EAX,[0x0066e8e0]                ; 0041cf7e | g_CConsolePtr
-    PUSH EAX                            ; 0041cf83 | g_ConsolePtr
+    PUSH EAX                            ; 0041cf83 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0041cf84
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0041cf89
@@ -466,7 +466,7 @@ section .text
     PUSH ECX                            ; 0041d150
     PUSH 0x6161f0                       ; 0041d151 | = "%s is going to try to pick up %s\n"
     MOV EBX,dword ptr [0x0066e8e0]      ; 0041d156 | g_CConsolePtr
-    PUSH EBX                            ; 0041d15c | g_ConsolePtr
+    PUSH EBX                            ; 0041d15c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0041d15d
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     MOV EAX,0x1                         ; 0041d162

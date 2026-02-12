@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
-;   core_glass.cpp_freeVectors_FUN_004eb8a0
+;   core_glass.cpp_CVector3f_arrdtor_FUN_004eb8a0
 ;   core_mirror.cpp_CMirror_dtor_FUN_005213e0
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFree_FUN_0050f210
@@ -31,14 +31,14 @@ section .text
     PUSH 0x0                            ; 004eb82c
     ADD EBX,0x38c                       ; 004eb82e
     PUSH EBX                            ; 004eb834
-    CALL core_glass.cpp_freeVectors_FUN_004eb8a0 ; 004eb835
-        ;   XREF to: 004eb8a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_glass.cpp_freeVectors_FUN_004eb8a0(CVector3f * objs)
+    CALL core_glass.cpp_CVector3f_arrdtor_FUN_004eb8a0 ; 004eb835
+        ;   XREF to: 004eb8a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_glass.cpp_CVector3f_arrdtor_FUN_004eb8a0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 004eb83a
     PUSH 0x0                            ; 004eb83d
     SUB EAX,0x1a0                       ; 004eb83f
     PUSH EAX                            ; 004eb844
     CALL core_mirror.cpp_CMirror_dtor_FUN_005213e0 ; 004eb845
-        ;   XREF to: 005213e0 (UNCONDITIONAL_CALL)  ; CMirror * core_mirror.cpp_CMirror_dtor_FUN_005213e0(CMirror * this_ptr)
+        ;   XREF to: 005213e0 (UNCONDITIONAL_CALL)  ; CMirror * core_mirror.cpp_CMirror_dtor_FUN_005213e0(CMirror * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004eb84a
     PUSH 0x1                            ; 004eb84d
     LEA EBX,[EAX + 0xfffffe14]          ; 004eb84f

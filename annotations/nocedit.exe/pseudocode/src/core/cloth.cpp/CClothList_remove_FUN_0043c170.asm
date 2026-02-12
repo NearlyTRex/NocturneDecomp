@@ -65,7 +65,7 @@ section .text
     PUSH 0x0                            ; 0043c1d4
     PUSH EAX                            ; 0043c1d6
     CALL core_cloth.cpp_CCloth_dtor_FUN_00438c00 ; 0043c1d7
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr)
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043c1dc
     PUSH EAX                            ; 0043c1df
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0043c1e0

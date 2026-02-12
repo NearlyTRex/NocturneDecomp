@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 8,
-        "line": 52,
+        "line": 53,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 14,
-        "line": 52,
+        "line": 53,
         "message": "expected expression"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 94,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 2,
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 66,
     "suspect_count": 2,
     "suspect_types": [
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 222
+    "total_lines": 224
   },
   "cross_references": [],
   "function": {
@@ -51,14 +51,14 @@
       "name": "core_actor.cpp_createActorByName_FUN_0040c430"
     },
     {
+      "addr": "0052b430",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_FUN_0052b430"
+    },
+    {
       "addr": "0052b680",
       "is_variadic": false,
       "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680"
-    },
-    {
-      "addr": "0052b430",
-      "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b430"
     },
     {
       "addr": "0052dce0",
@@ -180,7 +180,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
+      "line": 46,
       "match": "code *",
       "text": "(*(code *)**(uint **)(*(int *)(this_ptr->unk + 0x60) + 0x154))();",
       "type": "unresolved_funcptr"

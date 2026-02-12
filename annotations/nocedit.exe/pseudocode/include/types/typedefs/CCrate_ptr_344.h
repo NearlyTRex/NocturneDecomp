@@ -6,7 +6,15 @@ struct CCrate;
 // Dependencies
 #include "system/basetypes.h"
 
-// Typedef: CCrate_ptr_344
+// Adjusted pointer: CCrate_ptr_344
 // 32-bit pointer to CCrate
-typedef struct CCrate* CCrate_ptr_344;
+struct CCrate_ptr_344 {
+    void *_raw;
+    CCrate_ptr_344() : _raw(0) {}
+    template<typename T> CCrate_ptr_344(T* p) : _raw((void*)p) {}
+    template<typename T> CCrate_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
+    CCrate* operator->() const { return (CCrate*)_raw; }
+    template<typename T> operator T*() const { return (T*)_raw; }
+    explicit operator bool() const { return _raw != 0; }
+};
 

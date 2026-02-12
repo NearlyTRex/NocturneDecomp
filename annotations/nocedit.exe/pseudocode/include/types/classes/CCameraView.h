@@ -11,7 +11,7 @@ struct CCameraView_vtable;
 // Structure: CCameraView
 // Ghidra size: 0x40 (64 bytes)
 typedef struct CCameraView {
-    void* unk1; // 0x0
+    float unk1; // 0x0
     CVector3i position; // 0x4
     CMatrix3x3i rotation_matrix; // 0x10
     int unk2; // 0x34

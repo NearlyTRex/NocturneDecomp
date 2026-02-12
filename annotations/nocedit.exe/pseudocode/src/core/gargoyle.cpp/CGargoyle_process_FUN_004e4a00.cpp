@@ -332,22 +332,22 @@ switchD_004e531f_caseD_4:
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar4 != 0) {
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_98 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_94 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    pCVar8 = &(this_ptr->base).base.field6_0x241c;
-    local_90 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_98 = (this_ptr->base).base.velocity.x * delta_time;
+    local_94 = (this_ptr->base).base.velocity.y * delta_time;
+    pCVar8 = &(this_ptr->base).base.position_delta;
+    local_90 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar11 = &(this_ptr->base).base.model.accumulated_root_motion;
     local_74 = local_98 + pCVar8->x;
-    local_70 = local_94 + (this_ptr->base).base.field6_0x241c.y;
-    local_6c = local_90 + (this_ptr->base).base.field6_0x241c.z;
+    local_70 = local_94 + (this_ptr->base).base.position_delta.y;
+    local_6c = local_90 + (this_ptr->base).base.position_delta.z;
     local_b0.x = local_74 + pCVar11->x;
     local_b0.y = local_70 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_b0.z = local_6c + (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar8->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar8->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;

@@ -97,7 +97,7 @@ void __cdecl engine_dosio_c_removeFileExtension_FUN_00482040(char *source_path,c
 void __cdecl engine_dosio_c_changeFileExtension_FUN_00482050 (char *source_path,char *destination_buffer,char *new_extension);
 int __cdecl engine_dosio_c_getFullPath_FUN_004820c0(char *output_path,char *input_path);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_ctor_FUN_00482110(CDemonPart *this_ptr);
-CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00482160(CDemonPart *this_ptr);
+CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00482160(CDemonPart *this_ptr,uint flags);
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_00482180(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_free_FUN_004822b0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_write_FUN_00482330(CDemonPart *this_ptr,_FILE *file_handle);
@@ -134,10 +134,10 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004869a0(CDraculaBride *this_pt
 void __cdecl core_dracbrid_cpp_CDraculaBride_getPropertyList_FUN_00486c90 (CDraculaBride *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_dracbrid_cpp_CDraculaBride_addFilesToExtract_FUN_00486d00 (CDraculaBride *this_ptr,_FILE *file_handle);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_00486d30(SFreaky *this_ptr);
-SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_00486d50(SFreaky *this_ptr);
+SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_00486d50(SFreaky *this_ptr,uint flags);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_00486d70(CDraculaBride *this_ptr,uint flags);
-CVector3f * __cdecl core_dracbrid_cpp_freeVectors_FUN_00486e30(CVector3f *objs);
-SFreaky * __cdecl core_dracbrid_cpp_freeFreaky_FUN_00486e50(SFreaky *objs);
+CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_00486e30(CVector3f *objs,uint flags);
+SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_00486e50(SFreaky *objs,uint flags);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486e70(CDrawSurface *this_ptr);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0 (CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_00486ee0 (CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);

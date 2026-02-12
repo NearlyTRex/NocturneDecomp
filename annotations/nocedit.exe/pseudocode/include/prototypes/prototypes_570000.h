@@ -1,6 +1,7 @@
 #pragma once
 
 // Dependencies
+#include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/C3DSCamera.h"
 #include "types/classes/C3DSLight.h"
@@ -59,16 +60,16 @@ void __cdecl core_set_cpp_FUN_005713c0(void);
 int __cdecl core_set_cpp_FUN_00571410(void);
 int __cdecl core_set_cpp_FUN_00571440(void);
 SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_00571470(SRoom *this_ptr);
-SRoom * __cdecl core_set_cpp_SRoom_dtor_FUN_00571480(SRoom *this_ptr);
+SRoom * __cdecl core_set_cpp_SRoom_dtor_FUN_00571480(SRoom *this_ptr,uint flags);
 SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_00571490(SVDBox *this_ptr);
-SVDBox * __cdecl core_set_cpp_SVDBox_dtor_FUN_005714a0(SVDBox *this_ptr);
-C3DSLight * __cdecl core_set_cpp_C3DSLight_dtor_FUN_005714b0(C3DSLight *this_ptr);
+SVDBox * __cdecl core_set_cpp_SVDBox_dtor_FUN_005714a0(SVDBox *this_ptr,uint flags);
+C3DSLight * __cdecl core_set_cpp_C3DSLight_dtor_FUN_005714b0(C3DSLight *this_ptr,uint flags);
 void __cdecl core_set_cpp_FUN_005714c0(void);
-CVector3f * __cdecl core_set_cpp_freeVectors_FUN_00571510(CVector3f *objs);
-C3DSCamera * __cdecl core_set_cpp_free3DSCameras_FUN_00571530(C3DSCamera *objs);
-C3DSLight * __cdecl core_set_cpp_free3DSLights_FUN_00571550(C3DSLight *objs);
-SRoom * __cdecl core_set_cpp_freeRooms_FUN_00571570(SRoom *objs);
-SVDBox * __cdecl core_set_cpp_freeVDBoxes_FUN_00571590(SVDBox *objs);
+CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor_FUN_00571510(CVector3f *objs,uint flags);
+C3DSCamera * __cdecl core_set_cpp_C3DSCamera_arrdtor_FUN_00571530(C3DSCamera *objs,uint flags);
+C3DSLight * __cdecl core_set_cpp_C3DSLight_arrdtor_FUN_00571550(C3DSLight *objs,uint flags);
+SRoom * __cdecl core_set_cpp_SRoom_arrdtor_FUN_00571570(SRoom *objs,uint flags);
+SVDBox * __cdecl core_set_cpp_SVDBox_arrdtor_FUN_00571590(SVDBox *objs,uint flags);
 void __cdecl core_setcolid_cpp_staticInit_FUN_005715b0(void);
 int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0 (float x,float z,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2, CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal);
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0 (CDemonSet *this_ptr,CVector3f *position,float radius);
@@ -102,19 +103,19 @@ void __cdecl core_setcolid_cpp_CDemonSet_FUN_005744d0(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_FUN_00574560(CDemonSet *this_ptr);
 int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr);
 SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_ctor_FUN_00574690(SRaytraceState *this_ptr);
-SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_005746a0(SRaytraceState *this_ptr);
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_005746a0(SRaytraceState *this_ptr,uint flags);
 SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_ctor_FUN_005746b0(SIntersectXZCylinder *this_ptr);
-SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_005746c0(SIntersectXZCylinder *this_ptr);
+SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_005746c0(SIntersectXZCylinder *this_ptr,uint flags);
 void __cdecl core_setcolid_cpp_SDamageInfo_copy_FUN_005746d0(SDamageInfo *this_ptr,SDamageInfo *other);
 SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_00574750(SCollisionReturnInfo *this_ptr);
-SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_dtor_FUN_00574760(SCollisionReturnInfo *this_ptr);
-SRaytraceState * __cdecl core_setcolid_cpp_freeRaytraceStates_FUN_00574770(SRaytraceState *objs);
+SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_dtor_FUN_00574760(SCollisionReturnInfo *this_ptr,uint flags);
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_arrdtor_FUN_00574770(SRaytraceState *objs,uint flags);
 void __cdecl core_setdir_cpp_staticInit_FUN_00574790(void);
 void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_005747d0(CZThumb *this_ptr,int count);
 void __cdecl core_setdir_cpp_CZThumb_restoreZBufferTable_FUN_00574830(CZThumb *this_ptr,int count);
 void __cdecl core_setdir_cpp_setPixelGrayscale_FUN_005748a0(int x,int y,int grayscale_value);
 CZThumb * __cdecl core_setdir_cpp_CZThumb_ctor_FUN_005748d0(CZThumb *this_ptr);
-CZThumb * __cdecl core_setdir_cpp_CZThumb_dtor_FUN_005748f0(CZThumb *this_ptr);
+CZThumb * __cdecl core_setdir_cpp_CZThumb_dtor_FUN_005748f0(CZThumb *this_ptr,uint flags);
 void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,_FILE *file_handle);
 void __cdecl core_setdir_cpp_CZThumb_write_FUN_00574b20(CZThumb *this_ptr,_FILE *file_handle);
 void __cdecl core_setdir_cpp_CZThumb_free_FUN_00574b50(CZThumb *this_ptr);
@@ -143,8 +144,8 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_00576870(CDemonSet *this_ptr);
 CDemonSet * __cdecl core_setdir_cpp_copySet_FUN_005768c0(CDemonSet **set1,CDemonSet **set2);
 CDemonSet * __cdecl core_setdir_cpp_copySet_FUN_005768d0(CDemonSet **set1,CDemonSet **set2);
 CDemonSet * __cdecl core_setdir_cpp_copySet_FUN_005768e0(CDemonSet **set1,CDemonSet **set2);
-CBoundingBox3D * __cdecl core_setdir_cpp_freeBoundingBoxes_FUN_005768f0(CBoundingBox3D *objs);
-CZThumb * __cdecl core_setdir_cpp_freeCZThumbs_FUN_00576910(CZThumb *objs);
+CBoundingBox3D * __cdecl core_setdir_cpp_CBoundingBox3D_arrdtor_FUN_005768f0(CBoundingBox3D *objs,uint flags);
+CZThumb * __cdecl core_setdir_cpp_CZThumb_arrdtor_FUN_00576910(CZThumb *objs,uint flags);
 void __cdecl core_setedit_cpp_staticInit_FUN_00576930(void);
 void __cdecl core_setedit_cpp_FUN_00576950(void);
 void __cdecl core_setedit_cpp_C3DSCamera_FUN_005769a0(C3DSCamera *this_ptr);

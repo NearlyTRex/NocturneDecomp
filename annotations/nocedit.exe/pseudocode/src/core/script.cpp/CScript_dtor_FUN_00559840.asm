@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00559840(CScript *this_ptr)
+; __cdecl CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00559840(CScript *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_FUN_00559870

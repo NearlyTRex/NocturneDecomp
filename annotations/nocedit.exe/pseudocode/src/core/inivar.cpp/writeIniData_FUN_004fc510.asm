@@ -563,7 +563,7 @@ section .text
         ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this_ptr, char * section)
     MOV EAX,[0x0066e8e0]                ; 004fcb56 | g_CConsolePtr
     ADD ESP,0x8                         ; 004fcb5b
-    MOV EBX,dword ptr [EAX]             ; 004fcb5e | g_ConsolePtr
+    MOV EBX,dword ptr [EAX]             ; 004fcb5e | g_CConsoleInstance
     PUSH EBX                            ; 004fcb60
     PUSH 0x6302d9                       ; 004fcb61 | = "logConsoleFlag"
     LEA EAX,[ESP + 0x8]                 ; 004fcb66

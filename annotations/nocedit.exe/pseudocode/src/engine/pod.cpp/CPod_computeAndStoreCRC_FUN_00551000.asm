@@ -243,7 +243,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00551214
     PUSH EAX                            ; 00551218
     CALL engine_pod.cpp_CPodFile_dtor_FUN_0054f610 ; 00551219
-        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr)
+        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0055121e
     ADD ESP,0x43c                       ; 00551221
     POP EBP                             ; 00551227

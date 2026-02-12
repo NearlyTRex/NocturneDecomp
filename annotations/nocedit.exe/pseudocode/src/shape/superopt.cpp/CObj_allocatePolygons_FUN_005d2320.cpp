@@ -45,7 +45,7 @@ int __cdecl shape_superopt_cpp_CObj_allocatePolygons_FUN_005d2320(CObj *this_ptr
         local_10 = local_10 + 1;
       } while (local_10 < (uint)this_ptr->poly_count);
     }
-    shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_78);
+    shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_78,0);
     return 1;
   }
   if (this_ptr->vertex_data != (CVert *)0x0) {

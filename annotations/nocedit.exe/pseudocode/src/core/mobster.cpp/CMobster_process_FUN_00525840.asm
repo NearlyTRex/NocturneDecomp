@@ -570,7 +570,7 @@ section .text
     PUSH EBX                            ; 00525d8a
     PUSH 0x639856                       ; 00525d8b | = "%s confused while walking to scriptDe..."
     MOV ECX,dword ptr [0x0066e8e0]      ; 00525d90 | g_CConsolePtr
-    PUSH ECX                            ; 00525d96 | g_ConsolePtr
+    PUSH ECX                            ; 00525d96 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00525d97
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x00525b7c                      ; 00525d9c

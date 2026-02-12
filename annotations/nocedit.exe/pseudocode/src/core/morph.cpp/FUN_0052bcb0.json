@@ -67,12 +67,12 @@
   },
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 643,
+    "complexity_score": 673,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 33,
     "pseudocode_lines": 433,
-    "suspect_count": 19,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
@@ -118,29 +118,29 @@
       "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90"
     },
     {
-      "addr": "0052b680",
+      "addr": "0052ccd0",
       "is_variadic": false,
-      "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680"
+      "name": "core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0"
     },
     {
       "addr": "0052b350",
       "is_variadic": false,
-      "name": "core_morph.cpp_CMorphModel_FUN_0052b350"
-    },
-    {
-      "addr": "0052ccd0",
-      "is_variadic": false,
-      "name": "core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0"
-    },
-    {
-      "addr": "0052ccb0",
-      "is_variadic": false,
-      "name": "core_morph.cpp_freeMorphControlPoints_FUN_0052ccb0"
+      "name": "core_morph.cpp_CMorph_FUN_0052b350"
     },
     {
       "addr": "0052b430",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b430"
+      "name": "core_morph.cpp_CMorph_FUN_0052b430"
+    },
+    {
+      "addr": "0052ca90",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_FUN_0052ca90"
+    },
+    {
+      "addr": "0052b680",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680"
     },
     {
       "addr": "0052bb80",
@@ -148,9 +148,9 @@
       "name": "core_morph.cpp_FUN_0052bb80"
     },
     {
-      "addr": "0052ca90",
+      "addr": "0052ccb0",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052ca90"
+      "name": "core_morph.cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0"
     },
     {
       "addr": "0052dce0",
@@ -1050,7 +1050,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000014",
-      "text": "CMorphModel *in_stack_00000014;",
+      "text": "CMorph *in_stack_00000014;",
       "type": "stack_param"
     },
     {
@@ -1132,16 +1132,37 @@
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 390,
+      "match": "in_stack_00000014",
+      "text": "core_morph_cpp_CMorph_FUN_0052b430(in_stack_00000014,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 391,
+      "match": "in_stack_00000014",
+      "text": "core_morph_cpp_CMorph_FUN_0052b430(in_stack_00000014,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 392,
       "match": "in_stack_00000014",
-      "text": "core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)in_stack_00000014);",
+      "text": "core_morph_cpp_CMorph_getReady_FUN_0052b680(in_stack_00000014);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 393,
+      "match": "in_stack_00000014",
+      "text": "core_morph_cpp_CMorph_FUN_0052ca90(in_stack_00000014);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 394,
       "match": "in_stack_00000014",
-      "text": "core_morph_cpp_CMorphModel_FUN_0052b350(in_stack_00000014);",
+      "text": "core_morph_cpp_CMorph_FUN_0052b350(in_stack_00000014);",
       "type": "stack_param"
     },
     {
@@ -1155,14 +1176,14 @@
       "description": "Direct stack address reference",
       "line": 430,
       "match": "&stack0xffffb250",
-      "text": "((CDeformableModelInstance *)&stack0xffffb250);",
+      "text": "((CDeformableModelInstance *)&stack0xffffb250,0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 435,
       "match": "&stack0xffffb248",
-      "text": "((CDeformableModelInstance *)&stack0xffffb248);",
+      "text": "((CDeformableModelInstance *)&stack0xffffb248,0);",
       "type": "stack_ref"
     }
   ]

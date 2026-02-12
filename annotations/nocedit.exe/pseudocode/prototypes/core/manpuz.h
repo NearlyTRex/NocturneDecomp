@@ -217,7 +217,7 @@ SReflector * __cdecl SReflector::ctor(SReflector *this_ptr);
 
 // Original: core_manpuz.cpp_SReflector_dtor_FUN_0050b930
 // Address: 0050b930
-SReflector * __cdecl SReflector::dtor(SReflector *this_ptr);
+SReflector * __cdecl SReflector::dtor(SReflector *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_SGem_ctor_FUN_0050b940
 // Address: 0050b940
@@ -225,7 +225,7 @@ SGem * __cdecl SGem::ctor(SGem *this_ptr);
 
 // Original: core_manpuz.cpp_SGem_dtor_FUN_0050b960
 // Address: 0050b960
-SGem * __cdecl SGem::dtor(SGem *this_ptr);
+SGem * __cdecl SGem::dtor(SGem *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_SPanel_ctor_FUN_0050b980
 // Address: 0050b980
@@ -233,24 +233,24 @@ SPanel * __cdecl SPanel::ctor(SPanel *this_ptr);
 
 // Original: core_manpuz.cpp_SPanel_dtor_FUN_0050b990
 // Address: 0050b990
-SPanel * __cdecl SPanel::dtor(SPanel *this_ptr);
+SPanel * __cdecl SPanel::dtor(SPanel *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_FUN_0050b9a0
 // Address: 0050b9a0
 void __cdecl FUN_0050b9a0(void);
 
-// Original: core_manpuz.cpp_freeTriangles_FUN_0050ba70
+// Original: core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_0050ba70
 // Address: 0050ba70
-CDemonTriangle * __cdecl freeTriangles(CDemonTriangle *objs);
+CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *objs,uint flags);
 
-// Original: core_manpuz.cpp_freePanels_FUN_0050ba90
+// Original: core_manpuz.cpp_SPanel_arrdtor_FUN_0050ba90
 // Address: 0050ba90
-SPanel * __cdecl freePanels(SPanel *objs);
+SPanel * __cdecl SPanel::arrdtor(SPanel *objs,uint flags);
 
-// Original: core_manpuz.cpp_freeGems_FUN_0050bab0
+// Original: core_manpuz.cpp_SGem_arrdtor_FUN_0050bab0
 // Address: 0050bab0
-SGem * __cdecl freeGems(SGem *objs);
+SGem * __cdecl SGem::arrdtor(SGem *objs,uint flags);
 
-// Original: core_manpuz.cpp_freeReflectors_FUN_0050bad0
+// Original: core_manpuz.cpp_SReflector_arrdtor_FUN_0050bad0
 // Address: 0050bad0
-SReflector * __cdecl freeReflectors(SReflector *objs);
+SReflector * __cdecl SReflector::arrdtor(SReflector *objs,uint flags);

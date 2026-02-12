@@ -43,41 +43,41 @@ void __cdecl core_bride_cpp_CBride_setup_FUN_00423810(CBride *this_ptr)
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lshoulderpiece",1);
-  *(int *)this_ptr->unk = iVar1;
+  *(int *)this_ptr->unk1 = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l4armpiece",1);
-  *(int *)(this_ptr->unk + 4) = iVar1;
+  *(int *)(this_ptr->unk1 + 4) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rshoulderpiece",1);
-  *(int *)(this_ptr->unk + 8) = iVar1;
+  *(int *)(this_ptr->unk1 + 8) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r4armpiece",1);
-  *(int *)(this_ptr->unk + 0xc) = iVar1;
+  *(int *)(this_ptr->unk1 + 0xc) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lshinpiece",1);
-  *(int *)(this_ptr->unk + 0x10) = iVar1;
+  *(int *)(this_ptr->unk1 + 0x10) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rshinpiece",1);
-  *(int *)(this_ptr->unk + 0x14) = iVar1;
+  *(int *)(this_ptr->unk1 + 0x14) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"torsopiece",1);
-  *(int *)(this_ptr->unk + 0x18) = iVar1;
+  *(int *)(this_ptr->unk1 + 0x18) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lowerbodypiece",1);
-  *(int *)(this_ptr->unk + 0x1c) = iVar1;
+  *(int *)(this_ptr->unk1 + 0x1c) = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"headpiece",1);
-  *(int *)(this_ptr->unk + 0x20) = iVar1;
+  *(int *)(this_ptr->unk1 + 0x20) = iVar1;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
-  this_ptr->unk[0x28] = '\0';
-  this_ptr->unk[0x29] = '\0';
-  this_ptr->unk[0x2a] = '\0';
-  this_ptr->unk[0x2b] = '\0';
-  this_ptr->unk[0x2c] = '\0';
-  this_ptr->unk[0x2d] = '\0';
-  this_ptr->unk[0x2e] = '\0';
-  this_ptr->unk[0x2f] = '\0';
-  *(float *)(this_ptr->unk + 0x24) = fVar2;
+  this_ptr->unk3[0] = '\0';
+  this_ptr->unk3[1] = '\0';
+  this_ptr->unk3[2] = '\0';
+  this_ptr->unk3[3] = '\0';
+  this_ptr->unk3[4] = '\0';
+  this_ptr->unk3[5] = '\0';
+  this_ptr->unk3[6] = '\0';
+  this_ptr->unk3[7] = '\0';
+  this_ptr->unk2 = (int)fVar2;
   return;
 }

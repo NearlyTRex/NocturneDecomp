@@ -954,6 +954,40 @@ def transform_partial_access(code, var_info=None):
     return result
 
 
+def transform_adjusted_pointer_types(code):
+    """Fix ADJ(var). to ADJ(var)-> for adjusted pointer variables.
+
+    Ghidra sometimes emits dot-access on adjusted pointer variables
+    (e.g., ADJ(pCVar2).base.vtable) when it should use arrow-access.
+    This is a Ghidra bug where the decompiler uses '.' on a pointer type.
+
+    The _ptr_N types are defined as structs with operator overloads that
+    handle declarations, assignments, and type conversions automatically.
+    This transform only needs to fix the dot-access pattern.
+
+    Args:
+        code: Decompiled code string
+
+    Returns:
+        Transformed code with ADJ dot-access fixed to arrow-access
+    """
+    # Find _ptr_N typed variable declarations to identify which vars need fixing
+    decl_pattern = re.compile(r'^\s+\w+_ptr_\d+\s+(\w+)\s*;', re.MULTILINE)
+    ptr_vars = [m.group(1) for m in decl_pattern.finditer(code)]
+
+    if not ptr_vars:
+        return code
+
+    result = code
+    for var_name in ptr_vars:
+        result = result.replace(
+            'ADJ(' + var_name + ').',
+            'ADJ(' + var_name + ')->'
+        )
+
+    return result
+
+
 def apply_all_transforms(code, transforms=None, var_info=None):
     """Apply all or specified transforms to decompiled code.
 
@@ -975,6 +1009,7 @@ def apply_all_transforms(code, transforms=None, var_info=None):
         ('crt_functions', transform_crt_functions),
         ('file_pointer_casts', transform_file_pointer_casts),
         ('void_pointer_casts', transform_void_pointer_casts),
+        ('adjusted_pointer_types', transform_adjusted_pointer_types),
     ]
 
     if transforms is None:

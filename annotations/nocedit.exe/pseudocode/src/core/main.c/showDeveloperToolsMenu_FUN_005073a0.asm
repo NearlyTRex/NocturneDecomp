@@ -46,8 +46,8 @@
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_morph.cpp_CMorphModel_FUN_0052b330
-;   core_morph.cpp_FUN_0052b310
+;   core_morph.cpp_CMorph_ctor_FUN_0052b310
+;   core_morph.cpp_CMorph_dtor_FUN_0052b330
 ;   core_morph.cpp_FUN_0052bcb0
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0
 ;   core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880
@@ -312,19 +312,19 @@ section .text
     LEA EAX,[ESP + 0x3e8]               ; 00507674
     PUSH EAX                            ; 0050767b
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 0050767c
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507681
     PUSH 0x0                            ; 00507684
     LEA EAX,[ESP + 0x304]               ; 00507686
     PUSH EAX                            ; 0050768d
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 0050768e
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507693
     PUSH 0x0                            ; 00507696
     LEA EAX,[ESP + 0x4cc]               ; 00507698
     PUSH EAX                            ; 0050769f
     CALL shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20 ; 005076a0
-        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr)
+        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005076a5
     JMP 0x0050740e                      ; 005076a8
         ;   XREF to: 0050740e (UNCONDITIONAL_JUMP)  ; LAB_0050740e
@@ -383,19 +383,19 @@ section .text
     LEA EAX,[ESP + 0x3e8]               ; 00507734
     PUSH EAX                            ; 0050773b
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 0050773c
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507741
     PUSH 0x0                            ; 00507744
     LEA EAX,[ESP + 0x304]               ; 00507746
     PUSH EAX                            ; 0050774d
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 0050774e
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507753
     PUSH 0x0                            ; 00507756
     LEA EAX,[ESP + 0x4cc]               ; 00507758
     PUSH EAX                            ; 0050775f
     CALL shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20 ; 00507760
-        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr)
+        ;   XREF to: 004a5b20 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507765
     ADD ESP,0x518                       ; 00507768
     POP EBP                             ; 0050776e
@@ -467,7 +467,7 @@ section .text
     PUSH 0x0                            ; 00507819
     PUSH EBX                            ; 0050781b
     CALL core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90 ; 0050781c
-        ;   XREF to: 00476d90 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr)
+        ;   XREF to: 00476d90 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507821
     PUSH EAX                            ; 00507824
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00507825
@@ -490,7 +490,7 @@ section .text
     LEA EAX,[ESP + 0x500]               ; 00507854
     PUSH EAX                            ; 0050785b
     CALL core_course.cpp_CCourse_dtor_FUN_004424e0 ; 0050785c
-        ;   XREF to: 004424e0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_dtor_FUN_004424e0(CCourse * this_ptr)
+        ;   XREF to: 004424e0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_dtor_FUN_004424e0(CCourse * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507861
     JMP 0x00507522                      ; 00507864
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522
@@ -529,8 +529,8 @@ section .text
         ;   XREF to: 00507522 (CONDITIONAL_JUMP)  ; LAB_00507522
     PUSH 0x0                            ; 005078c7
     PUSH EBX                            ; 005078c9
-    CALL core_morph.cpp_CMorphModel_FUN_0052b330 ; 005078ca
-        ;   XREF to: 0052b330 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052b330(CMorphModel * this_ptr)
+    CALL core_morph.cpp_CMorph_dtor_FUN_0052b330 ; 005078ca
+        ;   XREF to: 0052b330 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_dtor_FUN_0052b330(CMorph * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005078cf
     PUSH EAX                            ; 005078d2
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005078d3
@@ -540,8 +540,8 @@ section .text
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522
     PUSH EAX                            ; 005078e0
         ;   Label: LAB_005078e0
-    CALL core_morph.cpp_FUN_0052b310    ; 005078e1
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
+    CALL core_morph.cpp_CMorph_ctor_FUN_0052b310 ; 005078e1
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_0052b310(CMorph * this_ptr)
     ADD ESP,0x4                         ; 005078e6
     JMP 0x00507896                      ; 005078e9
         ;   XREF to: 00507896 (UNCONDITIONAL_JUMP)  ; LAB_00507896

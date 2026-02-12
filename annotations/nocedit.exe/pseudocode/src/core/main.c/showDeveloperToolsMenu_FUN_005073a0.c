@@ -16,12 +16,10 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   int iVar5;
   CKeyFramedModel *this_ptr;
   CKeyFramedModel *pCVar6;
-  CMorphModel *a;
-  CMorphModel *this_ptr_00;
-  void *ptr;
-  CMorphModel *extraout_EAX;
+  CMorph *this_ptr_00;
+  CMorph *pCVar7;
   _FILE *output_file;
-  byte bVar7;
+  byte bVar8;
   int aiStackY_1008 [690];
   char *directory;
   char *mode;
@@ -37,7 +35,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   char local_20 [4];
   int aiStack_1c [3];
   
-  bVar7 = 0;
+  bVar8 = 0;
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
                     (&g_CDemonFileManagerInstance.base);
   if (iVar1 == 0) {
@@ -96,7 +94,7 @@ LAB_0050740e:
           g_CurrentDebugLine = 0x277;
           g_CurrentDebugFilename = "..\\core\\main.c";
           if (pCVar6 != (CKeyFramedModel *)0x0) {
-            pCVar6 = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(pCVar6);
+            pCVar6 = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(pCVar6,0);
             shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar6);
           }
         }
@@ -107,7 +105,7 @@ LAB_0050740e:
       else if (uVar2 < 0x38) {
         core_course_cpp_CCourse_ctor_FUN_004424c0(&local_2c);
         core_course_cpp_CCourse_showEditorMenu_FUN_00443040(&local_2c);
-        core_course_cpp_CCourse_dtor_FUN_004424e0(&local_2c);
+        core_course_cpp_CCourse_dtor_FUN_004424e0(&local_2c,0);
       }
       else if (uVar2 < 0x4d) {
         if (0x40 < uVar2) {
@@ -116,19 +114,19 @@ LAB_0050740e:
                       (&g_CDemonFileManagerInstance);
           }
           else if (uVar2 == 0x42) {
-            a = (CMorphModel *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc2c,"..\\core\\main.c",0x292);
-            this_ptr_00 = (CMorphModel *)0x0;
-            if (a != (CMorphModel *)0x0) {
-              core_morph_cpp_FUN_0052b310(a);
-              this_ptr_00 = extraout_EAX;
+            this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+                                    (0xc2c,"..\\core\\main.c",0x292);
+            pCVar7 = (CMorph *)0x0;
+            if (this_ptr_00 != (CMorph *)0x0) {
+              pCVar7 = core_morph_cpp_CMorph_ctor_FUN_0052b310(this_ptr_00);
             }
-            if (this_ptr_00 != (CMorphModel *)0x0) {
+            if (pCVar7 != (CMorph *)0x0) {
               core_morph_cpp_FUN_0052bcb0();
               g_CurrentDebugLine = 0x295;
               g_CurrentDebugFilename = "..\\core\\main.c";
-              if (this_ptr_00 != (CMorphModel *)0x0) {
-                core_morph_cpp_CMorphModel_FUN_0052b330(this_ptr_00);
-                shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+              if (pCVar7 != (CMorph *)0x0) {
+                pCVar7 = core_morph_cpp_CMorph_dtor_FUN_0052b330(pCVar7,0);
+                shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar7);
               }
             }
           }
@@ -153,9 +151,9 @@ LAB_0050740e:
           local_20[1] = "memdump.txt"[1];
           local_20[2] = "memdump.txt"[2];
           local_20[3] = "memdump.txt"[3];
-          aiStack_1c[(uint)bVar7 * -2] = *(int *)("memdump.txt" + (uint)bVar7 * -8 + 4);
-          aiStack_1c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-               *(int *)("memdump.txt" + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+          aiStack_1c[(uint)bVar8 * -2] = *(int *)("memdump.txt" + (uint)bVar8 * -8 + 4);
+          aiStack_1c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+               *(int *)("memdump.txt" + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           output_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                   (pcVar3,directory,mode,source_file,iVar1);
           if (output_file == (_FILE *)0x0) {
@@ -201,9 +199,9 @@ LAB_0050740e:
       engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
                 (&local_528,"AcceptedLicenseAgreement",1);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_144);
-      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_228);
-      shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_60);
+      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_144,0);
+      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_228,0);
+      shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_60,0);
       goto LAB_0050740e;
     }
     iVar1 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_144);
@@ -216,8 +214,8 @@ LAB_0050740e:
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
   } while (iVar1 == 0);
-  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_144);
-  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_228);
-  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_60);
+  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_144,0);
+  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_228,0);
+  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_60,0);
   return;
 }

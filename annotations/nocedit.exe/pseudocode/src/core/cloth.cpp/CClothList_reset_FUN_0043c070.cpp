@@ -20,7 +20,7 @@ void __cdecl core_cloth_cpp_CClothList_reset_FUN_0043c070(CClothList *this_ptr)
       g_CurrentDebugLine = 0x5bd;
       g_CurrentDebugFilename = "..\\core\\cloth.cpp";
       if (pCVar1->cloths[0] != (CCloth *)0x0) {
-        ptr = core_cloth_cpp_CCloth_dtor_FUN_00438c00(pCVar1->cloths[0]);
+        ptr = core_cloth_cpp_CCloth_dtor_FUN_00438c00(pCVar1->cloths[0],0);
         shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
       }
       iVar2 = iVar2 + 1;

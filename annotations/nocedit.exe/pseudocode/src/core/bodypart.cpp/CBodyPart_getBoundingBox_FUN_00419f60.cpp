@@ -10,11 +10,11 @@ CBoundingBox3D * __cdecl
 core_bodypart_cpp_CBodyPart_getBoundingBox_FUN_00419f60(CBodyPart *this_ptr,CBoundingBox3D *out_box)
 
 {
-  (out_box->min).x = *(float *)this_ptr->unk1;
-  (out_box->min).y = *(float *)(this_ptr->unk1 + 4);
-  (out_box->min).z = *(float *)(this_ptr->unk1 + 8);
-  (out_box->max).x = *(float *)(this_ptr->unk1 + 0xc);
-  (out_box->max).y = *(float *)(this_ptr->unk1 + 0x10);
-  (out_box->max).z = *(float *)(this_ptr->unk1 + 0x14);
+  (out_box->min).x = (this_ptr->bounding_box).min.x;
+  (out_box->min).y = (this_ptr->bounding_box).min.y;
+  (out_box->min).z = (this_ptr->bounding_box).min.z;
+  (out_box->max).x = (this_ptr->bounding_box).max.x;
+  (out_box->max).y = (this_ptr->bounding_box).max.y;
+  (out_box->max).z = (this_ptr->bounding_box).max.z;
   return out_box;
 }

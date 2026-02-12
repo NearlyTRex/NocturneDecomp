@@ -9,7 +9,7 @@ CFont * __cdecl CFont::ctor(CFont *this_ptr);
 
 // Original: engine_palette.cpp_CFont_dtor_FUN_00544ec0
 // Address: 00544ec0
-CFont * __cdecl CFont::dtor(CFont *this_ptr);
+CFont * __cdecl CFont::dtor(CFont *this_ptr,uint flags);
 
 // Original: engine_palette.cpp_CFont_drawText_FUN_00544ed0
 // Address: 00544ed0
@@ -25,7 +25,7 @@ CPaletteManager * __cdecl CPaletteManager::ctor(CPaletteManager *this_ptr);
 
 // Original: engine_palette.cpp_CPaletteManager_dtor_FUN_00544f80
 // Address: 00544f80
-CPaletteManager * __cdecl CPaletteManager::dtor(CPaletteManager *this_ptr);
+CPaletteManager * __cdecl CPaletteManager::dtor(CPaletteManager *this_ptr,uint flags);
 
 // Original: engine_palette.cpp_CPaletteManager_FUN_00544fb0
 // Address: 00544fb0

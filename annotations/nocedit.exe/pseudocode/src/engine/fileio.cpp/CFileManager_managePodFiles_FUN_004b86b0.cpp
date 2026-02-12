@@ -224,7 +224,7 @@ engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0
             shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"Can't mount %s to check status",&local_fbc);
-            engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1b38);
+            engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1b38,0);
             goto LAB_004b901b;
           }
           filename[0x37c] = '\0';
@@ -387,7 +387,7 @@ LAB_004b8c1d:
             filename[0x37a] = '\0';
             filename[0x37b] = '\0';
           }
-          engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1b38);
+          engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1b38,0);
           local_34 = local_34 + 0x39c;
           local_30 = local_30 + 0x39c;
           local_64 = local_64 + 1;

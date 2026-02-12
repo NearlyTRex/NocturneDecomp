@@ -34,7 +34,7 @@
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGore* g_CGorePtr = 02d83364
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CDemonLight* g_CurrentShadowLight
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CFireEffect g_CFireEffectInstance
@@ -345,7 +345,7 @@ section .text
     FSTP double ptr [ESP]               ; 0056c17e
     PUSH 0x645d33                       ; 0056c181 | = "renderStaticLights : %3.2f ms\n"
     MOV EBP,dword ptr [0x0066e8e0]      ; 0056c186 | g_CConsolePtr
-    PUSH EBP                            ; 0056c18c | g_ConsolePtr
+    PUSH EBP                            ; 0056c18c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0056c18d
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0056c192

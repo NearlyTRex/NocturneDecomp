@@ -25,7 +25,7 @@ CZThumb * __cdecl CZThumb::ctor(CZThumb *this_ptr);
 
 // Original: core_setdir.cpp_CZThumb_dtor_FUN_005748f0
 // Address: 005748f0
-CZThumb * __cdecl CZThumb::dtor(CZThumb *this_ptr);
+CZThumb * __cdecl CZThumb::dtor(CZThumb *this_ptr,uint flags);
 
 // Original: core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
 // Address: 00574910
@@ -139,10 +139,10 @@ CDemonSet * __cdecl copySet(CDemonSet **set1,CDemonSet **set2);
 // Address: 005768e0
 CDemonSet * __cdecl copySet(CDemonSet **set1,CDemonSet **set2);
 
-// Original: core_setdir.cpp_freeBoundingBoxes_FUN_005768f0
+// Original: core_setdir.cpp_CBoundingBox3D_arrdtor_FUN_005768f0
 // Address: 005768f0
-CBoundingBox3D * __cdecl freeBoundingBoxes(CBoundingBox3D *objs);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *objs,uint flags);
 
-// Original: core_setdir.cpp_freeCZThumbs_FUN_00576910
+// Original: core_setdir.cpp_CZThumb_arrdtor_FUN_00576910
 // Address: 00576910
-CZThumb * __cdecl freeCZThumbs(CZThumb *objs);
+CZThumb * __cdecl CZThumb::arrdtor(CZThumb *objs,uint flags);

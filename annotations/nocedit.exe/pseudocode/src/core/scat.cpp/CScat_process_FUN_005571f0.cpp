@@ -82,7 +82,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
     case 7:
     case 9:
     case 10:
-      if ((this_ptr->base).base.field3_0x2410 != 0) {
+      if ((this_ptr->base).base.is_on_ground != 0) {
         iVar11 = core_scat_cpp_CScat_FUN_00558010(this_ptr);
         desired_state_index = 0;
         if (iVar11 != 0) {
@@ -193,26 +193,25 @@ LAB_00557637:
   pCVar8 = (this_ptr->base).base.grabbed_by;
   if (pCVar8 == (CDemonActor *)0x0) {
     pCVar12 = &(this_ptr->base).base.model.accumulated_root_motion;
-    pCVar1 = &(this_ptr->base).base.field6_0x241c;
+    pCVar1 = &(this_ptr->base).base.position_delta;
     fVar18 = pCVar12->x;
     fVar2 = pCVar1->x;
     fVar3 = (this_ptr->base).base.model.accumulated_root_motion.y;
-    fVar4 = (this_ptr->base).base.field6_0x241c.y;
+    fVar4 = (this_ptr->base).base.position_delta.y;
     fVar5 = (this_ptr->base).base.model.accumulated_root_motion.z;
-    fVar6 = (this_ptr->base).base.field6_0x241c.z;
+    fVar6 = (this_ptr->base).base.position_delta.z;
     fVar9 = (float)32;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar12->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar1->x = (this_ptr->base).base.field6_0x241c.y;
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * fVar9;
-    CStack_6c.y = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    CStack_6c.z = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    local_5c = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar1->x = (this_ptr->base).base.position_delta.y;
+    (this_ptr->base).base.velocity.y = (this_ptr->base).base.velocity.y - delta_time * fVar9;
+    CStack_6c.y = (this_ptr->base).base.velocity.x * delta_time;
+    CStack_6c.z = (this_ptr->base).base.velocity.y * delta_time;
+    local_5c = delta_time * (this_ptr->base).base.velocity.z;
     local_4c.x = fVar18 + fVar2 + CStack_6c.y;
     local_4c.y = fVar3 + fVar4 + CStack_6c.z;
     local_4c.z = fVar5 + fVar6 + local_5c;

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 28,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 14,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 50
+    "total_lines": 51
   },
   "cross_references": [],
   "function": {
@@ -28,33 +28,33 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_dtor_FUN_00569350",
-    "signature": "CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00569350(CDemonSet *this_ptr)"
+    "signature": "CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00569350(CDemonSet *this_ptr,uint flags)"
   },
   "function_calls": [
+    {
+      "addr": "00571530",
+      "is_variadic": false,
+      "name": "core_set.cpp_C3DSCamera_arrdtor_FUN_00571530"
+    },
+    {
+      "addr": "00571550",
+      "is_variadic": false,
+      "name": "core_set.cpp_C3DSLight_arrdtor_FUN_00571550"
+    },
     {
       "addr": "005693c0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_clear_FUN_005693c0"
     },
     {
-      "addr": "00571530",
-      "is_variadic": false,
-      "name": "core_set.cpp_free3DSCameras_FUN_00571530"
-    },
-    {
-      "addr": "00571550",
-      "is_variadic": false,
-      "name": "core_set.cpp_free3DSLights_FUN_00571550"
-    },
-    {
       "addr": "00571570",
       "is_variadic": false,
-      "name": "core_set.cpp_freeRooms_FUN_00571570"
+      "name": "core_set.cpp_SRoom_arrdtor_FUN_00571570"
     },
     {
       "addr": "00571590",
       "is_variadic": false,
-      "name": "core_set.cpp_freeVDBoxes_FUN_00571590"
+      "name": "core_set.cpp_SVDBox_arrdtor_FUN_00571590"
     }
   ],
   "globals": [],
@@ -62,8 +62,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.741935483870968,
@@ -88,10 +88,10 @@
     "pcode_op_count": 147
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -100,13 +100,20 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 16,
       "match": "pCVar4[-1].",
       "text": "return (CDemonSet *)&pCVar4[-1].unk4;",
       "type": "negative_offset"

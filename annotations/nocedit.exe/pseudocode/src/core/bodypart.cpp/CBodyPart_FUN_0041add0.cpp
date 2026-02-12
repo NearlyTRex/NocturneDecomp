@@ -10,29 +10,28 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041add0(CBodyPart *this_ptr)
 
 {
   int iVar1;
-  char *pcVar2;
+  SBodyPartModel *pSVar2;
   char *in_stack_00000008;
-  uint *in_stack_0000000c;
-  uint *in_stack_00000010;
+  int *in_stack_0000000c;
+  int *in_stack_00000010;
   
-  iVar1 = *(int *)(this_ptr->unk5 + 0xfc);
+  iVar1 = this_ptr->attached_model_count;
   if (iVar1 < 3) {
-    pcVar2 = this_ptr->unk5 + iVar1 * 0x194 + 0x100;
-    *(int *)(this_ptr->unk5 + 0xfc) = iVar1 + 1;
-    if (pcVar2 != (char *)in_stack_0000000c) {
-      *(uint *)pcVar2 = *in_stack_0000000c;
-      *(uint *)(pcVar2 + 4) = in_stack_0000000c[1];
-      *(uint *)(pcVar2 + 8) = in_stack_0000000c[2];
+    pSVar2 = this_ptr->attached_models + iVar1;
+    this_ptr->attached_model_count = iVar1 + 1;
+    if (pSVar2 != (SBodyPartModel *)in_stack_0000000c) {
+      (pSVar2->scale).x = *in_stack_0000000c;
+      (pSVar2->scale).y = in_stack_0000000c[1];
+      (pSVar2->scale).z = in_stack_0000000c[2];
     }
-    if (pcVar2 + 0xc != (char *)in_stack_00000010) {
-      *(uint *)(pcVar2 + 0xc) = *in_stack_00000010;
-      *(uint *)(pcVar2 + 0x10) = in_stack_00000010[1];
-      *(uint *)(pcVar2 + 0x14) = in_stack_00000010[2];
+    if (&pSVar2->position != (CVector3i *)in_stack_00000010) {
+      (pSVar2->position).x = *in_stack_00000010;
+      (pSVar2->position).y = in_stack_00000010[1];
+      (pSVar2->position).z = in_stack_00000010[2];
     }
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(pcVar2 + 0x18),in_stack_00000008);
-    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-              ((CKeyFramedModelInstance *)(pcVar2 + 0x18));
+              (&pSVar2->model,in_stack_00000008);
+    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&pSVar2->model);
   }
   return;
 }

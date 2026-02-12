@@ -1163,7 +1163,7 @@ section .text
     LEA EAX,[ESP + 0x604]               ; 0051e663
     PUSH EAX                            ; 0051e66a
     CALL shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950 ; 0051e66b
-        ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr)
+        ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0051e670
     MOV EAX,ESI                         ; 0051e673
     MOV ESP,EBP                         ; 0051e675
@@ -1184,7 +1184,7 @@ section .text
     PUSH EAX                            ; 0051e694
     MOV ESI,0xffffffff                  ; 0051e695
     CALL shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950 ; 0051e69a
-        ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr)
+        ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0051e69f
     MOV EAX,ESI                         ; 0051e6a2
     MOV ESP,EBP                         ; 0051e6a4

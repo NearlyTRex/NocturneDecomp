@@ -80,7 +80,7 @@ switchD_005d8f77_caseD_9:
     case 2:
     case 3:
     case 10:
-      if ((this_ptr->base).base.field3_0x2410 != 0) {
+      if ((this_ptr->base).base.is_on_ground != 0) {
         iVar4 = 0;
         if (this_ptr->unk1 != 0) {
           iVar4 = 10;
@@ -197,16 +197,16 @@ switchD_005d8f77_caseD_8:
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
     if (pSVar5->state_index != 0x1a) {
-      (this_ptr->base).base.field7_0x2428.y =
-           (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
+      (this_ptr->base).base.velocity.y =
+           (this_ptr->base).base.velocity.y - delta_time * (float)32;
     }
-    local_44 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_40 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    local_3c = delta_time * (this_ptr->base).base.field7_0x2428.z;
-    local_74._0_4_ = local_44 + (this_ptr->base).base.field6_0x241c.x;
-    local_74._4_4_ = local_40 + (this_ptr->base).base.field6_0x241c.y;
+    local_44 = (this_ptr->base).base.velocity.x * delta_time;
+    local_40 = (this_ptr->base).base.velocity.y * delta_time;
+    local_3c = delta_time * (this_ptr->base).base.velocity.z;
+    local_74._0_4_ = local_44 + (this_ptr->base).base.position_delta.x;
+    local_74._4_4_ = local_40 + (this_ptr->base).base.position_delta.y;
     local_5c.x = local_5c.x + (float)local_74._0_4_;
-    local_74._8_4_ = local_3c + (this_ptr->base).base.field6_0x241c.z;
+    local_74._8_4_ = local_3c + (this_ptr->base).base.position_delta.z;
     local_5c.y = local_5c.y + (float)local_74._4_4_;
     local_5c.z = local_5c.z + (float)local_74._8_4_;
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0

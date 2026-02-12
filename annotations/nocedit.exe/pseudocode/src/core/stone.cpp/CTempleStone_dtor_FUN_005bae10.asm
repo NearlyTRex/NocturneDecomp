@@ -31,7 +31,7 @@ section .text
     ADD EBX,0x394                       ; 005bae1e
     PUSH EBX                            ; 005bae24
     CALL core_box.cpp_CBox_dtor_FUN_0041dd00 ; 005bae25
-        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr)
+        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005bae2a
     PUSH 0x1                            ; 005bae2d
     LEA EBX,[EAX + 0xfffffc6c]          ; 005bae2f

@@ -167,7 +167,7 @@ shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh *this_ptr,
                  aiStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
             puVar2[0x21] = aiStack_44[2];
             puVar2[0x22] = aiStack_44[3];
-            core_cloth_cpp_freeVectors_FUN_0043e460(local_6c);
+            core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460(local_6c,0);
           }
           local_24 = local_24 + 0x8c;
           local_28 = local_28 + 0x8c;

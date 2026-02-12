@@ -410,12 +410,12 @@ LAB_0051e453:
                          ((CPickList *)auStack_72c,"Accept or Cancel?",-1,0);
       if (iVar11 == 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)auStack_72c,0);
-        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)auStack_12c);
+        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)auStack_12c,0);
         return in_stack_00000024;
       }
       if (iVar11 == 1) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)auStack_72c,0);
-        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)auStack_12c);
+        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)auStack_12c,0);
         return -1;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)auStack_72c,0);

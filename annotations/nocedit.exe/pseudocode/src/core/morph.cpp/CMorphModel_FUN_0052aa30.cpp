@@ -9,12 +9,13 @@
 void __cdecl core_morph_cpp_CMorphModel_FUN_0052aa30(CMorphModel *this_ptr)
 
 {
+  int in_stack_00000008;
   CDeformableModelInstance *in_stack_0000000c;
   
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
             (in_stack_0000000c);
   core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(in_stack_0000000c,0);
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_0000000c);
-  core_morph_cpp_CMorphModel_animate_FUN_0052a920(this_ptr);
+  core_morph_cpp_CMorphModel_animate_FUN_0052a920(this_ptr,in_stack_00000008);
   return;
 }

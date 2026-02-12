@@ -9,7 +9,7 @@ CAlphaBitmap * __cdecl CAlphaBitmap::ctor(CAlphaBitmap *this_ptr);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540
 // Address: 00410540
-CAlphaBitmap * __cdecl CAlphaBitmap::dtor(CAlphaBitmap *this_ptr);
+CAlphaBitmap * __cdecl CAlphaBitmap::dtor(CAlphaBitmap *this_ptr,uint flags);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560
 // Address: 00410560

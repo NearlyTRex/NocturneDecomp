@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_00550cca
     PUSH EAX                            ; 00550ccc
     CALL engine_pod.cpp_CPodFile_dtor_FUN_0054f610 ; 00550ccd
-        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr)
+        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00550cd2
     PUSH EAX                            ; 00550cd5
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00550cd6

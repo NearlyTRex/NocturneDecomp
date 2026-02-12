@@ -13,7 +13,7 @@ CMoon * __cdecl CMoon::ctor(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_dtor_FUN_00529ab0
 // Address: 00529ab0
-CMoon * __cdecl CMoon::dtor(CMoon *this_ptr);
+CMoon * __cdecl CMoon::dtor(CMoon *this_ptr,uint flags);
 
 // Original: core_moon.cpp_CMoon_init_FUN_00529ae0
 // Address: 00529ae0
@@ -45,16 +45,16 @@ SBat * __cdecl SBat::ctor(SBat *this_ptr);
 
 // Original: core_moon.cpp_SBat_dtor_FUN_0052a420
 // Address: 0052a420
-SBat * __cdecl SBat::dtor(SBat *this_ptr);
+SBat * __cdecl SBat::dtor(SBat *this_ptr,uint flags);
 
-// Original: core_moon.cpp_freeBats_FUN_0052a430
+// Original: core_moon.cpp_SBat_arrdtor_FUN_0052a430
 // Address: 0052a430
-SBat * __cdecl freeBats(SBat *objs);
+SBat * __cdecl SBat::arrdtor(SBat *objs,uint flags);
 
-// Original: core_moon.cpp_freeCourses_FUN_0052a450
+// Original: core_moon.cpp_CCourse_arrdtor_FUN_0052a450
 // Address: 0052a450
-CCourse * __cdecl freeCourses(CCourse *objs);
+CCourse * __cdecl CCourse::arrdtor(CCourse *objs,uint flags);
 
-// Original: core_moon.cpp_freeAlphaBitmaps_FUN_0052a470
+// Original: core_moon.cpp_CAlphaBitmap_arrdtor_FUN_0052a470
 // Address: 0052a470
-CAlphaBitmap * __cdecl freeAlphaBitmaps(CAlphaBitmap *objs);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *objs,uint flags);

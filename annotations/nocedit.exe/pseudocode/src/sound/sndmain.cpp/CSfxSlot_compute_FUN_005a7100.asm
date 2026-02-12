@@ -92,8 +92,8 @@ section .text
         ;   XREF to: 005a714d (CONDITIONAL_JUMP)  ; LAB_005a714d
     PUSH EDI                            ; 005a7138
     PUSH 0x650266                       ; 005a7139 | = "SFXDBG: sample = %s\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 005a713e | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 005a7144 | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 005a713e | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 005a7144 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a7145
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005a714a
@@ -161,8 +161,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x4c]      ; 005a71eb
     PUSH EAX                            ; 005a71ee
     PUSH 0x6502af                       ; 005a71ef | = "  delayRemaining = %7.2fs\n"
-    MOV EDX,dword ptr [0x0066e8e0]      ; 005a71f4 | g_ConsolePtr | g_CConsolePtr
-    PUSH EDX                            ; 005a71fa | g_ConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 005a71f4 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EDX                            ; 005a71fa | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a71fb
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005a7200
@@ -177,8 +177,8 @@ section .text
     FLD float ptr [ESI + 0x7c]          ; 005a7217
     FSTP double ptr [ESP]               ; 005a721a
     PUSH 0x6502ca                       ; 005a721d | = "  freq = %5.2f\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 005a7222 | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 005a7228 | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 005a7222 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 005a7228 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a7229
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005a722e
@@ -190,8 +190,8 @@ section .text
     JNZ 0x005a7258                      ; 005a7242
         ;   XREF to: 005a7258 (CONDITIONAL_JUMP)  ; LAB_005a7258
     PUSH 0x650320                       ; 005a7244 | = "  non spatialized\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 005a7249 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 005a724f | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 005a7249 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 005a724f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a7250
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 005a7255
@@ -213,7 +213,7 @@ section .text
     FSTP double ptr [ESP]               ; 005a727b
     PUSH 0x650333                       ; 005a727e | = "  vol = %5.2f\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 005a7283 | g_CConsolePtr
-    PUSH EDI                            ; 005a7289 | g_ConsolePtr
+    PUSH EDI                            ; 005a7289 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a728a
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005a728f
@@ -245,8 +245,8 @@ section .text
     FSTP double ptr [ESP]               ; 005a72d6
     PUSH EBX                            ; 005a72d9
     PUSH 0x650342                       ; 005a72da | = "  channelVol[%d] = %5.2f\n"
-    MOV EAX,[0x0066e8e0]                ; 005a72df | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 005a72e4 | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 005a72df | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 005a72e4 | g_CConsoleInstance
     ADD EDI,0x4                         ; 005a72e5
     INC EBX                             ; 005a72e8
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a72e9
@@ -287,8 +287,8 @@ section .text
     FLD float ptr [ESI + 0x7c]          ; 005a7342
     FSTP double ptr [ESP]               ; 005a7345
     PUSH 0x65035c                       ; 005a7348 | = "  effFreq = %5.2f\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 005a734d | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 005a7353 | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 005a734d | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 005a7353 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a7354
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005a7359
@@ -341,8 +341,8 @@ section .text
         ;   Label: LAB_005a73bb
     PUSH ECX                            ; 005a73be
     PUSH 0x65027b                       ; 005a73bf | = "Killing %s in compute()\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 005a73c4 | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 005a73ca | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 005a73c4 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 005a73ca | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a73cb
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005a73d0
@@ -371,8 +371,8 @@ section .text
     JNZ 0x005a741c                      ; 005a7406
         ;   XREF to: 005a741c (CONDITIONAL_JUMP)  ; LAB_005a741c
     PUSH 0x650294                       ; 005a7408 | = "  auto computing delay...\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 005a740d | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 005a7413 | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 005a740d | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 005a7413 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a7414
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 005a7419
@@ -413,8 +413,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x44]      ; 005a747f
     PUSH EDX                            ; 005a7483
     PUSH 0x6502da                       ; 005a7484 | = "  distToEar = %7.2fs\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 005a7489 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 005a748f | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 005a7489 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 005a748f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a7490
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005a7495
@@ -466,8 +466,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005a7524
     PUSH EAX                            ; 005a7528
     PUSH 0x6502f0                       ; 005a7529 | = "  doppler = %5.2f\n"
-    MOV EDX,dword ptr [0x0066e8e0]      ; 005a752e | g_ConsolePtr | g_CConsolePtr
-    PUSH EDX                            ; 005a7534 | g_ConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 005a752e | g_CConsoleInstance | g_CConsolePtr
+    PUSH EDX                            ; 005a7534 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a7535
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005a753a
@@ -506,8 +506,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 005a7597
     PUSH EDI                            ; 005a759b
     PUSH 0x650303                       ; 005a759c | = "  doppler (clamped) = %5.2f\n"
-    MOV EAX,[0x0066e8e0]                ; 005a75a1 | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 005a75a6 | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 005a75a1 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 005a75a6 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005a75a7
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005a75ac

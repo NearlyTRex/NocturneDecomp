@@ -31,7 +31,7 @@ core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(_FILE *dependency_file,char 
   if (pCVar1 == (CKeyFramedModel *)0x0) {
     return;
   }
-  pCVar1 = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(pCVar1);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(pCVar1,0);
   shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
   return;
 }

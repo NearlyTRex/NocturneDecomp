@@ -19,7 +19,7 @@
 ;   double g_MaxRecommendedAmbient = 0.25
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_032613c8
@@ -94,7 +94,7 @@ section .text
         ;   XREF to: 00585917 (CONDITIONAL_JUMP)  ; LAB_00585917
     PUSH 0x64930a                       ; 00585903 | = "Ambient set low by script\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 00585908 | g_CConsolePtr
-    PUSH EDI                            ; 0058590e | g_ConsolePtr
+    PUSH EDI                            ; 0058590e | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0058590f
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00585914
@@ -125,7 +125,7 @@ section .text
     PUSH 0x649325                       ; 00585956 | = "Ambient set ridiculously high\n"
         ;   Label: LAB_00585956
     MOV EBP,dword ptr [0x0066e8e0]      ; 0058595b | g_CConsolePtr
-    PUSH EBP                            ; 00585961 | g_ConsolePtr
+    PUSH EBP                            ; 00585961 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00585962
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00585967

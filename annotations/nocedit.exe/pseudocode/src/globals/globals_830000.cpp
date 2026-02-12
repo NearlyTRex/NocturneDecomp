@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CConsole
-CConsole g_ConsolePtr = {};
+CConsole g_CConsoleInstance = {};
 
 // CCramTex[1]
 CCramTex g_CramSortedTextureEntries[1] = {};

@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 17,
-        "message": "incompatible pointer types assigning to 'CBackgroundActor_ptr_344' (aka 'CBackgroundActor *') from 'CKeyFramedModelInstance *'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 18,
-        "message": "member reference type 'CBackgroundActor_ptr_344' (aka 'CBackgroundActor *') is a pointer; did you mean to use '->'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 19,
-        "message": "no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -145,7 +126,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "ADJ",
-      "text": "ADJ(this_ptr_00).base.vtable._ub = &g_CBackgroundActorVTable;",
+      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CBackgroundActorVTable;",
       "type": "decompiler_intrinsic"
     },
     {

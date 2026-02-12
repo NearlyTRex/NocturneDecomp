@@ -13,7 +13,7 @@
 ;   TerminatedCString s_Shot_thru_the_heart_00621bd2
 ;   double DOUBLE_00621bee = 20
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
@@ -46,7 +46,7 @@ section .text
     MOV EDI,dword ptr [0x0066e8e0]      ; 0048604e | g_CConsolePtr
     FLD ST0                             ; 00486054
     FMUL double ptr [0x00621bee]        ; 00486056 | DOUBLE_00621bee
-    PUSH EDI                            ; 0048605c | g_ConsolePtr
+    PUSH EDI                            ; 0048605c | g_CConsoleInstance
     FSTP ST1                            ; 0048605d
     FSTP float ptr [EAX + 0x4]          ; 0048605f
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00486062

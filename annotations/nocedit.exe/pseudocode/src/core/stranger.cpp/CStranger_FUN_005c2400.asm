@@ -28,7 +28,7 @@
 ;   double DOUBLE_00653b5c = 0.261799387791667
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 g_CLadderClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_list_ptr
 ;   undefined4 g_CDemonSetInstance.actor_list_data[0]
@@ -295,8 +295,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 005c2714
     PUSH ECX                            ; 005c2718
     PUSH 0x653b1c                       ; 005c2719 | = "Ladder dot : %f\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 005c271e | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 005c2724 | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 005c271e | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 005c2724 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005c2725
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005c272a

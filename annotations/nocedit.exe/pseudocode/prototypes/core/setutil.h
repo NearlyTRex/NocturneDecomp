@@ -41,7 +41,7 @@ C3DSCamera * __cdecl C3DSCamera::ctor(C3DSCamera *this_ptr);
 
 // Original: core_setutil.cpp_C3DSCamera_dtor_FUN_00585340
 // Address: 00585340
-C3DSCamera * __cdecl C3DSCamera::dtor(C3DSCamera *this_ptr);
+C3DSCamera * __cdecl C3DSCamera::dtor(C3DSCamera *this_ptr,uint flags);
 
 // Original: core_setutil.cpp_C3DSCamera_free_FUN_00585360
 // Address: 00585360

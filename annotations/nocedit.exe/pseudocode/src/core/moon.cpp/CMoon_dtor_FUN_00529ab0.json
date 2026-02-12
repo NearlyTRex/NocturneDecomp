@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_moon.cpp_CMoon_dtor_FUN_00529ab0",
-    "signature": "CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_00529ab0(CMoon *this_ptr)"
+    "signature": "CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_00529ab0(CMoon *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -47,8 +47,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.923076923076923,
@@ -73,10 +73,10 @@
     "pcode_op_count": 64
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -85,6 +85,13 @@
         "offset": 4,
         "size": 4,
         "type": "CMoon *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

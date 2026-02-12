@@ -17,13 +17,13 @@ CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_0048eb50(CDrone *this_ptr)
   (pCVar3->base).base.base.vtable._ub = &g_CDroneVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"drone.dfm");
-  (pCVar3->base).base.field54_0x2ddc = 0.75;
+  (pCVar3->base).base.collision_cylinder_height = 0.75;
   fVar1 = 50.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
   fVar2 = 100.0f;
-  (pCVar3->base).base.field39_0x2610 = 1;
+  (pCVar3->base).base.collision_layer = 1;
   (pCVar3->base).base.hit_points = 75.0;
-  (pCVar3->base).base.field56_0x2de4 = fVar1;
-  (pCVar3->base).base.field57_0x2de8 = fVar2;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
 }

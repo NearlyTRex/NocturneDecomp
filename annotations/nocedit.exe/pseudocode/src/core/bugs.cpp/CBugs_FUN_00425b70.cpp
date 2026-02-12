@@ -16,9 +16,8 @@ int __cdecl core_bugs_cpp_CBugs_FUN_00425b70(CBugs *this_ptr)
   float in_stack_0000000c;
   
   fVar1 = 1.0 / 0.5f;
-  fVar2 = *(float *)(this_ptr->unk5 + 0x24);
-  round
-            ((double)((in_stack_00000008 - *(float *)(this_ptr->unk5 + 0x20)) * fVar1));
+  fVar2 = this_ptr->grid_origin_z;
+  round((double)((in_stack_00000008 - this_ptr->grid_origin_x) * fVar1));
   dVar3 = round((double)((in_stack_0000000c - fVar2) * fVar1));
   if ((-1 < (int)ROUND(dVar3)) && ((int)ROUND(dVar3) < 0xb)) {
     core_bugs_cpp_FUN_00427ba0();

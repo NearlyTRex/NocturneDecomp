@@ -21,7 +21,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
   float10 fVar8;
   float *in_stack_00000004;
   float *in_stack_00000008;
-  uint *in_stack_0000000c;
+  float *in_stack_0000000c;
   int in_stack_00000010;
   int in_stack_00000014;
   int in_stack_00000018;
@@ -47,7 +47,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
     (this_ptr_00->base).orient.vec.z = in_stack_00000008[2];
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr_00->base);
-  if (in_stack_0000000c == (uint *)0x0) {
+  if (in_stack_0000000c == (float *)0x0) {
     fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
     fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
     fVar4 = (float10)fcos((float10)fVar3);
@@ -55,14 +55,14 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
     fVar6 = (float10)fsin((float10)fVar3);
     fVar7 = (float10)fsin((float10)fVar2);
     fVar8 = (float10)10.0f;
-    *(float *)(this_ptr_00->unk5 + 0xf4) = (float)(fVar7 * fVar8);
-    *(float *)(this_ptr_00->unk5 + 0xf0) = (float)(fVar4 * fVar8 * fVar5);
-    *(float *)(this_ptr_00->unk5 + 0xf8) = (float)(fVar6 * fVar8 * fVar5);
+    (this_ptr_00->initial_velocity).y = (float)(fVar7 * fVar8);
+    (this_ptr_00->initial_velocity).x = (float)(fVar4 * fVar8 * fVar5);
+    (this_ptr_00->initial_velocity).z = (float)(fVar6 * fVar8 * fVar5);
   }
-  else if (this_ptr_00->unk5 + 0xf0 != (char *)in_stack_0000000c) {
-    *(uint *)(this_ptr_00->unk5 + 0xf0) = *in_stack_0000000c;
-    *(uint *)(this_ptr_00->unk5 + 0xf4) = in_stack_0000000c[1];
-    *(uint *)(this_ptr_00->unk5 + 0xf8) = in_stack_0000000c[2];
+  else if (&this_ptr_00->initial_velocity != (CVector3f *)in_stack_0000000c) {
+    (this_ptr_00->initial_velocity).x = *in_stack_0000000c;
+    (this_ptr_00->initial_velocity).y = in_stack_0000000c[1];
+    (this_ptr_00->initial_velocity).z = in_stack_0000000c[2];
   }
   core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
             (g_CDemonMissionPtr,&this_ptr_00->base);

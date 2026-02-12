@@ -65,7 +65,7 @@
 ;   undefined4 g_RenderVertexBuffer[1].projected_vertex.screen_x
 ;   undefined4 g_RenderVertexBuffer[2].projected_vertex.screen_x
 ;   undefined4 g_RenderVertexBuffer[3].projected_vertex.screen_x
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   ... and 13 more
 ;
@@ -370,8 +370,8 @@ section .text
     FSTP double ptr [ESP]               ; 005ea247
     PUSH ECX                            ; 005ea24a
     PUSH 0x6571f7                       ; 005ea24b | = "Vis water tiles : %d, SqFt : %f"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 005ea250 | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 005ea256 | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 005ea250 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 005ea256 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005ea257
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 005ea25c

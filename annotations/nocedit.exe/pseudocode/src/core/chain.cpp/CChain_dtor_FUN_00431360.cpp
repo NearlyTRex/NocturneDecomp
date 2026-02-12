@@ -9,7 +9,7 @@
 CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_00431360(CChain *this_ptr,uint flags)
 
 {
-  int iVar1;
+  SChainVertex *pSVar1;
   CChain *ptr;
   void *ptr_00;
   
@@ -18,8 +18,9 @@ CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_00431360(CChain *this_ptr,uint f
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  iVar1 = core_chain_cpp_FUN_004313f0((SChainVertex **)this_ptr->unk6);
-  ptr = (CChain *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(iVar1 + -0x28c),1);
+  pSVar1 = core_chain_cpp_SChainVertex_arrdtor_FUN_004313f0(this_ptr->unk6,0);
+  ptr = (CChain *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(pSVar1[-0x13].unk + 0x20),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

@@ -311,7 +311,7 @@ section .text
     PUSH EBX                            ; 0047f3cb
     PUSH 0x620fbc                       ; 0047f3cc | = "%s confused while walking to scriptDe..."
     MOV EDI,dword ptr [0x0066e8e0]      ; 0047f3d1 | g_CConsolePtr
-    PUSH EDI                            ; 0047f3d7 | g_ConsolePtr
+    PUSH EDI                            ; 0047f3d7 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0047f3d8
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x0047f237                      ; 0047f3dd
@@ -649,7 +649,7 @@ section .text
         ;   Label: LAB_0047f76d
     PUSH 0x620ff8                       ; 0047f76e | = "%s gave up chase - I'm confused\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 0047f773 | g_CConsolePtr
-    PUSH EDI                            ; 0047f779 | g_ConsolePtr
+    PUSH EDI                            ; 0047f779 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0047f77a
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0047f77f

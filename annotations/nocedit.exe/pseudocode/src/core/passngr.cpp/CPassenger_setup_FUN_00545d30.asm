@@ -12,8 +12,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_createActorByName_FUN_0040c430
+;   core_morph.cpp_CMorph_FUN_0052b430
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
-;   core_morph.cpp_FUN_0052b430
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
@@ -71,16 +71,16 @@ section .text
     PUSH 0x0                            ; 00545d98
     LEA EDI,[EBX + 0x1f814]             ; 00545d9a
     PUSH EDI                            ; 00545da0
-    CALL core_morph.cpp_FUN_0052b430    ; 00545da1
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b430()
+    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 00545da1
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
     MOV EAX,dword ptr [EBX + 0x1f810]   ; 00545da6
     ADD ESP,0xc                         ; 00545dac
     ADD EAX,0x158                       ; 00545daf
     PUSH EAX                            ; 00545db4
     PUSH 0x1                            ; 00545db5
     PUSH EDI                            ; 00545db7
-    CALL core_morph.cpp_FUN_0052b430    ; 00545db8
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b430()
+    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 00545db8
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
     ADD ESP,0xc                         ; 00545dbd
     PUSH EDI                            ; 00545dc0
     CALL core_morph.cpp_CMorph_getReady_FUN_0052b680 ; 00545dc1

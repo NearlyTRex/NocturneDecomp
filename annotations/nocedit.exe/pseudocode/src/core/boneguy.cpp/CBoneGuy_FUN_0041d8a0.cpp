@@ -9,46 +9,48 @@
 void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d8a0(CBoneGuy *this_ptr)
 
 {
-  int iVar1;
-  CBoneGuy *pCVar2;
-  CVector3f *pCVar3;
-  uint *puVar4;
+  CBodyPart *pCVar1;
+  CLocation *pCVar2;
+  CBoneGuy *pCVar3;
+  CVector3f *pCVar4;
   uint *puVar5;
   uint *puVar6;
-  byte bVar7;
+  uint *puVar7;
+  byte bVar8;
   float afStackY_1800 [1525];
   CQuaternion4f local_24;
   int local_14;
   
-  bVar7 = 0;
+  bVar8 = 0;
   local_14 = 0;
   if (0 < this_ptr->box_count) {
-    pCVar3 = &this_ptr->source_pos;
-    pCVar2 = this_ptr;
+    pCVar4 = &this_ptr->boxes[0].source_pos;
+    pCVar3 = this_ptr;
     do {
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-                ((CVector3f *)(*(int *)pCVar2->unk2 + 0x30),&local_24);
-      puVar5 = (uint *)((int)pCVar2 + (uint)bVar7 * -8 + 0xbf58);
-      (pCVar2->box_list_dest_orient).w = local_24.w;
-      puVar6 = puVar5 + (uint)bVar7 * -2 + 1;
-      puVar4 = (uint *)((int)&local_24 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-      *puVar5 = *(uint *)((int)&local_24 + (uint)bVar7 * -8 + 4);
-      *puVar6 = *puVar4;
-      puVar6[(uint)bVar7 * -2 + 1] = puVar4[(uint)bVar7 * -2 + 1];
-      *(uint *)(*(int *)pCVar2->unk2 + 0xf20) = 0;
-      iVar1 = *(int *)pCVar2->unk2;
-      if (pCVar3 != (CVector3f *)(iVar1 + 0x20)) {
-        pCVar3->x = *(float *)(iVar1 + 0x20);
-        pCVar3->y = *(float *)(iVar1 + 0x24);
-        pCVar3->z = *(float *)(iVar1 + 0x28);
+                (&((pCVar3->boxes[0].body_part)->base).orient.vec,&local_24);
+      puVar6 = (uint *)((int)pCVar3 + (uint)bVar8 * -8 + 0xbf58);
+      pCVar3->boxes[0].dest_orient.w = local_24.w;
+      puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
+      puVar5 = (uint *)((int)&local_24 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+      *puVar6 = *(uint *)((int)&local_24 + (uint)bVar8 * -8 + 4);
+      *puVar7 = *puVar5;
+      puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
+      ((pCVar3->boxes[0].body_part)->sim_box).is_valid = 0;
+      pCVar1 = pCVar3->boxes[0].body_part;
+      pCVar2 = &(pCVar1->base).location;
+      if ((CLocation *)pCVar4 != pCVar2) {
+        pCVar4->x = (pCVar2->position).x;
+        pCVar4->y = (pCVar1->base).location.position.y;
+        pCVar4->z = (pCVar1->base).location.position.z;
       }
       local_14 = local_14 + 1;
-      pCVar3 = pCVar3 + 6;
-      pCVar2 = (CBoneGuy *)((pCVar2->base).base.base.orient_matrix.m + 1);
+      pCVar4 = pCVar4 + 6;
+      pCVar3 = (CBoneGuy *)((pCVar3->base).base.base.orient_matrix.m + 1);
     } while (local_14 < this_ptr->box_count);
   }
   this_ptr->blown_up = 2;
-  this_ptr->param = 0.0;
+  this_ptr->recombine_interpolation = 0.0;
   (*((this_ptr->base).base.base.vtable._ub)->playSound)
             ((CDemonActor *)this_ptr,"boneguy-comeback.wav");
   return;

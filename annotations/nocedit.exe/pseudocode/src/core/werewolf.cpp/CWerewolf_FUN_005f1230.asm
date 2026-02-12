@@ -74,7 +74,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_werewolf.cpp_CWerewolf_FUN_005f1820 at 005f1900
+;   core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005f1820 at 005f1900
 ;
 ; Referenced Globals:
 ;   float FLOAT_00665740 = 256

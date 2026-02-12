@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 299,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 59,
-    "suspect_count": 23,
+    "pseudocode_lines": 65,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "warning_type_propagation"
     ],
-    "total_lines": 137
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -234,165 +234,179 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(CDeformableModelInstance *)((int)",
-      "text": "((CDeformableModelInstance *)((int)dest + -0xbde4),\"boneguy.dfm\");",
-      "type": "pointer_cast"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -0x9160) = 0x3f19999a;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 22,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -0x915c) = 0x3f666666;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.base.vtable._ub = &g_CBoneGuyVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 24,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -0xbe40) = 1;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "(&ADJ(dest)->base.base.model,\"boneguy.dfm\");",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 25,
-      "match": "(char *)((int)",
-      "text": "pcVar6 = (char *)((int)dest + -0x6c);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.collision_cylinder_height = 0.6;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 26,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + 0x5a0) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.collision_cylinder_radius = 0.9;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 28,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -0x992c) = 2;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.base.is_transparent = 1;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "pcVar6 = ADJ(dest)->death_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 30,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -8) = 0x41200000;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(dest)->blown_up = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)dest + -0x9158) = fVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 32,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)dest + -0x9154) = fVar3;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.collision_layer = 2;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -4) = 0;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ADJ",
+      "text": "ADJ(dest)->recombine_time = 10.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -0x7c) = 0;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.ai_detection_range_min = fVar2;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.ai_detection_range_max = fVar3;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 46,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -0x78) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(dest)->box_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -0x74) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + -0x8c) = 0x40c00000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 49,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)dest + -0x80) = iVar4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)dest + -0xbe34) = (int)ROUND(dVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "ROUND",
-      "text": "*(int *)((int)dest + -0xbe34) = (int)ROUND(dVar7);",
+      "match": "ADJ",
+      "text": "ADJ(dest)->search_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)dest + -0xbe30) = (int)ROUND(dVar7);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
-      "match": "ROUND",
-      "text": "*(int *)((int)dest + -0xbe30) = (int)ROUND(dVar7);",
+      "line": 50,
+      "match": "ADJ",
+      "text": "ADJ(dest)->pickup_cooldown = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)dest + -0xbe2c) = (int)ROUND(dVar7);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "text": "*(int *)((int)dest + -0xbe2c) = (int)ROUND(dVar7);",
+      "line": 51,
+      "match": "ADJ",
+      "text": "ADJ(dest)->pickup_target = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(CBoneGuy *)((int)",
-      "text": "return (CBoneGuy *)((int)dest + -0xbf3c);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.victim_height = 6.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ADJ",
+      "text": "ADJ(dest)->pickup_attempt_count = iVar4;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.base.scale.x = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ROUND",
+      "text": "ADJ(dest)->base.base.base.scale.x = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.base.scale.y = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ROUND",
+      "text": "ADJ(dest)->base.base.base.scale.y = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ADJ",
+      "text": "ADJ(dest)->base.base.base.scale.z = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "ADJ(dest)->base.base.base.scale.z = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ADJ",
+      "text": "return ADJ(dest);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

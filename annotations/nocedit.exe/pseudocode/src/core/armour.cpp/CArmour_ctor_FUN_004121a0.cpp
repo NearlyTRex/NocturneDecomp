@@ -23,11 +23,11 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
             (&(pCVar4->base).base.model,"armour.dfm");
   fVar3 = 100.0f;
   fVar2 = 50.0f;
-  (pCVar4->base).base.field54_0x2ddc = 0.6;
+  (pCVar4->base).base.collision_cylinder_height = 0.6;
   (pCVar4->base).base.collision_cylinder_radius = 2.0;
   pcVar6 = pCVar4->unk;
-  (pCVar4->base).base.field56_0x2de4 = fVar2;
-  (pCVar4->base).base.field57_0x2de8 = fVar3;
+  (pCVar4->base).base.ai_detection_range_min = fVar2;
+  (pCVar4->base).base.ai_detection_range_max = fVar3;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -37,6 +37,6 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  (pCVar4->base).base.field39_0x2610 = 2;
+  (pCVar4->base).base.collision_layer = 2;
   return pCVar4;
 }

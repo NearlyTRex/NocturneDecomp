@@ -25,7 +25,7 @@ CPodFile * __cdecl CPodFile::ctor(CPodFile *this_ptr);
 
 // Original: engine_pod.cpp_CPodFile_dtor_FUN_0054f610
 // Address: 0054f610
-CPodFile * __cdecl CPodFile::dtor(CPodFile *this_ptr);
+CPodFile * __cdecl CPodFile::dtor(CPodFile *this_ptr,uint flags);
 
 // Original: engine_pod.cpp_qsortByFilename_FUN_0054f630
 // Address: 0054f630

@@ -165,4 +165,4 @@ CDemonMission * __cdecl CDemonMission::ctor(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_dtor_FUN_00524f00
 // Address: 00524f00
-CDemonMission * __cdecl CDemonMission::dtor(CDemonMission *this_ptr);
+CDemonMission * __cdecl CDemonMission::dtor(CDemonMission *this_ptr,uint flags);

@@ -34,7 +34,7 @@ core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
   if (pCVar1 == (CDeformableModel *)0x0) {
     return;
   }
-  pCVar1 = core_skeleton_cpp_CDeformableModel_dtor_FUN_0059a270(pCVar1);
+  pCVar1 = core_skeleton_cpp_CDeformableModel_dtor_FUN_0059a270(pCVar1,0);
   shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
   return;
 }

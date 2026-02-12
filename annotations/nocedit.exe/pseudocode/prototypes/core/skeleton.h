@@ -21,7 +21,7 @@ CSkeleton * __cdecl CSkeleton::ctor(CSkeleton *this_ptr);
 
 // Original: core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0
 // Address: 005998e0
-CSkeleton * __cdecl CSkeleton::dtor(CSkeleton *this_ptr);
+CSkeleton * __cdecl CSkeleton::dtor(CSkeleton *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910
 // Address: 00599910
@@ -65,7 +65,7 @@ CDeformableModel * __cdecl CDeformableModel::ctor(CDeformableModel *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270
 // Address: 0059a270
-CDeformableModel * __cdecl CDeformableModel::dtor(CDeformableModel *this_ptr);
+CDeformableModel * __cdecl CDeformableModel::dtor(CDeformableModel *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
 // Address: 0059a2b0
@@ -449,24 +449,24 @@ SVert * __cdecl SVert::ctor(SVert *this_ptr);
 
 // Original: core_skeleton.cpp_SVert_dtor_FUN_005a1f90
 // Address: 005a1f90
-SVert * __cdecl SVert::dtor(SVert *this_ptr);
+SVert * __cdecl SVert::dtor(SVert *this_ptr,uint flags);
 
-// Original: core_skeleton.cpp_freeSkeletons_FUN_005a1fb0
+// Original: core_skeleton.cpp_CSkeleton_arrdtor_FUN_005a1fb0
 // Address: 005a1fb0
-CSkeleton * __cdecl freeSkeletons(CSkeleton *objs);
+CSkeleton * __cdecl CSkeleton::arrdtor(CSkeleton *objs,uint flags);
 
-// Original: core_skeleton.cpp_freeDeformableModels_FUN_005a1fd0
+// Original: core_skeleton.cpp_CDeformableModel_arrdtor_FUN_005a1fd0
 // Address: 005a1fd0
-CDeformableModel * __cdecl freeDeformableModels(CDeformableModel *objs);
+CDeformableModel * __cdecl CDeformableModel::arrdtor(CDeformableModel *objs,uint flags);
 
-// Original: core_skeleton.cpp_freeVectors_FUN_005a1ff0
+// Original: core_skeleton.cpp_CVector3f_arrdtor_FUN_005a1ff0
 // Address: 005a1ff0
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
-// Original: core_skeleton.cpp_freeVectors_FUN_005a2010
+// Original: core_skeleton.cpp_CVector3f_arrdtor_FUN_005a2010
 // Address: 005a2010
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
-// Original: core_skeleton.cpp_freeBoundingBoxes_FUN_005a2030
+// Original: core_skeleton.cpp_CBoundingBox3D_arrdtor_FUN_005a2030
 // Address: 005a2030
-CBoundingBox3D * __cdecl freeBoundingBoxes(CBoundingBox3D *objs);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *objs,uint flags);

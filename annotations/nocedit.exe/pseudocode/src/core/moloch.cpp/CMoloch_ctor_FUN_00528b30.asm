@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_ctor_FUN_004f2340
-;   core_morph.cpp_FUN_0052b310
+;   core_morph.cpp_CMorph_ctor_FUN_0052b310
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
@@ -47,8 +47,8 @@ section .text
     ADD ESP,0x4                         ; 00528b4b
     ADD EAX,0x2388                      ; 00528b4e
     PUSH EAX                            ; 00528b53
-    CALL core_morph.cpp_FUN_0052b310    ; 00528b54
-        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b310(CMorphModel * a)
+    CALL core_morph.cpp_CMorph_ctor_FUN_0052b310 ; 00528b54
+        ;   XREF to: 0052b310 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_0052b310(CMorph * this_ptr)
     ADD ESP,0x4                         ; 00528b59
     LEA EBX,[EAX + 0xfffde0a4]          ; 00528b5c
     PUSH 0x639d48                       ; 00528b62 | = "moloch_h.dfm"

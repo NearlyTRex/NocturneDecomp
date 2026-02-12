@@ -44,7 +44,7 @@ int __cdecl shape_superopt_cpp_CObj_addPolygons_FUN_005d2410(CObj *this_ptr,int 
       iVar3 = iVar3 + 0x68;
     }
     this_ptr->poly_count = uVar4;
-    shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_78);
+    shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_78,0);
     return 1;
   }
   shape_superopt_cpp_logToFile_FUN_005c7910("Unable to add polygons to object");

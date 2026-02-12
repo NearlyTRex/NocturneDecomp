@@ -1573,8 +1573,8 @@ section .text
         ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004fe380
     PUSH 0x630709                       ; 004fe383 | = "Found new type of ammo for existing w..."
-    MOV EBX,dword ptr [0x0066e8e0]      ; 004fe388 | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 004fe38e | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 004fe388 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 004fe38e | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004fe38f
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     MOV EAX,0x1                         ; 004fe394
@@ -1607,7 +1607,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x314]     ; 004fe3f0
     MOV EDI,dword ptr [0x0066e8e0]      ; 004fe3f6 | g_CConsolePtr
     ADD ESI,EAX                         ; 004fe3fc
-    PUSH EDI                            ; 004fe3fe | g_ConsolePtr
+    PUSH EDI                            ; 004fe3fe | g_CConsoleInstance
     MOV dword ptr [EBX + 0x314],ESI     ; 004fe3ff
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004fe405
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
@@ -1688,8 +1688,8 @@ section .text
         ;   XREF to: 005240a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004fe4e4
     PUSH 0x6306e5                       ; 004fe4e7 | = "Found weapon to put this ammo into\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 004fe4ec | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 004fe4f2 | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 004fe4ec | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 004fe4f2 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004fe4f3
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     MOV EAX,0x1                         ; 004fe4f8
@@ -1795,8 +1795,8 @@ section .text
         ;   XREF to: 00408820 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00408820(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004fe606
     PUSH 0x630764                       ; 004fe609 | = "Found dynamite.  Creating weapon for ..."
-    MOV EDX,dword ptr [0x0066e8e0]      ; 004fe60e | g_ConsolePtr | g_CConsolePtr
-    PUSH EDX                            ; 004fe614 | g_ConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 004fe60e | g_CConsoleInstance | g_CConsolePtr
+    PUSH EDX                            ; 004fe614 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004fe615
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004fe61a
@@ -1968,8 +1968,8 @@ section .text
     MOV dword ptr [EAX + 0x568],0xc8    ; 004fe7df
     PUSH 0x63078e                       ; 004fe7e9 | = "Found same weapon, increasing ammoCou..."
         ;   Label: LAB_004fe7e9
-    MOV EAX,[0x0066e8e0]                ; 004fe7ee | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 004fe7f3 | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 004fe7ee | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 004fe7f3 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004fe7f4
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004fe7f9
@@ -2050,8 +2050,8 @@ section .text
     ADD ESP,0x4                         ; 004fe8d3
     PUSH EAX                            ; 004fe8d6
     PUSH 0x6307b7                       ; 004fe8d7 | = "Converting existing ammo for %s to we..."
-    MOV ECX,dword ptr [0x0066e8e0]      ; 004fe8dc | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 004fe8e2 | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 004fe8dc | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 004fe8e2 | g_CConsoleInstance
     MOV EBX,0x1                         ; 004fe8e3
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004fe8e8
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)

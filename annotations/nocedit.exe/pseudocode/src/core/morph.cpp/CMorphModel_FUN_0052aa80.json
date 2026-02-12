@@ -6,23 +6,23 @@
   },
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 69,
+    "complexity_score": 90,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 9,
-    "suspect_count": 5,
+    "pseudocode_lines": 10,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 33
+    "total_lines": 34
   },
   "cross_references": [
     {
       "addr": "0052b640",
       "from_addr": "0052b66d",
-      "name": "core_morph.cpp_FUN_0052b640",
+      "name": "core_morph.cpp_CMorph_FUN_0052b640",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -57,7 +57,7 @@
       {
         "call_addr": "0052b66d",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_0052b640",
+        "caller": "core_morph.cpp_CMorph_FUN_0052b640",
         "estimated_params": 6,
         "instructions_analyzed": 17,
         "reg_params": [],
@@ -108,29 +108,43 @@
     {
       "description": "Unresolved stack parameter",
       "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
       "match": "in_stack_0000000c",
       "text": "CKeyFramedModel *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 6,
+      "line": 7,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_0000000c",
       "text": "core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(in_stack_0000000c,in_stack_00000010)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_00000010",
       "text": "core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(in_stack_0000000c,in_stack_00000010)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "core_morph_cpp_CMorphModel_animate_FUN_0052a920(this_ptr,in_stack_00000008);",
       "type": "stack_param"
     },
     {

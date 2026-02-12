@@ -292,7 +292,7 @@ section .text
     MOV dword ptr [0x0067d20c],ESI      ; 0055675c | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EDI      ; 00556762 | g_CurrentDebugLine
     CALL shape_quantize.cpp_CColorQuantizer_dtor_FUN_00554940 ; 00556768
-        ;   XREF to: 00554940 (UNCONDITIONAL_CALL)  ; CColorQuantizer * shape_quantize.cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer * this_ptr)
+        ;   XREF to: 00554940 (UNCONDITIONAL_CALL)  ; CColorQuantizer * shape_quantize.cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0055676d
     PUSH EAX                            ; 00556770
     MOV EBP,0x64107c                    ; 00556771 | = "..\\shape\\quantize.cpp"
@@ -309,7 +309,7 @@ section .text
     PUSH 0x0                            ; 00556799
     PUSH EDX                            ; 0055679b
     CALL shape_quantize.cpp_CBitmap_dtor_FUN_00556c20 ; 0055679c
-        ;   XREF to: 00556c20 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr)
+        ;   XREF to: 00556c20 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005567a1
     PUSH EAX                            ; 005567a4
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005567a5

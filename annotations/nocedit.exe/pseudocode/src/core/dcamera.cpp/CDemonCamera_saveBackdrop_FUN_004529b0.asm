@@ -447,7 +447,7 @@ section .text
     LEA EAX,[ESP + 0x1e8]               ; 00452f38
     PUSH EAX                            ; 00452f3f
     CALL support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0 ; 00452f40
-        ;   XREF to: 0043edf0 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr)
+        ;   XREF to: 0043edf0 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00452f45
     PUSH 0x1                            ; 00452f48
     LEA EAX,[ESP + 0x1e4]               ; 00452f4a

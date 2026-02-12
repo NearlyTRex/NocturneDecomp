@@ -1,78 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 21,
-        "message": "assigning to 'CKeyFramedModelInstance *' from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 24,
-        "message": "array index 4294967228 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 25,
-        "message": "array index 4294967228 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 26,
-        "message": "array index 4294967228 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 27,
-        "message": "array index 4294967228 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 28,
-        "message": "array index 4294967228 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 29,
-        "message": "array index 4294967228 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 30,
-        "message": "array index 4294967228 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 31,
-        "message": "array index 4294967228 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      }
-    ]
+    "errors": [],
+    "success": true,
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 121,
+    "complexity_score": 305,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 19,
-    "pseudocode_lines": 91,
-    "suspect_count": 2,
+    "pseudocode_lines": 70,
+    "suspect_count": 23,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 218
+    "total_lines": 197
   },
   "cross_references": [
     {
@@ -296,18 +239,165 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
-      "match": "(void *)((int)",
-      "text": "((void *)((int)pvVar2 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "(&ADJ(pvVar2)->bugs[399].downward_bias,4,",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 26,
-      "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x3;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->base.base.base.vtable._ub = &g_CBugsVTable;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->state = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->count = 0x32;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ADJ",
+      "text": "memset(ADJ(this_ptr_00)->bugs,0,0x6400);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->model_count = 3;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->models,\"roach.kfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->models + 1,\"hroach.kfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->models + 2,\"mroach.kfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "(&ADJ(this_ptr_00)->base.base.model,\"guul.dfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->swarm_target = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->deformable_model_ptr = (CKeyFramedModelInstance *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->swarm_vertex_count = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->allow_chase_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->allow_chase = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->allow_swarm_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->allow_swarm = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->animate_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->base.base.collision_cylinder_height = 2.49;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->base.base.collision_cylinder_radius = 2.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->base.base.collision_cylinder_bottom = 1.3;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->base.base.collision_cylinder_top = 1.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 72,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

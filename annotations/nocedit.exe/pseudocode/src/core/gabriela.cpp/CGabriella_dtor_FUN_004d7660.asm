@@ -31,7 +31,7 @@ section .text
     ADD EBX,0x1fc14                     ; 004d766e
     PUSH EBX                            ; 004d7674
     CALL core_cloth.cpp_CCloth_dtor_FUN_00438c00 ; 004d7675
-        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr)
+        ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004d767a
     PUSH 0x1                            ; 004d767d
     LEA EBX,[EAX + 0xfffe03ec]          ; 004d767f

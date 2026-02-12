@@ -473,7 +473,7 @@ section .text
     PUSH 0x0                            ; 0057dba4
     PUSH ESI                            ; 0057dba6
     CALL core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90 ; 0057dba7
-        ;   XREF to: 00476d90 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr)
+        ;   XREF to: 00476d90 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0057dbac
     PUSH EAX                            ; 0057dbaf
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0057dbb0

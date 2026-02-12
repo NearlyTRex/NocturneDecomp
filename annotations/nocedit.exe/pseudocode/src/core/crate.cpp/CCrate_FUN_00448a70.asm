@@ -17,7 +17,7 @@
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CFireEffect g_CFireEffectInstance
 ;   CDemonMission g_CDemonMissionInstance
 ;
@@ -43,8 +43,8 @@ section .text
     PUSH EBX                            ; 00448a83
         ;   Label: LAB_00448a83
     PUSH 0x619b2e                       ; 00448a84 | = "%s exploding!\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 00448a89 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 00448a8f | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 00448a89 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 00448a8f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00448a90
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00448a95

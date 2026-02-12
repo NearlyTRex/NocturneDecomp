@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_005746c0(SIntersectXZCylinder *this_ptr)
+; __cdecl SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_005746c0(SIntersectXZCylinder *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SIntersectXZCylinder * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

@@ -105,7 +105,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041aa40(CBodyPart *this_ptr)
     if (0 < iVar4) {
       local_40 = 0;
       do {
-        piVar5 = (int *)(this_ptr->unk2 + local_40);
+        piVar5 = (int *)((int)&this_ptr->vertices->x + local_40);
         lVar1 = (longlong)(int)ROUND(fVar12) * (longlong)piVar5[1];
         lVar2 = (longlong)(int)ROUND(fVar14) * (longlong)piVar5[2];
         fVar6 = (float)(((uint)((longlong)(int)local_54.z * (longlong)*piVar5) >> 0x10 |

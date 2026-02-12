@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00482160(CDemonPart *this_ptr)
+; __cdecl CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00482160(CDemonPart *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonPart *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0 at 00494341

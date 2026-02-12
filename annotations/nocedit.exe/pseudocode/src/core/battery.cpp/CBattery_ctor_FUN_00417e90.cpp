@@ -14,7 +14,7 @@ CBattery * __cdecl core_battery_cpp_CBattery_ctor_FUN_00417e90(CBattery *this_pt
   
   pCVar1 = (CBattery *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
-  ADJ(this_ptr_00).base.vtable._ub = &g_CBatteryVTable;
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CBatteryVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"question.kfm");
   ADJ(this_ptr_00)->recharge_time = 30.0;

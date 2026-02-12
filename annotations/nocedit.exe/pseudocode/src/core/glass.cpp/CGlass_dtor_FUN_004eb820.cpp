@@ -19,8 +19,8 @@ CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint f
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_glass_cpp_freeVectors_FUN_004eb8a0(this_ptr->broken_vertices);
-  pCVar2 = core_mirror_cpp_CMirror_dtor_FUN_005213e0((CMirror *)&pCVar1[-0x23].y);
+  pCVar1 = core_glass_cpp_CVector3f_arrdtor_FUN_004eb8a0(this_ptr->broken_vertices,0);
+  pCVar2 = core_mirror_cpp_CMirror_dtor_FUN_005213e0((CMirror *)&pCVar1[-0x23].y,0);
   ptr = (CGlass *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)&pCVar2[-2].reflection.mirror_transform_matrix.m[2].x,1);

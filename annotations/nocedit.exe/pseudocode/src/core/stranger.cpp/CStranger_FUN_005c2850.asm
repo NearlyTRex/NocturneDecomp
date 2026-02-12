@@ -53,7 +53,7 @@
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 g_CCrateClassInfo.name_hash
 ;   undefined4 g_CActorDestinationClassInfo.name_hash
 ;   CEditorTools g_CEditorToolsInstance
@@ -409,8 +409,8 @@ section .text
     SUB ESP,0x8                         ; 005c2c28
     FSTP double ptr [ESP]               ; 005c2c2b
     PUSH 0x653b8c                       ; 005c2c2e | = "Delta to dest : %3.2f,%3.2f,%3.2f\n"
-    MOV EDX,dword ptr [0x0066e8e0]      ; 005c2c33 | g_ConsolePtr | g_CConsolePtr
-    PUSH EDX                            ; 005c2c39 | g_ConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 005c2c33 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EDX                            ; 005c2c39 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005c2c3a
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x20                        ; 005c2c3f

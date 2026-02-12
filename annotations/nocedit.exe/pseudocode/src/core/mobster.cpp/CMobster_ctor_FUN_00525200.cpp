@@ -22,11 +22,11 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_pt
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base).base.model,"mobster1.dfm");
   fVar2 = 50.0f;
-  (pCVar4->base).base.field54_0x2ddc = 0.6;
+  (pCVar4->base).base.collision_cylinder_height = 0.6;
   fVar3 = 100.0f;
   (pCVar4->base).base.collision_cylinder_radius = 0.9;
-  (pCVar4->base).base.field56_0x2de4 = fVar2;
-  (pCVar4->base).base.field57_0x2de8 = fVar3;
+  (pCVar4->base).base.ai_detection_range_min = fVar2;
+  (pCVar4->base).base.ai_detection_range_max = fVar3;
   iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0xff);
   pCVar4->unk1[4] = '\0';
   pCVar4->unk1[5] = '\0';

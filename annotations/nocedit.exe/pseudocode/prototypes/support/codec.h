@@ -73,7 +73,7 @@ CLZWDictionary * __cdecl CLZWDictionary::ctor(CLZWDictionary *this_ptr);
 
 // Original: support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0
 // Address: 0043edf0
-CLZWDictionary * __cdecl CLZWDictionary::dtor(CLZWDictionary *this_ptr);
+CLZWDictionary * __cdecl CLZWDictionary::dtor(CLZWDictionary *this_ptr,uint flags);
 
 // Original: support_codec.cpp_CLZWDictionary_free_FUN_0043ee10
 // Address: 0043ee10

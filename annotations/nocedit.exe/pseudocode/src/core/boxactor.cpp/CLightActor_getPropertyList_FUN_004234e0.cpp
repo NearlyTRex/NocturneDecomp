@@ -28,10 +28,10 @@ core_boxactor_cpp_CLightActor_getPropertyList_FUN_004234e0
                core_boxactor_cpp_CLightActor_propertyDisplayFOVCallback_FUN_00423400,
                core_boxactor_cpp_CLightActor_propertyActionFOVCallback_FUN_00423440);
     core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
-              (property_list,"light falloff",&this_ptr->light_falloff,
+              (property_list,"light falloff",&(this_ptr->light).base.max_distance,
                (CActorPropertyValidatorFunc *)0x0);
   }
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
-            (property_list,"light status",&this_ptr->light_status);
+            (property_list,"light status",&(this_ptr->light).light_enabled_flag);
   return;
 }

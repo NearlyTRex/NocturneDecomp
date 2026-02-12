@@ -181,7 +181,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0054bb01
     PUSH EAX                            ; 0054bb05
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890 ; 0054bb06
-        ;   XREF to: 0054a890 (UNCONDITIONAL_CALL)  ; CPackedBitmap * cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890(CPackedBitmap * this_ptr)
+        ;   XREF to: 0054a890 (UNCONDITIONAL_CALL)  ; CPackedBitmap * cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890(CPackedBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0054bb0b
     INC EBX                             ; 0054bb0e
     CMP EBX,dword ptr [ESP + 0x50]      ; 0054bb0f

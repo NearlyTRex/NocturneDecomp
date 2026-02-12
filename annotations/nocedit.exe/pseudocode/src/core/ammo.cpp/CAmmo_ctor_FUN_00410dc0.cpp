@@ -17,7 +17,7 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(CAmmo *this_ptr)
   
   pCVar2 = (CAmmo *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
-  ADJ(this_ptr_00).base.vtable._ub = &g_CAmmoVTable;
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CAmmoVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"bullet.kfm");
   pcVar2 = "CGun";

@@ -38,7 +38,7 @@
 ;   float FLOAT_00654aba = -3.141593
 ;   double DOUBLE_00654ac2 = 3.14159265350000
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   int INT_03f6cb90
 ;
 ; Called Functions:
@@ -385,7 +385,7 @@ section .text
     PUSH EBX                            ; 005d8f10
     PUSH 0x654a51                       ; 005d8f11 | = "%s confused while walking to scriptDe..."
     MOV EDI,dword ptr [0x0066e8e0]      ; 005d8f16 | g_CConsolePtr
-    PUSH EDI                            ; 005d8f1c | g_ConsolePtr
+    PUSH EDI                            ; 005d8f1c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005d8f1d
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x005d8ce2                      ; 005d8f22

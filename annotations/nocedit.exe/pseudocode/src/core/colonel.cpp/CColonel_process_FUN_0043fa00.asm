@@ -37,7 +37,7 @@
 ;   double DOUBLE_00618ce9 = 3.14159265350000
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   int INT_0083b124
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
@@ -316,7 +316,7 @@ section .text
     PUSH EBX                            ; 0043fcad
     PUSH 0x618c8c                       ; 0043fcae | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x0066e8e0]      ; 0043fcb3 | g_CConsolePtr
-    PUSH ESI                            ; 0043fcb9 | g_ConsolePtr
+    PUSH ESI                            ; 0043fcb9 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0043fcba
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     JMP 0x0043fad8                      ; 0043fcbf

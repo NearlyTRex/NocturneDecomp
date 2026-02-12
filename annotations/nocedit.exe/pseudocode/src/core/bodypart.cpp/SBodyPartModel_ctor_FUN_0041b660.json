@@ -13,7 +13,7 @@
     "pseudocode_lines": 7,
     "suspect_count": 1,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
     "total_lines": 16
   },
@@ -85,11 +85,11 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 9,
-      "match": "pCVar1[-1].",
-      "text": "return (SBodyPartModel *)(pCVar1[-1].animation_state + 0x88);",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "return ADJ(pCVar1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

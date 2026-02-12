@@ -19,18 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 118,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
-    "pseudocode_lines": 43,
-    "suspect_count": 6,
+    "pseudocode_lines": 45,
+    "suspect_count": 4,
     "suspect_types": [
-      "extra_output",
       "negative_offset",
       "unresolved_funcptr"
     ],
-    "total_lines": 154
+    "total_lines": 156
   },
   "cross_references": [],
   "function": {
@@ -52,19 +51,19 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30"
     },
     {
-      "addr": "00412700",
-      "is_variadic": false,
-      "name": "core_armour.cpp_freeFires_FUN_00412700"
-    },
-    {
       "addr": "00412720",
       "is_variadic": false,
-      "name": "core_armour.cpp_freeFlames_FUN_00412720"
+      "name": "core_armour.cpp_CFlame_arrdtor_FUN_00412720"
     },
     {
       "addr": "004126e0",
       "is_variadic": false,
-      "name": "core_armour.cpp_freeVectors_FUN_004126e0"
+      "name": "core_armour.cpp_CVector3f_arrdtor_FUN_004126e0"
+    },
+    {
+      "addr": "00412700",
+      "is_variadic": false,
+      "name": "core_armour.cpp_SFire_arrdtor_FUN_00412700"
     },
     {
       "addr": "0043bf80",
@@ -74,7 +73,7 @@
     {
       "addr": "0052b330",
       "is_variadic": false,
-      "name": "core_morph.cpp_CMorphModel_FUN_0052b330"
+      "name": "core_morph.cpp_CMorph_dtor_FUN_0052b330"
     },
     {
       "addr": "005464d0",
@@ -191,13 +190,6 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 26,
       "match": "code *",
@@ -205,31 +197,24 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_EAX",
-      "text": "pCVar2 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(extraout_EAX + -0x139f0));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 31,
-      "match": "pCVar2[-1].",
-      "text": "((CFlame *)(pCVar2[-1].height_cache_tags[0xb] + 0x39));",
-      "type": "negative_offset"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 32,
-      "match": "pCVar3[-2].",
-      "text": "pSVar4 = core_armour_cpp_freeFires_FUN_00412700((SFire *)(pCVar3[-2].base.create_event + 0x20));",
+      "match": "pCVar3[-1].",
+      "text": "((CFlame *)(pCVar3[-1].height_cache_tags[0xb] + 0x39),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 40,
-      "match": "pCVar7[-1].",
-      "text": "((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);",
+      "line": 34,
+      "match": "pCVar4[-2].",
+      "text": "((SFire *)(pCVar4[-2].base.create_event + 0x20),0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 42,
+      "match": "pCVar8[-1].",
+      "text": "((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 7),1);",
       "type": "negative_offset"
     }
   ],

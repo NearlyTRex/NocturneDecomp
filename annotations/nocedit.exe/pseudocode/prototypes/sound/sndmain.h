@@ -105,7 +105,7 @@ CSfxSample * __cdecl CSfxSample::ctor(CSfxSample *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSample_dtor_FUN_005a6150
 // Address: 005a6150
-CSfxSample * __cdecl CSfxSample::dtor(CSfxSample *this_ptr);
+CSfxSample * __cdecl CSfxSample::dtor(CSfxSample *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170
 // Address: 005a6170
@@ -765,12 +765,12 @@ CSfxSlot * __cdecl CSfxSlot::ctor(CSfxSlot *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_dtor_FUN_005ade20
 // Address: 005ade20
-CSfxSlot * __cdecl CSfxSlot::dtor(CSfxSlot *this_ptr);
+CSfxSlot * __cdecl CSfxSlot::dtor(CSfxSlot *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxOptions_dtor_FUN_005ade30
 // Address: 005ade30
-CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr);
+CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 
-// Original: sound_sndmain.cpp_freeSfxSamples_FUN_005ade40
+// Original: sound_sndmain.cpp_CSfxSample_arrdtor_FUN_005ade40
 // Address: 005ade40
-CSfxSample * __cdecl freeSfxSamples(CSfxSample *objs);
+CSfxSample * __cdecl CSfxSample::arrdtor(CSfxSample *objs,uint flags);

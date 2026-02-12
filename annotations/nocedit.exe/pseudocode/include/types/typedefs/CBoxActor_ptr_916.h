@@ -1,0 +1,20 @@
+#pragma once
+
+// Forward declarations
+struct CBoxActor;
+
+// Dependencies
+#include "system/basetypes.h"
+
+// Adjusted pointer: CBoxActor_ptr_916
+// 32-bit pointer to CBoxActor
+struct CBoxActor_ptr_916 {
+    void *_raw;
+    CBoxActor_ptr_916() : _raw(0) {}
+    template<typename T> CBoxActor_ptr_916(T* p) : _raw((void*)p) {}
+    template<typename T> CBoxActor_ptr_916& operator=(T* p) { _raw = (void*)p; return *this; }
+    CBoxActor* operator->() const { return (CBoxActor*)_raw; }
+    template<typename T> operator T*() const { return (T*)_raw; }
+    explicit operator bool() const { return _raw != 0; }
+};
+

@@ -17,7 +17,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_FUN_0041af90(CBodyPart *this_ptr)
   
   iVar3 = 0;
   if (0 < this_ptr->texture_count) {
-    pcVar4 = this_ptr->unk5 + 8;
+    pcVar4 = this_ptr->textures[0].texture_name;
     do {
       iVar2 = stricmp(pcVar4,in_stack_00000008);
       if (iVar2 == 0) {
@@ -32,8 +32,8 @@ int __cdecl core_bodypart_cpp_CBodyPart_FUN_0041af90(CBodyPart *this_ptr)
     g_CurrentLineNumber = 0x47a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many body part textures!");
   }
-  memset(this_ptr->unk5 + this_ptr->texture_count * 0x18,0,0x18);
-  pcVar4 = this_ptr->unk5 + this_ptr->texture_count * 0x18 + 8;
+  memset(this_ptr->textures + this_ptr->texture_count,0,0x18);
+  pcVar4 = this_ptr->textures[this_ptr->texture_count].texture_name;
   do {
     cVar1 = *in_stack_00000008;
     *pcVar4 = cVar1;

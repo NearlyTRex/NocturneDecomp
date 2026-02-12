@@ -56,9 +56,9 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
       engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
                 (&local_410,"AcceptedLicenseAgreement",1);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_210);
-      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_12c);
-      shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_48);
+      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_210,0);
+      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_12c,0);
+      shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_48,0);
       return 1;
     }
     iVar3 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_210);
@@ -71,8 +71,8 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
   } while (iVar3 == 0);
-  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_210);
-  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_12c);
-  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_48);
+  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_210,0);
+  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_12c,0);
+  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_48,0);
   return 0;
 }

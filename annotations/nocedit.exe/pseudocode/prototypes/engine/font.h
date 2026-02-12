@@ -17,7 +17,7 @@ CBitFont * __cdecl CBitFont::ctor(CBitFont *this_ptr);
 
 // Original: engine_font.cpp_CBitFont_dtor_FUN_004cceb0
 // Address: 004cceb0
-CBitFont * __cdecl CBitFont::dtor(CBitFont *this_ptr);
+CBitFont * __cdecl CBitFont::dtor(CBitFont *this_ptr,uint flags);
 
 // Original: engine_font.cpp_CBitFont_reset_FUN_004cced0
 // Address: 004cced0

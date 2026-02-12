@@ -32,7 +32,7 @@
 ;   int g_CameraShakeSustainValue = 0xc80000
 ;   int g_CameraShakeState = 0x3
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   int g_CameraShakeSustainTimer
 ;   int g_CameraShakeAttackTime
 ;   int g_CameraShakeAttackAccum
@@ -97,8 +97,8 @@ section .text
     MOV EBX,EAX                         ; 0044c4a1
     PUSH 0x619fb2                       ; 0044c4a3 | = "Attack : "
         ;   Label: LAB_0044c4a3
-    MOV EAX,[0x0066e8e0]                ; 0044c4a8 | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 0044c4ad | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 0044c4a8 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 0044c4ad | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0044c4ae
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
         ;   Label: LAB_0044c4ae
@@ -261,8 +261,8 @@ section .text
     MOV [0x013da768],EAX                ; 0044c6ac | g_CameraShakeDecayTimer
     PUSH 0x619fbc                       ; 0044c6b1 | = "Sustain : "
         ;   Label: LAB_0044c6b1
-    MOV ECX,dword ptr [0x0066e8e0]      ; 0044c6b6 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 0044c6bc | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 0044c6b6 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 0044c6bc | g_CConsoleInstance
     MOV EBX,dword ptr [0x0066ecf8]      ; 0044c6bd | g_CameraShakePeakValue
     JMP 0x0044c4ae                      ; 0044c6c3
         ;   XREF to: 0044c4ae (UNCONDITIONAL_JUMP)  ; LAB_0044c4ae
@@ -288,7 +288,7 @@ section .text
     PUSH 0x619fc7                       ; 0044c6fc | = "Decay : "
         ;   Label: LAB_0044c6fc
     MOV ECX,dword ptr [0x0066e8e0]      ; 0044c701 | g_CConsolePtr
-    PUSH ECX                            ; 0044c707 | g_ConsolePtr
+    PUSH ECX                            ; 0044c707 | g_CConsoleInstance
     JMP 0x0044c4ae                      ; 0044c708
         ;   XREF to: 0044c4ae (UNCONDITIONAL_JUMP)  ; LAB_0044c4ae
     MOV EAX,0x3                         ; 0044c70d

@@ -19,7 +19,7 @@ CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005f2390(CWinFont *this_
   }
   (this_ptr->base).vtable = &g_CWinFontVTable;
   engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(this_ptr);
-  ptr = (CWinFont *)engine_palette_cpp_CFont_dtor_FUN_00544ec0(&this_ptr->base);
+  ptr = (CWinFont *)engine_palette_cpp_CFont_dtor_FUN_00544ec0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

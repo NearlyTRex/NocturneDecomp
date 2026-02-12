@@ -16,16 +16,16 @@ void __cdecl core_bugs_cpp_CBugs_archive_FUN_004254f0(CBugs *this_ptr)
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->count,"count");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->model_count,"modelCount");
   if (g_ActorReadingMode == 1) {
-    pCVar1 = (CKeyFramedModelInstance *)this_ptr->unk3;
+    pCVar1 = this_ptr->models;
     do {
       core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
                 (pCVar1,&s_EmptyChar_00616d44);
       pCVar1 = pCVar1 + 1;
-    } while (pCVar1 != (CKeyFramedModelInstance *)(this_ptr->unk3 + 0x5f0));
+    } while (pCVar1 != (CKeyFramedModelInstance *)this_ptr->ground_heights);
   }
   iVar2 = 0;
   if (0 < this_ptr->model_count) {
-    pCVar1 = (CKeyFramedModelInstance *)this_ptr->unk3;
+    pCVar1 = this_ptr->models;
     do {
       iVar2 = iVar2 + 1;
       core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(pCVar1,"modelName");

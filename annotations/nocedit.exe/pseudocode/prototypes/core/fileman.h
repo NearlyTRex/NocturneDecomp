@@ -49,4 +49,4 @@ CDemonFileManager * __cdecl CDemonFileManager::ctor(CDemonFileManager *this_ptr)
 
 // Original: core_fileman.cpp_CDemonFileManager_dtor_FUN_00508880
 // Address: 00508880
-CDemonFileManager * __cdecl CDemonFileManager::dtor(CDemonFileManager *this_ptr);
+CDemonFileManager * __cdecl CDemonFileManager::dtor(CDemonFileManager *this_ptr,uint flags);

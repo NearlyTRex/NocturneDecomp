@@ -22,7 +22,7 @@ core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
             (&this_ptr->base,&local_20,&(this_ptr->model).accumulated_root_motion);
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            (&this_ptr->base,&local_14,&this_ptr->field6_0x241c);
+            (&this_ptr->base,&local_14,&this_ptr->position_delta);
   pUVar1 = &(this_ptr->base).orient;
   if (pUVar1 != orientation) {
     (pUVar1->vec).x = (orientation->vec).x;
@@ -40,11 +40,11 @@ core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0
   }
   pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base,&local_2c,&local_14);
-  if (&this_ptr->field6_0x241c == pCVar3) {
+  if (&this_ptr->position_delta == pCVar3) {
     return;
   }
-  (this_ptr->field6_0x241c).x = pCVar3->x;
-  (this_ptr->field6_0x241c).y = pCVar3->y;
-  (this_ptr->field6_0x241c).z = pCVar3->z;
+  (this_ptr->position_delta).x = pCVar3->x;
+  (this_ptr->position_delta).y = pCVar3->y;
+  (this_ptr->position_delta).z = pCVar3->z;
   return;
 }

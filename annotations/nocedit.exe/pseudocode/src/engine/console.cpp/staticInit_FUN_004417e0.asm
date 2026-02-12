@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomStaticDestructorNode g_ConsoleDestructorNode
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
 ;   crt_stdlib.c__atexit_FUN_005ff060
@@ -21,7 +21,7 @@ section .text
     PUSH 0x1                            ; 004417e2
     PUSH 0x20                           ; 004417e4
     PUSH 0x28                           ; 004417e6
-    PUSH 0x83b1a4                       ; 004417e8 | g_ConsolePtr
+    PUSH 0x83b1a4                       ; 004417e8 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_ctor_FUN_00441810 ; 004417ed
         ;   XREF to: 00441810 (UNCONDITIONAL_CALL)  ; CConsole * engine_console.cpp_CConsole_ctor_FUN_00441810(CConsole * this_ptr, int width, int height, int screen_x, ...)
     ADD ESP,0x14                        ; 004417f2

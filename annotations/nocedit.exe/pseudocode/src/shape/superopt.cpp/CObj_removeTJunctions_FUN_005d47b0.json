@@ -61,18 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 1051,
-    "complexity_score": 1553,
+    "complexity_score": 1552,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 3,
-    "pseudocode_lines": 498,
+    "pseudocode_lines": 497,
     "suspect_count": 104,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 1549
+    "total_lines": 1548
   },
   "cross_references": [
     {
@@ -1102,14 +1102,14 @@
       "description": "Complex pointer cast",
       "line": 298,
       "match": "(uint *)((int)",
-      "text": "puVar16 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar20);",
+      "text": "puVar17 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar21);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 303,
       "match": "(CVector3d *)((int)",
-      "text": "pCVar18 = (CVector3d *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
+      "text": "pCVar19 = (CVector3d *)((int)pCVar19 + (uint)bVar20 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1179,7 +1179,7 @@
       "description": "Complex pointer cast",
       "line": 340,
       "match": "(uint *)((int)",
-      "text": "uVar12 = *(uint *)((int)&local_34->y + 4);",
+      "text": "uVar13 = *(uint *)((int)&local_34->y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1249,7 +1249,7 @@
       "description": "Complex pointer cast",
       "line": 364,
       "match": "(uint *)((int)",
-      "text": "uVar12 = *(uint *)((int)&local_2c->y + 4);",
+      "text": "uVar13 = *(uint *)((int)&local_2c->y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1319,7 +1319,7 @@
       "description": "Complex pointer cast",
       "line": 389,
       "match": "(uint *)((int)",
-      "text": "uVar12 = *(uint *)((int)&local_28->y + 4);",
+      "text": "uVar13 = *(uint *)((int)&local_28->y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1347,7 +1347,7 @@
       "description": "Unknown/mangled field access",
       "line": 403,
       "match": "._4_4_",
-      "text": "local_1f0._4_4_ = uVar14;",
+      "text": "local_1f0._4_4_ = uVar15;",
       "type": "unknown_field"
     },
     {
@@ -1403,7 +1403,7 @@
       "description": "Complex pointer cast",
       "line": 410,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_20->uv_coords + local_30 * 4 + -0xc) = uVar14;",
+      "text": "*(uint *)((int)local_20->uv_coords + local_30 * 4 + -0xc) = uVar15;",
       "type": "pointer_cast"
     },
     {
@@ -1445,21 +1445,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 416,
       "match": "CONCAT44",
-      "text": "dVar7 = (double)CONCAT44(uStack_2bc,local_2c0);",
+      "text": "dVar7 = (double)CONCAT44(uStack_2bc,uVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 418,
       "match": "CONCAT44",
-      "text": "local_dc = (double)CONCAT44(uVar12,local_248) - dVar7;",
+      "text": "local_dc = (double)CONCAT44(uVar13,local_248) - dVar7;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 421,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_e4 + (uint)bVar19 * -8 + 4);",
+      "text": "*(uint *)((int)&local_e4 + (uint)bVar20 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1487,7 +1487,7 @@
       "description": "Complex pointer cast",
       "line": 437,
       "match": "(int *)((int)",
-      "text": "local_cc[(uint)bVar19 * -2 + 3] = *(int *)((int)&uStack_94 + (uint)bVar19 * -8 + 4);",
+      "text": "local_cc[(uint)bVar20 * -2 + 3] = *(int *)((int)&uStack_94 + (uint)bVar20 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1508,96 +1508,96 @@
       "description": "Complex pointer cast",
       "line": 455,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)(&local_9c + (-(uint)bVar19 - (uint)bVar19)) +",
+      "text": "*(int *)((int)(&local_9c + (-(uint)bVar20 - (uint)bVar20)) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 463,
       "match": "(uint *)((int)",
-      "text": "local_1dc.uv_coords[0].x._0_4_ = *(uint *)((int)&pCVar15->x + 4);",
+      "text": "local_1dc.uv_coords[0].x._0_4_ = *(uint *)((int)&pCVar16->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 463,
       "match": "._0_4_",
-      "text": "local_1dc.uv_coords[0].x._0_4_ = *(uint *)((int)&pCVar15->x + 4);",
+      "text": "local_1dc.uv_coords[0].x._0_4_ = *(uint *)((int)&pCVar16->x + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 464,
       "match": "._4_4_",
-      "text": "local_1dc.uv_coords[0].x._4_4_ = *(uint *)&pCVar15->y;",
+      "text": "local_1dc.uv_coords[0].x._4_4_ = *(uint *)&pCVar16->y;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 465,
       "match": "(uint *)((int)",
-      "text": "local_1dc.uv_coords[0].y._0_4_ = *(uint *)((int)&pCVar15->y + 4);",
+      "text": "local_1dc.uv_coords[0].y._0_4_ = *(uint *)((int)&pCVar16->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 465,
       "match": "._0_4_",
-      "text": "local_1dc.uv_coords[0].y._0_4_ = *(uint *)((int)&pCVar15->y + 4);",
+      "text": "local_1dc.uv_coords[0].y._0_4_ = *(uint *)((int)&pCVar16->y + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 467,
       "match": "._4_4_",
-      "text": "local_1dc.uv_coords[0].y._4_4_ = *(uint *)&pCVar17->x;",
+      "text": "local_1dc.uv_coords[0].y._4_4_ = *(uint *)&pCVar18->x;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 468,
       "match": "(uint *)((int)",
-      "text": "local_1dc.uv_coords[1].x._0_4_ = *(uint *)((int)&pCVar17->x + 4);",
+      "text": "local_1dc.uv_coords[1].x._0_4_ = *(uint *)((int)&pCVar18->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 468,
       "match": "._0_4_",
-      "text": "local_1dc.uv_coords[1].x._0_4_ = *(uint *)((int)&pCVar17->x + 4);",
+      "text": "local_1dc.uv_coords[1].x._0_4_ = *(uint *)((int)&pCVar18->x + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 469,
       "match": "._4_4_",
-      "text": "local_1dc.uv_coords[1].x._4_4_ = *(uint *)&pCVar17->y;",
+      "text": "local_1dc.uv_coords[1].x._4_4_ = *(uint *)&pCVar18->y;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 470,
       "match": "(uint *)((int)",
-      "text": "local_1dc.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar17->y + 4);",
+      "text": "local_1dc.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar18->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 470,
       "match": "._0_4_",
-      "text": "local_1dc.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar17->y + 4);",
+      "text": "local_1dc.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar18->y + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 474,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&pCVar15->y + 4) = local_cc[1];",
+      "text": "*(int *)((int)&pCVar16->y + 4) = local_cc[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 485,
+      "line": 484,
       "match": "(CVector2d *)((int)",
       "text": "local_2c = (CVector2d *)((int)&local_2c->x + 1);",
       "type": "pointer_cast"

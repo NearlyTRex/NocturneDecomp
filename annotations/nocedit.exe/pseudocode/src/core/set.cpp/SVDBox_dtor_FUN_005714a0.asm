@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SVDBox * __cdecl core_set_cpp_SVDBox_dtor_FUN_005714a0(SVDBox *this_ptr)
+; __cdecl SVDBox * __cdecl core_set_cpp_SVDBox_dtor_FUN_005714a0(SVDBox *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SVDBox *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

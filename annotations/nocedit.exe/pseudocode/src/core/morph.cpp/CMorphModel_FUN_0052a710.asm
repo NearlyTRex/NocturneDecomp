@@ -123,7 +123,7 @@ section .text
     PUSH EAX                            ; 0052a7ff
     PUSH EBX                            ; 0052a800
     CALL core_morph.cpp_CMorphModel_animate_FUN_0052a920 ; 0052a801
-        ;   XREF to: 0052a920 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animate_FUN_0052a920(CMorphModel * this_ptr)
+        ;   XREF to: 0052a920 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animate_FUN_0052a920(CMorphModel * this_ptr, int part_index)
     ADD ESP,0x14                        ; 0052a806
     MOV EDI,dword ptr [ESP + 0x24]      ; 0052a809
         ;   Label: LAB_0052a809

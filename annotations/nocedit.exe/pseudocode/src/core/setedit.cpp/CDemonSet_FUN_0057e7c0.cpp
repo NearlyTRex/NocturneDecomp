@@ -610,7 +610,7 @@ LAB_0057f7c1:
           }
 LAB_0057fa1d:
           local_4c = local_4c + -1;
-          core_setutil_cpp_C3DSCamera_dtor_FUN_00585340(&local_b60);
+          core_setutil_cpp_C3DSCamera_dtor_FUN_00585340(&local_b60,0);
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_58,"..\\core\\setedit.cpp",0xede);
         goto LAB_0057eb3b;

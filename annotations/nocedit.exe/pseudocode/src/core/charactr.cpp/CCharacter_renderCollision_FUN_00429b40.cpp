@@ -86,8 +86,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
   local_cc = 1;
   local_c8 = 2;
   local_c4 = 3;
-  local_20 = this_ptr->field51_0x2c5c;
-  local_40 = this_ptr->field52_0x2d10;
+  local_20 = this_ptr->unk16;
+  local_40 = this_ptr->unk17;
   local_30 = 0x28000;
   do {
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,local_30 / 5)
@@ -121,8 +121,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
     local_20 = local_20 + 3;
     local_30 = local_30 + -0x8000;
   } while (local_20 != local_40);
-  local_24 = this_ptr->field52_0x2d10;
-  local_3c = (CVector3f *)this_ptr->field53_0x2dc4;
+  local_24 = this_ptr->unk17;
+  local_3c = (CVector3f *)&this_ptr->hero_proximity_timer;
   local_28 = 0x28000;
   do {
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,local_28 / 5)
@@ -235,11 +235,11 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
     fVar12 = (float10)local_f0 * (float10)3.1415926535000001 * (float10)0.041666666666666699;
     fVar13 = (float10)fsin(fVar12);
     fVar12 = (float10)fcos(fVar12);
-    local_84.x = (float)((float10)this_ptr->size_scale * (float10)this_ptr->field54_0x2ddc * fVar13)
-    ;
+    local_84.x = (float)((float10)this_ptr->size_scale *
+                        (float10)this_ptr->collision_cylinder_height * fVar13);
     local_84.y = 0.0;
-    local_84.z = (float)(fVar12 * (float10)this_ptr->field54_0x2ddc * (float10)this_ptr->size_scale)
-    ;
+    local_84.z = (float)(fVar12 * (float10)this_ptr->collision_cylinder_height *
+                        (float10)this_ptr->size_scale);
     local_a8.x = (int)ROUND(local_84.x * 256.0f);
     local_a8.y = (int)ROUND(256.0f * 0.0);
     local_a8.z = (int)ROUND(local_84.z * 256.0f);

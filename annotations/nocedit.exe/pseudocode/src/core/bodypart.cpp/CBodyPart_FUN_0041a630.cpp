@@ -10,7 +10,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
 
 {
   UOrientationVector *euler_angles;
-  int iVar1;
+  CVector3i *pCVar1;
   longlong lVar2;
   longlong lVar3;
   longlong lVar4;
@@ -110,28 +110,28 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
   if (0 < iVar8) {
     iVar8 = 0;
     do {
-      iVar1 = this_ptr->unk2;
-      lVar2 = (longlong)iStack_50 * (longlong)*(int *)(iVar1 + iVar8);
-      lVar3 = (longlong)iStack_5c * (longlong)*(int *)(iVar1 + 4 + iVar8);
-      lVar4 = (longlong)iStack_54 * (longlong)*(int *)(iVar1 + 8 + iVar8);
+      pCVar1 = this_ptr->vertices;
+      lVar2 = (longlong)iStack_50 * (longlong)*(int *)((int)&pCVar1->x + iVar8);
+      lVar3 = (longlong)iStack_5c * (longlong)*(int *)((int)&pCVar1->y + iVar8);
+      lVar4 = (longlong)iStack_54 * (longlong)*(int *)((int)&pCVar1->z + iVar8);
       local_64 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                  ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                  ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-      lVar2 = (longlong)local_4c * (longlong)*(int *)(iVar1 + iVar8);
-      lVar3 = (longlong)local_58 * (longlong)*(int *)(iVar1 + 4 + iVar8);
-      lVar4 = (longlong)iStack_44 * (longlong)*(int *)(iVar1 + 8 + iVar8);
+      lVar2 = (longlong)local_4c * (longlong)*(int *)((int)&pCVar1->x + iVar8);
+      lVar3 = (longlong)local_58 * (longlong)*(int *)((int)&pCVar1->y + iVar8);
+      lVar4 = (longlong)iStack_44 * (longlong)*(int *)((int)&pCVar1->z + iVar8);
       iStack_60 = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                   ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                   ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
-      lVar2 = (longlong)iStack_48 * (longlong)*(int *)(iVar1 + iVar8);
-      lVar3 = (longlong)local_3c * (longlong)*(int *)(iVar1 + 4 + iVar8);
-      lVar4 = (longlong)local_38 * (longlong)*(int *)(iVar1 + 8 + iVar8);
-      *(int *)(iVar1 + iVar8) = local_64;
-      *(uint *)(iVar1 + 8 + iVar8) =
+      lVar2 = (longlong)iStack_48 * (longlong)*(int *)((int)&pCVar1->x + iVar8);
+      lVar3 = (longlong)local_3c * (longlong)*(int *)((int)&pCVar1->y + iVar8);
+      lVar4 = (longlong)local_38 * (longlong)*(int *)((int)&pCVar1->z + iVar8);
+      *(int *)((int)&pCVar1->x + iVar8) = local_64;
+      *(uint *)((int)&pCVar1->z + iVar8) =
            ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-      *(int *)(iVar1 + 4 + iVar8) = iStack_60;
+      *(int *)((int)&pCVar1->y + iVar8) = iStack_60;
       iVar10 = iVar10 + 1;
       iVar8 = iVar8 + 0xc;
     } while (iVar10 < this_ptr->vertex_count);
@@ -156,8 +156,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   iVar8 = 0;
-  if (0 < *(int *)(this_ptr->unk5 + 0x5bc)) {
-    pCVar6 = (CVector3f *)(this_ptr->unk5 + 0x5c0);
+  if (0 < this_ptr->fire_count) {
+    pCVar6 = &this_ptr->fires[0].local_position;
     do {
       pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (&CStack_c8,(CVector3f *)(local_a4 + 0x1c),pCVar6);
@@ -173,11 +173,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
       pCVar6[4].x = pCVar7->y;
       pCVar6[4].y = pCVar7->z;
       pCVar6 = (CVector3f *)&pCVar6[0x39].y;
-    } while (iVar8 < *(int *)(this_ptr->unk5 + 0x5bc));
+    } while (iVar8 < this_ptr->fire_count);
   }
   local_40 = 0;
-  if (0 < *(int *)(this_ptr->unk5 + 0xfc)) {
-    pCVar6 = (CVector3f *)(this_ptr->unk5 + 0x100);
+  if (0 < this_ptr->attached_model_count) {
+    pCVar6 = (CVector3f *)this_ptr->attached_models;
     do {
       pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (&CStack_c8,&local_7c,pCVar6);
@@ -200,7 +200,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a630(CBodyPart *this_ptr)
       }
       pCVar6 = (CVector3f *)&pCVar6[0x21].z;
       local_40 = local_40 + 1;
-    } while (local_40 < *(int *)(this_ptr->unk5 + 0xfc));
+    } while (local_40 < this_ptr->attached_model_count);
   }
   return;
 }

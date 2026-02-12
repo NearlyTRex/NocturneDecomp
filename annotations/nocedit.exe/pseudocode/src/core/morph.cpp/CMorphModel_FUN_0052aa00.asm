@@ -7,7 +7,7 @@
 ; CMorphModel *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_morph.cpp_FUN_0052b5c0 at 0052b5e7
+;   core_morph.cpp_CMorph_FUN_0052b5c0 at 0052b5e7
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_animate_FUN_0052a920
@@ -31,7 +31,7 @@ section .text
     PUSH ECX                            ; 0052aa1b
     PUSH EDX                            ; 0052aa1c
     CALL core_morph.cpp_CMorphModel_animate_FUN_0052a920 ; 0052aa1d
-        ;   XREF to: 0052a920 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animate_FUN_0052a920(CMorphModel * this_ptr)
+        ;   XREF to: 0052a920 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animate_FUN_0052a920(CMorphModel * this_ptr, int part_index)
     ADD ESP,0x14                        ; 0052aa22
     POP ESI                             ; 0052aa25
     POP EBX                             ; 0052aa26

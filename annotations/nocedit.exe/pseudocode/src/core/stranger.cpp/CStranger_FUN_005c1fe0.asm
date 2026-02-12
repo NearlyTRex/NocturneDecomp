@@ -28,7 +28,7 @@
 ;   double DOUBLE_00653b14 = 0.261799387791667
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 g_CLadderClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.actor_list_ptr
 ;   undefined4 g_CDemonSetInstance.actor_list_data[0]
@@ -349,10 +349,10 @@ section .text
         ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 005c23bc
     PUSH ESI                            ; 005c23bf
-    MOV EDX,dword ptr [0x0066e8e0]      ; 005c23c0 | g_ConsolePtr | g_CConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 005c23c0 | g_CConsoleInstance | g_CConsolePtr
     PUSH 0x653ad4                       ; 005c23c6 | = "Climbing ladder %s\n"
     FLD float ptr [EAX + 0x4]           ; 005c23cb
-    PUSH EDX                            ; 005c23ce | g_ConsolePtr
+    PUSH EDX                            ; 005c23ce | g_CConsoleInstance
     FSTP float ptr [EDI + 0x1fe60]      ; 005c23cf
     MOV dword ptr [EDI + 0x1fe64],0x3f800000 ; 005c23d5
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005c23df

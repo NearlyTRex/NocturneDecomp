@@ -76,7 +76,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
     case 1:
     case 2:
     case 3:
-      if ((this_ptr->base).base.field3_0x2410 != 0) {
+      if ((this_ptr->base).base.is_on_ground != 0) {
         iVar5 = 0;
         if ((this_ptr->base).action_bindings.walk_key != 0) {
           if ((this_ptr->base).action_bindings.run_key == 0) {
@@ -163,28 +163,28 @@ LAB_0043fad3:
 switchD_0043fe37_caseD_5:
   pCVar3 = (this_ptr->base).base.grabbed_by;
   if (pCVar3 == (CDemonActor *)0x0) {
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_38 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_34 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    local_30 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_38 = (this_ptr->base).base.velocity.x * delta_time;
+    local_34 = (this_ptr->base).base.velocity.y * delta_time;
+    local_30 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar6 = &(this_ptr->base).base.model.accumulated_root_motion;
-    pCVar1 = &(this_ptr->base).base.field6_0x241c;
+    pCVar1 = &(this_ptr->base).base.position_delta;
     local_50 = pCVar6->x + pCVar1->x;
     local_4c = (this_ptr->base).base.model.accumulated_root_motion.y +
-               (this_ptr->base).base.field6_0x241c.y;
+               (this_ptr->base).base.position_delta.y;
     local_74._12_4_ = local_50 + local_38;
     local_48 = (this_ptr->base).base.model.accumulated_root_motion.z +
-               (this_ptr->base).base.field6_0x241c.z;
+               (this_ptr->base).base.position_delta.z;
     local_64 = local_4c + local_34;
     local_60 = local_48 + local_30;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar6->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    fVar10 = (this_ptr->base).base.field6_0x241c.z;
-    (this_ptr->base).base.field6_0x241c.y = fVar10;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    fVar10 = (this_ptr->base).base.position_delta.z;
+    (this_ptr->base).base.position_delta.y = fVar10;
     pCVar1->x = fVar10;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40
               ((CCharacter *)this_ptr,(CVector3f *)(local_74 + 0xc));

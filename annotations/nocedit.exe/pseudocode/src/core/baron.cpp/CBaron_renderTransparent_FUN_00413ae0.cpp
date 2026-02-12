@@ -50,7 +50,7 @@ LAB_00413b43:
   dVar6 = round((double)(fVar3 / (float)pSVar4->frame_count));
   local_1c = (float)(int)ROUND(dVar6);
 LAB_00413b59:
-  if (this_ptr->unk2 != 0) {
+  if (this_ptr->unk13 != 0) {
     engine_3d_c_setRenderAlpha_FUN_00406d80(((int)local_1c * 2) / 3);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&(this_ptr->base).base.base.location.position);

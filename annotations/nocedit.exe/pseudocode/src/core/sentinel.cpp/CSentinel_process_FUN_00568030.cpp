@@ -460,22 +460,22 @@ switchD_00568487_caseD_d:
   }
   iVar3 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar3 != 0) {
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_104 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_100 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    pCVar8 = &(this_ptr->base).base.field6_0x241c;
-    local_fc = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_104 = (this_ptr->base).base.velocity.x * delta_time;
+    local_100 = (this_ptr->base).base.velocity.y * delta_time;
+    pCVar8 = &(this_ptr->base).base.position_delta;
+    local_fc = delta_time * (this_ptr->base).base.velocity.z;
     pCVar1 = &(this_ptr->base).base.model.accumulated_root_motion;
     local_ec = local_104 + pCVar8->x;
-    local_e8 = local_100 + (this_ptr->base).base.field6_0x241c.y;
-    local_e4 = local_fc + (this_ptr->base).base.field6_0x241c.z;
+    local_e8 = local_100 + (this_ptr->base).base.position_delta.y;
+    local_e4 = local_fc + (this_ptr->base).base.position_delta.z;
     local_68.x = local_ec + pCVar1->x;
     local_68.y = local_e8 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_68.z = local_e4 + (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar8->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar8->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;

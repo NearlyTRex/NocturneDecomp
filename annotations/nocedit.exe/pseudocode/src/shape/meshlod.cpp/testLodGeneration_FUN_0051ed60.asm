@@ -59,7 +59,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0051edb7
     PUSH EAX                            ; 0051edbb
     CALL shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950 ; 0051edbc
-        ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr)
+        ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0051edc1
     ADD ESP,0x74                        ; 0051edc4
     RET                                 ; 0051edc7

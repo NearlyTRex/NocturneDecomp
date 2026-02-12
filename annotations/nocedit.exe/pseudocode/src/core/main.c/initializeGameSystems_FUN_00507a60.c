@@ -488,7 +488,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&loading_bitmap,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&loading_bitmap,0,0,0x8000);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&loading_bitmap);
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&loading_bitmap,0);
   core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(g_CSoundPtr);
   iVar9 = 0;
   core_mission_cpp_CDemonMission_reset_FUN_00522c80(g_CDemonMissionPtr);

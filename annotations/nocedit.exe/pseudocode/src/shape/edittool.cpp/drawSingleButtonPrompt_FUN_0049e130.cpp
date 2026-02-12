@@ -70,6 +70,6 @@ shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,char *message
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_108);
+  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_108,0);
   return;
 }

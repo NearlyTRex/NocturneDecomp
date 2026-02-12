@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonCube * __cdecl core_dcube_cpp_CDemonCube_dtor_FUN_00456790(CDemonCube *this_ptr)
+; __cdecl CDemonCube * __cdecl core_dcube_cpp_CDemonCube_dtor_FUN_00456790(CDemonCube *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonCube *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_freeMemory_FUN_004569b0

@@ -1,0 +1,144 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 6,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [
+    {
+      "addr": "00486d50",
+      "from_addr": "00486d5a",
+      "name": "core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ccd40",
+      "from_addr": "004ccd4a",
+      "name": "core_flies.cpp_SFly_dtor_FUN_004ccd40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee390",
+      "from_addr": "004ee39a",
+      "name": "core_gore.cpp_CFootstep_dtor_FUN_004ee390",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00486e30",
+    "address_range": [
+      [
+        "00486e30",
+        "00486e44"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30",
+    "signature": "CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_00486e30(CVector3f *objs,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feee9",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrfini_FUN_005feee9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006598c0",
+      "name": "g_CVectorTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004ccd4a",
+        "call_type": "direct",
+        "caller": "core_flies.cpp_SFly_dtor_FUN_004ccd40",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00486d5a",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ee39a",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CFootstep_dtor_FUN_004ee390",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 27
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "objs",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

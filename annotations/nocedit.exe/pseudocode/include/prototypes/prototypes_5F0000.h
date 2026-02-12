@@ -38,7 +38,7 @@
 void __cdecl core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_005f11a0 (CWerewolf *this_ptr,CDemonActor *target,float speed,float distance);
 void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f11e0(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1230(CWerewolf *this_ptr);
-int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr);
+int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005f1820(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005f1980(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005f1ac0(CWerewolf *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_005f1db0(CWerewolf *this_ptr);
@@ -186,7 +186,7 @@ int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970 (CZombie *this_ptr,C
 int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005fc9e0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_FUN_005fca10(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80 (CZombie *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_zombie_cpp_CZombie_FUN_005fcb70(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_randomize_FUN_005fcb70(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_addFilesToExtract_FUN_005fcc20(CZombie *this_ptr,_FILE *file_handle);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005fcc50(CZombie *this_ptr,uint flags);
 int __cdecl core_zombie_cpp_FUN_005fcd10(void);

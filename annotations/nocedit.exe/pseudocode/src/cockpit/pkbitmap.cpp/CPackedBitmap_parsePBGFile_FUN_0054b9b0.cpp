@@ -74,7 +74,7 @@ cockpit_pkbitmap_cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0
                 cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_0054a820(&local_44);
                 cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(&local_44,file_handle,1)
                 ;
-                cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_0054a890(&local_44);
+                cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_0054a890(&local_44,0);
                 iVar4 = iVar4 + 1;
               } while (iVar4 < param3);
             }

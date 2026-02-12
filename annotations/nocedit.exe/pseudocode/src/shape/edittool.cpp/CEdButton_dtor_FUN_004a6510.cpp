@@ -2,11 +2,11 @@
 // Address: 004a6510
 // Address Range: [[004a6510, 004a6521]]
 // Convention: __cdecl
-// Signature: CEdButton * __cdecl shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(CEdButton *this_ptr)
+// Signature: CEdButton * __cdecl shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(CEdButton *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CEdButton * __cdecl shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(CEdButton *this_ptr)
+CEdButton * __cdecl shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(CEdButton *this_ptr,uint flags)
 
 {
   shape_edittool_cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530(this_ptr);

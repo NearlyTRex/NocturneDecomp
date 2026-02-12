@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 218,
+    "complexity_score": 146,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 43,
-    "suspect_count": 17,
+    "pseudocode_lines": 61,
+    "suspect_count": 8,
     "suspect_types": [
-      "extra_output"
+      "negative_offset"
     ],
-    "total_lines": 101
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -51,7 +51,7 @@
     {
       "addr": "0052b310",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b310"
+      "name": "core_morph.cpp_CMorph_ctor_FUN_0052b310"
     }
   ],
   "globals": [
@@ -158,123 +158,60 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar7[-100].",
+      "text": "*(CDemonActor_vtable **)pCVar7[-100].models[0].textures[0xe].base.texture_name = &g_CMimicVTable;",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EAX",
-      "text": "*(CDemonActor_vtable **)(extraout_EAX + -0x4bcd0) = &g_CMimicVTable;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x49048) = 0x3f000000;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x49044) = 0x3f800000;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_EAX",
-      "text": "*(byte *)(extraout_EAX + -0x3ff68) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EAX",
-      "text": "*(byte *)(extraout_EAX + -0x3ff04) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EAX",
-      "text": "*(float *)(extraout_EAX + -0x49040) = fVar2;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EAX",
-      "text": "*(float *)(extraout_EAX + -0x4903c) = fVar3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x30) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_EAX",
-      "text": "pcVar7 = (char *)(extraout_EAX + -0x28);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Negative struct offset (wrong base type)",
       "line": 30,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x2c) = 0;",
-      "type": "extra_output"
+      "match": "pCVar7[-1].",
+      "text": "pSVar2 = pCVar7[-1].models[1].textures;",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 40,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc30) = 0;",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 35,
+      "match": "pCVar7[-1].",
+      "text": "pcVar9 = pCVar7[-1].models[1].textures[0x13].unknown + 0x24;",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 41,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc2c) = 0xbf800000;",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 36,
+      "match": "pCVar7[-1].",
+      "text": "pSVar2 = pCVar7[-1].models[1].textures;",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 42,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x4bd1c) = 0x10000;",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 52,
+      "match": "pCVar7[-100].",
+      "text": "pCVar7[-100].models[0].textures[0xd].base.base.count = 0x10000;",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x4bd18) = 0x10000;",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 53,
+      "match": "pCVar7[-100].",
+      "text": "pSVar2 = pCVar7[-100].models[0].textures;",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 44,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x4bd14) = 0x10000;",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 58,
+      "match": "pCVar7[-100].",
+      "text": "pSVar2 = pCVar7[-100].models[0].textures + 0xd;",
+      "type": "negative_offset"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
-      "match": "extraout_EAX",
-      "text": "return (CMimic *)(extraout_EAX + -0x4be24);",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 63,
+      "match": "pCVar7[-100].",
+      "text": "return (CMimic *)(pCVar7[-100].models[0].textures[9].unknown + 4);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

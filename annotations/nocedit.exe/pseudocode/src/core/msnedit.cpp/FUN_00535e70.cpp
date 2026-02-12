@@ -219,6 +219,6 @@ void __cdecl core_msnedit_cpp_FUN_00535e70(void)
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&local_48.thumb_end);
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20((CEdScrollBar *)&local_48.max_value);
+  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20((CEdScrollBar *)&local_48.max_value,0);
   return;
 }

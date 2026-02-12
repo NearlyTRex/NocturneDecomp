@@ -1,0 +1,34 @@
+// Name: core_morph.cpp_CMorph_FUN_0052ca90
+// Address: 0052ca90
+// Address Range: [[0052ca90, 0052cc08]]
+// Convention: __cdecl
+// Signature: void __cdecl core_morph_cpp_CMorph_FUN_0052ca90(CMorph *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_morph_cpp_CMorph_FUN_0052ca90(CMorph *this_ptr)
+
+{
+  int iVar1;
+  
+  shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
+  while( true ) {
+    engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,4);
+    wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+    shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
+    engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+              (g_CDemonRendererPtr2,&g_ZeroVector);
+    core_morph_cpp_CMorph_FUN_0052bae0(this_ptr);
+    wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    if (iVar1 != 0) break;
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x33);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x34);
+  }
+  engine_2d_c_clearInputAndWait_FUN_00403260();
+  return;
+}

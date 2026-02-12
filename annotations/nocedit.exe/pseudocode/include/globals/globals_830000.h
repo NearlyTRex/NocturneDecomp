@@ -12,7 +12,7 @@
 // =============================================================================
 
 // CConsole
-extern CConsole g_ConsolePtr;
+extern CConsole g_CConsoleInstance;
 
 // CCramTex[1]
 extern CCramTex g_CramSortedTextureEntries[1];

@@ -85,9 +85,9 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
      (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
       ((this_ptr->base).location.position.y == this_ptr->closest_distance_threshold)))) {
     core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
-    (this_ptr->field7_0x2428).z = 0.0;
-    (this_ptr->field7_0x2428).y = (this_ptr->field7_0x2428).z;
-    (this_ptr->field7_0x2428).x = (this_ptr->field7_0x2428).y;
+    (this_ptr->velocity).z = 0.0;
+    (this_ptr->velocity).y = (this_ptr->velocity).z;
+    (this_ptr->velocity).x = (this_ptr->velocity).y;
     return;
   }
   if ((this_ptr->model).model_name[0] != '\0') {
@@ -115,9 +115,9 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
       do {
         iVar8 = strnicmp(str1->motion_name,local_84,0xb);
         if (iVar8 == 0) {
-          (this_ptr->field7_0x2428).z = 0.0;
-          (this_ptr->field7_0x2428).y = (this_ptr->field7_0x2428).z;
-          (this_ptr->field7_0x2428).x = (this_ptr->field7_0x2428).y;
+          (this_ptr->velocity).z = 0.0;
+          (this_ptr->velocity).y = (this_ptr->velocity).z;
+          (this_ptr->velocity).x = (this_ptr->velocity).y;
           return;
         }
         iVar13 = iVar13 + 1;
@@ -125,10 +125,10 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
       } while (iVar13 <= (int)local_20);
     }
   }
-  local_50 = this_ptr->field51_0x2c5c;
+  local_50 = this_ptr->unk16;
   iVar13 = 0;
-  local_44 = this_ptr->field52_0x2d10;
-  local_48 = this_ptr->field51_0x2c5c + 3;
+  local_44 = this_ptr->unk17;
+  local_48 = this_ptr->unk16 + 3;
   do {
     pCVar6 = local_50 + iVar13 * 3;
     pCVar12 = local_44;
@@ -151,12 +151,12 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->base);
   local_38 = 0;
   local_54 = velocity->y;
-  local_4c = this_ptr->field52_0x2d10;
-  local_1c = this_ptr->field51_0x2c5c;
-  local_24 = this_ptr->field51_0x2c5c + 1;
-  pCVar12 = this_ptr->field52_0x2d10 + 2;
-  local_2c = this_ptr->field52_0x2d10 + 1;
-  pCVar6 = this_ptr->field51_0x2c5c + 2;
+  local_4c = this_ptr->unk17;
+  local_1c = this_ptr->unk16;
+  local_24 = this_ptr->unk16 + 1;
+  pCVar12 = this_ptr->unk17 + 2;
+  local_2c = this_ptr->unk17 + 1;
+  pCVar6 = this_ptr->unk16 + 2;
   local_30 = pCVar1;
   local_28 = pCVar1;
   do {
@@ -211,7 +211,7 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
       afStack_80[3] = (pCVar5->collision_normal).y;
       local_70 = (pCVar5->collision_normal).z;
       fVar9 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                        (&this_ptr->base,this_ptr->field54_0x2ddc,&local_9c);
+                        (&this_ptr->base,this_ptr->collision_cylinder_height,&local_9c);
       bVar3 = false;
       pCVar10 = (CVector3f *)((int)local_2c * 0x24 + (int)local_40);
       this_ptr->closest_distance_threshold = fVar9;
@@ -275,13 +275,13 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
   } while (local_38 < 3);
   if (bVar3) {
     fVar7 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                      (&this_ptr->base,this_ptr->field54_0x2ddc,(CVector3f *)0x0);
+                      (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
     this_ptr->closest_distance_threshold = fVar7;
   }
   fVar7 = (this_ptr->base).location.position.y + (float)local_48;
   (this_ptr->base).location.position.y = fVar7;
   if (this_ptr->closest_distance_threshold <= fVar7) {
-    if ((this_ptr->field3_0x2410 != 0) &&
+    if ((this_ptr->is_on_ground != 0) &&
        ((this_ptr->base).location.position.y <
         this_ptr->closest_distance_threshold + (float)0.5)) {
       (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
@@ -291,11 +291,11 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
   else {
     (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
   }
-  (this_ptr->field7_0x2428).z = 0.0;
-  (this_ptr->field7_0x2428).y = (this_ptr->field7_0x2428).z;
-  (this_ptr->field7_0x2428).x = (this_ptr->field7_0x2428).y;
+  (this_ptr->velocity).z = 0.0;
+  (this_ptr->velocity).y = (this_ptr->velocity).z;
+  (this_ptr->velocity).x = (this_ptr->velocity).y;
   pCVar5 = g_CDemonSetPtr;
-  (this_ptr->field7_0x2428).y =
+  (this_ptr->velocity).y =
        ((this_ptr->base).location.position.y - local_a8.y) / g_CGamePtr->delta_time_float;
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(pCVar5);
   return;

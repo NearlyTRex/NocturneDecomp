@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_005746a0(SRaytraceState *this_ptr)
+; __cdecl SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_005746a0(SRaytraceState *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SRaytraceState * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

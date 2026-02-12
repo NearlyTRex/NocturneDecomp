@@ -21,7 +21,7 @@
 ;   float FLOAT_00664b70 = 1.221730
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_list_ptr
 ;   undefined4 g_CDemonSetInstance.actor_list_data[0]
@@ -162,8 +162,8 @@ section .text
     PUSH ESI                            ; 005e2edc
         ;   Label: LAB_005e2edc
     PUSH 0x65675b                       ; 005e2edd | = "%s has no guard trigger!\n"
-    MOV ECX,dword ptr [0x0066e8e0]      ; 005e2ee2 | g_ConsolePtr | g_CConsolePtr
-    PUSH ECX                            ; 005e2ee8 | g_ConsolePtr
+    MOV ECX,dword ptr [0x0066e8e0]      ; 005e2ee2 | g_CConsoleInstance | g_CConsolePtr
+    PUSH ECX                            ; 005e2ee8 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005e2ee9
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005e2eee

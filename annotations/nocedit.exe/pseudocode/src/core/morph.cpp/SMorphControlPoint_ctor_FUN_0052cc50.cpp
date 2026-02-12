@@ -12,6 +12,6 @@ core_morph_cpp_SMorphControlPoint_ctor_FUN_0052cc50(SMorphControlPoint *this_ptr
 {
   void *pvVar1;
   
-  pvVar1 = __arrinit(this_ptr->unk + 8,2,&g_CVectorTypeInfo);
+  pvVar1 = __arrinit(this_ptr->unk2,2,&g_CVectorTypeInfo);
   return (SMorphControlPoint *)((int)pvVar1 + -8);
 }

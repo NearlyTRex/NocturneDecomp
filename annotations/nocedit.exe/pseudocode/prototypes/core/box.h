@@ -9,7 +9,7 @@ CBox * __cdecl CBox::ctor(CBox *this_ptr);
 
 // Original: core_box.cpp_CBox_dtor_FUN_0041dd00
 // Address: 0041dd00
-CBox * __cdecl CBox::dtor(CBox *this_ptr);
+CBox * __cdecl CBox::dtor(CBox *this_ptr,uint flags);
 
 // Original: core_box.cpp_CBox_setupCorners_FUN_0041dd20
 // Address: 0041dd20
@@ -49,11 +49,11 @@ SScrape * __cdecl SScrape::ctor(SScrape *this_ptr);
 
 // Original: core_box.cpp_SScrape_dtor_FUN_00420210
 // Address: 00420210
-SScrape * __cdecl SScrape::dtor(SScrape *this_ptr);
+SScrape * __cdecl SScrape::dtor(SScrape *this_ptr,uint flags);
 
-// Original: core_box.cpp_freeScrapes_FUN_00420220
+// Original: core_box.cpp_SScrape_arrdtor_FUN_00420220
 // Address: 00420220
-SScrape * __cdecl freeScrapes(SScrape *array);
+SScrape * __cdecl SScrape::arrdtor(SScrape *objs,uint flags);
 
 // Original: core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 // Address: 00420240

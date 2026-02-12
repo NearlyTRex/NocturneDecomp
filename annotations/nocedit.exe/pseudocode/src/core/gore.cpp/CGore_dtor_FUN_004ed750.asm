@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGore * __cdecl core_gore_cpp_CGore_dtor_FUN_004ed750(CGore *this_ptr)
+; __cdecl CGore * __cdecl core_gore_cpp_CGore_dtor_FUN_004ed750(CGore *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

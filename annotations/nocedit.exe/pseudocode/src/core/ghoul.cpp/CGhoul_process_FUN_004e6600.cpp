@@ -965,22 +965,22 @@ LAB_004e6754:
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,(CDemonActor *)in_stack_fffffc88);
     }
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_cc = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_c8 = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    pCVar21 = &(this_ptr->base).base.field6_0x241c;
-    local_c4 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_cc = (this_ptr->base).base.velocity.x * delta_time;
+    local_c8 = (this_ptr->base).base.velocity.y * delta_time;
+    pCVar21 = &(this_ptr->base).base.position_delta;
+    local_c4 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar24 = &(this_ptr->base).base.model.accumulated_root_motion;
     local_d8 = local_cc + pCVar21->x;
-    local_d4 = local_c8 + (this_ptr->base).base.field6_0x241c.y;
-    local_d0 = local_c4 + (this_ptr->base).base.field6_0x241c.z;
+    local_d4 = local_c8 + (this_ptr->base).base.position_delta.y;
+    local_d0 = local_c4 + (this_ptr->base).base.position_delta.z;
     local_18c.x = local_d8 + pCVar24->x;
     local_18c.y = local_d4 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_18c.z = local_d0 + (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar21->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar21->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -1012,9 +1012,9 @@ LAB_004e6754:
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
             ((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffc88);
   if (((float)0.01 < ABS((this_ptr->base).base.turn_angle_accumulator)) ||
-     (fVar25 = (this_ptr->base).base.field6_0x241c.y, fVar22 = (this_ptr->base).base.field6_0x241c.x
-     , fVar1 = (this_ptr->base).base.field6_0x241c.z,
-     (float)0.01 < SQRT(fVar1 * fVar1 + fVar22 * fVar22 + fVar25 * fVar25))) {
+     (fVar25 = (this_ptr->base).base.position_delta.y,
+     fVar22 = (this_ptr->base).base.position_delta.x, fVar1 = (this_ptr->base).base.position_delta.z
+     , (float)0.01 < SQRT(fVar1 * fVar1 + fVar22 * fVar22 + fVar25 * fVar25))) {
     core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)this_ptr->unk1);
     if (extraout_EAX == 0) {
       _sprintf

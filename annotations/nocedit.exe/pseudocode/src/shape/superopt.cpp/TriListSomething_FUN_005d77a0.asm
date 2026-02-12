@@ -415,7 +415,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005d7bc0
     PUSH EAX                            ; 005d7bc4
     CALL shape_superopt.cpp_CPoly_dtor_FUN_005cc660 ; 005d7bc5
-        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
+        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005d7bca
     MOV ESI,dword ptr [0x016e990c]      ; 005d7bcd | g_PolygonCount
     MOV EDX,dword ptr [ESP + 0x13c]     ; 005d7bd3
@@ -523,13 +523,13 @@ section .text
     LEA EAX,[ESP + 0xd0]                ; 005d7d2e
     PUSH EAX                            ; 005d7d35
     CALL shape_superopt.cpp_COptimize_dtor_FUN_005d6fd0 ; 005d7d36
-        ;   XREF to: 005d6fd0 (UNCONDITIONAL_CALL)  ; COptimize * shape_superopt.cpp_COptimize_dtor_FUN_005d6fd0(COptimize * this_ptr)
+        ;   XREF to: 005d6fd0 (UNCONDITIONAL_CALL)  ; COptimize * shape_superopt.cpp_COptimize_dtor_FUN_005d6fd0(COptimize * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005d7d3b
     PUSH 0x0                            ; 005d7d3e
     LEA EAX,[ESP + 0x114]               ; 005d7d40
     PUSH EAX                            ; 005d7d47
     CALL shape_superopt.cpp_CObj_dtor_FUN_005d2260 ; 005d7d48
-        ;   XREF to: 005d2260 (UNCONDITIONAL_CALL)  ; CObj * shape_superopt.cpp_CObj_dtor_FUN_005d2260(CObj * this_ptr)
+        ;   XREF to: 005d2260 (UNCONDITIONAL_CALL)  ; CObj * shape_superopt.cpp_CObj_dtor_FUN_005d2260(CObj * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005d7d4d
     MOV ESP,EBP                         ; 005d7d50
     POP EBP                             ; 005d7d52

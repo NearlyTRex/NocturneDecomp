@@ -300,7 +300,7 @@ section .text
     LEA EAX,[ESP + 0x1104]              ; 004e42e2
     PUSH EAX                            ; 004e42e9
     CALL engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540 ; 004e42ea
-        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e42ef
     ADD ESP,0x112c                      ; 004e42f2
     POP EBP                             ; 004e42f8
@@ -418,7 +418,7 @@ section .text
     LEA EAX,[ESP + 0x110c]              ; 004e4422
     PUSH EAX                            ; 004e4429
     CALL engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540 ; 004e442a
-        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr)
+        ;   XREF to: 00410540 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e442f
     POP ESI                             ; 004e4432
     POP EDI                             ; 004e4433

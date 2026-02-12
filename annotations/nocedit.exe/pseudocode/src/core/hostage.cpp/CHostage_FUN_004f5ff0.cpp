@@ -23,8 +23,7 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f5ff0(CHostage *this_ptr,float delt
   }
   fVar1 = this_ptr->unk6 - delta_time;
   this_ptr->unk6 = fVar1;
-  if ((0.0 < fVar1) &&
-     (*(float *)((this_ptr->base).base.field53_0x2dc4 + 0x10) <= (float)1.5)) {
+  if ((0.0 < fVar1) && ((this_ptr->base).base.walk_stuck_timer <= (float)1.5)) {
     pCVar2 = this_ptr->grabber;
     local_20.x = (this_ptr->base).base.base.location.position.x - (pCVar2->location).position.x;
     local_20.y = (this_ptr->base).base.base.location.position.y - (pCVar2->location).position.y;

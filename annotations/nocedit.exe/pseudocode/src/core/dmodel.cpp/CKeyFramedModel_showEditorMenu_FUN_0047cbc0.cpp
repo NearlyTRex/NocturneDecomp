@@ -770,7 +770,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 *(CKeyFramedModelInstance **)(iVar8 + 8 + (int)ppCVar3) = local_1c;
                 iVar8 = iVar8 + 0xc;
               }
-              core_course_cpp_CCourse_dtor_FUN_004424e0(&local_f0);
+              core_course_cpp_CCourse_dtor_FUN_004424e0(&local_f0,0);
             }
           }
           else if (local_84 < 0x45) {

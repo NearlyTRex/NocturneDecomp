@@ -77,13 +77,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_box.cpp_CBox_dtor_FUN_0041dd00",
-    "signature": "CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041dd00(CBox *this_ptr)"
+    "signature": "CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041dd00(CBox *this_ptr,uint flags)"
   },
   "function_calls": [
     {
       "addr": "00420220",
       "is_variadic": false,
-      "name": "core_box.cpp_freeScrapes_FUN_00420220"
+      "name": "core_box.cpp_SScrape_arrdtor_FUN_00420220"
     }
   ],
   "globals": [],
@@ -110,10 +110,10 @@
     "pcode_op_count": 42
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -122,6 +122,13 @@
         "offset": 4,
         "size": 4,
         "type": "CBox *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

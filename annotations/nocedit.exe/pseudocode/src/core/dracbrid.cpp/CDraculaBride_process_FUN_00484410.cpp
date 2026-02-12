@@ -157,7 +157,7 @@ core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride *this_ptr,flo
   while (0.0 < local_38) {
     uVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar3->motion_controller);
     if (uVar7 == 0x29a) {
-      (this_ptr->base).base.field60_0x2df4 = 0;
+      (this_ptr->base).base.damage_decal_count = 0;
       local_178.x = 0.0;
       local_178.y = 20.0;
       local_178.z = 20.0;
@@ -768,22 +768,22 @@ switchD_004858cd_caseD_1:
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,(CDemonActor *)in_stack_fffffb6c);
     }
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    local_160 = (this_ptr->base).base.field7_0x2428.x * delta_time;
-    local_15c = (this_ptr->base).base.field7_0x2428.y * delta_time;
-    pCVar12 = &(this_ptr->base).base.field6_0x241c;
-    local_158 = delta_time * (this_ptr->base).base.field7_0x2428.z;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_160 = (this_ptr->base).base.velocity.x * delta_time;
+    local_15c = (this_ptr->base).base.velocity.y * delta_time;
+    pCVar12 = &(this_ptr->base).base.position_delta;
+    local_158 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar4 = &(this_ptr->base).base.model.accumulated_root_motion;
     local_1d8 = local_160 + pCVar12->x;
-    local_1d4 = local_15c + (this_ptr->base).base.field6_0x241c.y;
-    local_1d0 = local_158 + (this_ptr->base).base.field6_0x241c.z;
+    local_1d4 = local_15c + (this_ptr->base).base.position_delta.y;
+    local_1d0 = local_158 + (this_ptr->base).base.position_delta.z;
     local_e8.x = local_1d8 + pCVar4->x;
     local_e8.y = local_1d4 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_e8.z = local_1d0 + (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar12->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar12->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     fVar19 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar19;

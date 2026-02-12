@@ -13,7 +13,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d1b0(CBoneGuy *t
   CBoundingBox3D *this_ptr_00;
   int iVar2;
   
-  if ((this_ptr->base).base.field2_0x240c != 0) {
+  if ((this_ptr->base).base.render_active != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);

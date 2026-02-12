@@ -13,7 +13,7 @@ CTextureList * __cdecl CTextureList::ctor(CTextureList *this_ptr);
 
 // Original: core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0
 // Address: 005dbdf0
-CTextureList * __cdecl CTextureList::dtor(CTextureList *this_ptr);
+CTextureList * __cdecl CTextureList::dtor(CTextureList *this_ptr,uint flags);
 
 // Original: core_texlist.cpp_CTextureList_load_FUN_005dbe00
 // Address: 005dbe00

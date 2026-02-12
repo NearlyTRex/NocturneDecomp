@@ -673,7 +673,7 @@ CVector3f * __cdecl CVector::ctor(CVector3f *this_ptr);
 
 // Original: core_actor.cpp_CVector_dtor_FUN_00410350
 // Address: 00410350
-CVector3f * __cdecl CVector::dtor(CVector3f *this_ptr);
+CVector3f * __cdecl CVector::dtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_actor.cpp_copyVector_FUN_00410360
 // Address: 00410360
@@ -697,11 +697,11 @@ CSlew * __cdecl CSlew::ctor(CSlew *this_ptr);
 
 // Original: core_actor.cpp_CSlew_dtor_FUN_00410410
 // Address: 00410410
-CSlew * __cdecl CSlew::dtor(CSlew *this_ptr);
+CSlew * __cdecl CSlew::dtor(CSlew *this_ptr,uint flags);
 
 // Original: core_actor.cpp_SDamageInfo_dtor_FUN_00410420
 // Address: 00410420
-SDamageInfo * __cdecl SDamageInfo::dtor(SDamageInfo *this_ptr);
+SDamageInfo * __cdecl SDamageInfo::dtor(SDamageInfo *this_ptr,uint flags);
 
 // Original: core_actor.cpp_CBoundingBox3D_ctor_FUN_00410430
 // Address: 00410430
@@ -713,7 +713,7 @@ CBoundingBox3D * __cdecl CBoundingBox3D::copy(CBoundingBox3D *this_ptr,CBounding
 
 // Original: core_actor.cpp_CBoundingBox3D_dtor_FUN_00410490
 // Address: 00410490
-CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr);
+CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);
 
 // Original: core_actor.cpp_CVector_copy_FUN_004104a0
 // Address: 004104a0
@@ -731,6 +731,6 @@ float * __cdecl copyFloat(float *dst,float *src);
 // Address: 004104f0
 float * __cdecl copyFloat(float *dst,float *src);
 
-// Original: core_actor.cpp_freeVectors_FUN_00410500
+// Original: core_actor.cpp_CVector3f_arrdtor_FUN_00410500
 // Address: 00410500
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);

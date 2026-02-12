@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_dtor_FUN_004a6a40(CEdCheck *this_ptr)
+; __cdecl CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_dtor_FUN_004a6a40(CEdCheck *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CEdCheck *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004a6b50

@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_ground.cpp_CGround_dtor_FUN_004eeee0 at 004eeee6
 ;   core_ground.cpp_CGround_init_FUN_004eef00 at 004eef06
-;   core_terrain.cpp_CTerrain_dtor_FUN_005e1f30 at 005e1f37
+;   core_terrain.cpp_CTerrain_free_FUN_005e1f30 at 005e1f37
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ground_cpp_0062e71f
@@ -63,7 +63,7 @@ section .text
         ;   Label: LAB_004ef002
     PUSH EAX                            ; 004ef004
     CALL core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0 ; 004ef005
-        ;   XREF to: 005dbdf0 (UNCONDITIONAL_CALL)  ; CTextureList * core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0(CTextureList * this_ptr)
+        ;   XREF to: 005dbdf0 (UNCONDITIONAL_CALL)  ; CTextureList * core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0(CTextureList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ef00a
     PUSH EAX                            ; 004ef00d
     CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004ef00e

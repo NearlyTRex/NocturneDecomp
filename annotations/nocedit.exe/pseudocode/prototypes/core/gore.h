@@ -93,7 +93,7 @@ CGore * __cdecl CGore::ctor(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_dtor_FUN_004ed750
 // Address: 004ed750
-CGore * __cdecl CGore::dtor(CGore *this_ptr);
+CGore * __cdecl CGore::dtor(CGore *this_ptr,uint flags);
 
 // Original: core_gore.cpp_CGore_FUN_004ed760
 // Address: 004ed760
@@ -177,7 +177,7 @@ CFootstep * __cdecl CFootstep::ctor(CFootstep *this_ptr);
 
 // Original: core_gore.cpp_CFootstep_dtor_FUN_004ee390
 // Address: 004ee390
-CFootstep * __cdecl CFootstep::dtor(CFootstep *this_ptr);
+CFootstep * __cdecl CFootstep::dtor(CFootstep *this_ptr,uint flags);
 
 // Original: core_gore.cpp_CBloodPool_ctor_FUN_004ee3b0
 // Address: 004ee3b0
@@ -185,7 +185,7 @@ CBloodPool * __cdecl CBloodPool::ctor(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_CBloodPool_dtor_FUN_004ee3c0
 // Address: 004ee3c0
-CBloodPool * __cdecl CBloodPool::dtor(CBloodPool *this_ptr);
+CBloodPool * __cdecl CBloodPool::dtor(CBloodPool *this_ptr,uint flags);
 
 // Original: core_gore.cpp_CBloodSplat_ctor_FUN_004ee3d0
 // Address: 004ee3d0
@@ -193,7 +193,7 @@ CBloodSplat * __cdecl CBloodSplat::ctor(CBloodSplat *this_ptr);
 
 // Original: core_gore.cpp_CBloodSplat_dtor_FUN_004ee3e0
 // Address: 004ee3e0
-CBloodSplat * __cdecl CBloodSplat::dtor(CBloodSplat *this_ptr);
+CBloodSplat * __cdecl CBloodSplat::dtor(CBloodSplat *this_ptr,uint flags);
 
 // Original: core_gore.cpp_CBloodParticle_ctor_FUN_004ee3f0
 // Address: 004ee3f0
@@ -201,20 +201,20 @@ CBloodParticle * __cdecl CBloodParticle::ctor(CBloodParticle *this_ptr);
 
 // Original: core_gore.cpp_CBloodParticle_dtor_FUN_004ee410
 // Address: 004ee410
-CBloodParticle * __cdecl CBloodParticle::dtor(CBloodParticle *this_ptr);
+CBloodParticle * __cdecl CBloodParticle::dtor(CBloodParticle *this_ptr,uint flags);
 
-// Original: core_gore.cpp_freeFootsteps_FUN_004ee420
+// Original: core_gore.cpp_CFootstep_arrdtor_FUN_004ee420
 // Address: 004ee420
-CFootstep * __cdecl freeFootsteps(CFootstep *objs);
+CFootstep * __cdecl CFootstep::arrdtor(CFootstep *objs,uint flags);
 
-// Original: core_gore.cpp_freeBloodPools_FUN_004ee440
+// Original: core_gore.cpp_CBloodPool_arrdtor_FUN_004ee440
 // Address: 004ee440
-CBloodPool * __cdecl freeBloodPools(CBloodPool *objs);
+CBloodPool * __cdecl CBloodPool::arrdtor(CBloodPool *objs,uint flags);
 
-// Original: core_gore.cpp_freeBloodSplats_FUN_004ee460
+// Original: core_gore.cpp_CBloodSplat_arrdtor_FUN_004ee460
 // Address: 004ee460
-CBloodSplat * __cdecl freeBloodSplats(CBloodSplat *objs);
+CBloodSplat * __cdecl CBloodSplat::arrdtor(CBloodSplat *objs,uint flags);
 
-// Original: core_gore.cpp_freeBloodParticles_FUN_004ee480
+// Original: core_gore.cpp_CBloodParticle_arrdtor_FUN_004ee480
 // Address: 004ee480
-CBloodParticle * __cdecl freeBloodParticles(CBloodParticle *objs);
+CBloodParticle * __cdecl CBloodParticle::arrdtor(CBloodParticle *objs,uint flags);

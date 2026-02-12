@@ -36,23 +36,23 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041b070(CBodyPart *this_ptr)
     ;
     fStack_8 = fStack_38 - fStack_44;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
-              ((CBox *)&this_ptr->sim_box,&CStack_14,&(this_ptr->base).orient.vec,
-               (CVector3f *)&fStack_8,5.0);
+              (&this_ptr->sim_box,&CStack_14,&(this_ptr->base).orient.vec,(CVector3f *)&fStack_8,5.0
+              );
     return;
   }
   (this_ptr->base).was_created = 2;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(this_ptr);
-  pCVar1 = (CVector3f *)(this_ptr->unk1 + 0xc);
+  pCVar1 = &(this_ptr->bounding_box).max;
   if (pCVar1 != &g_ZeroVector) {
     pCVar1->x = g_ZeroVector.x;
-    *(float *)(this_ptr->unk1 + 0x10) = g_ZeroVector.y;
-    *(float *)(this_ptr->unk1 + 0x14) = g_ZeroVector.z;
+    (this_ptr->bounding_box).max.y = g_ZeroVector.y;
+    (this_ptr->bounding_box).max.z = g_ZeroVector.z;
   }
-  if ((CVector3f *)this_ptr->unk1 == pCVar1) {
+  if (&this_ptr->bounding_box == (CBoundingBox3D *)pCVar1) {
     return;
   }
-  *(float *)this_ptr->unk1 = pCVar1->x;
-  *(uint *)(this_ptr->unk1 + 4) = *(uint *)(this_ptr->unk1 + 0x10);
-  *(uint *)(this_ptr->unk1 + 8) = *(uint *)(this_ptr->unk1 + 0x14);
+  (this_ptr->bounding_box).min.x = pCVar1->x;
+  (this_ptr->bounding_box).min.y = (this_ptr->bounding_box).max.y;
+  (this_ptr->bounding_box).min.z = (this_ptr->bounding_box).max.z;
   return;
 }

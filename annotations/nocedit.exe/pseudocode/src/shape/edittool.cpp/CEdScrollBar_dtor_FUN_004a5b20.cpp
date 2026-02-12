@@ -2,11 +2,12 @@
 // Address: 004a5b20
 // Address Range: [[004a5b20, 004a5b31]]
 // Convention: __cdecl
-// Signature: CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar *this_ptr)
+// Signature: CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar *this_ptr)
+CEdScrollBar * __cdecl
+shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar *this_ptr,uint flags)
 
 {
   shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(this_ptr);

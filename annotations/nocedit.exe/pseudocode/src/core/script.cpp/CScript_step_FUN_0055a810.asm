@@ -5798,7 +5798,7 @@ section .text
     PUSH EAX                            ; 0055e915
     PUSH 0x642b5b                       ; 0055e916 | = "%s can't selectWeapon(%s)\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 0055e91b | g_CConsolePtr
-    PUSH EDI                            ; 0055e921 | g_ConsolePtr
+    PUSH EDI                            ; 0055e921 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 0055e922
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0055e927

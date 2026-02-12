@@ -2,11 +2,11 @@
 // Address: 005a6150
 // Address Range: [[005a6150, 005a6161]]
 // Convention: __cdecl
-// Signature: CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_005a6150(CSfxSample *this_ptr)
+// Signature: CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_005a6150(CSfxSample *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_005a6150(CSfxSample *this_ptr)
+CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_005a6150(CSfxSample *this_ptr,uint flags)
 
 {
   sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);

@@ -109,7 +109,7 @@ int __cdecl shape_superopt_cpp_FUN_005cbf10(void);
 int __cdecl shape_superopt_cpp_FUN_005cbf20(void);
 int __cdecl shape_superopt_cpp_FUN_005cbf90(void);
 CPoly * __cdecl shape_superopt_cpp_CPoly_ctor_FUN_005cc620(CPoly *this_ptr);
-CPoly * __cdecl shape_superopt_cpp_CPoly_dtor_FUN_005cc660(CPoly *this_ptr);
+CPoly * __cdecl shape_superopt_cpp_CPoly_dtor_FUN_005cc660(CPoly *this_ptr,uint flags);
 void __cdecl shape_superopt_cpp_CPoly_init_FUN_005cc670(CPoly *this_ptr,CObj *parent_obj);
 void __cdecl shape_superopt_cpp_CPoly_copyFrom_FUN_005cc6a0(CPoly *this_ptr,CPoly *source,CObj *parent_obj);
 void __cdecl shape_superopt_cpp_CPoly_translate_FUN_005cc720(CPoly *this_ptr,CVector3d *offset);

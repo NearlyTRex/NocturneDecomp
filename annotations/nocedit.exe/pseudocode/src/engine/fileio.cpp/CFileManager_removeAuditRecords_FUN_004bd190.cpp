@@ -64,7 +64,7 @@ engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190
   if (iVar2 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s!",local_204);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
     return;
   }
   if (local_9d8.pod_format_version != 200) {
@@ -166,7 +166,7 @@ LAB_004bd3c3:
         if ((file->_flag & 0x20) == 0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x118b);
           engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000((CPod *)g_CDemonPodPtr,local_204);
-          engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8);
+          engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
           return;
         }
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -182,7 +182,7 @@ LAB_004bd3c3:
                 (g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
       g_AuditRecordsArray = (CPodAuditRecord *)0x0;
     }
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
     return;
   }
   pcVar9 = g_DefaultAuditRecordPath;
@@ -196,7 +196,7 @@ LAB_004bd3c3:
     iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                       (g_CEditorToolsPtr,"Remove audit records earlier than this date (MM/DD/YYYY)",local_104,100,1);
     if (iVar2 == 0) {
-      engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8);
+      engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
       return;
     }
     iVar2 = sscanf

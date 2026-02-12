@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 73,
-        "line": 23,
+        "line": 24,
         "message": "use of undeclared identifier 'stack0xffffffe4'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 69,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 41,
     "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 154
+    "total_lines": 156
   },
   "cross_references": [],
   "function": {
@@ -60,14 +60,14 @@
       "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0"
     },
     {
-      "addr": "0052bae0",
-      "is_variadic": false,
-      "name": "core_morph.cpp_CMorphModel_FUN_0052bae0"
-    },
-    {
       "addr": "0052b600",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b600"
+      "name": "core_morph.cpp_CMorph_FUN_0052b600"
+    },
+    {
+      "addr": "0052bae0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_FUN_0052bae0"
     },
     {
       "addr": "0052e700",
@@ -173,14 +173,14 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 16,
+      "line": 17,
       "match": "&stack0xffffffe4",
       "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 31,
       "match": "DAT_02f43978",
       "text": "if (DAT_02f43978 != 0) {",
       "type": "undefined_data"

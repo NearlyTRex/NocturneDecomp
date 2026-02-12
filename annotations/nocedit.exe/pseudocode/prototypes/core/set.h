@@ -13,7 +13,7 @@ CDemonSet * __cdecl CDemonSet::ctor(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_dtor_FUN_00569350
 // Address: 00569350
-CDemonSet * __cdecl CDemonSet::dtor(CDemonSet *this_ptr);
+CDemonSet * __cdecl CDemonSet::dtor(CDemonSet *this_ptr,uint flags);
 
 // Original: core_set.cpp_CDemonSet_clear_FUN_005693c0
 // Address: 005693c0
@@ -313,7 +313,7 @@ SRoom * __cdecl SRoom::ctor(SRoom *this_ptr);
 
 // Original: core_set.cpp_SRoom_dtor_FUN_00571480
 // Address: 00571480
-SRoom * __cdecl SRoom::dtor(SRoom *this_ptr);
+SRoom * __cdecl SRoom::dtor(SRoom *this_ptr,uint flags);
 
 // Original: core_set.cpp_SVDBox_ctor_FUN_00571490
 // Address: 00571490
@@ -321,32 +321,32 @@ SVDBox * __cdecl SVDBox::ctor(SVDBox *this_ptr);
 
 // Original: core_set.cpp_SVDBox_dtor_FUN_005714a0
 // Address: 005714a0
-SVDBox * __cdecl SVDBox::dtor(SVDBox *this_ptr);
+SVDBox * __cdecl SVDBox::dtor(SVDBox *this_ptr,uint flags);
 
 // Original: core_set.cpp_C3DSLight_dtor_FUN_005714b0
 // Address: 005714b0
-C3DSLight * __cdecl C3DSLight::dtor(C3DSLight *this_ptr);
+C3DSLight * __cdecl C3DSLight::dtor(C3DSLight *this_ptr,uint flags);
 
 // Original: core_set.cpp_FUN_005714c0
 // Address: 005714c0
 void __cdecl FUN_005714c0(void);
 
-// Original: core_set.cpp_freeVectors_FUN_00571510
+// Original: core_set.cpp_CVector3f_arrdtor_FUN_00571510
 // Address: 00571510
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
-// Original: core_set.cpp_free3DSCameras_FUN_00571530
+// Original: core_set.cpp_C3DSCamera_arrdtor_FUN_00571530
 // Address: 00571530
-C3DSCamera * __cdecl free3DSCameras(C3DSCamera *objs);
+C3DSCamera * __cdecl C3DSCamera::arrdtor(C3DSCamera *objs,uint flags);
 
-// Original: core_set.cpp_free3DSLights_FUN_00571550
+// Original: core_set.cpp_C3DSLight_arrdtor_FUN_00571550
 // Address: 00571550
-C3DSLight * __cdecl free3DSLights(C3DSLight *objs);
+C3DSLight * __cdecl C3DSLight::arrdtor(C3DSLight *objs,uint flags);
 
-// Original: core_set.cpp_freeRooms_FUN_00571570
+// Original: core_set.cpp_SRoom_arrdtor_FUN_00571570
 // Address: 00571570
-SRoom * __cdecl freeRooms(SRoom *objs);
+SRoom * __cdecl SRoom::arrdtor(SRoom *objs,uint flags);
 
-// Original: core_set.cpp_freeVDBoxes_FUN_00571590
+// Original: core_set.cpp_SVDBox_arrdtor_FUN_00571590
 // Address: 00571590
-SVDBox * __cdecl freeVDBoxes(SVDBox *objs);
+SVDBox * __cdecl SVDBox::arrdtor(SVDBox *objs,uint flags);

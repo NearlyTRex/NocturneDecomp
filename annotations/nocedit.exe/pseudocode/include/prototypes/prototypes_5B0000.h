@@ -116,11 +116,11 @@ int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20 (CSound *this_
 void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_005b3dc0 (CSound *this_ptr,float target_volume,float fade_time);
 int __cdecl core_sound_cpp_editSoundName_FUN_005b3de0(char *prompt_text,char *output_buffer);
 STrainNoise * __cdecl core_sound_cpp_STrainNoise_ctor_FUN_005b3e00(STrainNoise *this_ptr);
-STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_005b3e10(STrainNoise *this_ptr);
+STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_005b3e10(STrainNoise *this_ptr,uint flags);
 int * __cdecl core_sound_cpp_assignInt_FUN_005b3e20(int *dest_ptr,int *src_ptr);
 int * __cdecl core_sound_cpp_assignInt_FUN_005b3e30(int *dest_ptr,int *src_ptr);
 int * __cdecl core_sound_cpp_assignInt_FUN_005b3e40(int *dest_ptr,int *src_ptr);
-STrainNoise * __cdecl core_sound_cpp_freeTrainNoises_FUN_005b3e50(STrainNoise *objs);
+STrainNoise * __cdecl core_sound_cpp_STrainNoise_arrdtor_FUN_005b3e50(STrainNoise *objs,uint flags);
 void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3e70(void);
 void __cdecl wincore_windll_cpp_clearZBuffer_FUN_005b3ed4(void);
 void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3f37(int color);
@@ -241,7 +241,7 @@ void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_
 void __cdecl core_stairs_cpp_CStairs_showEditorHelp_FUN_005bab90(CStairs *this_ptr,int *y_pos);
 void __cdecl core_stairs_cpp_CStairs_onActorDeleted_FUN_005babf0(CStairs *this_ptr,CDemonActor *deleted_actor);
 CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_005bac10(CStairs *this_ptr,uint flags);
-CDemonTriangle * __cdecl core_stairs_cpp_freeTriangles_FUN_005bac80(CDemonTriangle *objs);
+CDemonTriangle * __cdecl core_stairs_cpp_CDemonTriangle_arrdtor_FUN_005bac80(CDemonTriangle *objs,uint flags);
 void __cdecl core_stone_cpp_staticInit_FUN_005baca0(void);
 CTempleStone * __cdecl core_stone_cpp_factoryFunc_FUN_005bacd0(void);
 CDemonActorType * __cdecl core_stone_cpp_CTempleStone_getActorType_FUN_005bad00(CTempleStone *this_ptr);

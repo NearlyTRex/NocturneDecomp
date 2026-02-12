@@ -148,5 +148,5 @@ void __cdecl core_dest_cpp_CActorDestination_getPropertyList_FUN_0046fe80 (CActo
 CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0046ff00(CActorDestination *this_ptr,uint flags);
 void __cdecl core_dfilter_cpp_staticInit_FUN_0046ff50(void);
 CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_ctor_FUN_0046ffd0(CFilterCache *this_ptr);
-CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_dtor_FUN_0046ffe0(CFilterCache *this_ptr);
+CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_dtor_FUN_0046ffe0(CFilterCache *this_ptr,uint flags);
 

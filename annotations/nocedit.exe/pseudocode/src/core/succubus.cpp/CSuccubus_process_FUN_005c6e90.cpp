@@ -191,20 +191,20 @@ LAB_005c6fd0:
   }
   iVar10 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar10 != 0) {
-    (this_ptr->base).base.field7_0x2428.y =
-         (this_ptr->base).base.field7_0x2428.y - delta_time * (float)32;
-    pCVar19 = &(this_ptr->base).base.field6_0x241c;
+    (this_ptr->base).base.velocity.y =
+         (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    pCVar19 = &(this_ptr->base).base.position_delta;
     pCVar2 = &(this_ptr->base).base.model.accumulated_root_motion;
-    local_44.x = (this_ptr->base).base.field7_0x2428.x * delta_time + pCVar19->x + pCVar2->x;
-    local_44.y = (this_ptr->base).base.field7_0x2428.y * delta_time +
-                 (this_ptr->base).base.field6_0x241c.y +
+    local_44.x = (this_ptr->base).base.velocity.x * delta_time + pCVar19->x + pCVar2->x;
+    local_44.y = (this_ptr->base).base.velocity.y * delta_time +
+                 (this_ptr->base).base.position_delta.y +
                  (this_ptr->base).base.model.accumulated_root_motion.y;
-    local_44.z = delta_time * (this_ptr->base).base.field7_0x2428.z +
-                 (this_ptr->base).base.field6_0x241c.z +
+    local_44.z = delta_time * (this_ptr->base).base.velocity.z +
+                 (this_ptr->base).base.position_delta.z +
                  (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.field6_0x241c.z = 0.0;
-    (this_ptr->base).base.field6_0x241c.y = (this_ptr->base).base.field6_0x241c.z;
-    pCVar19->x = (this_ptr->base).base.field6_0x241c.y;
+    (this_ptr->base).base.position_delta.z = 0.0;
+    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+    pCVar19->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -279,7 +279,7 @@ LAB_005c6fd0:
       (local_18->base).base.cloth_list.cloths[0] = pCVar4;
     }
   }
-  if ((this_ptr->base).base.field43_0x2620 != 0) {
+  if ((this_ptr->base).base.was_rendered_opaque != 0) {
     core_cloth_cpp_CClothList_process_FUN_0043c2d0
               ((CClothList *)(this_ptr->unk + 0x22b4),&(this_ptr->base).base.base.location.position,
                &(this_ptr->base).base.base.orient.vec,delta_time,

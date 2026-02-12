@@ -85,7 +85,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s to check status",local_77c);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);
     return 0;
   }
   local_30 = 0;
@@ -125,7 +125,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
                         (&local_1e2c,local_eac,1,0);
       if ((iVar2 < 0) || (iVar2 == 1)) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1e2c,0);
-        engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
+        engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);
         return 0;
       }
       if (iVar2 == 0) break;
@@ -138,7 +138,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
      iVar2 == 0)) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"%s fails CRC check.  File not checked in",local_77c);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);
     return 0;
   }
   local_50 = checkout_item_name;
@@ -503,7 +503,7 @@ LAB_004bbb45:
               if (p_Var3 != (_FILE *)0x0) {
                 engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_60);
 LAB_004bbfdd:
-                engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
+                engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);
                 return 2;
               }
               iVar2 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70(&local_60,local_48);
@@ -557,7 +557,7 @@ LAB_004bb492:
                       if (iVar6 == 0) {
                         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_21d4,0);
                         shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0);
-                        engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
+                        engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);
                         return 0;
                       }
                       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_70,local_77c);
@@ -569,7 +569,7 @@ LAB_004bb492:
                                           (this_ptr,local_77c), iVar2 == 0)) {
                       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_21d4,0);
                       shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0);
-                      engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
+                      engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);
                       return 0;
                     }
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_21d4,0);
@@ -581,7 +581,7 @@ LAB_004bb492:
                        (iVar2 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
                                           (this_ptr,local_77c), iVar2 == 0)) {
                       shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0);
-                      engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
+                      engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);
                       return 0;
                     }
                   }
@@ -592,7 +592,7 @@ LAB_004bb492:
                     (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
                   }
                   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0);
-                  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
+                  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);
                   return 1;
                 }
               }
@@ -634,6 +634,6 @@ LAB_004bb847:
   }
   engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
 LAB_004bb1fa:
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_2600,0);
   return 0;
 }

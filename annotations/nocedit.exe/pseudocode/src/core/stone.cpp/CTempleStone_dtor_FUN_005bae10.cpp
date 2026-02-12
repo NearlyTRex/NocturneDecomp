@@ -19,7 +19,7 @@ core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint flags)
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)&(this_ptr->base).sim_box);
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)&(this_ptr->base).sim_box,0);
   ptr = (CTempleStone *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);

@@ -81,7 +81,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_course.cpp_CCourse_dtor_FUN_004424e0",
-    "signature": "CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_004424e0(CCourse *this_ptr)"
+    "signature": "CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_004424e0(CCourse *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -112,10 +112,10 @@
     "pcode_op_count": 29
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -124,6 +124,13 @@
         "offset": 4,
         "size": 4,
         "type": "CCourse *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

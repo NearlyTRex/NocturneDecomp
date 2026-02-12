@@ -295,7 +295,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0049e3ed
     PUSH EAX                            ; 0049e3f1
     CALL shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 ; 0049e3f2
-        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr)
+        ;   XREF to: 004a6510 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_dtor_FUN_004a6510(CEdButton * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0049e3f7
     ADD ESP,0xf8                        ; 0049e3fa
     POP EBP                             ; 0049e400

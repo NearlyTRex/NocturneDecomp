@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Auto_use_health_00630bea
 ;   TerminatedCString s_no_more_auto_health_left_00630bfb
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_02db8780.name_hash
 ;
 ; Called Functions:
@@ -62,8 +62,8 @@ section .text
         ;   XREF to: 0050158d (CONDITIONAL_JUMP)  ; LAB_0050158d
     PUSH 0x630bfb                       ; 005015af | = "no more auto health left\n"
         ;   Label: LAB_005015af
-    MOV EDX,dword ptr [0x0066e8e0]      ; 005015b4 | g_ConsolePtr | g_CConsolePtr
-    PUSH EDX                            ; 005015ba | g_ConsolePtr
+    MOV EDX,dword ptr [0x0066e8e0]      ; 005015b4 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EDX                            ; 005015ba | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005015bb
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 005015c0
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 00501582 (CONDITIONAL_JUMP)  ; LAB_00501582
     PUSH 0x630bd0                       ; 005015de | = "Auto use selected health\n"
     MOV EBP,dword ptr [0x0066e8e0]      ; 005015e3 | g_CConsolePtr
-    PUSH EBP                            ; 005015e9 | g_ConsolePtr
+    PUSH EBP                            ; 005015e9 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005015ea
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 005015ef
@@ -103,8 +103,8 @@ section .text
         ;   XREF to: 004ff800 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_select_FUN_004ff800(CInventory * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 00501602
     PUSH 0x630bea                       ; 00501605 | = "Auto use health\n"
-    MOV EAX,[0x0066e8e0]                ; 0050160a | g_ConsolePtr | g_CConsolePtr
-    PUSH EAX                            ; 0050160f | g_ConsolePtr
+    MOV EAX,[0x0066e8e0]                ; 0050160a | g_CConsoleInstance | g_CConsolePtr
+    PUSH EAX                            ; 0050160f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 00501610
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00501615

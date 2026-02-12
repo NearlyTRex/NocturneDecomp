@@ -16,9 +16,9 @@ int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_00551280(CPod *this_ptr,char
   iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&local_430,pod_filename);
   if (iVar1 != 0) {
     iVar1 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(&local_430);
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_430);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_430,0);
     return iVar1;
   }
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_430);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_430,0);
   return 0;
 }

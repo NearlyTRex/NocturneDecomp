@@ -44,16 +44,16 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter
   
   pCVar1 = g_CDemonSetPtr;
   bVar9 = 0;
-  iVar3 = this_ptr->field60_0x2df4;
+  iVar3 = this_ptr->damage_decal_count;
   if ((iVar3 < 5) && (-1 < g_CDemonSetPtr->unk1)) {
-    this_ptr->field60_0x2df4 = this_ptr->field60_0x2df4 + 1;
-    local_20.z = (float)(this_ptr->field61_0x2df8 + iVar3 * 0x38);
-    *(int *)local_20.z = pCVar1->unk1;
+    this_ptr->damage_decal_count = this_ptr->damage_decal_count + 1;
+    local_20.z = (float)(this_ptr->damage_decals + iVar3);
+    ((SDamageDecal *)local_20.z)->part_index = pCVar1->unk1;
     iVar3 = pCVar1->unk2;
-    *(int *)((int)local_20.z + 4) = iVar3;
+    ((SDamageDecal *)local_20.z)->bone_index = iVar3;
     if (iVar3 < 0) {
       iVar3 = (*(((this_ptr->base).vtable._uc)->_uc).getPartDominantBone)
-                        (this_ptr,*(int *)local_20.z);
+                        (this_ptr,((SDamageDecal *)local_20.z)->part_index);
       *(int *)(unaff_EBP + 4) = iVar3;
     }
     local_44.x = (g_CDemonSetPtr->collision_result_vec2).x -

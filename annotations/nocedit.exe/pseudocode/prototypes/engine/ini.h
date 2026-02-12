@@ -73,4 +73,4 @@ CIni * __cdecl CIni::ctor(CIni *this_ptr);
 
 // Original: engine_ini.cpp_CIni_dtor_FUN_004fbd80
 // Address: 004fbd80
-CIni * __cdecl CIni::dtor(CIni *this_ptr);
+CIni * __cdecl CIni::dtor(CIni *this_ptr,uint flags);

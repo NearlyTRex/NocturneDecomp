@@ -6,7 +6,15 @@ struct CAmmo;
 // Dependencies
 #include "system/basetypes.h"
 
-// Typedef: CAmmo_ptr_344
+// Adjusted pointer: CAmmo_ptr_344
 // 32-bit pointer to CAmmo
-typedef struct CAmmo* CAmmo_ptr_344;
+struct CAmmo_ptr_344 {
+    void *_raw;
+    CAmmo_ptr_344() : _raw(0) {}
+    template<typename T> CAmmo_ptr_344(T* p) : _raw((void*)p) {}
+    template<typename T> CAmmo_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
+    CAmmo* operator->() const { return (CAmmo*)_raw; }
+    template<typename T> operator T*() const { return (T*)_raw; }
+    explicit operator bool() const { return _raw != 0; }
+};
 

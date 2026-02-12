@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_morph_cpp_CMorphModel_setFaceList_FUN_0052aac0(CMorphModel *this_ptr)
+; __cdecl void __cdecl core_morph_cpp_CMorphModel_setFaceList_FUN_0052aac0(CMorphModel *this_ptr,int part_index)
 ;
 ; Parameters:
 ; CMorphModel *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   part_index
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

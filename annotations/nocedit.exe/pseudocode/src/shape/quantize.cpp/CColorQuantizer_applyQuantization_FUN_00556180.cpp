@@ -78,7 +78,7 @@ shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180
         ppCVar9[-1] = (CBitmap *)0x0;
         ppCVar9[-2] = pCVar6;
         ppCVar9[-3] = (CBitmap *)0x5563a3;
-        pCVar6 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(ppCVar9[-2]);
+        pCVar6 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(ppCVar9[-2],(uint)ppCVar9[-1]);
         ppCVar9[-1] = pCVar6;
         ppCVar9[-2] = (CBitmap *)0x5563ac;
         shape_memdbg_cpp_debugFree_FUN_0050f210(ppCVar9[-1]);
@@ -102,7 +102,7 @@ shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180
           ppCVar9[2] = (CBitmap *)0x0;
           ppCVar9[1] = local_20;
           *ppCVar9 = (CBitmap *)0x55625b;
-          pCVar6 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(ppCVar9[1]);
+          pCVar6 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(ppCVar9[1],(uint)ppCVar9[2]);
           ppCVar9[2] = pCVar6;
           ppCVar9[1] = (CBitmap *)0x556264;
           shape_memdbg_cpp_debugFree_FUN_0050f210(ppCVar9[2]);

@@ -112,7 +112,7 @@ void __cdecl core_sentinel_cpp_CSentinel_addFilesToExtract_FUN_00568f50(CSentine
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_00568f80(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_00569040(void);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_005690c0(CDemonSet *this_ptr);
-CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00569350(CDemonSet *this_ptr);
+CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00569350(CDemonSet *this_ptr,uint flags);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_005693c0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *filename);
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 (CDemonSet *this_ptr,float frustum_param,int render_mode);

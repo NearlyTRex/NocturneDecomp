@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_attacking_hero_006387b3
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   undefined4 g_CGabriellaClassInfo.name_hash
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
@@ -84,8 +84,8 @@ section .text
     ADD ESP,0xc                         ; 00520590
     PUSH EBX                            ; 00520593
     PUSH 0x6387b3                       ; 00520594 | = "%s attacking hero\n"
-    MOV EBX,dword ptr [0x0066e8e0]      ; 00520599 | g_ConsolePtr | g_CConsolePtr
-    PUSH EBX                            ; 0052059f | g_ConsolePtr
+    MOV EBX,dword ptr [0x0066e8e0]      ; 00520599 | g_CConsoleInstance | g_CConsolePtr
+    PUSH EBX                            ; 0052059f | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005205a0
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005205a5

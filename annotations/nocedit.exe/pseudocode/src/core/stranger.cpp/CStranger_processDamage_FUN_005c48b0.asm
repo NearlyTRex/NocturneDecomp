@@ -20,7 +20,7 @@
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGore* g_CGorePtr = 02d83364
-;   CConsole g_ConsolePtr
+;   CConsole g_CConsoleInstance
 ;   CGame g_CGameInstance
 ;   undefined4 DAT_02d81b64
 ;   undefined4 DAT_02d81c6c
@@ -116,7 +116,7 @@ section .text
         ;   XREF to: 005c49ae (CONDITIONAL_JUMP)  ; LAB_005c49ae
     PUSH 0x653d22                       ; 005c4962 | = "Using auto health\n"
     MOV EDI,dword ptr [0x0066e8e0]      ; 005c4967 | g_CConsolePtr
-    PUSH EDI                            ; 005c496d | g_ConsolePtr
+    PUSH EDI                            ; 005c496d | g_CConsoleInstance
     MOV dword ptr [EBX + 0x243c],0x0    ; 005c496e
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005c4978
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
@@ -131,7 +131,7 @@ section .text
     FSTP double ptr [ESP]               ; 005c4998
     PUSH 0x653d35                       ; 005c499b | = "hit points: %3.2f\n"
     MOV EAX,[0x0066e8e0]                ; 005c49a0 | g_CConsolePtr
-    PUSH EAX                            ; 005c49a5 | g_ConsolePtr
+    PUSH EAX                            ; 005c49a5 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 005c49a6
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 005c49ab

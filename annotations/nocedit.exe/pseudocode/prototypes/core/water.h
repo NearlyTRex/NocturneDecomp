@@ -17,7 +17,7 @@ CWater * __cdecl CWater::ctor(CWater *this_ptr);
 
 // Original: core_water.cpp_CWater_dtor_FUN_005e9e30
 // Address: 005e9e30
-CWater * __cdecl CWater::dtor(CWater *this_ptr);
+CWater * __cdecl CWater::dtor(CWater *this_ptr,uint flags);
 
 // Original: core_water.cpp_CWater_captureTextures_FUN_005e9e40
 // Address: 005e9e40

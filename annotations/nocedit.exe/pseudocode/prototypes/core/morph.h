@@ -13,7 +13,7 @@ CMorphModel * __cdecl CMorphModel::ctor(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_CMorphModel_dtor_FUN_0052a4f0
 // Address: 0052a4f0
-CMorphModel * __cdecl CMorphModel::dtor(CMorphModel *this_ptr);
+CMorphModel * __cdecl CMorphModel::dtor(CMorphModel *this_ptr,uint flags);
 
 // Original: core_morph.cpp_CMorphModel_free_FUN_0052a510
 // Address: 0052a510
@@ -33,11 +33,11 @@ void __cdecl CMorphModel(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_CMorphModel_FUN_0052a8d0
 // Address: 0052a8d0
-void __cdecl CMorphModel(CMorphModel *this_ptr);
+void __cdecl CMorphModel(CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index);
 
 // Original: core_morph.cpp_CMorphModel_animate_FUN_0052a920
 // Address: 0052a920
-void __cdecl CMorphModel::animate(CMorphModel *this_ptr);
+void __cdecl CMorphModel::animate(CMorphModel *this_ptr,int part_index);
 
 // Original: core_morph.cpp_CMorphModel_FUN_0052aa00
 // Address: 0052aa00
@@ -53,7 +53,7 @@ void __cdecl CMorphModel(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_CMorphModel_setFaceList_FUN_0052aac0
 // Address: 0052aac0
-void __cdecl CMorphModel::setFaceList(CMorphModel *this_ptr);
+void __cdecl CMorphModel::setFaceList(CMorphModel *this_ptr,int part_index);
 
 // Original: core_morph.cpp_CMorphModel_FUN_0052aca0
 // Address: 0052aca0
@@ -79,69 +79,69 @@ void __cdecl CMorphModel(CMorphModel *this_ptr);
 // Address: 0052b280
 int __cdecl FUN_0052b280(void);
 
-// Original: core_morph.cpp_FUN_0052b310
+// Original: core_morph.cpp_CMorph_ctor_FUN_0052b310
 // Address: 0052b310
-void __cdecl FUN_0052b310(CMorphModel *a);
+CMorph * __cdecl CMorph::ctor(CMorph *this_ptr);
 
-// Original: core_morph.cpp_CMorphModel_FUN_0052b330
+// Original: core_morph.cpp_CMorph_dtor_FUN_0052b330
 // Address: 0052b330
-void __cdecl CMorphModel(CMorphModel *this_ptr);
+CMorph * __cdecl CMorph::dtor(CMorph *this_ptr,uint flags);
 
-// Original: core_morph.cpp_CMorphModel_FUN_0052b350
+// Original: core_morph.cpp_CMorph_FUN_0052b350
 // Address: 0052b350
-void __cdecl CMorphModel(CMorphModel *this_ptr);
+void __cdecl CMorph(CMorph *this_ptr);
 
-// Original: core_morph.cpp_FUN_0052b370
+// Original: core_morph.cpp_CMorph_FUN_0052b370
 // Address: 0052b370
-void __cdecl FUN_0052b370(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index);
 
-// Original: core_morph.cpp_FUN_0052b3d0
+// Original: core_morph.cpp_CMorph_FUN_0052b3d0
 // Address: 0052b3d0
-void __cdecl FUN_0052b3d0(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index);
 
-// Original: core_morph.cpp_FUN_0052b430
+// Original: core_morph.cpp_CMorph_FUN_0052b430
 // Address: 0052b430
-void __cdecl FUN_0052b430(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index);
 
-// Original: core_morph.cpp_FUN_0052b470
+// Original: core_morph.cpp_CMorph_FUN_0052b470
 // Address: 0052b470
-void __cdecl FUN_0052b470(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
 
-// Original: core_morph.cpp_FUN_0052b4b0
+// Original: core_morph.cpp_CMorph_FUN_0052b4b0
 // Address: 0052b4b0
-void __cdecl FUN_0052b4b0(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index);
 
-// Original: core_morph.cpp_FUN_0052b500
+// Original: core_morph.cpp_CMorph_FUN_0052b500
 // Address: 0052b500
-void __cdecl FUN_0052b500(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index);
 
-// Original: core_morph.cpp_FUN_0052b550
+// Original: core_morph.cpp_CMorph_FUN_0052b550
 // Address: 0052b550
-void __cdecl FUN_0052b550(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index);
 
-// Original: core_morph.cpp_FUN_0052b580
+// Original: core_morph.cpp_CMorph_FUN_0052b580
 // Address: 0052b580
-void __cdecl FUN_0052b580(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
 
-// Original: core_morph.cpp_FUN_0052b5c0
+// Original: core_morph.cpp_CMorph_FUN_0052b5c0
 // Address: 0052b5c0
-void __cdecl FUN_0052b5c0(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index);
 
-// Original: core_morph.cpp_FUN_0052b600
+// Original: core_morph.cpp_CMorph_FUN_0052b600
 // Address: 0052b600
-void __cdecl FUN_0052b600(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index);
 
-// Original: core_morph.cpp_FUN_0052b640
+// Original: core_morph.cpp_CMorph_FUN_0052b640
 // Address: 0052b640
-void __cdecl FUN_0052b640(void);
+void __cdecl CMorph(CMorph *this_ptr,int model_index);
 
 // Original: core_morph.cpp_CMorph_getReady_FUN_0052b680
 // Address: 0052b680
 void __cdecl CMorph::getReady(CMorph *this_ptr);
 
-// Original: core_morph.cpp_CMorphModel_FUN_0052bae0
+// Original: core_morph.cpp_CMorph_FUN_0052bae0
 // Address: 0052bae0
-void __cdecl CMorphModel(CMorphModel *this_ptr);
+void __cdecl CMorph(CMorph *this_ptr);
 
 // Original: core_morph.cpp_FUN_0052bb50
 // Address: 0052bb50
@@ -155,9 +155,9 @@ void __cdecl FUN_0052bb80(void);
 // Address: 0052bcb0
 void __cdecl FUN_0052bcb0(void);
 
-// Original: core_morph.cpp_FUN_0052ca90
+// Original: core_morph.cpp_CMorph_FUN_0052ca90
 // Address: 0052ca90
-void __cdecl FUN_0052ca90(void);
+void __cdecl CMorph(CMorph *this_ptr);
 
 // Original: core_morph.cpp_FUN_0052cc10
 // Address: 0052cc10
@@ -173,27 +173,27 @@ SMorphControlPoint * __cdecl SMorphControlPoint::ctor(SMorphControlPoint *this_p
 
 // Original: core_morph.cpp_SMorphControlPoint_dtor_FUN_0052cc70
 // Address: 0052cc70
-SMorphControlPoint * __cdecl SMorphControlPoint::dtor(SMorphControlPoint *this_ptr);
+SMorphControlPoint * __cdecl SMorphControlPoint::dtor(SMorphControlPoint *this_ptr,uint flags);
 
-// Original: core_morph.cpp_freeVectors_FUN_0052cc90
+// Original: core_morph.cpp_CVector3f_arrdtor_FUN_0052cc90
 // Address: 0052cc90
-CVector3f * __cdecl freeVectors(CVector3f *objs);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
-// Original: core_morph.cpp_freeMorphControlPoints_FUN_0052ccb0
+// Original: core_morph.cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0
 // Address: 0052ccb0
-SMorphControlPoint * __cdecl freeMorphControlPoints(SMorphControlPoint *objs);
+SMorphControlPoint * __cdecl SMorphControlPoint::arrdtor(SMorphControlPoint *objs,uint flags);
 
-// Original: core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0
+// Original: core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0
 // Address: 0052ccd0
-CDeformableModelInstance * __cdecl freeDeformableModelInstances(CDeformableModelInstance *objs);
+CDeformableModelInstance * __cdecl CDeformableModelInstance::arrdtor(CDeformableModelInstance *objs,uint flags);
 
-// Original: core_morph.cpp_freeBoundingBoxes_FUN_0052ccf0
+// Original: core_morph.cpp_CBoundingBox3D_arrdtor_FUN_0052ccf0
 // Address: 0052ccf0
-CBoundingBox3D * __cdecl freeBoundingBoxes(CBoundingBox3D *objs);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *objs,uint flags);
 
-// Original: core_morph.cpp_freeMorphModels_FUN_0052cd10
+// Original: core_morph.cpp_CMorphModel_arrdtor_FUN_0052cd10
 // Address: 0052cd10
-CMorphModel * __cdecl freeMorphModels(CMorphModel *objs);
+CMorphModel * __cdecl CMorphModel::arrdtor(CMorphModel *objs,uint flags);
 
 // Original: core_morph.cpp_FUN_0052cd30
 // Address: 0052cd30

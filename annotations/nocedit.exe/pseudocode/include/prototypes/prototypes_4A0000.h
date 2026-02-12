@@ -107,7 +107,7 @@ void __cdecl shape_edittool_cpp_CPickList_swap_FUN_004a5870(CPickList *this_ptr,
 void __cdecl shape_edittool_cpp_draw3DBorder_FUN_004a58f0 (int left,int top,int width,int height,int border_style_flag);
 void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0 (int left,int top,int right,int bottom,int inner_y,int style);
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar *this_ptr);
-CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar *this_ptr);
+CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(CEdScrollBar *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(CEdScrollBar *this_ptr);
 void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60 (CEdScrollBar *this_ptr,int left_pos,int top_pos,int right_pos,int bottom_pos);
 void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *this_ptr);
@@ -121,7 +121,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_updateWithSelection_FUN_004a6450 (C
 int __cdecl shape_edittool_cpp_calculateGridWidth_FUN_004a6490(void);
 int __cdecl shape_edittool_cpp_calculateGridHeight_FUN_004a64b0(void);
 CEdButton * __cdecl shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(CEdButton *this_ptr);
-CEdButton * __cdecl shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(CEdButton *this_ptr);
+CEdButton * __cdecl shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(CEdButton *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530(CEdButton *this_ptr);
 void __cdecl shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_004a6550 (CEdButton *this_ptr,int x_pos,int y_pos,char *button_text);
 void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004a6590 (CEdButton *this_ptr,int left,int top,int right,int bottom,char *button_text);
@@ -130,7 +130,7 @@ int __cdecl shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(CEdButton *this
 int __cdecl shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0(char *button_text);
 int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_004a6970(char *button_text);
 CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_ctor_FUN_004a6a00(CEdCheck *this_ptr);
-CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_dtor_FUN_004a6a40(CEdCheck *this_ptr);
+CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_dtor_FUN_004a6a40(CEdCheck *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60 (CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text);
 void __cdecl shape_edittool_cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004a6b50(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70(CEdCheck *this_ptr);
@@ -147,7 +147,7 @@ int __cdecl shape_edittool_cpp_getFontSpaceCharWidth_FUN_004a6f10(CBitFont *font
 int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f21(int *dest_ptr,int *src_ptr);
 int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f31(int *dest_ptr,int *src_ptr);
 int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f40(int *dest_ptr,int *src_ptr);
-CVector3f * __cdecl shape_edittool_cpp_freeVectors_FUN_004a6f50(CVector3f *objs);
+CVector3f * __cdecl shape_edittool_cpp_CVector3f_arrdtor_FUN_004a6f50(CVector3f *objs,uint flags);
 void __cdecl core_elephant_cpp_staticInit_FUN_004a6f70(void);
 CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004a6fa0(void);
 CDemonActorType * __cdecl core_elephant_cpp_CElephantGun_getActorType_FUN_004a6fd0(CElephantGun *this_ptr);
@@ -177,7 +177,7 @@ void __cdecl core_emitter_cpp_CEmitter_showEditorHelp_FUN_004a9350(CEmitter *thi
 void __cdecl core_emitter_cpp_CEmitter_addFilesToExtract_FUN_004a9390(CEmitter *this_ptr,_FILE *file_handle);
 CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a93c0(CEmitter *this_ptr,uint flags);
 void __cdecl core_emitter_cpp_SLaserInfo_copy_FUN_004a9410(SLaserInfo *this_ptr,SLaserInfo *copy);
-SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_004a94c0(SLaserInfo *this_ptr);
+SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_004a94c0(SLaserInfo *this_ptr,uint flags);
 void __cdecl core_enemy_cpp_staticInit_FUN_004a94d0(void);
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_setup_FUN_004a9650(CEnemy *this_ptr);

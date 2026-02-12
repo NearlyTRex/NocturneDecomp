@@ -2,11 +2,11 @@
 // Address: 0053f760
 // Address Range: [[0053f760, 0053f779]]
 // Convention: __cdecl
-// Signature: CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0053f760(CNetGame *this_ptr)
+// Signature: CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0053f760(CNetGame *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0053f760(CNetGame *this_ptr)
+CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0053f760(CNetGame *this_ptr,uint flags)
 
 {
   SSocketContext *pSVar1;

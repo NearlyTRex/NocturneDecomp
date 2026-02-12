@@ -39,9 +39,9 @@ void __cdecl CWerewolf(CWerewolf *this_ptr);
 // Address: 005f1230
 void __cdecl CWerewolf(CWerewolf *this_ptr);
 
-// Original: core_werewolf.cpp_CWerewolf_FUN_005f1820
+// Original: core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005f1820
 // Address: 005f1820
-int __cdecl CWerewolf(CWerewolf *this_ptr);
+int __cdecl CWerewolf::renderTransparent(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_archive_FUN_005f1980
 // Address: 005f1980

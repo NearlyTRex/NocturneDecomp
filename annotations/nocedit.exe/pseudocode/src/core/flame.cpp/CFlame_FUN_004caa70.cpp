@@ -9,6 +9,6 @@
 void __cdecl core_flame_cpp_CFlame_FUN_004caa70(CFlame *this_ptr)
 
 {
-  this_ptr->unk4 = 0;
+  this_ptr->is_visible = 0;
   return;
 }

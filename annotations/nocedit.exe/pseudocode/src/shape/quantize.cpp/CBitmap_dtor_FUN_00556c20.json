@@ -39,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_quantize.cpp_CBitmap_dtor_FUN_00556c20",
-    "signature": "CBitmap * __cdecl shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(CBitmap *this_ptr)"
+    "signature": "CBitmap * __cdecl shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(CBitmap *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -109,10 +109,10 @@
     "pcode_op_count": 150
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -121,6 +121,13 @@
         "offset": 4,
         "size": 4,
         "type": "CBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },

@@ -17,6 +17,6 @@ void __cdecl core_npc_cpp_CNPC_setup_FUN_00544870(CNPC *this_ptr)
   if (iVar1 != 0) {
     return;
   }
-  (this_ptr->base).field39_0x2610 = 2;
+  (this_ptr->base).collision_layer = 2;
   return;
 }

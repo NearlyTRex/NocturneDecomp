@@ -425,7 +425,7 @@ SPose * __cdecl SPose::ctor(SPose *this_ptr);
 
 // Original: core_charactr.cpp_SPose_dtor_FUN_0042fad0
 // Address: 0042fad0
-SPose * __cdecl SPose::dtor(SPose *this_ptr);
+SPose * __cdecl SPose::dtor(SPose *this_ptr,uint flags);
 
 // Original: core_charactr.cpp_copyFloat_FUN_0042fae0
 // Address: 0042fae0

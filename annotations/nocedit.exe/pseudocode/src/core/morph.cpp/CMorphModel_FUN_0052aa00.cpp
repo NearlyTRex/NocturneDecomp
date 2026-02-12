@@ -9,6 +9,8 @@
 void __cdecl core_morph_cpp_CMorphModel_FUN_0052aa00(CMorphModel *this_ptr)
 
 {
-  core_morph_cpp_CMorphModel_animate_FUN_0052a920(this_ptr);
+  int in_stack_00000008;
+  
+  core_morph_cpp_CMorphModel_animate_FUN_0052a920(this_ptr,in_stack_00000008);
   return;
 }

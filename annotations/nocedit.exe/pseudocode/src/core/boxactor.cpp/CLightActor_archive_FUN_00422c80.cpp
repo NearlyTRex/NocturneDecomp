@@ -20,17 +20,19 @@ void __cdecl core_boxactor_cpp_CLightActor_archive_FUN_00422c80(CLightActor *thi
               (&(this_ptr->light_orient).orient,"lightOrient");
     if (g_ActorReadingMode == 1) {
       core_actor_cpp_archiveFloat_FUN_0040b770(&local_c,"lightFov");
-      this_ptr->light_fov = local_c;
+      (this_ptr->light).base.base.projection_scale = local_c;
     }
     else {
-      local_c = this_ptr->light_fov;
+      local_c = (this_ptr->light).base.base.projection_scale;
       core_actor_cpp_archiveFloat_FUN_0040b770(&local_c,"lightFov");
     }
   }
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->light_status,"light status");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0
+            (&(this_ptr->light).light_enabled_flag,"light status");
   if (this_ptr->light_actor_type != LIGHT_TYPE_CUSTOM) {
     return;
   }
-  core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->light_falloff,"light falloff");
+  core_actor_cpp_archiveFloat_FUN_0040b770
+            (&(this_ptr->light).base.max_distance,"light falloff");
   return;
 }

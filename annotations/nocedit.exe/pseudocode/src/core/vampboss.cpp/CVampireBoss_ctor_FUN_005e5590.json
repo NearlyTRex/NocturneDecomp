@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 252,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 37,
-    "suspect_count": 21,
+    "pseudocode_lines": 63,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output"
+      "negative_offset"
     ],
-    "total_lines": 102
+    "total_lines": 128
   },
   "cross_references": [
     {
@@ -51,7 +51,7 @@
     {
       "addr": "0052b310",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_0052b310"
+      "name": "core_morph.cpp_CMorph_ctor_FUN_0052b310"
     },
     {
       "addr": "0059ddc0",
@@ -139,151 +139,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EAX",
-      "text": "*(CDemonActor_vtable **)(extraout_EAX + -0xcdb70) = &g_CVampireBossVTable;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_EAX",
-      "text": "((CDeformableModelInstance *)(extraout_EAX + -0xcdb6c),\"nosfer.dfm\");",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EAX",
-      "text": "((CDeformableModelInstance *)(extraout_EAX + -0xc1e08),\"batboss.dfm\");",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0xcaee8) = 0x40000000;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0xcaee4) = 0x40400000;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0xcaee0) = 0x42480000;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0xcaedc) = 0x42c80000;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc30) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -4) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc2c) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc48) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc4c) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc50) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 33,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc54) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc44) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 35,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc58) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 36,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc34) = 0x41200000;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 37,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + 0xc40) = 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0xcb6a0) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 39,
-      "match": "extraout_EAX",
-      "text": "return (CVampireBoss *)(extraout_EAX + -0xcdcc4);",
-      "type": "extra_output"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 50,
+      "match": "pCVar6[-1].",
+      "text": "pCVar6[-1].rescale_enabled = 0;",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {
