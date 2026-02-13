@@ -13,14 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 90,
+    "complexity_score": 65,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 27,
     "pseudocode_lines": 50,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output",
       "stack_ref"
     ],
     "total_lines": 186
@@ -61,7 +60,7 @@
     {
       "addr": "004b0f00",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004b0f00"
+      "name": "core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00"
     },
     {
       "addr": "005b3a20",
@@ -374,20 +373,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 40,
-      "match": "extraout_EAX",
-      "text": "g_SoundAmbientSfxHandle = extraout_EAX;",
-      "type": "extra_output"
-    },
     {
       "description": "Direct stack address reference",
       "line": 43,

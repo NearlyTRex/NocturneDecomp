@@ -1,0 +1,81 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    core_script.cpp_clearSelections_FUN_005644e0
+# Entry:       005644e0
+# Signature:   void __cdecl core_script_cpp_clearSelections_FUN_005644e0(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@0056449b [ESP:+0]  # MOV EDX, 0xffffffff
+COPY (register,0x8,4) /* EDX */ = (const,0xffffffff,4)
+
+@005644a0 [ESP:+0]  # MOV EBX, EDX
+COPY (register,0xc,4) /* EBX */ = (register,0x8,4) /* EDX */
+
+@005644a2 [ESP:+0]  # MOV ECX, EDX
+COPY (register,0x4,4) /* ECX */ = (register,0x8,4) /* EDX */
+
+@005644a4 [ESP:+0]  # MOV EBP, EDX
+COPY (register,0x14,4) /* EBP */ = (register,0x8,4) /* EDX */
+
+@005644a6 [ESP:+0]  # JMP 0x00564535
+BRANCH (ram,0x564535,4)
+
+@005644ab [ESP:???]??  # MOV EDX, dword ptr [0x0310fd44]
+COPY (register,0x8,4) /* EDX */ = (ram,0x310fd44,4)
+
+@005644b1 [ESP:???]??  # MOV EBX, EDI
+COPY (register,0xc,4) /* EBX */ = (register,0x1c,4) /* EDI */
+
+@005644b3 [ESP:???]??  # MOV EBP, ESI
+COPY (register,0x14,4) /* EBP */ = (register,0x18,4) /* ESI */
+
+@005644b5 [ESP:???]??  # JMP 0x00564535
+BRANCH (ram,0x564535,4)
+
+@005644ba [ESP:???]??  # MOV EBX, dword ptr [0x0310fd44]
+COPY (register,0xc,4) /* EBX */ = (ram,0x310fd44,4)
+
+@005644c0 [ESP:???]??  # MOV EBP, ECX
+COPY (register,0x14,4) /* EBP */ = (register,0x4,4) /* ECX */
+
+@005644c2 [ESP:???]??  # MOV EDX, EDI
+COPY (register,0x8,4) /* EDX */ = (register,0x1c,4) /* EDI */
+
+@005644c4 [ESP:???]??  # MOV ECX, ESI
+COPY (register,0x4,4) /* ECX */ = (register,0x18,4) /* ESI */
+
+@005644c6 [ESP:???]??  # JMP 0x00564535
+BRANCH (ram,0x564535,4)
+
+@005644cb [ESP:???]??  # MOV EDX, EDI
+COPY (register,0x8,4) /* EDX */ = (register,0x1c,4) /* EDI */
+
+@005644cd [ESP:???]??  # MOV EBX, EAX
+COPY (register,0xc,4) /* EBX */ = (register,0x0,4) /* EAX */
+
+@005644cf [ESP:???]??  # JMP 0x00564535
+BRANCH (ram,0x564535,4)
+
+@005644e0 [ESP:???]??  # MOV EDX, 0xffffffff
+COPY (register,0x8,4) /* EDX */ = (const,0xffffffff,4)
+
+@005644e5 [ESP:???]??  # MOV dword ptr [0x0310fd50], EDX
+COPY (ram,0x310fd50,4) = (register,0x8,4) /* EDX */
+
+@005644eb [ESP:???]??  # MOV dword ptr [0x0310fd4c], EDX
+COPY (ram,0x310fd4c,4) = (register,0x8,4) /* EDX */
+
+# ============================================================================
+# Summary: 20 instructions, 20 P-code ops
+# ============================================================================

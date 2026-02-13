@@ -33,7 +33,7 @@ void __cdecl core_set_cpp_FUN_005702b0(void)
   
   bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_006813e4);
-  if (g_CGamePtr->unk6 == 2) {
+  if (g_CGamePtr->render_mode == 2) {
     in_stack_00000010 = g_CurrentAlphaValue << 8;
   }
   else {

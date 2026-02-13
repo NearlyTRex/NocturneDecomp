@@ -17,8 +17,8 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
   CQuaternion4f *world_position;
   int extraout_EAX;
   CVector3f *pCVar4;
-  CDemonActor *pCVar5;
   int extraout_EAX_00;
+  CDemonActor *pCVar5;
   int iVar6;
   CActorProperty *this_ptr_01;
   int iVar7;
@@ -395,7 +395,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
           iVar11 = local_14, -1 < iVar7)) &&
          (iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar11 = iVar6, iVar1 != 0))
       {
-        core_script_cpp_CScript_FUN_00566660
+        core_script_cpp_CScript_initEditorLayout_FUN_00566660
                   (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
         DAT_02f7c634 = 1;
         core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(g_CDemonMissionPtr,1);
@@ -648,13 +648,13 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
         iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
         if (iVar11 == 0) {
           iVar11 = 0x101;
-          core_script_cpp_CScript_FUN_00566660
+          core_script_cpp_CScript_initEditorLayout_FUN_00566660
                     (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
           DAT_02f7c634 = 1;
         }
         else {
           iVar11 = 0;
-          core_script_cpp_CScript_FUN_00566660
+          core_script_cpp_CScript_initEditorLayout_FUN_00566660
                     (g_CScriptPtr,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
           DAT_02f7c634 = 2;
         }
@@ -670,13 +670,13 @@ LAB_00539d68:
         if (DAT_02f7c634 == 1) {
           iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
           if (iVar11 == 0) {
-            core_script_cpp_CScript_FUN_00566660
+            core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
             iVar11 = 1;
             DAT_02f7c634 = 2;
           }
           else {
-            core_script_cpp_CScript_FUN_00566660
+            core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
             iVar11 = 1;
             DAT_02f7c634 = 0;
@@ -685,13 +685,13 @@ LAB_00539d68:
         else {
           iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
           if (iVar11 == 0) {
-            core_script_cpp_CScript_FUN_00566660
+            core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
             iVar11 = 1;
             DAT_02f7c634 = 0;
           }
           else {
-            core_script_cpp_CScript_FUN_00566660
+            core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
             iVar11 = 1;
             DAT_02f7c634 = 1;
@@ -816,7 +816,7 @@ LAB_00539e00:
         iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
         if (iVar11 == 0) {
           if (this_ptr->selected_actor != (CDemonActor *)0x0) {
-            this_ptr->selected_actor->unk14 = 1;
+            this_ptr->selected_actor->is_editor_hidden = 1;
             core_msnedit_cpp_CDemonMission_FUN_0053bcf0(this_ptr);
           }
         }
@@ -834,7 +834,7 @@ LAB_00539e00:
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff64c);
             for (pCVar5 = this_ptr->first_actor; pCVar5 != (CDemonActor *)0x0;
                 pCVar5 = pCVar5->next_actor) {
-              if (pCVar5->unk14 != 0) {
+              if (pCVar5->is_editor_hidden != 0) {
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
                           ((CStrList *)&stack0xfffff64c,pCVar5->actor_name);
               }
@@ -848,16 +848,13 @@ LAB_00539e00:
             if (iVar6 < 0) goto LAB_0053a88c;
             pcVar15 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                                 ((CStrList *)&stack0xfffff64c,iVar6);
-            pcVar15 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,pcVar15);
-            if (pcVar15 == (char *)0x0) {
+            pCVar5 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,pcVar15);
+            if (pCVar5 == (CDemonActor *)0x0) {
               g_CurrentFilename = "..\\core\\msnedit.cpp";
               g_CurrentLineNumber = 0x739;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
             }
-            pcVar15[0x148] = '\0';
-            pcVar15[0x149] = '\0';
-            pcVar15[0x14a] = '\0';
-            pcVar15[0x14b] = '\0';
+            pCVar5->is_editor_hidden = 0;
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff64c,0);
           }
           if (iVar6 < 0) {
@@ -870,7 +867,7 @@ LAB_0053a88c:
         else {
           for (pCVar5 = this_ptr->first_actor; pCVar5 != (CDemonActor *)0x0;
               pCVar5 = pCVar5->next_actor) {
-            pCVar5->unk14 = 0;
+            pCVar5->is_editor_hidden = 0;
           }
         }
       }
@@ -923,7 +920,7 @@ LAB_0053a88c:
     iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x41);
     if (iVar11 != 0) {
       if (DAT_02f7c634 == 0) {
-        core_script_cpp_CScript_FUN_00566660
+        core_script_cpp_CScript_initEditorLayout_FUN_00566660
                   (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
         DAT_02f7c634 = 1;
         core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(g_CDemonMissionPtr,1);

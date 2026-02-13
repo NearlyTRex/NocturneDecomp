@@ -80,7 +80,7 @@ section .text
     PUSH EBX                            ; 005246c2
     PUSH EDI                            ; 005246c3
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 005246c4
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 005246c9
     TEST EAX,EAX                        ; 005246cc
     JNZ 0x005246ad                      ; 005246ce

@@ -140,7 +140,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f20(CFireEffect *this_ptr);
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr);
 SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(SLaserInfo *this_ptr);
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr);
-void __cdecl core_fire_cpp_CFireEffect_FUN_004c8c10(CFireEffect *this_ptr);
+void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position);
 int __cdecl core_fire_cpp_CFireEffect_FUN_004c8c90(CFireEffect *this_ptr);
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c8dd0(CFireEffect *this_ptr);
 int __cdecl core_fire_cpp_CFireEffect_FUN_004c8e40(CFireEffect *this_ptr);

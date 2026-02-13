@@ -73,7 +73,7 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
             piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          vertex2_00.v = (float)uVar8;
+          vertex2_00.v = uVar8;
           auVar7 = in_stack_ffffff58._0_24_;
           vertex2_00.projected_vertex.transformed_x = auVar7._0_4_;
           vertex2_00.projected_vertex.transformed_y = auVar7._4_4_;
@@ -81,7 +81,7 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
           vertex2_00.projected_vertex.inv_z = auVar7._12_4_;
           vertex2_00.projected_vertex.screen_x = auVar7._16_4_;
           vertex2_00.projected_vertex.screen_y = auVar7._20_4_;
-          vertex2_00.u = (float)in_stack_ffffff58._24_4_;
+          vertex2_00.u = in_stack_ffffff58._24_4_;
           vertex2_00.light = (float)pCVar9;
           vertex2_00.color = uVar10;
           vertex2_00.fog = (float)pSVar11;
@@ -102,7 +102,7 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
             piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          vertex2_01.v = (float)uVar8;
+          vertex2_01.v = uVar8;
           auVar7 = in_stack_ffffff58._0_24_;
           vertex2_01.projected_vertex.transformed_x = auVar7._0_4_;
           vertex2_01.projected_vertex.transformed_y = auVar7._4_4_;
@@ -110,7 +110,7 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
           vertex2_01.projected_vertex.inv_z = auVar7._12_4_;
           vertex2_01.projected_vertex.screen_x = auVar7._16_4_;
           vertex2_01.projected_vertex.screen_y = auVar7._20_4_;
-          vertex2_01.u = (float)in_stack_ffffff58._24_4_;
+          vertex2_01.u = in_stack_ffffff58._24_4_;
           vertex2_01.light = (float)pCVar9;
           vertex2_01.color = uVar10;
           vertex2_01.fog = (float)pSVar11;
@@ -148,7 +148,7 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
           pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
           piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
         }
-        vertex2.v = (float)uVar8;
+        vertex2.v = uVar8;
         auVar7 = in_stack_ffffff58._0_24_;
         vertex2.projected_vertex.transformed_x = auVar7._0_4_;
         vertex2.projected_vertex.transformed_y = auVar7._4_4_;
@@ -156,7 +156,7 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
         vertex2.projected_vertex.inv_z = auVar7._12_4_;
         vertex2.projected_vertex.screen_x = auVar7._16_4_;
         vertex2.projected_vertex.screen_y = auVar7._20_4_;
-        vertex2.u = (float)in_stack_ffffff58._24_4_;
+        vertex2.u = in_stack_ffffff58._24_4_;
         vertex2.light = (float)pCVar9;
         vertex2.color = uVar10;
         vertex2.fog = (float)pSVar11;

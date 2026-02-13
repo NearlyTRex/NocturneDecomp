@@ -51,8 +51,8 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8810(CIcePick *this_ptr)
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (this_ptr_00,iVar2,0.0,*(float *)(this_ptr->unk + 0x24),INT_02db89b0,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
-    fVar1 = *(float *)((this_ptr->base).unk2 + 8) * (float)3.1415926535000001 * (float)2
-            * in_stack_00000008 + *(float *)(this_ptr->unk + 0x28);
+    fVar1 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+            (float)2 * in_stack_00000008 + *(float *)(this_ptr->unk + 0x28);
     *(float *)(this_ptr->unk + 0x28) = fVar1;
     if ((float)0.78539816337500001 < fVar1) {
       this_ptr->unk[0x28] = -0x25;

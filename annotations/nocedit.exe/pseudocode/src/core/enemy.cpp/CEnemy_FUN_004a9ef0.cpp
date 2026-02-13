@@ -11,7 +11,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9ef0(CEnemy *this_ptr)
 {
   CDemonActor *in_stack_00000008;
   
-  this_ptr->unk3 = 0;
+  this_ptr->victim_search_timer = 0.0;
   this_ptr->script_victim = in_stack_00000008;
   return;
 }

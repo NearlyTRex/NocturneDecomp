@@ -21,8 +21,8 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453160
-;   core_event.cpp_FUN_004b19d0
-;   core_event.cpp_FUN_004b1a78
+;   crt_watcom.c__memcpy_FUN_004b1a78
+;   crt_watcom.c__memset_FUN_004b19d0
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     XOR EDX,EDX                         ; 0045115f
     MOV ECX,0xba8c78                    ; 00451161 | g_CoronaBlurOutputBuffer
     MOV DL,byte ptr [0x00c199f8]        ; 00451166 | INT_00c199f8
-    CALL core_event.cpp_FUN_004b19d0    ; 0045116c
-        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b19d0()
+    CALL crt_watcom.c__memset_FUN_004b19d0 ; 0045116c
+        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_004b19d0(void * dest, int fill_byte, uint size)
     CMP dword ptr [0x01519380],0x1      ; 00451171 | g_ImageBytesPerPixel
     JG 0x00451185                       ; 00451178
         ;   XREF to: 00451185 (CONDITIONAL_JUMP)  ; LAB_00451185
@@ -77,8 +77,8 @@ section .text
     MOV EDX,0x13ed378                   ; 004511a7 | g_CameraImageDecompressBuffer
     MOV ECX,0x13da778                   ; 004511ac | g_CameraPlaneWorkBuffer
     XOR EBX,EBX                         ; 004511b1
-    CALL core_event.cpp_FUN_004b1a78    ; 004511b3
-        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b1a78()
+    CALL crt_watcom.c__memcpy_FUN_004b1a78 ; 004511b3
+        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_004b1a78(void * dest, void * src, uint size)
     MOV dword ptr [0x013bbe2c],EBX      ; 004511b8 | g_BackdropSaveActive
     POP EBX                             ; 004511be
     RET                                 ; 004511bf

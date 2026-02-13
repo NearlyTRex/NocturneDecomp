@@ -1,0 +1,332 @@
+{
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 284,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 59,
+    "suspect_count": 18,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "param_count_too_few",
+      "pointer_cast",
+      "special_crt_function",
+      "unaffected_reg",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_indirect_jump",
+      "warning_jumptable"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "0044f3e0",
+      "from_addr": "0044fae2",
+      "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00451130",
+      "from_addr": "0045116c",
+      "name": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00472a80",
+      "from_addr": "00472c54",
+      "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00475fc0",
+      "from_addr": "00475fea",
+      "name": "core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00475fc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b19d0",
+    "address_range": [
+      [
+        "004b19d0",
+        "004b1a29"
+      ],
+      [
+        "004b1a2c",
+        "004b1a36"
+      ],
+      [
+        "004b1a38",
+        "004b1a3e"
+      ]
+    ],
+    "convention": "__fastcall",
+    "name": "crt_watcom.c__memset_FUN_004b19d0",
+    "signature": "void __fastcall crt_watcom_c__memset_FUN_004b19d0(void *dest,int fill_byte,uint size)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00679510",
+      "name": "g_CharacterSet",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00679d10",
+      "name": "switchdataD_00679d10",
+      "type": "void*",
+      "value": "004b1a0c"
+    },
+    {
+      "addr": "00679d50",
+      "name": "DAT_00679d50",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0044fae2",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "reg_params": [
+          "ECX",
+          "EDX"
+        ],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00475fea",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00475fc0",
+        "estimated_params": 6,
+        "instructions_analyzed": 13,
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045116c",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130",
+        "estimated_params": 6,
+        "instructions_analyzed": 18,
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00472c54",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80",
+        "estimated_params": 4,
+        "instructions_analyzed": 7,
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 3,
+    "estimated_params": 6
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.914285714285715,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 6,
+      "BRANCH": 3,
+      "BRANCHIND": 2,
+      "CBRANCH": 6,
+      "COPY": 45,
+      "INT2FLOAT": 1,
+      "INT_2COMP": 1,
+      "INT_ADD": 16,
+      "INT_AND": 18,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 4,
+      "LOAD": 6,
+      "POPCOUNT": 8,
+      "ROUND": 1,
+      "STORE": 10,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 172
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(longlong *)((int)",
+      "text": "plVar4 = (longlong *)((int)dest + uVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar4 + -1) = uVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar4 + -3) = uVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(short *)((int)",
+      "text": "*(short *)((int)plVar4 + -2) = (short)uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar4 + -5) = uVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)plVar4 + -4) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar4 + -7) = uVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(short *)((int)",
+      "text": "*(short *)((int)plVar4 + -6) = (short)uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)plVar4 + -4) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ROUND",
+      "text": "*plVar4 = (longlong)ROUND((float10)lVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 58,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1a19. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 59,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 60,
+      "match": "unaff_EBX",
+      "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))(uVar3,uVar2,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 60,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))(uVar3,uVar2,unaff_EBX);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_00679d50",
+      "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))(uVar3,uVar2,unaff_EBX);",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 4,
+      "declared_params": 3,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:6",
+      "param_delta": 3,
+      "text": "Function declares 3 params but call sites push 6 (3 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "address": "004b19d0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_watcom.c__memset_FUN_004b19d0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 004b19d0",
+      "type": "special_crt_function"
+    }
+  ]
+}

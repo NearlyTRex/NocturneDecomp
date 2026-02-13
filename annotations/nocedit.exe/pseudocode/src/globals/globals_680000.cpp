@@ -3202,15 +3202,15 @@ SMRGLTextureBasic DAT_00684858 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "WATER15.RAW"
 };
-SMRGLTextureBasic DAT_00684900 = {
+SMRGLTextureBasic SMRGLTextureBasic_00684900 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINDRP1.RAW"
 };
-SMRGLTextureBasic DAT_00684918 = {
+SMRGLTextureBasic SMRGLTextureBasic_00684918 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINSPLT.RAW"
 };
-SMRGLTextureBasic DAT_00684930 = {
+SMRGLTextureBasic SMRGLTextureBasic_00684930 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SNOWFLKE.RAW"
 };
@@ -3768,6 +3768,9 @@ char g_SoundResultBufferTemplate[] = "";
 // char[108]
 char g_TrainSoundFilenameTemplate[] = "";
 
+// char[200]
+char g_ActorRefDefaultBuffer[] = "";
+
 // char[256]
 char g_DefaultRecordingDeviceName[] = "";
 char g_DefaultDeviceName[] = "";
@@ -3965,8 +3968,6 @@ undefined4 DAT_00680974 = 0;
 undefined4 DAT_00680a04 = 0x00000001;
 undefined4 DAT_00680bd8 = 0xFFFFFFFF;
 undefined4 DAT_00680bdc = 0;
-undefined4 DAT_00680d60 = 0;
-undefined4 DAT_00680d64 = 0;
 undefined4 DAT_0068125c = 0;
 undefined4 DAT_00681260 = 0;
 undefined4 DAT_00681a00 = 0;

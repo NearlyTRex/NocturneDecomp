@@ -14,11 +14,11 @@
 ;   core_actor.cpp_trimActorName_FUN_004087b0 at 0040880b
 ;   core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 at 0047bebd
 ;   core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 at 0047bccc
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004ad900
-;   core_event.cpp_CEventList_FUN_004ae140 at 004ae520
-;   core_event.cpp_CEventList_FUN_004b0330 at 004b0448
-;   core_event.cpp_CEventList_FUN_004b0470 at 004b0588
-;   core_event.cpp_CEventList_FUN_004b0db0 at 004b0ee9
+;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004b0470 at 004b0588
+;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330 at 004b0448
+;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004ae520
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ad900
+;   core_event.cpp_CEventList_process_FUN_004aaac0 at 004aabcb
 ;   ... and 68 more
 ;
 ; *****************************************************************************

@@ -91,8 +91,8 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
           vertex2.projected_vertex.inv_z = auVar11._12_4_;
           vertex2.projected_vertex.screen_x = auVar11._16_4_;
           vertex2.projected_vertex.screen_y = auVar11._20_4_;
-          vertex2.u = (float)in_stack_ffffff84._24_4_;
-          vertex2.v = (float)in_stack_ffffff84._28_4_;
+          vertex2.u = in_stack_ffffff84._24_4_;
+          vertex2.v = in_stack_ffffff84._28_4_;
           vertex2.color = in_stack_ffffffa8;
           vertex2.fog = (float)output;
           vertex2.w_recip = (float)this_ptr;

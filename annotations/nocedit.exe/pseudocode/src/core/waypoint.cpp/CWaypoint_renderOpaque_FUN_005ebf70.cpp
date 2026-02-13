@@ -101,8 +101,8 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
       if (this_ptr == unaff_EDI) {
         local_14 = (CDemonActor *)0x0;
       }
-      core_path_cpp_FUN_00548500();
-      core_path_cpp_CPathMap_CallToQueuePop_FUN_00548750(this_ptr_01);
+      this_ptr_01 = core_path_cpp_FUN_00548500();
+      core_path_cpp_CPathMap_FUN_00548750(this_ptr_01);
       core_path_cpp_FUN_00547fc0();
       return 0;
     }

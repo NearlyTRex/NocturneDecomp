@@ -72,7 +72,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-;   core_event.cpp_CEventList_FUN_004addf0
+;   core_event.cpp_CEventList_render_FUN_004addf0
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50
 ;   core_game.cpp_CGame_process_FUN_004e3190
 ;   core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0
@@ -84,7 +84,7 @@
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
 ;   core_script.cpp_CScript_FUN_00559b20
-;   core_script.cpp_CScript_FUN_00559d80
+;   core_script.cpp_CScript_renderEditor_FUN_00559d80
 ;   ... and 38 more
 ;
 ; *****************************************************************************
@@ -834,8 +834,8 @@ section .text
         ;   XREF to: 004da99f (CONDITIONAL_JUMP)  ; LAB_004da99f
     MOV EBX,dword ptr [0x006793d0]      ; 004da990 | g_CEventListInstance | g_CEventListPtr
     PUSH EBX                            ; 004da996 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004addf0 ; 004da997
-        ;   XREF to: 004addf0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004addf0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_render_FUN_004addf0 ; 004da997
+        ;   XREF to: 004addf0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_render_FUN_004addf0(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004da99c
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da99f
         ;   Label: LAB_004da99f
@@ -855,8 +855,8 @@ section .text
     PUSH 0x0                            ; 004da9ca
     MOV EAX,[0x00680d50]                ; 004da9cc | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 004da9d1 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00559d80 ; 004da9d2
-        ;   XREF to: 00559d80 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00559d80(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_renderEditor_FUN_00559d80 ; 004da9d2
+        ;   XREF to: 00559d80 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_renderEditor_FUN_00559d80(CScript * this_ptr, int left, int top, int right, ...)
     ADD ESP,0x14                        ; 004da9d7
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da9da
         ;   Label: LAB_004da9da

@@ -31,7 +31,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004b0460
+;   core_event.cpp_CEventList_resetGameFlags_FUN_004b0460
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
@@ -121,8 +121,8 @@ section .text
     ADD ESP,0x8                         ; 00538c75
     MOV EDX,dword ptr [0x006793d0]      ; 00538c78 | g_CEventListInstance | g_CEventListPtr
     PUSH EDX                            ; 00538c7e | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004b0460 ; 00538c7f
-        ;   XREF to: 004b0460 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004b0460(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_resetGameFlags_FUN_004b0460 ; 00538c7f
+        ;   XREF to: 004b0460 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_004b0460(CEventList * this_ptr)
     ADD ESP,0x4                         ; 00538c84
     PUSH EBX                            ; 00538c87
     CALL core_mission.cpp_CDemonMission_FUN_00524760 ; 00538c88
@@ -180,8 +180,8 @@ section .text
     ADD ESP,0x4                         ; 00538d24
     MOV EBP,dword ptr [0x006793d0]      ; 00538d27 | g_CEventListPtr
     PUSH EBP                            ; 00538d2d | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004b0460 ; 00538d2e
-        ;   XREF to: 004b0460 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004b0460(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_resetGameFlags_FUN_004b0460 ; 00538d2e
+        ;   XREF to: 004b0460 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_004b0460(CEventList * this_ptr)
     ADD ESP,0x4                         ; 00538d33
     POP ESI                             ; 00538d36
     POP EDI                             ; 00538d37

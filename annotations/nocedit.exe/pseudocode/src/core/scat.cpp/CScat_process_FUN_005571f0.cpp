@@ -54,10 +54,10 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
   if (pCVar10->letterbox_mode != 0) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;
   }
-  fVar18 = (this_ptr->base).unk1 - delta_time;
-  (this_ptr->base).unk1 = fVar18;
+  fVar18 = (float)(this_ptr->base).no_collision_flag - delta_time;
+  (this_ptr->base).no_collision_flag = (int)fVar18;
   if (fVar18 < 0.0) {
-    (this_ptr->base).unk1 = 0.0;
+    (this_ptr->base).no_collision_flag = 0;
   }
   pCVar12 = &(this_ptr->base).base.model.accumulated_root_motion;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -88,10 +88,10 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
         if (iVar11 != 0) {
           desired_state_index = 7;
         }
-        if ((this_ptr->base).action_bindings.walk_key != 0) {
+        if ((this_ptr->base).player_control.action_states[0] != 0) {
           iVar11 = core_scat_cpp_CScat_FUN_00558010(this_ptr);
           if (iVar11 == 0) {
-            if ((this_ptr->base).action_bindings.run_key == 0) {
+            if ((this_ptr->base).player_control.action_states[2] == 0) {
               desired_state_index = 1;
             }
             else {
@@ -102,7 +102,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
             desired_state_index = 9;
           }
         }
-        if ((this_ptr->base).action_bindings.backup_key != 0) {
+        if ((this_ptr->base).player_control.action_states[1] != 0) {
           iVar11 = core_scat_cpp_CScat_FUN_00558010(this_ptr);
           if (iVar11 == 0) {
             desired_state_index = 3;
@@ -111,19 +111,19 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
             desired_state_index = 10;
           }
         }
-        if (((((this_ptr->base).action_bindings.fire_key != 0) && (this_ptr->guns_drawn != 0)) &&
-            (this_ptr->unk4 != 0)) &&
+        if (((((this_ptr->base).player_control.action_states[3] != 0) && (this_ptr->guns_drawn != 0)
+             ) && (this_ptr->unk4 != 0)) &&
            (iVar11 = (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xfc))(), iVar11 != 0)) {
           (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xf8))();
           iVar11 = this_ptr->unk4;
-          (this_ptr->base).action_bindings.fire_key = 0;
+          (this_ptr->base).player_control.action_states[3] = 0;
           if (*(int *)(iVar11 + 0x2e0) == 8) {
             desired_state_index = 0xb;
           }
         }
         pCVar17 = &(this_ptr->base).base.model;
         (this_ptr->base).base.turn_angle_accumulator =
-             *(float *)((this_ptr->base).unk2 + 4) * (this_ptr->base).base.turn_speed +
+             (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed +
              (this_ptr->base).base.turn_angle_accumulator;
         pSVar13 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                             (&pCVar17->motion_controller);
@@ -131,8 +131,8 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar17->motion_controller,desired_state_index,1);
         }
-        if ((this_ptr->base).action_bindings.draw_key != 0) {
-          (this_ptr->base).action_bindings.draw_key = 0;
+        if ((this_ptr->base).player_control.action_states[6] != 0) {
+          (this_ptr->base).player_control.action_states[6] = 0;
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
                     ((CEnemy *)this_ptr,(float)(uint)(this_ptr->guns_drawn == 0));
         }
@@ -254,7 +254,7 @@ LAB_005573f5:
     }
     else {
       if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_005573f5;
-      if ((this_ptr->base).action_bindings.fire_key == 0) goto LAB_00557408;
+      if ((this_ptr->base).player_control.action_states[3] == 0) goto LAB_00557408;
       iVar11 = 0xf;
     }
     in_stack_ffffff80 = 1.4013e-45;

@@ -23,7 +23,7 @@
 ;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
-;   core_event.cpp_FUN_004b0f90
+;   core_event.cpp_isValidIdentifierChar_FUN_004b0f90
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;
@@ -62,8 +62,8 @@ section .text
     XOR EAX,EAX                         ; 00567357
     MOV AL,DH                           ; 00567359
     PUSH EAX                            ; 0056735b
-    CALL core_event.cpp_FUN_004b0f90    ; 0056735c
-        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b0f90(int param_1)
+    CALL core_event.cpp_isValidIdentifierChar_FUN_004b0f90 ; 0056735c
+        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_isValidIdentifierChar_FUN_004b0f90(int ch)
     ADD ESP,0x4                         ; 00567361
     TEST EAX,EAX                        ; 00567364
     JZ 0x005673b1                       ; 00567366
@@ -82,8 +82,8 @@ section .text
         ;   Label: LAB_0056737e
     MOV AL,byte ptr [EBP]               ; 00567380
     PUSH EAX                            ; 00567383
-    CALL core_event.cpp_FUN_004b0f90    ; 00567384
-        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b0f90(int param_1)
+    CALL core_event.cpp_isValidIdentifierChar_FUN_004b0f90 ; 00567384
+        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_isValidIdentifierChar_FUN_004b0f90(int ch)
     ADD ESP,0x4                         ; 00567389
     LEA EDX,[ESI + 0x1]                 ; 0056738c
     MOV dword ptr [ESP + 0x198],EDX     ; 0056738f

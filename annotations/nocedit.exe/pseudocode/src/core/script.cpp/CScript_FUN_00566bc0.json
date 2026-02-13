@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 28,
+    "complexity_score": 14,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 13,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 52
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 53
   },
   "cross_references": [
     {
@@ -41,7 +39,7 @@
     {
       "addr": "00566c20",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566c20"
+      "name": "core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20"
     },
     {
       "addr": "004a2920",
@@ -76,8 +74,8 @@
     },
     {
       "addr": "03114208",
-      "name": "DAT_03114208",
-      "type": "undefined4",
+      "name": "g_ScriptEditorLineHeight",
+      "type": "int",
       "value": null
     }
   ],
@@ -135,13 +133,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_03114208",
-      "text": "(g_CEditorToolsPtr,1,DAT_03114208,0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

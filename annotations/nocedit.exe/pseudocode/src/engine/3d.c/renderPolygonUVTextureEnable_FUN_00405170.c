@@ -41,10 +41,10 @@ engine_3d_c_renderPolygonUVTextureEnable_FUN_00405170(SMRGLHeaderPrimitive *poly
     for (iVar4 = 0; iVar4 < (polygon_info->base).count * 3; iVar4 = iVar4 + 3) {
       iVar1 = (pSVar3->base).type;
       *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;
-      g_RenderVertexBuffer[iVar1].u = (float)(pSVar3->base).count;
+      g_RenderVertexBuffer[iVar1].u = (pSVar3->base).count;
       iVar2 = iVar2 + 4;
       vertex_count = vertex_count + 1;
-      g_RenderVertexBuffer[(pSVar3->base).type].v = (float)(pSVar3->surface_normal).A;
+      g_RenderVertexBuffer[(pSVar3->base).type].v = (pSVar3->surface_normal).A;
       pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);

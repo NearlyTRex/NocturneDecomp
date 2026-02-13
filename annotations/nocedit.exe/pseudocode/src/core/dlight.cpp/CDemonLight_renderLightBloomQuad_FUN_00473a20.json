@@ -13,12 +13,12 @@
   },
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 520,
+    "complexity_score": 440,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 8,
     "pseudocode_lines": 170,
-    "suspect_count": 33,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -703,62 +703,6 @@
       "match": "ROUND",
       "text": "local_98.z = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 131,
-      "match": "2.2775203e-38",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 132,
-      "match": "2.2775203e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 134,
-      "match": "7.34684e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 135,
-      "match": "2.2775203e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 137,
-      "match": "7.34684e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 138,
-      "match": "7.34684e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 140,
-      "match": "2.2775203e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 141,
-      "match": "7.34684e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;",
-      "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",

@@ -58,10 +58,10 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
+;   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
 ;   engine_fileio.cpp_CFileManager_findPodInList_FUN_004ba6c0
 ;   engine_fileio.cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
 ;   engine_fileio.cpp_CFileManager_writePodConfigFile_FUN_004ba620
-;   engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50
 ;   engine_pod.cpp_CPod_cleanup_FUN_00550c80
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
@@ -499,8 +499,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b72d6
     MOVSD ES:EDI,ESI                    ; 004b72d7
     MOVSD ES:EDI,ESI                    ; 004b72d8
-    CALL engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50 ; 004b72d9
-        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50(_FILE * source_file, char * dest_filename, char * name_or_offset, int file_size, ...)
+    CALL engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 ; 004b72d9
+        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager * this_ptr, _FILE * source_file, char * dest_filename, char * name_or_offset, ...)
     ADD ESP,0x1c                        ; 004b72de
     TEST EAX,EAX                        ; 004b72e1
     JZ 0x004b7428                       ; 004b72e3

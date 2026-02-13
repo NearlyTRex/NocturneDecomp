@@ -57,18 +57,18 @@ engine_prim_c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex *vertex0,SRend
     g_SoftwareEdgeTable[iVar2].x_current =
          (vertex0->projected_vertex).screen_x +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)iVar7 * (longlong)((int)pSVar6->u - (int)vertex0->u);
+    lVar1 = (longlong)iVar7 * (longlong)(pSVar6->u - vertex0->u);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     g_SoftwareEdgeTable[iVar2].u_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
     g_SoftwareEdgeTable[iVar2].u_current =
-         (int)vertex0->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)iVar7 * (longlong)((int)pSVar6->v - (int)vertex0->v);
+         vertex0->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    lVar1 = (longlong)iVar7 * (longlong)(pSVar6->v - vertex0->v);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     g_SoftwareEdgeTable[iVar2].v_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
     g_SoftwareEdgeTable[iVar2].v_current =
-         (int)vertex0->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+         vertex0->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)((int)pSVar6->light - (int)vertex0->light);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     g_SoftwareEdgeTable[iVar2].z_gradient = uVar5;

@@ -17,7 +17,7 @@ core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30
   float fVar3;
   int force_immediate;
   
-  if (ABS((this_ptr->base).unk1) != 0.0) {
+  if (((this_ptr->base).no_collision_flag & 0x7fffffffU) != 0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->debug_flag_1 != 0) {
@@ -26,7 +26,7 @@ core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).unk1 = 0.5f;
+  (this_ptr->base).no_collision_flag = (int)0.5f;
   fVar3 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar3;

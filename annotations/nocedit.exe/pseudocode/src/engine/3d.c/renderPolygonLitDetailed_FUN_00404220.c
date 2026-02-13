@@ -12,9 +12,9 @@ engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *polygon_
 {
   SMRGLHeaderBasic *pSVar1;
   int iVar2;
-  float fVar3;
+  int iVar3;
   SMRGLHeaderPrimitive *pSVar4;
-  float fVar5;
+  int iVar5;
   int iVar6;
   int vertex_count;
   
@@ -57,42 +57,42 @@ LAB_00404350:
   g_RenderStateFlag2 = PREPROCESS_NONE;
   for (iVar2 = 0; iVar2 < (polygon_info->base).count * 3; iVar2 = iVar2 + 3) {
     *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
-    fVar3 = (float)(pSVar4->base).count;
-    fVar5 = (float)(pSVar4->surface_normal).A;
+    iVar3 = (pSVar4->base).count;
+    iVar5 = (pSVar4->surface_normal).A;
     if (g_UseExternalRenderer == 0) {
-      if ((int)fVar3 < 0x10000) {
-        fVar3 = 9.18355e-41;
+      if (iVar3 < 0x10000) {
+        iVar3 = 0x10000;
       }
-      if ((int)fVar5 < 0x10000) {
-        fVar5 = 9.18355e-41;
+      if (iVar5 < 0x10000) {
+        iVar5 = 0x10000;
       }
-      if (0xfeffff < (int)fVar3) {
-        fVar3 = 2.341805e-38;
+      if (0xfeffff < iVar3) {
+        iVar3 = 0xfeffff;
       }
-      if (0xfeffff < (int)fVar5) {
-        fVar5 = 2.341805e-38;
+      if (0xfeffff < iVar5) {
+        iVar5 = 0xfeffff;
       }
     }
     else {
-      if ((int)fVar3 < 0x20000) {
-        fVar3 = 1.83671e-40;
+      if (iVar3 < 0x20000) {
+        iVar3 = 0x20000;
       }
-      if ((int)fVar5 < 0x20000) {
-        fVar5 = 1.83671e-40;
+      if (iVar5 < 0x20000) {
+        iVar5 = 0x20000;
       }
-      if (0xfdffff < (int)fVar3) {
-        fVar3 = 2.3326215e-38;
+      if (0xfdffff < iVar3) {
+        iVar3 = 0xfdffff;
       }
-      if (0xfdffff < (int)fVar5) {
-        fVar5 = 2.3326215e-38;
+      if (0xfdffff < iVar5) {
+        iVar5 = 0xfdffff;
       }
     }
-    g_RenderVertexBuffer[(pSVar4->base).type].u = fVar3;
+    g_RenderVertexBuffer[(pSVar4->base).type].u = iVar3;
     pSVar1 = &pSVar4->base;
     iVar6 = iVar6 + 4;
     vertex_count = vertex_count + 1;
     pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
-    g_RenderVertexBuffer[pSVar1->type].v = fVar5;
+    g_RenderVertexBuffer[pSVar1->type].v = iVar5;
   }
   engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);
 LAB_004043ff:

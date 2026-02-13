@@ -125,7 +125,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr)
               this_ptr->ladder_to_descend = this_ptr_00;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,0x2b,1);
-              (this_ptr->base).action_bindings.fire_key = 0;
+              (this_ptr->base).player_control.action_states[3] = 0;
               CStack_98.y = this_ptr_00[2].location.position.z;
               CStack_98.x = 0.0;
               CStack_98.z = -1.5;

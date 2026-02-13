@@ -14,7 +14,6 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
   CDemonSet *this_ptr_00;
   CTrigger *this_ptr_01;
   float fVar3;
-  int extraout_EAX;
   float10 fVar4;
   float10 fVar5;
   CDemonActor *in_stack_fffffec0;
@@ -172,8 +171,9 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
           }
           else {
             in_stack_fffffec4 = (CDemonSet *)0x5886f2;
-            core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0((CGlass *)pCStack_2c);
-            if (extraout_EAX == 0) break;
+            iVar2 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0((CGlass *)pCStack_2c)
+            ;
+            if (iVar2 == 0) break;
             in_stack_fffffec0 = (CDemonActor *)0x588715;
             in_stack_fffffec4 = pCStack_2c;
             core_glass_cpp_CGlass_shatter_FUN_004eaef0

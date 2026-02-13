@@ -10,6 +10,6 @@ void __cdecl core_setcolid_cpp_CDemonSet_FUN_00574560(CDemonSet *this_ptr)
 
 {
   core_dtrace_cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70(&g_CDemonRaytraceInstance);
-  core_path_cpp_GlobalPathmapListCorruption_FUN_00548590();
+  core_path_cpp_FUN_00548590();
   return;
 }

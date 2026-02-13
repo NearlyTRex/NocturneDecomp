@@ -83,9 +83,9 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
   vertex2.projected_vertex.transformed_z = local_64.projected_vertex.transformed_y;
   vertex2.projected_vertex.inv_z = local_64.projected_vertex.transformed_z;
   vertex2.projected_vertex.screen_x = local_64.projected_vertex.inv_z;
-  vertex2.u = (float)local_64.projected_vertex.screen_y;
+  vertex2.u = local_64.projected_vertex.screen_y;
   vertex2.v = local_64.u;
-  vertex2.light = local_64.v;
+  vertex2.light = (float)local_64.v;
   vertex2.color = (int)local_64.light;
   vertex2.fog = (float)local_64.color;
   vertex2.w_recip = local_64.fog;
@@ -117,9 +117,9 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
   vertex2_00.projected_vertex.transformed_z = local_64.projected_vertex.transformed_y;
   vertex2_00.projected_vertex.inv_z = local_64.projected_vertex.transformed_z;
   vertex2_00.projected_vertex.screen_x = local_64.projected_vertex.inv_z;
-  vertex2_00.u = (float)local_64.projected_vertex.screen_y;
+  vertex2_00.u = local_64.projected_vertex.screen_y;
   vertex2_00.v = local_64.u;
-  vertex2_00.light = local_64.v;
+  vertex2_00.light = (float)local_64.v;
   vertex2_00.color = (int)local_64.light;
   vertex2_00.fog = (float)local_64.color;
   vertex2_00.w_recip = local_64.fog;
@@ -152,9 +152,9 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
   vertex2_01.projected_vertex.transformed_z = local_64.projected_vertex.transformed_y;
   vertex2_01.projected_vertex.inv_z = local_64.projected_vertex.transformed_z;
   vertex2_01.projected_vertex.screen_x = local_64.projected_vertex.inv_z;
-  vertex2_01.u = (float)local_64.projected_vertex.screen_y;
+  vertex2_01.u = local_64.projected_vertex.screen_y;
   vertex2_01.v = local_64.u;
-  vertex2_01.light = local_64.v;
+  vertex2_01.light = (float)local_64.v;
   vertex2_01.color = (int)local_64.light;
   vertex2_01.fog = (float)local_64.color;
   vertex2_01.w_recip = local_64.fog;
@@ -166,7 +166,7 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
       local_64.color = (int)"%c";
       iVar1 = *(int *)(iVar4 + 0x10);
       iVar2 = *(int *)(iVar4 + 0x14);
-      local_64.v = 6.806708e-39;
+      local_64.v = 0x4a1e55;
       local_64.light = (float)&local_64.w_recip;
       _sprintf((char *)&local_64.w_recip,"%c");
       local_64.fog = 9.18341e-41;
@@ -175,12 +175,12 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
       local_64.fog = -NAN;
       local_64.color = g_AxisLabelTextColor;
       local_64.light = (float)(iVar2 >> 0x10);
-      local_64.v = (float)(iVar1 >> 0x10);
+      local_64.v = iVar1 >> 0x10;
       local_64.projected_vertex.screen_y = (int)g_EditorFont;
       local_64.projected_vertex.screen_x = 0x4a1e86;
-      local_64.u = (float)&local_64.w_recip;
+      local_64.u = (int)&local_64.w_recip;
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
-                (g_EditorFont,(char *)&local_64.w_recip,(int)local_64.v,(int)local_64.light,
+                (g_EditorFont,(char *)&local_64.w_recip,local_64.v,(int)local_64.light,
                  g_AxisLabelTextColor,-1);
     }
     iVar3 = iVar3 + 1;

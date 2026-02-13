@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "other",
-        "column": 26,
+        "column": 30,
         "line": 45,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
@@ -13,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 434,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 26,
-    "pseudocode_lines": 74,
-    "suspect_count": 35,
+    "pseudocode_lines": 76,
+    "suspect_count": 4,
     "suspect_types": [
-      "extra_output",
-      "unnamed_param"
+      "extra_output"
     ],
-    "total_lines": 367
+    "total_lines": 369
   },
   "cross_references": [
     {
@@ -43,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CScript_loadState_FUN_00560820",
-    "signature": "int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *param_2)"
+    "signature": "int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -59,7 +58,7 @@
     {
       "addr": "00560760",
       "is_variadic": false,
-      "name": "core_script.cpp_GetReferencedActor_FUN_00560760"
+      "name": "core_script.cpp_readActorReference_FUN_00560760"
     },
     {
       "addr": "005fefd0",
@@ -318,7 +317,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "file_handle",
         "offset": 8,
         "size": 4,
         "type": "_FILE *"
@@ -326,13 +325,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "text": "int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 5,
@@ -348,225 +340,15 @@
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%d\\n\",&local_18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%d\\n\",&g_CGamePtr->letterbox_mode);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%d\\n\",&g_CGamePtr->allow_damage_flag);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%d\\n\",&g_CGamePtr->allow_enemy_attack_flag);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%g\\n\",&g_ScriptTimeScale);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%d\\n\",&this_ptr->next_cmd);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"\\\"%[^\\\"]\",this_ptr->current_message);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"\\\"\\n\",this_ptr->current_message);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%g\\n\",&this_ptr->cmd_timer);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%g\\n\",&this_ptr->dialog_wav_time);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "text": "core_script_cpp_GetReferencedActor_FUN_00560760(param_2,(int *)&this_ptr->who_is_speaking);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "text": "core_script_cpp_GetReferencedActor_FUN_00560760(param_2,(int *)&this_ptr->focus_actor);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 47,
+      "line": 49,
       "match": "extraout_EAX",
       "text": "uVar1 = extraout_EAX;",
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "text": "uVar1 = _fscanf(param_2,\"%d\\n\",&this_ptr->focus_actor_locked);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_2",
-      "text": "uVar1 = _fscanf(param_2,\"%d\\n\",&this_ptr->call_stack_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%d\\n\",piVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_2",
-      "text": "_fgets(local_118,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_2",
-      "text": "_fscanf(param_2,\"%u\\n\",&local_14);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
+      "line": 75,
       "match": "extraout_EAX_00",
       "text": "return extraout_EAX_00;",
       "type": "extra_output"

@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_FUN_004c5680
-;   core_set.cpp_CDemonSet_FUN_00570fa0
+;   core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     MOV EAX,[0x006810c8]                ; 004c903f | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH 0x42c80000                     ; 004c9044
     PUSH EAX                            ; 004c9049 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570fa0 ; 004c904a
-        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570fa0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0 ; 004c904a
+        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 004c904f
     POP EBX                             ; 004c9052
     RET                                 ; 004c9053

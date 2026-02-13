@@ -4,103 +4,103 @@
       {
         "category": "other",
         "column": 17,
-        "line": 236,
+        "line": 230,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 266,
+        "line": 260,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 274,
+        "line": 268,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 283,
+        "line": 277,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 377,
+        "line": 372,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 504,
+        "line": 496,
         "message": "format specifies type 'int *' but the argument has type 'char **' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 89,
-        "line": 880,
+        "line": 872,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 89,
-        "line": 1051,
+        "line": 1043,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 86,
-        "line": 1272,
+        "line": 1264,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 64,
-        "line": 1376,
+        "line": 1368,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1393,
+        "line": 1385,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1396,
+        "line": 1388,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1418,
+        "line": 1410,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1421,
+        "line": 1413,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "format_error",
         "column": 83,
-        "line": 2136,
+        "line": 2129,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 2477,
+        "line": 2471,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "format_error",
         "column": 83,
-        "line": 2638,
+        "line": 2632,
         "message": "format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
       }
     ],
@@ -109,20 +109,19 @@
   },
   "complexity": {
     "assembly_lines": 7415,
-    "complexity_score": 3684,
+    "complexity_score": 3493,
     "cross_reference_count": 4,
     "function_call_count": 77,
     "global_count": 341,
-    "pseudocode_lines": 3359,
-    "suspect_count": 30,
+    "pseudocode_lines": 3353,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "unnamed_param",
       "warning_type_propagation"
     ],
-    "total_lines": 10774
+    "total_lines": 10768
   },
   "cross_references": [
     {
@@ -241,22 +240,12 @@
     {
       "addr": "004aabe0",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004aabe0"
-    },
-    {
-      "addr": "004add00",
-      "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004add00"
-    },
-    {
-      "addr": "004add40",
-      "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004add40"
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004aabe0"
     },
     {
       "addr": "004b0830",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004b0830"
+      "name": "core_event.cpp_CEventList_getCounterValue_FUN_004b0830"
     },
     {
       "addr": "004b09a0",
@@ -269,9 +258,19 @@
       "name": "core_event.cpp_CEventList_setCounter_FUN_004b0720"
     },
     {
+      "addr": "004add40",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_validateCommands_FUN_004add40"
+    },
+    {
+      "addr": "004add00",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_validateCondition_FUN_004add00"
+    },
+    {
       "addr": "004b1970",
       "is_variadic": false,
-      "name": "core_event.cpp_FUN_004b1970"
+      "name": "core_event.cpp_getSelectedCameraIndex_FUN_004b1970"
     },
     {
       "addr": "004d7650",
@@ -446,7 +445,7 @@
     {
       "addr": "0056b790",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056b790"
+      "name": "core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790"
     },
     {
       "addr": "00570ea0",
@@ -3955,197 +3954,71 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EAX",
-      "text": "char *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_EAX_00",
-      "text": "char *extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_EAX_01",
-      "text": "char *extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_EAX_02",
-      "text": "char *extraout_EAX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_EAX_03",
-      "text": "char *extraout_EAX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EAX_04",
-      "text": "char *extraout_EAX_04;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 233,
+      "line": 227,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 435,
-      "match": "extraout_EAX",
-      "text": "pcVar17 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 436,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX != (char *)0x0) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 465,
-      "match": "extraout_EAX_00",
-      "text": "pcVar17 = extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 466,
-      "match": "extraout_EAX_00",
-      "text": "if (extraout_EAX_00 != (char *)0x0) goto LAB_0055bb9d;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 481,
-      "match": "extraout_EAX_01",
-      "text": "pcVar17 = extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 482,
-      "match": "extraout_EAX_01",
-      "text": "if (extraout_EAX_01 != (char *)0x0) goto LAB_0055bb9d;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 756,
+      "line": 748,
       "match": "param_2",
       "text": "(float *)param_2), 0 < local_114)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 919,
+      "line": 910,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)local_c8c + iVar18) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1364,
+      "line": 1356,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1369,
+      "line": 1361,
       "match": "SUB84",
       "text": "SUB84(dVar1,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1405,
+      "line": 1397,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 1556,
-      "match": "extraout_EAX_02",
-      "text": "pcVar17 = extraout_EAX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 1557,
-      "match": "extraout_EAX_02",
-      "text": "if (extraout_EAX_02 != (char *)0x0)",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 1706,
-      "match": "extraout_EAX_03",
-      "text": "pcVar17 = extraout_EAX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 1707,
-      "match": "extraout_EAX_03",
-      "text": "if (extraout_EAX_03 != (char *)0x0)",
-      "type": "extra_output"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 2259,
+      "line": 2252,
       "match": "param_2",
       "text": "(float *)param_2), 0 < local_114)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3104,
+      "line": 3099,
       "match": "param_2",
       "text": "(this_ptr,local_30,(float *)param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3177,
+      "line": 3172,
       "match": "param_2",
       "text": "(this_ptr,local_24,(float *)param_2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 3192,
-      "match": "extraout_EAX_04",
-      "text": "pcVar17 = extraout_EAX_04;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 3193,
-      "match": "extraout_EAX_04",
-      "text": "if (extraout_EAX_04 != (char *)0x0)",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 3206,
+      "line": 3200,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(pcVar17,local_124);",
       "type": "decompiler_intrinsic"

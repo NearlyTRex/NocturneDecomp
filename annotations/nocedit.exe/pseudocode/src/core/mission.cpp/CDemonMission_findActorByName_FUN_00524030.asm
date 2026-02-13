@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission *this_ptr,char *name)
+; __cdecl CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission *this_ptr,char *name)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ;
 ; XREF[21]:
 ;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f649
-;   core_event.cpp_FUN_004aa400 at 004aa4d5
+;   core_event.cpp_resolveActorByName_FUN_004aa400 at 004aa4d5
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e199e
 ;   core_hiram.cpp_CHiram_process_FUN_004f4550 at 004f4626
 ;   core_mission.cpp_CDemonMission_FUN_00524c20 at 00524cc0

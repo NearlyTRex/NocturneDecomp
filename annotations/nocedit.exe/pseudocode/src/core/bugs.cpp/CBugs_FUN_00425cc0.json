@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 212,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 3,
-    "pseudocode_lines": 102,
-    "suspect_count": 9,
+    "pseudocode_lines": 100,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 395
+    "total_lines": 393
   },
   "cross_references": [
     {
@@ -210,57 +209,43 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "CPathMap *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 32,
       "match": "in_stack_00000008",
       "text": "(*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 38,
       "match": "ABS",
       "text": "if ((ABS(fStack_68) < (float)2) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 39,
       "match": "ABS",
       "text": "((ABS(CStack_74.z) < (float)2 && (ABS(fStack_64) < (float)2)))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 39,
       "match": "ABS",
       "text": "((ABS(CStack_74.z) < (float)2 && (ABS(fStack_64) < (float)2)))) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 55,
-      "match": "extraout_EAX",
-      "text": "this_ptr_00 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 61,
       "match": "in_stack_00000008",
       "text": "CStack_74.z = 2.0f * in_stack_00000008;",
       "type": "stack_param"

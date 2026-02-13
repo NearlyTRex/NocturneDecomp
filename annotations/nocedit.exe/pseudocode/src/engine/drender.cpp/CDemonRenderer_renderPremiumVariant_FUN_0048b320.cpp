@@ -19,11 +19,10 @@ engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320
     pSVar3 = polygon_info;
     do {
       uVar1 = (ushort)(pSVar3->base).type;
-      this_ptr->vertex_buffer_ptr[uVar1].u =
-           (float)((uint)*(ushort *)((int)&(pSVar3->base).count + 2) << 8);
+      this_ptr->vertex_buffer_ptr[uVar1].u = (uint)*(ushort *)((int)&(pSVar3->base).count + 2) << 8;
       pSVar2 = &pSVar3->surface_normal;
       pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);
-      this_ptr->vertex_buffer_ptr[uVar1].v = (float)((uint)(ushort)pSVar2->B << 8);
+      this_ptr->vertex_buffer_ptr[uVar1].v = (uint)(ushort)pSVar2->B << 8;
     } while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(polygon_info->base).count + 2));
   }
   g_VertexIndexBuffer[0] = (int)(ushort)(polygon_info->base).type;

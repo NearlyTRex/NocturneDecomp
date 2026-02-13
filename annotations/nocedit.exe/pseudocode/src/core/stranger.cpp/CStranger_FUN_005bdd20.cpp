@@ -36,8 +36,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(CStranger *this_ptr)
   UActorVTable local_14;
   
   this_ptr_00 = &(this_ptr->base).base.model;
-  local_1c = (CVector3f *)((this_ptr->base).unk3 + 0x14);
-  CStack_28.z = (float)((this_ptr->base).unk3 + 8);
+  local_1c = (CVector3f *)&(this_ptr->base).target_orientation;
+  CStack_28.z = (float)&(this_ptr->base).target_position;
   do {
     event_id = core_motion_cpp_CMotionController_advance_FUN_0052d610
                          (&this_ptr_00->motion_controller);
@@ -167,10 +167,7 @@ LAB_005bde44:
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar2,0x767);
           }
           iVar2 = (this_ptr->base).base.layer_action_index;
-          (this_ptr->base).unk3[4] = '\0';
-          (this_ptr->base).unk3[5] = '\0';
-          (this_ptr->base).unk3[6] = '\0';
-          (this_ptr->base).unk3[7] = '\0';
+          (this_ptr->base).target_actor = (CDemonActor *)0x0;
           if (iVar2 == 0xe) {
             (this_ptr->base).base.layer_action_t = 0.0;
             (this_ptr->base).base.layer_action_index = 0;

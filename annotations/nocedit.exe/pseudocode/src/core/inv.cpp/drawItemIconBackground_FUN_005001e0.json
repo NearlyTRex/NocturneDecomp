@@ -6,15 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 98,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 53,
-    "suspect_count": 4,
-    "suspect_types": [
-      "suspect_float"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 167
   },
   "cross_references": [
@@ -260,34 +258,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 28,
-      "match": "2.2040519e-38",
-      "text": "this_ptr->vertex_buffer_ptr[1].u = 2.2040519e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 33,
-      "match": "2.2040519e-38",
-      "text": "this_ptr->vertex_buffer_ptr[2].u = 2.2040519e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 34,
-      "match": "8.816208e-39",
-      "text": "this_ptr->vertex_buffer_ptr[2].v = 8.816208e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 39,
-      "match": "8.816208e-39",
-      "text": "this_ptr->vertex_buffer_ptr[3].v = 8.816208e-39;",
-      "type": "suspect_float"
-    }
-  ]
+  "suspects": []
 }

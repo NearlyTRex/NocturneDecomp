@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20
-;   core_path.cpp_GlobalPathmapListCorruption_FUN_00548590
+;   core_path.cpp_FUN_00548590
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     CALL core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20 ; 0057449a
         ;   XREF to: 00499c20 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20(CDemonRaytrace * this_ptr, CVector3f * offset_vector, CVector3f * start_position, CVector3f * end_position, ...)
     ADD ESP,0x14                        ; 0057449f
-    CALL core_path.cpp_GlobalPathmapListCorruption_FUN_00548590 ; 005744a2
-        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)  ; void core_path.cpp_GlobalPathmapListCorruption_FUN_00548590()
+    CALL core_path.cpp_FUN_00548590     ; 005744a2
+        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548590()
     ADD ESP,0x30                        ; 005744a7
     POP EBX                             ; 005744aa
     RET                                 ; 005744ab

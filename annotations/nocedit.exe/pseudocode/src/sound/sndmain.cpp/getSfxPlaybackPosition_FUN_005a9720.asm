@@ -13,7 +13,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[5]:
-;   core_event.cpp_CEventList_FUN_004b0db0 at 004b0df3
+;   core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 at 004b0df3
 ;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053ebc9
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005de360 at 005de43f
 ;   core_turret.cpp_CTurret_process_FUN_005e2430 at 005e28bb

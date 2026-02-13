@@ -9,11 +9,11 @@
 ;
 ; XREF[6]:
 ;   core_script.cpp_CScript_FUN_00565130 at 00565a04
-;   core_script.cpp_CScript_FUN_00565ae0 at 00565c01
 ;   core_script.cpp_CScript_FUN_00565f70 at 00566023
-;   core_script.cpp_CScript_FUN_00566330 at 00566381
-;   core_script.cpp_CScript_FUN_00566390 at 0056645d
+;   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 at 00565c01
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00565007
+;   core_script.cpp_CScript_insertText_FUN_00566390 at 0056645d
+;   core_script.cpp_CScript_splitLineAtColumn_FUN_00566330 at 00566381
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_00643f95

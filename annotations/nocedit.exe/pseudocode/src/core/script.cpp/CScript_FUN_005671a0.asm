@@ -15,7 +15,7 @@
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_FUN_0053ea30 at 0053eb0a
-;   core_script.cpp_FUN_00564090 at 00564156
+;   core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090 at 00564156
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00644047

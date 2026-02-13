@@ -21,10 +21,12 @@ core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
     iVar2 = stricmp(condition_expression,"none");
     iVar1 = 0;
     if (iVar2 != 0) {
-      DAT_02d0a45c = 0;
-      iVar1 = core_event_cpp_CEventList_FUN_004add80(this_ptr);
+      g_EventDryRun = 0;
+      iVar1 = core_event_cpp_CEventList_evaluateExpression_FUN_004add80
+                        (this_ptr,condition_expression);
       if (iVar1 < 0) {
-        engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n",&DAT_02d0a460);
+        engine_console_cpp_CConsole_printf_FUN_00441890
+                  (g_CConsolePtr,"%s\n",g_EventErrorMessageBuffer);
         return 0;
       }
     }

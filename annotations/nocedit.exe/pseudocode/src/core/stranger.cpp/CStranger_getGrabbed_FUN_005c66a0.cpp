@@ -26,7 +26,7 @@ core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0
         (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                   ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       }
-      this_ptr->unk10 = 0;
+      this_ptr->grab_timer = 0.0;
     }
     return iVar1;
   }

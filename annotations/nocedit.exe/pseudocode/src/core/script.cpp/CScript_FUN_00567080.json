@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 246,
+    "complexity_score": 248,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 63,
     "suspect_count": 18,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 183
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -47,7 +47,12 @@
     {
       "addr": "004b0f90",
       "is_variadic": false,
-      "name": "core_event.cpp_FUN_004b0f90"
+      "name": "core_event.cpp_isValidIdentifierChar_FUN_004b0f90"
+    },
+    {
+      "addr": "00564090",
+      "is_variadic": false,
+      "name": "core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090"
     },
     {
       "addr": "00561fd0",
@@ -58,11 +63,6 @@
       "addr": "00567510",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_FUN_00567510"
-    },
-    {
-      "addr": "00564090",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_00564090"
     }
   ],
   "globals": [
@@ -222,77 +222,70 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_3",
-      "text": "core_script_cpp_FUN_00564090((int)&local_2374,param_3);",
+      "text": "(&local_2374,(CDemonActor *)param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_2",
       "text": "while ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2) != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_2",
       "text": "param_2 = (char *)((byte *)param_2 + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_2",
       "text": "param_2 = (char *)((byte *)param_2 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "text": "while (iVar3 = core_event_cpp_FUN_004b0f90((uint)(byte)*param_2), iVar3 != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 32,
       "match": "param_2",
+      "text": "while (iVar3 = core_event_cpp_isValidIdentifierChar_FUN_004b0f90((uint)(byte)*param_2), iVar3 != 0",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
       "text": "bVar1 = *param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 35,
       "match": "param_2",
       "text": "param_2 = (char *)((byte *)param_2 + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 35,
       "match": "param_2",
       "text": "param_2 = (char *)((byte *)param_2 + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 40,
       "match": "param_2",
       "text": "while ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2) != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "text": "param_2 = (char *)((byte *)param_2 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 41,
       "match": "param_2",
       "text": "param_2 = (char *)((byte *)param_2 + 1);",
       "type": "unnamed_param"
@@ -301,26 +294,33 @@
       "description": "Unnamed function parameter",
       "line": 41,
       "match": "param_2",
+      "text": "param_2 = (char *)((byte *)param_2 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_2",
       "text": "if ((*param_2 != 0) || (local_24c[0] == 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 48,
       "match": "param_3",
       "text": "*(int *)pbVar4 = *param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 49,
       "match": "param_3",
       "text": "param_3 = param_3 + (uint)bVar6 * -2 + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 49,
       "match": "param_3",
       "text": "param_3 = param_3 + (uint)bVar6 * -2 + 1;",
       "type": "unnamed_param"

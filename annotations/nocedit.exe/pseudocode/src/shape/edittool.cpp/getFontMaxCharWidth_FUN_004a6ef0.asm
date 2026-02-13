@@ -7,7 +7,7 @@
 ; CBitFont *       Stack[0x4]:4   font_ptr
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_FUN_00566660 at 005666a1
+;   core_script.cpp_CScript_initEditorLayout_FUN_00566660 at 005666a1
 ;
 ; *****************************************************************************
 

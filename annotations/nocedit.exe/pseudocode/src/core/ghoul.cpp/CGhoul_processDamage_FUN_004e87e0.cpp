@@ -75,7 +75,7 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   if ((this_ptr->base).base.hit_points <= 0.0) {
-    iVar10 = (this_ptr->base).unk5;
+    iVar10 = (this_ptr->base).special_form_flag;
     (this_ptr->base).base.hit_points = 0.0;
     if (iVar10 != 0) {
       core_charactr_cpp_CCharacter_shatter_FUN_0042b8e0((CCharacter *)this_ptr);

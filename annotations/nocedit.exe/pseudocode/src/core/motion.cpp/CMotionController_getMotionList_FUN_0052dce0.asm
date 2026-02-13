@@ -15,7 +15,7 @@
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50 at 0042de95
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_0042d390 at 0042d3ad
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920 at 0042c99c
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004acfa6
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004acfa6
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004d2c40 at 004d2e47
 ;   ... and 23 more
 ;

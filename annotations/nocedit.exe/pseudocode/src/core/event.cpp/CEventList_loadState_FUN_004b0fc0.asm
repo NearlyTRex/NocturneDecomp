@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr)
+; __cdecl int __cdecl core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined1       Stack[-0x120]:1  local_120
 ; undefined4       Stack[-0x20]:4  local_20
@@ -34,7 +35,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004aaa70
+;   core_event.cpp_CEventList_reset_FUN_004aaa70
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -52,8 +53,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x124]     ; 004b0fca
     MOV ESI,dword ptr [ESP + 0x128]     ; 004b0fd1
     PUSH EBX                            ; 004b0fd8
-    CALL core_event.cpp_CEventList_FUN_004aaa70 ; 004b0fd9
-        ;   XREF to: 004aaa70 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aaa70(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_reset_FUN_004aaa70 ; 004b0fd9
+        ;   XREF to: 004aaa70 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_004aaa70(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004b0fde
     PUSH ESI                            ; 004b0fe1
     PUSH 0xff                           ; 004b0fe2

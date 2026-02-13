@@ -46,7 +46,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr)
   }
   local_40 = 0xffffffff;
   local_1c = (CInventory *)0x0;
-  if (*(int *)(this_ptr->base).unk3 == 0) {
+  if ((this_ptr->base).nearby_interactive_actor == (CDemonActor *)0x0) {
     if (this_ptr->guns_drawn != 0) {
       pCVar9 = (this_ptr->base).base.carry_hands[1].carry_actor;
       if (((pCVar9 != (CDemonActor *)0x0) &&
@@ -74,7 +74,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr)
       return;
     }
     iVar11 = this_ptr->action_pending;
-    if ((iVar11 == 1) || (*(int *)((this_ptr->base).unk3 + 4) != 0)) {
+    if ((iVar11 == 1) || ((this_ptr->base).target_actor != (CDemonActor *)0x0)) {
 LAB_005c52fa:
       iVar11 = 3;
     }
@@ -91,7 +91,7 @@ LAB_005c52fa:
         if (70.0f < fVar2) {
           *(float *)(this_ptr->unk1 + 0xc) = 70.0f;
         }
-        if ((this_ptr->base).action_bindings.fire_key != 0) {
+        if ((this_ptr->base).player_control.action_states[3] != 0) {
           return;
         }
         goto switchD_005c56f5_caseD_8;
@@ -320,15 +320,15 @@ LAB_005c53f2:
         core_hero_cpp_CHero_FUN_004f38d0(&this_ptr->base);
         this_ptr->action_pending = 0;
       }
-      pCVar9 = *(CDemonActor **)((this_ptr->base).unk3 + 4);
+      pCVar9 = (this_ptr->base).target_actor;
       if ((pCVar9 != (CDemonActor *)0x0) && (iVar3 == 3)) {
         core_inv_cpp_CInventory_removeItem_FUN_004fea70(local_1c,pCVar9,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
-                  (g_CDemonMissionPtr,*(CDemonActor **)((this_ptr->base).unk3 + 4));
+                  (g_CDemonMissionPtr,(this_ptr->base).target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
-                  ((CCharacter *)this_ptr,1,*(CDemonActor **)((this_ptr->base).unk3 + 4),0.0);
+                  ((CCharacter *)this_ptr,1,(this_ptr->base).target_actor,0.0);
         iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                          (*(CDemonActor **)((this_ptr->base).unk3 + 4),"CTrap");
+                          ((this_ptr->base).target_actor,"CTrap");
         if (iVar5 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_2c,0x16,1);
           if (this_ptr->action_pending != 0) {
@@ -342,10 +342,7 @@ LAB_005c53f2:
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_2c,0x14,1);
           this_ptr->action_pending = 6;
         }
-        (this_ptr->base).unk3[4] = '\0';
-        (this_ptr->base).unk3[5] = '\0';
-        (this_ptr->base).unk3[6] = '\0';
-        (this_ptr->base).unk3[7] = '\0';
+        (this_ptr->base).target_actor = (CDemonActor *)0x0;
       }
       if (iVar3 == 10) {
         pCVar6 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(local_1c);

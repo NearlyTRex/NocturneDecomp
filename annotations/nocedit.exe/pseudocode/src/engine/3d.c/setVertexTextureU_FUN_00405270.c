@@ -16,7 +16,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_setVertexTextureU_FUN_00405270(SVertex
   iVar1 = 0;
   if (0 < vertex_batch->vertex_count) {
     do {
-      g_RenderVertexBuffer[vertex_batch->render_queue_index + iVar1].u = (float)(pCVar2->x << 0x10);
+      g_RenderVertexBuffer[vertex_batch->render_queue_index + iVar1].u = pCVar2->x << 0x10;
       iVar1 = iVar1 + 1;
       pCVar2 = (CVector3i *)&pCVar2->y;
     } while (iVar1 < vertex_batch->vertex_count);

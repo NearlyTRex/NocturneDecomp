@@ -15,7 +15,6 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
   int iVar3;
   CTrigger *this_ptr_01;
   CFlameCan *this_ptr_02;
-  int extraout_EAX;
   CTrigger *actor;
   double dVar4;
   byte auStack_cc [28];
@@ -109,8 +108,8 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
         }
       }
       else {
-        core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_1c);
-        if (extraout_EAX == 0) break;
+        iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_1c);
+        if (iVar3 == 0) break;
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
                   (pCStack_1c,&g_CDemonSetPtr->collision_impact_position);
       }

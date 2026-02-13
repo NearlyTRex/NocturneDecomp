@@ -19,16 +19,16 @@
 ;   uchar[257] g_CharacterClassificationTable
 ;   CEdScrollBar g_ScriptEditorVScrollBar
 ;   CEdScrollBar g_ScriptEditorHScrollBar
-;   int INT_031141e0
-;   int INT_031141e4
-;   undefined4 DAT_031141e8
-;   undefined4 DAT_031141ec
-;   undefined4 DAT_03114200
-;   int INT_03114204
-;   undefined4 DAT_03114208
+;   int g_ScriptTextAreaLeft
+;   int g_ScriptTextAreaTop
+;   int g_ScriptTextAreaRight
+;   int g_ScriptTextAreaBottom
+;   CBitFont* g_ScriptEditorFont
+;   int g_ScriptEditorCharWidth
+;   int g_ScriptEditorLineHeight
 ;
 ; Called Functions:
-;   core_script.cpp_FUN_00564560
+;   core_script.cpp_getSelectionRangeForLine_FUN_00564560
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
@@ -67,17 +67,17 @@ section .text
         ;   XREF to: 005664df (CONDITIONAL_JUMP)  ; LAB_005664df
     MOV EDX,dword ptr [0x0310fcd8]      ; 005664fb | g_ScriptEditorVScrollBar
     MOV EAX,EBX                         ; 00566501
-    MOV ECX,dword ptr [0x03114208]      ; 00566503 | DAT_03114208
+    MOV ECX,dword ptr [0x03114208]      ; 00566503 | g_ScriptEditorLineHeight
     SUB EAX,EDX                         ; 00566509
     IMUL EAX,ECX                        ; 0056650b
-    MOV EDX,dword ptr [0x031141e4]      ; 0056650e | INT_031141e4
+    MOV EDX,dword ptr [0x031141e4]      ; 0056650e | g_ScriptTextAreaTop
     ADD EDX,EAX                         ; 00566514
-    MOV EDI,dword ptr [0x031141e4]      ; 00566516 | INT_031141e4
+    MOV EDI,dword ptr [0x031141e4]      ; 00566516 | g_ScriptTextAreaTop
     MOV dword ptr [ESP + 0xc],EDX       ; 0056651c
     CMP EDX,EDI                         ; 00566520
     JL 0x005664df                       ; 00566522
         ;   XREF to: 005664df (CONDITIONAL_JUMP)  ; LAB_005664df
-    CMP EDX,dword ptr [0x031141ec]      ; 00566524 | DAT_031141ec
+    CMP EDX,dword ptr [0x031141ec]      ; 00566524 | g_ScriptTextAreaBottom
     JGE 0x005664df                      ; 0056652a
         ;   XREF to: 005664df (CONDITIONAL_JUMP)  ; LAB_005664df
     PUSH EBX                            ; 0056652c
@@ -91,8 +91,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0056653d
     PUSH EAX                            ; 00566541
     PUSH EBX                            ; 00566542
-    CALL core_script.cpp_FUN_00564560   ; 00566543
-        ;   XREF to: 00564560 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564560()
+    CALL core_script.cpp_getSelectionRangeForLine_FUN_00564560 ; 00566543
+        ;   XREF to: 00564560 (UNCONDITIONAL_CALL)  ; void core_script.cpp_getSelectionRangeForLine_FUN_00564560(int line, int * sel_start_col_out, int * sel_end_col_out)
     ADD ESP,0xc                         ; 00566548
     MOV EAX,dword ptr [ESP + 0x8]       ; 0056654b
     MOV EDX,dword ptr [ESP + 0x4]       ; 0056654f
@@ -100,16 +100,16 @@ section .text
     JLE 0x0056659b                      ; 00566555
         ;   XREF to: 0056659b (CONDITIONAL_JUMP)  ; LAB_0056659b
     MOV EAX,dword ptr [ESP + 0xc]       ; 00566557
-    ADD EAX,dword ptr [0x03114208]      ; 0056655b | DAT_03114208
+    ADD EAX,dword ptr [0x03114208]      ; 0056655b | g_ScriptEditorLineHeight
     PUSH 0x4                            ; 00566561
     DEC EAX                             ; 00566563
     MOV EBX,dword ptr [0x0310fd0c]      ; 00566564 | g_ScriptEditorHScrollBar
     PUSH EAX                            ; 0056656a
     MOV EAX,dword ptr [ESP + 0x10]      ; 0056656b
-    MOV ESI,dword ptr [0x03114204]      ; 0056656f | INT_03114204
+    MOV ESI,dword ptr [0x03114204]      ; 0056656f | g_ScriptEditorCharWidth
     SUB EAX,EBX                         ; 00566575
     IMUL EAX,ESI                        ; 00566577
-    MOV EBP,dword ptr [0x031141e0]      ; 0056657a | INT_031141e0
+    MOV EBP,dword ptr [0x031141e0]      ; 0056657a | g_ScriptTextAreaLeft
     ADD EAX,EBP                         ; 00566580
     DEC EAX                             ; 00566582
     PUSH EAX                            ; 00566583
@@ -125,13 +125,13 @@ section .text
     ADD ESP,0x14                        ; 00566598
     MOV EAX,[0x0310fd0c]                ; 0056659b | g_ScriptEditorHScrollBar
         ;   Label: LAB_0056659b
-    MOV EDX,dword ptr [0x03114204]      ; 005665a0 | INT_03114204
+    MOV EDX,dword ptr [0x03114204]      ; 005665a0 | g_ScriptEditorCharWidth
     NEG EAX                             ; 005665a6
     IMUL EAX,EDX                        ; 005665a8
     XOR ESI,ESI                         ; 005665ab
     MOV dword ptr [ESP],ESI             ; 005665ad
-    MOV ESI,dword ptr [0x031141e0]      ; 005665b0 | INT_031141e0
-    MOV ECX,dword ptr [0x031141e8]      ; 005665b6 | DAT_031141e8
+    MOV ESI,dword ptr [0x031141e0]      ; 005665b0 | g_ScriptTextAreaLeft
+    MOV ECX,dword ptr [0x031141e8]      ; 005665b6 | g_ScriptTextAreaRight
     ADD ESI,EAX                         ; 005665bc
     XOR EBP,EBP                         ; 005665be
     CMP ESI,ECX                         ; 005665c0
@@ -170,7 +170,7 @@ section .text
     PUSH EAX                            ; 0056660c
     PUSH ESI                            ; 0056660d
     PUSH EBX                            ; 0056660e
-    MOV EDX,dword ptr [0x03114200]      ; 0056660f | DAT_03114200
+    MOV EDX,dword ptr [0x03114200]      ; 0056660f | g_ScriptEditorFont
     PUSH EDX                            ; 00566615
     CALL engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0 ; 00566616
         ;   XREF to: 004ce7a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont * this_ptr, int character_code, int x, int y, ...)
@@ -180,9 +180,9 @@ section .text
         ;   XREF to: 00566645 (CONDITIONAL_JUMP)  ; LAB_00566645
     INC EDI                             ; 00566623
         ;   Label: LAB_00566623
-    MOV EBX,dword ptr [0x03114204]      ; 00566624 | INT_03114204
+    MOV EBX,dword ptr [0x03114204]      ; 00566624 | g_ScriptEditorCharWidth
         ;   Label: LAB_00566624
-    MOV EAX,[0x031141e8]                ; 0056662a | DAT_031141e8
+    MOV EAX,[0x031141e8]                ; 0056662a | g_ScriptTextAreaRight
     ADD ESI,EBX                         ; 0056662f
     INC EBP                             ; 00566631
     CMP ESI,EAX                         ; 00566632

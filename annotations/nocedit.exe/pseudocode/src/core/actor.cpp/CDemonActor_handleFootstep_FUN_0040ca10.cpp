@@ -2,11 +2,11 @@
 // Address: 0040ca10
 // Address Range: [[0040ca10, 0040cb82]]
 // Convention: __cdecl
-// Signature: int __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10 (CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10 (CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)
 
 #include "nocturne.h"
 
-int __cdecl
+void __cdecl
 core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
           (CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)
 
@@ -16,7 +16,6 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
   float fVar3;
   int iVar4;
   char *pcVar5;
-  int extraout_EAX;
   double dVar6;
   char local_8c [100];
   int local_28;
@@ -30,7 +29,7 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
   fVar3 = position->y - (float)g_CDemonCameraInstance.base.position.y;
   fVar2 = position->z - (float)g_CDemonCameraInstance.base.position.z;
   if (10000.0f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
-    return 0;
+    return;
   }
   iVar4 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);
   if (iVar4 != 0) {
@@ -60,5 +59,5 @@ LAB_0040cb07:
   _sprintf
             (local_8c,"footstep-%s-!-%s-?.wav @ %f",this_ptr->footstep_sound_code,pcVar5,dVar6);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40(g_CSoundPtr,this_ptr,local_8c,position);
-  return extraout_EAX;
+  return;
 }

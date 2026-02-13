@@ -97,19 +97,19 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
             (g_CDemonRendererPtr2,&g_FireEffectRainDropTexture);
   (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
   iStack_14 = 0xffff - (int)g_PerspectiveReciprocal;
-  g_RenderVertexBuffer[1].u = 1.9101783e-38;
-  g_RenderVertexBuffer[0].u = 1.1754944e-38;
-  g_RenderVertexBuffer[0].v = 2.0203809e-38;
-  g_RenderVertexBuffer[1].v = 2.0203809e-38;
-  g_RenderVertexBuffer[2].u = 1.1754944e-38;
-  g_RenderVertexBuffer[3].u = 1.1754944e-38;
-  g_RenderVertexBuffer[2].v = (float)((int)g_CameraLoadImageReadBuffer + 0x771b0);
+  g_RenderVertexBuffer[1].u = 0xd00000;
+  g_RenderVertexBuffer[0].u = 0x800000;
+  g_RenderVertexBuffer[0].v = 0xdc0000;
+  g_RenderVertexBuffer[1].v = 0xdc0000;
+  g_RenderVertexBuffer[2].u = 0x800000;
+  g_RenderVertexBuffer[3].u = 0x800000;
+  g_RenderVertexBuffer[2].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
   iStack_10 = iStack_14;
   dVar3 = round
                     ((double)((float)iStack_14 *
                              (this_ptr->base).lifetime_remaining * (float)4));
   g_RenderVertexBuffer[0].w_recip = (float)(int)ROUND(dVar3);
-  g_RenderVertexBuffer[3].v = (float)((int)g_CameraLoadImageReadBuffer + 0x771b0);
+  g_RenderVertexBuffer[3].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
   local_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256.0f);
   iStack_2c = (int)ROUND((this_ptr->base).position.y * 256.0f);
   iStack_28 = (int)ROUND((this_ptr->base).position.z * 256.0f);

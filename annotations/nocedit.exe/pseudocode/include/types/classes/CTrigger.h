@@ -28,6 +28,7 @@ typedef struct CTrigger {
     int unk3; // 0x2fc
     int auto_aim_at_me; // 0x300
     char damage_actor_name_wildcard_name[100]; // 0x304
-    char unk4[8]; // 0x368
+    float unk4; // 0x368
+    float unk5; // 0x36c
 } CTrigger;
 

@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   fade_time
 ;
 ; XREF[1]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab545
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ab545
 ;
 ; Referenced Globals:
 ;   float g_TargetVolumeMultiplier

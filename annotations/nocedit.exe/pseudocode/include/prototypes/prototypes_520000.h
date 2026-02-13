@@ -85,7 +85,7 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
 CVector3f * __cdecl core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_005222f0 (CMirrorReflection *this_ptr,CVector3f *output_buffer,CVector3f *input_vector);
 uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
 void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560 (CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
-void __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_005225a0 (CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_005225a0 (CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_005225e0 (CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_00522670(CMirror *this_ptr);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror *this_ptr);
@@ -116,7 +116,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemo
 void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_00523f20 (CDemonMission *this_ptr,CDemonActor *actor,int should_delete);
 void __cdecl core_mission_cpp_CDemonMission_FUN_00523f50(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission *this_ptr,int set_index);
-char * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission *this_ptr,char *name);
+CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_00524070 (CDemonMission *this_ptr,CLocation *teleport_target);
 void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0 (CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMission *this_ptr);
@@ -299,7 +299,7 @@ int __cdecl sound_mp3_cpp_CFileBitStream_getErrorFlag_FUN_0052f0d0(CFileBitStrea
 int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_0052f0e0 (CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits);
 uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(CMP3Decoder *this_ptr);
 uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(CMP3Decoder *this_ptr,uint num_bits);
-void __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(CMP3Decoder *this_ptr);
+uint __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(CMP3Decoder *this_ptr);
 void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260 (CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte);
 void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_0052f2c0(CMP3Decoder *this_ptr,int num_bits);
 void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_0052f320(CMP3Decoder *this_ptr,int num_bytes);

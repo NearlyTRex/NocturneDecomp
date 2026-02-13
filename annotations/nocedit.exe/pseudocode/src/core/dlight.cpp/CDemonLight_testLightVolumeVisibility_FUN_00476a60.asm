@@ -62,7 +62,7 @@ section .text
     MOV dword ptr [ESP + 0x28],ECX      ; 00476ab6
     MOV dword ptr [ESP + 0x2c],ESI      ; 00476aba
     CALL core_set.cpp_CDemonSet_FUN_00570df0 ; 00476abe
-        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
+        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 00476ac3
     TEST EAX,EAX                        ; 00476ac6
     JZ 0x00476ae9                       ; 00476ac8
@@ -97,7 +97,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EDX      ; 00476b0f
     MOV dword ptr [ESP + 0x2c],ECX      ; 00476b13
     CALL core_set.cpp_CDemonSet_FUN_00570df0 ; 00476b17
-        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
+        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 00476b1c
     TEST EAX,EAX                        ; 00476b1f
     JZ 0x00476b27                       ; 00476b21
@@ -116,7 +116,7 @@ section .text
     MOV dword ptr [ESP + 0x24],EBP      ; 00476b42
     MOV dword ptr [ESP + 0x2c],EDX      ; 00476b46
     CALL core_set.cpp_CDemonSet_FUN_00570df0 ; 00476b4a
-        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
+        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 00476b4f
     TEST EAX,EAX                        ; 00476b52
     JZ 0x00476b5d                       ; 00476b54
@@ -138,7 +138,7 @@ section .text
     MOV dword ptr [ESP + 0x24],EDI      ; 00476b83
     MOV dword ptr [ESP + 0x28],EBP      ; 00476b87
     CALL core_set.cpp_CDemonSet_FUN_00570df0 ; 00476b8b
-        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
+        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 00476b90
     TEST EAX,EAX                        ; 00476b93
     JNZ 0x00476aca                      ; 00476b95
@@ -154,7 +154,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EDI      ; 00476bb6
     MOV dword ptr [ESP + 0x2c],EBP      ; 00476bba
     CALL core_set.cpp_CDemonSet_FUN_00570df0 ; 00476bbe
-        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
+        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 00476bc3
     TEST EAX,EAX                        ; 00476bc6
     JZ 0x00476bd1                       ; 00476bc8
@@ -176,7 +176,7 @@ section .text
     MOV dword ptr [ESP + 0x28],ESI      ; 00476bf7
     MOV dword ptr [ESP + 0x2c],EDI      ; 00476bfb
     CALL core_set.cpp_CDemonSet_FUN_00570df0 ; 00476bff
-        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
+        ;   XREF to: 00570df0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 00476c04
     TEST EAX,EAX                        ; 00476c07
     JZ 0x00476acf                       ; 00476c09

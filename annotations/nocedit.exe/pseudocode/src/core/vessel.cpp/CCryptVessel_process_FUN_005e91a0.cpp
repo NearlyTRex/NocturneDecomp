@@ -131,7 +131,7 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
         if (0.0 <= fVar6) {
           return;
         }
-        core_fire_cpp_CFireEffect_FUN_004c8c10(g_CFireEffectPtr);
+        core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(g_CFireEffectPtr,&pCVar2->position);
         pCVar4 = this_ptr->start_loc;
         this_ptr->timer = 1.0;
         (pCVar2->position).x = (pCVar4->location).position.x;
@@ -191,13 +191,14 @@ core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float d
           ))) {
         pCVar4[2].scale.x = 1;
         this_ptr->prey[2].scale.y = 0;
-        core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+        core_event_cpp_CEventList_executeCommands_FUN_004aabe0
+                  (g_CEventListPtr,(char *)&this_ptr->prey[2].orient);
       }
       if (((this_ptr->prey != (CDemonActor *)0x0) && (this_ptr->neutral != (CDemonActor *)0x0)) &&
          ((this_ptr->end_loc[1].location.area_id != 0 &&
           ((*(int *)(this_ptr->prey[2].is_transparent + 0x184) != 0 &&
            (*(int *)(this_ptr->neutral[2].is_transparent + 0x184) != 0)))))) {
-        core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+        core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->win_event);
         this_ptr->prey[5].previous_transform_state.orientation.y = 1.4013e-45;
         this_ptr->neutral[5].previous_transform_state.orientation.y = 1.4013e-45;
         this_ptr->unk8 = 1;

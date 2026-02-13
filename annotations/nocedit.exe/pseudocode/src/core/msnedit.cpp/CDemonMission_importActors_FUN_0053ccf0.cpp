@@ -10,21 +10,22 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
 
 {
   CDemonMission *pCVar1;
-  CDemonActor *actor_ptr;
   int iVar2;
   int iVar3;
   char *pcVar4;
   CDemonActor *pCVar5;
-  uint *puVar6;
+  CDemonActor *pCVar6;
+  CDemonActor *pCVar7;
+  uint *puVar8;
   char *unaff_EDI;
-  byte bVar7;
+  byte bVar9;
   CPickList local_448;
   char local_a0 [100];
   char local_3c [40];
   int local_14;
   CDemonMission *local_10;
   
-  bVar7 = 0;
+  bVar9 = 0;
   iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                     (g_CEditorToolsPtr,"Use a saved game file instead of a mission?");
   if (iVar2 == 0) {
@@ -64,12 +65,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   local_14 = 0;
   this_ptr->skip_gore_load_flag = 0;
   g_CDemonMissionPtr = this_ptr;
-  puVar6 = &0x0000002A;
+  puVar8 = &0x0000002A;
   pcVar4 = local_a0;
   for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(uint *)pcVar4 = *puVar6;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
-    pcVar4 = pcVar4 + ((uint)bVar7 * -2 + 1) * 4;
+    *(uint *)pcVar4 = *puVar8;
+    puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
+    pcVar4 = pcVar4 + ((uint)bVar9 * -2 + 1) * 4;
   }
   do {
     pCVar1 = local_10;
@@ -119,17 +120,16 @@ LAB_0053ce9f:
                           (&local_448,"Import actor",local_14,0);
         if (iVar2 < 0) break;
         pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_448.base,iVar2);
-        pCVar5 = (CDemonActor *)
-                 core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(local_10,pcVar4);
+        pCVar5 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(local_10,pcVar4);
         if (pCVar5 == (CDemonActor *)0x0) {
           g_CurrentFilename = "..\\core\\msnedit.cpp";
           g_CurrentLineNumber = 0xc2b;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze finding actor in temp mission!");
         }
         core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0(local_10,pCVar5);
-        pcVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
-                           (this_ptr,(char *)pCVar5);
-        if (pcVar4 != (char *)0x0) {
+        pCVar6 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                           (this_ptr,pCVar5->actor_name);
+        if (pCVar6 != (CDemonActor *)0x0) {
           core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,pCVar5);
         }
         core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,pCVar5);
@@ -145,19 +145,19 @@ LAB_0053d103:
       if (iVar2 != 0) {
         iVar2 = 0;
         pCVar5 = pCVar1->first_actor;
-        while ((actor_ptr = pCVar5, actor_ptr != (CDemonActor *)0x0 &&
-               (pCVar5 = actor_ptr->next_actor, actor_ptr != (CDemonActor *)0x0))) {
-          iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                            (local_a0,actor_ptr->actor_name,0);
+        while ((pCVar6 = pCVar5, pCVar6 != (CDemonActor *)0x0 &&
+               (pCVar5 = pCVar6->next_actor, pCVar6 != (CDemonActor *)0x0))) {
+          iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20(local_a0,pCVar6->actor_name,0)
+          ;
           if (iVar3 != 0) {
-            core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0(local_10,actor_ptr);
-            pcVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
-                               (this_ptr,actor_ptr->actor_name);
-            if (pcVar4 != (char *)0x0) {
-              core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,actor_ptr);
+            core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0(local_10,pCVar6);
+            pCVar7 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+                               (this_ptr,pCVar6->actor_name);
+            if (pCVar7 != (CDemonActor *)0x0) {
+              core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,pCVar6);
             }
             iVar2 = iVar2 + 1;
-            core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,actor_ptr);
+            core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,pCVar6);
           }
         }
         shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0

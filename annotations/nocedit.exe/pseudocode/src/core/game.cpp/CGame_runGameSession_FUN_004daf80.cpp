@@ -52,7 +52,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->debug_toggle_flag = 0;
   this_ptr->screen_clear_enabled = 0;
   this_ptr->debug_flag_1 = 0;
-  this_ptr->unk4 = 0;
+  this_ptr->gratuitous_dismemberment = 0;
   this_ptr->debug_flag_2 = 0;
   this_ptr->event_processing_enabled = 0;
   this_ptr->subtitle_system_enabled = 0;
@@ -60,7 +60,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->console_enabled = 0;
   this_ptr->time_scale_factor = 1.0;
   this_ptr->scripted_sequence_active = 0;
-  this_ptr->unk6 = 0;
+  this_ptr->render_mode = 0;
   this_ptr->editor_tools_enabled = 0;
   this_ptr->bitmap_filename[0] = '\0';
   this_ptr->bitmap_width = 0;
@@ -133,7 +133,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
     core_level_cpp_CLevelLoader_cleanup_FUN_00504720(g_CLevelLoaderPtr);
     shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",0x581);
     g_HeroActors[g_LocalHeroIndex]->aim_mode = this_ptr->aim_mode;
-    this_ptr->unk12 = 0;
+    this_ptr->act_completion_state = 0;
     while( true ) {
       if ((this_ptr->is_paused != 0) || (iVar3 = 1, g_CheatSystemEnabled != 0)) {
         iVar3 = 0;

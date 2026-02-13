@@ -179,7 +179,7 @@ section .text
     MOV ESI,dword ptr [0x00681ef8]      ; 00421bab | g_CSoundPtr
     PUSH ESI                            ; 00421bb1 | g_CSoundInstance
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80 ; 00421bb2
-        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
+        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 00421bb7
     TEST EAX,EAX                        ; 00421bba
     JZ 0x00421bf4                       ; 00421bbc

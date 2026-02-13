@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 at 0053afe4
-;   core_script.cpp_CScript_FUN_00565d00 at 00565e63
+;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565e63
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Can_t_start_sound_output_0063d024
@@ -70,7 +70,7 @@ section .text
     MOV EBX,dword ptr [0x00681ef8]      ; 0053eb76 | g_CSoundInstance | g_CSoundPtr
     PUSH EBX                            ; 0053eb7c | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 0053eb7d
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 0053eb82
     MOV ESI,EAX                         ; 0053eb85
     MOV EBX,EAX                         ; 0053eb87

@@ -17,8 +17,8 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_getRestoreMemory_FUN_00472950
-;   core_event.cpp_FUN_004b1a78
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_watcom.c__memcpy_FUN_004b1a78
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH EAX                            ; 00472a0c
     MOV EDX,dword ptr [EBX + 0x2f94]    ; 00472a0d
     MOV ECX,dword ptr [EBX + 0x2f9c]    ; 00472a13
-    CALL core_event.cpp_FUN_004b1a78    ; 00472a19
-        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b1a78()
+    CALL crt_watcom.c__memcpy_FUN_004b1a78 ; 00472a19
+        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_004b1a78(void * dest, void * src, uint size)
     POP EBP                             ; 00472a1e
     POP EBX                             ; 00472a1f
     RET                                 ; 00472a20

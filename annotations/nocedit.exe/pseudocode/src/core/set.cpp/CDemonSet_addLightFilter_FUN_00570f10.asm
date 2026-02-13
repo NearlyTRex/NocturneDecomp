@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004aaf08
-;   core_event.cpp_CEventList_FUN_004ae140 at 004af998
+;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004af998
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004aaf08
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055bd84
 ;
 ; Referenced Globals:

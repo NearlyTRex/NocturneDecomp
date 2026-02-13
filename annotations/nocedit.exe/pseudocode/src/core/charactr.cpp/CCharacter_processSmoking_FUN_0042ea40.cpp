@@ -29,9 +29,10 @@ core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter *this_ptr,fl
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->model).motion_controller);
     if (pSVar2->state_index == 0) {
-      if (((this_ptr->unk15).z == 0.0) &&
-         (fVar1 = (this_ptr->unk15).x - delta_time, (this_ptr->unk15).x = fVar1, fVar1 < 0.0)) {
-        (this_ptr->unk15).x = (this_ptr->unk15).x + 0.2f;
+      if ((this_ptr->smoke_occluded == 0) &&
+         (fVar1 = this_ptr->smoke_emit_timer - delta_time, this_ptr->smoke_emit_timer = fVar1,
+         fVar1 < 0.0)) {
+        this_ptr->smoke_emit_timer = this_ptr->smoke_emit_timer + 0.2f;
         local_4c.y = -0.5;
         local_4c.x = 0.0;
         local_4c.z = 1.0;
@@ -53,10 +54,10 @@ core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter *this_ptr,fl
                     (g_CFireEffectPtr,&local_34,0.5,&local_1c,0x8000);
         }
       }
-      fVar1 = (this_ptr->unk15).y - delta_time;
-      (this_ptr->unk15).y = fVar1;
+      fVar1 = this_ptr->smoke_check_timer - delta_time;
+      this_ptr->smoke_check_timer = fVar1;
       if (fVar1 < 0.0) {
-        (this_ptr->unk15).y = (this_ptr->unk15).y + 1.5f;
+        this_ptr->smoke_check_timer = this_ptr->smoke_check_timer + 1.5f;
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr->model);
         iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");
@@ -71,7 +72,7 @@ core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter *this_ptr,fl
                     (&this_ptr->base,&local_28,pCVar5);
           iVar4 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);
           if (iVar4 == 0) {
-            (this_ptr->unk15).z = (float)(uint)((this_ptr->unk15).z == 0.0);
+            this_ptr->smoke_occluded = (uint)(this_ptr->smoke_occluded == 0);
             return;
           }
         }

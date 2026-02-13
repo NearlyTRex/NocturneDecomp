@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 85,
+        "line": 82,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 142,
+        "line": 136,
         "message": "use of undeclared identifier 'stack0xffffff40'"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 231,
+        "line": 225,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -25,18 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 470,
-    "complexity_score": 368,
+    "complexity_score": 297,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 18,
-    "pseudocode_lines": 223,
-    "suspect_count": 13,
+    "pseudocode_lines": 217,
+    "suspect_count": 7,
     "suspect_types": [
-      "extra_output",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 693
+    "total_lines": 687
   },
   "cross_references": [],
   "function": {
@@ -521,92 +520,50 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_EAX_01",
-      "text": "int extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_ffffff48",
       "text": "float in_stack_ffffff48;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 21,
       "match": "in_stack_ffffff4c",
       "text": "CDemonActor *in_stack_ffffff4c;",
       "type": "stack_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 72,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX == 0) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
-      "match": "extraout_EAX_00",
-      "text": "if (extraout_EAX_00 == 0) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 96,
-      "match": "extraout_EAX_01",
-      "text": "if (extraout_EAX_01 == 0) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 117,
+      "line": 114,
       "match": "in_stack_ffffff48",
       "text": "path_map,pCVar9,fVar11,in_stack_ffffff48);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 135,
+      "line": 129,
       "match": "&stack0xffffff40",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff40);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 195,
+      "line": 189,
       "match": "in_stack_ffffff4c",
       "text": "in_stack_ffffff4c = (this_ptr->base).victim;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 196,
+      "line": 190,
       "match": "in_stack_ffffff4c",
       "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_ffffff4c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 224,
+      "line": 218,
       "match": "in_stack_ffffff4c",
       "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_ffffff4c);",
       "type": "stack_param"

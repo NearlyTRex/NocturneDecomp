@@ -56,7 +56,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(CStranger *this_ptr)
   CDemonActor *local_18;
   float local_14;
   
-  if (((((0.0 < this_ptr->unk8) || ((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0)) ||
+  if (((((0.0 < this_ptr->action_timer) ||
+        ((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0)) ||
        (local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                              ((CCharacter *)this_ptr,0), local_14 < (float)0.98999999999999999)) ||
       ((local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
@@ -283,7 +284,7 @@ LAB_005c197a:
   }
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,in_stack_fffffe98);
 LAB_005c1c40:
-  this_ptr->unk8 = 4.0;
+  this_ptr->action_timer = 4.0;
   this_ptr->action_pending = 4;
   return 1;
 }

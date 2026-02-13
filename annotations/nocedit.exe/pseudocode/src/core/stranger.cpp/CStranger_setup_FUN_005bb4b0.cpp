@@ -89,7 +89,7 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
     *(float *)(this_ptr->unk9 + 0x8c) = pCVar2->z;
   }
   core_stranger_cpp_CStranger_FUN_005be520(this_ptr);
-  this_ptr->unk10 = 0;
+  this_ptr->grab_timer = 0.0;
   this_ptr->unk11[0x10] = '\0';
   this_ptr->unk11[0x11] = '\0';
   this_ptr->unk11[0x12] = '\0';

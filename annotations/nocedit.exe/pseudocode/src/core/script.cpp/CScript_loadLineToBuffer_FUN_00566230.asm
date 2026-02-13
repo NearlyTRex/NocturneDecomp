@@ -9,9 +9,9 @@
 ;
 ; XREF[4]:
 ;   core_script.cpp_CScript_FUN_00565130 at 00565990
-;   core_script.cpp_CScript_FUN_00566330 at 00566342
-;   core_script.cpp_CScript_FUN_00566390 at 005663d4
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564f07
+;   core_script.cpp_CScript_insertText_FUN_00566390 at 005663d4
+;   core_script.cpp_CScript_splitLineAtColumn_FUN_00566330 at 00566342
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_00643f94

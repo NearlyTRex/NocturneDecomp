@@ -66,16 +66,16 @@ typedef struct CGame {
     int debug_flag_2; // 0x1d4
     int event_processing_enabled; // 0x1d8
     int subtitle_system_enabled; // 0x1dc
-    int unk4; // 0x1e0
+    int gratuitous_dismemberment; // 0x1e0
     int camera_debug_enabled; // 0x1e4
     int debug_toggle_flag; // 0x1e8
     float time_scale_factor; // 0x1ec
     int scripted_sequence_active; // 0x1f0
-    int unk6; // 0x1f4
+    int render_mode; // 0x1f4
     int editor_tools_enabled; // 0x1f8
     int is_paused; // 0x1fc
     int wait_for_keypress; // 0x200
-    int unk7; // 0x204
+    int big_hat_cheat; // 0x204
     int skip_frame_render; // 0x208
     int profile_mode; // 0x20c
     int velocity_debug_enabled; // 0x210
@@ -96,7 +96,7 @@ typedef struct CGame {
     float game_stat_2; // 0x24c
     float total_play_time; // 0x250
     int game_state_flags; // 0x254
-    int unk12; // 0x258
+    int act_completion_state; // 0x258
     int clocktime; // 0x25c
     int delta_time_int; // 0x260
     float delta_time_float; // 0x264

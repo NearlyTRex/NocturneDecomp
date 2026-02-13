@@ -11,7 +11,7 @@
 ; float            Stack[0x14]:4   decay_time
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_00570fa0 at 00570fb5
+;   core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0 at 00570fb5
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0061a4ca = 65536

@@ -112,7 +112,7 @@ void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SEdgeDat
 void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SEdgeData *vertex_a,SEdgeData *vertex_b);
 SEdgeData * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanline_y,SEdgeData *exclude_edge);
 void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_indices,int vertex_count);
-void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count);
+int __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count);
 void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void);
 CDraculaBride * __cdecl core_dracbrid_cpp_factoryFunc_FUN_00483f80(void);
 CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00483fb0(CDraculaBride *this_ptr);

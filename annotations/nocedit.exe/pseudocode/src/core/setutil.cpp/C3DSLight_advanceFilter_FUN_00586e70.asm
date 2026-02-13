@@ -8,7 +8,7 @@
 ; CDemonLight *    Stack[0x8]:4   light
 ;
 ; XREF[1]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004aafb7
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004aafb7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_006496b6

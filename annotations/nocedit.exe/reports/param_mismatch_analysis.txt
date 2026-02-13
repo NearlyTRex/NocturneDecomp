@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5101
 Functions with no callers: 3241
-Parameter mismatches detected: 585
-Signature accuracy rate: 68.5%
+Parameter mismatches detected: 579
+Signature accuracy rate: 68.9%
 
 Mismatches by confidence:
   High confidence:   36 (multiple call sites agree)
-  Medium confidence: 85 (some agreement)
-  Low confidence:    464 (limited data)
+  Medium confidence: 83 (some agreement)
+  Low confidence:    460 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -442,13 +442,13 @@ MEDIUM CONFIDENCE MISMATCHES
   core_cloth.cpp_CCloth_free_FUN_00438cb0            declared:1 est:2 (+1) [2 calls]
   core_curtain.cpp_CCurtain_FUN_00449fc0             declared:1 est:2 (+1) [2 calls]
 
-  ... and 35 more
+  ... and 33 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  464 functions with low-confidence mismatches
+  460 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -468,7 +468,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 90
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 495
+Functions where declaration has FEWER params than estimated: 489
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -481,11 +481,11 @@ Distribution of differences (estimated - declared):
   -3 params: 9 functions
   -2 params: 16 functions
   -1 params: 55 functions
-  +1 params: 219 functions
-  +2 params: 104 functions
-  +3 params: 58 functions
-  +4 params: 76 functions
-  +5 params: 11 functions
+  +1 params: 213 functions
+  +2 params: 103 functions
+  +3 params: 59 functions
+  +4 params: 77 functions
+  +5 params: 10 functions
   +6 params: 15 functions
   +7 params: 5 functions
   +8 params: 3 functions

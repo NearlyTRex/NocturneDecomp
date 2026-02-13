@@ -101,7 +101,7 @@ void __cdecl core_mobster_cpp_CMobster_setup_FUN_00525340(CMobster *this_ptr)
   this_ptr->unk2[0x42] = '\0';
   this_ptr->unk2[0x43] = '\0';
   if (pCVar1 != (CDemonActor *)0x0) {
-    (this_ptr->base).field14_0xbeb8 = 1;
+    (this_ptr->base).allow_pathfind_to_new_targets = 1;
   }
   this_ptr->unk2[4] = '\0';
   this_ptr->unk2[5] = '\0';

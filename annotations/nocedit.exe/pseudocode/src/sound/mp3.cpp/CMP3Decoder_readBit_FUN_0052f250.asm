@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(CMP3Decoder *this_ptr)
+; __cdecl uint __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(CMP3Decoder *this_ptr)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr

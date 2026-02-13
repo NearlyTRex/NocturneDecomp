@@ -19,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 724,
+    "complexity_score": 644,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 8,
     "pseudocode_lines": 234,
-    "suspect_count": 48,
+    "suspect_count": 40,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float"
@@ -537,62 +537,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 74,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 75,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 76,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 77,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[1].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 78,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 79,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 80,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 81,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[3].v = 7.34684e-40;",
-      "type": "suspect_float"
-    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,

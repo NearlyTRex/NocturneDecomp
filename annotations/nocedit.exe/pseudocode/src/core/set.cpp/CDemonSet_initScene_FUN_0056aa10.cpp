@@ -98,6 +98,6 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
       pCVar3 = (CDemonSet *)&pCVar3->cameras[0].unk4;
     } while (iVar4 < this_ptr->camera_count);
   }
-  core_weather_cpp_CWeather_FUN_005ef8c0(g_CWeatherPtr);
+  core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(g_CWeatherPtr,this_ptr->weather_type);
   return;
 }

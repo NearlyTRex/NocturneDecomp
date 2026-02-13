@@ -1,22 +1,47 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 24,
+        "line": 67,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 69,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 71,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 72,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 272,
+    "complexity_score": 268,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
-    "pseudocode_lines": 222,
+    "pseudocode_lines": 218,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 731
+    "total_lines": 727
   },
   "cross_references": [],
   "function": {
@@ -51,7 +76,7 @@
     {
       "addr": "004aabe0",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004aabe0"
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004aabe0"
     },
     {
       "addr": "004c8c90",
@@ -370,28 +395,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)",
-      "text": "iVar9 = *(int *)((int)g_HeroActors + iVar10);",
+      "line": 46,
+      "match": "(float *)((int)",
+      "text": "fVar4 = *(float *)((int)g_HeroActors + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 99,
       "match": "ROUND",
       "text": "CStack_74.x = (int)ROUND(aCStack_50[0].x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
+      "line": 100,
       "match": "ROUND",
       "text": "CStack_74.y = (int)ROUND(aCStack_50[0].y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 101,
       "match": "ROUND",
       "text": "CStack_74.z = (int)ROUND(aCStack_50[0].z * 256.0f);",
       "type": "decompiler_intrinsic"

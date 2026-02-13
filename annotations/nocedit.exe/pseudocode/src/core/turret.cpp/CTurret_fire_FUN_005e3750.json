@@ -4,38 +4,44 @@
       {
         "category": "incompatible_types",
         "column": 47,
-        "line": 94,
+        "line": 93,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 119,
+        "line": 118,
         "message": "use of undeclared identifier 'stack0xffffff24'"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 120,
+        "line": 119,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 46,
-        "line": 122,
+        "line": 121,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 123,
+        "line": 122,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 134,
+        "line": 133,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 135,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
@@ -52,31 +58,25 @@
       {
         "category": "other",
         "column": 19,
-        "line": 138,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 144,
+        "line": 143,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 150,
+        "line": 149,
         "message": "C-style cast from 'CTurret *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 153,
+        "line": 152,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 163,
+        "line": 162,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       }
     ],
@@ -85,20 +85,19 @@
   },
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 318,
+    "complexity_score": 292,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 22,
-    "pseudocode_lines": 163,
-    "suspect_count": 13,
+    "pseudocode_lines": 162,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "stack_ref",
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 560
+    "total_lines": 559
   },
   "cross_references": [],
   "function": {
@@ -426,92 +425,78 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 86,
       "match": "SUB84",
       "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 106,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX == 0) break;",
-      "type": "extra_output"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 112,
+      "line": 111,
       "match": "&stack0xffffff24",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff24);",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 113,
+      "line": 112,
       "match": "._0_4_",
       "text": "auStack_cc._0_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 114,
       "match": "SUB84",
       "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 116,
+      "line": 115,
       "match": "._4_4_",
       "text": "auStack_cc._4_4_ = 0.4;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 123,
       "match": "SQRT",
       "text": "SQRT(fStack_74 * fStack_74 + fStack_7c * fStack_7c + fStack_78 * fStack_78);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 129,
+      "line": 128,
       "match": "._8_4_",
       "text": "auStack_cc._8_4_ = fStack_40;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 130,
+      "line": 129,
       "match": "._12_4_",
       "text": "auStack_cc._12_4_ = fStack_3c;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 131,
+      "line": 130,
       "match": "._16_4_",
       "text": "auStack_cc._16_4_ = pCStack_38;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 136,
       "match": "._24_4_",
       "text": "auStack_cc._24_4_ = pCVar2->x;",
       "type": "unknown_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 144,
+      "line": 143,
       "match": "1.41531e-43",
       "text": "CStack_a0.x = 1.41531e-43;",
       "type": "suspect_float"

@@ -597,7 +597,7 @@ section .text
         ;   Label: LAB_005f0481
     PUSH EBX                            ; 005f0487
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 005f0488
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 005f048d
     TEST EAX,EAX                        ; 005f0490
     JZ 0x005f083d                       ; 005f0492
@@ -903,7 +903,7 @@ section .text
         ;   Label: LAB_005f09ee
     PUSH EBX                            ; 005f09f4
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 005f09f5
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 005f09fa
     TEST EAX,EAX                        ; 005f09fd
     JNZ 0x005f0010                      ; 005f09ff

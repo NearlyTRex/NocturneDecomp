@@ -27,10 +27,10 @@
 ;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
-;   core_event.cpp_FUN_004b0f90
+;   core_event.cpp_isValidIdentifierChar_FUN_004b0f90
+;   core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0
 ;   core_script.cpp_CScript_FUN_00567510
-;   core_script.cpp_FUN_00564090
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
         ;   Label: LAB_005670d3
     LEA EAX,[ESP + 0x4]                 ; 005670d4
     PUSH EAX                            ; 005670d8
-    CALL core_script.cpp_FUN_00564090   ; 005670d9
-        ;   XREF to: 00564090 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564090(int param_1, int * param_2) | = ":<label>"
+    CALL core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090 ; 005670d9
+        ;   XREF to: 00564090 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdParse * this_ptr, CDemonActor * actor) | = ":<label>"
     ADD ESP,0x8                         ; 005670de
     ADD ESP,0x2368                      ; 005670e1
         ;   Label: LAB_005670e1
@@ -89,8 +89,8 @@ section .text
         ;   Label: LAB_005670f2
     MOV AL,byte ptr [ESI]               ; 005670f4
     PUSH EAX                            ; 005670f6
-    CALL core_event.cpp_FUN_004b0f90    ; 005670f7
-        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b0f90(int param_1)
+    CALL core_event.cpp_isValidIdentifierChar_FUN_004b0f90 ; 005670f7
+        ;   XREF to: 004b0f90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_isValidIdentifierChar_FUN_004b0f90(int ch)
     ADD ESP,0x4                         ; 005670fc
     TEST EAX,EAX                        ; 005670ff
     JZ 0x0056710c                       ; 00567101

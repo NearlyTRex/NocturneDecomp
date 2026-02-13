@@ -14,7 +14,6 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
   int iVar2;
   CPathMap *this_ptr_01;
   CGhoul *pCVar3;
-  CPathMap *extraout_EAX;
   int iVar4;
   float in_stack_00000008;
   CVector3f CStack_2c;
@@ -53,8 +52,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
         if (local_20 != (CVector3f *)0x0) {
           this_ptr_01 = (*((this_ptr_00->vtable)._ub)->getPathMap)(this_ptr_00);
           if (this_ptr_01 == (CPathMap *)0x0) {
-            core_path_cpp_FUN_00548500();
-            this_ptr_01 = extraout_EAX;
+            this_ptr_01 = core_path_cpp_FUN_00548500();
           }
           if (this_ptr_01 == (CPathMap *)0x0) {
             g_CurrentFilename = "..\\core\\ghoul.cpp";

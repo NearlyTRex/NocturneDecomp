@@ -174,18 +174,18 @@ engine_prim_c_renderIndexedPolygonAdvanced_FUN_00553b10(int *vertex_indices,int 
           g_SoftwareEdgeTable[iVar3].x_current =
                (pSVar8->projected_vertex).screen_x +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          lVar1 = (longlong)iVar9 * (longlong)((int)pSVar12->u - (int)pSVar8->u);
+          lVar1 = (longlong)iVar9 * (longlong)(pSVar12->u - pSVar8->u);
           uVar6 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           g_SoftwareEdgeTable[iVar3].u_gradient = uVar6;
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar6;
           g_SoftwareEdgeTable[iVar3].u_current =
-               (int)pSVar8->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          lVar1 = (longlong)iVar9 * (longlong)((int)pSVar12->v - (int)pSVar8->v);
+               pSVar8->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+          lVar1 = (longlong)iVar9 * (longlong)(pSVar12->v - pSVar8->v);
           uVar6 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           g_SoftwareEdgeTable[iVar3].v_gradient = uVar6;
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar6;
           g_SoftwareEdgeTable[iVar3].v_current =
-               (int)pSVar8->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+               pSVar8->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
           lVar1 = (longlong)iVar9 * (longlong)((int)pSVar12->light - (int)pSVar8->light);
           uVar6 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           g_SoftwareEdgeTable[iVar3].z_gradient = uVar6;

@@ -25,8 +25,6 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   SMotion *pSVar12;
   CHotDemon *this_ptr_00;
   CHotDemon *pCVar13;
-  int extraout_EAX;
-  int extraout_EAX_00;
   CPathMap *path_map;
   uint uVar14;
   UOrientationVector *pUVar15;
@@ -87,8 +85,8 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar5 = (this_ptr->base).victim;
       if (pCVar5 == (CDemonActor *)0x0) {
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX != 0) {
+        iVar10 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar10 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar17->motion_controller,1,1);
         }
@@ -107,9 +105,9 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
     else if ((uVar11 < 2) || (uVar11 == 2)) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar10 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
         pCVar17 = &(this_ptr->base).base.model;
-        if (extraout_EAX_00 == 0) {
+        if (iVar10 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar17->motion_controller,0,1);
         }
@@ -186,8 +184,8 @@ LAB_005c731a:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_005c6fd0:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   iVar10 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar10 != 0) {

@@ -16,7 +16,6 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425fe0(CBugs *this_ptr)
   int iVar3;
   CCharacter *this_ptr_00;
   CPathMap *this_ptr_01;
-  CPathMap *extraout_EAX;
   CBugs *pCVar4;
   CMatrix3x4f *pCVar5;
   float *pfVar6;
@@ -74,8 +73,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425fe0(CBugs *this_ptr)
        ((float)2 < ABS(local_44))) {
       this_ptr_01 = (*((this_ptr->swarm_target->vtable)._ub)->getPathMap)(this_ptr->swarm_target);
       if (this_ptr_01 == (CPathMap *)0x0) {
-        core_path_cpp_FUN_00548500();
-        this_ptr_01 = extraout_EAX;
+        this_ptr_01 = core_path_cpp_FUN_00548500();
       }
       dest_position = &(this_ptr->base).base.base.location;
       iVar3 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00

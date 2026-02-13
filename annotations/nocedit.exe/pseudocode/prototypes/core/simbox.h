@@ -55,9 +55,9 @@ int __cdecl CSimBox::propertyActionCallback(CSimBox *this_ptr,CActorProperty *pr
 // Address: 00589310
 void __cdecl CSimBox::getPropertyList(CSimBox *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_simbox.cpp_CSimBox_FUN_005893c0
+// Original: core_simbox.cpp_CSimBox_addFilesToExtract_FUN_005893c0
 // Address: 005893c0
-void __cdecl CSimBox(CSimBox *this_ptr);
+void __cdecl CSimBox::addFilesToExtract(CSimBox *this_ptr,_FILE *file_handle);
 
 // Original: core_simbox.cpp_CSimBox_dtor_FUN_005893e0
 // Address: 005893e0

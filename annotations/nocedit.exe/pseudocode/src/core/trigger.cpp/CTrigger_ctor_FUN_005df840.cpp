@@ -61,17 +61,11 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005df840(CTrigger *this_pt
   pCVar2->laser_type = 1;
   pCVar2->hit_points = 100.0;
   (pCVar2->base).health = 0x96;
-  pCVar2->unk4[0] = '\0';
-  pCVar2->unk4[1] = '\0';
-  pCVar2->unk4[2] = '\0';
-  pCVar2->unk4[3] = '\0';
+  pCVar2->unk4 = 0.0;
   pCVar2->unk3 = 0;
   pCVar2->test_radius = 99999.9;
   pCVar2->auto_aim_at_me = 1;
   pCVar2->damage_actor_name_wildcard_name[0] = '\0';
-  pCVar2->unk4[4] = '\0';
-  pCVar2->unk4[5] = '\0';
-  pCVar2->unk4[6] = '\0';
-  pCVar2->unk4[7] = '\0';
+  pCVar2->unk5 = 0.0;
   return pCVar2;
 }

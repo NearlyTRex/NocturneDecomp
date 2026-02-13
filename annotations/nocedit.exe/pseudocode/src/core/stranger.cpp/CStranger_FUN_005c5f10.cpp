@@ -21,7 +21,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr)
   int iVar9;
   int unaff_EDI;
   
-  iVar6 = (this_ptr->base).action_bindings.fire_key;
+  iVar6 = (this_ptr->base).player_control.action_states[3];
   this_ptr->unk6[4] = '\0';
   this_ptr->unk6[5] = '\0';
   this_ptr->unk6[6] = '\0';
@@ -46,12 +46,12 @@ LAB_005c5f6e:
        (uVar4 = (*((pCVar3->vtable)._ub)->getAllowedMeleeAttackTypes)(pCVar3), uVar4 != 0)) {
       iVar6 = 0;
       while( true ) {
-        iVar9 = this_ptr->unk7 + 1;
-        this_ptr->unk7 = iVar9;
+        iVar9 = this_ptr->melee_attack_index + 1;
+        this_ptr->melee_attack_index = iVar9;
         if ((iVar9 < 0) || (1 < iVar9)) {
-          this_ptr->unk7 = 0;
+          this_ptr->melee_attack_index = 0;
         }
-        uVar8 = this_ptr->unk7 + 0xc;
+        uVar8 = this_ptr->melee_attack_index + 0xc;
         uVar5 = 0;
         if (0xb < uVar8) {
           if (uVar8 < 0xd) {
@@ -69,7 +69,7 @@ LAB_005c5f6e:
       }
       (this_ptr->base).base.layer_action_t = 0.0;
       this_ptr->action_pending = 7;
-      (this_ptr->base).base.layer_action_index = this_ptr->unk7 + 0xc;
+      (this_ptr->base).base.layer_action_index = this_ptr->melee_attack_index + 0xc;
       return;
     }
   }

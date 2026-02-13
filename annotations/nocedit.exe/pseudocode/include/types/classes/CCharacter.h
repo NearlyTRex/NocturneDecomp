@@ -2,6 +2,7 @@
 
 // Forward declarations
 struct CDoor;
+struct CWayPoint;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -53,10 +54,10 @@ typedef struct CCharacter {
     float look_at_pitch; // 0x25dc
     float look_at_weight; // 0x25e0
     int look_at_head_bone; // 0x25e4
-    int unk7; // 0x25e8
-    int unk8; // 0x25ec
-    int unk9; // 0x25f0
-    int unk10; // 0x25f4
+    float look_at_search_timer; // 0x25e8
+    struct CWayPoint* wander_target; // 0x25ec
+    struct CWayPoint* wander_nearest_waypoint; // 0x25f0
+    float wander_cooldown; // 0x25f4
     CBoundingBox3D cached_bounding_box; // 0x25f8
     int collision_layer; // 0x2610
     int is_ethereal; // 0x2614
@@ -69,9 +70,11 @@ typedef struct CCharacter {
     int layer_action_index; // 0x2a8c
     float layer_action_t; // 0x2a90
     CClothList cloth_list; // 0x2a94
-    CVector3f unk15; // 0x2c50
-    CVector3f unk16[15]; // 0x2c5c
-    CVector3f unk17[15]; // 0x2d10
+    float smoke_emit_timer; // 0x2c50
+    float smoke_check_timer; // 0x2c54
+    int smoke_occluded; // 0x2c58
+    CVector3f collision_test_points[15]; // 0x2c5c
+    CVector3f collision_test_normals[15]; // 0x2d10
     float hero_proximity_timer; // 0x2dc4
     CVector3f move_away_target; // 0x2dc8
     float walk_stuck_timer; // 0x2dd4

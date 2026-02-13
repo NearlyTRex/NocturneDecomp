@@ -7,10 +7,39 @@
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   hit_type
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
-; undefined4       Stack[-0xd4]:4  local_d4
-; undefined4       Stack[-0xd0]:4  local_d0
-; undefined4       Stack[-0x44]:4  local_44
+; SDamageInfo      Stack[-0x290]:60  local_290
+; SDamageInfo      Stack[-0x254]:60  local_254
+; SDamageInfo      Stack[-0x218]:60  local_218
+; SDamageInfo      Stack[-0x1dc]:60  local_1dc
+; SDamageInfo      Stack[-0x1a0]:60  local_1a0
+; SDamageInfo      Stack[-0x164]:60  local_164
+; CBoundingBox3D   Stack[-0x128]:24  local_128
+; CBoundingBox3D   Stack[-0x110]:24  local_110
+; CBoundingBox3D   Stack[-0xf8]:24  local_f8
+; CVector3f        Stack[-0xe0]:12  local_e0
+; CVector3f        Stack[-0xd4]:12  local_d4
+; CVector3f        Stack[-0xc8]:12  local_c8
+; CVector3f        Stack[-0xbc]:12  local_bc
+; CVector3f        Stack[-0xb0]:12  local_b0
+; CVector3f        Stack[-0xa4]:12  local_a4
+; CVector3f        Stack[-0x98]:12  local_98
+; CVector3f        Stack[-0x8c]:12  local_8c
+; CVector3f        Stack[-0x80]:12  local_80
+; CVector3f        Stack[-0x74]:12  local_74
+; CVector3f        Stack[-0x68]:12  local_68
+; CVector3f        Stack[-0x5c]:12  local_5c
+; CVector3f        Stack[-0x50]:12  local_50
+; float            Stack[-0x44]:4  local_44
+; CTrigger *       Stack[-0x40]:4  local_40
+; CCrate *         Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; CDemonActor *    Stack[-0x28]:4  local_28
+; CDemonActor *    Stack[-0x24]:4  local_24
+; CTrigger *       Stack[-0x20]:4  local_20
+; CGlass *         Stack[-0x1c]:4  local_1c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00613a40
@@ -411,7 +440,7 @@ section .text
     ADD ESP,0x10                        ; 0040a6a6
     PUSH EDI                            ; 0040a6a9
     CALL core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0 ; 0040a6aa
-        ;   XREF to: 004eb3a0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass * this_ptr)
+        ;   XREF to: 004eb3a0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0040a6af
     TEST EAX,EAX                        ; 0040a6b2
     JZ 0x0040a3e0                       ; 0040a6b4
@@ -741,7 +770,7 @@ section .text
     ADD ESP,0x10                        ; 0040aada
     PUSH EDI                            ; 0040aadd
     CALL core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0 ; 0040aade
-        ;   XREF to: 004eb3a0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass * this_ptr)
+        ;   XREF to: 004eb3a0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0040aae3
     TEST EAX,EAX                        ; 0040aae6
     JZ 0x0040a6dc                       ; 0040aae8

@@ -38,8 +38,7 @@ core_mission_cpp_CDemonMission_loadActor_FUN_00523990
           unaff_ESI = (CDemonActor *)0x0;
         }
         else {
-          unaff_ESI = (CDemonActor *)
-                      core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,local_dc)
+          unaff_ESI = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,local_dc)
           ;
           if (unaff_ESI == (CDemonActor *)0x0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

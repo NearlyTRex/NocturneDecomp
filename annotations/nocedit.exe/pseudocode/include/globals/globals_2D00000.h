@@ -43,6 +43,7 @@ extern char g_FileTransferErrorMessage[1024];
 
 // char[256]
 extern char g_KeyboardState[256];
+extern char g_EventErrorMessageBuffer[256];
 
 // char[32768]
 extern char g_FileTransferBuffer[32768];
@@ -107,6 +108,7 @@ extern int g_CameraRotationRoll;
 extern int g_LightDirectionX;
 extern int g_LightDirectionY;
 extern int g_LightDirectionZ;
+extern int g_EventDryRun;
 
 // uchar[768]
 extern uchar g_DefaultPalette[768];
@@ -130,15 +132,6 @@ extern ulonglong g_SavedMMX4;
 extern ulonglong g_SavedMMX5;
 extern ulonglong g_SavedMMX6;
 extern ulonglong g_SavedMMX7;
-
-// undefined1
-extern undefined1 DAT_02d0a460;
-extern undefined1 DAT_02d0a461;
-extern undefined1 DAT_02d0a462;
-extern undefined1 DAT_02d0a463;
-
-// undefined4
-extern undefined4 DAT_02d0a45c;
 
 // ushort[256]
 extern ushort g_ColorTable16[256];

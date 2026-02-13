@@ -14,7 +14,6 @@ core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
   char cVar1;
   CDemonActor *pCVar2;
   int iVar3;
-  uint extraout_EAX;
   uint uVar4;
   char *pcVar5;
   byte bVar6;
@@ -84,8 +83,8 @@ core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
     if (local_18 != 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(2);
-      core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,this_ptr,param_3);
-      this_ptr->current_sfx_handle = extraout_EAX;
+      uVar4 = core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,this_ptr,param_3);
+      this_ptr->current_sfx_handle = uVar4;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
   }

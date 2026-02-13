@@ -1,0 +1,102 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 19,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 61
+  },
+  "cross_references": [
+    {
+      "addr": "004adc10",
+      "from_addr": "004adc84",
+      "name": "core_event.cpp_CEventList_resolveVariable_FUN_004adc10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b05a0",
+      "from_addr": "004b05f7",
+      "name": "core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b0900",
+    "address_range": [
+      [
+        "004b0900",
+        "004b094a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_findTimer_FUN_004b0900",
+    "signature": "int __cdecl core_event_cpp_CEventList_findTimer_FUN_004b0900(CEventList *this_ptr,char *name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe7f0",
+      "is_variadic": false,
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.235294117647059,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 36,
+      "INT_ADD": 18,
+      "INT_AND": 16,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 14,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 144
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

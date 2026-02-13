@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *this_ptr)
+; __cdecl void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *this_ptr,char *name,float duration)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
+; float            Stack[0xc]:4   duration
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004ad13e
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ad13e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_00625b32
@@ -21,7 +23,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004b0900
+;   core_event.cpp_CEventList_findTimer_FUN_004b0900
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;
@@ -65,8 +67,8 @@ section .text
         ;   Label: LAB_004b05f2
     PUSH EDX                            ; 004b05f5
     PUSH EBX                            ; 004b05f6
-    CALL core_event.cpp_CEventList_FUN_004b0900 ; 004b05f7
-        ;   XREF to: 004b0900 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0900(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_findTimer_FUN_004b0900 ; 004b05f7
+        ;   XREF to: 004b0900 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findTimer_FUN_004b0900(CEventList * this_ptr, char * name)
     MOV ESI,EAX                         ; 004b05fc
     ADD ESP,0x8                         ; 004b05fe
     TEST EAX,EAX                        ; 004b0601

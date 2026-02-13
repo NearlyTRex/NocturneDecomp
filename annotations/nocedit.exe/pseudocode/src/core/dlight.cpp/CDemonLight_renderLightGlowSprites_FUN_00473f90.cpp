@@ -185,35 +185,29 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               local_13c.surface_normal.B = 0;
               local_13c.surface_normal.A = 0;
               local_124 = 0;
-              g_CDemonRendererPtr2->vertex_buffer_ptr->u =
-                   (float)(*(int *)texture[1].texture_name << 0x10);
-              pCVar5->vertex_buffer_ptr->v = (float)(*(int *)(texture[1].texture_name + 4) << 0x10);
+              g_CDemonRendererPtr2->vertex_buffer_ptr->u = *(int *)texture[1].texture_name << 0x10;
+              pCVar5->vertex_buffer_ptr->v = *(int *)(texture[1].texture_name + 4) << 0x10;
               pCVar5->vertex_buffer_ptr->w_recip = local_20;
               pCVar5->vertex_buffer_ptr->light = 9.18341e-41;
               pCVar5->vertex_buffer_ptr->color = 0xffff;
               pCVar5->vertex_buffer_ptr->fog = 9.18341e-41;
               local_120 = 1;
-              pCVar5->vertex_buffer_ptr[1].u =
-                   (float)(*(int *)(texture[1].texture_name + 8) << 0x10);
-              pCVar5->vertex_buffer_ptr[1].v =
-                   (float)(*(int *)(texture[1].texture_name + 4) << 0x10);
+              pCVar5->vertex_buffer_ptr[1].u = *(int *)(texture[1].texture_name + 8) << 0x10;
+              pCVar5->vertex_buffer_ptr[1].v = *(int *)(texture[1].texture_name + 4) << 0x10;
               pCVar5->vertex_buffer_ptr[1].w_recip = local_20;
               pCVar5->vertex_buffer_ptr[1].light = 9.18341e-41;
               pCVar5->vertex_buffer_ptr[1].color = 0xffff;
               pCVar5->vertex_buffer_ptr[1].fog = 9.18341e-41;
               local_11c = 2;
-              pCVar5->vertex_buffer_ptr[2].u =
-                   (float)(*(int *)(texture[1].texture_name + 8) << 0x10);
-              pCVar5->vertex_buffer_ptr[2].v =
-                   (float)(*(int *)(texture[1].texture_name + 0xc) << 0x10);
+              pCVar5->vertex_buffer_ptr[2].u = *(int *)(texture[1].texture_name + 8) << 0x10;
+              pCVar5->vertex_buffer_ptr[2].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
               pCVar5->vertex_buffer_ptr[2].w_recip = local_20;
               pCVar5->vertex_buffer_ptr[2].light = 9.18341e-41;
               pCVar5->vertex_buffer_ptr[2].color = 0xffff;
               pCVar5->vertex_buffer_ptr[2].fog = 9.18341e-41;
               local_118 = 3;
-              pCVar5->vertex_buffer_ptr[3].u = (float)(*(int *)texture[1].texture_name << 0x10);
-              pCVar5->vertex_buffer_ptr[3].v =
-                   (float)(*(int *)(texture[1].texture_name + 0xc) << 0x10);
+              pCVar5->vertex_buffer_ptr[3].u = *(int *)texture[1].texture_name << 0x10;
+              pCVar5->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
               pCVar5->vertex_buffer_ptr[3].w_recip = local_20;
               pCVar5->vertex_buffer_ptr[3].light = 9.18341e-41;
               pCVar5->vertex_buffer_ptr[3].color = 0xffff;

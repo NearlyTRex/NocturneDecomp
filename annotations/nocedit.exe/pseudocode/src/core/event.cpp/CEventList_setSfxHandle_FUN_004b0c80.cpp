@@ -2,58 +2,58 @@
 // Address: 004b0c80
 // Address Range: [[004b0c80, 004b0d5d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr)
+// Signature: void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr,char *name,uint sfx_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr)
+void __cdecl
+core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr,char *name,uint sfx_handle)
 
 {
   char cVar1;
   int iVar2;
   uint uVar3;
-  char *pcVar4;
-  int *piVar5;
+  SSfxEntry *pSVar4;
+  char *pcVar5;
   byte bVar6;
-  char *in_stack_00000008;
-  int in_stack_0000000c;
   
   bVar6 = 0;
-  core_event_cpp_CEventList_FUN_004b0db0(this_ptr);
-  iVar2 = core_event_cpp_CEventList_FUN_004b0d60(this_ptr);
+  core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(this_ptr);
+  iVar2 = core_event_cpp_CEventList_findSfxEntry_FUN_004b0d60(this_ptr,name);
   if (iVar2 < 0) {
-    if (0x13 < this_ptr[1].event_count) {
+    if (0x13 < (this_ptr->sfx_handles).count) {
       g_CurrentFilename = "..\\core\\event.cpp";
       g_CurrentLineNumber = 0xba6;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setSfxHandle - too many sfx!");
     }
-    iVar2 = this_ptr[1].event_count;
-    this_ptr[1].event_count = iVar2 + 1;
+    iVar2 = (this_ptr->sfx_handles).count;
+    (this_ptr->sfx_handles).count = iVar2 + 1;
   }
+  pSVar4 = (this_ptr->sfx_handles).entries + iVar2;
   uVar3 = 0xffffffff;
-  pcVar4 = in_stack_00000008;
+  pcVar5 = name;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar4;
-    pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   if (0x13 < ~uVar3 - 1) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xbae;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters");
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters",name,0x13);
   }
-  piVar5 = this_ptr[1].event_list + iVar2 * 0x48 + 1;
+  pcVar5 = pSVar4->handle_name;
   do {
-    cVar1 = *in_stack_00000008;
-    *(char *)piVar5 = cVar1;
+    cVar1 = *name;
+    *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_00000008[1];
-    in_stack_00000008 = in_stack_00000008 + 2;
-    *(char *)((int)piVar5 + 1) = cVar1;
-    piVar5 = (int *)((int)piVar5 + 2);
+    cVar1 = name[1];
+    name = name + 2;
+    pcVar5[1] = cVar1;
+    pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  this_ptr[1].event_list[iVar2 * 0x48] = in_stack_0000000c;
-  core_event_cpp_CEventList_FUN_004b0db0(this_ptr);
+  pSVar4->sfx_handle = sfx_handle;
+  core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(this_ptr);
   return;
 }

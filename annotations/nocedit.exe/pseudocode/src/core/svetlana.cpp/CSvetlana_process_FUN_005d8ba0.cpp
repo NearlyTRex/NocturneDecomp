@@ -52,12 +52,12 @@ switchD_005d8f77_caseD_9:
     return;
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40((CCharacter *)this_ptr,delta_time);
-  fVar10 = (this_ptr->base).unk1 - delta_time;
+  fVar10 = (float)(this_ptr->base).no_collision_flag - delta_time;
   fVar3 = (float)12.566370614;
-  (this_ptr->base).unk1 = fVar10;
+  (this_ptr->base).no_collision_flag = (int)fVar10;
   (this_ptr->base).base.turn_speed = delta_time * fVar3;
   if (fVar10 < 0.0) {
-    (this_ptr->base).unk1 = 0.0;
+    (this_ptr->base).no_collision_flag = 0;
   }
   pCVar6 = &(this_ptr->base).base.model.accumulated_root_motion;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -85,20 +85,20 @@ switchD_005d8f77_caseD_9:
         if (this_ptr->unk1 != 0) {
           iVar4 = 10;
         }
-        if ((this_ptr->base).action_bindings.walk_key != 0) {
-          if ((this_ptr->base).action_bindings.run_key == 0) {
+        if ((this_ptr->base).player_control.action_states[0] != 0) {
+          if ((this_ptr->base).player_control.action_states[2] == 0) {
             iVar4 = 1;
           }
           else {
             iVar4 = 2;
           }
         }
-        if ((this_ptr->base).action_bindings.backup_key != 0) {
+        if ((this_ptr->base).player_control.action_states[1] != 0) {
           iVar4 = 3;
         }
-        if ((this_ptr->base).action_bindings.draw_key != 0) {
+        if ((this_ptr->base).player_control.action_states[6] != 0) {
           iVar4 = this_ptr->unk1;
-          (this_ptr->base).action_bindings.draw_key = 0;
+          (this_ptr->base).player_control.action_states[6] = 0;
           uVar7 = (uint)(iVar4 == 0);
           this_ptr->unk1 = uVar7;
           if (uVar7 == 0) {
@@ -108,7 +108,7 @@ switchD_005d8f77_caseD_9:
             iVar4 = 10;
           }
         }
-        if ((this_ptr->base).action_bindings.fire_key != 0) {
+        if ((this_ptr->base).player_control.action_states[3] != 0) {
           bVar2 = true;
           if ((this_ptr->unk1 == 0) && ((this_ptr->base).control_type != 2)) {
             iVar8 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
@@ -132,7 +132,7 @@ LAB_005d9011:
             if (!bVar2) goto LAB_005d9032;
           }
           iVar4 = this_ptr->unk2;
-          (this_ptr->base).action_bindings.fire_key = 0;
+          (this_ptr->base).player_control.action_states[3] = 0;
           if (iVar4 == 0) {
             iVar4 = 0xf;
           }
@@ -142,7 +142,7 @@ LAB_005d9011:
         }
 LAB_005d9032:
         (this_ptr->base).base.turn_angle_accumulator =
-             *(float *)((this_ptr->base).unk2 + 4) * (this_ptr->base).base.turn_speed;
+             (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
         pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&(this_ptr->base).base.model.motion_controller);
         if (iVar4 != pSVar5->state_index) goto LAB_005d8cdd;
@@ -260,7 +260,7 @@ LAB_005d8e14:
   }
   else {
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_005d8e14;
-    if ((this_ptr->base).action_bindings.fire_key == 0) goto LAB_005d8e27;
+    if ((this_ptr->base).player_control.action_states[3] == 0) goto LAB_005d8e27;
     iVar4 = 0x10;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

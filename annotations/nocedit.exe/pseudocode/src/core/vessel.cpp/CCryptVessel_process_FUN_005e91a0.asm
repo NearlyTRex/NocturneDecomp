@@ -34,8 +34,8 @@
 ;   int g_LocalHeroIndex
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004aabe0
-;   core_fire.cpp_CFireEffect_FUN_004c8c10
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10
 ;   core_flame.cpp_CFlame_process_FUN_004c9c00
 ;   core_vessel.cpp_FUN_005e9180
 ;
@@ -231,8 +231,8 @@ section .text
     PUSH EAX                            ; 005e93e8
     MOV EDI,dword ptr [0x006793d0]      ; 005e93e9 | g_CEventListPtr
     PUSH EDI                            ; 005e93ef | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 005e93f0
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 005e93f0
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 005e93f5
     MOV EBP,dword ptr [EBX + 0x2d8]     ; 005e93f8
         ;   Label: LAB_005e93f8
@@ -437,8 +437,8 @@ section .text
     PUSH ESI                            ; 005e9659
     MOV EAX,[0x0067a3d0]                ; 005e965a | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EAX                            ; 005e965f | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8c10 ; 005e9660
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8c10(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 ; 005e9660
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position)
     MOV EAX,dword ptr [EBX + 0x3a8]     ; 005e9665
     MOV dword ptr [EBX + 0x3bc],0x3f800000 ; 005e966b
     MOV EDX,dword ptr [EAX + 0x20]      ; 005e9675
@@ -489,8 +489,8 @@ section .text
     PUSH EAX                            ; 005e970c
     MOV EDI,dword ptr [0x006793d0]      ; 005e970d | g_CEventListPtr
     PUSH EDI                            ; 005e9713 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 005e9714
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 005e9714
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     MOV EAX,dword ptr [EBX + 0x2d8]     ; 005e9719
     MOV dword ptr [EAX + 0x7f0],0x1     ; 005e971f
     MOV EAX,dword ptr [EBX + 0x2dc]     ; 005e9729

@@ -435,9 +435,9 @@ SLaserInfo * __cdecl SLaserInfo::ctor(SLaserInfo *this_ptr);
 // Address: 004c8230
 void __cdecl CFireEffect(CFireEffect *this_ptr);
 
-// Original: core_fire.cpp_CFireEffect_FUN_004c8c10
+// Original: core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10
 // Address: 004c8c10
-void __cdecl CFireEffect(CFireEffect *this_ptr);
+void __cdecl CFireEffect::createExplosion(CFireEffect *this_ptr,CVector3f *position);
 
 // Original: core_fire.cpp_CFireEffect_FUN_004c8c90
 // Address: 004c8c90

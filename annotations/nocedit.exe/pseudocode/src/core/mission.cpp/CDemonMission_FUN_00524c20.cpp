@@ -31,8 +31,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00524c20(CDemonMission *this_ptr
                           (&local_3b4,"Mission has no hero placeholders.\n\nSelect a hero to convert into a hero placeholder, or\npress ESC to leave mission as is.\n\n(You will not be able to play the mission without a hero placeholder.)",-1,0);
         if (-1 < iVar1) {
           name = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b4.base,iVar1);
-          pCVar3 = (CDemonActor *)
-                   core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,name);
+          pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,name);
           if (pCVar3 == (CDemonActor *)0x0) {
             g_CurrentFilename = "..\\core\\mission.cpp";
             g_CurrentLineNumber = 0x685;

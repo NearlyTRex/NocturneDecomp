@@ -39,13 +39,13 @@
       },
       {
         "category": "other",
-        "column": 45,
+        "column": 56,
         "line": 185,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 40,
+        "column": 51,
         "line": 189,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
@@ -87,13 +87,7 @@
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 225,
-        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
-      },
-      {
-        "category": "other",
-        "column": 45,
+        "column": 56,
         "line": 227,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
@@ -105,15 +99,21 @@
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 231,
-        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
-      },
-      {
-        "category": "other",
-        "column": 40,
+        "column": 51,
         "line": 233,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 39,
+        "line": 389,
+        "message": "use of undeclared identifier 'DAT_00000010'; did you mean 'DAT_00400080'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 398,
+        "message": "use of undeclared identifier 'stack0x000000dc'; did you mean 'in_stack_000000dc'?"
       }
     ],
     "success": false,
@@ -121,19 +121,19 @@
   },
   "complexity": {
     "assembly_lines": 979,
-    "complexity_score": 1983,
+    "complexity_score": 1828,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 35,
-    "pseudocode_lines": 423,
-    "suspect_count": 154,
+    "pseudocode_lines": 428,
+    "suspect_count": 138,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 1402
+    "total_lines": 1407
   },
   "cross_references": [
     {
@@ -157,6 +157,11 @@
   },
   "function_calls": [
     {
+      "addr": "005644e0",
+      "is_variadic": false,
+      "name": "core_script.cpp_clearSelections_FUN_005644e0"
+    },
+    {
       "addr": "00564820",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_editorAction_FUN_00564820"
@@ -177,29 +182,14 @@
       "name": "core_script.cpp_CScript_editorX2Index_FUN_00566a90"
     },
     {
-      "addr": "00565aa0",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00565aa0"
-    },
-    {
       "addr": "00565ae0",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00565ae0"
+      "name": "core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0"
     },
     {
       "addr": "00565d00",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00565d00"
-    },
-    {
-      "addr": "00565e70",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00565e70"
-    },
-    {
-      "addr": "00566390",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566390"
+      "name": "core_script.cpp_CScript_executeContextAction_FUN_00565d00"
     },
     {
       "addr": "00566880",
@@ -207,19 +197,34 @@
       "name": "core_script.cpp_CScript_FUN_00566880"
     },
     {
-      "addr": "00566c20",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566c20"
-    },
-    {
       "addr": "00566cc0",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_FUN_00566cc0"
     },
     {
+      "addr": "00565aa0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_gotoPosition_FUN_00565aa0"
+    },
+    {
+      "addr": "00566390",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_insertText_FUN_00566390"
+    },
+    {
       "addr": "00566230",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_loadLineToBuffer_FUN_00566230"
+    },
+    {
+      "addr": "00566c20",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20"
+    },
+    {
+      "addr": "00565e70",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70"
     },
     {
       "addr": "00566910",
@@ -237,14 +242,9 @@
       "name": "core_script.cpp_CScript_updateScrollPosition_FUN_005669a0"
     },
     {
-      "addr": "005644e0",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_005644e0"
-    },
-    {
       "addr": "00564500",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_00564500"
+      "name": "core_script.cpp_updateSelection_FUN_00564500"
     },
     {
       "addr": "005fdbd0",
@@ -433,14 +433,14 @@
     },
     {
       "addr": "0310fd4c",
-      "name": "DAT_0310fd4c",
-      "type": "undefined4",
+      "name": "g_SelectionAnchorColumn",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0310fd50",
-      "name": "DAT_0310fd50",
-      "type": "undefined4",
+      "name": "g_SelectionAnchorLine",
+      "type": "int",
       "value": null
     },
     {
@@ -451,8 +451,8 @@
     },
     {
       "addr": "0310fdc0",
-      "name": "DAT_0310fdc0",
-      "type": "undefined1",
+      "name": "g_ScriptEditorStatusText",
+      "type": "char[1020]",
       "value": null
     },
     {
@@ -481,26 +481,26 @@
     },
     {
       "addr": "031141e0",
-      "name": "INT_031141e0",
+      "name": "g_ScriptTextAreaLeft",
       "type": "int",
       "value": null
     },
     {
       "addr": "031141e4",
-      "name": "INT_031141e4",
+      "name": "g_ScriptTextAreaTop",
       "type": "int",
       "value": null
     },
     {
       "addr": "031141e8",
-      "name": "DAT_031141e8",
-      "type": "undefined4",
+      "name": "g_ScriptTextAreaRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "031141ec",
-      "name": "DAT_031141ec",
-      "type": "undefined4",
+      "name": "g_ScriptTextAreaBottom",
+      "type": "int",
       "value": null
     }
   ],
@@ -651,7 +651,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_000000d4",
-      "text": "uint in_stack_000000d4;",
+      "text": "int in_stack_000000d4;",
       "type": "stack_param"
     },
     {
@@ -674,13 +674,6 @@
       "match": "in_stack_000000dd",
       "text": "byte in_stack_000000dd;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_0310fd4c",
-      "text": "if (-1 < (int)DAT_0310fd4c) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -816,25 +809,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 178,
-      "match": "DAT_0310fdc0",
-      "text": "_sprintf(&DAT_0310fdc0,\"Can't find %s\");",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 181,
       "match": "in_stack_0000007c",
       "text": "in_stack_0000007c = (char *)0x56551e;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 182,
-      "match": "DAT_0310fdc0",
-      "text": "_sprintf(&DAT_0310fdc0,\"Found %s\");",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -854,15 +833,8 @@
       "description": "Unresolved stack parameter",
       "line": 186,
       "match": "in_stack_00000090",
-      "text": "DAT_0310fd4c = (uint)in_stack_00000090;",
+      "text": "g_SelectionAnchorColumn = (int)in_stack_00000090;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 186,
-      "match": "DAT_0310fd4c",
-      "text": "DAT_0310fd4c = (uint)in_stack_00000090;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -875,15 +847,8 @@
       "description": "Unresolved stack parameter",
       "line": 188,
       "match": "in_stack_0000008c",
-      "text": "DAT_0310fd50 = (int)in_stack_0000008c;",
+      "text": "g_SelectionAnchorLine = (int)in_stack_0000008c;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 188,
-      "match": "DAT_0310fd50",
-      "text": "DAT_0310fd50 = (int)in_stack_0000008c;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1036,15 +1001,8 @@
       "description": "Unresolved stack parameter",
       "line": 218,
       "match": "in_stack_00000090",
-      "text": "in_stack_00000090 = &DAT_0310fdc0;",
+      "text": "in_stack_00000090 = g_ScriptEditorStatusText;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 218,
-      "match": "DAT_0310fdc0",
-      "text": "in_stack_00000090 = &DAT_0310fdc0;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1052,13 +1010,6 @@
       "match": "in_stack_0000008c",
       "text": "in_stack_0000008c = (char *)0x56583b;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 220,
-      "match": "DAT_0310fdc0",
-      "text": "_sprintf(&DAT_0310fdc0,\"Can't find %s\");",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1078,15 +1029,8 @@
       "description": "Unresolved stack parameter",
       "line": 224,
       "match": "in_stack_00000090",
-      "text": "in_stack_00000090 = &DAT_0310fdc0;",
+      "text": "in_stack_00000090 = g_ScriptEditorStatusText;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 224,
-      "match": "DAT_0310fdc0",
-      "text": "in_stack_00000090 = &DAT_0310fdc0;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1094,13 +1038,6 @@
       "match": "in_stack_0000008c",
       "text": "in_stack_0000008c = (char *)0x5655fb;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 226,
-      "match": "DAT_0310fdc0",
-      "text": "_sprintf(&DAT_0310fdc0,\"Found %s\");",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1120,29 +1057,15 @@
       "description": "Unresolved stack parameter",
       "line": 230,
       "match": "in_stack_000000b4",
-      "text": "DAT_0310fd4c = in_stack_000000b4;",
+      "text": "g_SelectionAnchorColumn = in_stack_000000b4;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 230,
-      "match": "DAT_0310fd4c",
-      "text": "DAT_0310fd4c = in_stack_000000b4;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 231,
       "match": "in_stack_000000b0",
-      "text": "DAT_0310fd50 = (int)in_stack_000000b0;",
+      "text": "g_SelectionAnchorLine = (int)in_stack_000000b0;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 231,
-      "match": "DAT_0310fd50",
-      "text": "DAT_0310fd50 = (int)in_stack_000000b0;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1167,345 +1090,296 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 243,
+      "line": 244,
       "match": "in_stack_00000098",
       "text": "in_stack_00000098 = (char *)0x56566a;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 251,
+      "line": 253,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)g_CurrentEditingLine;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 252,
+      "line": 254,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)g_CurrentEditingColumn;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 261,
+      "line": 264,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = &g_CurrentEditingLine;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 262,
+      "line": 265,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = &g_CurrentEditingColumn;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 267,
+      "line": 270,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 268,
+      "line": 271,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)0x0;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 272,
-      "match": "DAT_031141e8",
-      "text": "if (DAT_031141e8 <= g_MouseX) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 273,
+      "line": 276,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 274,
+      "line": 277,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 278,
+      "line": 281,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 279,
+      "line": 282,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)0x2;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 282,
-      "match": "DAT_031141ec",
-      "text": "if (DAT_031141ec <= g_MouseY) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 283,
+      "line": 286,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 284,
+      "line": 287,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)0x3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 287,
+      "line": 290,
       "match": "in_stack_000000d8",
       "text": "in_stack_000000d8 = 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 293,
+      "line": 296,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = &g_CurrentEditingLine;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 294,
+      "line": 297,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = &g_CurrentEditingColumn;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 299,
+      "line": 302,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)g_CurrentEditingLine;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 300,
+      "line": 303,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)g_CurrentEditingColumn;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 306,
+      "line": 310,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = &g_CurrentEditingLine;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 307,
+      "line": 311,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = &g_CurrentEditingColumn;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 312,
+      "line": 316,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x38;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 313,
+      "line": 317,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)g_CKeysPtr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 317,
+      "line": 321,
       "match": "in_stack_000000b8",
       "text": "in_stack_000000b8 = g_CurrentEditingLine;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 318,
+      "line": 322,
       "match": "in_stack_000000b4",
       "text": "in_stack_000000b4 = g_CurrentEditingColumn;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 319,
+      "line": 323,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = &pCVar2->script_pause_flag;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 320,
+      "line": 324,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)0x5658ae;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 330,
+      "line": 335,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = &pCVar2->script_pause_flag;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 331,
+      "line": 336,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)0x56576e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 338,
+      "line": 343,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x565776;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 341,
+      "line": 346,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = &pCVar2->script_pause_flag;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 342,
+      "line": 347,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)0x565a1c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 345,
+      "line": 350,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x565a67;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 348,
+      "line": 353,
       "match": "in_stack_000000d4",
       "text": "else if ((in_stack_000000d4 != g_CurrentEditingColumn) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 349,
+      "line": 354,
       "match": "in_stack_000000d0",
       "text": "(in_stack_000000d0 != g_CurrentEditingLine)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 350,
+      "line": 355,
       "match": "in_stack_000000d8",
       "text": "if (in_stack_000000d8 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 351,
+      "line": 356,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x565a90;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 354,
-      "match": "DAT_0310fd4c",
-      "text": "else if ((int)DAT_0310fd4c < 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 355,
-      "match": "in_stack_000000d4",
-      "text": "DAT_0310fd4c = in_stack_000000d4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 355,
-      "match": "DAT_0310fd4c",
-      "text": "DAT_0310fd4c = in_stack_000000d4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 356,
-      "match": "in_stack_000000d0",
-      "text": "DAT_0310fd50 = in_stack_000000d0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 356,
-      "match": "DAT_0310fd50",
-      "text": "DAT_0310fd50 = in_stack_000000d0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 360,
-      "match": "in_stack_000000ac",
-      "text": "in_stack_000000ac = &pCVar2->script_pause_flag;",
+      "match": "in_stack_000000d4",
+      "text": "g_SelectionAnchorColumn = in_stack_000000d4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 361,
       "match": "in_stack_000000d0",
+      "text": "g_SelectionAnchorLine = in_stack_000000d0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 365,
+      "match": "in_stack_000000ac",
+      "text": "in_stack_000000ac = &pCVar2->script_pause_flag;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 366,
+      "match": "in_stack_000000d0",
       "text": "core_script_cpp_CScript_updateLineMetrics_FUN_00566800(pCVar2,in_stack_000000d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 362,
+      "line": 367,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x565a5a;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 366,
-      "match": "in_stack_000000b0",
-      "text": "in_stack_000000b0 = (int *)0x565785;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 371,
       "match": "in_stack_000000b0",
-      "text": "in_stack_000000b0 = (int *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 372,
-      "match": "in_stack_000000ac",
-      "text": "in_stack_000000ac = (int *)0x12;",
+      "text": "in_stack_000000b0 = (int *)0x565785;",
       "type": "stack_param"
     },
     {
@@ -1519,15 +1393,8 @@
       "description": "Unresolved stack parameter",
       "line": 377,
       "match": "in_stack_000000ac",
-      "text": "in_stack_000000ac = (int *)&DAT_00000010;",
+      "text": "in_stack_000000ac = (int *)0x12;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 377,
-      "match": "DAT_00000010",
-      "text": "in_stack_000000ac = (int *)&DAT_00000010;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1540,89 +1407,96 @@
       "description": "Unresolved stack parameter",
       "line": 382,
       "match": "in_stack_000000ac",
+      "text": "in_stack_000000ac = (int *)&DAT_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 382,
+      "match": "DAT_00000010",
+      "text": "in_stack_000000ac = (int *)&DAT_00000010;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 386,
+      "match": "in_stack_000000b0",
+      "text": "in_stack_000000b0 = (int *)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 387,
+      "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)0xf;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 385,
+      "line": 390,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 386,
+      "line": 391,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)&stack0x000000dc;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 386,
+      "line": 391,
       "match": "&stack0x000000dc",
       "text": "in_stack_000000ac = (int *)&stack0x000000dc;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 387,
+      "line": 392,
       "match": "in_stack_000000dd",
       "text": "in_stack_000000dd = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 388,
+      "line": 393,
       "match": "in_stack_000000dc",
       "text": "in_stack_000000dc = cVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 389,
+      "line": 394,
       "match": "in_stack_000000ac",
-      "text": "core_script_cpp_CScript_FUN_00566390(pCVar2,(char *)in_stack_000000ac,1);",
+      "text": "core_script_cpp_CScript_insertText_FUN_00566390(pCVar2,(char *)in_stack_000000ac,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 392,
+      "line": 397,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)g_CurrentEditingLine;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 393,
+      "line": 398,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = &pCVar2->script_pause_flag;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 403,
+      "line": 408,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)g_CurrentEditingColumn;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 404,
-      "match": "in_stack_000000ac",
-      "text": "in_stack_000000ac = (int *)g_CurrentEditingLine;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 415,
-      "match": "in_stack_000000b0",
-      "text": "in_stack_000000b0 = (int *)(iVar10 + 1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 416,
+      "line": 409,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)g_CurrentEditingLine;",
       "type": "stack_param"
@@ -1631,19 +1505,33 @@
       "description": "Unresolved stack parameter",
       "line": 420,
       "match": "in_stack_000000b0",
-      "text": "(pCVar2,line_number,(uint)in_stack_000000b0);",
+      "text": "in_stack_000000b0 = (int *)(iVar10 + 1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 421,
+      "match": "in_stack_000000ac",
+      "text": "in_stack_000000ac = (int *)g_CurrentEditingLine;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 425,
+      "match": "in_stack_000000b0",
+      "text": "(pCVar2,line_number,(uint)in_stack_000000b0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 426,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)g_CurrentEditingLine;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 422,
+      "line": 427,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = &pCVar2->script_pause_flag;",
       "type": "stack_param"

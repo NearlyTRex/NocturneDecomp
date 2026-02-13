@@ -9,9 +9,9 @@
 ; CDemonActorType * Stack[0xc]:4   expected_class
 ;
 ; XREF[3]:
+;   core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0 at 0056284e
 ;   core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 at 0055ff3e
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055bc6f
-;   core_script.cpp_FUN_005627f0 at 0056284e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Must_specify_actor_name_00641566
@@ -34,7 +34,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 ;   core_actor.cpp_isOfClassHash_FUN_0040c760
-;   core_event.cpp_CEventList_FUN_004b0b80
+;   core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_script.cpp_validateActorVariableName_FUN_00559220
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -105,8 +105,8 @@ section .text
     MOV EBP,0x1                         ; 00559546
     PUSH EAX                            ; 0055954b | g_CEventListInstance
     MOV dword ptr [0x0310f4ac],EBP      ; 0055954c | g_ActorLookedUpByVariable
-    CALL core_event.cpp_CEventList_FUN_004b0b80 ; 00559552
-        ;   XREF to: 004b0b80 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0b80(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80 ; 00559552
+        ;   XREF to: 004b0b80 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 00559557
     MOV ESI,EAX                         ; 0055955a
     TEST EAX,EAX                        ; 0055955c
@@ -189,7 +189,7 @@ section .text
     MOV ECX,dword ptr [0x0067d550]      ; 00559602 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 00559608 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 00559609
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0055960e
     MOV ESI,EAX                         ; 00559611
     TEST EAX,EAX                        ; 00559613

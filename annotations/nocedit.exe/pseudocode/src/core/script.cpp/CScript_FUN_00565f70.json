@@ -6,24 +6,6 @@
         "column": 19,
         "line": 25,
         "message": "assigning to 'char **' from incompatible type 'const char *[141]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 29,
-        "message": "use of undeclared identifier 'DAT_0310cb74'; did you mean 'DAT_03670b74'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 34,
-        "message": "use of undeclared identifier 'DAT_0310cca8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 45,
-        "message": "use of undeclared identifier 'DAT_0310cb74'; did you mean 'DAT_03670b74'?"
       }
     ],
     "success": false,
@@ -31,14 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 148,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 10,
     "pseudocode_lines": 48,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 169
@@ -70,9 +51,19 @@
       "name": "core_script.cpp_CCmdParse_bestParse_FUN_00561db0"
     },
     {
+      "addr": "00562760",
+      "is_variadic": false,
+      "name": "core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760"
+    },
+    {
       "addr": "005624f0",
       "is_variadic": false,
       "name": "core_script.cpp_CCmdParse_toString_FUN_005624f0"
+    },
+    {
+      "addr": "005644e0",
+      "is_variadic": false,
+      "name": "core_script.cpp_clearSelections_FUN_005644e0"
     },
     {
       "addr": "00566b30",
@@ -92,7 +83,7 @@
     {
       "addr": "00566390",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566390"
+      "name": "core_script.cpp_CScript_insertText_FUN_00566390"
     },
     {
       "addr": "00566910",
@@ -103,16 +94,6 @@
       "addr": "005669a0",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_updateScrollPosition_FUN_005669a0"
-    },
-    {
-      "addr": "00562760",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_00562760"
-    },
-    {
-      "addr": "005644e0",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_005644e0"
     },
     {
       "addr": "004a6ed0",
@@ -134,8 +115,8 @@
     },
     {
       "addr": "0310cb74",
-      "name": "DAT_0310cb74",
-      "type": "undefined4",
+      "name": "CCmdParse_0310cb74",
+      "type": "CCmdParse",
       "value": null
     },
     {
@@ -248,25 +229,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0310cb74",
-      "text": "((CCmdParse *)&DAT_0310cb74,pcVar3,iVar2,templates,template_count);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_2",
-      "text": "core_script_cpp_CScript_FUN_00566390(this_ptr,param_2,1);",
+      "text": "core_script_cpp_CScript_insertText_FUN_00566390(this_ptr,param_2,1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0310cca8",
-      "text": "pcVar3 = &DAT_0310cca8 + iVar2 * 0x328;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -295,13 +262,6 @@
       "match": "param_2",
       "text": "param_2 = param_2 + 2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_0310cb74",
-      "text": "((CCmdParse *)&DAT_0310cb74,g_CurrentLineBuffer + 1);",
-      "type": "undefined_data"
     }
   ]
 }

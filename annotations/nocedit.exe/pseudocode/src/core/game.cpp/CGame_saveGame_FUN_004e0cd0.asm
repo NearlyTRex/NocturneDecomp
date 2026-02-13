@@ -51,7 +51,7 @@
 ;   core_event.cpp_CEventList_saveState_FUN_004b1380
 ;   core_fire.cpp_CFireEffect_save_FUN_004c9380
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_00523600
-;   core_script.cpp_CScript_FUN_00560b50
+;   core_script.cpp_CScript_saveState_FUN_00560b50
 ;   core_set.cpp_CDemonSet_FUN_00571170
 ;   core_set.cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0
 ;   crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
@@ -226,8 +226,8 @@ section .text
     PUSH EDI                            ; 004e0e60
     MOV EBX,dword ptr [0x00680d50]      ; 004e0e61 | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 004e0e67 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00560b50 ; 004e0e68
-        ;   XREF to: 00560b50 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00560b50(CScript * this_ptr, _FILE * param_2)
+    CALL core_script.cpp_CScript_saveState_FUN_00560b50 ; 004e0e68
+        ;   XREF to: 00560b50 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_saveState_FUN_00560b50(CScript * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e0e6d
     PUSH EDI                            ; 004e0e70
     MOV ESI,dword ptr [0x0067a3d0]      ; 004e0e71 | g_CFireEffectPtr

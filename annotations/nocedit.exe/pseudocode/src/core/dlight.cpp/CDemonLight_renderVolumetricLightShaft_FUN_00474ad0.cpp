@@ -193,14 +193,14 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
             this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;
             this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
             this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;
-            this_ptr_00->vertex_buffer_ptr->u = 2.2775203e-38;
-            this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;
-            this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;
-            this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;
-            this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;
-            this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;
-            this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;
-            this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;
+            this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
+            this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
+            this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
+            this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
+            this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
             engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
                       (this_ptr_00,&local_130);
             iVar4 = iVar4 + 1;

@@ -108,7 +108,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
     core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670
               (local_14,(g_WindowWidth + iVar1) / 2,(g_WindowHeight + iVar2) / 2,
                ((int)((iVar3 + (iVar3 >> 0x1f) * -0x80) - (uint)((iVar3 >> 0x1f) << 6 < 0)) >> 7) +
-               iVar4 * 0x80 + *(int *)(g_CWeatherPtr->unk + 0x24) * 0x8000);
+               iVar4 * 0x80 + g_CWeatherPtr->lightning_active * 0x8000);
     return;
   }
   g_UseExternalRenderer = 0;

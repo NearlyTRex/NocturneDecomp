@@ -21,9 +21,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   CVector3f *pCVar10;
   SMotion *pSVar11;
   CWerewolf *pCVar12;
-  int extraout_EAX;
   CDemonActor *pCVar13;
-  int extraout_EAX_00;
   CPathMap *path_map;
   CDemonActor *pCVar14;
   uint uVar15;
@@ -224,8 +222,8 @@ LAB_005f094d:
       pCVar13 = (this_ptr->base).victim;
       if (pCVar13 == (CDemonActor *)0x0) {
         actor_ptr = (CWerewolf *)delta_time;
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX_00 == 0) {
+        iVar8 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar8 == 0) {
           actor_ptr = (CWerewolf *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0,1);
@@ -414,7 +412,7 @@ LAB_005f0ae7:
         else {
           if ((this_ptr->type == WEREWOLF_TYPE_FOREST) &&
              ((this_ptr->phase == 1 || (this_ptr->phase == 3)))) goto LAB_005f0010;
-          if (*(float *)(this_ptr->base).unk2 <= 0.0) {
+          if ((float)(this_ptr->base).unk2 <= 0.0) {
             iVar8 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
             if (iVar8 == 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -428,10 +426,7 @@ LAB_005f0ae7:
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,4,1);
             }
-            (this_ptr->base).unk2[0] = '\0';
-            (this_ptr->base).unk2[1] = '\0';
-            (this_ptr->base).unk2[2] = -0x80;
-            (this_ptr->base).unk2[3] = '?';
+            (this_ptr->base).unk2 = 0x3f800000;
             actor_ptr = (CWerewolf *)0x5f0c82;
             iVar8 = core_actor_cpp_randomChance_FUN_0040cd10(0.6);
             if (iVar8 != 0) {
@@ -561,8 +556,8 @@ LAB_005f04ff:
         goto LAB_005f094d;
       }
 LAB_005f0481:
-      core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-      if (extraout_EAX == 0) {
+      iVar8 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      if (iVar8 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar13 = (this_ptr->base).victim;
         if (pCVar13 == (CDemonActor *)0x0) goto LAB_005f0010;
@@ -669,8 +664,8 @@ LAB_005f0010:
     dVar17 = 2;
   }
   (this_ptr->base).base.collision_cylinder_radius = local_20 * (float)dVar17;
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                       (&(this_ptr->base).base.model.motion_controller);

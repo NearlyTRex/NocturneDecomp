@@ -4,6 +4,10 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x3100000
 // =============================================================================
 
+// CCmdParse
+CCmdParse CCmdParse_0310aa4c = {};
+CCmdParse CCmdParse_0310cb74 = {};
+
 // CDemonActorType
 CDemonActorType g_CScatClassInfo = {};
 
@@ -20,7 +24,14 @@ CScript g_CScriptInstance = {};
 // char[100]
 char g_ScriptTempBuffer[100] = {};
 
+// char[1020]
+char g_ScriptEditorStatusText[1020] = {};
+
+// char[10][1024]
+char g_ScriptSubtitleLines[10][1024] = {};
+
 // char[2048]
+char g_ScriptSyntaxErrorMessage[2048] = {};
 char g_ScriptLineBuffer[2048] = {};
 char g_ScriptErrorBuffer[2048] = {};
 
@@ -50,7 +61,7 @@ int INT_03106194 = {};
 int INT_03106198 = {};
 int INT_0310619c = {};
 int INT_031061a0 = {};
-int INT_031061e0 = {};
+int g_PreviousLetterboxMode = {};
 int g_ScriptEventsEnabled = {};
 int g_ScriptInputFlag = {};
 int g_ScriptLoopWarningShown = {};
@@ -58,15 +69,9 @@ int g_ActorLookedUpByVariable = {};
 int INT_0310fd40 = {};
 int g_CurrentEditingColumn = {};
 int g_CurrentEditingLine = {};
+int g_SelectionAnchorColumn = {};
+int g_SelectionAnchorLine = {};
 
 // undefined1
 undefined1 DAT_0310fd58 = {};
-undefined1 DAT_0310fdc0 = {};
-undefined1 DAT_0310fdc1 = {};
-undefined1 DAT_0310fdc2 = {};
-undefined1 DAT_0310fdc3 = {};
-
-// undefined4
-undefined4 DAT_0310fd4c = {};
-undefined4 DAT_0310fd50 = {};
 

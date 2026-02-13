@@ -16,7 +16,7 @@ typedef struct CBoxActor {
     CKeyFramedModelInstance model; // 0x158
     char loop_wav_name[20]; // 0x2d4
     char collision_wav_name[20]; // 0x2e8
-    int unk1; // 0x2fc
+    uint sfx_handle; // 0x2fc
     CVector3f rpm; // 0x300
     float fps; // 0x30c
     int unk2; // 0x310

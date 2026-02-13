@@ -89,8 +89,8 @@
 ;   core_cloth.cpp_CClothList_add_FUN_0043c0f0
 ;   core_cloth.cpp_CClothList_remove_FUN_0043c170
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-;   core_event.cpp_CEventList_FUN_004add00
-;   core_event.cpp_CEventList_FUN_004add40
+;   core_event.cpp_CEventList_validateCommands_FUN_004add40
+;   core_event.cpp_CEventList_validateCondition_FUN_004add00
 ;   core_event.cpp_CRuleList_insert_FUN_004b1680
 ;   core_event.cpp_CRuleList_remove_FUN_004b17c0
 ;   core_ground.cpp_getGroundTypeName_FUN_004eed80
@@ -1126,8 +1126,8 @@ section .text
     PUSH EAX                            ; 0040f912
     MOV EDX,dword ptr [0x006793d0]      ; 0040f913 | g_CEventListPtr
     PUSH EDX                            ; 0040f919 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add00 ; 0040f91a
-        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCondition_FUN_004add00 ; 0040f91a
+        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCondition_FUN_004add00(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 0040f91f
     TEST EAX,EAX                        ; 0040f922
     JZ 0x0040f938                       ; 0040f924
@@ -1213,8 +1213,8 @@ section .text
     PUSH EAX                            ; 0040f9d6
     MOV ECX,dword ptr [0x006793d0]      ; 0040f9d7 | g_CEventListPtr
     PUSH ECX                            ; 0040f9dd | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add40 ; 0040f9de
-        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add40(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCommands_FUN_004add40 ; 0040f9de
+        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCommands_FUN_004add40(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0040f9e3
     TEST EAX,EAX                        ; 0040f9e6
     JZ 0x0040f9fc                       ; 0040f9e8
@@ -1816,8 +1816,8 @@ section .text
     PUSH EAX                            ; 0040ffd5
     MOV EDX,dword ptr [0x006793d0]      ; 0040ffd6 | g_CEventListPtr
     PUSH EDX                            ; 0040ffdc | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add00 ; 0040ffdd
-        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCondition_FUN_004add00 ; 0040ffdd
+        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCondition_FUN_004add00(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 0040ffe2
     TEST EAX,EAX                        ; 0040ffe5
     JZ 0x0040fffe                       ; 0040ffe7
@@ -1835,8 +1835,8 @@ section .text
     PUSH EAX                            ; 00410005
     MOV ECX,dword ptr [0x006793d0]      ; 00410006 | g_CEventListPtr
     PUSH ECX                            ; 0041000c | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add40 ; 0041000d
-        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add40(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCommands_FUN_004add40 ; 0041000d
+        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCommands_FUN_004add40(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 00410012
     TEST EAX,EAX                        ; 00410015
     JNZ 0x00410052                      ; 00410017

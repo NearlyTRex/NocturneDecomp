@@ -399,7 +399,7 @@ section .text
         ;   XREF to: 0056bbef (CONDITIONAL_JUMP)  ; LAB_0056bbef
     PUSH EBX                            ; 0056bbd4
     CALL core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0 ; 0056bbd5
-        ;   XREF to: 004eb3a0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass * this_ptr)
+        ;   XREF to: 004eb3a0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0056bbda
     TEST EAX,EAX                        ; 0056bbdd
     JZ 0x0056bbef                       ; 0056bbdf

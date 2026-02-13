@@ -153,12 +153,12 @@ int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00 (CPathMap *thi
 void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0 (int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip);
 void __cdecl core_path_cpp_FUN_00547fc0(void);
 CPathMap * __cdecl core_path_cpp_FUN_00548390(void);
-void __cdecl core_path_cpp_FUN_00548500(void);
+CPathMap * __cdecl core_path_cpp_FUN_00548500(void);
 void __cdecl core_path_cpp_CPathMap_reset_FUN_00548510(CPathMap *this_ptr);
-void __cdecl core_path_cpp_GlobalPathmapListCorruption_FUN_00548590(void);
+void __cdecl core_path_cpp_FUN_00548590(void);
 void __cdecl core_path_cpp_FUN_005485f0(void);
 void __cdecl core_path_cpp_FUN_00548680(void);
-void __cdecl core_path_cpp_CPathMap_CallToQueuePop_FUN_00548750(CPathMap *this_ptr);
+void __cdecl core_path_cpp_CPathMap_FUN_00548750(CPathMap *this_ptr);
 uint __cdecl core_path_cpp_CPathMap_queuePop_FUN_005487a0(CPathMap *this_ptr,int start_height);
 CPathMap * __cdecl core_path_cpp_CPathMap_arrdtor_FUN_00548c30(CPathMap *objs,uint flags);
 void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,_FILE *pcx_file);

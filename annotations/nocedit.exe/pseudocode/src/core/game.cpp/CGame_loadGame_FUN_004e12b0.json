@@ -10,7 +10,7 @@
       {
         "category": "format_error",
         "column": 65,
-        "line": 314,
+        "line": 313,
         "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
       }
     ],
@@ -19,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 810,
-    "complexity_score": 385,
+    "complexity_score": 384,
     "cross_reference_count": 3,
     "function_call_count": 46,
     "global_count": 72,
-    "pseudocode_lines": 320,
+    "pseudocode_lines": 319,
     "suspect_count": 6,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 1130
+    "total_lines": 1129
   },
   "cross_references": [
     {
@@ -69,14 +69,14 @@
       "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
     },
     {
-      "addr": "004b0460",
-      "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004b0460"
-    },
-    {
       "addr": "004b0fc0",
       "is_variadic": false,
       "name": "core_event.cpp_CEventList_loadState_FUN_004b0fc0"
+    },
+    {
+      "addr": "004b0460",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_resetGameFlags_FUN_004b0460"
     },
     {
       "addr": "004c6c80",
@@ -1005,42 +1005,42 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 289,
+      "line": 288,
       "match": "DAT_02d82d80",
       "text": "DAT_02d82d80 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 294,
+      "line": 293,
       "match": "DAT_02d82d84",
       "text": "_fscanf(file_handle,\"%d\\n\",&DAT_02d82d84);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 295,
+      "line": 294,
       "match": "DAT_02d82d84",
       "text": "if (0 < DAT_02d82d84) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 296,
+      "line": 295,
       "match": "DAT_02d82d88",
       "text": "puVar7 = &DAT_02d82d88;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 301,
+      "line": 300,
       "match": "DAT_02d82d84",
       "text": "} while (iVar2 <= DAT_02d82d84);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 303,
+      "line": 302,
       "match": "DAT_02d82d80",
       "text": "DAT_02d82d80 = 1;",
       "type": "undefined_data"

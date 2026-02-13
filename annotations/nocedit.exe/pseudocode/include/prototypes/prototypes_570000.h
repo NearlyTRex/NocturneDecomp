@@ -42,13 +42,13 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00570c70(CDemonSet *this_p
 void __cdecl core_set_cpp_CDemonSet_FUN_00570ca0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_00570cd0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00570d60(CDemonSet *this_ptr,int gamma);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570e20(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570e60(CDemonSet *this_ptr);
+int __cdecl core_set_cpp_CDemonSet_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive);
+void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(CDemonSet *this_ptr,int index,float value);
+void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60 (CDemonSet *this_ptr,int id,float value);
 void __cdecl core_set_cpp_CDemonSet_FUN_00570ea0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_00570ec0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570fa0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_initCameraShake_FUN_00570fa0 (CDemonSet *this_ptr,float peak,float attack,float sustain,float decay);
 void __cdecl core_set_cpp_CDemonSet_FUN_00570fc0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_FUN_00571130(CDemonSet *this_ptr);
 int __cdecl core_set_cpp_CDemonSet_FUN_00571170(CDemonSet *this_ptr);

@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750 at 0054878e
+;   core_path.cpp_CPathMap_FUN_00548750 at 0054878e
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 at 00547942
 ;
 ; Referenced Globals:

@@ -14,6 +14,7 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   int iVar2;
   int iVar3;
   _tm *p_Var4;
+  int unaff_EBX;
   char *output_buffer;
   time_t *ptVar5;
   time_t *ptVar6;
@@ -22,11 +23,11 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
   SFoundFileInfo *pSVar9;
   byte bVar10;
   time_t atStackY_30f4 [2034];
-  CFileManager *source_file;
-  _FILE *dest_filename;
-  CPickList *this_ptr_00;
-  int file_offset;
-  CPodFile *this_ptr_01;
+  CFileManager *this_ptr_00;
+  _FILE *source_file;
+  CPickList *this_ptr_01;
+  int file_size;
+  CPodFile *this_ptr_02;
   SFoundFileInfo *info;
   CPodFile local_1108;
   SFoundFileInfo local_cdc;
@@ -80,16 +81,16 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
          (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                            (&local_8dc,"Select file to extract",(int)output_buffer,0);
     if ((int)output_buffer < 0) break;
-    this_ptr_00 = &local_8dc;
+    this_ptr_01 = &local_8dc;
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-              (&this_ptr_00->base,(int)local_120,output_buffer,0);
-    this_ptr_01 = &local_1108;
-    file_offset = 0x4b7851;
-    iVar2 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(this_ptr_01,local_120);
+              (&this_ptr_01->base,(int)local_120,output_buffer,0);
+    this_ptr_02 = &local_1108;
+    file_size = 0x4b7851;
+    iVar2 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(this_ptr_02,local_120);
     if (iVar2 < 0) {
       g_CurrentFilename = "..\\engine\\fileio.cpp";
       g_CurrentLineNumber = 0xa20;
-      this_ptr_01 = (CPodFile *)0x4b7a8d;
+      this_ptr_02 = (CPodFile *)0x4b7a8d;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze finding file in pod!");
     }
     ptVar5 = (time_t *)((int)(local_1108.directory_entries + iVar2) + (uint)bVar10 * -8 + 4);
@@ -116,19 +117,19 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
     iVar2 = 1;
     if (this_ptr->operation_mode != 0) {
       info = &local_534;
-      this_ptr_01 = (CPodFile *)0x4b78be;
+      this_ptr_02 = (CPodFile *)0x4b78be;
       iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(info);
       if (iVar3 != 0) {
         p_Var4 = _localtime((time_t *)&local_534.timestamp);
         _strftime(local_320,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
         p_Var4 = _localtime(local_1c + 2);
         _strftime(local_220,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
-        this_ptr_00 = (CPickList *)local_534.file_size;
+        this_ptr_01 = (CPickList *)local_534.file_size;
         _sprintf
                   (local_cdc.found_path,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_534.target_path);
         info = &local_cdc;
-        file_offset = 0x4b7970;
-        this_ptr_01 = (CPodFile *)g_CEditorToolsPtr;
+        file_size = 0x4b7970;
+        this_ptr_02 = (CPodFile *)g_CEditorToolsPtr;
         iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                           (g_CEditorToolsPtr,info->found_path);
       }
@@ -138,15 +139,15 @@ engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager
       ptVar5 = local_1c + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1;
       *(time_t *)((int)&local_1108 + (uint)bVar10 * -8 + -0x18) = local_1c[(uint)bVar10 * -2];
       ptVar8 = ptVar6 + (uint)bVar10 * -2 + 1;
-      source_file = this_ptr;
-      dest_filename = local_c;
+      this_ptr_00 = this_ptr;
+      source_file = local_c;
       pcVar7 = local_20;
       *ptVar6 = *ptVar5;
       *ptVar8 = ptVar5[(uint)bVar10 * -2 + 1];
       ptVar8[(uint)bVar10 * -2 + 1] = (ptVar5 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
-      iVar2 = engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
-                        ((_FILE *)source_file,(char *)dest_filename,pcVar7,(int)this_ptr_00,
-                         file_offset,(int)this_ptr_01,(int)info);
+      iVar2 = engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
+                        (this_ptr_00,source_file,pcVar7,(char *)this_ptr_01,file_size,
+                         (int)this_ptr_02,(int)info,unaff_EBX);
       if (iVar2 == 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Unable to extract file:\n%s");

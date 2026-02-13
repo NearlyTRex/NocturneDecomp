@@ -22,8 +22,8 @@ core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *d
                          (damage_info->attacker,g_CCharacterClassInfo.name_hash);
     }
     if (pCVar1 != (CDemonActor *)0x0) {
-      this_ptr->unk3 = 0x41700000;
-      this_ptr->unk1 = 1;
+      this_ptr->victim_search_timer = 15.0;
+      this_ptr->is_in_combat = 1;
       this_ptr->victim = pCVar1;
       return;
     }

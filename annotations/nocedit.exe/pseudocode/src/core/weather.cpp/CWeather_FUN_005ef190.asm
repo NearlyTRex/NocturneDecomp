@@ -69,9 +69,9 @@
 ;   float FLOAT_00665700 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   SMRGLTextureBasic DAT_00684900
-;   SMRGLTextureBasic DAT_00684918
-;   SMRGLTextureBasic DAT_00684930
+;   SMRGLTextureBasic SMRGLTextureBasic_00684900
+;   SMRGLTextureBasic SMRGLTextureBasic_00684918
+;   SMRGLTextureBasic SMRGLTextureBasic_00684930
 ;   undefined4 DAT_00780000
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -135,7 +135,7 @@ section .text
     CMP dword ptr [EAX],0x1             ; 005ef1dc
     JNZ 0x005ef6bb                      ; 005ef1df
         ;   XREF to: 005ef6bb (CONDITIONAL_JUMP)  ; LAB_005ef6bb
-    PUSH 0x684900                       ; 005ef1e5 | DAT_00684900
+    PUSH 0x684900                       ; 005ef1e5 | SMRGLTextureBasic_00684900
     MOV EAX,[0x006703ec]                ; 005ef1ea | g_CDemonRendererPtr2
     PUSH EAX                            ; 005ef1ef | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005ef1f0
@@ -427,7 +427,7 @@ section .text
     CMP dword ptr [EAX],0x1             ; 005ef60b
     JNZ 0x005ef69f                      ; 005ef60e
         ;   XREF to: 005ef69f (CONDITIONAL_JUMP)  ; LAB_005ef69f
-    PUSH 0x684918                       ; 005ef614 | DAT_00684918
+    PUSH 0x684918                       ; 005ef614 | SMRGLTextureBasic_00684918
     MOV EBX,dword ptr [0x006703ec]      ; 005ef619 | g_CDemonRendererPtr2
     PUSH EBX                            ; 005ef61f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005ef620
@@ -478,7 +478,7 @@ section .text
     POP EDI                             ; 005ef6b8
     POP ESI                             ; 005ef6b9
     RET                                 ; 005ef6ba
-    PUSH 0x684930                       ; 005ef6bb | DAT_00684930
+    PUSH 0x684930                       ; 005ef6bb | SMRGLTextureBasic_00684930
         ;   Label: LAB_005ef6bb
     MOV EBP,dword ptr [0x006703ec]      ; 005ef6c0 | g_CDemonRendererPtr2
     PUSH EBP                            ; 005ef6c6 | g_CDemonRendererInstance

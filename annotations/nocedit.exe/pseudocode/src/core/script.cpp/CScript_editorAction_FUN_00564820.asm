@@ -38,16 +38,16 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   core_script.cpp_clearSelections_FUN_005644e0
 ;   core_script.cpp_CScript_editorIndex2X_FUN_00566b30
 ;   core_script.cpp_CScript_editorPutLine_FUN_005662a0
 ;   core_script.cpp_CScript_editorX2Index_FUN_00566a90
-;   core_script.cpp_CScript_FUN_00566390
+;   core_script.cpp_CScript_insertText_FUN_00566390
 ;   core_script.cpp_CScript_loadLineToBuffer_FUN_00566230
 ;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910
 ;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0
-;   core_script.cpp_FUN_005644e0
-;   core_script.cpp_FUN_00564500
-;   core_script.cpp_FUN_00564560
+;   core_script.cpp_getSelectionRangeForLine_FUN_00564560
+;   core_script.cpp_updateSelection_FUN_00564500
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
@@ -266,8 +266,8 @@ section .text
     POP ESI                             ; 00564a18
     POP EBX                             ; 00564a19
     RET                                 ; 00564a1a
-    CALL core_script.cpp_FUN_00564500   ; 00564a1b
-        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564500()
+    CALL core_script.cpp_updateSelection_FUN_00564500 ; 00564a1b
+        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_updateSelection_FUN_00564500()
         ;   Label: caseD_d
     MOV EDX,dword ptr [0x031141c4]      ; 00564a20 | g_SelectionStartLine
     TEST EDX,EDX                        ; 00564a26
@@ -290,8 +290,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00564a58
     PUSH EAX                            ; 00564a5c
     PUSH EBX                            ; 00564a5d
-    CALL core_script.cpp_FUN_00564560   ; 00564a5e
-        ;   XREF to: 00564560 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564560()
+    CALL core_script.cpp_getSelectionRangeForLine_FUN_00564560 ; 00564a5e
+        ;   XREF to: 00564560 (UNCONDITIONAL_CALL)  ; void core_script.cpp_getSelectionRangeForLine_FUN_00564560(int line, int * sel_start_col_out, int * sel_end_col_out)
     ADD ESP,0xc                         ; 00564a63
     MOV EDI,dword ptr [ESP]             ; 00564a66
     PUSH EDI                            ; 00564a69
@@ -433,8 +433,8 @@ section .text
     ADD ESP,0x4                         ; 00564bbb
     PUSH EAX                            ; 00564bbe
     PUSH EBP                            ; 00564bbf
-    CALL core_script.cpp_CScript_FUN_00566390 ; 00564bc0
-        ;   XREF to: 00566390 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566390(CScript * this_ptr, char * param_2, int param_3)
+    CALL core_script.cpp_CScript_insertText_FUN_00566390 ; 00564bc0
+        ;   XREF to: 00566390 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_insertText_FUN_00566390(CScript * this_ptr, char * text, int update_cursor)
     ADD ESP,0xc                         ; 00564bc5
     ADD ESP,0x1c                        ; 00564bc8
     POP EBP                             ; 00564bcb
@@ -442,8 +442,8 @@ section .text
     POP ESI                             ; 00564bcd
     POP EBX                             ; 00564bce
     RET                                 ; 00564bcf
-    CALL core_script.cpp_FUN_00564500   ; 00564bd0
-        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564500()
+    CALL core_script.cpp_updateSelection_FUN_00564500 ; 00564bd0
+        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_updateSelection_FUN_00564500()
         ;   Label: caseD_f
     MOV ESI,dword ptr [0x031141c4]      ; 00564bd5 | g_SelectionStartLine
     TEST ESI,ESI                        ; 00564bdb
@@ -579,8 +579,8 @@ section .text
     CALL shape_edittool.cpp_CStrList_remove_FUN_004a2e00 ; 00564d22
         ;   XREF to: 004a2e00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_remove_FUN_004a2e00(CStrList * this_ptr, int start_index, int end_index)
     ADD ESP,0xc                         ; 00564d27
-    CALL core_script.cpp_FUN_005644e0   ; 00564d2a
-        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005644e0()
+    CALL core_script.cpp_clearSelections_FUN_005644e0 ; 00564d2a
+        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_clearSelections_FUN_005644e0()
         ;   Label: LAB_00564d2a
     JMP 0x005648c7                      ; 00564d2f
         ;   XREF to: 005648c7 (UNCONDITIONAL_JUMP)  ; LAB_005648c7
@@ -891,8 +891,8 @@ section .text
     TEST ESI,ESI                        ; 0056501a
     JNZ 0x00565039                      ; 0056501c
         ;   XREF to: 00565039 (CONDITIONAL_JUMP)  ; LAB_00565039
-    CALL core_script.cpp_FUN_005644e0   ; 0056501e
-        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005644e0()
+    CALL core_script.cpp_clearSelections_FUN_005644e0 ; 0056501e
+        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_clearSelections_FUN_005644e0()
     MOV EAX,[0x0310fd48]                ; 00565023 | g_CurrentEditingLine
     INC EAX                             ; 00565028
     MOV dword ptr [0x0310fd44],ESI      ; 00565029 | g_CurrentEditingColumn

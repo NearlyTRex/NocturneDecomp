@@ -26,7 +26,8 @@ void __cdecl core_script_cpp_CScript_FUN_00567080(CScript *this_ptr,char *param_
     iVar2 = core_script_cpp_CCmdParse_parse_FUN_00561fd0
                       (&local_2374,param_2,*(char **)((int)g_CommandTemplates + iVar3));
     if (iVar2 == 3) {
-      core_script_cpp_FUN_00564090((int)&local_2374,param_3);
+      core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090
+                (&local_2374,(CDemonActor *)param_3);
       return;
     }
     iVar3 = iVar3 + 4;
@@ -35,7 +36,8 @@ void __cdecl core_script_cpp_CScript_FUN_00567080(CScript *this_ptr,char *param_
     param_2 = (char *)((byte *)param_2 + 1);
   }
   pbVar4 = local_24c;
-  while (iVar3 = core_event_cpp_FUN_004b0f90((uint)(byte)*param_2), iVar3 != 0) {
+  while (iVar3 = core_event_cpp_isValidIdentifierChar_FUN_004b0f90((uint)(byte)*param_2), iVar3 != 0
+        ) {
     bVar1 = *param_2;
     param_2 = (char *)((byte *)param_2 + 1);
     *pbVar4 = bVar1;

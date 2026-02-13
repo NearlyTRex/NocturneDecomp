@@ -41,7 +41,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_event.cpp_FUN_004b18e0
+;   core_event.cpp_CRuleList_evaluateAndRun_FUN_004b18e0
 ;   core_lever.cpp_CLever_FUN_00505080
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;
@@ -188,8 +188,8 @@ section .text
     LEA EAX,[EBX + 0x420]               ; 004f30bc
         ;   Label: LAB_004f30bc
     PUSH EAX                            ; 004f30c2
-    CALL core_event.cpp_FUN_004b18e0    ; 004f30c3
-        ;   XREF to: 004b18e0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b18e0(int * param_1)
+    CALL core_event.cpp_CRuleList_evaluateAndRun_FUN_004b18e0 ; 004f30c3
+        ;   XREF to: 004b18e0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CRuleList_evaluateAndRun_FUN_004b18e0(CRuleList * this_ptr)
     ADD ESP,0x4                         ; 004f30c8
     TEST EAX,EAX                        ; 004f30cb
     JNZ 0x004f2f9b                      ; 004f30cd

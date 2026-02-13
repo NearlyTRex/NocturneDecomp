@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 318,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 25,
-    "pseudocode_lines": 143,
-    "suspect_count": 16,
+    "pseudocode_lines": 124,
+    "suspect_count": 11,
     "suspect_types": [
-      "extra_output",
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 425
+    "total_lines": 406
   },
   "cross_references": [
     {
@@ -82,7 +81,7 @@
     {
       "addr": "005eeeb0",
       "is_variadic": false,
-      "name": "core_weather.cpp_CWeather_FUN_005eeeb0"
+      "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0"
     },
     {
       "addr": "005ef140",
@@ -247,8 +246,8 @@
     },
     {
       "addr": "03f96b40",
-      "name": "DAT_03f96b40",
-      "type": "undefined4",
+      "name": "UINT_03f96b40",
+      "type": "uint",
       "value": null
     }
   ],
@@ -415,115 +414,80 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "uint extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_03f96b40",
-      "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f96b40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
+      "line": 52,
       "match": "DAT_03f96a78",
       "text": "(&DAT_03f96a78)[iVar5] = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 53,
       "match": "(float *)((int)",
-      "text": "fVar3 = *(float *)((int)&DAT_03f95df8[0].y + iVar4) - *(float *)(this_ptr->unk + 4) * fVar1;",
+      "text": "fVar3 = *(float *)((int)&DAT_03f95df8[0].y + iVar4) - this_ptr->particle_speed * fVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 53,
       "match": "DAT_03f95df8",
-      "text": "fVar3 = *(float *)((int)&DAT_03f95df8[0].y + iVar4) - *(float *)(this_ptr->unk + 4) * fVar1;",
+      "text": "fVar3 = *(float *)((int)&DAT_03f95df8[0].y + iVar4) - this_ptr->particle_speed * fVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 54,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&DAT_03f95df8[0].y + iVar4) = fVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 54,
       "match": "DAT_03f95df8",
       "text": "*(float *)((int)&DAT_03f95df8[0].y + iVar4) = fVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 55,
       "match": "(float *)((int)",
       "text": "if ((fVar3 < *(float *)((int)&DAT_03f96758 + iVar6)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 55,
       "match": "DAT_03f96758",
       "text": "if ((fVar3 < *(float *)((int)&DAT_03f96758 + iVar6)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 56,
       "match": "(float *)((int)",
       "text": "(*(float *)((int)&DAT_03f95df8[0].y + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 56,
       "match": "DAT_03f95df8",
       "text": "(*(float *)((int)&DAT_03f95df8[0].y + iVar4) =",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 57,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&DAT_03f95df8[0].y + iVar4) + 100.0f,",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 57,
       "match": "DAT_03f95df8",
       "text": "*(float *)((int)&DAT_03f95df8[0].y + iVar4) + 100.0f,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 138,
-      "match": "DAT_03f96b40",
-      "text": "iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_03f96b40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 141,
-      "match": "extraout_EAX",
-      "text": "DAT_03f96b40 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_03f96b40",
-      "text": "DAT_03f96b40 = extraout_EAX;",
       "type": "undefined_data"
     }
   ]

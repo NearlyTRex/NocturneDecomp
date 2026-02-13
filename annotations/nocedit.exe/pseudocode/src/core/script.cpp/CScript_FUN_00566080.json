@@ -1,35 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 14,
-        "line": 27,
-        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 44,
-        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 114,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 13,
-    "pseudocode_lines": 54,
-    "suspect_count": 5,
+    "pseudocode_lines": 55,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 168
+    "total_lines": 169
   },
   "cross_references": [
     {
@@ -53,6 +39,11 @@
   },
   "function_calls": [
     {
+      "addr": "005644e0",
+      "is_variadic": false,
+      "name": "core_script.cpp_clearSelections_FUN_005644e0"
+    },
+    {
       "addr": "0055a370",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_FUN_0055a370"
@@ -71,11 +62,6 @@
       "addr": "005669a0",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_updateScrollPosition_FUN_005669a0"
-    },
-    {
-      "addr": "005644e0",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_005644e0"
     },
     {
       "addr": "005fdbd0",
@@ -155,26 +141,26 @@
     },
     {
       "addr": "0310fdc0",
-      "name": "DAT_0310fdc0",
-      "type": "undefined1",
+      "name": "g_ScriptEditorStatusText",
+      "type": "char[1020]",
       "value": null
     },
     {
       "addr": "0310fdc1",
       "name": "DAT_0310fdc1",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0310fdc2",
       "name": "DAT_0310fdc2",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "0310fdc3",
       "name": "DAT_0310fdc3",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -240,13 +226,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_0310fdc0",
-      "text": "pcVar4 = &DAT_0310fdc0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(char *)((int)",
@@ -259,20 +238,6 @@
       "match": "(int *)((int)",
       "text": "piVar2 = (int *)((int)piVar2 + 2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_0310fdc0",
-      "text": "pcVar5 = &DAT_0310fdc0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_0310fdc0",
-      "text": "_sprintf(&DAT_0310fdc0,\"%d sound files missing.\",iVar3);",
-      "type": "undefined_data"
     }
   ]
 }

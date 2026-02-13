@@ -58,21 +58,21 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   local_bc = 2;
   uVar7 = rand();
   if ((uVar7 & 1) == 0) {
-    g_RenderVertexBuffer[1].u = 7.34684e-40;
-    g_RenderVertexBuffer[2].u = 7.34684e-40;
-    g_RenderVertexBuffer[3].u = 2.2775203e-38;
-    g_RenderVertexBuffer[0].u = 2.2775203e-38;
+    g_RenderVertexBuffer[1].u = 0x80000;
+    g_RenderVertexBuffer[2].u = 0x80000;
+    g_RenderVertexBuffer[3].u = 0xf80000;
+    g_RenderVertexBuffer[0].u = 0xf80000;
   }
   else {
-    g_RenderVertexBuffer[1].u = 2.2775203e-38;
-    g_RenderVertexBuffer[2].u = 2.2775203e-38;
-    g_RenderVertexBuffer[3].u = 7.34684e-40;
-    g_RenderVertexBuffer[0].u = 7.34684e-40;
+    g_RenderVertexBuffer[1].u = 0xf80000;
+    g_RenderVertexBuffer[2].u = 0xf80000;
+    g_RenderVertexBuffer[3].u = 0x80000;
+    g_RenderVertexBuffer[0].u = 0x80000;
   }
-  g_RenderVertexBuffer[3].v = 2.2775203e-38;
-  g_RenderVertexBuffer[2].v = 2.2775203e-38;
-  g_RenderVertexBuffer[1].v = 7.34684e-40;
-  g_RenderVertexBuffer[0].v = 7.34684e-40;
+  g_RenderVertexBuffer[3].v = 0xf80000;
+  g_RenderVertexBuffer[2].v = 0xf80000;
+  g_RenderVertexBuffer[1].v = 0x80000;
+  g_RenderVertexBuffer[0].v = 0x80000;
   g_RenderVertexBuffer[0].light = 9.18341e-41;
   g_RenderVertexBuffer[0].color = 0xffff;
   g_RenderVertexBuffer[0].fog = 9.18341e-41;

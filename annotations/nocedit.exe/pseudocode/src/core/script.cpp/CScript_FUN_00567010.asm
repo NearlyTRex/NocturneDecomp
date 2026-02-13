@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_FUN_0053ea30 at 0053eb24
-;   core_script.cpp_FUN_00564090 at 005641b3
+;   core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090 at 005641b3
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_FUN_00567080

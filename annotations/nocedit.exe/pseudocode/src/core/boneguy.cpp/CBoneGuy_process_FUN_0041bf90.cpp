@@ -23,8 +23,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   int iVar11;
   CBoneGuy *pCVar12;
   CVector3f *pCVar13;
-  int extraout_EAX;
-  int extraout_EAX_00;
   CPathMap *path_map;
   uint *puVar14;
   uint *puVar15;
@@ -224,8 +222,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   if (iVar11 == 0) {
     switch(iVar7) {
     case 0:
-      core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-      if (extraout_EAX == 0) {
+      iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      if (iVar7 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CDemonActor *)0x0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -240,8 +238,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     case 1:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX_00 == 0) {
+        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar7 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,0,1);
         }
@@ -275,7 +273,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
             fVar17 = (this_ptr->base).base.base.location.position.x - (pCVar4->location).position.x;
             fVar5 = (this_ptr->base).base.base.location.position.z - (pCVar4->location).position.z;
             if ((SQRT(fVar5 * fVar5 + fVar17 * fVar17) <= local_30 + (float)0.5) &&
-               (*(float *)(this_ptr->base).unk2 <= 0.0)) {
+               ((float)(this_ptr->base).unk2 <= 0.0)) {
               if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
                 fVar17 = 2.8026e-45;
               }
@@ -287,10 +285,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
               sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
               (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"boneguy-swing?.wav");
-              (this_ptr->base).unk2[0] = '\0';
-              (this_ptr->base).unk2[1] = '\0';
-              (this_ptr->base).unk2[2] = -0x80;
-              (this_ptr->base).unk2[3] = '?';
+              (this_ptr->base).unk2 = 0x3f800000;
             }
           }
         }
@@ -385,8 +380,8 @@ LAB_0041c60c:
     (this_ptr->base).base.model.accumulated_root_motion.x =
          (this_ptr->base).base.model.accumulated_root_motion.y;
   }
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   iVar7 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar7 != 0) {

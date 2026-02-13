@@ -116,8 +116,8 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
         pCVar2->vertex_buffer_ptr->color = iVar3 << 8;
         pCVar2->vertex_buffer_ptr->fog = (float)(iVar4 << 8);
         pCVar2->vertex_buffer_ptr->w_recip = (float)(iVar6 << 8);
-        pCVar2->vertex_buffer_ptr->u = 1.1754944e-38;
-        pCVar2->vertex_buffer_ptr->v = 1.1754944e-38;
+        pCVar2->vertex_buffer_ptr->u = 0x800000;
+        pCVar2->vertex_buffer_ptr->v = 0x800000;
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar2,&DAT_0068434c);
         CStack_48.x = (int)ROUND(fStack_60 * 256.0f);
         CStack_48.y = (int)ROUND(fStack_5c * 256.0f);

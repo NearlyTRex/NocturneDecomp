@@ -185,6 +185,9 @@ int g_InputBuffer[20] = {};
 // int[513]
 int g_MessageFlags[513] = {};
 
+// uint
+uint UINT_03f96b40 = {};
+
 // undefined1
 undefined1 DAT_03f96a78 = {};
 undefined1 DAT_03f96a79 = {};
@@ -205,7 +208,6 @@ undefined4 DAT_03f939a4 = {};
 undefined4 DAT_03f939a8 = {};
 undefined4 DAT_03f96758 = {};
 undefined4 DAT_03f9675c = {};
-undefined4 DAT_03f96b40 = {};
 undefined4 g_FreeListHeadPointer = {};
 undefined4 DAT_03f9b210 = {};
 

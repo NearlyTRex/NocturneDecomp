@@ -23,11 +23,7 @@ core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride *this_ptr,flo
   CDraculaBride *pCVar10;
   CSkeleton *pCVar11;
   CVector3f *pCVar12;
-  int extraout_EAX;
-  int extraout_EAX_00;
-  int extraout_EAX_01;
   CDemonActor *pCVar13;
-  int extraout_EAX_02;
   CPathMap *pCVar14;
   float10 fVar15;
   float10 fVar16;
@@ -225,8 +221,8 @@ LAB_004848f9:
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
     if ((this_ptr->base).victim == (CDemonActor *)0x0) {
       in_stack_fffffb6c = this_ptr;
-      core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-      if (extraout_EAX_01 != 0) {
+      iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      if (iVar6 != 0) {
         in_stack_fffffb6c = (CDraculaBride *)0xe;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0xe,1);
@@ -326,8 +322,8 @@ LAB_004848f9:
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
     if ((this_ptr->base).victim == (CDemonActor *)0x0) {
       in_stack_fffffb6c = this_ptr;
-      core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-      if (extraout_EAX != 0) {
+      iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      if (iVar6 != 0) {
         in_stack_fffffb6c = (CDraculaBride *)0xe;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0xe,1);
@@ -418,16 +414,13 @@ LAB_004848f9:
             }
           }
         }
-        else if (*(float *)(this_ptr->base).unk2 <= 0.0) {
+        else if ((float)(this_ptr->base).unk2 <= 0.0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     ((CMotionController *)pCVar10,2,1);
           in_stack_fffffb6c = (CDraculaBride *)0x485387;
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"hotbride-bite?.wav");
-          (this_ptr->base).unk2[0] = '\0';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = -0x80;
-          (this_ptr->base).unk2[3] = '?';
+          (this_ptr->base).unk2 = 0x3f800000;
         }
       }
       else {
@@ -440,8 +433,8 @@ LAB_004848f9:
       break;
     }
     in_stack_fffffb6c = this_ptr;
-    core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-    if (extraout_EAX_00 == 0) break;
+    iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+    if (iVar6 == 0) break;
 LAB_004852f8:
     in_stack_fffffb6c = (CDraculaBride *)0xe;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -477,8 +470,8 @@ LAB_004852f8:
     pCVar10 = (CDraculaBride *)&(this_ptr->base).base.model;
     if (pCVar18 == (CDraculaBride *)0x0) {
       in_stack_fffffb6c = this_ptr;
-      core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-      if (extraout_EAX_02 == 0) {
+      iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      if (iVar6 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   ((CMotionController *)pCVar10,0,1);
         in_stack_fffffb6c = pCVar18;
@@ -508,7 +501,7 @@ LAB_004852f8:
                   ((CMotionController *)pCVar10,0,1);
         in_stack_fffffb6c = pCVar10;
       }
-      else if ((0 < iVar6) && (*(float *)(this_ptr->base).unk2 <= 0.0)) {
+      else if ((0 < iVar6) && ((float)(this_ptr->base).unk2 <= 0.0)) {
         in_stack_fffffb6c = (CDraculaBride *)0x48582e;
         iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
         if (iVar6 == 0) {
@@ -528,10 +521,7 @@ LAB_004852f8:
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"hotbride-swipe?.wav");
         }
-        (this_ptr->base).unk2[0] = '\0';
-        (this_ptr->base).unk2[1] = '\0';
-        (this_ptr->base).unk2[2] = -0x80;
-        (this_ptr->base).unk2[3] = '?';
+        (this_ptr->base).unk2 = 0x3f800000;
       }
     }
     break;
@@ -747,8 +737,8 @@ LAB_004852f8:
     }
   }
 switchD_004858cd_caseD_1:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&(this_ptr->base).base.model.motion_controller);

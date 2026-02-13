@@ -11,7 +11,7 @@ int __cdecl core_turret_cpp_CTurret_canPickup_FUN_005e3c70(CTurret *this_ptr,CDe
 {
   int iVar1;
   
-  if (g_CGamePtr->unk7 == 0) {
+  if (g_CGamePtr->big_hat_cheat == 0) {
     return 0;
   }
   iVar1 = core_weapon_cpp_CWeapon_canPickup_FUN_005ee340(&this_ptr->base,picker);

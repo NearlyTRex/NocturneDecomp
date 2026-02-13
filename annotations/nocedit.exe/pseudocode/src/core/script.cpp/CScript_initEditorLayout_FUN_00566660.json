@@ -1,0 +1,305 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 49,
+    "cross_reference_count": 2,
+    "function_call_count": 9,
+    "global_count": 22,
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 178
+  },
+  "cross_references": [
+    {
+      "addr": "005390f0",
+      "from_addr": "0053aa0a",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005374b0",
+      "from_addr": "005374d8",
+      "name": "core_msnedit.cpp_FUN_005374b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566660",
+    "address_range": [
+      [
+        "00566660",
+        "005667f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_initEditorLayout_FUN_00566660",
+    "signature": "void __cdecl core_script_cpp_CScript_initEditorLayout_FUN_00566660 (CScript *this_ptr,int x,int y,int width,int height)"
+  },
+  "function_calls": [
+    {
+      "addr": "005644e0",
+      "is_variadic": false,
+      "name": "core_script.cpp_clearSelections_FUN_005644e0"
+    },
+    {
+      "addr": "00566800",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_updateLineMetrics_FUN_00566800"
+    },
+    {
+      "addr": "004d01a0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0"
+    },
+    {
+      "addr": "004a64b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateGridHeight_FUN_004a64b0"
+    },
+    {
+      "addr": "004a6490",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateGridWidth_FUN_004a6490"
+    },
+    {
+      "addr": "004a5b60",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60"
+    },
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
+    },
+    {
+      "addr": "004a6f00",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_getFontCharSpacing_FUN_004a6f00"
+    },
+    {
+      "addr": "004a6ef0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_getFontMaxCharWidth_FUN_004a6ef0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "020a5728",
+      "name": "g_ConsoleFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "0310fcd8",
+      "name": "g_ScriptEditorVScrollBar",
+      "type": "CEdScrollBar",
+      "value": null
+    },
+    {
+      "addr": "0310fcdc",
+      "name": "g_ScriptEditorVScrollBar.current_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fce0",
+      "name": "g_ScriptEditorVScrollBar.max_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd0c",
+      "name": "g_ScriptEditorHScrollBar",
+      "type": "CEdScrollBar",
+      "value": null
+    },
+    {
+      "addr": "0310fd10",
+      "name": "g_ScriptEditorHScrollBar.current_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd14",
+      "name": "g_ScriptEditorHScrollBar.max_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141d0",
+      "name": "g_ScriptEditorLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141d4",
+      "name": "g_ScriptEditorTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141d8",
+      "name": "g_ScriptEditorRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141dc",
+      "name": "g_ScriptEditorBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141e0",
+      "name": "g_ScriptTextAreaLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141e4",
+      "name": "g_ScriptTextAreaTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141e8",
+      "name": "g_ScriptTextAreaRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141ec",
+      "name": "g_ScriptTextAreaBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141f0",
+      "name": "g_ScriptStatusBarX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141f4",
+      "name": "g_ScriptStatusBarY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141f8",
+      "name": "g_ScriptStatusBarRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141fc",
+      "name": "g_ScriptStatusBarBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114200",
+      "name": "g_ScriptEditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "03114204",
+      "name": "g_ScriptEditorCharWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114208",
+      "name": "g_ScriptEditorLineHeight",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9292035398230087,
+    "instruction_count": 113,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BRANCH": 1,
+      "CALL": 11,
+      "CBRANCH": 1,
+      "COPY": 84,
+      "INT_ADD": 24,
+      "INT_AND": 66,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 46,
+      "INT_LEFT": 2,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 13,
+      "INT_SDIV": 2,
+      "INT_SEXT": 2,
+      "INT_SLESS": 22,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 41,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 10,
+      "POPCOUNT": 22,
+      "RETURN": 1,
+      "STORE": 33,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 444
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

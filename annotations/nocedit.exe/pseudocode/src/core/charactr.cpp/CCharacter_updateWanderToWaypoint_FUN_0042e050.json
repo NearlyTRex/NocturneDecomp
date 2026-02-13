@@ -3,15 +3,27 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 30,
-        "line": 117,
-        "message": "use of undeclared identifier 'code'"
+        "column": 21,
+        "line": 71,
+        "message": "use of undeclared identifier 'stack0xffffe080'; did you mean 'in_stack_ffffe080'?"
       },
       {
-        "category": "syntax_error",
-        "column": 37,
-        "line": 117,
-        "message": "expected expression"
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 82,
+        "message": "use of undeclared identifier 'stack0xffffe080'; did you mean 'in_stack_ffffe080'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 90,
+        "message": "use of undeclared identifier 'stack0xffffe080'; did you mean 'in_stack_ffffe080'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 93,
+        "message": "use of undeclared identifier 'stack0xffffe080'; did you mean 'in_stack_ffffe080'?"
       }
     ],
     "success": false,
@@ -19,15 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 262,
-    "complexity_score": 158,
+    "complexity_score": 213,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "pseudocode_lines": 118,
-    "suspect_count": 3,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "unresolved_funcptr"
+      "stack_param",
+      "stack_ref"
     ],
     "total_lines": 380
   },
@@ -249,25 +262,60 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffe080",
+      "text": "float in_stack_ffffe080;",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 36,
       "match": "SQRT",
-      "text": "(float)4 <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {",
+      "text": "(float)4 <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 61,
       "match": "SQRT",
-      "text": "20.0f <= SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5))) {",
+      "text": "20.0f <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
-      "match": "code *",
-      "text": "path_map = (CPathMap *)(**(code **)(*(int *)(this_ptr->unk9 + 0x154) + 0xbc))();",
-      "type": "unresolved_funcptr"
+      "description": "Direct stack address reference",
+      "line": 64,
+      "match": "&stack0xffffe080",
+      "text": "*(char **)(&stack0xffffe080 + iVar5) = target_string;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 75,
+      "match": "&stack0xffffe080",
+      "text": "if (*(int *)(&stack0xffffe080 + iVar4) != 0) break;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 83,
+      "match": "&stack0xffffe080",
+      "text": "this_ptr->wander_target = *(CWayPoint **)(&stack0xffffe080 + iVar4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 86,
+      "match": "&stack0xffffe080",
+      "text": "*(uint *)(&stack0xffffe080 + iVar4) = 0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_ffffe080",
+      "text": "path_map,direction,fVar6,in_stack_ffffe080);",
+      "type": "stack_param"
     }
   ]
 }

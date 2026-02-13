@@ -226,7 +226,7 @@
 ;   core_charactr.cpp_CCharacter_setLookAtTarget_FUN_0042ddd0
 ;   core_enemy.cpp_CEnemy_FUN_004a9ef0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   ... and 62 more
 ;
 ; *****************************************************************************
@@ -2068,8 +2068,8 @@ section .text
     PUSH ESI                            ; 0055bb6a
     MOV EAX,[0x006793d0]                ; 0055bb6b | g_CEventListPtr | g_CEventListInstance
     PUSH EAX                            ; 0055bb70 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 0055bb71
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 0055bb71
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0055bb76
     MOV dword ptr [ESP + 0x3e8c],0x641e5e ; 0055bb79 | s_EmptyChar_00641e5e
         ;   Label: LAB_0055bb79
@@ -2079,8 +2079,8 @@ section .text
         ;   Label: LAB_0055bb89
     MOV EDX,dword ptr [0x006793d0]      ; 0055bb8a | g_CEventListPtr | g_CEventListInstance
     PUSH EDX                            ; 0055bb90 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add40 ; 0055bb91
-        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add40(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCommands_FUN_004add40 ; 0055bb91
+        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCommands_FUN_004add40(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0055bb96
     TEST EAX,EAX                        ; 0055bb99
     JZ 0x0055bb79                       ; 0055bb9b
@@ -2306,7 +2306,7 @@ section .text
     LEA EAX,[ESP + 0x3e90]              ; 0055be3b
     PUSH EAX                            ; 0055be42
     CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055be43
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055be48
     TEST EAX,EAX                        ; 0055be4b
     JNZ 0x0055bb9d                      ; 0055be4d
@@ -2337,7 +2337,7 @@ section .text
     LEA EAX,[ESP + 0x3e90]              ; 0055bea3
     PUSH EAX                            ; 0055beaa
     CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055beab
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055beb0
     TEST EAX,EAX                        ; 0055beb3
     JNZ 0x0055bb9d                      ; 0055beb5
@@ -2373,7 +2373,7 @@ section .text
     LEA EAX,[ESP + 0x3e90]              ; 0055bf19
     PUSH EAX                            ; 0055bf20
     CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055bf21
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055bf26
     TEST EAX,EAX                        ; 0055bf29
     JNZ 0x0055bb9d                      ; 0055bf2b
@@ -2833,7 +2833,7 @@ section .text
     PUSH EBX                            ; 0055c45a
     MOV dword ptr [ESP + 0x3e94],EDX    ; 0055c45b
     CALL core_script.cpp_CScript_findDialogEntry_FUN_005606e0 ; 0055c462
-        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_005606e0(CScript * this_ptr, char * param_2)
+        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_005606e0(CScript * this_ptr, char * path)
     ADD ESP,0x8                         ; 0055c467
     TEST EAX,EAX                        ; 0055c46a
     JL 0x0055c51d                       ; 0055c46c
@@ -2979,7 +2979,7 @@ section .text
     PUSH EBX                            ; 0055c626
     MOV dword ptr [ESP + 0x3e94],EDX    ; 0055c627
     CALL core_script.cpp_CScript_findDialogEntry_FUN_005606e0 ; 0055c62e
-        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_005606e0(CScript * this_ptr, char * param_2)
+        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_005606e0(CScript * this_ptr, char * path)
     ADD ESP,0x8                         ; 0055c633
     TEST EAX,EAX                        ; 0055c636
     JL 0x0055c6e0                       ; 0055c638
@@ -3401,8 +3401,8 @@ section .text
     PUSH EAX                            ; 0055cbf1
     MOV EDI,dword ptr [0x006810c8]      ; 0055cbf2 | g_CDemonSetPtr
     PUSH EDI                            ; 0055cbf8 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056b790 ; 0055cbf9
-        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_0056b790(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790 ; 0055cbf9
+        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790(CDemonSet * this_ptr, char * name)
     MOV ESI,EAX                         ; 0055cbfe
     ADD ESP,0x8                         ; 0055cc00
     TEST EAX,EAX                        ; 0055cc03
@@ -3415,8 +3415,8 @@ section .text
     PUSH EAX                            ; 0055cc17
     MOV ESI,dword ptr [0x006793d0]      ; 0055cc18 | g_CEventListPtr
     PUSH ESI                            ; 0055cc1e | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add00 ; 0055cc1f
-        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCondition_FUN_004add00 ; 0055cc1f
+        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCondition_FUN_004add00(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 0055cc24
     TEST EAX,EAX                        ; 0055cc27
     JZ 0x0055a8bb                       ; 0055cc29
@@ -3516,8 +3516,8 @@ section .text
     PUSH EAX                            ; 0055cd3a
     MOV EDX,dword ptr [0x006793d0]      ; 0055cd3b | g_CEventListPtr | g_CEventListInstance
     PUSH EDX                            ; 0055cd41 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add00 ; 0055cd42
-        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCondition_FUN_004add00 ; 0055cd42
+        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCondition_FUN_004add00(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 0055cd47
     TEST EAX,EAX                        ; 0055cd4a
     JZ 0x0055a8bb                       ; 0055cd4c
@@ -3943,8 +3943,8 @@ section .text
     PUSH EAX                            ; 0055d24c
     MOV EAX,[0x006793d0]                ; 0055d24d | g_CEventListPtr | g_CEventListInstance
     PUSH EAX                            ; 0055d252 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004b0830 ; 0055d253
-        ;   XREF to: 004b0830 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0830(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_getCounterValue_FUN_004b0830 ; 0055d253
+        ;   XREF to: 004b0830 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_getCounterValue_FUN_004b0830(CEventList * this_ptr, char * str)
     ADD ESP,0x8                         ; 0055d258
     MOV dword ptr [ESP + 0x3ed8],EAX    ; 0055d25b
     LEA EAX,[ESP + 0x3ed8]              ; 0055d262
@@ -3963,7 +3963,7 @@ section .text
     MOV ECX,dword ptr [0x006793d0]      ; 0055d292 | g_CEventListPtr | g_CEventListInstance
     PUSH ECX                            ; 0055d298 | g_CEventListInstance
     CALL core_event.cpp_CEventList_setCounter_FUN_004b0720 ; 0055d299
-        ;   XREF to: 004b0720 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_setCounter_FUN_004b0720(CEventList * this_ptr)
+        ;   XREF to: 004b0720 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_setCounter_FUN_004b0720(CEventList * this_ptr, char * name, int value)
     ADD ESP,0xc                         ; 0055d29e
     JMP 0x0055a8bb                      ; 0055d2a1
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -4300,8 +4300,8 @@ section .text
     PUSH EAX                            ; 0055d6f0
     MOV EDX,dword ptr [0x006793d0]      ; 0055d6f1 | g_CEventListPtr | g_CEventListInstance
     PUSH EDX                            ; 0055d6f7 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add00 ; 0055d6f8
-        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCondition_FUN_004add00 ; 0055d6f8
+        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCondition_FUN_004add00(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 0055d6fd
     TEST EAX,EAX                        ; 0055d700
     JZ 0x0055d61c                       ; 0055d702
@@ -4379,7 +4379,7 @@ section .text
     LEA EAX,[ESP + 0x3e90]              ; 0055d7c4
     PUSH EAX                            ; 0055d7cb
     CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055d7cc
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055d7d1
     TEST EAX,EAX                        ; 0055d7d4
     JNZ 0x0055d708                      ; 0055d7d6
@@ -4557,8 +4557,8 @@ section .text
     MOV ESI,dword ptr [0x006810c8]      ; 0055da0a | g_CDemonSetPtr
     PUSH ESI                            ; 0055da10 | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x240],0x0     ; 0055da11 | g_CGameInstance.block_auto_save
-    CALL core_event.cpp_FUN_004b1970    ; 0055da1b
-        ;   XREF to: 004b1970 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b1970(int param_1)
+    CALL core_event.cpp_getSelectedCameraIndex_FUN_004b1970 ; 0055da1b
+        ;   XREF to: 004b1970 (UNCONDITIONAL_CALL)  ; int core_event.cpp_getSelectedCameraIndex_FUN_004b1970(CDemonSet * set_ptr)
     ADD ESP,0x4                         ; 0055da20
     MOV ESI,EAX                         ; 0055da23
     MOV EAX,[0x00680d50]                ; 0055da25 | g_CScriptPtr
@@ -4574,8 +4574,8 @@ section .text
     MOV EAX,[0x00680d50]                ; 0055da43 | g_CScriptPtr | g_CScriptInstance
     PUSH EDX                            ; 0055da48 | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x10],0x0      ; 0055da49 | DAT_0310f868
-    CALL core_event.cpp_FUN_004b1970    ; 0055da50
-        ;   XREF to: 004b1970 (UNCONDITIONAL_CALL)  ; int core_event.cpp_FUN_004b1970(int param_1)
+    CALL core_event.cpp_getSelectedCameraIndex_FUN_004b1970 ; 0055da50
+        ;   XREF to: 004b1970 (UNCONDITIONAL_CALL)  ; int core_event.cpp_getSelectedCameraIndex_FUN_004b1970(CDemonSet * set_ptr)
     ADD ESP,0x4                         ; 0055da55
     CMP ESI,EAX                         ; 0055da58
     JNZ 0x0055a8bb                      ; 0055da5a
@@ -4613,7 +4613,7 @@ section .text
     LEA EAX,[ESP + 0x3e90]              ; 0055dab7
     PUSH EAX                            ; 0055dabe
     CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055dabf
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055dac4
     TEST EAX,EAX                        ; 0055dac7
     JNZ 0x0055d708                      ; 0055dac9
@@ -5114,8 +5114,8 @@ section .text
     PUSH EAX                            ; 0055e0cd
     MOV ESI,dword ptr [0x006793d0]      ; 0055e0ce | g_CEventListPtr
     PUSH ESI                            ; 0055e0d4 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add40 ; 0055e0d5
-        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add40(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCommands_FUN_004add40 ; 0055e0d5
+        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCommands_FUN_004add40(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0055e0da
     TEST EAX,EAX                        ; 0055e0dd
     JZ 0x0055a8bb                       ; 0055e0df
@@ -5154,8 +5154,8 @@ section .text
     PUSH EAX                            ; 0055e12a
     MOV ECX,dword ptr [0x006793d0]      ; 0055e12b | g_CEventListPtr | g_CEventListInstance
     PUSH ECX                            ; 0055e131 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 0055e132
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 0055e132
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0055e137
     JMP 0x0055a8bb                      ; 0055e13a
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -5962,8 +5962,8 @@ section .text
     PUSH EAX                            ; 0055eb29
     MOV ECX,dword ptr [0x006810c8]      ; 0055eb2a | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH ECX                            ; 0055eb30 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056b790 ; 0055eb31
-        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_0056b790(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790 ; 0055eb31
+        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790(CDemonSet * this_ptr, char * name)
     ADD ESP,0x8                         ; 0055eb36
     TEST EAX,EAX                        ; 0055eb39
     JL 0x0055eb6a                       ; 0055eb3b
@@ -7085,8 +7085,8 @@ section .text
     PUSH EAX                            ; 0055f81a
     MOV EDI,dword ptr [0x006810c8]      ; 0055f81b | g_CDemonSetPtr
     PUSH EDI                            ; 0055f821 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056b790 ; 0055f822
-        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_0056b790(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790 ; 0055f822
+        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790(CDemonSet * this_ptr, char * name)
     ADD ESP,0x8                         ; 0055f827
     MOV ESI,EAX                         ; 0055f82a
     TEST EAX,EAX                        ; 0055f82c
@@ -7408,7 +7408,7 @@ section .text
     LEA EAX,[ESP + 0x3e90]              ; 0055fbd9
     PUSH EAX                            ; 0055fbe0
     CALL core_script.cpp_parseConditionExpr_FUN_005594a0 ; 0055fbe1
-        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
+        ;   XREF to: 005594a0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_parseConditionExpr_FUN_005594a0(char * * cursor, char * out_buffer)
     ADD ESP,0x8                         ; 0055fbe6
     TEST EAX,EAX                        ; 0055fbe9
     JNZ 0x0055f91c                      ; 0055fbeb

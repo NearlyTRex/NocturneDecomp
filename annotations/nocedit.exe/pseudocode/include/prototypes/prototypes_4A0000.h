@@ -16,7 +16,6 @@
 #include "types/classes/CEmitter.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CEventList.h"
-#include "types/classes/CHero.h"
 #include "types/classes/CPickList.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CStrList.h"
@@ -191,36 +190,36 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
 void __cdecl core_enemy_cpp_CEnemy_FUN_004a9ef0(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_enemy_cpp_CEnemy_renderBackground_FUN_004a9fa0(CEnemy *this_ptr,int layer_flag);
-void __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr);
+int __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_004aa030(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_004aa0c0(CEnemy *this_ptr,CDemonActor *lost_actor);
 int __cdecl core_enemy_cpp_CEnemy_FUN_004aa0f0(CEnemy *this_ptr);
 int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170 (CEnemy *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_enemy_cpp_CEnemy_randomize_FUN_004aa250(CEnemy *this_ptr);
 void __cdecl core_event_cpp_staticInit_FUN_004aa260(void);
-int __cdecl core_event_cpp_FUN_004aa270(int param_1,int param_2,char *param_3);
-int __cdecl core_event_cpp_FUN_004aa2a0(char *param_1);
-void __cdecl core_event_cpp_FUN_004aa2d0(char *param_1);
-void __cdecl core_event_cpp_FUN_004aa2f0(int param_1,int *param_2);
-int __cdecl core_event_cpp_FUN_004aa320(char *param_1);
-int __cdecl core_event_cpp_FUN_004aa3c0(char *param_1);
-CHero * __cdecl core_event_cpp_FUN_004aa400(char *param_1,uint param_2,int param_3);
-int __cdecl core_event_cpp_FUN_004aa530(int param_1,int *param_2,float *param_3);
-void __cdecl core_event_cpp_FUN_004aa650(char *param_1);
-char * __cdecl core_event_cpp_FUN_004aa6c0(int *param_1,char *param_2,int param_3);
-int __cdecl core_event_cpp_DifferentWaysToDie_FUN_004aa7d0(char *param_1,int *param_2);
-int __cdecl core_event_cpp_DifferentWaysToDie2_FUN_004aa960(char *param_1,int *param_2);
+int __cdecl core_event_cpp_setEventError_FUN_004aa270(char *source_file,int source_line,char *error_message);
+int __cdecl core_event_cpp_formatEventError_FUN_004aa2a0(char *format,...);
+char * __cdecl core_event_cpp_skipWhitespace_FUN_004aa2d0(char *str);
+int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_004aa2f0(char *expression,int *parse_position);
+int __cdecl core_event_cpp_parseComparisonOp_FUN_004aa320(char *str);
+int __cdecl core_event_cpp_parseIntOrCounter_FUN_004aa3c0(char *str);
+CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004aa400(char *name,uint class_hash,char *class_name);
+int __cdecl core_event_cpp_parseVectorLocation_FUN_004aa530(char *buffer,int *offset,CVector3f *out_position);
+void __cdecl core_event_cpp_trimWhitespace_FUN_004aa650(char *str);
+char * __cdecl core_event_cpp_extractParenArg_FUN_004aa6c0(char **cursor,char *out_buf,int max_len);
+int __cdecl core_event_cpp_parseDeathType_FUN_004aa7d0(char *type_name,int *out_type_id);
+int __cdecl core_event_cpp_parseDamageType_FUN_004aa960(char *type_name,int *out_type_id);
 CEventList * __cdecl core_event_cpp_CEventList_ctor_FUN_004aaa50(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_FUN_004aaa70(CEventList *this_ptr);
+void __cdecl core_event_cpp_CEventList_reset_FUN_004aaa70(CEventList *this_ptr);
 void __cdecl core_event_cpp_CEventList_process_FUN_004aaac0(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_FUN_004aabe0(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004aac00(CEventList *this_ptr);
-CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004adc10(CEventList *this_ptr,char *str);
+int __cdecl core_event_cpp_CEventList_executeCommands_FUN_004aabe0(CEventList *this_ptr,char *commands);
+int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004aac00 (CEventList *this_ptr,char *command_string);
+int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *this_ptr,char *command_buffer);
+int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004adc10(CEventList *this_ptr,char *identifier);
 int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004adca0 (CEventList *this_ptr,char *condition_expression);
-int __cdecl core_event_cpp_CEventList_FUN_004add00(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004add40(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004add80(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_FUN_004addf0(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr);
+char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_004add00(CEventList *this_ptr,char *expression);
+char * __cdecl core_event_cpp_CEventList_validateCommands_FUN_004add40(CEventList *this_ptr,char *commands);
+int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_004add80(CEventList *this_ptr,char *expression);
+void __cdecl core_event_cpp_CEventList_render_FUN_004addf0(CEventList *this_ptr);
+int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140 (CEventList *this_ptr,char *expression,int *parse_position);
 

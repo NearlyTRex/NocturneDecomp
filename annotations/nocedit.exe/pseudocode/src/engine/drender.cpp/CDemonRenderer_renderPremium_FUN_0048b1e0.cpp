@@ -26,8 +26,8 @@ engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
         do {
           iVar1 = pSVar3[1].base.type;
           if (this_ptr->unk == 0) {
-            this_ptr->vertex_buffer_ptr[iVar1].u = (float)pSVar3[1].base.count;
-            this_ptr->vertex_buffer_ptr[iVar1].v = (float)pSVar3[1].surface_normal.A;
+            this_ptr->vertex_buffer_ptr[iVar1].u = pSVar3[1].base.count;
+            this_ptr->vertex_buffer_ptr[iVar1].v = pSVar3[1].surface_normal.A;
           }
           *(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;
           pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;

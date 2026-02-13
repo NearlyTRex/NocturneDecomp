@@ -68,7 +68,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
   }
   core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,(CDemonActor *)this_ptr_00,1);
 LAB_005244ee:
-  if (g_CGamePtr->unk12 == 0) {
+  if (g_CGamePtr->act_completion_state == 0) {
     return;
   }
   core_game_cpp_CGame_finishAct_FUN_004e3b90(g_CGamePtr);

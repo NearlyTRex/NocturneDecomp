@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[7]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004ac560
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ac560
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e4391
 ;   core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 at 00560066
 ;   core_sound.cpp_CSound_configure_FUN_005b3830 at 005b393f

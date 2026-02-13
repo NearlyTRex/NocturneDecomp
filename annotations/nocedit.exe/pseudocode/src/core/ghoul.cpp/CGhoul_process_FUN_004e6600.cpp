@@ -19,11 +19,8 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   SMotion *pSVar7;
   int iVar8;
   CGhoul *pCVar9;
-  int extraout_EAX;
   uint uVar10;
   CPathMap *pCVar11;
-  int extraout_EAX_00;
-  int extraout_EAX_01;
   CDemonActor *pCVar12;
   uint uVar13;
   CLocation *pCVar14;
@@ -360,8 +357,8 @@ LAB_004e6a5f:
       if (*(float *)(this_ptr->unk3 + 0x38) <= 0.0) {
         iVar8 = *(int *)(this_ptr->unk3 + 0x3c);
         if (iVar8 == 0) {
-          core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-          if (extraout_EAX_00 != 0) goto LAB_004e7576;
+          iVar8 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+          if (iVar8 != 0) goto LAB_004e7576;
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
           ;
           if ((this_ptr->base).victim != (CDemonActor *)0x0) {
@@ -441,8 +438,8 @@ LAB_004e6a5f:
           pCVar12 = (this_ptr->base).victim;
           if (pCVar12 == (CDemonActor *)0x0) {
             in_stack_fffffc88 = (char *)0x4e77fa;
-            core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-            if (extraout_EAX_01 == 0) {
+            iVar8 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+            if (iVar8 == 0) {
               in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         ((CMotionController *)in_stack_fffffc88,0,1);
@@ -478,7 +475,7 @@ LAB_004e6a5f:
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_30,0,1);
               }
               else if (((0 < iVar8) && (cVar17 != '\0')) &&
-                      ((*(float *)(this_ptr->base).unk2 <= 0.0 &&
+                      (((float)(this_ptr->base).unk2 <= 0.0 &&
                        ((pCVar2 = (CCharacter *)(this_ptr->base).victim,
                         pCVar12 = (*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
                         pCVar12 == (CDemonActor *)0x0 && (*(float *)(this_ptr->unk2 + 4) <= 0.0)))))
@@ -524,7 +521,7 @@ LAB_004e6a5f:
                   local_14 = local_28;
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                             (&(this_ptr->base).base.model.motion_controller,iVar8,1);
-                  builtin_strncpy((this_ptr->base).unk2,"333?",4);
+                  (this_ptr->base).unk2 = 0x3f333333;
                 }
               }
             }
@@ -649,7 +646,7 @@ LAB_004e7576:
           in_stack_fffffc88 = (char *)0x3f000000;
           local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
           iVar8 = *(int *)(this_ptr->unk3 + 0xc);
-          *(float *)(this_ptr->base).unk2 = local_14;
+          (this_ptr->base).unk2 = (int)local_14;
           if ((this_ptr->base).base.model.part_data.visibility_flags[iVar8] != 0) {
             local_50 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                                  ((CMotionController *)pCVar11);
@@ -841,7 +838,7 @@ LAB_004e7d9a:
       in_stack_fffffc88 = (char *)0x3f000000;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
       iVar8 = *(int *)(this_ptr->unk3 + 4);
-      *(float *)(this_ptr->base).unk2 = local_14;
+      (this_ptr->base).unk2 = (int)local_14;
       if ((this_ptr->base).base.model.part_data.visibility_flags[iVar8] != 0) {
         local_4c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                              ((CMotionController *)pCVar11);
@@ -951,8 +948,8 @@ LAB_004e672d:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_004e6754:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   iVar8 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
@@ -1015,8 +1012,8 @@ LAB_004e6754:
      (fVar25 = (this_ptr->base).base.position_delta.y,
      fVar22 = (this_ptr->base).base.position_delta.x, fVar1 = (this_ptr->base).base.position_delta.z
      , (float)0.01 < SQRT(fVar1 * fVar1 + fVar22 * fVar22 + fVar25 * fVar25))) {
-    core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)this_ptr->unk1);
-    if (extraout_EAX == 0) {
+    iVar8 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,*(uint *)this_ptr->unk1);
+    if (iVar8 == 0) {
       _sprintf
                 (&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)(this_ptr->base).speed);
       uVar13 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)

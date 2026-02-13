@@ -18,7 +18,6 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   CTrigger *this_ptr_02;
   CFlameCan *this_ptr_03;
   CDemonActor *pCVar5;
-  int extraout_EAX;
   double dVar6;
   CDemonActor *pCVar7;
   int in_stack_fffffebc;
@@ -145,8 +144,8 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
         }
       }
       else {
-        core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_18);
-        if (extraout_EAX == 0) goto LAB_005ddd4e;
+        iVar4 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_18);
+        if (iVar4 == 0) goto LAB_005ddd4e;
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
                   (pCStack_18,&g_CDemonSetPtr->collision_impact_position);
       }

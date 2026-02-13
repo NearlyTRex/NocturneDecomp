@@ -86,7 +86,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004c6c80(CFireEffect *this_ptr)
     (pCVar10->base).lifetime_remaining = 0.0;
     pCVar10 = pCVar11;
   } while (pCVar11 != (CRock *)&g_CFireEffectRocksEnd);
-  g_LaserBeamActiveListHead = (CLaserBeam *)0x0;
+  g_ExplosionPoolIndex = 0;
   this_ptr_01 = g_ExplosionPool;
   do {
     core_fire_cpp_CExplosion_ctor_FUN_004c38c0(this_ptr_01);

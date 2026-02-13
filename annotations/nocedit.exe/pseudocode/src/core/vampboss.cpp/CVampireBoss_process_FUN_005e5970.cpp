@@ -321,7 +321,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
     pCVar6 = g_CEventListPtr;
     if (1.0 <= fVar3) {
       this_ptr->form = 2;
-      core_event_cpp_CEventList_FUN_004aabe0(pCVar6);
+      core_event_cpp_CEventList_executeCommands_FUN_004aabe0(pCVar6,"morphCompleted");
     }
     core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
@@ -380,7 +380,7 @@ core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float
     }
     else {
       this_ptr->form = 0;
-      core_event_cpp_CEventList_FUN_004aabe0(pCVar6);
+      core_event_cpp_CEventList_executeCommands_FUN_004aabe0(pCVar6,"backToHuman");
       fVar3 = (this_ptr->base).base.closest_distance_threshold;
       this_ptr->morph_t = 0.0;
     }

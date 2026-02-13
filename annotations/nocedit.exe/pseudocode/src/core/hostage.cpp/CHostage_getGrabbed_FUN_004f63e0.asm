@@ -13,7 +13,7 @@
 ;   CEventList g_CEventListInstance
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 004f6431
     MOV EDX,dword ptr [0x006793d0]      ; 004f6432 | g_CEventListInstance | g_CEventListPtr
     PUSH EDX                            ; 004f6438 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 004f6439
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 004f6439
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004f643e
     JMP 0x004f63fd                      ; 004f6441
         ;   XREF to: 004f63fd (UNCONDITIONAL_JUMP)  ; LAB_004f63fd

@@ -9,8 +9,8 @@
 ;
 ; XREF[5]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004dfae4
-;   core_set.cpp_CDemonSet_FUN_00570e20 at 00570e4d
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056aad9
+;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20 at 00570e4d
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_00585870 at 005858e5
 ;   core_weather.cpp_CWeather_FUN_005eeaf0 at 005eed5c
 ;

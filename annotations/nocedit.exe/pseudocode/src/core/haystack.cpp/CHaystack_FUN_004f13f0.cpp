@@ -15,7 +15,6 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
   CVector3f *pCVar3;
   SMotion *pSVar4;
   CPathMap *this_ptr_01;
-  CPathMap *extraout_EAX;
   int iVar5;
   float fVar6;
   CHero *pCVar7;
@@ -43,7 +42,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
   local_1c = 0.25;
   local_20 = 0.7853982;
   pCVar7 = g_HeroActors[g_LocalHeroIndex];
-  memset(&(this_ptr->base).action_bindings,0,0x2c);
+  memset(&(this_ptr->base).player_control,0,0x2c);
   if ((this_ptr->base).ai_task != 0) {
     pCVar2 = g_HeroActors[g_LocalHeroIndex];
     local_48._0_4_ =
@@ -60,7 +59,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
       pCVar2 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
       if ((pCVar2 == (CHero *)0x0) || ((float)20 <= 9999.9)) {
         if (this_ptr->guns_drawn != 0) {
-          (this_ptr->base).action_bindings.draw_key = 1;
+          (this_ptr->base).player_control.action_states[6] = 1;
         }
       }
       else {
@@ -89,8 +88,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
                                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
       }
       if (this_ptr_01 == (CPathMap *)0x0) {
-        core_path_cpp_FUN_00548500();
-        this_ptr_01 = extraout_EAX;
+        this_ptr_01 = core_path_cpp_FUN_00548500();
       }
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (this_ptr_01,&(this_ptr->base).base.base.location.position,&local_80,
@@ -100,19 +98,19 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
                           (local_80.y - (this_ptr->base).base.base.orient.vec.y);
         fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
         local_20 = -local_18;
-        *(float *)((this_ptr->base).unk2 + 4) = fVar6;
+        (this_ptr->base).player_control.turn_speed = fVar6;
         if (fVar6 < local_20) {
-          *(float *)((this_ptr->base).unk2 + 4) = local_20;
+          (this_ptr->base).player_control.turn_speed = local_20;
         }
-        if (local_18 < *(float *)((this_ptr->base).unk2 + 4)) {
-          *(float *)((this_ptr->base).unk2 + 4) = local_18;
+        if (local_18 < (this_ptr->base).player_control.turn_speed) {
+          (this_ptr->base).player_control.turn_speed = local_18;
         }
         if (((float)10 <= local_8c) || (bVar1)) {
-          (this_ptr->base).action_bindings.run_key = 1;
-          (this_ptr->base).action_bindings.walk_key = 1;
+          (this_ptr->base).player_control.action_states[2] = 1;
+          (this_ptr->base).player_control.action_states[0] = 1;
         }
         else {
-          (this_ptr->base).action_bindings.walk_key = 1;
+          (this_ptr->base).player_control.action_states[0] = 1;
         }
       }
     }
@@ -120,13 +118,13 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
       this_ptr_00 = &(this_ptr->base).base.model;
       if (bVar1) {
         if (this_ptr->guns_drawn == 0) {
-          (this_ptr->base).action_bindings.draw_key = 1;
+          (this_ptr->base).player_control.action_states[6] = 1;
         }
         else {
           pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr_00->motion_controller);
           if ((pSVar4->state_index != 2) && (pSVar4->state_index != 1)) {
-            (this_ptr->base).action_bindings.fire_key = 1;
+            (this_ptr->base).player_control.action_states[3] = 1;
           }
         }
       }
@@ -134,7 +132,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&this_ptr_00->motion_controller);
         if ((pSVar4->state_index == 10) && (this_ptr->guns_drawn != 0)) {
-          (this_ptr->base).action_bindings.draw_key = 1;
+          (this_ptr->base).player_control.action_states[6] = 1;
         }
       }
       if (bVar1) {
@@ -144,20 +142,17 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
                              (pCVar3->y - (this_ptr->base).base.base.orient.vec.y);
         fVar6 = local_14 * (float)0.31830988619288902 * (float)4;
         local_28 = -local_1c;
-        *(float *)((this_ptr->base).unk2 + 4) = fVar6;
+        (this_ptr->base).player_control.turn_speed = fVar6;
         if (fVar6 < local_28) {
-          *(float *)((this_ptr->base).unk2 + 4) = local_28;
+          (this_ptr->base).player_control.turn_speed = local_28;
         }
-        if (local_1c < *(float *)((this_ptr->base).unk2 + 4)) {
-          *(float *)((this_ptr->base).unk2 + 4) = local_1c;
+        if (local_1c < (this_ptr->base).player_control.turn_speed) {
+          (this_ptr->base).player_control.turn_speed = local_1c;
         }
-        fVar6 = *(float *)((this_ptr->base).unk2 + 4);
+        fVar6 = (this_ptr->base).player_control.turn_speed;
         if ((((float)-0.25 < fVar6) && ((double)fVar6 < 0.25)) &&
-           ((this_ptr->base).action_bindings.fire_key != 0)) {
-          (this_ptr->base).unk2[4] = '\0';
-          (this_ptr->base).unk2[5] = '\0';
-          (this_ptr->base).unk2[6] = '\0';
-          (this_ptr->base).unk2[7] = '\0';
+           ((this_ptr->base).player_control.action_states[3] != 0)) {
+          (this_ptr->base).player_control.turn_speed = 0.0;
         }
       }
     }

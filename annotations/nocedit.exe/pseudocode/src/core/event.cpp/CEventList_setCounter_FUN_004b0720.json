@@ -6,22 +6,22 @@
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 155,
+    "complexity_score": 62,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 50,
-    "suspect_count": 10,
+    "pseudocode_lines": 47,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 159
+    "total_lines": 156
   },
   "cross_references": [
     {
       "addr": "004aacc0",
       "from_addr": "004abc14",
-      "name": "core_event.cpp_CEventList_FUN_004aacc0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004aacc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,13 +41,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_event.cpp_CEventList_setCounter_FUN_004b0720",
-    "signature": "void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_ptr)"
+    "signature": "void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_ptr,char *name,int value)"
   },
   "function_calls": [
     {
       "addr": "004b0950",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004b0950"
+      "name": "core_event.cpp_CEventList_findCounter_FUN_004b0950"
     },
     {
       "addr": "00506f10",
@@ -116,10 +116,10 @@
     "pcode_op_count": 542
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -128,79 +128,30 @@
         "offset": 4,
         "size": 4,
         "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000008",
-      "text": "cVar2 = *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "cVar2 = in_stack_00000008[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_0000000c",
-      "text": "*(int *)(this_ptr->variablesVarName1 + iVar1 + -0x2c) = in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(void *)((int)",
+      "text": "(void *)((int)((this_ptr->actor_vars).var_names + -2) + 0x14 + iVar2 * 4),",
+      "type": "pointer_cast"
     }
   ]
 }

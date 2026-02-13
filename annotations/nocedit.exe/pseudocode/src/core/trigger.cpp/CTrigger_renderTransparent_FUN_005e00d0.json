@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 439,
-    "complexity_score": 510,
+    "complexity_score": 490,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 16,
     "pseudocode_lines": 220,
-    "suspect_count": 27,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -294,20 +294,6 @@
       "match": "ROUND",
       "text": "fStack_20 = (float)(int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 112,
-      "match": "1.1754944e-38",
-      "text": "pCVar2->vertex_buffer_ptr->u = 1.1754944e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 113,
-      "match": "1.1754944e-38",
-      "text": "pCVar2->vertex_buffer_ptr->v = 1.1754944e-38;",
-      "type": "suspect_float"
     },
     {
       "description": "Undefined global data reference",

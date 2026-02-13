@@ -49,8 +49,8 @@ engine_texture_cpp_CTextureCache_renderAllTextures_FUN_005dd580(CTextureCache *t
       local_5c = 0x5fffa;
       local_58 = 0x5fffa;
       local_28 = 0x5fffa;
-      local_cc.u = 0.0;
-      local_cc.v = 0.0;
+      local_cc.u = 0;
+      local_cc.v = 0;
       local_84 = 0;
       local_80 = 0;
       local_54 = 0;

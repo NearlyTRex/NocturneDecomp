@@ -3,15 +3,15 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 44,
+        "column": 42,
         "line": 32,
-        "message": "use of undeclared identifier 'DAT_00a00000'"
+        "message": "use of undeclared identifier 'DAT_00a00000'; did you mean 'DAT_00400080'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 46,
+        "column": 44,
         "line": 37,
-        "message": "use of undeclared identifier 'DAT_00a00000'"
+        "message": "use of undeclared identifier 'DAT_00a00000'; did you mean 'DAT_00400080'?"
       }
     ],
     "success": false,
@@ -19,14 +19,13 @@
   },
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 124,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "pseudocode_lines": 54,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "suspect_float",
       "undefined_data"
     ],
     "total_lines": 168
@@ -311,43 +310,15 @@
       "description": "Undefined global data reference",
       "line": 25,
       "match": "DAT_00a00000",
-      "text": "this_ptr->vertex_buffer_ptr->v = (float)&DAT_00a00000;",
+      "text": "this_ptr->vertex_buffer_ptr->v = (int)&DAT_00a00000;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 29,
-      "match": "8.816208e-39",
-      "text": "this_ptr->vertex_buffer_ptr[1].u = 8.816208e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "Undefined global data reference",
       "line": 30,
       "match": "DAT_00a00000",
-      "text": "this_ptr->vertex_buffer_ptr[1].v = (float)&DAT_00a00000;",
+      "text": "this_ptr->vertex_buffer_ptr[1].v = (int)&DAT_00a00000;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 34,
-      "match": "8.816208e-39",
-      "text": "this_ptr->vertex_buffer_ptr[2].u = 8.816208e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 35,
-      "match": "2.3509887e-38",
-      "text": "this_ptr->vertex_buffer_ptr[2].v = 2.3509887e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 40,
-      "match": "2.3509887e-38",
-      "text": "this_ptr->vertex_buffer_ptr[3].v = 2.3509887e-38;",
-      "type": "suspect_float"
     }
   ]
 }

@@ -41,9 +41,9 @@
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c140
+;   core_script.cpp_clearSelections_FUN_005644e0
 ;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910
 ;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0
-;   core_script.cpp_FUN_005644e0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -243,8 +243,8 @@ section .text
         ;   XREF to: 005679f6 (CONDITIONAL_JUMP)  ; LAB_005679f6
     MOV [0x0310fd48],EAX                ; 005679d4 | g_CurrentEditingLine
     MOV dword ptr [0x0310fd44],EBX      ; 005679d9 | g_CurrentEditingColumn
-    CALL core_script.cpp_FUN_005644e0   ; 005679df
-        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005644e0()
+    CALL core_script.cpp_clearSelections_FUN_005644e0 ; 005679df
+        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_clearSelections_FUN_005644e0()
     PUSH EBP                            ; 005679e4
     CALL core_script.cpp_CScript_updateCursorBounds_FUN_00566910 ; 005679e5
         ;   XREF to: 00566910 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_updateCursorBounds_FUN_00566910(CScript * this_ptr)

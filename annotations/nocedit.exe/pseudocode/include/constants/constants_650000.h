@@ -2463,6 +2463,3 @@ const undefined1 DAT_00658c0c = 0x09;
 const undefined1 DAT_006590a4 = 0x54;
 const undefined1 DAT_006590a8 = 0x54;
 
-// undefined4 constants
-const undefined4 DAT_0065d95c = 0x0FFFFFFF;
-

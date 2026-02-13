@@ -36,7 +36,8 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   CMatrix3x3f local_ac;
   byte local_84 [32];
   byte auStack_64 [24];
-  CVector3f CStack_4c;
+  byte auStack_4c [8];
+  float local_44;
   int local_40;
   CVector3f local_3c;
   int local_30;
@@ -247,9 +248,9 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   local_30 = g_CDemonCameraInstance.base.position.x;
   local_2c = g_CDemonCameraInstance.base.position.y;
   local_28 = g_CDemonCameraInstance.base.position.z;
-  if (&CStack_4c.y != (float *)&local_30) {
-    CStack_4c.y = (float)g_CDemonCameraInstance.base.position.x;
-    CStack_4c.z = (float)g_CDemonCameraInstance.base.position.y;
+  if ((int *)(auStack_4c + 4) != &local_30) {
+    auStack_4c._4_4_ = g_CDemonCameraInstance.base.position.x;
+    local_44 = (float)g_CDemonCameraInstance.base.position.y;
     local_40 = g_CDemonCameraInstance.base.position.z;
   }
   pCVar8 = &g_CDemonCameraInstance.base.rotation_matrix;
@@ -273,7 +274,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     local_3c.y = pCVar4->y;
     local_3c.z = pCVar4->z;
   }
-  core_weather_cpp_CWeather_FUN_005ef940(g_CWeatherPtr);
+  core_weather_cpp_CWeather_FUN_005ef940(g_CWeatherPtr,(CVector3f *)(auStack_4c + 4),&local_3c);
   iVar5 = 0;
   if (0 < (int)this_ptr->actor_list_ptr) {
     do {
@@ -294,11 +295,12 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
           pCVar4 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                              ((CBoundingBox3D *)(local_84 + 8),(CVector3f *)auStack_64,corner_index)
           ;
-          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr_00,&CStack_4c,pCVar4);
+          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                    (this_ptr_00,(CVector3f *)auStack_4c,pCVar4);
           corner_index = corner_index + 1;
-          *piVar14 = (int)ROUND(CStack_4c.x * 256.0f);
-          piVar14[1] = (int)ROUND(CStack_4c.y * 256.0f);
-          piVar14[2] = (int)ROUND(CStack_4c.z * 256.0f);
+          *piVar14 = (int)ROUND((float)auStack_4c._0_4_ * 256.0f);
+          piVar14[1] = (int)ROUND((float)auStack_4c._4_4_ * 256.0f);
+          piVar14[2] = (int)ROUND(local_44 * 256.0f);
           piVar14 = piVar14 + 3;
         } while ((int)corner_index < 8);
       }

@@ -19,17 +19,17 @@ CDemonActorType * __cdecl CSmiley::getActorType(CSmiley *this_ptr);
 // Address: 005a2430
 CSmiley * __cdecl CSmiley::ctor(CSmiley *this_ptr);
 
-// Original: core_smiley.cpp_CSmiley_FUN_005a24d0
+// Original: core_smiley.cpp_CSmiley_setup_FUN_005a24d0
 // Address: 005a24d0
-void __cdecl CSmiley(CSmiley *this_ptr);
+void __cdecl CSmiley::setup(CSmiley *this_ptr);
 
 // Original: core_smiley.cpp_CSmiley_process_FUN_005a2800
 // Address: 005a2800
 void __cdecl CSmiley::process(CSmiley *this_ptr,float delta_time);
 
-// Original: core_smiley.cpp_CSmiley_FUN_005a3160
+// Original: core_smiley.cpp_CSmiley_attractActorToward_FUN_005a3160
 // Address: 005a3160
-int __cdecl CSmiley(CSmiley *this_ptr);
+int __cdecl CSmiley::attractActorToward(CSmiley *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
 // Original: core_smiley.cpp_CSmiley_archive_FUN_005a3220
 // Address: 005a3220

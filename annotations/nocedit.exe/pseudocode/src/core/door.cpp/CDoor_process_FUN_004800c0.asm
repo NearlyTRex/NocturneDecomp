@@ -26,7 +26,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
 ;   core_door.cpp_CDoor_reposition_FUN_0047fd20
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_setcolid.cpp_CDemonSet_FUN_00574440
 ;   core_setcolid.cpp_CDemonSet_FUN_005744d0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
@@ -109,8 +109,8 @@ section .text
     PUSH EAX                            ; 00480198
     MOV EBP,dword ptr [0x006793d0]      ; 00480199 | g_CEventListPtr
     PUSH EBP                            ; 0048019f | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 004801a0
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 004801a0
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
         ;   Label: LAB_004801a0
     ADD ESP,0x8                         ; 004801a5
     PUSH ESI                            ; 004801a8

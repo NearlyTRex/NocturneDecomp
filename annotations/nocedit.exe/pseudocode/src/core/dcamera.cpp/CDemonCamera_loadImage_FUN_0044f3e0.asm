@@ -69,12 +69,12 @@
 ;   ... and 76 more
 ;
 ; Called Functions:
-;   core_event.cpp_FUN_004b19d0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   crt_string.c_strcmp_FUN_005fef20
+;   crt_watcom.c__memset_FUN_004b19d0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -647,8 +647,8 @@ section .text
     PUSH 0x12d40                        ; 0044fad6
     MOV ECX,0xbbb9b8                    ; 0044fadb | g_CoronaBlurWorkBuffer
     XOR EDX,EDX                         ; 0044fae0
-    CALL core_event.cpp_FUN_004b19d0    ; 0044fae2
-        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b19d0()
+    CALL crt_watcom.c__memset_FUN_004b19d0 ; 0044fae2
+        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_004b19d0(void * dest, int fill_byte, uint size)
     CMP dword ptr [0x00679398],0x180    ; 0044fae7 | g_WindowHeight
     JNZ 0x0044fbc1                      ; 0044faf1
         ;   XREF to: 0044fbc1 (CONDITIONAL_JUMP)  ; LAB_0044fbc1

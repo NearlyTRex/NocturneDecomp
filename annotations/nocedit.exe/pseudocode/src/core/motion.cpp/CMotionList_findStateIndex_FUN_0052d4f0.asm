@@ -9,7 +9,7 @@
 ; XREF[13]:
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50 at 0042de9e
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920 at 0042c9a5
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004acfaf
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004acfaf
 ;   core_hero.cpp_CHero_canBeGrabbed_FUN_004f2890 at 004f28bf
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004f28d0 at 004f2916
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004f29b0 at 004f29e8

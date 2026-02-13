@@ -24,10 +24,10 @@ engine_prim_c_adjustNearPlaneTextureCoords_FUN_005520a0(SRenderVertex *vertices,
       else {
         iVar2 = (int)(0x7fffffff / (longlong)(iVar2 >> 4));
       }
-      lVar1 = (longlong)iVar2 * (longlong)((int)vertices->u >> 8);
-      vertices->u = (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-      lVar1 = (longlong)iVar2 * (longlong)((int)vertices->v >> 8);
-      vertices->v = (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+      lVar1 = (longlong)iVar2 * (longlong)(vertices->u >> 8);
+      vertices->u = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+      lVar1 = (longlong)iVar2 * (longlong)(vertices->v >> 8);
+      vertices->v = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       iVar3 = iVar3 + 1;
       (vertices->projected_vertex).transformed_z = iVar2;
       vertices = vertices + 1;

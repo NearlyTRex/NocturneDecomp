@@ -36,11 +36,11 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
             (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->euler_angles,rotation);
   iVar2 = (this_ptr->texture_index & 1U) * 0x800000;
   local_50 = 0;
-  g_RenderVertexBuffer[0].u = (float)(iVar2 + 0x80000);
+  g_RenderVertexBuffer[0].u = iVar2 + 0x80000;
   iVar1 = (this_ptr->texture_index & 2U) * 0x400000;
-  g_RenderVertexBuffer[1].u = (float)(iVar2 + 0x780000);
-  g_RenderVertexBuffer[0].v = (float)(iVar1 + 0x780000);
-  g_RenderVertexBuffer[2].v = (float)(iVar1 + 0x80000);
+  g_RenderVertexBuffer[1].u = iVar2 + 0x780000;
+  g_RenderVertexBuffer[0].v = iVar1 + 0x780000;
+  g_RenderVertexBuffer[2].v = iVar1 + 0x80000;
   local_58 = 0xbe2e147b;
   local_54 = 0xbe2e147b;
   local_40.x = (int)ROUND(256.0f * -0.17);

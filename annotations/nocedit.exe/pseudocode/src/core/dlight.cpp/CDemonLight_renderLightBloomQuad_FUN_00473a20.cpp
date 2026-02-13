@@ -135,17 +135,17 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_98);
     this_ptr_00 = g_CDemonRendererPtr2;
-    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 2.2775203e-38;
-    this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0xf80000;
+    this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
     this_ptr_00->vertex_buffer_ptr->w_recip = fVar3;
-    this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;
-    this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;
+    this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
     this_ptr_00->vertex_buffer_ptr[1].w_recip = fVar3;
-    this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;
-    this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;
+    this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
+    this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
     this_ptr_00->vertex_buffer_ptr[2].w_recip = fVar3;
-    this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;
-    this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;
+    this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
+    this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
     this_ptr_00->vertex_buffer_ptr[3].w_recip = fVar3;
     this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;
     this_ptr_00->vertex_buffer_ptr->color = 0xffff;

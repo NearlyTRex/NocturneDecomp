@@ -156,14 +156,14 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
             puVar6 = puVar6 + (uint)bVar13 * -2 + 1;
             puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
           }
-          vertex2.v = 8.413128e-39;
+          vertex2.v = 0x5b9c61;
           vertex2.projected_vertex.transformed_x = (int)local_144.w_recip;
           vertex2.projected_vertex.transformed_y = local_114.projected_vertex.transformed_x;
           vertex2.projected_vertex.transformed_z = local_114.projected_vertex.transformed_y;
           vertex2.projected_vertex.inv_z = local_114.projected_vertex.transformed_z;
           vertex2.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
-          vertex2.u = (float)local_114.projected_vertex.screen_y;
+          vertex2.u = local_114.projected_vertex.screen_y;
           vertex2.light = (float)this_ptr;
           vertex2.color = (int)local_114.light;
           vertex2.fog = (float)local_114.color;
@@ -185,14 +185,14 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
             puVar6 = puVar6 + (uint)bVar13 * -2 + 1;
             puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
           }
-          vertex2_00.v = 8.413128e-39;
+          vertex2_00.v = 0x5b9c61;
           vertex2_00.projected_vertex.transformed_x = (int)local_144.w_recip;
           vertex2_00.projected_vertex.transformed_y = local_114.projected_vertex.transformed_x;
           vertex2_00.projected_vertex.transformed_z = local_114.projected_vertex.transformed_y;
           vertex2_00.projected_vertex.inv_z = local_114.projected_vertex.transformed_z;
           vertex2_00.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_00.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
-          vertex2_00.u = (float)local_114.projected_vertex.screen_y;
+          vertex2_00.u = local_114.projected_vertex.screen_y;
           vertex2_00.light = (float)this_ptr;
           vertex2_00.color = (int)local_114.light;
           vertex2_00.fog = (float)local_114.color;
@@ -214,14 +214,14 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
             puVar6 = puVar6 + (uint)bVar13 * -2 + 1;
             puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
           }
-          vertex2_01.v = 8.413128e-39;
+          vertex2_01.v = 0x5b9c61;
           vertex2_01.projected_vertex.transformed_x = (int)local_144.w_recip;
           vertex2_01.projected_vertex.transformed_y = local_114.projected_vertex.transformed_x;
           vertex2_01.projected_vertex.transformed_z = local_114.projected_vertex.transformed_y;
           vertex2_01.projected_vertex.inv_z = local_114.projected_vertex.transformed_z;
           vertex2_01.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_01.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
-          vertex2_01.u = (float)local_114.projected_vertex.screen_y;
+          vertex2_01.u = local_114.projected_vertex.screen_y;
           vertex2_01.light = (float)this_ptr;
           vertex2_01.color = (int)local_114.light;
           vertex2_01.fog = (float)local_114.color;
@@ -243,14 +243,14 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
             puVar6 = puVar6 + (uint)bVar13 * -2 + 1;
             puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
           }
-          vertex2_02.v = 8.413128e-39;
+          vertex2_02.v = 0x5b9c61;
           vertex2_02.projected_vertex.transformed_x = (int)local_144.w_recip;
           vertex2_02.projected_vertex.transformed_y = local_114.projected_vertex.transformed_x;
           vertex2_02.projected_vertex.transformed_z = local_114.projected_vertex.transformed_y;
           vertex2_02.projected_vertex.inv_z = local_114.projected_vertex.transformed_z;
           vertex2_02.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_02.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
-          vertex2_02.u = (float)local_114.projected_vertex.screen_y;
+          vertex2_02.u = local_114.projected_vertex.screen_y;
           vertex2_02.light = (float)this_ptr;
           vertex2_02.color = (int)local_114.light;
           vertex2_02.fog = (float)local_114.color;
@@ -272,14 +272,14 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
             puVar6 = puVar6 + (uint)bVar13 * -2 + 1;
             puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
           }
-          vertex2_03.v = 8.413128e-39;
+          vertex2_03.v = 0x5b9c61;
           vertex2_03.projected_vertex.transformed_x = (int)local_144.w_recip;
           vertex2_03.projected_vertex.transformed_y = local_114.projected_vertex.transformed_x;
           vertex2_03.projected_vertex.transformed_z = local_114.projected_vertex.transformed_y;
           vertex2_03.projected_vertex.inv_z = local_114.projected_vertex.transformed_z;
           vertex2_03.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_03.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
-          vertex2_03.u = (float)local_114.projected_vertex.screen_y;
+          vertex2_03.u = local_114.projected_vertex.screen_y;
           vertex2_03.light = (float)this_ptr;
           vertex2_03.color = (int)local_114.light;
           vertex2_03.fog = (float)local_114.color;
@@ -302,14 +302,14 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
             puVar6 = puVar6 + (uint)bVar13 * -2 + 1;
             puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
           }
-          vertex2_04.v = 8.413128e-39;
+          vertex2_04.v = 0x5b9c61;
           vertex2_04.projected_vertex.transformed_x = (int)local_144.w_recip;
           vertex2_04.projected_vertex.transformed_y = local_114.projected_vertex.transformed_x;
           vertex2_04.projected_vertex.transformed_z = local_114.projected_vertex.transformed_y;
           vertex2_04.projected_vertex.inv_z = local_114.projected_vertex.transformed_z;
           vertex2_04.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_04.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
-          vertex2_04.u = (float)local_114.projected_vertex.screen_y;
+          vertex2_04.u = local_114.projected_vertex.screen_y;
           vertex2_04.light = (float)this_ptr;
           vertex2_04.color = (int)local_114.light;
           vertex2_04.fog = (float)local_114.color;
@@ -339,14 +339,14 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
         pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar13 * -2 + 1) * 4);
         piVar12 = piVar12 + (uint)bVar13 * -2 + 1;
       }
-      vertex2_05.v = 8.413128e-39;
+      vertex2_05.v = 0x5b9c61;
       vertex2_05.projected_vertex.transformed_x = (int)local_144.w_recip;
       vertex2_05.projected_vertex.transformed_y = local_114.projected_vertex.transformed_x;
       vertex2_05.projected_vertex.transformed_z = local_114.projected_vertex.transformed_y;
       vertex2_05.projected_vertex.inv_z = local_114.projected_vertex.transformed_z;
       vertex2_05.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
       vertex2_05.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
-      vertex2_05.u = (float)local_114.projected_vertex.screen_y;
+      vertex2_05.u = local_114.projected_vertex.screen_y;
       vertex2_05.light = (float)this_ptr;
       vertex2_05.color = (int)local_114.light;
       vertex2_05.fog = (float)local_114.color;

@@ -22,8 +22,6 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   SMotion *pSVar8;
   CLarva *pCVar9;
   CVector3f *pCVar10;
-  int extraout_EAX;
-  int extraout_EAX_00;
   CPathMap *path_map;
   uint uVar11;
   float10 fVar12;
@@ -165,8 +163,8 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       pCVar5 = (this_ptr->base).victim;
       if (pCVar5 == (CDemonActor *)0x0) {
         in_stack_fffffe10 = this_ptr;
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX != 0) {
+        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar7 != 0) {
           in_stack_fffffe10 = (CLarva *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     ((CMotionController *)pCVar9,1,1);
@@ -190,12 +188,12 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,1,1);
         }
-        else if (*(float *)(this_ptr->base).unk2 <= 0.0) {
+        else if ((float)(this_ptr->base).unk2 <= 0.0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     ((CMotionController *)pCVar9,2,1);
           in_stack_fffffe10 = (CLarva *)0x41700000;
           local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
-          *(float *)(this_ptr->base).unk2 = local_14;
+          (this_ptr->base).unk2 = (int)local_14;
         }
       }
     }
@@ -205,8 +203,8 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       pCVar16 = (CLarva *)(this_ptr->base).victim;
       if (pCVar16 == (CLarva *)0x0) {
         in_stack_fffffe10 = this_ptr;
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX_00 == 0) {
+        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar7 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     ((CMotionController *)pCVar9,0,1);
           in_stack_fffffe10 = pCVar16;
@@ -236,7 +234,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
                     ((CMotionController *)pCVar9,0,1);
           in_stack_fffffe10 = pCVar9;
         }
-        if (*(float *)(this_ptr->base).unk2 <= 0.0) {
+        if ((float)(this_ptr->base).unk2 <= 0.0) {
           pCVar5 = (this_ptr->base).victim;
           local_f8.x = (pCVar5->location).position.x -
                        (this_ptr->base).base.base.location.position.x;
@@ -264,10 +262,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
               in_stack_fffffe10 = (CLarva *)&(this_ptr->base).base.model;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         ((CMotionController *)in_stack_fffffe10,2,1);
-              (this_ptr->base).unk2[0] = '\0';
-              (this_ptr->base).unk2[1] = '\0';
-              (this_ptr->base).unk2[2] = -0x40;
-              (this_ptr->base).unk2[3] = '@';
+              (this_ptr->base).unk2 = 0x40c00000;
             }
           }
         }
@@ -310,8 +305,8 @@ LAB_00503501:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_00503184:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   if (local_30 == 1) {
     iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 8));

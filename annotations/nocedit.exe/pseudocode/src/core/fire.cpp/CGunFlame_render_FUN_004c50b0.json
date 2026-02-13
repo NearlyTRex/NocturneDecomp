@@ -31,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 489,
+    "complexity_score": 409,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 20,
     "pseudocode_lines": 174,
-    "suspect_count": 30,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float",
@@ -711,67 +711,11 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 122,
-      "match": "1.83671e-40",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->u = 1.83671e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 124,
-      "match": "1.83671e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr->v = 1.83671e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 127,
-      "match": "2.3326216e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 2.3326216e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 129,
-      "match": "1.83671e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 1.83671e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 130,
-      "match": "2.3326216e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 2.3326216e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 134,
-      "match": "2.3326216e-38",
-      "text": "pSVar1[2].v = 2.3326216e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 139,
-      "match": "1.83671e-40",
-      "text": "pSVar1[3].u = 1.83671e-40;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 141,
       "match": "ROUND",
       "text": "fStack_34 = (float)(int)ROUND(fVar4);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 142,
-      "match": "2.3326216e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].v = 2.3326216e-38;",
-      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

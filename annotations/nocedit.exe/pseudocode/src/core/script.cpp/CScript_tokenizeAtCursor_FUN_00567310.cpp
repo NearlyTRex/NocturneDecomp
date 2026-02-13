@@ -36,7 +36,7 @@ core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310
       if (*pbVar8 == 0) {
         return local_1c;
       }
-      iVar3 = core_event_cpp_FUN_004b0f90((uint)*pbVar8);
+      iVar3 = core_event_cpp_isValidIdentifierChar_FUN_004b0f90((uint)*pbVar8);
     } while ((iVar3 == 0) && (*pbVar8 != 0x2e));
     iVar7 = iVar6;
     if (input_text[iVar6] == '.') {
@@ -46,7 +46,7 @@ core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310
     iVar3 = 0;
     local_18 = iVar6;
     while( true ) {
-      iVar4 = core_event_cpp_FUN_004b0f90((uint)*pbVar8);
+      iVar4 = core_event_cpp_isValidIdentifierChar_FUN_004b0f90((uint)*pbVar8);
       local_14 = iVar3 + 1;
       iVar6 = iVar7 + 1;
       if (iVar4 == 0) break;

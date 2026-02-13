@@ -6,11 +6,13 @@
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBulletHole.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CCheckOutItem.h"
 #include "types/classes/CCheckOutList.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFileManager.h"
+#include "types/classes/CDemonSet.h"
 #include "types/classes/CEventList.h"
 #include "types/classes/CFileManager.h"
 #include "types/classes/CFilmProjector.h"
@@ -29,48 +31,48 @@
 // FUNCTION PROTOTYPES - Range 0x4B0000
 // =============================================================================
 
-int __cdecl core_event_cpp_CEventList_FUN_004b0270(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_FUN_004b0330(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_FUN_004b0460(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_FUN_004b0470(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004b0830(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004b0860(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004b08b0(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004b0900(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004b0950(CEventList *this_ptr);
+int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004b0270 (CEventList *this_ptr,char *expression,int *parse_position);
+void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330 (CEventList *this_ptr,char *name,int add_flag);
+void __cdecl core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(CEventList *this_ptr);
+void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004b0470 (CEventList *this_ptr,char *name,int add_flag);
+void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *this_ptr,char *name,float duration);
+void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_ptr,char *name,int value);
+int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_004b0830(CEventList *this_ptr,char *str);
+int __cdecl core_event_cpp_CEventList_findPersistentEvent_FUN_004b0860(CEventList *this_ptr,char *name);
+int __cdecl core_event_cpp_CEventList_findGameFlag_FUN_004b08b0(CEventList *this_ptr,char *name);
+int __cdecl core_event_cpp_CEventList_findTimer_FUN_004b0900(CEventList *this_ptr,char *name);
+int __cdecl core_event_cpp_CEventList_findCounter_FUN_004b0950(CEventList *this_ptr,char *name);
 void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004b0b80(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004b0bf0(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004b0c40(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr);
-int __cdecl core_event_cpp_CEventList_FUN_004b0d60(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr);
-void __cdecl core_event_cpp_CEventList_FUN_004b0f00(CEventList *this_ptr);
-int __cdecl core_event_cpp_FUN_004b0f90(int param_1);
-int __cdecl core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr);
+CDemonActor * __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_004b0b80(CEventList *this_ptr,char *name);
+int __cdecl core_event_cpp_CEventList_findActorVariable_FUN_004b0bf0(CEventList *this_ptr,char *name);
+uint __cdecl core_event_cpp_CEventList_getSfxHandle_FUN_004b0c40(CEventList *this_ptr,char *name);
+void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr,char *name,uint sfx_handle);
+int __cdecl core_event_cpp_CEventList_findSfxEntry_FUN_004b0d60(CEventList *this_ptr,char *name);
+void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList *this_ptr);
+void __cdecl core_event_cpp_CEventList_restartSfxEntries_FUN_004b0f00(CEventList *this_ptr);
+int __cdecl core_event_cpp_isValidIdentifierChar_FUN_004b0f90(int ch);
+int __cdecl core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr,_FILE *file_handle);
 int __cdecl core_event_cpp_CEventList_saveState_FUN_004b1380(CEventList *this_ptr,_FILE *file_handle);
-void __cdecl core_event_cpp_FUN_004b1670(void);
+void __cdecl core_event_cpp_CRuleList_clear_FUN_004b1670(CRuleList *this_ptr);
 void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr);
 void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr);
-int __cdecl core_event_cpp_FUN_004b1890(int *param_1);
-int __cdecl core_event_cpp_FUN_004b18e0(int *param_1);
-float __cdecl core_event_cpp_FUN_004b1930(float *param_1,float *param_2);
-int __cdecl core_event_cpp_FUN_004b1970(int param_1);
-int __cdecl core_event_cpp_FUN_004b1980(int param_1);
-void __cdecl core_event_cpp_FUN_004b19a1(int *param_1);
-void __cdecl core_event_cpp_FUN_004b19b1(int *param_1);
-void __cdecl core_event_cpp_FUN_004b19c1(int *param_1);
-void __cdecl core_event_cpp_FUN_004b19d0(void);
-void __cdecl core_event_cpp_FUN_004b1a49(void);
-char __cdecl core_event_cpp_FUN_004b1a59(void);
-void __cdecl core_event_cpp_FUN_004b1a78(void);
-void __cdecl core_event_cpp_FUN_004b1b1c(void);
-void __cdecl core_event_cpp_FUN_004b1b31(void);
-void __cdecl core_event_cpp_FUN_004b1b41(void);
-void __cdecl core_event_cpp_FUN_004b1b54(void);
-void __cdecl core_event_cpp_FUN_004b1b5c(void);
+int __cdecl core_event_cpp_CRuleList_findFirst_FUN_004b1890(CRuleList *this_ptr);
+int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_004b18e0(CRuleList *this_ptr);
+float __cdecl core_event_cpp_getVectorDistance_FUN_004b1930(CVector3f *a,CVector3f *b);
+int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_004b1970(CDemonSet *set_ptr);
+int __cdecl core_event_cpp_isCharacterSpeaking_FUN_004b1980(CCharacter *char_ptr);
+void __cdecl crt_watcom_c_FUN_004b19a1(int *param_1);
+void __cdecl crt_watcom_c_FUN_004b19b1(int *param_1);
+void __cdecl crt_watcom_c_FUN_004b19c1(int *param_1);
+void __fastcall crt_watcom_c__memset_FUN_004b19d0(void *dest,int fill_byte,uint size);
+void __cdecl crt_watcom_c_FUN_004b1a49(void);
+char __cdecl crt_watcom_c_FUN_004b1a59(void);
+void __fastcall crt_watcom_c__memcpy_FUN_004b1a78(void *dest,void *src,uint size);
+void __cdecl crt_watcom_c_FUN_004b1b1c(void);
+void __cdecl crt_watcom_c_FUN_004b1b31(void);
+void __cdecl crt_watcom_c_FUN_004b1b41(void);
+void __cdecl crt_watcom_c_FUN_004b1b54(void);
+void __cdecl crt_watcom_c__strcpy_FUN_004b1b5c(char *dest,char *src);
 int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void);
 void __cdecl engine_fileio_cpp_trimWhitespace_FUN_004b1d40(char *string);
 void __cdecl engine_fileio_cpp_safeCloseFile_FUN_004b1db0(_FILE **file_ptr);
@@ -120,7 +122,7 @@ void __cdecl engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac
 void __cdecl engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(CFileManager *this_ptr);
 void __cdecl engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(CFileManager *this_ptr);
 void __cdecl engine_fileio_cpp_CFileManager_verifyPodCRC_FUN_004b7c90(CFileManager *this_ptr,char *pod_filename);
-int __cdecl engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50 (_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset ,int checksum,int timestamp);
+int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 (CFileManager *this_ptr,_FILE *source_file,char *dest_filename,char *name_or_offset, int file_size,int file_offset,int checksum,int timestamp);
 void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50 (CFileManager *this_ptr,char *pod_filename);
 void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0 (CFileManager *this_ptr,char *pod_filename);
 void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0 (CFileManager *this_ptr,char *pod_directory_path);

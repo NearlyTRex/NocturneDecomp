@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0 at 00562293
-;   core_script.cpp_FUN_005643d0 at 0056443c
+;   core_script.cpp_expandTemplateText_FUN_005643d0 at 0056443c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_SCmdParm_setTemplateText_00643649

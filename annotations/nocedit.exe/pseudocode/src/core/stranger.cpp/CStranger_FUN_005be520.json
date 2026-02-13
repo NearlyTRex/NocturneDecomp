@@ -10,109 +10,109 @@
       {
         "category": "other",
         "column": 14,
-        "line": 132,
+        "line": 126,
         "message": "cannot cast from type 'float' to pointer type 'CQuaternion4f *'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 138,
+        "line": 132,
         "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 142,
+        "line": 136,
         "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 146,
+        "line": 140,
         "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 148,
+        "line": 142,
         "message": "use of undeclared identifier '_local_1ecc'; did you mean 'local_1ecc'?"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 151,
+        "line": 145,
         "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 172,
+        "line": 166,
         "message": "cannot cast from type 'double' to pointer type 'CQuaternion4f *'"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 174,
+        "line": 168,
         "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 179,
+        "line": 173,
         "message": "cannot cast from type 'float' to pointer type 'CQuaternion4f *'"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 182,
+        "line": 176,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 193,
+        "line": 187,
         "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 200,
+        "line": 194,
         "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 219,
+        "line": 213,
         "message": "member reference base type 'byte[36]' (aka 'unsigned char[36]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 220,
+        "line": 214,
         "message": "member reference base type 'byte[36]' (aka 'unsigned char[36]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 221,
+        "line": 215,
         "message": "member reference base type 'byte[36]' (aka 'unsigned char[36]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 226,
+        "line": 220,
         "message": "cannot cast from type 'double' to pointer type 'CQuaternion4f *'"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 228,
+        "line": 222,
         "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 233,
+        "line": 227,
         "message": "cannot cast from type 'float' to pointer type 'CQuaternion4f *'"
       }
     ],
@@ -121,11 +121,11 @@
   },
   "complexity": {
     "assembly_lines": 1324,
-    "complexity_score": 1438,
+    "complexity_score": 1424,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
-    "pseudocode_lines": 633,
+    "pseudocode_lines": 624,
     "suspect_count": 77,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -133,10 +133,9 @@
       "stack_ref",
       "undefined_data",
       "unknown_field",
-      "unresolved_funcptr",
-      "warning_type_propagation"
+      "unresolved_funcptr"
     ],
-    "total_lines": 1957
+    "total_lines": 1948
   },
   "cross_references": [
     {
@@ -1470,13 +1469,6 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 26,
       "match": "code *",
@@ -1485,527 +1477,534 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 175,
+      "line": 169,
       "match": "._0_4_",
       "text": "local_360._0_4_ = local_320.w;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
+      "line": 170,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&local_320 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar8 = (uint *)((int)&local_320 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 172,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_320 + (uint)bVar13 * -8 + 4);",
+      "text": "*(uint *)((int)&local_320 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 190,
       "match": "(uint *)((int)",
-      "text": "puVar11 = (uint *)((int)pCVar10 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "puVar11 = (uint *)((int)pCVar10 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 191,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)pCVar7 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "puVar8 = (uint *)((int)pCVar7 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 212,
+      "line": 206,
       "match": "._0_4_",
       "text": "local_70._0_4_ = local_e8 - local_b8.x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 213,
+      "line": 207,
       "match": "._4_4_",
       "text": "local_70._4_4_ = local_e4 - local_b8.y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 214,
+      "line": 208,
       "match": "._8_4_",
-      "text": "local_70._8_4_ = local_e0.x - local_b8.z;",
+      "text": "local_70._8_4_ = local_e0[0].x - local_b8.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 230,
+      "line": 224,
       "match": "._0_4_",
       "text": "local_230.w = (float)local_2c0._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 246,
+      "line": 240,
       "match": "._0_4_",
       "text": "local_1e0._0_4_ = local_240.w;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 247,
+      "line": 241,
       "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&local_240 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "pfVar13 = (float *)((int)&local_240 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 249,
+      "line": 243,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_240 + (uint)bVar13 * -8 + 4);",
+      "text": "*(uint *)((int)&local_240 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 263,
+      "line": 257,
       "match": "DAT_03f6baa8",
       "text": "pCVar3 = core_lever_cpp_CLever_FUN_00504dd0(DAT_03f6baa8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 281,
+      "line": 275,
       "match": "DAT_03f6baa8",
       "text": "DAT_03f6baa8 = (CLever *)(this_ptr->base).lever_to_pull;",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 288,
+      "line": 282,
       "match": "._0_4_",
       "text": "local_130 = local_100 - (float)local_94._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 289,
+      "line": 283,
       "match": "._4_4_",
       "text": "local_12c = local_fc - (float)local_94._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 290,
+      "line": 284,
       "match": "._8_4_",
       "text": "local_128.x = local_f8.x - (float)local_94._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 296,
+      "line": 290,
       "match": "SQRT",
       "text": "local_24 = SQRT(local_128.x * local_128.x + local_130 * local_130 + local_12c * local_12c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 303,
+      "line": 297,
       "match": "(uint *)((int)",
-      "text": "puVar9 = (uint *)((int)&CStack_2a4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&CStack_2a4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 304,
+      "line": 298,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&CStack_2d4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar8 = (uint *)((int)&CStack_2d4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 305,
+      "line": 299,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_2a4 + (uint)bVar13 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_2a4 + (uint)bVar14 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 306,
+      "line": 300,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_2d4 + (uint)bVar13 * -8 + 4);",
+      "text": "*(uint *)((int)&CStack_2d4 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 315,
+      "line": 309,
       "match": "._12_4_",
       "text": "CStack_1c4.w = (float)local_2c0._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 310,
       "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&CStack_1c4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "pfVar13 = (float *)((int)&CStack_1c4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 317,
+      "line": 311,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&CStack_1c4 + (uint)bVar13 * -8 + 4) = local_2b0[(uint)bVar13 * -2];",
+      "text": "*(float *)((int)&CStack_1c4 + (uint)bVar14 * -8 + 4) = local_2b0[(uint)bVar14 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 327,
+      "line": 321,
       "match": "._12_4_",
       "text": "CStack_3b4.w = (float)local_1e0._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 328,
+      "line": 322,
       "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&CStack_3b4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "pfVar13 = (float *)((int)&CStack_3b4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 329,
+      "line": 323,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&CStack_3b4 + (uint)bVar13 * -8 + 4) = local_1d0[(uint)bVar13 * -2];",
+      "text": "*(float *)((int)&CStack_3b4 + (uint)bVar14 * -8 + 4) = local_1d0[(uint)bVar14 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 337,
+      "line": 331,
       "match": "._0_4_",
       "text": "core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((float)local_148._0_4_,&CStack_3a4);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 351,
+      "line": 345,
       "match": "fpatan",
-      "text": "fVar14 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) /",
+      "text": "fVar15 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 355,
+      "line": 349,
       "match": "._0_4_",
       "text": "local_330.w = (float)local_3f0._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 356,
+      "line": 350,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&local_330 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar8 = (uint *)((int)&local_330 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 357,
+      "line": 351,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_330 + (uint)bVar13 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_330 + (uint)bVar14 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 389,
+      "line": 383,
       "match": "fpatan",
-      "text": "fVar14 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) /",
+      "text": "fVar15 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) /",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 394,
-      "match": "._0_4_",
-      "text": "local_1f0.w = (float)local_260._0_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 395,
+      "line": 389,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&local_1f0 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&local_1f0 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 396,
+      "line": 390,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_1f0 + (uint)bVar13 * -8 + 4) =",
+      "text": "puVar8 = (uint *)((int)local_260 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 391,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_1f0 + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 392,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_260 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 409,
+      "line": 401,
       "match": "._0_4_",
       "text": "local_1f0.w = (float)local_220._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 410,
+      "line": 402,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&local_1f0 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar8 = (uint *)((int)&local_1f0 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 411,
+      "line": 403,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_1f0 + (uint)bVar13 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_1f0 + (uint)bVar14 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 432,
+      "line": 424,
       "match": "._12_4_",
       "text": "local_3f0._12_4_ = local_344.w;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 433,
+      "line": 425,
       "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&local_344 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "pfVar13 = (float *)((int)&local_344 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 434,
+      "line": 426,
       "match": "(float *)((int)",
-      "text": "local_3e0[(uint)bVar13 * -2] = *(float *)((int)&local_344 + (uint)bVar13 * -8 + 4);",
+      "text": "local_3e0[(uint)bVar14 * -2] = *(float *)((int)&local_344 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 444,
+      "line": 436,
       "match": "fpatan",
-      "text": "fVar14 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) /",
+      "text": "fVar15 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 449,
+      "line": 441,
       "match": "._12_4_",
       "text": "local_220._12_4_ = local_204.w;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 450,
-      "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&local_204 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "line": 442,
+      "match": "(float *)((int)",
+      "text": "pfVar13 = (float *)((int)&local_204 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 443,
+      "match": "(float *)((int)",
+      "text": "local_210[(uint)bVar14 * -2] = *(float *)((int)&local_204 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 461,
+      "line": 452,
       "match": "._12_4_",
       "text": "local_220._12_4_ = local_360._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 461,
+      "line": 452,
       "match": "._12_4_",
       "text": "local_220._12_4_ = local_360._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 490,
+      "line": 480,
       "match": "._12_4_",
       "text": "local_294.w = (float)local_390._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 491,
+      "line": 481,
       "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&local_294 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "pfVar13 = (float *)((int)&local_294 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 492,
+      "line": 482,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_294 + (uint)bVar13 * -8 + 4) = local_380[(uint)bVar13 * -2];",
+      "text": "*(float *)((int)&local_294 + (uint)bVar14 * -8 + 4) = local_380[(uint)bVar14 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 503,
+      "line": 493,
       "match": "fpatan",
-      "text": "fVar14 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) /",
+      "text": "fVar15 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 508,
+      "line": 498,
       "match": "._12_4_",
       "text": "local_1a4.w = (float)local_300._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 509,
+      "line": 499,
       "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&local_1a4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "pfVar13 = (float *)((int)&local_1a4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 510,
+      "line": 500,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_1a4 + (uint)bVar13 * -8 + 4) = local_2f0[(uint)bVar13 * -2];",
+      "text": "*(float *)((int)&local_1a4 + (uint)bVar14 * -8 + 4) = local_2f0[(uint)bVar14 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 530,
+      "line": 520,
       "match": "DAT_03f6baac",
       "text": "if ((DAT_03f6baac & 1) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 531,
+      "line": 521,
       "match": "DAT_03f6baac",
       "text": "DAT_03f6baac = DAT_03f6baac | 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 531,
+      "line": 521,
       "match": "DAT_03f6baac",
       "text": "DAT_03f6baac = DAT_03f6baac | 1;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 535,
-      "match": "code *",
-      "text": "pfVar4 = (float *)(**(code **)(*(int *)(iVar6 + 0x154) + 0x14))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 542,
+      "line": 532,
       "match": "&stack0x00000000",
-      "text": "if (&stack0x00000000 != (byte *)0x3f6bc18) {",
+      "text": "if (&stack0x00000000 != (byte *)0x3f6bc0c) {",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 551,
+      "line": 541,
       "match": "._8_4_",
-      "text": "local_148._8_4_ = *(float *)((this_ptr->base).unk3 + 8) + pCVar5->x;",
+      "text": "local_148._8_4_ = (this_ptr->base).target_position.x + pCVar5->x;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 576,
+      "line": 566,
       "match": "(uint *)((int)",
-      "text": "puVar9 = (uint *)((int)&CStack_284 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&CStack_284 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 577,
+      "line": 567,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&CStack_1b4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar8 = (uint *)((int)&CStack_1b4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 568,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_284 + (uint)bVar14 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 569,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_1b4 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 578,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_284 + (uint)bVar13 * -8 + 4) =",
+      "text": "puVar9 = (uint *)((int)&CStack_274 + ((uint)bVar14 * -2 + (uint)bVar14 * -2 + 1) * 4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 579,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_1b4 + (uint)bVar13 * -8 + 4);",
+      "text": "puVar8 = (uint *)((int)&CStack_374 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 588,
+      "line": 580,
       "match": "(uint *)((int)",
-      "text": "puVar9 = (uint *)((int)&CStack_274 + ((uint)bVar13 * -2 + (uint)bVar13 * -2 + 1) * 4 + 4);",
+      "text": "*(uint *)((int)&CStack_274 + (uint)bVar14 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 589,
+      "line": 581,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&CStack_374 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 590,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_274 + (uint)bVar13 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 591,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_374 + (uint)bVar13 * -8 + 4);",
+      "text": "*(uint *)((int)&CStack_374 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 606,
+      "line": 596,
       "match": "._8_4_",
       "text": "local_94._8_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 608,
+      "line": 598,
       "match": "._8_4_",
       "text": "local_94._8_4_ = *(uint *)(this_ptr->unk1 + 0x18);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 615,
+      "line": 605,
       "match": "(uint *)((int)",
-      "text": "puVar9 = (uint *)((int)&CStack_2e4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&CStack_2e4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 616,
+      "line": 606,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&CStack_3d4 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
+      "text": "puVar8 = (uint *)((int)&CStack_3d4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 617,
+      "line": 607,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_2e4 + (uint)bVar13 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_2e4 + (uint)bVar14 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 618,
+      "line": 608,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_3d4 + (uint)bVar13 * -8 + 4);",
+      "text": "*(uint *)((int)&CStack_3d4 + (uint)bVar14 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

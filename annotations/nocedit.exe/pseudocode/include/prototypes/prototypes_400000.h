@@ -336,7 +336,7 @@ void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0(void);
 void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c7f0(void);
 int __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor *this_ptr,float volume);
 int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0 (CDemonActor *this_ptr,CVector3f *location,float volume);
-int __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10 (CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume);
+void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10 (CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume);
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040cb90(uint seed_value);
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040cba0(void);
 float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cbc0(void);

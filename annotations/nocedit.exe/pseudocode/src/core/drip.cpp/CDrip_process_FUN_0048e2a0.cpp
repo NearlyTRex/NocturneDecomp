@@ -52,7 +52,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
     if ((this_ptr->base).location.position.y <
         *(float *)(this_ptr->unk2 + 4) - (fStack_60 - (float)pCStack_6c) * (float)0.84999999999999998) {
       if (this_ptr->unk3 != 0) {
-        core_set_cpp_CDemonSet_FUN_00570fa0(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_initCameraShake_FUN_00570fa0(g_CDemonSetPtr,100.0,0.0,0.0,1.0);
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->hit_sound);
       }
       iVar5 = this_ptr->no_rock_flag;

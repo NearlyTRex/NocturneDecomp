@@ -12,8 +12,8 @@ core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *thi
 {
   byte *pbVar1;
   char cVar2;
-  CDemonActor *pCVar3;
-  int iVar4;
+  int iVar3;
+  CDemonActor *pCVar4;
   int iVar5;
   int iVar6;
   char *pcVar7;
@@ -56,9 +56,9 @@ core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *thi
         } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0) != 0);
       } while ((CStack_30.data_array == (char **)0x2d) || (CStack_30.data_array == (char **)0x5f));
       *pcVar7 = '\0';
-      iVar4 = stricmp(local_110,"none");
-      if ((iVar4 != 0) &&
-         (iVar4 = stricmp(local_110,"true"), iVar4 != 0)) {
+      iVar3 = stricmp(local_110,"none");
+      if ((iVar3 != 0) &&
+         (iVar3 = stricmp(local_110,"true"), iVar3 != 0)) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(auStack_40 + 8),local_110);
       }
     }
@@ -67,9 +67,9 @@ core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *thi
   core_mission_cpp_CDemonMission_countActors_FUN_00523cc0(this_ptr);
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_6ac);
   local_18 = this_ptr->first_actor;
-  pCVar3 = local_18;
+  pCVar4 = local_18;
   do {
-    if (pCVar3 == (CDemonActor *)0x0) {
+    if (pCVar4 == (CDemonActor *)0x0) {
       if (local_6ac.base.item_count < 1) {
         shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                   (g_CEditorToolsPtr,"No actors relevent to the operation of this event.");
@@ -82,9 +82,9 @@ core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *thi
         if (-1 < (int)pcVar9) {
           shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                     (&local_6ac.base,(int)acStack_304,pcVar9,0);
-          pcVar9 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,acStack_304)
+          pCVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,acStack_304)
           ;
-          core_msnedit_cpp_CDemonMission_FUN_0053c140(this_ptr,(int)pcVar9);
+          core_msnedit_cpp_CDemonMission_FUN_0053c140(this_ptr,(int)pCVar4);
         }
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_6ac,0);
@@ -97,19 +97,19 @@ core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *thi
     if (0 < CStack_30.item_count) {
       do {
         pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_30,iStack_14);
-        iVar4 = stricmp(pcVar9,unaff_EBP->actor_name);
-        if (iVar4 == 0) {
+        iVar3 = stricmp(pcVar9,unaff_EBP->actor_name);
+        if (iVar3 == 0) {
           _sprintf(acStack_2fc,"%s\tReferenced by name");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     ((CStrList *)&local_6ac.base.data_array,acStack_2fc);
         }
-        iVar4 = 0;
+        iVar3 = 0;
         if (0 < iStack_2ba4) {
           puStack_1c = auStack_2b9c;
           do {
-            if ((&iStack_2ba0)[iVar4 * 0x3b] == 0xb) {
+            if ((&iStack_2ba0)[iVar3 * 0x3b] == 0xb) {
               shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)auStack_40);
-              pcVar7 = (char *)auStack_2b38[iVar4 * 0x3b];
+              pcVar7 = (char *)auStack_2b38[iVar3 * 0x3b];
               cVar2 = *pcVar7;
               while (cVar2 != '\0') {
                 cVar2 = *pcVar7;
@@ -158,13 +158,13 @@ core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *thi
               shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)auStack_40,0);
             }
             puStack_1c = puStack_1c + 0xec;
-            iVar4 = iVar4 + 1;
-          } while (iVar4 < iStack_2ba4);
+            iVar3 = iVar3 + 1;
+          } while (iVar3 < iStack_2ba4);
         }
         iStack_14 = iStack_14 + 1;
       } while (iStack_14 < CStack_30.item_count);
     }
     unaff_EBP = unaff_EBP->next_actor;
-    pCVar3 = unaff_EBP;
+    pCVar4 = unaff_EBP;
   } while( true );
 }

@@ -59,8 +59,8 @@ void __cdecl engine_3d_c_rasterizePolygon_FUN_004d1340(SRenderVertex **vertices,
           g_EdgeListMaxY = iVar5;
         }
         g_HardwareEdgeTable[iVar7].x_current = (pSVar6->projected_vertex).screen_x;
-        g_HardwareEdgeTable[iVar7].u_current = (int)pSVar6->u;
-        g_HardwareEdgeTable[iVar7].v_current = (int)pSVar6->v;
+        g_HardwareEdgeTable[iVar7].u_current = pSVar6->u;
+        g_HardwareEdgeTable[iVar7].v_current = pSVar6->v;
         uVar8 = (pSVar9->projected_vertex).screen_y - (pSVar6->projected_vertex).screen_y;
         if (uVar8 < 0x10000) {
           iVar3 = 0;
@@ -73,10 +73,10 @@ void __cdecl engine_3d_c_rasterizePolygon_FUN_004d1340(SRenderVertex **vertices,
                 ((pSVar9->projected_vertex).screen_x - (pSVar6->projected_vertex).screen_x);
         g_HardwareEdgeTable[iVar7].x_gradient =
              (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        lVar2 = (longlong)iVar3 * (longlong)((int)pSVar9->u - (int)pSVar6->u);
+        lVar2 = (longlong)iVar3 * (longlong)(pSVar9->u - pSVar6->u);
         g_HardwareEdgeTable[iVar7].u_gradient =
              (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        lVar2 = (longlong)iVar3 * (longlong)((int)pSVar9->v - (int)pSVar6->v);
+        lVar2 = (longlong)iVar3 * (longlong)(pSVar9->v - pSVar6->v);
         g_HardwareEdgeTable[iVar7].v_gradient =
              (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
         uVar8 = (uint)(ushort)((ushort)(pSVar6->projected_vertex).screen_y ^ 0xffff);

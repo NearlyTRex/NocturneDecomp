@@ -18,6 +18,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDoor.h"
+#include "types/classes/CGame.h"
 #include "types/classes/CLightActor.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPathMap.h"
@@ -269,7 +270,7 @@ void __cdecl core_charactr_cpp_FUN_0042f930(void);
 void __cdecl core_charactr_cpp_FUN_0042f990(void);
 int __cdecl core_charactr_cpp_FUN_0042f9c0(void);
 int __cdecl core_charactr_cpp_FUN_0042f9d0(void);
-float __cdecl core_charactr_cpp_FUN_0042f9e0(void);
+float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042f9e0(CGame *game_ptr);
 CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042f9f0(CCharacter *this_ptr,uint flags);
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_0042fab0(SFire *this_ptr);
 SPose * __cdecl core_charactr_cpp_SPose_ctor_FUN_0042fac0(SPose *this_ptr);

@@ -10,7 +10,7 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 at 0044df3b
 ;
 ; Called Functions:
-;   core_event.cpp_FUN_004b19d0
+;   crt_watcom.c__memset_FUN_004b19d0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH EAX                            ; 00475fe1
     MOV ECX,dword ptr [ECX + 0x2fa0]    ; 00475fe2
     XOR EDX,EDX                         ; 00475fe8
-    CALL core_event.cpp_FUN_004b19d0    ; 00475fea
-        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b19d0()
+    CALL crt_watcom.c__memset_FUN_004b19d0 ; 00475fea
+        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_004b19d0(void * dest, int fill_byte, uint size)
     POP EBX                             ; 00475fef
     RET                                 ; 00475ff0
 

@@ -22,7 +22,7 @@ void __cdecl core_crate_cpp_CCrate_FUN_00448a70(CCrate *this_ptr)
   if ((CLocation *)&fStack_8 != pCVar1) {
     fStack_8 = (pCVar1->position).x;
   }
-  core_fire_cpp_CFireEffect_FUN_004c8c10(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(g_CFireEffectPtr,(CVector3f *)&fStack_8);
   core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
             (g_CDemonMissionPtr,&this_ptr->base,1);
   (this_ptr->base).was_created = 2;

@@ -16,8 +16,8 @@
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005392ad
 ;   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 at 0053bc07
 ;   core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 at 0053af7b
-;   core_script.cpp_CScript_FUN_00565d00 at 00565dc3
 ;   core_script.cpp_CScript_FUN_005677a0 at 00567bae
+;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565dc3
 ;   ... and 2 more
 ;
 ; Referenced Globals:

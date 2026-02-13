@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_event.cpp_CEventList_FUN_004aabe0
-;   core_lever.cpp_CLever_FUN_00504b20
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
+;   core_lever.cpp_CLever_setState_FUN_00504b20
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     PUSH EAX                            ; 005049a5
     MOV EBP,dword ptr [0x006793d0]      ; 005049a6 | g_CEventListPtr
     PUSH EBP                            ; 005049ac | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 005049ad
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 005049ad
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
         ;   Label: LAB_005049ad
     ADD ESP,0x8                         ; 005049b2
     MOV EAX,dword ptr [EBX + 0x410]     ; 005049b5
@@ -135,8 +135,8 @@ section .text
     PUSH dword ptr [EBX + 0x2dc]        ; 00504a6a
         ;   Label: LAB_00504a6a
     PUSH EAX                            ; 00504a70
-    CALL core_lever.cpp_CLever_FUN_00504b20 ; 00504a71
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_FUN_00504b20(CLever * this_ptr)
+    CALL core_lever.cpp_CLever_setState_FUN_00504b20 ; 00504a71
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_00504b20(CLever * this_ptr, float param_2)
     ADD ESP,0x8                         ; 00504a76
     JMP 0x005049c3                      ; 00504a79
         ;   XREF to: 005049c3 (UNCONDITIONAL_JUMP)  ; LAB_005049c3
@@ -147,8 +147,8 @@ section .text
         ;   XREF to: 005049f7 (CONDITIONAL_JUMP)  ; LAB_005049f7
     PUSH dword ptr [ECX + 0x2dc]        ; 00504a8c
     PUSH EAX                            ; 00504a92
-    CALL core_lever.cpp_CLever_FUN_00504b20 ; 00504a93
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_FUN_00504b20(CLever * this_ptr)
+    CALL core_lever.cpp_CLever_setState_FUN_00504b20 ; 00504a93
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_00504b20(CLever * this_ptr, float param_2)
     ADD ESP,0x8                         ; 00504a98
     INC EDI                             ; 00504a9b
     ADD ESI,0x4                         ; 00504a9c
@@ -171,8 +171,8 @@ section .text
     PUSH EAX                            ; 00504acd
     MOV EDI,dword ptr [0x006793d0]      ; 00504ace | g_CEventListPtr
     PUSH EDI                            ; 00504ad4 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 00504ad5
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 00504ad5
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 00504ada
     FLD float ptr [EBX + 0x2dc]         ; 00504add
         ;   Label: LAB_00504add
@@ -196,8 +196,8 @@ section .text
     PUSH EBX                            ; 00504b05
     MOV EBP,dword ptr [0x006793d0]      ; 00504b06 | g_CEventListPtr
     PUSH EBP                            ; 00504b0c | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 00504b0d
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 00504b0d
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 00504b12
     ADD ESP,0x8                         ; 00504b15
     POP EBP                             ; 00504b18

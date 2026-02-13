@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_fire.cpp_CFireEffect_FUN_004c8c10
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10
 ;   core_flame.cpp_CFlame_process_FUN_004c9c00
 ;   core_flamecan.cpp_CFlameCan_FUN_004cb340
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
@@ -130,8 +130,8 @@ section .text
     FADD float ptr [ESP + 0x44]         ; 004cb4a6
     PUSH EDI                            ; 004cb4aa | g_CFireEffectInstance
     FSTP float ptr [ESP + 0x3c]         ; 004cb4ab
-    CALL core_fire.cpp_CFireEffect_FUN_004c8c10 ; 004cb4af
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8c10(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 ; 004cb4af
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position)
     ADD ESP,0x14                        ; 004cb4b4
     POP ESI                             ; 004cb4b7
     POP EDI                             ; 004cb4b8

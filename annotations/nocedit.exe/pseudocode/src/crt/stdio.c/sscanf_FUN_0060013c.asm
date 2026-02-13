@@ -11,15 +11,15 @@
 ;
 ; XREF[47]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e6b5
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab061
-;   core_event.cpp_CEventList_FUN_004ae140 at 004aff00
-;   core_event.cpp_FUN_004aa3c0 at 004aa3d0
-;   core_event.cpp_FUN_004aa530 at 004aa56d
+;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004aff00
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ab061
+;   core_event.cpp_parseIntOrCounter_FUN_004aa3c0 at 004aa3d0
+;   core_event.cpp_parseVectorLocation_FUN_004aa530 at 004aa56d
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bdbe7
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_00524660 at 005246e4
+;   core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0 at 0056280e
 ;   core_script.cpp_CScript_FUN_00566fa0 at 00566fdc
 ;   core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 at 0055ff79
-;   core_script.cpp_CScript_step_FUN_0055a810 at 0055bc00
 ;   ... and 37 more
 ;
 ; Called Functions:

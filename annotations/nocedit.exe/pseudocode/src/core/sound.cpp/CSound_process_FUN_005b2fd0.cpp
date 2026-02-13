@@ -12,9 +12,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
   char cVar1;
   float fVar2;
   STrainNoise *pSVar3;
-  int extraout_EAX;
   int iVar4;
-  int extraout_EAX_00;
   int iVar5;
   uint uVar6;
   STrainNoise *pSVar7;
@@ -65,8 +63,8 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
     CVector3f_03f6af7c.y = 0.0;
   }
   else {
-    core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(this_ptr,g_WindSoundHandle);
-    if (extraout_EAX == 0) {
+    iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(this_ptr,g_WindSoundHandle);
+    if (iVar4 == 0) {
       g_WindSoundHandle = sound_sndmain_cpp_startSfx_FUN_005a8e90("wind-ctl.wav");
     }
     sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(g_WindSoundHandle,CVector3f_03f6af7c.y);
@@ -93,8 +91,8 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
     CVector3f_03f6af7c.z = 0.0;
   }
   else {
-    core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(this_ptr,g_WaterSoundHandle);
-    if (extraout_EAX_00 == 0) {
+    iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(this_ptr,g_WaterSoundHandle);
+    if (iVar4 == 0) {
       g_WaterSoundHandle = sound_sndmain_cpp_startSfx_FUN_005a8e90("water-2.wav");
     }
     sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(g_WaterSoundHandle,CVector3f_03f6af7c.z);

@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-;   core_event.cpp_FUN_004b1670
+;   core_event.cpp_CRuleList_clear_FUN_004b1670
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     ADD ESP,0x4                         ; 005047e9
     LEA EBX,[EAX + 0x2c8]               ; 005047ec
     PUSH EBX                            ; 005047f2
-    CALL core_event.cpp_FUN_004b1670    ; 005047f3
-        ;   XREF to: 004b1670 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b1670()
+    CALL core_event.cpp_CRuleList_clear_FUN_004b1670 ; 005047f3
+        ;   XREF to: 004b1670 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CRuleList_clear_FUN_004b1670(CRuleList * this_ptr)
     ADD ESP,0x4                         ; 005047f8
     SUB EBX,0x420                       ; 005047fb
     PUSH 0x631071                       ; 00504801 | = "glever.kfm"

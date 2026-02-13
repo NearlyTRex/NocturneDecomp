@@ -38,12 +38,12 @@ engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170
             local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
             local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
             if (this_ptr->unk == 0) {
-              this_ptr->vertex_buffer_ptr[local_24.x].u = (float)((uint)face_array->u_coord_0 << 8);
-              this_ptr->vertex_buffer_ptr[local_24.x].v = (float)((uint)face_array->v_coord_0 << 8);
-              this_ptr->vertex_buffer_ptr[local_24.y].u = (float)((uint)face_array->u_coord_1 << 8);
-              this_ptr->vertex_buffer_ptr[local_24.y].v = (float)((uint)face_array->v_coord_1 << 8);
-              this_ptr->vertex_buffer_ptr[local_24.z].u = (float)((uint)face_array->u_coord_2 << 8);
-              this_ptr->vertex_buffer_ptr[local_24.z].v = (float)((uint)face_array->v_coord_2 << 8);
+              this_ptr->vertex_buffer_ptr[local_24.x].u = (uint)face_array->u_coord_0 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.x].v = (uint)face_array->v_coord_0 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.y].u = (uint)face_array->u_coord_1 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.y].v = (uint)face_array->v_coord_1 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.z].u = (uint)face_array->u_coord_2 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.z].v = (uint)face_array->v_coord_2 << 8;
             }
             face_array = face_array + 1;
             engine_drender_cpp_renderTriangleTextured_FUN_00483370(&local_24.x,3);

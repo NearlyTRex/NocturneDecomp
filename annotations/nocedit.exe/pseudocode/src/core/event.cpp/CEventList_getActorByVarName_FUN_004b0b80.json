@@ -1,0 +1,136 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 57,
+    "complexity_score": 22,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "004aa400",
+      "from_addr": "004aa41f",
+      "name": "core_event.cpp_resolveActorByName_FUN_004aa400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005594e0",
+      "from_addr": "00559552",
+      "name": "core_script.cpp_getActor_FUN_005594e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b0b80",
+    "address_range": [
+      [
+        "004b0b80",
+        "004b0bee"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80",
+    "signature": "CDemonActor * __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_004b0b80(CEventList *this_ptr,char *name)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b0bf0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_findActorVariable_FUN_004b0bf0"
+    },
+    {
+      "addr": "005fe7f0",
+      "is_variadic": false,
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.630434782608695,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 43,
+      "INT_ADD": 24,
+      "INT_AND": 43,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 31,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 17,
+      "INT_SUB": 13,
+      "INT_XOR": 4,
+      "LOAD": 15,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 259
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

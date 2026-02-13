@@ -48,7 +48,7 @@ switchD_00424639_default:
     if (*(int *)(this_ptr->unk1 + 0x20) == *in_stack_00000008) {
       local_20 = local_20 * (float)0.33300000000000002;
     }
-    if (g_CGamePtr->unk4 != 0) {
+    if (g_CGamePtr->gratuitous_dismemberment != 0) {
       local_20 = 1.0;
     }
     if (g_CGamePtr->blood_flag == 0) {

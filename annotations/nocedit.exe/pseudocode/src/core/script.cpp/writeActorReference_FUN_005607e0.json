@@ -1,0 +1,144 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 35,
+        "line": 16,
+        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "00560b50",
+      "from_addr": "00560cd2",
+      "name": "core_script.cpp_CScript_saveState_FUN_00560b50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005607e0",
+    "address_range": [
+      [
+        "005607e0",
+        "00560811"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_writeActorReference_FUN_005607e0",
+    "signature": "void __cdecl core_script_cpp_writeActorReference_FUN_005607e0(_FILE *file_handle,CDemonActor *actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6d0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006433e6",
+      "name": "s_s_006433e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006433ec",
+      "name": "s_s_006433ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00680d58",
+      "name": "s_none_00680d58",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00560cd2",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_saveState_FUN_00560b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00560cb7",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_saveState_FUN_00560b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9411764705882355,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 11,
+      "INT_ADD": 6,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 8,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 67
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": []
+}

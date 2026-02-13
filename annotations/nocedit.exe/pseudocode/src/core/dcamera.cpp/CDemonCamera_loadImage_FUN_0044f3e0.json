@@ -4,26 +4,32 @@
       {
         "category": "incompatible_types",
         "column": 29,
-        "line": 297,
+        "line": 298,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 30,
-        "line": 307,
+        "line": 308,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 30,
-        "line": 381,
+        "line": 382,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 426,
+        "line": 427,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 452,
+        "message": "use of undeclared identifier '_memset'; did you mean 'memset'?"
       }
     ],
     "success": false,
@@ -31,16 +37,16 @@
   },
   "complexity": {
     "assembly_lines": 1081,
-    "complexity_score": 547,
+    "complexity_score": 548,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 91,
-    "pseudocode_lines": 472,
+    "pseudocode_lines": 473,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 1553
+    "total_lines": 1554
   },
   "cross_references": [
     {
@@ -63,11 +69,6 @@
     "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *this_ptr,char *filename)"
   },
   "function_calls": [
-    {
-      "addr": "004b19d0",
-      "is_variadic": false,
-      "name": "core_event.cpp_FUN_004b19d0"
-    },
     {
       "addr": "00506f10",
       "is_variadic": true,
@@ -92,6 +93,11 @@
       "addr": "005fef20",
       "is_variadic": false,
       "name": "crt_string.c_strcmp_FUN_005fef20"
+    },
+    {
+      "addr": "004b19d0",
+      "is_variadic": false,
+      "name": "crt_watcom.c__memset_FUN_004b19d0"
     },
     {
       "addr": "00481a50",
@@ -1058,49 +1064,49 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 263,
+      "line": 264,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_CameraConvertedPalette + iVar6) = uVar23;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 274,
+      "line": 275,
       "match": "(int *)((int)",
       "text": "piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 406,
+      "line": 407,
       "match": "(char *)((int)",
       "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar14) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 427,
+      "line": 428,
       "match": "(uint *)((int)",
       "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar31 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 428,
+      "line": 429,
       "match": "(uint *)((int)",
       "text": "puVar28 = (uint *)((int)puVar28 + (uint)bVar31 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 434,
+      "line": 435,
       "match": "(SRGBColorPalette *)((int)",
       "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 439,
+      "line": 440,
       "match": "(SRGBColorPalette *)((int)",
       "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -2 + 1);",
       "type": "pointer_cast"

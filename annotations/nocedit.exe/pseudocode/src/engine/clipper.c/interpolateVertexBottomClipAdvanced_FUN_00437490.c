@@ -56,12 +56,12 @@ engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00437490
   uVar4 = (uint)lVar1;
   output->fog = (float)((int)v1->fog +
                        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4));
-  lVar1 = (longlong)((int)v2->u - (int)v1->u) * (longlong)iVar3;
+  lVar1 = (longlong)(v2->u - v1->u) * (longlong)iVar3;
   uVar4 = (uint)lVar1;
-  output->u = (float)((int)v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4));
-  lVar1 = (longlong)((int)v2->v - (int)v1->v) * (longlong)iVar3;
+  output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  lVar1 = (longlong)(v2->v - v1->v) * (longlong)iVar3;
   uVar4 = (uint)lVar1;
-  output->v = (float)((int)v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4));
+  output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
   lVar1 = (longlong)((int)v2->w_recip - (int)v1->w_recip) * (longlong)iVar3;
   uVar4 = (uint)lVar1;
   output->w_recip =

@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70
-;   core_path.cpp_GlobalPathmapListCorruption_FUN_00548590
+;   core_path.cpp_FUN_00548590
 ;
 ; *****************************************************************************
 

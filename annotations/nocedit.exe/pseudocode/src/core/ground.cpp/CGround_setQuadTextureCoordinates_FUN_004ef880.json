@@ -6,15 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 102,
+    "complexity_score": 17,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 17,
-    "suspect_count": 8,
-    "suspect_types": [
-      "suspect_float"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 81
   },
   "cross_references": [
@@ -141,62 +139,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 10,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[1]].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 11,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 12,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[0]].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 13,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[0]].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 14,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[3]].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 15,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[3]].v = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 16,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 17,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[2]].v = 7.34684e-40;",
-      "type": "suspect_float"
-    }
-  ]
+  "suspects": []
 }

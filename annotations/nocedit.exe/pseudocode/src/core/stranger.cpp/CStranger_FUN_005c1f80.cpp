@@ -12,7 +12,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(CStranger *this_ptr)
   CDemonActor *pCVar1;
   
   pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
-  this_ptr->unk8 = 4.0;
+  this_ptr->action_timer = 4.0;
   if (pCVar1 == this_ptr->weapon) {
     this_ptr->weapon = (CDemonActor *)0x0;
   }

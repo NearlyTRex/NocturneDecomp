@@ -74,7 +74,7 @@ SOCKADDR_IN * __cdecl support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkA
 void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1a80(int unknown1,int unknown2);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1ab0(int unknown1,int unknown2);
-void __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SSocketContext *socket_ctx);
+SSocketContext * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SSocketContext *socket_ctx);
 SSocketContext * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(SSocketContext *socket_ctx);
 int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(SSocketContext *socket_ctx);
 int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SSocketContext *socket_ctx);
@@ -307,11 +307,11 @@ CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_dtor_FUN_005eea90(CDemonGlobe 
 void __cdecl core_weather_cpp_staticInit_FUN_005eeaa0(void);
 CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_005eead0(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_FUN_005eeaf0(CWeather *this_ptr);
-void __cdecl core_weather_cpp_CWeather_FUN_005eeeb0(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0 (CWeather *this_ptr,float param_2,int param_3);
 void __cdecl core_weather_cpp_CWeather_FUN_005ef140(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr);
-void __cdecl core_weather_cpp_CWeather_FUN_005ef8c0(CWeather *this_ptr);
-void __cdecl core_weather_cpp_CWeather_FUN_005ef940(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,int type);
+void __cdecl core_weather_cpp_CWeather_FUN_005ef940(CWeather *this_ptr,CVector3f *param_2,CVector3f *param_3);
 CWeather * __cdecl core_weather_cpp_CWeather_dtor_FUN_005efb40(CWeather *this_ptr,uint flags);
 CVector3f * __cdecl core_weather_cpp_CVector3f_arrdtor_FUN_005efb50(CVector3f *objs,uint flags);
 void __cdecl core_werewolf_cpp_staticInit_FUN_005efb70(void);

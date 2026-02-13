@@ -394,7 +394,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       if (iVar12 == 0) {
         return 0;
       }
-      pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add00(g_CEventListPtr);
+      pcVar6 = core_event_cpp_CEventList_validateCondition_FUN_004add00(g_CEventListPtr,local_ac);
       if (pcVar6 == (char *)0x0) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
     }
@@ -431,7 +431,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       if (iVar12 == 0) {
         return 0;
       }
-      pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
+      pcVar6 = core_event_cpp_CEventList_validateCommands_FUN_004add40(g_CEventListPtr,local_110);
       if (pcVar6 == (char *)0x0) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
     }
@@ -673,9 +673,11 @@ LAB_0040fdd3:
           memmove(local_175 + 1,local_175 + 2,SVar8);
           SVar8 = SVar8 - 1;
         }
-        pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add00(g_CEventListPtr);
+        pcVar6 = core_event_cpp_CEventList_validateCondition_FUN_004add00
+                           (g_CEventListPtr,acStack_1d9 + 1);
         if (pcVar6 == (char *)0x0) {
-          pcVar6 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
+          pcVar6 = core_event_cpp_CEventList_validateCommands_FUN_004add40
+                             (g_CEventListPtr,local_175 + 1);
           if (pcVar6 == (char *)0x0) {
             pCVar4 = (this_ptr->data).v_rulelist_ptr;
             if (pCVar4->list_size <= (this_ptr->param1).v_int) {

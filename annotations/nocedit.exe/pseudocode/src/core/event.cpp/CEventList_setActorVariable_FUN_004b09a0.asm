@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
-;   core_event.cpp_CEventList_FUN_004b0bf0
+;   core_event.cpp_CEventList_findActorVariable_FUN_004b0bf0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;
@@ -62,8 +62,8 @@ section .text
     PUSH EDI                            ; 004b09eb
         ;   Label: LAB_004b09eb
     PUSH EBX                            ; 004b09ec
-    CALL core_event.cpp_CEventList_FUN_004b0bf0 ; 004b09ed
-        ;   XREF to: 004b0bf0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0bf0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_findActorVariable_FUN_004b0bf0 ; 004b09ed
+        ;   XREF to: 004b0bf0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findActorVariable_FUN_004b0bf0(CEventList * this_ptr, char * name)
     MOV ESI,EAX                         ; 004b09f2
     ADD ESP,0x8                         ; 004b09f4
     TEST EAX,EAX                        ; 004b09f7

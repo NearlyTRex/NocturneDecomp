@@ -33,7 +33,7 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0
 ;   core_script.cpp_CScript_FUN_005602b0
 ;   core_set.cpp_CDemonSet_FUN_0056b7e0
-;   core_set.cpp_CDemonSet_FUN_00570e20
+;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 ;   core_set.cpp_CDemonSet_setGamma_FUN_00570d60
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
@@ -899,8 +899,8 @@ section .text
     PUSH dword ptr [ESP]                ; 004dd7c0
     PUSH EBX                            ; 004dd7c3
     PUSH EAX                            ; 004dd7c4 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570e20 ; 004dd7c5
-        ;   XREF to: 00570e20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570e20(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20 ; 004dd7c5
+        ;   XREF to: 00570e20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(CDemonSet * this_ptr, int index, float value)
     INC EBX                             ; 004dd7ca
     ADD ESP,0xc                         ; 004dd7cb
     JMP 0x004dd7b3                      ; 004dd7ce

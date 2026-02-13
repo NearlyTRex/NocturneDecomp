@@ -32,7 +32,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004aaa70
+;   core_event.cpp_CEventList_reset_FUN_004aaa70
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_005235b0
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
@@ -73,8 +73,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 005247b2
     MOV EDX,dword ptr [EAX + 0x4]       ; 005247b5
     MOV dword ptr [EAX],EDX             ; 005247b8
-    CALL core_event.cpp_CEventList_FUN_004aaa70 ; 005247ba
-        ;   XREF to: 004aaa70 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aaa70(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_reset_FUN_004aaa70 ; 005247ba
+        ;   XREF to: 004aaa70 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_004aaa70(CEventList * this_ptr)
     MOV EAX,[0x0067b654]                ; 005247bf | g_CGamePtr
     MOV dword ptr [EAX + 0x228],0x0     ; 005247c4 | DAT_02d81cc4
     MOV EAX,[0x02db87d0]                ; 005247ce | g_LocalHeroIndex

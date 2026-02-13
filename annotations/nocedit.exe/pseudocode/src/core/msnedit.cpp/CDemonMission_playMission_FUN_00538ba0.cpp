@@ -36,7 +36,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMissi
                 (this_ptr,(g_HeroActors[iVar1]->base).base.location.area_id);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Preparing...");
-      core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
+      core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(g_CEventListPtr);
       iVar1 = core_mission_cpp_CDemonMission_FUN_00524760(this_ptr);
       if (iVar1 != 0) {
         core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(this_ptr);
@@ -53,7 +53,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMissi
     core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,local_18,1);
     _sprintf(local_11c,"world\\%s",local_18);
     remove(local_11c);
-    core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
+    core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(g_CEventListPtr);
     return;
   }
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

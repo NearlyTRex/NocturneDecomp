@@ -47,9 +47,9 @@ void __cdecl CDemonSet(CDemonSet *this_ptr);
 // Address: 0056ae50
 void __cdecl CDemonSet::setCameraView(CDemonSet *this_ptr,int index);
 
-// Original: core_set.cpp_CDemonSet_FUN_0056b790
+// Original: core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790
 // Address: 0056b790
-int __cdecl CDemonSet(CDemonSet *this_ptr);
+int __cdecl CDemonSet::findCameraByName(CDemonSet *this_ptr,char *name);
 
 // Original: core_set.cpp_CDemonSet_FUN_0056b7e0
 // Address: 0056b7e0
@@ -241,15 +241,15 @@ void __cdecl CDemonSet::setGamma(CDemonSet *this_ptr,int gamma);
 
 // Original: core_set.cpp_CDemonSet_FUN_00570df0
 // Address: 00570df0
-void __cdecl CDemonSet(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive);
+int __cdecl CDemonSet(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive);
 
-// Original: core_set.cpp_CDemonSet_FUN_00570e20
+// Original: core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20
 // Address: 00570e20
-void __cdecl CDemonSet(CDemonSet *this_ptr);
+void __cdecl CDemonSet::setCameraAmbientValue(CDemonSet *this_ptr,int index,float value);
 
-// Original: core_set.cpp_CDemonSet_FUN_00570e60
+// Original: core_set.cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60
 // Address: 00570e60
-void __cdecl CDemonSet(CDemonSet *this_ptr);
+void __cdecl CDemonSet::setCameraAmbientValueById(CDemonSet *this_ptr,int id,float value);
 
 // Original: core_set.cpp_CDemonSet_FUN_00570ea0
 // Address: 00570ea0
@@ -263,9 +263,9 @@ void __cdecl CDemonSet(CDemonSet *this_ptr);
 // Address: 00570f10
 void __cdecl CDemonSet::addLightFilter(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_FUN_00570fa0
+// Original: core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0
 // Address: 00570fa0
-void __cdecl CDemonSet(CDemonSet *this_ptr);
+void __cdecl CDemonSet::initCameraShake(CDemonSet *this_ptr,float peak,float attack,float sustain,float decay);
 
 // Original: core_set.cpp_CDemonSet_FUN_00570fc0
 // Address: 00570fc0

@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_event.cpp_CEventList_FUN_004ae140 at 004af173
+;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004af173
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004dbb43
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055cf8e
 ;

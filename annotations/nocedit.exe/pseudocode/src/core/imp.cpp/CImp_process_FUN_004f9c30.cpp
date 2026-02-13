@@ -23,8 +23,6 @@ void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_t
   SMotion *pSVar11;
   int iVar12;
   CImp *pCVar13;
-  int extraout_EAX;
-  CImp *extraout_EAX_00;
   CPathMap *path_map;
   uint uVar14;
   double dVar15;
@@ -193,8 +191,8 @@ LAB_004f9c99:
         pCVar9 = (this_ptr->base).victim;
         if (pCVar9 == (CDemonActor *)0x0) {
           in_stack_fffffe64 = (CImp *)0x4fa4a1;
-          core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-          if (extraout_EAX != 0) {
+          iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+          if (iVar7 != 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       ((CMotionController *)pCVar13,1,1);
             in_stack_fffffe64 = pCVar13;
@@ -256,9 +254,8 @@ LAB_004f9c99:
       pCVar9 = (this_ptr->base).victim;
       pCVar13 = (CImp *)&(this_ptr->base).base.model;
       if (pCVar9 == (CDemonActor *)0x0) {
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX_00 == (CImp *)0x0) {
-          in_stack_fffffe64 = extraout_EAX_00;
+        in_stack_fffffe64 = (CImp *)core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (in_stack_fffffe64 == (CImp *)0x0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     ((CMotionController *)pCVar13,0,1);
         }
@@ -331,7 +328,7 @@ LAB_004f9c99:
                 }
               }
             }
-            if ((local_1c <= local_28) && (*(float *)(this_ptr->base).unk2 <= 0.0)) {
+            if ((local_1c <= local_28) && ((float)(this_ptr->base).unk2 <= 0.0)) {
               pCVar9 = (this_ptr->base).victim;
               local_d4.x = (pCVar9->location).position.x -
                            (this_ptr->base).base.base.location.position.x;
@@ -346,10 +343,7 @@ LAB_004f9c99:
               if (ABS((float)local_14) < (float)0.52359877558333301) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           (&(this_ptr->base).base.model.motion_controller,4,1);
-                (this_ptr->base).unk2[0] = '\0';
-                (this_ptr->base).unk2[1] = '\0';
-                (this_ptr->base).unk2[2] = -0x80;
-                (this_ptr->base).unk2[3] = '@';
+                (this_ptr->base).unk2 = 0x40800000;
               }
             }
             if ((this_ptr->base).guard_distance < local_1c) {
@@ -500,8 +494,8 @@ LAB_004fa163:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_004fa8ed_caseD_8:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   iVar7 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if ((iVar7 != 0) && (local_24 != 9)) {

@@ -30,8 +30,8 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0
-;   core_event.cpp_FUN_004b19d0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_watcom.c__memset_FUN_004b19d0
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0
@@ -184,8 +184,8 @@ section .text
     PUSH EAX                            ; 00472c48
     MOV EDX,0xff                        ; 00472c49
     MOV ECX,dword ptr [EBX + 0x2f94]    ; 00472c4e
-    CALL core_event.cpp_FUN_004b19d0    ; 00472c54
-        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b19d0()
+    CALL crt_watcom.c__memset_FUN_004b19d0 ; 00472c54
+        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_004b19d0(void * dest, int fill_byte, uint size)
     JMP 0x00472b92                      ; 00472c59
         ;   XREF to: 00472b92 (UNCONDITIONAL_JUMP)  ; LAB_00472b92
     MOV dword ptr [0x02c6d03c],ESI      ; 00472c5e | g_RasterizerDepthBias

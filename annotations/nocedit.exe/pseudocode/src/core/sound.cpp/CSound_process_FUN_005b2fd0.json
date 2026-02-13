@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 34,
-        "line": 232,
+        "line": 230,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -13,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 331,
+    "complexity_score": 284,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 68,
-    "pseudocode_lines": 261,
-    "suspect_count": 6,
+    "pseudocode_lines": 259,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 901
+    "total_lines": 899
   },
   "cross_references": [
     {
@@ -900,43 +899,15 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 62,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX == 0) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 69,
       "match": "SQRT",
       "text": "(local_138 = SQRT(g_CWaterPtr->visible_area_sqft) * (float)0.027777777777777801 +",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 90,
-      "match": "extraout_EAX_00",
-      "text": "if (extraout_EAX_00 == 0) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 197,
+      "line": 195,
       "match": "ABS",
       "text": "if ((float)510 < ABS(g_TrainNoiseArray[iVar4].position.z)) {",
       "type": "decompiler_intrinsic"

@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 527,
-    "complexity_score": 282,
+    "complexity_score": 255,
     "cross_reference_count": 27,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 162,
-    "suspect_count": 11,
+    "pseudocode_lines": 160,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 689
+    "total_lines": 687
   },
   "cross_references": [
     {
@@ -790,78 +789,64 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EAX",
-      "text": "CPathMap *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 47,
       "match": "SQRT",
       "text": "fVar2 = SQRT(direction->x * direction->x + direction->z * direction->z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 51,
       "match": "SQRT",
       "text": "fVar3 = SQRT(local_bc.x * local_bc.x + local_bc.z * local_bc.z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 56,
       "match": "SQRT",
       "text": "if (0.0 < SQRT(direction->z * direction->z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 59,
       "match": "ABS",
       "text": "local_fc = ABS(local_18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 61,
       "match": "ABS",
       "text": "if (((ABS(fVar3 - fVar2) < min_distance + (float)0.01) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 63,
       "match": "ABS",
       "text": "(ABS(local_bc.y) < (float)5)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 70,
       "match": "ABS",
       "text": "ABS(fVar7) * (float)0.31830988619288902 * (float)2 <= fVar3) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 71,
       "match": "ABS",
       "text": "(1.0 < ABS(local_bc.y))) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
-      "match": "extraout_EAX",
-      "text": "path_map = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 134,
       "match": "SQRT",
       "text": "local_60 = SQRT(local_d8 * local_d8 + local_e0 * local_e0);",
       "type": "decompiler_intrinsic"

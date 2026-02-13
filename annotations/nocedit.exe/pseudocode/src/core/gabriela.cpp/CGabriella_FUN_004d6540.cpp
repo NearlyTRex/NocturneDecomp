@@ -121,8 +121,8 @@ LAB_004d6841:
     }
   }
   else {
-    fVar2 = *(float *)((this_ptr->base).unk2 + 8) * (float)3.1415926535000001 * (float)2
-            * in_stack_00000008 + *(float *)(this_ptr->unk1 + 0xc);
+    fVar2 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+            (float)2 * in_stack_00000008 + *(float *)(this_ptr->unk1 + 0xc);
     local_3c = 0x3fc90fdb;
     *(float *)(this_ptr->unk1 + 0xc) = fVar2;
     if (fVar2 < -1.570796f) {

@@ -54,12 +54,12 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
   local_40.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110(g_CDemonSetPtr,&local_40,(CVector3i *)0x0,0,3)
   ;
-  g_RenderVertexBuffer[0].u = (this_ptr->uv_u_per_vertex).x;
-  g_RenderVertexBuffer[0].v = (this_ptr->uv_v_per_vertex).x;
-  g_RenderVertexBuffer[1].u = (this_ptr->uv_u_per_vertex).y;
-  g_RenderVertexBuffer[1].v = (this_ptr->uv_v_per_vertex).y;
-  g_RenderVertexBuffer[2].u = (this_ptr->uv_u_per_vertex).z;
-  g_RenderVertexBuffer[2].v = (this_ptr->uv_v_per_vertex).z;
+  g_RenderVertexBuffer[0].u = (int)(this_ptr->uv_u_per_vertex).x;
+  g_RenderVertexBuffer[0].v = (int)(this_ptr->uv_v_per_vertex).x;
+  g_RenderVertexBuffer[1].u = (int)(this_ptr->uv_u_per_vertex).y;
+  g_RenderVertexBuffer[1].v = (int)(this_ptr->uv_v_per_vertex).y;
+  g_RenderVertexBuffer[2].u = (int)(this_ptr->uv_u_per_vertex).z;
+  g_RenderVertexBuffer[2].v = (int)(this_ptr->uv_v_per_vertex).z;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr2,&SStack_68);

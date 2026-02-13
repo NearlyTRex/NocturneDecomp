@@ -15,7 +15,7 @@ CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_005047d0(CLever *this_ptr)
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                           ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  core_event_cpp_FUN_004b1670();
+  core_event_cpp_CRuleList_clear_FUN_004b1670((CRuleList *)(this_ptr_00[1].animation_state + 0x70));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CLeverVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"glever.kfm");

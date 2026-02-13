@@ -41,8 +41,10 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
       }
       iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBoxActor");
       if (iVar2 != 0) {
-        core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CBoxActorClassInfo.name_hash);
-        core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+        pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+                           (actor_ptr,g_CBoxActorClassInfo.name_hash);
+        core_event_cpp_CEventList_executeCommands_FUN_004aabe0
+                  (g_CEventListPtr,pCVar3[4].create_event + 0x28);
         return 0;
       }
     }

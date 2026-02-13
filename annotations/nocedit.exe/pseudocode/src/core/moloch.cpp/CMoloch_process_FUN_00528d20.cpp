@@ -43,10 +43,10 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   if (iVar5 == 0) {
     return;
   }
-  fVar10 = (this_ptr->base).unk1 - delta_time;
-  (this_ptr->base).unk1 = fVar10;
+  fVar10 = (float)(this_ptr->base).no_collision_flag - delta_time;
+  (this_ptr->base).no_collision_flag = (int)fVar10;
   if (fVar10 < 0.0) {
-    (this_ptr->base).unk1 = 0.0;
+    (this_ptr->base).no_collision_flag = 0;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -76,18 +76,18 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
     uVar6 = pSVar8->state_index;
     if ((((uVar6 == 0) || (uVar6 < 2)) || (uVar6 == 2)) && ((this_ptr->base).base.is_on_ground != 0)
        ) {
-      uVar6 = (uint)((this_ptr->base).action_bindings.walk_key != 0);
-      if ((this_ptr->base).action_bindings.backup_key != 0) {
+      uVar6 = (uint)((this_ptr->base).player_control.action_states[0] != 0);
+      if ((this_ptr->base).player_control.action_states[1] != 0) {
         uVar6 = 2;
       }
-      if ((this_ptr->base).action_bindings.draw_key != 0) {
+      if ((this_ptr->base).player_control.action_states[6] != 0) {
         if (this_ptr->morphing == 0) {
           core_moloch_cpp_CMoloch_FUN_00529900(this_ptr);
         }
-        (this_ptr->base).action_bindings.draw_key = 0;
+        (this_ptr->base).player_control.action_states[6] = 0;
       }
       (this_ptr->base).base.turn_angle_accumulator =
-           *(float *)((this_ptr->base).unk2 + 4) * (this_ptr->base).base.turn_speed;
+           (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
       pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if (uVar6 != pSVar8->state_index) goto LAB_00528e32;
@@ -182,7 +182,7 @@ LAB_00528e3a:
       (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
     }
     else if (((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) &&
-            ((this_ptr->base).action_bindings.fire_key == 0)) goto LAB_00528f8e;
+            ((this_ptr->base).player_control.action_states[3] == 0)) goto LAB_00528f8e;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,0,1);
   }

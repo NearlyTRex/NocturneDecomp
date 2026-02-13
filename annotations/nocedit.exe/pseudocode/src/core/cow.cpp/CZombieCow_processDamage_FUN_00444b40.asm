@@ -57,7 +57,7 @@ section .text
     MOV ECX,dword ptr [0x00681ef8]      ; 00444b87 | g_CSoundInstance | g_CSoundPtr
     PUSH ECX                            ; 00444b8d | g_CSoundInstance
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80 ; 00444b8e
-        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
+        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 00444b93
     TEST EAX,EAX                        ; 00444b96
     JZ 0x00444bce                       ; 00444b98

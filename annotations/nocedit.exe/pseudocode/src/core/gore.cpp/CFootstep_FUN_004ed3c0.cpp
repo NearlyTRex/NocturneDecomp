@@ -20,14 +20,14 @@ void __cdecl core_gore_cpp_CFootstep_FUN_004ed3c0(CFootstep *this_ptr)
   INT_02d833c4 = 1;
   INT_02d833c8 = 2;
   INT_02d833cc = 3;
-  g_RenderVertexBuffer[0].u = 7.34684e-40;
-  g_RenderVertexBuffer[0].v = 7.34684e-40;
-  g_RenderVertexBuffer[1].u = 2.2775203e-38;
-  g_RenderVertexBuffer[2].u = 2.2775203e-38;
-  g_RenderVertexBuffer[2].v = 2.2775203e-38;
-  g_RenderVertexBuffer[3].v = 2.2775203e-38;
-  g_RenderVertexBuffer[1].v = 7.34684e-40;
-  g_RenderVertexBuffer[3].u = 7.34684e-40;
+  g_RenderVertexBuffer[0].u = 0x80000;
+  g_RenderVertexBuffer[0].v = 0x80000;
+  g_RenderVertexBuffer[1].u = 0xf80000;
+  g_RenderVertexBuffer[2].u = 0xf80000;
+  g_RenderVertexBuffer[2].v = 0xf80000;
+  g_RenderVertexBuffer[3].v = 0xf80000;
+  g_RenderVertexBuffer[1].v = 0x80000;
+  g_RenderVertexBuffer[3].u = 0x80000;
   output = g_RenderVertexBuffer;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr2,*(int *)this_ptr->field2_0x38);

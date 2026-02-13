@@ -1,0 +1,137 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 102,
+    "complexity_score": 54,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 54,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 156
+  },
+  "cross_references": [
+    {
+      "addr": "004ae140",
+      "from_addr": "004ae1fe",
+      "name": "core_event.cpp_CEventList_evaluateAtom_FUN_004ae140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004add80",
+      "from_addr": "004add9f",
+      "name": "core_event.cpp_CEventList_evaluateExpression_FUN_004add80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b0270",
+    "address_range": [
+      [
+        "004b0270",
+        "004b0329"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_evaluateLogicalExpr_FUN_004b0270",
+    "signature": "int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004b0270 (CEventList *this_ptr,char *expression,int *parse_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ae140",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateAtom_FUN_004ae140"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004ae1fe",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_evaluateAtom_FUN_004ae140",
+        "estimated_params": 3,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004add9f",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_evaluateExpression_FUN_004add80",
+        "estimated_params": 4,
+        "instructions_analyzed": 12,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.094594594594595,
+    "instruction_count": 74,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 4,
+      "CALL": 3,
+      "CBRANCH": 12,
+      "COPY": 61,
+      "INT_ADD": 18,
+      "INT_AND": 46,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 38,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 19,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "LOAD": 14,
+      "POPCOUNT": 19,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 303
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "expression",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "parse_position",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
+}

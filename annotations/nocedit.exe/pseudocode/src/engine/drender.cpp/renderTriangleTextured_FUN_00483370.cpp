@@ -94,18 +94,18 @@ engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_indices,int v
           g_EdgeInterpolationArray[iVar8].x_current =
                (pSVar11->projected_vertex).screen_x +
                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-          lVar3 = (longlong)iVar9 * (longlong)((int)local_1c->u - (int)pSVar11->u);
+          lVar3 = (longlong)iVar9 * (longlong)(local_1c->u - pSVar11->u);
           uVar10 = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
           g_EdgeInterpolationArray[iVar8].u_delta = uVar10;
           lVar3 = (longlong)(int)uVar12 * (longlong)(int)uVar10;
           g_EdgeInterpolationArray[iVar8].u_current =
-               (int)pSVar11->u + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-          lVar3 = (longlong)iVar9 * (longlong)((int)local_1c->v - (int)pSVar11->v);
+               pSVar11->u + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
+          lVar3 = (longlong)iVar9 * (longlong)(local_1c->v - pSVar11->v);
           uVar10 = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
           g_EdgeInterpolationArray[iVar8].v_delta = uVar10;
           lVar3 = (longlong)(int)uVar12 * (longlong)(int)uVar10;
           g_EdgeInterpolationArray[iVar8].v_current =
-               (int)pSVar11->v + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
+               pSVar11->v + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
           lVar3 = (longlong)iVar9 * (longlong)((int)local_1c->light - (int)pSVar11->light);
           uVar10 = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
           g_EdgeInterpolationArray[iVar8].light_delta = uVar10;
@@ -232,11 +232,11 @@ LAB_00483606:
           if (g_RenderAbortFlag != 0) {
             return;
           }
-          fVar1 = local_1c->u;
-          fVar2 = local_1c->v;
+          iVar8 = local_1c->u;
+          iVar9 = local_1c->v;
           (local_1c->projected_vertex).transformed_z =
                (local_1c->projected_vertex).transformed_z + (local_1c->projected_vertex).inv_z;
-          local_1c->u = (float)((int)fVar1 + (int)fVar2);
+          local_1c->u = iVar8 + iVar9;
           iVar8 = (local_1c->projected_vertex).screen_x;
           fVar1 = local_1c->fog;
           iVar9 = local_1c[1].projected_vertex.transformed_x;

@@ -34,7 +34,7 @@ int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
   int iStack_18;
   float local_14;
   
-  if ((this_ptr->base).unk1 == 0) {
+  if ((this_ptr->base).is_in_combat == 0) {
     fVar9 = *(float *)(this_ptr->unk1 + 4) - in_stack_00000008;
     *(float *)(this_ptr->unk1 + 4) = fVar9;
     if (0.0 < fVar9) {

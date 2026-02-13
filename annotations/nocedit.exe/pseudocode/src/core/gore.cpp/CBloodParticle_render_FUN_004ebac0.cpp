@@ -89,11 +89,11 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *th
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_94);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0067b9b0);
   iVar3 = (*(uint *)(this_ptr->field1_0x38 + 4) & 3) * 0x400000;
-  g_RenderVertexBuffer[0].u = (float)(iVar3 + 0x80000);
+  g_RenderVertexBuffer[0].u = iVar3 + 0x80000;
   iVar4 = (*(int *)(this_ptr->field1_0x38 + 4) >> 2 & 3U) * 0x400000;
-  g_RenderVertexBuffer[1].u = (float)(iVar3 + 0x380000);
-  g_RenderVertexBuffer[0].v = (float)(iVar4 + 0x80000);
-  g_RenderVertexBuffer[2].v = (float)(iVar4 + 0x380000);
+  g_RenderVertexBuffer[1].u = iVar3 + 0x380000;
+  g_RenderVertexBuffer[0].v = iVar4 + 0x80000;
+  g_RenderVertexBuffer[2].v = iVar4 + 0x380000;
   local_88.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   local_88.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   local_88.z = (int)ROUND((this_ptr->base).position.z * 256.0f);

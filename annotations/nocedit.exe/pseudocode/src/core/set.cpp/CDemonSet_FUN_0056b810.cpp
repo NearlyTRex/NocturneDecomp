@@ -16,7 +16,6 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   CPathMap *this_ptr_00;
   float fVar5;
   CGlass *this_ptr_01;
-  int extraout_EAX;
   CTrigger *this_ptr_02;
   CFlameCan *this_ptr_03;
   CDemonSet *pCVar6;
@@ -179,8 +178,8 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
           pCStack_30 = (CCharacter *)&(this_ptr_01->base).location;
           iVar7 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
           if ((iVar7 != 0) &&
-             (core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(this_ptr_01),
-             extraout_EAX != 0)) {
+             (iVar7 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(this_ptr_01),
+             iVar7 != 0)) {
             core_glass_cpp_CGlass_shatter_FUN_004eaef0(this_ptr_01,(CVector3f *)pCStack_30);
           }
         }

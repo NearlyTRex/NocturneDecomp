@@ -58,7 +58,7 @@ switchD_005a3329_default:
           ((iVar1 == *(int *)(this_ptr->unk2 + 0xc) || (iVar1 == *(int *)(this_ptr->unk2 + 0x24)))))
          || (iVar1 == *(int *)(this_ptr->unk2 + 0x28))) {
         local_14 = (float)in_stack_00000008[0xb];
-        if (g_CGamePtr->unk4 != 0) {
+        if (g_CGamePtr->gratuitous_dismemberment != 0) {
           local_14 = 1.0;
         }
         iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);

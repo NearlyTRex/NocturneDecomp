@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_005606e0(CScript *this_ptr,char *param_2)
+; __cdecl int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_005606e0(CScript *this_ptr,char *path)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   path
 ; Local Variables:
 ; undefined1       Stack[-0x110]:1  local_110
 ;

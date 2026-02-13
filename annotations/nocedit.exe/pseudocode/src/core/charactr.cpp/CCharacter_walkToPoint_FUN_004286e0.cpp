@@ -16,7 +16,6 @@ core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
   float fVar2;
   float fVar3;
   CVector3f *pCVar4;
-  CPathMap *extraout_EAX;
   int iVar5;
   float fVar6;
   float fVar7;
@@ -78,8 +77,7 @@ core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
        ABS(fVar7) * (float)0.31830988619288902 * (float)2 <= fVar3) ||
      (1.0 < ABS(local_bc.y))) {
     if (path_map == (CPathMap *)0x0) {
-      core_path_cpp_FUN_00548500();
-      path_map = extraout_EAX;
+      path_map = core_path_cpp_FUN_00548500();
     }
     iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                       (path_map,&(this_ptr->base).location.position,&local_74,

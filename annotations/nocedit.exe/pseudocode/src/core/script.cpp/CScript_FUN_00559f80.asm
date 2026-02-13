@@ -131,7 +131,7 @@ section .text
     PUSH EAX                            ; 0055a024
     PUSH EBP                            ; 0055a025
     CALL core_script.cpp_CScript_dbLoad_FUN_005603c0 ; 0055a026
-        ;   XREF to: 005603c0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_dbLoad_FUN_005603c0(CScript * this_ptr, char * param_2)
+        ;   XREF to: 005603c0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_dbLoad_FUN_005603c0(CScript * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0055a02b
     PUSH 0x6417ba                       ; 0055a02e | = "rt"
     MOV ESI,dword ptr [ESP + 0x79c]     ; 0055a033
@@ -242,7 +242,7 @@ section .text
     TEST ESI,ESI                        ; 0055a15f
     JZ 0x0055a34a                       ; 0055a161
         ;   XREF to: 0055a34a (CONDITIONAL_JUMP)  ; LAB_0055a34a
-    MOV EDI,0x31089e8                   ; 0055a167 | DAT_031089e8
+    MOV EDI,0x31089e8                   ; 0055a167 | g_ScriptSyntaxErrorMessage
     XOR ESI,ESI                         ; 0055a16c
     MOV EAX,dword ptr [ESP + 0x774]     ; 0055a16e
         ;   Label: LAB_0055a16e
@@ -252,7 +252,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x7a0]     ; 0055a178
     PUSH ECX                            ; 0055a17f
     PUSH 0x64186c                       ; 0055a180 | = "Syntax error on %s line %d:\n%s"
-    PUSH EDI                            ; 0055a185 | DAT_031089e8
+    PUSH EDI                            ; 0055a185 | g_ScriptSyntaxErrorMessage
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0055a186
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0055a18b
@@ -287,7 +287,7 @@ section .text
     ADD ESP,0x8                         ; 0055a1de
     PUSH ESI                            ; 0055a1e1
     PUSH -0x1                           ; 0055a1e2
-    PUSH EDI                            ; 0055a1e4 | DAT_031089e8
+    PUSH EDI                            ; 0055a1e4 | g_ScriptSyntaxErrorMessage
     LEA EAX,[ESP + 0xc]                 ; 0055a1e5
     PUSH EAX                            ; 0055a1e9
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 0055a1ea

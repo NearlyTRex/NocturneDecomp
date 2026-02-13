@@ -9,12 +9,12 @@
 void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delta_time)
 
 {
-  char cVar1;
-  int iVar2;
-  float fVar3;
-  int iVar4;
-  CVector3f *pCVar5;
-  int iVar6;
+  int iVar1;
+  float fVar2;
+  int iVar3;
+  CVector3f *pCVar4;
+  int iVar5;
+  char *commands;
   byte auStack_c8 [40];
   float fStack_a0;
   float fStack_9c;
@@ -44,7 +44,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   float fStack_1c;
   float fStack_18;
   float fStack_14;
-  int iVar7;
+  int iVar6;
   
   CStack_7c.y = (this_ptr->base).location.position.x;
   CStack_7c.z = (this_ptr->base).location.position.y;
@@ -55,9 +55,9 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   }
   switch(this_ptr->door_state) {
   case 0:
-    iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->open_condition);
-    if (iVar7 != 0) {
+    if (iVar6 != 0) {
       this_ptr->door_state = 1;
       if (this_ptr->open_sound[0] != '\0') {
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->open_sound);
@@ -86,9 +86,9 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
     }
     break;
   case 2:
-    iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->close_condition);
-    if ((iVar7 != 0) && (this_ptr->door_state = 3, this_ptr->close_sound[0] != '\0')) {
+    if ((iVar6 != 0) && (this_ptr->door_state = 3, this_ptr->close_sound[0] != '\0')) {
       (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->close_sound);
     }
     this_ptr->param = this_ptr->max_param;
@@ -115,41 +115,41 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
     }
   }
   if (this_ptr->door_state == 0) {
-    cVar1 = this_ptr->on_close_trigger_event[0];
+    if (this_ptr->on_close_trigger_event[0] == '\0') goto LAB_004801a8;
+    commands = this_ptr->on_close_trigger_event;
   }
   else {
-    if (this_ptr->door_state != 2) goto LAB_004801a8;
-    cVar1 = this_ptr->on_open_trigger_event[0];
+    if ((this_ptr->door_state != 2) || (this_ptr->on_open_trigger_event[0] == '\0'))
+    goto LAB_004801a8;
+    commands = this_ptr->on_open_trigger_event;
   }
-  if (cVar1 != '\0') {
-    core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
-  }
+  core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,commands);
 LAB_004801a8:
   core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
   if ((this_ptr->param != local_50) && (this_ptr->door_type != 3)) {
-    iVar6 = 0;
+    iVar5 = 0;
     (*((this_ptr->base).vtable._ub)->getBoundingBox)
               (&this_ptr->base,(CBoundingBox3D *)(auStack_c8 + 0x20));
     iStack_4c = 0;
     pCStack_44 = &(this_ptr->base).orient_matrix;
-    for (iVar7 = 0; iVar7 < g_CDemonSetPtr->damage_listener_count; iVar7 = iVar7 + 1) {
-      iVar2 = *(int *)(g_CDemonSetPtr->unk4 + iVar6 + -4);
+    for (iVar6 = 0; iVar6 < g_CDemonSetPtr->damage_listener_count; iVar6 = iVar6 + 1) {
+      iVar1 = *(int *)(g_CDemonSetPtr->unk4 + iVar5 + -4);
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)auStack_c8);
-      iVar4 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x34))();
-      if (((iVar4 == 2) &&
-          ((float)auStack_c8._20_4_ + *(float *)(iVar2 + 0x24) <=
+      iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x34))();
+      if (((iVar3 == 2) &&
+          ((float)auStack_c8._20_4_ + *(float *)(iVar1 + 0x24) <=
            (this_ptr->base).location.position.y + fStack_90)) &&
          ((this_ptr->base).location.position.y + fStack_9c <=
-          (float)auStack_c8._24_4_ + *(float *)(iVar2 + 0x24))) {
-        CStack_7c.x = *(float *)(iVar2 + 0x20) - (this_ptr->base).location.position.x;
-        CStack_7c.y = *(float *)(iVar2 + 0x24) - (this_ptr->base).location.position.y;
-        CStack_7c.z = *(float *)(iVar2 + 0x28) - (this_ptr->base).location.position.z;
-        pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+          (float)auStack_c8._24_4_ + *(float *)(iVar1 + 0x24))) {
+        CStack_7c.x = *(float *)(iVar1 + 0x20) - (this_ptr->base).location.position.x;
+        CStack_7c.y = *(float *)(iVar1 + 0x24) - (this_ptr->base).location.position.y;
+        CStack_7c.z = *(float *)(iVar1 + 0x28) - (this_ptr->base).location.position.z;
+        pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                            (pCStack_44,&CStack_88,&CStack_7c);
-        if (&CStack_64 != pCVar5) {
-          CStack_64.x = pCVar5->x;
-          CStack_64.y = pCVar5->y;
-          CStack_64.z = pCVar5->z;
+        if (&CStack_64 != pCVar4) {
+          CStack_64.x = pCVar4->x;
+          CStack_64.y = pCVar4->y;
+          CStack_64.z = pCVar4->z;
         }
         fStack_40 = CStack_64.x + (float)auStack_c8._28_4_;
         if (((fStack_a0 <= fStack_40) &&
@@ -158,30 +158,30 @@ LAB_004801a8:
             (fStack_34 = CStack_64.z - (float)auStack_c8._28_4_, fStack_34 <= fStack_8c)))) {
           if (((fStack_a0 <= fStack_3c) && (fStack_40 <= fStack_94)) &&
              ((fStack_98 <= fStack_34 && (fStack_38 <= fStack_8c)))) goto LAB_0048059d;
-          fVar3 = (float)auStack_c8._28_4_ * (float)auStack_c8._28_4_;
-          fStack_28 = SQRT(fVar3 - (fStack_94 - CStack_64.x) * (fStack_94 - CStack_64.x));
+          fVar2 = (float)auStack_c8._28_4_ * (float)auStack_c8._28_4_;
+          fStack_28 = SQRT(fVar2 - (fStack_94 - CStack_64.x) * (fStack_94 - CStack_64.x));
           fStack_2c = CStack_64.z + fStack_28;
           fStack_28 = CStack_64.z - fStack_28;
           if (((fStack_98 <= fStack_2c) && (fStack_2c <= fStack_8c)) ||
              ((fStack_98 <= fStack_28 && (fStack_28 <= fStack_8c)))) goto LAB_0048059d;
-          fStack_14 = SQRT(fVar3 - (fStack_a0 - CStack_64.x) * (fStack_a0 - CStack_64.x));
+          fStack_14 = SQRT(fVar2 - (fStack_a0 - CStack_64.x) * (fStack_a0 - CStack_64.x));
           fStack_1c = CStack_64.z + fStack_14;
           fStack_14 = CStack_64.z - fStack_14;
           if (((fStack_98 <= fStack_1c) && (fStack_1c <= fStack_8c)) ||
              ((fStack_98 <= fStack_14 && (fStack_14 <= fStack_8c)))) goto LAB_0048059d;
-          fStack_18 = SQRT(fVar3 - (fStack_8c - CStack_64.z) * (fStack_8c - CStack_64.z));
+          fStack_18 = SQRT(fVar2 - (fStack_8c - CStack_64.z) * (fStack_8c - CStack_64.z));
           fStack_20 = CStack_64.x + fStack_18;
           fStack_18 = CStack_64.x - fStack_18;
           if (((fStack_a0 <= fStack_20) && (fStack_20 <= fStack_94)) ||
              ((fStack_a0 <= fStack_18 && (fStack_18 <= fStack_94)))) goto LAB_0048059d;
-          fStack_30 = SQRT(fVar3 - (fStack_98 - CStack_64.z) * (fStack_98 - CStack_64.z));
+          fStack_30 = SQRT(fVar2 - (fStack_98 - CStack_64.z) * (fStack_98 - CStack_64.z));
           fStack_24 = CStack_64.x + fStack_30;
           fStack_30 = CStack_64.x - fStack_30;
           if (((fStack_a0 <= fStack_24) && (fStack_24 <= fStack_94)) ||
              ((fStack_a0 <= fStack_30 && (fStack_30 <= fStack_94)))) goto LAB_0048059d;
         }
       }
-      iVar6 = iVar6 + 4;
+      iVar5 = iVar5 + 4;
     }
     if (iStack_4c != 0) {
 LAB_0048059d:

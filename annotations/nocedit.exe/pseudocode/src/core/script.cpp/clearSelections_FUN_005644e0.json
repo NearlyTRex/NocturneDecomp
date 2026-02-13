@@ -1,0 +1,182 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 103,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 8,
+    "suspect_types": [
+      "warning_unreachable"
+    ],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "00565130",
+      "from_addr": "00565a62",
+      "name": "core_script.cpp_CScript_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565f70",
+      "from_addr": "0056604f",
+      "name": "core_script.cpp_CScript_FUN_00565f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566080",
+      "from_addr": "0056612e",
+      "name": "core_script.cpp_CScript_FUN_00566080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005677a0",
+      "from_addr": "005679df",
+      "name": "core_script.cpp_CScript_FUN_005677a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565ae0",
+      "from_addr": "00565c4b",
+      "name": "core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564820",
+      "from_addr": "00564d2a",
+      "name": "core_script.cpp_CScript_editorAction_FUN_00564820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565d00",
+      "from_addr": "00565e0b",
+      "name": "core_script.cpp_CScript_executeContextAction_FUN_00565d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566660",
+      "from_addr": "005667e3",
+      "name": "core_script.cpp_CScript_initEditorLayout_FUN_00566660",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005644e0",
+    "address_range": [
+      [
+        "0056449b",
+        "005644d0"
+      ],
+      [
+        "005644e0",
+        "005644ff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_clearSelections_FUN_005644e0",
+    "signature": "void __cdecl core_script_cpp_clearSelections_FUN_005644e0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0310fd44",
+      "name": "g_CurrentEditingColumn",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0310fd4c",
+      "name": "g_SelectionAnchorColumn",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0310fd50",
+      "name": "g_SelectionAnchorLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BRANCH": 4,
+      "COPY": 16
+    },
+    "pcode_op_count": 20
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00564514) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00564518) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005644ab) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00564522) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005644ba) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00564524) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005644cb) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 9,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00564531) */",
+      "type": "warning_unreachable"
+    }
+  ]
+}

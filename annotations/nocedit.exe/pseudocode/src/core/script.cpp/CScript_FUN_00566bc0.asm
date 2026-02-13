@@ -17,10 +17,10 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_MouseX
 ;   int g_MouseY
-;   undefined4 DAT_03114208
+;   int g_ScriptEditorLineHeight
 ;
 ; Called Functions:
-;   core_script.cpp_CScript_FUN_00566c20
+;   core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20
 ;   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH ECX                            ; 00566bdb
     MOV EBX,dword ptr [ESP + 0x20]      ; 00566bdc
     PUSH EBX                            ; 00566be0
-    CALL core_script.cpp_CScript_FUN_00566c20 ; 00566be1
-        ;   XREF to: 00566c20 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566c20(CScript * this_ptr, int param_2, int param_3, int * param_4, ...)
+    CALL core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20 ; 00566be1
+        ;   XREF to: 00566c20 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20(CScript * this_ptr, int pixel_x, int pixel_y, int * column_out, ...)
     ADD ESP,0x14                        ; 00566be6
     TEST EAX,EAX                        ; 00566be9
     JNZ 0x00566bf2                      ; 00566beb
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_00566bf2
     PUSH ESI                            ; 00566bf3
     PUSH 0x0                            ; 00566bf4
-    MOV ESI,dword ptr [0x03114208]      ; 00566bf6 | DAT_03114208
+    MOV ESI,dword ptr [0x03114208]      ; 00566bf6 | g_ScriptEditorLineHeight
     PUSH ESI                            ; 00566bfc
     PUSH 0x1                            ; 00566bfd
     MOV EDI,dword ptr [0x00678a60]      ; 00566bff | g_CEditorToolsPtr

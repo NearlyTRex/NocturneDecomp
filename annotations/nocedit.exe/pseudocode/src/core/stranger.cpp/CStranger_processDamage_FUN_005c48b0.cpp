@@ -27,14 +27,14 @@ core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *this_ptr,SDama
     damage_info->damage_amount = 0.0;
   }
   core_hero_cpp_CHero_FUN_004f3580(&this_ptr->base);
-  if ((0.0 < (this_ptr->base).unk1) && (0xb < damage_info->damage_type)) {
+  if ((0.0 < (float)(this_ptr->base).no_collision_flag) && (0xb < damage_info->damage_type)) {
     damage_info->damage_amount = 0.0;
     return;
   }
-  (this_ptr->base).unk1 = 2.0f;
+  (this_ptr->base).no_collision_flag = (int)2.0f;
   iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(damage_info->wielder,"CBugs");
   if (iVar3 != 0) {
-    (this_ptr->base).unk1 = 0.15;
+    (this_ptr->base).no_collision_flag = 0x3e19999a;
   }
   pCVar2 = g_CGamePtr;
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;

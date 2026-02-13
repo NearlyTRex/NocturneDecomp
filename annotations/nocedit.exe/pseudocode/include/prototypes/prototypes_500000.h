@@ -130,7 +130,7 @@ CDemonActorType * __cdecl core_lever_cpp_CLever_getActorType_FUN_005047c0(CLever
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_005047d0(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_setup_FUN_005048a0(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_process_FUN_00504920(CLever *this_ptr,float delta_time);
-void __cdecl core_lever_cpp_CLever_FUN_00504b20(CLever *this_ptr);
+void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float param_2);
 void __cdecl core_lever_cpp_CLever_FUN_00504c90(CLever *this_ptr);
 int __cdecl core_lever_cpp_CLever_renderOpaque_FUN_00504cf0(CLever *this_ptr);
 CBoundingBox3D * __cdecl core_lever_cpp_CLever_getBoundingBox_FUN_00504d80(CLever *this_ptr,CBoundingBox3D *out_box);

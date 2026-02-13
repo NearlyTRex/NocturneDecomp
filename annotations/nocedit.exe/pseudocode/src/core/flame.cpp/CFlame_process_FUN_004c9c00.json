@@ -4,55 +4,55 @@
       {
         "category": "incompatible_types",
         "column": 67,
-        "line": 75,
+        "line": 74,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 75,
+        "line": 74,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 76,
+        "line": 75,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 81,
+        "line": 80,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 99,
+        "line": 98,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 100,
+        "line": 99,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 104,
+        "line": 103,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 131,
+        "line": 130,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 139,
+        "line": 138,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       }
     ],
@@ -61,19 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 313,
+    "complexity_score": 287,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 17,
-    "pseudocode_lines": 143,
-    "suspect_count": 15,
+    "pseudocode_lines": 142,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 489
+    "total_lines": 488
   },
   "cross_references": [
     {
@@ -389,106 +388,92 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 65,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX == 0) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 67,
       "match": "(char *)((int)",
       "text": "((char *)((int)&uStack_fc + 4),\"torch.wav * %f\",SUB84((double)local_14,0),",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 67,
       "match": "SUB84",
       "text": "((char *)((int)&uStack_fc + 4),\"torch.wav * %f\",SUB84((double)local_14,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(char *)((int)",
       "text": "(&this_ptr->base,(char *)((int)&uStack_fc + 4));",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 93,
+      "line": 92,
       "match": "._4_4_",
       "text": "uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4c9e5a);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 92,
       "match": "CONCAT44",
       "text": "uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4c9e5a);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 96,
       "match": "ROUND",
       "text": "fVar2 = (float)SStack_8c.result_ptr + (float)(int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 98,
       "match": "ABS",
       "text": "if ((ABS(fStack_38) < fVar2) && (ABS(fStack_30) < fVar2)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 98,
       "match": "ABS",
       "text": "if ((ABS(fStack_38) < fVar2) && (ABS(fStack_30) < fVar2)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 124,
+      "line": 123,
       "match": "._4_4_",
       "text": "uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4ca068);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 123,
       "match": "CONCAT44",
       "text": "uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4ca068);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 128,
       "match": "ROUND",
       "text": "local_14 = (float)(int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 133,
       "match": "ABS",
       "text": "if ((ABS(fStack_2c) < fVar2) && (ABS(fStack_24) < fVar2)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 133,
       "match": "ABS",
       "text": "if ((ABS(fStack_2c) < fVar2) && (ABS(fStack_24) < fVar2)) {",
       "type": "decompiler_intrinsic"

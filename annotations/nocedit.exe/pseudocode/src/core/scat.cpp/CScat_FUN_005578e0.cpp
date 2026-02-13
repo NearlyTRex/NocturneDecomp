@@ -14,7 +14,6 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
   CHero *pCVar3;
   SMotion *pSVar4;
   CPathMap *this_ptr_00;
-  CPathMap *extraout_EAX;
   int iVar5;
   CVector3f *pCVar6;
   CHero *this_ptr_01;
@@ -42,7 +41,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
   if ((this_ptr->base).ai_task == 0) {
     return;
   }
-  memset(&(this_ptr->base).action_bindings,0,0x2c);
+  memset(&(this_ptr->base).player_control,0,0x2c);
   pCVar3 = g_HeroActors[g_LocalHeroIndex];
   local_3c = (this_ptr->base).base.base.location.position.x -
              (pCVar3->base).base.location.position.x;
@@ -63,7 +62,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
     }
   }
   if (iVar7 != this_ptr->guns_drawn) {
-    (this_ptr->base).action_bindings.draw_key = 1;
+    (this_ptr->base).player_control.action_states[6] = 1;
   }
   CStack_68.z = (this_ptr_01->base).base.location.position.x -
                 (this_ptr->base).base.base.location.position.x;
@@ -87,7 +86,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
       pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if ((pSVar4->state_index == 7) && (this_ptr->guns_drawn != 0)) {
-        (this_ptr->base).action_bindings.fire_key = 1;
+        (this_ptr->base).player_control.action_states[3] = 1;
       }
 LAB_00557a94:
       if (local_2c == 0) goto LAB_00557b63;
@@ -97,19 +96,18 @@ LAB_00557a94:
     if ((this_ptr->guns_drawn != 0) && (iVar7 != 0)) {
       if (((float)0.90000000000000002 < (this_ptr->base).base.layer_action_t) && (this_ptr->unk9 != 0))
       {
-        (this_ptr->base).action_bindings.fire_key = 1;
+        (this_ptr->base).player_control.action_states[3] = 1;
       }
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80
                 ((CCharacter *)this_ptr,&(this_ptr_01->base).base.location.position);
     }
-    (this_ptr->base).action_bindings.run_key = 0;
-    (this_ptr->base).action_bindings.walk_key = 0;
+    (this_ptr->base).player_control.action_states[2] = 0;
+    (this_ptr->base).player_control.action_states[0] = 0;
     goto LAB_00557a94;
   }
   this_ptr_00 = (*((this_ptr_01->base).base.vtable._ub)->getPathMap)((CDemonActor *)this_ptr_01);
   if (this_ptr_00 == (CPathMap *)0x0) {
-    core_path_cpp_FUN_00548500();
-    this_ptr_00 = extraout_EAX;
+    this_ptr_00 = core_path_cpp_FUN_00548500();
   }
   iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                     (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_50,
@@ -119,17 +117,17 @@ LAB_00557a94:
                           (CStack_50.y - (this_ptr->base).base.base.orient.vec.y);
     fVar2 = fStack_14 * (float)0.31830988619288902 * (float)4;
     local_20 = -local_1c;
-    *(float *)((this_ptr->base).unk2 + 4) = fVar2;
+    (this_ptr->base).player_control.turn_speed = fVar2;
     if (fVar2 < local_20) {
-      *(float *)((this_ptr->base).unk2 + 4) = local_20;
+      (this_ptr->base).player_control.turn_speed = local_20;
     }
-    if (local_1c < *(float *)((this_ptr->base).unk2 + 4)) {
-      *(float *)((this_ptr->base).unk2 + 4) = local_1c;
+    if (local_1c < (this_ptr->base).player_control.turn_speed) {
+      (this_ptr->base).player_control.turn_speed = local_1c;
     }
     if ((float)10 <= local_78) {
-      (this_ptr->base).action_bindings.run_key = 1;
+      (this_ptr->base).player_control.action_states[2] = 1;
     }
-    (this_ptr->base).action_bindings.walk_key = 1;
+    (this_ptr->base).player_control.action_states[0] = 1;
   }
 LAB_00557b63:
   local_74.x = (this_ptr_01->base).base.location.position.x -

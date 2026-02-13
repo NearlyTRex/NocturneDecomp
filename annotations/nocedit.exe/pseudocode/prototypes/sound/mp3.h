@@ -61,7 +61,7 @@ uint __cdecl CMP3Decoder::readBits(CMP3Decoder *this_ptr,uint num_bits);
 
 // Original: sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250
 // Address: 0052f250
-void __cdecl CMP3Decoder::readBit(CMP3Decoder *this_ptr);
+uint __cdecl CMP3Decoder::readBit(CMP3Decoder *this_ptr);
 
 // Original: sound_mp3.cpp_CMP3Decoder_putByte_FUN_0052f260
 // Address: 0052f260

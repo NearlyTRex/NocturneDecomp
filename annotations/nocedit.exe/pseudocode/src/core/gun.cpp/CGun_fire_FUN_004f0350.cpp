@@ -15,7 +15,6 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
   CCharacter *this_ptr_01;
   CTrigger *this_ptr_02;
   CFlameCan *this_ptr_03;
-  int extraout_EAX;
   double dVar3;
   CDemonActor *pCVar4;
   int in_stack_fffffebc;
@@ -132,8 +131,8 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
         }
       }
       else {
-        core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_18);
-        if (extraout_EAX == 0) break;
+        iVar2 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_18);
+        if (iVar2 == 0) break;
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
                   (pCStack_18,&g_CDemonSetPtr->collision_impact_position);
       }

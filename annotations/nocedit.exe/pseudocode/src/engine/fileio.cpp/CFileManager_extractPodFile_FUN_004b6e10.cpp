@@ -24,11 +24,12 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
   byte bVar11;
   int in_stack_0000000c;
   time_t atStackY_2e68 [2034];
-  CFileManager *source_file;
-  _FILE *dest_filename;
-  uint file_size;
+  CFileManager *this_ptr_00;
+  _FILE *source_file;
+  char *name_or_offset;
   char *pcVar12;
-  CEditorTools *checksum;
+  CEditorTools *file_offset;
+  int in_stack_fffff17c;
   byte local_e80 [2088];
   SFoundFileInfo local_658;
   char local_444 [256];
@@ -84,7 +85,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
     }
   }
   pcVar12 = "rb";
-  file_size = 0;
+  name_or_offset = (char *)0x0;
   local_20 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_e80,(char *)0x0,"rb","..\\engine\\fileio.cpp",0x94f);
   if (local_20 == (_FILE *)0x0) {
@@ -125,7 +126,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
         pSVar10 = (SFoundFileInfo *)(pSVar10->found_path + 2);
       } while (cVar1 != '\0');
       pSVar10 = &local_658;
-      checksum = (CEditorTools *)0x4b6fce;
+      file_offset = (CEditorTools *)0x4b6fce;
       iVar4 = engine_dosio_c_findFileNormally_FUN_004817c0(pSVar10);
       if ((this_ptr->operation_mode != 0) && (((local_14 == 0 || (local_14 == 1)) && (iVar4 != 0))))
       {
@@ -133,30 +134,30 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
         _strftime(local_344,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var3);
         p_Var3 = _localtime(local_40 + 2);
         _strftime(local_144,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var3);
-        file_size = local_658.file_size;
+        name_or_offset = (char *)local_658.file_size;
         _sprintf
                   (local_e80 + 0x428,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_658.target_path);
         pSVar10 = (SFoundFileInfo *)(local_e80 + 0x428);
         pcVar12 = (char *)0x4b70a5;
-        checksum = g_CEditorToolsPtr;
+        file_offset = g_CEditorToolsPtr;
         local_14 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
                              (g_CEditorToolsPtr,(char *)pSVar10);
       }
-      dest_filename = local_20;
+      source_file = local_20;
       pcVar8 = local_44;
       if (local_14 == -1) break;
       if ((0 < local_14) || (iVar4 == 0)) {
         ptVar7 = (time_t *)(local_e80 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + -0x10);
         ptVar6 = local_40 + (uint)bVar11 * -2 + (uint)bVar11 * -2 + 1;
         *(time_t *)(local_e80 + (uint)bVar11 * -8 + -0x14) = local_40[(uint)bVar11 * -2];
-        source_file = this_ptr;
+        this_ptr_00 = this_ptr;
         *ptVar7 = *ptVar6;
         ptVar7[(uint)bVar11 * -2 + 1] = ptVar6[(uint)bVar11 * -2 + 1];
         (ptVar7 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1] =
              (ptVar6 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1];
-        iVar4 = engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
-                          ((_FILE *)source_file,(char *)dest_filename,pcVar8,file_size,(int)pcVar12,
-                           (int)checksum,(int)pSVar10);
+        iVar4 = engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
+                          (this_ptr_00,source_file,pcVar8,name_or_offset,(int)pcVar12,
+                           (int)file_offset,(int)pSVar10,in_stack_fffff17c);
         if (iVar4 == 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Unable to extract file:\n%s");
@@ -168,7 +169,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
       engine_2d_c_drawText_FUN_00401fd0(local_e80 + 0x428,g_WindowWidth / 2,iVar2);
       _sprintf(local_e80 + 0x428,"%d");
       pcVar12 = local_e80 + 0x428;
-      file_size = 0x4b73ac;
+      name_or_offset = (char *)0x4b73ac;
       engine_2d_c_drawText_FUN_00401fd0
                 (pcVar12,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
                                (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + g_WindowWidth / 2,
@@ -177,7 +178,7 @@ engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10
       iVar2 = iVar2 + 0xb;
       if (g_WindowHeight + -0x21 <= iVar2) {
         pcVar12 = "More...";
-        file_size = 0x4b73d8;
+        name_or_offset = (char *)0x4b73d8;
         engine_2d_c_drawText_FUN_00401fd0("More...",0,g_WindowHeight + -0xc);
         iVar2 = 0;
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

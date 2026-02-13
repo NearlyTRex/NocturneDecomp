@@ -50,7 +50,7 @@
 ;   core_platfrm.cpp_CPlatform_FUN_0054d690
 ;   core_platfrm.cpp_CPlatform_FUN_0054df80
 ;   core_platfrm.cpp_CPlatform_FUN_0054e320
-;   core_set.cpp_CDemonSet_FUN_0056b790
+;   core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20
 ;   core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00575b00
@@ -153,8 +153,8 @@ section .text
     MOV EDI,dword ptr [0x006810c8]      ; 0054cd25 | g_CDemonSetPtr
     PUSH EDI                            ; 0054cd2b | g_CDemonSetInstance
     MOV byte ptr [EBX],0x0              ; 0054cd2c
-    CALL core_set.cpp_CDemonSet_FUN_0056b790 ; 0054cd2f
-        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_0056b790(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790 ; 0054cd2f
+        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790(CDemonSet * this_ptr, char * name)
     ADD ESP,0x8                         ; 0054cd34
     CMP EAX,-0x1                        ; 0054cd37
     JZ 0x0054d17a                       ; 0054cd3a
@@ -176,8 +176,8 @@ section .text
         ;   Label: LAB_0054cd70
     MOV EAX,[0x006810c8]                ; 0054cd71 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 0054cd76 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056b790 ; 0054cd77
-        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_0056b790(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790 ; 0054cd77
+        ;   XREF to: 0056b790 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790(CDemonSet * this_ptr, char * name)
     ADD ESP,0x8                         ; 0054cd7c
     CMP EAX,-0x1                        ; 0054cd7f
     JZ 0x0054cdb0                       ; 0054cd82
@@ -224,7 +224,7 @@ section .text
     MOV ECX,dword ptr [0x00681ef8]      ; 0054ce07 | g_CSoundInstance | g_CSoundPtr
     PUSH ECX                            ; 0054ce0d | g_CSoundInstance
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80 ; 0054ce0e
-        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
+        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 0054ce13
     TEST EAX,EAX                        ; 0054ce16
     JZ 0x0054d19a                       ; 0054ce18

@@ -45,12 +45,12 @@ engine_clipper_c_interpolateVertexLeftClip_FUN_00435a00
   (output->projected_vertex).transformed_y =
        (int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
        (v1->projected_vertex).transformed_y;
-  lVar2 = (longlong)((int)v2->u - (int)v1->u) * (longlong)iVar4;
+  lVar2 = (longlong)(v2->u - v1->u) * (longlong)iVar4;
   uVar3 = (uint)lVar2;
-  output->u = (float)((int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + (int)v1->u);
-  lVar2 = (longlong)((int)v2->v - (int)v1->v) * (longlong)iVar4;
+  output->u = (int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
+  lVar2 = (longlong)(v2->v - v1->v) * (longlong)iVar4;
   uVar3 = (uint)lVar2;
-  output->v = (float)((int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + (int)v1->v);
+  output->v = (int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->v;
   lVar2 = (longlong)((int)v2->light - (int)v1->light) * (longlong)iVar4;
   uVar3 = (uint)lVar2;
   output->light =

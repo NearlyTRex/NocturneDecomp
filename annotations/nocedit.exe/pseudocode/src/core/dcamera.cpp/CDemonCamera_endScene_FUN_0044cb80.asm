@@ -34,8 +34,8 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410
-;   core_event.cpp_FUN_004b1a78
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_watcom.c__memcpy_FUN_004b1a78
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
 ;   wincore_windll.cpp_endScene_FUN_005b72a0
 ;   wincore_windll.cpp_masterZBuffer_FUN_005b7d00
@@ -89,8 +89,8 @@ section .text
     MOV EDX,dword ptr [EDI + 0x2cf7d5c] ; 0044cbf5 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     ADD ECX,EAX                         ; 0044cbfb
     INC ESI                             ; 0044cbfd
-    CALL core_event.cpp_FUN_004b1a78    ; 0044cbfe
-        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b1a78()
+    CALL crt_watcom.c__memcpy_FUN_004b1a78 ; 0044cbfe
+        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_004b1a78(void * dest, void * src, uint size)
     MOV EBP,dword ptr [EBX + 0x148]     ; 0044cc03
     ADD EDI,0x4                         ; 0044cc09
     CMP ESI,EBP                         ; 0044cc0c

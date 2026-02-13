@@ -16,8 +16,6 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
   SMotion *pSVar5;
   int iVar6;
   uint uVar7;
-  int extraout_EAX;
-  int extraout_EAX_00;
   CPathMap *path_map;
   uint uVar8;
   CVector3f *pCVar9;
@@ -144,24 +142,18 @@ LAB_004f7178:
         if (10.0f <= local_24) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,7,1);
-          (this_ptr->base).unk2[0] = '\0';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = '\0';
-          (this_ptr->base).unk2[3] = '\0';
+          (this_ptr->base).unk2 = 0;
         }
         else {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,1,1);
-          (this_ptr->base).unk2[0] = '\0';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = '\0';
-          (this_ptr->base).unk2[3] = '\0';
+          (this_ptr->base).unk2 = 0;
         }
       }
       break;
     }
-    core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-    if (extraout_EAX == 0) break;
+    iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+    if (iVar4 == 0) break;
     goto LAB_004f73d5;
   case 1:
   case 7:
@@ -194,14 +186,11 @@ LAB_004f7178:
         local_20 = SQRT(local_8c * local_8c + local_94 * local_94);
         local_18 = local_20;
         if ((10.0f < local_20) && (iVar4 != 7)) {
-          (this_ptr->base).unk2[0] = '\0';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = '\0';
-          (this_ptr->base).unk2[3] = '\0';
+          (this_ptr->base).unk2 = 0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,7,1);
         }
-        if ((local_20 <= local_1c) && (*(float *)(this_ptr->base).unk2 <= 0.0)) {
+        if ((local_20 <= local_1c) && ((float)(this_ptr->base).unk2 <= 0.0)) {
           pCVar3 = (this_ptr->base).victim;
           local_70.x = (pCVar3->location).position.x -
                        (this_ptr->base).base.base.location.position.x;
@@ -227,10 +216,7 @@ LAB_004f7178:
                                 ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
               *(uint *)this_ptr->field1_0xbebc = uVar8;
             }
-            (this_ptr->base).unk2[0] = '\0';
-            (this_ptr->base).unk2[1] = '\0';
-            (this_ptr->base).unk2[2] = '\0';
-            (this_ptr->base).unk2[3] = '@';
+            (this_ptr->base).unk2 = 0x40000000;
           }
         }
         if ((this_ptr->base).guard_distance < local_20) {
@@ -238,25 +224,19 @@ LAB_004f7178:
           if (iVar4 == 7) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,6,1);
-            (this_ptr->base).unk2[0] = '\0';
-            (this_ptr->base).unk2[1] = '\0';
-            (this_ptr->base).unk2[2] = '\0';
-            (this_ptr->base).unk2[3] = '\0';
+            (this_ptr->base).unk2 = 0;
           }
           else {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,0,1);
-            (this_ptr->base).unk2[0] = '\0';
-            (this_ptr->base).unk2[1] = '\0';
-            (this_ptr->base).unk2[2] = '\0';
-            (this_ptr->base).unk2[3] = '\0';
+            (this_ptr->base).unk2 = 0;
           }
         }
       }
       break;
     }
-    core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-    if (extraout_EAX_00 == 0) {
+    iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+    if (iVar6 == 0) {
       if (iVar4 == 1) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,0,1);
@@ -297,8 +277,8 @@ LAB_004f73d5:
     }
   }
 switchD_004f7654_caseD_e:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar4 != 0) {

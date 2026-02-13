@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060
-;   core_script.cpp_CScript_FUN_00566660
+;   core_script.cpp_CScript_initEditorLayout_FUN_00566660
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;
 ; *****************************************************************************
@@ -43,8 +43,8 @@ section .text
     PUSH 0x0                            ; 005374cf
     MOV ECX,dword ptr [0x00680d50]      ; 005374d1 | g_CScriptPtr | g_CScriptInstance
     PUSH ECX                            ; 005374d7 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566660 ; 005374d8
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_initEditorLayout_FUN_00566660 ; 005374d8
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initEditorLayout_FUN_00566660(CScript * this_ptr, int x, int y, int width, ...)
         ;   Label: LAB_005374d8
     ADD ESP,0x14                        ; 005374dd
     PUSH 0x1                            ; 005374e0

@@ -90,12 +90,6 @@
         "column": 44,
         "line": 171,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 181,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -103,12 +97,12 @@
   },
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 364,
+    "complexity_score": 354,
     "cross_reference_count": 8,
     "function_call_count": 8,
     "global_count": 27,
     "pseudocode_lines": 179,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -648,13 +642,6 @@
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 162,
-      "match": "6.806708e-39",
-      "text": "local_64.v = 6.806708e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",

@@ -76,6 +76,6 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_pt
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  (pCVar4->base).field14_0xbeb8 = 0;
+  (pCVar4->base).allow_pathfind_to_new_targets = 0;
   return pCVar4;
 }

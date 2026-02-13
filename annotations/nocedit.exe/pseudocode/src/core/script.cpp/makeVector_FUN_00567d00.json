@@ -1,0 +1,104 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00567d00",
+    "address_range": [
+      [
+        "00567d00",
+        "00567d25"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_makeVector_FUN_00567d00",
+    "signature": "CVector3f * __cdecl core_script_cpp_makeVector_FUN_00567d00(CVector3f *out,float x,float y,float z)"
+  },
+  "function_calls": [
+    {
+      "addr": "00410340",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CVector_ctor_FUN_00410340"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.2857142857142856,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 12,
+      "INT_ADD": 9,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 6,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 46
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "out",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "z",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

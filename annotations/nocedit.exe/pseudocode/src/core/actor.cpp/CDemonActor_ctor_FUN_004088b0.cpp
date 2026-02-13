@@ -59,7 +59,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
   ADJ(pCVar2)->unk7 = 0.0;
   ADJ(pCVar2)->health = 100;
   pcVar2 = "str";
-  ADJ(pCVar2)->unk14 = 0;
+  ADJ(pCVar2)->is_editor_hidden = 0;
   pcVar3 = ADJ(pCVar2)->footstep_sound_code;
   ADJ(pCVar2)->validation_magic = (uintptr_t)&g_ActorMagicNumber;
   do {

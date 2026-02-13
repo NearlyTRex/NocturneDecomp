@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_FUN_004c79d0
 ;   core_fire.cpp_CFireEffect_FUN_004c7db0
-;   core_set.cpp_CDemonSet_FUN_00570fa0
+;   core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
@@ -82,8 +82,8 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 004c16f6 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH 0x42c80000                     ; 004c16fc
     PUSH ECX                            ; 004c1701 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570fa0 ; 004c1702
-        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570fa0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0 ; 004c1702
+        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 004c1707
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 ; 004c170a
         ;   XREF to: 005a8c30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30()

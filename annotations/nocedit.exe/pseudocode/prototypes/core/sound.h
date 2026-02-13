@@ -81,7 +81,7 @@ void __cdecl CSound::playAmbientSound(CSound *this_ptr,char *sound_name);
 
 // Original: core_sound.cpp_CSound_playSound_FUN_005b3a20
 // Address: 005b3a20
-void __cdecl CSound::playSound(CSound *this_ptr,void *user_data,char *sound_name);
+int __cdecl CSound::playSound(CSound *this_ptr,void *user_data,char *sound_name);
 
 // Original: core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 // Address: 005b3a40
@@ -105,7 +105,7 @@ uint __cdecl CSound::playTrackedActorSoundWithDelay(CSound *this_ptr,CDemonActor
 
 // Original: core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 // Address: 005b3b80
-void __cdecl CSound::isSoundPlaying(CSound *this_ptr,uint sfx_handle);
+int __cdecl CSound::isSoundPlaying(CSound *this_ptr,uint sfx_handle);
 
 // Original: core_sound.cpp_CSound_killSound_FUN_005b3b90
 // Address: 005b3b90

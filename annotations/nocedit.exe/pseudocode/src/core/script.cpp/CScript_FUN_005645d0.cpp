@@ -14,19 +14,21 @@ void __cdecl core_script_cpp_CScript_FUN_005645d0(CScript *this_ptr)
   int y;
   CDemonRenderer *in_stack_fffffdfc;
   
-  core_script_cpp_FUN_00564500();
+  core_script_cpp_updateSelection_FUN_00564500();
   engine_matrix_c_pushViewport_FUN_0050e320
-            (INT_031141d0,INT_031141d4,(INT_031141d8 - INT_031141d0) + -1,
-             (INT_031141dc - INT_031141d4) + -1);
+            (g_ScriptEditorLeft,g_ScriptEditorTop,(g_ScriptEditorRight - g_ScriptEditorLeft) + -1,
+             (g_ScriptEditorBottom - g_ScriptEditorTop) + -1);
   engine_2d_c_fillRectColor_FUN_00403170
-            (INT_031141d0,INT_031141d4,INT_031141d8 + -1,INT_031141dc + -1,0);
+            (g_ScriptEditorLeft,g_ScriptEditorTop,g_ScriptEditorRight + -1,g_ScriptEditorBottom + -1
+             ,0);
   g_ActiveRenderColor = 7;
-  engine_2d_c_drawHLine_FUN_00402ee0(INT_031141d0,INT_031141d4,INT_031141d8 + -1);
+  engine_2d_c_drawHLine_FUN_00402ee0(g_ScriptEditorLeft,g_ScriptEditorTop,g_ScriptEditorRight + -1);
   shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&g_ScriptEditorHScrollBar);
   shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&g_ScriptEditorVScrollBar);
   engine_matrix_c_pushViewport_FUN_0050e320
-            (INT_031141e0,INT_031141e4,(DAT_031141e8 - INT_031141e0) + -1,
-             (DAT_031141ec - INT_031141e4) + -1);
+            (g_ScriptTextAreaLeft,g_ScriptTextAreaTop,
+             (g_ScriptTextAreaRight - g_ScriptTextAreaLeft) + -1,
+             (g_ScriptTextAreaBottom - g_ScriptTextAreaTop) + -1);
   for (iVar1 = g_ScriptEditorVScrollBar.scroll_position;
       iVar1 <= g_ScriptEditorVScrollBar.scroll_position + g_ScriptEditorVScrollBar.max_value;
       iVar1 = iVar1 + 1) {
@@ -34,13 +36,13 @@ void __cdecl core_script_cpp_CScript_FUN_005645d0(CScript *this_ptr)
   }
   if ((INT_0310fd40._1_1_ & 0x40) == 0) {
     g_ActiveRenderColor = 0xff;
-    iVar1 = (g_CurrentEditingLine - g_ScriptEditorVScrollBar.scroll_position) * DAT_03114208 +
-            INT_031141e4;
-    x1 = INT_03114204 * (g_CurrentEditingColumn - g_ScriptEditorHScrollBar.scroll_position) +
-         INT_031141e0;
-    y = iVar1 + DAT_03114208 + -1;
+    iVar1 = (g_CurrentEditingLine - g_ScriptEditorVScrollBar.scroll_position) *
+            g_ScriptEditorLineHeight + g_ScriptTextAreaTop;
+    x1 = g_ScriptEditorCharWidth *
+         (g_CurrentEditingColumn - g_ScriptEditorHScrollBar.scroll_position) + g_ScriptTextAreaLeft;
+    y = iVar1 + g_ScriptEditorLineHeight + -1;
     if (g_AutoIndentEnabled == 0) {
-      engine_2d_c_drawHLine_FUN_00402ee0(x1,y,INT_03114204 + x1 + -1);
+      engine_2d_c_drawHLine_FUN_00402ee0(x1,y,g_ScriptEditorCharWidth + x1 + -1);
     }
     else {
       engine_2d_c_drawVLine_FUN_00402ff0(x1,iVar1,y);
@@ -51,9 +53,10 @@ void __cdecl core_script_cpp_CScript_FUN_005645d0(CScript *this_ptr)
             (&stack0xfffffdfc,"Ln %d, Col %d",g_CurrentEditingLine + 1,
              g_CurrentEditingColumn + 1);
   engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0
-            (DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);
+            (g_ScriptEditorFont,g_ScriptStatusBarRight,g_ScriptStatusBarY,0xff,-1,&stack0xfffffdfc);
   engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0
-            (DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);
+            (g_ScriptEditorFont,g_ScriptStatusBarX,g_ScriptStatusBarY,0xff,-1,
+             g_ScriptEditorStatusText);
   engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);
   return;
 }

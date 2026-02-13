@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   core_script.cpp_CScript_FUN_0055a6c0 at 0055a702
-;   core_script.cpp_CScript_FUN_00565d00 at 00565deb
+;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565deb
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055a9b5
 ;
 ; Called Functions:

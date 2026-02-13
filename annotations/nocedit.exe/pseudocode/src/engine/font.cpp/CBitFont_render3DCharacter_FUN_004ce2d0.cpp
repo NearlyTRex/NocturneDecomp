@@ -127,16 +127,16 @@ LAB_004ce397:
   iVar9 = this_ptr->char_positions[character_code] -
           (int)this_ptr->bitmap_data[this_ptr->char_bitmap_index[character_code]];
   g_QuadVertex0.u =
-       (float)((iVar9 % this_ptr->bitmap_widths[this_ptr->char_bitmap_index[character_code]]) *
-               0x10000 + -0x1000);
+       (iVar9 % this_ptr->bitmap_widths[this_ptr->char_bitmap_index[character_code]]) * 0x10000 +
+       -0x1000;
   g_QuadVertex0.v =
-       (float)((iVar9 / this_ptr->bitmap_widths[this_ptr->char_bitmap_index[character_code]]) *
-               0x10000 + -0x1000);
-  g_QuadVertex2.u = (float)(((int)g_QuadVertex0.u + iVar10) - iVar6);
-  g_QuadVertex2.v = (float)(((int)g_QuadVertex0.v + iVar14) - iVar5);
+       (iVar9 / this_ptr->bitmap_widths[this_ptr->char_bitmap_index[character_code]]) * 0x10000 +
+       -0x1000;
+  g_QuadVertex2.u = (g_QuadVertex0.u + iVar10) - iVar6;
+  g_QuadVertex2.v = (g_QuadVertex0.v + iVar14) - iVar5;
   if (g_UseExternalRenderer == 0) {
-    g_QuadVertex2.v = (float)((int)g_QuadVertex2.v + 0x8000);
-    g_QuadVertex2.u = (float)((int)g_QuadVertex2.u + 0x8000);
+    g_QuadVertex2.v = g_QuadVertex2.v + 0x8000;
+    g_QuadVertex2.u = g_QuadVertex2.u + 0x8000;
   }
   local_54.surface_normal.D = 0;
   local_54.base.count = 4;

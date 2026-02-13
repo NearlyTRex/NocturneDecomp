@@ -31,8 +31,8 @@
 ;   core_box.cpp_CBox_process_FUN_0041e2f0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10
 ;   core_fire.cpp_CFireEffect_FUN_004c79d0
-;   core_fire.cpp_CFireEffect_FUN_004c8c10
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;
 ; *****************************************************************************
@@ -80,8 +80,8 @@ section .text
     PUSH ESI                            ; 004c4065
     MOV ECX,dword ptr [0x0067a3d0]      ; 004c4066 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 004c406c | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8c10 ; 004c406d
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8c10(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 ; 004c406d
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position)
     ADD ESP,0x14                        ; 004c4072
     MOV ESI,dword ptr [EBX + 0x3e0]     ; 004c4075
     PUSH ESI                            ; 004c407b

@@ -386,7 +386,7 @@ LAB_004e2376:
     } while (cVar1 != '\0');
     g_OverlayDisplayTimer = 8.0;
   }
-  core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
+  core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(g_CEventListPtr);
   iVar5 = 1;
   iVar6 = stricmp(&g_CurrentSaveFile,local_144);
   if (iVar6 != 0) {

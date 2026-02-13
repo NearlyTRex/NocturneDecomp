@@ -1,0 +1,427 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 51,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 54,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_005671a0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 69,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 84,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 99,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 114,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 129,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 132,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567010'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 147,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 162,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 177,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 192,
+        "message": "no matching function for call to 'core_script_cpp_CScript_FUN_00567510'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 368,
+    "complexity_score": 189,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 189,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 557
+  },
+  "cross_references": [
+    {
+      "addr": "00567080",
+      "from_addr": "005670d9",
+      "name": "core_script.cpp_CScript_FUN_00567080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00567490",
+      "from_addr": "005674f2",
+      "name": "core_script.cpp_CScript_FUN_00567490",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00564090",
+    "address_range": [
+      [
+        "00564090",
+        "005643cb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090",
+    "signature": "void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdParse *this_ptr,CDemonActor *actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "00567010",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00567010"
+    },
+    {
+      "addr": "005671a0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_005671a0"
+    },
+    {
+      "addr": "00567510",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_00567510"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00564008",
+      "name": "switchdataD_00564008",
+      "type": "void*",
+      "value": "005640d5"
+    },
+    {
+      "addr": "00680d50",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "0310f858"
+    },
+    {
+      "addr": "0310f858",
+      "name": "g_CScriptInstance",
+      "type": "CScript",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005674f2",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00567490",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005670d9",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_FUN_00567080",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.817857142857143,
+    "instruction_count": 280,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 2,
+      "BRANCH": 14,
+      "BRANCHIND": 1,
+      "CALL": 12,
+      "CBRANCH": 25,
+      "COPY": 190,
+      "INT_ADD": 104,
+      "INT_AND": 125,
+      "INT_CARRY": 35,
+      "INT_EQUAL": 125,
+      "INT_LESS": 24,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 36,
+      "INT_SLESS": 62,
+      "INT_SUB": 79,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 44,
+      "POPCOUNT": 62,
+      "RETURN": 1,
+      "STORE": 84
+    },
+    "pcode_op_count": 1069
+  },
+  "stack_frame": {
+    "frame_size": 304,
+    "local_size": 296,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_123",
+        "offset": -291,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCmdParse *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 23,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005640a6",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005640f8",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564128",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564148",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564163",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564182",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005641a5",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005641c0",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005641df",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564201",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564220",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564243",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564262",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564285",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005642a4",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005642c6",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005642e5",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564308",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564332",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564349",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00564368",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0056438b",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005643b5",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

@@ -88,14 +88,14 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_70);
   this_ptr_00 = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr->u = 1.83671e-40;
-  this_ptr_00->vertex_buffer_ptr->v = 1.83671e-40;
-  this_ptr_00->vertex_buffer_ptr[1].u = 2.3326216e-38;
-  this_ptr_00->vertex_buffer_ptr[1].v = 1.83671e-40;
-  this_ptr_00->vertex_buffer_ptr[2].u = 2.3326216e-38;
-  this_ptr_00->vertex_buffer_ptr[2].v = 2.3326216e-38;
-  this_ptr_00->vertex_buffer_ptr[3].u = 1.83671e-40;
-  this_ptr_00->vertex_buffer_ptr[3].v = 2.3326216e-38;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x20000;
+  this_ptr_00->vertex_buffer_ptr->v = 0x20000;
+  this_ptr_00->vertex_buffer_ptr[1].u = 0xfe0000;
+  this_ptr_00->vertex_buffer_ptr[1].v = 0x20000;
+  this_ptr_00->vertex_buffer_ptr[2].u = 0xfe0000;
+  this_ptr_00->vertex_buffer_ptr[2].v = 0xfe0000;
+  this_ptr_00->vertex_buffer_ptr[3].u = 0x20000;
+  this_ptr_00->vertex_buffer_ptr[3].v = 0xfe0000;
   this_ptr_00->vertex_buffer_ptr->w_recip = 4.59177e-41;
   this_ptr_00->vertex_buffer_ptr[1].w_recip = 4.59177e-41;
   this_ptr_00->vertex_buffer_ptr[2].w_recip = 4.59177e-41;

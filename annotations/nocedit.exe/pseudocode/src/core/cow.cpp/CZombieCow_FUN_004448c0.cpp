@@ -42,7 +42,7 @@ switchD_004448f6_default:
       (iVar1 == *(int *)(this_ptr->unk + 0x30))) ||
      ((iVar1 == *(int *)(this_ptr->unk + 0xc) || (iVar1 == *(int *)(this_ptr->unk + 0x24))))) {
     local_14 = (float)in_stack_00000008[0xb];
-    if (g_CGamePtr->unk4 != 0) {
+    if (g_CGamePtr->gratuitous_dismemberment != 0) {
       local_14 = 1.0;
     }
     if (g_CGamePtr->blood_flag == 0) {

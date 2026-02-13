@@ -10,7 +10,8 @@
 // Ghidra size: 0x3a8 (936 bytes)
 typedef struct CPickList {
     CStrList base; // 0x0
-    char unk1[44]; // 0x10
+    int unk1; // 0x10
+    char unk3[40]; // 0x14
     int selected_index; // 0x3c
     int state_flag; // 0x40
     char ok_button_text[100]; // 0x44

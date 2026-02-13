@@ -22,10 +22,10 @@ typedef struct CStranger {
     struct CDemonActor* weapon; // 0x1fc2c
     char unk6[8]; // 0x1fc30
     int action_pending; // 0x1fc38
-    int unk7; // 0x1fc3c
-    float unk8; // 0x1fc40
+    int melee_attack_index; // 0x1fc3c
+    float action_timer; // 0x1fc40
     char unk9[144]; // 0x1fc44
-    int unk10; // 0x1fcd4
+    float grab_timer; // 0x1fcd4
     CKeyFramedModelInstance model; // 0x1fcd8
     char unk11[28]; // 0x1fe54
 } CStranger;

@@ -53,7 +53,7 @@ void __cdecl CMirror::clipAndRenderReflectedPrimitive(CMirror *this_ptr,SMRGLHea
 
 // Original: core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0
 // Address: 005225a0
-void __cdecl CMirror::renderReflectedPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+int __cdecl CMirror::renderReflectedPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0
 // Address: 005225e0

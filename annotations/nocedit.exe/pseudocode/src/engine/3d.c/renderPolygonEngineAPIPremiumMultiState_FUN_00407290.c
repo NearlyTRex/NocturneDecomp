@@ -49,9 +49,9 @@ engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrim
     for (iVar3 = 0; iVar2 = g_RenderBufferCount, uVar1 = g_ProcessedVertexOffset,
         iVar3 < (polygon_info->base).count * 3; iVar3 = iVar3 + 3) {
       *piVar7 = (pSVar4->base).type + g_ProcessedVertexOffset;
-      g_RenderVertexBuffer[(pSVar4->base).type + uVar1].u = (float)(pSVar4->base).count;
+      g_RenderVertexBuffer[(pSVar4->base).type + uVar1].u = (pSVar4->base).count;
       piVar7 = piVar7 + 1;
-      g_RenderVertexBuffer[(pSVar4->base).type + uVar1].v = (float)(pSVar4->surface_normal).A;
+      g_RenderVertexBuffer[(pSVar4->base).type + uVar1].v = (pSVar4->surface_normal).A;
       pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
     }
     if (((g_RenderBufferEnabled == 0) || (0x9c3 < g_RenderBufferCount)) ||

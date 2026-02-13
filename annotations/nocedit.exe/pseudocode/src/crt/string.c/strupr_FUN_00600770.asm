@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   string
 ;
 ; XREF[12]:
-;   core_event.cpp_CEventList_FUN_004b0330 at 004b03db
-;   core_event.cpp_CEventList_FUN_004b0470 at 004b051b
+;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004b0470 at 004b051b
+;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330 at 004b03db
 ;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057ecfd
 ;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580eb5
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584e21

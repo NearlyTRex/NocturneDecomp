@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x3110000
 // =============================================================================
 
+// CBitFont*
+CBitFont* g_ScriptEditorFont = {};
+
 // CDemonActorType
 CDemonActorType g_CSentinelClassInfo = {};
 
@@ -18,14 +21,20 @@ int g_SelectionStartColumn = {};
 int g_SelectionStartLine = {};
 int g_SelectionEndColumn = {};
 int g_SelectionEndLine = {};
-int INT_031141d0 = {};
-int INT_031141d4 = {};
-int INT_031141d8 = {};
-int INT_031141dc = {};
-int INT_031141e0 = {};
-int INT_031141e4 = {};
-int INT_031141fc = {};
-int INT_03114204 = {};
+int g_ScriptEditorLeft = {};
+int g_ScriptEditorTop = {};
+int g_ScriptEditorRight = {};
+int g_ScriptEditorBottom = {};
+int g_ScriptTextAreaLeft = {};
+int g_ScriptTextAreaTop = {};
+int g_ScriptTextAreaRight = {};
+int g_ScriptTextAreaBottom = {};
+int g_ScriptStatusBarX = {};
+int g_ScriptStatusBarY = {};
+int g_ScriptStatusBarRight = {};
+int g_ScriptStatusBarBottom = {};
+int g_ScriptEditorCharWidth = {};
+int g_ScriptEditorLineHeight = {};
 int INT_0311420c = {};
 int INT_03114210 = {};
 int INT_03114214 = {};
@@ -38,13 +47,4 @@ int INT_0311422c = {};
 int INT_03114230 = {};
 int INT_03114234 = {};
 int INT_03114238 = {};
-
-// undefined4
-undefined4 DAT_031141e8 = {};
-undefined4 DAT_031141ec = {};
-undefined4 DAT_031141f0 = {};
-undefined4 DAT_031141f4 = {};
-undefined4 DAT_031141f8 = {};
-undefined4 DAT_03114200 = {};
-undefined4 DAT_03114208 = {};
 

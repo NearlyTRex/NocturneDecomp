@@ -13,18 +13,13 @@ sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350
 
 {
   int iVar1;
-  int extraout_EAX;
-  int extraout_EAX_00;
-  int extraout_EAX_01;
-  int extraout_EAX_02;
-  int extraout_EAX_03;
-  int extraout_EAX_04;
   uint uVar2;
   uint uVar3;
+  uint uVar4;
   int local_14;
   
-  uVar3 = 0x80000000;
-  uVar2 = 0;
+  uVar4 = 0x80000000;
+  uVar3 = 0;
   local_14 = 1;
   if (huffman_table == (SHuffmanTable *)0xffffffe0) {
     return 2;
@@ -35,27 +30,27 @@ sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350
     return 0;
   }
   do {
-    if (huffman_table->huffman_data[uVar2 * 2] == '\0') {
-      *x_out = (int)(uint)(byte)huffman_table->huffman_data[uVar2 * 2 + 1] >> 4;
-      *y_out = (uint)(huffman_table->huffman_data[uVar2 * 2 + 1] & 0xf);
+    if (huffman_table->huffman_data[uVar3 * 2] == '\0') {
+      *x_out = (int)(uint)(byte)huffman_table->huffman_data[uVar3 * 2 + 1] >> 4;
+      *y_out = (uint)(huffman_table->huffman_data[uVar3 * 2 + 1] & 0xf);
       local_14 = 0;
       goto LAB_0052f3b9;
     }
-    sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr);
-    if (extraout_EAX_03 == 0) {
+    uVar2 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr);
+    if (uVar2 == 0) {
       do {
-        iVar1 = uVar2 * 2;
-        uVar2 = uVar2 + (byte)huffman_table->huffman_data[iVar1];
+        iVar1 = uVar3 * 2;
+        uVar3 = uVar3 + (byte)huffman_table->huffman_data[iVar1];
       } while (0xf9 < (byte)huffman_table->huffman_data[iVar1]);
     }
     else {
       do {
-        iVar1 = uVar2 * 2;
-        uVar2 = uVar2 + (byte)huffman_table->huffman_data[iVar1 + 1];
+        iVar1 = uVar3 * 2;
+        uVar3 = uVar3 + (byte)huffman_table->huffman_data[iVar1 + 1];
       } while (0xf9 < (byte)huffman_table->huffman_data[iVar1 + 1]);
     }
-    uVar3 = uVar3 >> 1;
-  } while ((uVar3 != 0) || (uVar2 < (uint)g_HuffmanTables[0].table_size));
+    uVar4 = uVar4 >> 1;
+  } while ((uVar4 != 0) || (uVar3 < (uint)g_HuffmanTables[0].table_size));
   g_CurrentFilename = "..\\sound\\mp3.cpp";
   g_CurrentLineNumber = 0x321;
   core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -68,34 +63,34 @@ LAB_0052f3b9:
     *x_out = *y_out >> 1 & 1;
     *y_out = *y_out & 1;
     if ((*v_out != 0) &&
-       (sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX == 1)) {
+       (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
       *v_out = -*v_out;
     }
     if ((*w_out != 0) &&
-       (sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_00 == 1)) {
+       (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
       *w_out = -*w_out;
     }
     if ((*x_out != 0) &&
-       (sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_01 == 1)) {
+       (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
       *x_out = -*x_out;
     }
   }
   else {
     if ((huffman_table->linbits != 0) && (huffman_table->xlen + -1 == *x_out)) {
-      uVar2 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,huffman_table->linbits);
-      *x_out = *x_out + uVar2;
+      uVar3 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,huffman_table->linbits);
+      *x_out = *x_out + uVar3;
     }
     if ((*x_out != 0) &&
-       (sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_04 == 1)) {
+       (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
       *x_out = -*x_out;
     }
     if ((huffman_table->linbits != 0) && (huffman_table->ylen + -1 == *y_out)) {
-      uVar2 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,huffman_table->linbits);
-      *y_out = *y_out + uVar2;
+      uVar3 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,huffman_table->linbits);
+      *y_out = *y_out + uVar3;
     }
   }
   if ((*y_out != 0) &&
-     (sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_02 == 1)) {
+     (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
     *y_out = -*y_out;
   }
   return local_14;

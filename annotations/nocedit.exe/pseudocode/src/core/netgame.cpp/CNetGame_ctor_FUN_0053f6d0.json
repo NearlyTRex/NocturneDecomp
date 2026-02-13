@@ -2,21 +2,81 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": []
+    "warnings": [
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 34,
+        "message": "array index 4294967286 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      },
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 35,
+        "message": "array index 4294967286 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      },
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 36,
+        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      },
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 37,
+        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      },
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 38,
+        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      },
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 39,
+        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      },
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 55,
+        "message": "array index 4294967295 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      },
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 56,
+        "message": "array index 4294967295 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      },
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 57,
+        "message": "array index 4294967295 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      },
+      {
+        "category": "array_error",
+        "column": 3,
+        "line": 58,
+        "message": "array index 4294967295 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
+      }
+    ]
   },
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 138,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 28,
-    "suspect_count": 10,
+    "pseudocode_lines": 50,
+    "suspect_count": 3,
     "suspect_types": [
-      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 73
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -141,74 +201,25 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 12,
+      "line": 15,
       "match": "(SSocketContext *)((int)",
-      "text": "support_trisock_cpp_invalidateSocket_FUN_005e1ae0((SSocketContext *)((int)pvVar2 + 0x150));",
+      "text": "((SSocketContext *)((int)pvVar4 + 0x150));",
       "type": "pointer_cast"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EAX",
-      "text": "((CNetGame *)(extraout_EAX + -0x170))->connection_type = 0;",
-      "type": "extra_output"
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)&pSVar7->socket + 1) = cVar2;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x16c) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x154) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x60) = 0xffffffff;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EAX",
-      "text": "pcVar4 = (char *)(extraout_EAX + -0x168);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -0x5c) = 0xffffffff;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_EAX",
-      "text": "*(uint *)(extraout_EAX + -8) = 0;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EAX",
-      "text": "return (CNetGame *)(extraout_EAX + -0x170);",
-      "type": "extra_output"
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(SSocketContext *)((int)",
+      "text": "pSVar7 = (SSocketContext *)((int)&pSVar7->socket + 2);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

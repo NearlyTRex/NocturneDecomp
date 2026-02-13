@@ -407,9 +407,9 @@ int __cdecl FUN_0042f9c0(void);
 // Address: 0042f9d0
 int __cdecl FUN_0042f9d0(void);
 
-// Original: core_charactr.cpp_FUN_0042f9e0
+// Original: core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0
 // Address: 0042f9e0
-float __cdecl FUN_0042f9e0(void);
+float __cdecl getGameDeltaTime(CGame *game_ptr);
 
 // Original: core_charactr.cpp_CCharacter_dtor_FUN_0042f9f0
 // Address: 0042f9f0

@@ -19,8 +19,10 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
   char *pcVar7;
   uint uStack00000078;
   int iStack0000007c;
+  float in_stack_00000080;
   uint uVar8;
   float fVar9;
+  float fStack_188;
   char acStack_b4 [164];
   
   if (g_CheatSystemEnabled == 0) {
@@ -236,10 +238,21 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
         (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar4 != 0)) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1e), iVar4 != 0)) {
       uStack00000078 = 0x3ca3d70a;
-      (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      if (iVar4 != 0) {
+        in_stack_00000080 = -0.02;
+      }
       iStack0000007c = g_CDemonCameraInstance.corona_blend_factor;
+      fStack_188 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05 +
+                   in_stack_00000080;
+      if (fStack_188 < 0.0) {
+        fStack_188 = 0.0;
+      }
+      if (1.0 < fStack_188) {
+        fStack_188 = 1.0;
+      }
       for (iVar4 = 0; iVar4 < g_CDemonSetPtr->camera_count; iVar4 = iVar4 + 1) {
-        core_set_cpp_CDemonSet_FUN_00570e20(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(g_CDemonSetPtr,iVar4,fStack_188);
       }
     }
   }

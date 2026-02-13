@@ -14,13 +14,13 @@ core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(CGround *this_ptr
             (this_ptr->texture_list,
              (uint)*(ushort *)
                     ((int)this_ptr->terrain_data + (row * this_ptr->width + column) * 4 + 2));
-  g_RenderVertexBuffer[this_ptr->vertex_indices[1]].u = 2.2775203e-38;
-  g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 2.2775203e-38;
-  g_RenderVertexBuffer[this_ptr->vertex_indices[0]].u = 7.34684e-40;
-  g_RenderVertexBuffer[this_ptr->vertex_indices[0]].v = 2.2775203e-38;
-  g_RenderVertexBuffer[this_ptr->vertex_indices[3]].u = 7.34684e-40;
-  g_RenderVertexBuffer[this_ptr->vertex_indices[3]].v = 7.34684e-40;
-  g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 2.2775203e-38;
-  g_RenderVertexBuffer[this_ptr->vertex_indices[2]].v = 7.34684e-40;
+  g_RenderVertexBuffer[this_ptr->vertex_indices[1]].u = 0xf80000;
+  g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 0xf80000;
+  g_RenderVertexBuffer[this_ptr->vertex_indices[0]].u = 0x80000;
+  g_RenderVertexBuffer[this_ptr->vertex_indices[0]].v = 0xf80000;
+  g_RenderVertexBuffer[this_ptr->vertex_indices[3]].u = 0x80000;
+  g_RenderVertexBuffer[this_ptr->vertex_indices[3]].v = 0x80000;
+  g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 0xf80000;
+  g_RenderVertexBuffer[this_ptr->vertex_indices[2]].v = 0x80000;
   return;
 }

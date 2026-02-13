@@ -11,54 +11,53 @@ engine_clipper_c_interpolateVertexRightClip_FUN_00435b00
           (SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 
 {
-  float fVar1;
-  longlong lVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
+  longlong lVar1;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
   
-  uVar4 = (v1->projected_vertex).transformed_x + (v1->projected_vertex).transformed_z;
-  iVar5 = (uVar4 - (v2->projected_vertex).transformed_x) - (v2->projected_vertex).transformed_z;
-  if ((int)uVar4 < iVar5) {
-    if (-iVar5 < (int)uVar4) {
-      iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);
+  uVar3 = (v1->projected_vertex).transformed_x + (v1->projected_vertex).transformed_z;
+  iVar4 = (uVar3 - (v2->projected_vertex).transformed_x) - (v2->projected_vertex).transformed_z;
+  if ((int)uVar3 < iVar4) {
+    if (-iVar4 < (int)uVar3) {
+      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
     }
     else {
-      iVar5 = -0x80000000;
+      iVar4 = -0x80000000;
     }
   }
   else {
-    iVar5 = 0x7fffffff;
+    iVar4 = 0x7fffffff;
   }
-  lVar2 = (longlong)((v2->projected_vertex).transformed_z - (v1->projected_vertex).transformed_z) *
-          (longlong)iVar5;
-  uVar4 = (uint)lVar2;
-  iVar3 = (int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
+  lVar1 = (longlong)((v2->projected_vertex).transformed_z - (v1->projected_vertex).transformed_z) *
+          (longlong)iVar4;
+  uVar3 = (uint)lVar1;
+  iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
           (v1->projected_vertex).transformed_z;
-  (output->projected_vertex).transformed_z = iVar3;
-  (output->projected_vertex).transformed_x = iVar3;
-  (output->projected_vertex).transformed_x = -iVar3;
-  lVar2 = (longlong)((v2->projected_vertex).transformed_y - (v1->projected_vertex).transformed_y) *
-          (longlong)iVar5;
-  uVar4 = (uint)lVar2;
+  (output->projected_vertex).transformed_z = iVar2;
+  (output->projected_vertex).transformed_x = iVar2;
+  (output->projected_vertex).transformed_x = -iVar2;
+  lVar1 = (longlong)((v2->projected_vertex).transformed_y - (v1->projected_vertex).transformed_y) *
+          (longlong)iVar4;
+  uVar3 = (uint)lVar1;
   (output->projected_vertex).transformed_y =
-       (int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
+       (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
        (v1->projected_vertex).transformed_y;
-  lVar2 = (longlong)((int)v2->light - (int)v1->light) * (longlong)iVar5;
-  uVar4 = (uint)lVar2;
+  lVar1 = (longlong)((int)v2->light - (int)v1->light) * (longlong)iVar4;
+  uVar3 = (uint)lVar1;
   output->light =
-       (float)((int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + (int)v1->light);
-  lVar2 = (longlong)((int)v2->w_recip - (int)v1->w_recip) * (longlong)iVar5;
-  uVar4 = (uint)lVar2;
+       (float)((int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + (int)v1->light);
+  lVar1 = (longlong)((int)v2->w_recip - (int)v1->w_recip) * (longlong)iVar4;
+  uVar3 = (uint)lVar1;
   output->w_recip =
-       (float)((int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + (int)v1->w_recip);
-  lVar2 = (longlong)((int)v2->u - (int)v1->u) * (longlong)iVar5;
-  uVar4 = (uint)lVar2;
-  output->u = (float)((int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + (int)v1->u);
-  lVar2 = (longlong)((int)v2->v - (int)v1->v) * (longlong)iVar5;
-  uVar4 = (uint)lVar2;
-  fVar1 = v1->v;
+       (float)((int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + (int)v1->w_recip);
+  lVar1 = (longlong)(v2->u - v1->u) * (longlong)iVar4;
+  uVar3 = (uint)lVar1;
+  output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
+  lVar1 = (longlong)(v2->v - v1->v) * (longlong)iVar4;
+  uVar3 = (uint)lVar1;
+  iVar4 = v1->v;
   (output->projected_vertex).screen_x = -1;
-  output->v = (float)((int)((ulonglong)lVar2 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + (int)fVar1);
+  output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
   return;
 }

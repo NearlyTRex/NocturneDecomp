@@ -1305,7 +1305,7 @@ section .text
         ;   Label: LAB_004851d6
     PUSH EBX                            ; 004851dc
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004851dd
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 004851e2
     TEST EAX,EAX                        ; 004851e5
     JZ 0x004846e0                       ; 004851e7
@@ -1403,7 +1403,7 @@ section .text
         ;   Label: LAB_004852e1
     PUSH EBX                            ; 004852e7
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004852e8
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 004852ed
     TEST EAX,EAX                        ; 004852f0
     JZ 0x004846e0                       ; 004852f2
@@ -1620,7 +1620,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0048555b
     PUSH EBX                            ; 00485561
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00485562
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 00485567
     TEST EAX,EAX                        ; 0048556a
     JZ 0x004846e0                       ; 0048556c
@@ -1804,7 +1804,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0048576a
     PUSH EBX                            ; 00485770
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00485771
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 00485776
     TEST EAX,EAX                        ; 00485779
     JNZ 0x004846e0                      ; 0048577b

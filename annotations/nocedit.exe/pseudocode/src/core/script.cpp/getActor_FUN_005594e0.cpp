@@ -40,7 +40,8 @@ core_script_cpp_getActor_FUN_005594e0
       return (CDemonActor *)0x0;
     }
     g_ActorLookedUpByVariable = 1;
-    actor_ptr = (CHero *)core_event_cpp_CEventList_FUN_004b0b80(g_CEventListPtr);
+    actor_ptr = (CHero *)core_event_cpp_CEventList_getActorByVarName_FUN_004b0b80
+                                   (g_CEventListPtr,actor_specifier);
     if (actor_ptr == (CHero *)0x0) {
       _sprintf
                 (g_ScriptErrorBuffer,"Actor variable %s not defined, or doesn't reference an existing actor",actor_specifier);

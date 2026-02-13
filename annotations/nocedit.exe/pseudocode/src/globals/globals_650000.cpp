@@ -764,6 +764,9 @@ CCodec_vtable g_CLZWDecompressVTable = {
     .finalizeBuffer = (void *)support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50
 };
 
+// CDemonActor*
+CDemonActor* g_ActorNameSentinel = (CDemonActor*)0x0FFFFFFF; // DAT_0fffffff
+
 // CDemonActor_vtable
 CDemonActor_vtable g_CDemonActorVTable = {
     .setup = (CDemonActor_setup *)core_actor_cpp_CDemonActor_setup_FUN_00408bb0,

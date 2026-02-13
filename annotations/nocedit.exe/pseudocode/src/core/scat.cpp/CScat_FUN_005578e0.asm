@@ -215,7 +215,7 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 00557ab5
     PUSH EAX                            ; 00557ab8
     CALL core_path.cpp_FUN_00548500     ; 00557ab9
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
     ADD ESP,0x4                         ; 00557abe
     MOV EDX,EAX                         ; 00557ac1
     MOV ECX,dword ptr [EBX + 0x6c]      ; 00557ac3

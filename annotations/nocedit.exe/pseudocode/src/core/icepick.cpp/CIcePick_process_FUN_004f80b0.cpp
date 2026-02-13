@@ -56,14 +56,14 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
     core_icepick_cpp_CIcePick_FUN_004f8c70(this_ptr);
   }
   fVar3 = (float)12.566370614;
-  fVar14 = (this_ptr->base).unk1;
+  fVar14 = (float)(this_ptr->base).no_collision_flag;
   *(uint *)(this_ptr->unk + 0x1c) =
        (uint)((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0);
   fVar14 = fVar14 - delta_time;
   (this_ptr->base).base.turn_speed = delta_time * fVar3;
-  (this_ptr->base).unk1 = fVar14;
+  (this_ptr->base).no_collision_flag = (int)fVar14;
   if (fVar14 < 0.0) {
-    (this_ptr->base).unk1 = 0.0;
+    (this_ptr->base).no_collision_flag = 0;
   }
   pCVar5 = &(this_ptr->base).base.model.accumulated_root_motion;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -94,20 +94,20 @@ LAB_004f8427:
             if ((this_ptr->guns_drawn != 0) && (*(int *)(this_ptr->unk + 0x1c) == 0)) {
               iVar4 = 10;
             }
-            if ((this_ptr->base).action_bindings.walk_key != 0) {
-              if ((this_ptr->base).action_bindings.run_key == 0) {
+            if ((this_ptr->base).player_control.action_states[0] != 0) {
+              if ((this_ptr->base).player_control.action_states[2] == 0) {
                 iVar4 = 1;
               }
               else {
                 iVar4 = 2;
               }
             }
-            if ((this_ptr->base).action_bindings.backup_key != 0) {
+            if ((this_ptr->base).player_control.action_states[1] != 0) {
               iVar4 = 3;
             }
-            if ((this_ptr->base).action_bindings.draw_key != 0) {
+            if ((this_ptr->base).player_control.action_states[6] != 0) {
               iVar4 = this_ptr->guns_drawn;
-              (this_ptr->base).action_bindings.draw_key = 0;
+              (this_ptr->base).player_control.action_states[6] = 0;
               uVar8 = (uint)(iVar4 == 0);
               this_ptr->guns_drawn = uVar8;
               if ((uVar8 == 0) || (*(int *)(this_ptr->unk + 0x1c) != 0)) {
@@ -117,7 +117,7 @@ LAB_004f8427:
                 iVar4 = 10;
               }
             }
-            if ((this_ptr->base).action_bindings.fire_key != 0) {
+            if ((this_ptr->base).player_control.action_states[3] != 0) {
               bVar2 = true;
               if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
                 iVar10 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
@@ -142,7 +142,7 @@ LAB_004f84cc:
               }
               if (this_ptr->guns_drawn != 0) {
                 if (*(int *)(this_ptr->unk + 0x1c) == 0) {
-                  (this_ptr->base).action_bindings.fire_key = 0;
+                  (this_ptr->base).player_control.action_states[3] = 0;
                   switch(*(uint *)this_ptr->unk) {
                   case 0:
                   case 2:
@@ -169,7 +169,7 @@ LAB_004f84cc:
             }
 switchD_004f8665_default:
             (this_ptr->base).base.turn_angle_accumulator =
-                 *(float *)((this_ptr->base).unk2 + 4) * (this_ptr->base).base.turn_speed;
+                 (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
             pSVar12 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                 (&(this_ptr->base).base.model.motion_controller);
             if (iVar4 != pSVar12->state_index) {
@@ -183,7 +183,7 @@ switchD_004f8665_default:
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,iVar4,1);
             }
-            if (((this_ptr->base).action_bindings.use_item_key != 0) &&
+            if (((this_ptr->base).player_control.action_states[4] != 0) &&
                (iVar4 = core_icepick_cpp_CIcePick_FUN_004f8970(this_ptr), iVar4 == 0)) {
               core_icepick_cpp_CIcePick_FUN_004f8ad0(this_ptr);
             }
@@ -279,7 +279,7 @@ LAB_004f82e5:
   }
   else {
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_004f82e5;
-    if ((this_ptr->base).action_bindings.fire_key == 0) goto LAB_004f82f8;
+    if ((this_ptr->base).player_control.action_states[3] == 0) goto LAB_004f82f8;
     in_stack_ffffff70 = 2.38221e-44;
   }
   in_stack_ffffff74 = 1.4013e-45;

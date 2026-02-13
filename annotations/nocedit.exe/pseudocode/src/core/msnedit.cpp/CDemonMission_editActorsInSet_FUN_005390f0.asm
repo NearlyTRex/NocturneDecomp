@@ -498,8 +498,8 @@ section .text
     PUSH EDI                            ; 005395b4
     MOV ECX,dword ptr [0x00680d50]      ; 005395b5 | g_CScriptInstance | g_CScriptPtr
     PUSH ECX                            ; 005395bb | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566660 ; 005395bc
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_initEditorLayout_FUN_00566660 ; 005395bc
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initEditorLayout_FUN_00566660(CScript * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 005395c1
     MOV ESI,0x1                         ; 005395c4
     PUSH ESI                            ; 005395c9
@@ -1240,8 +1240,8 @@ section .text
     PUSH 0x0                            ; 00539d44
     MOV ESI,dword ptr [0x00680d50]      ; 00539d46 | g_CScriptPtr
     PUSH ESI                            ; 00539d4c | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566660 ; 00539d4d
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_initEditorLayout_FUN_00566660 ; 00539d4d
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initEditorLayout_FUN_00566660(CScript * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 00539d52
     PUSH 0x1                            ; 00539d55
     MOV EAX,[0x0067d550]                ; 00539d57 | g_CDemonMissionInstance | g_CDemonMissionPtr
@@ -1846,8 +1846,8 @@ section .text
     PUSH EAX                            ; 0053a4a7
     MOV EDX,dword ptr [0x00680d50]      ; 0053a4a8 | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 0053a4ae | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566660 ; 0053a4af
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_initEditorLayout_FUN_00566660 ; 0053a4af
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initEditorLayout_FUN_00566660(CScript * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0053a4b4
     MOV ECX,0x1                         ; 0053a4b7
     PUSH ECX                            ; 0053a4bc
@@ -1893,8 +1893,8 @@ section .text
     PUSH 0x0                            ; 0053a52b
     MOV EAX,[0x00680d50]                ; 0053a52d | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 0053a532 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566660 ; 0053a533
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_initEditorLayout_FUN_00566660 ; 0053a533
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initEditorLayout_FUN_00566660(CScript * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0053a538
     PUSH 0x1                            ; 0053a53b
     MOV ECX,dword ptr [0x0067d550]      ; 0053a53d | g_CDemonMissionInstance | g_CDemonMissionPtr
@@ -1910,8 +1910,8 @@ section .text
     PUSH EAX                            ; 0053a554
     MOV EBX,dword ptr [0x00680d50]      ; 0053a555 | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 0053a55b | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566660 ; 0053a55c
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_initEditorLayout_FUN_00566660 ; 0053a55c
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initEditorLayout_FUN_00566660(CScript * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0053a561
     PUSH 0x1                            ; 0053a564
     MOV EDI,dword ptr [0x0067d550]      ; 0053a566 | g_CDemonMissionPtr
@@ -1940,8 +1940,8 @@ section .text
     PUSH 0x0                            ; 0053a5a5
     MOV EAX,[0x00680d50]                ; 0053a5a7 | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 0053a5ac | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566660 ; 0053a5ad
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_initEditorLayout_FUN_00566660 ; 0053a5ad
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initEditorLayout_FUN_00566660(CScript * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0053a5b2
     MOV EDX,0x1                         ; 0053a5b5
     PUSH EDX                            ; 0053a5ba
@@ -1957,8 +1957,8 @@ section .text
     PUSH EAX                            ; 0053a5d4
     MOV EBX,dword ptr [0x00680d50]      ; 0053a5d5 | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 0053a5db | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566660 ; 0053a5dc
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_initEditorLayout_FUN_00566660 ; 0053a5dc
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initEditorLayout_FUN_00566660(CScript * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0053a5e1
     PUSH 0x1                            ; 0053a5e4
     MOV EDI,dword ptr [0x0067d550]      ; 0053a5e6 | g_CDemonMissionPtr
@@ -2380,8 +2380,8 @@ section .text
     PUSH EDX                            ; 0053aa02
     MOV ECX,dword ptr [0x00680d50]      ; 0053aa03 | g_CScriptInstance | g_CScriptPtr
     PUSH ECX                            ; 0053aa09 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566660 ; 0053aa0a
-        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566660(CScript * this_ptr, int param_2, int param_3, int param_4, ...)
+    CALL core_script.cpp_CScript_initEditorLayout_FUN_00566660 ; 0053aa0a
+        ;   XREF to: 00566660 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initEditorLayout_FUN_00566660(CScript * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0053aa0f
     MOV EBX,0x1                         ; 0053aa12
     PUSH EBX                            ; 0053aa17
@@ -2587,7 +2587,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x92]      ; 0053ac53
     PUSH EDX                            ; 0053ac59
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 0053ac5a
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0053ac5f
     MOV EBX,EAX                         ; 0053ac62
     TEST EAX,EAX                        ; 0053ac64

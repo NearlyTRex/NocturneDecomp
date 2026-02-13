@@ -88,31 +88,31 @@
       {
         "category": "lvalue_required",
         "column": 60,
-        "line": 717,
+        "line": 719,
         "message": "cannot take the address of an rvalue of type 'int'"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 721,
+        "line": 723,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
-        "line": 721,
+        "line": 723,
         "message": "use of undeclared identifier 'PTR_s_thrust_0066e310'"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 721,
+        "line": 723,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "lvalue_required",
         "column": 70,
-        "line": 729,
+        "line": 731,
         "message": "cannot take the address of an rvalue of type 'int'"
       }
     ],
@@ -121,18 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 2062,
-    "complexity_score": 1272,
+    "complexity_score": 1274,
     "cross_reference_count": 3,
     "function_call_count": 31,
     "global_count": 44,
-    "pseudocode_lines": 757,
+    "pseudocode_lines": 759,
     "suspect_count": 50,
     "suspect_types": [
       "pointer_cast",
       "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 2819
+    "total_lines": 2821
   },
   "cross_references": [
     {
@@ -183,14 +183,14 @@
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
     },
     {
-      "addr": "004add00",
-      "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004add00"
-    },
-    {
       "addr": "004add40",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004add40"
+      "name": "core_event.cpp_CEventList_validateCommands_FUN_004add40"
+    },
+    {
+      "addr": "004add00",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_validateCondition_FUN_004add00"
     },
     {
       "addr": "004b1680",
@@ -1339,42 +1339,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 674,
+      "line": 676,
       "match": "param1",
       "text": "if (pCVar4->list_size <= (this_ptr->param1).v_int) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 678,
+      "line": 680,
       "match": "param1",
       "text": "pacVar16 = pCVar4->conditions + (this_ptr->param1).v_int;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 710,
+      "line": 712,
       "match": "(uint *)((int)",
       "text": "if ((*(this_ptr->data).v_uint_ptr & *(uint *)((int)&0x00000001 + iVar18)) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 714,
+      "line": 716,
       "match": "(uint *)((int)",
       "text": "(local_368,\"%s\\t%s\",*(uint *)((int)&PTR_s_thrust_0066e310 + iVar18),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 747,
+      "line": 749,
       "match": "(char *)((int)",
       "text": "pcVar11 = (char *)((int)((this_ptr->data).v_dfm_ptr)->transformed_vertices +",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 748,
+      "line": 750,
       "match": "param1",
       "text": "(this_ptr->param1).v_int * 100 + 0x1a0);",
       "type": "unnamed_param"

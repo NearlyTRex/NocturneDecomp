@@ -49,11 +49,10 @@ LAB_004047c8:
   pSVar2 = primitive + 1;
   for (iVar1 = 0; iVar1 < (primitive->base).count * 3; iVar1 = iVar1 + 3) {
     *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
-    g_RenderVertexBuffer[(pSVar2->base).type + g_ProcessedVertexOffset].u =
-         (float)(pSVar2->base).count;
+    g_RenderVertexBuffer[(pSVar2->base).type + g_ProcessedVertexOffset].u = (pSVar2->base).count;
     piVar3 = piVar3 + 1;
     g_RenderVertexBuffer[(pSVar2->base).type + g_ProcessedVertexOffset].v =
-         (float)(pSVar2->surface_normal).A;
+         (pSVar2->surface_normal).A;
     pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
   engine_clipper_c_clipAndRasterize_FUN_004371b0((primitive->base).count,g_ProcessedVertexIndices);

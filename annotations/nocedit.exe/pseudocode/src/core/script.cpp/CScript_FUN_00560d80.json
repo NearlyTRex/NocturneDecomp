@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "00560b50",
-      "from_addr": "00560d5f",
-      "name": "core_script.cpp_CScript_FUN_00560b50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00560820",
       "from_addr": "00560b17",
       "name": "core_script.cpp_CScript_loadState_FUN_00560820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00560b50",
+      "from_addr": "00560d5f",
+      "name": "core_script.cpp_CScript_saveState_FUN_00560b50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -64,7 +64,7 @@
       {
         "call_addr": "00560d5f",
         "call_type": "direct",
-        "caller": "core_script.cpp_CScript_FUN_00560b50",
+        "caller": "core_script.cpp_CScript_saveState_FUN_00560b50",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],

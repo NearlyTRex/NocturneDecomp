@@ -67,7 +67,7 @@ LAB_00527413:
   if (*(int *)(this_ptr->unk2 + 0x34) == *in_stack_00000008) {
     fVar2 = 0.06;
   }
-  if (g_CGamePtr->unk4 != 0) {
+  if (g_CGamePtr->gratuitous_dismemberment != 0) {
     fVar2 = 1.0;
   }
   if (g_CGamePtr->blood_flag == 0) {

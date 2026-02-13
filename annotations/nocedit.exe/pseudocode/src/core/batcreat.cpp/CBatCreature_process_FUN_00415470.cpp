@@ -19,8 +19,6 @@ core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *this_ptr,float
   int iVar6;
   uint uVar7;
   CVector3f *pCVar8;
-  int extraout_EAX;
-  int extraout_EAX_00;
   CPathMap *path_map;
   uint uVar9;
   float fVar10;
@@ -91,8 +89,8 @@ core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *this_ptr,float
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar3 = (this_ptr->base).victim;
       if (pCVar3 == (CDemonActor *)0x0) {
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX != 0) {
+        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar4 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,1,1);
         }
@@ -123,16 +121,10 @@ core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *this_ptr,float
       if ((this_ptr->base).guard_distance <= local_1c) break;
       if (local_1c < 10.0f) {
         fVar11 = 1.4013e-45;
-        (this_ptr->base).unk2[0] = '\0';
-        (this_ptr->base).unk2[1] = '\0';
-        (this_ptr->base).unk2[2] = '\0';
-        (this_ptr->base).unk2[3] = '\0';
+        (this_ptr->base).unk2 = 0;
       }
       else {
-        (this_ptr->base).unk2[0] = '\0';
-        (this_ptr->base).unk2[1] = '\0';
-        (this_ptr->base).unk2[2] = '\0';
-        (this_ptr->base).unk2[3] = '\0';
+        (this_ptr->base).unk2 = 0;
         iVar4 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
         if (iVar4 != 0) {
           pCVar3 = (this_ptr->base).victim;
@@ -177,8 +169,8 @@ LAB_004158fb:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar11 = 3.5f;
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX_00 == 0) {
+        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar4 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
         }
@@ -212,9 +204,7 @@ LAB_004158fb:
           local_9c = 0;
           local_20 = SQRT(local_98 * local_98 + local_a0 * local_a0);
           local_18 = local_20;
-          if ((10.0f < local_20) &&
-             ((this_ptr->base).unk2[0] = '\0', (this_ptr->base).unk2[1] = '\0',
-             (this_ptr->base).unk2[2] = '\0', (this_ptr->base).unk2[3] = '\0', iVar4 == 1)) {
+          if ((10.0f < local_20) && ((this_ptr->base).unk2 = 0, iVar4 == 1)) {
             pCVar3 = (this_ptr->base).victim;
             local_94.x = (pCVar3->location).position.x - (pCVar1->position).x;
             local_94.y = (pCVar3->location).position.y -
@@ -230,10 +220,7 @@ LAB_004158fb:
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&this_ptr_00->motion_controller,2,1);
               uVar7 = *(uint *)(this_ptr->unk + 0x3c);
-              (this_ptr->base).unk2[0] = '\0';
-              (this_ptr->base).unk2[1] = '\0';
-              (this_ptr->base).unk2[2] = '\0';
-              (this_ptr->base).unk2[3] = '\0';
+              (this_ptr->base).unk2 = 0;
               iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar7);
               if ((iVar4 == 0) &&
                  (iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
@@ -244,7 +231,7 @@ LAB_004158fb:
               }
             }
           }
-          if ((local_20 <= local_24) && (*(float *)(this_ptr->base).unk2 <= 0.0)) {
+          if ((local_20 <= local_24) && ((float)(this_ptr->base).unk2 <= 0.0)) {
             pCVar3 = (this_ptr->base).victim;
             local_88.x = (pCVar3->location).position.x -
                          (this_ptr->base).base.base.location.position.x;
@@ -259,10 +246,7 @@ LAB_004158fb:
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,3,1);
               uVar7 = *(uint *)(this_ptr->unk + 0x3c);
-              (this_ptr->base).unk2[0] = '\0';
-              (this_ptr->base).unk2[1] = '\0';
-              (this_ptr->base).unk2[2] = -0x80;
-              (this_ptr->base).unk2[3] = '?';
+              (this_ptr->base).unk2 = 0x3f800000;
               iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar7);
               if ((iVar4 == 0) &&
                  (iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
@@ -332,8 +316,8 @@ LAB_004156d6:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_00415d62_caseD_2:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar4 != 0) {

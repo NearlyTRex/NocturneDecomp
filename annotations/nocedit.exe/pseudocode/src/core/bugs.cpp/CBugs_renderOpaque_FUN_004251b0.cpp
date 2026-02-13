@@ -56,7 +56,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
             position = (CVector3i *)&position[5].y;
             iVar1 = iVar1 + 1;
             rotation = (CVector3i *)&rotation[5].y;
-          } while (iVar1 < in_stack_0000000c[0x8d].unk14);
+          } while (iVar1 < in_stack_0000000c[0x8d].is_editor_hidden);
         }
         core_set_cpp_CDemonSet_FUN_00570cd0(g_CDemonSetPtr);
       }

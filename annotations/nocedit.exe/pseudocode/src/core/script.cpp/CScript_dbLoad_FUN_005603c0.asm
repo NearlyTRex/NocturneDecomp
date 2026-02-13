@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *param_2)
+; __cdecl void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined1       Stack[-0x334]:1  local_334
 ; undefined1       Stack[-0x333]:1  local_333
@@ -213,7 +213,7 @@ section .text
     PUSH EAX                            ; 00560560
     PUSH EBX                            ; 00560561
     CALL core_script.cpp_CScript_findDialogEntry_FUN_005606e0 ; 00560562
-        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_005606e0(CScript * this_ptr, char * param_2)
+        ;   XREF to: 005606e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_005606e0(CScript * this_ptr, char * path)
     ADD ESP,0x8                         ; 00560567
     TEST EAX,EAX                        ; 0056056a
     JL 0x0056058f                       ; 0056056c

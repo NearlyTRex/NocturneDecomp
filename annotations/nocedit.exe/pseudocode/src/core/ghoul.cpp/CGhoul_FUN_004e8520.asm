@@ -20,7 +20,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.blood_flag
-;   undefined4 g_CGameInstance.unk4
+;   undefined4 g_CGameInstance.gratuitous_dismemberment
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10
@@ -90,7 +90,7 @@ section .text
     MOV dword ptr [ESP + 0x8],0x3ca3d70a ; 004e8598
     MOV EAX,[0x0067b654]                ; 004e85a0 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_004e85a0
-    CMP dword ptr [EAX + 0x1e0],0x0     ; 004e85a5 | g_CGameInstance.unk4
+    CMP dword ptr [EAX + 0x1e0],0x0     ; 004e85a5 | g_CGameInstance.gratuitous_dismemberment
     JZ 0x004e85b6                       ; 004e85ac
         ;   XREF to: 004e85b6 (CONDITIONAL_JUMP)  ; LAB_004e85b6
     MOV dword ptr [ESP + 0x8],0x3f800000 ; 004e85ae

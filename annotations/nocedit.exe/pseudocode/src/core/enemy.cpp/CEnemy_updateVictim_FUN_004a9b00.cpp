@@ -39,21 +39,21 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
     if (((g_CGamePtr->debug_flag_2 != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                           (g_CEventListPtr,"Capture"), iVar5 != 0)) {
-      this_ptr->unk1 = 0;
-      this_ptr->unk3 = 0;
+      this_ptr->is_in_combat = 0;
+      this_ptr->victim_search_timer = 0.0;
       this_ptr->victim = (CDemonActor *)0x0;
       return;
     }
-    fVar2 = (float)this_ptr->unk3 - delta_time;
-    this_ptr->unk3 = (int)fVar2;
+    fVar2 = this_ptr->victim_search_timer - delta_time;
+    this_ptr->victim_search_timer = fVar2;
     if (fVar2 <= 0.0) {
-      this_ptr->unk1 = 0;
+      this_ptr->is_in_combat = 0;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.5,1.5);
-      local_38 = (CVector3f *)((float)this_ptr->unk4 * (float)this_ptr->unk4);
+      local_38 = (CVector3f *)(this_ptr->victim_search_radius * this_ptr->victim_search_radius);
       iVar5 = 0;
-      this_ptr->unk3 = (int)local_14;
+      this_ptr->victim_search_timer = local_14;
       if ((this_ptr->victim == (CDemonActor *)0x0) &&
-         (this_ptr->guard_distance < (float)this_ptr->unk4)) {
+         (this_ptr->guard_distance < this_ptr->victim_search_radius)) {
         local_38 = (CVector3f *)(this_ptr->guard_distance * this_ptr->guard_distance);
       }
       local_28 = &(this_ptr->base).base.location;
@@ -109,8 +109,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
                     (this_ptr_01,"%s can see hero\n",this_ptr);
           return;
         }
-        if ((((this_ptr->field14_0xbeb8 != 0) ||
-             ((this_ptr->field14_0xbeb8 == 0 && (local_1c == local_34)))) &&
+        if ((((this_ptr->allow_pathfind_to_new_targets != 0) ||
+             ((this_ptr->allow_pathfind_to_new_targets == 0 && (local_1c == local_34)))) &&
             (this_ptr_02 = (*((local_1c->vtable)._ub)->getPathMap)(local_1c),
             this_ptr_02 != (CPathMap *)0x0)) &&
            (iVar7 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
@@ -130,8 +130,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
       if ((this_ptr_00 != (CCharacter *)0x0) &&
          (iVar5 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), iVar5 != 0)
          ) {
-        this_ptr->unk3 = 0;
-        this_ptr->unk1 = 0;
+        this_ptr->victim_search_timer = 0.0;
+        this_ptr->is_in_combat = 0;
         this_ptr->victim = (CDemonActor *)0x0;
         return;
       }
@@ -144,8 +144,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
     else {
       this_ptr->victim = pCVar1;
     }
-    this_ptr->unk1 = 0;
-    this_ptr->unk3 = 0;
+    this_ptr->is_in_combat = 0;
+    this_ptr->victim_search_timer = 0.0;
   }
   return;
 }

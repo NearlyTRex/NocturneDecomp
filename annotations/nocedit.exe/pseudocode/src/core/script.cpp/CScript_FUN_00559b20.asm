@@ -32,12 +32,12 @@
 ;   undefined4 DAT_02d81aac
 ;   undefined4 DAT_02d81cc4
 ;   int g_MessageCount
-;   int INT_031061e0
-;   undefined4 DAT_031061e8
+;   int g_PreviousLetterboxMode
+;   char[10][1024] g_ScriptSubtitleLines
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042f9e0
+;   core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0
 ;   core_script.cpp_CScript_FUN_00559ac0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
@@ -63,8 +63,8 @@ section .text
     JNZ 0x00559d41                      ; 00559b38
         ;   XREF to: 00559d41 (CONDITIONAL_JUMP)  ; LAB_00559d41
     PUSH EAX                            ; 00559b3e | g_CGameInstance
-    CALL core_charactr.cpp_FUN_0042f9e0 ; 00559b3f
-        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_FUN_0042f9e0()
+    CALL core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0 ; 00559b3f
+        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x20],EAX      ; 00559b44
     FLD float ptr [ESP + 0x20]          ; 00559b48
     FDIV float ptr [0x00641794]         ; 00559b4c | FLOAT_00641794
@@ -104,7 +104,7 @@ section .text
     TEST EAX,EAX                        ; 00559bb1
     JLE 0x00559bf2                      ; 00559bb3
         ;   XREF to: 00559bf2 (CONDITIONAL_JUMP)  ; LAB_00559bf2
-    CMP dword ptr [0x031061e0],0x2      ; 00559bb5 | INT_031061e0
+    CMP dword ptr [0x031061e0],0x2      ; 00559bb5 | g_PreviousLetterboxMode
     JZ 0x00559bd4                       ; 00559bbc
         ;   XREF to: 00559bd4 (CONDITIONAL_JUMP)  ; LAB_00559bd4
     PUSH 0x0                            ; 00559bbe
@@ -171,7 +171,7 @@ section .text
     PUSH EAX                            ; 00559c6f
     PUSH 0x400                          ; 00559c70
     PUSH ESI                            ; 00559c75
-    PUSH 0x31061e8                      ; 00559c76 | DAT_031061e8
+    PUSH 0x31061e8                      ; 00559c76 | g_ScriptSubtitleLines
     LEA EAX,[EDI + 0x54]                ; 00559c7b
     PUSH EAX                            ; 00559c7e
     PUSH EBP                            ; 00559c7f
@@ -213,9 +213,9 @@ section .text
         ;   XREF to: 00559d30 (CONDITIONAL_JUMP)  ; LAB_00559d30
     MOV EAX,dword ptr [ESP + 0x8]       ; 00559cd3
     ADD EAX,dword ptr [ESP + 0xc]       ; 00559cd7
-    MOV EBX,0x31061e8                   ; 00559cdb | DAT_031061e8
+    MOV EBX,0x31061e8                   ; 00559cdb | g_ScriptSubtitleLines
     MOV dword ptr [ESP + 0x10],EAX      ; 00559ce0
-    PUSH EBX                            ; 00559ce4 | DAT_031061e8 | DAT_031065e8
+    PUSH EBX                            ; 00559ce4 | g_ScriptSubtitleLines | DAT_031065e8
         ;   Label: LAB_00559ce4
     PUSH EBP                            ; 00559ce5
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 00559ce6
@@ -231,7 +231,7 @@ section .text
     PUSH 0xf8                           ; 00559cff
     PUSH ESI                            ; 00559d04
     PUSH EAX                            ; 00559d05
-    PUSH EBX                            ; 00559d06 | DAT_031061e8
+    PUSH EBX                            ; 00559d06 | g_ScriptSubtitleLines
     PUSH EBP                            ; 00559d07
     INC EDI                             ; 00559d08
     CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00559d09
@@ -258,9 +258,9 @@ section .text
     RET                                 ; 00559d40
     PUSH EAX                            ; 00559d41 | g_CGameInstance
         ;   Label: LAB_00559d41
-    MOV dword ptr [0x031061e0],EDX      ; 00559d42 | INT_031061e0
-    CALL core_charactr.cpp_FUN_0042f9e0 ; 00559d48
-        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_FUN_0042f9e0()
+    MOV dword ptr [0x031061e0],EDX      ; 00559d42 | g_PreviousLetterboxMode
+    CALL core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0 ; 00559d48
+        ;   XREF to: 0042f9e0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x20],EAX      ; 00559d4d
     FLD float ptr [ESP + 0x20]          ; 00559d51
     FDIV float ptr [0x00641794]         ; 00559d55 | FLOAT_00641794

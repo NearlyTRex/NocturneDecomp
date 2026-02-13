@@ -3,51 +3,93 @@
     "errors": [
       {
         "category": "format_error",
-        "column": 36,
-        "line": 33,
+        "column": 30,
+        "line": 35,
         "message": "format specifies type 'int *' but the argument has type 'CEventList *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 44,
-        "line": 38,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
+        "column": 38,
+        "line": 40,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 44,
-        "line": 49,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
+        "column": 30,
+        "line": 46,
+        "message": "format specifies type 'int *' but the argument has type 'SEventNameBlock *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 52,
-        "line": 60,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
+        "column": 38,
+        "line": 51,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 58,
-        "line": 73,
-        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 65,
-        "line": 73,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 50,
-        "line": 89,
-        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+        "column": 38,
+        "line": 57,
+        "message": "format specifies type 'int *' but the argument has type 'SEventNameBlock *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 46,
-        "line": 120,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
+        "line": 62,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 32,
+        "line": 68,
+        "message": "format specifies type 'int *' but the argument has type 'STimerBlock *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 59,
+        "line": 75,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 32,
+        "line": 85,
+        "message": "format specifies type 'int *' but the argument has type 'SCounterBlock *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 51,
+        "line": 91,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 40,
+        "line": 102,
+        "message": "format specifies type 'int *' but the argument has type 'SActorVarBlock *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 65,
+        "line": 107,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 73,
+        "line": 107,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 40,
+        "line": 117,
+        "message": "format specifies type 'int *' but the argument has type 'SEventNameBlock *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 40,
+        "line": 122,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -55,16 +97,14 @@
   },
   "complexity": {
     "assembly_lines": 337,
-    "complexity_score": 362,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
-    "pseudocode_lines": 117,
-    "suspect_count": 24,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 454
+    "pseudocode_lines": 120,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 457
   },
   "cross_references": [
     {
@@ -84,13 +124,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_event.cpp_CEventList_loadState_FUN_004b0fc0",
-    "signature": "int __cdecl core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr)"
+    "signature": "int __cdecl core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
       "addr": "004aaa70",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004aaa70"
+      "name": "core_event.cpp_CEventList_reset_FUN_004aaa70"
     },
     {
       "addr": "00506f10",
@@ -254,10 +294,10 @@
     "pcode_op_count": 1200
   },
   "stack_frame": {
-    "frame_size": 296,
+    "frame_size": 300,
     "local_size": 292,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -301,177 +341,15 @@
         "offset": 4,
         "size": 4,
         "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "_FILE *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "text": "_fgets(local_120,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&local_20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000008",
-      "text": "_fgets(local_120,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",this_ptr);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000008",
-      "text": "_fgets(local_120,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->current_event_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000008",
-      "text": "_fgets(local_120,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = _fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->persistent_event_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = _fscanf(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000008",
-      "text": "_fgets(local_120,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->timer_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = _fscanf(in_stack_00000008,\"%f, %[^\\n]\\n\",pcVar3,piVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_00000008",
-      "text": "_fgets(local_120,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->counter_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%d, %[^\\n]\\n\",pcVar3,local_18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_00000008",
-      "text": "_fgets(local_120,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = _fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->actor_var_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 98,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = _fscanf(in_stack_00000008,\"\\\"%[^\\\"]\\\" , \\\"%[^\\\"]\\\"\\n\",pcVar3,local_1c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 106,
-      "match": "in_stack_00000008",
-      "text": "_fgets(local_120,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = _fscanf(in_stack_00000008,\"%d\\n\",&this_ptr->game_flag_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_00000008",
-      "text": "_fscanf(in_stack_00000008,\"%[^\\n]\\n\",piVar4);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

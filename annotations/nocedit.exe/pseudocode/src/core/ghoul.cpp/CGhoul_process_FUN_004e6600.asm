@@ -454,7 +454,7 @@ section .text
     MOV EDX,dword ptr [0x00681ef8]      ; 004e6966 | g_CSoundPtr | g_CSoundInstance
     PUSH EDX                            ; 004e696c | g_CSoundInstance
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80 ; 004e696d
-        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
+        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 004e6972
     TEST EAX,EAX                        ; 004e6975
     JZ 0x004e8044                       ; 004e6977
@@ -1496,7 +1496,7 @@ section .text
         ;   Label: LAB_004e7563
     PUSH EBX                            ; 004e7569
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004e756a
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 004e756f
     TEST EAX,EAX                        ; 004e7572
     JZ 0x004e758e                       ; 004e7574
@@ -1718,7 +1718,7 @@ section .text
         ;   Label: LAB_004e77ee
     PUSH EBX                            ; 004e77f4
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004e77f5
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 004e77fa
     TEST EAX,EAX                        ; 004e77fd
     JNZ 0x004e70a3                      ; 004e77ff

@@ -2,11 +2,11 @@
 // Address: 005603c0
 // Address Range: [[005603c0, 005606dc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *param_2)
+// Signature: void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *param_2)
+void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *filename)
 
 {
   char cVar1;
@@ -26,15 +26,15 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
   
   bVar7 = 0;
   this_ptr->dialog_entry_count = 0;
-  local_c = engine_dosio_c_getFileSize_FUN_00481880("world",param_2);
+  local_c = engine_dosio_c_getFileSize_FUN_00481880("world",filename);
   if (local_c < 1) {
     return;
   }
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("world",param_2,"rt");
+  file_handle = engine_dosio_c_getFile_FUN_00481a50("world",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\script.cpp";
     g_CurrentLineNumber = 0xec2;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",param_2);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",filename);
   }
   lVar2 = _ftell(file_handle);
   local_c = local_c + lVar2;
@@ -50,7 +50,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
       g_CurrentFilename = "..\\core\\script.cpp";
       g_CurrentLineNumber = 0xed6;
       core_main_c_displayErrorAndQuit_FUN_00506f10
-                ("SCScipt::dbLoad - error parsing %s record %d",param_2,this_ptr->dialog_entry_count);
+                ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
     }
     core_script_cpp_trimString_FUN_00559360(local_334);
     core_script_cpp_trimString_FUN_00559360(local_2bc);
@@ -84,7 +84,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
     iVar3 = core_script_cpp_CScript_findDialogEntry_FUN_005606e0(this_ptr,local_334);
     if (-1 < iVar3) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                (g_CEditorToolsPtr,"Warning! Duplicate wav string %s detected in %s",local_334,param_2);
+                (g_CEditorToolsPtr,"Warning! Duplicate wav string %s detected in %s",local_334,filename);
     }
     _sprintf(local_2f8,"%s.wav",local_334);
     iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);

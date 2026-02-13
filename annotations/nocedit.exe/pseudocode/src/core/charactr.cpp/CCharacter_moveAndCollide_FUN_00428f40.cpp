@@ -125,10 +125,10 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
       } while (iVar13 <= (int)local_20);
     }
   }
-  local_50 = this_ptr->unk16;
+  local_50 = this_ptr->collision_test_points;
   iVar13 = 0;
-  local_44 = this_ptr->unk17;
-  local_48 = this_ptr->unk16 + 3;
+  local_44 = this_ptr->collision_test_normals;
+  local_48 = this_ptr->collision_test_points + 3;
   do {
     pCVar6 = local_50 + iVar13 * 3;
     pCVar12 = local_44;
@@ -151,12 +151,12 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->base);
   local_38 = 0;
   local_54 = velocity->y;
-  local_4c = this_ptr->unk17;
-  local_1c = this_ptr->unk16;
-  local_24 = this_ptr->unk16 + 1;
-  pCVar12 = this_ptr->unk17 + 2;
-  local_2c = this_ptr->unk17 + 1;
-  pCVar6 = this_ptr->unk16 + 2;
+  local_4c = this_ptr->collision_test_normals;
+  local_1c = this_ptr->collision_test_points;
+  local_24 = this_ptr->collision_test_points + 1;
+  pCVar12 = this_ptr->collision_test_normals + 2;
+  local_2c = this_ptr->collision_test_normals + 1;
+  pCVar6 = this_ptr->collision_test_points + 2;
   local_30 = pCVar1;
   local_28 = pCVar1;
   do {

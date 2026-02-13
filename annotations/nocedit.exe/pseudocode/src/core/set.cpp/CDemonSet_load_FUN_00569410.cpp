@@ -361,7 +361,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
       core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0
                 (&g_CDemonRaytraceInstance,pcVar3);
     }
-    core_path_cpp_GlobalPathmapListCorruption_FUN_00548590();
+    core_path_cpp_FUN_00548590();
   }
   iVar10 = 0;
   pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading thumbs");

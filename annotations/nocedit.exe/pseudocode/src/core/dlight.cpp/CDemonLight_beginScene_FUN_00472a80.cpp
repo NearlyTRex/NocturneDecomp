@@ -46,7 +46,9 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[2].y;
   g_TransformMatrix.m[2].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   if (skip_clear_buffers == 0) {
-    core_event_cpp_FUN_004b19d0();
+    _memset
+              (this_ptr->shadow_depth_buffer,0xff,
+               this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2);
   }
   iVar2 = 0;
   pCVar3 = this_ptr;
@@ -61,8 +63,8 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
   }
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,1);
-  if (this_ptr == (CDemonLight *)0x0) {
-    g_RasterizerDepthBias = (int)this_ptr;
+  if (skip_clear_buffers == 0) {
+    g_RasterizerDepthBias = skip_clear_buffers;
     return;
   }
   g_RasterizerDepthBias = 0x8000;

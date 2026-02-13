@@ -12,35 +12,35 @@ core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660
 
 {
   char cVar1;
-  CDemonActor *str1;
   int iVar2;
-  char *pcVar3;
+  CDemonActor *pCVar3;
   uint uVar4;
   int iVar5;
+  char *pcVar6;
   int local_14;
   
   iVar5 = -1;
   uVar4 = 0xffffffff;
-  pcVar3 = base_name;
+  pcVar6 = base_name;
   do {
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
-    cVar1 = *pcVar3;
-    pcVar3 = pcVar3 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
-  for (str1 = this_ptr->first_actor; str1 != (CDemonActor *)0x0; str1 = str1->next_actor) {
-    iVar2 = strnicmp(str1->actor_name,base_name,~uVar4 - 1);
+  for (pCVar3 = this_ptr->first_actor; pCVar3 != (CDemonActor *)0x0; pCVar3 = pCVar3->next_actor) {
+    iVar2 = strnicmp(pCVar3->actor_name,base_name,~uVar4 - 1);
     if (((iVar2 == 0) &&
         (iVar2 = sscanf
-                           (str1->actor_name + (~uVar4 - 1),"%d",&local_14), iVar2 == 1)) &&
-       (iVar5 < local_14)) {
+                           (pCVar3->actor_name + (~uVar4 - 1),"%d",&local_14), iVar2 == 1))
+       && (iVar5 < local_14)) {
       iVar5 = local_14;
     }
   }
   do {
     iVar5 = iVar5 + 1;
     _sprintf(out_buf,"%s%d",base_name,iVar5);
-    pcVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,out_buf);
-  } while (pcVar3 != (char *)0x0);
+    pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,out_buf);
+  } while (pCVar3 != (CDemonActor *)0x0);
   return;
 }

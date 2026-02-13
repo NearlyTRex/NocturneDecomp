@@ -24,6 +24,6 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8fd0(CFireEffect *this_ptr)
       return;
     }
   }
-  core_set_cpp_CDemonSet_FUN_00570fa0(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_initCameraShake_FUN_00570fa0(g_CDemonSetPtr,100.0,0.0,0.0,1.0);
   return;
 }

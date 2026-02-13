@@ -102,7 +102,7 @@ section .text
     MOV EBP,dword ptr [0x00681ef8]      ; 004dda64 | g_CSoundPtr
     PUSH EBP                            ; 004dda6a | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004dda6b
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004dda70
     ADD ESP,0x8                         ; 004dda73
     POP EBP                             ; 004dda76

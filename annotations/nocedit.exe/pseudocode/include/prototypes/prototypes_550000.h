@@ -149,7 +149,7 @@ void __cdecl core_script_cpp_trimLine_FUN_005592c0(char *input_line,char *output
 void __cdecl core_script_cpp_trimString_FUN_00559360(char *str);
 char * __cdecl core_script_cpp_skipWhitespace_FUN_005593d0(char *str);
 char * __cdecl core_script_cpp_parseArgument_FUN_005593f0(char **cursor,char *out_buffer,int max_length);
-void __cdecl core_script_cpp_parseConditionExpr_FUN_005594a0(char **cursor,char *out_buffer);
+char * __cdecl core_script_cpp_parseConditionExpr_FUN_005594a0(char **cursor,char *out_buffer);
 CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0 (char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
 int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660 (SActionKeyBindings *action_bindings,char *action_name);
 int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730 (CCharacter *character,char *part_names,int *part_mask);
@@ -160,7 +160,7 @@ void __cdecl core_script_cpp_CScript_FUN_005598f0(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_process_FUN_00559960(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_FUN_00559ac0(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_FUN_00559b20(CScript *this_ptr);
-void __cdecl core_script_cpp_CScript_FUN_00559d80 (CScript *this_ptr,int param_2,int param_3,int param_4,int param_5);
+void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80 (CScript *this_ptr,int left,int top,int right,int bottom);
 int __cdecl core_script_cpp_CScript_FUN_00559f80(CScript *this_ptr,char *param_2,int param_3);
 void __cdecl core_script_cpp_CScript_FUN_0055a370(CScript *this_ptr);
 int * __cdecl core_script_cpp_CScript_FUN_0055a4b0(CScript *this_ptr,int *param_2);

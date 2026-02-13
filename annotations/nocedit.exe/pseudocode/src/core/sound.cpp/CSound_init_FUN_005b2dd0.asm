@@ -36,7 +36,7 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004b0f00
+;   core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00
 ;   core_sound.cpp_CSound_playSound_FUN_005b3a20
 ;   core_sound.cpp_updateListeners_FUN_005b1870
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
@@ -141,7 +141,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 005b2ec0
     PUSH EDI                            ; 005b2ec4
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 005b2ec5
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 005b2eca
     MOV [0x03f6b7a8],EAX                ; 005b2ecd | g_SoundAmbientSfxHandle
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0 ; 005b2ed2
@@ -174,8 +174,8 @@ section .text
     MOV EDX,dword ptr [0x006793d0]      ; 005b2f39 | g_CEventListInstance | g_CEventListPtr
         ;   Label: LAB_005b2f39
     PUSH EDX                            ; 005b2f3f | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004b0f00 ; 005b2f40
-        ;   XREF to: 004b0f00 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004b0f00(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00 ; 005b2f40
+        ;   XREF to: 004b0f00 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00(CEventList * this_ptr)
     MOV ECX,0x1                         ; 005b2f45
     ADD ESP,0x4                         ; 005b2f4a
     MOV dword ptr [0x03f6b7ac],ECX      ; 005b2f4d | g_SoundAudioInitialized

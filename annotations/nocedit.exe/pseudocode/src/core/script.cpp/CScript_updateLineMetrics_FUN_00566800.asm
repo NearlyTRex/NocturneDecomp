@@ -10,8 +10,8 @@
 ; XREF[4]:
 ;   core_script.cpp_CScript_FUN_00565130 at 00565a4d
 ;   core_script.cpp_CScript_FUN_00566180 at 005661d4
-;   core_script.cpp_CScript_FUN_00566660 at 005667ef
 ;   core_script.cpp_CScript_editorPutLine_FUN_005662a0 at 005662e3
+;   core_script.cpp_CScript_initEditorLayout_FUN_00566660 at 005667ef
 ;
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable

@@ -37,11 +37,11 @@ shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
   
   this_ptr->character_width = g_FontCharacterWidth + 1;
   this_ptr->unk2 = 8;
-  this_ptr->unk1[0x28] = '\x01';
-  this_ptr->unk1[0x29] = '\0';
-  this_ptr->unk1[0x2a] = '\0';
-  this_ptr->unk1[0x2b] = '\0';
-  memset(this_ptr->unk1,0,0x28);
+  this_ptr->unk3[0x24] = '\x01';
+  this_ptr->unk3[0x25] = '\0';
+  this_ptr->unk3[0x26] = '\0';
+  this_ptr->unk3[0x27] = '\0';
+  memset(&this_ptr->unk1,0,0x28);
   local_14 = 0;
   if (0 < (this_ptr->base).item_count) {
     do {
@@ -60,8 +60,8 @@ shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
         }
         *pcVar8 = '\0';
         iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,local_160);
-        if (*(int *)pCVar5->unk1 < iVar4) {
-          *(int *)pCVar5->unk1 = iVar4;
+        if (pCVar5->unk1 < iVar4) {
+          pCVar5->unk1 = iVar4;
         }
         iVar10 = iVar10 + 1;
         pCVar5 = (CPickList *)&(pCVar5->base).capacity;
@@ -72,26 +72,26 @@ shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many picklist columns!");
         }
       }
-      if (*(int *)(this_ptr->unk1 + 0x28) < iVar10) {
-        *(int *)(this_ptr->unk1 + 0x28) = iVar10;
+      if (*(int *)(this_ptr->unk3 + 0x24) < iVar10) {
+        *(int *)(this_ptr->unk3 + 0x24) = iVar10;
       }
       local_14 = local_14 + 1;
     } while (local_14 < (this_ptr->base).item_count);
   }
   pCVar5 = this_ptr;
-  for (iVar10 = 0; iVar10 < *(int *)(this_ptr->unk1 + 0x28) + -1; iVar10 = iVar10 + 1) {
-    *(int *)pCVar5->unk1 = *(int *)pCVar5->unk1 + g_WindowWidth / 0x28;
+  for (iVar10 = 0; iVar10 < *(int *)(this_ptr->unk3 + 0x24) + -1; iVar10 = iVar10 + 1) {
+    pCVar5->unk1 = pCVar5->unk1 + g_WindowWidth / 0x28;
     pCVar5 = (CPickList *)&(pCVar5->base).capacity;
   }
   iVar4 = 0;
-  iVar10 = *(int *)(this_ptr->unk1 + 0x28);
+  iVar10 = *(int *)(this_ptr->unk3 + 0x24);
   this_ptr->total_content_width = 0;
   pCVar5 = this_ptr;
   if (0 < iVar10) {
     do {
       iVar4 = iVar4 + 1;
-      iVar10 = *(int *)(this_ptr->unk1 + 0x28);
-      this_ptr->total_content_width = this_ptr->total_content_width + *(int *)pCVar5->unk1;
+      iVar10 = *(int *)(this_ptr->unk3 + 0x24);
+      this_ptr->total_content_width = this_ptr->total_content_width + pCVar5->unk1;
       pCVar5 = (CPickList *)&(pCVar5->base).capacity;
     } while (iVar4 < iVar10);
   }

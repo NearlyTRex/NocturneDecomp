@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 133,
+    "complexity_score": 108,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 9,
     "pseudocode_lines": 33,
-    "suspect_count": 9,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
     "total_lines": 108
   },
@@ -270,20 +269,6 @@
       "match": "ROUND",
       "text": "local_38[0].z = (int)ROUND((float)(fVar2 * fVar4 * fVar6) * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 33,
-      "match": "1.1754944e-38",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_buffer_index].u = 1.1754944e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 34,
-      "match": "1.1754944e-38",
-      "text": "pCVar1->vertex_buffer_ptr[vertex_buffer_index].v = 1.1754944e-38;",
-      "type": "suspect_float"
     }
   ]
 }

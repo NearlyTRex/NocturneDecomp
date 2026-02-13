@@ -9,7 +9,7 @@
 CEventList * __cdecl core_event_cpp_CEventList_ctor_FUN_004aaa50(CEventList *this_ptr)
 
 {
-  core_event_cpp_CEventList_FUN_004aaa70(this_ptr);
-  core_event_cpp_CEventList_FUN_004b0460(this_ptr);
+  core_event_cpp_CEventList_reset_FUN_004aaa70(this_ptr);
+  core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(this_ptr);
   return this_ptr;
 }

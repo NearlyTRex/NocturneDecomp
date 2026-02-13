@@ -141,7 +141,7 @@ int __cdecl core_script_cpp_CScript_FUN_005677a0(CScript *this_ptr,char *param_2
               if (iVar4 != g_CurrentEditingLine) {
                 g_CurrentEditingColumn = iVar3;
                 g_CurrentEditingLine = iVar4;
-                core_script_cpp_FUN_005644e0();
+                core_script_cpp_clearSelections_FUN_005644e0();
                 core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
                 core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(this_ptr);
               }

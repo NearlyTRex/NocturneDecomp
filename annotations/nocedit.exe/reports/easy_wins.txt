@@ -87,7 +87,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/gun.cpp (1 remaining of 7)
     - core_gun.cpp_CGun_fire_FUN_004f0350
-      Suspects: extra_output, stack_param, stack_param, decompiler_intrinsic, extra_output, stack_ref, unknown_field, stack_param, unknown_field, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, suspect_float, stack_param
+      Suspects: stack_param, stack_param, decompiler_intrinsic, stack_ref, unknown_field, stack_param, unknown_field, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, suspect_float, stack_param
 
   core/terrain.cpp (1 remaining of 4)
     - core_terrain.cpp_CTerrain_render_FUN_005e1f50
@@ -119,7 +119,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/level.cpp (1 remaining of 6)
     - core_level.cpp_CLevelLoader_update_FUN_00504160
-      Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, suspect_float, suspect_float, suspect_float, suspect_float, suspect_float, pointer_cast, pointer_cast, pointer_cast, param_count_too_many
+      Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, suspect_float, pointer_cast, pointer_cast, pointer_cast, param_count_too_many
 
   shape/multicrm.cpp (1 remaining of 6)
     - shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70
@@ -189,6 +189,12 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_gasmask.cpp_CGasMask_renderOpaque_FUN_004e5da0
       Suspects: stack_ref
 
+  core/sentinel.cpp (2 remaining of 14)
+    - core_sentinel.cpp_CSentinel_dtor_FUN_00568f80
+      Suspects: negative_offset, negative_offset
+    - core_sentinel.cpp_CSentinel_process_FUN_00568030
+      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, decompiler_intrinsic, stack_param, stack_param, decompiler_intrinsic, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, decompiler_intrinsic, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, decompiler_intrinsic, stack_param, stack_param, decompiler_intrinsic, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, decompiler_intrinsic, stack_param, stack_param, stack_param, stack_param, stack_ref, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_ref, stack_param, stack_param
+
   core/ammo.cpp (2 remaining of 18)
     - core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80
       Suspects: stack_ref
@@ -199,6 +205,12 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_battery.cpp_CBattery_ctor_FUN_00417e90
       Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
     - core_battery.cpp_CBattery_renderOpaque_FUN_00417f80
+      Suspects: stack_ref
+
+  core/flamegun.cpp (2 remaining of 10)
+    - core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880
+      Suspects: suspect_float
+    - core_flamegun.cpp_CFlameThrower_fire_FUN_004cb920
       Suspects: stack_ref
 
   shape/spotview.cpp (2 remaining of 6)
@@ -224,7 +236,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_thread.c_GetTLS_FUN_0060242c                        (  4 lines)
     ... and 247 more
 
-  [param_count_too_few] - 120 functions
+  [param_count_too_few] - 121 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
     engine_2d.c_doNothing_FUN_00401590                      (  4 lines)
@@ -235,9 +247,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_palette.cpp_CFont_ctor_FUN_00544eb0              (  5 lines)
     engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d6 (  5 lines)
     core_bugs.cpp_CBugs_FUN_00426410                        (  5 lines)
-    ... and 110 more
+    ... and 111 more
 
-  [pointer_cast] - 70 functions
+  [pointer_cast] - 72 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
     core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30             (  6 lines)
@@ -248,9 +260,10 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  6 lines)
     core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  6 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  6 lines)
-    ... and 60 more
+    ... and 62 more
 
-  [stack_ref] - 62 functions
+  [stack_ref] - 64 functions
+    core_event.cpp_formatEventError_FUN_004aa2a0            (  7 lines)
     engine_2d.c_drawTextColorFormatted_FUN_004024c0         ( 10 lines)
     engine_2d.c_drawTextFormatted_FUN_00402150              ( 10 lines)
     engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 ( 10 lines)
@@ -260,10 +273,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_2d.c_getStringWidthFormatted_FUN_004027a0        ( 11 lines)
     engine_2d.c_drawTextCenteredAtColorFormatted_FUN_004026 ( 11 lines)
     engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20  ( 11 lines)
-    engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20        ( 11 lines)
-    ... and 52 more
+    ... and 54 more
 
-  [decompiler_intrinsic] - 52 functions
+  [decompiler_intrinsic] - 50 functions
     core_actor.cpp_CVector3f_length_FUN_00410380            (  4 lines)
     core_weapon.cpp_CWeapon_isReadyToFire_FUN_005ee710      (  4 lines)
     core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620       (  6 lines)
@@ -274,7 +286,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00 (  9 lines)
     engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN (  9 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScaleSim ( 10 lines)
-    ... and 42 more
+    ... and 40 more
 
   [negative_offset] - 39 functions
     core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50             (  6 lines)
@@ -302,18 +314,18 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_edittool.cpp_CEditorTools_showCheatInputDialog_FU ( 10 lines)
     ... and 17 more
 
-  [undefined_data] - 21 functions
+  [undefined_data] - 20 functions
     core_msnedit.cpp_FUN_0053d3a0                           (  4 lines)
     core_setedit.cpp_staticInit_FUN_00576930                (  6 lines)
     core_weather.cpp_staticInit_FUN_005eeaa0                (  6 lines)
-    core_event.cpp_CEventList_FUN_004aabe0                  (  6 lines)
     core_msnedit.cpp_staticInit_FUN_00535c30                (  7 lines)
     core_drip.cpp_staticInit_FUN_0048df80                   (  8 lines)
     core_sound.cpp_staticInit_FUN_005b1760                  (  8 lines)
     core_charactr.cpp_staticInit_FUN_00427d80               (  8 lines)
     sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettin ( 12 lines)
-    core_script.cpp_CScript_FUN_00566bc0                    ( 13 lines)
-    ... and 11 more
+    core_boxactor.cpp_staticInit_FUN_00421650               ( 13 lines)
+    core_gore.cpp_CBloodSplat_FUN_004ec470                  ( 18 lines)
+    ... and 10 more
 
   [warning_type_propagation] - 15 functions
     core_zombie.cpp_CZombie_FUN_005fbda0                    ( 11 lines)
@@ -337,15 +349,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e35 ( 26 lines)
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0  ( 34 lines)
 
-  [unresolved_funcptr] - 7 functions
-    core_hero.cpp_CHero_FUN_004f3580                        ( 12 lines)
-    core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0 ( 18 lines)
-    support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50  ( 20 lines)
-    engine_3d.c_dispatchMRGLBlockChain_FUN_00407890         ( 21 lines)
-    core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0     ( 22 lines)
-    engine_dosio.c_findFile_FUN_00481760                    ( 23 lines)
-    core_boxactor.cpp_CBoxActor_FUN_00422590                ( 31 lines)
-
   [suspect_float] - 7 functions
     core_glass.cpp_CGlass_process_FUN_004e98e0              ( 16 lines)
     core_stranger.cpp_CStranger_FUN_005c5e80                ( 18 lines)
@@ -353,7 +356,15 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_grave.cpp_CGrave_process_FUN_004ee5c0              ( 31 lines)
     core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 34 lines)
     core_lightgun.cpp_CLightGun_ctor_FUN_00505900           ( 38 lines)
-    core_trigger.cpp_CTrigger_setup_FUN_005df990            ( 46 lines)
+    core_trigger.cpp_CTrigger_setup_FUN_005df990            ( 43 lines)
+
+  [unresolved_funcptr] - 6 functions
+    core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0 ( 18 lines)
+    support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50  ( 20 lines)
+    engine_3d.c_dispatchMRGLBlockChain_FUN_00407890         ( 21 lines)
+    core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0     ( 22 lines)
+    engine_dosio.c_findFile_FUN_00481760                    ( 23 lines)
+    core_boxactor.cpp_CBoxActor_FUN_00422590                ( 31 lines)
 
   [unknown_field] - 5 functions
     core_fire.cpp_CFireEffect_FUN_004c93d0                  ( 16 lines)

@@ -43,15 +43,14 @@
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 215,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 14,
     "pseudocode_lines": 90,
-    "suspect_count": 11,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "suspect_float",
       "undefined_data"
     ],
     "total_lines": 262
@@ -243,62 +242,6 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 57,
-      "match": "9.18355e-41",
-      "text": "fVar3 = 9.18355e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 60,
-      "match": "9.18355e-41",
-      "text": "fVar5 = 9.18355e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 63,
-      "match": "2.341805e-38",
-      "text": "fVar3 = 2.341805e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 66,
-      "match": "2.341805e-38",
-      "text": "fVar5 = 2.341805e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 71,
-      "match": "1.83671e-40",
-      "text": "fVar3 = 1.83671e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 74,
-      "match": "1.83671e-40",
-      "text": "fVar5 = 1.83671e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 77,
-      "match": "2.3326215e-38",
-      "text": "fVar3 = 2.3326215e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 80,
-      "match": "2.3326215e-38",
-      "text": "fVar5 = 2.3326215e-38;",
-      "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",

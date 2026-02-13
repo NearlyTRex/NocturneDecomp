@@ -12,11 +12,10 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr)
   SRenderVertex *vertex_ptr;
   CDemonRenderer *pCVar1;
   int iVar2;
-  float fVar3;
   CVector3f *world_position;
-  int iVar4;
-  uint uVar5;
-  int iVar6;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
   SMRGLHeaderPrimitive local_f0;
   uint local_d8;
   uint local_d4;
@@ -41,40 +40,40 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr)
   float local_30;
   CVector3f local_2c;
   int local_20;
-  float local_1c;
-  float local_18;
+  int local_1c;
+  int local_18;
   float local_14;
   float local_10;
   
-  if (*(int *)this_ptr->unk == 0) {
+  if (this_ptr->weather_type == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
             (g_CDemonRendererPtr2,(float *)&local_b0);
-  if (*(int *)this_ptr->unk == 1) {
+  if (this_ptr->weather_type == 1) {
     local_b0.x = 0;
   }
-  if (*(int *)this_ptr->unk == 1) {
+  if (this_ptr->weather_type == 1) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr2,&DAT_00684900);
+              (g_CDemonRendererPtr2,&SMRGLTextureBasic_00684900);
     pCVar1 = g_CDemonRendererPtr2;
-    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 7.34684e-40;
-    pCVar1->vertex_buffer_ptr->v = 7.34684e-40;
-    pCVar1->vertex_buffer_ptr[1].u = 1.102026e-38;
-    pCVar1->vertex_buffer_ptr[1].v = 7.34684e-40;
-    pCVar1->vertex_buffer_ptr[2].u = 1.102026e-38;
-    pCVar1->vertex_buffer_ptr[2].v = 2.2775203e-38;
-    pCVar1->vertex_buffer_ptr[3].u = 7.34684e-40;
-    pCVar1->vertex_buffer_ptr[3].v = 2.2775203e-38;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x80000;
+    pCVar1->vertex_buffer_ptr->v = 0x80000;
+    pCVar1->vertex_buffer_ptr[1].u = 0x780000;
+    pCVar1->vertex_buffer_ptr[1].v = 0x80000;
+    pCVar1->vertex_buffer_ptr[2].u = 0x780000;
+    pCVar1->vertex_buffer_ptr[2].v = 0xf80000;
+    pCVar1->vertex_buffer_ptr[3].u = 0x80000;
+    pCVar1->vertex_buffer_ptr[3].v = 0xf80000;
   }
   else {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr2,&DAT_00684930);
+              (g_CDemonRendererPtr2,&SMRGLTextureBasic_00684930);
   }
   core_set_cpp_CDemonSet_FUN_0056d380(g_CDemonSetPtr);
   local_14 = 0.1;
   local_10 = 0.1;
-  if (*(int *)this_ptr->unk == 1) {
+  if (this_ptr->weather_type == 1) {
     local_10 = -0.4;
     local_14 = 0.05;
   }
@@ -89,7 +88,7 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr)
   local_cc = 3;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   world_position = DAT_03f95df8;
-  uVar5 = 0;
+  uVar4 = 0;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0x8000);
   do {
     vertex_ptr = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -110,20 +109,20 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr)
       core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
                 (g_CDemonSetPtr,&local_80,(CVector3i *)0x0,0,4);
       pCVar1 = g_CDemonRendererPtr2;
-      if (*(int *)this_ptr->unk == 2) {
-        local_20 = (uVar5 & 3) * 0x400000;
-        iVar2 = ((int)(uVar5 & 0xc) >> 2) * 0x400000;
-        g_CDemonRendererPtr2->vertex_buffer_ptr->u = (float)(local_20 + 0x80000);
-        local_18 = (float)(iVar2 + 0x80000);
+      if (this_ptr->weather_type == 2) {
+        local_20 = (uVar4 & 3) * 0x400000;
+        iVar2 = ((int)(uVar4 & 0xc) >> 2) * 0x400000;
+        g_CDemonRendererPtr2->vertex_buffer_ptr->u = local_20 + 0x80000;
+        local_18 = iVar2 + 0x80000;
         pCVar1->vertex_buffer_ptr->v = local_18;
-        local_1c = (float)(local_20 + 0x380000);
+        local_1c = local_20 + 0x380000;
         pCVar1->vertex_buffer_ptr[1].u = local_1c;
         pCVar1->vertex_buffer_ptr[1].v = local_18;
         pCVar1->vertex_buffer_ptr[2].u = local_1c;
-        fVar3 = (float)(iVar2 + 0x380000);
-        pCVar1->vertex_buffer_ptr[2].v = fVar3;
-        pCVar1->vertex_buffer_ptr[3].u = (float)(local_20 + 0x80000);
-        pCVar1->vertex_buffer_ptr[3].v = fVar3;
+        iVar2 = iVar2 + 0x380000;
+        pCVar1->vertex_buffer_ptr[2].v = iVar2;
+        pCVar1->vertex_buffer_ptr[3].u = local_20 + 0x80000;
+        pCVar1->vertex_buffer_ptr[3].v = iVar2;
       }
       local_34 = -local_10;
       local_38 = local_14;
@@ -155,28 +154,28 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr)
                 (g_CDemonRendererPtr2,&local_f0);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
-    uVar5 = uVar5 + 1;
+    uVar4 = uVar4 + 1;
     world_position = world_position + 1;
-  } while ((int)uVar5 < 200);
-  if (*(int *)this_ptr->unk == 1) {
+  } while ((int)uVar4 < 200);
+  if (this_ptr->weather_type == 1) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr2,&DAT_00684918);
+              (g_CDemonRendererPtr2,&SMRGLTextureBasic_00684918);
     pCVar1 = g_CDemonRendererPtr2;
-    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 7.34684e-40;
-    pCVar1->vertex_buffer_ptr->v = 7.34684e-40;
-    pCVar1->vertex_buffer_ptr[1].u = 1.102026e-38;
-    pCVar1->vertex_buffer_ptr[1].v = 7.34684e-40;
-    pCVar1->vertex_buffer_ptr[2].u = 1.102026e-38;
-    pCVar1->vertex_buffer_ptr[2].v = 2.2775203e-38;
-    iVar4 = 0;
-    pCVar1->vertex_buffer_ptr[3].u = 7.34684e-40;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x80000;
+    pCVar1->vertex_buffer_ptr->v = 0x80000;
+    pCVar1->vertex_buffer_ptr[1].u = 0x780000;
+    pCVar1->vertex_buffer_ptr[1].v = 0x80000;
+    pCVar1->vertex_buffer_ptr[2].u = 0x780000;
+    pCVar1->vertex_buffer_ptr[2].v = 0xf80000;
+    iVar3 = 0;
+    pCVar1->vertex_buffer_ptr[3].u = 0x80000;
     iVar2 = 0;
-    iVar6 = 0x3f95dfc;
-    pCVar1->vertex_buffer_ptr[3].v = 2.2775203e-38;
+    iVar5 = 0x3f95dfc;
+    pCVar1->vertex_buffer_ptr[3].v = 0xf80000;
     do {
-      if ((&DAT_03f96a78)[iVar4] != '\0') {
-        local_2c.x = DAT_03f95df8[iVar4].x;
-        local_2c.z = *(float *)(iVar6 + 4);
+      if ((&DAT_03f96a78)[iVar3] != '\0') {
+        local_2c.x = DAT_03f95df8[iVar3].x;
+        local_2c.z = *(float *)(iVar5 + 4);
         local_2c.y = *(float *)((int)&DAT_03f96758 + iVar2);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,&local_2c);
@@ -212,10 +211,10 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr)
                   (g_CDemonRendererPtr2,&local_f0);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
       }
-      iVar6 = iVar6 + 0xc;
-      iVar4 = iVar4 + 1;
+      iVar5 = iVar5 + 0xc;
+      iVar3 = iVar3 + 1;
       iVar2 = iVar2 + 4;
-    } while (iVar4 < 200);
+    } while (iVar3 < 200);
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   return;

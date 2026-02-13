@@ -10,103 +10,103 @@
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 204,
+        "line": 205,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 271,
+        "line": 272,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 271,
+        "line": 272,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 272,
+        "line": 273,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 46,
-        "line": 272,
+        "line": 273,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 281,
+        "line": 282,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 281,
+        "line": 282,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 297,
+        "line": 298,
         "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 298,
+        "line": 299,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 298,
+        "line": 299,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 77,
-        "line": 299,
-        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 41,
         "line": 300,
         "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
       },
       {
         "category": "other",
+        "column": 41,
+        "line": 301,
+        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
+      },
+      {
+        "category": "other",
         "column": 25,
-        "line": 302,
+        "line": 303,
         "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 302,
+        "line": 303,
         "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 306,
+        "line": 307,
         "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 316,
+        "line": 317,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 316,
+        "line": 317,
         "message": "expected expression"
       }
     ],
@@ -115,21 +115,20 @@
   },
   "complexity": {
     "assembly_lines": 790,
-    "complexity_score": 590,
+    "complexity_score": 576,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 16,
-    "pseudocode_lines": 310,
-    "suspect_count": 25,
+    "pseudocode_lines": 311,
+    "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "suspect_float",
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 1100
+    "total_lines": 1101
   },
   "cross_references": [
     {
@@ -201,7 +200,7 @@
     {
       "addr": "0056b790",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056b790"
+      "name": "core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790"
     },
     {
       "addr": "005743c0",
@@ -529,45 +528,45 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 109,
+      "line": 108,
       "match": "1.4013e-45",
       "text": "local_2c = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 118,
+      "line": 117,
       "match": "1.4013e-45",
       "text": "local_30 = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 141,
+      "line": 140,
       "match": "1.4013e-45",
       "text": "local_30 = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 148,
       "match": "(char *)((int)",
       "text": "pcVar11 = (char *)((int)&uStack_320 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 150,
       "match": "(char *)((int)",
       "text": "pcVar7 = (char *)((int)&uStack_320 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(char *)((int)",
+      "text": "pcVar8 = (char *)((int)&uStack_320 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -578,22 +577,8 @@
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 196,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX == 0) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 230,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar15 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 237,
+      "line": 231,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -601,104 +586,111 @@
     {
       "description": "Complex pointer cast",
       "line": 238,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar15 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 239,
       "match": "(CMatrix3x3f *)((int)",
       "text": "pCVar13 = (CMatrix3x3f *)((int)pCVar13 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 264,
+      "line": 265,
       "match": "code *",
       "text": "iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x120))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 265,
+      "line": 266,
       "match": "code *",
       "text": "if ((iVar4 < 1) && (iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x68))(), iVar4 == 0))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 274,
+      "line": 275,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0xf0))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 286,
+      "line": 287,
       "match": "ABS",
       "text": "if (((float)10 < ABS(local_30)) || ((float)10 < ABS(local_28)))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 286,
+      "line": 287,
       "match": "ABS",
       "text": "if (((float)10 < ABS(local_30)) || ((float)10 < ABS(local_28)))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 290,
+      "line": 291,
       "match": "._0_4_",
       "text": "auStack_c4._0_4_ = 0;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 291,
+      "line": 292,
       "match": "code *",
       "text": "iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x34))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 292,
+      "line": 293,
       "match": "._20_4_",
       "text": "if ((((iVar4 != 2) || (CStack_9c.max.y < CStack_3c.y + (float)auStack_c4._20_4_)) ||",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 293,
+      "line": 294,
       "match": "._24_4_",
       "text": "(CStack_3c.y + (float)auStack_c4._24_4_ < CStack_9c.min.y)) ||",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 295,
+      "line": 296,
       "match": "._28_4_",
       "text": "(float)auStack_c4._28_4_ * (float)auStack_c4._28_4_ < fStack_318)) goto LAB_0054d4f3;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 295,
+      "line": 296,
       "match": "._28_4_",
       "text": "(float)auStack_c4._28_4_ * (float)auStack_c4._28_4_ < fStack_318)) goto LAB_0054d4f3;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 296,
+      "line": 297,
       "match": "SQRT",
       "text": "fStack_318 = SQRT(fStack_318);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 299,
+      "line": 300,
       "match": "._28_4_",
       "text": "fVar5 = ((float)auStack_c4._28_4_ + (float)0.050000000000000003) / fStack_318;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 309,
+      "line": 310,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0x60))();",
       "type": "unresolved_funcptr"

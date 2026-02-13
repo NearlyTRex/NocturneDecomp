@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 221,
+    "complexity_score": 248,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 22,
-    "pseudocode_lines": 221,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 686
+    "pseudocode_lines": 223,
+    "suspect_count": 2,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 688
   },
   "cross_references": [
     {
@@ -51,7 +53,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_renderTriangleSimple_FUN_004839f0",
-    "signature": "void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count)"
+    "signature": "int __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count)"
   },
   "function_calls": [
     {
@@ -346,5 +348,20 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 201,
+      "match": "extraout_EAX",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
+    }
+  ]
 }

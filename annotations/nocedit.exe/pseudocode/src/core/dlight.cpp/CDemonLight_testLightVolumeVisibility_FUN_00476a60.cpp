@@ -10,13 +10,8 @@ int __cdecl
 core_dlight_cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight *this_ptr)
 
 {
-  int extraout_EAX;
-  int extraout_EAX_00;
-  int extraout_EAX_01;
-  int extraout_EAX_02;
-  int extraout_EAX_03;
-  int extraout_EAX_04;
   int iVar1;
+  int iVar2;
   SMRGLHeaderPrimitive SStack_38;
   uint local_20;
   uint local_1c;
@@ -33,21 +28,21 @@ core_dlight_cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight *
   local_1c = 4;
   local_18 = 6;
   local_14 = 2;
-  core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
-  if (extraout_EAX == 0) {
+  iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+  if (iVar1 == 0) {
     iVar1 = 1;
     local_1c = 3;
     local_20 = 1;
     local_18 = 7;
     local_14 = 5;
-    core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
-    if (extraout_EAX_00 != 0) goto LAB_00476acf;
+    iVar2 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+    if (iVar2 != 0) goto LAB_00476acf;
     local_18 = 5;
     local_20 = 0;
     local_1c = 1;
     local_14 = 4;
-    core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
-    if (extraout_EAX_01 != 0) {
+    iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+    if (iVar1 != 0) {
       iVar1 = 1;
       goto LAB_00476acf;
     }
@@ -55,14 +50,14 @@ core_dlight_cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight *
     local_20 = 2;
     local_1c = 6;
     local_18 = 7;
-    core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
-    if (extraout_EAX_02 == 0) {
+    iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+    if (iVar1 == 0) {
       local_20 = 0;
       local_1c = 2;
       local_18 = 3;
       local_14 = 1;
-      core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
-      if (extraout_EAX_03 != 0) {
+      iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+      if (iVar1 != 0) {
         iVar1 = 1;
         goto LAB_00476acf;
       }
@@ -70,9 +65,9 @@ core_dlight_cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight *
       local_1c = 5;
       local_18 = 7;
       local_14 = 6;
-      core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+      iVar2 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
       iVar1 = 0;
-      if (extraout_EAX_04 == 0) goto LAB_00476acf;
+      if (iVar2 == 0) goto LAB_00476acf;
     }
   }
   iVar1 = 1;

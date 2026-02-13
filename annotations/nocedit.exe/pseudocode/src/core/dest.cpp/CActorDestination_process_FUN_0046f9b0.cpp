@@ -55,7 +55,7 @@ core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestination *this_ptr
     }
     if ((this_ptr->persistent_event_flag != 0) || ((this_ptr->unk1 == 0 && (this_ptr->unk4 == 0))))
     {
-      core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+      core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->what_event);
     }
     this_ptr->unk1 = 1;
   }

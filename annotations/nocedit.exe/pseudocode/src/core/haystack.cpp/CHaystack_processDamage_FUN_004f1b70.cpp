@@ -15,7 +15,7 @@ core_haystack_cpp_CHaystack_processDamage_FUN_004f1b70(CHaystack *this_ptr,SDama
   SMotion *pSVar2;
   int desired_state_index;
   
-  if (ABS((this_ptr->base).unk1) != 0.0) {
+  if (((this_ptr->base).no_collision_flag & 0x7fffffffU) != 0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->debug_flag_1 != 0) {
@@ -24,7 +24,7 @@ core_haystack_cpp_CHaystack_processDamage_FUN_004f1b70(CHaystack *this_ptr,SDama
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).unk1 = 0.5f;
+  (this_ptr->base).no_collision_flag = (int)0.5f;
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;

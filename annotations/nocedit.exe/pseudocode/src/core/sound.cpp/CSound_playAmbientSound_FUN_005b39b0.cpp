@@ -10,7 +10,6 @@ void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_005b39b0(CSound *this_pt
 
 {
   char cVar1;
-  int extraout_EAX;
   char *pcVar2;
   
   core_sound_cpp_CSound_killSound_FUN_005b3b90(this_ptr,g_SoundAmbientSfxHandle);
@@ -27,7 +26,8 @@ void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_005b39b0(CSound *this_pt
   if (g_SoundAudioInitialized == 0) {
     return;
   }
-  core_sound_cpp_CSound_playSound_FUN_005b3a20(this_ptr,g_CDemonSetPtr,g_SoundAmbientSoundName);
-  g_SoundAmbientSfxHandle = extraout_EAX;
+  g_SoundAmbientSfxHandle =
+       core_sound_cpp_CSound_playSound_FUN_005b3a20(this_ptr,g_CDemonSetPtr,g_SoundAmbientSoundName)
+  ;
   return;
 }

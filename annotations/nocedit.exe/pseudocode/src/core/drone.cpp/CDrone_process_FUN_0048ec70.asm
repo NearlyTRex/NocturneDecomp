@@ -493,7 +493,7 @@ section .text
         ;   Label: caseD_0
     PUSH EBX                            ; 0048f0ea
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 0048f0eb
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 0048f0f0
     TEST EAX,EAX                        ; 0048f0f3
     JZ 0x0048f109                       ; 0048f0f5
@@ -537,7 +537,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0048f15f
     PUSH EBX                            ; 0048f165
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 0048f166
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 0048f16b
     TEST EAX,EAX                        ; 0048f16e
     JNZ 0x0048ed7c                      ; 0048f170
@@ -652,7 +652,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 0048f2a7
     FSTP double ptr [ESP]               ; 0048f2aa
     CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0 ; 0048f2ad
-        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
+        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 0048f2b2
     PUSH 0x6223e2                       ; 0048f2b5 | = "slime.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0048f2ba

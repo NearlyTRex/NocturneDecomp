@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   item_name
 ;
 ; XREF[4]:
-;   core_event.cpp_CEventList_FUN_004ae140 at 004aea3d
+;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004aea3d
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de559
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055e440
 ;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030 at 005e71de

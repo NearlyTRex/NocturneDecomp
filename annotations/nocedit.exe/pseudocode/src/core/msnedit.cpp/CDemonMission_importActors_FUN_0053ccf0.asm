@@ -336,7 +336,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x440]     ; 0053d023
     PUSH EBX                            ; 0053d02a
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 0053d02b
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0053d030
     MOV EBX,EAX                         ; 0053d033
     TEST EAX,EAX                        ; 0053d035
@@ -359,7 +359,7 @@ section .text
     PUSH EBX                            ; 0053d067
     PUSH EBP                            ; 0053d068
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 0053d069
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0053d06e
     TEST EAX,EAX                        ; 0053d071
     JNZ 0x0053d09c                      ; 0053d073
@@ -464,7 +464,7 @@ section .text
     PUSH EBX                            ; 0053d152
     PUSH EBP                            ; 0053d153
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 0053d154
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0053d159
     TEST EAX,EAX                        ; 0053d15c
     JZ 0x0053d16a                       ; 0053d15e

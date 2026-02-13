@@ -27,9 +27,9 @@ void __cdecl CSentinel::setup(CSentinel *this_ptr);
 // Address: 00568030
 void __cdecl CSentinel::process(CSentinel *this_ptr,float delta_time);
 
-// Original: core_sentinel.cpp_CSentinel_FUN_00568b70
+// Original: core_sentinel.cpp_CSentinel_attractActorToward_FUN_00568b70
 // Address: 00568b70
-int __cdecl CSentinel(CSentinel *this_ptr);
+int __cdecl CSentinel::attractActorToward(CSentinel *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
 // Original: core_sentinel.cpp_CSentinel_archive_FUN_00568c70
 // Address: 00568c70

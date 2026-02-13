@@ -52,7 +52,7 @@
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__strftime_FUN_006002d4
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
-;   engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50
+;   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140
@@ -311,8 +311,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b7990
     MOVSD ES:EDI,ESI                    ; 004b7991
     MOVSD ES:EDI,ESI                    ; 004b7992
-    CALL engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50 ; 004b7993
-        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50(_FILE * source_file, char * dest_filename, char * name_or_offset, int file_size, ...)
+    CALL engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 ; 004b7993
+        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager * this_ptr, _FILE * source_file, char * dest_filename, char * name_or_offset, ...)
     ADD ESP,0x1c                        ; 004b7998
     TEST EAX,EAX                        ; 004b799b
     JZ 0x004b7a95                       ; 004b799d

@@ -46,7 +46,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
   float local_18;
   
   local_1c = 0.25;
-  memset(&(this_ptr->base).action_bindings,0,0x2c);
+  memset(&(this_ptr->base).player_control,0,0x2c);
   if ((this_ptr->base).ai_task != 0) {
     pCVar1 = g_HeroActors[g_LocalHeroIndex];
     local_84 = (this_ptr->base).base.base.location.position.x -
@@ -68,15 +68,15 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
         fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (local_c0.y - (this_ptr->base).base.base.orient.vec.y);
         fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
-        *(float *)((this_ptr->base).unk2 + 4) = fVar6;
+        (this_ptr->base).player_control.turn_speed = fVar6;
         if (fVar6 < -local_1c) {
-          *(float *)((this_ptr->base).unk2 + 4) = -local_1c;
+          (this_ptr->base).player_control.turn_speed = -local_1c;
         }
-        if (local_1c < *(float *)((this_ptr->base).unk2 + 4)) {
-          *(float *)((this_ptr->base).unk2 + 4) = local_1c;
+        if (local_1c < (this_ptr->base).player_control.turn_speed) {
+          (this_ptr->base).player_control.turn_speed = local_1c;
         }
         iVar5 = g_LocalHeroIndex;
-        (this_ptr->base).action_bindings.walk_key = 1;
+        (this_ptr->base).player_control.action_states[0] = 1;
         pCVar1 = g_HeroActors[iVar5];
         if (&local_9c != local_b4) {
           local_9c = (this_ptr->base).base.base.location.position.x -
@@ -88,7 +88,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
         }
         if ((float)10 <
             SQRT(local_98.y * local_98.y + local_9c * local_9c + local_98.x * local_98.x)) {
-          (this_ptr->base).action_bindings.run_key = 1;
+          (this_ptr->base).player_control.action_states[2] = 1;
           return;
         }
       }
@@ -105,7 +105,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
           pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&(this_ptr->base).base.model.motion_controller);
           if (pSVar2->state_index == 0) {
-            (this_ptr->base).action_bindings.draw_key = 1;
+            (this_ptr->base).player_control.action_states[6] = 1;
             return;
           }
         }
@@ -115,7 +115,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
           pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&(this_ptr->base).base.model.motion_controller);
           if (pSVar2->state_index == 0) {
-            (this_ptr->base).action_bindings.draw_key = 1;
+            (this_ptr->base).player_control.action_states[6] = 1;
           }
         }
         local_6c._0_4_ =
@@ -130,14 +130,14 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
                              (pCVar3->y - (this_ptr->base).base.base.orient.vec.y);
         fVar6 = local_18 * (float)0.31830988619288902 * (float)4;
         local_24 = -local_1c;
-        *(float *)((this_ptr->base).unk2 + 4) = fVar6;
+        (this_ptr->base).player_control.turn_speed = fVar6;
         if (fVar6 < local_24) {
-          *(float *)((this_ptr->base).unk2 + 4) = local_24;
+          (this_ptr->base).player_control.turn_speed = local_24;
         }
-        if (local_1c < *(float *)((this_ptr->base).unk2 + 4)) {
-          *(float *)((this_ptr->base).unk2 + 4) = local_1c;
+        if (local_1c < (this_ptr->base).player_control.turn_speed) {
+          (this_ptr->base).player_control.turn_speed = local_1c;
         }
-        fVar6 = *(float *)((this_ptr->base).unk2 + 4);
+        fVar6 = (this_ptr->base).player_control.turn_speed;
         if (((float)-0.050000000000000003 < fVar6) && ((double)fVar6 < 0.050000000000000003)) {
           pCVar4 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                              ((CDemonActor *)this_ptr,(CBoundingBox3D *)(auStack_10c + 0x10));
@@ -196,7 +196,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
                     (this_ptr_00,(CVector3f *)(local_6c + 4),&CStack_38);
           core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
           if (this_ptr_01 == g_CDemonSetPtr->collision_actor) {
-            (this_ptr->base).action_bindings.fire_key = 1;
+            (this_ptr->base).player_control.action_states[3] = 1;
             return;
           }
         }

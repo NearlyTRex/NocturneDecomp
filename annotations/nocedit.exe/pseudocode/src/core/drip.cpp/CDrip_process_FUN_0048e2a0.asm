@@ -29,7 +29,7 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00495aa0
-;   core_set.cpp_CDemonSet_FUN_00570fa0
+;   core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0
 ;
 ; *****************************************************************************
 
@@ -163,8 +163,8 @@ section .text
     MOV EBP,dword ptr [0x006810c8]      ; 0048e42c | g_CDemonSetPtr
     PUSH 0x42c80000                     ; 0048e432
     PUSH EBP                            ; 0048e437 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570fa0 ; 0048e438
-        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570fa0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0 ; 0048e438
+        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 0048e43d
     LEA EDX,[EBX + 0x314]               ; 0048e440
     PUSH EDX                            ; 0048e446

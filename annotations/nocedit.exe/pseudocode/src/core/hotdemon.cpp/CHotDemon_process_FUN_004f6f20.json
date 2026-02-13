@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 21,
-        "line": 136,
+        "line": 134,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 23,
-        "line": 226,
+        "line": 215,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 69,
-        "line": 276,
+        "line": 256,
         "message": "use of undeclared identifier 'stack0xfffffef4'"
       }
     ],
@@ -25,20 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 675,
-    "complexity_score": 498,
+    "complexity_score": 433,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 16,
-    "pseudocode_lines": 323,
-    "suspect_count": 15,
+    "pseudocode_lines": 303,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "stack_param",
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 998
+    "total_lines": 978
   },
   "cross_references": [],
   "function": {
@@ -637,106 +636,78 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_fffffefc",
       "text": "float in_stack_fffffefc;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_ffffff08",
       "text": "float in_stack_ffffff08;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 110,
       "match": "SQRT",
       "text": "local_28 = SQRT(local_c4.z * local_c4.z + local_c4.x * local_c4.x + local_c4.y * local_c4.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
+      "line": 116,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 157,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX == 0) break;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 181,
+      "line": 173,
       "match": "in_stack_fffffefc",
       "text": "path_map,pCVar9,fVar10,in_stack_fffffefc);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 187,
+      "line": 179,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_8c * local_8c + local_94 * local_94);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 208,
+      "line": 197,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 210,
+      "line": 199,
       "match": "1.12104e-44",
       "text": "fVar11 = 1.12104e-44;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 213,
+      "line": 202,
       "match": "2.8026e-45",
       "text": "fVar11 = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 252,
-      "match": "extraout_EAX_00",
-      "text": "if (extraout_EAX_00 == 0) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 269,
+      "line": 249,
       "match": "&stack0xfffffef4",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffef4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 324,
+      "line": 304,
       "match": "in_stack_ffffff08",
       "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff08);",
       "type": "stack_param"

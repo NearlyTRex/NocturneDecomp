@@ -4,26 +4,20 @@
       {
         "category": "other",
         "column": 20,
-        "line": 35,
+        "line": 37,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 51,
+        "line": 53,
         "message": "use of undeclared identifier 'stack0xfffffdfc'; did you mean 'in_stack_fffffdfc'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 62,
-        "line": 54,
+        "column": 84,
+        "line": 56,
         "message": "use of undeclared identifier 'stack0xfffffdfc'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 55,
-        "message": "no matching function for call to 'engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0'"
       }
     ],
     "success": false,
@@ -31,19 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 239,
+    "complexity_score": 127,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 24,
-    "pseudocode_lines": 49,
-    "suspect_count": 17,
+    "pseudocode_lines": 52,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param",
       "stack_ref",
-      "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 230
+    "total_lines": 233
   },
   "cross_references": [
     {
@@ -74,7 +67,7 @@
     {
       "addr": "00564500",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_00564500"
+      "name": "core_script.cpp_updateSelection_FUN_00564500"
     },
     {
       "addr": "005fdbd0",
@@ -179,92 +172,92 @@
     },
     {
       "addr": "0310fdc0",
-      "name": "DAT_0310fdc0",
-      "type": "undefined1",
+      "name": "g_ScriptEditorStatusText",
+      "type": "char[1020]",
       "value": null
     },
     {
       "addr": "031141d0",
-      "name": "INT_031141d0",
+      "name": "g_ScriptEditorLeft",
       "type": "int",
       "value": null
     },
     {
       "addr": "031141d4",
-      "name": "INT_031141d4",
+      "name": "g_ScriptEditorTop",
       "type": "int",
       "value": null
     },
     {
       "addr": "031141d8",
-      "name": "INT_031141d8",
+      "name": "g_ScriptEditorRight",
       "type": "int",
       "value": null
     },
     {
       "addr": "031141dc",
-      "name": "INT_031141dc",
+      "name": "g_ScriptEditorBottom",
       "type": "int",
       "value": null
     },
     {
       "addr": "031141e0",
-      "name": "INT_031141e0",
+      "name": "g_ScriptTextAreaLeft",
       "type": "int",
       "value": null
     },
     {
       "addr": "031141e4",
-      "name": "INT_031141e4",
+      "name": "g_ScriptTextAreaTop",
       "type": "int",
       "value": null
     },
     {
       "addr": "031141e8",
-      "name": "DAT_031141e8",
-      "type": "undefined4",
+      "name": "g_ScriptTextAreaRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "031141ec",
-      "name": "DAT_031141ec",
-      "type": "undefined4",
+      "name": "g_ScriptTextAreaBottom",
+      "type": "int",
       "value": null
     },
     {
       "addr": "031141f0",
-      "name": "DAT_031141f0",
-      "type": "undefined4",
+      "name": "g_ScriptStatusBarX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "031141f4",
-      "name": "DAT_031141f4",
-      "type": "undefined4",
+      "name": "g_ScriptStatusBarY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "031141f8",
-      "name": "DAT_031141f8",
-      "type": "undefined4",
+      "name": "g_ScriptStatusBarRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03114200",
-      "name": "DAT_03114200",
-      "type": "undefined4",
+      "name": "g_ScriptEditorFont",
+      "type": "CBitFont*",
       "value": null
     },
     {
       "addr": "03114204",
-      "name": "INT_03114204",
+      "name": "g_ScriptEditorCharWidth",
       "type": "int",
       "value": null
     },
     {
       "addr": "03114208",
-      "name": "DAT_03114208",
-      "type": "undefined4",
+      "name": "g_ScriptEditorLineHeight",
+      "type": "int",
       "value": null
     }
   ],
@@ -330,113 +323,36 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_031141e8",
-      "text": "(INT_031141e0,INT_031141e4,(DAT_031141e8 - INT_031141e0) + -1,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_031141ec",
-      "text": "(DAT_031141ec - INT_031141e4) + -1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 28,
+      "line": 30,
       "match": "._1_1_",
       "text": "if ((INT_0310fd40._1_1_ & 0x40) == 0) {",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_03114208",
-      "text": "iVar1 = (g_CurrentEditingLine - g_ScriptEditorVScrollBar.scroll_position) * DAT_03114208 +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_03114208",
-      "text": "y = iVar1 + DAT_03114208 + -1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 44,
       "match": "in_stack_fffffdfc",
       "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 46,
       "match": "&stack0xfffffdfc",
       "text": "(&stack0xfffffdfc,\"Ln %d, Col %d\",g_CurrentEditingLine + 1,",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 47,
+      "line": 49,
       "match": "&stack0xfffffdfc",
-      "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
+      "text": "(g_ScriptEditorFont,g_ScriptStatusBarRight,g_ScriptStatusBarY,0xff,-1,&stack0xfffffdfc);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_03114200",
-      "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_031141f8",
-      "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_031141f4",
-      "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_03114200",
-      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_031141f0",
-      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_031141f4",
-      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_0310fdc0",
-      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,&DAT_0310fdc0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 53,
       "match": "in_stack_fffffdfc",
       "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);",
       "type": "stack_param"

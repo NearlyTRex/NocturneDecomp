@@ -31,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 393,
+    "complexity_score": 403,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 14,
     "pseudocode_lines": 78,
-    "suspect_count": 31,
+    "suspect_count": 32,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
@@ -81,7 +81,7 @@
     {
       "addr": "004b1670",
       "is_variadic": false,
-      "name": "core_event.cpp_FUN_004b1670"
+      "name": "core_event.cpp_CRuleList_clear_FUN_004b1670"
     }
   ],
   "globals": [
@@ -228,6 +228,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "core_event_cpp_CRuleList_clear_FUN_004b1670(&ADJ(this_ptr_00)->open_rule);",
+      "type": "decompiler_intrinsic"
+    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,

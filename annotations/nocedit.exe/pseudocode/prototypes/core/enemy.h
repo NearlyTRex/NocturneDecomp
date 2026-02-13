@@ -57,7 +57,7 @@ void __cdecl CEnemy::renderBackground(CEnemy *this_ptr,int layer_flag);
 
 // Original: core_enemy.cpp_CEnemy_FUN_004a9fd0
 // Address: 004a9fd0
-void __cdecl CEnemy(CEnemy *this_ptr);
+int __cdecl CEnemy(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_CEnemy_releaseVictim_FUN_004aa030
 // Address: 004aa030

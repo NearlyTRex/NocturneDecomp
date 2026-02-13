@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 19,
-        "line": 30,
+        "line": 29,
         "message": "C-style cast from 'CLocation *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 40,
+        "line": 39,
         "message": "use of undeclared identifier 'PTR_s_darkPoint_0062df3e_0067b930'"
       }
     ],
@@ -19,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 120,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 70,
-    "suspect_count": 4,
+    "pseudocode_lines": 68,
+    "suspect_count": 2,
     "suspect_types": [
-      "extra_output",
       "stack_param"
     ],
-    "total_lines": 101
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -147,32 +146,18 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "CPathMap *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "(fVar1 = *(float *)(this_ptr->unk3 + 0x40) - in_stack_00000008,",
       "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 50,
-      "match": "extraout_EAX",
-      "text": "this_ptr_01 = extraout_EAX;",
-      "type": "extra_output"
     }
   ]
 }

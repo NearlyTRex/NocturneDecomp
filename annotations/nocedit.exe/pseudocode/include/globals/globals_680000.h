@@ -190,9 +190,9 @@ extern SMRGLTextureBasic DAT_00684810;
 extern SMRGLTextureBasic DAT_00684828;
 extern SMRGLTextureBasic DAT_00684840;
 extern SMRGLTextureBasic DAT_00684858;
-extern SMRGLTextureBasic DAT_00684900;
-extern SMRGLTextureBasic DAT_00684918;
-extern SMRGLTextureBasic DAT_00684930;
+extern SMRGLTextureBasic SMRGLTextureBasic_00684900;
+extern SMRGLTextureBasic SMRGLTextureBasic_00684918;
+extern SMRGLTextureBasic SMRGLTextureBasic_00684930;
 extern SMRGLTextureBasic DAT_0068495c;
 
 // SMRGLTextureBasic*
@@ -310,6 +310,9 @@ extern char g_SoundResultBufferTemplate[104];
 
 // char[108]
 extern char g_TrainSoundFilenameTemplate[108];
+
+// char[200]
+extern char g_ActorRefDefaultBuffer[200];
 
 // char[256]
 extern char g_DefaultRecordingDeviceName[256];
@@ -493,8 +496,6 @@ extern undefined4 DAT_00680974;
 extern undefined4 DAT_00680a04;
 extern undefined4 DAT_00680bd8;
 extern undefined4 DAT_00680bdc;
-extern undefined4 DAT_00680d60;
-extern undefined4 DAT_00680d64;
 extern undefined4 DAT_0068125c;
 extern undefined4 DAT_00681260;
 extern undefined4 DAT_00681a00;

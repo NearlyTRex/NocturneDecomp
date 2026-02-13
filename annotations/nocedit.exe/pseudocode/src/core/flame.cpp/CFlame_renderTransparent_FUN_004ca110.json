@@ -19,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 451,
-    "complexity_score": 1022,
+    "complexity_score": 822,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 39,
     "pseudocode_lines": 277,
-    "suspect_count": 72,
+    "suspect_count": 52,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -697,90 +697,6 @@
       "type": "suspect_float"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 152,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 153,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[1].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 154,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 155,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[3].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 158,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[0].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 159,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 160,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[2].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 161,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 163,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[3].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 164,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 165,
-      "match": "7.34684e-40",
-      "text": "g_RenderVertexBuffer[1].v = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 166,
-      "match": "2.2775203e-38",
-      "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 173,
       "match": "ROUND",
@@ -918,62 +834,6 @@
       "line": 252,
       "match": "2.29589e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[3].w_recip = 2.29589e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 253,
-      "match": "7.34684e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr->u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 254,
-      "match": "2.2775203e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 255,
-      "match": "2.2775203e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 256,
-      "match": "2.2775203e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 257,
-      "match": "2.2775203e-38",
-      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 2.2775203e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 258,
-      "match": "7.34684e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 259,
-      "match": "7.34684e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 7.34684e-40;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 260,
-      "match": "7.34684e-40",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {

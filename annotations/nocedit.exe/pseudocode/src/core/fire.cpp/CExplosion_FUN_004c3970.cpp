@@ -29,7 +29,7 @@ void __cdecl core_fire_cpp_CExplosion_FUN_004c3970(CExplosion *this_ptr)
   this_ptr->unk[0xe] = -0x80;
   this_ptr->unk[0xf] = '?';
   *(uint *)(this_ptr->unk + 0x10) = in_stack_0000000c;
-  core_set_cpp_CDemonSet_FUN_00570fa0(this_ptr_00);
+  core_set_cpp_CDemonSet_initCameraShake_FUN_00570fa0(this_ptr_00,200.0,0.0,0.0,2.0);
   iVar4 = 0;
   iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
   *(int *)(this_ptr->unk + 0x18) = iVar1;

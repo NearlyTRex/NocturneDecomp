@@ -36,6 +36,7 @@ char g_FileTransferErrorMessage[1024] = {};
 
 // char[256]
 char g_KeyboardState[256] = {};
+char g_EventErrorMessageBuffer[256] = {};
 
 // char[32768]
 char g_FileTransferBuffer[32768] = {};
@@ -100,6 +101,7 @@ int g_CameraRotationRoll = {};
 int g_LightDirectionX = {};
 int g_LightDirectionY = {};
 int g_LightDirectionZ = {};
+int g_EventDryRun = {};
 
 // uchar[768]
 uchar g_DefaultPalette[768] = {};
@@ -123,15 +125,6 @@ ulonglong g_SavedMMX4 = {};
 ulonglong g_SavedMMX5 = {};
 ulonglong g_SavedMMX6 = {};
 ulonglong g_SavedMMX7 = {};
-
-// undefined1
-undefined1 DAT_02d0a460 = {};
-undefined1 DAT_02d0a461 = {};
-undefined1 DAT_02d0a462 = {};
-undefined1 DAT_02d0a463 = {};
-
-// undefined4
-undefined4 DAT_02d0a45c = {};
 
 // ushort[256]
 ushort g_ColorTable16[256] = {};

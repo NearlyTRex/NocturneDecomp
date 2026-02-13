@@ -33,7 +33,7 @@
 ;
 ; Called Functions:
 ;   core_dest.cpp_CActorDestination_FUN_0046fd50
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;
 ; *****************************************************************************
 
@@ -160,8 +160,8 @@ section .text
     PUSH EAX                            ; 0046faf3
     MOV EDI,dword ptr [0x006793d0]      ; 0046faf4 | g_CEventListPtr
     PUSH EDI                            ; 0046fafa | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 0046fafb
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 0046fafb
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
         ;   Label: LAB_0046fafb
     ADD ESP,0x8                         ; 0046fb00
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046fb03

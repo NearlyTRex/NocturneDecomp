@@ -9,13 +9,13 @@
 void __cdecl core_hero_cpp_CHero_FUN_004f3580(CHero *this_ptr)
 
 {
-  if (*(int *)this_ptr->unk3 == 0) {
+  CDemonActor *this_ptr_00;
+  
+  this_ptr_00 = this_ptr->nearby_interactive_actor;
+  if (this_ptr_00 == (CDemonActor *)0x0) {
     return;
   }
-  (**(code **)(*(int *)(*(int *)this_ptr->unk3 + 0x154) + 0x9c))();
-  this_ptr->unk3[0] = '\0';
-  this_ptr->unk3[1] = '\0';
-  this_ptr->unk3[2] = '\0';
-  this_ptr->unk3[3] = '\0';
+  (*((this_ptr_00->vtable)._ub)->stopInteraction)(this_ptr_00,(CDemonActor *)this_ptr);
+  this_ptr->nearby_interactive_actor = (CDemonActor *)0x0;
   return;
 }

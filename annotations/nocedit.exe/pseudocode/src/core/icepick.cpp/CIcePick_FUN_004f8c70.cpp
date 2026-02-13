@@ -17,7 +17,6 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
   float fVar5;
   SMotion *pSVar6;
   uint uVar7;
-  CPathMap *extraout_EAX;
   float unaff_EBP;
   CHero *pCVar8;
   float in_stack_00000008;
@@ -44,7 +43,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
   local_1c = 0x3e800000;
   local_24 = 0.7853982;
   pCVar8 = g_HeroActors[g_LocalHeroIndex];
-  memset(&(this_ptr->base).action_bindings,0,0x2c);
+  memset(&(this_ptr->base).player_control,0,0x2c);
   if ((this_ptr->base).ai_task != 0) {
     pCVar3 = g_HeroActors[g_LocalHeroIndex];
     local_6c = (this_ptr->base).base.base.location.position.x -
@@ -69,7 +68,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
       pCVar3 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
       if ((pCVar3 == (CHero *)0x0) || (local_24 <= CStack_3c.y)) {
         if (this_ptr->guns_drawn != 0) {
-          (this_ptr->base).action_bindings.draw_key = 1;
+          (this_ptr->base).player_control.action_states[6] = 1;
         }
       }
       else {
@@ -105,17 +104,16 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
            (uVar7 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                               ((CCharacter *)this_ptr,in_stack_00000008), uVar7 != 0)) {
           if (uVar7 < 2) {
-            (this_ptr->base).action_bindings.walk_key = 1;
+            (this_ptr->base).player_control.action_states[0] = 1;
           }
           else if (uVar7 == 2) {
-            (this_ptr->base).action_bindings.run_key = 1;
-            (this_ptr->base).action_bindings.walk_key = 1;
+            (this_ptr->base).player_control.action_states[2] = 1;
+            (this_ptr->base).player_control.action_states[0] = 1;
           }
         }
       }
       if (pCStack_14 == (CPathMap *)0x0) {
-        core_path_cpp_FUN_00548500();
-        pCStack_14 = extraout_EAX;
+        pCStack_14 = core_path_cpp_FUN_00548500();
       }
       iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (pCStack_14,&(this_ptr->base).base.base.location.position,&CStack_3c,
@@ -125,19 +123,19 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
                           (CStack_3c.y - (this_ptr->base).base.base.orient.vec.y);
         fVar5 = fVar5 * (float)0.31830988619288902 * (float)4;
         fStack_2c = -unaff_EBP;
-        *(float *)((this_ptr->base).unk2 + 4) = fVar5;
+        (this_ptr->base).player_control.turn_speed = fVar5;
         if (fVar5 < fStack_2c) {
-          *(float *)((this_ptr->base).unk2 + 4) = fStack_2c;
+          (this_ptr->base).player_control.turn_speed = fStack_2c;
         }
-        if (unaff_EBP < *(float *)((this_ptr->base).unk2 + 4)) {
-          *(float *)((this_ptr->base).unk2 + 4) = unaff_EBP;
+        if (unaff_EBP < (this_ptr->base).player_control.turn_speed) {
+          (this_ptr->base).player_control.turn_speed = unaff_EBP;
         }
         if (((float)10 <= fStack_88) || (bVar1)) {
-          (this_ptr->base).action_bindings.run_key = 1;
-          (this_ptr->base).action_bindings.walk_key = 1;
+          (this_ptr->base).player_control.action_states[2] = 1;
+          (this_ptr->base).player_control.action_states[0] = 1;
         }
         else {
-          (this_ptr->base).action_bindings.walk_key = 1;
+          (this_ptr->base).player_control.action_states[0] = 1;
         }
       }
     }
@@ -145,13 +143,13 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
       this_ptr_00 = &(this_ptr->base).base.model;
       if (bVar1) {
         if (this_ptr->guns_drawn == 0) {
-          (this_ptr->base).action_bindings.draw_key = 1;
+          (this_ptr->base).player_control.action_states[6] = 1;
         }
         else {
           pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr_00->motion_controller);
           if ((pSVar6->state_index != 2) && (pSVar6->state_index != 1)) {
-            (this_ptr->base).action_bindings.fire_key = 1;
+            (this_ptr->base).player_control.action_states[3] = 1;
           }
         }
         (this_ptr->base).base.hero_proximity_timer = 0.0;
@@ -160,7 +158,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
         pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&this_ptr_00->motion_controller);
         if ((pSVar6->state_index == 10) && (this_ptr->guns_drawn != 0)) {
-          (this_ptr->base).action_bindings.draw_key = 1;
+          (this_ptr->base).player_control.action_states[6] = 1;
         }
         iVar2 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).randomize)
                           ((CEnemy *)g_HeroActors[g_LocalHeroIndex]);
@@ -168,11 +166,11 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
            (uVar7 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                               ((CCharacter *)this_ptr,in_stack_00000008), uVar7 != 0)) {
           if (uVar7 < 2) {
-            (this_ptr->base).action_bindings.walk_key = 1;
+            (this_ptr->base).player_control.action_states[0] = 1;
           }
           else if (uVar7 == 2) {
-            (this_ptr->base).action_bindings.run_key = 1;
-            (this_ptr->base).action_bindings.walk_key = 1;
+            (this_ptr->base).player_control.action_states[2] = 1;
+            (this_ptr->base).player_control.action_states[0] = 1;
           }
         }
       }
@@ -183,20 +181,17 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
                           (pCVar4->y - (this_ptr->base).base.base.orient.vec.y);
         fVar5 = fVar5 * (float)0.31830988619288902 * (float)4;
         local_28 = -unaff_EBP;
-        *(float *)((this_ptr->base).unk2 + 4) = fVar5;
+        (this_ptr->base).player_control.turn_speed = fVar5;
         if (fVar5 < local_28) {
-          *(float *)((this_ptr->base).unk2 + 4) = local_28;
+          (this_ptr->base).player_control.turn_speed = local_28;
         }
-        if (unaff_EBP < *(float *)((this_ptr->base).unk2 + 4)) {
-          *(float *)((this_ptr->base).unk2 + 4) = unaff_EBP;
+        if (unaff_EBP < (this_ptr->base).player_control.turn_speed) {
+          (this_ptr->base).player_control.turn_speed = unaff_EBP;
         }
-        fVar5 = *(float *)((this_ptr->base).unk2 + 4);
+        fVar5 = (this_ptr->base).player_control.turn_speed;
         if ((((float)-0.25 < fVar5) && ((double)fVar5 < 0.25)) &&
-           ((this_ptr->base).action_bindings.fire_key != 0)) {
-          (this_ptr->base).unk2[4] = '\0';
-          (this_ptr->base).unk2[5] = '\0';
-          (this_ptr->base).unk2[6] = '\0';
-          (this_ptr->base).unk2[7] = '\0';
+           ((this_ptr->base).player_control.action_states[3] != 0)) {
+          (this_ptr->base).player_control.turn_speed = 0.0;
         }
       }
     }
@@ -204,12 +199,12 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
     if (fVar5 <= 0.0) {
       if (fVar5 < 0.0) {
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
-        *(float *)((this_ptr->base).unk2 + 4) = -unaff_EBP;
+        (this_ptr->base).player_control.turn_speed = -unaff_EBP;
       }
     }
     else {
       (this_ptr->base).base.turn_angle_accumulator = 0.0;
-      *(float *)((this_ptr->base).unk2 + 4) = unaff_EBP;
+      (this_ptr->base).player_control.turn_speed = unaff_EBP;
     }
     CStack_54.x = (pCVar8->base).base.location.position.x -
                   (this_ptr->base).base.base.location.position.x;

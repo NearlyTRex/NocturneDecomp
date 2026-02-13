@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time,int trigger_id)
+; __cdecl int __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time,int trigger_id)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   trigger_time
@@ -10,7 +10,7 @@
 ; XREF[4]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c5b0
 ;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048f2ad
-;   core_event.cpp_CEventList_FUN_004b0f00 at 004b0f46
+;   core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00 at 004b0f46
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005de360 at 005de540
 ;
 ; Referenced Globals:

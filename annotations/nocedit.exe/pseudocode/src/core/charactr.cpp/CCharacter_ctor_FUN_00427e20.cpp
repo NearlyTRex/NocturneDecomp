@@ -23,8 +23,10 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   pCVar1 = (CCharacter *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(&pCVar1->model);
   pCVar3 = core_cloth_cpp_CClothList_ctor_FUN_0043bf40(&ADJ(pCVar2)->cloth_list);
-  pvVar1 = __arrinit(ADJ(pCVar3)->unk16,0xf,&g_CVectorTypeInfo);
-  pvVar2 = __arrinit(ADJ(pvVar1)->unk17,0xf,&g_CVectorTypeInfo);
+  pvVar1 = __arrinit
+                     (ADJ(pCVar3)->collision_test_points,0xf,&g_CVectorTypeInfo);
+  pvVar2 = __arrinit
+                     (ADJ(pvVar1)->collision_test_normals,0xf,&g_CVectorTypeInfo);
   pvVar3 = __arrinit(ADJ(pvVar2)->fire_effects,0x32,&g_SFireTypeInfo);
   pvVar4 = __arrinit(ADJ(pvVar3)->flames,0x32,&g_CFlameTypeInfo);
   ADJ(pvVar4)->base.vtable._ub = &g_CCharacterVTable;
@@ -57,10 +59,10 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
     (ADJ(pvVar4)->look_offset).y = 0.0;
     (ADJ(pvVar4)->look_offset).z = 2.0;
   }
-  ADJ(pvVar4)->unk7 = 0;
-  ADJ(pvVar4)->unk8 = 0;
-  ADJ(pvVar4)->unk9 = 0;
-  ADJ(pvVar4)->unk10 = 0;
+  ADJ(pvVar4)->look_at_search_timer = 0.0;
+  ADJ(pvVar4)->wander_target = (CWayPoint *)0x0;
+  ADJ(pvVar4)->wander_nearest_waypoint = (CWayPoint *)0x0;
+  ADJ(pvVar4)->wander_cooldown = 0.0;
   ADJ(pvVar4)->look_at_head_bone = -1;
   pCVar4 = ADJ(pvVar4);
   do {
@@ -90,9 +92,9 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->show_in_editor = 1;
   ADJ(pvVar4)->health_bar_mode = 0;
   ADJ(pvVar4)->descriptive_name[0] = '\0';
-  (ADJ(pvVar4)->unk15).x = 0.0;
-  (ADJ(pvVar4)->unk15).y = 0.0;
-  (ADJ(pvVar4)->unk15).z = 0.0;
+  ADJ(pvVar4)->smoke_emit_timer = 0.0;
+  ADJ(pvVar4)->smoke_check_timer = 0.0;
+  ADJ(pvVar4)->smoke_occluded = 0;
   ADJ(pvVar4)->hero_proximity_timer = 0.0;
   ADJ(pvVar4)->walk_stuck_timer = 0.0;
   ADJ(pvVar4)->talk_to_me_event[0] = '\0';

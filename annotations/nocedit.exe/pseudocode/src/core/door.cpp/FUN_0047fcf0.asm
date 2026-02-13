@@ -16,7 +16,7 @@
 ;   CEventList g_CEventListInstance
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     PUSH EAX                            ; 0047fcf9
     MOV EDX,dword ptr [0x006793d0]      ; 0047fcfa | g_CEventListInstance | g_CEventListPtr
     PUSH EDX                            ; 0047fd00 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 0047fd01
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 0047fd01
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0047fd06
     RET                                 ; 0047fd09
 

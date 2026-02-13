@@ -29,7 +29,7 @@ char * __cdecl parseArgument(char **cursor,char *out_buffer,int max_length);
 
 // Original: core_script.cpp_parseConditionExpr_FUN_005594a0
 // Address: 005594a0
-void __cdecl parseConditionExpr(char **cursor,char *out_buffer);
+char * __cdecl parseConditionExpr(char **cursor,char *out_buffer);
 
 // Original: core_script.cpp_getActor_FUN_005594e0
 // Address: 005594e0
@@ -71,9 +71,9 @@ int __cdecl CScript(CScript *this_ptr);
 // Address: 00559b20
 void __cdecl CScript(CScript *this_ptr);
 
-// Original: core_script.cpp_CScript_FUN_00559d80
+// Original: core_script.cpp_CScript_renderEditor_FUN_00559d80
 // Address: 00559d80
-void __cdecl CScript(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CScript::renderEditor(CScript *this_ptr,int left,int top,int right,int bottom);
 
 // Original: core_script.cpp_CScript_FUN_00559f80
 // Address: 00559f80
@@ -129,27 +129,27 @@ int __cdecl CScript(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_dbLoad_FUN_005603c0
 // Address: 005603c0
-void __cdecl CScript::dbLoad(CScript *this_ptr,char *param_2);
+void __cdecl CScript::dbLoad(CScript *this_ptr,char *filename);
 
 // Original: core_script.cpp_CScript_findDialogEntry_FUN_005606e0
 // Address: 005606e0
-int __cdecl CScript::findDialogEntry(CScript *this_ptr,char *param_2);
+int __cdecl CScript::findDialogEntry(CScript *this_ptr,char *path);
 
-// Original: core_script.cpp_GetReferencedActor_FUN_00560760
+// Original: core_script.cpp_readActorReference_FUN_00560760
 // Address: 00560760
-void __cdecl GetReferencedActor(_FILE *param_1,int *param_2);
+void __cdecl readActorReference(_FILE *file_handle,CDemonActor *actor_out);
 
-// Original: core_script.cpp_FUN_005607e0
+// Original: core_script.cpp_writeActorReference_FUN_005607e0
 // Address: 005607e0
-void __cdecl FUN_005607e0(_FILE *param_1,int *param_2);
+void __cdecl writeActorReference(_FILE *file_handle,CDemonActor *actor);
 
 // Original: core_script.cpp_CScript_loadState_FUN_00560820
 // Address: 00560820
-int __cdecl CScript::loadState(CScript *this_ptr,_FILE *param_2);
+int __cdecl CScript::loadState(CScript *this_ptr,_FILE *file_handle);
 
-// Original: core_script.cpp_CScript_FUN_00560b50
+// Original: core_script.cpp_CScript_saveState_FUN_00560b50
 // Address: 00560b50
-void __cdecl CScript(CScript *this_ptr,_FILE *param_2);
+void __cdecl CScript::saveState(CScript *this_ptr,_FILE *file_handle);
 
 // Original: core_script.cpp_CScript_FUN_00560d80
 // Address: 00560d80
@@ -191,45 +191,45 @@ void __cdecl CCmdParse::toString(CCmdParse *this_ptr,char *output_buffer);
 // Address: 00562620
 int __cdecl CCmdParse::getParamIndexAtCursor(CCmdParse *this_ptr,int cursor_position);
 
-// Original: core_script.cpp_FUN_005626d0
+// Original: core_script.cpp_CCmdParse_getParamTextLength_FUN_005626d0
 // Address: 005626d0
-int __cdecl FUN_005626d0(int param_1,int param_2);
+int __cdecl CCmdParse::getParamTextLength(CCmdParse *this_ptr,int param_count);
 
-// Original: core_script.cpp_FUN_00562760
+// Original: core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760
 // Address: 00562760
-int __cdecl FUN_00562760(int param_1,int param_2);
+int __cdecl CCmdParse::getParamTextLengthAt(CCmdParse *this_pointer,int param_index);
 
-// Original: core_script.cpp_FUN_005627f0
+// Original: core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0
 // Address: 005627f0
-CHero * __cdecl FUN_005627f0(int param_1,int param_2);
+CCharacter * __cdecl CCmdParse::getCharacterByParamIndex(CCmdParse *this_ptr,int param_index);
 
-// Original: core_script.cpp_FUN_00562860
+// Original: core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
 // Address: 00562860
-void __cdecl FUN_00562860(int param_1,int param_2);
+CMotionList * __cdecl CCmdParse::getMotionListByParamIndex(CCmdParse *this_ptr,int param_index);
 
 // Original: core_script.cpp_editParameterValue_FUN_00562920
 // Address: 00562920
 int __cdecl editParameterValue(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name);
 
-// Original: core_script.cpp_FUN_00564090
+// Original: core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090
 // Address: 00564090
-void __cdecl FUN_00564090(int param_1,int *param_2);
+void __cdecl CCmdParse::applyActorParameters(CCmdParse *this_ptr,CDemonActor *actor);
 
-// Original: core_script.cpp_FUN_005643d0
+// Original: core_script.cpp_expandTemplateText_FUN_005643d0
 // Address: 005643d0
-void __cdecl FUN_005643d0(void);
+void __cdecl expandTemplateText(char *buffer,char *template_text);
 
-// Original: core_script.cpp_FUN_005644e0
+// Original: core_script.cpp_clearSelections_FUN_005644e0
 // Address: 005644e0
-void __cdecl FUN_005644e0(void);
+void __cdecl clearSelections(void);
 
-// Original: core_script.cpp_FUN_00564500
+// Original: core_script.cpp_updateSelection_FUN_00564500
 // Address: 00564500
-void __cdecl FUN_00564500(void);
+void __cdecl updateSelection(void);
 
-// Original: core_script.cpp_FUN_00564560
+// Original: core_script.cpp_getSelectionRangeForLine_FUN_00564560
 // Address: 00564560
-void __cdecl FUN_00564560(void);
+void __cdecl getSelectionRangeForLine(int line,int *sel_start_col_out,int *sel_end_col_out);
 
 // Original: core_script.cpp_CScript_FUN_005645d0
 // Address: 005645d0
@@ -243,21 +243,21 @@ void __cdecl CScript::editorAction(CScript *this_ptr,EEditorActionType action_ty
 // Address: 00565130
 void __cdecl CScript(CScript *this_ptr);
 
-// Original: core_script.cpp_CScript_FUN_00565aa0
+// Original: core_script.cpp_CScript_gotoPosition_FUN_00565aa0
 // Address: 00565aa0
-void __cdecl CScript(CScript *this_ptr,int param_2,int param_3);
+void __cdecl CScript::gotoPosition(CScript *this_ptr,int column,int line);
 
-// Original: core_script.cpp_CScript_FUN_00565ae0
+// Original: core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0
 // Address: 00565ae0
-void __cdecl CScript(CScript *this_ptr,int param_2,int param_3);
+void __cdecl CScript::editParameterAtPosition(CScript *this_ptr,int column,int line);
 
-// Original: core_script.cpp_CScript_FUN_00565d00
+// Original: core_script.cpp_CScript_executeContextAction_FUN_00565d00
 // Address: 00565d00
-void __cdecl CScript(CScript *this_ptr,int param_2,int param_3);
+void __cdecl CScript::executeContextAction(CScript *this_ptr,int column,int line);
 
-// Original: core_script.cpp_CScript_FUN_00565e70
+// Original: core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70
 // Address: 00565e70
-void __cdecl CScript(CScript *this_ptr,int param_2,int param_3);
+void __cdecl CScript::showSyntaxHelp(CScript *this_ptr,int column,int line);
 
 // Original: core_script.cpp_CScript_FUN_00565f70
 // Address: 00565f70
@@ -279,21 +279,21 @@ void __cdecl CScript::loadLineToBuffer(CScript *this_ptr,int line_number);
 // Address: 005662a0
 void __cdecl CScript::editorPutLine(CScript *this_ptr,int line_number);
 
-// Original: core_script.cpp_CScript_FUN_00566330
+// Original: core_script.cpp_CScript_splitLineAtColumn_FUN_00566330
 // Address: 00566330
-void __cdecl CScript(CScript *this_ptr,int param_2,int param_3);
+void __cdecl CScript::splitLineAtColumn(CScript *this_ptr,int column,int line);
 
-// Original: core_script.cpp_CScript_FUN_00566390
+// Original: core_script.cpp_CScript_insertText_FUN_00566390
 // Address: 00566390
-void __cdecl CScript(CScript *this_ptr,char *param_2,int param_3);
+void __cdecl CScript::insertText(CScript *this_ptr,char *text,int update_cursor);
 
 // Original: core_script.cpp_CScript_FUN_005664d0
 // Address: 005664d0
 void __cdecl CScript(CScript *this_ptr,int param_2);
 
-// Original: core_script.cpp_CScript_FUN_00566660
+// Original: core_script.cpp_CScript_initEditorLayout_FUN_00566660
 // Address: 00566660
-void __cdecl CScript(CScript *this_ptr,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CScript::initEditorLayout(CScript *this_ptr,int x,int y,int width,int height);
 
 // Original: core_script.cpp_CScript_updateLineMetrics_FUN_00566800
 // Address: 00566800
@@ -323,9 +323,9 @@ uint __cdecl CScript::editorIndex2X(CScript *this_ptr,int line_number,uint buffe
 // Address: 00566bc0
 void __cdecl CScript(CScript *this_ptr);
 
-// Original: core_script.cpp_CScript_FUN_00566c20
+// Original: core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20
 // Address: 00566c20
-int __cdecl CScript(CScript *this_ptr,int param_2,int param_3,int *param_4,int *param_5);
+int __cdecl CScript::screenToScriptPosition(CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out);
 
 // Original: core_script.cpp_CScript_FUN_00566cc0
 // Address: 00566cc0
@@ -359,9 +359,9 @@ void __cdecl CScript(CScript *this_ptr,int param_2,int param_3);
 // Address: 00567510
 void __cdecl CScript(CScript *this_ptr,int *param_2);
 
-// Original: core_script.cpp_FUN_005675a0
+// Original: core_script.cpp_compareActors_FUN_005675a0
 // Address: 005675a0
-int __cdecl FUN_005675a0(char *param_1,char *param_2);
+int __cdecl compareActors(CDemonActor *a,CDemonActor *b);
 
 // Original: core_script.cpp_CScript_FUN_00567630
 // Address: 00567630
@@ -379,9 +379,9 @@ int __cdecl CScript(CScript *this_ptr,char *param_2,char *param_3);
 // Address: 00567bc0
 void __cdecl CScript(CScript *this_ptr,CStrList *param_2);
 
-// Original: core_script.cpp_FUN_00567d00
+// Original: core_script.cpp_makeVector_FUN_00567d00
 // Address: 00567d00
-CVector3f * __cdecl FUN_00567d00(CVector3f *param_1,float param_2,float param_3,float param_4);
+CVector3f * __cdecl makeVector(CVector3f *out,float x,float y,float z);
 
 // Original: core_script.cpp_CDeformableModel_getModelFilename_FUN_00567d30
 // Address: 00567d30

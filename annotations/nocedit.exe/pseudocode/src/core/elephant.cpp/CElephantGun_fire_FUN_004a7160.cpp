@@ -14,7 +14,6 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   CDemonSet *this_ptr_00;
   CTrigger *this_ptr_01;
   float fVar3;
-  int extraout_EAX;
   float10 fVar4;
   float10 fVar5;
   CDemonActor *in_stack_fffffec0;
@@ -170,8 +169,9 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
           }
           else {
             in_stack_fffffec4 = (CDemonSet *)0x4a77f0;
-            core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0((CGlass *)pCStack_2c);
-            if (extraout_EAX == 0) break;
+            iVar2 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0((CGlass *)pCStack_2c)
+            ;
+            if (iVar2 == 0) break;
             in_stack_fffffec0 = (CDemonActor *)0x4a7813;
             in_stack_fffffec4 = pCStack_2c;
             core_glass_cpp_CGlass_shatter_FUN_004eaef0

@@ -126,7 +126,7 @@ section .text
     JNZ 0x004c6d73                      ; 004c6d7f
         ;   XREF to: 004c6d73 (CONDITIONAL_JUMP)  ; LAB_004c6d73
     XOR EBX,EBX                         ; 004c6d81
-    MOV dword ptr [0x02d677b0],EBX      ; 004c6d83 | g_LaserBeamActiveListHead
+    MOV dword ptr [0x02d677b0],EBX      ; 004c6d83 | g_ExplosionPoolIndex
     MOV EBX,0x2d677b4                   ; 004c6d89 | g_ExplosionPool
     LEA ESI,[EBX + 0x118]               ; 004c6d8e | g_ExplosionActiveListHead
     PUSH EBX                            ; 004c6d94 | g_ExplosionPool | DAT_02d677d0

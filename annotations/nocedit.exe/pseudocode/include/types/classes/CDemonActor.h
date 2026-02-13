@@ -42,8 +42,8 @@ typedef struct CDemonActor {
     int unk11; // 0x120
     int unk12; // 0x124
     CDemonActorTransformState previous_transform_state; // 0x128
-    int unk13; // 0x144
-    int unk14; // 0x148
+    int render_needs_update; // 0x144
+    int is_editor_hidden; // 0x148
     struct CDemonActor* next_actor; // 0x14c
     struct CDemonActor* prev_actor; // 0x150
     UActorVTable vtable; // 0x154

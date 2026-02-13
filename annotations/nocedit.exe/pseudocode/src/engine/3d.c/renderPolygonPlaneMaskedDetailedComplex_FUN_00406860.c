@@ -12,9 +12,9 @@ engine_3d_c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860(SMRGLHeaderPrim
 {
   SMRGLHeaderBasic *pSVar1;
   int iVar2;
-  float fVar3;
+  int iVar3;
   SMRGLHeaderPrimitive *pSVar4;
-  float fVar5;
+  int iVar5;
   int iVar6;
   int vertex_count;
   
@@ -45,42 +45,42 @@ engine_3d_c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860(SMRGLHeaderPrim
     vertex_count = 0;
     for (iVar2 = 0; iVar2 < (polygon_info->base).count * 3; iVar2 = iVar2 + 3) {
       *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
-      fVar3 = (float)(pSVar4->base).count;
-      fVar5 = (float)(pSVar4->surface_normal).A;
+      iVar3 = (pSVar4->base).count;
+      iVar5 = (pSVar4->surface_normal).A;
       if (g_CurrentTextureDimension < 0x41) {
-        if ((int)fVar3 < 0x40000) {
-          fVar3 = 3.67342e-40;
+        if (iVar3 < 0x40000) {
+          iVar3 = 0x40000;
         }
-        if ((int)fVar5 < 0x40000) {
-          fVar5 = 3.67342e-40;
+        if (iVar5 < 0x40000) {
+          iVar5 = 0x40000;
         }
-        if (0xfbffff < (int)fVar3) {
-          fVar3 = 2.3142544e-38;
+        if (0xfbffff < iVar3) {
+          iVar3 = 0xfbffff;
         }
-        if (0xfbffff < (int)fVar5) {
-          fVar5 = 2.3142544e-38;
+        if (0xfbffff < iVar5) {
+          iVar5 = 0xfbffff;
         }
       }
       else {
-        if ((int)fVar3 < 0x10000) {
-          fVar3 = 9.18355e-41;
+        if (iVar3 < 0x10000) {
+          iVar3 = 0x10000;
         }
-        if ((int)fVar5 < 0x10000) {
-          fVar5 = 9.18355e-41;
+        if (iVar5 < 0x10000) {
+          iVar5 = 0x10000;
         }
-        if (0xfeffff < (int)fVar3) {
-          fVar3 = 2.341805e-38;
+        if (0xfeffff < iVar3) {
+          iVar3 = 0xfeffff;
         }
-        if (0xfeffff < (int)fVar5) {
-          fVar5 = 2.341805e-38;
+        if (0xfeffff < iVar5) {
+          iVar5 = 0xfeffff;
         }
       }
-      g_RenderVertexBuffer[(pSVar4->base).type].u = fVar3;
+      g_RenderVertexBuffer[(pSVar4->base).type].u = iVar3;
       pSVar1 = &pSVar4->base;
       iVar6 = iVar6 + 4;
       vertex_count = vertex_count + 1;
       pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
-      g_RenderVertexBuffer[pSVar1->type].v = fVar5;
+      g_RenderVertexBuffer[pSVar1->type].v = iVar5;
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);
   }

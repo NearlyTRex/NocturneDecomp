@@ -52,9 +52,10 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2f50(CHero *this_ptr)
     iVar3 = iVar3 + 4;
   }
   if (this_ptr->lever_to_pull != (CDemonActor *)0x0) {
-    iVar3 = core_event_cpp_FUN_004b18e0((int *)(this_ptr->lever_to_pull[3].actor_name + 0x18));
+    iVar3 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004b18e0
+                      ((CRuleList *)(this_ptr->lever_to_pull[3].actor_name + 0x18));
     if (iVar3 == 0) {
-      (this_ptr->action_bindings).fire_key = 0;
+      (this_ptr->player_control).action_states[3] = 0;
       return 1;
     }
   }

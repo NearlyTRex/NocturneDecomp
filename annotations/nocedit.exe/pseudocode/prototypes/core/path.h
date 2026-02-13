@@ -73,15 +73,15 @@ CPathMap * __cdecl FUN_00548390(void);
 
 // Original: core_path.cpp_FUN_00548500
 // Address: 00548500
-void __cdecl FUN_00548500(void);
+CPathMap * __cdecl FUN_00548500(void);
 
 // Original: core_path.cpp_CPathMap_reset_FUN_00548510
 // Address: 00548510
 void __cdecl CPathMap::reset(CPathMap *this_ptr);
 
-// Original: core_path.cpp_GlobalPathmapListCorruption_FUN_00548590
+// Original: core_path.cpp_FUN_00548590
 // Address: 00548590
-void __cdecl GlobalPathmapListCorruption(void);
+void __cdecl FUN_00548590(void);
 
 // Original: core_path.cpp_FUN_005485f0
 // Address: 005485f0
@@ -91,9 +91,9 @@ void __cdecl FUN_005485f0(void);
 // Address: 00548680
 void __cdecl FUN_00548680(void);
 
-// Original: core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750
+// Original: core_path.cpp_CPathMap_FUN_00548750
 // Address: 00548750
-void __cdecl CPathMap::CallToQueuePop(CPathMap *this_ptr);
+void __cdecl CPathMap(CPathMap *this_ptr);
 
 // Original: core_path.cpp_CPathMap_queuePop_FUN_005487a0
 // Address: 005487a0

@@ -46,9 +46,6 @@ extern CGlassParticle* g_CFireEffectGlassParticlesEnd;
 // CGunFlame[500]
 extern CGunFlame g_GunFlamePool[500];
 
-// CLaserBeam*
-extern CLaserBeam* g_LaserBeamActiveListHead;
-
 // CLaserBeam[64]
 extern CLaserBeam g_LaserBeamPool[64];
 
@@ -63,4 +60,7 @@ extern CToss* g_TossActiveListHead;
 
 // CToss[20]
 extern CToss g_TossPool[20];
+
+// int
+extern int g_ExplosionPoolIndex;
 

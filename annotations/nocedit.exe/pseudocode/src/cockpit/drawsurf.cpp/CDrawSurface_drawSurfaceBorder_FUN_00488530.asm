@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30 at 00489dfe
-;   core_script.cpp_CScript_FUN_00559d80 at 00559f19
+;   core_script.cpp_CScript_renderEditor_FUN_00559d80 at 00559f19
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0

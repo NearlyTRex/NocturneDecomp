@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 28,
-        "line": 69,
+        "line": 70,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 120,
-        "line": 128,
+        "line": 129,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -19,16 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 188,
+    "complexity_score": 214,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 19,
-    "pseudocode_lines": 153,
-    "suspect_count": 3,
+    "pseudocode_lines": 154,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unaffected_reg"
     ],
-    "total_lines": 498
+    "total_lines": 499
   },
   "cross_references": [
     {
@@ -79,7 +80,7 @@
     {
       "addr": "004b7d50",
       "is_variadic": false,
-      "name": "engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50"
+      "name": "engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50"
     },
     {
       "addr": "0054f5a0",
@@ -484,25 +485,39 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 89,
       "match": "(time_t *)((int)",
       "text": "ptVar5 = (time_t *)((int)(local_1108.directory_entries + iVar2) + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 131,
       "match": "(time_t *)((int)",
       "text": "ptVar6 = (time_t *)((int)&local_1108 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 133,
       "match": "(time_t *)((int)",
       "text": "*(time_t *)((int)&local_1108 + (uint)bVar10 * -8 + -0x18) = local_1c[(uint)bVar10 * -2];",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 143,
+      "match": "unaff_EBX",
+      "text": "(int)this_ptr_02,(int)info,unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

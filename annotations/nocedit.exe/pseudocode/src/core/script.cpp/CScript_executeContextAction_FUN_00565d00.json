@@ -1,0 +1,254 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 19,
+        "line": 24,
+        "message": "assigning to 'char **' from incompatible type 'const char *[141]'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 167,
+    "complexity_score": 56,
+    "cross_reference_count": 1,
+    "function_call_count": 13,
+    "global_count": 13,
+    "pseudocode_lines": 56,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 223
+  },
+  "cross_references": [
+    {
+      "addr": "00565130",
+      "from_addr": "00565684",
+      "name": "core_script.cpp_CScript_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00565d00",
+    "address_range": [
+      [
+        "00565d00",
+        "00565e6f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_executeContextAction_FUN_00565d00",
+    "signature": "void __cdecl core_script_cpp_CScript_executeContextAction_FUN_00565d00(CScript *this_ptr,int column,int line)"
+  },
+  "function_calls": [
+    {
+      "addr": "00524030",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_00524030"
+    },
+    {
+      "addr": "0053c140",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c140"
+    },
+    {
+      "addr": "0053eb40",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053eb40"
+    },
+    {
+      "addr": "00561db0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CCmdParse_bestParse_FUN_00561db0"
+    },
+    {
+      "addr": "005644e0",
+      "is_variadic": false,
+      "name": "core_script.cpp_clearSelections_FUN_005644e0"
+    },
+    {
+      "addr": "00566a90",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_editorX2Index_FUN_00566a90"
+    },
+    {
+      "addr": "00560160",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_findLabelIndex_FUN_00560160"
+    },
+    {
+      "addr": "0055a370",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_FUN_0055a370"
+    },
+    {
+      "addr": "00566910",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_updateCursorBounds_FUN_00566910"
+    },
+    {
+      "addr": "005669a0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_updateScrollPosition_FUN_005669a0"
+    },
+    {
+      "addr": "0049e740",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
+    },
+    {
+      "addr": "004a2f70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00565c70",
+      "name": "switchdataD_00565c70",
+      "type": "void*",
+      "value": "00565d10"
+    },
+    {
+      "addr": "00643e99",
+      "name": "s_No_such_actor_s_00643e99",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00643eaa",
+      "name": "s_No_such_label_s_00643eaa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "00680e28",
+      "name": "g_CommandTemplates",
+      "type": "char*[141]",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "0310aa4c",
+      "name": "CCmdParse_0310aa4c",
+      "type": "CCmdParse",
+      "value": null
+    },
+    {
+      "addr": "0310ab1c",
+      "name": "DAT_0310ab1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310ad74",
+      "name": "DAT_0310ad74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd44",
+      "name": "g_CurrentEditingColumn",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0310fd48",
+      "name": "g_CurrentEditingLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.463768115942029,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CALL": 14,
+      "CBRANCH": 6,
+      "COPY": 118,
+      "INT_ADD": 61,
+      "INT_AND": 62,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 60,
+      "INT_LESS": 2,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 8,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 21,
+      "INT_SEXT": 18,
+      "INT_SLESS": 29,
+      "INT_SUB": 49,
+      "INT_XOR": 1,
+      "LOAD": 37,
+      "POPCOUNT": 29,
+      "RETURN": 6,
+      "STORE": 46,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 616
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "column",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "line",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

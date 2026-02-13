@@ -121,12 +121,12 @@
   },
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 2609,
+    "complexity_score": 2630,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 200,
-    "pseudocode_lines": 1999,
-    "suspect_count": 58,
+    "pseudocode_lines": 2000,
+    "suspect_count": 60,
     "suspect_types": [
       "decompiler_intrinsic",
       "nonstandard_int",
@@ -135,7 +135,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 5946
+    "total_lines": 5947
   },
   "cross_references": [
     {
@@ -207,12 +207,12 @@
     {
       "addr": "004aabe0",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004aabe0"
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004aabe0"
     },
     {
       "addr": "004add40",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004add40"
+      "name": "core_event.cpp_CEventList_validateCommands_FUN_004add40"
     },
     {
       "addr": "004d7f20",
@@ -277,7 +277,7 @@
     {
       "addr": "005ef8c0",
       "is_variadic": false,
-      "name": "core_weather.cpp_CWeather_FUN_005ef8c0"
+      "name": "core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0"
     },
     {
       "addr": "005ff9e0",
@@ -2160,161 +2160,175 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1195,
+      "line": 1187,
+      "match": "DAT_0067b5f0",
+      "text": "(g_CEventListPtr,&DAT_0067b5f0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1189,
+      "match": "DAT_0067b5f0",
+      "text": "core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,&DAT_0067b5f0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1196,
       "match": "DAT_0062c2b1",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c2b1);",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1230,
+      "line": 1231,
       "match": "SQRT",
       "text": "if (SQRT(fStack_2b0 * fStack_2b0 + fStack_2b8 * fStack_2b8 + local_2b4 * local_2b4) <=",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1234,
+      "line": 1235,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar18 + 0x154) + 0x11c))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1239,
+      "line": 1240,
       "match": "DAT_0062c2f2",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c2f2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1280,
+      "line": 1281,
       "match": "DAT_0062c377",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c377);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1312,
+      "line": 1313,
       "match": "DAT_0062c3c7",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c3c7);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1342,
+      "line": 1343,
       "match": "DAT_0062c406",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c406);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1372,
+      "line": 1373,
       "match": "DAT_0062c445",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c445);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1426,
+      "line": 1427,
       "match": "DAT_0062c4f0",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c4f0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1459,
+      "line": 1460,
       "match": "DAT_0062c52f",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c52f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1491,
+      "line": 1492,
       "match": "DAT_0062c561",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c561);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1530,
+      "line": 1531,
       "match": "DAT_0062c5bc",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c5bc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1564,
+      "line": 1565,
       "match": "DAT_0062c61a",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c61a);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1592,
+      "line": 1593,
       "match": "DAT_0062c654",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c654);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1620,
+      "line": 1621,
       "match": "DAT_0062c68b",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c68b);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1745,
+      "line": 1746,
       "match": "DAT_0062c710",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c710);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1774,
+      "line": 1775,
       "match": "DAT_0062c744",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c744);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1816,
+      "line": 1817,
       "match": "DAT_0062c7a0",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c7a0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1847,
+      "line": 1848,
       "match": "DAT_0062c7e5",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c7e5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1885,
+      "line": 1886,
       "match": "DAT_0062c830",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c830);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1913,
+      "line": 1914,
       "match": "DAT_0062c869",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c869);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1941,
+      "line": 1942,
       "match": "DAT_0062c8a0",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c8a0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1970,
+      "line": 1971,
       "match": "DAT_0062c8da",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c8da);",
       "type": "undefined_data"

@@ -99,14 +99,14 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_48);
     pCVar1 = g_CDemonRendererPtr2;
-    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 2.3509887e-38;
-    pCVar1->vertex_buffer_ptr->v = 0.0;
-    pCVar1->vertex_buffer_ptr[1].u = 0.0;
-    pCVar1->vertex_buffer_ptr[1].v = 0.0;
-    pCVar1->vertex_buffer_ptr[2].u = 0.0;
-    pCVar1->vertex_buffer_ptr[2].v = 2.3509887e-38;
-    pCVar1->vertex_buffer_ptr[3].u = 2.3509887e-38;
-    pCVar1->vertex_buffer_ptr[3].v = 2.3509887e-38;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x1000000;
+    pCVar1->vertex_buffer_ptr->v = 0;
+    pCVar1->vertex_buffer_ptr[1].u = 0;
+    pCVar1->vertex_buffer_ptr[1].v = 0;
+    pCVar1->vertex_buffer_ptr[2].u = 0;
+    pCVar1->vertex_buffer_ptr[2].v = 0x1000000;
+    pCVar1->vertex_buffer_ptr[3].u = 0x1000000;
+    pCVar1->vertex_buffer_ptr[3].v = 0x1000000;
     pCVar1 = g_CDemonRendererPtr2;
     fVar4 = (float)((this_ptr->current_frame * 0xffff) / this_ptr->total_frames);
     if (0xffff < (int)fVar4) {

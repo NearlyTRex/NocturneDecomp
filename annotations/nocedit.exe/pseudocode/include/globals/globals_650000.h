@@ -6,6 +6,7 @@
 #include "types/classes/CCameraView_vtable.h"
 #include "types/classes/CCharacter_vtable.h"
 #include "types/classes/CCodec_vtable.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CEnemy_vtable.h"
 #include "types/classes/CFileManager_vtable.h"
@@ -54,6 +55,9 @@ extern CCharacter_vtable DAT_0065FF80;
 extern CCodec_vtable g_CCodecVTable;
 extern CCodec_vtable g_CLZWCompressVTable;
 extern CCodec_vtable g_CLZWDecompressVTable;
+
+// CDemonActor*
+extern CDemonActor* g_ActorNameSentinel;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CDemonActorVTable;

@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_CFireEffect_FUN_004c8c10 at 004c8c35
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 at 004c8c35
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_set.cpp_CDemonSet_FUN_00570fa0
+;   core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     MOV dword ptr [ESI + 0xc],0x3f800000 ; 004c39ab
     PUSH EDX                            ; 004c39b2 | g_CDemonSetInstance
     MOV dword ptr [ESI + 0x10],EAX      ; 004c39b3
-    CALL core_set.cpp_CDemonSet_FUN_00570fa0 ; 004c39b6
-        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570fa0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0 ; 004c39b6
+        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 004c39bb
     LEA EDI,[ESI + 0x4]                 ; 004c39be
     PUSH 0x3f000000                     ; 004c39c1

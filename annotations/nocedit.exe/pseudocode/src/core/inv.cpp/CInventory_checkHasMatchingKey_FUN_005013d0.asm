@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   show_message
 ;
 ; XREF[2]:
-;   core_event.cpp_CEventList_FUN_004ae140 at 004aecfa
+;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004aecfa
 ;   core_hero.cpp_CHero_FUN_004f2ed0 at 004f2ef9
 ;
 ; Referenced Globals:

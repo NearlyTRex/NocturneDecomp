@@ -30,8 +30,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004f4550(CHiram *this_ptr,float d
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,1,1)
       ;
       uVar4 = g_CGlassClassInfo.name_hash;
-      actor_ptr = (CDemonActor *)
-                  core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+      actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                             (g_CDemonMissionPtr,"GlassHiram");
       this_ptr_00 = (CGlass *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,uVar4);
       if (this_ptr_00 != (CGlass *)0x0) {

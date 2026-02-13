@@ -17,8 +17,8 @@ engine_3d_c_processTextureCoordinates_FUN_00403a80(SMRGLHeaderPrimitive *polygon
   iVar1 = 0;
   if (0 < (polygon_info->surface_normal).A) {
     do {
-      g_RenderVertexBuffer[(polygon_info->base).count + iVar1].u = (float)*piVar2;
-      g_RenderVertexBuffer[(polygon_info->base).count + iVar1].v = (float)piVar2[1];
+      g_RenderVertexBuffer[(polygon_info->base).count + iVar1].u = *piVar2;
+      g_RenderVertexBuffer[(polygon_info->base).count + iVar1].v = piVar2[1];
       iVar1 = iVar1 + 1;
       piVar2 = piVar2 + 2;
     } while (iVar1 < (polygon_info->surface_normal).A);

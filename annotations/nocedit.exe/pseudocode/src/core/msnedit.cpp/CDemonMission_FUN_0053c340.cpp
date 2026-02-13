@@ -41,10 +41,11 @@ core_msnedit_cpp_CDemonMission_FUN_0053c340(CDemonMission *this_ptr,int param_2,
     actor_ptr = this_ptr->first_actor;
     local_14 = 1.01;
     for (; actor_ptr != (CDemonActor *)0x0; actor_ptr = actor_ptr->next_actor) {
-      if (((this_ptr->current_set_index == (actor_ptr->location).area_id) && (actor_ptr->unk14 == 0)
-          ) && ((g_DisableMouseHitOnBarrier == 0 ||
-                (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBarrier"),
-                iVar1 == 0)))) {
+      if (((this_ptr->current_set_index == (actor_ptr->location).area_id) &&
+          (actor_ptr->is_editor_hidden == 0)) &&
+         ((g_DisableMouseHitOnBarrier == 0 ||
+          (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBarrier"), iVar1 == 0)
+          ))) {
         (*((actor_ptr->vtable)._ub)->getBoundingBox)(actor_ptr,(CBoundingBox3D *)(auStack_68 + 4));
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(actor_ptr,&CStack_38,&local_20);
         core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0

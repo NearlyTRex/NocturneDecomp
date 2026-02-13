@@ -31,7 +31,7 @@ void __cdecl core_script_cpp_CScript_FUN_00567630(CScript *this_ptr)
     } while (iVar3 < this_ptr->parsed_line_count);
   }
   core_msnedit_cpp_CDemonMission_FUN_0053ea30(g_CDemonMissionPtr);
-  _qsort(this_ptr->unk4,this_ptr->unk3,0x114,core_script_cpp_FUN_005675a0)
-  ;
+  _qsort
+            (this_ptr->unk4,this_ptr->unk3,0x114,core_script_cpp_compareActors_FUN_005675a0);
   return;
 }

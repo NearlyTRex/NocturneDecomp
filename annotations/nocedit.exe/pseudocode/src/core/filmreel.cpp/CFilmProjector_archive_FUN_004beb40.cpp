@@ -54,7 +54,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjecto
       }
     }
     if (*(CDemonActor **)this_ptr->unk == (this_ptr->base).dest_actor) {
-      core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+      core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->unk + 4);
     }
   }
   *(int *)(this_ptr->unk + 0x6c) = (this_ptr->base).unk1;

@@ -28,6 +28,6 @@ void __cdecl core_setcolid_cpp_CDemonSet_FUN_00574440(CDemonSet *this_ptr)
   core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20
             (&g_CDemonRaytraceInstance,(CVector3f *)(in_stack_00000008 + 0x20),
              (CVector3f *)(in_stack_00000008 + 0x30),&CStack_1c,&CStack_10);
-  core_path_cpp_GlobalPathmapListCorruption_FUN_00548590();
+  core_path_cpp_FUN_00548590();
   return;
 }

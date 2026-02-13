@@ -75,8 +75,8 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_event.cpp_CEventList_FUN_004aabe0
-;   core_event.cpp_CEventList_FUN_004add40
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
+;   core_event.cpp_CEventList_validateCommands_FUN_004add40
 ;   core_game.cpp_CGame_displayMessage_FUN_004d7f20
 ;   core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80
 ;   core_game.cpp_giveHeroWeapon_FUN_004dd870
@@ -136,7 +136,7 @@ section .text
     MOV EDI,dword ptr [0x00681ef8]      ; 004ddb68 | g_CSoundPtr
     PUSH EDI                            ; 004ddb6e | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004ddb6f
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004ddb74
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ddb77
         ;   Label: LAB_004ddb77
@@ -242,7 +242,7 @@ section .text
     MOV EDI,dword ptr [0x00681ef8]      ; 004ddc9b | g_CSoundPtr
     PUSH EDI                            ; 004ddca1 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004ddca2
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004ddca7
     PUSH 0x62ba90                       ; 004ddcaa | DAT_0062ba90
         ;   Label: LAB_004ddcaa
@@ -446,7 +446,7 @@ section .text
     MOV EAX,[0x00681ef8]                ; 004ddee4 | g_CSoundInstance | g_CSoundPtr
     PUSH EAX                            ; 004ddee9 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004ddeea
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004ddeef
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ddef2
         ;   Label: LAB_004ddef2
@@ -536,7 +536,7 @@ section .text
     MOV EBX,dword ptr [0x00681ef8]      ; 004ddfec | g_CSoundInstance | g_CSoundPtr
     PUSH EBX                            ; 004ddff2 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004ddff3
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004ddff8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ddffb
         ;   Label: LAB_004ddffb
@@ -618,7 +618,7 @@ section .text
     MOV EAX,[0x00681ef8]                ; 004de0d4 | g_CSoundInstance | g_CSoundPtr
     PUSH EAX                            ; 004de0d9 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004de0da
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004de0df
     PUSH 0x62bc2d                       ; 004de0e2 | DAT_0062bc2d
         ;   Label: LAB_004de0e2
@@ -688,7 +688,7 @@ section .text
     MOV EDX,dword ptr [0x00681ef8]      ; 004de197 | g_CSoundInstance | g_CSoundPtr
     PUSH EDX                            ; 004de19d | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004de19e
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004de1a3
     MOV EBX,dword ptr [0x02db87d0]      ; 004de1a6 | g_LocalHeroIndex
     MOV EAX,dword ptr [EBP + 0x14]      ; 004de1ac
@@ -763,7 +763,7 @@ section .text
     MOV EBX,dword ptr [0x00681ef8]      ; 004de277 | g_CSoundInstance | g_CSoundPtr
     PUSH EBX                            ; 004de27d | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004de27e
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004de283
     MOV EAX,[0x02db87d0]                ; 004de286 | g_LocalHeroIndex
     MOV EBX,dword ptr [EBP + 0x14]      ; 004de28b
@@ -1049,7 +1049,7 @@ section .text
     MOV ESI,dword ptr [0x00681ef8]      ; 004de5b6 | g_CSoundPtr
     PUSH ESI                            ; 004de5bc | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004de5bd
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004de5c2
     MOV EAX,[0x02db87d0]                ; 004de5c5 | g_LocalHeroIndex
     PUSH 0x1                            ; 004de5ca
@@ -1149,7 +1149,7 @@ section .text
     MOV ECX,dword ptr [0x00681ef8]      ; 004de6de | g_CSoundInstance | g_CSoundPtr
     PUSH ECX                            ; 004de6e4 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004de6e5
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004de6ea
     PUSH 0x62be21                       ; 004de6ed | DAT_0062be21
         ;   Label: LAB_004de6ed
@@ -1225,7 +1225,7 @@ section .text
     MOV EAX,[0x00681ef8]                ; 004de7ac | g_CSoundInstance | g_CSoundPtr
     PUSH EAX                            ; 004de7b1 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004de7b2
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004de7b7
     PUSH 0x62be80                       ; 004de7ba | = "You have the shotgun"
         ;   Label: LAB_004de7ba
@@ -1305,7 +1305,7 @@ section .text
     MOV EDX,dword ptr [0x00681ef8]      ; 004de893 | g_CSoundInstance | g_CSoundPtr
     PUSH EDX                            ; 004de899 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004de89a
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004de89f
     PUSH 0x62bed3                       ; 004de8a2 | = "You have the crossbow"
         ;   Label: LAB_004de8a2
@@ -1385,7 +1385,7 @@ section .text
     MOV EDI,dword ptr [0x00681ef8]      ; 004de97d | g_CSoundPtr
     PUSH EDI                            ; 004de983 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004de984
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004de989
     PUSH 0x62bf29                       ; 004de98c | = "DY-NO-MITE"
         ;   Label: LAB_004de98c
@@ -1464,7 +1464,7 @@ section .text
     MOV EBX,dword ptr [0x00681ef8]      ; 004dea65 | g_CSoundInstance | g_CSoundPtr
     PUSH EBX                            ; 004dea6b | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004dea6c
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004dea71
     PUSH 0x62bf72                       ; 004dea74 | = "Fire! Fire! Fire!"
         ;   Label: LAB_004dea74
@@ -1543,7 +1543,7 @@ section .text
     MOV EDX,dword ptr [0x00681ef8]      ; 004deb4c | g_CSoundInstance | g_CSoundPtr
     PUSH EDX                            ; 004deb52 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004deb53
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004deb58
     PUSH 0x62bfc8                       ; 004deb5b | = "You have the tommy gun"
         ;   Label: LAB_004deb5b
@@ -1622,7 +1622,7 @@ section .text
     MOV EDI,dword ptr [0x00681ef8]      ; 004dec34 | g_CSoundPtr
     PUSH EDI                            ; 004dec3a | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004dec3b
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004dec40
     PUSH 0x62c021                       ; 004dec43 | = "You can now summon the baron"
         ;   Label: LAB_004dec43
@@ -1701,7 +1701,7 @@ section .text
     MOV EBX,dword ptr [0x00681ef8]      ; 004ded1c | g_CSoundInstance | g_CSoundPtr
     PUSH EBX                            ; 004ded22 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004ded23
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004ded28
     PUSH 0x62c081                       ; 004ded2b | = "You have the elephant gun"
         ;   Label: LAB_004ded2b
@@ -1780,7 +1780,7 @@ section .text
     MOV EDX,dword ptr [0x00681ef8]      ; 004dee03 | g_CSoundInstance | g_CSoundPtr
     PUSH EDX                            ; 004dee09 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004dee0a
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004dee0f
     PUSH 0x62c0dc                       ; 004dee12 | = "You have the charged radiance emitter"
         ;   Label: LAB_004dee12
@@ -1859,7 +1859,7 @@ section .text
     MOV EDI,dword ptr [0x00681ef8]      ; 004deeeb | g_CSoundPtr
     PUSH EDI                            ; 004deef1 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004deef2
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004deef7
     PUSH 0x62c141                       ; 004deefa | DAT_0062c141
         ;   Label: LAB_004deefa
@@ -1980,7 +1980,7 @@ section .text
     PUSH EDI                            ; 004df05a | g_CSoundInstance
     MOV dword ptr [EAX + 0x243c],0x42c80000 ; 004df05b
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004df065
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004df06a
     PUSH 0x62c203                       ; 004df06d | DAT_0062c203
         ;   Label: LAB_004df06d
@@ -2057,7 +2057,7 @@ section .text
     MOV EAX,[0x00681ef8]                ; 004df134 | g_CSoundInstance | g_CSoundPtr
     PUSH EAX                            ; 004df139 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004df13a
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004df13f
     MOV EAX,dword ptr [EBP + 0x14]      ; 004df142
         ;   Label: LAB_004df142
@@ -2120,7 +2120,7 @@ section .text
     MOV ECX,dword ptr [0x00681ef8]      ; 004df1e1 | g_CSoundInstance | g_CSoundPtr
     PUSH ECX                            ; 004df1e7 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004df1e8
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004df1ed
     MOV EDI,0x67b5f0                    ; 004df1f0 | DAT_0067b5f0
     PUSH 0x1                            ; 004df1f5
@@ -2139,8 +2139,8 @@ section .text
     PUSH EDI                            ; 004df215 | DAT_0067b5f0
     MOV EDX,dword ptr [0x006793d0]      ; 004df216 | g_CEventListInstance | g_CEventListPtr
     PUSH EDX                            ; 004df21c | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add40 ; 004df21d
-        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add40(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCommands_FUN_004add40 ; 004df21d
+        ;   XREF to: 004add40 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCommands_FUN_004add40(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004df222
     TEST EAX,EAX                        ; 004df225
     JZ 0x004df543                       ; 004df227
@@ -2363,7 +2363,7 @@ section .text
     XOR EDI,EDI                         ; 004df498
     MOV byte ptr [0x02d831d8],DH        ; 004df49a | CHAR_ARRAY_02d831d8
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004df4a0
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004df4a5
     MOV dword ptr [ESP + 0x3ec],EDI     ; 004df4a8
     MOV EAX,[0x006810c8]                ; 004df4af | g_CDemonSetInstance | g_CDemonSetPtr
@@ -2409,8 +2409,8 @@ section .text
         ;   Label: LAB_004df543
     MOV EBX,dword ptr [0x006793d0]      ; 004df548 | g_CEventListInstance | g_CEventListPtr
     PUSH EBX                            ; 004df54e | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 004df54f
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 004df54f
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004df554
     JMP 0x004df408                      ; 004df557
         ;   XREF to: 004df408 (UNCONDITIONAL_JUMP)  ; LAB_004df408
@@ -2505,7 +2505,7 @@ section .text
     MOV ECX,dword ptr [0x00681ef8]      ; 004df659 | g_CSoundInstance | g_CSoundPtr
     PUSH ECX                            ; 004df65f | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004df660
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004df665
     MOV EAX,dword ptr [EBP + 0x14]      ; 004df668
         ;   Label: LAB_004df668
@@ -2566,7 +2566,7 @@ section .text
     MOV EBX,dword ptr [0x00681ef8]      ; 004df701 | g_CSoundInstance | g_CSoundPtr
     PUSH EBX                            ; 004df707 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004df708
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004df70d
     PUSH 0x1                            ; 004df710
     PUSH 0x40800000                     ; 004df712
@@ -2635,7 +2635,7 @@ section .text
     PUSH EBX                            ; 004df7bc | g_CSoundInstance
     MOV byte ptr [0x02d831d8],CL        ; 004df7bd | CHAR_ARRAY_02d831d8
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004df7c3
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004df7c8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004df7cb
     CMP dword ptr [EAX + 0x1f0],0x0     ; 004df7ce
@@ -2698,7 +2698,7 @@ section .text
     PUSH ESI                            ; 004df86f | g_CSoundInstance
     MOV byte ptr [0x02d831d8],CH        ; 004df870 | CHAR_ARRAY_02d831d8
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004df876
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004df87b
     MOV EAX,dword ptr [EBP + 0x14]      ; 004df87e
     CMP dword ptr [EAX + 0x1f4],0x0     ; 004df881
@@ -2785,7 +2785,7 @@ section .text
     MOV ECX,dword ptr [0x00681ef8]      ; 004df96f | g_CSoundInstance | g_CSoundPtr
     PUSH ECX                            ; 004df975 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004df976
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004df97b
     MOV EAX,dword ptr [EBP + 0x14]      ; 004df97e
         ;   Label: LAB_004df97e
@@ -2852,7 +2852,7 @@ section .text
     MOV EBX,dword ptr [0x00681ef8]      ; 004dfa2b | g_CSoundInstance | g_CSoundPtr
     PUSH EBX                            ; 004dfa31 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004dfa32
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004dfa37
     MOV EAX,dword ptr [EBP + 0x14]      ; 004dfa3a
         ;   Label: LAB_004dfa3a
@@ -3060,7 +3060,7 @@ section .text
     MOV EDI,dword ptr [0x00681ef8]      ; 004dfc7c | g_CSoundPtr
     PUSH EDI                            ; 004dfc82 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004dfc83
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004dfc88
     PUSH 0x62c61a                       ; 004dfc8b | DAT_0062c61a
         ;   Label: LAB_004dfc8b
@@ -3115,8 +3115,8 @@ section .text
     XOR BH,BH                           ; 004dfd0d
     PUSH ESI                            ; 004dfd0f | g_CWeatherInstance
     MOV byte ptr [0x02d831d8],BH        ; 004dfd10 | CHAR_ARRAY_02d831d8
-    CALL core_weather.cpp_CWeather_FUN_005ef8c0 ; 004dfd16
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef8c0(CWeather * this_ptr)
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0 ; 004dfd16
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather * this_ptr, int type)
     ADD ESP,0x8                         ; 004dfd1b
     PUSH 0x62c654                       ; 004dfd1e | DAT_0062c654
         ;   Label: LAB_004dfd1e
@@ -3171,8 +3171,8 @@ section .text
     XOR CL,CL                           ; 004dfda0
     PUSH EBX                            ; 004dfda2 | g_CWeatherInstance
     MOV byte ptr [0x02d831d8],CL        ; 004dfda3 | CHAR_ARRAY_02d831d8
-    CALL core_weather.cpp_CWeather_FUN_005ef8c0 ; 004dfda9
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef8c0(CWeather * this_ptr)
+    CALL core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0 ; 004dfda9
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather * this_ptr, int type)
     ADD ESP,0x8                         ; 004dfdae
     PUSH 0x62c68b                       ; 004dfdb1 | DAT_0062c68b
         ;   Label: LAB_004dfdb1
@@ -3243,7 +3243,7 @@ section .text
     PUSH ECX                            ; 004dfe79 | g_CSoundInstance
     MOV dword ptr [ESP + 0x328],EDX     ; 004dfe7a
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004dfe81
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
         ;   Label: LAB_004dfe81
     ADD ESP,0xc                         ; 004dfe86
     XOR EBX,EBX                         ; 004dfe89
@@ -3797,7 +3797,7 @@ section .text
     MOV EDI,dword ptr [0x00681ef8]      ; 004e0511 | g_CSoundPtr
     PUSH EDI                            ; 004e0517 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004e0518
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004e051d
     PUSH 0x62c830                       ; 004e0520 | DAT_0062c830
         ;   Label: LAB_004e0520

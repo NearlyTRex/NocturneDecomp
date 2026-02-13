@@ -157,7 +157,7 @@ void __cdecl core_course_cpp_CCourse_FUN_00443bc0(CCourse *this_ptr,CKeyFramedMo
         pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
         piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
       }
-      vertex1.v = (float)in_stack_fffffe8c;
+      vertex1.v = in_stack_fffffe8c;
       auVar7 = in_stack_fffffe70._0_24_;
       vertex1.projected_vertex.transformed_x = auVar7._0_4_;
       vertex1.projected_vertex.transformed_y = auVar7._4_4_;
@@ -165,15 +165,15 @@ void __cdecl core_course_cpp_CCourse_FUN_00443bc0(CCourse *this_ptr,CKeyFramedMo
       vertex1.projected_vertex.inv_z = auVar7._12_4_;
       vertex1.projected_vertex.screen_x = auVar7._16_4_;
       vertex1.projected_vertex.screen_y = auVar7._20_4_;
-      vertex1.u = (float)in_stack_fffffe70._24_4_;
+      vertex1.u = in_stack_fffffe70._24_4_;
       vertex1.light = (float)in_stack_fffffe90;
       vertex1.color = (int)in_stack_fffffe94;
       vertex1._40_8_ = in_stack_fffffe98;
       vertex2.projected_vertex._8_8_ = in_stack_fffffea8;
       vertex2.projected_vertex._0_8_ = in_stack_fffffea0;
       vertex2.projected_vertex._16_8_ = in_stack_fffffeb0;
-      vertex2.u = (float)in_stack_fffffeb8;
-      vertex2.v = (float)uVar9;
+      vertex2.u = in_stack_fffffeb8;
+      vertex2.v = uVar9;
       vertex2.light = (float)pCVar10;
       vertex2.color = uVar11;
       vertex2.fog = (float)output;

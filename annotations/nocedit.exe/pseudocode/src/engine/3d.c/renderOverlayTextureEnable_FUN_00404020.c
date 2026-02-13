@@ -37,9 +37,9 @@ engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *polygo
   for (iVar4 = 0; uVar1 = g_ProcessedVertexOffset, iVar4 < (polygon_info->base).count * 3;
       iVar4 = iVar4 + 3) {
     *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
-    g_RenderVertexBuffer[(pSVar2->base).type + uVar1].u = (float)(pSVar2->base).count;
+    g_RenderVertexBuffer[(pSVar2->base).type + uVar1].u = (pSVar2->base).count;
     piVar3 = piVar3 + 1;
-    g_RenderVertexBuffer[(pSVar2->base).type + uVar1].v = (float)(pSVar2->surface_normal).A;
+    g_RenderVertexBuffer[(pSVar2->base).type + uVar1].v = (pSVar2->surface_normal).A;
     pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
   engine_clipper_c_clipAndRasterize_FUN_004371b0

@@ -203,6 +203,9 @@ extern int g_InputBuffer[20];
 // int[513]
 extern int g_MessageFlags[513];
 
+// uint
+extern uint UINT_03f96b40;
+
 // undefined1
 extern undefined1 DAT_03f96a78;
 extern undefined1 DAT_03f96a79;
@@ -223,7 +226,6 @@ extern undefined4 DAT_03f939a4;
 extern undefined4 DAT_03f939a8;
 extern undefined4 DAT_03f96758;
 extern undefined4 DAT_03f9675c;
-extern undefined4 DAT_03f96b40;
 extern undefined4 g_FreeListHeadPointer;
 extern undefined4 DAT_03f9b210;
 

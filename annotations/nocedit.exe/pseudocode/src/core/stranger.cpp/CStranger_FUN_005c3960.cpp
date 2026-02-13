@@ -108,8 +108,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr)
       local_2c = -0.5235988;
     }
   }
-  fVar9 = *(float *)((this_ptr->base).unk2 + 8) * (float)3.1415926535000001 * (float)2 *
-          in_stack_0000000c + *pfStack_20;
+  fVar9 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+          (float)2 * in_stack_0000000c + *pfStack_20;
   pfStack_20[1] = 0.0;
   *pfStack_20 = fVar9;
   if (fVar9 < -1.047198f) {

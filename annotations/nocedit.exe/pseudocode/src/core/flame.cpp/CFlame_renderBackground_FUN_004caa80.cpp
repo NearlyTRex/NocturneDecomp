@@ -48,7 +48,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004caa80(CFlame *this_pt
             fVar2 = (this_ptr->base).location.position.y - (pCVar5->location).position.y,
             fVar3 = (this_ptr->base).location.position.z - (pCVar5->location).position.z,
             SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) < (float)5)) &&
-           (pCVar5[1].unk14 == 1)) break;
+           (pCVar5[1].is_editor_hidden == 1)) break;
         iVar6 = iVar6 + 1;
         iVar4 = iVar4 + 4;
       }

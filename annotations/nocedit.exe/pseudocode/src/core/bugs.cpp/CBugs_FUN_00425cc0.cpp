@@ -14,7 +14,6 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
   float *pfVar2;
   CDemonActor *pCVar3;
   CPathMap *this_ptr_00;
-  CPathMap *extraout_EAX;
   int iVar4;
   float in_stack_00000008;
   CMatrix3x3f CStack_9c;
@@ -58,8 +57,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
      (pCVar3 = (this_ptr->base).victim, pCVar3 != (CDemonActor *)0x0)) {
     this_ptr_00 = (*((pCVar3->vtable)._ub)->getPathMap)(pCVar3);
     if (this_ptr_00 == (CPathMap *)0x0) {
-      core_path_cpp_FUN_00548500();
-      this_ptr_00 = extraout_EAX;
+      this_ptr_00 = core_path_cpp_FUN_00548500();
     }
     dest_position = &(this_ptr->base).base.base.location;
     iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00

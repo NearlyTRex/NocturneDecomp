@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_parseConditionExpr_FUN_005594a0(char **cursor,char *out_buffer)
+; __cdecl char * __cdecl core_script_cpp_parseConditionExpr_FUN_005594a0(char **cursor,char *out_buffer)
 ;
 ; Parameters:
 ; char * *         Stack[0x4]:4   cursor
@@ -16,7 +16,7 @@
 ;   int g_ScriptEventsEnabled
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004add00
+;   core_event.cpp_CEventList_validateCondition_FUN_004add00
 ;   core_script.cpp_parseArgument_FUN_005593f0
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     PUSH ESI                            ; 005594c8
     MOV EDI,dword ptr [0x006793d0]      ; 005594c9 | g_CEventListPtr
     PUSH EDI                            ; 005594cf | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add00 ; 005594d0
-        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_validateCondition_FUN_004add00 ; 005594d0
+        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; char * core_event.cpp_CEventList_validateCondition_FUN_004add00(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 005594d5
     POP ESI                             ; 005594d8
     POP EDI                             ; 005594d9

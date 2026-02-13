@@ -153,7 +153,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xe4]      ; 00523a87
     PUSH EDX                            ; 00523a8e
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 00523a8f
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 00523a94
     MOV ESI,EAX                         ; 00523a97
     TEST EAX,EAX                        ; 00523a99

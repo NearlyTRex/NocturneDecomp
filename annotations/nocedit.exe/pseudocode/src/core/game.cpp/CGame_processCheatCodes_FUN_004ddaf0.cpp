@@ -1190,9 +1190,10 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         while (iVar9 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                  (g_CEditorToolsPtr,"Raise an event",&DAT_0067b5f0,100,1),
               iVar9 != 0) {
-          pcVar10 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
+          pcVar10 = core_event_cpp_CEventList_validateCommands_FUN_004add40
+                              (g_CEventListPtr,&DAT_0067b5f0);
           if (pcVar10 == (char *)0x0) {
-            core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+            core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,&DAT_0067b5f0);
             break;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar10);
@@ -1269,8 +1270,8 @@ LAB_004df408:
       }
       if (iStack_198 == iStack_19c) {
         g_InputHistory[1] = '\0';
-        uVar11 = (uint)(this_ptr->unk4 == 0);
-        this_ptr->unk4 = uVar11;
+        uVar11 = (uint)(this_ptr->gratuitous_dismemberment == 0);
+        this_ptr->gratuitous_dismemberment = uVar11;
         if (uVar11 == 0) {
           pcVar10 = "Gratuitous dismemberment disabled";
         }
@@ -1374,7 +1375,7 @@ LAB_004df408:
         g_InputHistory[1] = '\0';
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
-        this_ptr->unk6 = (uint)(this_ptr->unk6 == 0);
+        this_ptr->render_mode = (uint)(this_ptr->render_mode == 0);
       }
       pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c445);
       iStack_178 = 0;
@@ -1594,7 +1595,7 @@ LAB_004df408:
       }
       if (iStack_150 == iStack_154) {
         g_InputHistory[1] = '\0';
-        core_weather_cpp_CWeather_FUN_005ef8c0(g_CWeatherPtr);
+        core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(g_CWeatherPtr,1);
       }
       pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c654);
       iStack_148 = 0;
@@ -1622,7 +1623,7 @@ LAB_004df408:
       }
       if (iStack_148 == iStack_14c) {
         g_InputHistory[1] = '\0';
-        core_weather_cpp_CWeather_FUN_005ef8c0(g_CWeatherPtr);
+        core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(g_CWeatherPtr,2);
       }
       pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c68b);
       uVar11 = 0xffffffff;
@@ -1650,9 +1651,9 @@ LAB_004df408:
       }
       if (iStack_140 == iStack_144) {
         g_InputHistory[1] = '\0';
-        uVar11 = (uint)(this_ptr->unk7 == 0);
+        uVar11 = (uint)(this_ptr->big_hat_cheat == 0);
         fStack_13c = 0.25;
-        this_ptr->unk7 = uVar11;
+        this_ptr->big_hat_cheat = uVar11;
         if (uVar11 == 0) {
           pcVar10 = "burp1.wav";
         }
@@ -1737,7 +1738,7 @@ LAB_004df408:
                             ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
                              g_CStrangerClassInfo.name_hash);
         if (pCVar15 != (CStranger *)0x0) {
-          if (this_ptr->unk7 == 0) {
+          if (this_ptr->big_hat_cheat == 0) {
             pcVar10 = "stranger-hat.kfm";
           }
           else {

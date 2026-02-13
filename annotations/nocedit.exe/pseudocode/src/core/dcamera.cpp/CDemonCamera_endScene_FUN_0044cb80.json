@@ -1,19 +1,26 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 38,
+        "message": "use of undeclared identifier '_memcpy'; did you mean 'memcpy'?"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 31,
+    "complexity_score": 39,
     "cross_reference_count": 11,
     "function_call_count": 6,
     "global_count": 10,
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 39,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 116
+    "total_lines": 124
   },
   "cross_references": [
     {
@@ -102,14 +109,14 @@
       "name": "core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410"
     },
     {
-      "addr": "004b1a78",
-      "is_variadic": false,
-      "name": "core_event.cpp_FUN_004b1a78"
-    },
-    {
       "addr": "00506f10",
       "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "004b1a78",
+      "is_variadic": false,
+      "name": "crt_watcom.c__memcpy_FUN_004b1a78"
     },
     {
       "addr": "0048c8c0",

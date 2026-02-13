@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004ab47c
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ab47c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_0062d24b

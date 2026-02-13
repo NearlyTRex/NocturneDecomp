@@ -26806,7 +26806,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_drender.cpp_renderTriangleSimple_FUN_004839f0",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -27003,7 +27003,17 @@
           },
           "type":"int"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -36687,12 +36697,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_event.cpp_FUN_004aa270",
+    "name":"core_event.cpp_setEventError_FUN_004aa270",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"param_1",
+          "name":"source_file",
           "storage":{
             "offset":4,
             "size":4,
@@ -36705,10 +36715,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"param_2",
+          "name":"source_line",
           "storage":{
             "offset":8,
             "size":4,
@@ -36724,7 +36734,7 @@
           "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"error_message",
           "storage":{
             "offset":12,
             "size":4,
@@ -36763,12 +36773,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_event.cpp_FUN_004aa2f0",
-    "ret":"void",
+    "name":"core_event.cpp_skipWhitespaceIndexed_FUN_004aa2f0",
+    "ret":"int*",
     "vars":{
       "params":[
         {
-          "name":"param_1",
+          "name":"expression",
           "storage":{
             "offset":4,
             "size":4,
@@ -36781,10 +36791,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"param_2",
+          "name":"parse_position",
           "storage":{
             "offset":8,
             "size":4,
@@ -36799,7 +36809,17 @@
           },
           "type":"int*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -36813,7 +36833,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_event.cpp_CEventList_FUN_004aaa70",
+    "name":"core_event.cpp_CEventList_reset_FUN_004aaa70",
     "ret":"void",
     "vars":{
       "params":[
@@ -36847,7 +36867,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_event.cpp_CEventList_FUN_004addf0",
+    "name":"core_event.cpp_CEventList_render_FUN_004addf0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -37075,7 +37095,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_event.cpp_CEventList_FUN_004b0270",
+    "name":"core_event.cpp_CEventList_evaluateLogicalExpr_FUN_004b0270",
     "ret":"int",
     "vars":{
       "params":[
@@ -37094,6 +37114,38 @@
             ]
           },
           "type":"CEventList*"
+        },
+        {
+          "name":"expression",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"parse_position",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -37119,7 +37171,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_event.cpp_CEventList_FUN_004b0470",
+    "name":"core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004b0470",
     "ret":"void",
     "vars":{
       "params":[
@@ -37138,6 +37190,38 @@
             ]
           },
           "type":"CEventList*"
+        },
+        {
+          "name":"name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"add_flag",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -37153,7 +37237,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_event.cpp_CEventList_FUN_004b0bf0",
+    "name":"core_event.cpp_CEventList_findActorVariable_FUN_004b0bf0",
     "ret":"int",
     "vars":{
       "params":[
@@ -37172,6 +37256,22 @@
             ]
           },
           "type":"CEventList*"
+        },
+        {
+          "name":"name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -37197,26 +37297,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_event.cpp_FUN_004b1670",
-    "ret":"void"
-  },
-  {
-    "addr":"004b1970",
-    "body":[
-      {
-        "end":"004b197a",
-        "size":11,
-        "start":"004b1970"
-      }
-    ],
-    "conv":"__cdecl",
-    "importable":true,
-    "name":"core_event.cpp_FUN_004b1970",
-    "ret":"int",
+    "name":"core_event.cpp_CRuleList_clear_FUN_004b1670",
+    "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"param_1",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -37229,7 +37315,41 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CRuleList*"
+        }
+      ]
+    }
+  },
+  {
+    "addr":"004b1970",
+    "body":[
+      {
+        "end":"004b197a",
+        "size":11,
+        "start":"004b1970"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"core_event.cpp_getSelectedCameraIndex_FUN_004b1970",
+    "ret":"int",
+    "vars":{
+      "params":[
+        {
+          "name":"set_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
         }
       ],
       "ret_storage":{
@@ -67729,8 +67849,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_FUN_005627f0",
-    "ret":"CHero*",
+    "name":"core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0",
+    "ret":"CCharacter*",
     "vars":{
       "locals":[
         {
@@ -67752,7 +67872,7 @@
       ],
       "params":[
         {
-          "name":"param_1",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -67765,10 +67885,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CCmdParse*"
         },
         {
-          "name":"param_2",
+          "name":"param_index",
           "storage":{
             "offset":8,
             "size":4,
@@ -67807,7 +67927,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00565e70",
+    "name":"core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70",
     "ret":"void",
     "vars":{
       "locals":[
@@ -67910,7 +68030,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"column",
           "storage":{
             "offset":8,
             "size":4,
@@ -67926,7 +68046,7 @@
           "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"line",
           "storage":{
             "offset":12,
             "size":4,
@@ -68031,7 +68151,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sentinel.cpp_CSentinel_FUN_00568b70",
+    "name":"core_sentinel.cpp_CSentinel_attractActorToward_FUN_00568b70",
     "ret":"int",
     "vars":{
       "locals":[
@@ -68212,6 +68332,38 @@
             ]
           },
           "type":"CSentinel*"
+        },
+        {
+          "name":"actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"target_local_point",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -69107,7 +69259,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_set.cpp_CDemonSet_FUN_00570df0",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -69142,7 +69294,17 @@
           },
           "type":"SMRGLHeaderPrimitive*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -74271,7 +74433,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_shovel.cpp_CShovel_FUN_00588c70",
+    "name":"core_shovel.cpp_CShovel_fireProjectile_FUN_00588c70",
     "ret":"void",
     "vars":{
       "params":[

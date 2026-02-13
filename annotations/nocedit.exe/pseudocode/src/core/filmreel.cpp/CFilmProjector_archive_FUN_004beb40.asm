@@ -25,7 +25,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_dest.cpp_CActorDestination_process_FUN_0046f9b0
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
@@ -97,8 +97,8 @@ section .text
     PUSH EAX                            ; 004bebe2
     MOV ESI,dword ptr [0x006793d0]      ; 004bebe3 | g_CEventListPtr
     PUSH ESI                            ; 004bebe9 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 004bebea
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 004bebea
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004bebef
     JMP 0x004beb62                      ; 004bebf2
         ;   XREF to: 004beb62 (UNCONDITIONAL_JUMP)  ; LAB_004beb62

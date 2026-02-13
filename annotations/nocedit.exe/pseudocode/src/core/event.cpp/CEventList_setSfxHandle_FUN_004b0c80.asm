@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr)
+; __cdecl void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr,char *name,uint sfx_handle)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
+; uint             Stack[0xc]:4   sfx_handle
 ;
 ; XREF[1]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004ac5a2
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ac5a2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_00625ca8
@@ -18,8 +20,8 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004b0d60
-;   core_event.cpp_CEventList_FUN_004b0db0
+;   core_event.cpp_CEventList_findSfxEntry_FUN_004b0d60
+;   core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;
 ; *****************************************************************************
@@ -34,13 +36,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 004b0c84
     MOV ESI,dword ptr [ESP + 0x18]      ; 004b0c88
     PUSH EBX                            ; 004b0c8c
-    CALL core_event.cpp_CEventList_FUN_004b0db0 ; 004b0c8d
-        ;   XREF to: 004b0db0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004b0db0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 ; 004b0c8d
+        ;   XREF to: 004b0db0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004b0c92
     PUSH ESI                            ; 004b0c95
     PUSH EBX                            ; 004b0c96
-    CALL core_event.cpp_CEventList_FUN_004b0d60 ; 004b0c97
-        ;   XREF to: 004b0d60 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0d60(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_findSfxEntry_FUN_004b0d60 ; 004b0c97
+        ;   XREF to: 004b0d60 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findSfxEntry_FUN_004b0d60(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 004b0c9c
     MOV EDX,EAX                         ; 004b0c9f
     TEST EAX,EAX                        ; 004b0ca1
@@ -98,8 +100,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004b0d22
     PUSH EBX                            ; 004b0d26
     MOV dword ptr [EBP],EAX             ; 004b0d27
-    CALL core_event.cpp_CEventList_FUN_004b0db0 ; 004b0d2a
-        ;   XREF to: 004b0db0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004b0db0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 ; 004b0d2a
+        ;   XREF to: 004b0db0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004b0d2f
     POP EBP                             ; 004b0d32
     POP EDI                             ; 004b0d33

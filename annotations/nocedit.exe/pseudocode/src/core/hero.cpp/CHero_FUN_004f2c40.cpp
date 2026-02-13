@@ -45,7 +45,8 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2c40(CHero *this_ptr)
           pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_44,pCVar2);
           if (ABS(pCVar2->y) <= (float)0.34906585038888899) {
-            core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+            core_event_cpp_CEventList_executeCommands_FUN_004aabe0
+                      (g_CEventListPtr,(pCVar1->base).talk_to_me_event);
             return 1;
           }
         }

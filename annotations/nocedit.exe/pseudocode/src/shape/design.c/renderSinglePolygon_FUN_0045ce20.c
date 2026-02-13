@@ -67,11 +67,11 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
         dVar4 = round
                           ((double)(g_ModelPolygonData[polygon_index].uv_u[local_18] *
                                    (float)65536));
-        g_RenderVertexBuffer[local_14].u = (float)(int)ROUND(dVar4);
+        g_RenderVertexBuffer[local_14].u = (int)ROUND(dVar4);
         dVar4 = round
                           ((double)(g_ModelPolygonData[polygon_index].uv_v[local_18] *
                                    (float)65536));
-        g_RenderVertexBuffer[local_14].v = (float)(int)ROUND(dVar4);
+        g_RenderVertexBuffer[local_14].v = (int)ROUND(dVar4);
       }
       if (g_ZBufferEnabled == 0) {
         engine_3d_c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(&local_c4);

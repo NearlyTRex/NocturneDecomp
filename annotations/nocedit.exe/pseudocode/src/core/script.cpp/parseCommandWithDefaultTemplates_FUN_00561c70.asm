@@ -13,8 +13,8 @@
 ; CCmdParse *      Stack[0x1c]:4   parse_out
 ;
 ; XREF[2]:
-;   core_script.cpp_CScript_FUN_00565ae0 at 00565b56
-;   core_script.cpp_CScript_FUN_00565e70 at 00565ee8
+;   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 at 00565b56
+;   core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70 at 00565ee8
 ;
 ; Referenced Globals:
 ;   char*[141] g_CommandTemplates

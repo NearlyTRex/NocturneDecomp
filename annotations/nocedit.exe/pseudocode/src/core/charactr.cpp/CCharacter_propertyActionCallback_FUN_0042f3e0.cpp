@@ -114,8 +114,7 @@ LAB_0042f571:
                 (this_ptr_00,(int)local_24,(CVector3f *)0x0);
       if (0 < iVar8) {
         name = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(aCStack_924,iVar8);
-        pCVar4 = (CDemonActor *)
-                 core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+        pCVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                            (g_CDemonMissionPtr,name);
         pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (local_20,&CStack_38,(int)*unaff_EDI);

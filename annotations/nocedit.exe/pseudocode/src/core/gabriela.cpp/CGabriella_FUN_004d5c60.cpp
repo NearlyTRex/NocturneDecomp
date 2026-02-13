@@ -82,7 +82,7 @@ int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c60(CGabriella *this_ptr)
                 (this_ptr->base).ladder_to_climb = local_24;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           (&(this_ptr->base).base.model.motion_controller,0x16,1);
-                (this_ptr->base).action_bindings.fire_key = 0;
+                (this_ptr->base).player_control.action_states[3] = 0;
                 local_84.x = 0.0;
                 local_84.y = 0.0;
                 local_84.z = 2.0;

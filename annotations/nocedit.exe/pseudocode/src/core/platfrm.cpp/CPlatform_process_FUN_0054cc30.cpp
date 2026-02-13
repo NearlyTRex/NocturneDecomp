@@ -11,7 +11,6 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
 {
   char cVar1;
   int iVar2;
-  int extraout_EAX;
   uint uVar3;
   int iVar4;
   float fVar5;
@@ -165,6 +164,7 @@ LAB_0054d090:
         pcVar11[1] = cVar1;
         pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
+      pcVar8 = (char *)((int)&uStack_320 + 4);
       cVar1 = uStack_320._4_1_;
       while (cVar1 != '\0') {
         while (*pcVar7 != ';') {
@@ -172,17 +172,18 @@ LAB_0054d090:
           if (*pcVar7 == '\0') goto LAB_0054cd70;
         }
         *pcVar7 = '\0';
-        iVar2 = core_set_cpp_CDemonSet_FUN_0056b790(g_CDemonSetPtr);
+        iVar2 = core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790(g_CDemonSetPtr,pcVar8);
         if ((iVar2 != -1) && (iVar2 != g_CDemonSetPtr->selected_camera_index)) {
           core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00575b00(g_CDemonSetPtr,iVar2,999.0);
           this_ptr->unk3 = 0;
           break;
         }
         pcVar7 = pcVar7 + 1;
+        pcVar8 = pcVar7;
         cVar1 = *pcVar7;
       }
 LAB_0054cd70:
-      iVar2 = core_set_cpp_CDemonSet_FUN_0056b790(g_CDemonSetPtr);
+      iVar2 = core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790(g_CDemonSetPtr,pcVar8);
       if ((iVar2 != -1) && (iVar2 != g_CDemonSetPtr->selected_camera_index)) {
         core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00575b00(g_CDemonSetPtr,iVar2,999.0);
         this_ptr->unk3 = 0;
@@ -199,8 +200,8 @@ LAB_0054cd70:
     core_sound_cpp_CSound_killSound_FUN_005b3b90(g_CSoundPtr,this_ptr->sfx_handle);
   }
   else {
-    core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
-    if (extraout_EAX == 0) {
+    iVar2 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
+    if (iVar2 == 0) {
       uVar3 = (*((this_ptr->base).vtable._ub)->playAmbientSound)
                         (&this_ptr->base,this_ptr->active_sound);
       this_ptr->sfx_handle = uVar3;

@@ -1,0 +1,87 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 5,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "004aaa50",
+      "from_addr": "004aaa5f",
+      "name": "core_event.cpp_CEventList_ctor_FUN_004aaa50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e12b0",
+      "from_addr": "004e13f8",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1cb0",
+      "from_addr": "004e1fb3",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538ba0",
+      "from_addr": "00538d2e",
+      "name": "core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b0460",
+    "address_range": [
+      [
+        "004b0460",
+        "004b046e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_resetGameFlags_FUN_004b0460",
+    "signature": "void __cdecl core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(CEventList *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 3,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 9
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      }
+    ]
+  },
+  "suspects": []
+}

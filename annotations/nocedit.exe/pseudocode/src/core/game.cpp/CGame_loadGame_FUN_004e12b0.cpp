@@ -111,7 +111,7 @@ LAB_004e17ac:
         pcVar5 = pcVar5 + 2;
       } while (cVar1 != '\0');
     }
-    core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
+    core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(g_CEventListPtr);
     core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,9,0,-1);
     file_handle = engine_dosio_c_getFile_FUN_00481a50("save",local_638,"rt");
     local_18 = _ftell(file_handle);
@@ -262,8 +262,7 @@ LAB_004e14f5:
             }
             _fscanf(file_handle,"%[^\n]\n",local_230);
             uVar13 = g_CHeroClassInfo.name_hash;
-            pCVar3 = (CDemonActor *)
-                     core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+            pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                                (g_CDemonMissionPtr,local_230);
             pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar3,uVar13);
             *(CDemonActor **)((int)g_HeroActors + iVar2) = pCVar3;
@@ -278,7 +277,7 @@ LAB_004e14f5:
         }
         iVar2 = core_mission_cpp_CDemonMission_FUN_00524760(g_CDemonMissionPtr);
         if (iVar2 == 0) goto LAB_004e17ac;
-        core_event_cpp_CEventList_loadState_FUN_004b0fc0(g_CEventListPtr);
+        core_event_cpp_CEventList_loadState_FUN_004b0fc0(g_CEventListPtr,file_handle);
         core_script_cpp_CScript_loadState_FUN_00560820(g_CScriptPtr,file_handle);
         if (local_34 < 4) {
           core_gore_cpp_CGore_FUN_004ed760(g_CGorePtr);

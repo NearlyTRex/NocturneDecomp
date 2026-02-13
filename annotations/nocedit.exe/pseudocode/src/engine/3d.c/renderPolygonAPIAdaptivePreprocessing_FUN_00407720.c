@@ -60,9 +60,9 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimit
       do {
         iVar1 = pSVar3[1].base.type;
         *(int *)((int)g_ProcessedVertexIndices + iVar5) = iVar1;
-        g_RenderVertexBuffer[iVar1].u = (float)pSVar3[1].base.count;
+        g_RenderVertexBuffer[iVar1].u = pSVar3[1].base.count;
         iVar5 = iVar5 + 4;
-        g_RenderVertexBuffer[iVar1].v = (float)pSVar3[1].surface_normal.A;
+        g_RenderVertexBuffer[iVar1].v = pSVar3[1].surface_normal.A;
         iVar2 = iVar2 + 1;
         pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
       } while (iVar2 < (polygon_info->base).count);

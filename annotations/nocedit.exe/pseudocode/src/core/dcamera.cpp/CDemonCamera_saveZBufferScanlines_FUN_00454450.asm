@@ -14,7 +14,7 @@
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;
 ; Called Functions:
-;   core_event.cpp_FUN_004b1a78
+;   crt_watcom.c__memcpy_FUN_004b1a78
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     MOV EDX,dword ptr [EDI + 0x2cf7d5c] ; 00454481 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     ADD ECX,EAX                         ; 00454487
     INC EBX                             ; 00454489
-    CALL core_event.cpp_FUN_004b1a78    ; 0045448a
-        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b1a78()
+    CALL crt_watcom.c__memcpy_FUN_004b1a78 ; 0045448a
+        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_004b1a78(void * dest, void * src, uint size)
     MOV ECX,dword ptr [ESI + 0x148]     ; 0045448f
     ADD EDI,0x4                         ; 00454495
     CMP EBX,ECX                         ; 00454498

@@ -156,21 +156,21 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           g_RenderVertexBuffer[3].color = 0xffff;
           g_RenderVertexBuffer[3].fog = 9.18341e-41;
           if (this_ptr->texture_flip == 0) {
-            g_RenderVertexBuffer[0].u = 7.34684e-40;
-            g_RenderVertexBuffer[1].u = 7.34684e-40;
-            g_RenderVertexBuffer[2].u = 2.2775203e-38;
-            g_RenderVertexBuffer[3].u = 2.2775203e-38;
+            g_RenderVertexBuffer[0].u = 0x80000;
+            g_RenderVertexBuffer[1].u = 0x80000;
+            g_RenderVertexBuffer[2].u = 0xf80000;
+            g_RenderVertexBuffer[3].u = 0xf80000;
           }
           else {
-            g_RenderVertexBuffer[0].u = 2.2775203e-38;
-            g_RenderVertexBuffer[1].u = 2.2775203e-38;
-            g_RenderVertexBuffer[2].u = 7.34684e-40;
-            g_RenderVertexBuffer[3].u = 7.34684e-40;
+            g_RenderVertexBuffer[0].u = 0xf80000;
+            g_RenderVertexBuffer[1].u = 0xf80000;
+            g_RenderVertexBuffer[2].u = 0x80000;
+            g_RenderVertexBuffer[3].u = 0x80000;
           }
-          g_RenderVertexBuffer[3].v = 2.2775203e-38;
-          g_RenderVertexBuffer[2].v = 7.34684e-40;
-          g_RenderVertexBuffer[1].v = 7.34684e-40;
-          g_RenderVertexBuffer[0].v = 2.2775203e-38;
+          g_RenderVertexBuffer[3].v = 0xf80000;
+          g_RenderVertexBuffer[2].v = 0x80000;
+          g_RenderVertexBuffer[1].v = 0x80000;
+          g_RenderVertexBuffer[0].v = 0xf80000;
           g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
           g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
           g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
@@ -257,14 +257,14 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       this_ptr_00->vertex_buffer_ptr[1].w_recip = 2.29589e-41;
       this_ptr_00->vertex_buffer_ptr[2].w_recip = 2.29589e-41;
       this_ptr_00->vertex_buffer_ptr[3].w_recip = 2.29589e-41;
-      this_ptr_00->vertex_buffer_ptr->u = 7.34684e-40;
-      this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;
-      this_ptr_00->vertex_buffer_ptr[1].u = 2.2775203e-38;
-      this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;
-      this_ptr_00->vertex_buffer_ptr[2].u = 2.2775203e-38;
-      this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;
-      this_ptr_00->vertex_buffer_ptr[3].u = 7.34684e-40;
-      this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;
+      this_ptr_00->vertex_buffer_ptr->u = 0x80000;
+      this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;
+      this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+      this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
+      this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
       SStack_13c.base.count = 4;
       SStack_13c.surface_normal.D = 0;
       SStack_13c.surface_normal.C = 0;

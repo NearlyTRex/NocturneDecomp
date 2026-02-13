@@ -1,0 +1,483 @@
+{
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 597,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 77,
+    "suspect_count": 48,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "special_crt_function",
+      "unaffected_reg",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_indirect_jump",
+      "warning_jumptable"
+    ],
+    "total_lines": 143
+  },
+  "cross_references": [
+    {
+      "addr": "0044cb80",
+      "from_addr": "0044cbfe",
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00451130",
+      "from_addr": "004511b3",
+      "name": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004544a0",
+      "from_addr": "004544da",
+      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00454450",
+      "from_addr": "0045448a",
+      "name": "core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00454450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004729d0",
+      "from_addr": "00472a19",
+      "name": "core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b1a78",
+    "address_range": [
+      [
+        "004b1a78",
+        "004b1a95"
+      ],
+      [
+        "004b1a98",
+        "004b1ab2"
+      ],
+      [
+        "004b1ab4",
+        "004b1ad1"
+      ],
+      [
+        "004b1ad4",
+        "004b1ae9"
+      ],
+      [
+        "004b1aec",
+        "004b1b13"
+      ]
+    ],
+    "convention": "__fastcall",
+    "name": "crt_watcom.c__memcpy_FUN_004b1a78",
+    "signature": "void __fastcall crt_watcom_c__memcpy_FUN_004b1a78(void *dest,void *src,uint size)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00679d54",
+      "name": "switchdataD_00679d54",
+      "type": "void*",
+      "value": "004b1a9b"
+    },
+    {
+      "addr": "00679d94",
+      "name": "DAT_00679d94",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.854166666666667,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 6,
+      "BRANCHIND": 6,
+      "CBRANCH": 6,
+      "COPY": 57,
+      "INT2FLOAT": 1,
+      "INT_2COMP": 1,
+      "INT_ADD": 34,
+      "INT_AND": 19,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 4,
+      "LOAD": 21,
+      "POPCOUNT": 9,
+      "ROUND": 2,
+      "STORE": 11,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 233
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(longlong *)((int)",
+      "text": "plVar3 = (longlong *)((int)dest + uVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)",
+      "text": "src = (void *)((int)src + uVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)src + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)src + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 25,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1b0d. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 26,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBX",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 27,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_00679d94",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)src + -3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)src + -3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(ushort *)((int)",
+      "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)src + -2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(ushort *)((int)",
+      "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)src + -2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 36,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1afd. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 37,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EBX",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 38,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_00679d94",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)src + -5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)src + -5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)src + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)src + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 46,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1ae3. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 47,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EBX",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 48,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_00679d94",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)src + -7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)src + -7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(ushort *)((int)",
+      "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)src + -6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(ushort *)((int)",
+      "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)src + -6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)src + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)src + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 59,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1acb. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 60,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_EBX",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 61,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_00679d94",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(void *)((int)",
+      "text": "src = (void *)((int)src + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "ROUND",
+      "text": "*plVar3 = (longlong)ROUND((float10)lVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "ROUND",
+      "text": "*plVar3 = (longlong)ROUND((float10)lVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 76,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1aac. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 77,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 78,
+      "match": "unaff_EBX",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 78,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 78,
+      "match": "DAT_00679d94",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,src,unaff_EBX);",
+      "type": "undefined_data"
+    },
+    {
+      "address": "004b1a78",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_watcom.c__memcpy_FUN_004b1a78",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 004b1a78",
+      "type": "special_crt_function"
+    }
+  ]
+}

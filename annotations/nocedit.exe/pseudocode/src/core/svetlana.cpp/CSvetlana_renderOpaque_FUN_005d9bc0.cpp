@@ -42,14 +42,14 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
     (this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk6 + 0x10)] = 1;
     this_ptr_00 = g_CDemonRendererPtr2;
     (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->unk7] = 1;
-    iVar3 = g_CGamePtr->unk6;
-    g_CGamePtr->unk6 = 2;
+    iVar3 = g_CGamePtr->render_mode;
+    g_CGamePtr->render_mode = 2;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(this_ptr_00,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,48000);
     if (iVar4 != 0) {
       core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
     }
-    g_CGamePtr->unk6 = iVar3;
+    g_CGamePtr->render_mode = iVar3;
     iVar3 = 0;
     pCVar5 = this_ptr;
     do {

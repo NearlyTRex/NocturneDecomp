@@ -57,7 +57,8 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056fbd0(CDemonSet *this_ptr)
     do {
       this_ptr_00 = *(CHero **)(pCVar12->unk4 + 0x9c50);
       if ((this_ptr_00 != g_HeroActors[g_LocalHeroIndex]) &&
-         ((g_CDemonMissionPtr->is_in_editor == 0 || ((this_ptr_00->base).base.unk14 == 0)))) {
+         ((g_CDemonMissionPtr->is_in_editor == 0 || ((this_ptr_00->base).base.is_editor_hidden == 0)
+          ))) {
         if (in_stack_00000008 == 0xffffffff) {
           (this_ptr_00->base).base.previous_transform_state.dirty_flags = -1;
         }
@@ -99,10 +100,10 @@ joined_r0x0056fede:
                  (this_ptr_00->base).base.previous_transform_state.orientation.y)) &&
                ((this_ptr_00->base).base.orient.vec.z ==
                 (this_ptr_00->base).base.previous_transform_state.orientation.z)))))) {
-            uVar4 = (this_ptr_00->base).base.unk13;
+            uVar4 = (this_ptr_00->base).base.render_needs_update;
             goto joined_r0x0056fede;
           }
-          (this_ptr_00->base).base.unk13 = 1;
+          (this_ptr_00->base).base.render_needs_update = 1;
         }
         pCVar9 = (*((this_ptr_00->base).base.vtable._ub)->getBoundingBox)
                            ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff78);

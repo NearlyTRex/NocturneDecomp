@@ -48,8 +48,8 @@ engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
           pSVar2 = polygon_info;
           do {
             iVar1 = *(int *)((int)g_VertexIndexBuffer + iVar3);
-            this_ptr->vertex_buffer_ptr[iVar1].u = (float)pSVar2[1].base.count;
-            this_ptr->vertex_buffer_ptr[iVar1].v = (float)pSVar2[1].surface_normal.A;
+            this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2[1].base.count;
+            this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2[1].surface_normal.A;
             pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
             iVar4 = iVar4 + 1;
             iVar3 = iVar3 + 4;

@@ -244,7 +244,8 @@ LAB_004f4fc0:
           this_ptr->hostage_state = 1;
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (pCVar12,"%s rescued, entering follow mode\n",this_ptr);
-          core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+          core_event_cpp_CEventList_executeCommands_FUN_004aabe0
+                    (g_CEventListPtr,this_ptr->hero_found_me_event);
         }
         break;
       case 1:
@@ -290,7 +291,8 @@ LAB_004f4fc0:
               this_ptr->hostage_state = 2;
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (pCVar12,"%s left behind!\n",this_ptr);
-              core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+              core_event_cpp_CEventList_executeCommands_FUN_004aabe0
+                        (g_CEventListPtr,this_ptr->hero_left_me_event);
               (this_ptr->base).base.hero_proximity_timer = 0.0;
             }
           }
@@ -299,7 +301,8 @@ LAB_004f4fc0:
           this_ptr->hostage_state = 3;
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (pCVar12,"%s was led close enough, going home!\n",this_ptr);
-          core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+          core_event_cpp_CEventList_executeCommands_FUN_004aabe0
+                    (g_CEventListPtr,this_ptr->going_to_sit_down_event);
           (this_ptr->base).base.hero_proximity_timer = 0.0;
         }
         break;
@@ -333,7 +336,8 @@ LAB_004f579d:
           }
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s was left behind, but now can follow again!\n",this_ptr);
-          core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+          core_event_cpp_CEventList_executeCommands_FUN_004aabe0
+                    (g_CEventListPtr,this_ptr->hero_came_back_event);
         }
         break;
       case 3:
@@ -384,8 +388,10 @@ LAB_004f579d:
                       (pCVar12,"%s got confused going home.  Help me!\n",this_ptr);
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar2->motion_controller,0,1);
-            core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
-            core_event_cpp_CEventList_FUN_004b0330(g_CEventListPtr);
+            core_event_cpp_CEventList_executeCommands_FUN_004aabe0
+                      (g_CEventListPtr,this_ptr->sit_down_event);
+            core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330
+                      (g_CEventListPtr,this_ptr->rescue_event,1);
             this_ptr->hostage_state = 4;
             this_ptr->unk3[0] = '\0';
             this_ptr->unk3[1] = '\0';
@@ -452,8 +458,10 @@ LAB_004f579d:
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,10,1);
             }
-            core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
-            core_event_cpp_CEventList_FUN_004b0330(g_CEventListPtr);
+            core_event_cpp_CEventList_executeCommands_FUN_004aabe0
+                      (g_CEventListPtr,this_ptr->sit_down_event);
+            core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330
+                      (g_CEventListPtr,this_ptr->rescue_event,1);
             this_ptr->sit_down_way_point = (CDemonActor *)0x0;
           }
           local_3c = delta_time * (float)3.1415926535000001;

@@ -14,15 +14,9 @@ void __cdecl core_weather_cpp_CWeather_FUN_005ef140(CWeather *this_ptr)
   
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
   this_ptr_00 = g_CSoundPtr;
-  *(float *)(this_ptr->unk + 0x20) = fVar1;
+  this_ptr->lightning_countdown = fVar1;
   core_sound_cpp_CSound_playSound_FUN_005b3a20(this_ptr_00,this_ptr,"thndr?.wav");
-  this_ptr->unk[0x2c] = '\0';
-  this_ptr->unk[0x2d] = '\0';
-  this_ptr->unk[0x2e] = '\0';
-  this_ptr->unk[0x2f] = '\0';
-  this_ptr->unk[0x34] = '\0';
-  this_ptr->unk[0x35] = '\0';
-  this_ptr->unk[0x36] = -0x80;
-  this_ptr->unk[0x37] = '?';
+  this_ptr->sub_flash_interval = 0.0;
+  this_ptr->max_flash_interval = 1.0;
   return;
 }

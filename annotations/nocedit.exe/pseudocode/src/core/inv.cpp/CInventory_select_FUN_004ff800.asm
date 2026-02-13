@@ -36,7 +36,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_game.cpp_CGame_displayMessage_FUN_004d7f20
 ;   core_health.cpp_CHealthItem_FUN_004f1fd0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004fea70
@@ -322,8 +322,8 @@ section .text
     PUSH EAX                            ; 004ffa8e
     MOV ECX,dword ptr [0x006793d0]      ; 004ffa8f | g_CEventListInstance | g_CEventListPtr
     PUSH ECX                            ; 004ffa95 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 004ffa96
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 004ffa96
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004ffa9b
     XOR EAX,EAX                         ; 004ffa9e
     ADD ESP,0x104                       ; 004ffaa0

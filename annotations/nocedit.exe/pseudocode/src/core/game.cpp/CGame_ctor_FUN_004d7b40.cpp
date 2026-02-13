@@ -27,13 +27,13 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->debug_flag_2 = 0;
   this_ptr->event_processing_enabled = 0;
   this_ptr->subtitle_system_enabled = 0;
-  this_ptr->unk4 = 0;
+  this_ptr->gratuitous_dismemberment = 0;
   this_ptr->time_scale_factor = 1.0;
   this_ptr->scripted_sequence_active = 0;
-  this_ptr->unk6 = 0;
+  this_ptr->render_mode = 0;
   this_ptr->editor_tools_enabled = 0;
   this_ptr->wait_for_keypress = 0;
-  this_ptr->unk7 = 0;
+  this_ptr->big_hat_cheat = 0;
   this_ptr->skip_frame_render = 0;
   this_ptr->profile_mode = 0;
   this_ptr->velocity_debug_enabled = 0;
@@ -64,7 +64,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->total_play_time = 0.0;
   this_ptr->game_stat_2 = 0.0;
   this_ptr->game_state_flags = 0;
-  this_ptr->unk12 = 0;
+  this_ptr->act_completion_state = 0;
   g_CurrentSaveFile = '\0';
   this_ptr->chapter_reload_filename[0] = '\0';
   return this_ptr;

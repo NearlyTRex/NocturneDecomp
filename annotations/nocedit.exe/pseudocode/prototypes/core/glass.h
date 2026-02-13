@@ -73,7 +73,7 @@ int __cdecl CGlass::getGroundType(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 // Address: 004eb3a0
-void __cdecl CGlass::checkBreakableCondition(CGlass *this_ptr);
+int __cdecl CGlass::checkBreakableCondition(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_getPropertyList_FUN_004eb3c0
 // Address: 004eb3c0

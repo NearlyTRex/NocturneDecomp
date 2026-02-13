@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sound_cpp_CSound_playSound_FUN_005b3a20(CSound *this_ptr,void *user_data,char *sound_name)
+; __cdecl int __cdecl core_sound_cpp_CSound_playSound_FUN_005b3a20(CSound *this_ptr,void *user_data,char *sound_name)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   sound_name
 ;
 ; XREF[9]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004ac5e0
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ac5e0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004df4a0
 ;   core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0 at 004dda6b
 ;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053eb7d

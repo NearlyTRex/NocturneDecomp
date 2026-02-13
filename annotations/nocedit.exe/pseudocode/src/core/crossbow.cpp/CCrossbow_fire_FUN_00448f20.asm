@@ -486,7 +486,7 @@ section .text
     PUSH EAX                            ; 004494c1
         ;   Label: LAB_004494c1
     CALL core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0 ; 004494c2
-        ;   XREF to: 004eb3a0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass * this_ptr)
+        ;   XREF to: 004eb3a0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 004494c7
     TEST EAX,EAX                        ; 004494ca
     JZ 0x004490f5                       ; 004494cc

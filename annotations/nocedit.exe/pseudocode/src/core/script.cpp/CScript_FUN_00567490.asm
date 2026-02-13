@@ -20,8 +20,8 @@
 ;   undefined4 PTR_s_exists_actor_00645495_0068100c
 ;
 ; Called Functions:
+;   core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0
-;   core_script.cpp_FUN_00564090
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
     PUSH ECX                            ; 005674ec
     LEA EAX,[ESP + 0x4]                 ; 005674ed
     PUSH EAX                            ; 005674f1
-    CALL core_script.cpp_FUN_00564090   ; 005674f2
-        ;   XREF to: 00564090 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564090(int param_1, int * param_2)
+    CALL core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090 ; 005674f2
+        ;   XREF to: 00564090 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdParse * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005674f7
     ADD ESP,0x2128                      ; 005674fa
     POP EDI                             ; 00567500

@@ -1,0 +1,123 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 10,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [
+    {
+      "addr": "004aacc0",
+      "from_addr": "004ac765",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004aacc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dcee0",
+      "from_addr": "004dd7c5",
+      "name": "core_game.cpp_CGame_processHotkeys_FUN_004dcee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570e60",
+      "from_addr": "00570e96",
+      "name": "core_set.cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00570e20",
+    "address_range": [
+      [
+        "00570e20",
+        "00570e56"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(CDemonSet *this_ptr,int index,float value)"
+  },
+  "function_calls": [
+    {
+      "addr": "004528e0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "032758e4",
+      "name": "g_CDemonCameraInstance",
+      "type": "CDemonCamera",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 13,
+      "INT_ADD": 12,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SEXT": 3,
+      "INT_SLESS": 2,
+      "INT_SUB": 5,
+      "LOAD": 9,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 5,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 72
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

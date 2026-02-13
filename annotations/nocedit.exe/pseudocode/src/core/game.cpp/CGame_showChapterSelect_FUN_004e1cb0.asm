@@ -47,7 +47,7 @@
 ;   ... and 82 more
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004b0460
+;   core_event.cpp_CEventList_resetGameFlags_FUN_004b0460
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0
 ;   core_level.cpp_CLevelLoader_show_FUN_00503dc0
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
@@ -284,8 +284,8 @@ section .text
     MOV EDX,dword ptr [0x006793d0]      ; 004e1fac | g_CEventListInstance | g_CEventListPtr
         ;   Label: LAB_004e1fac
     PUSH EDX                            ; 004e1fb2 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004b0460 ; 004e1fb3
-        ;   XREF to: 004b0460 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004b0460(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_resetGameFlags_FUN_004b0460 ; 004e1fb3
+        ;   XREF to: 004b0460 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_004b0460(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004e1fb8
     LEA EAX,[ESP + 0x5a8]               ; 004e1fbb
     PUSH EAX                            ; 004e1fc2

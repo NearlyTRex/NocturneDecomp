@@ -86,8 +86,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
   local_cc = 1;
   local_c8 = 2;
   local_c4 = 3;
-  local_20 = this_ptr->unk16;
-  local_40 = this_ptr->unk17;
+  local_20 = this_ptr->collision_test_points;
+  local_40 = this_ptr->collision_test_normals;
   local_30 = 0x28000;
   do {
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,local_30 / 5)
@@ -121,7 +121,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
     local_20 = local_20 + 3;
     local_30 = local_30 + -0x8000;
   } while (local_20 != local_40);
-  local_24 = this_ptr->unk17;
+  local_24 = this_ptr->collision_test_normals;
   local_3c = (CVector3f *)&this_ptr->hero_proximity_timer;
   local_28 = 0x28000;
   do {

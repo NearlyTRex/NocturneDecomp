@@ -133,7 +133,7 @@ section .text
     PUSH ESI                            ; 005b3094
     PUSH EBX                            ; 005b3095
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80 ; 005b3096
-        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
+        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 005b309b
     TEST EAX,EAX                        ; 005b309e
     JZ 0x005b352a                       ; 005b30a0
@@ -217,7 +217,7 @@ section .text
     PUSH ESI                            ; 005b31a5
     PUSH EBX                            ; 005b31a6
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80 ; 005b31a7
-        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
+        ;   XREF to: 005b3b80 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 005b31ac
     TEST EAX,EAX                        ; 005b31af
     JZ 0x005b355e                       ; 005b31b1

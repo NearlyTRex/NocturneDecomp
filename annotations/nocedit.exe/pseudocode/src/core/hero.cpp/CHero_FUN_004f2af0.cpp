@@ -52,7 +52,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2af0(CHero *this_ptr)
   if (iVar5 != 0) {
     iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x5c))();
     if (iVar5 != 0) {
-      (this_ptr->action_bindings).fire_key = 0;
+      (this_ptr->player_control).action_states[3] = 0;
     }
     return 1;
   }

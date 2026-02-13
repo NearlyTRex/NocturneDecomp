@@ -36,18 +36,18 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
     engine_light_cpp_setAmbientLightLevel_FUN_00505490(0xffff);
     engine_light_cpp_setDirectionalLightVector_FUN_005054d0(0,0,0xffff);
     g_RenderVertexBuffer[0].projected_vertex.screen_x = -0x80000000;
-    g_RenderVertexBuffer[0].u = 2.2775203e-38;
+    g_RenderVertexBuffer[0].u = 0xf80000;
     g_RenderVertexBuffer[1].projected_vertex.screen_x = -0x80000000;
     g_RenderVertexBuffer[2].projected_vertex.screen_x = -0x80000000;
-    g_RenderVertexBuffer[2].v = 2.2775203e-38;
+    g_RenderVertexBuffer[2].v = 0xf80000;
     g_RenderVertexBuffer[3].projected_vertex.screen_x = -0x80000000;
-    g_RenderVertexBuffer[3].u = 2.2775203e-38;
+    g_RenderVertexBuffer[3].u = 0xf80000;
     g_RenderVertexBuffer[0].projected_vertex.transformed_x = 0xa00;
     g_RenderVertexBuffer[0].projected_vertex.transformed_y = 0xa00;
     g_RenderVertexBuffer[0].projected_vertex.transformed_z = 0xa00;
-    g_RenderVertexBuffer[0].v = 7.34684e-40;
-    g_RenderVertexBuffer[1].u = 7.34684e-40;
-    g_RenderVertexBuffer[1].v = 7.34684e-40;
+    g_RenderVertexBuffer[0].v = 0x80000;
+    g_RenderVertexBuffer[1].u = 0x80000;
+    g_RenderVertexBuffer[1].v = 0x80000;
     g_RenderVertexBuffer[1].projected_vertex.transformed_y = 0xa00;
     g_RenderVertexBuffer[1].projected_vertex.transformed_z = 0xa00;
     g_RenderVertexBuffer[2].projected_vertex.transformed_z = 0xa00;
@@ -58,10 +58,10 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
     g_RenderVertexBuffer[3].projected_vertex.transformed_y = -0xa00;
     g_RenderVertexBuffer[3].projected_vertex.transformed_x = 0xa00;
     g_RenderVertexBuffer[3].projected_vertex.transformed_z = 0xa00;
-    g_RenderVertexBuffer[2].u = 7.34684e-40;
+    g_RenderVertexBuffer[2].u = 0x80000;
     pcVar4 = local_28.texture_name;
     pacVar3 = this_ptr->master_texture_names + this_ptr->current_master_selection;
-    g_RenderVertexBuffer[3].v = 2.2775203e-38;
+    g_RenderVertexBuffer[3].v = 0xf80000;
     do {
       cVar1 = (*pacVar3)[0];
       *pcVar4 = cVar1;

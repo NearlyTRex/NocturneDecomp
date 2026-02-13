@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   class_name
 ;
 ; XREF[1]:
-;   core_event.cpp_CEventList_FUN_004ae140 at 004aec31
+;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004aec31
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0

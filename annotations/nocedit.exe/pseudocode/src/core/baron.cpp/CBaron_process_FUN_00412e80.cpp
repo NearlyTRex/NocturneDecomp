@@ -76,10 +76,10 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
   if (pCVar2->letterbox_mode != 0) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;
   }
-  fVar10 = (this_ptr->base).unk1 - delta_time;
-  (this_ptr->base).unk1 = fVar10;
+  fVar10 = (float)(this_ptr->base).no_collision_flag - delta_time;
+  (this_ptr->base).no_collision_flag = (int)fVar10;
   if (fVar10 < 0.0) {
-    (this_ptr->base).unk1 = 0.0;
+    (this_ptr->base).no_collision_flag = 0;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -102,24 +102,24 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
     case 2:
     case 3:
       iVar3 = 0;
-      if ((this_ptr->base).action_bindings.walk_key != 0) {
-        if ((this_ptr->base).action_bindings.run_key == 0) {
+      if ((this_ptr->base).player_control.action_states[0] != 0) {
+        if ((this_ptr->base).player_control.action_states[2] == 0) {
           iVar3 = 1;
         }
         else {
           iVar3 = 3;
         }
       }
-      if ((this_ptr->base).action_bindings.backup_key != 0) {
+      if ((this_ptr->base).player_control.action_states[1] != 0) {
         iVar3 = 2;
       }
-      if ((this_ptr->base).action_bindings.fire_key != 0) {
+      if ((this_ptr->base).player_control.action_states[3] != 0) {
         this_ptr->unk6 = 1;
         iVar3 = 4;
-        (this_ptr->base).action_bindings.fire_key = 0;
+        (this_ptr->base).player_control.action_states[3] = 0;
       }
       (this_ptr->base).base.turn_angle_accumulator =
-           *(float *)((this_ptr->base).unk2 + 4) * (this_ptr->base).base.turn_speed;
+           (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if (iVar3 == pSVar5->state_index) break;

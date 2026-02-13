@@ -9,6 +9,7 @@
 void __cdecl core_door_cpp_FUN_0047fcf0(int event_id)
 
 {
-  core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
+  core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,(char *)(event_id + 0x2e8))
+  ;
   return;
 }

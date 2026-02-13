@@ -10,11 +10,11 @@
 ;
 ; XREF[6]:
 ;   core_script.cpp_CScript_FUN_00559f80 at 0055a0c4
-;   core_script.cpp_CScript_FUN_00565d00 at 00565dd1
 ;   core_script.cpp_CScript_FUN_00566080 at 0056608b
 ;   core_script.cpp_CScript_FUN_00566fa0 at 00566fb9
 ;   core_script.cpp_CScript_FUN_00567630 at 00567649
 ;   core_script.cpp_CScript_FUN_00567bc0 at 00567bd2
+;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565dd1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_006419d9

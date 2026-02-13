@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 79,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 11,
-    "pseudocode_lines": 54,
-    "suspect_count": 2,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 192
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 191
   },
   "cross_references": [],
   "function": {
@@ -28,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10",
-    "signature": "int __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10 (CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)"
+    "signature": "void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10 (CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)"
   },
   "function_calls": [
     {
@@ -248,22 +246,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 56,
-      "match": "extraout_EAX",
-      "text": "return extraout_EAX;",
-      "type": "extra_output"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

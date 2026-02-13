@@ -4,20 +4,62 @@
       {
         "category": "format_error",
         "column": 33,
-        "line": 140,
+        "line": 141,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 164,
+        "line": 165,
         "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 252,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 292,
+        "line": 293,
         "message": "use of undeclared identifier 'stack0xfffffe7c'"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 301,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 301,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 301,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 302,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 302,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 302,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       }
     ],
     "success": false,
@@ -25,19 +67,20 @@
   },
   "complexity": {
     "assembly_lines": 724,
-    "complexity_score": 491,
+    "complexity_score": 528,
     "cross_reference_count": 13,
     "function_call_count": 36,
     "global_count": 47,
-    "pseudocode_lines": 301,
-    "suspect_count": 17,
+    "pseudocode_lines": 303,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref",
-      "undefined_data"
+      "undefined_data",
+      "unknown_field"
     ],
-    "total_lines": 1025
+    "total_lines": 1027
   },
   "cross_references": [
     {
@@ -816,57 +859,50 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(uint *)((int)",
       "text": "puVar15 = (uint *)((int)g_DynamicLights + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 65,
       "match": "(uint *)((int)",
       "text": "puVar15 = (uint *)((int)g_ActiveLightList + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 75,
       "match": "(uint *)((int)",
       "text": "puVar15 = (uint *)((int)g_ActiveLightList + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_03277d80",
       "text": "DAT_03277d80 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 91,
       "match": "DAT_0327785c",
       "text": "DAT_0327785c = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 157,
       "match": "DAT_03277d80",
       "text": "iVar11 = DAT_03277d80 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 158,
       "match": "DAT_03277d84",
-      "text": "piVar14 = &DAT_03277d84 + DAT_03277d80;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 157,
-      "match": "DAT_03277d80",
       "text": "piVar14 = &DAT_03277d84 + DAT_03277d80;",
       "type": "undefined_data"
     },
@@ -874,63 +910,91 @@
       "description": "Undefined global data reference",
       "line": 158,
       "match": "DAT_03277d80",
+      "text": "piVar14 = &DAT_03277d84 + DAT_03277d80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 159,
+      "match": "DAT_03277d80",
       "text": "DAT_03277d80 = iVar11;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 174,
+      "line": 175,
       "match": "DAT_032770b4",
       "text": "(&DAT_032770b4)[iVar3].left = *(int *)pcVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 190,
+      "line": 191,
       "match": "DAT_032770b4",
       "text": "rect = &DAT_032770b4;",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 245,
+      "match": "._4_4_",
+      "text": "auStack_4c._4_4_ = g_CDemonCameraInstance.base.position.x;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 252,
+      "line": 253,
       "match": "(CMatrix3x3i *)((int)",
       "text": "pCVar8 = (CMatrix3x3i *)((int)pCVar8 + ((uint)bVar17 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 260,
+      "line": 261,
       "match": "(CMatrix3x3f *)((int)",
       "text": "pCVar13 = (CMatrix3x3f *)((int)pCVar13 + ((uint)bVar17 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 285,
+      "line": 286,
       "match": "&stack0xfffffe7c",
       "text": "piVar14 = (int *)&stack0xfffffe7c;",
       "type": "stack_ref"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 292,
-      "match": "ROUND",
-      "text": "*piVar14 = (int)ROUND(CStack_4c.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 293,
-      "match": "ROUND",
-      "text": "piVar14[1] = (int)ROUND(CStack_4c.y * 256.0f);",
-      "type": "decompiler_intrinsic"
+      "description": "Unknown/mangled field access",
+      "line": 294,
+      "match": "._0_4_",
+      "text": "*piVar14 = (int)ROUND((float)auStack_4c._0_4_ * 256.0f);",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 294,
       "match": "ROUND",
-      "text": "piVar14[2] = (int)ROUND(CStack_4c.z * 256.0f);",
+      "text": "*piVar14 = (int)ROUND((float)auStack_4c._0_4_ * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 295,
+      "match": "._4_4_",
+      "text": "piVar14[1] = (int)ROUND((float)auStack_4c._4_4_ * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 295,
+      "match": "ROUND",
+      "text": "piVar14[1] = (int)ROUND((float)auStack_4c._4_4_ * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 296,
+      "match": "ROUND",
+      "text": "piVar14[2] = (int)ROUND(local_44 * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ]

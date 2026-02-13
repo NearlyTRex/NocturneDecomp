@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_set_cpp_CDemonSet_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive)
+; __cdecl int __cdecl core_set_cpp_CDemonSet_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -36,7 +36,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x161650]  ; 00570e05
     PUSH EDX                            ; 00570e0b
     CALL core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0 ; 00570e0c
-        ;   XREF to: 005225a0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
+        ;   XREF to: 005225a0 (UNCONDITIONAL_CALL)  ; int core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 00570e11
     RET                                 ; 00570e14
     PUSH ECX                            ; 00570e15

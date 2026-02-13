@@ -65,7 +65,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_path.cpp_GlobalPathmapListCorruption_FUN_00548590
+;   core_path.cpp_FUN_00548590
 ;   core_set.cpp_CDemonSet_clear_FUN_005693c0
 ;   core_setcolid.cpp_CDemonSet_FUN_00574560
 ;   core_setdir.cpp_CDemonSet_FUN_00576710
@@ -838,8 +838,8 @@ section .text
     CALL core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0 ; 00569d38
         ;   XREF to: 00494de0 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0(CDemonRaytrace * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00569d3d
-    CALL core_path.cpp_GlobalPathmapListCorruption_FUN_00548590 ; 00569d40
-        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)  ; void core_path.cpp_GlobalPathmapListCorruption_FUN_00548590()
+    CALL core_path.cpp_FUN_00548590     ; 00569d40
+        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548590()
         ;   Label: LAB_00569d40
     PUSH 0x0                            ; 00569d45
         ;   Label: LAB_00569d45

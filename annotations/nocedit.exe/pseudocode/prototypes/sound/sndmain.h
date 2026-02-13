@@ -281,7 +281,7 @@ void __cdecl clearNextSfxFlagBits(uint flag_mask);
 
 // Original: sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 // Address: 005a8be0
-void __cdecl setNextSfxTriggerTime(double trigger_time,int trigger_id);
+int __cdecl setNextSfxTriggerTime(double trigger_time,int trigger_id);
 
 // Original: sound_sndmain.cpp_resetCurrentSfxOptions_FUN_005a8c10
 // Address: 005a8c10

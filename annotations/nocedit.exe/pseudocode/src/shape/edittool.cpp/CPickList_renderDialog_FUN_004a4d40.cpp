@@ -64,7 +64,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
           if (iVar8 == 0) {
             local_20 = g_BackgroundColor1;
           }
-          pcVar10 = this_ptr->unk1 + local_18 * 4 + -0x10;
+          pcVar10 = this_ptr->unk3 + local_18 * 4 + -0x14;
           do {
             cVar1 = *pcVar7;
             pcVar2 = pcVar7;

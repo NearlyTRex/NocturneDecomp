@@ -39,7 +39,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;
 ; *****************************************************************************
@@ -149,8 +149,8 @@ section .text
     PUSH EBX                            ; 004f2d42
     MOV EBX,dword ptr [0x006793d0]      ; 004f2d43 | g_CEventListInstance | g_CEventListPtr
     PUSH EBX                            ; 004f2d49 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 004f2d4a
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 004f2d4a
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     MOV EAX,0x1                         ; 004f2d4f
     ADD ESP,0x8                         ; 004f2d54
     MOV ESP,EBP                         ; 004f2d57

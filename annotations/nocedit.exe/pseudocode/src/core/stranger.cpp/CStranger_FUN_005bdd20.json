@@ -5,7 +5,7 @@
         "category": "other",
         "column": 17,
         "line": 40,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
@@ -76,19 +76,19 @@
       {
         "category": "undeclared_identifier",
         "column": 75,
-        "line": 193,
+        "line": 190,
         "message": "use of undeclared identifier 'stack0xffffff50'"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 194,
+        "line": 191,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 205,
+        "line": 202,
         "message": "use of undeclared identifier 'stack0xffffff50'"
       }
     ],
@@ -97,11 +97,11 @@
   },
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 477,
+    "complexity_score": 474,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
-    "pseudocode_lines": 287,
+    "pseudocode_lines": 284,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -111,7 +111,7 @@
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 866
+    "total_lines": 863
   },
   "cross_references": [
     {
@@ -599,42 +599,42 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 186,
+      "line": 183,
       "match": "&stack0xffffff50",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff50);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 198,
+      "line": 195,
       "match": "&stack0xffffff50",
       "text": "(local_18,(SDamageInfo *)&stack0xffffff50);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 201,
+      "line": 198,
       "match": "unaff_EBP",
       "text": "unaff_EBP = (int)ROUND(dVar5);",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 201,
+      "line": 198,
       "match": "ROUND",
       "text": "unaff_EBP = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 203,
+      "line": 200,
       "match": "in_stack_ffffff48",
       "text": "in_stack_ffffff48 = \"kick1.wav\";",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 286,
+      "line": 283,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 <= 0.0) {",
       "type": "stack_param"

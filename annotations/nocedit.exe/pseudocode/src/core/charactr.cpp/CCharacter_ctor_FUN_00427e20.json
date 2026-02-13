@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 795,
+    "complexity_score": 797,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 92,
     "suspect_count": 70,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 229
+    "total_lines": 231
   },
   "cross_references": [
     {
@@ -205,483 +205,483 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "ADJ",
-      "text": "pvVar1 = __arrinit(ADJ(pCVar3)->unk16,0xf,&g_CVectorTypeInfo);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "ADJ",
-      "text": "pvVar2 = __arrinit(ADJ(pvVar1)->unk17,0xf,&g_CVectorTypeInfo);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
-      "match": "ADJ",
-      "text": "pvVar3 = __arrinit(ADJ(pvVar2)->fire_effects,0x32,&g_SFireTypeInfo);",
+      "text": "(ADJ(pCVar3)->collision_test_points,0xf,&g_CVectorTypeInfo);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "ADJ",
-      "text": "pvVar4 = __arrinit(ADJ(pvVar3)->flames,0x32,&g_CFlameTypeInfo);",
+      "text": "(ADJ(pvVar1)->collision_test_normals,0xf,&g_CVectorTypeInfo);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->base.vtable._ub = &g_CCharacterVTable;",
+      "text": "pvVar3 = __arrinit(ADJ(pvVar2)->fire_effects,0x32,&g_SFireTypeInfo);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->render_active = 0;",
+      "text": "pvVar4 = __arrinit(ADJ(pvVar3)->flames,0x32,&g_CFlameTypeInfo);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "ADJ",
+      "text": "ADJ(pvVar4)->base.vtable._ub = &g_CCharacterVTable;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ADJ",
+      "text": "ADJ(pvVar4)->render_active = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ADJ",
       "text": "(ADJ(pvVar4)->velocity).z = 0.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "ADJ",
-      "text": "(ADJ(pvVar4)->velocity).y = (ADJ(pvVar4)->velocity).z;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "ADJ",
-      "text": "(ADJ(pvVar4)->velocity).y = (ADJ(pvVar4)->velocity).z;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ADJ",
-      "text": "(ADJ(pvVar4)->velocity).x = (ADJ(pvVar4)->velocity).y;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ADJ",
-      "text": "(ADJ(pvVar4)->velocity).x = (ADJ(pvVar4)->velocity).y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->max_hit_points = 100.0;",
+      "text": "(ADJ(pvVar4)->velocity).y = (ADJ(pvVar4)->velocity).z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ADJ",
+      "text": "(ADJ(pvVar4)->velocity).y = (ADJ(pvVar4)->velocity).z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->collision_cylinder_height = 1.0;",
+      "text": "(ADJ(pvVar4)->velocity).x = (ADJ(pvVar4)->velocity).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "(ADJ(pvVar4)->velocity).x = (ADJ(pvVar4)->velocity).y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->collision_cylinder_radius = 2.0;",
+      "text": "ADJ(pvVar4)->max_hit_points = 100.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->ai_detection_range_min = 20.0;",
+      "text": "ADJ(pvVar4)->collision_cylinder_height = 1.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->ai_detection_range_max = 50.0;",
+      "text": "ADJ(pvVar4)->collision_cylinder_radius = 2.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->collision_cylinder_bottom = 2.0;",
+      "text": "ADJ(pvVar4)->ai_detection_range_min = 20.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->collision_cylinder_top = -999.0;",
+      "text": "ADJ(pvVar4)->ai_detection_range_max = 50.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->damage_decal_count = 0;",
+      "text": "ADJ(pvVar4)->collision_cylinder_bottom = 2.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->fire_count = 0;",
+      "text": "ADJ(pvVar4)->collision_cylinder_top = -999.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->fire_allow_hero = 0x40000000;",
+      "text": "ADJ(pvVar4)->damage_decal_count = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->gesture_motion_index = -1;",
+      "text": "ADJ(pvVar4)->fire_count = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->gesture_branch_root = -1;",
+      "text": "ADJ(pvVar4)->fire_allow_hero = 0x40000000;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->sound_cooldown = 0.0;",
+      "text": "ADJ(pvVar4)->gesture_motion_index = -1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->is_walking = 0;",
+      "text": "ADJ(pvVar4)->gesture_branch_root = -1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->walk_to_target = (CDemonActor *)0x0;",
+      "text": "ADJ(pvVar4)->sound_cooldown = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->walk_min_distance = 3.0;",
+      "text": "ADJ(pvVar4)->is_walking = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->walk_max_distance = 1e+30;",
+      "text": "ADJ(pvVar4)->walk_to_target = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->walk_timeout = -1.0;",
+      "text": "ADJ(pvVar4)->walk_min_distance = 3.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->door_target = (CDoor *)0x0;",
+      "text": "ADJ(pvVar4)->walk_max_distance = 1e+30;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->hit_points = 100.0;",
+      "text": "ADJ(pvVar4)->walk_timeout = -1.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "ADJ",
-      "text": "if (&ADJ(pvVar4)->look_offset != (CVector3f *)local_c) {",
+      "text": "ADJ(pvVar4)->door_target = (CDoor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "ADJ",
-      "text": "(ADJ(pvVar4)->look_offset).x = 0.0;",
+      "text": "ADJ(pvVar4)->hit_points = 100.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "ADJ",
-      "text": "(ADJ(pvVar4)->look_offset).y = 0.0;",
+      "text": "if (&ADJ(pvVar4)->look_offset != (CVector3f *)local_c) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "ADJ",
-      "text": "(ADJ(pvVar4)->look_offset).z = 2.0;",
+      "text": "(ADJ(pvVar4)->look_offset).x = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ADJ",
+      "text": "(ADJ(pvVar4)->look_offset).y = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->unk7 = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "ADJ",
-      "text": "ADJ(pvVar4)->unk8 = 0;",
+      "text": "(ADJ(pvVar4)->look_offset).z = 2.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->unk9 = 0;",
+      "text": "ADJ(pvVar4)->look_at_search_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 56,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->unk10 = 0;",
+      "text": "ADJ(pvVar4)->wander_target = (CWayPoint *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 57,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->look_at_head_bone = -1;",
+      "text": "ADJ(pvVar4)->wander_nearest_waypoint = (CWayPoint *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "ADJ",
+      "text": "ADJ(pvVar4)->wander_cooldown = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ADJ",
+      "text": "ADJ(pvVar4)->look_at_head_bone = -1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ADJ",
       "text": "pCVar4 = ADJ(pvVar4);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
-      "match": "ADJ",
-      "text": "} while (pfVar5 != (float *)(ADJ(pvVar4)->base.create_event + 0x10));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "ADJ",
-      "text": "ADJ(pvVar4)->look_at_yaw = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->look_at_pitch = 0.0;",
+      "text": "} while (pfVar5 != (float *)(ADJ(pvVar4)->base.create_event + 0x10));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->look_at_weight = 0.0;",
+      "text": "ADJ(pvVar4)->look_at_yaw = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->collision_enabled = 0;",
+      "text": "ADJ(pvVar4)->look_at_pitch = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 70,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->look_at_target = (CDemonActor *)0x0;",
+      "text": "ADJ(pvVar4)->look_at_weight = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->collision_layer = 0;",
+      "text": "ADJ(pvVar4)->collision_enabled = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->is_fully_burned = 0;",
+      "text": "ADJ(pvVar4)->look_at_target = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->is_ethereal = 0;",
+      "text": "ADJ(pvVar4)->collision_layer = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->grabbed_by = (CDemonActor *)0x0;",
+      "text": "ADJ(pvVar4)->is_fully_burned = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 75,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->grabbed_type = 0;",
+      "text": "ADJ(pvVar4)->is_ethereal = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->speech_timer = 0.0;",
+      "text": "ADJ(pvVar4)->grabbed_by = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 77,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->stagger_amount = 0.0;",
+      "text": "ADJ(pvVar4)->grabbed_type = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->size_scale = 1.0;",
+      "text": "ADJ(pvVar4)->speech_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->was_rendered_opaque = 0;",
+      "text": "ADJ(pvVar4)->stagger_amount = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 80,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->layer_action_count = 0;",
+      "text": "ADJ(pvVar4)->size_scale = 1.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->layer_action_index = 0;",
+      "text": "ADJ(pvVar4)->was_rendered_opaque = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->layer_action_t = 0.0;",
+      "text": "ADJ(pvVar4)->layer_action_count = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 83,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->show_in_editor = 1;",
+      "text": "ADJ(pvVar4)->layer_action_index = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 84,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->health_bar_mode = 0;",
+      "text": "ADJ(pvVar4)->layer_action_t = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->descriptive_name[0] = '\\0';",
+      "text": "ADJ(pvVar4)->show_in_editor = 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "ADJ",
-      "text": "(ADJ(pvVar4)->unk15).x = 0.0;",
+      "text": "ADJ(pvVar4)->health_bar_mode = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 87,
       "match": "ADJ",
-      "text": "(ADJ(pvVar4)->unk15).y = 0.0;",
+      "text": "ADJ(pvVar4)->descriptive_name[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 88,
       "match": "ADJ",
-      "text": "(ADJ(pvVar4)->unk15).z = 0.0;",
+      "text": "ADJ(pvVar4)->smoke_emit_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 89,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->hero_proximity_timer = 0.0;",
+      "text": "ADJ(pvVar4)->smoke_check_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 90,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->walk_stuck_timer = 0.0;",
+      "text": "ADJ(pvVar4)->smoke_occluded = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "ADJ",
-      "text": "ADJ(pvVar4)->talk_to_me_event[0] = '\\0';",
+      "text": "ADJ(pvVar4)->hero_proximity_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
+      "match": "ADJ",
+      "text": "ADJ(pvVar4)->walk_stuck_timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 93,
+      "match": "ADJ",
+      "text": "ADJ(pvVar4)->talk_to_me_event[0] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
       "match": "ADJ",
       "text": "return ADJ(pvVar4);",
       "type": "decompiler_intrinsic"

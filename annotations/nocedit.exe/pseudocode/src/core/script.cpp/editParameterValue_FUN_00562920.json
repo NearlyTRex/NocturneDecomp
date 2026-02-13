@@ -4,55 +4,61 @@
       {
         "category": "other",
         "column": 30,
-        "line": 58,
+        "line": 59,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 61,
+        "line": 62,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 65,
+        "line": 66,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 70,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 471,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 538,
+        "line": 71,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 650,
+        "line": 473,
+        "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 473,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 541,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 39,
+        "line": 654,
         "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 650,
+        "line": 654,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 667,
+        "line": 671,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       }
     ],
@@ -61,24 +67,23 @@
   },
   "complexity": {
     "assembly_lines": 2421,
-    "complexity_score": 883,
+    "complexity_score": 772,
     "cross_reference_count": 1,
     "function_call_count": 33,
     "global_count": 85,
-    "pseudocode_lines": 738,
-    "suspect_count": 13,
+    "pseudocode_lines": 742,
+    "suspect_count": 2,
     "suspect_types": [
-      "extra_output",
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 3159
+    "total_lines": 3163
   },
   "cross_references": [
     {
       "addr": "00565ae0",
       "from_addr": "00565b76",
-      "name": "core_script.cpp_CScript_FUN_00565ae0",
+      "name": "core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -112,6 +117,16 @@
       "name": "core_charactr.cpp_FUN_0042f9c0"
     },
     {
+      "addr": "005627f0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0"
+    },
+    {
+      "addr": "00562860",
+      "is_variadic": false,
+      "name": "core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860"
+    },
+    {
       "addr": "00566fa0",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_FUN_00566fa0"
@@ -130,16 +145,6 @@
       "addr": "005677a0",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_FUN_005677a0"
-    },
-    {
-      "addr": "005627f0",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_005627f0"
-    },
-    {
-      "addr": "00562860",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_00562860"
     },
     {
       "addr": "00559730",
@@ -1083,92 +1088,15 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 455,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX != 0) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 457,
-      "match": "extraout_EAX",
-      "text": "local_2c = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 460,
-      "match": "extraout_EAX",
-      "text": "if (0 < *(int *)(extraout_EAX + 0x964)) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 461,
-      "match": "extraout_EAX",
-      "text": "local_24 = extraout_EAX + 4;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 462,
-      "match": "extraout_EAX",
-      "text": "pcVar3 = (char *)(extraout_EAX + 0x968);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 488,
-      "match": "extraout_EAX_00",
-      "text": "if (extraout_EAX_00 != 0) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 491,
-      "match": "extraout_EAX_00",
-      "text": "if (0 < *(int *)(extraout_EAX_00 + 0x964)) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 492,
-      "match": "extraout_EAX_00",
-      "text": "pcVar3 = (char *)(extraout_EAX_00 + 4);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 497,
-      "match": "extraout_EAX_00",
-      "text": "} while (iVar6 < *(int *)(extraout_EAX_00 + 0x964));",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 623,
+      "line": 626,
       "match": "code",
       "text": "(g_CEditorToolsPtr,\"WARNING! chooseParm - unknown parm type %d (code needs to be updated)\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 668,
+      "line": 672,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)local_a8 + local_14) != 0) {",
       "type": "pointer_cast"

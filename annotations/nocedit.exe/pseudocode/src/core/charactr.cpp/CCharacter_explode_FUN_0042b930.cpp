@@ -25,7 +25,7 @@ core_charactr_cpp_CCharacter_explode_FUN_0042b930
   CStack_20.y = ((pCVar1->min).y + (pCVar1->max).y) * 0.5f;
   CStack_20.z = ((pCVar1->min).z + (pCVar1->max).z) * 0.5f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(&this_ptr->base,&CStack_14,&CStack_20);
-  core_fire_cpp_CFireEffect_FUN_004c8c10(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(g_CFireEffectPtr,&CStack_14);
   core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(this_ptr,in_stack_00000010,in_stack_00000014);
   return;
 }

@@ -78,6 +78,7 @@ core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *this_ptr,char
   int local_24;
   int local_20;
   int iStack_1c;
+  int iStack_18;
   _FILE *local_14;
   
   bVar31 = 0;
@@ -448,10 +449,10 @@ LAB_0044f4fd:
       }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30
                 (g_CDemonRendererPtr2,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
-      core_event_cpp_FUN_004b19d0();
+      _memset(g_CoronaBlurWorkBuffer,0,0x12d40);
       if (g_WindowHeight == 0x180) {
+        iStack_18 = 0;
         iStack_1c = 0;
-        local_20 = 0;
         do {
           iVar18 = 0;
           iVar6 = 0;
@@ -459,8 +460,8 @@ LAB_0044f4fd:
             iVar14 = 0;
             if (0 < g_ImageBytesPerPixel) {
               iVar12 = ((int)((iVar6 + (iVar6 >> 0x1f) * -0x100) - (uint)((iVar6 >> 0x1f) << 7 < 0))
-                       >> 8) + (iStack_1c / 0xc0) * 0x140;
-              iVar16 = local_20 + iVar18;
+                       >> 8) + (iStack_18 / 0xc0) * 0x140;
+              iVar16 = iStack_1c + iVar18;
               do {
                 iVar14 = iVar14 + 1;
                 g_CameraImageDecompressBuffer[0].pixels[0][iVar16] =
@@ -472,9 +473,9 @@ LAB_0044f4fd:
             iVar18 = iVar18 + 1;
             iVar6 = iVar6 + 0x140;
           } while (iVar18 < 0x100);
-          iStack_1c = iStack_1c + 0xf0;
-          local_20 = local_20 + 0x140;
-        } while (iStack_1c != 0xb400);
+          iStack_18 = iStack_18 + 0xf0;
+          iStack_1c = iStack_1c + 0x140;
+        } while (iStack_18 != 0xb400);
       }
     }
   }

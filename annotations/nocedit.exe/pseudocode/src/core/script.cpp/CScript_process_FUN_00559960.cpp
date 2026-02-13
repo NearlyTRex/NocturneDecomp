@@ -21,7 +21,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_00559960(CScript *this_ptr)
       this_ptr->script_state = 0;
     }
     iVar4 = 0;
-    fVar2 = core_charactr_cpp_FUN_0042f9e0();
+    fVar2 = core_charactr_cpp_getGameDeltaTime_FUN_0042f9e0(g_CGamePtr);
     g_ScriptInputFlag = 0;
     do {
       if (((fVar2 <= 0.0) || (this_ptr->script_state == 2)) || (this_ptr->script_pause_flag != 0))

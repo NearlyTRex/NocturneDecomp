@@ -45,7 +45,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_fire.cpp_CFireEffect_FUN_004c9290
 ;   core_sound.cpp_CSound_playSound_FUN_005b3a20
-;   core_weather.cpp_CWeather_FUN_005eeeb0
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0
 ;   core_weather.cpp_CWeather_FUN_005ef140
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
@@ -205,7 +205,7 @@ section .text
     FSTP ST1                            ; 005eecc1
     MOV EAX,dword ptr [EBP + 0x14]      ; 005eecc3
     FSTP float ptr [EAX + 0x34]         ; 005eecc6
-    MOV ECX,dword ptr [0x03f96b40]      ; 005eecc9 | DAT_03f96b40
+    MOV ECX,dword ptr [0x03f96b40]      ; 005eecc9 | UINT_03f96b40
         ;   Label: LAB_005eecc9
     PUSH ECX                            ; 005eeccf
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 ; 005eecd0
@@ -278,7 +278,7 @@ section .text
     MOV dword ptr [EAX + 0x28],0x0      ; 005eed86
     JMP 0x005eeb1c                      ; 005eed8d
         ;   XREF to: 005eeb1c (UNCONDITIONAL_JUMP)  ; LAB_005eeb1c
-    MOV ESI,dword ptr [0x03f96b40]      ; 005eed92 | DAT_03f96b40
+    MOV ESI,dword ptr [0x03f96b40]      ; 005eed92 | UINT_03f96b40
         ;   Label: LAB_005eed92
     PUSH ESI                            ; 005eed98
     CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005eed99
@@ -302,8 +302,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 005eedba
     PUSH 0x3dcccccd                     ; 005eedbd
     PUSH EDX                            ; 005eedc2
-    CALL core_weather.cpp_CWeather_FUN_005eeeb0 ; 005eedc3
-        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005eeeb0(CWeather * this_ptr)
+    CALL core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 ; 005eedc3
+        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather * this_ptr, float param_2, int param_3)
     ADD ESP,0xc                         ; 005eedc8
     JMP 0x005eec84                      ; 005eedcb
         ;   XREF to: 005eec84 (UNCONDITIONAL_JUMP)  ; LAB_005eec84
@@ -327,9 +327,9 @@ section .text
     MOV ESI,dword ptr [0x00681ef8]      ; 005eee94 | g_CSoundPtr
     PUSH ESI                            ; 005eee9a | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 005eee9b
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 005eeea0
-    MOV [0x03f96b40],EAX                ; 005eeea3 | DAT_03f96b40
+    MOV [0x03f96b40],EAX                ; 005eeea3 | UINT_03f96b40
     MOV ESP,EBP                         ; 005eeea8
     POP EBP                             ; 005eeeaa
     POP EDI                             ; 005eeeab

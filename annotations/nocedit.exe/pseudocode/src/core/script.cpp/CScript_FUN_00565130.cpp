@@ -32,7 +32,7 @@ void __cdecl core_script_cpp_CScript_FUN_00565130(CScript *this_ptr)
   uint in_stack_000000b4;
   int in_stack_000000b8;
   int in_stack_000000d0;
-  uint in_stack_000000d4;
+  int in_stack_000000d4;
   int in_stack_000000d8;
   char in_stack_000000dc;
   byte in_stack_000000dd;
@@ -44,7 +44,7 @@ void __cdecl core_script_cpp_CScript_FUN_00565130(CScript *this_ptr)
   INT_0310fd40 = INT_0310fd40 + g_GlobalDeltaTimeInt & 0xfffff;
   core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
   core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(this_ptr);
-  core_script_cpp_FUN_00564500();
+  core_script_cpp_updateSelection_FUN_00564500();
   shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&g_ScriptEditorHScrollBar);
   shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&g_ScriptEditorVScrollBar);
   core_script_cpp_CScript_FUN_00566880(this_ptr);
@@ -98,7 +98,7 @@ void __cdecl core_script_cpp_CScript_FUN_00565130(CScript *this_ptr)
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x53);
   if (iVar5 != 0) {
     bVar3 = true;
-    if (-1 < (int)DAT_0310fd4c) {
+    if (-1 < g_SelectionAnchorColumn) {
       iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar5 == 0) {
         in_stack_00000024 = ACTION_TYPE_CUT;
@@ -182,17 +182,17 @@ LAB_00565363:
                          iVar10);
       if (iVar5 == 0) {
         in_stack_0000007c = (char *)0x56581f;
-        _sprintf(&DAT_0310fdc0,"Can't find %s");
+        _sprintf(g_ScriptEditorStatusText,"Can't find %s");
       }
       else {
         in_stack_0000007c = (char *)0x56551e;
-        _sprintf(&DAT_0310fdc0,"Found %s");
+        _sprintf(g_ScriptEditorStatusText,"Found %s");
         g_CurrentEditingLine = (int)in_stack_0000008c;
         g_CurrentEditingColumn = (int)in_stack_00000098;
         bVar3 = false;
-        DAT_0310fd4c = (uint)in_stack_00000090;
+        g_SelectionAnchorColumn = (int)in_stack_00000090;
         in_stack_000000b0 = (int *)0x1;
-        DAT_0310fd50 = (int)in_stack_0000008c;
+        g_SelectionAnchorLine = (int)in_stack_0000008c;
       }
     }
   }
@@ -222,20 +222,20 @@ LAB_00565363:
                          (uint *)in_stack_0000008c,(int *)in_stack_00000090,&stack0x000000b4,uVar6);
       if (iVar5 == 0) {
         in_stack_00000098 = &DAT_0310fd58;
-        in_stack_00000090 = &DAT_0310fdc0;
+        in_stack_00000090 = g_ScriptEditorStatusText;
         in_stack_0000008c = (char *)0x56583b;
-        _sprintf(&DAT_0310fdc0,"Can't find %s");
+        _sprintf(g_ScriptEditorStatusText,"Can't find %s");
       }
       else {
         in_stack_00000098 = &DAT_0310fd58;
-        in_stack_00000090 = &DAT_0310fdc0;
+        in_stack_00000090 = g_ScriptEditorStatusText;
         in_stack_0000008c = (char *)0x5655fb;
-        _sprintf(&DAT_0310fdc0,"Found %s");
+        _sprintf(g_ScriptEditorStatusText,"Found %s");
         g_CurrentEditingLine = (int)in_stack_000000b0;
         g_CurrentEditingColumn = (int)in_stack_000000ac;
         bVar3 = false;
-        DAT_0310fd4c = in_stack_000000b4;
-        DAT_0310fd50 = (int)in_stack_000000b0;
+        g_SelectionAnchorColumn = in_stack_000000b4;
+        g_SelectionAnchorLine = (int)in_stack_000000b0;
       }
     }
   }
@@ -245,19 +245,22 @@ LAB_00565363:
   if (iVar5 != 0) {
     in_stack_00000098 = (char *)pCVar2;
     bVar3 = true;
-    core_script_cpp_CScript_FUN_00565ae0(pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
+    core_script_cpp_CScript_editParameterAtPosition_FUN_00565ae0
+              (pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
   }
   in_stack_00000098 = (char *)0x56566a;
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x40);
   if (iVar5 != 0) {
     bVar3 = true;
-    core_script_cpp_CScript_FUN_00565d00(pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
+    core_script_cpp_CScript_executeContextAction_FUN_00565d00
+              (pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
   if (iVar5 != 0) {
     in_stack_000000b0 = (int *)g_CurrentEditingLine;
     in_stack_000000ac = (int *)g_CurrentEditingColumn;
-    core_script_cpp_CScript_FUN_00565e70(pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
+    core_script_cpp_CScript_showSyntaxHelp_FUN_00565e70
+              (pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
   }
   this_ptr_00 = g_ActiveButton;
   if (pCVar2 == (CScript *)g_ActiveButton) {
@@ -267,26 +270,26 @@ LAB_00565363:
     else {
       in_stack_000000b0 = &g_CurrentEditingLine;
       in_stack_000000ac = &g_CurrentEditingColumn;
-      core_script_cpp_CScript_FUN_00566c20
+      core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20
                 ((CScript *)g_ActiveButton,g_MouseX,g_MouseY,&g_CurrentEditingColumn,
                  &g_CurrentEditingLine);
-      if (g_MouseX <= INT_031141e0) {
+      if (g_MouseX <= g_ScriptTextAreaLeft) {
         in_stack_000000b0 = (int *)0x0;
         in_stack_000000ac = (int *)0x0;
         core_script_cpp_CScript_editorAction_FUN_00564820
                   ((CScript *)this_ptr_00,ACTION_TYPE_CURSOR_LEFT);
       }
-      if (DAT_031141e8 <= g_MouseX) {
+      if (g_ScriptTextAreaRight <= g_MouseX) {
         in_stack_000000b0 = (int *)0x0;
         in_stack_000000ac = (int *)0x1;
         core_script_cpp_CScript_editorAction_FUN_00564820(pCVar2,ACTION_TYPE_CURSOR_RIGHT);
       }
-      if (g_MouseY <= INT_031141e4) {
+      if (g_MouseY <= g_ScriptTextAreaTop) {
         in_stack_000000b0 = (int *)0x0;
         in_stack_000000ac = (int *)0x2;
         core_script_cpp_CScript_editorAction_FUN_00564820(pCVar2,ACTION_TYPE_CURSOR_UP);
       }
-      if (DAT_031141ec <= g_MouseY) {
+      if (g_ScriptTextAreaBottom <= g_MouseY) {
         in_stack_000000b0 = (int *)0x0;
         in_stack_000000ac = (int *)0x3;
         core_script_cpp_CScript_editorAction_FUN_00564820(pCVar2,ACTION_TYPE_CURSOR_DOWN);
@@ -300,19 +303,20 @@ LAB_00565363:
         in_stack_000000b0 = &g_CurrentEditingLine;
         in_stack_000000ac = &g_CurrentEditingColumn;
         g_MouseButtonFlags = (uint)g_ActiveButton;
-        iVar5 = core_script_cpp_CScript_FUN_00566c20
+        iVar5 = core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20
                           (pCVar2,g_MouseX,g_MouseY,&g_CurrentEditingColumn,&g_CurrentEditingLine);
         if (iVar5 != 0) {
           in_stack_000000b0 = (int *)g_CurrentEditingLine;
           in_stack_000000ac = (int *)g_CurrentEditingColumn;
-          core_script_cpp_CScript_FUN_00565aa0(pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
+          core_script_cpp_CScript_gotoPosition_FUN_00565aa0
+                    (pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
         }
       }
     }
     else {
       in_stack_000000b0 = &g_CurrentEditingLine;
       in_stack_000000ac = &g_CurrentEditingColumn;
-      iVar5 = core_script_cpp_CScript_FUN_00566c20
+      iVar5 = core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20
                         (pCVar2,g_MouseX,g_MouseY,&g_CurrentEditingColumn,&g_CurrentEditingLine);
       pCVar9 = (CScript *)g_ActiveButton;
       if (iVar5 != 0) {
@@ -325,7 +329,8 @@ LAB_00565363:
           in_stack_000000b4 = g_CurrentEditingColumn;
           in_stack_000000b0 = &pCVar2->script_pause_flag;
           in_stack_000000ac = (int *)0x5658ae;
-          core_script_cpp_CScript_FUN_00565ae0(pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
+          core_script_cpp_CScript_editParameterAtPosition_FUN_00565ae0
+                    (pCVar2,g_CurrentEditingColumn,g_CurrentEditingLine);
           g_MouseButtonFlags = (uint)this_ptr_00;
           pCVar9 = (CScript *)g_ActiveButton;
         }
@@ -350,24 +355,24 @@ LAB_00565363:
               core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(pCVar2);
               if (bVar3) {
                 in_stack_000000b0 = (int *)0x565a67;
-                core_script_cpp_FUN_005644e0();
+                core_script_cpp_clearSelections_FUN_005644e0();
               }
               else if ((in_stack_000000d4 != g_CurrentEditingColumn) ||
                       (in_stack_000000d0 != g_CurrentEditingLine)) {
                 if (in_stack_000000d8 == 0) {
                   in_stack_000000b0 = (int *)0x565a90;
-                  core_script_cpp_FUN_005644e0();
+                  core_script_cpp_clearSelections_FUN_005644e0();
                 }
-                else if ((int)DAT_0310fd4c < 0) {
-                  DAT_0310fd4c = in_stack_000000d4;
-                  DAT_0310fd50 = in_stack_000000d0;
+                else if (g_SelectionAnchorColumn < 0) {
+                  g_SelectionAnchorColumn = in_stack_000000d4;
+                  g_SelectionAnchorLine = in_stack_000000d0;
                 }
                 INT_0310fd40 = 0;
               }
               in_stack_000000ac = &pCVar2->script_pause_flag;
               core_script_cpp_CScript_updateLineMetrics_FUN_00566800(pCVar2,in_stack_000000d0);
               in_stack_000000b0 = (int *)0x565a5a;
-              core_script_cpp_FUN_00564500();
+              core_script_cpp_updateSelection_FUN_00564500();
               return;
             }
             in_stack_000000b0 = (int *)0x565785;
@@ -393,7 +398,7 @@ LAB_00565363:
       in_stack_000000ac = (int *)&stack0x000000dc;
       in_stack_000000dd = 0;
       in_stack_000000dc = cVar4;
-      core_script_cpp_CScript_FUN_00566390(pCVar2,(char *)in_stack_000000ac,1);
+      core_script_cpp_CScript_insertText_FUN_00566390(pCVar2,(char *)in_stack_000000ac,1);
       bVar3 = true;
     }
     in_stack_000000b0 = (int *)g_CurrentEditingLine;

@@ -29,7 +29,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750
+;   core_path.cpp_CPathMap_FUN_00548750
 ;   core_path.cpp_FUN_00547fc0
 ;   core_path.cpp_FUN_00548500
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
@@ -192,12 +192,12 @@ section .text
         ;   Label: LAB_005ec10e
     PUSH ESI                            ; 005ec111
     CALL core_path.cpp_FUN_00548500     ; 005ec112
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
     ADD ESP,0x4                         ; 005ec117
     PUSH EAX                            ; 005ec11a
     MOV EBX,EAX                         ; 005ec11b
-    CALL core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750 ; 005ec11d
-        ;   XREF to: 00548750 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750(CPathMap * this_ptr)
+    CALL core_path.cpp_CPathMap_FUN_00548750 ; 005ec11d
+        ;   XREF to: 00548750 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_FUN_00548750(CPathMap * this_ptr)
     ADD ESP,0x4                         ; 005ec122
     PUSH EBP                            ; 005ec125
     MOV ESI,dword ptr [ESP + 0x94]      ; 005ec126

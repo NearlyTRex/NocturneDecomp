@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCmdParse.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEdScrollBar.h"
 #include "types/classes/CPickList.h"
@@ -10,6 +11,10 @@
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x3100000
 // =============================================================================
+
+// CCmdParse
+extern CCmdParse CCmdParse_0310aa4c;
+extern CCmdParse CCmdParse_0310cb74;
 
 // CDemonActorType
 extern CDemonActorType g_CScatClassInfo;
@@ -27,7 +32,14 @@ extern CScript g_CScriptInstance;
 // char[100]
 extern char g_ScriptTempBuffer[100];
 
+// char[1020]
+extern char g_ScriptEditorStatusText[1020];
+
+// char[10][1024]
+extern char g_ScriptSubtitleLines[10][1024];
+
 // char[2048]
+extern char g_ScriptSyntaxErrorMessage[2048];
 extern char g_ScriptLineBuffer[2048];
 extern char g_ScriptErrorBuffer[2048];
 
@@ -57,7 +69,7 @@ extern int INT_03106194;
 extern int INT_03106198;
 extern int INT_0310619c;
 extern int INT_031061a0;
-extern int INT_031061e0;
+extern int g_PreviousLetterboxMode;
 extern int g_ScriptEventsEnabled;
 extern int g_ScriptInputFlag;
 extern int g_ScriptLoopWarningShown;
@@ -65,15 +77,9 @@ extern int g_ActorLookedUpByVariable;
 extern int INT_0310fd40;
 extern int g_CurrentEditingColumn;
 extern int g_CurrentEditingLine;
+extern int g_SelectionAnchorColumn;
+extern int g_SelectionAnchorLine;
 
 // undefined1
 extern undefined1 DAT_0310fd58;
-extern undefined1 DAT_0310fdc0;
-extern undefined1 DAT_0310fdc1;
-extern undefined1 DAT_0310fdc2;
-extern undefined1 DAT_0310fdc3;
-
-// undefined4
-extern undefined4 DAT_0310fd4c;
-extern undefined4 DAT_0310fd50;
 

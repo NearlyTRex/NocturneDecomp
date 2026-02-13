@@ -658,7 +658,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 0041c5aa
     FSTP double ptr [ESP]               ; 0041c5ad
     CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0 ; 0041c5b0
-        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
+        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 0041c5b5
     PUSH 0x616115                       ; 0041c5b8 | = "boneGuy-walkloop.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0041c5bd
@@ -894,7 +894,7 @@ section .text
         ;   Label: caseD_0
     PUSH EBX                            ; 0041c856
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 0041c857
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 0041c85c
     TEST EAX,EAX                        ; 0041c85f
     JZ 0x0041c875                       ; 0041c861
@@ -938,7 +938,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0041c8cb
     PUSH EBX                            ; 0041c8d1
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 0041c8d2
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 0041c8d7
     TEST EAX,EAX                        ; 0041c8da
     JNZ 0x0041c3f4                      ; 0041c8dc

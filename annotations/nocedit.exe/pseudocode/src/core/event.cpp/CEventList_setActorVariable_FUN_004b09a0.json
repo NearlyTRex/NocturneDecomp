@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 333,
+    "complexity_score": 343,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "pseudocode_lines": 83,
-    "suspect_count": 24,
+    "suspect_count": 25,
     "suspect_types": [
       "format_string_mismatch",
       "stack_param"
@@ -47,7 +47,7 @@
     {
       "addr": "004b0bf0",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004b0bf0"
+      "name": "core_event.cpp_CEventList_findActorVariable_FUN_004b0bf0"
     },
     {
       "addr": "00506f10",
@@ -191,6 +191,13 @@
       "line": 16,
       "match": "in_stack_0000000c",
       "text": "core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = core_event_cpp_CEventList_findActorVariable_FUN_004b0bf0(this_ptr,in_stack_00000008);",
       "type": "stack_param"
     },
     {

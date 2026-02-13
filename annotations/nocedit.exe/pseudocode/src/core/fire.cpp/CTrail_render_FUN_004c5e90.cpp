@@ -72,14 +72,14 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   local_50.z = (int)ROUND(local_3c * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_50);
-  g_RenderVertexBuffer[0].u = 7.34684e-40;
-  g_RenderVertexBuffer[0].v = 2.2775203e-38;
-  g_RenderVertexBuffer[1].u = 2.2775203e-38;
-  g_RenderVertexBuffer[1].v = 2.2775203e-38;
-  g_RenderVertexBuffer[2].u = 2.2775203e-38;
-  g_RenderVertexBuffer[2].v = 7.34684e-40;
-  g_RenderVertexBuffer[3].u = 7.34684e-40;
-  g_RenderVertexBuffer[3].v = 7.34684e-40;
+  g_RenderVertexBuffer[0].u = 0x80000;
+  g_RenderVertexBuffer[0].v = 0xf80000;
+  g_RenderVertexBuffer[1].u = 0xf80000;
+  g_RenderVertexBuffer[1].v = 0xf80000;
+  g_RenderVertexBuffer[2].u = 0xf80000;
+  g_RenderVertexBuffer[2].v = 0x80000;
+  g_RenderVertexBuffer[3].u = 0x80000;
+  g_RenderVertexBuffer[3].v = 0x80000;
   g_RenderVertexBuffer[0].light = 9.18341e-41;
   g_RenderVertexBuffer[0].color = 0xffff;
   g_RenderVertexBuffer[0].fog = 9.18341e-41;

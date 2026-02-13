@@ -52,7 +52,7 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
   local_13c = (float)this_ptr->unk5;
   local_2c = (float)this_ptr->unk6;
   if (((this_ptr->base).aim_mode != 0) && ((this_ptr->base).control_type != 2)) {
-    local_13c = *(float *)((this_ptr->base).unk2 + 8) * (float)3.1415926535000001 *
+    local_13c = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
                 (float)2 * in_stack_00000008 + local_13c;
     local_1c = 0x3fc90fdb;
     if (local_13c < -1.570796f) {
@@ -67,7 +67,7 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
   if ((this_ptr->guns_drawn == 0) || (in_stack_0000000c != 0)) {
     this_ptr->unk8 = 0;
   }
-  else if ((this_ptr->base).action_bindings.fire_key == 0) {
+  else if ((this_ptr->base).player_control.action_states[3] == 0) {
     local_28 = in_stack_0000000c;
     local_24 = 1e+30;
     iVar4 = 0;
@@ -83,7 +83,7 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
     }
     this_ptr->unk8 = local_28;
   }
-  if ((this_ptr->base).action_bindings.fire_key != 0) {
+  if ((this_ptr->base).player_control.action_states[3] != 0) {
     if (this_ptr->unk8 == 0) {
       this_ptr->unk6 = 0;
       this_ptr->unk5 = this_ptr->unk6;

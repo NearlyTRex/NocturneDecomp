@@ -33,6 +33,6 @@ void __cdecl core_script_cpp_CScript_FUN_00567490(CScript *this_ptr,int param_2,
     return;
   }
 LAB_005674e5:
-  core_script_cpp_FUN_00564090((int)&local_2134,(int *)param_3);
+  core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(&local_2134,(CDemonActor *)param_3);
   return;
 }

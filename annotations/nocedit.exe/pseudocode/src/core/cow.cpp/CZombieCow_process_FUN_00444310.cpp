@@ -21,10 +21,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   CZombieCow *pCVar7;
   uint uVar8;
   CVector3f *pCVar9;
-  int extraout_EAX;
-  int extraout_EAX_00;
   uint uVar10;
-  int extraout_EAX_01;
   CPathMap *path_map;
   float fVar11;
   float in_stack_ffffff48;
@@ -75,13 +72,13 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   if (iVar6 == 0) {
     switch(iVar4) {
     case 0:
-      core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-      if (extraout_EAX == 0) {
+      iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      if (iVar4 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CDemonActor *)0x0) {
-          core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
-                    (g_CSoundPtr,*(uint *)(this_ptr->unk + 8));
-          if (extraout_EAX_00 == 0) {
+          iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
+                            (g_CSoundPtr,*(uint *)(this_ptr->unk + 8));
+          if (iVar4 == 0) {
             uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                ((CDemonActor *)this_ptr,"cow?.wav");
             *(uint *)(this_ptr->unk + 8) = uVar10;
@@ -99,8 +96,8 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar2 = 4.5f;
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX_01 == 0) {
+        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar4 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
         }
@@ -128,13 +125,10 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
         }
-        else if ((0 < iVar4) && (*(float *)(this_ptr->base).unk2 <= 0.0)) {
+        else if ((0 < iVar4) && ((float)(this_ptr->base).unk2 <= 0.0)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,2,1);
-          (this_ptr->base).unk2[0] = '\0';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = ' ';
-          (this_ptr->base).unk2[3] = '@';
+          (this_ptr->base).unk2 = 0x40200000;
         }
       }
       break;
@@ -190,8 +184,8 @@ LAB_004445a0:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_0044482d_caseD_3:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar4 != 0) {

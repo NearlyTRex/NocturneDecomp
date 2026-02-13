@@ -39,7 +39,7 @@
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_fire.cpp_CFireEffect_FUN_004c8c90
 ;   core_hero.cpp_FUN_004f2220
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
@@ -131,8 +131,8 @@ section .text
     PUSH ESI                            ; 005dfba4
     MOV EDX,dword ptr [0x006793d0]      ; 005dfba5 | g_CEventListInstance | g_CEventListPtr
     PUSH EDX                            ; 005dfbab | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 005dfbac
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 005dfbac
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 005dfbb1
     MOV ESP,EBP                         ; 005dfbb4
     POP EBP                             ; 005dfbb6
@@ -158,7 +158,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 005dfbde | g_CDemonMissionPtr
     PUSH EDI                            ; 005dfbe4 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 005dfbe5
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 005dfbea
     MOV dword ptr [ESI + 0x368],EAX     ; 005dfbed
     MOV EAX,dword ptr [ESI + 0x368]     ; 005dfbf3
@@ -550,8 +550,8 @@ section .text
     PUSH EAX                            ; 005e0088
     MOV EAX,[0x006793d0]                ; 005e0089 | g_CEventListInstance | g_CEventListPtr
     PUSH EAX                            ; 005e008e | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 005e008f
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 005e008f
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 005e0094
     MOV dword ptr [ESI + 0x2fc],EDI     ; 005e0097
     MOV ESP,EBP                         ; 005e009d

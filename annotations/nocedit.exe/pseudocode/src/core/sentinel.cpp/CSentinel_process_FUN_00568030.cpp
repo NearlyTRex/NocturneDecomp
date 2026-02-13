@@ -18,8 +18,6 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00568030(CSentinel *this_pt
   CDemonActor *pCVar6;
   uint uVar7;
   CVector3f *pCVar8;
-  int extraout_EAX;
-  CSentinel *extraout_EAX_00;
   CPathMap *pCVar9;
   CSentinel *in_stack_fffffe60;
   CSentinel *pCVar10;
@@ -181,8 +179,8 @@ LAB_00568089:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar6 = (this_ptr->base).victim;
       if (pCVar6 == (CDemonActor *)0x0) {
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX == 0) {
+        iVar3 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar3 == 0) {
           in_stack_fffffe60 = (CSentinel *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,1,1);
@@ -251,7 +249,7 @@ LAB_00568089:
                       ((CMotionController *)pCVar10,3,1);
             in_stack_fffffe60 = pCVar10;
           }
-          if ((local_24 <= local_20) && (*(float *)(this_ptr->base).unk2 <= 0.0)) {
+          if ((local_24 <= local_20) && ((float)(this_ptr->base).unk2 <= 0.0)) {
             pCVar6 = (this_ptr->base).victim;
             local_bc.x = (pCVar6->location).position.x -
                          (this_ptr->base).base.base.location.position.x;
@@ -275,10 +273,7 @@ LAB_00568089:
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           ((CMotionController *)in_stack_fffffe60,4,1);
               }
-              (this_ptr->base).unk2[0] = '\0';
-              (this_ptr->base).unk2[1] = '\0';
-              (this_ptr->base).unk2[2] = -0x80;
-              (this_ptr->base).unk2[3] = '?';
+              (this_ptr->base).unk2 = 0x3f800000;
             }
           }
           if ((this_ptr->base).guard_distance < local_24) {
@@ -289,9 +284,8 @@ LAB_00568089:
         }
         break;
       }
-      core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-      if (extraout_EAX_00 == (CSentinel *)0x0) {
-        in_stack_fffffe60 = extraout_EAX_00;
+      in_stack_fffffe60 = (CSentinel *)core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      if (in_stack_fffffe60 == (CSentinel *)0x0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   ((CMotionController *)pCVar10,0,1);
         break;
@@ -455,8 +449,8 @@ LAB_0056845d:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_00568487_caseD_d:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   iVar3 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar3 != 0) {

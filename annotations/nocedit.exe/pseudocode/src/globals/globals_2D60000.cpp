@@ -34,9 +34,6 @@ CGlassParticle* g_CFireEffectGlassParticlesEnd = {};
 // CGunFlame[500]
 CGunFlame g_GunFlamePool[500] = {};
 
-// CLaserBeam*
-CLaserBeam* g_LaserBeamActiveListHead = {};
-
 // CLaserBeam[64]
 CLaserBeam g_LaserBeamPool[64] = {};
 
@@ -51,4 +48,7 @@ CToss* g_TossActiveListHead = {};
 
 // CToss[20]
 CToss g_TossPool[20] = {};
+
+// int
+int g_ExplosionPoolIndex = {};
 

@@ -65,7 +65,7 @@ int __cdecl shouldNeverBeCalled(int unknown1,int unknown2);
 
 // Original: support_trisock.cpp_invalidateSocket_FUN_005e1ae0
 // Address: 005e1ae0
-void __cdecl invalidateSocket(SSocketContext *socket_ctx);
+SSocketContext * __cdecl invalidateSocket(SSocketContext *socket_ctx);
 
 // Original: support_trisock.cpp_bindSocketWrapper_FUN_005e1af0
 // Address: 005e1af0

@@ -38,7 +38,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
   int local_18;
   
   bVar12 = 0;
-  if (this_ptr->unk12 == 2) {
+  if (this_ptr->act_completion_state == 2) {
     pCVar9 = g_ThemeFont;
     if (g_CDemonCameraInstance.framebuffer_width < 0x1e0) {
       pCVar9 = g_SmallEditorFont;

@@ -60,8 +60,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_event.cpp_CEventList_FUN_004b0460
 ;   core_event.cpp_CEventList_loadState_FUN_004b0fc0
+;   core_event.cpp_CEventList_resetGameFlags_FUN_004b0460
 ;   core_fire.cpp_CFireEffect_init_FUN_004c6c80
 ;   core_fire.cpp_CFireEffect_load_FUN_004c9300
 ;   core_gore.cpp_CGore_FUN_004ed760
@@ -187,8 +187,8 @@ section .text
     MOV ESI,dword ptr [0x006793d0]      ; 004e13f1 | g_CEventListPtr
         ;   Label: LAB_004e13f1
     PUSH ESI                            ; 004e13f7 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004b0460 ; 004e13f8
-        ;   XREF to: 004b0460 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004b0460(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_resetGameFlags_FUN_004b0460 ; 004e13f8
+        ;   XREF to: 004b0460 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_004b0460(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004e13fd
     PUSH -0x1                           ; 004e1400
     PUSH 0x0                            ; 004e1402
@@ -678,7 +678,7 @@ section .text
     MOV ECX,dword ptr [0x0067d550]      ; 004e1997 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 004e199d | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 004e199e
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004e19a3
     PUSH EAX                            ; 004e19a6
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004e19a7
@@ -724,13 +724,13 @@ section .text
     MOV EAX,[0x006793d0]                ; 004e1a20 | g_CEventListInstance | g_CEventListPtr
     PUSH EAX                            ; 004e1a25 | g_CEventListInstance
     CALL core_event.cpp_CEventList_loadState_FUN_004b0fc0 ; 004e1a26
-        ;   XREF to: 004b0fc0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_loadState_FUN_004b0fc0(CEventList * this_ptr)
+        ;   XREF to: 004b0fc0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_loadState_FUN_004b0fc0(CEventList * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e1a2b
     PUSH EBX                            ; 004e1a2e
     MOV EDX,dword ptr [0x00680d50]      ; 004e1a2f | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 004e1a35 | g_CScriptInstance
     CALL core_script.cpp_CScript_loadState_FUN_00560820 ; 004e1a36
-        ;   XREF to: 00560820 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_loadState_FUN_00560820(CScript * this_ptr, _FILE * param_2)
+        ;   XREF to: 00560820 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_loadState_FUN_00560820(CScript * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e1a3b
     MOV ECX,dword ptr [ESP + 0x604]     ; 004e1a3e
     CMP ECX,0x4                         ; 004e1a45

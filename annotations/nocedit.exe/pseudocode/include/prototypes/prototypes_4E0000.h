@@ -127,7 +127,7 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0 (CGlass *
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector3f *location);
 void __cdecl core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfaceInfo *surface_info);
 int __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr);
-void __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass *this_ptr);
+int __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_getPropertyList_FUN_004eb3c0 (CGlass *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_glass_cpp_CGlass_processInEditor_FUN_004eb490(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_showEditorHelp_FUN_004eb600(CGlass *this_ptr,int *y_pos);

@@ -2,11 +2,11 @@
 // Address: 005606e0
 // Address Range: [[005606e0, 00560756]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_005606e0(CScript *this_ptr,char *param_2)
+// Signature: int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_005606e0(CScript *this_ptr,char *path)
 
 #include "nocturne.h"
 
-int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_005606e0(CScript *this_ptr,char *param_2)
+int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_005606e0(CScript *this_ptr,char *path)
 
 {
   int iVar1;
@@ -15,7 +15,7 @@ int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_005606e0(CScript *this_p
   char local_110 [256];
   
   iVar2 = 0;
-  splitpath(param_2,(char *)0x0,(char *)0x0,local_110,(char *)0x0);
+  splitpath(path,(char *)0x0,(char *)0x0,local_110,(char *)0x0);
   if (0 < this_ptr->dialog_entry_count) {
     iVar3 = 0;
     do {

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *param_2)
+; __cdecl int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
-; _FILE *          Stack[0x8]:4   param_2
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined1       Stack[-0x118]:1  local_118
 ; undefined4       Stack[-0x18]:4  local_18
@@ -35,7 +35,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_script.cpp_CScript_FUN_00560d80
-;   core_script.cpp_GetReferencedActor_FUN_00560760
+;   core_script.cpp_readActorReference_FUN_00560760
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
@@ -209,8 +209,8 @@ section .text
     LEA EAX,[EBP + 0x4]                 ; 005609e7
     PUSH EAX                            ; 005609ea
     PUSH EDI                            ; 005609eb
-    CALL core_script.cpp_GetReferencedActor_FUN_00560760 ; 005609ec
-        ;   XREF to: 00560760 (UNCONDITIONAL_CALL)  ; void core_script.cpp_GetReferencedActor_FUN_00560760(_FILE * param_1, int * param_2)
+    CALL core_script.cpp_readActorReference_FUN_00560760 ; 005609ec
+        ;   XREF to: 00560760 (UNCONDITIONAL_CALL)  ; void core_script.cpp_readActorReference_FUN_00560760(_FILE * file_handle, CDemonActor * actor_out)
     ADD ESP,0x8                         ; 005609f1
     PUSH EDI                            ; 005609f4
     PUSH 0xff                           ; 005609f5
@@ -222,8 +222,8 @@ section .text
     LEA EAX,[EBP + 0xc]                 ; 00560a07
     PUSH EAX                            ; 00560a0a
     PUSH EDI                            ; 00560a0b
-    CALL core_script.cpp_GetReferencedActor_FUN_00560760 ; 00560a0c
-        ;   XREF to: 00560760 (UNCONDITIONAL_CALL)  ; void core_script.cpp_GetReferencedActor_FUN_00560760(_FILE * param_1, int * param_2)
+    CALL core_script.cpp_readActorReference_FUN_00560760 ; 00560a0c
+        ;   XREF to: 00560760 (UNCONDITIONAL_CALL)  ; void core_script.cpp_readActorReference_FUN_00560760(_FILE * file_handle, CDemonActor * actor_out)
     ADD ESP,0x8                         ; 00560a11
     CMP dword ptr [ESP + 0x100],0x5     ; 00560a14
     JL 0x00560a43                       ; 00560a1c

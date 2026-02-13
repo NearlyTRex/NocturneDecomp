@@ -25,17 +25,14 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
   CActorDestination *local_14;
   
   local_20 = &this_ptr->inventory;
-  this_ptr->unk3[4] = '\0';
-  this_ptr->unk3[5] = '\0';
-  this_ptr->unk3[6] = '\0';
-  this_ptr->unk3[7] = '\0';
+  this_ptr->target_actor = (CDemonActor *)0x0;
   iVar5 = 0;
   local_18 = 0;
   do {
     if ((int)g_CDemonSetPtr->actor_list_ptr <= local_18) {
       iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0(local_20->selected_item,"CTrap");
       if (iVar5 != 0) {
-        *(CDemonActor **)(this_ptr->unk3 + 4) = local_20->selected_item;
+        this_ptr->target_actor = local_20->selected_item;
       }
       return 0;
     }
@@ -57,18 +54,18 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
           pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_48,&local_3c);
           if ((ABS(pCVar3->y) <= (float)60) &&
-             (pCVar1 = this_ptr_00->dest_actor, *(CDemonActor **)(this_ptr->unk3 + 4) = pCVar1,
+             (pCVar1 = this_ptr_00->dest_actor, this_ptr->target_actor = pCVar1,
              pCVar1 != (CDemonActor *)0x0)) {
-            if ((CLocation *)(this_ptr->unk3 + 8) != local_1c) {
-              *(float *)(this_ptr->unk3 + 8) = (local_1c->position).x;
-              *(float *)(this_ptr->unk3 + 0xc) = (local_1c->position).y;
-              *(float *)(this_ptr->unk3 + 0x10) = (local_1c->position).z;
+            if ((CLocation *)&this_ptr->target_position != local_1c) {
+              (this_ptr->target_position).x = (local_1c->position).x;
+              (this_ptr->target_position).y = (local_1c->position).y;
+              (this_ptr->target_position).z = (local_1c->position).z;
             }
             pUVar4 = &(local_14->base).orient;
-            if ((UOrientationVector *)(this_ptr->unk3 + 0x14) != pUVar4) {
-              *(float *)(this_ptr->unk3 + 0x14) = (pUVar4->vec).x;
-              *(float *)(this_ptr->unk3 + 0x18) = (local_14->base).orient.vec.y;
-              *(float *)(this_ptr->unk3 + 0x1c) = (local_14->base).orient.vec.z;
+            if (&this_ptr->target_orientation != pUVar4) {
+              (this_ptr->target_orientation).vec.x = (pUVar4->vec).x;
+              (this_ptr->target_orientation).vec.y = (local_14->base).orient.vec.y;
+              (this_ptr->target_orientation).vec.z = (local_14->base).orient.vec.z;
             }
             return 1;
           }

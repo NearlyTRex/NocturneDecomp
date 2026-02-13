@@ -128,7 +128,7 @@ section .text
     MOV ESI,dword ptr [0x0067d550]      ; 004f461f | g_CDemonMissionPtr
     PUSH ESI                            ; 004f4625 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 004f4626
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004f462b
     PUSH EAX                            ; 004f462e
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004f462f

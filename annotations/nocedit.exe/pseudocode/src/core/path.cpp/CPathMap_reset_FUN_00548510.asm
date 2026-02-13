@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_path.cpp_CPathMap_ctor_FUN_00546450 at 00546473
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60 at 00546b8d
-;   core_path.cpp_GlobalPathmapListCorruption_FUN_00548590 at 005485d7
+;   core_path.cpp_FUN_00548590 at 005485d7
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40

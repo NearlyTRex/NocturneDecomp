@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 299,
+    "complexity_score": 292,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 79,
+    "pseudocode_lines": 72,
     "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "undefined_data"
+      "undefined_data",
+      "unnamed_param"
     ],
-    "total_lines": 134
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_weather.cpp_CWeather_FUN_005ef940",
-    "signature": "void __cdecl core_weather_cpp_CWeather_FUN_005ef940(CWeather *this_ptr)"
+    "signature": "void __cdecl core_weather_cpp_CWeather_FUN_005ef940(CWeather *this_ptr,CVector3f *param_2,CVector3f *param_3)"
   },
   "function_calls": [
     {
@@ -87,10 +87,10 @@
     "pcode_op_count": 171
   },
   "stack_frame": {
-    "frame_size": 96,
+    "frame_size": 104,
     "local_size": 92,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -197,6 +197,20 @@
         "offset": 4,
         "size": 4,
         "type": "CWeather *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -219,141 +233,141 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "float *in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "core_weather_cpp_CWeather_FUN_005ef940(CWeather *this_ptr,CVector3f *param_2,CVector3f *param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "uint *in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "core_weather_cpp_CWeather_FUN_005ef940(CWeather *this_ptr,CVector3f *param_2,CVector3f *param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "text": "if (&this_ptr->direction != param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 19,
-      "match": "in_stack_00000008",
-      "text": "if ((float *)(this_ptr->unk + 8) != in_stack_00000008) {",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "(this_ptr->direction).x = param_2->x;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 20,
-      "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk + 8) = *in_stack_00000008;",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "(this_ptr->direction).y = param_2->y;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 21,
-      "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk + 0xc) = in_stack_00000008[1];",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "(this_ptr->direction).z = param_2->z;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk + 0x10) = in_stack_00000008[2];",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_3",
+      "text": "if (&this_ptr->rotation != param_3) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 24,
-      "match": "in_stack_0000000c",
-      "text": "if (this_ptr->unk + 0x14 != (char *)in_stack_0000000c) {",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "(this_ptr->rotation).x = param_3->x;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 25,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr->unk + 0x14) = *in_stack_0000000c;",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "(this_ptr->rotation).y = param_3->y;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 26,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr->unk + 0x18) = in_stack_0000000c[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(this_ptr->unk + 0x1c) = in_stack_0000000c[2];",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "(this_ptr->rotation).z = param_3->z;",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 29,
       "match": "DAT_03f95df8",
       "text": "pCVar2 = DAT_03f95df8;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_0000000c",
-      "text": "((float)in_stack_0000000c[1] + (float)-0.78539816337500001,",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "text": "(param_3->y + (float)-0.78539816337500001,param_3->y + (float)0.78539816337500001)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_0000000c",
-      "text": "(float)in_stack_0000000c[1] + (float)0.78539816337500001);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "text": "(param_3->y + (float)-0.78539816337500001,param_3->y + (float)0.78539816337500001)",
+      "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 37,
       "match": "fsin",
       "text": "fVar4 = (float10)fsin((float10)local_14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 38,
       "match": "fcos",
       "text": "fVar5 = (float10)fcos((float10)local_14);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_2",
+      "text": "local_38.x = (float)(fVar4 * (float10)local_18 + (float10)param_2->x);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 40,
-      "match": "in_stack_00000008",
-      "text": "local_38.x = (float)(fVar4 * (float10)local_18 + (float10)*in_stack_00000008);",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "local_38.y = param_2->y;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 41,
-      "match": "in_stack_00000008",
-      "text": "local_38.y = in_stack_00000008[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000008",
-      "text": "local_38.z = (float)(fVar5 * (float10)local_18 + (float10)in_stack_00000008[2]);",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "local_38.z = (float)(fVar5 * (float10)local_18 + (float10)param_2->z);",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&DAT_03f96758 + iVar3) = fVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 59,
       "match": "DAT_03f96758",
       "text": "*(float *)((int)&DAT_03f96758 + iVar3) = fVar1;",
       "type": "undefined_data"

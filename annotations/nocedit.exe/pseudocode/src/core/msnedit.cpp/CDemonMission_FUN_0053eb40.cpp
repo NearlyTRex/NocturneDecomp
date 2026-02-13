@@ -23,7 +23,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053eb40(CDemonMission *this_ptr
               (g_CEditorToolsPtr,"Can't start sound output.  (Maybe muted, or other problem?)");
   }
   else {
-    core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,param_2);
+    sfx_handle = core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,param_2);
     engine_2d_c_clearInputAndWait_FUN_00403260();
     iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle);
     if (iVar1 == 0) {

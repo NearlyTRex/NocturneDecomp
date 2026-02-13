@@ -31,7 +31,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
-;   core_event.cpp_CEventList_FUN_004aabe0
+;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_fire.cpp_CFireEffect_FUN_004c79d0
 ;   core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004fea70
@@ -249,8 +249,8 @@ section .text
     PUSH 0x656c6d                       ; 005e7217 | = "VampireBossBitesIt"
     MOV EDI,dword ptr [0x006793d0]      ; 005e721c | g_CEventListPtr
     PUSH EDI                            ; 005e7222 | g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 005e7223
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004aabe0 ; 005e7223
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004aabe0(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 005e7228
     MOV EBP,dword ptr [ESI + 0xce900]   ; 005e722b
     PUSH EBP                            ; 005e7231
@@ -262,7 +262,7 @@ section .text
     MOV EAX,[0x00681ef8]                ; 005e7240 | g_CSoundInstance | g_CSoundPtr
     PUSH EAX                            ; 005e7245 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 005e7246
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 005e724b
     MOV dword ptr [ESI + 0x243c],0x0    ; 005e724e
     ADD ESP,0x14                        ; 005e7258

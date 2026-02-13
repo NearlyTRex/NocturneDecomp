@@ -12,11 +12,10 @@ core_dog_cpp_CZombieDog_processDamage_FUN_0047f820(CZombieDog *this_ptr,SDamageI
 {
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  int extraout_EAX;
   SMotion *pSVar2;
   uint uVar3;
   SDamageInfo *in_stack_00000010;
-  int desired_state_index;
+  int iVar4;
   
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -26,17 +25,17 @@ core_dog_cpp_CZombieDog_processDamage_FUN_0047f820(CZombieDog *this_ptr,SDamageI
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if ((pSVar2->state_index == 7) || (pSVar2->state_index == 6)) goto LAB_0047f855;
-    desired_state_index = 6;
+    iVar4 = 6;
   }
   else {
-    desired_state_index = 5;
+    iVar4 = 5;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&this_ptr_00->motion_controller,desired_state_index,1);
+            (&this_ptr_00->motion_controller,iVar4,1);
 LAB_0047f855:
-  core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
-            (g_CSoundPtr,*(uint *)(this_ptr->field1_0xbebc + 8));
-  if (extraout_EAX != 0) {
+  iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
+                    (g_CSoundPtr,*(uint *)(this_ptr->field1_0xbebc + 8));
+  if (iVar4 != 0) {
     core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
     return;
   }

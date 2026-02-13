@@ -26,7 +26,7 @@ int __cdecl core_mission_cpp_CDemonMission_FUN_00524760(CDemonMission *this_ptr)
     (this_ptr->pending_teleport).position.z = 0.0;
     (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
     (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;
-    core_event_cpp_CEventList_FUN_004aaa70(this_ptr_00);
+    core_event_cpp_CEventList_reset_FUN_004aaa70(this_ptr_00);
     g_CGamePtr->letterbox_mode = 0;
     core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0
               (this_ptr,(g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id);

@@ -28,21 +28,21 @@
 ;   ... and 20 more
 ;
 ; Called Functions:
+;   core_script.cpp_clearSelections_FUN_005644e0
 ;   core_script.cpp_CScript_editorAction_FUN_00564820
 ;   core_script.cpp_CScript_editorIndex2X_FUN_00566b30
 ;   core_script.cpp_CScript_editorPutLine_FUN_005662a0
 ;   core_script.cpp_CScript_editorX2Index_FUN_00566a90
-;   core_script.cpp_CScript_FUN_00565aa0
-;   core_script.cpp_CScript_FUN_00565ae0
-;   core_script.cpp_CScript_FUN_00565d00
-;   core_script.cpp_CScript_FUN_00565e70
-;   core_script.cpp_CScript_FUN_00566390
+;   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0
+;   core_script.cpp_CScript_executeContextAction_FUN_00565d00
 ;   core_script.cpp_CScript_FUN_00566880
-;   core_script.cpp_CScript_FUN_00566c20
 ;   core_script.cpp_CScript_FUN_00566cc0
+;   core_script.cpp_CScript_gotoPosition_FUN_00565aa0
+;   core_script.cpp_CScript_insertText_FUN_00566390
 ;   core_script.cpp_CScript_loadLineToBuffer_FUN_00566230
+;   core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20
+;   core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70
 ;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910
-;   core_script.cpp_CScript_updateLineMetrics_FUN_00566800
 ;   ... and 12 more
 ;
 ; *****************************************************************************
@@ -76,8 +76,8 @@ section .text
     CALL core_script.cpp_CScript_updateScrollPosition_FUN_005669a0 ; 0056516f
         ;   XREF to: 005669a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_updateScrollPosition_FUN_005669a0(CScript * this_ptr)
     ADD ESP,0x4                         ; 00565174
-    CALL core_script.cpp_FUN_00564500   ; 00565177
-        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564500()
+    CALL core_script.cpp_updateSelection_FUN_00564500 ; 00565177
+        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_updateSelection_FUN_00564500()
     PUSH 0x310fd0c                      ; 0056517c | g_ScriptEditorHScrollBar
     CALL shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0 ; 00565181
         ;   XREF to: 004a5fc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollBar * this_ptr)
@@ -246,7 +246,7 @@ section .text
     TEST EAX,EAX                        ; 005652f0
     JZ 0x0056532b                       ; 005652f2
         ;   XREF to: 0056532b (CONDITIONAL_JUMP)  ; LAB_0056532b
-    MOV ECX,dword ptr [0x0310fd4c]      ; 005652f4 | DAT_0310fd4c
+    MOV ECX,dword ptr [0x0310fd4c]      ; 005652f4 | g_SelectionAnchorColumn
     MOV ESI,0x1                         ; 005652fa
     TEST ECX,ECX                        ; 005652ff
     JL 0x005657c7                       ; 00565301
@@ -472,7 +472,7 @@ section .text
         ;   XREF to: 0056580b (CONDITIONAL_JUMP)  ; LAB_0056580b
     PUSH 0x310fd58                      ; 0056550a | DAT_0310fd58
     PUSH 0x643e66                       ; 0056550f | = "Found %s"
-    PUSH 0x310fdc0                      ; 00565514 | DAT_0310fdc0
+    PUSH 0x310fdc0                      ; 00565514 | g_ScriptEditorStatusText
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00565519
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056551e
@@ -483,10 +483,10 @@ section .text
     MOV [0x0310fd44],EAX                ; 00565532 | g_CurrentEditingColumn
     MOV EAX,dword ptr [ESP + 0x4]       ; 00565537
     XOR ESI,ESI                         ; 0056553b
-    MOV [0x0310fd4c],EAX                ; 0056553d | DAT_0310fd4c
+    MOV [0x0310fd4c],EAX                ; 0056553d | g_SelectionAnchorColumn
     MOV EAX,dword ptr [ESP]             ; 00565542
     MOV dword ptr [ESP + 0x24],EDI      ; 00565545
-    MOV [0x0310fd50],EAX                ; 00565549 | DAT_0310fd50
+    MOV [0x0310fd50],EAX                ; 00565549 | g_SelectionAnchorLine
     PUSH 0x3d                           ; 0056554e
         ;   Label: LAB_0056554e
     MOV EAX,[0x0067cf44]                ; 00565550 | g_CKeysPtr
@@ -547,7 +547,7 @@ section .text
         ;   XREF to: 00565827 (CONDITIONAL_JUMP)  ; LAB_00565827
     PUSH 0x310fd58                      ; 005655e7 | DAT_0310fd58
     PUSH 0x643e82                       ; 005655ec | = "Found %s"
-    PUSH 0x310fdc0                      ; 005655f1 | DAT_0310fdc0
+    PUSH 0x310fdc0                      ; 005655f1 | g_ScriptEditorStatusText
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005655f6
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005655fb
@@ -558,10 +558,10 @@ section .text
     MOV [0x0310fd44],EAX                ; 00565610 | g_CurrentEditingColumn
     MOV EAX,dword ptr [ESP + 0x18]      ; 00565615
     XOR ESI,ESI                         ; 00565619
-    MOV [0x0310fd4c],EAX                ; 0056561b | DAT_0310fd4c
+    MOV [0x0310fd4c],EAX                ; 0056561b | g_SelectionAnchorColumn
     MOV EAX,dword ptr [ESP + 0x14]      ; 00565620
     MOV dword ptr [ESP + 0x24],EBX      ; 00565624
-    MOV [0x0310fd50],EAX                ; 00565628 | DAT_0310fd50
+    MOV [0x0310fd50],EAX                ; 00565628 | g_SelectionAnchorLine
     PUSH 0x3e                           ; 0056562d
         ;   Label: LAB_0056562d
     MOV EAX,[0x0067cf44]                ; 0056562f | g_CKeysPtr
@@ -578,8 +578,8 @@ section .text
     PUSH EDI                            ; 0056564e
     PUSH EBP                            ; 0056564f
     MOV ESI,0x1                         ; 00565650
-    CALL core_script.cpp_CScript_FUN_00565ae0 ; 00565655
-        ;   XREF to: 00565ae0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00565ae0(CScript * this_ptr, int param_2, int param_3)
+    CALL core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 ; 00565655
+        ;   XREF to: 00565ae0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0(CScript * this_ptr, int column, int line)
     ADD ESP,0xc                         ; 0056565a
     PUSH 0x40                           ; 0056565d
         ;   Label: LAB_0056565d
@@ -597,8 +597,8 @@ section .text
     PUSH EDX                            ; 0056567d
     PUSH EBP                            ; 0056567e
     MOV ESI,0x1                         ; 0056567f
-    CALL core_script.cpp_CScript_FUN_00565d00 ; 00565684
-        ;   XREF to: 00565d00 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00565d00(CScript * this_ptr, int param_2, int param_3)
+    CALL core_script.cpp_CScript_executeContextAction_FUN_00565d00 ; 00565684
+        ;   XREF to: 00565d00 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_executeContextAction_FUN_00565d00(CScript * this_ptr, int column, int line)
     ADD ESP,0xc                         ; 00565689
     PUSH 0x3b                           ; 0056568c
         ;   Label: LAB_0056568c
@@ -615,8 +615,8 @@ section .text
     MOV EBX,dword ptr [0x0310fd44]      ; 005656a7 | g_CurrentEditingColumn
     PUSH EBX                            ; 005656ad
     PUSH EBP                            ; 005656ae
-    CALL core_script.cpp_CScript_FUN_00565e70 ; 005656af
-        ;   XREF to: 00565e70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00565e70(CScript * this_ptr, int param_2, int param_3)
+    CALL core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70 ; 005656af
+        ;   XREF to: 00565e70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70(CScript * this_ptr, int column, int line)
     ADD ESP,0xc                         ; 005656b4
     MOV EDI,dword ptr [0x02cf2b00]      ; 005656b7 | g_ActiveButton
         ;   Label: LAB_005656b7
@@ -633,10 +633,10 @@ section .text
     MOV ECX,dword ptr [0x02cf6a8c]      ; 005656e3 | g_MouseX
     PUSH ECX                            ; 005656e9
     PUSH EDI                            ; 005656ea
-    CALL core_script.cpp_CScript_FUN_00566c20 ; 005656eb
-        ;   XREF to: 00566c20 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566c20(CScript * this_ptr, int param_2, int param_3, int * param_4, ...)
+    CALL core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20 ; 005656eb
+        ;   XREF to: 00566c20 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20(CScript * this_ptr, int pixel_x, int pixel_y, int * column_out, ...)
     MOV EAX,[0x02cf6a8c]                ; 005656f0 | g_MouseX
-    MOV EBX,dword ptr [0x031141e0]      ; 005656f5 | INT_031141e0
+    MOV EBX,dword ptr [0x031141e0]      ; 005656f5 | g_ScriptTextAreaLeft
     ADD ESP,0x14                        ; 005656fb
     CMP EAX,EBX                         ; 005656fe
     JG 0x0056570f                       ; 00565700
@@ -647,7 +647,7 @@ section .text
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565707
         ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
     ADD ESP,0xc                         ; 0056570c
-    MOV EDI,dword ptr [0x031141e8]      ; 0056570f | DAT_031141e8
+    MOV EDI,dword ptr [0x031141e8]      ; 0056570f | g_ScriptTextAreaRight
         ;   Label: LAB_0056570f
     CMP EDI,dword ptr [0x02cf6a8c]      ; 00565715 | g_MouseX
     JG 0x0056572a                       ; 0056571b
@@ -658,7 +658,7 @@ section .text
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565722
         ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
     ADD ESP,0xc                         ; 00565727
-    MOV EDX,dword ptr [0x031141e4]      ; 0056572a | INT_031141e4
+    MOV EDX,dword ptr [0x031141e4]      ; 0056572a | g_ScriptTextAreaTop
         ;   Label: LAB_0056572a
     CMP EDX,dword ptr [0x02cf6a90]      ; 00565730 | g_MouseY
     JL 0x00565745                       ; 00565736
@@ -669,7 +669,7 @@ section .text
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 0056573d
         ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
     ADD ESP,0xc                         ; 00565742
-    MOV ECX,dword ptr [0x031141ec]      ; 00565745 | DAT_031141ec
+    MOV ECX,dword ptr [0x031141ec]      ; 00565745 | g_ScriptTextAreaBottom
         ;   Label: LAB_00565745
     CMP ECX,dword ptr [0x02cf6a90]      ; 0056574b | g_MouseY
     JG 0x00565760                       ; 00565751
@@ -763,7 +763,7 @@ section .text
     PUSH 0x310fd58                      ; 0056580b | DAT_0310fd58
         ;   Label: LAB_0056580b
     PUSH 0x643e6f                       ; 00565810 | = "Can't find %s"
-    PUSH 0x310fdc0                      ; 00565815 | DAT_0310fdc0
+    PUSH 0x310fdc0                      ; 00565815 | g_ScriptEditorStatusText
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056581a
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056581f
@@ -772,7 +772,7 @@ section .text
     PUSH 0x310fd58                      ; 00565827 | DAT_0310fd58
         ;   Label: LAB_00565827
     PUSH 0x643e8b                       ; 0056582c | = "Can't find %s"
-    PUSH 0x310fdc0                      ; 00565831 | DAT_0310fdc0
+    PUSH 0x310fdc0                      ; 00565831 | g_ScriptEditorStatusText
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00565836
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056583b
@@ -798,8 +798,8 @@ section .text
     MOV ECX,dword ptr [0x02cf6a8c]      ; 00565873 | g_MouseX
     PUSH ECX                            ; 00565879
     PUSH EBP                            ; 0056587a
-    CALL core_script.cpp_CScript_FUN_00566c20 ; 0056587b
-        ;   XREF to: 00566c20 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566c20(CScript * this_ptr, int param_2, int param_3, int * param_4, ...)
+    CALL core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20 ; 0056587b
+        ;   XREF to: 00566c20 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20(CScript * this_ptr, int pixel_x, int pixel_y, int * column_out, ...)
     ADD ESP,0x14                        ; 00565880
     TEST EAX,EAX                        ; 00565883
     JZ 0x005658b7                       ; 00565885
@@ -818,8 +818,8 @@ section .text
     MOV ESI,dword ptr [0x0310fd44]      ; 005658a1 | g_CurrentEditingColumn
     PUSH ESI                            ; 005658a7
     PUSH EBP                            ; 005658a8
-    CALL core_script.cpp_CScript_FUN_00565ae0 ; 005658a9
-        ;   XREF to: 00565ae0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00565ae0(CScript * this_ptr, int param_2, int param_3)
+    CALL core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 ; 005658a9
+        ;   XREF to: 00565ae0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0(CScript * this_ptr, int column, int line)
     ADD ESP,0xc                         ; 005658ae
     MOV dword ptr [0x02cf6a94],EDI      ; 005658b1 | g_MouseButtonFlags
     MOV ESI,0x1                         ; 005658b7
@@ -842,8 +842,8 @@ section .text
     PUSH EBX                            ; 005658e9
     PUSH EBP                            ; 005658ea
     MOV dword ptr [0x02cf6a94],EDI      ; 005658eb | g_MouseButtonFlags
-    CALL core_script.cpp_CScript_FUN_00566c20 ; 005658f1
-        ;   XREF to: 00566c20 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00566c20(CScript * this_ptr, int param_2, int param_3, int * param_4, ...)
+    CALL core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20 ; 005658f1
+        ;   XREF to: 00566c20 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20(CScript * this_ptr, int pixel_x, int pixel_y, int * column_out, ...)
     ADD ESP,0x14                        ; 005658f6
     TEST EAX,EAX                        ; 005658f9
     JZ 0x00565768                       ; 005658fb
@@ -853,8 +853,8 @@ section .text
     MOV EAX,[0x0310fd44]                ; 00565908 | g_CurrentEditingColumn
     PUSH EAX                            ; 0056590d
     PUSH EBP                            ; 0056590e
-    CALL core_script.cpp_CScript_FUN_00565aa0 ; 0056590f
-        ;   XREF to: 00565aa0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00565aa0(CScript * this_ptr, int param_2, int param_3)
+    CALL core_script.cpp_CScript_gotoPosition_FUN_00565aa0 ; 0056590f
+        ;   XREF to: 00565aa0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_gotoPosition_FUN_00565aa0(CScript * this_ptr, int column, int line)
     ADD ESP,0xc                         ; 00565914
     JMP 0x00565768                      ; 00565917
         ;   XREF to: 00565768 (UNCONDITIONAL_JUMP)  ; LAB_00565768
@@ -894,8 +894,8 @@ section .text
     PUSH EBP                            ; 00565963
     MOV byte ptr [ESP + 0x34],BL        ; 00565964
     MOV byte ptr [ESP + 0x35],CH        ; 00565968
-    CALL core_script.cpp_CScript_FUN_00566390 ; 0056596c
-        ;   XREF to: 00566390 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566390(CScript * this_ptr, char * param_2, int param_3)
+    CALL core_script.cpp_CScript_insertText_FUN_00566390 ; 0056596c
+        ;   XREF to: 00566390 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_insertText_FUN_00566390(CScript * this_ptr, char * text, int update_cursor)
     ADD ESP,0xc                         ; 00565971
     MOV ESI,0x1                         ; 00565974
     JMP 0x00565771                      ; 00565979
@@ -983,7 +983,7 @@ section .text
         ;   Label: LAB_00565a2f
     JZ 0x00565a8b                       ; 00565a34
         ;   XREF to: 00565a8b (CONDITIONAL_JUMP)  ; LAB_00565a8b
-    CMP dword ptr [0x0310fd4c],0x0      ; 00565a36 | DAT_0310fd4c
+    CMP dword ptr [0x0310fd4c],0x0      ; 00565a36 | g_SelectionAnchorColumn
     JL 0x00565a77                       ; 00565a3d
         ;   XREF to: 00565a77 (CONDITIONAL_JUMP)  ; LAB_00565a77
     XOR ECX,ECX                         ; 00565a3f
@@ -996,16 +996,16 @@ section .text
     CALL core_script.cpp_CScript_updateLineMetrics_FUN_00566800 ; 00565a4d
         ;   XREF to: 00566800 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_updateLineMetrics_FUN_00566800(CScript * this_ptr, int line_number)
     ADD ESP,0x8                         ; 00565a52
-    CALL core_script.cpp_FUN_00564500   ; 00565a55
-        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00564500()
+    CALL core_script.cpp_updateSelection_FUN_00564500 ; 00565a55
+        ;   XREF to: 00564500 (UNCONDITIONAL_CALL)  ; void core_script.cpp_updateSelection_FUN_00564500()
     ADD ESP,0x2c                        ; 00565a5a
     POP EBP                             ; 00565a5d
     POP EDI                             ; 00565a5e
     POP ESI                             ; 00565a5f
     POP EBX                             ; 00565a60
     RET                                 ; 00565a61
-    CALL core_script.cpp_FUN_005644e0   ; 00565a62
-        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005644e0()
+    CALL core_script.cpp_clearSelections_FUN_005644e0 ; 00565a62
+        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_clearSelections_FUN_005644e0()
         ;   Label: LAB_00565a62
     JMP 0x00565a47                      ; 00565a67
         ;   XREF to: 00565a47 (UNCONDITIONAL_JUMP)  ; LAB_00565a47
@@ -1018,13 +1018,13 @@ section .text
         ;   XREF to: 00565a47 (UNCONDITIONAL_JUMP)  ; LAB_00565a47
     MOV EAX,dword ptr [ESP + 0x20]      ; 00565a77
         ;   Label: LAB_00565a77
-    MOV [0x0310fd4c],EAX                ; 00565a7b | DAT_0310fd4c
+    MOV [0x0310fd4c],EAX                ; 00565a7b | g_SelectionAnchorColumn
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00565a80
-    MOV [0x0310fd50],EAX                ; 00565a84 | DAT_0310fd50
+    MOV [0x0310fd50],EAX                ; 00565a84 | g_SelectionAnchorLine
     JMP 0x00565a3f                      ; 00565a89
         ;   XREF to: 00565a3f (UNCONDITIONAL_JUMP)  ; LAB_00565a3f
-    CALL core_script.cpp_FUN_005644e0   ; 00565a8b
-        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005644e0()
+    CALL core_script.cpp_clearSelections_FUN_005644e0 ; 00565a8b
+        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_clearSelections_FUN_005644e0()
         ;   Label: LAB_00565a8b
     JMP 0x00565a3f                      ; 00565a90
         ;   XREF to: 00565a3f (UNCONDITIONAL_JUMP)  ; LAB_00565a3f

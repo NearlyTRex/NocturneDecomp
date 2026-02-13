@@ -199,9 +199,9 @@ void __cdecl CFileManager::closeExtractFile(CFileManager *this_ptr);
 // Address: 004b7c90
 void __cdecl CFileManager::verifyPodCRC(CFileManager *this_ptr,char *pod_filename);
 
-// Original: engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50
+// Original: engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
 // Address: 004b7d50
-int __cdecl extractFileWithTimestamp(_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset ,int checksum,int timestamp);
+int __cdecl CFileManager::extractFileWithTimestamp(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,char *name_or_offset, int file_size,int file_offset,int checksum,int timestamp);
 
 // Original: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
 // Address: 004b7f50

@@ -43,16 +43,16 @@
   },
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 67,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 11,
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 51,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 176
+    "total_lines": 175
   },
   "cross_references": [
     {
@@ -225,7 +225,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(SMRGLHeaderExtended *)((int)",
       "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",
       "type": "pointer_cast"

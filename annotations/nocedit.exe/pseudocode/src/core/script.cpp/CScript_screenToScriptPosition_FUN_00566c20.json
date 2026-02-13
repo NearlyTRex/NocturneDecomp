@@ -1,0 +1,174 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 16,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 8,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 75
+  },
+  "cross_references": [
+    {
+      "addr": "00565130",
+      "from_addr": "005656eb",
+      "name": "core_script.cpp_CScript_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566bc0",
+      "from_addr": "00566be1",
+      "name": "core_script.cpp_CScript_FUN_00566bc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566c20",
+    "address_range": [
+      [
+        "00566c20",
+        "00566cb3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20",
+    "signature": "int __cdecl core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20 (CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0310fcd8",
+      "name": "g_ScriptEditorVScrollBar",
+      "type": "CEdScrollBar",
+      "value": null
+    },
+    {
+      "addr": "0310fd0c",
+      "name": "g_ScriptEditorHScrollBar",
+      "type": "CEdScrollBar",
+      "value": null
+    },
+    {
+      "addr": "031141e0",
+      "name": "g_ScriptTextAreaLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141e4",
+      "name": "g_ScriptTextAreaTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141e8",
+      "name": "g_ScriptTextAreaRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031141ec",
+      "name": "g_ScriptTextAreaBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114204",
+      "name": "g_ScriptEditorCharWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114208",
+      "name": "g_ScriptEditorLineHeight",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.846153846153846,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "CBRANCH": 4,
+      "COPY": 46,
+      "INT_ADD": 15,
+      "INT_AND": 62,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 2,
+      "INT_LESS": 7,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 14,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 2,
+      "INT_SDIV": 2,
+      "INT_SEXT": 2,
+      "INT_SLESS": 14,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 7,
+      "INT_SUB": 13,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 5,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 304
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "column_out",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "line_out",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
+}

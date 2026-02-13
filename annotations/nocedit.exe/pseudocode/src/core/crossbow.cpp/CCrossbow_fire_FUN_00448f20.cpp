@@ -15,7 +15,6 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   float grab_type;
   CCharacter *this_ptr_01;
   CTrigger *this_ptr_02;
-  int extraout_EAX;
   double dVar3;
   CDemonActor *pCVar4;
   byte auStack_dc [28];
@@ -113,8 +112,8 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
         core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)CStack_20.x);
       }
       else {
-        core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_14);
-        if (extraout_EAX == 0) break;
+        iVar2 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_14);
+        if (iVar2 == 0) break;
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
                   (pCStack_14,&g_CDemonSetPtr->collision_impact_position);
       }

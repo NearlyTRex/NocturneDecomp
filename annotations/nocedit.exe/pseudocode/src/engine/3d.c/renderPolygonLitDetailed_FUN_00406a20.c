@@ -44,10 +44,10 @@ engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(SMRGLHeaderPrimitive *polygon_
     for (iVar2 = 0; iVar2 < (polygon_info->base).count * 3; iVar2 = iVar2 + 3) {
       iVar1 = (pSVar3->base).type;
       *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
-      g_RenderVertexBuffer[iVar1].u = (float)(pSVar3->base).count;
+      g_RenderVertexBuffer[iVar1].u = (pSVar3->base).count;
       iVar4 = iVar4 + 4;
       vertex_count = vertex_count + 1;
-      g_RenderVertexBuffer[(pSVar3->base).type].v = (float)(pSVar3->surface_normal).A;
+      g_RenderVertexBuffer[(pSVar3->base).type].v = (pSVar3->surface_normal).A;
       pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);

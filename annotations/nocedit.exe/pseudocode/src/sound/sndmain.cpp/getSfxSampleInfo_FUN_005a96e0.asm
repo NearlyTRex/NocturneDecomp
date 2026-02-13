@@ -8,7 +8,7 @@
 ; CSfxSample *     Stack[0x8]:4   output_buffer
 ;
 ; XREF[3]:
-;   core_event.cpp_CEventList_FUN_004b0db0 at 004b0e8e
+;   core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 at 004b0e8e
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da951
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005de360 at 005de4d8
 ;

@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_ptr)
+; __cdecl void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_ptr,char *name,int value)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
+; int              Stack[0xc]:4   value
 ;
 ; XREF[2]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004abc14
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004abc14
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055d299
 ;
 ; Referenced Globals:
@@ -17,7 +19,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_event.cpp_CEventList_FUN_004b0950
+;   core_event.cpp_CEventList_findCounter_FUN_004b0950
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;
@@ -35,8 +37,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 004b072c
     PUSH EDX                            ; 004b0730
     PUSH EBX                            ; 004b0731
-    CALL core_event.cpp_CEventList_FUN_004b0950 ; 004b0732
-        ;   XREF to: 004b0950 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0950(CEventList * this_ptr)
+    CALL core_event.cpp_CEventList_findCounter_FUN_004b0950 ; 004b0732
+        ;   XREF to: 004b0950 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findCounter_FUN_004b0950(CEventList * this_ptr, char * name)
     MOV ESI,EAX                         ; 004b0737
     ADD ESP,0x8                         ; 004b0739
     TEST EAX,EAX                        ; 004b073c

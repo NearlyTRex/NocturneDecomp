@@ -19,17 +19,17 @@
 ;   CPickList g_ScriptPickList
 ;   int g_CurrentEditingColumn
 ;   int g_CurrentEditingLine
-;   undefined1 DAT_0310fdc0
-;   undefined1 DAT_0310fdc1
-;   undefined1 DAT_0310fdc2
-;   undefined1 DAT_0310fdc3
+;   char[1020] g_ScriptEditorStatusText
+;   undefined4 DAT_0310fdc1
+;   undefined4 DAT_0310fdc2
+;   undefined4 DAT_0310fdc3
 ;
 ; Called Functions:
+;   core_script.cpp_clearSelections_FUN_005644e0
 ;   core_script.cpp_CScript_FUN_0055a370
 ;   core_script.cpp_CScript_FUN_0055a4b0
 ;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910
 ;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0
-;   core_script.cpp_FUN_005644e0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CPickList_clear_FUN_004a5770
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -72,7 +72,7 @@ section .text
     ADD ESP,0x4                         ; 005660c4
     PUSH EAX                            ; 005660c7
     PUSH 0x643f0e                       ; 005660c8 | = "%d sound files missing."
-    PUSH 0x310fdc0                      ; 005660cd | DAT_0310fdc0
+    PUSH 0x310fdc0                      ; 005660cd | g_ScriptEditorStatusText
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005660d2
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005660d7
@@ -94,11 +94,11 @@ section .text
     RET                                 ; 00566102
     MOV ESI,0x643f4d                    ; 00566103 | = "Syntax check OK."
         ;   Label: LAB_00566103
-    MOV EDI,0x310fdc0                   ; 00566108 | DAT_0310fdc0
-    PUSH EDI                            ; 0056610d | DAT_0310fdc0
+    MOV EDI,0x310fdc0                   ; 00566108 | g_ScriptEditorStatusText
+    PUSH EDI                            ; 0056610d | g_ScriptEditorStatusText
     MOV AL,byte ptr [ESI]               ; 0056610e | = "Syntax check OK." | s_ntax_check_OK._00643f4f
         ;   Label: LAB_0056610e
-    MOV byte ptr [EDI],AL               ; 00566110 | DAT_0310fdc0 | DAT_0310fdc2
+    MOV byte ptr [EDI],AL               ; 00566110 | g_ScriptEditorStatusText | DAT_0310fdc2
     CMP AL,0x0                          ; 00566112
     JZ 0x00566126                       ; 00566114
         ;   XREF to: 00566126 (CONDITIONAL_JUMP)  ; LAB_00566126
@@ -116,8 +116,8 @@ section .text
     POP ESI                             ; 0056612b
     POP EBX                             ; 0056612c
     RET                                 ; 0056612d
-    CALL core_script.cpp_FUN_005644e0   ; 0056612e
-        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005644e0()
+    CALL core_script.cpp_clearSelections_FUN_005644e0 ; 0056612e
+        ;   XREF to: 005644e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_clearSelections_FUN_005644e0()
         ;   Label: LAB_0056612e
     MOV EAX,dword ptr [ESP]             ; 00566133
     PUSH EBX                            ; 00566136
@@ -131,11 +131,11 @@ section .text
     CALL core_script.cpp_CScript_updateScrollPosition_FUN_005669a0 ; 0056614d
         ;   XREF to: 005669a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_updateScrollPosition_FUN_005669a0(CScript * this_ptr)
     ADD ESP,0x4                         ; 00566152
-    MOV EDI,0x310fdc0                   ; 00566155 | DAT_0310fdc0
-    PUSH EDI                            ; 0056615a | DAT_0310fdc0
+    MOV EDI,0x310fdc0                   ; 00566155 | g_ScriptEditorStatusText
+    PUSH EDI                            ; 0056615a | g_ScriptEditorStatusText
     MOV AL,byte ptr [ESI]               ; 0056615b
         ;   Label: LAB_0056615b
-    MOV byte ptr [EDI],AL               ; 0056615d | DAT_0310fdc0 | DAT_0310fdc2
+    MOV byte ptr [EDI],AL               ; 0056615d | g_ScriptEditorStatusText | DAT_0310fdc2
     CMP AL,0x0                          ; 0056615f
     JZ 0x00566173                       ; 00566161
         ;   XREF to: 00566173 (CONDITIONAL_JUMP)  ; LAB_00566173

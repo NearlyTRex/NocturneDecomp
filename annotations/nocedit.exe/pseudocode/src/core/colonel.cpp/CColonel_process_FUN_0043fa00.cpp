@@ -48,10 +48,10 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   if (iVar5 == 0) {
     return;
   }
-  fVar10 = (this_ptr->base).unk1 - delta_time;
-  (this_ptr->base).unk1 = fVar10;
+  fVar10 = (float)(this_ptr->base).no_collision_flag - delta_time;
+  (this_ptr->base).no_collision_flag = (int)fVar10;
   if (fVar10 < 0.0) {
-    (this_ptr->base).unk1 = 0.0;
+    (this_ptr->base).no_collision_flag = 0;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -78,24 +78,24 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
     case 3:
       if ((this_ptr->base).base.is_on_ground != 0) {
         iVar5 = 0;
-        if ((this_ptr->base).action_bindings.walk_key != 0) {
-          if ((this_ptr->base).action_bindings.run_key == 0) {
+        if ((this_ptr->base).player_control.action_states[0] != 0) {
+          if ((this_ptr->base).player_control.action_states[2] == 0) {
             iVar5 = 1;
           }
           else {
             iVar5 = 2;
           }
         }
-        if ((this_ptr->base).action_bindings.backup_key != 0) {
+        if ((this_ptr->base).player_control.action_states[1] != 0) {
           iVar5 = 3;
         }
-        if ((this_ptr->base).action_bindings.draw_key != 0) {
+        if ((this_ptr->base).player_control.action_states[6] != 0) {
           iVar7 = this_ptr->guns_drawn;
-          (this_ptr->base).action_bindings.draw_key = 0;
+          (this_ptr->base).player_control.action_states[6] = 0;
           iVar5 = 0;
           this_ptr->guns_drawn = (uint)(iVar7 == 0);
         }
-        if ((this_ptr->base).action_bindings.fire_key != 0) {
+        if ((this_ptr->base).player_control.action_states[3] != 0) {
           bVar4 = true;
           if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
             iVar7 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
@@ -118,11 +118,11 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
 LAB_0043fd60:
             if (!bVar4) goto LAB_0043fd6e;
           }
-          (this_ptr->base).action_bindings.fire_key = 0;
+          (this_ptr->base).player_control.action_states[3] = 0;
         }
 LAB_0043fd6e:
         (this_ptr->base).base.turn_angle_accumulator =
-             *(float *)((this_ptr->base).unk2 + 4) * (this_ptr->base).base.turn_speed;
+             (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
         pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&(this_ptr->base).base.model.motion_controller);
         if (iVar5 != pSVar8->state_index) goto LAB_0043fad3;
@@ -226,7 +226,7 @@ LAB_0043fc01:
     }
     else {
       if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_0043fc01;
-      if ((this_ptr->base).action_bindings.fire_key == 0) goto LAB_0043fc14;
+      if ((this_ptr->base).player_control.action_states[3] == 0) goto LAB_0043fc14;
       iVar5 = 9;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

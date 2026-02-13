@@ -76,14 +76,14 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     local_50.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_50);
-    g_RenderVertexBuffer[0].u = 7.34684e-40;
-    g_RenderVertexBuffer[0].v = 2.2775203e-38;
-    g_RenderVertexBuffer[1].u = 2.2775203e-38;
-    g_RenderVertexBuffer[1].v = 2.2775203e-38;
-    g_RenderVertexBuffer[2].u = 2.2775203e-38;
-    g_RenderVertexBuffer[2].v = 7.34684e-40;
-    g_RenderVertexBuffer[3].u = 7.34684e-40;
-    g_RenderVertexBuffer[3].v = 7.34684e-40;
+    g_RenderVertexBuffer[0].u = 0x80000;
+    g_RenderVertexBuffer[0].v = 0xf80000;
+    g_RenderVertexBuffer[1].u = 0xf80000;
+    g_RenderVertexBuffer[1].v = 0xf80000;
+    g_RenderVertexBuffer[2].u = 0xf80000;
+    g_RenderVertexBuffer[2].v = 0x80000;
+    g_RenderVertexBuffer[3].u = 0x80000;
+    g_RenderVertexBuffer[3].v = 0x80000;
     local_44.x = (int)ROUND((this_ptr->position).x * 256.0f);
     local_44.y = (int)ROUND((this_ptr->position).y * 256.0f);
     local_44.z = (int)ROUND((this_ptr->position).z * 256.0f);

@@ -37,7 +37,7 @@ core_setutil_cpp_generateSphereVertex_FUN_00587a40
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_buffer_index].projected_vertex,local_38
             );
   pCVar1 = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_buffer_index].u = 1.1754944e-38;
-  pCVar1->vertex_buffer_ptr[vertex_buffer_index].v = 1.1754944e-38;
+  g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_buffer_index].u = 0x800000;
+  pCVar1->vertex_buffer_ptr[vertex_buffer_index].v = 0x800000;
   return;
 }

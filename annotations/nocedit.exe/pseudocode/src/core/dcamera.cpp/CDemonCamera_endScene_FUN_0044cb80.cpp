@@ -11,6 +11,8 @@ core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera *this_ptr,int s
 
 {
   int iVar1;
+  int iVar2;
+  int iVar3;
   
   if (this_ptr->scene_open_flag == 0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
@@ -27,12 +29,18 @@ core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera *this_ptr,int s
     if (g_UseExternalRenderer != 0) {
       wincore_windll_cpp_masterZBuffer_FUN_005b7d00(0);
     }
-    iVar1 = 0;
+    iVar2 = 0;
     if (0 < this_ptr->framebuffer_height) {
+      iVar3 = 0;
       do {
-        iVar1 = iVar1 + 1;
-        core_event_cpp_FUN_004b1a78();
-      } while (iVar1 < this_ptr->framebuffer_height);
+        iVar1 = this_ptr->framebuffer_width * iVar2;
+        iVar2 = iVar2 + 1;
+        _memcpy
+                  ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
+                   *(void **)((int)g_ZBufferScanlineArray + iVar3),this_ptr->framebuffer_width << 2)
+        ;
+        iVar3 = iVar3 + 4;
+      } while (iVar2 < this_ptr->framebuffer_height);
     }
   }
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);

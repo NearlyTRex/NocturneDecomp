@@ -53,7 +53,7 @@ core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
   pCVar3 = pCStack_1c;
   if ((param_3 == 0) &&
      (pCVar3 = this_ptr->look_at_target, this_ptr->look_at_target == (CDemonActor *)0x0)) {
-    if ((float)this_ptr->unk7 <= 0.0) {
+    if (this_ptr->look_at_search_timer <= 0.0) {
       auStack_a4._4_4_ = 0.0;
       uStack_98 = 0;
       fStack_9c = 5.5;
@@ -140,16 +140,16 @@ core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
       }
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,2.0);
-      this_ptr->unk7 = (int)fVar7;
+      this_ptr->look_at_search_timer = fVar7;
     }
     else {
       pCStack_1c = (CDemonActor *)this_ptr->collision_enabled;
-      this_ptr->unk7 = (int)((float)this_ptr->unk7 - delta_time);
+      this_ptr->look_at_search_timer = this_ptr->look_at_search_timer - delta_time;
     }
   }
   else {
     pCStack_1c = pCVar3;
-    this_ptr->unk7 = 0;
+    this_ptr->look_at_search_timer = 0.0;
   }
   this_ptr->collision_enabled = (int)pCStack_1c;
   if (pCStack_1c != (CDemonActor *)0x0) {

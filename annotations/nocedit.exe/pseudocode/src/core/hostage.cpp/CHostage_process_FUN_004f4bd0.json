@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 401,
+        "line": 407,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 667,
+        "line": 675,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       }
     ],
@@ -19,11 +19,11 @@
   },
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 882,
+    "complexity_score": 890,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 49,
-    "pseudocode_lines": 682,
+    "pseudocode_lines": 690,
     "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -31,7 +31,7 @@
       "suspect_float",
       "undefined_data"
     ],
-    "total_lines": 2338
+    "total_lines": 2346
   },
   "cross_references": [],
   "function": {
@@ -144,6 +144,11 @@
       "name": "core_door.cpp_CDoor_FUN_00480de0"
     },
     {
+      "addr": "004b0330",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330"
+    },
+    {
       "addr": "004adca0",
       "is_variadic": false,
       "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
@@ -151,12 +156,7 @@
     {
       "addr": "004aabe0",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004aabe0"
-    },
-    {
-      "addr": "004b0330",
-      "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004b0330"
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004aabe0"
     },
     {
       "addr": "004edaa0",
@@ -1161,77 +1161,77 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 248,
+      "line": 249,
       "match": "SQRT",
       "text": "SQRT(fVar3 * fVar3 + fVar5 * fVar5) < (float)40)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 394,
+      "line": 400,
       "match": "SUB84",
       "text": "this_ptr_01 = SUB84((double)fVar5,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 410,
+      "line": 416,
       "match": "SQRT",
       "text": "fVar5 = SQRT(local_9c * local_9c + local_a4 * local_a4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 438,
+      "line": 444,
       "match": "ABS",
       "text": "(ABS((this_ptr->base).base.turn_angle_accumulator) < (float)0.017453292519444399)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 525,
+      "line": 533,
       "match": "1.4013e-45",
       "text": "local_20 = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 591,
+      "line": 599,
       "match": "SQRT",
       "text": "SQRT((double)local_b0.z * (double)local_b0.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 596,
+      "line": 604,
       "match": "SQRT",
       "text": "SQRT(dVar11 * dVar11 + dVar10 * dVar10 + dVar9 * dVar9) <= dVar22 * 0.40000000000000002))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 636,
+      "line": 644,
       "match": "DAT_02db8888",
       "text": "(&pCVar2->motion_controller,DAT_02db8888,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 641,
+      "line": 649,
       "match": "DAT_02db8888",
       "text": "(pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 4),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 644,
+      "line": 652,
       "match": "DAT_02db8888",
       "text": "(pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 8),",
       "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 667,
+      "line": 675,
       "match": "8.40779e-45",
       "text": "(pCVar18->model).transformed_vertices[0x4f].z = 8.40779e-45;",
       "type": "suspect_float"

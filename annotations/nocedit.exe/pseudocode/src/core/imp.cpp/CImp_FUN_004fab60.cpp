@@ -53,7 +53,7 @@ switchD_004fab96_default:
     if (*(int *)(this_ptr->unk + 0x30) == *in_stack_00000008) {
       local_14 = 0.02;
     }
-    if (g_CGamePtr->unk4 != 0) {
+    if (g_CGamePtr->gratuitous_dismemberment != 0) {
       local_14 = 1.0;
     }
     if (g_CGamePtr->blood_flag == 0) {

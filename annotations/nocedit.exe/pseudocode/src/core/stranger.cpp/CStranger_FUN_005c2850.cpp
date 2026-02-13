@@ -19,7 +19,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
   CVector3f *pCVar8;
   float fVar9;
   CDemonActor *pCVar10;
-  char *pcVar11;
+  UOrientationVector *pUVar11;
   CLocation *pCVar12;
   int iVar13;
   double in_stack_ffffff18;
@@ -97,19 +97,19 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
         if ((((0.0 < fVar3) &&
              ((fVar3 < (float)3 && (ABS(fVar9) < (float)2)))) &&
             (dVar1 = (double)fVar2, 0.0 < dVar1)) && (dVar1 < 4)) {
-          pcVar11 = (this_ptr->base).unk3 + 8;
+          pCVar7 = &(this_ptr->base).target_position;
           this_ptr->action_pending = 2;
-          if ((CLocation *)pcVar11 != pCVar12) {
-            *(float *)pcVar11 = (pCVar12->position).x;
-            *(float *)((this_ptr->base).unk3 + 0xc) = (pCVar4->base).location.position.y;
-            *(float *)((this_ptr->base).unk3 + 0x10) = (pCVar4->base).location.position.z;
+          if ((CLocation *)pCVar7 != pCVar12) {
+            pCVar7->x = (pCVar12->position).x;
+            (this_ptr->base).target_position.y = (pCVar4->base).location.position.y;
+            (this_ptr->base).target_position.z = (pCVar4->base).location.position.z;
           }
-          pcVar11 = (this_ptr->base).unk3 + 0x14;
-          pUVar5 = &(local_30->base).orient;
-          if ((UOrientationVector *)pcVar11 != pUVar5) {
-            *(float *)pcVar11 = (pUVar5->vec).x;
-            *(float *)((this_ptr->base).unk3 + 0x18) = (local_30->base).orient.vec.y;
-            *(float *)((this_ptr->base).unk3 + 0x1c) = (local_30->base).orient.vec.z;
+          pUVar5 = &(this_ptr->base).target_orientation;
+          pUVar11 = &(local_30->base).orient;
+          if (pUVar5 != pUVar11) {
+            (pUVar5->vec).x = (pUVar11->vec).x;
+            (this_ptr->base).target_orientation.vec.y = (local_30->base).orient.vec.y;
+            (this_ptr->base).target_orientation.vec.z = (local_30->base).orient.vec.z;
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0x16,1);
@@ -161,20 +161,20 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar6,0xe78);
           }
-          pcVar11 = (this_ptr->base).unk3 + 8;
+          pCVar7 = &(this_ptr->base).target_position;
           pCVar12 = &(pCStack_2c->base).location;
           this_ptr->action_pending = 2;
-          if ((CLocation *)pcVar11 != pCVar12) {
-            *(float *)pcVar11 = (pCVar12->position).x;
-            *(float *)((this_ptr->base).unk3 + 0xc) = (pCStack_2c->base).location.position.y;
-            *(float *)((this_ptr->base).unk3 + 0x10) = (pCStack_2c->base).location.position.z;
+          if ((CLocation *)pCVar7 != pCVar12) {
+            pCVar7->x = (pCVar12->position).x;
+            (this_ptr->base).target_position.y = (pCStack_2c->base).location.position.y;
+            (this_ptr->base).target_position.z = (pCStack_2c->base).location.position.z;
           }
-          pcVar11 = (this_ptr->base).unk3 + 0x14;
+          pUVar11 = &(this_ptr->base).target_orientation;
           pUVar5 = &(pCStack_2c->base).orient;
-          if ((UOrientationVector *)pcVar11 != pUVar5) {
-            *(float *)pcVar11 = (pUVar5->vec).x;
-            *(float *)((this_ptr->base).unk3 + 0x18) = (pCStack_2c->base).orient.vec.y;
-            *(float *)((this_ptr->base).unk3 + 0x1c) = (pCStack_2c->base).orient.vec.z;
+          if (pUVar11 != pUVar5) {
+            (pUVar11->vec).x = (pUVar5->vec).x;
+            (this_ptr->base).target_orientation.vec.y = (pCStack_2c->base).orient.vec.y;
+            (this_ptr->base).target_orientation.vec.z = (pCStack_2c->base).orient.vec.z;
           }
           return 1;
         }
@@ -234,7 +234,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,iVar6,force_immediate);
-        this_ptr->unk8 = 4.0;
+        this_ptr->action_timer = 4.0;
         return 1;
       }
       pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c790

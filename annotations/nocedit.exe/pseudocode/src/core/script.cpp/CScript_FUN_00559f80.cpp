@@ -119,7 +119,8 @@ LAB_0055a34a:
     if (piVar8 == (int *)0x0) goto LAB_0055a34a;
     while( true ) {
       _sprintf
-                (&DAT_031089e8,"Syntax error on %s line %d:\n%s",param_2,local_1c + 1,piVar8);
+                (g_ScriptSyntaxErrorMessage,"Syntax error on %s line %d:\n%s",param_2,local_1c + 1
+                 ,piVar8);
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_790);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
                 (&local_790.base,"Try to load the script again.  (You can ALT-TAB and edit the script now.)");
@@ -129,7 +130,7 @@ LAB_0055a34a:
                 (&local_790.base,"Execute NOTEPAD on the script right now.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_790.base,"Cancel");
       iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        (&local_790,&DAT_031089e8,-1,0);
+                        (&local_790,g_ScriptSyntaxErrorMessage,-1,0);
       if (iVar4 == 0) break;
       if (iVar4 == 1) {
         core_script_cpp_CScript_FUN_00559870(this_ptr);

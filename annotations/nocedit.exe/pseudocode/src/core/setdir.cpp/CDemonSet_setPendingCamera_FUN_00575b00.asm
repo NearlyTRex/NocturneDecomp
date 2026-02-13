@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   hold_time
 ;
 ; XREF[3]:
-;   core_event.cpp_CEventList_FUN_004aacc0 at 004ad715
+;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ad715
 ;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30 at 0054cd5b
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055f85c
 ;

@@ -13,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 292,
-    "complexity_score": 197,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
     "pseudocode_lines": 117,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 409
   },
@@ -43,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CScript_dbLoad_FUN_005603c0",
-    "signature": "void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *param_2)"
+    "signature": "void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *filename)"
   },
   "function_calls": [
     {
@@ -388,7 +387,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "filename",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -396,48 +395,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "text": "void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "text": "local_c = engine_dosio_c_getFileSize_FUN_00481880(\"world\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "text": "file_handle = engine_dosio_c_getFile_FUN_00481a50(\"world\",param_2,\"rt\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open world\\\\%s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "text": "(\"SCScipt::dbLoad - error parsing %s record %d\",param_2,this_ptr->dialog_entry_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_2",
-      "text": "(g_CEditorToolsPtr,\"Warning! Duplicate wav string %s detected in %s\",local_334,param_2);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 116,

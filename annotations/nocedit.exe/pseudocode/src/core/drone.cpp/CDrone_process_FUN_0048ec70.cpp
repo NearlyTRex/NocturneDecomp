@@ -22,8 +22,6 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
   CDrone *pCVar8;
   uint uVar9;
   CVector3f *pCVar10;
-  int extraout_EAX;
-  int extraout_EAX_00;
   CPathMap *path_map;
   uint uVar11;
   float fVar12;
@@ -82,8 +80,8 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
   if (iVar7 == 0) {
     switch(iVar5) {
     case 0:
-      core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-      if (extraout_EAX == 0) {
+      iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      if (iVar5 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CDemonActor *)0x0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -99,8 +97,8 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar2 = 3.0f;
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-        core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
-        if (extraout_EAX_00 == 0) {
+        iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        if (iVar5 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
         }
@@ -128,14 +126,11 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
         }
-        else if ((0 < iVar5) && (*(float *)(this_ptr->base).unk2 <= 0.0)) {
+        else if ((0 < iVar5) && ((float)(this_ptr->base).unk2 <= 0.0)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,2,1);
           uVar9 = *(uint *)(this_ptr->unk + 0x14);
-          (this_ptr->base).unk2[0] = '\0';
-          (this_ptr->base).unk2[1] = '\0';
-          (this_ptr->base).unk2[2] = -0x80;
-          (this_ptr->base).unk2[3] = '?';
+          (this_ptr->base).unk2 = 0x3f800000;
           iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar9);
           if (iVar5 == 0) {
             uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -212,8 +207,8 @@ LAB_0048ef7a:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_0048f284_caseD_3:
-  if (0.0 < *(float *)(this_ptr->base).unk2) {
-    *(float *)(this_ptr->base).unk2 = *(float *)(this_ptr->base).unk2 - delta_time;
+  if (0.0 < (float)(this_ptr->base).unk2) {
+    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
   }
   if ((local_1c == 1) &&
      (iVar5 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290

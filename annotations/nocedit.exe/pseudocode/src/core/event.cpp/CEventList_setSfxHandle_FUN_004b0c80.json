@@ -6,24 +6,20 @@
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 174,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 49,
-    "suspect_count": 11,
-    "suspect_types": [
-      "format_string_mismatch",
-      "pointer_cast",
-      "stack_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 142
   },
   "cross_references": [
     {
       "addr": "004aacc0",
       "from_addr": "004ac5a2",
-      "name": "core_event.cpp_CEventList_FUN_004aacc0",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_004aacc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -37,18 +33,18 @@
     ],
     "convention": "__cdecl",
     "name": "core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80",
-    "signature": "void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr)"
+    "signature": "void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr,char *name,uint sfx_handle)"
   },
   "function_calls": [
     {
       "addr": "004b0d60",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004b0d60"
+      "name": "core_event.cpp_CEventList_findSfxEntry_FUN_004b0d60"
     },
     {
       "addr": "004b0db0",
       "is_variadic": false,
-      "name": "core_event.cpp_CEventList_FUN_004b0db0"
+      "name": "core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0"
     },
     {
       "addr": "00506f10",
@@ -127,10 +123,10 @@
     "pcode_op_count": 357
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -139,90 +135,22 @@
         "offset": 4,
         "size": 4,
         "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "pcVar4 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000008",
-      "text": "cVar1 = *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000008",
-      "text": "cVar1 = in_stack_00000008[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_0000000c",
-      "text": "this_ptr[1].event_list[iVar2 * 0x48] = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"CEventList::setSfxHandle - sfx handle name %s is t...\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 37,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CEventList::setSfxHandle - sfx handle name %s is too l",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

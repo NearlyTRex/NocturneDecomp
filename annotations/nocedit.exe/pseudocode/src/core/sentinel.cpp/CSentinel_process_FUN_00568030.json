@@ -4,31 +4,31 @@
       {
         "category": "other",
         "column": 73,
-        "line": 241,
+        "line": 239,
         "message": "C-style cast from 'CSentinel *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 327,
+        "line": 321,
         "message": "C-style cast from 'CSentinel *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 369,
+        "line": 363,
         "message": "use of undeclared identifier 'stack0xfffffe60'; did you mean 'in_stack_fffffe60'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 43,
-        "line": 423,
+        "line": 417,
         "message": "use of undeclared identifier 'stack0xffffff2c'"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 489,
+        "line": 483,
         "message": "C-style cast from 'CSentinel *' to 'float' is not allowed"
       }
     ],
@@ -37,19 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 1024,
-    "complexity_score": 1151,
+    "complexity_score": 1100,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 20,
-    "pseudocode_lines": 481,
-    "suspect_count": 65,
+    "pseudocode_lines": 475,
+    "suspect_count": 61,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 1505
+    "total_lines": 1499
   },
   "cross_references": [],
   "function": {
@@ -798,372 +797,351 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_EAX_00",
-      "text": "CSentinel *extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_fffffe60",
       "text": "CSentinel *in_stack_fffffe60;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_fffffe68",
       "text": "CSentinel *in_stack_fffffe68;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
+      "line": 79,
       "match": "in_stack_fffffe68",
       "text": "pCVar10 = in_stack_fffffe68;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 82,
       "match": "in_stack_fffffe68",
       "text": "pCVar10 = in_stack_fffffe68, iVar3 == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
+      "line": 83,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)(this_ptr->base).victim;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 86,
+      "line": 84,
       "match": "in_stack_fffffe60",
       "text": "pCVar6 = (*(((in_stack_fffffe60->base).base.base.vtable._uc)->_uc).getGrabber)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 85,
       "match": "in_stack_fffffe60",
       "text": "((CCharacter *)in_stack_fffffe60);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 88,
+      "line": 86,
       "match": "in_stack_fffffe68",
       "text": "pCVar10 = in_stack_fffffe68;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 90,
+      "line": 88,
       "match": "in_stack_fffffe60",
       "text": "(pCVar2 = (CCharacter *)(this_ptr->base).victim, in_stack_fffffe60 = this_ptr,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 92,
+      "line": 90,
       "match": "in_stack_fffffe68",
       "text": "(pCVar2,(CDemonActor *)this_ptr,0), pCVar10 = in_stack_fffffe68,",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 101,
       "match": "SQRT",
       "text": "fVar12 = SQRT(fVar11 * fVar11 + fVar12 * fVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 103,
       "match": "in_stack_fffffe68",
       "text": "in_stack_fffffe68 = (CSentinel *)(this_ptr->base).victim;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 106,
+      "line": 104,
       "match": "in_stack_fffffe68",
       "text": "if (ABS(local_c8.y - (in_stack_fffffe68->base).base.base.location.position.y) <=",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 104,
       "match": "ABS",
       "text": "if (ABS(local_c8.y - (in_stack_fffffe68->base).base.base.location.position.y) <=",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
+      "line": 107,
       "match": "in_stack_fffffe68",
       "text": "(iVar3 = (*(((in_stack_fffffe68->base).base.base.vtable._uc)->_uc).getGrabbed)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 108,
       "match": "in_stack_fffffe68",
       "text": "((CCharacter *)in_stack_fffffe68,(CDemonActor *)this_ptr,0),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 109,
       "match": "in_stack_fffffe68",
       "text": "pCVar10 = in_stack_fffffe68, iVar3 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 110,
       "match": "in_stack_fffffe68",
       "text": "in_stack_fffffe68 = pCVar10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 126,
+      "line": 124,
       "match": "in_stack_fffffe68",
       "text": "in_stack_fffffe68 = pCVar10;",
       "type": "stack_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 178,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX == 0) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 179,
+      "line": 177,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
+      "line": 182,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)0x2;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 193,
+      "line": 191,
       "match": "SQRT",
       "text": "if (SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58) <= 12.0f)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 195,
+      "line": 193,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)0x2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 200,
+      "line": 198,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)0x3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 209,
+      "line": 207,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)0x0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 221,
+      "line": 219,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)0x3f000000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 234,
+      "line": 232,
       "match": "in_stack_fffffe60",
       "text": "pCVar9,(CVector3f *)in_stack_fffffe60,fVar11,(float)in_stack_fffffe68);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 234,
+      "line": 232,
       "match": "in_stack_fffffe68",
       "text": "pCVar9,(CVector3f *)in_stack_fffffe60,fVar11,(float)in_stack_fffffe68);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 239,
+      "line": 237,
       "match": "SQRT",
       "text": "local_24 = SQRT(local_d8 * local_d8 + local_e0 * local_e0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 245,
+      "line": 243,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = pCVar10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 255,
+      "line": 253,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)0x5688d1;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 259,
+      "line": 257,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 261,
+      "line": 259,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)&(this_ptr->base).base.model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 264,
+      "line": 262,
       "match": "in_stack_fffffe60",
       "text": "((CMotionController *)in_stack_fffffe60,10,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 269,
+      "line": 267,
       "match": "in_stack_fffffe60",
       "text": "((CMotionController *)in_stack_fffffe60,4,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 278,
+      "line": 273,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)&(this_ptr->base).base.model;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 275,
+      "match": "in_stack_fffffe60",
+      "text": "((CMotionController *)in_stack_fffffe60,0,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 280,
       "match": "in_stack_fffffe60",
-      "text": "((CMotionController *)in_stack_fffffe60,0,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 286,
-      "match": "extraout_EAX_00",
-      "text": "if (extraout_EAX_00 == (CSentinel *)0x0) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 287,
-      "match": "in_stack_fffffe60",
-      "text": "in_stack_fffffe60 = extraout_EAX_00;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 287,
-      "match": "extraout_EAX_00",
-      "text": "in_stack_fffffe60 = extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 293,
-      "match": "in_stack_fffffe60",
-      "text": "in_stack_fffffe60 = (CSentinel *)&(this_ptr->base).base.model;",
+      "text": "in_stack_fffffe60 = (CSentinel *)core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 295,
-      "match": "in_stack_fffffe60",
-      "text": "((CMotionController *)in_stack_fffffe60,2,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 299,
-      "match": "in_stack_fffffe60",
-      "text": "in_stack_fffffe60 = (CSentinel *)(this_ptr->base).victim;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 301,
+      "line": 281,
       "match": "in_stack_fffffe60",
       "text": "if (in_stack_fffffe60 == (CSentinel *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 307,
+      "line": 287,
+      "match": "in_stack_fffffe60",
+      "text": "in_stack_fffffe60 = (CSentinel *)&(this_ptr->base).base.model;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 289,
+      "match": "in_stack_fffffe60",
+      "text": "((CMotionController *)in_stack_fffffe60,2,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 293,
+      "match": "in_stack_fffffe60",
+      "text": "in_stack_fffffe60 = (CSentinel *)(this_ptr->base).victim;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 295,
+      "match": "in_stack_fffffe60",
+      "text": "if (in_stack_fffffe60 == (CSentinel *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 301,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)0x3f000000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 320,
+      "line": 314,
       "match": "in_stack_fffffe60",
       "text": "(CVector3f *)in_stack_fffffe60,fVar12,(float)in_stack_fffffe68);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 320,
+      "line": 314,
       "match": "in_stack_fffffe68",
       "text": "(CVector3f *)in_stack_fffffe60,fVar12,(float)in_stack_fffffe68);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 326,
+      "line": 320,
       "match": "SQRT",
       "text": "SQRT(local_114 * local_114 + local_11c * local_11c + local_118 * local_118)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 333,
+      "line": 327,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = pCVar10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 344,
+      "line": 338,
+      "match": "in_stack_fffffe60",
+      "text": "in_stack_fffffe60 = pCVar10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 347,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = pCVar10;",
       "type": "stack_param"
@@ -1176,78 +1154,71 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 359,
-      "match": "in_stack_fffffe60",
-      "text": "in_stack_fffffe60 = pCVar10;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 362,
+      "line": 356,
       "match": "&stack0xfffffe60",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe60);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 404,
+      "line": 398,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)(this_ptr->base).victim;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 405,
+      "line": 399,
       "match": "in_stack_fffffe60",
       "text": "if (in_stack_fffffe60 == (CSentinel *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 410,
+      "line": 404,
       "match": "in_stack_fffffe60",
       "text": "local_f8.x = (in_stack_fffffe60->base).base.base.location.position.x -",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 412,
+      "line": 406,
       "match": "in_stack_fffffe60",
       "text": "local_f8.y = (in_stack_fffffe60->base).base.base.location.position.y -",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 414,
+      "line": 408,
       "match": "in_stack_fffffe60",
       "text": "local_f8.z = (in_stack_fffffe60->base).base.base.location.position.z -",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 416,
+      "line": 410,
       "match": "in_stack_fffffe60",
       "text": "in_stack_fffffe60 = (CSentinel *)&stack0xffffff2c;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 416,
+      "line": 410,
       "match": "&stack0xffffff2c",
       "text": "in_stack_fffffe60 = (CSentinel *)&stack0xffffff2c;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 418,
+      "line": 412,
       "match": "in_stack_fffffe60",
       "text": "((CVector3f *)in_stack_fffffe60,&local_f8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 482,
+      "line": 476,
       "match": "in_stack_fffffe60",
       "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe60);",
       "type": "stack_param"

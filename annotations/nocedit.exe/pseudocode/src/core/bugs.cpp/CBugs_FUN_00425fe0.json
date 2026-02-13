@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 20,
-        "line": 89,
+        "line": 87,
         "message": "cannot cast from type 'float' to pointer type 'float *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 119,
+        "line": 117,
         "message": "use of undeclared identifier 'stack0xfffffe78'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 122,
+        "line": 120,
         "message": "use of undeclared identifier 'stack0xfffffe78'"
       }
     ],
@@ -25,21 +25,20 @@
   },
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 323,
+    "complexity_score": 296,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 5,
-    "pseudocode_lines": 153,
-    "suspect_count": 14,
+    "pseudocode_lines": 151,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 492
+    "total_lines": 490
   },
   "cross_references": [
     {
@@ -336,29 +335,29 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EAX",
-      "text": "CPathMap *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(float *)((int)",
       "text": "pfVar6 = (float *)((int)pfVar6 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 65,
+      "match": "ABS",
+      "text": "if ((((float)2 < ABS(local_48)) || ((float)2 < ABS(local_4c))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
       "match": "ABS",
       "text": "if ((((float)2 < ABS(local_48)) || ((float)2 < ABS(local_4c))) ||",
       "type": "decompiler_intrinsic"
@@ -366,62 +365,48 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 66,
-      "match": "ABS",
-      "text": "if ((((float)2 < ABS(local_48)) || ((float)2 < ABS(local_4c))) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
       "match": "ABS",
       "text": "((float)2 < ABS(local_44))) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
-      "match": "extraout_EAX",
-      "text": "this_ptr_01 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 77,
       "match": "in_stack_00000008",
       "text": "CStack_90.z = 2.0f * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 103,
       "match": "in_stack_00000008",
       "text": "(fVar2 = this_ptr->damage_timer - in_stack_00000008, this_ptr->damage_timer = fVar2,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 112,
+      "line": 110,
       "match": "&stack0xfffffe78",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe78);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 115,
+      "line": 113,
       "match": "&stack0xfffffe78",
       "text": "(this_ptr_00,(SDamageInfo *)&stack0xfffffe78);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 127,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 128,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"

@@ -267,7 +267,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 0042f642 | g_CDemonMissionPtr
     PUSH EDI                            ; 0042f648 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_00524030 ; 0042f649
-        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; char * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
+        ;   XREF to: 00524030 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission * this_ptr, char * name)
     MOV EBX,EAX                         ; 0042f64e
     ADD ESP,0x8                         ; 0042f650
     MOV EDI,EAX                         ; 0042f653

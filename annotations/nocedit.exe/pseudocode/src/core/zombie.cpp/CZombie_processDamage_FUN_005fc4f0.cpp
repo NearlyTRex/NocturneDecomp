@@ -29,10 +29,7 @@ core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_ptr,SDamageInfo
   }
   fVar1 = (this_ptr->base).base.hit_points;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).unk2[0] = -0x66;
-  (this_ptr->base).unk2[1] = -0x67;
-  (this_ptr->base).unk2[2] = -0x67;
-  (this_ptr->base).unk2[3] = '?';
+  (this_ptr->base).unk2 = 0x3f99999a;
   if (0.0 < fVar1) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,4,1);

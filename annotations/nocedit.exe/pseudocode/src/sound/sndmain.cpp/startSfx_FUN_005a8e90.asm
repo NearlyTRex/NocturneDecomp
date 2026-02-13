@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[23]:
-;   core_event.cpp_CEventList_FUN_004b0f00 at 004b0f59
+;   core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00 at 004b0f59
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c1736
 ;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 at 004d1f5f
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e43a8

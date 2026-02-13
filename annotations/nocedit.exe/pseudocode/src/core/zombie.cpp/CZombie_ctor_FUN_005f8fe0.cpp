@@ -72,7 +72,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   pCVar3->unk4[0x61] = '\0';
   pCVar3->unk4[0x62] = '\0';
   pCVar3->unk4[99] = '\0';
-  (pCVar3->base).field14_0xbeb8 = 0;
+  (pCVar3->base).allow_pathfind_to_new_targets = 0;
   pCVar3->is_miner_zombie = (uint)(iVar5 == 0);
   return pCVar3;
 }
