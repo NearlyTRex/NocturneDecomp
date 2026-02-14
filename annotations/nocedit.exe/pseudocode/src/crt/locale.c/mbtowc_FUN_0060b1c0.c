@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack
-mbtowc(wchar_t *wide_char,char *mb_string,SIZE_T max_bytes)
+int __watcallStack mbtowc(wchar_t *wide_char,char *mb_string,SIZE_T max_bytes)
 
 {
   int iVar1;

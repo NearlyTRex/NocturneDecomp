@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_backgnd_cpp_CBackgroundActor_hasCollision_FUN_004129f0 (CBackgroundActor *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_backgnd_cpp_CBackgroundActor_hasCollision_FUN_004129f0(CBackgroundActor *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CBackgroundActor * Stack[0x4]:4   this_ptr

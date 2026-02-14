@@ -2,13 +2,11 @@
 // Address: 0042f730
 // Address Range: [[0042f730, 0042f7f4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_getPropertyList_FUN_0042f730 (CCharacter *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_getPropertyList_FUN_0042f730(CCharacter *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_getPropertyList_FUN_0042f730
-          (CCharacter *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_charactr_cpp_CCharacter_getPropertyList_FUN_0042f730(CCharacter *this_ptr,CActorPropertyList *property_list)
 
 {
   int iVar1;

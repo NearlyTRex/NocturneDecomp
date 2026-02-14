@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90(CLodFace *this_ptr,int vertex_index)
+int __cdecl shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90(CLodFace *this_ptr,int vertex_index)
 
 {
   if (vertex_index == this_ptr->vertex_idx_0) {

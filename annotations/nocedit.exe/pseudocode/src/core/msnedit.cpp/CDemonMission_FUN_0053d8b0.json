@@ -4,32 +4,8 @@
       {
         "category": "format_error",
         "column": 59,
-        "line": 63,
+        "line": 61,
         "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 82,
-        "line": 76,
-        "message": "use of undeclared identifier 'stack0xffffafd8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 79,
-        "message": "use of undeclared identifier 'stack0xffffafe0'"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 81,
-        "message": "member reference base type 'byte[9472]' (aka 'unsigned char[9472]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 147,
-        "message": "member reference base type 'byte[9472]' (aka 'unsigned char[9472]') is not a structure or union"
       }
     ],
     "success": false,
@@ -37,21 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 623,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 9,
-    "pseudocode_lines": 173,
-    "suspect_count": 42,
+    "pseudocode_lines": 171,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
-      "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 566
+    "total_lines": 564
   },
   "cross_references": [
     {
@@ -71,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_msnedit.cpp_CDemonMission_FUN_0053d8b0",
-    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d8b0 (CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4)"
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d8b0(CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4)"
   },
   "function_calls": [
     {
@@ -325,297 +297,38 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
-      "text": "(CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d8b0(CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
-      "text": "(CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d8b0(CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
-      "text": "(CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d8b0(CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "text": "CDemonActor *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_EDI",
-      "text": "CDemonActor *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_0000001c",
-      "text": "CDemonMission *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 36,
       "match": "(int *)((int)",
-      "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar7) + 0x2c) != 0) {",
+      "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 0x2c) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 43,
       "match": "(int *)((int)",
-      "text": "(char *)(*(int *)((int)g_ActorClassRegistrations + iVar7) + 1));",
+      "text": "(&local_624.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 1))",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 69,
-      "match": "&stack0xffffafd8",
-      "text": "core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffafd8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_4",
-      "text": "(*(((*(CDemonActor **)(param_4 + 0x28))->vtable)._ub)->getPropertyList)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 72,
-      "match": "&stack0xffffafe0",
-      "text": "(*(CDemonActor **)(param_4 + 0x28),(CActorPropertyList *)&stack0xffffafe0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_4",
-      "text": "(*(CDemonActor **)(param_4 + 0x28),(CActorPropertyList *)&stack0xffffafe0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 73,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = (CDemonActor *)0x0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 74,
-      "match": "._20_4_",
-      "text": "if (0 < (int)auStack_2b24._20_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 139,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = (CDemonActor *)(unaff_ESI->actor_name + 1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 139,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = (CDemonActor *)(unaff_ESI->actor_name + 1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 140,
-      "match": "unaff_ESI",
-      "text": "} while ((int)unaff_ESI < (int)auStack_2b24._20_4_);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 140,
-      "match": "._20_4_",
-      "text": "} while ((int)unaff_ESI < (int)auStack_2b24._20_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 143,
-      "match": "in_stack_00000018",
-      "text": "pcVar4 = *(char **)(in_stack_00000018 + 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 144,
-      "match": "unaff_EDI",
-      "text": "pCVar6 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 154,
-      "match": "in_stack_00000018",
-      "text": "iVar9 = *(int *)(in_stack_00000018 + 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 155,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI->location).position.x = *(float *)(iVar9 + 0x20);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 156,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI->location).position.y = *(float *)(iVar9 + 0x24);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 157,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI->location).position.z = *(float *)(iVar9 + 0x28);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 158,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI->location).area_id = *(int *)(iVar9 + 0x2c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 159,
-      "match": "in_stack_00000018",
-      "text": "iVar9 = *(int *)(in_stack_00000018 + 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 160,
-      "match": "unaff_EDI",
-      "text": "if (&unaff_EDI->orient != (UOrientationVector *)(iVar9 + 0x30)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 161,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI->orient).vec.x = *(float *)(iVar9 + 0x30);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 162,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI->orient).vec.y = *(float *)(iVar9 + 0x34);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 163,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI->orient).vec.z = *(float *)(iVar9 + 0x38);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 165,
-      "match": "unaff_EDI",
-      "text": "(*((unaff_EDI->vtable)._ub)->setup)(unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 165,
-      "match": "unaff_EDI",
-      "text": "(*((unaff_EDI->vtable)._ub)->setup)(unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 166,
-      "match": "in_stack_0000001c",
-      "text": "pCVar6 = in_stack_0000001c->selected_actor;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 167,
-      "match": "in_stack_0000001c",
-      "text": "core_msnedit_cpp_CDemonMission_FUN_0053c140(in_stack_0000001c,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 168,
-      "match": "in_stack_0000001c",
-      "text": "core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(in_stack_0000001c,(int)pCVar6);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 169,
-      "match": "in_stack_0000001c",
-      "text": "core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(in_stack_0000001c,pCVar6,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 170,
-      "match": "in_stack_0000001c",
-      "text": "core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(in_stack_0000001c,unaff_ESI);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 170,
-      "match": "unaff_ESI",
-      "text": "core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(in_stack_0000001c,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 171,
-      "match": "in_stack_0000001c",
-      "text": "core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 172,
-      "match": "in_stack_0000001c",
-      "text": "core_msnedit_cpp_CDemonMission_FUN_0053c140(in_stack_0000001c,(int)unaff_ESI);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 172,
-      "match": "unaff_ESI",
-      "text": "core_msnedit_cpp_CDemonMission_FUN_0053c140(in_stack_0000001c,(int)unaff_ESI);",
-      "type": "unaffected_reg"
     }
   ]
 }

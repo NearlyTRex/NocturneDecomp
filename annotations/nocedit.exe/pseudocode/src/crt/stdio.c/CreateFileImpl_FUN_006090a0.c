@@ -2,13 +2,11 @@
 // Address: 006090a0
 // Address Range: [[006090a0, 006092e0]]
 // Convention: __cdecl
-// Signature: HANDLE __cdecl crt_stdio_c_CreateFileImpl_FUN_006090a0 (char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)
+// Signature: HANDLE __cdecl crt_stdio_c_CreateFileImpl_FUN_006090a0(char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)
 
 #include "nocturne.h"
 
-HANDLE __cdecl
-CreateFileImpl
-          (char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)
+HANDLE __cdecl CreateFileImpl(char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)
 
 {
   uint *puVar1;
@@ -99,7 +97,7 @@ LAB_006091db:
     pvVar3 = CreateFallbackHandle();
     handle_index = (HANDLE)(*PTR_crt_sync_c_RegisterHandle_FUN_00602438_00684ef0)(pvVar3);
     uVar4 = 0x2000;
-    (*DAT_0068528c)();
+    (*DAT_0068528c)(0,handle_index);
   }
   if (access_mode_00 == 2) {
     uVar4 = uVar4 | 3;

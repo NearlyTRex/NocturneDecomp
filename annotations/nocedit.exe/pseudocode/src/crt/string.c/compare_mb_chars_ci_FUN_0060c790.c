@@ -19,8 +19,8 @@ int __cdecl compare_mb_chars_ci(char *str1,char *str2)
   copyMbChar(local_10,str2);
   iVar1 = mblen(str2);
   local_10[iVar1] = '\0';
-  SomethingWithUppercaseCharacterConvert();
-  SomethingWithUppercaseCharacterConvert();
+  SomethingWithUppercaseCharacterConvert(local_c);
+  SomethingWithUppercaseCharacterConvert(local_10);
   iVar1 = mbcmp(local_c,local_10);
   return iVar1;
 }

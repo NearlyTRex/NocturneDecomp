@@ -2,14 +2,11 @@
 // Address: 00547d00
 // Address Range: [[00547d00, 00547dc0]]
 // Convention: __cdecl
-// Signature: int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00 (CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint)
+// Signature: int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
 
 #include "nocturne.h"
 
-int __cdecl
-core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-          (CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,
-          int direction_hint)
+int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
 
 {
   int iVar1;

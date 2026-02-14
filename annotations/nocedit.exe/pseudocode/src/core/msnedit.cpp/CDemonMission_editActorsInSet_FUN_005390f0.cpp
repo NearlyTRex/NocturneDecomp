@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)
+int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)
 
 {
   CGame *this_ptr_00;
@@ -101,7 +100,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
   float local_3c;
   int local_38;
   float local_34;
-  uint local_30;
+  _BIT_INTEGER local_30;
   float local_2c;
   float local_28;
   float local_24;
@@ -135,7 +134,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
   if (param_2 != 0) {
     DAT_02f7c53c = 0;
     this_ptr->current_camera_index = 0;
-    DAT_02f7c634 = 0;
+    INT_02f7c634 = 0;
     g_CEdCheckInstance.checked_state = 1;
   }
   FLOAT_02f7c540 = 5.0f;
@@ -177,7 +176,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
   local_24 = 0.0;
   local_60 = 0;
   local_54 = &g_CDemonCameraInstance.base.position.y;
-  DAT_00680818 = 1e+20;
+  INT_00680818 = 0x60ad78ec;
   local_58 = &g_CDemonCameraInstance.base.position.z;
   do {
     local_44 = g_CDemonSetPtr->selected_camera_index;
@@ -186,7 +185,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
     local_30 = g_MouseButtonFlags;
     wincore_winrun_cpp_doNothing_FUN_005f2f80();
     local_38 = -1;
-    if (DAT_02f7c634 != 2) {
+    if (INT_02f7c634 != 2) {
       puVar8 = &DAT_00680830;
       pcVar15 = local_2b0;
       for (iVar11 = 0x32; iVar11 != 0; iVar11 = iVar11 + -1) {
@@ -196,7 +195,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
       }
       switch(DAT_02f7c53c) {
       case 0:
-        if ((g_CEdCheckInstance.checked_state != 0) && (g_MouseButtonFlags == 0)) {
+        if ((g_CEdCheckInstance.checked_state != 0) && (g_MouseButtonFlags.dword == 0)) {
           core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                     (g_CDemonSetPtr,this_ptr->selected_actor,0);
         }
@@ -390,23 +389,24 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
         core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
       }
       iVar11 = local_14;
-      if ((((this_ptr->show_3d_viewport != 0) && (iVar6 = DAT_02f7c634, DAT_02f7c634 == 0)) &&
+      if ((((this_ptr->show_3d_viewport != 0) && (iVar6 = INT_02f7c634, INT_02f7c634 == 0)) &&
           (iVar7 = core_setedit_cpp_CDemonSet_FUN_00577af0(g_CDemonSetPtr), local_38 = iVar7,
           iVar11 = local_14, -1 < iVar7)) &&
          (iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar11 = iVar6, iVar1 != 0))
       {
         core_script_cpp_CScript_initEditorLayout_FUN_00566660
                   (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
-        DAT_02f7c634 = 1;
+        INT_02f7c634 = 1;
         core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(g_CDemonMissionPtr,1);
         engine_2d_c_clearInputAndWait_FUN_00403260();
-        core_script_cpp_CScript_FUN_00565f70(g_CScriptPtr,g_CDemonSetPtr->cameras[iVar7].name);
+        core_script_cpp_CScript_setParameterValue_FUN_00565f70
+                  (g_CScriptPtr,g_CDemonSetPtr->cameras[iVar7].name);
         local_38 = -1;
         iVar11 = local_14;
       }
       local_14 = iVar11;
       core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
-      if ((DAT_02f7c538 == 0) && (g_ActiveButton == (CEdButton *)0x0)) {
+      if ((DAT_02f7c538 == 0) && (g_ActiveControl == (void *)0x0)) {
         pCVar5 = core_msnedit_cpp_CDemonMission_FUN_0053c340(this_ptr,g_MouseX,g_MouseY);
         this_ptr->hovered_actor = pCVar5;
         if (pCVar5 != (CDemonActor *)0x0) {
@@ -501,12 +501,12 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
     }
     core_fire_cpp_CFireEffect_process_FUN_004c6ec0(g_CFireEffectPtr);
     core_gore_cpp_CGore_process_FUN_004ed9e0(g_CGorePtr);
-    if (DAT_02f7c634 != 0) {
-      core_script_cpp_CScript_FUN_005645d0(g_CScriptPtr);
+    if (INT_02f7c634 != 0) {
+      core_script_cpp_CScript_drawEditor_FUN_005645d0(g_CScriptPtr);
     }
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(g_CEditorToolsPtr,0,0,0);
-    if (DAT_02f7c634 != 0) {
-      core_script_cpp_CScript_FUN_00566bc0(g_CScriptPtr);
+    if (INT_02f7c634 != 0) {
+      core_script_cpp_CScript_updateMouseCursor_FUN_00566bc0(g_CScriptPtr);
     }
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(g_CEditorToolsPtr,0,0,0);
@@ -518,7 +518,7 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
        (iVar11 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                            (g_CEditorToolsPtr,"Exit editor?"), iVar11 != 0))
     goto LAB_00539e00;
-    if (DAT_02f7c634 == 0) {
+    if (INT_02f7c634 == 0) {
       if (DAT_02f7c53c == 4) {
         local_3c = g_CGamePtr->delta_time_float;
         local_2c = local_3c;
@@ -650,13 +650,13 @@ core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_
           iVar11 = 0x101;
           core_script_cpp_CScript_initEditorLayout_FUN_00566660
                     (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
-          DAT_02f7c634 = 1;
+          INT_02f7c634 = 1;
         }
         else {
           iVar11 = 0;
           core_script_cpp_CScript_initEditorLayout_FUN_00566660
                     (g_CScriptPtr,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
-          DAT_02f7c634 = 2;
+          INT_02f7c634 = 2;
         }
 LAB_00539d68:
         core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(g_CDemonMissionPtr,iVar11);
@@ -664,22 +664,22 @@ LAB_00539d68:
       }
     }
     else {
-      core_script_cpp_CScript_FUN_00565130(g_CScriptPtr);
+      core_script_cpp_CScript_processEditorInput_FUN_00565130(g_CScriptPtr);
       iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3c);
       if (iVar11 != 0) {
-        if (DAT_02f7c634 == 1) {
+        if (INT_02f7c634 == 1) {
           iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
           if (iVar11 == 0) {
             core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
             iVar11 = 1;
-            DAT_02f7c634 = 2;
+            INT_02f7c634 = 2;
           }
           else {
             core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
             iVar11 = 1;
-            DAT_02f7c634 = 0;
+            INT_02f7c634 = 0;
           }
         }
         else {
@@ -688,13 +688,13 @@ LAB_00539d68:
             core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
             iVar11 = 1;
-            DAT_02f7c634 = 0;
+            INT_02f7c634 = 0;
           }
           else {
             core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
             iVar11 = 1;
-            DAT_02f7c634 = 1;
+            INT_02f7c634 = 1;
           }
         }
         goto LAB_00539d68;
@@ -738,7 +738,7 @@ LAB_00539e00:
       }
       return 2;
     }
-    if ((DAT_02f7c634 == 0) ||
+    if ((INT_02f7c634 == 0) ||
        (iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar11 != 0)) {
       iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x12);
       if (iVar11 != 0) {
@@ -919,15 +919,15 @@ LAB_0053a88c:
     }
     iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x41);
     if (iVar11 != 0) {
-      if (DAT_02f7c634 == 0) {
+      if (INT_02f7c634 == 0) {
         core_script_cpp_CScript_initEditorLayout_FUN_00566660
                   (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
-        DAT_02f7c634 = 1;
+        INT_02f7c634 = 1;
         core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(g_CDemonMissionPtr,1);
         engine_2d_c_clearInputAndWait_FUN_00403260();
       }
       in_stack_fffff698 = (CDemonSet *)0x53aa3e;
-      core_script_cpp_CScript_FUN_00566080(g_CScriptPtr);
+      core_script_cpp_CScript_checkSyntax_FUN_00566080(g_CScriptPtr);
     }
     if (-1 < local_14) {
       DAT_02f7c53c = local_14;
@@ -965,31 +965,31 @@ LAB_0053a88c:
       FLOAT_02f7c540 = 5.0f;
       in_stack_fffff698 = pCVar16;
     }
-    if (((((g_MouseButtonFlags & 1) == 0) && ((local_30 & 1) != 0)) && (DAT_02f7c538 == 0)) &&
-       (g_ActiveButton == (CEdButton *)0x0)) {
+    if (((((g_MouseButtonFlags.dword & 1) == 0) && ((local_30.dword & 1) != 0)) &&
+        (DAT_02f7c538 == 0)) && (g_ActiveControl == (void *)0x0)) {
       if ((this_ptr->selected_actor == (CDemonActor *)0x0) || (DAT_02f7c528 < 0)) {
         if (this_ptr->hovered_actor != (CDemonActor *)0x0) {
           in_stack_fffff698 = (CDemonSet *)g_CKeysPtr;
           iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
           if (iVar11 == 0) {
             if (this_ptr->hovered_actor == this_ptr->selected_actor) {
-              if ((local_30 != 0) || (0x3e999999 < (int)DAT_00680818)) goto LAB_0053aea7;
+              if ((local_30.dword != 0) || (0x3e999999 < INT_00680818)) goto LAB_0053aea7;
               core_msnedit_cpp_CDemonMission_FUN_0053c730(this_ptr);
               engine_2d_c_clearInputAndWait_FUN_00403260();
-              DAT_00680818 = 0.0;
+              INT_00680818 = 0;
             }
             else {
               core_msnedit_cpp_CDemonMission_FUN_0053c140(this_ptr,(int)this_ptr->hovered_actor);
-              DAT_00680818 = 0.0;
+              INT_00680818 = 0;
             }
           }
           else {
-            if (DAT_02f7c634 != 0) {
-              core_script_cpp_CScript_FUN_00565f70(g_CScriptPtr,this_ptr->hovered_actor->actor_name)
-              ;
+            if (INT_02f7c634 != 0) {
+              core_script_cpp_CScript_setParameterValue_FUN_00565f70
+                        (g_CScriptPtr,this_ptr->hovered_actor->actor_name);
             }
 LAB_0053aea7:
-            DAT_00680818 = 0.0;
+            INT_00680818 = 0;
           }
         }
       }
@@ -1007,37 +1007,37 @@ LAB_0053aea7:
               core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                         (this_ptr_01,this_ptr->selected_actor);
               engine_2d_c_clearInputAndWait_FUN_00403260();
-              local_30 = 0;
-              DAT_00680818 = 1e+10;
+              local_30.dword = 0;
+              INT_00680818 = 0x501502f9;
             }
             else {
               core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
                         (this_ptr_01,this_ptr->selected_actor,local_4e0);
               shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
                         (g_CEditorToolsPtr,local_4e0);
-              DAT_00680818 = 1e+10;
+              INT_00680818 = 0x501502f9;
             }
           }
           else {
-            if (DAT_02f7c634 == 0) goto LAB_0053ad72;
+            if (INT_02f7c634 == 0) goto LAB_0053ad72;
             core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
                       (this_ptr_01,this_ptr->selected_actor,local_60c);
-            core_script_cpp_CScript_FUN_00565f70(g_CScriptPtr,local_60c);
-            DAT_00680818 = 1e+10;
+            core_script_cpp_CScript_setParameterValue_FUN_00565f70(g_CScriptPtr,local_60c);
+            INT_00680818 = 0x501502f9;
           }
         }
         else {
           core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50
                     (this_ptr,(char *)this_ptr_01);
 LAB_0053ad72:
-          DAT_00680818 = 1e+10;
+          INT_00680818 = 0x501502f9;
         }
       }
     }
     else {
-      DAT_00680818 = g_CGamePtr->delta_time_float + DAT_00680818;
+      INT_00680818 = (int)(g_CGamePtr->delta_time_float + (float)INT_00680818);
     }
-    if (((g_MouseButtonFlags & 1) == 0) || ((local_30 & 1) == 0)) {
+    if (((g_MouseButtonFlags.dword & 1) == 0) || ((local_30.dword & 1) == 0)) {
       FLOAT_02f7c630 = 0.0;
     }
     else {

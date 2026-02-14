@@ -2,10 +2,10 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 #include "system/winuser.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CEdButton.h"
 #include "types/classes/CEditorTools.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SWindow.h"
@@ -22,9 +22,6 @@ extern CDemonActorType g_CElephantGunClassInfo;
 extern CDemonActorType g_CEmitterClassInfo;
 extern CDemonActorType g_CEnemyClassInfo;
 
-// CEdButton*
-extern CEdButton* g_ActiveButton;
-
 // CEditorTools
 extern CEditorTools g_CEditorToolsInstance;
 
@@ -36,6 +33,9 @@ extern HWND g_DialogParentWindow;
 
 // SWindow[5]
 extern SWindow g_WindowStack[5];
+
+// _BIT_INTEGER
+extern _BIT_INTEGER g_MouseButtonFlags;
 
 // char*
 extern char* g_ClipboardBackupText;
@@ -102,9 +102,6 @@ extern int g_MouseY;
 // uchar[32768]
 extern uchar g_ColorCubeLookup[32768];
 
-// uint
-extern uint g_MouseButtonFlags;
-
 // uint*[1200]
 extern uint* g_ZBufferScanlineArray[1200];
 
@@ -117,6 +114,9 @@ extern undefined4 DAT_02cf2bf8;
 extern undefined4 DAT_02cf4b30;
 extern undefined4 DAT_02cf4b34;
 extern undefined4 DAT_02cf4b38;
+
+// void*
+extern void* g_ActiveControl;
 
 // void*[1200]
 extern void* g_ScreenBufferArray[1200];

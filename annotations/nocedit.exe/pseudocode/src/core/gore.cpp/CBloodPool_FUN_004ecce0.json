@@ -6,18 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 335,
+    "complexity_score": 266,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 18,
-    "pseudocode_lines": 130,
-    "suspect_count": 19,
+    "pseudocode_lines": 131,
+    "suspect_count": 13,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float",
-      "undefined_data"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 429
+    "total_lines": 430
   },
   "cross_references": [
     {
@@ -87,7 +85,7 @@
     },
     {
       "addr": "0067c028",
-      "name": "DAT_0067c028",
+      "name": "SMRGLTextureBasic_0067c028",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -171,7 +169,7 @@
     },
     {
       "addr": "02d83368",
-      "name": "DAT_02d83368",
+      "name": "SMRGLHeaderPrimitive_02d83368",
       "type": "SMRGLHeaderPrimitive",
       "value": null
     }
@@ -350,130 +348,88 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_0067c028",
-      "text": "(g_CDemonRendererPtr2,&DAT_0067c028 + *(int *)(this_ptr->unk + 0x14) * 0x1d + local_18);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 37,
       "match": "ROUND",
       "text": "local_24.x = (int)ROUND(256.0f * -1.333);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 38,
       "match": "ROUND",
       "text": "local_24.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 39,
       "match": "ROUND",
       "text": "local_24.z = (int)ROUND(256.0f * -1.333);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 45,
       "match": "ROUND",
       "text": "local_48.x = (int)ROUND(256.0f * 1.333);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 46,
       "match": "ROUND",
       "text": "local_48.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 47,
       "match": "ROUND",
       "text": "local_48.z = (int)ROUND(256.0f * -1.333);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 53,
       "match": "ROUND",
       "text": "local_30.x = (int)ROUND(256.0f * 1.333);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 54,
       "match": "ROUND",
       "text": "local_30.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 55,
       "match": "ROUND",
       "text": "local_30.z = (int)ROUND(256.0f * 1.333);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 61,
       "match": "ROUND",
       "text": "CStack_54.x = (int)ROUND(256.0f * -1.333);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 62,
       "match": "ROUND",
       "text": "CStack_54.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 63,
       "match": "ROUND",
       "text": "CStack_54.z = (int)ROUND(256.0f * 1.333);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 68,
-      "match": "1.14794e-41",
-      "text": "g_RenderVertexBuffer[0].light = 1.14794e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 84,
-      "match": "1.14794e-41",
-      "text": "g_RenderVertexBuffer[1].light = 1.14794e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 100,
-      "match": "1.14794e-41",
-      "text": "g_RenderVertexBuffer[2].light = 1.14794e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 126,
-      "match": "1.14794e-41",
-      "text": "g_RenderVertexBuffer[3].light = 1.14794e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_02d83368",
-      "text": "(g_CDemonRendererPtr2,&DAT_02d83368);",
-      "type": "undefined_data"
     }
   ]
 }

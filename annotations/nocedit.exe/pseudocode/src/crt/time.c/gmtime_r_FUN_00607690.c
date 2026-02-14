@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-uint * __cdecl
-gmtime_r(int days,uint seconds,int timezone_offset,uint *param_4)
+uint * __cdecl gmtime_r(int days,uint seconds,int timezone_offset,uint *param_4)
 
 {
   ulonglong uVar1;

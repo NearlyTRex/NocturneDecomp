@@ -13,31 +13,32 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004d7810(void)
   _FILE *file;
   int iVar2;
   int iVar3;
-  int iVar4;
-  int iVar5;
-  float fVar6;
-  uint *puVar7;
+  float fVar4;
+  uint *puVar5;
+  int iVar6;
+  int iVar7;
   int iVar8;
-  int iVar9;
-  int iVar10;
-  char acStack_150 [200];
-  char acStack_88 [100];
+  char acStack_160 [200];
+  char acStack_98 [100];
+  int iStack_34;
+  int iStack_30;
+  _FILE *p_Stack_2c;
+  int iStack_28;
   int iStack_24;
   int iStack_20;
-  _FILE *p_Stack_1c;
+  int iStack_1c;
   int iStack_18;
   int iStack_14;
-  int iVar11;
   
   if (g_CheatFlags != 0) {
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     if (iVar2 != 0) {
       iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
       if (iVar2 != 0) {
-        fVar6 = (float)g_DebugRecording;
+        fVar4 = (float)g_DebugRecording;
         if (g_DebugRecording == 0) {
           g_DebugRecording = 1;
-          FLOAT_02d831bc = fVar6;
+          FLOAT_02d831bc = fVar4;
         }
         else {
           g_DebugRecording = 0;
@@ -49,57 +50,60 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004d7810(void)
       return;
     }
     if (g_DebugRecording != 0) {
-      _sprintf(acStack_88,"noc%05d.raw",FLOAT_02d831bc);
-      _sprintf(acStack_150,"Movie recording active: movie\\%s",acStack_88);
-      p_Stack_1c = engine_dosio_c_getFile_FUN_00481a50("movie",acStack_88,"wb");
-      if (p_Stack_1c != (_FILE *)0x0) {
-        iStack_20 = 0;
+      _sprintf(acStack_98,"noc%05d.raw",FLOAT_02d831bc);
+      _sprintf(acStack_160,"Movie recording active: movie\\%s",acStack_98);
+      p_Stack_2c = engine_dosio_c_getFile_FUN_00481a50("movie",acStack_98,"wb");
+      if (p_Stack_2c != (_FILE *)0x0) {
+        iStack_30 = 0;
         if (0 < INT_0067b668) {
           do {
-            iStack_18 = 0;
+            iStack_28 = 0;
             if (0 < INT_0067b664) {
-              iStack_24 = iStack_20 + 1;
+              iStack_34 = iStack_30 + 1;
               do {
-                file = p_Stack_1c;
-                iVar3 = (iStack_18 * g_WindowWidth) / INT_0067b664;
-                iVar4 = ((iStack_18 + 1) * g_WindowWidth) / INT_0067b664;
-                iVar2 = (iStack_20 * g_WindowHeight) / INT_0067b668;
-                iVar5 = (iStack_24 * g_WindowHeight) / INT_0067b668;
-                iVar10 = 0;
+                file = p_Stack_2c;
+                iStack_20 = (iStack_28 * g_WindowWidth) / INT_0067b664;
+                iStack_18 = ((iStack_28 + 1) * g_WindowWidth) / INT_0067b664;
+                iVar2 = (iStack_30 * g_WindowHeight) / INT_0067b668;
+                iVar3 = (iStack_34 * g_WindowHeight) / INT_0067b668;
                 iVar8 = 0;
-                iVar9 = 0;
-                iVar11 = 0;
-                if (iVar2 < iVar5) {
-                  iVar2 = iVar2 * 4;
-                  iStack_14 = iVar5 << 2;
+                iVar6 = 0;
+                iVar7 = 0;
+                iStack_14 = 0;
+                if (iVar2 < iVar3) {
+                  iStack_1c = iVar2 * 4;
+                  iStack_24 = iVar3 << 2;
                   do {
-                    if (iVar3 < iVar4) {
-                      puVar7 = (uint *)(iVar3 * 4 + *(int *)((int)g_ScreenBufferArray + iVar2));
-                      iVar5 = iVar3;
+                    if (iStack_20 < iStack_18) {
+                      puVar5 = (uint *)(iStack_20 * 4 +
+                                       *(int *)((int)g_ScreenBufferArray + iStack_1c));
+                      iVar2 = iStack_20;
                       do {
-                        uVar1 = *puVar7;
-                        puVar7 = puVar7 + 1;
-                        iVar8 = iVar8 + (uVar1 >> 0x10 & 0xff);
-                        iVar5 = iVar5 + 1;
-                        iVar10 = iVar10 + (uVar1 & 0xff);
-                        iVar11 = iVar11 + 1;
-                        iVar9 = iVar9 + (uVar1 >> 8 & 0xff);
-                      } while (iVar5 < iVar4);
+                        uVar1 = *puVar5;
+                        puVar5 = puVar5 + 1;
+                        iVar6 = iVar6 + (uVar1 >> 0x10 & 0xff);
+                        iVar2 = iVar2 + 1;
+                        iVar8 = iVar8 + (uVar1 & 0xff);
+                        iStack_14 = iStack_14 + 1;
+                        iVar7 = iVar7 + (uVar1 >> 8 & 0xff);
+                      } while (iVar2 < iStack_18);
                     }
-                    iVar2 = iVar2 + 4;
-                  } while (iVar2 < iStack_14);
+                    iStack_1c = iStack_1c + 4;
+                  } while (iStack_1c < iStack_24);
                 }
-                _fputc(iVar8 / iVar11,p_Stack_1c);
-                _fputc(iVar9 / iVar11,file);
-                _fputc(iVar10 / iVar11,file);
-                iStack_18 = iStack_18 + 1;
-              } while (iStack_18 < INT_0067b664);
+                iVar7 = iVar7 / iStack_14;
+                iVar8 = iVar8 / iStack_14;
+                _fputc(iVar6 / iStack_14,p_Stack_2c);
+                _fputc(iVar7,file);
+                _fputc(iVar8,file);
+                iStack_28 = iStack_28 + 1;
+              } while (iStack_28 < INT_0067b664);
             }
-            iStack_20 = iStack_20 + 1;
-          } while (iStack_20 < INT_0067b668);
+            iStack_30 = iStack_30 + 1;
+          } while (iStack_30 < INT_0067b668);
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_1c,"..\\core\\game.cpp",0x110);
-        engine_2d_c_drawText_FUN_00401fd0(acStack_150,0,0);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_2c,"..\\core\\game.cpp",0x110);
+        engine_2d_c_drawText_FUN_00401fd0(acStack_160,0,0);
         FLOAT_02d831bc = (float)((int)FLOAT_02d831bc + 1);
         return;
       }

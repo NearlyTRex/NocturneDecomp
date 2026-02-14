@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_bat_cpp_CBat_getBoundingBox_FUN_00414c60(CBat *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_bat_cpp_CBat_getBoundingBox_FUN_00414c60(CBat *this_ptr,CBoundingBox3D *out_box)
 
 {
   CKeyFramedModel *pCVar1;

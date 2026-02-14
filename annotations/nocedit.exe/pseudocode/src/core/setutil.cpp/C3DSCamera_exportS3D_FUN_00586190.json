@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 56,
-        "line": 21,
+        "line": 20,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 39,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 23,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 124
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -198,7 +198,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 11,
       "match": "fpatan",
       "text": "fVar2 = (float10)fpatan((float10)18 / (float10)this_ptr->projection_scale,",
       "type": "decompiler_intrinsic"

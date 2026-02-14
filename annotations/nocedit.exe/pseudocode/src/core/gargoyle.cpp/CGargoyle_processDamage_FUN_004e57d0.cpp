@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;
@@ -15,10 +14,11 @@ core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *this_ptr,SDama
   SMotion *pSVar2;
   uint uVar3;
   int iVar4;
+  CVector3f local_1c;
   
   iVar4 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            ((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffe4,&damage_info->impact_direction);
+            ((CDemonActor *)this_ptr,&local_1c,&damage_info->impact_direction);
   do {
     iVar4 = iVar4 + 1;
     core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);

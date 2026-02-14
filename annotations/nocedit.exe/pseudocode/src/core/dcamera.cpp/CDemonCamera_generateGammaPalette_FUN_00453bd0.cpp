@@ -2,13 +2,11 @@
 // Address: 00453bd0
 // Address Range: [[00453bd0, 00453c89]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0 (CDemonCamera *this_ptr,int gamma_value)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera *this_ptr,int gamma_value)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
-          (CDemonCamera *this_ptr,int gamma_value)
+void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera *this_ptr,int gamma_value)
 
 {
   uint uVar1;

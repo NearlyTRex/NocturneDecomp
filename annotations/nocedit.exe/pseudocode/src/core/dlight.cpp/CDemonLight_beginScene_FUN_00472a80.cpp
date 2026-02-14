@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int skip_clear_buffers)
+void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int skip_clear_buffers)
 
 {
   longlong lVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_setutil_cpp_C3DSCamera_savePVS_FUN_00587450(C3DSCamera *this_ptr,_FILE *file_handle)
+int __cdecl core_setutil_cpp_C3DSCamera_savePVS_FUN_00587450(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
   uint *puVar1;

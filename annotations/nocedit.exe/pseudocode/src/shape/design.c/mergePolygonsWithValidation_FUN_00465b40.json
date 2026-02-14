@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 59,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many"
     ],
-    "total_lines": 129
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_mergePolygonsWithValidation_FUN_00465b40",
-    "signature": "void __cdecl shape_design_c_mergePolygonsWithValidation_FUN_00465b40 (int polygon1_index,int polygon2_index,float tolerance,int enforce_part_match)"
+    "signature": "void __cdecl shape_design_c_mergePolygonsWithValidation_FUN_00465b40(int polygon1_index,int polygon2_index,float tolerance,int enforce_part_match)"
   },
   "function_calls": [
     {
@@ -188,7 +188,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
+      "line": 8,
       "match": "fcos",
       "text": "fVar2 = (float10)fcos((float10)tolerance * (float10)0.01745329252);",
       "type": "decompiler_intrinsic"

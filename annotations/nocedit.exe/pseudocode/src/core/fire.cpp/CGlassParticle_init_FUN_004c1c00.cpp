@@ -2,14 +2,11 @@
 // Address: 004c1c00
 // Address Range: [[004c1c00, 004c1ce2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00 (CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex, CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
+// Signature: void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 
 #include "nocturne.h"
 
-void __cdecl
-core_fire_cpp_CGlassParticle_init_FUN_004c1c00
-          (CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,
-          CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
+void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 
 {
   CVector3f *pCVar1;

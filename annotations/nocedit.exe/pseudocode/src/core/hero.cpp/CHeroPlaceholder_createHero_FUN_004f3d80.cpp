@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActor * __cdecl
-core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,int param_2)
+CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,int param_2)
 
 {
   UOrientationVector *pUVar1;

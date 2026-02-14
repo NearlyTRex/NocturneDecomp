@@ -1,29 +1,25 @@
 {
   "complexity": {
     "assembly_lines": 533,
-    "complexity_score": 730,
+    "complexity_score": 653,
     "cross_reference_count": 10,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 290,
-    "suspect_count": 40,
+    "pseudocode_lines": 283,
+    "suspect_count": 35,
     "suspect_types": [
-      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "register_param",
-      "segment_register",
       "special_crt_function",
-      "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 823
+    "total_lines": 816
   },
   "cross_references": [
     {
       "addr": "00567630",
       "from_addr": "005676c1",
-      "name": "core_script.cpp_CScript_FUN_00567630",
+      "name": "core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -326,266 +322,231 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_EAX",
       "text": "void *extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 14,
       "match": "extraout_EAX_00",
       "text": "void *extraout_EAX_00;",
       "type": "extra_output"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 26,
-      "match": "in_GS",
-      "text": "ushort in_GS;",
-      "type": "register_param"
-    },
-    {
-      "description": "Segment register input (TLS or unusual code)",
-      "line": 26,
-      "match": "in_GS",
-      "text": "ushort in_GS;",
-      "type": "segment_register"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 53,
-      "match": "in_GS",
-      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
-      "type": "register_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._2_2_",
-      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
-      "match": "CONCAT22",
-      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Segment register input (TLS or unusual code)",
-      "line": 53,
-      "match": "in_GS",
-      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
-      "type": "segment_register"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 66,
       "match": "(int *)((int)",
       "text": "b = (int *)((int)local_48 + (num >> 1) * size);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 69,
       "match": "(void *)((int)",
       "text": "pvVar4 = (void *)((int)local_48 + (num - 1) * size);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 74,
       "match": "(void *)((int)",
       "text": "(local_48,(void *)((int)local_48 + iVar8),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 75,
       "match": "(void *)((int)",
       "text": "(void *)((int)local_48 + local_68),local_3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 77,
       "match": "(void *)((int)",
       "text": "((void *)((int)b - iVar8),b,(int *)((int)b + iVar8),local_3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 77,
       "match": "(int *)((int)",
       "text": "((void *)((int)b - iVar8),b,(int *)((int)b + iVar8),local_3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 79,
       "match": "(void *)((int)",
       "text": "((void *)((int)pvVar4 - local_68),(void *)((int)pvVar4 - iVar8),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 79,
       "match": "(void *)((int)",
       "text": "((void *)((int)pvVar4 - local_68),(void *)((int)pvVar4 - iVar8),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 96,
       "match": "(void *)((int)",
       "text": "pvVar7 = (void *)((int)local_48 + (num - 1) * size);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 121,
+      "line": 116,
       "match": "extraout_EAX",
       "text": "ptr1 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 118,
       "match": "(void *)((int)",
-      "text": "local_2c = (void *)((int)local_2c + size);",
+      "text": "local_34 = (void *)((int)local_34 + size);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 120,
       "match": "(void *)((int)",
-      "text": "local_20 = (void *)((int)local_20 + size);",
+      "text": "local_28 = (void *)((int)local_28 + size);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 142,
+      "line": 136,
       "match": "extraout_EAX_00",
       "text": "ptr1 = extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 138,
       "match": "(void *)((int)",
-      "text": "local_28 = (void *)((int)local_28 - size);",
+      "text": "local_30 = (void *)((int)local_30 - size);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
-      "match": "(void *)((int)",
-      "text": "local_28 = (void *)((int)local_28 + size);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 164,
+      "line": 140,
       "match": "(void *)((int)",
       "text": "pvVar4 = (void *)((int)local_2c - size);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 154,
+      "match": "(void *)((int)",
+      "text": "local_28 = (void *)((int)local_28 + size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
+      "match": "(void *)((int)",
+      "text": "pvVar4 = (void *)((int)local_2c - size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 165,
       "match": "(void *)((int)",
       "text": "pvVar7 = (void *)((int)local_48 + num * size);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 172,
       "match": "(uint *)((int)",
       "text": "puVar10 = (uint *)((int)local_28 - uVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 191,
       "match": "(uint *)((int)",
       "text": "puVar9 = (uint *)((int)puVar9 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 193,
       "match": "(uint *)((int)",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 208,
+      "line": 202,
       "match": "(uint *)((int)",
       "text": "puVar10 = (uint *)((int)pvVar7 - uVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 227,
+      "line": 221,
       "match": "(uint *)((int)",
       "text": "puVar9 = (uint *)((int)puVar9 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 229,
+      "line": 223,
       "match": "(uint *)((int)",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 239,
+      "line": 233,
       "match": "(void *)((int)",
       "text": "local_48 = (void *)((int)pvVar7 - uVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 253,
+      "line": 247,
       "match": "(void *)((int)",
       "text": "local_50 = (void *)((int)local_48 + num * size);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 255,
+      "line": 249,
       "match": "(void *)((int)",
       "text": "local_4c = (void *)((int)local_48 + local_40);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 257,
+      "line": 251,
       "match": "(void *)((int)",
       "text": "if ((void *)((int)local_48 + local_40) < local_50) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 262,
+      "line": 256,
       "match": "(uint *)((int)",
       "text": "puVar10 = (uint *)((int)local_20 - local_40);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 274,
-      "match": "(uint *)((int)",
-      "text": "puStack_18 = (uint *)((int)puStack_18 - local_38);",
+      "line": 267,
+      "match": "(void *)((int)",
+      "text": "local_20 = (void *)((int)local_20 - local_40);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 278,
+      "line": 271,
       "match": "(void *)((int)",
       "text": "local_4c = (void *)((int)local_4c + local_40);",
       "type": "pointer_cast"

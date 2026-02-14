@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 35,
+    "complexity_score": 33,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 18,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 66
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -47,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_applyActPalette_FUN_004319b0",
-    "signature": "void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_004319b0 (char *filename,void *bitmap_buffer,int bitmap_size,int palette_index)"
+    "signature": "void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_004319b0(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index)"
   },
   "function_calls": [
     {
@@ -160,7 +160,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(byte *)((int)",
       "text": "bitmap_buffer = (byte *)((int)bitmap_buffer + 1);",
       "type": "pointer_cast"

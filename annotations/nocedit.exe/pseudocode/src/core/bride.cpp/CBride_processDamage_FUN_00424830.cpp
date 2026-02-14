@@ -6,8 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *damage_info)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;
@@ -17,6 +18,7 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
   uint uVar3;
   int iVar4;
   char *sound_name;
+  CVector3f local_3c;
   CVector3f local_30;
   CVector3f local_24;
   
@@ -25,8 +27,7 @@ core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,SDamageInfo *d
     iVar2 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffc4,&damage_info->impact_direction)
-    ;
+              ((CDemonActor *)this_ptr,&local_3c,&damage_info->impact_direction);
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);

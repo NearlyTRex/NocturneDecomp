@@ -2,13 +2,11 @@
 // Address: 005b8e90
 // Address Range: [[005b8e90, 005b901f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_spike_cpp_CSpike_getPropertyList_FUN_005b8e90 (CSpike *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_spike_cpp_CSpike_getPropertyList_FUN_005b8e90(CSpike *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_spike_cpp_CSpike_getPropertyList_FUN_005b8e90
-          (CSpike *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_spike_cpp_CSpike_getPropertyList_FUN_005b8e90(CSpike *this_ptr,CActorPropertyList *property_list)
 
 {
   char *property_name;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hero_cpp_CHeroPlaceholder_getPropertyList_FUN_004f3f60 (CHeroPlaceholder *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_hero_cpp_CHeroPlaceholder_getPropertyList_FUN_004f3f60(CHeroPlaceholder *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CHeroPlaceholder * Stack[0x4]:4   this_ptr

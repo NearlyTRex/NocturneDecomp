@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920 (CEditorTools *this_ptr,int cursor_type,int width,int height)
+; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools *this_ptr,int cursor_type,int width,int height)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
@@ -12,7 +12,7 @@
 ; XREF[3]:
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e42b
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005399a0
-;   core_script.cpp_CScript_FUN_00566bc0 at 00566c06
+;   core_script.cpp_CScript_updateMouseCursor_FUN_00566bc0 at 00566c06
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0062362e

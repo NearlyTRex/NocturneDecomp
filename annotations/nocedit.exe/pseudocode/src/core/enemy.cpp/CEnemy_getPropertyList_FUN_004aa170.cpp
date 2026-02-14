@@ -2,13 +2,11 @@
 // Address: 004aa170
 // Address Range: [[004aa170, 004aa24f]]
 // Convention: __cdecl
-// Signature: int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170 (CEnemy *this_ptr,CActorPropertyList *property_list)
+// Signature: int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-int __cdecl
-core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170
-          (CEnemy *this_ptr,CActorPropertyList *property_list)
+int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,CActorPropertyList *property_list)
 
 {
   CActorProperty *pCVar1;

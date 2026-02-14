@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00453950 (CDemonCamera *this_ptr,int alpha_index)
+; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00453950(CDemonCamera *this_ptr,int alpha_index)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

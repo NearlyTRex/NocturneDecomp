@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-float10 __fpustack
-pentiumFdivBugWorkaroundDouble(float10 param0,double param1)
+float10 __fpustack pentiumFdivBugWorkaroundDouble(float10 param0,double param1)
 
 {
   ushort in_FPUStatusWord;

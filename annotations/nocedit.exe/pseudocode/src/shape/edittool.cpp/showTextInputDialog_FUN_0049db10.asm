@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10 (int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags)
+; __cdecl int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10(int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags )
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   dialog_mode
@@ -449,7 +449,7 @@ section .text
     JNZ 0x0049de8b                      ; 0049df24
         ;   XREF to: 0049de8b (CONDITIONAL_JUMP)  ; LAB_0049de8b
     LEA EAX,[ESP + 0x224]               ; 0049df2a
-    CMP EAX,dword ptr [0x02cf2b00]      ; 0049df31 | g_ActiveButton
+    CMP EAX,dword ptr [0x02cf2b00]      ; 0049df31 | g_ActiveControl
     JNZ 0x0049df3b                      ; 0049df37
         ;   XREF to: 0049df3b (CONDITIONAL_JUMP)  ; LAB_0049df3b
     XOR ESI,ESI                         ; 0049df39
@@ -463,7 +463,7 @@ section .text
     JNZ 0x0049df6c                      ; 0049df4d
         ;   XREF to: 0049df6c (CONDITIONAL_JUMP)  ; LAB_0049df6c
     LEA EAX,[ESP + 0x140]               ; 0049df4f
-    CMP EAX,dword ptr [0x02cf2b00]      ; 0049df56 | g_ActiveButton
+    CMP EAX,dword ptr [0x02cf2b00]      ; 0049df56 | g_ActiveControl
     JNZ 0x0049dcd6                      ; 0049df5c
         ;   XREF to: 0049dcd6 (CONDITIONAL_JUMP)  ; LAB_0049dcd6
     MOV ESI,0x1                         ; 0049df62

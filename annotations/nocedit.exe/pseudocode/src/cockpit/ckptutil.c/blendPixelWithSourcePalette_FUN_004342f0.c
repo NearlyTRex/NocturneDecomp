@@ -2,13 +2,11 @@
 // Address: 004342f0
 // Address Range: [[004342f0, 004345b5]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0 (int x,int y,float blend_factor,int palette_index)
+// Signature: void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0(int x,int y,float blend_factor,int palette_index)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0
-          (int x,int y,float blend_factor,int palette_index)
+void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0(int x,int y,float blend_factor,int palette_index)
 
 {
   byte bVar1;

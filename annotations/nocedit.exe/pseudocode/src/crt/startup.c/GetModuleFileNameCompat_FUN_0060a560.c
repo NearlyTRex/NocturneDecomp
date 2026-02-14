@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-DWORD __cdecl
-GetModuleFileNameCompat(HMODULE hModule,LPWSTR lpFilename,DWORD nSize)
+DWORD __cdecl GetModuleFileNameCompat(HMODULE hModule,LPWSTR lpFilename,DWORD nSize)
 
 {
   DWORD DVar1;

@@ -2,15 +2,11 @@
 // Address: 005325e0
 // Address Range: [[005325e0, 005334a8]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0 (SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples, SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info, SMpegLayer3Granule **granule_array)
+// Signature: void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
-          (SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,
-          SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,
-          SMpegLayer3Granule **granule_array)
+void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
 
 {
   int *piVar1;
@@ -142,7 +138,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
       iVar6 = *(int *)(&DAT_0067e6c8 + iVar11);
       while (iVar6 <= iVar9) {
         local_e8 = local_e8 + 1;
-        piVar1 = (int *)(&DAT_0067e6cc + iVar11);
+        piVar1 = (int *)((int)&INT_0067e6cc + iVar11);
         iVar11 = iVar11 + 4;
         iVar6 = *piVar1;
       }
@@ -152,7 +148,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
       if (local_e8 < 0x15) {
         local_88 = local_e8 * 4;
         do {
-          iVar6 = *(int *)(&DAT_0067e6cc + local_8c) - *(int *)(&DAT_0067e6c8 + local_8c);
+          iVar6 = *(int *)((int)&INT_0067e6cc + local_8c) - *(int *)(&DAT_0067e6c8 + local_8c);
           if (0 < iVar6) {
             iVar11 = iVar9 * 2;
             local_a8 = (int)scalefactor_data->reserved + local_88;
@@ -405,7 +401,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
           iVar9 = *(int *)(&DAT_0067e6c8 + iVar6);
           while (iVar9 <= local_1c) {
             local_38 = local_38 + 1;
-            piVar1 = (int *)(&DAT_0067e6cc + iVar6);
+            piVar1 = (int *)((int)&INT_0067e6cc + iVar6);
             iVar6 = iVar6 + 4;
             iVar9 = *piVar1;
           }
@@ -413,7 +409,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
           if (local_38 < 8) {
             local_60 = local_38 * 4 + local_f4 * 0x94;
             do {
-              iVar6 = *(int *)(&DAT_0067e6cc + local_60) - *(int *)(&DAT_0067e6c8 + local_60);
+              iVar6 = *(int *)((int)&INT_0067e6cc + local_60) - *(int *)(&DAT_0067e6c8 + local_60);
               if (0 < iVar6) {
                 iVar11 = iVar9 * 2;
                 local_c4 = scalefactor_data->reserved + local_38;

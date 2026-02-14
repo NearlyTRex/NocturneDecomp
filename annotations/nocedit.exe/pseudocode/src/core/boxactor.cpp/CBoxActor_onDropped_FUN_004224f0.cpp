@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_boxactor_cpp_CBoxActor_onDropped_FUN_004224f0(CBoxActor *this_ptr,CVector3f *drop_position)
+void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_004224f0(CBoxActor *this_ptr,CVector3f *drop_position)
 
 {
   CVector3f local_10;

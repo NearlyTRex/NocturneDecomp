@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   search_string
 ;
 ; XREF[5]:
-;   core_script.cpp_CScript_FUN_005677a0 at 0056796e
+;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 at 0056796e
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 00562d60
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b243c
 ;   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 at 004b978c

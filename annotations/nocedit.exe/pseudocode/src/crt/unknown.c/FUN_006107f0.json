@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 174,
+    "complexity_score": 172,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 47,
     "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 189
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -32,7 +32,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_006107f0",
-    "signature": "BOOL crt_unknown_c_FUN_006107f0(void)"
+    "signature": "BOOL crt_unknown_c_FUN_006107f0(LPCWSTR param_1,LPWSTR param_2)"
   },
   "function_calls": [
     {
@@ -132,67 +132,67 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "LPCWSTR in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "BOOL FUN_006107f0(LPCWSTR param_1,LPWSTR param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "LPWSTR in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "BOOL FUN_006107f0(LPCWSTR param_1,LPWSTR param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "BVar1 = (*g_SetEnvironmentVariableWFunc)(in_stack_00000004,in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "text": "BVar1 = (*g_SetEnvironmentVariableWFunc)(param_1,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "BVar1 = (*g_SetEnvironmentVariableWFunc)(in_stack_00000004,in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "text": "BVar1 = (*g_SetEnvironmentVariableWFunc)(param_1,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "uVar2 = wcslen(in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "text": "uVar2 = wcslen(param_1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 != (LPWSTR)0x0) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "text": "if (param_2 != (LPWSTR)0x0) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000008",
-      "text": "uVar2 = wcslen(in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "text": "uVar2 = wcslen(param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "iVar3 = wcstombs(dest,in_stack_00000004,uVar2);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "text": "iVar3 = wcstombs(dest,param_1,uVar2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000008",
-      "text": "(iVar3 = wcstombs(dest_00,in_stack_00000008,uVar2), iVar3 == -1)) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_2",
+      "text": "(iVar3 = wcstombs(dest_00,param_2,uVar2), iVar3 == -1)) {",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 1,

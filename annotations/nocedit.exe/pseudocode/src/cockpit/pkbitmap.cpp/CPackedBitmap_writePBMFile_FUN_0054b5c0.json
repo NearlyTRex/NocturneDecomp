@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 63,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 36,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 124
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 (CPackedBitmap *this_ptr,_FILE *file_handle)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(CPackedBitmap *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -210,14 +210,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 16,
       "match": "(int *)((int)",
       "text": "piVar3 = (int *)((int)piVar3 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(int *)((int)",
       "text": "piVar3 = (int *)((int)piVar3 + 1);",
       "type": "pointer_cast"

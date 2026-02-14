@@ -2,13 +2,11 @@
 // Address: 0042b760
 // Address Range: [[0042b760, 0042b801]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760 (CCharacter *this_ptr,int part_index,int bone_index,float chance)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760(CCharacter *this_ptr,int part_index,int bone_index,float chance)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-          (CCharacter *this_ptr,int part_index,int bone_index,float chance)
+void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760(CCharacter *this_ptr,int part_index,int bone_index,float chance)
 
 {
   int iVar1;

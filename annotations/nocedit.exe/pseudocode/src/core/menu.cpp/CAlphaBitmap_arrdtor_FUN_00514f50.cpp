@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CAlphaBitmap * __cdecl
-core_menu_cpp_CAlphaBitmap_arrdtor_FUN_00514f50(CAlphaBitmap *objs,uint flags)
+CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_00514f50(CAlphaBitmap *objs,uint flags)
 
 {
   CAlphaBitmap *pCVar1;

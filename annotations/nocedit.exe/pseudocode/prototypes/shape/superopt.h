@@ -501,7 +501,7 @@ int __cdecl segmentsIntersect2D(CVector2d *point_a,CVector2d *point_b,CVector2d 
 
 // Original: shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0
 // Address: 005d5de0
-int __cdecl segmentIntersectsPolygon2D(CVector2d *polyVerts,uint vertCount,CVector2d *segStart,CVector2d *segEnd, CVector2d *segStart2);
+int __cdecl segmentIntersectsPolygon2D(CVector2d *polyVerts,uint vertCount,CVector2d *segStart,CVector2d *segEnd,CVector2d *segStart2);
 
 // Original: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 // Address: 005d5e60

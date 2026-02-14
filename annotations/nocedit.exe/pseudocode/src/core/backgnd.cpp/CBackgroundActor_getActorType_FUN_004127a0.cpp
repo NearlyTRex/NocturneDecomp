@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_backgnd_cpp_CBackgroundActor_getActorType_FUN_004127a0(CBackgroundActor *this_ptr)
+CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_004127a0(CBackgroundActor *this_ptr)
 
 {
   return &g_CBackgroundActorClassInfo;

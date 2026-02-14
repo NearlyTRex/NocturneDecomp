@@ -2,13 +2,11 @@
 // Address: 005b5322
 // Address Range: [[005b5322, 005b555b]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322 (STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
+// Signature: void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl
-wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
-          (STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
+void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
 
 {
   bool bVar1;
@@ -39,7 +37,7 @@ wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
     g_ScanlinePixelCount = iVar4 * 4;
     puVar9 = g_ZBufferScanlineArray[scanline_y] + uVar3;
     g_CurrentZBufferPtr = (int *)puVar9;
-    if (g_RenderStateFlags == 0x80) {
+    if (g_RenderStateFlags.dword == 0x80) {
       uVar10 = pSVar7->perspective_w;
       iVar8 = (int)((ulonglong)
                     ((longlong)(int)(right_vertex->perspective_w - uVar10) *
@@ -101,11 +99,11 @@ wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
     uVar10 = 0;
     g_StartDepthW = iVar8;
     if ((g_CurrentTextureOpacityData == (void *)0x0) &&
-       (uVar6 = g_StartTextureV, uVar3 = g_StartTextureU, (g_RenderStateFlags & 2U) == 0)) {
+       (uVar6 = g_StartTextureV, uVar3 = g_StartTextureU, (g_RenderStateFlags.dword & 2) == 0)) {
       while( true ) {
-        if (((g_RenderStateFlags & 0x40U) == 0) ||
+        if (((g_RenderStateFlags.dword & 0x40) == 0) ||
            (*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {
-          if ((g_RenderStateFlags & 1U) == 0) {
+          if ((g_RenderStateFlags.dword & 1) == 0) {
             uVar2 = (ushort)g_ActiveRenderColor;
           }
           else {
@@ -115,7 +113,7 @@ wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
                               (uVar3 >> ((byte)g_TextureShift1 & 0x1f) & (uint)g_TextureMask1))];
           }
           *(ushort *)((uVar10 >> 1) + (int)g_CurrentScreenPtr) = uVar2;
-          if ((g_RenderStateFlags & 0x80U) != 0) {
+          if ((g_RenderStateFlags.dword & 0x80) != 0) {
             *(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;
           }
         }

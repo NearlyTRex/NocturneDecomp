@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CDemonRenderer *this_ptr,int mode)
+void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CDemonRenderer *this_ptr,int mode)
 
 {
   this_ptr->projection_mode = mode;

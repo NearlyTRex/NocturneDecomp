@@ -2,13 +2,11 @@
 // Address: 004b3120
 // Address Range: [[004b3120, 004b31d2]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120 (char *target_filename,char *source_directory)
+// Signature: int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120(char *target_filename,char *source_directory)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120
-          (char *target_filename,char *source_directory)
+int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120(char *target_filename,char *source_directory)
 
 {
   uint uVar1;

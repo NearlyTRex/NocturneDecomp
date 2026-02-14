@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CKeyFramedModel * __cdecl
-core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel *this_ptr)
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel *this_ptr)
 
 {
   this_ptr->vertex_count = 0;

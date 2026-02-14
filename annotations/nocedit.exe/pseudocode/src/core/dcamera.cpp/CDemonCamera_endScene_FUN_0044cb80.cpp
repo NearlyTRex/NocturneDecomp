@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera *this_ptr,int skip_zbuffer_copy)
+void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera *this_ptr,int skip_zbuffer_copy)
 
 {
   int iVar1;
@@ -43,7 +42,7 @@ core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera *this_ptr,int s
       } while (iVar2 < this_ptr->framebuffer_height);
     }
   }
-  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
+  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
   core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_0044c410(this_ptr);
   return;
 }

@@ -3,25 +3,25 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 21,
-        "line": 115,
+        "column": 22,
+        "line": 114,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
-        "column": 17,
-        "line": 159,
+        "column": 18,
+        "line": 158,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
-        "column": 25,
+        "column": 26,
         "line": 228,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
-        "column": 25,
+        "column": 26,
         "line": 254,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
@@ -29,7 +29,7 @@
         "category": "undeclared_identifier",
         "column": 71,
         "line": 268,
-        "message": "use of undeclared identifier 'stack0xfffffec4'"
+        "message": "use of undeclared identifier 'stack0xfffffec4'; did you mean 'in_stack_fffffec4'?"
       }
     ],
     "success": false,
@@ -37,20 +37,20 @@
   },
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 537,
+    "complexity_score": 495,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
-    "pseudocode_lines": 342,
-    "suspect_count": 17,
+    "pseudocode_lines": 340,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
-      "suspect_float",
-      "undefined_data"
+      "undefined_data",
+      "warning_type_propagation"
     ],
-    "total_lines": 1147
+    "total_lines": 1145
   },
   "cross_references": [],
   "function": {
@@ -742,74 +742,46 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_fffffecc",
-      "text": "float in_stack_fffffecc;",
-      "type": "stack_param"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffed8",
-      "text": "float in_stack_fffffed8;",
+      "line": 21,
+      "match": "in_stack_fffffec4",
+      "text": "float in_stack_fffffec4;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 94,
       "match": "SQRT",
       "text": "local_28 = SQRT(local_f4.z * local_f4.z + local_f4.x * local_f4.x + local_f4.y * local_f4.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
+      "line": 100,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 116,
-      "match": "1.4013e-45",
-      "text": "fVar11 = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 132,
       "match": "ABS",
       "text": "if ((ABS(local_14) < (float)0.52359877558333301) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 133,
       "match": "ABS",
       "text": "(ABS((((this_ptr->base).victim)->location).position.y -",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 136,
-      "match": "2.8026e-45",
-      "text": "fVar11 = 2.8026e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 140,
-      "match": "1.4013e-45",
-      "text": "fVar11 = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 191,
-      "match": "in_stack_fffffecc",
-      "text": "path_map,pCVar8,fVar10,in_stack_fffffecc);",
-      "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -848,16 +820,16 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 267,
+      "line": 266,
       "match": "DAT_00822754",
-      "text": "[DAT_00822754].m);",
+      "text": "DAT_00822754);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 343,
-      "match": "in_stack_fffffed8",
-      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffed8);",
+      "line": 342,
+      "match": "in_stack_fffffec4",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffec4);",
       "type": "stack_param"
     }
   ],

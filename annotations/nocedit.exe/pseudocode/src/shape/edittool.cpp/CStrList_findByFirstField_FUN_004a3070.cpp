@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(CStrList *this_ptr,char *search_field)
+int __cdecl shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(CStrList *this_ptr,char *search_field)
 
 {
   char cVar1;

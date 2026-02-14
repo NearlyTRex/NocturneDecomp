@@ -2,14 +2,11 @@
 // Address: 0056ddb0
 // Address Range: [[0056ddb0, 0056e10e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 (CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index, int skip_lighting_calculation)
+// Signature: void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation)
 
 #include "nocturne.h"
 
-void __cdecl
-core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
-          (CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,
-          int skip_lighting_calculation)
+void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation)
 
 {
   longlong lVar1;
@@ -46,13 +43,13 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
     }
     lVar1 = (longlong)this_ptr->light_scale_factor * (longlong)iVar8;
     g_RenderVertexBuffer[vertex_index].light =
-         (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+         (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)this_ptr->color_scale_factor * (longlong)iVar8;
     g_RenderVertexBuffer[vertex_index].color =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)this_ptr->fog_scale_factor * (longlong)iVar8;
     g_RenderVertexBuffer[vertex_index].fog =
-         (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+         (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     g_RenderVertexBuffer[vertex_index].w_recip = g_PerspectiveReciprocal;
     return;
   }
@@ -156,8 +153,8 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
   if (0xffff < (int)uVar5) {
     uVar5 = 0xffff;
   }
-  g_RenderVertexBuffer[vertex_index].light = (float)g_IntensityToValueLookupTable[local_18];
+  g_RenderVertexBuffer[vertex_index].light = g_IntensityToValueLookupTable[local_18];
   g_RenderVertexBuffer[vertex_index].color = g_IntensityToValueLookupTable[uVar4];
-  g_RenderVertexBuffer[vertex_index].fog = (float)g_IntensityToValueLookupTable[uVar5];
+  g_RenderVertexBuffer[vertex_index].fog = g_IntensityToValueLookupTable[uVar5];
   return;
 }

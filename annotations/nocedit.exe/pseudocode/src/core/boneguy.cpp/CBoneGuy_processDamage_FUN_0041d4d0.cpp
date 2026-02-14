@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_boneguy_cpp_CBoneGuy_processDamage_FUN_0041d4d0(CBoneGuy *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_boneguy_cpp_CBoneGuy_processDamage_FUN_0041d4d0(CBoneGuy *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-uint __cdecl
-support_trisock_cpp_parseIPAddress_FUN_005e1700(uint *result_ptr,char *dotted_decimal_string)
+uint __cdecl support_trisock_cpp_parseIPAddress_FUN_005e1700(uint *result_ptr,char *dotted_decimal_string)
 
 {
   int iVar1;

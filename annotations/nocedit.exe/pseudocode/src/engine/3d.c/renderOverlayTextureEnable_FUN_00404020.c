@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl
-engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *polygon_info)
+void * __cdecl engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *polygon_info)
 
 {
   uint uVar1;
@@ -17,19 +16,19 @@ engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *polygo
   
   if (g_MMXSupported == 0) {
     if (g_BitsPerPixel == 0x20) {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
     }
     else {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
     }
   }
   else if (g_BitsPerPixel == 0x20) {
-    g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+    g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
   }
   else {
-    g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+    g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
   }
-  g_RenderStateFlags = RENDER_TEXTURE_ENABLE;
+  g_RenderStateFlags.dword = RENDER_TEXTURE_ENABLE;
   g_RenderStateFlag2 = PREPROCESS_NONE;
   engine_3d_c_calculatePolygonLighting_FUN_00403a00(polygon_info);
   piVar3 = g_ProcessedVertexIndices;

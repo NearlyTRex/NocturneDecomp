@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0 (CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)
+; __cdecl void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)
 ;
 ; Parameters:
 ; CBox *           Stack[0x4]:4   this_ptr

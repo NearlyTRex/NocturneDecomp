@@ -53,11 +53,11 @@ void __cdecl renderTexturedDecalMMXScanline(SEdgeData *left_edge,SEdgeData *righ
 
 // Original: core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc
 // Address: 004917bc
-void __cdecl blendBilerpLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
+void __cdecl blendBilerpLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a
 // Address: 00491c9a
-void __cdecl blendBilerpLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
+void __cdecl blendBilerpLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90
 // Address: 00491f90
@@ -85,31 +85,31 @@ void __cdecl spatialFilter9TapMMX(uint *output_buffer,uint *input_buffer,int pix
 
 // Original: core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_004924a9
 // Address: 004924a9
-void __cdecl blendLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_004925c5
 // Address: 004925c5
-void __cdecl blendLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
 // Address: 004926e1
-void __cdecl blendLightmapToTexture32BitInputOutput(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices, int pixel_count);
+void __cdecl blendLightmapToTexture32BitInputOutput(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5
 // Address: 00492bd5
-void __cdecl blendLightmapToTexture64BitOutput(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTexture64BitOutput(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a
 // Address: 00492e8a
-void __cdecl alphaBlendPixelsMMX(uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1,uint alpha2, int pixel_count);
+void __cdecl alphaBlendPixelsMMX(uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1,uint alpha2,int pixel_count);
 
 // Original: core_dstrender.cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03
 // Address: 00492f03
-void __cdecl blendLightmapToTextureMMX::Variant2(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTextureMMX::Variant2(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
 // Address: 00493450
-void __cdecl blendBilerpTextureWithLightmapMMX(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
+void __cdecl blendBilerpTextureWithLightmapMMX(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendSinglePixelLightmapMMX_FUN_004937b6
 // Address: 004937b6
@@ -117,11 +117,11 @@ void __cdecl blendSinglePixelLightmapMMX(ushort *output_pixel,uint *texture_pixe
 
 // Original: core_dstrender.cpp_blendTextureWithLightmapMMX_FUN_00493860
 // Address: 00493860
-void __cdecl blendTextureWithLightmapMMX(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices, int pixel_count);
+void __cdecl blendTextureWithLightmapMMX(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4
 // Address: 00493dc4
-void __cdecl blendLightmapToTextureMMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTextureMMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
 // Address: 004940e9

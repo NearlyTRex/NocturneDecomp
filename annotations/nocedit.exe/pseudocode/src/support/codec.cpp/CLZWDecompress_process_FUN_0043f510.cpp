@@ -2,13 +2,11 @@
 // Address: 0043f510
 // Address Range: [[0043f510, 0043f585]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510 (CLZWDecompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
+// Signature: int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
 
 #include "nocturne.h"
 
-int __cdecl
-support_codec_cpp_CLZWDecompress_process_FUN_0043f510
-          (CLZWDecompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
+int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
 
 {
   int iVar1;

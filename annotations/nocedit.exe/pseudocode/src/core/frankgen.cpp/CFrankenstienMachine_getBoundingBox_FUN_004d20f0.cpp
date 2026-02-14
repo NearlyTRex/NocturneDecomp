@@ -2,13 +2,11 @@
 // Address: 004d20f0
 // Address Range: [[004d20f0, 004d2165]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0 (CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0
-          (CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
 
 {
   CKeyFramedModel *pCVar1;

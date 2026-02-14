@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CStrList_remove_FUN_004a2e00(CStrList *this_ptr,int start_index,int end_index)
+void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004a2e00(CStrList *this_ptr,int start_index,int end_index)
 
 {
   void *ptr;

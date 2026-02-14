@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 (CEditorTools *this_ptr,char *output_buffer)
+; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools *this_ptr,char *output_buffer)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

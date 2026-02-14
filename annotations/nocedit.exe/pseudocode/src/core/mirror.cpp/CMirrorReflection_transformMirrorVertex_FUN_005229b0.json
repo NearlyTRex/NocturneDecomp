@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 94,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 32,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 94
+    "total_lines": 92
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__stack2_esi",
     "name": "core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0",
-    "signature": "CVector3f * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0 (CMirrorReflection *this_ptr,CVector3f *input_vertex,CVector3f *output_vertex)"
+    "signature": "CVector3f * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0(CMirrorReflection *this_ptr,CVector3f *input_vertex,CVector3f *output_vertex)"
   },
   "function_calls": [
     {
@@ -185,35 +185,35 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 27,
       "match": "ROUND",
       "text": "local_24 = (float)(int)ROUND(local_30.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 28,
       "match": "ROUND",
       "text": "local_20 = (float)(int)ROUND(local_30.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 29,
       "match": "ROUND",
       "text": "local_1c = (int)ROUND(local_30.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 30,
       "match": "(float *)((int)",
       "text": "pfVar2 = (float *)((int)output_vertex + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 31,
       "match": "ROUND",
       "text": "output_vertex->x = (float)(int)ROUND(local_30.x * 256.0f);",
       "type": "decompiler_intrinsic"

@@ -2,13 +2,11 @@
 // Address: 0056e7c0
 // Address Range: [[0056e7c0, 0056e88a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0 (CDemonSet *this_ptr,int vertex_count,int *input_vertices)
+// Signature: void __cdecl core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet *this_ptr,int vertex_count,int *input_vertices)
 
 #include "nocturne.h"
 
-void __cdecl
-core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-          (CDemonSet *this_ptr,int vertex_count,int *input_vertices)
+void __cdecl core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet *this_ptr,int vertex_count,int *input_vertices)
 
 {
   SRenderVertex *output;

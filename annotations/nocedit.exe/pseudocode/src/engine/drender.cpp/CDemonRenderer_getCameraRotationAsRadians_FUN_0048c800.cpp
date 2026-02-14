@@ -2,13 +2,11 @@
 // Address: 0048c800
 // Address Range: [[0048c800, 0048c861]]
 // Convention: __cdecl
-// Signature: float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800 (CDemonRenderer *this_ptr,float *output)
+// Signature: float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output)
 
 #include "nocturne.h"
 
-float * __cdecl
-engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-          (CDemonRenderer *this_ptr,float *output)
+float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output)
 
 {
   float fVar1;

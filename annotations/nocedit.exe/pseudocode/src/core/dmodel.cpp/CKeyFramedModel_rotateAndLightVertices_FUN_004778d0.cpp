@@ -2,13 +2,11 @@
 // Address: 004778d0
 // Address Range: [[004778d0, 00477970]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0 (CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0
-          (CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index)
 
 {
   CVector3i *input_vertices;

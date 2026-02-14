@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 105,
+    "complexity_score": 103,
     "cross_reference_count": 13,
     "function_call_count": 6,
     "global_count": 1,
-    "pseudocode_lines": 80,
+    "pseudocode_lines": 78,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 263
+    "total_lines": 261
   },
   "cross_references": [
     {
@@ -108,7 +108,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 (CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)"
   },
   "function_calls": [
     {
@@ -316,14 +316,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(CMatrix3x3f *)((int)",
       "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGround *this_ptr,int column,int row)
+void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGround *this_ptr,int column,int row)
 
 {
   int iVar1;
@@ -26,10 +25,10 @@ core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGround *this_ptr,i
                               (column & this_ptr->width_minus_1)) * 4);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[iVar2].projected_vertex,&local_1c);
-  g_RenderVertexBuffer[iVar2].light = 2.29575e-41;
+  g_RenderVertexBuffer[iVar2].light = 0x3fff;
   g_RenderVertexBuffer[iVar2].color = 0x3fff;
   iVar1 = g_RenderVertexBuffer[iVar2].projected_vertex.transformed_z;
-  g_RenderVertexBuffer[iVar2].fog = 2.29575e-41;
+  g_RenderVertexBuffer[iVar2].fog = 0x3fff;
   if (iVar1 < 0) {
     g_RenderVertexBuffer[iVar2].w_recip = 0.0;
   }

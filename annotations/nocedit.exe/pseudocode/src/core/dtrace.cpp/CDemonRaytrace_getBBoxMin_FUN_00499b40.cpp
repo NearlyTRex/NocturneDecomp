@@ -2,13 +2,11 @@
 // Address: 00499b40
 // Address Range: [[00499b40, 00499b63]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40 (CDemonRaytrace *this_ptr,CVector3f *output_vector)
+// Signature: CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(CDemonRaytrace *this_ptr,CVector3f *output_vector)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40
-          (CDemonRaytrace *this_ptr,CVector3f *output_vector)
+CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(CDemonRaytrace *this_ptr,CVector3f *output_vector)
 
 {
   output_vector->x = (this_ptr->bbox_min).x;

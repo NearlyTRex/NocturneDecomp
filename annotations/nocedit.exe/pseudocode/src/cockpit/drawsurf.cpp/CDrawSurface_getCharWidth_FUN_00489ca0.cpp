@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-cockpit_drawsurf_cpp_CDrawSurface_getCharWidth_FUN_00489ca0(CDrawSurface *this_ptr,int char_code)
+int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCharWidth_FUN_00489ca0(CDrawSurface *this_ptr,int char_code)
 
 {
   int iVar1;

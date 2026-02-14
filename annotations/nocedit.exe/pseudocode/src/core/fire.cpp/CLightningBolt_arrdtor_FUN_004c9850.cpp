@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLightningBolt * __cdecl
-core_fire_cpp_CLightningBolt_arrdtor_FUN_004c9850(CLightningBolt *objs,uint flags)
+CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_arrdtor_FUN_004c9850(CLightningBolt *objs,uint flags)
 
 {
   CLightningBolt *pCVar1;

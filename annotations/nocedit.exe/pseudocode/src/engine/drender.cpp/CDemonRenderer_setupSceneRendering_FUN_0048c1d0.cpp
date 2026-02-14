@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr)
+void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr)
 
 {
   CVector3f *in_stack_00000008;

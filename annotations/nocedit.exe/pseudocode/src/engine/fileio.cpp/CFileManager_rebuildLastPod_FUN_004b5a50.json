@@ -2,118 +2,46 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 162,
-        "message": "use of undeclared identifier 'stack0xffffe7c8'; did you mean 'in_stack_ffffe7c8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 164,
-        "message": "use of undeclared identifier 'stack0xffffe7c8'; did you mean 'in_stack_ffffe7c8'?"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 167,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 168,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 171,
-        "message": "use of undeclared identifier 'stack0xffffe7c8'; did you mean 'in_stack_ffffe7c8'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 18,
-        "line": 181,
+        "line": 174,
         "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 216,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 220,
-        "message": "use of undeclared identifier 'stack0xffffe7c8'; did you mean 'in_stack_ffffe7c8'?"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 221,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 224,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 230,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 72,
-        "line": 240,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 249,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 262,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 263,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 273,
+        "line": 267,
         "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 305,
-        "message": "member reference base type 'byte[1064]' (aka 'unsigned char[1064]') is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 308,
+        "line": 302,
         "message": "assigning to 'SIZE_T *' (aka 'unsigned long *') from incompatible type 'void *'"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 351,
-        "message": "assigning to 'char *' from 'byte *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
+        "category": "incompatible_types",
+        "column": 22,
+        "line": 475,
+        "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 22,
+        "line": 518,
+        "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
+      },
+      {
+        "category": "format_error",
+        "column": 51,
+        "line": 586,
+        "message": "format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 22,
+        "line": 587,
+        "message": "format specifies type 'int' but the argument has type 'long' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -121,19 +49,16 @@
   },
   "complexity": {
     "assembly_lines": 1448,
-    "complexity_score": 983,
+    "complexity_score": 722,
     "cross_reference_count": 4,
     "function_call_count": 43,
     "global_count": 73,
-    "pseudocode_lines": 653,
-    "suspect_count": 31,
+    "pseudocode_lines": 637,
+    "suspect_count": 8,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "unknown_field"
+      "pointer_cast"
     ],
-    "total_lines": 2101
+    "total_lines": 2085
   },
   "cross_references": [
     {
@@ -171,7 +96,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
-    "signature": "void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (CFileManager *this_ptr,char *pod_filename,char *volume_name)"
+    "signature": "void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileManager *this_ptr,char *pod_filename,char *volume_name)"
   },
   "function_calls": [
     {
@@ -1313,221 +1238,60 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_ffffe7c8",
-      "text": "int in_stack_ffffe7c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 155,
-      "match": "&stack0xffffe7c8",
-      "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xffffe7c8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 157,
-      "match": "&stack0xffffe7c8",
-      "text": "((CPodFile *)&stack0xffffe7c8,local_290);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 160,
-      "match": "._1048_4_",
-      "text": "local_6c = (char *)auStack_1834._1048_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 161,
-      "match": "._1048_4_",
-      "text": "if (0 < (int)auStack_1834._1048_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 164,
-      "match": "&stack0xffffe7c8",
-      "text": "((CPodFile *)&stack0xffffe7c8,iVar2,local_500);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 188,
+      "line": 181,
       "match": "(CPodAuditRecord *)((int)",
-      "text": "pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pCVar18 = (CPodAuditRecord *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 205,
-      "match": "in_stack_ffffe7c8",
-      "text": "if (in_stack_ffffe7c8 < 2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 209,
-      "match": "._1036_4_",
-      "text": "if (0 < (int)auStack_1834._1036_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 213,
-      "match": "&stack0xffffe7c8",
-      "text": "((CPodFile *)&stack0xffffe7c8,iVar2);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 214,
+      "line": 206,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)(auStack_1834._1040_4_ + 0x10) + iVar7) = uVar3;",
+      "text": "*(uint *)((int)&(local_1838.directory_entries)->checksum + iVar8) = uVar3;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 214,
-      "match": "._1040_4_",
-      "text": "*(uint *)((int)(auStack_1834._1040_4_ + 0x10) + iVar7) = uVar3;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 217,
-      "match": "._1036_4_",
-      "text": "} while (iVar2 < (int)auStack_1834._1036_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 223,
-      "match": "._1036_4_",
-      "text": "if (0 < (int)auStack_1834._1036_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 233,
-      "match": "._1040_4_",
-      "text": "(*(char **)((int)(uint *)auStack_1834._1040_4_ + iVar2),*pacVar8);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 242,
-      "match": "._1040_4_",
-      "text": "pcVar13 = *(char **)((int)(uint *)auStack_1834._1040_4_ + local_2c);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 255,
+      "line": 249,
       "match": "(int *)((int)",
-      "text": "g_CurrentFileTimestamp = *(int *)((int)(auStack_1834._1040_4_ + 0xc) + local_2c);",
+      "text": "*(int *)((int)&(local_1838.directory_entries)->timestamp + local_2c);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 255,
-      "match": "._1040_4_",
-      "text": "g_CurrentFileTimestamp = *(int *)((int)(auStack_1834._1040_4_ + 0xc) + local_2c);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 256,
+      "line": 250,
       "match": "(int *)((int)",
-      "text": "g_CurrentFileSize = *(int *)((int)(auStack_1834._1040_4_ + 4) + local_2c);",
+      "text": "g_CurrentFileSize = *(int *)((int)&(local_1838.directory_entries)->size + local_2c);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 256,
-      "match": "._1040_4_",
-      "text": "g_CurrentFileSize = *(int *)((int)(auStack_1834._1040_4_ + 4) + local_2c);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 280,
+      "line": 274,
       "match": "(CPodAuditRecord *)((int)",
-      "text": "pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pCVar18 = (CPodAuditRecord *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 298,
-      "match": "._1036_4_",
-      "text": "} while (local_40 < (int)auStack_1834._1036_4_);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 366,
+      "line": 358,
       "match": "(char *)((int)",
-      "text": "pcVar13 = (char *)((int)local_54 + local_30);",
+      "text": "pcVar14 = (char *)((int)local_54 + local_30);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 393,
-      "match": "._0_4_",
-      "text": "if (local_140c._0_4_ == 0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 462,
-      "match": "&stack0xffffe7c8",
-      "text": "((CPodFile *)&stack0xffffe7c8,*local_1c);",
-      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 491,
+      "line": 482,
       "match": "(CPodAuditRecord *)((int)",
-      "text": "pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pCVar18 = (CPodAuditRecord *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 508,
-      "match": "._1040_4_",
-      "text": "((CPodDirectoryEntry *)(auStack_1834._1040_4_ + iVar2 * 0x14))->checksum) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 510,
-      "match": "._1040_4_",
-      "text": "((CPodDirectoryEntry *)(auStack_1834._1040_4_ + iVar2 * 0x14))->timestamp;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 512,
-      "match": "._1040_4_",
-      "text": "((CPodDirectoryEntry *)(auStack_1834._1040_4_ + iVar2 * 0x14))->size;",
-      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 537,
+      "line": 525,
       "match": "(CPodAuditRecord *)((int)",
-      "text": "pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pCVar18 = (CPodAuditRecord *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 651,
-      "match": "&stack0xffffe7c8",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffe7c8,0);",
-      "type": "stack_ref"
     }
   ]
 }

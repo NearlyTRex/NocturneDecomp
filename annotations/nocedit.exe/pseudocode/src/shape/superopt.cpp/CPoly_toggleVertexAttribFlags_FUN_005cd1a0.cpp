@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CPoly_toggleVertexAttribFlags_FUN_005cd1a0(CPoly *this_ptr,uint flag_mask)
+void __cdecl shape_superopt_cpp_CPoly_toggleVertexAttribFlags_FUN_005cd1a0(CPoly *this_ptr,uint flag_mask)
 
 {
   int iVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690(CMatrix3x3f *matrix,int preserve_scale)
+void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690(CMatrix3x3f *matrix,int preserve_scale)
 
 {
   float fVar1;

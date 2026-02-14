@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 (CDemonSet *this_ptr,int mirror_index,int enable_flag)
+; __cdecl void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet *this_ptr,int mirror_index,int enable_flag)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

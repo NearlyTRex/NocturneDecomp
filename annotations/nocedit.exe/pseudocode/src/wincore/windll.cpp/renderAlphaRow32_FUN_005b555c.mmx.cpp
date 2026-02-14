@@ -2,13 +2,11 @@
 // Address: 005b555c
 // Address Range: [[005b555c, 005b55f6]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_windll_cpp_renderAlphaRow32_FUN_005b555c (uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
+// Signature: void __cdecl wincore_windll_cpp_renderAlphaRow32_FUN_005b555c(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 
 #include "nocturne.h"
 
-void __cdecl
-wincore_windll_cpp_renderAlphaRow32_FUN_005b555c
-          (uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
+void __cdecl wincore_windll_cpp_renderAlphaRow32_FUN_005b555c(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 {
 __asm {
         pushad

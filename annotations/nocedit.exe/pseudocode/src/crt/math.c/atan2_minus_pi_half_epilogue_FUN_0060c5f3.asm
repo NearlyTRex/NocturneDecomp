@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister float10 crt_math_c_atan2_minus_pi_half_epilogue_FUN_0060c5f3(void)
+; __watcallRegister float10 __watcallRegister crt_math_c_atan2_minus_pi_half_epilogue_FUN_0060c5f3(void)
 ;
 ;
 ; Referenced Globals:

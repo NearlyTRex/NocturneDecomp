@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SCurtainVertex * __cdecl
-core_curtain_cpp_SCurtainVertex_arrdtor_FUN_0044bad0(SCurtainVertex *objs,uint flags)
+SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_arrdtor_FUN_0044bad0(SCurtainVertex *objs,uint flags)
 
 {
   SCurtainVertex *pSVar1;

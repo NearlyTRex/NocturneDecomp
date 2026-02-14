@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 22,
+    "complexity_score": 138,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 7,
-    "suspect_count": 1,
+    "pseudocode_lines": 8,
+    "suspect_count": 12,
     "suspect_types": [
-      "special_crt_function"
+      "special_crt_function",
+      "unnamed_param"
     ],
-    "total_lines": 31
+    "total_lines": 32
   },
   "cross_references": [],
   "function": {
@@ -24,7 +25,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "crt_unknown.c_FUN_0060b106",
-    "signature": "void crt_unknown_c_FUN_0060b106(void)"
+    "signature": "void crt_unknown_c_FUN_0060b106(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)"
   },
   "function_calls": [
     {
@@ -74,6 +75,83 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void FUN_0060b106(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void FUN_0060b106(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "void FUN_0060b106(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "text": "void FUN_0060b106(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "text": "void FUN_0060b106(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "text": "uVar1 = FUN_0060d48c(param_1,param_2,param_3,param_4,param_5,0x47,uVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "text": "uVar1 = FUN_0060d48c(param_1,param_2,param_3,param_4,param_5,0x47,uVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_3",
+      "text": "uVar1 = FUN_0060d48c(param_1,param_2,param_3,param_4,param_5,0x47,uVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_4",
+      "text": "uVar1 = FUN_0060d48c(param_1,param_2,param_3,param_4,param_5,0x47,uVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_5",
+      "text": "uVar1 = FUN_0060d48c(param_1,param_2,param_3,param_4,param_5,0x47,uVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_3",
+      "text": "FUN_0060b0c8(uVar1,param_3);",
+      "type": "unnamed_param"
+    },
     {
       "address": "0060b106",
       "crt_type": "runtime support",

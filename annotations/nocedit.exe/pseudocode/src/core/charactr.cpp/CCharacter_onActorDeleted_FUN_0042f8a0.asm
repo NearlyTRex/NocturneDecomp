@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0 (CCharacter *this_ptr,CDemonActor *deleted_actor)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0(CCharacter *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

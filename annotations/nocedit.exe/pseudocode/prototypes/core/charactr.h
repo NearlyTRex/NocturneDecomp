@@ -37,7 +37,7 @@ float __cdecl clampNormalizedAngle(float angle,float limit);
 
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 // Address: 004286e0
-int __cdecl CCharacter::walkToPoint(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction, float min_distance,float max_distance);
+int __cdecl CCharacter::walkToPoint(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance);
 
 // Original: core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00428d80
 // Address: 00428d80
@@ -121,7 +121,7 @@ void __cdecl CCharacter::addDamageDecal(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 // Address: 0042b5b0
-void __cdecl CCharacter::igniteBone(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero, int param_6);
+void __cdecl CCharacter::igniteBone(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int param_6);
 
 // Original: core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042b670
 // Address: 0042b670
@@ -193,7 +193,7 @@ int __cdecl CCharacter::checkCylinderCollisionWorld(CCharacter *this_ptr,CVector
 
 // Original: core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180
 // Address: 0042c180
-int __cdecl CCharacter::testDamageLine(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info, CVector3f *out_hit);
+int __cdecl CCharacter::testDamageLine(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit);
 
 // Original: core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 // Address: 0042c3c0
@@ -333,7 +333,7 @@ void __cdecl CCharacter::blendLayerActionMotion(CCharacter *this_ptr,float blend
 
 // Original: core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0
 // Address: 0042e5d0
-void __cdecl CCharacter::addLayerAction(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name, int direction);
+void __cdecl CCharacter::addLayerAction(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
 
 // Original: core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670
 // Address: 0042e670

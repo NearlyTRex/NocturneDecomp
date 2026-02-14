@@ -21,11 +21,17 @@ CPickList g_ScriptPickList = {};
 // CScript
 CScript g_CScriptInstance = {};
 
+// _BIT_INTEGER
+_BIT_INTEGER g_CursorBlinkTimer = {};
+
 // char[100]
 char g_ScriptTempBuffer[100] = {};
 
-// char[1020]
-char g_ScriptEditorStatusText[1020] = {};
+// char[1023]
+char g_ScriptEditorStatusText[1023] = {};
+
+// char[104]
+char g_ScriptFindText[104] = {};
 
 // char[10][1024]
 char g_ScriptSubtitleLines[10][1024] = {};
@@ -66,12 +72,8 @@ int g_ScriptEventsEnabled = {};
 int g_ScriptInputFlag = {};
 int g_ScriptLoopWarningShown = {};
 int g_ActorLookedUpByVariable = {};
-int INT_0310fd40 = {};
 int g_CurrentEditingColumn = {};
 int g_CurrentEditingLine = {};
 int g_SelectionAnchorColumn = {};
 int g_SelectionAnchorLine = {};
-
-// undefined1
-undefined1 DAT_0310fd58 = {};
 

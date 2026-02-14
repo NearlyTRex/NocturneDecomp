@@ -31,18 +31,17 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   uint *puVar15;
   uint *puVar16;
   byte bVar17;
+  int local_184 [24];
   char local_124 [80];
   float local_d4 [10];
   CMatrix3x3f local_ac;
-  byte local_84 [32];
-  byte auStack_64 [24];
-  byte auStack_4c [8];
-  float local_44;
-  int local_40;
+  CBoundingBox3D local_84;
+  CVector3f CStack_6c;
+  CVector3f local_60;
+  CVector3f CStack_54;
+  CVector3f local_48;
   CVector3f local_3c;
-  int local_30;
-  int local_2c;
-  int local_28;
+  CVector3f local_30;
   C3DSLight *local_24;
   int local_20;
   int *local_1c;
@@ -245,13 +244,13 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     iVar5 = this_ptr->default_master_reverb;
   }
   core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(g_CSoundPtr,iVar5);
-  local_30 = g_CDemonCameraInstance.base.position.x;
-  local_2c = g_CDemonCameraInstance.base.position.y;
-  local_28 = g_CDemonCameraInstance.base.position.z;
-  if ((int *)(auStack_4c + 4) != &local_30) {
-    auStack_4c._4_4_ = g_CDemonCameraInstance.base.position.x;
-    local_44 = (float)g_CDemonCameraInstance.base.position.y;
-    local_40 = g_CDemonCameraInstance.base.position.z;
+  local_30.x = (float)g_CDemonCameraInstance.base.position.x;
+  local_30.y = (float)g_CDemonCameraInstance.base.position.y;
+  local_30.z = (float)g_CDemonCameraInstance.base.position.z;
+  if (&local_48 != &local_30) {
+    local_48.x = (float)g_CDemonCameraInstance.base.position.x;
+    local_48.y = (float)g_CDemonCameraInstance.base.position.y;
+    local_48.z = (float)g_CDemonCameraInstance.base.position.z;
   }
   pCVar8 = &g_CDemonCameraInstance.base.rotation_matrix;
   pfVar9 = local_d4;
@@ -267,14 +266,13 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     pfVar9 = pfVar9 + (uint)bVar17 * -2 + 1;
     pCVar13 = (CMatrix3x3f *)((int)pCVar13 + ((uint)bVar17 * -2 + 1) * 4);
   }
-  pCVar4 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-                     (&local_ac,(CVector3f *)(auStack_64 + 4));
+  pCVar4 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&local_ac,&local_60);
   if (&local_3c != pCVar4) {
     local_3c.x = pCVar4->x;
     local_3c.y = pCVar4->y;
     local_3c.z = pCVar4->z;
   }
-  core_weather_cpp_CWeather_FUN_005ef940(g_CWeatherPtr,(CVector3f *)(auStack_4c + 4),&local_3c);
+  core_weather_cpp_CWeather_FUN_005ef940(g_CWeatherPtr,&local_48,&local_3c);
   iVar5 = 0;
   if (0 < (int)this_ptr->actor_list_ptr) {
     do {
@@ -289,18 +287,16 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
       this_ptr_00 = *(CDemonActor **)local_18->actor_list_data;
       if ((this_ptr_00->is_transparent != 0) || (this_ptr_00->is_renderable != 0)) {
         corner_index = 0;
-        (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,(CBoundingBox3D *)local_84);
-        piVar14 = (int *)&stack0xfffffe7c;
+        (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&local_84);
+        piVar14 = local_184;
         do {
           pCVar4 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
-                             ((CBoundingBox3D *)(local_84 + 8),(CVector3f *)auStack_64,corner_index)
-          ;
-          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                    (this_ptr_00,(CVector3f *)auStack_4c,pCVar4);
+                             (&local_84,&CStack_6c,corner_index);
+          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr_00,&CStack_54,pCVar4);
           corner_index = corner_index + 1;
-          *piVar14 = (int)ROUND((float)auStack_4c._0_4_ * 256.0f);
-          piVar14[1] = (int)ROUND((float)auStack_4c._4_4_ * 256.0f);
-          piVar14[2] = (int)ROUND(local_44 * 256.0f);
+          *piVar14 = (int)ROUND(CStack_54.x * 256.0f);
+          piVar14[1] = (int)ROUND(CStack_54.y * 256.0f);
+          piVar14[2] = (int)ROUND(CStack_54.z * 256.0f);
           piVar14 = piVar14 + 3;
         } while ((int)corner_index < 8);
       }

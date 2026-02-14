@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_hero_cpp_CHero_getGrabbed_FUN_004f28d0(CHero *this_ptr,CDemonActor *grabber,int grab_type)
+int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004f28d0(CHero *this_ptr,CDemonActor *grabber,int grab_type)
 
 {
   CDeformableModelInstance *this_ptr_00;

@@ -2,13 +2,11 @@
 // Address: 0048b650
 // Address Range: [[0048b650, 0048b721]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQualityDirect_FUN_0048b650 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQualityDirect_FUN_0048b650(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_renderEnhancedQualityDirect_FUN_0048b650
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQualityDirect_FUN_0048b650(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   SMRGLHeaderPrimitive *pSVar1;
@@ -30,18 +28,18 @@ engine_drender_cpp_CDemonRenderer_renderEnhancedQualityDirect_FUN_0048b650
     if (((uVar2 & 0x80000000) == 0) || ((uVar2 & 0x1f) == 0)) {
       if (this_ptr->face_count == 0) {
         if (g_BitsPerPixel == 0x20) {
-          g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+          g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
         }
         else {
-          g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+          g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
         g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
-        g_RenderStateFlags = 999;
+        g_RenderStateFlags.dword = 999;
       }
       else {
-        g_RenderStateFlags = RENDER_TEXTURE_ENABLE;
+        g_RenderStateFlags.dword = RENDER_TEXTURE_ENABLE;
         g_RenderStateFlag2 = PREPROCESS_NONE;
-        g_ScanlineRenderFunc = core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
                 (this_ptr,(prim->base).count,(int *)(prim + 1));

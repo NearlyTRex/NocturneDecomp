@@ -2,13 +2,11 @@
 // Address: 0044c3e0
 // Address Range: [[0044c3e0, 0044c401]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0 (CDemonCamera *this_ptr,int skip_clear_buffers)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0(CDemonCamera *this_ptr,int skip_clear_buffers)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0
-          (CDemonCamera *this_ptr,int skip_clear_buffers)
+void __cdecl core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0(CDemonCamera *this_ptr,int skip_clear_buffers)
 
 {
   g_CurrentSceneCamera = this_ptr;

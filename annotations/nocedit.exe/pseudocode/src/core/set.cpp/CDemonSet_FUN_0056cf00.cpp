@@ -14,6 +14,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056cf00(CDemonSet *this_ptr)
   int iVar3;
   int iVar4;
   int iVar5;
+  byte auStack_44 [24];
   uint uStack_2c;
   uint uStack_28;
   uint uStack_24;
@@ -31,7 +32,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056cf00(CDemonSet *this_ptr)
         *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) & 0xf7;
       }
       else {
-        puVar2 = (uint *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))();
+        puVar2 = (uint *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1,auStack_44);
         if (&uStack_2c != puVar2) {
           uStack_2c = *puVar2;
           uStack_28 = puVar2[1];
@@ -44,7 +45,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056cf00(CDemonSet *this_ptr)
         }
         core_set_cpp_CDemonSet_FUN_0056d380(this_ptr);
         core_set_cpp_CDemonSet_FUN_00570ca0(this_ptr);
-        iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 0xc))();
+        iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 0xc))(iVar1);
         if (iVar3 == 0) {
           *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) & 0xf7;
         }
@@ -56,7 +57,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056cf00(CDemonSet *this_ptr)
         if (0 < this_ptr->mirror_glass_count) {
           do {
             core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar3,0);
-            iVar4 = (**(code **)(*(int *)(iVar1 + 0x154) + 0xc))();
+            iVar4 = (**(code **)(*(int *)(iVar1 + 0x154) + 0xc))(iVar1);
             if (iVar4 != 0) {
               *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 8;
             }

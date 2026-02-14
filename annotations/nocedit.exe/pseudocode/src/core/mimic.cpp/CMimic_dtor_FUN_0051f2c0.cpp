@@ -30,7 +30,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint f
   g_CurrentDebugFilename = "..\\core\\mimic.cpp";
   g_CurrentDebugLine = 0xa9;
   if (iVar1 != 0) {
-    (**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))();
+    (**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))(iVar1,2);
   }
   this_ptr->unk4[0xc54] = '\0';
   this_ptr->unk4[0xc55] = '\0';

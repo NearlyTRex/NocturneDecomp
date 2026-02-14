@@ -4,115 +4,115 @@
       {
         "category": "other",
         "column": 14,
-        "line": 120,
+        "line": 119,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
-        "column": 11,
+        "column": 12,
+        "line": 122,
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 14,
         "line": 123,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 124,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 12,
+        "line": 126,
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 14,
         "line": 127,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 128,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 12,
+        "line": 130,
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 14,
         "line": 131,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 132,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 135,
+        "line": 134,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 142,
+        "line": 141,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 10,
+        "line": 145,
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 16,
         "line": 146,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 147,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 151,
+        "line": 150,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 152,
+        "line": 151,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 156,
+        "line": 155,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 157,
+        "line": 156,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 160,
+        "line": 159,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 161,
+        "line": 160,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 165,
+        "line": 164,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 183,
+        "line": 182,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       }
     ],
@@ -121,19 +121,20 @@
   },
   "complexity": {
     "assembly_lines": 1655,
-    "complexity_score": 844,
+    "complexity_score": 805,
     "cross_reference_count": 0,
     "function_call_count": 47,
     "global_count": 42,
-    "pseudocode_lines": 714,
-    "suspect_count": 11,
+    "pseudocode_lines": 700,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "warning_type_propagation"
     ],
-    "total_lines": 2369
+    "total_lines": 2355
   },
   "cross_references": [],
   "function": {
@@ -1257,78 +1258,57 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_fffffe24",
-      "text": "CDeformableModelInstance *in_stack_fffffe24;",
-      "type": "stack_param"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 282,
+      "line": 33,
       "match": "in_stack_fffffe24",
-      "text": "pCVar14 = in_stack_fffffe24;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 322,
-      "match": "in_stack_fffffe24",
-      "text": "in_stack_fffffe24 = (CDeformableModelInstance *)0x4d3961;",
+      "text": "float in_stack_fffffe24;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 332,
+      "line": 322,
       "match": "SQRT",
       "text": "if ((((local_b8.z - SQRT(local_a4 * local_a4 + local_ac * local_ac) < (float)3)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 334,
+      "line": 324,
       "match": "ABS",
       "text": "(ABS((float)local_14) < (float)0.78539816337500001)) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 381,
-      "match": "in_stack_fffffe24",
-      "text": "pCVar14 = in_stack_fffffe24;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 383,
-      "match": "in_stack_fffffe24",
-      "text": "in_stack_fffffe24 = pCVar14;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 469,
+      "line": 456,
       "match": "(uint *)((int)",
-      "text": "(*(uint *)((int)&pCVar18[0x1a].orient + 4) = (uint)(pCVar18[0x1a].orient.vec.y == 0.0),",
+      "text": "&& (*(uint *)((int)&pCVar18[0x1a].orient + 4) = (uint)(pCVar18[0x1a].orient.vec.y == 0.0),",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 617,
+      "line": 604,
       "match": "in_stack_fffffe24",
-      "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe24);",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffe24);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 669,
+      "line": 656,
       "match": "&stack0xfffffe24",
       "text": "((CMatrix3x3f *)&stack0xfffffe24,&local_e8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 674,
+      "line": 661,
       "match": "&stack0xfffffe24",
       "text": "((CMatrix3x3f *)&stack0xfffffe24,&local_100,&local_d0);",
       "type": "stack_ref"

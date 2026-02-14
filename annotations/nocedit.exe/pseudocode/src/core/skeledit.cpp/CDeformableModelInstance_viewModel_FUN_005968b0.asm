@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (CDeformableModelInstance *this_ptr)
+; __cdecl void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x8]:4   this_ptr
@@ -1179,7 +1179,7 @@ section .text
     LEA EAX,[EBP + -0x4e]               ; 005973af
     LEA EDI,[EBP + 0xffffff3a]          ; 005973b2
     MOV EDX,dword ptr [0x006703ec]      ; 005973b8 | g_CDemonRendererPtr2
-    MOV ESI,0x6819fc                    ; 005973be | DAT_006819fc
+    MOV ESI,0x6819fc                    ; 005973be | FLOAT_006819fc
     FXCH ST2                            ; 005973c3
     FCHS                                ; 005973c5
     FXCH                                ; 005973c7
@@ -1200,9 +1200,9 @@ section .text
     LEA EAX,[EBP + 0xffffff3a]          ; 005973e7
     MOV EDX,dword ptr [0x006703ec]      ; 005973ed | g_CDemonRendererPtr2
     ADD ESP,0xc                         ; 005973f3
-    MOVSD ES:EDI,ESI                    ; 005973f6 | DAT_006819fc
-    MOVSD ES:EDI,ESI                    ; 005973f7 | DAT_00681a00
-    MOVSD ES:EDI,ESI                    ; 005973f8 | DAT_00681a04
+    MOVSD ES:EDI,ESI                    ; 005973f6 | FLOAT_006819fc
+    MOVSD ES:EDI,ESI                    ; 005973f7 | FLOAT_00681a00
+    MOVSD ES:EDI,ESI                    ; 005973f8 | FLOAT_00681a04
     PUSH EAX                            ; 005973f9
     MOV EAX,dword ptr [EDX]             ; 005973fa | g_CDemonRendererInstance
     PUSH EAX                            ; 005973fc
@@ -1253,7 +1253,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffd2e],ESI ; 005974a2 | DAT_00fe0000
     XOR EAX,EAX                         ; 005974a8
     MOV EDI,0x1                         ; 005974aa
-    PUSH 0x6819e4                       ; 005974af | DAT_006819e4
+    PUSH 0x6819e4                       ; 005974af | SMRGLTextureBasic_006819e4
     MOV ESI,dword ptr [0x006703ec]      ; 005974b4 | g_CDemonRendererPtr2
     MOV dword ptr [EBP + 0xfffffcfe],EAX ; 005974ba
     MOV dword ptr [EBP + 0xfffffcfa],EAX ; 005974c0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_cramTextures_FUN_0046a970 (char *texture_filename,int min_u,int min_v,int max_u,int max_v)
+; __cdecl void __cdecl shape_design_c_cramTextures_FUN_0046a970(char *texture_filename,int min_u,int min_v,int max_u,int max_v)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   texture_filename

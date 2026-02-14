@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_flashlit_cpp_CFlashlight_getActorType_FUN_004cbbb0(CFlashlight *this_ptr)
+CDemonActorType * __cdecl core_flashlit_cpp_CFlashlight_getActorType_FUN_004cbbb0(CFlashlight *this_ptr)
 
 {
   return &g_CFlashlightClassInfo;

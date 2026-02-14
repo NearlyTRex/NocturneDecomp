@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset)
+; __cdecl void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset)
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr

@@ -30,7 +30,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
   if (iVar1 != 0) {
     g_CurrentDebugLine = 0x50;
     g_CurrentDebugFilename = "..\\core\\passngr.cpp";
-    (**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))();
+    (**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))(iVar1,2);
   }
   pCVar2 = core_morph_cpp_CMorph_dtor_FUN_0052b330((CMorph *)(this_ptr->unk + 100),0);
   pCVar3 = core_path_cpp_CPathMap_dtor_FUN_005464d0

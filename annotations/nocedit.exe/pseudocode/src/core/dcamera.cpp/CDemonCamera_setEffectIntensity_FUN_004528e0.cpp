@@ -2,13 +2,11 @@
 // Address: 004528e0
 // Address Range: [[004528e0, 004528f9]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0 (CDemonCamera *this_ptr,float intensity)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera *this_ptr,float intensity)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
-          (CDemonCamera *this_ptr,float intensity)
+void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera *this_ptr,float intensity)
 
 {
   double dVar1;

@@ -2,15 +2,13 @@
 // Address: 004b4220
 // Address Range: [[004b4220, 004b502e]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220 (CCheckOutItem *this_ptr,int operation_mode,char *filename)
+// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,int operation_mode,char *filename)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004b4aea) */
 
-int __cdecl
-engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
-          (CCheckOutItem *this_ptr,int operation_mode,char *filename)
+int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,int operation_mode,char *filename)
 
 {
   char cVar1;

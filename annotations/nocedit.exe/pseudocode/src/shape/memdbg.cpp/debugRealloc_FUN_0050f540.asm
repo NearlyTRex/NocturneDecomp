@@ -16,8 +16,8 @@
 ;   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0 at 00499000
 ;   core_morph.cpp_CMorphModel_FUN_0052a710 at 0052a78c
 ;   core_morph.cpp_CMorphModel_addPart_FUN_0052a580 at 0052a625
-;   core_script.cpp_CScript_FUN_0055a370 at 0055a3e4
-;   core_script.cpp_CScript_FUN_00567510 at 00567539
+;   core_script.cpp_CScript_addEventXRef_FUN_00567510 at 00567539
+;   core_script.cpp_CScript_buildParsedLines_FUN_0055a370 at 0055a3e4
 ;   core_script.cpp_CScript_dbLoad_FUN_005603c0 at 005605dc
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564ad7
 ;   ... and 25 more

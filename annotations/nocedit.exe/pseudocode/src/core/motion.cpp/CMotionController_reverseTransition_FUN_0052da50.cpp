@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_motion_cpp_CMotionController_reverseTransition_FUN_0052da50(CMotionController *this_ptr)
+void __cdecl core_motion_cpp_CMotionController_reverseTransition_FUN_0052da50(CMotionController *this_ptr)
 
 {
   int iVar1;

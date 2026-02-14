@@ -2,13 +2,11 @@
 // Address: 0051a030
 // Address Range: [[0051a030, 0051a146]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030 (CLodMesh *this_ptr,int grid_x,int grid_y,int grid_z)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh *this_ptr,int grid_x,int grid_y,int grid_z)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030
-          (CLodMesh *this_ptr,int grid_x,int grid_y,int grid_z)
+void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh *this_ptr,int grid_x,int grid_y,int grid_z)
 
 {
   int iVar1;

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 48,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 16,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 54
+    "total_lines": 52
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90 (CDeformableModel *this_ptr,int lod_index)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index)"
   },
   "function_calls": [],
   "globals": [
@@ -131,7 +131,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 12,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip + iVar1) =",
       "type": "pointer_cast"

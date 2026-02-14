@@ -12,6 +12,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422590(CBoxActor *this_ptr)
   CBoundingBox3D *this_ptr_00;
   CVector3f *pCVar1;
   CVector3f *out_point;
+  byte local_40 [24];
   CVector3f CStack_28;
   CVector3f local_1c;
   CVector3f local_10;
@@ -25,7 +26,8 @@ void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422590(CBoxActor *this_ptr)
   pCVar1 = &local_1c;
   out_point = &local_10;
   this_ptr_00 = (CBoundingBox3D *)
-                (**(code **)(*(int *)(this_ptr->constrain_extents_actor + 0x154) + 0x14))();
+                (**(code **)(*(int *)(this_ptr->constrain_extents_actor + 0x154) + 0x14))
+                          (this_ptr->constrain_extents_actor,local_40);
   pCVar1 = core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(this_ptr_00,out_point,pCVar1);
   if (&local_1c != pCVar1) {
     local_1c.x = pCVar1->x;

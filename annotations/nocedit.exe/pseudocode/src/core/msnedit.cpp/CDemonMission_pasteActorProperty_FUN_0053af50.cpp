@@ -2,13 +2,11 @@
 // Address: 0053af50
 // Address Range: [[0053af50, 0053b02c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50 (CDemonMission *this_ptr,char *property)
+// Signature: void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,char *property)
 
 #include "nocturne.h"
 
-void __cdecl
-core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50
-          (CDemonMission *this_ptr,char *property)
+void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,char *property)
 
 {
   CKeyFramedModel *this_ptr_00;

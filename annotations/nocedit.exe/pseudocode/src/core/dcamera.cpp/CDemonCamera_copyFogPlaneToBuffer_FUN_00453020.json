@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 63,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 14,
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 46,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 149
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020 (CDemonCamera *this_ptr,int plane_index)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(CDemonCamera *this_ptr,int plane_index)"
   },
   "function_calls": [],
   "globals": [
@@ -181,7 +181,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 45,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&g_CameraPlaneWorkBuffer + iVar1);",
       "type": "pointer_cast"

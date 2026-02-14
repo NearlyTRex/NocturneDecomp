@@ -3,93 +3,9 @@
     "errors": [
       {
         "category": "other",
-        "column": 13,
-        "line": 48,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 50,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 55,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 55,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 56,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 56,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 16,
-        "line": 59,
+        "line": 57,
         "message": "cannot cast from type 'float' to pointer type 'CHero *'"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 77,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 78,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 82,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 82,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 83,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 83,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 166,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 173,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       }
     ],
     "success": false,
@@ -97,19 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 439,
-    "complexity_score": 425,
+    "complexity_score": 290,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
-    "pseudocode_lines": 185,
-    "suspect_count": 22,
+    "pseudocode_lines": 180,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
-      "unknown_field"
+      "warning_type_propagation"
     ],
-    "total_lines": 624
+    "total_lines": 619
   },
   "cross_references": [
     {
@@ -540,150 +456,59 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 41,
-      "match": "._0_4_",
-      "text": "local_48._0_4_ =",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 43,
-      "match": "._4_4_",
-      "text": "local_48._4_4_ =",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "SQRT",
-      "text": "CStack_38.z = SQRT(local_40 * local_40 +",
+      "text": "local_30 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 48,
-      "match": "._0_4_",
-      "text": "(float)local_48._0_4_ * (float)local_48._0_4_ +",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 48,
-      "match": "._0_4_",
-      "text": "(float)local_48._0_4_ * (float)local_48._0_4_ +",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 49,
-      "match": "._4_4_",
-      "text": "(float)local_48._4_4_ * (float)local_48._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 49,
-      "match": "._4_4_",
-      "text": "(float)local_48._4_4_ * (float)local_48._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 70,
-      "match": "._0_4_",
-      "text": "local_48._0_4_ = local_80.z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 71,
-      "match": "._4_4_",
-      "text": "local_48._4_4_ = local_74;",
-      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 72,
       "match": "SQRT",
-      "text": "local_18 = SQRT(local_40 * local_40 +",
+      "text": "fVar1 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 75,
-      "match": "._0_4_",
-      "text": "(float)local_48._0_4_ * (float)local_48._0_4_ +",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 175,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 * (float)3.1415926535000001 < local_8c) {",
+      "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 75,
-      "match": "._0_4_",
-      "text": "(float)local_48._0_4_ * (float)local_48._0_4_ +",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 176,
+      "match": "in_stack_00000008",
+      "text": "local_8c = in_stack_00000008 * (float)3.1415926535000001;",
+      "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 76,
-      "match": "._4_4_",
-      "text": "(float)local_48._4_4_ * (float)local_48._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 76,
-      "match": "._4_4_",
-      "text": "(float)local_48._4_4_ * (float)local_48._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 159,
-      "match": "._4_4_",
-      "text": "local_48._4_4_ = local_68;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 166,
-      "match": "._4_4_",
-      "text": "local_48._4_4_ = pCVar3->x;",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 178,
+      "match": "in_stack_00000008",
+      "text": "if (local_8c < in_stack_00000008 * (float)-3.1415926535000001) {",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 179,
       "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 * (float)3.1415926535000001 < local_88) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 180,
-      "match": "in_stack_00000008",
-      "text": "local_88 = in_stack_00000008 * (float)3.1415926535000001;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 182,
-      "match": "in_stack_00000008",
-      "text": "if (local_88 < in_stack_00000008 * (float)-3.1415926535000001) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 183,
-      "match": "in_stack_00000008",
-      "text": "local_88 = in_stack_00000008 * (float)-3.1415926535000001;",
+      "text": "local_8c = in_stack_00000008 * (float)-3.1415926535000001;",
       "type": "stack_param"
     },
     {

@@ -139,24 +139,24 @@ section .text
         ;   Label: LAB_005ee5d5
     LEA EAX,[ESP + 0x1c]                ; 005ee5d6
     PUSH EAX                            ; 005ee5da
-    PUSH 0x3f95d7c                      ; 005ee5db | DAT_03f95d7c
+    PUSH 0x3f95d7c                      ; 005ee5db | CDemonGlobe_03f95d7c
     CALL core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310 ; 005ee5e0
         ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)
     ADD ESP,0x8                         ; 005ee5e5
     MOV EBX,0x8000                      ; 005ee5e8
     PUSH 0x40400000                     ; 005ee5ed
     MOV AH,0x20                         ; 005ee5f2
-    PUSH 0x3f95d7c                      ; 005ee5f4 | DAT_03f95d7c
-    MOV dword ptr [0x03f95db8],EBX      ; 005ee5f9 | DAT_03f95d7c.intensity_multiplier
-    MOV byte ptr [0x03f95d98],AH        ; 005ee5ff | DAT_03f95d7c.intensity
+    PUSH 0x3f95d7c                      ; 005ee5f4 | CDemonGlobe_03f95d7c
+    MOV dword ptr [0x03f95db8],EBX      ; 005ee5f9 | CDemonGlobe_03f95d7c.intensity_multiplier
+    MOV byte ptr [0x03f95d98],AH        ; 005ee5ff | CDemonGlobe_03f95d7c.intensity
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360 ; 005ee605
         ;   XREF to: 00471360 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 005ee60a
-    PUSH 0x3f95d7c                      ; 005ee60d | DAT_03f95d7c
+    PUSH 0x3f95d7c                      ; 005ee60d | CDemonGlobe_03f95d7c
     MOV EDI,dword ptr [0x006810c8]      ; 005ee612 | g_CDemonSetPtr
     XOR ESI,ESI                         ; 005ee618
     PUSH EDI                            ; 005ee61a | g_CDemonSetInstance
-    MOV dword ptr [0x03f95d9c],ESI      ; 005ee61b | DAT_03f95d7c.corona_mode
+    MOV dword ptr [0x03f95d9c],ESI      ; 005ee61b | CDemonGlobe_03f95d7c.corona_mode
     CALL core_set.cpp_CDemonSet_FUN_0056d110 ; 005ee621
         ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d110(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 005ee626

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(CNetGame *this_ptr,int player_index)
+void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(CNetGame *this_ptr,int player_index)
 
 {
   int iVar1;

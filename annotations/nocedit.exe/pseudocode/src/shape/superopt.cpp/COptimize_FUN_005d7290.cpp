@@ -27,9 +27,9 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr)
     return 0;
   }
   shape_superopt_cpp_CObj_clearStateFlags_FUN_005d35e0(&this_ptr->obj,0xffffffff);
-  iVar1 = (*this_ptr->vtable->func12)();
+  iVar1 = (*this_ptr->vtable->func12)(this_ptr);
   if (iVar1 != 0) {
-    iVar1 = (*this_ptr->vtable->func14)();
+    iVar1 = (*this_ptr->vtable->func14)(this_ptr);
     if (iVar1 != 0) {
       return 1;
     }

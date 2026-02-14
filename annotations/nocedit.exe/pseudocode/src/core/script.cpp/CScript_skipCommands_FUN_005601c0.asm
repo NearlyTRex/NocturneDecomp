@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,int param_2,int param_3)
+; __cdecl int __cdecl core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,int direction,int count)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   direction
+; int              Stack[0xc]:4   count
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -146,7 +146,7 @@ section .text
     PUSH EBX                            ; 00560282
     PUSH EBP                            ; 00560283
     CALL core_script.cpp_CScript_skipCommands_FUN_005601c0 ; 00560284
-        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int param_2, int param_3)
+        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int direction, int count)
     MOV EBX,EAX                         ; 00560289
     ADD ESP,0xc                         ; 0056028b
     JMP 0x005601f0                      ; 0056028e
@@ -157,7 +157,7 @@ section .text
     PUSH EBX                            ; 00560296
     PUSH EBP                            ; 00560297
     CALL core_script.cpp_CScript_skipCommands_FUN_005601c0 ; 00560298
-        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int param_2, int param_3)
+        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int direction, int count)
     ADD ESP,0xc                         ; 0056029d
     MOV EBX,EAX                         ; 005602a0
     JMP 0x005601f0                      ; 005602a2

@@ -2,13 +2,11 @@
 // Address: 004339c0
 // Address Range: [[004339c0, 00433c82]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0 (int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode)
+// Signature: void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0
-          (int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode)
+void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode)
 
 {
   bool bVar1;

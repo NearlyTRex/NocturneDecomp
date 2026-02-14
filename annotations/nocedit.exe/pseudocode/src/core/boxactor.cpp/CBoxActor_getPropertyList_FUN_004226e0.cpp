@@ -2,13 +2,11 @@
 // Address: 004226e0
 // Address Range: [[004226e0, 004228d1]]
 // Convention: __cdecl
-// Signature: void __cdecl core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0 (CBoxActor *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(CBoxActor *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0
-          (CBoxActor *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(CBoxActor *this_ptr,CActorPropertyList *property_list)
 
 {
   CKeyFramedModel *pCVar1;

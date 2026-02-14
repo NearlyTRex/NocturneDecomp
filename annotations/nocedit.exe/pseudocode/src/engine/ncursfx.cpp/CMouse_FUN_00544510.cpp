@@ -11,7 +11,7 @@ int __cdecl engine_ncursfx_cpp_CMouse_FUN_00544510(CMouse *this_ptr)
 {
   uint in_stack_00000008;
   
-  if (((g_MouseButtonFlags & in_stack_00000008) != 0) && (this_ptr->field_604 == 0)) {
+  if (((g_MouseButtonFlags.dword & in_stack_00000008) != 0) && (this_ptr->field_604 == 0)) {
     this_ptr->field_604 = 1;
     return 0;
   }

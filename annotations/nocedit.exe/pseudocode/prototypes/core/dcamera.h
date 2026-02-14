@@ -141,11 +141,11 @@ int __cdecl CDemonCamera::sampleLightingAntialiased(CDemonCamera *this_ptr,CVect
 
 // Original: core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
 // Address: 0044edf0
-int __cdecl CDemonCamera::calculateAttenuatedDirectionalLight(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source, CVector3i *light_direction);
+int __cdecl CDemonCamera::calculateAttenuatedDirectionalLight(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
 
 // Original: core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30
 // Address: 0044ef30
-void __cdecl CDemonCamera::saveCameraTransform(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix, CMatrix3x3f *transform_matrix);
+void __cdecl CDemonCamera::saveCameraTransform(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix);
 
 // Original: core_dcamera.cpp_CDemonCamera_restoreTransform_FUN_0044f1e0
 // Address: 0044f1e0
@@ -189,7 +189,7 @@ void __cdecl CDemonCamera::blurCoronaBufferAndClearEdges(CDemonCamera *this_ptr)
 
 // Original: core_dcamera.cpp_log2Custom_FUN_00450a90
 // Address: 00450a90
-double log2Custom(void);
+double __watcallRegister log2Custom(void);
 
 // Original: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
 // Address: 00450ac0
@@ -325,7 +325,7 @@ void __cdecl saveCameraFog(SFog *fog,_FILE *file_handle);
 
 // Original: core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0
 // Address: 00453fc0
-void __cdecl CDemonCamera::initCameraShake(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration, float decay_time);
+void __cdecl CDemonCamera::initCameraShake(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time);
 
 // Original: core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
 // Address: 00454060

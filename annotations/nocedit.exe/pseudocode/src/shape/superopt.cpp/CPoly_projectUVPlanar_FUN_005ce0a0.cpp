@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CPoly_projectUVPlanar_FUN_005ce0a0(CPoly *this_ptr,CVector2d *uv_scale)
+void __cdecl shape_superopt_cpp_CPoly_projectUVPlanar_FUN_005ce0a0(CPoly *this_ptr,CVector2d *uv_scale)
 
 {
   CVert *pCVar1;

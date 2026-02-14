@@ -2,14 +2,11 @@
 // Address: 004286e0
 // Address Range: [[004286e0, 00428d7c]]
 // Convention: __cdecl
-// Signature: int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0 (CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction, float min_distance,float max_distance)
+// Signature: int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)
 
 #include "nocturne.h"
 
-int __cdecl
-core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-          (CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,
-          float min_distance,float max_distance)
+int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)
 
 {
   float *pfVar1;

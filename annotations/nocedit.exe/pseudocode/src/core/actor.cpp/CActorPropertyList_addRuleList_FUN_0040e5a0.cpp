@@ -2,13 +2,11 @@
 // Address: 0040e5a0
 // Address Range: [[0040e5a0, 0040e631]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0 (CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0(CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count)
 
 #include "nocturne.h"
 
-CActorProperty * __cdecl
-core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0
-          (CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count)
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0(CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count)
 
 {
   CActorProperty *in_EAX;

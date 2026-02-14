@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 142,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 15,
     "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 45
+    "total_lines": 43
   },
   "cross_references": [
     {
@@ -32,7 +32,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_006107c0",
-    "signature": "short * crt_unknown_c_FUN_006107c0(void)"
+    "signature": "short * crt_unknown_c_FUN_006107c0(short *param_1,short param_2)"
   },
   "function_calls": [],
   "globals": [],
@@ -89,67 +89,67 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "text": "short *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "short * FUN_006107c0(short *param_1,short param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "short * FUN_006107c0(short *param_1,short param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 7,
-      "match": "in_stack_00000008",
-      "text": "short in_stack_00000008;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "sVar1 = *param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 9,
-      "match": "in_stack_00000004",
-      "text": "sVar1 = *in_stack_00000004;",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "if (param_2 == sVar1) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == sVar1) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "text": "return param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 12,
-      "match": "in_stack_00000004",
-      "text": "return in_stack_00000004;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "sVar1 = *param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "sVar1 = *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 15,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "sVar1 = *in_stack_00000004;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "sVar1 = *param_1;",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 1,

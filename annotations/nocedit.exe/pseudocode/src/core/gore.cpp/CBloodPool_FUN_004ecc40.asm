@@ -22,10 +22,10 @@
 ;   undefined4 g_RenderVertexBuffer[3].v
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02d83368.base.count
-;   undefined4 DAT_02d83368.surface_normal.A
-;   undefined4 DAT_02d83368.surface_normal.B
-;   undefined4 DAT_02d83368.surface_normal.C
+;   undefined4 SMRGLHeaderPrimitive_02d83368.base.count
+;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.A
+;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.B
+;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.C
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
     MOV EBP,0x80000                     ; 004ecc58
     MOV EAX,0xf80000                    ; 004ecc5d | DAT_00f80000
     XOR ECX,ECX                         ; 004ecc62
-    MOV dword ptr [0x02d8336c],EDX      ; 004ecc64 | DAT_02d83368.base.count
+    MOV dword ptr [0x02d8336c],EDX      ; 004ecc64 | SMRGLHeaderPrimitive_02d83368.base.count
     MOV dword ptr [0x02d83380],ECX      ; 004ecc6a | INT_02d83380
     MOV dword ptr [0x02d83384],EBX      ; 004ecc70 | INT_02d83384
     MOV dword ptr [0x02d83388],ESI      ; 004ecc76 | INT_02d83388
@@ -61,13 +61,13 @@ section .text
     MOV dword ptr [0x006880bc],EBP      ; 004ecca2 | g_RenderVertexBuffer[3].u
     MOV dword ptr [0x006880c0],EBP      ; 004ecca8 | g_RenderVertexBuffer[3].v
     MOV EDX,0xffff                      ; 004eccae
-    MOV dword ptr [0x02d83370],ECX      ; 004eccb3 | DAT_02d83368.surface_normal.A
+    MOV dword ptr [0x02d83370],ECX      ; 004eccb3 | SMRGLHeaderPrimitive_02d83368.surface_normal.A
     PUSH EDX                            ; 004eccb9
     MOV ESI,dword ptr [0x006703ec]      ; 004eccba | g_CDemonRendererPtr2
-    MOV dword ptr [0x02d83378],ECX      ; 004eccc0 | DAT_02d83368.surface_normal.C
+    MOV dword ptr [0x02d83378],ECX      ; 004eccc0 | SMRGLHeaderPrimitive_02d83368.surface_normal.C
     PUSH ESI                            ; 004eccc6 | g_CDemonRendererInstance
-    MOV dword ptr [0x02d8337c],ECX      ; 004eccc7 | DAT_02d83368.surface_normal.D
-    MOV dword ptr [0x02d83374],EDX      ; 004ecccd | DAT_02d83368.surface_normal.B
+    MOV dword ptr [0x02d8337c],ECX      ; 004eccc7 | SMRGLHeaderPrimitive_02d83368.surface_normal.D
+    MOV dword ptr [0x02d83374],EDX      ; 004ecccd | SMRGLHeaderPrimitive_02d83368.surface_normal.B
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004eccd3
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004eccd8

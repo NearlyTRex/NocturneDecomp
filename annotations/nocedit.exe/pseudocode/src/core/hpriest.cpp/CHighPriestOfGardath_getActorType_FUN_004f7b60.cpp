@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_hpriest_cpp_CHighPriestOfGardath_getActorType_FUN_004f7b60(CHighPriestOfGardath *this_ptr)
+CDemonActorType * __cdecl core_hpriest_cpp_CHighPriestOfGardath_getActorType_FUN_004f7b60(CHighPriestOfGardath *this_ptr)
 
 {
   return &g_CHighPriestOfGardathClassInfo;

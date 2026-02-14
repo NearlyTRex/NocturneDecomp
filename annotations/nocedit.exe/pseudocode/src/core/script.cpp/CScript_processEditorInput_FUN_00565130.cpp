@@ -1,0 +1,362 @@
+// Name: core_script.cpp_CScript_processEditorInput_FUN_00565130
+// Address: 00565130
+// Address Range: [[00565130, 00565a91]]
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *this_ptr)
+
+{
+  char cVar1;
+  bool bVar2;
+  void *this_ptr_00;
+  int line_number;
+  CScript *pCVar3;
+  char cVar4;
+  int iVar5;
+  uint uVar6;
+  char *pcVar7;
+  byte bVar8;
+  EEditorActionType EVar9;
+  int iVar10;
+  int iStack_3c;
+  uint uStack_38;
+  int iStack_34;
+  uint uStack_30;
+  uint uStack_2c;
+  int iStack_28;
+  uint uStack_24;
+  int iStack_20;
+  int iStack_1c;
+  int iStack_18;
+  char acStack_14 [4];
+  
+  bVar8 = 0;
+  iStack_18 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  g_CursorBlinkTimer.dword = g_CursorBlinkTimer.dword + g_GlobalDeltaTimeInt & 0xfffff;
+  core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
+  core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(this_ptr);
+  core_script_cpp_updateSelection_FUN_00564500();
+  shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&g_ScriptEditorHScrollBar);
+  shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&g_ScriptEditorVScrollBar);
+  core_script_cpp_CScript_clampCursorToView_FUN_00566880(this_ptr);
+  iStack_1c = g_CurrentEditingColumn;
+  iStack_20 = g_CurrentEditingLine;
+  bVar2 = false;
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
+  if (iVar5 != 0) {
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_LEFT);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
+  if (iVar5 != 0) {
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_RIGHT);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
+  if (iVar5 != 0) {
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_DOWN);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
+  if (iVar5 != 0) {
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_UP);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
+  if (iVar5 != 0) {
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    if (iVar5 == 0) {
+      EVar9 = ACTION_TYPE_HOME;
+    }
+    else {
+      EVar9 = ACTION_TYPE_CTRL_HOME;
+    }
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4f);
+  if (iVar5 != 0) {
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    if (iVar5 == 0) {
+      EVar9 = ACTION_TYPE_END;
+    }
+    else {
+      EVar9 = ACTION_TYPE_CTRL_END;
+    }
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x51);
+  if (iVar5 != 0) {
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_PAGE_DOWN);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x49);
+  if (iVar5 != 0) {
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_PAGE_UP);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x53);
+  if (iVar5 != 0) {
+    bVar2 = true;
+    if (g_SelectionAnchorColumn < 0) {
+      EVar9 = ACTION_TYPE_DELETE;
+    }
+    else {
+      iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      if (iVar5 == 0) {
+        EVar9 = ACTION_TYPE_CUT;
+      }
+      else {
+        EVar9 = ACTION_TYPE_SELECT_WORD;
+      }
+    }
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x52);
+  if (iVar5 != 0) {
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    if (iVar5 == 0) {
+      iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      if (iVar5 == 0) {
+        g_AutoIndentEnabled = (int)(g_AutoIndentEnabled == 0);
+        goto LAB_00565363;
+      }
+      EVar9 = ACTION_TYPE_PASTE;
+      bVar2 = true;
+    }
+    else {
+      EVar9 = ACTION_TYPE_COPY;
+    }
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9);
+  }
+LAB_00565363:
+  iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if (iVar5 != 0) {
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2d);
+    if (iVar5 != 0) {
+      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_SELECT_WORD);
+      wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
+    }
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
+    if (iVar5 != 0) {
+      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_COPY);
+      wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
+    }
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
+    if (iVar5 != 0) {
+      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_PASTE);
+      wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
+    }
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if ((iVar5 != 0) &&
+     (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22), iVar5 != 0)) {
+    iStack_34 = g_CurrentEditingLine + 1;
+    iVar10 = 1;
+    iVar5 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
+    iVar5 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
+                      (g_CEditorToolsPtr,"Enter line number",&iStack_34,1,1,iVar5 + 1,
+                       iVar10);
+    if (iVar5 != 0) {
+      g_CurrentEditingLine = iStack_34 + -1;
+      bVar2 = true;
+      g_CurrentEditingColumn = 0;
+    }
+    engine_2d_c_clearInputAndWait_FUN_00403260();
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if ((iVar5 != 0) &&
+     (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21), iVar5 != 0)) {
+    iVar10 = 1;
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    if (iVar5 != 0) {
+      iVar10 = -1;
+    }
+    iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+                      (g_CEditorToolsPtr,"Find",g_ScriptFindText,100,1);
+    if (iVar5 != 0) {
+      iVar5 = core_script_cpp_CScript_findText_FUN_00566cc0
+                        (this_ptr,g_ScriptFindText,g_CurrentEditingColumn,g_CurrentEditingLine,
+                         &uStack_30,&iStack_3c,&uStack_38,iVar10);
+      if (iVar5 == 0) {
+        _sprintf
+                  (g_ScriptEditorStatusText,"Can't find %s",g_ScriptFindText);
+      }
+      else {
+        _sprintf
+                  (g_ScriptEditorStatusText,"Found %s",g_ScriptFindText);
+        g_CurrentEditingLine = iStack_3c;
+        g_CurrentEditingColumn = uStack_30;
+        bVar2 = false;
+        g_SelectionAnchorColumn = uStack_38;
+        iStack_18 = 1;
+        g_SelectionAnchorLine = iStack_3c;
+      }
+    }
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3d);
+  if (iVar5 != 0) {
+    iVar10 = 1;
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    if (iVar5 != 0) {
+      iVar10 = -1;
+    }
+    if (g_ScriptFindText[0] == '\0') {
+      shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+                (g_CEditorToolsPtr,"Find",g_ScriptFindText,100,1);
+    }
+    if (g_ScriptFindText[0] != '\0') {
+      iVar5 = core_script_cpp_CScript_findText_FUN_00566cc0
+                        (this_ptr,g_ScriptFindText,iVar10 + g_CurrentEditingColumn,
+                         g_CurrentEditingLine,&uStack_2c,&iStack_28,&uStack_24,iVar10);
+      if (iVar5 == 0) {
+        _sprintf
+                  (g_ScriptEditorStatusText,"Can't find %s",g_ScriptFindText);
+      }
+      else {
+        _sprintf
+                  (g_ScriptEditorStatusText,"Found %s",g_ScriptFindText);
+        g_CurrentEditingLine = iStack_28;
+        g_CurrentEditingColumn = uStack_2c;
+        bVar2 = false;
+        g_SelectionAnchorColumn = uStack_24;
+        iStack_18 = 1;
+        g_SelectionAnchorLine = iStack_28;
+      }
+    }
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e);
+  if (iVar5 != 0) {
+    bVar2 = true;
+    core_script_cpp_CScript_editParameterAtPosition_FUN_00565ae0
+              (this_ptr,g_CurrentEditingColumn,g_CurrentEditingLine);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x40);
+  if (iVar5 != 0) {
+    bVar2 = true;
+    core_script_cpp_CScript_executeContextAction_FUN_00565d00
+              (this_ptr,g_CurrentEditingColumn,g_CurrentEditingLine);
+  }
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
+  if (iVar5 != 0) {
+    core_script_cpp_CScript_showSyntaxHelp_FUN_00565e70
+              (this_ptr,g_CurrentEditingColumn,g_CurrentEditingLine);
+  }
+  this_ptr_00 = g_ActiveControl;
+  if (this_ptr == g_ActiveControl) {
+    if ((g_MouseButtonFlags.dword & 1) == 0) {
+      g_ActiveControl = (void *)0x0;
+    }
+    else {
+      core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20
+                (g_ActiveControl,g_MouseX,g_MouseY,&g_CurrentEditingColumn,&g_CurrentEditingLine);
+      if (g_MouseX <= g_ScriptTextAreaLeft) {
+        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr_00,ACTION_TYPE_CURSOR_LEFT);
+      }
+      if (g_ScriptTextAreaRight <= g_MouseX) {
+        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_RIGHT);
+      }
+      if (g_MouseY <= g_ScriptTextAreaTop) {
+        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_UP);
+      }
+      if (g_ScriptTextAreaBottom <= g_MouseY) {
+        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_DOWN);
+      }
+      iStack_18 = 1;
+    }
+  }
+  else if (g_ActiveControl == (void *)0x0) {
+    if ((g_MouseButtonFlags.dword & 1) == 0) {
+      if ((g_MouseButtonFlags.dword & 2) != 0) {
+        g_MouseButtonFlags = (_BIT_INTEGER)g_ActiveControl;
+        iVar5 = core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20
+                          (this_ptr,g_MouseX,g_MouseY,&g_CurrentEditingColumn,&g_CurrentEditingLine)
+        ;
+        if (iVar5 != 0) {
+          core_script_cpp_CScript_gotoPosition_FUN_00565aa0
+                    (this_ptr,g_CurrentEditingColumn,g_CurrentEditingLine);
+        }
+      }
+    }
+    else {
+      iVar5 = core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20
+                        (this_ptr,g_MouseX,g_MouseY,&g_CurrentEditingColumn,&g_CurrentEditingLine);
+      pCVar3 = g_ActiveControl;
+      if ((iVar5 != 0) &&
+         (iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), pCVar3 = this_ptr, iVar5 != 0
+         )) {
+        core_script_cpp_CScript_editParameterAtPosition_FUN_00565ae0
+                  (this_ptr,g_CurrentEditingColumn,g_CurrentEditingLine);
+        g_MouseButtonFlags = (_BIT_INTEGER)this_ptr_00;
+        pCVar3 = g_ActiveControl;
+      }
+      g_ActiveControl = pCVar3;
+      bVar2 = true;
+    }
+  }
+  core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
+  do {
+    while( true ) {
+      do {
+        while( true ) {
+          while( true ) {
+            iVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+            if (iVar5 == 0) {
+              core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(this_ptr);
+              if (bVar2) {
+                core_script_cpp_clearSelections_FUN_005644e0();
+              }
+              else if ((iStack_1c != g_CurrentEditingColumn) || (iStack_20 != g_CurrentEditingLine))
+              {
+                if (iStack_18 == 0) {
+                  core_script_cpp_clearSelections_FUN_005644e0();
+                }
+                else if (g_SelectionAnchorColumn < 0) {
+                  g_SelectionAnchorColumn = iStack_1c;
+                  g_SelectionAnchorLine = iStack_20;
+                }
+                g_CursorBlinkTimer.dword = 0;
+              }
+              core_script_cpp_CScript_updateLineMetrics_FUN_00566800(this_ptr,iStack_20);
+              core_script_cpp_updateSelection_FUN_00564500();
+              return;
+            }
+            uVar6 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+            cVar4 = (char)uVar6;
+            uVar6 = uVar6 & 0xff;
+            if (uVar6 != 0xd) break;
+            core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_ENTER);
+          }
+          if (uVar6 != 8) break;
+          core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_BACKSPACE);
+        }
+      } while (((g_CharacterClassificationTable[(byte)(cVar4 + 1)] & 8) == 0) && (uVar6 != 9));
+      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT);
+      if (g_AutoIndentEnabled == 0) break;
+      acStack_14[1] = 0;
+      acStack_14[0] = cVar4;
+      core_script_cpp_CScript_insertText_FUN_00566390(this_ptr,acStack_14,1);
+      bVar2 = true;
+    }
+    core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(this_ptr,g_CurrentEditingLine);
+    uVar6 = 0xffffffff;
+    pcVar7 = g_CurrentLineBuffer + 1;
+    do {
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
+    } while (cVar1 != '\0');
+    iVar10 = core_script_cpp_CScript_editorX2Index_FUN_00566a90
+                       (this_ptr,g_CurrentEditingLine,g_CurrentEditingColumn);
+    for (iVar5 = ~uVar6 - 1; iVar5 < iVar10; iVar5 = iVar5 + 1) {
+      g_CurrentLineBuffer[iVar5 + 1] = ' ';
+    }
+    g_CurrentLineBuffer[iVar10 + 1] = cVar4;
+    line_number = g_CurrentEditingLine;
+    if (iVar5 <= iVar10) {
+      iVar5 = iVar5 + 1;
+    }
+    g_CurrentLineBuffer[iVar5 + 1] = '\0';
+    g_CurrentEditingColumn =
+         core_script_cpp_CScript_editorIndex2X_FUN_00566b30(this_ptr,line_number,iVar10 + 1);
+    core_script_cpp_CScript_editorPutLine_FUN_005662a0(this_ptr,g_CurrentEditingLine);
+    bVar2 = true;
+  } while( true );
+}

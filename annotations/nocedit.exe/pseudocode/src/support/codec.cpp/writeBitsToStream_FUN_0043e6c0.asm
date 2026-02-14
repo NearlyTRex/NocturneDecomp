@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0 (SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)
+; __cdecl void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)
 ;
 ; Parameters:
 ; SBitBuffer *     Stack[0x4]:4   bit_buffer

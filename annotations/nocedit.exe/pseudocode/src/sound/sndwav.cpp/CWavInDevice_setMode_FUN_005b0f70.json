@@ -4,37 +4,37 @@
       {
         "category": "missing_member",
         "column": 13,
-        "line": 38,
+        "line": 35,
         "message": "no member named '_16_4_' in 'tWAVEFORMATEX'"
       },
       {
         "category": "missing_member",
         "column": 85,
-        "line": 45,
+        "line": 42,
         "message": "no member named '_16_4_' in 'tWAVEFORMATEX'"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 124,
+        "line": 121,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 124,
+        "line": 121,
         "message": "expected expression"
       },
       {
         "category": "missing_member",
         "column": 15,
-        "line": 128,
+        "line": 125,
         "message": "no member named '_16_4_' in 'tWAVEFORMATEX'"
       },
       {
         "category": "missing_member",
         "column": 34,
-        "line": 128,
+        "line": 125,
         "message": "no member named '_16_4_' in 'tWAVEFORMATEX'"
       }
     ],
@@ -43,11 +43,11 @@
   },
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 332,
+    "complexity_score": 329,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 30,
-    "pseudocode_lines": 122,
+    "pseudocode_lines": 119,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
@@ -55,7 +55,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 406
+    "total_lines": 403
   },
   "cross_references": [],
   "function": {
@@ -68,7 +68,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70",
-    "signature": "int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70 (CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)"
   },
   "function_calls": [
     {
@@ -373,133 +373,133 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_00000018",
       "text": "int in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 27,
       "match": "in_stack_00000018",
       "text": "g_WaveInStereoRequested = (int)(in_stack_00000018 != 0);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 31,
+      "line": 28,
       "match": "._16_4_",
       "text": "WStack_24._16_4_ = tStack_54.dwFormats;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & WStack_24._16_4_) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 35,
       "match": "._16_4_",
       "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & WStack_24._16_4_) != 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 36,
       "match": "(int *)((int)",
       "text": "uVar4 = (uint)(channels < *(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 37,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8) < channels) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 41,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 44,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8) <",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 48,
       "match": "(int *)((int)",
       "text": "if (sample_rate < *(int *)((int)&g_WaveInFormatTable[0].channels + iVar8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 51,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].channels + iVar8) < sample_rate) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 86,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar8) = pvVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 89,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveInBuffers + iVar8) = pvVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 92,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8) = pvVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 95,
       "match": "(HGLOBAL *)((int)",
       "text": "pvVar6 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 97,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveInHeaders + iVar8) = pvVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 117,
+      "line": 114,
       "match": "code *",
-      "text": "iVar7 = (*(code *)**(uint **)bits_per_sample)();",
+      "text": "iVar7 = (*(code *)**(uint **)bits_per_sample)(bits_per_sample);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 121,
+      "line": 118,
       "match": "._16_4_",
       "text": "WStack_24._16_4_ = WStack_24._16_4_ & ~g_WaveInFormatTable[iVar2].format_flags;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 121,
+      "line": 118,
       "match": "._16_4_",
       "text": "WStack_24._16_4_ = WStack_24._16_4_ & ~g_WaveInFormatTable[iVar2].format_flags;",
       "type": "unknown_field"

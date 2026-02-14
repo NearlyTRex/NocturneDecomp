@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 348,
+    "complexity_score": 263,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 43,
-    "suspect_count": 28,
+    "pseudocode_lines": 33,
+    "suspect_count": 22,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output",
-      "register_param",
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 170
+    "total_lines": 160
   },
   "cross_references": [
     {
@@ -35,7 +32,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "crt_unknown.c_FUN_0060af5d",
-    "signature": "undefined8 crt_unknown_c_FUN_0060af5d(void)"
+    "signature": "int crt_unknown_c_FUN_0060af5d(int param_1,int *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -183,193 +180,151 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int FUN_0060af5d(int param_1,int *param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_DS",
-      "text": "ushort in_DS;",
-      "type": "register_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "int FUN_0060af5d(int param_1,int *param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "int FUN_0060af5d(int param_1,int *param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "int *in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "text": "*param_2 = *param_2 + 8;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "text": "*param_2 = *param_2 + 8;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = *in_stack_00000008 + 8;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_3",
+      "text": "*(uint *)(param_3 + 0x28) = local_34;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "*in_stack_00000008 = *in_stack_00000008 + 8;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_3",
+      "text": "*(uint *)(param_3 + 0x2c) = local_30;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "text": "*(uint *)(param_3 + 0x30) = local_2c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "text": "*(uint *)(param_3 + 0x34) = local_28;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "text": "iVar1 = *(int *)(param_3 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 20,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(in_stack_0000000c + 0x28) = local_34;",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "*(int *)(param_3 + 0x20) = iVar1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 21,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(in_stack_0000000c + 0x2c) = local_30;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "*(byte *)(param_1 + iVar1) = 0x2d;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(in_stack_0000000c + 0x30) = local_2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 23,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(in_stack_0000000c + 0x34) = local_28;",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "else if ((*(byte *)(param_3 + 0x1e) & 4) == 0) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_3",
+      "text": "if ((*(byte *)(param_3 + 0x1e) & 2) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 25,
-      "match": "in_stack_0000000c",
-      "text": "iVar1 = *(int *)(in_stack_0000000c + 0x20);",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "iVar1 = *(int *)(param_3 + 0x20);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_3",
+      "text": "*(int *)(param_3 + 0x20) = iVar1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 27,
-      "match": "in_stack_0000000c",
-      "text": "*(int *)(in_stack_0000000c + 0x20) = iVar2;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "*(byte *)(param_1 + iVar1) = 0x20;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "*(byte *)(in_stack_00000004 + iVar1) = 0x2d;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
-      "text": "else if ((*(byte *)(in_stack_0000000c + 0x1e) & 4) == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unnamed function parameter",
       "line": 31,
-      "match": "extraout_EDX",
-      "text": "iVar2 = extraout_EDX;",
-      "type": "extra_output"
+      "match": "param_3",
+      "text": "iVar1 = *(int *)(param_3 + 0x20);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 32,
-      "match": "in_stack_0000000c",
-      "text": "if ((*(byte *)(in_stack_0000000c + 0x1e) & 2) != 0) {",
-      "type": "stack_param"
+      "match": "param_3",
+      "text": "*(int *)(param_3 + 0x20) = iVar1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 33,
-      "match": "in_stack_0000000c",
-      "text": "iVar1 = *(int *)(in_stack_0000000c + 0x20);",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "*(byte *)(param_1 + iVar1) = 0x2b;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 35,
-      "match": "in_stack_0000000c",
-      "text": "*(int *)(in_stack_0000000c + 0x20) = iVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000004",
-      "text": "*(byte *)(in_stack_00000004 + iVar1) = 0x20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_0000000c",
-      "text": "iVar1 = *(int *)(in_stack_0000000c + 0x20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_0000000c",
-      "text": "*(int *)(in_stack_0000000c + 0x20) = iVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "*(byte *)(in_stack_00000004 + iVar1) = 0x2b;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 45,
-      "match": "in_DS",
-      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),in_stack_00000004);",
-      "type": "register_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "CONCAT44",
-      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),in_stack_00000004);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "CONCAT22",
-      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),in_stack_00000004);",
-      "type": "decompiler_intrinsic"
+      "match": "param_1",
+      "text": "return param_1;",
+      "type": "unnamed_param"
     },
     {
       "address": "0060af5d",

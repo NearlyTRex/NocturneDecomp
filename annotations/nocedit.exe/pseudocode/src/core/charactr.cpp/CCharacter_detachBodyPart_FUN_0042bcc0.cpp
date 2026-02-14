@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index)
+void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index)
 
 {
   CBodyPart *body_part;

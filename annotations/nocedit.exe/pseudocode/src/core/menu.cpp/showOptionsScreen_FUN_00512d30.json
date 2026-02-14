@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 42,
-        "line": 36,
+        "line": 35,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 38,
+        "line": 37,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 40,
+        "line": 39,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 42,
+        "line": 41,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -31,16 +31,14 @@
   },
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 93,
+    "complexity_score": 65,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 22,
-    "pseudocode_lines": 68,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 255
+    "pseudocode_lines": 65,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 252
   },
   "cross_references": [
     {
@@ -373,20 +371,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c != 0) {",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -4,6 +4,18 @@
       {
         "category": "other",
         "column": 15,
+        "line": 112,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 113,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
         "line": 114,
         "message": "member reference base type 'double' is not a structure or union"
       },
@@ -28,13 +40,13 @@
       {
         "category": "other",
         "column": 15,
-        "line": 118,
+        "line": 128,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 119,
+        "line": 129,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
@@ -60,18 +72,6 @@
         "column": 15,
         "line": 133,
         "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 134,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 135,
-        "message": "member reference base type 'double' is not a structure or union"
       }
     ],
     "success": false,
@@ -79,18 +79,18 @@
   },
   "complexity": {
     "assembly_lines": 309,
-    "complexity_score": 465,
+    "complexity_score": 463,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 130,
+    "pseudocode_lines": 128,
     "suspect_count": 32,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 439
+    "total_lines": 437
   },
   "cross_references": [
     {
@@ -111,7 +111,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10",
-    "signature": "int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10 (CVector3d *point,CVector3d *segStart,CVector3d *segEnd)"
+    "signature": "int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *segStart,CVector3d *segEnd)"
   },
   "function_calls": [
     {
@@ -516,224 +516,224 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(uint *)((int)",
       "text": "uVar1 = *(uint *)((int)&segStart->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 47,
       "match": "(uint *)((int)",
       "text": "uVar1 = *(uint *)((int)&segEnd->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 51,
       "match": "(uint *)((int)",
       "text": "uVar2 = *(uint *)((int)&segEnd->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(uint *)((int)",
       "text": "uVar2 = *(uint *)((int)&segStart->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 59,
       "match": "(uint *)((int)",
       "text": "uVar3 = *(uint *)((int)&segEnd->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 63,
       "match": "(uint *)((int)",
       "text": "uVar3 = *(uint *)((int)&segStart->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 67,
       "match": "(uint *)((int)",
       "text": "uVar4 = *(uint *)((int)&segEnd->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 71,
       "match": "(uint *)((int)",
       "text": "uVar4 = *(uint *)((int)&segStart->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 75,
       "match": "(uint *)((int)",
       "text": "uVar5 = *(uint *)((int)&segEnd->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 79,
       "match": "(uint *)((int)",
       "text": "uVar5 = *(uint *)((int)&segStart->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 83,
       "match": "(uint *)((int)",
       "text": "uVar6 = *(uint *)((int)&segEnd->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 87,
       "match": "(uint *)((int)",
       "text": "uVar6 = *(uint *)((int)&segStart->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 89,
       "match": "CONCAT44",
       "text": "if ((((double)CONCAT44(uVar1,local_b0) + -0.0001 <= point->x) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 90,
       "match": "CONCAT44",
       "text": "(point->x <= (double)CONCAT44(uVar4,local_a8) + 0.0001)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 91,
       "match": "CONCAT44",
       "text": "(((double)CONCAT44(uVar2,local_c0) + -0.0001 <= point->y &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 92,
       "match": "CONCAT44",
       "text": "(((point->y <= (double)CONCAT44(uVar5,local_f0) + 0.0001 &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 93,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(uVar3,local_f8) + -0.0001 <= point->z)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 94,
       "match": "CONCAT44",
       "text": "(point->z <= (double)CONCAT44(uVar6,local_b8) + 0.0001)))))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 102,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 107,
+      "line": 105,
       "match": "._0_4_",
       "text": "local_88.x._0_4_ = local_58[0];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 108,
+      "line": 106,
       "match": "._4_4_",
       "text": "local_88.x._4_4_ = local_58[1];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 107,
       "match": "._0_4_",
       "text": "local_88.y._0_4_ = local_58[2];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 110,
+      "line": 108,
       "match": "._4_4_",
       "text": "local_88.y._4_4_ = local_58[3];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 111,
+      "line": 109,
       "match": "._0_4_",
       "text": "local_88.z._0_4_ = local_48;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 112,
+      "line": 110,
       "match": "._4_4_",
       "text": "local_88.z._4_4_ = local_44;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 118,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 123,
+      "line": 121,
       "match": "._0_4_",
       "text": "local_28.x._0_4_ = local_70[0];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 124,
+      "line": 122,
       "match": "._4_4_",
       "text": "local_28.x._4_4_ = local_70[1];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 125,
+      "line": 123,
       "match": "._0_4_",
       "text": "local_28.y._0_4_ = local_70[2];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 126,
+      "line": 124,
       "match": "._4_4_",
       "text": "local_28.y._4_4_ = local_70[3];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 127,
+      "line": 125,
       "match": "._0_4_",
       "text": "local_28.z._0_4_ = local_60;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 128,
+      "line": 126,
       "match": "._4_4_",
       "text": "local_28.z._4_4_ = local_5c;",
       "type": "unknown_field"

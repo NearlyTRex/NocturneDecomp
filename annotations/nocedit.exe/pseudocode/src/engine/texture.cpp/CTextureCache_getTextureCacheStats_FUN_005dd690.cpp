@@ -2,13 +2,11 @@
 // Address: 005dd690
 // Address Range: [[005dd690, 005dd75a]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_005dd690 (CTextureCache *this_ptr,char *output_buffer)
+// Signature: int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_005dd690(CTextureCache *this_ptr,char *output_buffer)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_005dd690
-          (CTextureCache *this_ptr,char *output_buffer)
+int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_005dd690(CTextureCache *this_ptr,char *output_buffer)
 
 {
   CTextureCache *pCVar1;

@@ -2,13 +2,11 @@
 // Address: 005d3f10
 // Address Range: [[005d3f10, 005d3f5f]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_superopt_cpp_CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10 (CObj *this_ptr,int material_id,uint flag_mask)
+// Signature: void __cdecl shape_superopt_cpp_CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10(CObj *this_ptr,int material_id,uint flag_mask)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10
-          (CObj *this_ptr,int material_id,uint flag_mask)
+void __cdecl shape_superopt_cpp_CObj_setPolyMaterialIdsWithFlag_FUN_005d3f10(CObj *this_ptr,int material_id,uint flag_mask)
 
 {
   CPoly *this_ptr_00;

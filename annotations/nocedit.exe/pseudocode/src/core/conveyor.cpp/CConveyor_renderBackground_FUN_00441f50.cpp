@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_conveyor_cpp_CConveyor_renderBackground_FUN_00441f50(CConveyor *this_ptr,int layer_flag)
+void __cdecl core_conveyor_cpp_CConveyor_renderBackground_FUN_00441f50(CConveyor *this_ptr,int layer_flag)
 
 {
   return;

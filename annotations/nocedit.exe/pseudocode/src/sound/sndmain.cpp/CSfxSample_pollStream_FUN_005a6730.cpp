@@ -2,13 +2,11 @@
 // Address: 005a6730
 // Address Range: [[005a6730, 005a6cd8]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730 (CSfxSample *this_ptr,float time_window,float update_interval)
+// Signature: int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *this_ptr,float time_window,float update_interval)
 
 #include "nocturne.h"
 
-int __cdecl
-sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730
-          (CSfxSample *this_ptr,float time_window,float update_interval)
+int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *this_ptr,float time_window,float update_interval)
 
 {
   CSfxSample *this_ptr_00;

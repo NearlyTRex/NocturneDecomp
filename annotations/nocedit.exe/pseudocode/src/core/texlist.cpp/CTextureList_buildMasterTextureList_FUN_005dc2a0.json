@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 33,
+        "line": 32,
         "message": "incompatible integer to pointer conversion assigning to 'HANDLE' (aka 'void *') from 'long'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 87,
+        "line": 86,
         "message": "no matching function for call to '_findnext'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 90,
+        "line": 89,
         "message": "no matching function for call to '_findclose'"
       }
     ],
@@ -25,16 +25,16 @@
   },
   "complexity": {
     "assembly_lines": 291,
-    "complexity_score": 158,
+    "complexity_score": 157,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 11,
-    "pseudocode_lines": 133,
+    "pseudocode_lines": 132,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 424
+    "total_lines": 423
   },
   "cross_references": [],
   "function": {
@@ -311,14 +311,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)&pFVar4->dwLowDateTime + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 41,
       "match": "(FILETIME *)((int)",
       "text": "pFVar4 = (FILETIME *)((int)&pFVar4->dwLowDateTime + 2);",
       "type": "pointer_cast"

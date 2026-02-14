@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-splitpath(char *path,char *drive,char *dir,char *fname,char *ext)
+void __cdecl splitpath(char *path,char *drive,char *dir,char *fname,char *ext)
 
 {
   char cVar1;

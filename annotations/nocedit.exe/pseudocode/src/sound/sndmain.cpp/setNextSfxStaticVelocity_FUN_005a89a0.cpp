@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_setNextSfxStaticVelocity_FUN_005a89a0(double vel_x,double vel_y,double vel_z)
+void __cdecl sound_sndmain_cpp_setNextSfxStaticVelocity_FUN_005a89a0(double vel_x,double vel_y,double vel_z)
 
 {
   int iVar1;

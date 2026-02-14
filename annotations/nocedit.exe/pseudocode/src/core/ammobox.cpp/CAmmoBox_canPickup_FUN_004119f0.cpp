@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_ammobox_cpp_CAmmoBox_canPickup_FUN_004119f0(CAmmoBox *this_ptr,CDemonActor *carrier)
+int __cdecl core_ammobox_cpp_CAmmoBox_canPickup_FUN_004119f0(CAmmoBox *this_ptr,CDemonActor *carrier)
 
 {
   int iVar1;

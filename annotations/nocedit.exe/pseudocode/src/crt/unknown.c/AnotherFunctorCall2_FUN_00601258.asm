@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_AnotherFunctorCall2_FUN_00601258(void)
+; unknown void crt_unknown_c_AnotherFunctorCall2_FUN_00601258(void *param_1,int param_2,WatcomTypeInfo *param_3)
 ;
 ;
 ; Called Functions:

@@ -156,18 +156,18 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1230(CWerewolf *this_ptr)
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_c4);
   this_ptr_00 = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr->light = 9.18341e-41;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->light = 0xffff;
   this_ptr_00->vertex_buffer_ptr->color = 0;
-  this_ptr_00->vertex_buffer_ptr->fog = 0.0;
-  this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;
+  this_ptr_00->vertex_buffer_ptr->fog = 0;
+  this_ptr_00->vertex_buffer_ptr[1].light = 0xffff;
   this_ptr_00->vertex_buffer_ptr[1].color = 0;
-  this_ptr_00->vertex_buffer_ptr[1].fog = 0.0;
-  this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;
+  this_ptr_00->vertex_buffer_ptr[1].fog = 0;
+  this_ptr_00->vertex_buffer_ptr[2].light = 0xffff;
   this_ptr_00->vertex_buffer_ptr[2].color = 0;
-  this_ptr_00->vertex_buffer_ptr[2].fog = 0.0;
-  this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;
+  this_ptr_00->vertex_buffer_ptr[2].fog = 0;
+  this_ptr_00->vertex_buffer_ptr[3].light = 0xffff;
   this_ptr_00->vertex_buffer_ptr[3].color = 0;
-  this_ptr_00->vertex_buffer_ptr[3].fog = 0.0;
+  this_ptr_00->vertex_buffer_ptr[3].fog = 0;
   this_ptr_00->vertex_buffer_ptr->w_recip = 2.29589e-41;
   this_ptr_00->vertex_buffer_ptr[1].w_recip = 2.29589e-41;
   this_ptr_00->vertex_buffer_ptr[2].w_recip = 2.29589e-41;
@@ -189,7 +189,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1230(CWerewolf *this_ptr)
   local_f8 = 3;
   local_100 = 1;
   local_fc = 2;
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_00,&DAT_0068495c);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (this_ptr_00,&SMRGLTextureBasic_0068495c);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
             (g_CDemonRendererPtr2,&SStack_11c);

@@ -10,10 +10,9 @@ int __cdecl core_gabriela_cpp_CGabriella_renderTransparent_FUN_004d6230(CGabriel
 
 {
   CWeapon *this_ptr_00;
-  CCharacter *in_stack_00000008;
   
   this_ptr_00 = (this_ptr->base).inventory.selected_weapon;
   (*((this_ptr_00->base).vtable._ub)->renderTransparent)(&this_ptr_00->base);
-  core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0(in_stack_00000008);
+  core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0((CCharacter *)this_ptr);
   return 1;
 }

@@ -12,7 +12,6 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
   int iVar1;
   char *pcVar2;
   char (*pacVar3) [256];
-  int in_stack_0000000c;
   int local_10;
   
   local_10 = 0;
@@ -65,10 +64,8 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     }
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
   } while (iVar1 == 0);
-  if (in_stack_0000000c != 0) {
-    local_10 = 0x512f09;
+  if (initialize_systems != 0) {
     core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
-    local_10 = 0x512f18;
     core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
     core_inivar_cpp_writeIniData_FUN_004fc510();
     return;

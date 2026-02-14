@@ -2,13 +2,11 @@
 // Address: 005fcfc0
 // Address Range: [[005fcfc0, 005fd4b7]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0 (SRenderVertex *vertex_buffer,int vertex_count,int triangle_count)
+// Signature: void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count,int triangle_count)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_3d_c_rasterizeTriangle_FUN_005fcfc0
-          (SRenderVertex *vertex_buffer,int vertex_count,int triangle_count)
+void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count,int triangle_count)
 
 {
   longlong lVar1;
@@ -57,7 +55,8 @@ engine_3d_c_rasterizeTriangle_FUN_005fcfc0
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
   if ((g_UseExternalRenderer != 0) && (g_TexturesDisabled == 0)) {
-    wincore_windll_cpp_drawPolygon_FUN_005b75e0(vertex_buffer,vertex_count,g_RenderStateFlags);
+    wincore_windll_cpp_drawPolygon_FUN_005b75e0(vertex_buffer,vertex_count,g_RenderStateFlags.dword)
+    ;
     return;
   }
   if (g_RenderStateFlag2 != 0) {

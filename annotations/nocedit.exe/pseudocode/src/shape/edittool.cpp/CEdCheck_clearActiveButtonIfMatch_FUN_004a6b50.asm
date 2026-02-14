@@ -10,7 +10,7 @@
 ;   shape_edittool.cpp_CEdCheck_dtor_FUN_004a6a40 at 004a6a46
 ;
 ; Referenced Globals:
-;   CEdButton* g_ActiveButton
+;   void* g_ActiveControl
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 004a6b50
         ;   Label: shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004a6b50
-    CMP EDX,dword ptr [0x02cf2b00]      ; 004a6b54 | g_ActiveButton
+    CMP EDX,dword ptr [0x02cf2b00]      ; 004a6b54 | g_ActiveControl
     JZ 0x004a5b4d                       ; 004a6b5a
         ;   XREF to: 004a5b4d (CONDITIONAL_JUMP)  ; LAB_004a5b4d
     RET                                 ; 004a6b60

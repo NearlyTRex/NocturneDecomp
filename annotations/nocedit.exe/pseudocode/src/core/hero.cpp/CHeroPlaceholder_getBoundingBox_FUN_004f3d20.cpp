@@ -2,13 +2,11 @@
 // Address: 004f3d20
 // Address Range: [[004f3d20, 004f3d4d]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004f3d20 (CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004f3d20(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004f3d20
-          (CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004f3d20(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box)
 
 {
   (out_box->min).y = 0.0;

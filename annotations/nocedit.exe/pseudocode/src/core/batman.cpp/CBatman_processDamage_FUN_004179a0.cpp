@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;
@@ -16,6 +15,7 @@ core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_ptr,SDamageInfo
   int iVar2;
   SMotion *pSVar3;
   uint uVar4;
+  CVector3f local_3c;
   CVector3f local_30;
   CVector3f local_24;
   
@@ -34,7 +34,7 @@ core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_ptr,SDamageInfo
   if (damage_info->damage_type == 0x6c) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                   (&(this_ptr->base).base.model,(CVector3f *)&stack0xffffffc4,0);
+                   (&(this_ptr->base).base.model,&local_3c,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_24,input_local_point);
     core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0

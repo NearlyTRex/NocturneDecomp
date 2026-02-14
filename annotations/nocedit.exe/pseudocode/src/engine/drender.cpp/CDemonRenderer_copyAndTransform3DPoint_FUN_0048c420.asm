@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420 (CDemonRenderer *this_ptr,CVector3f *input_point)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer *this_ptr,CVector3f *input_point)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

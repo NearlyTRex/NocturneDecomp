@@ -15,7 +15,7 @@ int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(ostrstream *this_ptr
   if ((*(uint *)((this_ptr->_ios).padding + iVar1 + -0x61) & 3) != 0) {
     return -1;
   }
-  iVar1 = (**(code **)(*(int *)(*(int *)((this_ptr->_ios).padding + iVar1 + -0x6d) + 0x28) + 0x18))
-                    ();
+  iVar1 = *(int *)((this_ptr->_ios).padding + iVar1 + -0x6d);
+  iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,0,1,2);
   return iVar1;
 }

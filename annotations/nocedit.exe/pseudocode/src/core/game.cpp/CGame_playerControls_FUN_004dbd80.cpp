@@ -53,7 +53,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
       pcVar3 = pcVar3 + (uint)bVar5 * -2 + 1;
       pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
     }
-    g_InputResetFlag = g_MouseButtonFlags;
+    g_InputResetFlag = g_MouseButtonFlags.dword;
     g_StoredCameraValue = g_CDemonSetPtr->selected_camera_index;
     return;
   }

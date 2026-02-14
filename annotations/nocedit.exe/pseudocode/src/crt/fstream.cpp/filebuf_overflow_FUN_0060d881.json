@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 169,
+    "complexity_score": 155,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 94,
-    "suspect_count": 6,
+    "pseudocode_lines": 95,
+    "suspect_count": 5,
     "suspect_types": [
       "special_crt_function",
-      "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 333
+    "total_lines": 334
   },
   "cross_references": [],
   "function": {
@@ -127,29 +126,22 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xffffffec",
-      "text": "(this_ptr->__file_handle,&stack0xffffffec,character & 0xff);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 49,
       "match": "unaff_EDI",
       "text": "((unaff_EDI = tell(this_ptr->__file_handle), -1 < unaff_EDI &&",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 49,
       "match": "unaff_EDI",
       "text": "((unaff_EDI = tell(this_ptr->__file_handle), -1 < unaff_EDI &&",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 91,
+      "line": 92,
       "match": "unaff_EDI",
       "text": "(iVar3 = lseek(this_ptr->__file_handle,unaff_EDI,0), -1 < iVar3))",
       "type": "unaffected_reg"

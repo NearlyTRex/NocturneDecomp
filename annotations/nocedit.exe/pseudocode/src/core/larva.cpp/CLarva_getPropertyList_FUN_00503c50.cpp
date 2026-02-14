@@ -2,13 +2,11 @@
 // Address: 00503c50
 // Address Range: [[00503c50, 00503c8c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_larva_cpp_CLarva_getPropertyList_FUN_00503c50 (CLarva *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_larva_cpp_CLarva_getPropertyList_FUN_00503c50(CLarva *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_larva_cpp_CLarva_getPropertyList_FUN_00503c50
-          (CLarva *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_larva_cpp_CLarva_getPropertyList_FUN_00503c50(CLarva *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

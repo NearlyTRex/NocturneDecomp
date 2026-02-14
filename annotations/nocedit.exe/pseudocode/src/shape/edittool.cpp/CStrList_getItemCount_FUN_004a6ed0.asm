@@ -7,16 +7,16 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[25]:
-;   core_script.cpp_CScript_FUN_00559f80 at 0055a2b2
-;   core_script.cpp_CScript_FUN_0055a370 at 0055a390
-;   core_script.cpp_CScript_FUN_00565130 at 00565423
-;   core_script.cpp_CScript_FUN_00565f70 at 00565f8e
-;   core_script.cpp_CScript_FUN_00566080 at 005660ae
-;   core_script.cpp_CScript_FUN_00566180 at 005661c6
-;   core_script.cpp_CScript_FUN_005664d0 at 005664ef
-;   core_script.cpp_CScript_FUN_00566cc0 at 00566d61
-;   core_script.cpp_CScript_FUN_005671a0 at 005671f8
-;   core_script.cpp_CScript_FUN_005677a0 at 00567a36
+;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 at 00567a36
+;   core_script.cpp_CScript_buildParsedLines_FUN_0055a370 at 0055a390
+;   core_script.cpp_CScript_checkSyntax_FUN_00566080 at 005660ae
+;   core_script.cpp_CScript_drawLine_FUN_005664d0 at 005664ef
+;   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 at 00565b09
+;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564fc1
+;   core_script.cpp_CScript_editorIndex2X_FUN_00566b30 at 00566b47
+;   core_script.cpp_CScript_editorPutLine_FUN_005662a0 at 005662c6
+;   core_script.cpp_CScript_editorX2Index_FUN_00566a90 at 00566aa7
+;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565d19
 ;   ... and 15 more
 ;
 ; *****************************************************************************

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SCurtainVertex * __cdecl
-core_curtain_cpp_SCurtainVertex_dtor_FUN_0044bab0(SCurtainVertex *this_ptr,uint flags)
+SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_dtor_FUN_0044bab0(SCurtainVertex *this_ptr,uint flags)
 
 {
   return this_ptr;

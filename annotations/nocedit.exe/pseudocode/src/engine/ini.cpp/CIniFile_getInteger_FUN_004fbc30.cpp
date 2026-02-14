@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile *this_ptr,char *key_name,int *value_ptr)
+void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile *this_ptr,char *key_name,int *value_ptr)
 
 {
   char *in_stack_ffffff94;

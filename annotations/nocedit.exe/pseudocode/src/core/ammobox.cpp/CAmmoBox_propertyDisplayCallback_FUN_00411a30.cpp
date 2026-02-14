@@ -2,13 +2,11 @@
 // Address: 00411a30
 // Address Range: [[00411a30, 00411a99]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ammobox_cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30 (CAmmoBox *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_ammobox_cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30(CAmmoBox *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_ammobox_cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30
-          (CAmmoBox *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_ammobox_cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30(CAmmoBox *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

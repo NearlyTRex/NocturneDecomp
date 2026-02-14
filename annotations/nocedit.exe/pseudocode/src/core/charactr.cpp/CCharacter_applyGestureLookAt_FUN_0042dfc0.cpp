@@ -2,13 +2,11 @@
 // Address: 0042dfc0
 // Address Range: [[0042dfc0, 0042e046]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 (CCharacter *this_ptr,float delta_time,float param_3)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time,float param_3)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-          (CCharacter *this_ptr,float delta_time,float param_3)
+void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time,float param_3)
 
 {
   int iVar1;
@@ -26,6 +24,6 @@ core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
   }
   core_cloth_cpp_CClothList_process_FUN_0043c2d0
             (&this_ptr->cloth_list,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec,
-             param_3,this_ptr->closest_distance_threshold,&this_ptr->model);
+             delta_time,this_ptr->closest_distance_threshold,&this_ptr->model);
   return;
 }

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590(CLZWDecompress *this_ptr,_FILE *output_file)
+int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590(CLZWDecompress *this_ptr,_FILE *output_file)
 
 {
   if (this_ptr->current_code < 0) {

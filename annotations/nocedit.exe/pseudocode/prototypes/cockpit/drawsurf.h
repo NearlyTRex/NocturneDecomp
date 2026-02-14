@@ -125,7 +125,7 @@ char __cdecl computeCohenSutherlandOutcode(int point_x,int point_y,int clip_left
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20
 // Address: 00487e20
-int __cdecl CDrawSurface::clipLine(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top, int clip_right,int clip_bottom);
+int __cdecl CDrawSurface::clipLine(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110
 // Address: 00488110
@@ -225,7 +225,7 @@ void __cdecl CDrawSurface::drawClosedPolyline(CDrawSurface *this_ptr,int point_c
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120
 // Address: 00489120
-void __cdecl CDrawSurface::drawTextWithAlignment(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height, ETextAlignment alignment_mode);
+void __cdecl CDrawSurface::drawTextWithAlignment(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
 // Address: 004893f0

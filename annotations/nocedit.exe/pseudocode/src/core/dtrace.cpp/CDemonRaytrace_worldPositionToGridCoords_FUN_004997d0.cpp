@@ -2,13 +2,11 @@
 // Address: 004997d0
 // Address Range: [[004997d0, 00499871]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0 (CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
-          (CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
 
 {
   float fVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-reportStreamError(FileEmbeddedData *embedded_data,uint error_flags)
+void __cdecl reportStreamError(FileEmbeddedData *embedded_data,uint error_flags)
 
 {
   uint uVar1;

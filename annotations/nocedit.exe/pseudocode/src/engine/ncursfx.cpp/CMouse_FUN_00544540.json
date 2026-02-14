@@ -35,7 +35,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     }
   ],
@@ -104,7 +104,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
-      "text": "if ((g_MouseButtonFlags & in_stack_00000008) != 0) {",
+      "text": "if ((g_MouseButtonFlags.dword & in_stack_00000008) != 0) {",
       "type": "stack_param"
     },
     {
@@ -118,7 +118,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
-      "text": "g_MouseButtonFlags = g_MouseButtonFlags & (in_stack_00000008 ^ 0xff);",
+      "text": "g_MouseButtonFlags.dword = g_MouseButtonFlags.dword & (in_stack_00000008 ^ 0xff);",
       "type": "stack_param"
     }
   ]

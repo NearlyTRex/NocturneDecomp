@@ -45,7 +45,7 @@ void __cdecl CDemonPart::renderFaces(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10
 // Address: 00482a10
-int __cdecl CDemonPart::importTriangleMesh(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count, CDemonTriangle *triangle_data);
+int __cdecl CDemonPart::importTriangleMesh(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,CDemonTriangle *triangle_data);
 
 // Original: core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40
 // Address: 00482e40

@@ -2,13 +2,11 @@
 // Address: 00566a90
 // Address Range: [[00566a90, 00566b24]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_editorX2Index_FUN_00566a90 (CScript *this_ptr,int line_number,int visual_column)
+// Signature: int __cdecl core_script_cpp_CScript_editorX2Index_FUN_00566a90(CScript *this_ptr,int line_number,int visual_column)
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_CScript_editorX2Index_FUN_00566a90
-          (CScript *this_ptr,int line_number,int visual_column)
+int __cdecl core_script_cpp_CScript_editorX2Index_FUN_00566a90(CScript *this_ptr,int line_number,int visual_column)
 
 {
   int iVar1;

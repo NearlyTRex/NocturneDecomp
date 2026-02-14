@@ -9,18 +9,13 @@
 void __cdecl core_teleport_cpp_CTeleport_processInEditor_FUN_005dabe0(CTeleport *this_ptr)
 
 {
-  int iVar1;
-  float unaff_retaddr;
-  float in_stack_00000008;
-  float in_stack_00000010;
-  float in_stack_00000018;
-  float in_stack_00000020;
-  float in_stack_00000028;
+  float fVar1;
+  int iVar2;
   
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if (iVar1 == 0) {
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
-    if (iVar1 == 0) {
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if (iVar2 == 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
+    if (iVar2 == 0) {
       core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
       return;
     }
@@ -29,37 +24,38 @@ void __cdecl core_teleport_cpp_CTeleport_processInEditor_FUN_005dabe0(CTeleport 
                 (g_CEditorToolsPtr,"Teleport has no destination!");
       return;
     }
-    iVar1 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+    iVar2 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                       (g_CEditorToolsPtr,"Switch to destination %s",this_ptr->destination);
-    if (iVar1 != 0) {
+    if (iVar2 != 0) {
       core_msnedit_cpp_CDemonMission_FUN_0053c140(g_CDemonMissionPtr,(int)this_ptr->destination);
       return;
     }
   }
   else {
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
-    if (iVar1 != 0) {
-      this_ptr->unk1 = (int)((float)this_ptr->unk1 - unaff_retaddr);
+    fVar1 = g_CGamePtr->delta_time_float * (float)4;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    if (iVar2 != 0) {
+      this_ptr->unk1 = (int)((float)this_ptr->unk1 - fVar1);
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
-    if (iVar1 != 0) {
-      this_ptr->unk1 = (int)((float)this_ptr->unk1 + in_stack_00000008);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    if (iVar2 != 0) {
+      this_ptr->unk1 = (int)((float)this_ptr->unk1 + fVar1);
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
-    if (iVar1 != 0) {
-      this_ptr->unk2 = (int)((float)this_ptr->unk2 - in_stack_00000010);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    if (iVar2 != 0) {
+      this_ptr->unk2 = (int)((float)this_ptr->unk2 - fVar1);
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
-    if (iVar1 != 0) {
-      this_ptr->unk2 = (int)((float)this_ptr->unk2 + in_stack_00000018);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    if (iVar2 != 0) {
+      this_ptr->unk2 = (int)((float)this_ptr->unk2 + fVar1);
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
-    if (iVar1 != 0) {
-      this_ptr->unk3 = (int)((float)this_ptr->unk3 - in_stack_00000020);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    if (iVar2 != 0) {
+      this_ptr->unk3 = (int)((float)this_ptr->unk3 - fVar1);
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
-    if (iVar1 != 0) {
-      this_ptr->unk3 = (int)((float)this_ptr->unk3 + in_stack_00000028);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    if (iVar2 != 0) {
+      this_ptr->unk3 = (int)((float)this_ptr->unk3 + fVar1);
     }
     if (this_ptr->unk1 < 0x3f000000) {
       this_ptr->unk1 = 0x3f000000;

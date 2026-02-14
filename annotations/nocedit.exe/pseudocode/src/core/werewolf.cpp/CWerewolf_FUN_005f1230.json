@@ -6,20 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 354,
-    "complexity_score": 563,
+    "complexity_score": 509,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 188,
-    "suspect_count": 35,
+    "pseudocode_lines": 189,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
-      "suspect_float",
-      "undefined_data"
+      "suspect_float"
     ],
-    "total_lines": 542
+    "total_lines": 543
   },
   "cross_references": [
     {
@@ -90,7 +89,7 @@
     },
     {
       "addr": "0068495c",
-      "name": "DAT_0068495c",
+      "name": "SMRGLTextureBasic_0068495c",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -819,34 +818,6 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 152,
-      "match": "9.18341e-41",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 155,
-      "match": "9.18341e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 158,
-      "match": "9.18341e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 161,
-      "match": "9.18341e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
       "line": 164,
       "match": "2.29589e-41",
       "text": "this_ptr_00->vertex_buffer_ptr->w_recip = 2.29589e-41;",
@@ -872,13 +843,6 @@
       "match": "2.29589e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[3].w_recip = 2.29589e-41;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 185,
-      "match": "DAT_0068495c",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_00,&DAT_0068495c);",
-      "type": "undefined_data"
     },
     {
       "call_site_count": 2,

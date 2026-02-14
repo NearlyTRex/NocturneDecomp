@@ -2,13 +2,11 @@
 // Address: 00461df0
 // Address Range: [[00461df0, 00461e57]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_design_c_isNormalDotProductBelowThreshold_FUN_00461df0 (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double threshold)
+// Signature: int __cdecl shape_design_c_isNormalDotProductBelowThreshold_FUN_00461df0(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double threshold)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_design_c_isNormalDotProductBelowThreshold_FUN_00461df0
-          (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double threshold)
+int __cdecl shape_design_c_isNormalDotProductBelowThreshold_FUN_00461df0(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double threshold)
 
 {
   uint local_14;

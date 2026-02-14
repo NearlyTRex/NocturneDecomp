@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_ammo_cpp_CAmmo_hasCollision_FUN_00410fa0(CAmmo *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_ammo_cpp_CAmmo_hasCollision_FUN_00410fa0(CAmmo *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

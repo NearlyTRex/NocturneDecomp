@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(CPickList *this_ptr,char *text)
+void __cdecl shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(CPickList *this_ptr,char *text)
 
 {
   char cVar1;

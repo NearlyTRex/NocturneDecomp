@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_crate_cpp_CCrate_hasCollision_FUN_00448960(CCrate *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_crate_cpp_CCrate_hasCollision_FUN_00448960(CCrate *this_ptr,SCollisionInfo *collision_info)
 
 {
   if (((this_ptr->base).was_created == 1) && (this_ptr->carrier == (CDemonActor *)0x0)) {

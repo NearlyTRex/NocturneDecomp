@@ -27,7 +27,7 @@
 ;   int g_ViewportRightFixed
 ;   int g_ViewportBottomFixed
 ;   int g_UseExternalRenderer
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;   int g_SoftwareEdgeCount
 ;   SSoftwareEdge[16] g_SoftwareEdgeBuffer

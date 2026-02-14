@@ -19,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 138,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 12,
     "pseudocode_lines": 48,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
     "total_lines": 178
   },
@@ -134,8 +133,8 @@
     },
     {
       "addr": "0066e6b0",
-      "name": "DAT_0066e6b0",
-      "type": "SMRGLTextureBasic",
+      "name": "SMRGLTextureBasic_ARRAY_0066e6b0",
+      "type": "SMRGLTextureBasic[6]",
       "value": null
     },
     {
@@ -270,13 +269,6 @@
       "match": "ROUND",
       "text": "INT_00823a90 = (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0066e6b0",
-      "text": "engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0066e6b0 + iVar2 % 6);",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

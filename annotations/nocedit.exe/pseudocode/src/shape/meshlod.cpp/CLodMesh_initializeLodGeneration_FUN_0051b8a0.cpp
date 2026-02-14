@@ -2,13 +2,11 @@
 // Address: 0051b8a0
 // Address Range: [[0051b8a0, 0051b91c]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 (CLodMesh *this_ptr,_FILE *file_handle)
+// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0
-          (CLodMesh *this_ptr,_FILE *file_handle)
+int __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh *this_ptr,_FILE *file_handle)
 
 {
   CLodMesh *unaff_ESI;

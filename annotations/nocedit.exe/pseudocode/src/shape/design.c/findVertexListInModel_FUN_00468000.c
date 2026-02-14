@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CVector3i * __cdecl
-shape_design_c_findVertexListInModel_FUN_00468000(SMRGLHeaderExtended *model_ptr)
+CVector3i * __cdecl shape_design_c_findVertexListInModel_FUN_00468000(SMRGLHeaderExtended *model_ptr)
 
 {
   int iVar1;

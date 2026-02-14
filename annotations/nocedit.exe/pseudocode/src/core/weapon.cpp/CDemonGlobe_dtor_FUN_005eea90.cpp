@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonGlobe * __cdecl
-core_weapon_cpp_CDemonGlobe_dtor_FUN_005eea90(CDemonGlobe *this_ptr,uint flags)
+CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_dtor_FUN_005eea90(CDemonGlobe *this_ptr,uint flags)
 
 {
   return this_ptr;

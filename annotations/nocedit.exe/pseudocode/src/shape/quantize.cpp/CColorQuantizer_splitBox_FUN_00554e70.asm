@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_quantize_cpp_CColorQuantizer_splitBox_FUN_00554e70 (CColorQuantizer *this_ptr,int source_box_index,int dest_box_index)
+; __cdecl void __cdecl shape_quantize_cpp_CColorQuantizer_splitBox_FUN_00554e70(CColorQuantizer *this_ptr,int source_box_index,int dest_box_index)
 ;
 ; Parameters:
 ; CColorQuantizer * Stack[0x4]:4   this_ptr

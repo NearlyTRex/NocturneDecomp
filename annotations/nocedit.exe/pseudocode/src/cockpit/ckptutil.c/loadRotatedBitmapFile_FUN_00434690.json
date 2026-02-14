@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 25,
+        "line": 23,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 87,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 60,
     "suspect_count": 2,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 242
+    "total_lines": 240
   },
   "cross_references": [],
   "function": {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690",
-    "signature": "char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690 (char *filename,char *buffer,int width,int height,void *optional_param)"
+    "signature": "char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filename,char *buffer,int width,int height,void *optional_param)"
   },
   "function_calls": [
     {
@@ -267,14 +267,14 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000018",
       "text": "int in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 61,
       "match": "in_stack_00000018",
       "text": "cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,buffer,local_1c,in_stack_00000018);",
       "type": "stack_param"

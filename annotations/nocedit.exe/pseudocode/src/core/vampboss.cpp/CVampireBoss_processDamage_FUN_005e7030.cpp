@@ -2,13 +2,11 @@
 // Address: 005e7030
 // Address Range: [[005e7030, 005e726e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030 (CVampireBoss *this_ptr,SDamageInfo *damage_info)
+// Signature: void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireBoss *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl
-core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030
-          (CVampireBoss *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireBoss *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;
@@ -17,13 +15,13 @@ core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030
   CDemonActor *this_ptr_00;
   CDemonActor *pCVar4;
   CDemonActor *pCVar5;
+  CVector3f local_24;
   
   if (damage_info->ammo_type == 7) {
     iVar2 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffdc,&damage_info->impact_direction)
-    ;
+              ((CDemonActor *)this_ptr,&local_24,&damage_info->impact_direction);
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_005b0030(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_005b0030(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
   int iVar1;

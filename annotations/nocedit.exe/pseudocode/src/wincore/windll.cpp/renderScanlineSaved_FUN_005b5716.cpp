@@ -2,13 +2,11 @@
 // Address: 005b5716
 // Address Range: [[005b5716, 005b575b]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_windll_cpp_renderScanlineSaved_FUN_005b5716 (void *scanline_data,int scanline_y,int render_flags)
+// Signature: void __cdecl wincore_windll_cpp_renderScanlineSaved_FUN_005b5716(void *scanline_data,int scanline_y,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl
-wincore_windll_cpp_renderScanlineSaved_FUN_005b5716
-          (void *scanline_data,int scanline_y,int render_flags)
+void __cdecl wincore_windll_cpp_renderScanlineSaved_FUN_005b5716(void *scanline_data,int scanline_y,int render_flags)
 
 {
   int in_EAX;

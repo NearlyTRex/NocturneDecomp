@@ -4,37 +4,43 @@
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 60,
+        "line": 59,
         "message": "assigning to 'CDemonGlobe *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 62,
+        "line": 61,
         "message": "no matching function for call to 'core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 54,
-        "line": 65,
+        "line": 64,
         "message": "use of undeclared identifier 'stack0xffffff70'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 67,
+        "line": 66,
         "message": "use of undeclared identifier 'stack0xffffff74'"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 92,
+        "line": 91,
         "message": "member reference base type 'char[307200]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 113,
+        "line": 112,
+        "message": "member reference base type 'char[307200]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 114,
         "message": "member reference base type 'char[307200]' is not a structure or union"
       },
       {
@@ -45,32 +51,26 @@
       },
       {
         "category": "other",
-        "column": 40,
+        "column": 32,
         "line": 116,
         "message": "member reference base type 'char[307200]' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 117,
-        "message": "member reference base type 'char[307200]' is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 64,
-        "line": 117,
+        "line": 116,
         "message": "member reference base type 'char[307200]' is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 119,
+        "line": 118,
         "message": "no matching function for call to 'core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 220,
+        "line": 219,
         "message": "no matching function for call to 'core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400'"
       }
     ],
@@ -112,7 +112,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 (CDemonCamera *this_ptr,void *p1,int p2)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemonCamera *this_ptr,void *p1,int p2)"
   },
   "function_calls": [
     {
@@ -273,7 +273,7 @@
     {
       "addr": "013bc260",
       "name": "g_CameraDownscaleIterations",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -669,149 +669,149 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_ffffff6c",
       "text": "CVector3i *in_stack_ffffff6c;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(int *)((int)",
       "text": "if ((g_CGamePtr->halo_mode != 0) || ((p2 == 0 && (*(int *)((int)p1 + 0x20) != 0)))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 53,
       "match": "in_stack_ffffff6c",
-      "text": "pCVar9 = in_stack_ffffff6c;",
+      "text": "pCVar10 = in_stack_ffffff6c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_ffffff6c",
       "text": "(this_ptr,p1,in_stack_ffffff6c);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 57,
       "match": "&stack0xffffff70",
-      "text": "(&g_CoronaTargetY)[(uint)bVar2 * -2] = *(int *)(&stack0xffffff70 + (uint)bVar2 * -8);",
+      "text": "(&g_CoronaTargetY)[(uint)bVar3 * -2] = *(int *)(&stack0xffffff70 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
+      "line": 59,
       "match": "&stack0xffffff74",
-      "text": "*(int *)(&stack0xffffff74 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "text": "*(int *)(&stack0xffffff74 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)p1 + 0x20) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 76,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)g_CoronaLeftExtent + iVar3) = this_ptr->framebuffer_width;",
+      "text": "*(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->framebuffer_width;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 77,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_CoronaRightExtent + iVar3) = 0;",
+      "text": "*(uint *)((int)g_CoronaRightExtent + iVar4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 82,
       "match": "(int *)((int)",
       "text": "if (((p2 == 0) && (*(int *)((int)p1 + 0x20) != 0)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 83,
       "match": "(int *)((int)",
       "text": "(INT_0066ed68 = -1, *(int *)((int)p1 + 0x20) == 2)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
+      "line": 84,
       "match": "._0_4_",
       "text": "if (g_LightBufferPool[0x18]._0_4_ != 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 106,
+      "line": 105,
       "match": "._0_4_",
-      "text": "} while (iVar5 < g_LightBufferPool[0x18]._0_4_ * 0x13384);",
+      "text": "} while (iVar6 < g_LightBufferPool[0x18]._0_4_ * 0x13384);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 108,
+      "line": 107,
       "match": "._0_4_",
       "text": "if ((uint)g_LightBufferPool[0x18]._0_4_ < 8) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 108,
       "match": "._0_4_",
-      "text": "iVar5 = g_LightBufferPool[0x18]._0_4_ * 0x13384;",
+      "text": "iVar6 = g_LightBufferPool[0x18]._0_4_ * 0x13384;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 110,
+      "line": 109,
       "match": "._0_4_",
       "text": "g_LightBufferPool[0x18]._0_4_ = g_LightBufferPool[0x18]._0_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 110,
+      "line": 109,
       "match": "._0_4_",
       "text": "g_LightBufferPool[0x18]._0_4_ = g_LightBufferPool[0x18]._0_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 220,
       "match": "(int *)((int)",
       "text": "if (this_ptr->framebuffer_width != *(int *)((int)g_CoronaLeftExtent + local_58)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 221,
       "match": "(int *)((int)",
       "text": "local_28 = *(int *)((int)g_CoronaLeftExtent + local_58);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 223,
+      "line": 222,
       "match": "(int *)((int)",
-      "text": "iVar5 = *(int *)((int)g_CoronaRightExtent + local_58);",
+      "text": "iVar6 = *(int *)((int)g_CoronaRightExtent + local_58);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 230,
       "match": "SBORROW4",
-      "text": "while (SBORROW4(local_28,iVar5) != iVar3 < 0) {",
+      "text": "while (SBORROW4(local_28,iVar6) != iVar4 < 0) {",
       "type": "decompiler_intrinsic"
     }
   ]

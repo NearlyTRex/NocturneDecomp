@@ -2,14 +2,11 @@
 // Address: 0054adb0
 // Address Range: [[0054adb0, 0054ae6f]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0 (CPackedBitmap *this_ptr,int dest_x,int dest_y,int rect_left,int rect_top,int rect_right, int rect_bottom)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0(CPackedBitmap *this_ptr,int dest_x,int dest_y,int rect_left,int rect_top,int rect_right,int rect_bottom)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbitmap_cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0
-          (CPackedBitmap *this_ptr,int dest_x,int dest_y,int rect_left,int rect_top,int rect_right,
-          int rect_bottom)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0(CPackedBitmap *this_ptr,int dest_x,int dest_y,int rect_left,int rect_top,int rect_right,int rect_bottom)
 
 {
   int iVar1;

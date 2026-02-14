@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-LRESULT __stdcall
-wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam)
+LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam)
 
 {
   int iVar1;
@@ -22,7 +21,7 @@ wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wPa
   if (0 < g_NumWindowMessageHandlers) {
     iVar5 = 0;
     do {
-      iVar1 = (**(code **)((int)g_WindowMessageHandlers + iVar5))();
+      iVar1 = (**(code **)((int)g_WindowMessageHandlers + iVar5))(hWnd,message,wParam,lParam);
       if (iVar1 != 0) {
         return 0;
       }
@@ -51,7 +50,7 @@ wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wPa
           if (message < 0x202) {
             g_MouseX = lParam & 0xffff;
             g_MouseY = uVar3;
-            g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags | 1;
+            g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] | 1;
             g_LeftMousePressed = 1;
             return 0;
           }
@@ -59,14 +58,14 @@ wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wPa
             g_MouseX = lParam & 0xffff;
             g_MouseY = uVar3;
             g_LeftMouseReleased = 1;
-            g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;
+            g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
             return 0;
           }
           if (message == 0x204) {
             g_MouseX = lParam & 0xffff;
             g_MouseY = uVar3;
             g_RightMousePressed = 1;
-            g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags | 2;
+            g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] | 2;
             return 0;
           }
         }
@@ -76,14 +75,14 @@ wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wPa
           g_MouseX = lParam & 0xffff;
           g_MouseY = uVar3;
           g_RightMouseReleased = 1;
-          g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfd;
+          g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfd;
           return 0;
         }
         if (message < 0x30f) {
           if (0x206 < message) {
             if (message < 0x208) {
               g_MouseX = lParam & 0xffff;
-              g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags | 4;
+              g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] | 4;
               g_MouseY = uVar3;
               g_MiddleMousePressed = 1;
               return 0;
@@ -92,7 +91,7 @@ wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wPa
               g_MouseX = lParam & 0xffff;
               g_MouseY = uVar3;
               g_MiddleMouseReleased = 1;
-              g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfb;
+              g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfb;
               return 0;
             }
           }

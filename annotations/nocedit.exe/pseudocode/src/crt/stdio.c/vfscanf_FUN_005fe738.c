@@ -11,10 +11,9 @@ int __cdecl vfscanf(_FILE *file,char *format,va_list_t args)
 {
   char *pcVar1;
   int iVar2;
-  va_list_t *in_stack_00000010;
+  code *pcStack_24;
   code *pcStack_20;
-  code *pcStack_1c;
-  _FILE *p_Stack_18;
+  _FILE *p_Stack_1c;
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   pcVar1 = file->_link->__get_base;
@@ -25,11 +24,11 @@ int __cdecl vfscanf(_FILE *file,char *format,va_list_t args)
     }
     file->_link->__get_base = (char *)0x1;
   }
-  pcStack_1c = ungetc_helper;
-  p_Stack_18 = file;
-  pcStack_20 = getc_helper;
+  pcStack_20 = ungetc_helper;
+  p_Stack_1c = file;
+  pcStack_24 = getc_helper;
   iVar2 = doscan
-                    ((scanf_state_t *)&pcStack_20,(char **)args.value[0],in_stack_00000010);
+                    ((scanf_state_t *)&pcStack_24,(char **)format,(va_list_t *)args.value[0]);
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
   return iVar2;
 }

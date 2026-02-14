@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 31,
+        "line": 29,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 64,
+    "complexity_score": 62,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 37,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 122
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -48,7 +48,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370",
-    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370 (CKeyFramedModel *this_ptr,CVector3f *bias_offset)"
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370(CKeyFramedModel *this_ptr,CVector3f *bias_offset)"
   },
   "function_calls": [
     {
@@ -176,14 +176,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 22,
       "match": "SUB84",
       "text": "iVar8 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 35,
       "match": "ROUND",
       "text": "*(int *)(iVar5 + 8 + (int)model_ptr->vertex_list) + (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"

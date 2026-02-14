@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; __cdecl void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 ;
 ;
 ; XREF[1]:

@@ -159,7 +159,7 @@ section .text
         ;   XREF to: 00402ff0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawVLine_FUN_00402ff0(int x, int y1, int y2)
     ADD ESP,0xc                         ; 004a1086
     CALL engine_matrix.c_popViewport_FUN_0050e480 ; 004a1089
-        ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
+        ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480()
     CMP byte ptr [EBX + 0x38],0x0       ; 004a108e | DAT_02cf1d18
     JNZ 0x004a10cc                      ; 004a1092
         ;   XREF to: 004a10cc (CONDITIONAL_JUMP)  ; LAB_004a10cc

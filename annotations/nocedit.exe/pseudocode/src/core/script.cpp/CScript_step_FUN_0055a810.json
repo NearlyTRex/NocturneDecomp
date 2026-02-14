@@ -4,104 +4,110 @@
       {
         "category": "other",
         "column": 17,
-        "line": 230,
+        "line": 229,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 260,
+        "line": 259,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 268,
+        "line": 267,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 277,
+        "line": 276,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 372,
+        "line": 371,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "format_error",
-        "column": 85,
-        "line": 496,
-        "message": "format specifies type 'int *' but the argument has type 'char **' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
         "column": 89,
-        "line": 872,
+        "line": 871,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 89,
-        "line": 1043,
+        "line": 1042,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 86,
-        "line": 1264,
+        "line": 1263,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 64,
-        "line": 1368,
+        "line": 1367,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1385,
+        "line": 1384,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1388,
+        "line": 1387,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1410,
+        "line": 1409,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1413,
+        "line": 1412,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 78,
+        "line": 1527,
+        "message": "use of undeclared identifier 'SUB14'"
       },
       {
         "category": "format_error",
         "column": 83,
-        "line": 2129,
+        "line": 2128,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 2471,
+        "line": 2470,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "format_error",
         "column": 83,
-        "line": 2632,
+        "line": 2631,
         "message": "format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 73,
+        "line": 3362,
+        "message": "format specifies type 'char *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -109,43 +115,42 @@
   },
   "complexity": {
     "assembly_lines": 7415,
-    "complexity_score": 3493,
+    "complexity_score": 3447,
     "cross_reference_count": 4,
     "function_call_count": 77,
     "global_count": 341,
-    "pseudocode_lines": 3353,
-    "suspect_count": 12,
+    "pseudocode_lines": 3352,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "unnamed_param",
       "warning_type_propagation"
     ],
-    "total_lines": 10768
+    "total_lines": 10767
   },
   "cross_references": [
     {
-      "addr": "0055a4b0",
-      "from_addr": "0055a4f5",
-      "name": "core_script.cpp_CScript_FUN_0055a4b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0055a6c0",
       "from_addr": "0055a736",
-      "name": "core_script.cpp_CScript_FUN_0055a6c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005602e0",
-      "from_addr": "0056033d",
-      "name": "core_script.cpp_CScript_FUN_005602e0",
+      "name": "core_script.cpp_CScript_executeInitSection_FUN_0055a6c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00559960",
       "from_addr": "00559a11",
       "name": "core_script.cpp_CScript_process_FUN_00559960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005602e0",
+      "from_addr": "0056033d",
+      "name": "core_script.cpp_CScript_skipCinematic_FUN_005602e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a4b0",
+      "from_addr": "0055a4f5",
+      "name": "core_script.cpp_CScript_validateSyntax_FUN_0055a4b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -164,7 +169,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_script.cpp_CScript_step_FUN_0055a810",
-    "signature": "int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int param_2)"
+    "signature": "int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining)"
   },
   "function_calls": [
     {
@@ -3914,10 +3919,10 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "time_remaining",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "float *"
       }
     ]
   },
@@ -3947,78 +3952,50 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "text": "int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 227,
+      "line": 226,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 748,
-      "match": "param_2",
-      "text": "(float *)param_2), 0 < local_114)) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 910,
+      "line": 909,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)local_c8c + iVar18) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1356,
+      "line": 1355,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1361,
+      "line": 1360,
       "match": "SUB84",
       "text": "SUB84(dVar1,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1397,
+      "line": 1396,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2252,
-      "match": "param_2",
-      "text": "(float *)param_2), 0 < local_114)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3099,
-      "match": "param_2",
-      "text": "(this_ptr,local_30,(float *)param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3172,
-      "match": "param_2",
-      "text": "(this_ptr,local_24,(float *)param_2);",
-      "type": "unnamed_param"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 1520,
+      "match": "SUB14",
+      "text": "updateVictim)(local_c4,SUB14(local_c0 == 0,0))",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 3200,
+      "line": 3199,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(pcVar17,local_124);",
       "type": "decompiler_intrinsic"

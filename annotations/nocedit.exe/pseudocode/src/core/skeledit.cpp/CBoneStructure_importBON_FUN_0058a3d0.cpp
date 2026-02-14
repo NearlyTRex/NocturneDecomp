@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr,char *filename)
+void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr,char *filename)
 
 {
   CBoneStructure *this_ptr_00;

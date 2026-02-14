@@ -17,6 +17,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
   int iVar4;
   SMRGLHeaderPrimitive *polygon_info;
   SMRGLTextureBasic *texture;
+  CBoundingBox3D CStack_20;
   
   if (this_ptr->background_flag == 0) {
     if (((layer_flag != 0) && (this_ptr->shattered != 0)) && (this_ptr->mirror_flag != 0)) {
@@ -27,8 +28,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
   else if ((layer_flag != 0) || (this_ptr->unk4 != 0)) {
     this_ptr->unk4 = 0;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-    this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                            (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+    this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_20);
     core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if (this_ptr->shattered == 0) {
       texture = &this_ptr->glass_texture;

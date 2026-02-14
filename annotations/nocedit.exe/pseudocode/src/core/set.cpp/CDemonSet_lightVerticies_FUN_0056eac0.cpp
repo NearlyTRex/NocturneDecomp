@@ -2,14 +2,11 @@
 // Address: 0056eac0
 // Address Range: [[0056eac0, 0056f93c]]
 // Convention: __cdecl
-// Signature: float __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0 (CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr, int render_flags,int lighting_mode,int flags)
+// Signature: float __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr,int render_flags,int lighting_mode,int flags)
 
 #include "nocturne.h"
 
-float __cdecl
-core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
-          (CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr,
-          int render_flags,int lighting_mode,int flags)
+float __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr,int render_flags,int lighting_mode,int flags)
 
 {
   ushort *puVar1;

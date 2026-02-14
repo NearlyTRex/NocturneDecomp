@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 81,
+    "complexity_score": 79,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 24,
     "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "param_count_too_few",
       "special_crt_function"
     ],
-    "total_lines": 70
+    "total_lines": 68
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524",
-    "signature": "istrstream * __cdecl crt_strstream_cpp_istrstream_constructor_FUN_005ff524 (istrstream *this_ptr,int ctor_flags,char *buffer,int size)"
+    "signature": "istrstream * __cdecl crt_strstream_cpp_istrstream_constructor_FUN_005ff524(istrstream *this_ptr,int ctor_flags,char *buffer,int size)"
   },
   "function_calls": [
     {
@@ -180,14 +180,14 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
+      "line": 20,
       "match": "piVar3[-2].",
       "text": "pcVar4 = &piVar3[-2]._ios.__fill_character;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 22,
       "match": "piVar3[-1].",
       "text": "piVar3[-1]._ios.cleanup_vtable = &PTR_FUN_00665bf4.destructor_func;",
       "type": "negative_offset"

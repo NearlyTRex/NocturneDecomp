@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042e570 (CCharacter *this_ptr,float blend_weight,int blend_mode)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042e570(CCharacter *this_ptr,float blend_weight,int blend_mode)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

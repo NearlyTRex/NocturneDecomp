@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;
@@ -15,7 +14,6 @@ core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,SDamageInfo *d
   SMotion *pSVar2;
   uint uVar3;
   int iVar4;
-  SDamageInfo *in_stack_00000010;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 0x14));
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 0x10));
@@ -41,7 +39,7 @@ core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,SDamageInfo *d
     if (iVar4 == 2) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.motion_controller,5,1);
-      core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,in_stack_00000010);
+      core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
     }
   }
@@ -60,6 +58,6 @@ core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,SDamageInfo *d
                       ((CDemonActor *)this_ptr,"drone-die?.wav");
     *(uint *)(this_ptr->unk + 0xc) = uVar3;
   }
-  core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,in_stack_00000010);
+  core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;
 }

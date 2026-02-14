@@ -6,18 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 210,
+    "complexity_score": 116,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
-    "pseudocode_lines": 55,
-    "suspect_count": 14,
+    "pseudocode_lines": 51,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 216
+    "total_lines": 212
   },
   "cross_references": [],
   "function": {
@@ -30,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190",
-    "signature": "void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00432190 (void *sprite_data,int dest_x,int dest_y,int width,int height)"
+    "signature": "void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00432190(void *sprite_data,int dest_x,int dest_y,int width,int height)"
   },
   "function_calls": [
     {
@@ -206,102 +204,46 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 26,
       "match": "(void *)((int)",
-      "text": "(*pCVar3)((void *)(iVar6 + iVar2),(void *)((int)sprite_data + iVar2),(iVar4 - iVar2) + 1);",
+      "text": "(*pCVar3)((void *)(iVar7 + iVar5),(void *)((int)sprite_data + iVar5),(iVar4 - iVar5) + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_EDI",
-      "text": "iVar6 = iVar6 + unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000001c",
-      "text": "sprite_data = (void *)((int)sprite_data + in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 29,
       "match": "(void *)((int)",
-      "text": "sprite_data = (void *)((int)sprite_data + in_stack_0000001c);",
+      "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000020",
-      "text": "} while (iVar1 < in_stack_00000020);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(void *)((int)",
+      "text": "pvVar8 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 42,
       "match": "(void *)((int)",
-      "text": "pvVar7 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);",
+      "text": "(*pCVar3)((void *)(iVar5 * 2 + (int)pvVar8),(void *)((int)sprite_data + iVar5),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(void *)((int)",
+      "text": "pvVar8 = (void *)((int)pvVar8 + (iVar2 / 2) * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(void *)((int)",
-      "text": "(*pCVar3)((void *)(iVar6 * 2 + (int)pvVar7),(void *)((int)sprite_data + iVar6),",
+      "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(void *)((int)",
-      "text": "pvVar7 = (void *)((int)pvVar7 + iVar2 / 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_0000001c",
-      "text": "sprite_data = (void *)((int)sprite_data + in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(void *)((int)",
-      "text": "sprite_data = (void *)((int)sprite_data + in_stack_0000001c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000020",
-      "text": "} while (iVar1 < in_stack_00000020);",
-      "type": "stack_param"
     }
   ]
 }

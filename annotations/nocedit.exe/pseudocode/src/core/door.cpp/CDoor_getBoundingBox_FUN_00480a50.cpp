@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_door_cpp_CDoor_getBoundingBox_FUN_00480a50(CDoor *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00480a50(CDoor *this_ptr,CBoundingBox3D *out_box)
 
 {
   CVector3f *pCVar1;

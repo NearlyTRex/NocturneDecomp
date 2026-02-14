@@ -66,7 +66,7 @@ void __cdecl FUN_00603dc8(void)
   in_stack_00000008[10] = 0;
   iVar9 = 0;
   in_stack_00000008[6] = 0;
-  uVar2 = FUN_0060b07a();
+  uVar2 = FUN_0060b07a(&local_4c);
   switch(uVar2) {
   case 0:
   case 4:
@@ -247,6 +247,6 @@ LAB_006040c9:
     FUN_00604267();
   }
 LAB_00603d56:
-  FUN_0060445e(local_18 & 0xffff);
+  FUN_0060445e();
   return;
 }

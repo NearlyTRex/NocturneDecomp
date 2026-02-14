@@ -2,13 +2,11 @@
 // Address: 0059ab90
 // Address Range: [[0059ab90, 0059abe0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90 (CDeformableModel *this_ptr,int lod_index)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90
-          (CDeformableModel *this_ptr,int lod_index)
+void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index)
 
 {
   int iVar1;

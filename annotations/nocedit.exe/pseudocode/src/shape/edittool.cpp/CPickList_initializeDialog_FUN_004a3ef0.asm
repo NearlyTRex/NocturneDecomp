@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0 (CPickList *this_ptr,char *dialog_title,int initial_selected_index,int config_parameter)
+; __cdecl void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0(CPickList *this_ptr,char *dialog_title,int initial_selected_index,int config_parameter)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr

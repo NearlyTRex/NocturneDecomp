@@ -19,15 +19,15 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
   CVector3f *pCVar7;
   int iVar8;
   int iVar9;
-  double local_b8 [3];
+  CBoundingBox3D local_b8;
   CBoundingBox3D local_a0;
+  float fStack_88;
+  float fStack_84;
   float fStack_80;
-  float fStack_7c;
-  float fStack_78;
-  CVector3i CStack_74;
-  CVector3f CStack_68;
-  CVector3f CStack_5c;
-  CVector3f aCStack_50 [2];
+  CVector3i CStack_7c;
+  CVector3f CStack_70;
+  CVector3f CStack_64;
+  CVector3f aCStack_58 [3];
   int local_34;
   char *local_30;
   char *local_2c;
@@ -35,6 +35,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
   int local_24;
   CLocation *local_20;
   float local_1c;
+  int iStack_18;
   
   local_34 = 0;
   this_ptr->unk3 = 0;
@@ -51,7 +52,6 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
                             (this_ptr,*(CDemonActor **)((int)g_HeroActors + iVar9));
           if (iVar3 != 0) {
             fVar4 = *(float *)((int)g_HeroActors + iVar9);
-            local_2c = (char *)0x1;
             goto LAB_005dfb52;
           }
           iVar8 = iVar8 + 1;
@@ -79,8 +79,8 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
          (iVar8 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar5), iVar8 != 0)
          ) {
         fVar4 = this_ptr->unk4;
-        local_34 = 1;
 LAB_005dfb52:
+        local_34 = 1;
         this_ptr->unk3 = (int)fVar4;
       }
     }
@@ -88,30 +88,28 @@ LAB_005dfb52:
   case 2:
     iVar8 = core_hero_cpp_FUN_004f2220();
     if (iVar8 != 0) {
-      pCVar6 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                         (&this_ptr->base,(CBoundingBox3D *)local_b8);
-      fStack_80 = (pCVar6->min).x + (pCVar6->max).x;
-      fStack_7c = (pCVar6->min).y + (pCVar6->max).y;
-      CStack_68.x = fStack_80 * 0.5f;
-      CStack_68.y = fStack_7c * 0.5f;
-      fStack_78 = (pCVar6->min).z + (pCVar6->max).z;
-      CStack_68.z = fStack_78 * 0.5f;
+      pCVar6 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_b8);
+      fStack_88 = (pCVar6->min).x + (pCVar6->max).x;
+      fStack_84 = (pCVar6->min).y + (pCVar6->max).y;
+      CStack_70.x = fStack_88 * 0.5f;
+      CStack_70.y = fStack_84 * 0.5f;
+      fStack_80 = (pCVar6->min).z + (pCVar6->max).z;
+      CStack_70.z = fStack_80 * 0.5f;
       pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                         (&this_ptr->base,&CStack_5c,&CStack_68);
-      if (aCStack_50 != pCVar7) {
-        aCStack_50[0].x = pCVar7->x;
-        aCStack_50[0].y = pCVar7->y;
-        aCStack_50[0].z = pCVar7->z;
+                         (&this_ptr->base,&CStack_64,&CStack_70);
+      if (aCStack_58 != pCVar7) {
+        aCStack_58[0].x = pCVar7->x;
+        aCStack_58[0].y = pCVar7->y;
+        aCStack_58[0].z = pCVar7->z;
       }
-      CStack_74.x = (int)ROUND(aCStack_50[0].x * 256.0f);
-      CStack_74.y = (int)ROUND(aCStack_50[0].y * 256.0f);
-      CStack_74.z = (int)ROUND(aCStack_50[0].z * 256.0f);
-      iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
-                        (g_CDemonSetPtr,&CStack_74,(CVector3i *)0x0);
-      local_b8[0] = (double)iVar8;
-      if ((this_ptr->light_min * (float)65536 <= (float)iVar8) &&
-         ((float)iVar8 <= this_ptr->light_max * (float)65536)) {
-        local_2c = (char *)0x1;
+      CStack_7c.x = (int)ROUND(aCStack_58[0].x * 256.0f);
+      CStack_7c.y = (int)ROUND(aCStack_58[0].y * 256.0f);
+      CStack_7c.z = (int)ROUND(aCStack_58[0].z * 256.0f);
+      iStack_18 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
+                            (g_CDemonSetPtr,&CStack_7c,(CVector3i *)0x0);
+      if ((this_ptr->light_min * (float)65536 <= (float)iStack_18) &&
+         ((float)iStack_18 <= this_ptr->light_max * (float)65536)) {
+        local_34 = 1;
       }
     }
     break;
@@ -158,10 +156,10 @@ LAB_005dfb52:
            (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar5),
            iVar9 != 0)) {
           this_ptr->unk3 = (int)pCVar5;
-          local_30 = (char *)0x1;
+          local_34 = 1;
           break;
         }
-        local_24 = local_24 + 4;
+        local_28 = local_28 + 4;
       }
     }
     break;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vampboss_cpp_CVampireBoss_getPropertyList_FUN_005e7650 (CVampireBoss *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_vampboss_cpp_CVampireBoss_getPropertyList_FUN_005e7650(CVampireBoss *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr

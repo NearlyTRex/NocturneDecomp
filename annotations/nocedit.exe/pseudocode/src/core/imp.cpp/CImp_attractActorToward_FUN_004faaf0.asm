@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_imp_cpp_CImp_attractActorToward_FUN_004faaf0 (CImp *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
+; __cdecl int __cdecl core_imp_cpp_CImp_attractActorToward_FUN_004faaf0(CImp *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 ;
 ; Parameters:
 ; CImp *           Stack[0x4]:4   this_ptr

@@ -2,13 +2,11 @@
 // Address: 00420e90
 // Address Range: [[00420e90, 00420fa7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90 (CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
+// Signature: void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90(CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
 
 #include "nocturne.h"
 
-void __cdecl
-core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90
-          (CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
+void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90(CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
 
 {
   int iVar1;

@@ -11,45 +11,46 @@ void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_
 {
   float fVar1;
   float fVar2;
-  int iVar3;
-  float unaff_retaddr;
-  float in_stack_00000008;
-  float in_stack_00000010;
-  float in_stack_00000018;
-  float in_stack_00000020;
-  float in_stack_00000028;
-  float in_stack_0000002c;
-  float in_stack_00000030;
+  float fVar3;
+  float fVar4;
+  int iVar5;
+  float fStack_18;
   
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if (iVar3 == 0) {
+  fVar3 = this_ptr->run;
+  fVar4 = this_ptr->rise;
+  iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if (iVar5 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
   else {
-    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
-    if (iVar3 != 0) {
-      this_ptr->width = this_ptr->width - unaff_retaddr;
+    fStack_18 = g_CGamePtr->delta_time_float * (float)0.5;
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    if (iVar5 != 0) {
+      fStack_18 = fStack_18 * (float)0.10000000000000001;
     }
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
-    if (iVar3 != 0) {
-      this_ptr->width = this_ptr->width + in_stack_00000008;
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    if (iVar5 != 0) {
+      this_ptr->width = this_ptr->width - fStack_18;
     }
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
-    if (iVar3 != 0) {
-      this_ptr->rise = this_ptr->rise - in_stack_00000010;
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    if (iVar5 != 0) {
+      this_ptr->width = this_ptr->width + fStack_18;
     }
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
-    if (iVar3 != 0) {
-      this_ptr->rise = this_ptr->rise + in_stack_00000018;
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    if (iVar5 != 0) {
+      this_ptr->rise = this_ptr->rise - fStack_18;
     }
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
-    if (iVar3 != 0) {
-      this_ptr->run = this_ptr->run - in_stack_00000020;
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    if (iVar5 != 0) {
+      this_ptr->rise = this_ptr->rise + fStack_18;
     }
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
-    if (iVar3 != 0) {
-      this_ptr->run = this_ptr->run + in_stack_00000028;
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    if (iVar5 != 0) {
+      this_ptr->run = this_ptr->run - fStack_18;
+    }
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    if (iVar5 != 0) {
+      this_ptr->run = this_ptr->run + fStack_18;
     }
   }
   if (this_ptr->width < (float)0.20000000000000001) {
@@ -84,8 +85,8 @@ void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_
   fVar1 = this_ptr->rise;
   fVar2 = (this_ptr->base).location.position.y;
   (this_ptr->base).location.position.z =
-       (in_stack_0000002c - this_ptr->run) + (this_ptr->base).location.position.z;
-  (this_ptr->base).location.position.y = (in_stack_00000030 - fVar1) + fVar2;
+       (fVar3 - this_ptr->run) + (this_ptr->base).location.position.z;
+  (this_ptr->base).location.position.y = (fVar4 - fVar1) + fVar2;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   core_stairs_cpp_CStairs_FUN_005ba700(this_ptr);
   return;

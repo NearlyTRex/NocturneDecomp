@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 136,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 66,
-    "suspect_count": 6,
+    "pseudocode_lines": 65,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "unaffected_reg"
+      "warning_type_propagation"
     ],
-    "total_lines": 222
+    "total_lines": 221
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020",
-    "signature": "int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020 (CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time, SMotionTransition *out_transition)"
+    "signature": "int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition)"
   },
   "function_calls": [],
   "globals": [
@@ -233,32 +233,11 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EDI",
-      "text": "float unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 44,
-      "match": "unaff_EDI",
-      "text": "if (unaff_EDI <= out_transition->to_frame_number) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 45,
-      "match": "unaff_EBP",
-      "text": "return unaff_EBP;",
-      "type": "unaffected_reg"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Complex pointer cast",
@@ -266,13 +245,6 @@
       "match": "(SMotionTransition *)((int)",
       "text": "pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 68,
-      "match": "unaff_EBP",
-      "text": "return unaff_EBP;",
-      "type": "unaffected_reg"
     }
   ]
 }

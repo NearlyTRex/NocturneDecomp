@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0 (CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v, int subdivision_level)
+; __cdecl void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr

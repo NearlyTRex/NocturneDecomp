@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-wincore_windll_cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)
+int __cdecl wincore_windll_cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)
 
 {
   int iVar1;

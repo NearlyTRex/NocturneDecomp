@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBulletTrail * __cdecl
-core_fire_cpp_CBulletTrail_dtor_FUN_004c9620(CBulletTrail *this_ptr,uint flags)
+CBulletTrail * __cdecl core_fire_cpp_CBulletTrail_dtor_FUN_004c9620(CBulletTrail *this_ptr,uint flags)
 
 {
   return this_ptr;

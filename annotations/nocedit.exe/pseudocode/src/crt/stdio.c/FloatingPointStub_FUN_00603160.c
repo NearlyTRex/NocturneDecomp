@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-FloatingPointStub(char *buffer,va_list_t *args,FormatSpec *spec_info)
+void __cdecl FloatingPointStub(char *buffer,va_list_t *args,FormatSpec *spec_info)
 
 {
   (*PTR_crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30_0068540c)

@@ -2,13 +2,11 @@
 // Address: 0042c920
 // Address Range: [[0042c920, 0042c9ce]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920 (CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920
-          (CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)
+void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)
 
 {
   CMotionList *this_ptr_00;

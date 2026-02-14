@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_00524070 (CDemonMission *this_ptr,CLocation *teleport_target)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_00524070(CDemonMission *this_ptr,CLocation *teleport_target)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

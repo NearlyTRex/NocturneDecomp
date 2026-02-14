@@ -2,13 +2,11 @@
 // Address: 0059c2f0
 // Address Range: [[0059c2f0, 0059c5d1]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (CDeformableModel *this_ptr,int bone_index,CVector3f *reference_position)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0(CDeformableModel *this_ptr,int bone_index,CVector3f *reference_position)
 
 #include "nocturne.h"
 
-int __cdecl
-core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
-          (CDeformableModel *this_ptr,int bone_index,CVector3f *reference_position)
+int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0(CDeformableModel *this_ptr,int bone_index,CVector3f *reference_position)
 
 {
   CDeformableModelInstance *pCVar1;

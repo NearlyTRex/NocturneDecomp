@@ -97,11 +97,11 @@ void __cdecl CMotionController::clearTweenState(CMotionController *this_ptr);
 
 // Original: core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
 // Address: 0052de70
-int __cdecl CMotionController::advanceFrameAndCheckSignals(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number, float delta_time,float scale_factor);
+int __cdecl CMotionController::advanceFrameAndCheckSignals(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
 
 // Original: core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020
 // Address: 0052e020
-int __cdecl CMotionController::advanceFrameToExitPoint(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time, SMotionTransition *out_transition);
+int __cdecl CMotionController::advanceFrameToExitPoint(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
 
 // Original: core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0
 // Address: 0052e1d0
@@ -117,7 +117,7 @@ float __cdecl CMotionController::markerPositionToFrame(CMotionController *this_p
 
 // Original: core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
 // Address: 0052e4c0
-void __cdecl CMotionController::getFramesForInterpolation(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1, int *out_frame2,float *out_blend_weight);
+void __cdecl CMotionController::getFramesForInterpolation(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
 
 // Original: core_motion.cpp_CMotionController_accumulateScaledRootMotion_FUN_0052e570
 // Address: 0052e570

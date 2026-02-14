@@ -2,13 +2,11 @@
 // Address: 0043c320
 // Address Range: [[0043c320, 0043c394]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CClothList_render_FUN_0043c320 (CClothList *this_ptr,CDeformableModelInstance *model_ptr)
+// Signature: void __cdecl core_cloth_cpp_CClothList_render_FUN_0043c320(CClothList *this_ptr,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_cloth_cpp_CClothList_render_FUN_0043c320
-          (CClothList *this_ptr,CDeformableModelInstance *model_ptr)
+void __cdecl core_cloth_cpp_CClothList_render_FUN_0043c320(CClothList *this_ptr,CDeformableModelInstance *model_ptr)
 
 {
   CClothList *pCVar1;

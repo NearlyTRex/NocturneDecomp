@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLZWDecompress * __cdecl
-support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZWDecompress *this_ptr,uint flags)
+CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZWDecompress *this_ptr,uint flags)
 
 {
   CLZWDictionary *pCVar1;

@@ -2,13 +2,11 @@
 // Address: 00454060
 // Address Range: [[00454060, 00454441]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060 (CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box)
+// Signature: CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
-          (CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box)
+CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box)
 
 {
   CVector3f *pCVar1;

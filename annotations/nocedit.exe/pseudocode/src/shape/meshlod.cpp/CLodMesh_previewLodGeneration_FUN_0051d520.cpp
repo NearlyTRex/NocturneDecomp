@@ -2,13 +2,11 @@
 // Address: 0051d520
 // Address Range: [[0051d520, 0051d986]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (CLodMesh *this_ptr,int pause_flag,int render_mode)
+// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(CLodMesh *this_ptr,int pause_flag,int render_mode)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520
-          (CLodMesh *this_ptr,int pause_flag,int render_mode)
+int __cdecl shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(CLodMesh *this_ptr,int pause_flag,int render_mode)
 
 {
   int iVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,char *filename)
+int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,char *filename)
 
 {
   int iVar1;

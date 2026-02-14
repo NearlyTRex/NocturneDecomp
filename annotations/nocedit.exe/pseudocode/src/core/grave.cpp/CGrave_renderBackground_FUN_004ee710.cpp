@@ -11,6 +11,7 @@ void __cdecl core_grave_cpp_CGrave_renderBackground_FUN_004ee710(CGrave *this_pt
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
+  CBoundingBox3D CStack_1c;
   
   if (layer_flag != 0) {
     if (*(int *)this_ptr->unk1 == 0) {
@@ -23,8 +24,7 @@ void __cdecl core_grave_cpp_CGrave_renderBackground_FUN_004ee710(CGrave *this_pt
       this_ptr->unk1[3] = '\0';
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-    this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                            (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+    this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_1c);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar1 != 0) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20

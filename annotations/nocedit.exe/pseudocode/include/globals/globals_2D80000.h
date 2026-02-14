@@ -36,7 +36,7 @@ extern CGore g_CGoreInstance;
 extern CPickList g_CPickList;
 
 // SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive DAT_02d83368;
+extern SMRGLHeaderPrimitive SMRGLHeaderPrimitive_02d83368;
 
 // char
 extern char g_CurrentSaveFile;

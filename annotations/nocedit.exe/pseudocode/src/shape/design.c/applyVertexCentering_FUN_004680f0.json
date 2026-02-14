@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 30,
+        "line": 27,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 31,
+        "line": 28,
         "message": "use of undeclared identifier 'stack0xffffffe0'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 89,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 26,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 101
+    "total_lines": 98
   },
   "cross_references": [
     {
@@ -50,7 +50,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_applyVertexCentering_FUN_004680f0",
-    "signature": "void __cdecl shape_design_c_applyVertexCentering_FUN_004680f0 (SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list, int reference_vertex_id)"
+    "signature": "void __cdecl shape_design_c_applyVertexCentering_FUN_004680f0(SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list,int reference_vertex_id)"
   },
   "function_calls": [
     {
@@ -186,35 +186,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 18,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)(local_14 + reference_vertex_id) + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
+      "line": 20,
       "match": "&stack0xffffffdc",
       "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar2 * -8) = *puVar1;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 20,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar2 * -8) = *puVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 21,
       "match": "&stack0xffffffe0",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 21,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "pointer_cast"

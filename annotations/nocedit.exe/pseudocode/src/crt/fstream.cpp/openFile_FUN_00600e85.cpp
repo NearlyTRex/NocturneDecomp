@@ -2,13 +2,11 @@
 // Address: 00600e85
 // Address Range: [[00600e85, 00600ee3]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_fstream_cpp_openFile_FUN_00600e85 (ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
+// Signature: void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
 
 #include "nocturne.h"
 
-void __cdecl
-crt_fstream_cpp_openFile_FUN_00600e85
-          (ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
+void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
 
 {
   int iVar1;

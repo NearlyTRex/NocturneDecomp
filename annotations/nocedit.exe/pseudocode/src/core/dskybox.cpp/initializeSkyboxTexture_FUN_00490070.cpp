@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLTextureBasic * __cdecl
-core_dskybox_cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic *texture)
+SMRGLTextureBasic * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic *texture)
 
 {
   char cVar1;

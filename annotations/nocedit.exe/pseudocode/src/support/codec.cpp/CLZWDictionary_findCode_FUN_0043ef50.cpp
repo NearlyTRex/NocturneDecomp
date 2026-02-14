@@ -2,13 +2,11 @@
 // Address: 0043ef50
 // Address Range: [[0043ef50, 0043ef8b]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_0043ef50 (CLZWDictionary *this_ptr,int search_code,int start_index)
+// Signature: int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_0043ef50(CLZWDictionary *this_ptr,int search_code,int start_index)
 
 #include "nocturne.h"
 
-int __cdecl
-support_codec_cpp_CLZWDictionary_findCode_FUN_0043ef50
-          (CLZWDictionary *this_ptr,int search_code,int start_index)
+int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_0043ef50(CLZWDictionary *this_ptr,int search_code,int start_index)
 
 {
   int iVar1;

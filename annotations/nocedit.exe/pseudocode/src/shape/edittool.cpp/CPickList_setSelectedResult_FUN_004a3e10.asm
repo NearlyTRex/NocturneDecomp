@@ -10,7 +10,7 @@
 ; XREF[9]:
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 at 0051475e
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005388d1
-;   core_script.cpp_CScript_FUN_005677a0 at 00567954
+;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 at 00567954
 ;   core_setedit.cpp_FUN_00578630 at 00578677
 ;   engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 at 004b5107
 ;   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 at 004b7508

@@ -2,13 +2,11 @@
 // Address: 005512f0
 // Address Range: [[005512f0, 00551372]]
 // Convention: __cdecl
-// Signature: CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_005512f0 (CPod *this_ptr,char *base_path,char *filename,int *file_index_out)
+// Signature: CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_005512f0(CPod *this_ptr,char *base_path,char *filename,int *file_index_out)
 
 #include "nocturne.h"
 
-CPodFile * __cdecl
-engine_pod_cpp_CPod_locateFile_FUN_005512f0
-          (CPod *this_ptr,char *base_path,char *filename,int *file_index_out)
+CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_005512f0(CPod *this_ptr,char *base_path,char *filename,int *file_index_out)
 
 {
   int iVar1;

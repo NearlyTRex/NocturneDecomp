@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730 (CCharacter *character,char *part_names,int *part_mask)
+; __cdecl int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730(CCharacter *character,char *part_names,int *part_mask)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   character
@@ -21,7 +21,7 @@
 ;   char[2048] g_ScriptErrorBuffer
 ;
 ; Called Functions:
-;   core_script.cpp_CDeformableModel_getModelFilename_FUN_00567d30
+;   core_script.cpp_getDeformableModelFilename_FUN_00567d30
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -94,8 +94,8 @@ section .text
         ;   Label: LAB_005597bc
     PUSH EAX                            ; 005597be
     PUSH ESI                            ; 005597bf
-    CALL core_script.cpp_CDeformableModel_getModelFilename_FUN_00567d30 ; 005597c0
-        ;   XREF to: 00567d30 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_CDeformableModel_getModelFilename_FUN_00567d30(CDeformableModel * this_ptr)
+    CALL core_script.cpp_getDeformableModelFilename_FUN_00567d30 ; 005597c0
+        ;   XREF to: 00567d30 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_getDeformableModelFilename_FUN_00567d30(CDeformableModel * model_ptr)
     ADD ESP,0x4                         ; 005597c5
     PUSH EAX                            ; 005597c8
     MOV EAX,dword ptr [ESP + 0x80]      ; 005597c9

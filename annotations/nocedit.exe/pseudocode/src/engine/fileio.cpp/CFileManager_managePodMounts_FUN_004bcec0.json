@@ -1,71 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 24,
-        "line": 27,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 36,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 40,
-        "message": "use of undeclared identifier 'stack0xfffffa28'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 42,
-        "message": "use of undeclared identifier 'stack0xfffffa28'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 44,
-        "message": "use of undeclared identifier 'stack0xfffffa28'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 61,
-        "message": "use of undeclared identifier 'stack0xfffffa28'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 66,
-        "message": "use of undeclared identifier 'stack0xfffffa28'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 78,
-        "message": "use of undeclared identifier 'stack0xfffffa28'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 173,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 13,
-    "pseudocode_lines": 83,
-    "suspect_count": 8,
-    "suspect_types": [
-      "stack_ref",
-      "unknown_field"
-    ],
-    "total_lines": 355
+    "pseudocode_lines": 80,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 352
   },
   "cross_references": [
     {
@@ -344,62 +292,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 20,
-      "match": "._0_4_",
-      "text": "if (0 < (int)local_30._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._0_4_",
-      "text": "} while (iVar4 < (int)local_30._0_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xfffffa28",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffa28);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xfffffa28",
-      "text": "((CPickList *)&stack0xfffffa28,(char *)0x0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xfffffa28",
-      "text": "((CPickList *)&stack0xfffffa28,\"Close\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xfffffa28",
-      "text": "((CStrList *)&stack0xfffffa28,(char *)&CStack_5d4.selection_state);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 59,
-      "match": "&stack0xfffffa28",
-      "text": "((CPickList *)&stack0xfffffa28,\"Select PODs you wish to have mounted\",iVar4,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 71,
-      "match": "&stack0xfffffa28",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa28,0);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

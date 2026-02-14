@@ -2,13 +2,11 @@
 // Address: 004b0270
 // Address Range: [[004b0270, 004b0329]]
 // Convention: __cdecl
-// Signature: int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004b0270 (CEventList *this_ptr,char *expression,int *parse_position)
+// Signature: int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004b0270(CEventList *this_ptr,char *expression,int *parse_position)
 
 #include "nocturne.h"
 
-int __cdecl
-core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004b0270
-          (CEventList *this_ptr,char *expression,int *parse_position)
+int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004b0270(CEventList *this_ptr,char *expression,int *parse_position)
 
 {
   char cVar1;

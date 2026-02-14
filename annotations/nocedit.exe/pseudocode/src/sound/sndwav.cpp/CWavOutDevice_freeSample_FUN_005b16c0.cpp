@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndwav_cpp_CWavOutDevice_freeSample_FUN_005b16c0(CWavOutDevice *this_ptr,int buffer_id)
+void __cdecl sound_sndwav_cpp_CWavOutDevice_freeSample_FUN_005b16c0(CWavOutDevice *this_ptr,int buffer_id)
 
 {
   return;

@@ -2,21 +2,15 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 53,
-        "message": "use of undeclared identifier 'stack0xffffffd4'"
-      },
-      {
         "category": "other",
-        "column": 32,
-        "line": 65,
+        "column": 11,
+        "line": 71,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
-        "column": 93,
-        "line": 65,
+        "column": 20,
+        "line": 72,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -25,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 77,
+    "complexity_score": 104,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 10,
-    "pseudocode_lines": 62,
-    "suspect_count": 1,
+    "pseudocode_lines": 69,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_ref"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 226
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -212,11 +206,25 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xffffffd4",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);",
-      "type": "stack_ref"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ROUND",
+      "text": "iStack_14 = (int)ROUND((this_ptr->base).location.position.x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ROUND",
+      "text": "iStack_10 = (int)ROUND((this_ptr->base).location.position.y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "iStack_c = (int)ROUND((this_ptr->base).location.position.z * 256.0f);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

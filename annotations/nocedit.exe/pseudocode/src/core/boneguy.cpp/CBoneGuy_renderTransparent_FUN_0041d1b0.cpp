@@ -12,13 +12,14 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d1b0(CBoneGuy *t
   CDemonRenderer *pCVar1;
   CBoundingBox3D *this_ptr_00;
   int iVar2;
+  CBoundingBox3D local_20;
   
   if ((this_ptr->base).base.render_active != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
   this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
-                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe0);
+                          ((CDemonActor *)this_ptr,&local_20);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar2 != 0) {
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,0);

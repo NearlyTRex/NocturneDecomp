@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_004a6550 (CEdButton *this_ptr,int x_pos,int y_pos,char *button_text)
+; __cdecl void __cdecl shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_004a6550(CEdButton *this_ptr,int x_pos,int y_pos,char *button_text)
 ;
 ; Parameters:
 ; CEdButton *      Stack[0x4]:4   this_ptr

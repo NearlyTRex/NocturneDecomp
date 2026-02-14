@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_fstream_cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e (ostream *this_ptr,int dtor_flags)
+; __cdecl void __cdecl crt_fstream_cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e(ostream *this_ptr,int dtor_flags)
 ;
 ; Parameters:
 ; ostream *        Stack[0x4]:4   this_ptr

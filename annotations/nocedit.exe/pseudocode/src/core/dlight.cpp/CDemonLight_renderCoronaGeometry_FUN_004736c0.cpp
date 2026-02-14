@@ -76,7 +76,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar1->vertex_buffer_ptr[0x10].projected_vertex,&local_7c);
   pCVar1 = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr[0x10].light = 9.18341e-41;
+  g_CDemonRendererPtr2->vertex_buffer_ptr[0x10].light = 0xffff;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(pCVar1,1);
   pfVar2 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
                      (g_CDemonRendererPtr2,local_58);

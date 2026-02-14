@@ -2,13 +2,11 @@
 // Address: 00423310
 // Address Range: [[00423310, 00423379]]
 // Convention: __cdecl
-// Signature: void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310 (CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310(CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_boxactor_cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310
-          (CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310(CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

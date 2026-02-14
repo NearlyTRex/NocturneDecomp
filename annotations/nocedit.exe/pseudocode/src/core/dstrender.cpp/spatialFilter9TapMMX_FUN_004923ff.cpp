@@ -2,13 +2,11 @@
 // Address: 004923ff
 // Address Range: [[004923ff, 004924a8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_spatialFilter9TapMMX_FUN_004923ff (uint *output_buffer,uint *input_buffer,int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_spatialFilter9TapMMX_FUN_004923ff(uint *output_buffer,uint *input_buffer,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dstrender_cpp_spatialFilter9TapMMX_FUN_004923ff
-          (uint *output_buffer,uint *input_buffer,int pixel_count)
+void __cdecl core_dstrender_cpp_spatialFilter9TapMMX_FUN_004923ff(uint *output_buffer,uint *input_buffer,int pixel_count)
 
 {
   uint uVar1;

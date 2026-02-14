@@ -2,13 +2,11 @@
 // Address: 00499170
 // Address Range: [[00499170, 00499329]]
 // Convention: __cdecl
-// Signature: float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170 (CDemonRaytrace *this_ptr,CVector3f *world_position)
+// Signature: float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170(CDemonRaytrace *this_ptr,CVector3f *world_position)
 
 #include "nocturne.h"
 
-float __cdecl
-core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170
-          (CDemonRaytrace *this_ptr,CVector3f *world_position)
+float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170(CDemonRaytrace *this_ptr,CVector3f *world_position)
 
 {
   int iVar1;

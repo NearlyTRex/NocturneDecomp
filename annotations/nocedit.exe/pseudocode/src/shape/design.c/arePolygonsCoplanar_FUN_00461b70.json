@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 163,
+    "complexity_score": 160,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 35,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 126
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_arePolygonsCoplanar_FUN_00461b70",
-    "signature": "int __cdecl shape_design_c_arePolygonsCoplanar_FUN_00461b70 (SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,float scale_factor, int tolerance)"
+    "signature": "int __cdecl shape_design_c_arePolygonsCoplanar_FUN_00461b70(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,float scale_factor,int tolerance)"
   },
   "function_calls": [
     {
@@ -166,84 +166,84 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 26,
       "match": "ROUND",
       "text": "uVar1 = (int)ROUND(dVar2) - (int)ROUND(dVar5) >> 0x1f;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 26,
       "match": "ROUND",
       "text": "uVar1 = (int)ROUND(dVar2) - (int)ROUND(dVar5) >> 0x1f;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 27,
       "match": "ROUND",
       "text": "if ((((int)(((int)ROUND(dVar2) - (int)ROUND(dVar5) ^ uVar1) - uVar1) < tolerance) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 27,
       "match": "ROUND",
       "text": "if ((((int)(((int)ROUND(dVar2) - (int)ROUND(dVar5) ^ uVar1) - uVar1) < tolerance) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 28,
       "match": "ROUND",
       "text": "(uVar1 = (int)ROUND(dVar3) - (int)ROUND(dVar6) >> 0x1f,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 28,
       "match": "ROUND",
       "text": "(uVar1 = (int)ROUND(dVar3) - (int)ROUND(dVar6) >> 0x1f,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 29,
       "match": "ROUND",
       "text": "(int)(((int)ROUND(dVar3) - (int)ROUND(dVar6) ^ uVar1) - uVar1) < tolerance)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 29,
       "match": "ROUND",
       "text": "(int)(((int)ROUND(dVar3) - (int)ROUND(dVar6) ^ uVar1) - uVar1) < tolerance)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 30,
       "match": "ROUND",
       "text": "(uVar1 = (int)ROUND(dVar4) - (int)ROUND(dVar7) >> 0x1f,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 30,
       "match": "ROUND",
       "text": "(uVar1 = (int)ROUND(dVar4) - (int)ROUND(dVar7) >> 0x1f,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 31,
       "match": "ROUND",
       "text": "(int)(((int)ROUND(dVar4) - (int)ROUND(dVar7) ^ uVar1) - uVar1) < tolerance)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 31,
       "match": "ROUND",
       "text": "(int)(((int)ROUND(dVar4) - (int)ROUND(dVar7) ^ uVar1) - uVar1) < tolerance)) {",
       "type": "decompiler_intrinsic"

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFramedModel *this_ptr,_FILE *file)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFramedModel *this_ptr,_FILE *file)
 
 {
   int iVar1;

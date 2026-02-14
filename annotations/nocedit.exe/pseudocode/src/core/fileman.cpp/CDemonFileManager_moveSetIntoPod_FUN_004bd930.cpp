@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_fileman_cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930(CDemonFileManager *this_ptr)
+void __cdecl core_fileman_cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930(CDemonFileManager *this_ptr)
 
 {
   int iVar1;

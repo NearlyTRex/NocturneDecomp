@@ -166,7 +166,7 @@ void __cdecl core_course_cpp_CCourse_FUN_00443bc0(CCourse *this_ptr,CKeyFramedMo
       vertex1.projected_vertex.screen_x = auVar7._16_4_;
       vertex1.projected_vertex.screen_y = auVar7._20_4_;
       vertex1.u = in_stack_fffffe70._24_4_;
-      vertex1.light = (float)in_stack_fffffe90;
+      vertex1.light = (int)in_stack_fffffe90;
       vertex1.color = (int)in_stack_fffffe94;
       vertex1._40_8_ = in_stack_fffffe98;
       vertex2.projected_vertex._8_8_ = in_stack_fffffea8;
@@ -174,9 +174,9 @@ void __cdecl core_course_cpp_CCourse_FUN_00443bc0(CCourse *this_ptr,CKeyFramedMo
       vertex2.projected_vertex._16_8_ = in_stack_fffffeb0;
       vertex2.u = in_stack_fffffeb8;
       vertex2.v = uVar9;
-      vertex2.light = (float)pCVar10;
+      vertex2.light = (int)pCVar10;
       vertex2.color = uVar11;
-      vertex2.fog = (float)output;
+      vertex2.fog = (int)output;
       vertex2.w_recip = (float)input;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1,vertex2);
       if (&local_8c == &local_68) {

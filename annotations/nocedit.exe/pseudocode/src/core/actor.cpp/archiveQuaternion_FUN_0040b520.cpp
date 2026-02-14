@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_archiveQuaternion_FUN_0040b520(CQuaternion4f *quat_ptr,char *property_type)
+void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040b520(CQuaternion4f *quat_ptr,char *property_type)
 
 {
   int iVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double __cdecl shape_design_c_calculateSamplingWeight_FUN_0046adc0 (double current_pos,double start_coord,double end_coord)
+; __cdecl double __cdecl shape_design_c_calculateSamplingWeight_FUN_0046adc0(double current_pos,double start_coord,double end_coord)
 ;
 ; Parameters:
 ; double           Stack[0x8]:8   current_pos

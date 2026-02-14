@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00453160 (CDemonCamera *this_ptr,int plane_index,uint blend_alpha)
+; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00453160(CDemonCamera *this_ptr,int plane_index,uint blend_alpha)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

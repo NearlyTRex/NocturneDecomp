@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041dd20 (CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume )
+; __cdecl void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041dd20(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume)
 ;
 ; Parameters:
 ; CBox *           Stack[0x4]:4   this_ptr

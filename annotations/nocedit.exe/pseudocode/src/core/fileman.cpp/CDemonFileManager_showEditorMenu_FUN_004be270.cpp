@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager *this_ptr)
+void __cdecl core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager *this_ptr)
 
 {
   uint uVar1;

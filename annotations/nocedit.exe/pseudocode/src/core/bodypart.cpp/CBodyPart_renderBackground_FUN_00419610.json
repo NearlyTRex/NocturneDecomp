@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 36,
-        "message": "use of undeclared identifier 'stack0xffffffe4'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 54,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 7,
-    "pseudocode_lines": 39,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 139
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 138
   },
   "cross_references": [],
   "function": {
@@ -180,15 +171,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xffffffe4",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);",
-      "type": "stack_ref"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

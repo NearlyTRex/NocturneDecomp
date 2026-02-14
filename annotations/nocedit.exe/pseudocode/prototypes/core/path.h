@@ -29,7 +29,7 @@ CPathMap * __cdecl CPathMap::dtor(CPathMap *this_ptr,uint flags);
 
 // Original: core_path.cpp_CPathMap_getDirection_FUN_005465b0
 // Address: 005465b0
-float __cdecl CPathMap::getDirection(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction, CVector3f *dest_position);
+float __cdecl CPathMap::getDirection(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position);
 
 // Original: core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
 // Address: 00546a60
@@ -41,7 +41,7 @@ int __cdecl CPathMap::getCachedVoxelHeight(CPathMap *this_ptr,int grid_z,int gri
 
 // Original: core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40
 // Address: 00546c40
-int __cdecl CPathMap::isLineWalkable(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z, int end_height);
+int __cdecl CPathMap::isLineWalkable(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z,int end_height);
 
 // Original: core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90
 // Address: 00546e90
@@ -49,7 +49,7 @@ int __cdecl CPathMap::checkAxisAlignedPath(CPathMap *this_ptr,int start_x,int st
 
 // Original: core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
 // Address: 00547320
-int __cdecl CPathMap::findPathToDestination(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint);
+int __cdecl CPathMap::findPathToDestination(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
 
 // Original: core_path.cpp_CPathMap_previewPathfinding_FUN_00547c00
 // Address: 00547c00
@@ -57,7 +57,7 @@ void __cdecl CPathMap::previewPathfinding(CPathMap *this_ptr);
 
 // Original: core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 // Address: 00547d00
-int __cdecl CPathMap::findPathWithRetry(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint);
+int __cdecl CPathMap::findPathWithRetry(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
 
 // Original: core_path.cpp_debugRenderGridQuad_FUN_00547dd0
 // Address: 00547dd0

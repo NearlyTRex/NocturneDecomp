@@ -4,19 +4,19 @@
       {
         "category": "format_error",
         "column": 81,
-        "line": 25,
+        "line": 24,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 99,
-        "line": 25,
+        "line": 24,
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 28,
+        "line": 27,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 60,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 19,
     "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -188,14 +188,14 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 6,
       "match": "in_stack_0000000c",
       "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_0000000c",
       "text": "_fprintf(file_handle,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\",in_stack_0000000c,pSVar1,dVar2);",
       "type": "stack_param"

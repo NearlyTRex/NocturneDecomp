@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonLight * __cdecl
-core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint flags)
+CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint flags)
 
 {
   CDemonLight *ptr;

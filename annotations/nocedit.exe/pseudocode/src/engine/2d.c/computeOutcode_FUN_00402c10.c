@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_2d_c_computeOutcode_FUN_00402c10(int x,int y,int x_min,int y_min,int x_max,int y_max)
+int __cdecl engine_2d_c_computeOutcode_FUN_00402c10(int x,int y,int x_min,int y_min,int x_max,int y_max)
 
 {
   byte bVar1;

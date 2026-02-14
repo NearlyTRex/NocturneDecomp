@@ -2,14 +2,11 @@
 // Address: 00477bf0
 // Address Range: [[00477bf0, 00477e56]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0 (CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count, int part_count,int frame_count)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
-          (CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,
-          int part_count,int frame_count)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count)
 
 {
   float fVar1;

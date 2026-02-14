@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 46,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 5,
     "suspect_count": 3,
     "suspect_types": [
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 13
+    "total_lines": 12
   },
   "cross_references": [
     {
@@ -31,7 +31,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0060c640",
-    "signature": "void crt_unknown_c_FUN_0060c640(void)"
+    "signature": "void crt_unknown_c_FUN_0060c640(ulong param_1)"
   },
   "function_calls": [
     {
@@ -71,18 +71,18 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000004",
-      "text": "ulong in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void FUN_0060c640(ulong param_1)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "malloc(in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "text": "malloc(param_1);",
+      "type": "unnamed_param"
     },
     {
       "address": "0060c640",

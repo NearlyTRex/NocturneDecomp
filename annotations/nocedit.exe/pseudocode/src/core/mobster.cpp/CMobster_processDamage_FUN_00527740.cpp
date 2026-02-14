@@ -6,8 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageInfo *damage_info)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;

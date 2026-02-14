@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_006597b0 = 256
-;   SMRGLTextureBasic DAT_0066e158
+;   SMRGLTextureBasic SMRGLTextureBasic_0066e158
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -116,7 +116,7 @@ section .text
     CMP EDI,0x8                         ; 0040dfb9
     JL 0x0040df23                       ; 0040dfbc
         ;   XREF to: 0040df23 (CONDITIONAL_JUMP)  ; LAB_0040df23
-    PUSH 0x66e158                       ; 0040dfc2 | DAT_0066e158
+    PUSH 0x66e158                       ; 0040dfc2 | SMRGLTextureBasic_0066e158
     MOV ESI,0x4                         ; 0040dfc7
     PUSH EAX                            ; 0040dfcc | g_CDemonRendererInstance
     MOV EBX,0x2                         ; 0040dfcd

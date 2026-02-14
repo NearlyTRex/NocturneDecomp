@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor *this_ptr)
+int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor *this_ptr)
 
 {
   float fVar1;

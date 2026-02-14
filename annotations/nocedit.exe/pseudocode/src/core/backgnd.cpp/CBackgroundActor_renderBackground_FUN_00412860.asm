@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_00412860 (CBackgroundActor *this_ptr,int layer_flag)
+; __cdecl void __cdecl core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_00412860(CBackgroundActor *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CBackgroundActor * Stack[0x4]:4   this_ptr

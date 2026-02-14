@@ -4,37 +4,37 @@
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 34,
+        "line": 35,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 37,
-        "line": 34,
+        "line": 35,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 47,
+        "line": 48,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 47,
+        "line": 48,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 59,
+        "line": 60,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 32,
-        "line": 59,
+        "line": 60,
         "message": "expected expression"
       }
     ],
@@ -43,16 +43,16 @@
   },
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 101,
+    "complexity_score": 102,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 2,
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 67,
     "suspect_count": 3,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 224
+    "total_lines": 225
   },
   "cross_references": [
     {
@@ -221,23 +221,23 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
+      "line": 28,
       "match": "code *",
-      "text": "puVar2 = (uint *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))();",
+      "text": "puVar2 = (uint *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1,auStack_44);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 41,
       "match": "code *",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 0xc))();",
+      "text": "iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 0xc))(iVar1);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
+      "line": 53,
       "match": "code *",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar1 + 0x154) + 0xc))();",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar1 + 0x154) + 0xc))(iVar1);",
       "type": "unresolved_funcptr"
     }
   ]

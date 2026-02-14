@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 86,
+        "line": 85,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 141,
+    "complexity_score": 140,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 80,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 208
+    "total_lines": 207
   },
   "cross_references": [
     {
@@ -349,35 +349,35 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_ffffff64",
       "text": "uint in_stack_ffffff64;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 74,
       "match": "in_stack_ffffff64",
       "text": "((double)CONCAT44(in_stack_ffffff64,",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 74,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(in_stack_ffffff64,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 78,
       "match": "in_stack_ffffff64",
       "text": "in_stack_ffffff64 = SUB84(dVar5,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 78,
       "match": "SUB84",
       "text": "in_stack_ffffff64 = SUB84(dVar5,0);",
       "type": "decompiler_intrinsic"

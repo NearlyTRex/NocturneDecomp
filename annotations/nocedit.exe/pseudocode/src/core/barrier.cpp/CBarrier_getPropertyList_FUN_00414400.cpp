@@ -2,13 +2,11 @@
 // Address: 00414400
 // Address Range: [[00414400, 0041445e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_barrier_cpp_CBarrier_getPropertyList_FUN_00414400 (CBarrier *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_barrier_cpp_CBarrier_getPropertyList_FUN_00414400(CBarrier *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_barrier_cpp_CBarrier_getPropertyList_FUN_00414400
-          (CBarrier *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_barrier_cpp_CBarrier_getPropertyList_FUN_00414400(CBarrier *this_ptr,CActorPropertyList *property_list)
 
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);

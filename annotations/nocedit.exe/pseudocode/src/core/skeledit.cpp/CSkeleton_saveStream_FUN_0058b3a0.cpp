@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,_FILE *file_handle)
+void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,_FILE *file_handle)
 
 {
   float *pfVar1;

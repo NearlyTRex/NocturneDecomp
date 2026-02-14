@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_frankgen_cpp_CFrankenstienMachine_archive_FUN_004d19e0(CFrankenstienMachine *this_ptr)
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_archive_FUN_004d19e0(CFrankenstienMachine *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);

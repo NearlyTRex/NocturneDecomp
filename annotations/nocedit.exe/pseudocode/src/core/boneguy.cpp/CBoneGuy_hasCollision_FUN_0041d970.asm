@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_boneguy_cpp_CBoneGuy_hasCollision_FUN_0041d970 (CBoneGuy *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_boneguy_cpp_CBoneGuy_hasCollision_FUN_0041d970(CBoneGuy *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr

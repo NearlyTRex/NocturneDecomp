@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CStrList_appendRange_FUN_004a2ba0(CStrList *this_ptr,CStrList *source_list)
+void __cdecl shape_edittool_cpp_CStrList_appendRange_FUN_004a2ba0(CStrList *this_ptr,CStrList *source_list)
 
 {
   shape_edittool_cpp_CStrList_insertRange_FUN_004a2d80(this_ptr,this_ptr->item_count,source_list);

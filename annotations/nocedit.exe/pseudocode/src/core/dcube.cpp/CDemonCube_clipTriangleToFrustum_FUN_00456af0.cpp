@@ -2,14 +2,11 @@
 // Address: 00456af0
 // Address Range: [[00456af0, 00456ec2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0 (CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, uchar texture_id)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
-          (CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,
-          uchar texture_id)
+void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)
 
 {
   uint uVar1;

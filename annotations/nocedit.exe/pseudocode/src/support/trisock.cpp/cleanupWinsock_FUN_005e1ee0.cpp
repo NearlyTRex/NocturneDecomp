@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(WORD wVersionRequested,LPWSADATA lpWSAData)
+int __cdecl support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(WORD wVersionRequested,LPWSADATA lpWSAData)
 
 {
   int iVar1;

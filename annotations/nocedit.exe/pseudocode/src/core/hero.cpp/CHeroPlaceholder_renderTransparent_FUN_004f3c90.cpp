@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004f3c90(CHeroPlaceholder *this_ptr)
+int __cdecl core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004f3c90(CHeroPlaceholder *this_ptr)
 
 {
   int iVar1;

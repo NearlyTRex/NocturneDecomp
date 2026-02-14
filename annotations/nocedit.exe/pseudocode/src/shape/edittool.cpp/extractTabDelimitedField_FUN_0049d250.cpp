@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl
-shape_edittool_cpp_extractTabDelimitedField_FUN_0049d250(char *source_str,char *dest_buffer)
+char * __cdecl shape_edittool_cpp_extractTabDelimitedField_FUN_0049d250(char *source_str,char *dest_buffer)
 
 {
   char *pcVar1;

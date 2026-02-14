@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50 (SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples, int *scalefactor_data,SMpegLayer3Granule *granule_info,int channel_index, SMpegLayer3Granule **granule_array)
+; __cdecl void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3Granule *granule_info,int channel_index,SMpegLayer3Granule **granule_array)
 ;
 ; Parameters:
 ; SMpegSubbandQuantizedSamples * Stack[0x4]:4   quantized_samples
@@ -45,8 +45,8 @@
 ;   double DOUBLE_0063b052 = 2
 ;   undefined4 DAT_0067e180
 ;   undefined4 DAT_0067e184
-;   undefined4 DAT_0067e6cc
-;   undefined4 DAT_0067e6d0
+;   int INT_0067e6cc = 0x6
+;   int INT_0067e6d0 = 0xc
 ;   undefined4 DAT_0067e6dc
 ;   undefined4 DAT_0067e6e8
 ;   undefined4 DAT_0067e728
@@ -97,7 +97,7 @@ section .text
     TEST EAX,EAX                        ; 00531da0
     JZ 0x00531f85                       ; 00531da2
         ;   XREF to: 00531f85 (CONDITIONAL_JUMP)  ; LAB_00531f85
-    MOV EAX,dword ptr [EDX + 0x67e6cc]  ; 00531da8 | DAT_0067e6cc
+    MOV EAX,dword ptr [EDX + 0x67e6cc]  ; 00531da8 | INT_0067e6cc
     MOV dword ptr [ESP + 0x5c],EAX      ; 00531dae
         ;   Label: LAB_00531dae
     MOV EDX,dword ptr [0x02f45984]      ; 00531db2 | g_MpegRequantTablesInitialized
@@ -264,7 +264,7 @@ section .text
     ADD EAX,EDI                         ; 00531fb6
     SHL EAX,0x2                         ; 00531fb8
     ADD EAX,EDI                         ; 00531fbb
-    MOV EAX,dword ptr [EAX*0x4 + 0x67e6cc] ; 00531fbd | DAT_0067e6cc
+    MOV EAX,dword ptr [EAX*0x4 + 0x67e6cc] ; 00531fbd | INT_0067e6cc
     JMP 0x00531dae                      ; 00531fc4
         ;   XREF to: 00531dae (UNCONDITIONAL_JUMP)  ; LAB_00531dae
     XOR EBX,EBX                         ; 00531fc9
@@ -311,7 +311,7 @@ section .text
     JGE 0x00532050                      ; 0053203f
         ;   XREF to: 00532050 (CONDITIONAL_JUMP)  ; LAB_00532050
         ;   Label: LAB_0053203f
-    MOV EAX,dword ptr [EBX + 0x67e6cc]  ; 00532041 | DAT_0067e6d0
+    MOV EAX,dword ptr [EBX + 0x67e6cc]  ; 00532041 | INT_0067e6d0
     MOV dword ptr [ESP + 0x5c],EAX      ; 00532047
     JMP 0x00531ee0                      ; 0053204b
         ;   XREF to: 00531ee0 (UNCONDITIONAL_JUMP)  ; LAB_00531ee0
@@ -331,7 +331,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00532078
     LEA EAX,[ESI*0x4 + 0x0]             ; 0053207c
     ADD EAX,EDX                         ; 00532083
-    MOV EAX,dword ptr [EAX + 0x67e6cc]  ; 00532085 | DAT_0067e6d0 | DAT_0067e6dc
+    MOV EAX,dword ptr [EAX + 0x67e6cc]  ; 00532085 | INT_0067e6d0 | DAT_0067e6dc
     MOV dword ptr [ESP + 0x5c],EAX      ; 0053208b
     JMP 0x00531ee0                      ; 0053208f
         ;   XREF to: 00531ee0 (UNCONDITIONAL_JUMP)  ; LAB_00531ee0

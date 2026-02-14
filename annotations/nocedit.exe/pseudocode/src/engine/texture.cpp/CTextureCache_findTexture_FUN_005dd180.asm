@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_005dd180 (CTextureCache *this_ptr,int hint_index,char *texture_name)
+; __cdecl int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_005dd180(CTextureCache *this_ptr,int hint_index,char *texture_name)
 ;
 ; Parameters:
 ; CTextureCache *  Stack[0x4]:4   this_ptr

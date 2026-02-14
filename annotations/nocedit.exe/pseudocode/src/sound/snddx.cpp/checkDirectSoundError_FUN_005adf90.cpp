@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-sound_snddx_cpp_checkDirectSoundError_FUN_005adf90(HRESULT error_code,char *operation_description)
+int __cdecl sound_snddx_cpp_checkDirectSoundError_FUN_005adf90(HRESULT error_code,char *operation_description)
 
 {
   char *pcVar1;

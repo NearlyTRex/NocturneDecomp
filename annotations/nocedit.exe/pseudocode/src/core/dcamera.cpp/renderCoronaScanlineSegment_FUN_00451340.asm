@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340 (int row_index,int column_start,int column_end)
+; __cdecl void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340(int row_index,int column_start,int column_end)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   row_index
@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   CVector3i[15360] g_PrecomputedWorldPositions
 ;   char[241][320] g_CoronaBlurOutputBuffer
-;   int g_CameraDownscaleIterations
+;   _BIT_INTEGER g_CameraDownscaleIterations
 ;   int[240][320] g_CoronaDepthBuffer
 ;   CDemonGlobe* g_CurrentGlobe
 ;   uint*[1200] g_ZBufferScanlineArray

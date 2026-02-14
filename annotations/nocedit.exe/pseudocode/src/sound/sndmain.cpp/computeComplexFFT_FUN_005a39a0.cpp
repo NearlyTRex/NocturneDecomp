@@ -2,13 +2,11 @@
 // Address: 005a39a0
 // Address Range: [[005a39a0, 005a3c80]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0 (float *input_real,float *input_imag,float *output_real,float *output_imag,int size)
+// Signature: void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0(float *input_real,float *input_imag,float *output_real,float *output_imag,int size)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0
-          (float *input_real,float *input_imag,float *output_real,float *output_imag,int size)
+void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0(float *input_real,float *input_imag,float *output_real,float *output_imag,int size)
 
 {
   double dVar1;

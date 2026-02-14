@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; __cdecl void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 ;
 ; Parameters:
 ; SEdgeData *      Stack[0x4]:4   left_edge
@@ -24,7 +24,7 @@
 ;   int g_DitherPatternOffset
 ;   int[256] g_DitherPatternTable
 ;   undefined4 g_DitherPatternTable[1]
-;   int g_CameraDownscaleIterations
+;   _BIT_INTEGER g_CameraDownscaleIterations
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ClipLeft

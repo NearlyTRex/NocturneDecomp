@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel *this_ptr,char *filename)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel *this_ptr,char *filename)
 
 {
   char cVar1;

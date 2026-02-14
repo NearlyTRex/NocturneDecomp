@@ -83,8 +83,8 @@
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
-;   core_script.cpp_CScript_FUN_00559b20
 ;   core_script.cpp_CScript_renderEditor_FUN_00559d80
+;   core_script.cpp_CScript_renderSubtitles_FUN_00559b20
 ;   ... and 38 more
 ;
 ; *****************************************************************************
@@ -469,8 +469,8 @@ section .text
     MOV EAX,[0x00680d50]                ; 004da558 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_004da558
     PUSH EAX                            ; 004da55d | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00559b20 ; 004da55e
-        ;   XREF to: 00559b20 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00559b20(CScript * this_ptr)
+    CALL core_script.cpp_CScript_renderSubtitles_FUN_00559b20 ; 004da55e
+        ;   XREF to: 00559b20 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_renderSubtitles_FUN_00559b20(CScript * this_ptr)
     ADD ESP,0x4                         ; 004da563
     MOV EDX,dword ptr [EBP + 0x92]      ; 004da566
     PUSH EDX                            ; 004da56c

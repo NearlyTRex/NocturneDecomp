@@ -1,40 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 59,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 62,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 70,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 95,
+    "complexity_score": 93,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 70,
+    "pseudocode_lines": 68,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 220
+    "total_lines": 218
   },
   "cross_references": [
     {
@@ -90,7 +71,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags)"
   },
   "function_calls": [
     {
@@ -137,7 +118,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -218,14 +199,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar2[1].base.type;",
       "type": "pointer_cast"

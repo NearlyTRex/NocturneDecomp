@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack2_esi CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_005f7640 (CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out)
+; __stack2_esi CQuaternion4f * __stack2_esi core_xform_cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,CQuaternion4f *quat_out)
 ;
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   quat1_in

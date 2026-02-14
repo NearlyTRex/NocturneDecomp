@@ -2,13 +2,11 @@
 // Address: 0054c500
 // Address Range: [[0054c500, 0054c5c9]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500 (CPackedBitmapSet *this_ptr,char *filename,int bitmap_index)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500(CPackedBitmapSet *this_ptr,char *filename,int bitmap_index)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500
-          (CPackedBitmapSet *this_ptr,char *filename,int bitmap_index)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500(CPackedBitmapSet *this_ptr,char *filename,int bitmap_index)
 
 {
   int iVar1;

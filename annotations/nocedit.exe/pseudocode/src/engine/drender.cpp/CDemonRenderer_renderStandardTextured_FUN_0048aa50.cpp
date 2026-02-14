@@ -2,13 +2,11 @@
 // Address: 0048aa50
 // Address Range: [[0048aa50, 0048ab40]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 
 {
   int iVar1;
@@ -38,9 +36,9 @@ engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
   }
   if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
     if (this_ptr->face_count == 0) {
-      g_RenderStateFlags = RENDER_TEXTURE_BASE;
+      g_RenderStateFlags.dword = RENDER_TEXTURE_BASE;
       g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
-      g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35;
     }
     else {
       g_CurrentFilename = "..\\engine\\drender.cpp";

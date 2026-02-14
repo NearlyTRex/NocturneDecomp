@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-uint __cdecl
-shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr)
+uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr)
 
 {
   uint uVar1;

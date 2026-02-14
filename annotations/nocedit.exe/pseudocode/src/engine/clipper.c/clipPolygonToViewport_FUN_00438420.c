@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_count,int *vertex_indices)
+void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_count,int *vertex_indices)
 
 {
   uint uVar1;
@@ -103,7 +102,7 @@ engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_count,int *vertex
           }
           g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
           wincore_windll_cpp_drawPolygon2_FUN_005b7610
-                    (g_ClipperCullingPointers,vertex_count,g_RenderStateFlags);
+                    (g_ClipperCullingPointers,vertex_count,g_RenderStateFlags.dword);
           return;
         }
         g_ClippedVertexCount = vertex_count;

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 95,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 54,
     "suspect_count": 3,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
     ],
-    "total_lines": 130
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -142,21 +142,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(SSoundDeviceInfo *)((int)",
       "text": "pSVar6 = (SSoundDeviceInfo *)((int)device_info + (uint)bVar7 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 45,
+      "line": 44,
       "match": "pSVar6[-1].",
       "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_value2 + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(char *)((int)",
       "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_value2 + 3);",
       "type": "pointer_cast"

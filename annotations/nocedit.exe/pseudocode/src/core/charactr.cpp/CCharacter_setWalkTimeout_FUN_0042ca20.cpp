@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_setWalkTimeout_FUN_0042ca20(CCharacter *this_ptr,float timeout)
+void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_0042ca20(CCharacter *this_ptr,float timeout)
 
 {
   this_ptr->walk_timeout = timeout;

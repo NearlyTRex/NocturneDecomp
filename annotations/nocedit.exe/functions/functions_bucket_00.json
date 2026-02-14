@@ -6710,6 +6710,21 @@
     "vars":{
       "locals":[
         {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CEnemy*",
+          "use":78
+        },
+        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -19409,22 +19424,6 @@
             ]
           },
           "type":"int"
-        },
-        {
-          "name":"instance",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"CKeyFramedModelInstance*"
         }
       ]
     }
@@ -46169,27 +46168,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_matrix.c_popViewport_FUN_0050e480",
-    "ret":"void",
-    "vars":{
-      "params":[
-        {
-          "name":"this_ptr",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonRenderer*"
-        }
-      ]
-    }
+    "ret":"void"
   },
   {
     "addr":"0050f180",
@@ -57715,7 +57694,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00559f80",
+    "name":"core_script.cpp_CScript_loadScript_FUN_00559f80",
     "ret":"int",
     "vars":{
       "locals":[
@@ -57866,7 +57845,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"filename",
           "storage":{
             "offset":8,
             "size":4,
@@ -57882,7 +57861,7 @@
           "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"skip_validation",
           "storage":{
             "offset":12,
             "size":4,
@@ -58095,7 +58074,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00560d80",
+    "name":"core_script.cpp_CScript_computeChecksum_FUN_00560d80",
     "ret":"uint",
     "vars":{
       "locals":[
@@ -58237,7 +58216,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00566080",
+    "name":"core_script.cpp_CScript_checkSyntax_FUN_00566080",
     "ret":"void",
     "vars":{
       "params":[
@@ -58271,7 +58250,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00566180",
+    "name":"core_script.cpp_CScript_saveToFile_FUN_00566180",
     "ret":"void",
     "vars":{
       "params":[
@@ -58292,7 +58271,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"filename",
           "storage":{
             "offset":8,
             "size":4,
@@ -58371,7 +58350,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00566880",
+    "name":"core_script.cpp_CScript_clampCursorToView_FUN_00566880",
     "ret":"void",
     "vars":{
       "params":[
@@ -58405,7 +58384,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00567080",
+    "name":"core_script.cpp_CScript_parseCommand_FUN_00567080",
     "ret":"void",
     "vars":{
       "locals":[
@@ -58524,7 +58503,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"text",
           "storage":{
             "offset":8,
             "size":4,
@@ -58540,7 +58519,7 @@
           "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"xref_data",
           "storage":{
             "offset":12,
             "size":4,
@@ -58553,7 +58532,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"SScriptXRef*"
         }
       ]
     }

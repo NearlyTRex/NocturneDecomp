@@ -2,13 +2,11 @@
 // Address: 005892d0
 // Address Range: [[005892d0, 00589302]]
 // Convention: __cdecl
-// Signature: int __cdecl core_simbox_cpp_CSimBox_propertyActionCallback_FUN_005892d0 (CSimBox *this_ptr,CActorProperty *property)
+// Signature: int __cdecl core_simbox_cpp_CSimBox_propertyActionCallback_FUN_005892d0(CSimBox *this_ptr,CActorProperty *property)
 
 #include "nocturne.h"
 
-int __cdecl
-core_simbox_cpp_CSimBox_propertyActionCallback_FUN_005892d0
-          (CSimBox *this_ptr,CActorProperty *property)
+int __cdecl core_simbox_cpp_CSimBox_propertyActionCallback_FUN_005892d0(CSimBox *this_ptr,CActorProperty *property)
 
 {
   CSimBox *pCVar1;

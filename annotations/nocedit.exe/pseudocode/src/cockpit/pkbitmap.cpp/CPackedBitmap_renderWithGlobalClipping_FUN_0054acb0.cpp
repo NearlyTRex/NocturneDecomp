@@ -2,14 +2,11 @@
 // Address: 0054acb0
 // Address Range: [[0054acb0, 0054ada1]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0 (CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width, int height)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0
-          (CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,
-          int height)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height)
 
 {
   if ((this_ptr->row_pointers != (void **)0x0) && (this_ptr->packed_data != (char *)0x0)) {

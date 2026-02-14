@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_bride_cpp_CBride_getTargetPoint_FUN_00424aa0(CBride *this_ptr,CVector3f *out_point)
+CVector3f * __cdecl core_bride_cpp_CBride_getTargetPoint_FUN_00424aa0(CBride *this_ptr,CVector3f *out_point)
 
 {
   int iVar1;

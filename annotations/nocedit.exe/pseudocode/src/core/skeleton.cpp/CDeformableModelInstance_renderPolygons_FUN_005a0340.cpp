@@ -2,13 +2,11 @@
 // Address: 005a0340
 // Address Range: [[005a0340, 005a03ab]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340 (CDeformableModelInstance *this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
-          (CDeformableModelInstance *this_ptr)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance *this_ptr)
 
 {
   CDeformableModel *this_ptr_00;

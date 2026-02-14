@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 81,
+    "complexity_score": 79,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 19,
     "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 138
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500",
-    "signature": "double __cdecl shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500 (CVector3d *ray_origin,CVector3d *ray_dir,CVector3d *plane_point,CVector3d *plane_normal)"
+    "signature": "double __cdecl shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500(CVector3d *ray_origin,CVector3d *ray_dir,CVector3d *plane_point,CVector3d *plane_normal)"
   },
   "function_calls": [],
   "globals": [
@@ -251,28 +251,28 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000004",
       "text": "double *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "return -((plane_point->z * in_stack_00000004[2] +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "plane_point->x * *in_stack_00000004 + plane_point->y * in_stack_00000004[1] +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "plane_point->x * *in_stack_00000004 + plane_point->y * in_stack_00000004[1] +",
       "type": "stack_param"

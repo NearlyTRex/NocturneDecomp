@@ -13,18 +13,22 @@ int __cdecl shape_superopt_cpp_CObj_isClosedManifold_FUN_005d4070(CObj *this_ptr
   int iVar2;
   int iVar3;
   uint uVar4;
+  int local_1c;
   uint local_18;
   
   local_18 = 0;
   if (this_ptr->poly_count != 0) {
+    local_1c = 0;
     do {
       uVar4 = 0;
       iVar2 = 0;
       if (this_ptr->poly_count != 0) {
         iVar3 = 0;
         do {
-          iVar1 = (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar3 + 4) +
-                              0x70))();
+          iVar1 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar3;
+          iVar1 = (**(code **)(*(int *)(iVar1 + 100) + 0x70))
+                            (iVar1,(int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->
+                                         parent_obj + local_1c);
           if ((iVar1 != 0) && (iVar2 = iVar2 + 1, iVar2 == 3)) break;
           uVar4 = uVar4 + 1;
           iVar3 = iVar3 + 0x68;
@@ -33,6 +37,7 @@ int __cdecl shape_superopt_cpp_CObj_isClosedManifold_FUN_005d4070(CObj *this_ptr
       if (iVar2 != 3) {
         return 0;
       }
+      local_1c = local_1c + 0x68;
       local_18 = local_18 + 1;
     } while (local_18 < (uint)this_ptr->poly_count);
   }

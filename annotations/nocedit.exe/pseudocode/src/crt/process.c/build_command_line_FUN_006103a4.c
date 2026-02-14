@@ -2,13 +2,11 @@
 // Address: 006103a4
 // Address Range: [[006103a4, 006103f8]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_process_c_build_command_line_FUN_006103a4 (char *program_name,char **argv,char *buffer,int skip_program_name)
+// Signature: void __cdecl crt_process_c_build_command_line_FUN_006103a4(char *program_name,char **argv,char *buffer,int skip_program_name)
 
 #include "nocturne.h"
 
-void __cdecl
-build_command_line
-          (char *program_name,char **argv,char *buffer,int skip_program_name)
+void __cdecl build_command_line(char *program_name,char **argv,char *buffer,int skip_program_name)
 
 {
   char *pcVar1;

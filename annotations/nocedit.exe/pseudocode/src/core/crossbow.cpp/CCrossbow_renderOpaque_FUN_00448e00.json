@@ -1,29 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 19,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 51,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 21,
-    "suspect_count": 2,
-    "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref"
-    ],
-    "total_lines": 77
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 78
   },
   "cross_references": [],
   "function": {
@@ -115,22 +105,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 12,
-      "match": "&stack0xffffffdc",
-      "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "NAN",
-      "text": "render_flags = -NAN;",
-      "type": "decompiler_intrinsic"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

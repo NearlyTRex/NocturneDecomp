@@ -1,28 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 44,
-        "message": "use of undeclared identifier 'stack0xffffffe8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 65,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 50,
-    "suspect_count": 1,
+    "pseudocode_lines": 64,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_ref"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 265
+    "total_lines": 279
   },
   "cross_references": [],
   "function": {
@@ -36,7 +29,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180",
-    "signature": "int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_0042c180 (CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info, CVector3f *out_hit)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_0042c180(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit)"
   },
   "function_calls": [
     {
@@ -227,11 +220,18 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffffe8",
-      "text": "(&this_ptr->base,(CVector3f *)&stack0xffffffe8,&local_54);",
-      "type": "stack_ref"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "SQRT",
+      "text": "fVar1 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ROUND",
+      "text": "iStack_1c = (int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0 (CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal)
+; __cdecl float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

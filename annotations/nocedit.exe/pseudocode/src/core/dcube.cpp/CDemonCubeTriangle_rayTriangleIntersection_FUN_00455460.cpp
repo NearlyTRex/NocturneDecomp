@@ -2,13 +2,11 @@
 // Address: 00455460
 // Address Range: [[00455460, 004556a5]]
 // Convention: __cdecl
-// Signature: float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460 (CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
+// Signature: float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
 
 #include "nocturne.h"
 
-float __cdecl
-core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460
-          (CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
+float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
 
 {
   float fVar1;

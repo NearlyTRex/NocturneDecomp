@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonTriangle * __cdecl
-core_dtri_cpp_CDemonTriangle_arrdtor_FUN_0049cd20(CDemonTriangle *objs,uint flags)
+CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_arrdtor_FUN_0049cd20(CDemonTriangle *objs,uint flags)
 
 {
   CDemonTriangle *pCVar1;

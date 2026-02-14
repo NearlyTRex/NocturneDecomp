@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380(CEdScrollBar *this_ptr)
+void __cdecl shape_edittool_cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380(CEdScrollBar *this_ptr)
 
 {
   int iVar1;

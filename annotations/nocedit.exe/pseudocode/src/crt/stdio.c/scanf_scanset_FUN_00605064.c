@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-scanf_scanset(scanf_state_t *state,va_list_t *args,char **format_ptr)
+int __cdecl scanf_scanset(scanf_state_t *state,va_list_t *args,char **format_ptr)
 
 {
   byte bVar1;
@@ -25,7 +24,7 @@ scanf_scanset(scanf_state_t *state,va_list_t *args,char **format_ptr)
   if (local_1c != 0) {
     *format_ptr = *format_ptr + 1;
   }
-  pcVar3 = (char *)FUN_0060501c();
+  pcVar3 = (char *)FUN_0060501c(*format_ptr,abStack_40);
   *format_ptr = pcVar3;
   bVar1 = state->flags;
   if ((bVar1 & 1) != 0) {

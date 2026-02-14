@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 39,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 68
+    "total_lines": 66
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0 (CDemonCamera *this_ptr,SRenderVertex *vertex)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(CDemonCamera *this_ptr,SRenderVertex *vertex)"
   },
   "function_calls": [],
   "globals": [
@@ -114,7 +114,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 16,
       "match": "(uint *)((int)",
       "text": "uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +",
       "type": "pointer_cast"

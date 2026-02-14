@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boneguy_cpp_CBoneGuy_getPropertyList_FUN_0041d990 (CBoneGuy *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_boneguy_cpp_CBoneGuy_getPropertyList_FUN_0041d990(CBoneGuy *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr

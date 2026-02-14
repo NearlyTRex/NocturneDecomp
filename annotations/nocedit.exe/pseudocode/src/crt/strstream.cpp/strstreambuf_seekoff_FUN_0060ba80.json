@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 223,
+    "complexity_score": 221,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 46,
     "suspect_count": 16,
     "suspect_types": [
       "register_param",
       "special_crt_function",
       "unknown_field"
     ],
-    "total_lines": 161
+    "total_lines": 159
   },
   "cross_references": [],
   "function": {
@@ -26,7 +26,7 @@
     "convention": "__watcallStack",
     "is_ebp_frame": true,
     "name": "crt_strstream.cpp_strstreambuf_seekoff_FUN_0060ba80",
-    "signature": "int __watcallStack crt_strstream_cpp_strstreambuf_seekoff_FUN_0060ba80 (strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags)"
+    "signature": "int __watcallStack crt_strstream_cpp_strstreambuf_seekoff_FUN_0060ba80(strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags)"
   },
   "function_calls": [
     {
@@ -110,105 +110,105 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_ECX",
       "text": "int in_ECX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_ECX",
       "text": "in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_0060d725",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_ECX",
       "text": "if (in_ECX != -1) {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_ECX",
       "text": "pcVar2 = (this_ptr->_streambuf).__get_base + in_ECX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_ECX",
       "text": "in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_0060d725",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 35,
+      "line": 33,
       "match": "in_ECX",
       "text": "(this_ptr->_streambuf).__put_ptr,pcVar3,pcVar3), in_ECX != -1)) {",
       "type": "register_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 36,
       "match": "._0_2_",
       "text": "iVar1._0_2_ = this_ptr->__minbuf_size;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 39,
+      "line": 37,
       "match": "._2_1_",
       "text": "iVar1._2_1_ = this_ptr->__bit_flags;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 40,
+      "line": 38,
       "match": "._3_1_",
       "text": "iVar1._3_1_ = this_ptr->padding;",
       "type": "unknown_field"
     },
     {
       "description": "Inferred register parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_ECX",
       "text": "(this_ptr->_streambuf).__put_ptr = (this_ptr->_streambuf).__put_ptr + in_ECX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_ECX",
       "text": "if (iVar1 < in_ECX) {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 43,
+      "line": 41,
       "match": "in_ECX",
       "text": "this_ptr->__minbuf_size = (short)in_ECX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 44,
+      "line": 42,
       "match": "in_ECX",
       "text": "this_ptr->__bit_flags = (char)((uint)in_ECX >> 0x10);",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 45,
+      "line": 43,
       "match": "in_ECX",
       "text": "this_ptr->padding = (char)((uint)in_ECX >> 0x18);",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 48,
+      "line": 46,
       "match": "in_ECX",
       "text": "return in_ECX;",
       "type": "register_param"

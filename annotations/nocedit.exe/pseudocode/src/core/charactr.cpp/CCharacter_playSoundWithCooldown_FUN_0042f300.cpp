@@ -2,13 +2,11 @@
 // Address: 0042f300
 // Address Range: [[0042f300, 0042f330]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300 (CCharacter *this_ptr,char *sound_name)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300(CCharacter *this_ptr,char *sound_name)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
-          (CCharacter *this_ptr,char *sound_name)
+void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300(CCharacter *this_ptr,char *sound_name)
 
 {
   CDemonActor_vtable *pCVar1;

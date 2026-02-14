@@ -2,14 +2,11 @@
 // Address: 00499f10
 // Address Range: [[00499f10, 0049a15f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10 (CDemonRaytrace *this_ptr,CVector3f *offset_vector,void *light_data, CVector3f *start_position,CVector3f *end_position)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10(CDemonRaytrace *this_ptr,CVector3f *offset_vector,void *light_data,CVector3f *start_position,CVector3f *end_position)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10
-          (CDemonRaytrace *this_ptr,CVector3f *offset_vector,void *light_data,
-          CVector3f *start_position,CVector3f *end_position)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10(CDemonRaytrace *this_ptr,CVector3f *offset_vector,void *light_data,CVector3f *start_position,CVector3f *end_position)
 
 {
   float fVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CObj_computeBoundingBox_FUN_005d3f60 (CObj *this_ptr,CVector3d *out_min,CVector3d *out_max)
+; __cdecl void __cdecl shape_superopt_cpp_CObj_computeBoundingBox_FUN_005d3f60(CObj *this_ptr,CVector3d *out_min,CVector3d *out_max)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

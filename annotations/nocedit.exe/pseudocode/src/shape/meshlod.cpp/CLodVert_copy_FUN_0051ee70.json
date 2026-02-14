@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 43,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 17,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 37
+    "total_lines": 36
   },
   "cross_references": [],
   "function": {
@@ -90,14 +90,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 16,
       "match": "(CLodVert *)((int)",
       "text": "source = (CLodVert *)((int)&(source->position).x + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 17,
       "match": "(CLodVert *)((int)",
       "text": "pCVar2 = (CLodVert *)((int)&(pCVar2->position).x + 1);",
       "type": "pointer_cast"

@@ -37,8 +37,8 @@
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_005235b0
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
-;   core_script.cpp_CScript_FUN_0055a540
-;   core_script.cpp_CScript_FUN_0055a6c0
+;   core_script.cpp_CScript_executeInitSection_FUN_0055a6c0
+;   core_script.cpp_CScript_initRuntime_FUN_0055a540
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
@@ -141,13 +141,13 @@ section .text
     MOV ECX,dword ptr [0x00680d50]      ; 0052485d | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_0052485d
     PUSH ECX                            ; 00524863 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_0055a540 ; 00524864
-        ;   XREF to: 0055a540 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_0055a540(CScript * this_ptr)
+    CALL core_script.cpp_CScript_initRuntime_FUN_0055a540 ; 00524864
+        ;   XREF to: 0055a540 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initRuntime_FUN_0055a540(CScript * this_ptr)
     ADD ESP,0x4                         ; 00524869
     MOV EBX,dword ptr [0x00680d50]      ; 0052486c | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 00524872 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_0055a6c0 ; 00524873
-        ;   XREF to: 0055a6c0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_0055a6c0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_executeInitSection_FUN_0055a6c0 ; 00524873
+        ;   XREF to: 0055a6c0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_executeInitSection_FUN_0055a6c0(CScript * this_ptr)
     ADD ESP,0x4                         ; 00524878
     MOV ESI,dword ptr [0x006810c8]      ; 0052487b | g_CDemonSetPtr
     PUSH ESI                            ; 00524881 | g_CDemonSetInstance

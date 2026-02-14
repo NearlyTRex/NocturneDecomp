@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CGlassParticle * __cdecl
-core_fire_cpp_CGlassParticle_arrdtor_FUN_004c9970(CGlassParticle *objs,uint flags)
+CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_arrdtor_FUN_004c9970(CGlassParticle *objs,uint flags)
 
 {
   CGlassParticle *pCVar1;

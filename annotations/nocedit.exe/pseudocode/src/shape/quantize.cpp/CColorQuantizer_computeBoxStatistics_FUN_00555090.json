@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 10,
-        "line": 75,
+        "line": 73,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 76,
+        "line": 74,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 79,
+        "line": 77,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 80,
+        "line": 78,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 85,
+        "line": 83,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 86,
+        "line": 84,
         "message": "member reference base type 'int' is not a structure or union"
       }
     ],
@@ -43,18 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 240,
+    "complexity_score": 238,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 115,
+    "pseudocode_lines": 113,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 437
+    "total_lines": 435
   },
   "cross_references": [
     {
@@ -86,7 +86,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090",
-    "signature": "void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 (CColorQuantizer *this_ptr,int box_index)"
+    "signature": "void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer *this_ptr,int box_index)"
   },
   "function_calls": [
     {
@@ -317,77 +317,77 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 44,
       "match": "ROUND",
       "text": "this_ptr->boxes[box_index].avg_red = (short)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 48,
       "match": "ROUND",
       "text": "this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 51,
       "match": "ROUND",
       "text": "this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "ROUND",
       "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 62,
       "match": "(int *)((int)",
       "text": "uVar12 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 66,
       "match": "._0_2_",
       "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_red;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 67,
       "match": "._2_2_",
       "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 72,
+      "line": 70,
       "match": "._0_2_",
       "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 71,
       "match": "._2_2_",
       "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_blue;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 76,
       "match": "._0_2_",
       "text": "iVar5._0_2_ = this_ptr->boxes[box_index].avg_blue;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 77,
       "match": "._2_2_",
       "text": "iVar5._2_2_ = this_ptr->boxes[box_index].avg_intensity;",
       "type": "unknown_field"

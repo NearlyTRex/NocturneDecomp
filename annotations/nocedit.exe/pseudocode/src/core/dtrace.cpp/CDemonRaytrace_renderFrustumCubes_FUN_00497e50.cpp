@@ -2,13 +2,11 @@
 // Address: 00497e50
 // Address Range: [[00497e50, 00498e43]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-          (CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode)
 
 {
   int iVar1;

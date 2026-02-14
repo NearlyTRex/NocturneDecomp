@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 125,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 3,
-    "pseudocode_lines": 40,
-    "suspect_count": 7,
+    "pseudocode_lines": 38,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
-      "stack_param",
-      "stack_ref"
+      "special_crt_function"
     ],
-    "total_lines": 144
+    "total_lines": 142
   },
   "cross_references": [
     {
@@ -159,48 +157,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xfffffee0",
-      "text": "_tempnam(&stack0xfffffee0,(uint)*(byte *)&file_handle->_link->__get_ptr)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xfffffee0",
-      "text": "remove(&stack0xfffffee0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000010",
-      "text": "if (in_stack_00000010 != 0) {",
-      "type": "stack_param"
-    },
     {
       "address": "00601fd0",
       "crt_type": "runtime support",

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 47,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 65
+    "total_lines": 64
   },
   "cross_references": [],
   "function": {
@@ -108,14 +108,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 14,
       "match": "(SNetworkAddr *)((int)",
       "text": "buffer = (SNetworkAddr *)((int)&network_addr->ip_address + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 17,
       "match": "(SNetworkAddr *)((int)",
       "text": "network_addr = (SNetworkAddr *)((int)&network_addr->ip_address + 2);",
       "type": "pointer_cast"

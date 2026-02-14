@@ -1,29 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 27,
-        "line": 38,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 76,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 7,
-    "pseudocode_lines": 36,
-    "suspect_count": 3,
-    "suspect_types": [
-      "builtin_function",
-      "unaffected_reg"
-    ],
-    "total_lines": 155
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 153
   },
   "cross_references": [],
   "function": {
@@ -256,29 +246,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra builtin function",
-      "line": 19,
-      "match": "builtin_strncpy",
-      "text": "builtin_strncpy(local_170,\"/\\x1aU\",4);",
-      "type": "builtin_function"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EBX",
-      "text": "} while (iVar1 < unaff_EBX);",
-      "type": "unaffected_reg"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CColorQuantizer * __cdecl
-shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr)
+CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr)
 
 {
   CColorQuantizer_ProgressCallback *pCVar1;

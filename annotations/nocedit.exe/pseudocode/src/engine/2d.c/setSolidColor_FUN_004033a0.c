@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_2d_c_setSolidColor_FUN_004033a0(int red_component,int green_component,int blue_component)
+void __cdecl engine_2d_c_setSolidColor_FUN_004033a0(int red_component,int green_component,int blue_component)
 
 {
   g_SolidGreenComponent = green_component;

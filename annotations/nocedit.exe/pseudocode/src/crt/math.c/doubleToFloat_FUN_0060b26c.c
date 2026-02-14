@@ -2,11 +2,11 @@
 // Address: 0060b26c
 // Address Range: [[0060b26c, 0060b2b7]]
 // Convention: __watcallRegister
-// Signature: float crt_math_c_doubleToFloat_FUN_0060b26c(double val)
+// Signature: float __watcallRegister crt_math_c_doubleToFloat_FUN_0060b26c(double val)
 
 #include "nocturne.h"
 
-float doubleToFloat(double val)
+float __watcallRegister doubleToFloat(double val)
 
 {
   uint uVar1;

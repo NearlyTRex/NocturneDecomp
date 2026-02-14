@@ -2,13 +2,11 @@
 // Address: 005f2010
 // Address Range: [[005f2010, 005f2061]]
 // Convention: __cdecl
-// Signature: void __cdecl core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010 (CWerewolf *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010(CWerewolf *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010
-          (CWerewolf *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010(CWerewolf *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   CWerewolf *pCVar1;

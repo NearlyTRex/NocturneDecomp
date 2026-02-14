@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20 (CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out)
+; __cdecl int __cdecl core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20(CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
@@ -11,8 +11,8 @@
 ; int *            Stack[0x14]:4   line_out
 ;
 ; XREF[2]:
-;   core_script.cpp_CScript_FUN_00565130 at 005656eb
-;   core_script.cpp_CScript_FUN_00566bc0 at 00566be1
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 005656eb
+;   core_script.cpp_CScript_updateMouseCursor_FUN_00566bc0 at 00566be1
 ;
 ; Referenced Globals:
 ;   CEdScrollBar g_ScriptEditorVScrollBar

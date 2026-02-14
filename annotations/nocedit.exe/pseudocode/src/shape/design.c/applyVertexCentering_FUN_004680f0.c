@@ -2,14 +2,11 @@
 // Address: 004680f0
 // Address Range: [[004680f0, 0046819a]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_applyVertexCentering_FUN_004680f0 (SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list, int reference_vertex_id)
+// Signature: void __cdecl shape_design_c_applyVertexCentering_FUN_004680f0(SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list,int reference_vertex_id)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_design_c_applyVertexCentering_FUN_004680f0
-          (SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list,
-          int reference_vertex_id)
+void __cdecl shape_design_c_applyVertexCentering_FUN_004680f0(SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list,int reference_vertex_id)
 
 {
   uint *puVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_superopt_cpp_CObj_findAndRemoveVertex_FUN_005d3250(CObj *this_ptr,CVert *vertex_ptr)
+int __cdecl shape_superopt_cpp_CObj_findAndRemoveVertex_FUN_005d3250(CObj *this_ptr,CVert *vertex_ptr)
 
 {
   uint index;

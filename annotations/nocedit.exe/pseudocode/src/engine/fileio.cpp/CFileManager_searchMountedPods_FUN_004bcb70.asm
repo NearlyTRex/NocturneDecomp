@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70 (CFileManager *this_ptr,char *default_wildcard)
+; __cdecl void __cdecl engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70(CFileManager *this_ptr,char *default_wildcard)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

@@ -4,49 +4,49 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 27,
+        "line": 24,
         "message": "unknown type name 'undefined3'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 40,
+        "line": 37,
         "message": "use of undeclared identifier '_transparency_color'; did you mean 'transparency_color'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 41,
+        "line": 38,
         "message": "use of undeclared identifier '_transparency_color'; did you mean 'transparency_color'?"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 43,
+        "line": 40,
         "message": "assigning to 'void **' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 59,
+        "line": 56,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 83,
+        "line": 80,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "format_error",
         "column": 105,
-        "line": 89,
+        "line": 86,
         "message": "format specifies type 'char *' but the argument has type 'CPackedBitmap *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 118,
+        "line": 115,
         "message": "use of undeclared identifier '_transparency_color'; did you mean 'transparency_color'?"
       }
     ],
@@ -55,18 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 165,
+    "complexity_score": 162,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 9,
-    "pseudocode_lines": 110,
+    "pseudocode_lines": 107,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "undefined_type"
     ],
-    "total_lines": 308
+    "total_lines": 305
   },
   "cross_references": [
     {
@@ -92,7 +92,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190 (CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int stride_bytes, uchar transparency_color)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int stride_bytes,uchar transparency_color)"
   },
   "function_calls": [
     {
@@ -339,28 +339,28 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_00000019",
       "text": "undefined3 in_stack_00000019;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved type",
-      "line": 20,
+      "line": 17,
       "match": "undefined3 in_stack_00000019",
       "text": "undefined3 in_stack_00000019;",
       "type": "undefined_type"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 47,
       "match": "(int *)((int)",
       "text": "*(int *)((int)this_ptr->row_pointers + local_28) = new_size;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 100,
       "match": "(ushort *)((int)",
       "text": "puVar6 = (ushort *)((int)puVar6 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"

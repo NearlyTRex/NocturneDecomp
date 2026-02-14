@@ -7,14 +7,14 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
-;   core_script.cpp_CScript_FUN_00565130 at 00565166
-;   core_script.cpp_CScript_FUN_00565f70 at 00566055
-;   core_script.cpp_CScript_FUN_00566080 at 00566144
-;   core_script.cpp_CScript_FUN_00566880 at 00566889
-;   core_script.cpp_CScript_FUN_005677a0 at 005679e5
+;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 at 005679e5
+;   core_script.cpp_CScript_checkSyntax_FUN_00566080 at 00566144
+;   core_script.cpp_CScript_clampCursorToView_FUN_00566880 at 00566889
 ;   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 at 00565c51
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 005648c8
 ;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565e11
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 00565166
+;   core_script.cpp_CScript_setParameterValue_FUN_00565f70 at 00566055
 ;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0 at 005669a9
 ;
 ; Referenced Globals:

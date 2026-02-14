@@ -2,13 +2,11 @@
 // Address: 005e1c20
 // Address Range: [[005e1c20, 005e1c9a]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20 (SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *source_addr)
+// Signature: int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *source_addr)
 
 #include "nocturne.h"
 
-int __cdecl
-support_trisock_cpp_receiveSocketData_FUN_005e1c20
-          (SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *source_addr)
+int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *source_addr)
 
 {
   uint uVar1;

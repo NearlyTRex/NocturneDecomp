@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 43,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 16,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 44
+    "total_lines": 42
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "cockpit_ckptutil.c_expandIndexedToRGB_FUN_004314fa",
-    "signature": "void __cdecl cockpit_ckptutil_c_expandIndexedToRGB_FUN_004314fa (void *output_buffer,void *input_buffer,int pixel_count)"
+    "signature": "void __cdecl cockpit_ckptutil_c_expandIndexedToRGB_FUN_004314fa(void *output_buffer,void *input_buffer,int pixel_count)"
   },
   "function_calls": [],
   "globals": [
@@ -112,14 +112,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 11,
       "match": "(void *)((int)",
       "text": "input_buffer = (void *)((int)input_buffer + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 13,
       "match": "(void *)((int)",
       "text": "output_buffer = (void *)((int)output_buffer + 4);",
       "type": "pointer_cast"

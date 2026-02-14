@@ -16,8 +16,9 @@ int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00557df0(CScat *this_ptr)
   iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
   iVar2 = 0;
   if (iVar1 != 0) {
-    if (this_ptr->unk4 != 0) {
-      (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 8))();
+    iVar2 = this_ptr->unk4;
+    if (iVar2 != 0) {
+      (**(code **)(*(int *)(iVar2 + 0x154) + 8))(iVar2);
       iVar2 = 0;
       if (this_ptr->unk4 != 0) {
         switch(*(uint *)(this_ptr->unk4 + 0x2e0)) {
@@ -31,7 +32,7 @@ int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00557df0(CScat *this_ptr)
       fVar3 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                         ((CCharacter *)this_ptr,iVar2);
       if ((float)0.94999999999999996 < fVar3) {
-        (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0x104))();
+        (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0x104))(this_ptr->unk4);
         return 1;
       }
       return 1;

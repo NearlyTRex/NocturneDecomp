@@ -4,37 +4,37 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 67,
+        "line": 65,
         "message": "use of undeclared identifier 'PTR_02f313e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 71,
+        "line": 69,
         "message": "use of undeclared identifier 'PTR_02f313e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 79,
+        "line": 77,
         "message": "use of undeclared identifier 'stack0xffffff44'; did you mean 'in_stack_ffffff44'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 80,
+        "line": 78,
         "message": "use of undeclared identifier 'stack0xffffff44'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 101,
+        "line": 99,
         "message": "use of undeclared identifier 'stack0xffffff40'"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 102,
+        "line": 100,
         "message": "use of undeclared identifier 'stack0xffffff40'"
       }
     ],
@@ -43,11 +43,11 @@
   },
   "complexity": {
     "assembly_lines": 427,
-    "complexity_score": 284,
+    "complexity_score": 282,
     "cross_reference_count": 3,
     "function_call_count": 30,
     "global_count": 25,
-    "pseudocode_lines": 144,
+    "pseudocode_lines": 142,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -55,7 +55,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 571
+    "total_lines": 569
   },
   "cross_references": [
     {
@@ -87,7 +87,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520",
-    "signature": "int __cdecl shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (CLodMesh *this_ptr,int pause_flag,int render_mode)"
+    "signature": "int __cdecl shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(CLodMesh *this_ptr,int pause_flag,int render_mode)"
   },
   "function_calls": [
     {
@@ -598,84 +598,84 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_ffffff44",
       "text": "int in_stack_ffffff44;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 43,
       "match": "in_stack_ffffff44",
       "text": "shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,0,in_stack_ffffff44);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 47,
       "match": "in_stack_ffffff44",
       "text": "shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,1,in_stack_ffffff44);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 72,
+      "line": 70,
       "match": "&stack0xffffff44",
       "text": "_sprintf(&stack0xffffff44,\"%d faces, %d original\",iVar1);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 73,
+      "line": 71,
       "match": "&stack0xffffff44",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff44,0,0);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 91,
       "match": "ROUND",
       "text": "local_28.z = (float)(int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 94,
+      "line": 92,
       "match": "&stack0xffffff40",
       "text": "_sprintf(&stack0xffffff40,\"Pixel Height: %d\",local_28.z);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 95,
+      "line": 93,
       "match": "&stack0xffffff40",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff40,0,0x16);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 114,
+      "line": 112,
       "match": "unaff_EDI",
       "text": "unaff_EDI = 0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 119,
+      "line": 117,
       "match": "unaff_EDI",
       "text": "return unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 122,
+      "line": 120,
       "match": "in_stack_ffffff44",
       "text": "in_stack_ffffff44 = 0x51d861;",
       "type": "stack_param"

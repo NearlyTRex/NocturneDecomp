@@ -13,7 +13,6 @@ int __cdecl _fputc(int character,_FILE *file)
   int iVar2;
   uint uVar3;
   uint uVar4;
-  byte in_stack_0000000c;
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   pcVar1 = file->_link->__get_base;
@@ -34,22 +33,24 @@ int __cdecl _fputc(int character,_FILE *file)
     InitializeFileBuffer(file);
   }
   uVar4 = 0x400;
-  if ((file == (_FILE *)0xa) && (uVar4 = 0x600, (bRam00000016 & 0x40) == 0)) {
-    bRam00000017 = bRam00000017 | 0x10;
-    *puRam0000000a = 0xd;
-    puRam0000000a = puRam0000000a + 1;
-    iRam0000000e = iRam0000000e + 1;
-    if (iRam0000000e == iRam0000001e) {
-      iVar2 = fflushInternal((_FILE *)0xa);
+  if ((character == 10) && (uVar4 = 0x600, (file->_flag & 0x40) == 0)) {
+    pcVar1 = file->_ptr;
+    *(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;
+    *pcVar1 = '\r';
+    file->_ptr = file->_ptr + 1;
+    uVar3 = file->_cnt + 1;
+    file->_cnt = uVar3;
+    if (uVar3 == file->_bufsize) {
+      iVar2 = fflushInternal(file);
       if (iVar2 != 0) {
-        (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(iRam0000001a);
+        (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
         return -1;
       }
     }
   }
   pcVar1 = file->_ptr;
   *(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;
-  *pcVar1 = (char)file;
+  *pcVar1 = (char)character;
   file->_ptr = file->_ptr + 1;
   uVar3 = file->_cnt + 1;
   file->_cnt = uVar3;
@@ -61,5 +62,5 @@ int __cdecl _fputc(int character,_FILE *file)
     }
   }
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
-  return (uint)in_stack_0000000c;
+  return character & 0xff;
 }

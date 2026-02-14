@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 50,
+    "complexity_score": 48,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 33,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 122
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -95,7 +95,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0",
-    "signature": "void __cdecl core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0 (CDemonSet *this_ptr,int vertex_count,int *input_vertices)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet *this_ptr,int vertex_count,int *input_vertices)"
   },
   "function_calls": [
     {
@@ -226,7 +226,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(int *)((int)",
       "text": "input_vertices = (int *)((int)input_vertices + 0xc);",
       "type": "pointer_cast"

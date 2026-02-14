@@ -32,7 +32,7 @@ ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream *this_ptr,in
       uVar4 = (uint)*pbVar2;
     }
     else {
-      uVar4 = (**(code **)(*(int *)(iVar1 + 0x28) + 0xc))();
+      uVar4 = (**(code **)(*(int *)(iVar1 + 0x28) + 0xc))(iVar1,character & 0xff);
     }
     if (uVar4 == 0xffffffff) {
       reportStreamError

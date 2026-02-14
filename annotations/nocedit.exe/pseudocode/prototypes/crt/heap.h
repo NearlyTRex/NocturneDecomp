@@ -25,11 +25,11 @@ void __cdecl ValidateHeapIntegrity(void *ptr);
 
 // Original: crt_heap.c_AllocateFromFreeList_FUN_00609410
 // Address: 00609410
-void * AllocateFromFreeList(ulong size,HeapBlock *free_block,ushort ds_segment);
+void * __watcallRegister AllocateFromFreeList(ulong size,HeapBlock *free_block,ushort ds_segment);
 
 // Original: crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0
 // Address: 006094c0
-void CoalesceAndAddFreeBlock(void *ptr,HeapBlock *heap_block,ushort segment);
+void __watcallRegister CoalesceAndAddFreeBlock(void *ptr,HeapBlock *heap_block,ushort segment);
 
 // Original: crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0
 // Address: 006095f0
@@ -57,7 +57,7 @@ ulong __cdecl GetBlockSize(void *ptr);
 
 // Original: crt_heap.c_ResizeBlockInPlace_FUN_006097b8
 // Address: 006097b8
-int ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded);
+int __watcallRegister ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded);
 
 // Original: crt_heap.c_TryResizeInPlace_FUN_00609974
 // Address: 00609974

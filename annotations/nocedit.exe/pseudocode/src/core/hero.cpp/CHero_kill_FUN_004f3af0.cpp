@@ -2,13 +2,11 @@
 // Address: 004f3af0
 // Address Range: [[004f3af0, 004f3b15]]
 // Convention: __cdecl
-// Signature: void __cdecl core_hero_cpp_CHero_kill_FUN_004f3af0 (CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
+// Signature: void __cdecl core_hero_cpp_CHero_kill_FUN_004f3af0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
 
 #include "nocturne.h"
 
-void __cdecl
-core_hero_cpp_CHero_kill_FUN_004f3af0
-          (CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
+void __cdecl core_hero_cpp_CHero_kill_FUN_004f3af0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
 
 {
   this_ptr->no_collision_flag = 0;

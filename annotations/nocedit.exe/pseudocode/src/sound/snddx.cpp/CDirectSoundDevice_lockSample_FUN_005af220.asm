@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_005af220 (CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size)
+; __cdecl int __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_005af220(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size)
 ;
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr

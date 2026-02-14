@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_actor_cpp_CBoundingBox3D_copy_FUN_00410440(CBoundingBox3D *this_ptr,CBoundingBox3D *other)
+CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_copy_FUN_00410440(CBoundingBox3D *this_ptr,CBoundingBox3D *other)
 
 {
   (this_ptr->min).x = (other->min).x;

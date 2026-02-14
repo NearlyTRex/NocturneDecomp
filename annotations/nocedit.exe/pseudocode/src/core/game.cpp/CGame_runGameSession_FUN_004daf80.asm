@@ -856,8 +856,8 @@ section .text
         ;   XREF to: 004db966 (CONDITIONAL_JUMP)  ; LAB_004db966
     MOV EBX,dword ptr [0x00680d50]      ; 004db944 | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 004db94a | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005602e0 ; 004db94b
-        ;   XREF to: 005602e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005602e0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_skipCinematic_FUN_005602e0 ; 004db94b
+        ;   XREF to: 005602e0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCinematic_FUN_005602e0(CScript * this_ptr)
     ADD ESP,0x4                         ; 004db950
     TEST EAX,EAX                        ; 004db953
     SETZ AL                             ; 004db955

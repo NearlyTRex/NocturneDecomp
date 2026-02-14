@@ -1,36 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 26,
-        "message": "use of undeclared identifier 'stack0xffffffec'; did you mean 'in_stack_ffffffec'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 36,
-        "message": "use of undeclared identifier 'stack0xffffffec'; did you mean 'in_stack_ffffffec'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 141,
+    "complexity_score": 41,
     "cross_reference_count": 26,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 46,
-    "suspect_count": 8,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
-    ],
-    "total_lines": 151
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -235,7 +218,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -292,62 +275,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBX",
-      "text": "float unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffffec",
-      "text": "float in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffffec",
-      "text": "if ((CLocation *)&stack0xffffffec != &this_ptr->location) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffffec",
-      "text": "in_stack_ffffffec = (this_ptr->location).position.x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 26,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = (this_ptr->orient).vec.y;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xffffffec",
-      "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffffec);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_ffffffec",
-      "text": "(this_ptr->location).position.x = in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EBX",
-      "text": "(this_ptr->orient).vec.y = unaff_EBX;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

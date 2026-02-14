@@ -1,32 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 21,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 26,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 22,
+    "complexity_score": 20,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 20,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 76
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -58,7 +45,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
   },
   "function_calls": [
     {
@@ -82,7 +69,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {

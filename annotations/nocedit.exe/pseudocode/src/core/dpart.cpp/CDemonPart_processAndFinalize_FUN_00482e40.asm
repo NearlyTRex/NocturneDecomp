@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40 (CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize)
+; __cdecl void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize)
 ;
 ; Parameters:
 ; CDemonPart *     Stack[0x4]:4   this_ptr

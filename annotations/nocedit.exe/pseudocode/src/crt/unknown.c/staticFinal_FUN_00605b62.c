@@ -14,7 +14,7 @@ void __cdecl staticFinal(void)
   while (g_AtexitListHead != (WatcomStaticDestructorNode *)0x0) {
     ppWVar1 = &g_AtexitListHead->destructor_info;
     g_AtexitListHead = g_AtexitListHead->next;
-    (*(*ppWVar1)->destructor_func)();
+    (*(*ppWVar1)->destructor_func)((*ppWVar1)->object_instance,0);
   }
   return;
 }

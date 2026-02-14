@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 39,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 81
+    "total_lines": 79
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCodec_process_FUN_0043ea10",
-    "signature": "int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10 (CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)"
+    "signature": "int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)"
   },
   "function_calls": [
     {
@@ -154,7 +154,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 15,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&input_file->_handle + *(int *)(input_file->_ptr + 4)) != 0)",
       "type": "pointer_cast"

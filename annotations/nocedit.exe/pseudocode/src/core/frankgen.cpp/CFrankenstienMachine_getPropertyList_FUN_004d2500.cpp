@@ -2,13 +2,11 @@
 // Address: 004d2500
 // Address Range: [[004d2500, 004d2557]]
 // Convention: __cdecl
-// Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500 (CFrankenstienMachine *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500(CFrankenstienMachine *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_frankgen_cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
-          (CFrankenstienMachine *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500(CFrankenstienMachine *this_ptr,CActorPropertyList *property_list)
 
 {
   CDemonActor *pCVar1;

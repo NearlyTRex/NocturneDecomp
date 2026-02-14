@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 35,
+    "complexity_score": 33,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 10,
+    "pseudocode_lines": 8,
     "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 30
+    "total_lines": 28
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0 (CPackedBitmapSet *this_ptr,char *pbg_filename)"
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0(CPackedBitmapSet *this_ptr,char *pbg_filename)"
   },
   "function_calls": [
     {
@@ -96,14 +96,14 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 7,
+      "line": 5,
       "match": "unaff_EBX",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 9,
       "match": "unaff_EBX",
       "text": "(this_ptr,this_ptr->filename,pbg_filename,this_ptr->config_param,0,unaff_EBX);",
       "type": "unaffected_reg"

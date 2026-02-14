@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 125,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 88,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 280
+    "total_lines": 278
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_00488ad0 (CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_00488ad0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)"
   },
   "function_calls": [
     {
@@ -238,21 +238,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(int *)((int)",
       "text": "puVar2 = (ushort *)(start_x * 2 + *(int *)((int)g_ScreenBufferArray + iVar4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 68,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)(start_x * 4 + *(int *)((int)g_ScreenBufferArray + iVar4));",
       "type": "pointer_cast"

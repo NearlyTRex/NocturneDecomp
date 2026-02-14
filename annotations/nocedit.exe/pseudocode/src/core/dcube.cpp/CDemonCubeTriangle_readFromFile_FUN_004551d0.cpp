@@ -2,13 +2,11 @@
 // Address: 004551d0
 // Address Range: [[004551d0, 0045524d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0 (CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base)
+// Signature: void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0
-          (CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base)
+void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base)
 
 {
   _fread(g_TempTriangleIndices,3,4,file_handle);

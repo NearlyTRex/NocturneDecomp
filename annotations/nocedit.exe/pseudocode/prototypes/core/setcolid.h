@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0
 // Address: 005715d0
-int __cdecl rayTestQuadFloor(float x,float z,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2, CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal);
+int __cdecl rayTestQuadFloor(float x,float z,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal);
 
 // Original: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
 // Address: 005716b0
@@ -57,15 +57,15 @@ int __cdecl intersectXZCylinder(SIntersectXZCylinder *cylinder,float ray_x,float
 
 // Original: core_setcolid.cpp_testCylinderQuadCollision_FUN_005730d0
 // Address: 005730d0
-void __cdecl testCylinderQuadCollision(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, CVector3f *vertex4);
+void __cdecl testCylinderQuadCollision(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4);
 
 // Original: core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
 // Address: 00573140
-int __cdecl CDemonSet::testOBBCylinderCollision(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix, SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2);
+int __cdecl CDemonSet::testOBBCylinderCollision(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix,SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2);
 
 // Original: core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
 // Address: 00573470
-float __cdecl CDemonSet::testCapsuleCollision(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius, void *user_data1,void *user_data2);
+float __cdecl CDemonSet::testCapsuleCollision(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,void *user_data1,void *user_data2);
 
 // Original: core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10
 // Address: 00573e10
@@ -105,7 +105,7 @@ void __cdecl CDemonSet::setRayTypeLaser(CDemonSet *this_ptr,float f1,float f2,fl
 
 // Original: core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
 // Address: 005742b0
-void __cdecl CDemonSet::notifyDamageListeners(CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position, void *unknown_param);
+void __cdecl CDemonSet::notifyDamageListeners(CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position,void *unknown_param);
 
 // Original: core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 // Address: 005743c0

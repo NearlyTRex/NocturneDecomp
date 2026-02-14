@@ -215,20 +215,17 @@ extern SFontGlyph g_FontTable[224];
 extern SMRGLLightPrimitive g_CoronaFacePrimitives[84];
 
 // SMRGLTextureBasic
-extern SMRGLTextureBasic DAT_0066e158;
-extern SMRGLTextureBasic DAT_0066e460;
-extern SMRGLTextureBasic DAT_0066e6b0;
-extern SMRGLTextureBasic DAT_0066E6C8;
-extern SMRGLTextureBasic DAT_0066E6E0;
-extern SMRGLTextureBasic DAT_0066E6F8;
-extern SMRGLTextureBasic DAT_0066E710;
-extern SMRGLTextureBasic DAT_0066E728;
-extern SMRGLTextureBasic DAT_0066e784;
+extern SMRGLTextureBasic SMRGLTextureBasic_0066e158;
+extern SMRGLTextureBasic SMRGLTextureBasic_0066e460;
+extern SMRGLTextureBasic SMRGLTextureBasic_0066e784;
 extern SMRGLTextureBasic g_CameraBackdropTexture;
 extern SMRGLTextureBasic g_CoronaHeadliteTexture;
 
 // SMRGLTextureBasic[20]
 extern SMRGLTextureBasic g_LightTextures[20];
+
+// SMRGLTextureBasic[6]
+extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6];
 
 // SResolutionEntry[9]
 extern SResolutionEntry g_ResolutionTable[9];

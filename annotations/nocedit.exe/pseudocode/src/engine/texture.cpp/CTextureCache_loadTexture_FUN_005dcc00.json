@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 72,
+        "line": 71,
         "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 519,
-    "complexity_score": 407,
+    "complexity_score": 406,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 33,
-    "pseudocode_lines": 242,
+    "pseudocode_lines": 241,
     "suspect_count": 16,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 761
+    "total_lines": 760
   },
   "cross_references": [
     {
@@ -425,112 +425,112 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 10,
       "match": "unaff_EBP",
       "text": "SIZE_T unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 27,
+      "line": 26,
       "match": "unaff_EBP",
       "text": "unaff_EBP = 0x20;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 31,
+      "line": 30,
       "match": "unaff_EBP",
       "text": "unaff_EBP = 0x40;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 38,
+      "line": 37,
       "match": "unaff_EBP",
       "text": "unaff_EBP = 0x80;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 43,
+      "line": 42,
       "match": "unaff_EBP",
       "text": "unaff_EBP = 0x100;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 48,
       "match": "unaff_EBP",
       "text": "unaff_EBP = 0x200;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 53,
+      "line": 52,
       "match": "unaff_EBP",
       "text": "unaff_EBP = 0x400;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 135,
+      "line": 134,
       "match": "unaff_EBP",
       "text": "if (unaff_EBP != cache->texture_dimensions[cache->current_texture_count]) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 183,
+      "line": 182,
       "match": "unaff_EBP",
       "text": "(cache->texture_data_ptrs[cache->current_texture_count],0,unaff_EBP * unaff_EBP);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 183,
+      "line": 182,
       "match": "unaff_EBP",
       "text": "(cache->texture_data_ptrs[cache->current_texture_count],0,unaff_EBP * unaff_EBP);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 187,
+      "line": 186,
       "match": "unaff_EBP",
       "text": "_fread(cache->texture_data_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 187,
+      "line": 186,
       "match": "unaff_EBP",
       "text": "_fread(cache->texture_data_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 222,
+      "line": 221,
       "match": "unaff_EBP",
       "text": "if (unaff_EBP != cache->texture_dimensions[cache->current_texture_count]) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 232,
+      "line": 231,
       "match": "unaff_EBP",
       "text": "_fread(cache->texture_opacity_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 232,
+      "line": 231,
       "match": "unaff_EBP",
       "text": "_fread(cache->texture_opacity_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 236,
+      "line": 235,
       "match": "unaff_EBP",
       "text": "cache->texture_dimensions[cache->current_texture_count] = unaff_EBP;",
       "type": "unaffected_reg"

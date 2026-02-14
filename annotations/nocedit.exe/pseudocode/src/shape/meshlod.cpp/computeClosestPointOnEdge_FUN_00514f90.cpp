@@ -2,14 +2,11 @@
 // Address: 00514f90
 // Address Range: [[00514f90, 00515104]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90 (CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0, CVector3f *edge_vertex_1)
+// Signature: CVector3f * __cdecl shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
-          (CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0,
-          CVector3f *edge_vertex_1)
+CVector3f * __cdecl shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1)
 
 {
   float fVar1;

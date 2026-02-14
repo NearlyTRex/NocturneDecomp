@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 264,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 49,
-    "suspect_count": 21,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 191
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 190
   },
   "cross_references": [
     {
@@ -35,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CScript_skipCommands_FUN_005601c0",
-    "signature": "int __cdecl core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,int param_2,int param_3)"
+    "signature": "int __cdecl core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,int direction,int count)"
   },
   "function_calls": [
     {
@@ -110,167 +108,19 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "direction",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "count",
         "offset": 12,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "text": "if (param_2 < this_ptr->parsed_line_count) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "text": "str1 = this_ptr->parsed_lines[param_2].text;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "text": "return param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "text": "return param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_3",
-      "text": "if (((iVar3 < 1) && (param_3 == 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "text": "return param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "text": "return param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "text": "param_2 = core_script_cpp_CScript_skipCommands_FUN_005601c0(this_ptr,param_2 + 1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "text": "param_2 = core_script_cpp_CScript_skipCommands_FUN_005601c0(this_ptr,param_2 + 1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "text": "param_2 = core_script_cpp_CScript_skipCommands_FUN_005601c0(this_ptr,param_2 + 1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "text": "param_2 = core_script_cpp_CScript_skipCommands_FUN_005601c0(this_ptr,param_2 + 1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "text": "} while ((-1 < param_2) && (bVar1 = false, param_2 < this_ptr->parsed_line_count));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "text": "} while ((-1 < param_2) && (bVar1 = false, param_2 < this_ptr->parsed_line_count));",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActor * __cdecl
-core_batcreat_cpp_CBatCreature_dtor_FUN_00416320(CBatCreature *this_ptr,uint flags)
+CDemonActor * __cdecl core_batcreat_cpp_CBatCreature_dtor_FUN_00416320(CBatCreature *this_ptr,uint flags)
 
 {
   CFlame *pCVar1;

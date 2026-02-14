@@ -12,9 +12,6 @@ CDemonActorType g_CElephantGunClassInfo = {};
 CDemonActorType g_CEmitterClassInfo = {};
 CDemonActorType g_CEnemyClassInfo = {};
 
-// CEdButton*
-CEdButton* g_ActiveButton = {};
-
 // CEditorTools
 CEditorTools g_CEditorToolsInstance = {};
 
@@ -26,6 +23,9 @@ HWND g_DialogParentWindow = {};
 
 // SWindow[5]
 SWindow g_WindowStack[5] = {};
+
+// _BIT_INTEGER
+_BIT_INTEGER g_MouseButtonFlags = {};
 
 // char*
 char* g_ClipboardBackupText = {};
@@ -92,9 +92,6 @@ int g_MouseY = {};
 // uchar[32768]
 uchar g_ColorCubeLookup[32768] = {};
 
-// uint
-uint g_MouseButtonFlags = {};
-
 // uint*[1200]
 uint* g_ZBufferScanlineArray[1200] = {};
 
@@ -107,6 +104,9 @@ undefined4 DAT_02cf2bf8 = {};
 undefined4 DAT_02cf4b30 = {};
 undefined4 DAT_02cf4b34 = {};
 undefined4 DAT_02cf4b38 = {};
+
+// void*
+void* g_ActiveControl = {};
 
 // void*[1200]
 void* g_ScreenBufferArray[1200] = {};

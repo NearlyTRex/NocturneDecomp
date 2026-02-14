@@ -4,37 +4,37 @@
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 22,
+        "line": 20,
         "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 25,
+        "line": 23,
         "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 34,
+        "line": 32,
         "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 37,
+        "line": 35,
         "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 46,
+        "line": 44,
         "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 49,
+        "line": 47,
         "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
       }
     ],
@@ -43,16 +43,16 @@
   },
   "complexity": {
     "assembly_lines": 209,
-    "complexity_score": 89,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 54,
+    "pseudocode_lines": 52,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 263
+    "total_lines": 261
   },
   "cross_references": [
     {
@@ -73,7 +73,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_embedCopyrightWatermark_FUN_0046b9a0",
-    "signature": "void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0 (void *image_buffer,char *output_filename,int texture_size)"
+    "signature": "void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0(void *image_buffer,char *output_filename,int texture_size)"
   },
   "function_calls": [
     {
@@ -276,21 +276,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(byte *)((int)",
       "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(byte *)((int)",
       "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 44,
       "match": "(byte *)((int)",
       "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
       "type": "pointer_cast"

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtrace_cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70(CDemonRaytrace *this_ptr)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70(CDemonRaytrace *this_ptr)
 
 {
   CDemonCube *pCVar1;

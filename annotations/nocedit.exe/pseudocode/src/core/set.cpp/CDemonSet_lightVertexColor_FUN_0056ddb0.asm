@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 (CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index, int skip_lighting_calculation)
+; __cdecl void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SChatHistory * __cdecl
-core_netgame_cpp_SChatHistory_dtor_FUN_00543cd0(SChatHistory *this_ptr,uint flags)
+SChatHistory * __cdecl core_netgame_cpp_SChatHistory_dtor_FUN_00543cd0(SChatHistory *this_ptr,uint flags)
 
 {
   return this_ptr;

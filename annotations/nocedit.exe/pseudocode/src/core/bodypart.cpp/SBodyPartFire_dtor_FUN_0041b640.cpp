@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SBodyPartFire * __cdecl
-core_bodypart_cpp_SBodyPartFire_dtor_FUN_0041b640(SBodyPartFire *this_ptr,uint flags)
+SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_dtor_FUN_0041b640(SBodyPartFire *this_ptr,uint flags)
 
 {
   CDemonActor *pCVar1;

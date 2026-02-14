@@ -4,6 +4,12 @@
       {
         "category": "other",
         "column": 17,
+        "line": 33,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
         "line": 34,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
@@ -15,8 +21,8 @@
       },
       {
         "category": "other",
-        "column": 17,
-        "line": 36,
+        "column": 15,
+        "line": 37,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
@@ -33,8 +39,8 @@
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 40,
+        "column": 52,
+        "line": 42,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
@@ -50,22 +56,22 @@
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
-        "category": "other",
-        "column": 52,
-        "line": 45,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 53,
-        "line": 73,
+        "line": 72,
         "message": "use of undeclared identifier 'stack0xffffff88'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 74,
+        "line": 73,
         "message": "comparison of distinct pointer types ('byte *' (aka 'unsigned char *') and 'char *')"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 74,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
@@ -81,15 +87,15 @@
       },
       {
         "category": "other",
-        "column": 17,
-        "line": 77,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+        "column": 26,
+        "line": 78,
+        "message": "comparison of distinct pointer types ('byte *' (aka 'unsigned char *') and 'char *')"
       },
       {
         "category": "other",
-        "column": 26,
+        "column": 17,
         "line": 79,
-        "message": "comparison of distinct pointer types ('byte *' (aka 'unsigned char *') and 'char *')"
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
@@ -105,14 +111,8 @@
       },
       {
         "category": "other",
-        "column": 17,
-        "line": 82,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 32,
-        "line": 85,
+        "line": 84,
         "message": "comparison of distinct pointer types ('char *' and 'byte *' (aka 'unsigned char *'))"
       }
     ],
@@ -121,17 +121,17 @@
   },
   "complexity": {
     "assembly_lines": 297,
-    "complexity_score": 496,
+    "complexity_score": 495,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 146,
+    "pseudocode_lines": 145,
     "suspect_count": 34,
     "suspect_types": [
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 443
+    "total_lines": 442
   },
   "cross_references": [],
   "function": {
@@ -252,238 +252,238 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 27,
+      "line": 26,
       "match": "._0_4_",
       "text": "auStack_3c._0_4_ = (this_ptr->emitter_pos).x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 28,
+      "line": 27,
       "match": "._4_4_",
       "text": "auStack_3c._4_4_ = (this_ptr->emitter_pos).y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 29,
+      "line": 28,
       "match": "._8_4_",
       "text": "auStack_3c._8_4_ = (this_ptr->emitter_pos).z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 31,
+      "line": 30,
       "match": "._20_4_",
       "text": "auStack_3c._20_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 31,
       "match": "._16_4_",
       "text": "auStack_3c._16_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 33,
+      "line": 32,
       "match": "._12_4_",
       "text": "auStack_3c._12_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 35,
       "match": "._0_4_",
       "text": "(this_ptr->emitter_pos).x = (float)auStack_3c._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 36,
       "match": "._4_4_",
       "text": "(this_ptr->emitter_pos).y = (float)auStack_3c._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 37,
       "match": "._8_4_",
       "text": "(this_ptr->emitter_pos).z = (float)auStack_3c._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 66,
+      "line": 65,
       "match": "&stack0xffffff88",
       "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff88);",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 67,
       "match": "._0_4_",
       "text": "auStack_74._0_4_ = *(uint *)(this_ptr->unk3 + 0xcf8);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 68,
       "match": "._4_4_",
       "text": "auStack_74._4_4_ = *(uint *)(this_ptr->unk3 + 0xcfc);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 70,
+      "line": 69,
       "match": "._8_4_",
       "text": "auStack_74._8_4_ = *(uint *)(this_ptr->unk3 + 0xd00);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 72,
       "match": "._12_4_",
       "text": "auStack_74._12_4_ = *(uint *)(this_ptr->unk3 + 0xd20);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 73,
       "match": "._16_4_",
       "text": "auStack_74._16_4_ = *(uint *)(this_ptr->unk3 + 0xd24);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 74,
       "match": "._20_4_",
       "text": "auStack_74._20_4_ = *(uint *)(this_ptr->unk3 + 0xd28);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 78,
       "match": "._0_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xcf8) = auStack_74._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 80,
+      "line": 79,
       "match": "._4_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xcfc) = auStack_74._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 81,
+      "line": 80,
       "match": "._8_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd00) = auStack_74._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 84,
+      "line": 83,
       "match": "._12_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd20) = auStack_74._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
+      "line": 84,
       "match": "._16_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd24) = auStack_74._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 86,
+      "line": 85,
       "match": "._20_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd28) = auStack_74._20_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 97,
       "match": "._0_4_",
       "text": "auStack_58._0_4_ = *(uint *)(this_ptr->unk3 + 0xd04);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 99,
+      "line": 98,
       "match": "._4_4_",
       "text": "auStack_58._4_4_ = *(uint *)(this_ptr->unk3 + 0xd08);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 100,
+      "line": 99,
       "match": "._8_4_",
       "text": "auStack_58._8_4_ = *(uint *)(this_ptr->unk3 + 0xd0c);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 103,
+      "line": 102,
       "match": "._12_4_",
       "text": "auStack_58._12_4_ = *(uint *)(this_ptr->unk3 + 0xd20);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 104,
+      "line": 103,
       "match": "._16_4_",
       "text": "auStack_58._16_4_ = *(uint *)(this_ptr->unk3 + 0xd24);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 105,
+      "line": 104,
       "match": "._20_4_",
       "text": "auStack_58._20_4_ = *(uint *)(this_ptr->unk3 + 0xd28);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 108,
       "match": "._0_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd04) = auStack_58._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 110,
+      "line": 109,
       "match": "._4_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd08) = auStack_58._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 111,
+      "line": 110,
       "match": "._8_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd0c) = auStack_58._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 114,
+      "line": 113,
       "match": "._12_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd20) = auStack_58._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 115,
+      "line": 114,
       "match": "._16_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd24) = auStack_58._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 116,
+      "line": 115,
       "match": "._20_4_",
       "text": "*(uint *)(this_ptr->unk3 + 0xd28) = auStack_58._20_4_;",
       "type": "unknown_field"

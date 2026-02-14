@@ -2,13 +2,11 @@
 // Address: 005e3440
 // Address Range: [[005e3440, 005e34a8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005e3440 (CTurret *this_ptr,SInteractionInfo *interaction_info)
+// Signature: void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005e3440(CTurret *this_ptr,SInteractionInfo *interaction_info)
 
 #include "nocturne.h"
 
-void __cdecl
-core_turret_cpp_CTurret_getInteractionInfo_FUN_005e3440
-          (CTurret *this_ptr,SInteractionInfo *interaction_info)
+void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005e3440(CTurret *this_ptr,SInteractionInfo *interaction_info)
 
 {
   float fVar1;

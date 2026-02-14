@@ -4,55 +4,55 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 55,
+        "line": 53,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 55,
+        "line": 53,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 58,
+        "line": 56,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 58,
+        "line": 56,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 62,
+        "line": 60,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 83,
+        "line": 81,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 104,
+        "line": 102,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 65,
-        "line": 943,
+        "line": 941,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 1070,
+        "line": 1068,
         "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'"
       }
     ],
@@ -61,11 +61,11 @@
   },
   "complexity": {
     "assembly_lines": 1998,
-    "complexity_score": 1737,
+    "complexity_score": 1735,
     "cross_reference_count": 10,
     "function_call_count": 20,
     "global_count": 63,
-    "pseudocode_lines": 1147,
+    "pseudocode_lines": 1145,
     "suspect_count": 57,
     "suspect_types": [
       "stack_param",
@@ -73,7 +73,7 @@
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 3145
+    "total_lines": 3143
   },
   "cross_references": [
     {
@@ -147,7 +147,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600",
-    "signature": "int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600 (CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)"
+    "signature": "int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)"
   },
   "function_calls": [
     {
@@ -729,399 +729,399 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 20,
+      "line": 18,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 22,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 23,
       "match": "in_stack_0000001c",
       "text": "CDemonActor *in_stack_0000001c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_00000020",
       "text": "int in_stack_00000020;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_00000028",
       "text": "CDemonActor *in_stack_00000028;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 26,
       "match": "in_stack_fffffce0",
       "text": "uint in_stack_fffffce0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_fffffce4",
       "text": "uint in_stack_fffffce4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 28,
       "match": "in_stack_fffffce8",
       "text": "uint in_stack_fffffce8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 29,
       "match": "in_stack_fffffcec",
       "text": "uint in_stack_fffffcec;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_fffffcf0",
       "text": "uint in_stack_fffffcf0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_fffffcf4",
       "text": "uint in_stack_fffffcf4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_fffffcf8",
       "text": "uint in_stack_fffffcf8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
+      "line": 46,
       "match": "code *",
       "text": "(**(code **)(*(int *)(show_tutorial_message + 0x154) + 0x84))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
+      "line": 49,
       "match": "code *",
       "text": "(**(code **)(*(int *)(show_tutorial_message + 0x154) + 0x80))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",
-      "line": 55,
+      "line": 53,
       "match": "&stack0xfffffce0",
       "text": "pcVar11 = &stack0xfffffce0;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 54,
       "match": "in_stack_00000020",
       "text": "if ((((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex]) && (in_stack_00000020 != 0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 56,
       "match": "in_stack_0000001c",
       "text": "pcStack_20 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(in_stack_0000001c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 57,
       "match": "in_stack_0000001c",
       "text": "core_inv_cpp_getItemIconName_FUN_004fcf70(in_stack_0000001c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 59,
       "match": "in_stack_0000001c",
       "text": "(in_stack_0000001c,g_CAmmoClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 76,
+      "line": 74,
       "match": "&stack0xfffffce0",
       "text": "pcVar6 = &stack0xfffffce0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 97,
+      "line": 95,
       "match": "&stack0xfffffce0",
       "text": "pcVar11 = &stack0xfffffce0;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 118,
+      "line": 116,
       "match": "in_stack_0000001c",
       "text": "iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_0000001c,\"CHealthItem\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 260,
+      "line": 258,
       "match": "in_stack_0000001c",
       "text": "iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_0000001c,\"CGasMask\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 402,
+      "line": 400,
       "match": "in_stack_0000001c",
       "text": "iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_0000001c,\"CKeyActor\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 460,
+      "line": 458,
       "match": "in_stack_0000001c",
       "text": "iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_0000001c,\"CBoxActor\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 601,
+      "line": 599,
       "match": "in_stack_0000001c",
       "text": "iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_0000001c,\"CAmmo\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 604,
+      "line": 602,
       "match": "in_stack_0000001c",
       "text": "(in_stack_0000001c,g_CAmmoClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 790,
+      "line": 788,
       "match": "in_stack_fffffce0",
       "text": "(pCVar5,2,in_stack_fffffce0,in_stack_fffffce4,in_stack_fffffce8,in_stack_fffffcec,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 790,
+      "line": 788,
       "match": "in_stack_fffffce4",
       "text": "(pCVar5,2,in_stack_fffffce0,in_stack_fffffce4,in_stack_fffffce8,in_stack_fffffcec,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 790,
+      "line": 788,
       "match": "in_stack_fffffce8",
       "text": "(pCVar5,2,in_stack_fffffce0,in_stack_fffffce4,in_stack_fffffce8,in_stack_fffffcec,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 790,
+      "line": 788,
       "match": "in_stack_fffffcec",
       "text": "(pCVar5,2,in_stack_fffffce0,in_stack_fffffce4,in_stack_fffffce8,in_stack_fffffcec,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 791,
+      "line": 789,
       "match": "in_stack_fffffcf0",
       "text": "in_stack_fffffcf0,in_stack_fffffcf4,in_stack_fffffcf8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 791,
+      "line": 789,
       "match": "in_stack_fffffcf4",
       "text": "in_stack_fffffcf0,in_stack_fffffcf4,in_stack_fffffcf8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 791,
+      "line": 789,
       "match": "in_stack_fffffcf8",
       "text": "in_stack_fffffcf0,in_stack_fffffcf4,in_stack_fffffcf8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 794,
+      "line": 792,
       "match": "in_stack_0000001c",
       "text": "iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_0000001c,\"CWeapon\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 797,
+      "line": 795,
       "match": "in_stack_0000001c",
       "text": "(in_stack_0000001c,g_CWeaponClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 936,
+      "line": 934,
       "match": "&stack0xfffffce0",
       "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,&stack0xfffffce0,10.0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 953,
+      "line": 951,
       "match": "in_stack_0000001c",
       "text": "(in_stack_0000001c,g_CAmmoClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 973,
+      "line": 971,
       "match": "in_stack_0000001c",
       "text": "(g_CDemonMissionPtr,in_stack_0000001c,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1022,
+      "line": 1020,
       "match": "in_stack_0000001c",
       "text": "(g_CDemonMissionPtr,in_stack_0000001c,1);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 1035,
+      "line": 1033,
       "match": "unaff_EDI",
       "text": "*(uint *)(pCVar5[4].actor_name + 8) = *(uint *)(unaff_EDI + 0x314);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 1036,
+      "line": 1034,
       "match": "unaff_EDI",
       "text": "*(uint *)(pCVar5[4].actor_name + 0xc) = *(uint *)(unaff_EDI + 0x318);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1041,
+      "line": 1039,
       "match": "in_stack_00000028",
       "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(pCVar3,in_stack_00000028,1);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 1051,
+      "line": 1049,
       "match": "unaff_EDI",
       "text": "*(uint *)(pCVar5[4].actor_name + 8) = *(uint *)(unaff_EDI + 0x314);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1053,
+      "line": 1051,
       "match": "in_stack_00000028",
       "text": "core_actor_cpp_deleteActor_FUN_00408820(in_stack_00000028);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1061,
+      "line": 1059,
       "match": "in_stack_0000001c",
       "text": "(in_stack_0000001c,g_CWeaponClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1065,
+      "line": 1063,
       "match": "in_stack_0000001c",
       "text": "this_ptr->items[this_ptr->item_count] = in_stack_0000001c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1068,
+      "line": 1066,
       "match": "in_stack_0000001c",
       "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(pCVar3,in_stack_0000001c,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1069,
+      "line": 1067,
       "match": "in_stack_0000001c",
       "text": "(*((in_stack_0000001c->vtable)._ub)->onPickup)(in_stack_0000001c,(CDemonActor *)this_ptr);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1069,
+      "line": 1067,
       "match": "in_stack_0000001c",
       "text": "(*((in_stack_0000001c->vtable)._ub)->onPickup)(in_stack_0000001c,(CDemonActor *)this_ptr);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1097,
+      "line": 1095,
       "match": "in_stack_0000001c",
       "text": "(g_CDemonMissionPtr,in_stack_0000001c,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1124,
+      "line": 1122,
       "match": "in_stack_00000010",
       "text": "core_actor_cpp_deleteActor_FUN_00408820(*(CDemonActor **)(in_stack_00000010 + 0xc));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1125,
+      "line": 1123,
       "match": "in_stack_00000010",
       "text": "*(CDemonActor **)(in_stack_00000010 + 0xc) = actor;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1141,
+      "line": 1139,
       "match": "in_stack_0000001c",
       "text": "this_ptr->items[this_ptr->item_count] = in_stack_0000001c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1144,
+      "line": 1142,
       "match": "in_stack_0000001c",
       "text": "core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0(pCVar3,in_stack_0000001c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1145,
+      "line": 1143,
       "match": "in_stack_0000001c",
       "text": "(*((in_stack_0000001c->vtable)._ub)->onPickup)(in_stack_0000001c,(CDemonActor *)this_ptr);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1145,
+      "line": 1143,
       "match": "in_stack_0000001c",
       "text": "(*((in_stack_0000001c->vtable)._ub)->onPickup)(in_stack_0000001c,(CDemonActor *)this_ptr);",
       "type": "stack_param"

@@ -2,13 +2,11 @@
 // Address: 00566c20
 // Address Range: [[00566c20, 00566cb3]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20 (CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out)
+// Signature: int __cdecl core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20(CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out)
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20
-          (CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out)
+int __cdecl core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20(CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out)
 
 {
   int iVar1;

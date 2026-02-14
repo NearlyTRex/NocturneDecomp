@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,_FILE *file_handle)
+void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,_FILE *file_handle)
 
 {
   _fscanf(file_handle,"%f,%f,%f,%f,%f,%f,%f,%f,%f\n",this_ptr,&(this_ptr->vertex1).y,

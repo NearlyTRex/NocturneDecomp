@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 58,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 31,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 120
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780 (CDemonCamera *this_ptr,CRect *rect_ptr)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780(CDemonCamera *this_ptr,CRect *rect_ptr)"
   },
   "function_calls": [
     {
@@ -157,14 +157,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(void *)((int)",
       "text": "(void *)((int)this_ptr->zbuffer_aligned + (iVar2 + rect_ptr->left) * 4),",
       "type": "pointer_cast"

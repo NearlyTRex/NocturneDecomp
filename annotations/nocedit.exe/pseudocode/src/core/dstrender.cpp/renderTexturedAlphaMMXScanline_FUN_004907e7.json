@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 25,
-        "line": 45,
+        "line": 43,
         "message": "use of undeclared label 'DAT_02d02584'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 115,
+    "complexity_score": 113,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 16,
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 63,
     "suspect_count": 4,
     "suspect_types": [
       "mmx_assembly",
       "pointer_cast"
     ],
-    "total_lines": 152
+    "total_lines": 150
   },
   "cross_references": [
     {
@@ -67,7 +67,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7",
-    "signature": "void __cdecl core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)"
+    "signature": "void __cdecl core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -220,21 +220,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(uint *)((int)",
       "text": "g_PerspectiveScanlineZPtr = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(ushort *)((int)",
       "text": "if (uVar1 < *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;",
       "type": "pointer_cast"

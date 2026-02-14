@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190 (CFileManager *this_ptr,char *pod_file_path)
+; __cdecl void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

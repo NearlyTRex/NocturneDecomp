@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel *this_ptr,char *filename)
+int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel *this_ptr,char *filename)
 
 {
   char cVar1;

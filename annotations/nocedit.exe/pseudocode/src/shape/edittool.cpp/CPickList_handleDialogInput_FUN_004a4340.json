@@ -1,27 +1,18 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 23,
-        "line": 82,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 99,
+    "complexity_score": 84,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 7,
     "pseudocode_lines": 84,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 301
   },
   "cross_references": [
@@ -104,8 +95,8 @@
     },
     {
       "addr": "02cf2b00",
-      "name": "g_ActiveButton",
-      "type": "CEdButton*",
+      "name": "g_ActiveControl",
+      "type": "void*",
       "value": null
     },
     {
@@ -123,7 +114,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     }
   ],
@@ -203,13 +194,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 75,
-      "match": "._0_1_",
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

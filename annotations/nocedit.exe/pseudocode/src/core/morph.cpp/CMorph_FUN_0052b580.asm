@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_morph_cpp_CMorph_FUN_0052b580 (CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index)
+; __cdecl void __cdecl core_morph_cpp_CMorph_FUN_0052b580(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index)
 ;
 ; Parameters:
 ; CMorph *         Stack[0x4]:4   this_ptr

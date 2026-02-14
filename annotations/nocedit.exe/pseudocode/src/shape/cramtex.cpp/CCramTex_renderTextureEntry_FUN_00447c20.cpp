@@ -2,14 +2,11 @@
 // Address: 00447c20
 // Address Range: [[00447c20, 00447e7d]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20 (CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width, int draw_height)
+// Signature: void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20
-          (CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,
-          int draw_height)
+void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height)
 
 {
   int iVar1;

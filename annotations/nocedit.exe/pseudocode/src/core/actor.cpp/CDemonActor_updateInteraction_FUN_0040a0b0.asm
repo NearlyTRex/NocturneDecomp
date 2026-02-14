@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0 (CDemonActor *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state )
+; __cdecl int __cdecl core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0(CDemonActor *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

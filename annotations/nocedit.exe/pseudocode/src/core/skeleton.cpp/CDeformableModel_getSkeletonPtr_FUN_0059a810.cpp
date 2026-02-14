@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CSkeleton * __cdecl
-core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(CDeformableModel *this_ptr)
+CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(CDeformableModel *this_ptr)
 
 {
   if (this_ptr->skeleton_ptr != (CSkeleton *)0x0) {

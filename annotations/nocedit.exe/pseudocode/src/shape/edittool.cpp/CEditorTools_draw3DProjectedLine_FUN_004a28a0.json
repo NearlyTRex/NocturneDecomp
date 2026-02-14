@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 67,
+    "complexity_score": 65,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 15,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many"
     ],
-    "total_lines": 61
+    "total_lines": 59
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 (CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length)"
   },
   "function_calls": [
     {
@@ -205,21 +205,21 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
+      "line": 8,
       "match": "ROUND",
       "text": "local_10.x = (int)ROUND(world_point->w * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 9,
       "match": "ROUND",
       "text": "local_10.y = (int)ROUND(world_point->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 10,
       "match": "ROUND",
       "text": "local_10.z = (int)ROUND(world_point->y * 256.0f);",
       "type": "decompiler_intrinsic"

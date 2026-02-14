@@ -2,13 +2,11 @@
 // Address: 005a15e0
 // Address Range: [[005a15e0, 005a16bc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 (CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
-          (CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform)
 
 {
   int iVar1;

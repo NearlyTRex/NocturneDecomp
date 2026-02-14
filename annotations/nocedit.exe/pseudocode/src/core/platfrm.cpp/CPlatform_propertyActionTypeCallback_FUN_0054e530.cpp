@@ -2,13 +2,11 @@
 // Address: 0054e530
 // Address Range: [[0054e530, 0054e6f2]]
 // Convention: __cdecl
-// Signature: int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530 (CPlatform *this_ptr,CActorProperty *property)
+// Signature: int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530(CPlatform *this_ptr,CActorProperty *property)
 
 #include "nocturne.h"
 
-int __cdecl
-core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530
-          (CPlatform *this_ptr,CActorProperty *property)
+int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530(CPlatform *this_ptr,CActorProperty *property)
 
 {
   CCourse *this_ptr_00;

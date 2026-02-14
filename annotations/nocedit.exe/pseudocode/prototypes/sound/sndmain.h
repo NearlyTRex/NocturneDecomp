@@ -77,7 +77,7 @@ void __cdecl nextMixingBuffer(void);
 
 // Original: sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
 // Address: 005a5b80
-void __cdecl convertMixBufToOutput(float *input_samples,void *output_buffer,int bits_per_sample,int num_samples, int output_stride);
+void __cdecl convertMixBufToOutput(float *input_samples,void *output_buffer,int bits_per_sample,int num_samples,int output_stride);
 
 // Original: sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 // Address: 005a5d00
@@ -93,11 +93,11 @@ void __cdecl convertDoubleToFixed(double input,int *out_integer_part,int *out_fr
 
 // Original: sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
 // Address: 005a5e70
-double __cdecl mixResampleMonoToStereo(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains, double resample_position,double resample_delta,int samples_to_process);
+double __cdecl mixResampleMonoToStereo(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
 
 // Original: sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
 // Address: 005a5fb0
-double __cdecl mixResampleStereoToStereo(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains, double resample_position,double resample_delta,int samples_to_process);
+double __cdecl mixResampleStereoToStereo(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
 
 // Original: sound_sndmain.cpp_CSfxSample_ctor_FUN_005a60f0
 // Address: 005a60f0
@@ -441,7 +441,7 @@ void __cdecl set3DListenerPos(double pos_x,double pos_y,double pos_z);
 
 // Original: sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
 // Address: 005aa0a0
-void __cdecl set3DListenerOrient(double front_x,double front_y,double front_z,double up_x,double up_y,double up_z, double right_x,double right_y,double right_z);
+void __cdecl set3DListenerOrient(double front_x,double front_y,double front_z,double up_x,double up_y,double up_z,double right_x,double right_y,double right_z);
 
 // Original: sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
 // Address: 005aa1c0
@@ -481,7 +481,7 @@ void __cdecl freeAllSamples(void);
 
 // Original: sound_sndmain.cpp_getSoundMemoryStats_FUN_005aa6a0
 // Address: 005aa6a0
-void __cdecl getSoundMemoryStats(int *out_referenced_count,int *out_total_bytes_referenced,int *out_unreferenced_count, int *out_total_bytes_unreferenced,int *out_free_slots,int *out_available_memory);
+void __cdecl getSoundMemoryStats(int *out_referenced_count,int *out_total_bytes_referenced,int *out_unreferenced_count,int *out_total_bytes_unreferenced,int *out_free_slots,int *out_available_memory);
 
 // Original: sound_sndmain.cpp_convert8BitAudioSignedness_FUN_005aa7b0
 // Address: 005aa7b0
@@ -493,7 +493,7 @@ void __cdecl convert16BitAudioSignedness(short *buffer,int num_samples);
 
 // Original: sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0
 // Address: 005aa7f0
-void __cdecl resampleAndConvertAudio(int src_bit_depth,int src_channels,int src_sample_rate,int src_signed,short *src_buffer, int dst_bit_depth,int dst_channels,int dst_sample_rate,int dst_signed,short *dst_buffer, int num_output_samples);
+void __cdecl resampleAndConvertAudio(int src_bit_depth,int src_channels,int src_sample_rate,int src_signed,short *src_buffer,int dst_bit_depth,int dst_channels,int dst_sample_rate,int dst_signed,short *dst_buffer,int num_output_samples);
 
 // Original: sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00
 // Address: 005aae00
@@ -705,7 +705,7 @@ void __cdecl getChannelLevels(int channel,float *out_peak,float *out_average);
 
 // Original: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 // Address: 005aca90
-void __cdecl pollAndMixSfx(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec, int samples_per_block,int block_align);
+void __cdecl pollAndMixSfx(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align);
 
 // Original: sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0
 // Address: 005acdb0

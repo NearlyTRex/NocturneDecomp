@@ -2,13 +2,11 @@
 // Address: 0047c4d0
 // Address Range: [[0047c4d0, 0047c5e4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0 (CKeyFramedModel *this_ptr,CVector3f *scale_factors)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0(CKeyFramedModel *this_ptr,CVector3f *scale_factors)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0
-          (CKeyFramedModel *this_ptr,CVector3f *scale_factors)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0(CKeyFramedModel *this_ptr,CVector3f *scale_factors)
 
 {
   int iVar1;

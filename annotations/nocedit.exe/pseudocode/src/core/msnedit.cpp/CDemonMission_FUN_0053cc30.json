@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 23,
+        "line": 21,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 44,
-        "line": 23,
+        "line": 21,
         "message": "expected expression"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 179,
+    "complexity_score": 187,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 19,
-    "suspect_count": 15,
+    "pseudocode_lines": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 89
+    "total_lines": 87
   },
   "cross_references": [
     {
@@ -55,7 +55,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_msnedit.cpp_CDemonMission_FUN_0053cc30",
-    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cc30 (CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)"
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cc30(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)"
   },
   "function_calls": [
     {
@@ -149,105 +149,112 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
-      "text": "(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cc30(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
-      "text": "(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cc30(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
-      "text": "(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cc30(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
-      "text": "(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cc30(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_2",
       "text": "sort_type = param_2->item_count;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_4",
       "text": "if ((((param_4 == (char *)0x0) || (*param_4 == '\\0')) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_4",
       "text": "if ((((param_4 == (char *)0x0) || (*param_4 == '\\0')) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_4",
       "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,param_4), iVar1 != 0)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 14,
       "match": "code *",
-      "text": "((param_5 == 0 || (iVar1 = (*(code *)param_5)(), iVar1 != 0)))) {",
+      "text": "((param_5 == 0 || (iVar1 = (*(code *)param_5)(param_3,actor_ptr), iVar1 != 0)))) {",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_5",
-      "text": "((param_5 == 0 || (iVar1 = (*(code *)param_5)(), iVar1 != 0)))) {",
+      "text": "((param_5 == 0 || (iVar1 = (*(code *)param_5)(param_3,actor_ptr), iVar1 != 0)))) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_5",
-      "text": "((param_5 == 0 || (iVar1 = (*(code *)param_5)(), iVar1 != 0)))) {",
+      "text": "((param_5 == 0 || (iVar1 = (*(code *)param_5)(param_3,actor_ptr), iVar1 != 0)))) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 14,
+      "match": "param_3",
+      "text": "((param_5 == 0 || (iVar1 = (*(code *)param_5)(param_3,actor_ptr), iVar1 != 0)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
       "match": "param_2",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(param_2,actor_ptr->actor_name);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "text": "(*param_2->vtable->sort)(param_2,sort_type,param_2->item_count + -1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "text": "(*param_2->vtable->sort)(param_2,sort_type,param_2->item_count + -1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "text": "(*param_2->vtable->sort)(param_2,sort_type,param_2->item_count + -1);",
       "type": "unnamed_param"

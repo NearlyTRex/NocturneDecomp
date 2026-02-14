@@ -2,13 +2,11 @@
 // Address: 0052f260
 // Address Range: [[0052f260, 0052f2b5]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260 (CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260
-          (CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte)
+void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte)
 
 {
   if (bits_per_byte != 8) {

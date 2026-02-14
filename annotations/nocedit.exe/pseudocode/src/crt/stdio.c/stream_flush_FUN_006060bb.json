@@ -158,14 +158,14 @@
       "description": "Complex pointer cast",
       "line": 8,
       "match": "(int *)((int)",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4)) + 0x28)",
+      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
+      "line": 9,
       "match": "code *",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4)) + 0x28)",
+      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x20))(iVar1);",
       "type": "unresolved_funcptr"
     },
     {

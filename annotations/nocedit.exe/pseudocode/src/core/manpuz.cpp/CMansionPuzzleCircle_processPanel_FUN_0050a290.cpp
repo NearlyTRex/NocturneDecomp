@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle *this_ptr)
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle *this_ptr)
 
 {
   float fVar1;

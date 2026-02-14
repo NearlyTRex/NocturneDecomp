@@ -2,13 +2,11 @@
 // Address: 0041d990
 // Address Range: [[0041d990, 0041d9fa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_boneguy_cpp_CBoneGuy_getPropertyList_FUN_0041d990 (CBoneGuy *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_boneguy_cpp_CBoneGuy_getPropertyList_FUN_0041d990(CBoneGuy *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_boneguy_cpp_CBoneGuy_getPropertyList_FUN_0041d990
-          (CBoneGuy *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_boneguy_cpp_CBoneGuy_getPropertyList_FUN_0041d990(CBoneGuy *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

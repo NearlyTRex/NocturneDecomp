@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 659,
-    "complexity_score": 379,
+    "complexity_score": 380,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "pseudocode_lines": 279,
+    "pseudocode_lines": 280,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset"
     ],
-    "total_lines": 938
+    "total_lines": 939
   },
   "cross_references": [],
   "function": {
@@ -529,65 +529,65 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 64,
-      "match": "pSVar6[-1].",
-      "text": "local_70 = *(float *)pSVar6[-1].unk - *(float *)pSVar6->unk;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 65,
-      "match": "pSVar6[-1].",
-      "text": "fStack_6c = *(float *)(pSVar6[-1].unk + 4) - *(float *)(pSVar6->unk + 4);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
       "line": 66,
       "match": "pSVar6[-1].",
-      "text": "fStack_68 = *(float *)(pSVar6[-1].unk + 8) - *(float *)(pSVar6->unk + 8);",
+      "text": "local_7c = *(float *)pSVar6[-1].unk - *(float *)pSVar6->unk;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 67,
+      "match": "pSVar6[-1].",
+      "text": "local_78 = *(float *)(pSVar6[-1].unk + 4) - *(float *)(pSVar6->unk + 4);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 68,
+      "match": "pSVar6[-1].",
+      "text": "local_74 = *(float *)(pSVar6[-1].unk + 8) - *(float *)(pSVar6->unk + 8);",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 69,
       "match": "SQRT",
-      "text": "fStack_e0 = SQRT(fStack_68 * fStack_68 + local_70 * local_70 + fStack_6c * fStack_6c) +",
+      "text": "local_ec = SQRT(local_74 * local_74 + local_7c * local_7c + local_78 * local_78) + local_ec;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 232,
-      "match": "pSVar6[-1].",
-      "text": "local_b8 = *(float *)pSVar6[-1].unk - *(float *)pSVar6->unk;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 233,
-      "match": "pSVar6[-1].",
-      "text": "local_b4 = *(float *)(pSVar6[-1].unk + 4) - *(float *)(pSVar6->unk + 4);",
-      "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 234,
       "match": "pSVar6[-1].",
-      "text": "local_b0 = *(float *)(pSVar6[-1].unk + 8) - *(float *)(pSVar6->unk + 8);",
+      "text": "local_c4 = *(float *)pSVar6[-1].unk - *(float *)pSVar6->unk;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 235,
+      "match": "pSVar6[-1].",
+      "text": "local_c0 = *(float *)(pSVar6[-1].unk + 4) - *(float *)(pSVar6->unk + 4);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 236,
+      "match": "pSVar6[-1].",
+      "text": "local_bc = *(float *)(pSVar6[-1].unk + 8) - *(float *)(pSVar6->unk + 8);",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 235,
+      "line": 237,
       "match": "SQRT",
-      "text": "fStack_e4 = SQRT(local_b0 * local_b0 + local_b8 * local_b8 + local_b4 * local_b4) +",
+      "text": "local_f0 = SQRT(local_bc * local_bc + local_c4 * local_c4 + local_c0 * local_c0) + local_f0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 247,
+      "line": 248,
       "match": "SQRT",
-      "text": "SQRT(local_8c * local_8c + local_94 * local_94 + local_90 * local_90)) {",
+      "text": "SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c)) {",
       "type": "decompiler_intrinsic"
     }
   ],

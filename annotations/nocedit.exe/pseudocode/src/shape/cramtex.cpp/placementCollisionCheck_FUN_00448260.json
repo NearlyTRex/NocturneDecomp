@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 95,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 26,
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 58,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 185
+    "total_lines": 183
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_cramtex.cpp_placementCollisionCheck_FUN_00448260",
-    "signature": "void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260 (int layer_id,int start_x,int start_y,int width,int height)"
+    "signature": "void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id,int start_x,int start_y,int width,int height)"
   },
   "function_calls": [],
   "globals": [
@@ -289,21 +289,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 15,
       "match": "(int *)((int)",
       "text": "if (((layer_id == *(int *)((int)&g_CramRectangles[0].left + iVar1)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 16,
       "match": "(int *)((int)",
       "text": "(start_x == *(int *)((int)&g_CramRectangles[0].top + iVar1))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(int *)((int)",
       "text": "(start_y == *(int *)((int)&g_CramRectangles[0].right + iVar1))) {",
       "type": "pointer_cast"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_teleport_cpp_CTeleport_onActorDeleted_FUN_005dab70 (CTeleport *this_ptr,CDemonActor *deleted_actor)
+; __cdecl void __cdecl core_teleport_cpp_CTeleport_onActorDeleted_FUN_005dab70(CTeleport *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CTeleport *      Stack[0x4]:4   this_ptr

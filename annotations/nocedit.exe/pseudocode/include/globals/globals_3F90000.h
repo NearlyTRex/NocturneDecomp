@@ -17,6 +17,7 @@
 #include "types/classes/CWeather.h"
 #include "types/structs/SEdgeData.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/typedefs/MessageHandler.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x3F90000
@@ -36,7 +37,7 @@ extern CDemonActorType g_CWerewolfClassInfo;
 extern CDemonActorType g_CZombieClassInfo;
 
 // CDemonGlobe
-extern CDemonGlobe DAT_03f95d7c;
+extern CDemonGlobe CDemonGlobe_03f95d7c;
 
 // CRITICAL_SECTION[64]
 extern CRITICAL_SECTION g_StaticCriticalSectionArray[64];
@@ -90,6 +91,9 @@ extern LPCRITICAL_SECTION g_GlobalInitLock;
 // LPCRITICAL_SECTION*
 extern LPCRITICAL_SECTION* g_DynamicCriticalSectionArray;
 
+// MessageHandler[4]
+extern MessageHandler g_WindowMessageHandlers[4];
+
 // PALETTEENTRY[256]
 extern PALETTEENTRY g_DDPaletteBuffer[256];
 
@@ -114,9 +118,6 @@ extern ThreadRegistryEntry* g_ThreadDataRegistryList;
 
 // WCHAR*
 extern WCHAR* g_CommandLineW;
-
-// WNDPROC[4]
-extern WNDPROC g_WindowMessageHandlers[4];
 
 // byte
 extern byte g_CommandLineBuffer;

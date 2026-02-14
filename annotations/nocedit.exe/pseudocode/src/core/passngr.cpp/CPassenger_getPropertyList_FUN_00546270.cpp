@@ -2,13 +2,11 @@
 // Address: 00546270
 // Address Range: [[00546270, 005462e4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_passngr_cpp_CPassenger_getPropertyList_FUN_00546270 (CPassenger *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_passngr_cpp_CPassenger_getPropertyList_FUN_00546270(CPassenger *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_passngr_cpp_CPassenger_getPropertyList_FUN_00546270
-          (CPassenger *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_passngr_cpp_CPassenger_getPropertyList_FUN_00546270(CPassenger *this_ptr,CActorPropertyList *property_list)
 
 {
   core_npc_cpp_CNPC_getPropertyList_FUN_00544e40(&this_ptr->base,property_list);

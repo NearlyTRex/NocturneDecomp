@@ -224,12 +224,12 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_c0);
   pCVar5 = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr->light = 9.18341e-41;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->light = 0xffff;
   iVar6 = 0;
   pCVar5->vertex_buffer_ptr->color = 0;
   iVar9 = 0x30;
   local_f0 = 0;
-  pCVar5->vertex_buffer_ptr->fog = 0.0;
+  pCVar5->vertex_buffer_ptr->fog = 0;
   do {
     local_18 = local_f0;
     fVar12 = (float10)local_f0 * (float10)3.1415926535000001 * (float10)0.041666666666666699;

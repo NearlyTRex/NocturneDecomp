@@ -32,10 +32,12 @@ int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_0060da87(filebuf *this_
     }
     pcVar3 = (this_ptr->_streambuf).__reserve_base;
     if (pcVar3 == (char *)0x0) {
-      (this_ptr->_streambuf).__get_ptr = this_ptr->__unbuffered_get_area + 4;
-      (this_ptr->_streambuf).__get_end = this_ptr->__unbuffered_get_area + 4;
+      pcVar3 = this_ptr->__unbuffered_get_area + 4;
+      (this_ptr->_streambuf).__get_ptr = pcVar3;
+      (this_ptr->_streambuf).__get_end = pcVar3;
+      iVar4 = this_ptr->__file_handle;
       (this_ptr->_streambuf).__get_base = this_ptr->__unbuffered_get_area;
-      iVar4 = ReadFileBytesMaybe();
+      iVar4 = ReadFileBytesMaybe(iVar4,pcVar3,1);
       if (iVar4 < 1) {
         return -1;
       }
@@ -49,11 +51,13 @@ LAB_0060dac1:
     (this_ptr->_streambuf).__get_end = pcVar3 + 4;
   }
   else if ((this_ptr->_streambuf).__get_end <= (this_ptr->_streambuf).__get_ptr) goto LAB_0060dac1;
-  if ((int)(this_ptr->_streambuf).__reserve_end - (int)(this_ptr->_streambuf).__get_end < 1) {
+  pcVar3 = (this_ptr->_streambuf).__get_end;
+  iVar4 = (int)(this_ptr->_streambuf).__reserve_end - (int)pcVar3;
+  if (iVar4 < 1) {
     iVar4 = 0;
   }
   else {
-    iVar4 = ReadFileBytesMaybe();
+    iVar4 = ReadFileBytesMaybe(this_ptr->__file_handle,pcVar3,iVar4);
     if (iVar4 < 1) {
       return -1;
     }

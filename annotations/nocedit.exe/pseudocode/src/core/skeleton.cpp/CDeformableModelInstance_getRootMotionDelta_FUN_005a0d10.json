@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 25,
-        "line": 45,
+        "line": 42,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 154,
+    "complexity_score": 151,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 66,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "unaffected_reg"
     ],
-    "total_lines": 247
+    "total_lines": 244
   },
   "cross_references": [
     {
@@ -50,7 +50,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10",
-    "signature": "CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 (CDeformableModelInstance *this_ptr,CVector3f *output_buffer,float start_frame, float end_frame)"
+    "signature": "CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance *this_ptr,CVector3f *output_buffer,float start_frame,float end_frame)"
   },
   "function_calls": [
     {
@@ -287,49 +287,49 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 17,
       "match": "extraout_EBX",
       "text": "int extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Unaffected register variable",
-      "line": 21,
+      "line": 18,
       "match": "unaff_ESI",
       "text": "float unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 37,
       "match": "ROUND",
       "text": "iVar1 = (int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 47,
+      "line": 44,
       "match": "extraout_EBX",
       "text": "iVar8 = *(int *)(extraout_EBX + 0x29378);",
       "type": "extra_output"
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 52,
       "match": "unaff_ESI",
       "text": "fVar10 = unaff_ESI - (float)iStack_20;",
       "type": "unaffected_reg"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 56,
+      "line": 53,
       "match": "extraout_EBX",
       "text": "iVar9 = *(int *)(extraout_EBX + 0x29378);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 61,
+      "line": 58,
       "match": "extraout_EBX",
       "text": "iVar1 = *(int *)(extraout_EBX + 0x29378);",
       "type": "extra_output"

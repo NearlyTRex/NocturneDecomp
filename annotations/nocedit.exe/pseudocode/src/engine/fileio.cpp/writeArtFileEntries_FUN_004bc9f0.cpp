@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_fileio_cpp_writeArtFileEntries_FUN_004bc9f0(char *filename,_FILE **raw_file,_FILE **act_file)
+void __cdecl engine_fileio_cpp_writeArtFileEntries_FUN_004bc9f0(char *filename,_FILE **raw_file,_FILE **act_file)
 
 {
   char local_104 [256];

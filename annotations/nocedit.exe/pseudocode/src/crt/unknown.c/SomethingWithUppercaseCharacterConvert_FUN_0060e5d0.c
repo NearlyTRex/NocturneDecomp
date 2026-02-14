@@ -2,21 +2,20 @@
 // Address: 0060e5d0
 // Address Range: [[0060e5d0, 0060e636]]
 // Convention: unknown
-// Signature: char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(void)
+// Signature: char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(char *param_1)
 
 #include "nocturne.h"
 
-char * SomethingWithUppercaseCharacterConvert(void)
+char * SomethingWithUppercaseCharacterConvert(char *param_1)
 
 {
   wchar_t wVar1;
   int iVar2;
   ushort extraout_var;
   char *str;
-  char *in_stack_00000004;
   char *in_stack_fffffff4;
   
-  str = in_stack_00000004;
+  str = param_1;
   while( true ) {
     iVar2 = mbstring_termination_check(str);
     if (iVar2 != 0) break;
@@ -29,5 +28,5 @@ char * SomethingWithUppercaseCharacterConvert(void)
     copyMbChar(str,&stack0xfffffff4);
     str = mbtowc_next(str);
   }
-  return in_stack_00000004;
+  return param_1;
 }

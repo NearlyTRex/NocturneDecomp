@@ -28,7 +28,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter
   iVar2 = rand();
   INT_00823a94 = iVar2 % 6;
   g_CDemonRendererPtr2->unk = 1;
-  engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0066e6b0 + iVar2 % 6);
+  engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(SMRGLTextureBasic_ARRAY_0066e6b0 + iVar2 % 6);
   this_ptr_00 = &this_ptr->model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
             (this_ptr_00,(SBoneTransformData *)&stack0xffffe550);

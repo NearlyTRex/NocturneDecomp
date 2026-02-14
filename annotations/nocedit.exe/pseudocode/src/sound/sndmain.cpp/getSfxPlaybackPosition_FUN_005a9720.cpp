@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-double __cdecl
-sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle,uint output_format)
+double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle,uint output_format)
 
 {
   CSfxSlot *this_ptr;

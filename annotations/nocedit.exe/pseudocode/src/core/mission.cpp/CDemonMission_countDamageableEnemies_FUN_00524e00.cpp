@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00(CDemonMission *this_ptr)
+int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00(CDemonMission *this_ptr)
 
 {
   CEnemy *this_ptr_00;

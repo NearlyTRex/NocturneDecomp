@@ -2,13 +2,11 @@
 // Address: 00546e90
 // Address Range: [[00546e90, 005472f1]]
 // Convention: __cdecl
-// Signature: int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90 (CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z)
+// Signature: int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z)
 
 #include "nocturne.h"
 
-int __cdecl
-core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90
-          (CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z)
+int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z)
 
 {
   uint uVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_weapon_cpp_CWeapon_hasCollision_FUN_005ee330(CWeapon *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_weapon_cpp_CWeapon_hasCollision_FUN_005ee330(CWeapon *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

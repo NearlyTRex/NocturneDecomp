@@ -34,7 +34,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_script.cpp_CScript_FUN_00560d80
+;   core_script.cpp_CScript_computeChecksum_FUN_00560d80
 ;   core_script.cpp_readActorReference_FUN_00560760
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -319,8 +319,8 @@ section .text
         ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00560b13
     PUSH EBP                            ; 00560b16
-    CALL core_script.cpp_CScript_FUN_00560d80 ; 00560b17
-        ;   XREF to: 00560d80 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_FUN_00560d80(CScript * this_ptr)
+    CALL core_script.cpp_CScript_computeChecksum_FUN_00560d80 ; 00560b17
+        ;   XREF to: 00560d80 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_computeChecksum_FUN_00560d80(CScript * this_ptr)
     ADD ESP,0x4                         ; 00560b1c
     CMP EAX,dword ptr [ESP + 0x104]     ; 00560b1f
     JZ 0x00560aba                       ; 00560b26

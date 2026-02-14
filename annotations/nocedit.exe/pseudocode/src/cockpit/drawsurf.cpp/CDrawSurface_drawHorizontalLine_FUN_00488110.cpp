@@ -2,13 +2,11 @@
 // Address: 00488110
 // Address Range: [[00488110, 0048822a]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110 (CDrawSurface *this_ptr,int start_x,int y,int end_x)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110(CDrawSurface *this_ptr,int start_x,int y,int end_x)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110
-          (CDrawSurface *this_ptr,int start_x,int y,int end_x)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110(CDrawSurface *this_ptr,int start_x,int y,int end_x)
 
 {
   int start_x_00;

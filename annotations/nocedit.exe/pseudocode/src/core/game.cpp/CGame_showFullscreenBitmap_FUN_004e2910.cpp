@@ -14,12 +14,11 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
   int iVar3;
   _FILE *p_Var4;
   byte *pbVar5;
-  void *unaff_EBP;
   char *pcVar6;
   int iVar7;
   char *pcVar8;
   byte bVar10;
-  CGame *in_stack_0000000c;
+  uint auStack_a30 [256];
   byte local_630 [768];
   ushort auStack_330 [256];
   char local_130 [256];
@@ -100,13 +99,13 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
              (ushort)(local_30 << ((byte)g_GreenBitPosition & 0x1f));
       }
       else if (g_BitsPerPixel == 0x20) {
-        *(uint *)(&stack0xfffff5d0 + local_20) =
+        *(uint *)((int)auStack_a30 + local_20) =
              (uint)local_630[iVar2] << ((byte)g_RedBitPosition & 0x1f) |
              (uint)local_630[iVar2 + 1] << ((byte)g_GreenBitPosition & 0x1f) |
              (uint)local_630[iVar2 + 2] << ((byte)g_BlueBitPosition & 0x1f);
       }
       else {
-        *(uint *)(&stack0xfffff5d0 + local_20) =
+        *(uint *)((int)auStack_a30 + local_20) =
              (uint)local_630[iVar2 + 1] << 8 | (uint)local_630[iVar2] << 0x10 |
              (uint)local_630[iVar2 + 2];
       }
@@ -154,7 +153,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
               }
               else {
                 *(uint *)(iVar3 + *(int *)((int)g_ScreenBufferArray + local_24)) =
-                     *(uint *)(&stack0xfffff5d0 + (uint)*pbVar5 * 4);
+                     auStack_a30[*pbVar5];
               }
               iVar3 = iVar3 + 4;
               iVar2 = iVar2 + 1;
@@ -175,8 +174,8 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
         iVar2 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
       } while (((iVar2 == 0) &&
                (iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire),
-               iVar2 == 0)) && (g_MouseButtonFlags == 0));
-      while ((g_MouseButtonFlags != 0 ||
+               iVar2 == 0)) && (g_MouseButtonFlags.dword == 0));
+      while ((g_MouseButtonFlags.dword != 0 ||
              (iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire), iVar2 != 0)
              )) {
         if (this_ptr->game_control == 2) {
@@ -188,10 +187,10 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
         }
       }
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(in_stack_0000000c);
-      core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_0000000c);
-      in_stack_0000000c->bitmap_filename[0] = '\0';
-      shape_memdbg_cpp_debugFree_FUN_0050f460(unaff_EBP,"..\\core\\game.cpp",0x1057);
+      core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
+      core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
+      this_ptr->bitmap_filename[0] = '\0';
+      shape_memdbg_cpp_debugFree_FUN_0050f460(local_18,"..\\core\\game.cpp",0x1057);
       return;
     }
   }

@@ -23,11 +23,12 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   char *pcVar9;
   byte bVar10;
   double dVar11;
-  CGame *in_stack_00000008;
+  CGame *unaff_retaddr;
   uint local_1134 [1024];
   char local_134 [252];
-  byte auStack_38 [8];
-  CAlphaBitmap CStack_30;
+  byte auStack_38 [20];
+  uint uStack_24;
+  float local_20;
   float local_1c;
   float local_18;
   float local_14;
@@ -89,13 +90,13 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\game.cpp",0x123e);
   sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
   sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
-  CStack_30.height = 0;
+  local_20 = 0.0;
   iVar7 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(1);
   if (iVar7 != 0) {
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
     sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(1);
-    CStack_30.height = sound_sndmain_cpp_startSfx_FUN_005a8e90("faded-remix.mp3");
+    local_20 = (float)sound_sndmain_cpp_startSfx_FUN_005a8e90("faded-remix.mp3");
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -111,7 +112,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
     dVar11 = round((double)local_18);
     local_14 = (float)(int)ROUND(dVar11);
     if (local_14 != fVar2) {
-      CStack_30.height = (int)local_14;
+      local_20 = local_14;
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950((CAlphaBitmap *)auStack_38,0,0,0xffff);
       if (0 < (int)local_18) {
@@ -134,25 +135,26 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
           local_14 = (float)((int)local_14 + local_10);
         } while (iVar8 < iVar3);
       }
-      if ((CStack_30.width != 0) &&
-         (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(CStack_30.width), iVar3 == 0)) {
+      if ((uStack_24 != 0) &&
+         (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uStack_24), iVar3 == 0)) {
 LAB_004e43c1:
         if (g_MessageCount != 0) {
           this_ptr_00->win_font_enabled = 1;
         }
         sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
-        iVar7 = local_10;
+        fVar2 = local_18;
         engine_2d_c_clearInputAndWait_FUN_00403260();
-        if (0 < iVar7) {
+        if (0 < (int)fVar2) {
           iVar7 = 0;
+          iVar3 = (int)local_18 * 4;
           do {
-            iVar3 = iVar7 + 4;
+            iVar8 = iVar7 + -4;
             iVar7 = iVar7 + 4;
             shape_memdbg_cpp_debugFree_FUN_0050f460
-                      (*(void **)((int)local_1134 + iVar3),"..\\core\\game.cpp",0x1294);
-          } while (iVar7 < local_10 * 4);
+                      (*(void **)((int)local_1134 + iVar8),"..\\core\\game.cpp",0x1294);
+          } while (iVar7 < iVar3);
         }
-        engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&CStack_30,0);
+        engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)auStack_38,0);
         return;
       }
       engine_2d_c_fillRectColor_FUN_00403170(0x19e,0,0x27f,0x1e,0);
@@ -161,7 +163,7 @@ LAB_004e43c1:
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
     if (iVar3 != 0) goto LAB_004e43c1;
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(in_stack_00000008);
-    local_14 = local_14 - in_stack_00000008->delta_time_float * 32.0f;
+    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(unaff_retaddr);
+    local_1c = local_1c - unaff_retaddr->delta_time_float * 32.0f;
   } while( true );
 }

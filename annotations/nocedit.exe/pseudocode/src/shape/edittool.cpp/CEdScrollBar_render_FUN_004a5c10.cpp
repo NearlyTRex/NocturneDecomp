@@ -39,7 +39,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
     top = iVar3;
     local_1c = height;
   }
-  if (((CEdButton *)this_ptr == g_ActiveButton) && (g_ScrollAction == 0)) {
+  if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 0)) {
     border_style_flag = 1;
   }
   else {
@@ -47,14 +47,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
   }
   shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar2,top,local_20,local_1c,border_style_flag);
   if (this_ptr->orientation != 0) {
-    if (((CEdButton *)this_ptr == g_ActiveButton) && (g_ScrollAction == 1)) {
+    if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 1)) {
       iVar2 = 1;
     }
     else {
       iVar2 = 0;
     }
     shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar1,iVar3,this_ptr->track_start,height,iVar2);
-    if (((CEdButton *)this_ptr == g_ActiveButton) && (g_ScrollAction == 1)) {
+    if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 1)) {
       iVar2 = 1;
     }
     else {
@@ -62,14 +62,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
     }
     shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0
               (iVar1,iVar3,this_ptr->track_start,height,iVar2,2);
-    if (((CEdButton *)this_ptr == g_ActiveButton) && (g_ScrollAction == 2)) {
+    if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 2)) {
       iVar1 = 1;
     }
     else {
       iVar1 = 0;
     }
     shape_edittool_cpp_draw3DBorder_FUN_004a58f0(this_ptr->track_end,iVar3,width,height,iVar1);
-    if (((CEdButton *)this_ptr == g_ActiveButton) && (g_ScrollAction == 2)) {
+    if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 2)) {
       iVar1 = 1;
     }
     else {
@@ -79,14 +79,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
               (this_ptr->track_end,iVar3,width,height,iVar1,3);
     return;
   }
-  if (((CEdButton *)this_ptr == g_ActiveButton) && (g_ScrollAction == 1)) {
+  if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 1)) {
     iVar2 = 1;
   }
   else {
     iVar2 = 0;
   }
   shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar1,iVar3,width,this_ptr->track_start,iVar2);
-  if (((CEdButton *)this_ptr == g_ActiveButton) && (g_ScrollAction == 1)) {
+  if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 1)) {
     iVar2 = 1;
   }
   else {
@@ -94,14 +94,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
   }
   shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(iVar1,iVar3,width,this_ptr->track_start,iVar2,0)
   ;
-  if (((CEdButton *)this_ptr == g_ActiveButton) && (g_ScrollAction == 2)) {
+  if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 2)) {
     iVar3 = 1;
   }
   else {
     iVar3 = 0;
   }
   shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar1,this_ptr->track_end,width,height,iVar3);
-  if (((CEdButton *)this_ptr == g_ActiveButton) && (g_ScrollAction == 2)) {
+  if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 2)) {
     iVar3 = 1;
   }
   else {

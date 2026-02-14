@@ -13,6 +13,8 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056aca0(CDemonSet *this_ptr)
   uint *puVar2;
   int iVar3;
   CDemonSet *pCVar4;
+  uint in_stack_00000008;
+  byte auStack_40 [24];
   uint uStack_28;
   uint uStack_24;
   uint uStack_20;
@@ -20,12 +22,15 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056aca0(CDemonSet *this_ptr)
   uint uStack_18;
   uint uStack_14;
   
+  if (g_CDemonMissionPtr->is_in_editor != 0) {
+    in_stack_00000008 = 0;
+  }
   iVar3 = 0;
   pCVar4 = this_ptr;
   if (0 < *(int *)this_ptr->unk13) {
     do {
       iVar1 = *(int *)(pCVar4->unk13 + 4);
-      puVar2 = (uint *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))();
+      puVar2 = (uint *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1,auStack_40);
       if (&uStack_28 != puVar2) {
         uStack_28 = *puVar2;
         uStack_24 = puVar2[1];
@@ -39,7 +44,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056aca0(CDemonSet *this_ptr)
       core_set_cpp_CDemonSet_FUN_0056d380(this_ptr);
       core_set_cpp_CDemonSet_FUN_00570ca0(this_ptr);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
-      (**(code **)(*(int *)(iVar1 + 0x154) + 0x10))();
+      (**(code **)(*(int *)(iVar1 + 0x154) + 0x10))(iVar1,in_stack_00000008);
       core_set_cpp_CDemonSet_FUN_00570ca0(this_ptr);
       iVar3 = iVar3 + 1;
       engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);

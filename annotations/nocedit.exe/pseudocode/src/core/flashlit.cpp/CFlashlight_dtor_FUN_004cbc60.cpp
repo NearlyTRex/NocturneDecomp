@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CFlashlight * __cdecl
-core_flashlit_cpp_CFlashlight_dtor_FUN_004cbc60(CFlashlight *this_ptr,uint flags)
+CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004cbc60(CFlashlight *this_ptr,uint flags)
 
 {
   CWeapon *ptr;

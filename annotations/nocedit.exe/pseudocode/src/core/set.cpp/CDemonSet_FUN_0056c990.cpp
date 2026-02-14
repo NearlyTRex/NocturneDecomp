@@ -77,7 +77,8 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
     pCVar5 = this_ptr;
     if (0 < *(int *)this_ptr->unk13) {
       do {
-        (**(code **)(*(int *)(*(int *)(pCVar5->unk13 + 4) + 0x154) + 8))();
+        (**(code **)(*(int *)(*(int *)(pCVar5->unk13 + 4) + 0x154) + 8))
+                  (*(int *)(pCVar5->unk13 + 4));
         iVar3 = iVar3 + 1;
         engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
         pCVar5 = (CDemonSet *)pCVar5->cameras;

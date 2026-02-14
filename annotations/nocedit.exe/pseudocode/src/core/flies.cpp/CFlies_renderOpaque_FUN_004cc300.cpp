@@ -64,21 +64,21 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
       DAT_02d7a804 = DAT_02d7a800 ^ 0xffffff;
     }
     else {
-      g_CDemonRendererPtr2->vertex_buffer_ptr->light = 0.0;
+      g_CDemonRendererPtr2->vertex_buffer_ptr->light = 0;
       pCVar2->vertex_buffer_ptr->color = 0;
-      pCVar2->vertex_buffer_ptr->fog = 0.0;
-      pCVar2->vertex_buffer_ptr[1].light = 0.0;
+      pCVar2->vertex_buffer_ptr->fog = 0;
+      pCVar2->vertex_buffer_ptr[1].light = 0;
       pCVar2->vertex_buffer_ptr[1].color = 0;
-      pCVar2->vertex_buffer_ptr[1].fog = 0.0;
-      pCVar2->vertex_buffer_ptr[2].light = 0.0;
+      pCVar2->vertex_buffer_ptr[1].fog = 0;
+      pCVar2->vertex_buffer_ptr[2].light = 0;
       pCVar2->vertex_buffer_ptr[2].color = 0;
       fVar5 = g_PerspectiveReciprocal;
-      pCVar2->vertex_buffer_ptr[2].fog = 0.0;
+      pCVar2->vertex_buffer_ptr[2].fog = 0;
       fVar5 = (float)(0xffff - (int)fVar5);
       pCVar2->vertex_buffer_ptr->w_recip = fVar5;
       pCVar2->vertex_buffer_ptr[1].w_recip = fVar5;
       pCVar2->vertex_buffer_ptr[2].w_recip = fVar5;
-      engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0067b514);
+      engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&SMRGLTextureBasic_0067b514);
     }
     iStack_1c = 0;
     if (0 < this_ptr->count) {

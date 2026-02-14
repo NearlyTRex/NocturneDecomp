@@ -18,7 +18,7 @@ CDemonActorType g_CWerewolfClassInfo = {};
 CDemonActorType g_CZombieClassInfo = {};
 
 // CDemonGlobe
-CDemonGlobe DAT_03f95d7c = {};
+CDemonGlobe CDemonGlobe_03f95d7c = {};
 
 // CRITICAL_SECTION[64]
 CRITICAL_SECTION g_StaticCriticalSectionArray[64] = {};
@@ -72,6 +72,9 @@ LPCRITICAL_SECTION g_GlobalInitLock = {};
 // LPCRITICAL_SECTION*
 LPCRITICAL_SECTION* g_DynamicCriticalSectionArray = {};
 
+// MessageHandler[4]
+MessageHandler g_WindowMessageHandlers[4] = {};
+
 // PALETTEENTRY[256]
 PALETTEENTRY g_DDPaletteBuffer[256] = {};
 
@@ -96,9 +99,6 @@ ThreadRegistryEntry* g_ThreadDataRegistryList = {};
 
 // WCHAR*
 WCHAR* g_CommandLineW = {};
-
-// WNDPROC[4]
-WNDPROC g_WindowMessageHandlers[4] = {};
 
 // byte
 byte g_CommandLineBuffer = {};

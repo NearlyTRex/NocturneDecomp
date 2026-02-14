@@ -3,32 +3,26 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 66,
-        "line": 28,
-        "message": "use of undeclared identifier 'stack0xffffff9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
+        "column": 28,
         "line": 44,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
-        "column": 31,
+        "column": 35,
         "line": 44,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 53,
+        "line": 55,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 53,
+        "line": 55,
         "message": "expected expression"
       }
     ],
@@ -37,17 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 90,
+    "complexity_score": 77,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 50,
-    "suspect_count": 3,
+    "pseudocode_lines": 52,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 176
+    "total_lines": 178
   },
   "cross_references": [
     {
@@ -215,24 +208,17 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xffffff9c",
-      "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffff9c);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 37,
       "match": "code *",
-      "text": "fVar2 = (float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar3) + 0x154)",
+      "text": "fStack_18 = (float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar2) +",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
+      "line": 48,
       "match": "code *",
-      "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x5c))();",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x5c))(iVar4);",
       "type": "unresolved_funcptr"
     }
   ]

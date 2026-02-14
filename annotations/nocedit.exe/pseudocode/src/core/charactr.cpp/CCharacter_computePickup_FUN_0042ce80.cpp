@@ -2,13 +2,11 @@
 // Address: 0042ce80
 // Address Range: [[0042ce80, 0042cfdb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80 (CCharacter *this_ptr,int hand_index,float blend_time)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter *this_ptr,int hand_index,float blend_time)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80
-          (CCharacter *this_ptr,int hand_index,float blend_time)
+void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter *this_ptr,int hand_index,float blend_time)
 
 {
   int iVar1;

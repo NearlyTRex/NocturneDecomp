@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_batcreat_cpp_CBatCreature_getActorType_FUN_004150e0(CBatCreature *this_ptr)
+CDemonActorType * __cdecl core_batcreat_cpp_CBatCreature_getActorType_FUN_004150e0(CBatCreature *this_ptr)
 
 {
   return &g_CBatCreatureClassInfo;

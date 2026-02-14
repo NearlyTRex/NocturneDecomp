@@ -19,7 +19,7 @@
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
-;   core_script.cpp_CScript_FUN_00559f80
+;   core_script.cpp_CScript_loadScript_FUN_00559f80
 ;   crt_file.c_makepath_FUN_005febfc
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     PUSH EAX                            ; 005235e3
     MOV ECX,dword ptr [0x00680d50]      ; 005235e4 | g_CScriptInstance | g_CScriptPtr
     PUSH ECX                            ; 005235ea | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00559f80 ; 005235eb
-        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00559f80(CScript * this_ptr, char * param_2, int param_3)
+    CALL core_script.cpp_CScript_loadScript_FUN_00559f80 ; 005235eb
+        ;   XREF to: 00559f80 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_loadScript_FUN_00559f80(CScript * this_ptr, char * filename, int skip_validation)
     ADD ESP,0xc                         ; 005235f0
     ADD ESP,0x104                       ; 005235f3
     RET                                 ; 005235f9

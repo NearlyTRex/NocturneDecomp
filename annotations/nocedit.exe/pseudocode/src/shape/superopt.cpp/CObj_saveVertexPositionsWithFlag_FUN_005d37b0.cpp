@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0(CObj *this_ptr,uint flag_mask)
+void __cdecl shape_superopt_cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0(CObj *this_ptr,uint flag_mask)
 
 {
   int iVar1;
@@ -23,10 +22,10 @@ shape_superopt_cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0(CObj *this_ptr,
   if (this_ptr->poly_count != 0) {
     iVar4 = 0;
     do {
-      iVar1 = iVar4 + 4;
+      iVar1 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar4;
       uVar3 = uVar3 + 1;
       iVar4 = iVar4 + 0x68;
-      (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 0x38))();
+      (**(code **)(*(int *)(iVar1 + 100) + 0x38))(iVar1,flag_mask);
     } while (uVar3 < (uint)this_ptr->poly_count);
   }
   uVar3 = 0;

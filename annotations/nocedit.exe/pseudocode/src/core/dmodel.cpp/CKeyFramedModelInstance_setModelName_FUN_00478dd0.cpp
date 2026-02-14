@@ -2,13 +2,11 @@
 // Address: 00478dd0
 // Address Range: [[00478dd0, 00478e0c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 (CKeyFramedModelInstance *this_ptr,char *filename)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-          (CKeyFramedModelInstance *this_ptr,char *filename)
+void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance *this_ptr,char *filename)
 
 {
   char cVar1;

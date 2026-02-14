@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMorphControlPoint * __cdecl
-core_morph_cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0(SMorphControlPoint *objs,uint flags)
+SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0(SMorphControlPoint *objs,uint flags)
 
 {
   SMorphControlPoint *pSVar1;

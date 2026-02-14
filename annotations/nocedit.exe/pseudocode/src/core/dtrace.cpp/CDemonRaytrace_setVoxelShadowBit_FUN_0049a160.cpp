@@ -2,13 +2,11 @@
 // Address: 0049a160
 // Address Range: [[0049a160, 0049a27c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160 (CDemonRaytrace *this_ptr,CVector3f *world_position)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemonRaytrace *this_ptr,CVector3f *world_position)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160
-          (CDemonRaytrace *this_ptr,CVector3f *world_position)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemonRaytrace *this_ptr,CVector3f *world_position)
 
 {
   CDemonCube *this_ptr_00;

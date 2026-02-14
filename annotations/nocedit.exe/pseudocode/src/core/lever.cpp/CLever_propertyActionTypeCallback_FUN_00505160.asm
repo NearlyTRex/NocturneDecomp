@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_lever_cpp_CLever_propertyActionTypeCallback_FUN_00505160 (CLever *this_ptr,CActorProperty *property)
+; __cdecl int __cdecl core_lever_cpp_CLever_propertyActionTypeCallback_FUN_00505160(CLever *this_ptr,CActorProperty *property)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr

@@ -2,13 +2,11 @@
 // Address: 005013d0
 // Address Range: [[005013d0, 00501497]]
 // Convention: __cdecl
-// Signature: int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0 (CInventory *this_ptr,uint key_mask,int show_message)
+// Signature: int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0(CInventory *this_ptr,uint key_mask,int show_message)
 
 #include "nocturne.h"
 
-int __cdecl
-core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0
-          (CInventory *this_ptr,uint key_mask,int show_message)
+int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0(CInventory *this_ptr,uint key_mask,int show_message)
 
 {
   CDemonActor *pCVar1;

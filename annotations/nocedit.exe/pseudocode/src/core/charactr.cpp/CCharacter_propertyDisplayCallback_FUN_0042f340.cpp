@@ -2,13 +2,11 @@
 // Address: 0042f340
 // Address Range: [[0042f340, 0042f3d4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340 (CCharacter *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340(CCharacter *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340
-          (CCharacter *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340(CCharacter *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

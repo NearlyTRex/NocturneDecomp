@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_setSfxPosition_FUN_005a9820 (uint sfx_handle,double pos_x,double pos_y,double pos_z)
+; __cdecl int __cdecl sound_sndmain_cpp_setSfxPosition_FUN_005a9820(uint sfx_handle,double pos_x,double pos_y,double pos_z)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_0054c6a0(CPackedBitmapSet *this_ptr)
+int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_0054c6a0(CPackedBitmapSet *this_ptr)
 
 {
   int iVar1;

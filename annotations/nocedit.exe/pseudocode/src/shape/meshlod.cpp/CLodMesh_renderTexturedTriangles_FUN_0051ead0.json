@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 78,
+        "line": 76,
         "message": "use of undeclared identifier 'stack0xffffff80'"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 105,
+        "line": 103,
         "message": "use of undeclared identifier 'stack0xffffff80'"
       }
     ],
@@ -19,11 +19,11 @@
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 238,
+    "complexity_score": 236,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 8,
-    "pseudocode_lines": 103,
+    "pseudocode_lines": 101,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -32,7 +32,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 307
+    "total_lines": 305
   },
   "cross_references": [
     {
@@ -58,7 +58,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (CLodMesh *this_ptr,int enable_texture_lookup,int use_atlas_mode)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh *this_ptr,int enable_texture_lookup,int use_atlas_mode)"
   },
   "function_calls": [
     {
@@ -352,70 +352,70 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 11,
       "match": "unaff_EBX",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(float *)((int)",
       "text": "local_18 = (float *)((int)this_ptr->tri_data->attribute_indices + local_20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_60 + iVar4) = pfVar6[4];",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "ROUND",
       "text": "local_30 = (float)(int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 60,
       "match": "(int *)((int)",
       "text": "*(int *)((int)afStack_60 + iVar4 + -4) = (int)ROUND(dVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 60,
       "match": "ROUND",
       "text": "*(int *)((int)afStack_60 + iVar4 + -4) = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 62,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_60 + iVar4) = local_30;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 71,
+      "line": 69,
       "match": "&stack0xffffff80",
       "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff80);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 77,
+      "line": 75,
       "match": "unaff_EBX",
       "text": "((int)atlas_texture_index * 0x48 + *(int *)(unaff_EBX + 0x14));",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 98,
+      "line": 96,
       "match": "&stack0xffffff80",
       "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff80);",
       "type": "stack_ref"

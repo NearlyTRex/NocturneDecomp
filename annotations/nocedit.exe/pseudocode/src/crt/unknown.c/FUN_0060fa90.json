@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 74,
+    "complexity_score": 73,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 13,
     "suspect_count": 5,
     "suspect_types": [
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 40
+    "total_lines": 39
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0060fa90",
-    "signature": "int crt_unknown_c_FUN_0060fa90(void)"
+    "signature": "int crt_unknown_c_FUN_0060fa90(char *param_1)"
   },
   "function_calls": [
     {
@@ -86,32 +86,32 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int FUN_0060fa90(char *param_1)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = mbstring_termination_check(in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "text": "iVar1 = mbstring_termination_check(param_1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = mbtowc_next(in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "text": "param_1 = mbtowc_next(param_1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = mbtowc_next(in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "text": "param_1 = mbtowc_next(param_1);",
+      "type": "unnamed_param"
     },
     {
       "address": "0060fa90",

@@ -6,15 +6,18 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
 
 {
   CDeformableModelInstance *this_ptr_00;
   CBoundingBox3D *this_ptr_01;
   int iVar1;
-  float *pfVar2;
+  CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
+  CMatrix3x4f local_f4;
   CMatrix3x4f local_c4;
   CMatrix3x4f local_94;
   CBoundingBox3D local_64;
@@ -60,14 +63,13 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
                     (&local_c4,&local_40,&local_28);
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                     (&local_c4,
-                     (CMatrix3x4f *)
-                     (this_ptr->base).base.model.bone_transform.bone_world_matrices[INT_02f33378].m,
-                     (CMatrix3x4f *)&stack0xffffff0c);
-          pfVar2 = (float *)&stack0xffffff0c;
+                     (this_ptr->base).base.model.bone_transform.bone_world_matrices + INT_02f33378,
+                     &local_f4);
+          pCVar2 = &local_f4;
           pCVar3 = &local_94;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-            pCVar3->m[0].w = *pfVar2;
-            pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+            pCVar3->m[0].w = pCVar2->m[0].w;
+            pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
             pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
           }
           core_xform_cpp_getTranslation_FUN_005f6110(&local_94,&local_4c);

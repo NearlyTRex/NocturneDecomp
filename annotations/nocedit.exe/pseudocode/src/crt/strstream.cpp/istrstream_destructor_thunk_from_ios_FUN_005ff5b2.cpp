@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-crt_strstream_cpp_istrstream_destructor_thunk_from_ios_FUN_005ff5b2(ios *this_ptr,int dtor_flags)
+void __cdecl crt_strstream_cpp_istrstream_destructor_thunk_from_ios_FUN_005ff5b2(ios *this_ptr,int dtor_flags)
 
 {
   crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca

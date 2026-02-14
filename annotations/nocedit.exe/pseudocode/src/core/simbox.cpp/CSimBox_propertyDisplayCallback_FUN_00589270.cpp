@@ -2,13 +2,11 @@
 // Address: 00589270
 // Address Range: [[00589270, 005892c8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_simbox_cpp_CSimBox_propertyDisplayCallback_FUN_00589270 (CSimBox *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_simbox_cpp_CSimBox_propertyDisplayCallback_FUN_00589270(CSimBox *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_simbox_cpp_CSimBox_propertyDisplayCallback_FUN_00589270
-          (CSimBox *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_simbox_cpp_CSimBox_propertyDisplayCallback_FUN_00589270(CSimBox *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

@@ -1,87 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 18,
-        "line": 45,
-        "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 46,
-        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 57,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 57,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 67,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 75,
-        "message": "cannot cast from type 'float' to pointer type 'CMotionController *'"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 85,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 85,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 92,
-        "message": "use of undeclared identifier 'stack0xffffff1c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 72,
-        "line": 99,
-        "message": "use of undeclared identifier 'stack0xffffff1c'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 281,
+    "complexity_score": 237,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 1,
-    "pseudocode_lines": 91,
-    "suspect_count": 16,
+    "pseudocode_lines": 87,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_ref",
-      "suspect_float",
-      "unaffected_reg",
-      "unknown_field"
+      "pointer_cast"
     ],
-    "total_lines": 250
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -132,7 +67,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 (CDeformableModelInstance *this_ptr,CQuaternion4f *rotation_quat,float blend_weight, int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20(CDeformableModelInstance *this_ptr,CQuaternion4f *rotation_quat,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)"
   },
   "function_calls": [
     {
@@ -448,116 +383,102 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "CQuaternion4f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 44,
       "match": "ABS",
       "text": "if ((float)1.0000000000000001e-05 < ABS(fStack_e8)) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 47,
-      "match": "8.265272e-39",
-      "text": "fStack_e0 = 8.265272e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._4_4_",
-      "text": "local_54._4_4_ = local_34._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._4_4_",
-      "text": "local_54._4_4_ = local_34._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 56,
-      "match": "8.265326e-39",
-      "text": "fStack_e0 = 8.265326e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 58,
-      "match": "unaff_ESI",
-      "text": "(unaff_ESI,(CQuaternion4f *)(local_54 + 4),(CQuaternion4f *)(local_74 + 4));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_EDI",
-      "text": "pfVar4 = (float *)(unaff_EDI + 0x6b4 + (uint)bVar6 * -8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_EDI",
-      "text": "*(uint *)(unaff_EDI + 0x6b0) = local_74._4_4_;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._4_4_",
-      "text": "*(uint *)(unaff_EDI + 0x6b0) = local_74._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 78,
-      "match": "._0_4_",
-      "text": "local_54._0_4_ = local_74._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 78,
-      "match": "._0_4_",
-      "text": "local_54._0_4_ = local_74._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 85,
-      "match": "&stack0xffffff1c",
-      "text": "pfVar4 = (float *)&stack0xffffff1c;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "line": 47,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)&CStack_64 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 92,
-      "match": "&stack0xffffff1c",
-      "text": "(&(this_ptr->bone_transform).root_position,(CMatrix3x4f *)&stack0xffffff1c);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)&CStack_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_64 + (uint)bVar8 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_44 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)local_20 + (uint)bVar8 * -8 + 0x6b4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)&CStack_84 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(uint *)((int)",
+      "text": "*puVar5 = *(uint *)((int)&CStack_84 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)&local_54 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)&local_74 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_54 + (uint)bVar8 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_74 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

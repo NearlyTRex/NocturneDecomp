@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 144,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 44,
-    "suspect_count": 9,
+    "pseudocode_lines": 43,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
-      "stack_param"
+      "param_count_too_many"
     ],
-    "total_lines": 173
+    "total_lines": 172
   },
   "cross_references": [
     {
@@ -153,62 +152,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000010",
-      "text": "float in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000018",
-      "text": "float in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000020",
-      "text": "float in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000028",
-      "text": "float in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000010",
-      "text": "this_ptr->debug_fudge_target->z = this_ptr->debug_fudge_target->z - in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000018",
-      "text": "this_ptr->debug_fudge_target->z = this_ptr->debug_fudge_target->z + in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000020",
-      "text": "this_ptr->debug_fudge_target->y = this_ptr->debug_fudge_target->y - in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000028",
-      "text": "pCVar1->y = pCVar1->y + in_stack_00000028;",
-      "type": "stack_param"
-    },
     {
       "call_site_count": 1,
       "declared_params": 3,

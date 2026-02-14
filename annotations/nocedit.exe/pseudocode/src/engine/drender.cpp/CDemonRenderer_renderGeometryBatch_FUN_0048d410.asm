@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face, int render_mode)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -22,7 +22,7 @@
 ;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_ClippedVertexBuffer
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   undefined4 DAT_02d052a1
 ;   int g_RenderStateFlag2
 ;   char* g_CurrentFilename

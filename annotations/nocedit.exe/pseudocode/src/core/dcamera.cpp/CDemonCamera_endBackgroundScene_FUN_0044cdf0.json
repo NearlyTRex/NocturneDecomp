@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 135,
+    "complexity_score": 133,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 24,
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 63,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "register_param"
     ],
-    "total_lines": 165
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0",
-    "signature": "int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 (CDemonCamera *this_ptr,int restore_zbuffer)"
+    "signature": "int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera *this_ptr,int restore_zbuffer)"
   },
   "function_calls": [
     {
@@ -268,42 +268,42 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_EAX",
       "text": "int in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 44,
+      "line": 42,
       "match": "in_EAX",
       "text": "in_EAX = g_BackgroundSavedBlueBitPosition;",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 49,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",
-      "line": 58,
+      "line": 56,
       "match": "in_EAX",
       "text": "in_EAX = this_ptr->framebuffer_height;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 59,
+      "line": 57,
       "match": "in_EAX",
       "text": "} while (iVar3 < in_EAX);",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 67,
+      "line": 65,
       "match": "in_EAX",
       "text": "return in_EAX;",
       "type": "register_param"

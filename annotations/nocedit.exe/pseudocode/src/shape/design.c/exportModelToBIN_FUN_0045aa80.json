@@ -4,31 +4,31 @@
       {
         "category": "other",
         "column": 54,
-        "line": 135,
+        "line": 133,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 144,
+        "line": 142,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 77,
-        "line": 169,
+        "line": 167,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 236,
+        "line": 234,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 418,
+        "line": 416,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -37,17 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 1273,
-    "complexity_score": 932,
+    "complexity_score": 930,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 75,
-    "pseudocode_lines": 442,
+    "pseudocode_lines": 440,
     "suspect_count": 48,
     "suspect_types": [
       "decompiler_intrinsic",
       "unresolved_funcptr"
     ],
-    "total_lines": 1715
+    "total_lines": 1713
   },
   "cross_references": [
     {
@@ -74,7 +74,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_exportModelToBIN_FUN_0045aa80",
-    "signature": "void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80 (char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)"
+    "signature": "void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)"
   },
   "function_calls": [
     {
@@ -957,336 +957,336 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 55,
+      "line": 53,
       "match": "code",
       "text": "_fprintf(local_1c,\"code\\tsegment\\n\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 56,
+      "line": 54,
       "match": "code",
       "text": "_fprintf(local_1c,\"\\tASSUME\\tcs:code\\n\\n\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 70,
       "match": "ABS",
       "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.x)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "ABS",
+      "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "ABS",
-      "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.x);",
+      "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.y)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 74,
       "match": "ABS",
-      "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.y)) {",
+      "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ABS",
-      "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.y);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
-      "match": "ABS",
       "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.z)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 77,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 85,
       "match": "ABS",
       "text": "if ((scale_mode == 0x32) && (local_14 < ABS(g_LoadedVertices[local_28].vertex.x))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 86,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 88,
       "match": "ABS",
       "text": "if ((scale_mode == 0x33) && (local_14 < ABS(g_LoadedVertices[local_28].vertex.y))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 89,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 91,
       "match": "ABS",
       "text": "if ((scale_mode == 0x34) && (local_14 < ABS(g_LoadedVertices[local_28].vertex.z))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 92,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 103,
       "match": "ABS",
       "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.x)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 104,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 106,
       "match": "ABS",
       "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.y)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 107,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 109,
       "match": "ABS",
       "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.z)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 110,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 117,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar6) + 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 118,
       "match": "CONCAT44",
       "text": "dVar6 = ldexp((double)CONCAT44(local_18,0x3ff00000),iVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 124,
       "match": "ROUND",
       "text": "local_34 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 146,
       "match": "ROUND",
       "text": "local_68 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
+      "line": 152,
       "match": "ROUND",
       "text": "local_64 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 158,
       "match": "ROUND",
       "text": "local_60 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 176,
+      "line": 174,
       "match": "ROUND",
       "text": "local_68 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 179,
+      "line": 177,
       "match": "ROUND",
       "text": "local_64 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 182,
+      "line": 180,
       "match": "ROUND",
       "text": "local_60 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 206,
+      "line": 204,
       "match": "ROUND",
       "text": "local_78 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
+      "line": 209,
       "match": "ROUND",
       "text": "local_74 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 216,
+      "line": 214,
       "match": "ROUND",
       "text": "local_70 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 223,
+      "line": 221,
       "match": "ROUND",
       "text": "local_6c = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 319,
+      "line": 317,
       "match": "ROUND",
       "text": "local_78 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 323,
+      "line": 321,
       "match": "ROUND",
       "text": "local_74 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 327,
+      "line": 325,
       "match": "ROUND",
       "text": "local_70 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 333,
+      "line": 331,
       "match": "ROUND",
       "text": "local_6c = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 340,
+      "line": 338,
       "match": "ROUND",
       "text": "local_78 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 344,
+      "line": 342,
       "match": "ROUND",
       "text": "local_74 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 348,
+      "line": 346,
       "match": "ROUND",
       "text": "local_70 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 354,
+      "line": 352,
       "match": "ROUND",
       "text": "local_6c = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 369,
+      "line": 367,
       "match": "ABS",
       "text": "if (ABS(g_VertexNormals[uVar2].vertex.x) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 372,
+      "line": 370,
       "match": "ABS",
       "text": "if (ABS(g_VertexNormals[uVar2].vertex.y) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 375,
+      "line": 373,
       "match": "ABS",
       "text": "if (ABS(g_VertexNormals[uVar2].vertex.z) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 405,
+      "line": 403,
       "match": "ROUND",
       "text": "iVar11 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 410,
+      "line": 408,
       "match": "ROUND",
       "text": "g_ModelPolygonData[local_28].vertex_indices[local_24],(int)ROUND(dVar6),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 422,
+      "line": 420,
       "match": "ROUND",
       "text": "local_20 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 427,
+      "line": 425,
       "match": "ROUND",
       "text": "local_20 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"

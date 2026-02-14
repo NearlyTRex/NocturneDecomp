@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_flies_cpp_CFlies_getBoundingBox_FUN_004cc700(CFlies *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004cc700(CFlies *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;

@@ -2,13 +2,11 @@
 // Address: 004be070
 // Address Range: [[004be070, 004be141]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070 (CDemonFileManager *file_manager_ptr,char *model_filename)
+// Signature: void __cdecl core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070(CDemonFileManager *file_manager_ptr,char *model_filename)
 
 #include "nocturne.h"
 
-void __cdecl
-core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
-          (CDemonFileManager *file_manager_ptr,char *model_filename)
+void __cdecl core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070(CDemonFileManager *file_manager_ptr,char *model_filename)
 
 {
   CDeformableModel *this_ptr;

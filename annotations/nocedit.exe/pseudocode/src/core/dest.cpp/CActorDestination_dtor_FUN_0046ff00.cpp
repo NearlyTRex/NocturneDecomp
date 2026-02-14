@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CActorDestination * __cdecl
-core_dest_cpp_CActorDestination_dtor_FUN_0046ff00(CActorDestination *this_ptr,uint flags)
+CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0046ff00(CActorDestination *this_ptr,uint flags)
 
 {
   CActorDestination *ptr;

@@ -21,7 +21,7 @@
 ;   undefined4 g_RenderVertexBuffer[3].v
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02d83368.base.count
+;   undefined4 SMRGLHeaderPrimitive_02d83368.base.count
 ;   int INT_02d83380
 ;   int INT_02d83384
 ;   int INT_02d83388
@@ -47,7 +47,7 @@ section .text
     MOV EAX,0xf80000                    ; 004ec48d | DAT_00f80000
     PUSH 0xffff                         ; 004ec492
     XOR ECX,ECX                         ; 004ec497
-    MOV dword ptr [0x02d8336c],EDX      ; 004ec499 | DAT_02d83368.base.count
+    MOV dword ptr [0x02d8336c],EDX      ; 004ec499 | SMRGLHeaderPrimitive_02d83368.base.count
     MOV dword ptr [0x02d83380],ECX      ; 004ec49f | INT_02d83380
     MOV dword ptr [0x02d83384],EBX      ; 004ec4a5 | INT_02d83384
     MOV dword ptr [0x02d83388],ESI      ; 004ec4ab | INT_02d83388

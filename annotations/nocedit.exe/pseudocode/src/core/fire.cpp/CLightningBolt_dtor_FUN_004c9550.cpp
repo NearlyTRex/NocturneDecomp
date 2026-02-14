@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLightningBolt * __cdecl
-core_fire_cpp_CLightningBolt_dtor_FUN_004c9550(CLightningBolt *this_ptr,uint flags)
+CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_dtor_FUN_004c9550(CLightningBolt *this_ptr,uint flags)
 
 {
   return this_ptr;

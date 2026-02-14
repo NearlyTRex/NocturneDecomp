@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_smiley_cpp_CSmiley_hasCollision_FUN_005a37f0(CSmiley *this_ptr,SCollisionInfo *collision_info)
+void __cdecl core_smiley_cpp_CSmiley_hasCollision_FUN_005a37f0(CSmiley *this_ptr,SCollisionInfo *collision_info)
 
 {
   core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20((CCharacter *)this_ptr,collision_info);

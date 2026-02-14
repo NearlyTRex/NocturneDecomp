@@ -36,7 +36,7 @@
 ;   float FLOAT_0063ea38 = 256
 ;   double DOUBLE_0063ea40 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic DAT_00680bb0
+;   SMRGLTextureBasic SMRGLTextureBasic_00680bb0
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   SMRGLHeaderPrimitive DAT_030d4fd0
@@ -104,7 +104,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 00548021
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00548026
-    PUSH 0x680bb0                       ; 00548029 | DAT_00680bb0
+    PUSH 0x680bb0                       ; 00548029 | SMRGLTextureBasic_00680bb0
     MOV ESI,dword ptr [0x006703ec]      ; 0054802e | g_CDemonRendererPtr2
     PUSH ESI                            ; 00548034 | g_CDemonRendererInstance
     MOV EDI,0x4                         ; 00548035

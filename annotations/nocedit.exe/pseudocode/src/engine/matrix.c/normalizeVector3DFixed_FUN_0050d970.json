@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 31,
+        "line": 29,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 33,
+        "line": 31,
         "message": "use of undeclared identifier 'stack0xfffffff0'"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 100,
+    "complexity_score": 98,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 23,
     "suspect_count": 6,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 77
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -62,7 +62,7 @@
     ],
     "convention": "__stack_esi",
     "name": "engine_matrix.c_normalizeVector3DFixed_FUN_0050d970",
-    "signature": "CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_0050d970 (CVector3i *input_vector,CVector3i *output_vector)"
+    "signature": "CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(CVector3i *input_vector,CVector3i *output_vector)"
   },
   "function_calls": [
     {
@@ -207,35 +207,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)output_vector + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 22,
       "match": "&stack0xffffffec",
       "text": "*puVar2 = *(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(uint *)((int)",
       "text": "*puVar2 = *(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 26,
+      "line": 24,
       "match": "&stack0xfffffff0",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 24,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "pointer_cast"

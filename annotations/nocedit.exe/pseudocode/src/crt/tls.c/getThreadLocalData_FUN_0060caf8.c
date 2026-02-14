@@ -2,11 +2,11 @@
 // Address: 0060caf8
 // Address Range: [[0060caf8, 0060cbcc]]
 // Convention: __watcallRegister
-// Signature: void * crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
+// Signature: void * __watcallRegister crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
 
 #include "nocturne.h"
 
-void * getThreadLocalData(void)
+void * __watcallRegister getThreadLocalData(void)
 
 {
   ThreadRegistryEntry *pTVar1;

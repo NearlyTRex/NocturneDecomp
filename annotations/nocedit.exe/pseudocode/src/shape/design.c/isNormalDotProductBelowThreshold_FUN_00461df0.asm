@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_isNormalDotProductBelowThreshold_FUN_00461df0 (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double threshold)
+; __cdecl int __cdecl shape_design_c_isNormalDotProductBelowThreshold_FUN_00461df0(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double threshold)
 ;
 ; Parameters:
 ; SShapeEditorPolygon * Stack[0x4]:4   polygon1

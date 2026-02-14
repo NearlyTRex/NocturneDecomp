@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 34,
+        "line": 32,
         "message": "use of undeclared identifier 'stack0xffffffc4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 36,
+        "line": 34,
         "message": "use of undeclared identifier 'stack0xffffffc8'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 143,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 31,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 91
+    "total_lines": 89
   },
   "cross_references": [],
   "function": {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900 (CDemonCamera *this_ptr,CVector3f *output_ray,CVector3i *screen_coords,int depth)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera *this_ptr,CVector3f *output_ray,CVector3i *screen_coords,int depth)"
   },
   "function_calls": [
     {
@@ -187,70 +187,70 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 19,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 27,
+      "line": 25,
       "match": "&stack0xffffffc4",
       "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 26,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 29,
+      "line": 27,
       "match": "&stack0xffffffc8",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_cast"

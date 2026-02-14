@@ -31,7 +31,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr2,&DAT_0067d150);
+              (g_CDemonRendererPtr2,&SMRGLTextureBasic_0067d150);
     this_ptr_00 = (CCourse *)this_ptr->unk3;
     if (g_CDemonMissionPtr->is_in_editor == 0) {
       if (this_ptr->type == 1) {

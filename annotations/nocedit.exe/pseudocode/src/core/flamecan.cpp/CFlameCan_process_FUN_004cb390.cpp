@@ -44,13 +44,15 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004cb390(CFlameCan *this_pt
   core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
             (g_CDemonMissionPtr,&this_ptr->base,1);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_40);
+  fStack_10 = local_40.max.x - local_40.min.x;
+  fStack_1c = fStack_10 * 0.5f;
+  fStack_c = local_40.max.y - local_40.min.y;
   fStack_8 = local_40.max.z - local_40.min.z;
+  fStack_18 = fStack_c * 0.5f;
   fStack_14 = fStack_8 * 0.5f;
-  fStack_10 = (fStack_28 - local_40.max.x) * 0.5f;
-  fStack_c = (fStack_24 - local_40.max.y) * 0.5f;
-  fStack_20 = (this_ptr->base).location.position.x + fStack_14;
-  fStack_1c = (this_ptr->base).location.position.y + fStack_10;
-  fStack_18 = (this_ptr->base).location.position.z + fStack_c;
+  fStack_28 = (this_ptr->base).location.position.x + fStack_1c;
+  fStack_24 = (this_ptr->base).location.position.y + fStack_18;
+  fStack_20 = (this_ptr->base).location.position.z + fStack_14;
   core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10
             (g_CFireEffectPtr,(CVector3f *)(this_ptr->unk + 0x20));
   return;

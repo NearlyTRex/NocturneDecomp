@@ -2,52 +2,34 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "format_error",
-        "column": 73,
-        "line": 693,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 1130,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 61,
-        "line": 1130,
-        "message": "expected expression"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 53,
-        "line": 1132,
+        "line": 1183,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 60,
-        "line": 1132,
+        "line": 1183,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 52,
+        "line": 1185,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 59,
+        "line": 1185,
         "message": "expected expression"
       },
       {
         "category": "incompatible_types",
         "column": 40,
-        "line": 1184,
+        "line": 1237,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "format_error",
-        "column": 39,
-        "line": 1465,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 1469,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -55,18 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 3369,
-    "complexity_score": 1564,
+    "complexity_score": 1646,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 231,
-    "pseudocode_lines": 1509,
-    "suspect_count": 4,
+    "pseudocode_lines": 1571,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_type_propagation"
     ],
-    "total_lines": 4878
+    "total_lines": 4940
   },
   "cross_references": [
     {
@@ -87,7 +69,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_event.cpp_CEventList_evaluateAtom_FUN_004ae140",
-    "signature": "int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140 (CEventList *this_ptr,char *expression,int *parse_position)"
+    "signature": "int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this_ptr,char *expression,int *parse_position)"
   },
   "function_calls": [
     {
@@ -2379,32 +2361,46 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 725,
+      "match": "SQRT",
+      "text": "local_e0 = (uint)(SQRT((local_104.z - local_ec.z) * (local_104.z - local_ec.z)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 968,
+      "match": "ABS",
+      "text": "if (local_a88 * (float)3.1415926535000001 * (float)0.0055555555555555497 < ABS(pCVar13->y))",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1123,
+      "line": 1176,
       "match": "code *",
-      "text": "(iVar12 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x120))(),",
+      "text": "(iVar9 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x120))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1125,
+      "line": 1178,
       "match": "code *",
-      "text": "(iVar12 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x68))(),",
+      "text": "(iVar9 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x68))(iVar8),",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1130,
+      "line": 1183,
       "match": "SQRT",
       "text": "SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) <=",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1135,
-      "match": "(char *)((int)",
-      "text": "local_bc = (char *)((int)local_bc + 4);",
-      "type": "pointer_cast"
     }
   ]
 }

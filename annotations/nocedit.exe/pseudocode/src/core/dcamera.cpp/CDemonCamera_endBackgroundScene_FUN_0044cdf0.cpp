@@ -2,13 +2,11 @@
 // Address: 0044cdf0
 // Address Range: [[0044cdf0, 0044cf1b]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 (CDemonCamera *this_ptr,int restore_zbuffer)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera *this_ptr,int restore_zbuffer)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0
-          (CDemonCamera *this_ptr,int restore_zbuffer)
+int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera *this_ptr,int restore_zbuffer)
 
 {
   int *piVar1;
@@ -25,7 +23,7 @@ core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0
   bVar8 = 0;
   g_BackgroundSceneDepth = g_BackgroundSceneDepth + -1;
   if (g_BackgroundSceneDepth == 0) {
-    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
+    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
     (this_ptr->saved_viewport_rect).left = g_ViewportCenterXFixed;
     (this_ptr->saved_viewport_rect).top = g_ViewportCenterYFixed;
     (this_ptr->saved_viewport_rect).right = g_ViewportRightFixed;

@@ -9,64 +9,57 @@
 void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
 
 {
-  CStrList_vtable *ext;
   char *pcVar1;
+  char *path;
   int iVar2;
   int iVar3;
-  char **ppcVar4;
   char *drive;
   char *dir;
-  char *in_stack_fffff0e0;
-  CStrList *pCVar5;
-  CStrList *pCVar6;
-  CStrList aCStack_f18 [58];
-  SFoundFileInfo SStack_b70;
-  SFoundFileInfo SStack_95c;
-  char acStack_748 [512];
-  char acStack_548 [260];
-  char acStack_444 [260];
-  char acStack_340 [260];
-  char *apcStack_23c [64];
-  char acStack_13c [240];
-  byte auStack_4c [24];
-  byte local_34 [16];
+  char *fname;
+  CPickList CStack_f20;
+  SFoundFileInfo SStack_b78;
+  SFoundFileInfo SStack_964;
+  char acStack_750 [512];
+  char acStack_550 [260];
+  char acStack_44c [260];
+  char acStack_348 [260];
+  char acStack_244 [256];
+  char acStack_144 [256];
+  CStrList CStack_44;
+  CStrList local_34;
   CStrList CStack_24;
+  int iStack_14;
   
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff0e0);
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_f20);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Searching for orphaned sfx files");
-  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)local_34);
+  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_34);
   shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
-            ((CStrList *)local_34,"sound","*.sfx");
+            (&local_34,"sound","*.sfx");
   iVar3 = 0;
-  if (0 < (int)local_34._0_4_) {
+  if (0 < local_34.item_count) {
     do {
-      ext = (CStrList_vtable *)(*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
-      if (ext != (CStrList_vtable *)0x0) break;
-      ppcVar4 = apcStack_23c;
+      pcVar1 = (char *)(*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
+      if (pcVar1 != (char *)0x0) break;
+      fname = acStack_244;
       dir = (char *)0x0;
       drive = (char *)0x0;
-      pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                         ((CStrList *)(local_34 + 8),iVar3);
-      splitpath(pcVar1,drive,dir,(char *)ppcVar4,(char *)ext);
+      path = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_34,iVar3);
+      splitpath(path,drive,dir,fname,pcVar1);
       makepath
-                (acStack_444,(char *)0x0,(char *)0x0,(char *)apcStack_23c,"mp3");
+                (acStack_44c,(char *)0x0,(char *)0x0,acStack_244,"mp3");
       makepath
-                (acStack_340,(char *)0x0,(char *)0x0,(char *)apcStack_23c,"wav");
-      in_stack_fffff0e0 = "sound";
-      iVar2 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_444);
-      if (iVar2 < 1) {
-        in_stack_fffff0e0 = "sound";
-        iVar2 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_340);
-        if (iVar2 < 1) {
-          shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)(local_34 + 8),iVar3);
-          _sprintf(acStack_748,"Orphaned sfx file %s");
-          in_stack_fffff0e0 = (char *)aCStack_f18;
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
-        }
+                (acStack_348,(char *)0x0,(char *)0x0,acStack_244,"wav");
+      iVar2 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_44c);
+      if ((iVar2 < 1) &&
+         (iVar2 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_348), iVar2 < 1))
+      {
+        pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_34,iVar3);
+        _sprintf(acStack_750,"Orphaned sfx file %s",pcVar1);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,acStack_750);
       }
       iVar3 = iVar3 + 1;
-    } while (iVar3 < (int)local_34._8_4_);
+    } while (iVar3 < local_34.item_count);
   }
   sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
   iVar3 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
@@ -85,96 +78,88 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
       do {
         iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
         if (iVar2 != 0) break;
+        iStack_14 = iVar3;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                  (g_CEditorToolsPtr,(float)iVar3,(float)(int)CStack_24.data_array);
-        shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                  ((CStrList *)&CStack_24.data_array,iVar3);
-        _sprintf(SStack_95c.found_path,"sound\\%s");
-        iVar2 = engine_dosio_c_findFile_FUN_00481760(&SStack_95c);
+                  (g_CEditorToolsPtr,(float)iVar3,(float)CStack_24.item_count);
+        pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_24,iVar3);
+        _sprintf(SStack_964.found_path,"sound\\%s",pcVar1);
+        iVar2 = engine_dosio_c_findFile_FUN_00481760(&SStack_964);
         if (iVar2 == 0) {
-          shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                    ((CStrList *)&CStack_24.data_array,iVar3);
-          _sprintf(acStack_748,"Can't get file info for %s");
-          in_stack_fffff0e0 = (char *)aCStack_f18;
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
+          pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_24,iVar3);
+          _sprintf(acStack_750,"Can't get file info for %s",pcVar1);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,acStack_750);
         }
         else {
           splitpath
-                    (SStack_95c.found_path,(char *)0x0,(char *)0x0,acStack_13c,(char *)0x0);
+                    (SStack_964.found_path,(char *)0x0,(char *)0x0,acStack_144,(char *)0x0);
           makepath
-                    (acStack_548,(char *)0x0,(char *)0x0,acStack_13c,"wav");
-          iVar2 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_548);
+                    (acStack_550,(char *)0x0,(char *)0x0,acStack_144,"wav");
+          iVar2 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_550);
           if (-1 < iVar2) {
-            _sprintf(acStack_748,"%s found in both wav and mp3 format");
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
+            _sprintf
+                      (acStack_750,"%s found in both wav and mp3 format",acStack_144);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,acStack_750);
           }
-          pCVar5 = aCStack_f18;
-          in_stack_fffff0e0 = (char *)aCStack_f18;
-          pCVar6 = aCStack_f18;
           makepath
-                    (SStack_b70.found_path,(char *)0x0,"sound",acStack_13c,"sfx");
-          iVar2 = engine_dosio_c_findFile_FUN_00481760(&SStack_b70);
+                    (SStack_b78.found_path,(char *)0x0,"sound",acStack_144,"sfx");
+          iVar2 = engine_dosio_c_findFile_FUN_00481760(&SStack_b78);
           if (iVar2 == 0) {
-            _sprintf(acStack_748,"No sfx file for %s");
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
+            _sprintf(acStack_750,"No sfx file for %s",&SStack_964);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,acStack_750);
           }
-          else if (SStack_b70.timestamp < SStack_95c.timestamp) {
-            _sprintf(acStack_748,"%s older than %s");
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,acStack_748);
-            in_stack_fffff0e0 = (char *)pCVar5;
+          else if (SStack_b78.timestamp < SStack_964.timestamp) {
+            _sprintf
+                      (acStack_750,"%s older than %s",&SStack_b78,&SStack_964);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,acStack_750);
           }
           else {
-            pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                               ((CStrList *)&CStack_24.data_array,iVar3);
-            in_stack_fffff0e0 = (char *)0x5adadb;
+            pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_24,iVar3);
             pcVar1 = sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(pcVar1);
             if (pcVar1 != (char *)0x0) {
-              shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_f18,pcVar1);
-              in_stack_fffff0e0 = (char *)pCVar6;
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,pcVar1);
             }
           }
         }
         iVar3 = iVar3 + 1;
-      } while (iVar3 < (int)CStack_24.data_array);
+      } while (iVar3 < CStack_24.item_count);
     }
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-    shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)(auStack_4c + 8));
+    shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&CStack_44);
     shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
-              ((CStrList *)(auStack_4c + 8),"sound","*.wav");
+              (&CStack_44,"sound","*.wav");
     shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
               (g_CEditorToolsPtr,"Testing WAV files...");
-    ppcVar4 = (char **)0x0;
-    if (0 < (int)auStack_4c._8_4_) {
+    iVar3 = 0;
+    if (0 < CStack_44.item_count) {
       do {
-        iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
-        if (iVar3 != 0) break;
-        CStack_24.data_array = ppcVar4;
+        iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
+        if (iVar2 != 0) break;
+        iStack_14 = iVar3;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                  (g_CEditorToolsPtr,(float)(int)ppcVar4,(float)(int)auStack_4c._0_4_);
-        pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                           ((CStrList *)auStack_4c,(int)ppcVar4);
+                  (g_CEditorToolsPtr,(float)iVar3,(float)CStack_44.item_count);
+        pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_44,iVar3);
         pcVar1 = sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(pcVar1);
         if (pcVar1 != (char *)0x0) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff0d8,pcVar1);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,pcVar1);
         }
-        ppcVar4 = (char **)((int)ppcVar4 + 1);
-      } while ((int)ppcVar4 < (int)auStack_4c._0_4_);
+        iVar3 = iVar3 + 1;
+      } while (iVar3 < CStack_44.item_count);
     }
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
     (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
-    if ((int)in_stack_fffff0e0 < 1) {
+    if (CStack_f20.base.item_count < 1) {
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"No sound file problems found");
     }
     else {
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                ((CPickList *)&stack0xfffff0e0,"Possible sound file problems",-1,0);
+                (&CStack_f20,"Possible sound file problems",-1,0);
     }
-    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(auStack_4c + 8),0);
+    shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_44,0);
     shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_24,0);
   }
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)local_34,0);
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff0e0,0);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_34,0);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_f20,0);
   return;
 }

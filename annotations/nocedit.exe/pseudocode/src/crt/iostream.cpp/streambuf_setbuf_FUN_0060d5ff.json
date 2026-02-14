@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 52,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 20,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 73
+    "total_lines": 71
   },
   "cross_references": [],
   "function": {
@@ -24,7 +24,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_iostream.cpp_streambuf_setbuf_FUN_0060d5ff",
-    "signature": "streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_0060d5ff (streambuf *this_ptr,void *buffer_start,int buffer_size)"
+    "signature": "streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_0060d5ff(streambuf *this_ptr,void *buffer_start,int buffer_size)"
   },
   "function_calls": [
     {
@@ -103,7 +103,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 19,
       "match": "(void *)((int)",
       "text": "buffer_end = (void *)((int)buffer_start + buffer_size);",
       "type": "pointer_cast"

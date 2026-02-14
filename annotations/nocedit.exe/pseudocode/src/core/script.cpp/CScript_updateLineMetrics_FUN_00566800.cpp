@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_script_cpp_CScript_updateLineMetrics_FUN_00566800(CScript *this_ptr,int line_number)
+void __cdecl core_script_cpp_CScript_updateLineMetrics_FUN_00566800(CScript *this_ptr,int line_number)
 
 {
   char cVar1;

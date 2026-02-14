@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 (CDemonRenderer *this_ptr,int color)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer *this_ptr,int color)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

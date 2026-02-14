@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_enemy_cpp_CEnemy_onVictimLost_FUN_004aa0c0(CEnemy *this_ptr,CDemonActor *lost_actor)
+void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_004aa0c0(CEnemy *this_ptr,CDemonActor *lost_actor)
 
 {
   if (lost_actor != this_ptr->victim) {

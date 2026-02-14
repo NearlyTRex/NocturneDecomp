@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int height,int bits_per_pixel)
+int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int height,int bits_per_pixel)
 
 {
   int iVar1;

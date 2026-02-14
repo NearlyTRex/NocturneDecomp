@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_winfont_cpp_CWinFont_getStringWidth_FUN_005f2aa0(CWinFont *this_ptr,char *text_string)
+int __cdecl engine_winfont_cpp_CWinFont_getStringWidth_FUN_005f2aa0(CWinFont *this_ptr,char *text_string)
 
 {
   char cVar1;

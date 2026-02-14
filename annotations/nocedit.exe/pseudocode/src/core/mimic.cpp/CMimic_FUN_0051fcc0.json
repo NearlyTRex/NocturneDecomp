@@ -4,43 +4,37 @@
       {
         "category": "other",
         "column": 25,
-        "line": 187,
+        "line": 196,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 187,
+        "line": 196,
         "message": "member reference base type 'float' is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 79,
-        "line": 188,
-        "message": "use of undeclared identifier 'stack0xfffffe1c'"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 252,
+        "line": 262,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 252,
+        "line": 262,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 260,
+        "line": 270,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 260,
+        "line": 270,
         "message": "member reference base type 'float' is not a structure or union"
       }
     ],
@@ -49,20 +43,20 @@
   },
   "complexity": {
     "assembly_lines": 698,
-    "complexity_score": 570,
+    "complexity_score": 599,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 25,
-    "pseudocode_lines": 305,
-    "suspect_count": 24,
+    "pseudocode_lines": 314,
+    "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
-      "stack_ref",
-      "unknown_field"
+      "unknown_field",
+      "warning_type_propagation"
     ],
-    "total_lines": 1003
+    "total_lines": 1012
   },
   "cross_references": [
     {
@@ -801,8 +795,15 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
@@ -832,138 +833,145 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 131,
+      "line": 130,
       "match": "SQRT",
       "text": "if (-local_118.z <= SQRT(local_d4 * local_d4 + local_dc * local_dc)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 144,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr->base).base.turn_speed = in_stack_00000008 * fVar4 * fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 145,
       "match": "in_stack_00000008",
-      "text": "(this_ptr->base).base.turn_speed = in_stack_00000008 * fVar5 * fVar2;",
+      "text": "(this_ptr->base).base.walk_step_speed = fVar3 * in_stack_00000008 * fVar2;",
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 160,
+      "match": "ABS",
+      "text": "if (ABS((this_ptr->base).base.turn_angle_accumulator) /",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 146,
+      "line": 161,
       "match": "in_stack_00000008",
-      "text": "(this_ptr->base).base.walk_step_speed = fVar4 * in_stack_00000008 * fVar3;",
+      "text": "(in_stack_00000008 * (this_ptr->base).speed) <= (float)0.78539816337500001) {",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 180,
+      "line": 189,
       "match": "._3_1_",
       "text": "local_ac.x._3_1_ = local_ac.x._3_1_ ^ 0x80;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 180,
+      "line": 189,
       "match": "._3_1_",
       "text": "local_ac.x._3_1_ = local_ac.x._3_1_ ^ 0x80;",
       "type": "unknown_field"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 181,
-      "match": "&stack0xfffffe1c",
-      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe1c);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 222,
+      "line": 232,
       "match": "in_stack_00000008",
-      "text": "(this_ptr->base).base.walk_step_speed = fVar4 * in_stack_00000008;",
+      "text": "(this_ptr->base).base.walk_step_speed = fVar3 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 223,
+      "line": 233,
       "match": "in_stack_00000008",
-      "text": "(this_ptr->base).base.turn_speed = in_stack_00000008 * fVar2 * fVar4;",
+      "text": "(this_ptr->base).base.turn_speed = in_stack_00000008 * fVar1 * fVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 236,
+      "line": 246,
       "match": "in_stack_00000008",
       "text": "local_2c = in_stack_00000008 * (this_ptr->base).speed;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 245,
+      "line": 255,
       "match": "._3_1_",
       "text": "local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 245,
+      "line": 255,
       "match": "._3_1_",
       "text": "local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 253,
+      "line": 263,
       "match": "._3_1_",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 253,
+      "line": 263,
       "match": "._3_1_",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 266,
+      "line": 276,
       "match": "in_stack_00000008",
       "text": "(this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 267,
+      "line": 277,
       "match": "in_stack_00000008",
       "text": "local_d0 = (this_ptr->base).base.velocity.x * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 268,
+      "line": 278,
       "match": "in_stack_00000008",
       "text": "local_cc = (this_ptr->base).base.velocity.y * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 269,
+      "line": 279,
       "match": "in_stack_00000008",
       "text": "local_c8 = in_stack_00000008 * (this_ptr->base).base.velocity.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 305,
+      "line": 315,
       "match": "in_stack_00000008",
       "text": "&(this_ptr->base).base.base.orient.vec,in_stack_00000008,",
       "type": "stack_param"

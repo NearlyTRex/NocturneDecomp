@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00498e50 (CDemonRaytrace *this_ptr,int visible_cube_count,int *visible_cube_indices)
+; __cdecl void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00498e50(CDemonRaytrace *this_ptr,int visible_cube_count,int *visible_cube_indices)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr

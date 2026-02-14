@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonFilter * __cdecl
-core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980(CDemonFilter *objs,uint flags)
+CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980(CDemonFilter *objs,uint flags)
 
 {
   CDemonFilter *pCVar1;

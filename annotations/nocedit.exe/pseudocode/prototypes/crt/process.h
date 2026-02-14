@@ -37,7 +37,7 @@ int __cdecl execv(int argc,char *program,char **argv);
 
 // Original: crt_process.c_build_cmdline_FUN_00610258
 // Address: 00610258
-int __cdecl build::cmdline(int argc,char **argv,char *program,char **out_cmdline,char **out_environment, char **out_buffer,int *out_bufsize,int copy_program_flag);
+int __cdecl build::cmdline(int argc,char **argv,char *program,char **out_cmdline,char **out_environment,char **out_buffer,int *out_bufsize,int copy_program_flag);
 
 // Original: crt_process.c_build_command_line_FUN_006103a4
 // Address: 006103a4

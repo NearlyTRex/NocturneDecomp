@@ -14,7 +14,6 @@ void __fastcall _memset(void *dest,int fill_byte,uint size)
   uint uVar3;
   longlong *plVar4;
   byte uVar5;
-  uint unaff_EBX;
   uint uVar6;
   bool bVar7;
   
@@ -64,6 +63,6 @@ switchD_004b19f9_caseD_0:
 LAB_004b1a18:
                     /* WARNING: Could not recover jumptable at 0x004b1a19. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(&DAT_00679d50 + uVar3 * 4))(uVar3,uVar2,unaff_EBX);
+  (**(code **)(&DAT_00679d50 + uVar3 * 4))();
   return;
 }

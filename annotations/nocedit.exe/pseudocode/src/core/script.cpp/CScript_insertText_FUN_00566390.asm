@@ -12,9 +12,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_script.cpp_CScript_FUN_00565130 at 0056596c
-;   core_script.cpp_CScript_FUN_00565f70 at 0056606f
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564bc0
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 0056596c
+;   core_script.cpp_CScript_setParameterValue_FUN_00565f70 at 0056606f
 ;
 ; Referenced Globals:
 ;   int g_CurrentEditingColumn

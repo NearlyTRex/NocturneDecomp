@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 268,
+    "complexity_score": 266,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
-    "pseudocode_lines": 218,
+    "pseudocode_lines": 216,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 727
+    "total_lines": 725
   },
   "cross_references": [],
   "function": {
@@ -395,30 +395,30 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 47,
       "match": "(float *)((int)",
       "text": "fVar4 = *(float *)((int)g_HeroActors + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 98,
+      "match": "ROUND",
+      "text": "CStack_7c.x = (int)ROUND(aCStack_58[0].x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 99,
       "match": "ROUND",
-      "text": "CStack_74.x = (int)ROUND(aCStack_50[0].x * 256.0f);",
+      "text": "CStack_7c.y = (int)ROUND(aCStack_58[0].y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 100,
       "match": "ROUND",
-      "text": "CStack_74.y = (int)ROUND(aCStack_50[0].y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
-      "match": "ROUND",
-      "text": "CStack_74.z = (int)ROUND(aCStack_50[0].z * 256.0f);",
+      "text": "CStack_7c.z = (int)ROUND(aCStack_58[0].z * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ],

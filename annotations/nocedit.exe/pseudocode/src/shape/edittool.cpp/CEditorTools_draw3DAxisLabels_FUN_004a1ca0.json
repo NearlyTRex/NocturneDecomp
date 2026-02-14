@@ -4,91 +4,37 @@
       {
         "category": "other",
         "column": 24,
-        "line": 37,
+        "line": 35,
         "message": "C-style cast from 'const char *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 45,
-        "message": "C-style cast from 'CBitFont *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
         "column": 22,
-        "line": 51,
+        "line": 49,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
-        "category": "other",
-        "column": 51,
-        "line": 58,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 60,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 65,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
+        "category": "undeclared_identifier",
+        "column": 46,
+        "line": 90,
+        "message": "use of undeclared identifier '_auStack_98'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 92,
+        "line": 124,
         "message": "use of undeclared identifier '_auStack_98'"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 94,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 126,
+        "line": 159,
         "message": "use of undeclared identifier '_auStack_98'"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 128,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 133,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 161,
-        "message": "use of undeclared identifier '_auStack_98'"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 170,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 171,
+        "line": 169,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -97,18 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 354,
+    "complexity_score": 272,
     "cross_reference_count": 8,
     "function_call_count": 8,
     "global_count": 27,
-    "pseudocode_lines": 179,
-    "suspect_count": 16,
+    "pseudocode_lines": 177,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "suspect_float"
     ],
-    "total_lines": 349
+    "total_lines": 347
   },
   "cross_references": [
     {
@@ -170,7 +116,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (CEditorTools *this_ptr,float scale_factor,int text_color)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools *this_ptr,float scale_factor,int text_color)"
   },
   "function_calls": [
     {
@@ -547,115 +493,59 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 33,
-      "match": "6.806655e-39",
-      "text": "local_64.fog = 6.806655e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 36,
+      "line": 34,
       "match": "1.48538e-43",
       "text": "local_64.w_recip = 1.48538e-43;",
       "type": "suspect_float"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 46,
-      "match": "6.80623e-39",
-      "text": "local_64.fog = 6.80623e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 47,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 50,
-      "match": "6.806244e-39",
-      "text": "local_64.light = 6.806244e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 57,
-      "match": "6.806287e-39",
-      "text": "local_64.light = 6.806287e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 61,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 91,
-      "match": "6.806393e-39",
-      "text": "local_64.light = 6.806393e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 97,
+      "line": 68,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 125,
-      "match": "6.8065e-39",
-      "text": "local_64.light = 6.8065e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 131,
+      "line": 95,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 102,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 165,
-      "match": "9.18341e-41",
-      "text": "local_64.fog = 9.18341e-41;",
-      "type": "suspect_float"
+      "description": "Complex pointer cast",
+      "line": 129,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
-      "match": "NAN",
-      "text": "local_64.fog = -NAN;",
-      "type": "decompiler_intrinsic"
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -12,12 +12,6 @@
         "column": 21,
         "line": 26,
         "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 51,
-        "message": "member reference base type 'int' is not a structure or union"
       }
     ],
     "success": false,
@@ -25,18 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 201,
+    "complexity_score": 131,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 23,
     "pseudocode_lines": 46,
-    "suspect_count": 13,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param",
       "stack_ref",
-      "unaffected_reg",
-      "undefined_data",
-      "unknown_field"
+      "unaffected_reg"
     ],
     "total_lines": 175
   },
@@ -207,25 +199,25 @@
     },
     {
       "addr": "03f95d7c",
-      "name": "DAT_03f95d7c",
+      "name": "CDemonGlobe_03f95d7c",
       "type": "CDemonGlobe",
       "value": null
     },
     {
       "addr": "03f95d98",
-      "name": "DAT_03f95d7c.intensity",
+      "name": "CDemonGlobe_03f95d7c.intensity",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03f95d9c",
-      "name": "DAT_03f95d7c.corona_mode",
+      "name": "CDemonGlobe_03f95d7c.corona_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03f95db8",
-      "name": "DAT_03f95d7c.intensity_multiplier",
+      "name": "CDemonGlobe_03f95d7c.intensity_multiplier",
       "type": "undefined4",
       "value": null
     }
@@ -339,48 +331,6 @@
       "match": "unaff_EBX",
       "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,unaff_EBX);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_03f95d7c",
-      "text": "core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(&DAT_03f95d7c,(CColor3f *)&CStack_18.y);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_03f95d7c",
-      "text": "DAT_03f95d7c.intensity_multiplier = 0x8000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 44,
-      "match": "._0_1_",
-      "text": "DAT_03f95d7c.intensity._0_1_ = 0x20;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_03f95d7c",
-      "text": "DAT_03f95d7c.intensity._0_1_ = 0x20;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_03f95d7c",
-      "text": "core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(&DAT_03f95d7c,3.0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_03f95d7c",
-      "text": "DAT_03f95d7c.corona_mode = 0;",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

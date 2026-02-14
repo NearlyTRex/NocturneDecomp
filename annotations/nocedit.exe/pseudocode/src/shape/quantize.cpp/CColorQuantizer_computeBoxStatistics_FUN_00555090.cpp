@@ -2,13 +2,11 @@
 // Address: 00555090
 // Address Range: [[00555090, 005554f9]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 (CColorQuantizer *this_ptr,int box_index)
+// Signature: void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer *this_ptr,int box_index)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-          (CColorQuantizer *this_ptr,int box_index)
+void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer *this_ptr,int box_index)
 
 {
   float fVar1;

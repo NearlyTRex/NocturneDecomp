@@ -12,8 +12,8 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
   CMorph *this_ptr_00;
   int iVar1;
   CBoundingBox3D *this_ptr_01;
-  int iVar2;
-  int unaff_retaddr;
+  CBoundingBox3D local_24;
+  int iStack_c;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
@@ -22,9 +22,9 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
   if ((this_ptr->base).base.render_active == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_01 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
-                            ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);
-    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
-    if (iVar2 != 0) {
+                            ((CDemonActor *)this_ptr,&local_24);
+    iStack_c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
+    if (iStack_c != 0) {
       (this_ptr->base).base.was_rendered_opaque = 1;
       if (iVar1 == 0) {
         if (*(int *)(this_ptr->unk + 0x2478) == 0) {
@@ -55,7 +55,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-    return unaff_retaddr;
+    return iStack_c;
   }
   return 0;
 }

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_3d_c_processTextureCoordinates_FUN_00403a80(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00403a80(SMRGLHeaderPrimitive *polygon_info)
 
 {
   int iVar1;

@@ -1,15 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_kill_FUN_00428e30 (CCharacter *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_kill_FUN_00428e30(CCharacter *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   damage_type
 ; CVector3f *      Stack[0xc]:4   damage_direction
 ; float            Stack[0x10]:4   impact_force
-; Local Variables:
-; SDamageInfo      Stack[-0x40]:60  local_40
 ;
 ; XREF[1]:
 ;   core_hero.cpp_CHero_kill_FUN_004f3af0 at 004f3b0d

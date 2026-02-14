@@ -2,11 +2,11 @@
 // Address: 00450a90
 // Address Range: [[00450a90, 00450ab0]]
 // Convention: __watcallRegister
-// Signature: double core_dcamera_cpp_log2Custom_FUN_00450a90(void)
+// Signature: double __watcallRegister core_dcamera_cpp_log2Custom_FUN_00450a90(void)
 
 #include "nocturne.h"
 
-double core_dcamera_cpp_log2Custom_FUN_00450a90(void)
+double __watcallRegister core_dcamera_cpp_log2Custom_FUN_00450a90(void)
 
 {
   double in_stack_00000004;

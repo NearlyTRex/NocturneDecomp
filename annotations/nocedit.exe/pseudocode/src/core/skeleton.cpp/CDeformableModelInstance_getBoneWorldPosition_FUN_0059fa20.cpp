@@ -2,13 +2,11 @@
 // Address: 0059fa20
 // Address Range: [[0059fa20, 0059faf3]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 (CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
+// Signature: CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-          (CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
+CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
 
 {
   CVector3f *input_vector;

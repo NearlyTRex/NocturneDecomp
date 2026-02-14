@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbmpset_cpp_CPackedBitmapSet_doNothing_FUN_0054c7c0(CPackedBitmapSet *this_ptr)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_doNothing_FUN_0054c7c0(CPackedBitmapSet *this_ptr)
 
 {
   return;

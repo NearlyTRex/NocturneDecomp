@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 94,
+        "line": 92,
         "message": "use of undeclared identifier 'stack0xffffff48'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 95,
+        "line": 93,
         "message": "use of undeclared identifier 'stack0xffffff48'"
       },
       {
         "category": "undeclared_identifier",
         "column": 63,
-        "line": 113,
+        "line": 111,
         "message": "use of undeclared identifier 'stack0xffffff48'"
       }
     ],
@@ -25,11 +25,11 @@
   },
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 290,
+    "complexity_score": 288,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 3,
-    "pseudocode_lines": 180,
+    "pseudocode_lines": 178,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -37,7 +37,7 @@
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 549
+    "total_lines": 547
   },
   "cross_references": [
     {
@@ -58,7 +58,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0",
-    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)"
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)"
   },
   "function_calls": [
     {
@@ -376,63 +376,63 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 87,
+      "line": 85,
       "match": "&stack0xffffff48",
       "text": "shape_design_c_initializeCramConfig_FUN_0046b6e0((SCramConfig *)&stack0xffffff48);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 88,
+      "line": 86,
       "match": "&stack0xffffff48",
       "text": "pcVar8 = &stack0xffffff48;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 106,
+      "line": 104,
       "match": "&stack0xffffff48",
       "text": "shape_design_c_cramTextureList_FUN_0046bb80((SCramConfig *)&stack0xffffff48);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 111,
       "match": "(int *)((int)",
       "text": "piVar2 = (int *)((int)model_ptr->poly_texture_index_list + iStack_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 116,
       "match": "(int *)((int)",
       "text": "(local_3c[*(int *)((int)model_ptr->poly_texture_index_list + iStack_28)].",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 141,
+      "line": 139,
       "match": "6.580217e-39",
       "text": "fVar11 = 6.580217e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 143,
+      "line": 141,
       "match": "ROUND",
       "text": "local_3c = (SMRGLTextureExtended *)(int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 144,
       "match": "ROUND",
       "text": "iStack_40 = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 152,
       "match": "(int *)((int)",
       "text": "*(int *)((int)model_ptr->poly_texture_index_list + iStack_28) = iVar4;",
       "type": "pointer_cast"

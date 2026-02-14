@@ -2,16 +2,13 @@
 // Address: 0054be70
 // Address Range: [[0054be70, 0054bf37]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70 (CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index, char *extension,char *base_path,int stride,int apply_palette_flag)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *extension,char *base_path,int stride,int apply_palette_flag)
 
 #include "nocturne.h"
 
 /* WARNING: Variable defined which should be unmapped: local_74 */
 
-void __cdecl
-cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
-          (CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,
-          char *extension,char *base_path,int stride,int apply_palette_flag)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *extension,char *base_path,int stride,int apply_palette_flag)
 
 {
   int iVar1;

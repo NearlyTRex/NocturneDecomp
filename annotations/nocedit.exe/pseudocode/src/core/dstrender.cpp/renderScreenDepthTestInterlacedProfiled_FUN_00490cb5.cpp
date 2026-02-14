@@ -2,13 +2,11 @@
 // Address: 00490cb5
 // Address Range: [[00490cb5, 00490d34]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5
-          (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 {
   bool bVar1;

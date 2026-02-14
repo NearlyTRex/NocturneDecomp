@@ -2,13 +2,11 @@
 // Address: 0052f0e0
 // Address Range: [[0052f0e0, 0052f153]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_0052f0e0 (CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits)
+// Signature: int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_0052f0e0(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits)
 
 #include "nocturne.h"
 
-int __cdecl
-sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_0052f0e0
-          (CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits)
+int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_0052f0e0(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits)
 
 {
   uint uVar1;

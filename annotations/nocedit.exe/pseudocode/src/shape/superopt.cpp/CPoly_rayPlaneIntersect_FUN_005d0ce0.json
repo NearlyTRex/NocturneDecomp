@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 78,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 11,
     "suspect_count": 6,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 43
+    "total_lines": 41
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_superopt.cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0",
-    "signature": "double __cdecl shape_superopt_cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0 (CPoly *this_ptr,CVec *ray_origin,CVec *ray_dir)"
+    "signature": "double __cdecl shape_superopt_cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0(CPoly *this_ptr,CVec *ray_origin,CVec *ray_dir)"
   },
   "function_calls": [
     {
@@ -120,42 +120,42 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000004",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_fffffff0",
       "text": "CVector3d *in_stack_fffffff0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "(CVector3d *)(*(int *)(*in_stack_00000004 + 4) + in_stack_00000004[1] * 0x38),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "(CVector3d *)(*(int *)(*in_stack_00000004 + 4) + in_stack_00000004[1] * 0x38),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "(CVector3d *)(in_stack_00000004 + 0x10),in_stack_fffffff0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_fffffff0",
       "text": "(CVector3d *)(in_stack_00000004 + 0x10),in_stack_fffffff0);",
       "type": "stack_param"

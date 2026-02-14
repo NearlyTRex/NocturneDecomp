@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_biggs_cpp_CBiggs_processDamage_FUN_00418b50(CBiggs *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_biggs_cpp_CBiggs_processDamage_FUN_00418b50(CBiggs *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;

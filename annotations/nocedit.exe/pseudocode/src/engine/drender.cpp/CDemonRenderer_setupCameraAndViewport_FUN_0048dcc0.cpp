@@ -2,13 +2,11 @@
 // Address: 0048dcc0
 // Address Range: [[0048dcc0, 0048de12]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0 (CDemonRenderer *this_ptr,SCameraViewportState *camera_state)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0(CDemonRenderer *this_ptr,SCameraViewportState *camera_state)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
-          (CDemonRenderer *this_ptr,SCameraViewportState *camera_state)
+void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0(CDemonRenderer *this_ptr,SCameraViewportState *camera_state)
 
 {
   g_ViewportCenterXFixed = camera_state->viewport_center_x;

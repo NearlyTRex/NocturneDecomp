@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 172,
+    "complexity_score": 105,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 42,
-    "suspect_count": 11,
+    "pseudocode_lines": 40,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 161
+    "total_lines": 159
   },
   "cross_references": [
     {
@@ -172,74 +171,32 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EDI",
-      "text": "float unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 12,
       "match": "ABS",
       "text": "if ((ABS(g_CWaterPtr->water_level_y) == 0.0) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "(g_CWaterPtr->water_level_y <= in_stack_00000008->y)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 23,
       "match": "in_stack_00000008",
       "text": "(this_ptr_00,&local_1c,in_stack_00000008);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EBP",
-      "text": "if ((((CStack_34.min.z <= local_1c.z) && (CStack_34.max.x <= unaff_EBP)) &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EDI",
-      "text": "(CStack_34.max.y <= unaff_EDI)) &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EBP",
-      "text": "(((local_1c.z <= CStack_34.max.z && (unaff_EBP <= local_1c.x)) &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI <= local_1c.y)))) {",
-      "type": "unaffected_reg"
     },
     {
       "call_site_count": 2,

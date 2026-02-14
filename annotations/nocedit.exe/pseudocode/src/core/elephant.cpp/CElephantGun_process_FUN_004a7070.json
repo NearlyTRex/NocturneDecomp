@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 24,
+        "line": 23,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 71,
+    "complexity_score": 70,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 30,
     "suspect_count": 3,
     "suspect_types": [
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 108
+    "total_lines": 107
   },
   "cross_references": [],
   "function": {
@@ -207,21 +207,21 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 6,
       "match": "in_stack_0000000c",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 17,
+      "line": 16,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_0000000c",
       "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,in_stack_0000000c);",
       "type": "stack_param"

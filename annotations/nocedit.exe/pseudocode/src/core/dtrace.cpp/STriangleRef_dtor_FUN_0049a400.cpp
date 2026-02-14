@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-STriangleRef * __cdecl
-core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef *this_ptr,uint flags)
+STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef *this_ptr,uint flags)
 
 {
   return this_ptr;

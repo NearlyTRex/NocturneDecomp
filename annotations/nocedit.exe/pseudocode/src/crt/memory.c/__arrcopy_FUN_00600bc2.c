@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl
-__arrcopy(void *dest,void *source,int count,WatcomTypeInfo *type_info)
+void * __cdecl __arrcopy(void *dest,void *source,int count,WatcomTypeInfo *type_info)
 
 {
   WATCOM_COPY_CONSTRUCTOR_FUNC *pWVar1;

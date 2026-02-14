@@ -2,58 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 585,
-        "message": "use of undeclared identifier 'stack0xfffff584'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 588,
-        "message": "use of undeclared identifier 'stack0xfffff584'"
-      },
-      {
         "category": "format_error",
         "column": 36,
-        "line": 595,
+        "line": 594,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 599,
-        "message": "use of undeclared identifier 'stack0xfffff584'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 79,
-        "line": 602,
-        "message": "use of undeclared identifier 'stack0xfffff584'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 607,
-        "message": "use of undeclared identifier 'stack0xfffff584'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 609,
-        "message": "use of undeclared identifier 'stack0xfffff584'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 72,
-        "line": 794,
-        "message": "use of undeclared identifier 'stack0xfffff58c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 885,
-        "message": "use of undeclared identifier 'stack0xfffff584'"
       }
     ],
     "success": false,
@@ -61,16 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 2055,
-    "complexity_score": 976,
+    "complexity_score": 876,
     "cross_reference_count": 2,
     "function_call_count": 19,
     "global_count": 242,
     "pseudocode_lines": 876,
-    "suspect_count": 9,
-    "suspect_types": [
-      "stack_ref",
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2931
   },
   "cross_references": [
@@ -1743,69 +1692,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 578,
-      "match": "&stack0xfffff584",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff584);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 581,
-      "match": "&stack0xfffff584",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff584,pcVar2);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 592,
-      "match": "&stack0xfffff584",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff584,local_d4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 595,
-      "match": "&stack0xfffff584",
-      "text": "shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffff584,1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 600,
-      "match": "&stack0xfffff584",
-      "text": "((CPickList *)&stack0xfffff584,pcVar2,iVar30,iVar32);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 602,
-      "match": "&stack0xfffff584",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff584,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 787,
-      "match": "&stack0xfffff58c",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff58c,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 878,
-      "match": "&stack0xfffff584",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff584,0);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

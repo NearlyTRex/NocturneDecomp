@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0 (CDeformableModel *this_ptr,int lod_level,int triangle_index)
+; __cdecl int __cdecl core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel *this_ptr,int lod_level,int triangle_index)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

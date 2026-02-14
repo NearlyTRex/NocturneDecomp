@@ -2,13 +2,11 @@
 // Address: 00478d20
 // Address Range: [[00478d20, 00478d54]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 (CKeyFramedModelInstance *this_ptr,float animation_frame,int render_flags)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance *this_ptr,float animation_frame,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-          (CKeyFramedModelInstance *this_ptr,float animation_frame,int render_flags)
+void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance *this_ptr,float animation_frame,int render_flags)
 
 {
   CKeyFramedModel *this_ptr_00;

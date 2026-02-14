@@ -11,14 +11,14 @@
 ;   core_main.c_showLicenseAgreement_FUN_005070f0 at 005071fa
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c5f1
 ;   core_msnedit.cpp_FUN_00535e70 at 00536b85
-;   core_script.cpp_CScript_FUN_00565130 at 00565181
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 00565181
 ;   core_setedit.cpp_CDemonSet_FUN_00577af0 at 00577bd1
 ;   shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450 at 004a6471
 ;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340 at 004a4582
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004a5fa8 = 004a61cc
-;   CEdButton* g_ActiveButton
+;   void* g_ActiveControl
 ;   int g_ScrollAction
 ;   int g_ScrollTimer
 ;   int g_ScrollDelay
@@ -28,7 +28,7 @@
 ;   int g_DragStartThumbPos
 ;   int g_MouseX
 ;   int g_MouseY
-;   uint g_MouseButtonFlags
+;   _BIT_INTEGER g_MouseButtonFlags
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380
@@ -53,7 +53,7 @@ section .text
     PUSH EBX                            ; 004a5fd1
     CALL shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0 ; 004a5fd2
         ;   XREF to: 004a5ea0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(CEdScrollBar * this_ptr)
-    MOV EDX,dword ptr [0x02cf2b00]      ; 004a5fd7 | g_ActiveButton
+    MOV EDX,dword ptr [0x02cf2b00]      ; 004a5fd7 | g_ActiveControl
     ADD ESP,0x4                         ; 004a5fdd
     CMP EBX,EDX                         ; 004a5fe0
     JNZ 0x004a625a                      ; 004a5fe2
@@ -128,7 +128,7 @@ section .text
     RET                                 ; 004a6099
     XOR EDX,EDX                         ; 004a609a
         ;   Label: LAB_004a609a
-    MOV dword ptr [0x02cf2b00],EDX      ; 004a609c | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],EDX      ; 004a609c | g_ActiveControl
     POP EBP                             ; 004a60a2
     POP EDI                             ; 004a60a3
     POP ESI                             ; 004a60a4
@@ -293,7 +293,7 @@ section .text
         ;   Label: LAB_004a6216
     XOR EAX,EAX                         ; 004a621c
     AND CL,0xfe                         ; 004a621e
-    MOV [0x02cf2b00],EAX                ; 004a6221 | g_ActiveButton
+    MOV [0x02cf2b00],EAX                ; 004a6221 | g_ActiveControl
     MOV byte ptr [0x02cf6a94],CL        ; 004a6226 | g_MouseButtonFlags
     JMP 0x004a61d5                      ; 004a622c
         ;   XREF to: 004a61d5 (UNCONDITIONAL_JUMP)  ; default
@@ -311,7 +311,7 @@ section .text
         ;   Label: LAB_004a623e
     XOR ESI,ESI                         ; 004a6244
     AND DH,0xfe                         ; 004a6246
-    MOV dword ptr [0x02cf2b00],ESI      ; 004a6249 | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],ESI      ; 004a6249 | g_ActiveControl
     MOV byte ptr [0x02cf6a94],DH        ; 004a624f | g_MouseButtonFlags
     JMP 0x004a61d5                      ; 004a6255
         ;   XREF to: 004a61d5 (UNCONDITIONAL_JUMP)  ; default
@@ -343,7 +343,7 @@ section .text
     MOV EAX,[0x02cf6a90]                ; 004a62b1 | g_MouseY
     MOV [0x02cf2b14],EAX                ; 004a62b6 | g_DragStartMouseY
     MOV EAX,dword ptr [EBX]             ; 004a62bb
-    MOV dword ptr [0x02cf2b00],EBX      ; 004a62bd | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],EBX      ; 004a62bd | g_ActiveControl
     MOV [0x02cf2b18],EAX                ; 004a62c3 | g_DragStartScrollPos
     MOV EAX,dword ptr [EBX + 0x2c]      ; 004a62c8
     MOV ECX,dword ptr [EBX + 0x10]      ; 004a62cb

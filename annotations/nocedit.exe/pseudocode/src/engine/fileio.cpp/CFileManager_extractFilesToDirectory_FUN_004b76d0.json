@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 28,
-        "line": 70,
+        "line": 69,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 120,
-        "line": 129,
+        "line": 128,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 214,
+    "complexity_score": 213,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 19,
-    "pseudocode_lines": 154,
+    "pseudocode_lines": 153,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "unaffected_reg"
     ],
-    "total_lines": 499
+    "total_lines": 498
   },
   "cross_references": [
     {
@@ -486,35 +486,35 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 9,
       "match": "unaff_EBX",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 88,
       "match": "(time_t *)((int)",
       "text": "ptVar5 = (time_t *)((int)(local_1108.directory_entries + iVar2) + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 130,
       "match": "(time_t *)((int)",
       "text": "ptVar6 = (time_t *)((int)&local_1108 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 132,
       "match": "(time_t *)((int)",
       "text": "*(time_t *)((int)&local_1108 + (uint)bVar10 * -8 + -0x18) = local_1c[(uint)bVar10 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 143,
+      "line": 142,
       "match": "unaff_EBX",
       "text": "(int)this_ptr_02,(int)info,unaff_EBX);",
       "type": "unaffected_reg"

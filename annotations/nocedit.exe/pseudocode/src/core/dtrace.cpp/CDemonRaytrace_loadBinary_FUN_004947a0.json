@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 79,
+        "line": 78,
         "message": "assigning to 'SIZE_T *' (aka 'unsigned long *') from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 343,
+    "complexity_score": 342,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 23,
-    "pseudocode_lines": 243,
+    "pseudocode_lines": 242,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 877
+    "total_lines": 876
   },
   "cross_references": [
     {
@@ -497,63 +497,63 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 34,
       "match": "DAT_02cee5ac",
       "text": "DAT_02cee5ac = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 67,
       "match": "(SIZE_T *)((int)",
       "text": "buffer = (SIZE_T *)((int)this_ptr->cube_list->voxel_data + local_24 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 123,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)this_ptr->cube_list->voxel_data + iVar11 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 158,
       "match": "(CDemonTriangle *)((int)",
       "text": "((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar11),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 169,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 198,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)pSVar2->voxel_data + iVar9 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 204,
+      "line": 203,
       "match": "(CDemonCube *)((int)",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + local_20),",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 226,
+      "line": 225,
       "match": "DAT_02cee5ac",
       "text": "DAT_02cee5ac = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 235,
+      "line": 234,
       "match": "(CDemonCube *)((int)",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar9),file_handle);",
       "type": "pointer_cast"

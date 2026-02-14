@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210 (CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
+; __cdecl void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr

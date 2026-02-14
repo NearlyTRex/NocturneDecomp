@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 234,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 58,
     "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
       "unaffected_reg"
     ],
-    "total_lines": 147
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -32,7 +32,7 @@
     ],
     "convention": "__watcallRegister",
     "name": "crt_heap.c_AllocateFromFreeList_FUN_00609410",
-    "signature": "void * crt_heap_c_AllocateFromFreeList_FUN_00609410 (ulong size,HeapBlock *free_block,ushort ds_segment)"
+    "signature": "void * __watcallRegister crt_heap_c_AllocateFromFreeList_FUN_00609410(ulong size,HeapBlock *free_block,ushort ds_segment)"
   },
   "function_calls": [],
   "globals": [],
@@ -82,105 +82,105 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 9,
       "match": "unaff_EBX",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 18,
+      "line": 17,
       "match": "unaff_EBX",
       "text": "if (uVar4 <= *(uint *)(unaff_EBX + 0x14)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 19,
+      "line": 18,
       "match": "unaff_EBX",
       "text": "uVar5 = *(uint *)(unaff_EBX + 0x10);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 20,
+      "line": 19,
       "match": "unaff_EBX",
       "text": "puVar3 = *(uint **)(unaff_EBX + 0xc);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 22,
+      "line": 21,
       "match": "unaff_EBX",
       "text": "puVar3 = *(uint **)(unaff_EBX + 0x28);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 28,
+      "line": 27,
       "match": "unaff_EBX",
       "text": "*(uint *)(unaff_EBX + 0x10) = uVar5;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 28,
       "match": "unaff_EBX",
       "text": "*(int *)(unaff_EBX + 0x18) = *(int *)(unaff_EBX + 0x18) + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 28,
       "match": "unaff_EBX",
       "text": "*(int *)(unaff_EBX + 0x18) = *(int *)(unaff_EBX + 0x18) + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 31,
+      "line": 30,
       "match": "unaff_EBX",
       "text": "*(int *)(unaff_EBX + 0x1c) = *(int *)(unaff_EBX + 0x1c) + -1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 31,
+      "line": 30,
       "match": "unaff_EBX",
       "text": "*(int *)(unaff_EBX + 0x1c) = *(int *)(unaff_EBX + 0x1c) + -1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 32,
       "match": "unaff_EBX",
       "text": "*(uint *)(unaff_EBX + 0xc) = uVar4;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)puVar3 + uVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 39,
       "match": "unaff_EBX",
       "text": "*(uint **)(unaff_EBX + 0xc) = puVar1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 56,
       "match": "unaff_EBX",
       "text": "} while (puVar3 != (uint *)(unaff_EBX + 0x20));",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 58,
+      "line": 57,
       "match": "unaff_EBX",
       "text": "*(uint *)(unaff_EBX + 0x14) = uVar5;",
       "type": "unaffected_reg"

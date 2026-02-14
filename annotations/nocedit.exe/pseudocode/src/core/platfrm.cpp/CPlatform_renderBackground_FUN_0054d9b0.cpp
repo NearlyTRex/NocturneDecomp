@@ -6,12 +6,15 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform *this_ptr,int layer_flag)
+void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform *this_ptr,int layer_flag)
 
 {
   int iVar1;
   CBoundingBox3D *this_ptr_00;
+  CBoundingBox3D local_2c;
+  int iStack_14;
+  int iStack_10;
+  int iStack_c;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 != 0) {
@@ -49,8 +52,7 @@ core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform *this_ptr,int
     }
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                          (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_2c);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {
     if ((this_ptr->recompute_fog == 0) ||
@@ -62,7 +64,12 @@ core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform *this_ptr,int
       return;
     }
     g_CDemonSetPtr->per_pixel_lighting_enabled = 1;
-    g_FlatShadingLightLevel = (*((g_CurrentSceneCamera->base).vtable)->calculatePerspective)();
+    iStack_14 = (int)ROUND((this_ptr->base).location.position.x * 256.0f);
+    iStack_10 = (int)ROUND((this_ptr->base).location.position.y * 256.0f);
+    iStack_c = (int)ROUND((this_ptr->base).location.position.z * 256.0f);
+    g_FlatShadingLightLevel =
+         (*((g_CurrentSceneCamera->base).vtable)->calculatePerspective)
+                   (g_CurrentSceneCamera,&iStack_14,0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&this_ptr->model,0.0,-1);
     g_CDemonSetPtr->per_pixel_lighting_enabled = 0;

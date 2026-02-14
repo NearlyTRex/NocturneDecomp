@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 31,
-        "line": 18,
+        "line": 19,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 25,
+        "column": 16,
+        "line": 30,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
-        "column": 86,
-        "line": 25,
+        "column": 65,
+        "line": 30,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -25,14 +25,16 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 29,
+    "complexity_score": 69,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 12,
-    "pseudocode_lines": 29,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 111
+    "pseudocode_lines": 34,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -58,7 +60,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0 (CDemonCamera *this_ptr,CVector3f *position,float max_distance)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera *this_ptr,CVector3f *position,float max_distance)"
   },
   "function_calls": [],
   "globals": [
@@ -220,5 +222,27 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "local_10 = (int)ROUND(position->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "local_c = (int)ROUND(position->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "local_8 = (int)ROUND(position->z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

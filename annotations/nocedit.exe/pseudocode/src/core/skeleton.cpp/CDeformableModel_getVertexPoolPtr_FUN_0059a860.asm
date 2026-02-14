@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860 (CDeformableModel *this_ptr,int index)
+; __cdecl CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860(CDeformableModel *this_ptr,int index)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

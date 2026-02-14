@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 101,
+        "line": 99,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 166,
+        "line": 164,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
         "line": 266,
-        "message": "use of undeclared identifier 'stack0xfffffefc'"
+        "message": "use of undeclared identifier 'stack0xfffffefc'; did you mean 'in_stack_fffffefc'?"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 291,
+        "line": 290,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -31,19 +31,19 @@
   },
   "complexity": {
     "assembly_lines": 878,
-    "complexity_score": 561,
+    "complexity_score": 519,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 16,
-    "pseudocode_lines": 421,
-    "suspect_count": 12,
+    "pseudocode_lines": 419,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
-      "suspect_float"
+      "warning_type_propagation"
     ],
-    "total_lines": 1299
+    "total_lines": 1297
   },
   "cross_references": [],
   "function": {
@@ -656,74 +656,46 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffff04",
-      "text": "float in_stack_ffffff04;",
-      "type": "stack_param"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffff08",
-      "text": "float in_stack_ffffff08;",
+      "line": 20,
+      "match": "in_stack_fffffefc",
+      "text": "float in_stack_fffffefc;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
+      "line": 114,
       "match": "SQRT",
       "text": "local_1c = SQRT(local_a4.z * local_a4.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 121,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 195,
-      "match": "in_stack_ffffff04",
-      "text": "fVar12,in_stack_ffffff04);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 202,
+      "line": 201,
       "match": "SQRT",
       "text": "local_30 = SQRT(local_54 * local_54 + local_5c * local_5c);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 208,
-      "match": "2.8026e-45",
-      "text": "fVar12 = 2.8026e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 211,
-      "match": "5.60519e-45",
-      "text": "fVar12 = 5.60519e-45;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 228,
+      "line": 227,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 254,
-      "match": "in_stack_ffffff04",
-      "text": "pCVar11,fVar12,in_stack_ffffff04);",
-      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
@@ -734,9 +706,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 350,
-      "match": "in_stack_ffffff08",
-      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff08);",
+      "line": 349,
+      "match": "in_stack_fffffefc",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffefc);",
       "type": "stack_param"
     }
   ],

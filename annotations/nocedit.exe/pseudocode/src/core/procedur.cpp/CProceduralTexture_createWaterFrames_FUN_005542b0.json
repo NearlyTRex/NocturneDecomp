@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 173,
+    "complexity_score": 172,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
-    "pseudocode_lines": 123,
+    "pseudocode_lines": 122,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 382
+    "total_lines": 381
   },
   "cross_references": [
     {
@@ -350,28 +350,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(CProceduralTexture *)((int)",
       "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar9->unk1 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 72,
       "match": "(CProceduralTexture *)((int)",
       "text": "pCVar7 = (CProceduralTexture *)((int)&pCVar7->unk1 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 112,
       "match": "(CProceduralTexture *)((int)",
       "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar10->unk1 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 113,
       "match": "CONCAT11",
       "text": "*piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3);",
       "type": "decompiler_intrinsic"

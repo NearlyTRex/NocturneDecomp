@@ -2,14 +2,11 @@
 // Address: 004cd550
 // Address Range: [[004cd550, 004cda1c]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height, int first_char)
+// Signature: void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height,int first_char)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
-          (CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height,
-          int first_char)
+void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height,int first_char)
 
 {
   int iVar1;

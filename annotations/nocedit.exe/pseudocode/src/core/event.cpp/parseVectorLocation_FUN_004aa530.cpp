@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_event_cpp_parseVectorLocation_FUN_004aa530(char *buffer,int *offset,CVector3f *out_position)
+int __cdecl core_event_cpp_parseVectorLocation_FUN_004aa530(char *buffer,int *offset,CVector3f *out_position)
 
 {
   CDemonActor *pCVar1;

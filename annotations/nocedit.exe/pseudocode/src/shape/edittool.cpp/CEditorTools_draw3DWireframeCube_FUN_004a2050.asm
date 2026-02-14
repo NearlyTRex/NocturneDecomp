@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
+; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

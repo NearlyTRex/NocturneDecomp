@@ -8,8 +8,7 @@
 
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl
-core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_ptr,CVector3f *out_points_array)
+int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_ptr,CVector3f *out_points_array)
 
 {
   CDeformableModelInstance *this_ptr_00;

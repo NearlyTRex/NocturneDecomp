@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_CBitFont_printfRightF_FUN_004cdd70 (CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,va_list_t args )
+; __cdecl void __cdecl engine_font_cpp_CBitFont_printfRightF_FUN_004cdd70(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,va_list_t args)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

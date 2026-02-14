@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_platfrm_cpp_CPlatform_hasCollision_FUN_0054e180 (CPlatform *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_platfrm_cpp_CPlatform_hasCollision_FUN_0054e180(CPlatform *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr

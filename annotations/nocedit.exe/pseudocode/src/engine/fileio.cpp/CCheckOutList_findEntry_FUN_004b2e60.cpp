@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(CCheckOutList *this_ptr,char *filename)
+int __cdecl engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(CCheckOutList *this_ptr,char *filename)
 
 {
   int iVar1;

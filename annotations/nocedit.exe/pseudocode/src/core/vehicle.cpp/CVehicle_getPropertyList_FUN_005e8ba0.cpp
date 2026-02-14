@@ -2,13 +2,11 @@
 // Address: 005e8ba0
 // Address Range: [[005e8ba0, 005e8ce7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0 (CVehicle *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0(CVehicle *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0
-          (CVehicle *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0(CVehicle *this_ptr,CActorPropertyList *property_list)
 
 {
   int iVar1;

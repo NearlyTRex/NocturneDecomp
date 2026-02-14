@@ -14,7 +14,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   WatcomStaticDestructorNode DAT_0068064c
-;   CEdButton* g_ActiveButton
+;   void* g_ActiveControl
 ;   int g_MouseX
 ;   int g_MouseY
 ;   int g_ActiveRenderColor
@@ -140,7 +140,7 @@ section .text
     MOV EBP,0xef                        ; 0053c60c
     CALL core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770 ; 0053c611
         ;   XREF to: 0040e770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770(CActorPropertyList * this_ptr, int x, int y, int width)
-    MOV EAX,[0x02cf2b00]                ; 0053c616 | g_ActiveButton
+    MOV EAX,[0x02cf2b00]                ; 0053c616 | g_ActiveControl
     ADD ESP,0x10                        ; 0053c61b
     TEST EAX,EAX                        ; 0053c61e
     JNZ 0x0053c656                      ; 0053c620
@@ -174,7 +174,7 @@ section .text
         ;   XREF to: 0040e850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_render_FUN_0040e850(CActorPropertyList * this_ptr, int selected_index)
     ADD ESP,0x8                         ; 0053c667
     CALL engine_matrix.c_popViewport_FUN_0050e480 ; 0053c66a
-        ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
+        ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480()
     PUSH 0x2f797e4                      ; 0053c66f | DAT_02f797e4
     CALL shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10 ; 0053c674
         ;   XREF to: 004a5c10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar * this_ptr)

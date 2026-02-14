@@ -31,11 +31,11 @@ void __cdecl core_gore_cpp_CFootstep_FUN_004ed240(CFootstep *this_ptr)
     fVar6 = (float10)fcos((float10)*(float *)(in_stack_0000000c + 4));
     fVar5 = fVar5 * (float10)0.5;
     fVar6 = fVar6 * (float10)0.5;
-    local_40.x = (float)(fVar5 * (float10)*(float *)((int)&0x3F800000 + iVar2) +
-                         -fVar6 * (float10)*(float *)((int)&0x3F800000 + iVar2) +
+    local_40.x = (float)(fVar5 * (float10)*(float *)((int)&1.0f + iVar2) +
+                         -fVar6 * (float10)*(float *)((int)&1.0f + iVar2) +
                         (float10)*in_stack_00000008);
-    local_40.z = (float)(fVar6 * (float10)*(float *)((int)&0x3F800000 + iVar2) +
-                        fVar5 * (float10)*(float *)((int)&0x3F800000 + iVar2)) +
+    local_40.z = (float)(fVar6 * (float10)*(float *)((int)&1.0f + iVar2) +
+                        fVar5 * (float10)*(float *)((int)&1.0f + iVar2)) +
                  in_stack_00000008[2];
     if (local_34 != &local_40) {
       local_34[0].x = local_40.x;

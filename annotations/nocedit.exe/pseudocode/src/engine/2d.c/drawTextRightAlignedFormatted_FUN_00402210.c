@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_2d_c_drawTextRightAlignedFormatted_FUN_00402210(int x,int y,char *format_string,...)
+void __cdecl engine_2d_c_drawTextRightAlignedFormatted_FUN_00402210(int x,int y,char *format_string,...)
 
 {
   char local_100c [4096];

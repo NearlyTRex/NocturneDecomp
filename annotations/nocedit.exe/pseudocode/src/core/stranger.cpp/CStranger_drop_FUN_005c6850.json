@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 61,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 16,
-    "suspect_count": 4,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 45
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
   },
   "cross_references": [],
   "function": {
@@ -28,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_stranger.cpp_CStranger_drop_FUN_005c6850",
-    "signature": "void __cdecl core_stranger_cpp_CStranger_drop_FUN_005c6850 (CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position)"
+    "signature": "void __cdecl core_stranger_cpp_CStranger_drop_FUN_005c6850(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position)"
   },
   "function_calls": [
     {
@@ -100,36 +98,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000010",
-      "text": "CDemonActor *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "CVector3f *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000010",
-      "text": "((CCharacter *)this_ptr,in_stack_00000010,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000014",
-      "text": "((CCharacter *)this_ptr,in_stack_00000010,in_stack_00000014);",
-      "type": "stack_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

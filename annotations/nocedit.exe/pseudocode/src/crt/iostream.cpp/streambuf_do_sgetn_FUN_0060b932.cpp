@@ -2,13 +2,11 @@
 // Address: 0060b932
 // Address Range: [[0060b932, 0060b9b6]]
 // Convention: __watcallStack
-// Signature: int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932 (streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)
+// Signature: int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932(streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)
 
 #include "nocturne.h"
 
-int __watcallStack
-crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932
-          (streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)
+int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932(streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)
 
 {
   uint uVar1;
@@ -27,7 +25,7 @@ crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932
     }
     uVar1 = (int)buffer->__get_end - (int)buffer->__get_ptr;
     if ((int)uVar1 < 1) {
-      iVar2 = (**(code **)((int)buffer[1].__b_lock + 0x10))();
+      iVar2 = (**(code **)((int)buffer[1].__b_lock + 0x10))(buffer);
       if (iVar2 == -1) {
         return local_14;
       }

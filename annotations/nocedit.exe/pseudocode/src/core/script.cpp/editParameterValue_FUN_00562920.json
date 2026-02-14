@@ -4,61 +4,61 @@
       {
         "category": "other",
         "column": 30,
-        "line": 59,
+        "line": 57,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 62,
+        "line": 60,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 66,
+        "line": 64,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 71,
+        "line": 69,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 473,
+        "line": 476,
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 473,
+        "line": 476,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 541,
+        "line": 544,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 654,
+        "line": 658,
         "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 654,
+        "line": 658,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 671,
+        "line": 675,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       }
     ],
@@ -67,17 +67,17 @@
   },
   "complexity": {
     "assembly_lines": 2421,
-    "complexity_score": 772,
+    "complexity_score": 847,
     "cross_reference_count": 1,
     "function_call_count": 33,
     "global_count": 85,
-    "pseudocode_lines": 742,
-    "suspect_count": 2,
+    "pseudocode_lines": 747,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 3163
+    "total_lines": 3168
   },
   "cross_references": [
     {
@@ -98,7 +98,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_script.cpp_editParameterValue_FUN_00562920",
-    "signature": "int __cdecl core_script_cpp_editParameterValue_FUN_00562920 (char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)"
+    "signature": "int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)"
   },
   "function_calls": [
     {
@@ -127,24 +127,24 @@
       "name": "core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860"
     },
     {
+      "addr": "005677a0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_browseEventXRefs_FUN_005677a0"
+    },
+    {
       "addr": "00566fa0",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566fa0"
+      "name": "core_script.cpp_CScript_collectLabels_FUN_00566fa0"
     },
     {
       "addr": "00567630",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00567630"
+      "name": "core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630"
     },
     {
       "addr": "005676e0",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_005676e0"
-    },
-    {
-      "addr": "005677a0",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_005677a0"
+      "name": "core_script.cpp_CScript_removeEventXRef_FUN_005676e0"
     },
     {
       "addr": "00559730",
@@ -702,13 +702,13 @@
     },
     {
       "addr": "0310f880",
-      "name": "g_CScriptInstance.unk3",
+      "name": "g_CScriptInstance.xref_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0310f884",
-      "name": "g_CScriptInstance.unk4",
+      "name": "g_CScriptInstance.xref_entries",
       "type": "undefined4",
       "value": null
     },
@@ -1088,17 +1088,66 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 184,
+      "match": "(uint *)((int)",
+      "text": "uVar2 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 297,
+      "match": "(uint *)((int)",
+      "text": "uVar2 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 330,
+      "match": "(uint *)((int)",
+      "text": "uVar2 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 422,
+      "match": "(int *)((int)",
+      "text": "iVar5 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 442,
+      "match": "(int *)((int)",
+      "text": "iVar5 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 613,
+      "match": "(int *)((int)",
+      "text": "iVar5 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 626,
+      "line": 630,
       "match": "code",
       "text": "(g_CEditorToolsPtr,\"WARNING! chooseParm - unknown parm type %d (code needs to be updated)\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 672,
+      "line": 676,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)local_a8 + local_14) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 730,
+      "match": "(uint *)((int)",
+      "text": "switch(*(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8)) {",
       "type": "pointer_cast"
     }
   ]

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_vampboss_cpp_CVampireBoss_getTargetPoints_FUN_005e7280 (CVampireBoss *this_ptr,CVector3f *out_points_array)
+; __cdecl int __cdecl core_vampboss_cpp_CVampireBoss_getTargetPoints_FUN_005e7280(CVampireBoss *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0(CCharacter *this_ptr,uint *out_crc)
+void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0(CCharacter *this_ptr,uint *out_crc)
 
 {
   SMotion *string;

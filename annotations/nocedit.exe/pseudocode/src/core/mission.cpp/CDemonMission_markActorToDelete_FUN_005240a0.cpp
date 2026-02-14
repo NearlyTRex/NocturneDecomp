@@ -2,13 +2,11 @@
 // Address: 005240a0
 // Address Range: [[005240a0, 0052411b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0 (CDemonMission *this_ptr,CDemonActor *actor,uint flags)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission *this_ptr,CDemonActor *actor,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl
-core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
-          (CDemonMission *this_ptr,CDemonActor *actor,uint flags)
+void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission *this_ptr,CDemonActor *actor,uint flags)
 
 {
   int iVar1;

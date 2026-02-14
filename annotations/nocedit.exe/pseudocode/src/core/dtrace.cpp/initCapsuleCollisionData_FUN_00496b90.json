@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 58,
+    "complexity_score": 55,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 25,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many"
     ],
-    "total_lines": 105
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dtrace.cpp_initCapsuleCollisionData_FUN_00496b90",
-    "signature": "void __cdecl core_dtrace_cpp_initCapsuleCollisionData_FUN_00496b90 (SCapsuleCollision *out_data,float start_x,float start_z,float dir_x,float dir_z, float radius,void *user_data1,void *user_data2)"
+    "signature": "void __cdecl core_dtrace_cpp_initCapsuleCollisionData_FUN_00496b90(SCapsuleCollision *out_data,float start_x,float start_z,float dir_x,float dir_z,float radius,void *user_data1,void *user_data2)"
   },
   "function_calls": [],
   "globals": [],
@@ -203,7 +203,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 15,
       "match": "SQRT",
       "text": "fVar1 = SQRT(dir_z * dir_z + dir_x * dir_x);",
       "type": "decompiler_intrinsic"

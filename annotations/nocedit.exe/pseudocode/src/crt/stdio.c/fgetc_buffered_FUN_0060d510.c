@@ -21,7 +21,7 @@ int __watcallStack fgetc_buffered(_FILE *stream)
     uVar2 = (uint)**(byte **)(iVar1 + 0x14);
   }
   else {
-    uVar2 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x10))();
+    uVar2 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x10))(iVar1);
   }
   if (uVar2 != 0xffffffff) {
     return uVar2;

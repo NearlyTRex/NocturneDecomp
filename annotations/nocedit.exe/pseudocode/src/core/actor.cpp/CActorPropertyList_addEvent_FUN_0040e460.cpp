@@ -2,13 +2,11 @@
 // Address: 0040e460
 // Address Range: [[0040e460, 0040e47d]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460 (CActorPropertyList *this_ptr,char *property_name,char *data_ptr)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList *this_ptr,char *property_name,char *data_ptr)
 
 #include "nocturne.h"
 
-CActorProperty * __cdecl
-core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
-          (CActorPropertyList *this_ptr,char *property_name,char *data_ptr)
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList *this_ptr,char *property_name,char *data_ptr)
 
 {
   CActorProperty *pCVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SBodyPartModel * __cdecl
-core_bodypart_cpp_SBodyPartModel_ctor_FUN_0041b660(SBodyPartModel *this_ptr)
+SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_ctor_FUN_0041b660(SBodyPartModel *this_ptr)
 
 {
   SBodyPartModel_ptr_24 pCVar1;

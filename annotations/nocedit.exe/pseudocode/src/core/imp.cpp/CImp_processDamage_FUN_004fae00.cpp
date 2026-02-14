@@ -15,14 +15,14 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004fae00(CImp *this_ptr,SDamage
   uint uVar3;
   int iVar4;
   char *sound_name;
+  CVector3f local_24;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)this_ptr->unk);
   if (damage_info->ammo_type == 8) {
     iVar4 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffdc,&damage_info->impact_direction)
-    ;
+              ((CDemonActor *)this_ptr,&local_24,&damage_info->impact_direction);
     do {
       iVar4 = iVar4 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);

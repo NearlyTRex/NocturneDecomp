@@ -4,55 +4,55 @@
       {
         "category": "other",
         "column": 13,
-        "line": 145,
+        "line": 142,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 146,
+        "line": 143,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 147,
+        "line": 144,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 175,
+        "line": 172,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 176,
+        "line": 173,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 185,
+        "line": 182,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 186,
+        "line": 183,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 45,
-        "line": 230,
+        "line": 227,
         "message": "use of undeclared identifier 'stack0xfffffee4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 75,
-        "line": 230,
+        "line": 227,
         "message": "use of undeclared identifier 'stack0xfffffed8'"
       }
     ],
@@ -61,11 +61,11 @@
   },
   "complexity": {
     "assembly_lines": 714,
-    "complexity_score": 977,
+    "complexity_score": 974,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 22,
-    "pseudocode_lines": 302,
+    "pseudocode_lines": 299,
     "suspect_count": 64,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -76,7 +76,7 @@
       "unaffected_reg",
       "unknown_field"
     ],
-    "total_lines": 1016
+    "total_lines": 1013
   },
   "cross_references": [
     {
@@ -96,7 +96,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320",
-    "signature": "int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320 (CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint)"
+    "signature": "int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)"
   },
   "function_calls": [
     {
@@ -694,448 +694,448 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 10,
       "match": "unaff_EBX",
       "text": "CVector3f *unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 14,
+      "line": 11,
       "match": "unaff_ESI",
       "text": "CVector3f *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_fffffed0",
       "text": "CVector3f *in_stack_fffffed0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_fffffed4",
       "text": "CVector3f *in_stack_fffffed4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_fffffee8",
       "text": "CVector3i *in_stack_fffffee8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 49,
       "match": "in_stack_fffffee8",
       "text": "(&g_CDemonRaytraceInstance,dest_position,in_stack_fffffee8);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 50,
       "match": "(float *)((int)",
       "text": "pfVar6 = (float *)((int)this_ptr + (uint)bVar7 * -8 + 0x1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
+      "line": 59,
+      "match": "5.60519e-45",
+      "text": "local_a4.y = 5.60519e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 62,
-      "match": "5.60519e-45",
-      "text": "local_a4.y = 5.60519e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
       "match": "NAN",
       "text": "local_a4.y = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 75,
+      "line": 72,
       "match": "5.60519e-45",
       "text": "local_a4.y = 5.60519e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 76,
       "match": "NAN",
       "text": "local_a4.y = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 80,
       "match": "NAN",
       "text": "local_a4.y = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 87,
+      "line": 84,
       "match": "5.60519e-45",
       "text": "local_a4.y = 5.60519e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 93,
       "match": "in_stack_fffffed0",
       "text": "(in_stack_fffffed0,in_stack_fffffed4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 93,
       "match": "in_stack_fffffed4",
       "text": "(in_stack_fffffed0,in_stack_fffffed4);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 97,
+      "line": 94,
       "match": "unaff_EBX",
       "text": "if (pCVar1 != unaff_EBX) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 98,
+      "line": 95,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = pCVar1->x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 99,
+      "line": 96,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = pCVar1->y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 97,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = pCVar1->z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 138,
+      "line": 135,
       "match": "._0_4_",
       "text": "local_40._0_4_ = (this_ptr->current_position).x - dest_position->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 139,
+      "line": 136,
       "match": "._4_4_",
       "text": "local_40._4_4_ = (this_ptr->current_position).y - dest_position->y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 140,
+      "line": 137,
       "match": "._8_4_",
       "text": "local_40._8_4_ = (this_ptr->current_position).z - dest_position->z;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 151,
+      "line": 148,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
+      "line": 150,
       "match": "ROUND",
       "text": "local_1c = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 152,
       "match": "ROUND",
       "text": "iStack_20 = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 156,
+      "line": 153,
       "match": "7.7566e-39",
       "text": "fVar9 = 7.7566e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 158,
+      "line": 155,
       "match": "ROUND",
       "text": "iStack_24 = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 168,
+      "line": 165,
       "match": "._0_4_",
       "text": "local_40._0_4_ = g_CDemonRaytraceInstance.adjusted_size.y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 169,
+      "line": 166,
       "match": "._4_4_",
       "text": "local_40._4_4_ = g_CDemonRaytraceInstance.adjusted_size.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 178,
+      "line": 175,
       "match": "unaff_ESI",
       "text": "auStack_c8._0_4_ = (this_ptr->current_position).x - unaff_ESI->x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 178,
+      "line": 175,
       "match": "._0_4_",
       "text": "auStack_c8._0_4_ = (this_ptr->current_position).x - unaff_ESI->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 179,
+      "line": 176,
       "match": "unaff_ESI",
       "text": "auStack_c8._4_4_ = (this_ptr->current_position).y - unaff_ESI->y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 179,
+      "line": 176,
       "match": "._4_4_",
       "text": "auStack_c8._4_4_ = (this_ptr->current_position).y - unaff_ESI->y;",
       "type": "unknown_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 180,
+      "line": 177,
       "match": "unaff_ESI",
       "text": "fStack_c0 = (this_ptr->current_position).z - unaff_ESI->z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 183,
+      "line": 180,
       "match": "unaff_EBX",
       "text": "if (pCVar1 != unaff_EBX) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 184,
+      "line": 181,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = pCVar1->x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 185,
+      "line": 182,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = pCVar1->y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 186,
+      "line": 183,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = pCVar1->z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 200,
+      "line": 197,
       "match": "unaff_ESI",
       "text": "local_a4.x = (this_ptr->current_position).x - unaff_ESI->x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 201,
+      "line": 198,
       "match": "unaff_ESI",
       "text": "local_a4.y = (this_ptr->current_position).y - unaff_ESI->y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 202,
+      "line": 199,
       "match": "unaff_ESI",
       "text": "local_a4.z = (this_ptr->current_position).z - unaff_ESI->z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 205,
+      "line": 202,
       "match": "unaff_EBX",
       "text": "if (pCVar1 == unaff_EBX) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 208,
+      "line": 205,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = pCVar1->x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 209,
+      "line": 206,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = pCVar1->y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 210,
+      "line": 207,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = pCVar1->z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 223,
+      "line": 220,
       "match": "&stack0xfffffee4",
       "text": "((CVector3f *)&stack0xfffffee4,(CVector3f *)&stack0xfffffed8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 223,
+      "line": 220,
       "match": "&stack0xfffffed8",
       "text": "((CVector3f *)&stack0xfffffee4,(CVector3f *)&stack0xfffffed8);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 224,
+      "line": 221,
       "match": "unaff_EBX",
       "text": "if (pCVar1 == unaff_EBX) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 227,
+      "line": 224,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = pCVar1->x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 228,
+      "line": 225,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = pCVar1->y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 229,
+      "line": 226,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = pCVar1->z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 256,
+      "line": 253,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = 0.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 257,
+      "line": 254,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = 0.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 259,
+      "line": 256,
       "match": "unaff_ESI",
       "text": "(this_ptr,uVar5,local_28,local_2c,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 260,
+      "line": 257,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = fVar9;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 263,
+      "line": 260,
       "match": "unaff_ESI",
       "text": "local_110.x = (this_ptr->current_position).x - unaff_ESI->x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 264,
+      "line": 261,
       "match": "unaff_ESI",
       "text": "local_110.y = (this_ptr->current_position).y - unaff_ESI->y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 265,
+      "line": 262,
       "match": "unaff_ESI",
       "text": "local_110.z = (this_ptr->current_position).z - unaff_ESI->z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 266,
+      "line": 263,
       "match": "in_stack_fffffed4",
       "text": "in_stack_fffffed4 = &local_110;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 267,
+      "line": 264,
       "match": "in_stack_fffffed0",
       "text": "in_stack_fffffed0 = &CStack_104;",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 300,
+      "line": 297,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = 0.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 301,
+      "line": 298,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = 0.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 302,
+      "line": 299,
       "match": "unaff_ESI",
       "text": "fVar9 = core_path_cpp_CPathMap_getDirection_FUN_005465b0(this_ptr,iVar2,-1,-1,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 303,
+      "line": 300,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = fVar9;",
       "type": "unaffected_reg"

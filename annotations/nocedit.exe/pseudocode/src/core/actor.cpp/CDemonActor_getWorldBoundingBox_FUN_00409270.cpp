@@ -2,23 +2,21 @@
 // Address: 00409270
 // Address Range: [[00409270, 004093ee]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 (CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info, int bounding_box_type)
+// Signature: CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
-          (CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,
-          int bounding_box_type)
+CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type)
 
 {
   CVector3f *pCVar1;
   CBoundingBox3D *pCVar2;
   uint corner_index;
-  CBoundingBox3D CStack_4c;
-  CVector3f CStack_34;
-  CVector3f CStack_28;
-  CVector3f CStack_1c;
+  CBoundingBox3D CStack_54;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
+  CVector3f CStack_18;
   
   if ((uint)bounding_box_type < 2) {
     if (bounding_box_type != 1) {
@@ -47,11 +45,10 @@ LAB_004093bd:
     }
     if (bounding_box_type != 3) goto LAB_004093bd;
   }
-  (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);
-  pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&CStack_4c,&CStack_34,0);
+  (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&CStack_54);
+  pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&CStack_54,&CStack_3c,0);
   pCVar2 = (CBoundingBox3D *)
-           core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                     (this_ptr,(CVector3f *)&stack0xfffffff0,pCVar1);
+           core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr,&CStack_18,pCVar1);
   if (output_bbox != pCVar2) {
     (output_bbox->min).x = (pCVar2->min).x;
     (output_bbox->min).y = (pCVar2->min).y;
@@ -64,8 +61,8 @@ LAB_004093bd:
   }
   corner_index = 1;
   do {
-    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&CStack_4c,&CStack_28,corner_index);
-    pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr,&CStack_1c,pCVar1);
+    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&CStack_54,&CStack_30,corner_index);
+    pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr,&CStack_24,pCVar1);
     corner_index = corner_index + 1;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(output_bbox,pCVar1);
   } while ((int)corner_index < 8);

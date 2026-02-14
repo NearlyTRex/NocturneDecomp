@@ -2,14 +2,11 @@
 // Address: 0040e3e0
 // Address Range: [[0040e3e0, 0040e458]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0 (CActorPropertyList *this_ptr,char *property_name,void *data_ptr,char *search_path, char *extension,int allow_none)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0(CActorPropertyList *this_ptr,char *property_name,void *data_ptr,char *search_path,char *extension,int allow_none)
 
 #include "nocturne.h"
 
-CActorProperty * __cdecl
-core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0
-          (CActorPropertyList *this_ptr,char *property_name,void *data_ptr,char *search_path,
-          char *extension,int allow_none)
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0(CActorPropertyList *this_ptr,char *property_name,void *data_ptr,char *search_path,char *extension,int allow_none)
 
 {
   char cVar1;

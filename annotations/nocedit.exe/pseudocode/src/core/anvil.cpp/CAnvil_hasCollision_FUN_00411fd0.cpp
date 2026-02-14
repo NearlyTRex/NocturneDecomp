@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_anvil_cpp_CAnvil_hasCollision_FUN_00411fd0(CAnvil *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_anvil_cpp_CAnvil_hasCollision_FUN_00411fd0(CAnvil *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

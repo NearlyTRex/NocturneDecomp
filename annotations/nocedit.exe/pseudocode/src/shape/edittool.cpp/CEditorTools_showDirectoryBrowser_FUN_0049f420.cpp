@@ -2,13 +2,11 @@
 // Address: 0049f420
 // Address Range: [[0049f420, 0049fb65]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-          (CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path)
+int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path)
 
 {
   char cVar1;

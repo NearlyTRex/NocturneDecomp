@@ -2,14 +2,11 @@
 // Address: 004bfe90
 // Address Range: [[004bfe90, 004c00b4] [004c0111, 004c0136]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90 (CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles, CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity)
+// Signature: void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity)
 
 #include "nocturne.h"
 
-void __cdecl
-core_fire_cpp_CStake_spawn_FUN_004bfe90
-          (CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,
-          CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity)
+void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity)
 
 {
   CKeyFramedModel *pCVar1;

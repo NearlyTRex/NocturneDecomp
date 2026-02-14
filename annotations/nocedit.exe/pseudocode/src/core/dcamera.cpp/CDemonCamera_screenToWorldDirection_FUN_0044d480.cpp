@@ -2,13 +2,11 @@
 // Address: 0044d480
 // Address Range: [[0044d480, 0044d5f0]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480 (CDemonCamera *this_ptr,CVector3f *output_ptr,int screen_x,int screen_y)
+// Signature: CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480(CDemonCamera *this_ptr,CVector3f *output_ptr,int screen_x,int screen_y)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
-          (CDemonCamera *this_ptr,CVector3f *output_ptr,int screen_x,int screen_y)
+CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480(CDemonCamera *this_ptr,CVector3f *output_ptr,int screen_x,int screen_y)
 
 {
   longlong lVar1;

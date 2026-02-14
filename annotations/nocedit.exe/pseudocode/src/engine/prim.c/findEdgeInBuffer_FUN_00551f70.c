@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SSoftwareEdge * __cdecl
-engine_prim_c_findEdgeInBuffer_FUN_00551f70(int y_value,SSoftwareEdge *edge_ptr)
+SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_00551f70(int y_value,SSoftwareEdge *edge_ptr)
 
 {
   SSoftwareEdge *pSVar1;

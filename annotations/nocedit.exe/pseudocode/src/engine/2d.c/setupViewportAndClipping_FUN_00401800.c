@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_2d_c_setupViewportAndClipping_FUN_00401800(int left,int top,int right,int bottom)
+void __cdecl engine_2d_c_setupViewportAndClipping_FUN_00401800(int left,int top,int right,int bottom)
 
 {
   int iVar1;

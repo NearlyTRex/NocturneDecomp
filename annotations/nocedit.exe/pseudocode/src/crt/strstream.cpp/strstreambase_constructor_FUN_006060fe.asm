@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl strstreambase * __cdecl crt_strstream_cpp_strstreambase_constructor_FUN_006060fe (strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart)
+; __cdecl strstreambase * __cdecl crt_strstream_cpp_strstreambase_constructor_FUN_006060fe(strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart)
 ;
 ; Parameters:
 ; strstreambase *  Stack[0x4]:4   this_ptr

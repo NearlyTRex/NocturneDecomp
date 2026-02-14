@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float delta_time)
+void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float delta_time)
 
 {
   CVector3i *pCVar1;
@@ -78,7 +77,7 @@ core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float d
             (&this_ptr->globe,(CColor3f *)&(this_ptr->base).base.location);
   uVar3 = rand();
   (this_ptr->globe).intensity_multiplier = uVar3 & 0x7fff;
-  *(char *)&(this_ptr->globe).intensity = (char)((int)(uVar3 & 0x7fff) >> 10);
+  (this_ptr->globe).intensity.bytes[0] = (uchar)((int)(uVar3 & 0x7fff) >> 10);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(&this_ptr->globe,2.0);
   this_ptr_00 = g_CDemonSetPtr;
   (this_ptr->globe).corona_mode = 0;

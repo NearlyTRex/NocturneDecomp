@@ -14,6 +14,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
   int iVar2;
   CVector3i *position;
   CBoundingBox3D local_20;
+  SBodyPartModel *pSStack_8;
   
   if (this_ptr->render_in_background < 2) {
     g_CDemonSetPtr->unk_lighting_param2 = this_ptr->dont_use_normals;
@@ -29,11 +30,12 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
       }
       iVar2 = 0;
       if (0 < this_ptr->attached_model_count) {
+        pSStack_8 = this_ptr->attached_models;
         pSVar1 = this_ptr->attached_models;
         position = &this_ptr->attached_models[0].position;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr2,position,&this_ptr->attached_models[iVar2].scale);
+                    (g_CDemonRendererPtr2,position,&pSStack_8[iVar2].scale);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                     (&pSVar1->model,0.0,-1);
           iVar2 = iVar2 + 1;

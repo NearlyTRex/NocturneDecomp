@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_CLodVert_addAdjacentEdge_FUN_00515d90(CLodVert *this_ptr,int edge_index)
+void __cdecl shape_meshlod_cpp_CLodVert_addAdjacentEdge_FUN_00515d90(CLodVert *this_ptr,int edge_index)
 
 {
   if (0x31 < this_ptr->adjacent_edge_count) {

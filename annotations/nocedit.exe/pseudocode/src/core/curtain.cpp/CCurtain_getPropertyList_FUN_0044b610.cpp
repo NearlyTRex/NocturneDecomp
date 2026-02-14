@@ -2,13 +2,11 @@
 // Address: 0044b610
 // Address Range: [[0044b610, 0044b79d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_curtain_cpp_CCurtain_getPropertyList_FUN_0044b610 (CCurtain *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_curtain_cpp_CCurtain_getPropertyList_FUN_0044b610(CCurtain *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_curtain_cpp_CCurtain_getPropertyList_FUN_0044b610
-          (CCurtain *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_curtain_cpp_CCurtain_getPropertyList_FUN_0044b610(CCurtain *this_ptr,CActorPropertyList *property_list)
 
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);

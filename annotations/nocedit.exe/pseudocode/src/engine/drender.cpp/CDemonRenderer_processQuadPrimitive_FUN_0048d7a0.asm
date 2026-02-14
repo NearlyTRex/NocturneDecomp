@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *quad_primitive,int render_flags)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *quad_primitive,int render_flags)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

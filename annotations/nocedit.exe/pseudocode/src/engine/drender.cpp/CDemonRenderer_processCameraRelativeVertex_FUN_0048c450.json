@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 79,
+    "complexity_score": 77,
     "cross_reference_count": 77,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 17,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float"
     ],
-    "total_lines": 44
+    "total_lines": 42
   },
   "cross_references": [
     {
@@ -492,7 +492,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 (CDemonRenderer *this_ptr,CVector3f *world_position)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer *this_ptr,CVector3f *world_position)"
   },
   "function_calls": [
     {
@@ -587,35 +587,35 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 12,
+      "line": 10,
       "match": "6.68261e-39",
       "text": "CStack_18.x = 6.68261e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 12,
       "match": "ROUND",
       "text": "CStack_18.y = (float)(int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 15,
+      "line": 13,
       "match": "6.68263e-39",
       "text": "CStack_18.w = 6.68263e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 15,
       "match": "ROUND",
       "text": "CStack_18.y = (float)(int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 17,
       "match": "ROUND",
       "text": "CStack_18.y = (float)(int)ROUND(dVar2);",
       "type": "decompiler_intrinsic"

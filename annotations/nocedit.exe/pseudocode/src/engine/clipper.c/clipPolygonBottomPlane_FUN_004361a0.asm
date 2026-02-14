@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_clipper_c_clipPolygonBottomPlane_FUN_004361a0 (SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
+; __cdecl int __cdecl engine_clipper_c_clipPolygonBottomPlane_FUN_004361a0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 ;
 ; Parameters:
 ; SRenderVertex * * Stack[0x4]:4   input_vertices

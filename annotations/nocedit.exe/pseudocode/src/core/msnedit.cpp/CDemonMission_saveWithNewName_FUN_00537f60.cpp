@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonMission *this_ptr,char *name)
+void __cdecl core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonMission *this_ptr,char *name)
 
 {
   char cVar1;

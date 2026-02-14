@@ -2,14 +2,11 @@
 // Address: 00533ba0
 // Address Range: [[00533ba0, 00533c4a]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0 (CMP3Decoder *this_ptr,void *unknown_param2,float *output_buffer,int subband_index, int channel,SMpegFrame *frame_info,void *unknown_param7)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,void *unknown_param2,float *output_buffer,int subband_index,int channel,SMpegFrame *frame_info,void *unknown_param7)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0
-          (CMP3Decoder *this_ptr,void *unknown_param2,float *output_buffer,int subband_index,
-          int channel,SMpegFrame *frame_info,void *unknown_param7)
+void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,void *unknown_param2,float *output_buffer,int subband_index,int channel,SMpegFrame *frame_info,void *unknown_param7)
 
 {
   int iVar1;

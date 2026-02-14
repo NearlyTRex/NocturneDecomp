@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920 (CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

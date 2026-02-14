@@ -1,46 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 25,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 28,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 32,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 35,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 97,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 49,
     "suspect_count": 4,
     "suspect_types": [
       "extra_output"
     ],
-    "total_lines": 151
+    "total_lines": 148
   },
   "cross_references": [
     {
@@ -60,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 (SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags, int alpha_blend_flags,int special_render_mode)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,int alpha_blend_flags,int special_render_mode)"
   },
   "function_calls": [
     {
@@ -118,7 +93,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -200,28 +175,28 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 6,
       "match": "extraout_EAX",
       "text": "SMRGLHeaderExtended *extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 8,
       "match": "extraout_EAX_00",
       "text": "SMRGLHeaderExtended *extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 49,
+      "line": 46,
       "match": "extraout_EAX_00",
       "text": "return extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 52,
+      "line": 49,
       "match": "extraout_EAX",
       "text": "pSVar2 = extraout_EAX;",
       "type": "extra_output"

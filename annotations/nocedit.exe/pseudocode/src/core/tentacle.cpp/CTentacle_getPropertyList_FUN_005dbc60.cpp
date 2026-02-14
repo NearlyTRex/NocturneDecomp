@@ -2,13 +2,11 @@
 // Address: 005dbc60
 // Address Range: [[005dbc60, 005dbcbc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_tentacle_cpp_CTentacle_getPropertyList_FUN_005dbc60 (CTentacle *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_tentacle_cpp_CTentacle_getPropertyList_FUN_005dbc60(CTentacle *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_tentacle_cpp_CTentacle_getPropertyList_FUN_005dbc60
-          (CTentacle *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_tentacle_cpp_CTentacle_getPropertyList_FUN_005dbc60(CTentacle *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

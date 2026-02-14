@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 (CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check, float min_value,float max_value,int show_current_value)
+; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check,float min_value,float max_value,int show_current_value)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

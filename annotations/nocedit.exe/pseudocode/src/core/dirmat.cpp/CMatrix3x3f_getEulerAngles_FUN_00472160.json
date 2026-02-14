@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 40,
+        "line": 38,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 45,
+        "line": 43,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 48,
+        "line": 46,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 241,
+    "complexity_score": 239,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 131,
+    "pseudocode_lines": 129,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output"
     ],
-    "total_lines": 497
+    "total_lines": 495
   },
   "cross_references": [
     {
@@ -128,7 +128,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160",
-    "signature": "CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (CMatrix3x3f *this_ptr,CVector3f *euler_angles)"
+    "signature": "CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(CMatrix3x3f *this_ptr,CVector3f *euler_angles)"
   },
   "function_calls": [
     {
@@ -395,70 +395,70 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 10,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
+      "line": 28,
       "match": "extraout_ST1",
       "text": "fVar5 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
+      "line": 28,
       "match": "extraout_ST1",
       "text": "fVar5 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 28,
       "match": "SQRT",
       "text": "fVar5 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 31,
       "match": "SUB84",
       "text": "uStack_94 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 36,
       "match": "SUB84",
       "text": "uStack_84 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 39,
       "match": "SUB84",
       "text": "uStack_5c = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 46,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44(uStack_84,local_68) < 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 54,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44(uStack_5c,local_80) < 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 65,
       "match": "CONCAT44",
       "text": "fVar3 = 1.0 / (float)(double)CONCAT44(uStack_94,local_98);",
       "type": "decompiler_intrinsic"

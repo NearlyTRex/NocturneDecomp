@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_getSelectionRangeForLine_FUN_00564560 (int line,int *sel_start_col_out,int *sel_end_col_out)
+; __cdecl void __cdecl core_script_cpp_getSelectionRangeForLine_FUN_00564560(int line,int *sel_start_col_out,int *sel_end_col_out)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   line
@@ -9,7 +9,7 @@
 ; int *            Stack[0xc]:4   sel_end_col_out
 ;
 ; XREF[2]:
-;   core_script.cpp_CScript_FUN_005664d0 at 00566543
+;   core_script.cpp_CScript_drawLine_FUN_005664d0 at 00566543
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564a5e
 ;
 ; Referenced Globals:

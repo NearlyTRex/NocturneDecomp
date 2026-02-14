@@ -2,13 +2,11 @@
 // Address: 005e51a0
 // Address Range: [[005e51a0, 005e5253]]
 // Convention: __cdecl
-// Signature: void __cdecl core_tvbat_cpp_CTVBat_getPropertyList_FUN_005e51a0 (CTVBat *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_tvbat_cpp_CTVBat_getPropertyList_FUN_005e51a0(CTVBat *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_tvbat_cpp_CTVBat_getPropertyList_FUN_005e51a0
-          (CTVBat *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_tvbat_cpp_CTVBat_getPropertyList_FUN_005e51a0(CTVBat *this_ptr,CActorPropertyList *property_list)
 
 {
   core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(&this_ptr->base,property_list);

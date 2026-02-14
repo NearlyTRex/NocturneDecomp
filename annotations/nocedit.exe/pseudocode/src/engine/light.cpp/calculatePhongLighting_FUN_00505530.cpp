@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int world_z)
+int __cdecl engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int world_z)
 
 {
   longlong lVar1;

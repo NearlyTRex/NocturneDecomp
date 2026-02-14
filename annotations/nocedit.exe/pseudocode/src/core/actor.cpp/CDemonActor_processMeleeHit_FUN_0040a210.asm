@@ -7,7 +7,6 @@
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   hit_type
 ; Local Variables:
-; SDamageInfo      Stack[-0x290]:60  local_290
 ; SDamageInfo      Stack[-0x254]:60  local_254
 ; SDamageInfo      Stack[-0x218]:60  local_218
 ; SDamageInfo      Stack[-0x1dc]:60  local_1dc
@@ -33,8 +32,8 @@
 ; CTrigger *       Stack[-0x40]:4  local_40
 ; CCrate *         Stack[-0x3c]:4  local_3c
 ; int              Stack[-0x38]:4  local_38
-; int              Stack[-0x34]:4  local_34
-; int              Stack[-0x30]:4  local_30
+; CTrigger *       Stack[-0x34]:4  local_34
+; CCrate *         Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; CDemonActor *    Stack[-0x28]:4  local_28
 ; CDemonActor *    Stack[-0x24]:4  local_24

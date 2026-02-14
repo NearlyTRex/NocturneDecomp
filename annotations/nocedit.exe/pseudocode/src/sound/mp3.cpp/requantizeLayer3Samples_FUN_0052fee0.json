@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 127,
+    "complexity_score": 124,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 102,
+    "pseudocode_lines": 99,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 347
+    "total_lines": 344
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_0052fee0",
-    "signature": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0 (int *scalefactor_indices,uint *quantized_samples,float *dequantized_output, SMpegFrame *frame_info)"
+    "signature": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)"
   },
   "function_calls": [],
   "globals": [
@@ -292,14 +292,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "local_24 = (uint *)((int)dequantized_output + local_40 + local_54);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 48,
       "match": "(int *)((int)",
       "text": "[*(int *)((int)quantized_samples + local_54 + local_1c * 0x80) * 4];",
       "type": "pointer_cast"

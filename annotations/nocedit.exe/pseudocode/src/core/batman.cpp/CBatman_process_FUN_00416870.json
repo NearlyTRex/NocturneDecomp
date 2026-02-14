@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 26,
-        "line": 224,
+        "line": 223,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 238,
-        "message": "use of undeclared identifier 'stack0xfffffe78'"
+        "line": 237,
+        "message": "use of undeclared identifier 'stack0xfffffe78'; did you mean 'in_stack_fffffe78'?"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 273,
+        "line": 271,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -25,18 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 1015,
-    "complexity_score": 559,
+    "complexity_score": 551,
     "cross_reference_count": 0,
     "function_call_count": 32,
     "global_count": 34,
-    "pseudocode_lines": 444,
-    "suspect_count": 10,
+    "pseudocode_lines": 441,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "warning_type_propagation"
     ],
-    "total_lines": 1459
+    "total_lines": 1456
   },
   "cross_references": [],
   "function": {
@@ -931,73 +932,66 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_fffffe80",
-      "text": "float in_stack_fffffe80;",
-      "type": "stack_param"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_fffffe8c",
-      "text": "float in_stack_fffffe8c;",
+      "line": 25,
+      "match": "in_stack_fffffe78",
+      "text": "float in_stack_fffffe78;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 143,
+      "line": 142,
       "match": "SQRT",
       "text": "if (SQRT(local_c8.z * local_c8.z + local_c8.x * local_c8.x + local_c8.y * local_c8.y) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 147,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 188,
-      "match": "in_stack_fffffe80",
-      "text": "path_map,pCVar11,fVar14,in_stack_fffffe80);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 196,
+      "line": 195,
       "match": "SQRT",
       "text": "local_38 = SQRT(local_84 * local_84 + local_8c * local_8c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 208,
+      "line": 207,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 231,
+      "line": 230,
       "match": "&stack0xfffffe78",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe78);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 322,
+      "line": 320,
       "match": "SQRT",
       "text": "if (SQRT(local_48 * local_48 + local_50 * local_50 + local_4c * local_4c) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 445,
-      "match": "in_stack_fffffe8c",
-      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffe8c);",
+      "line": 443,
+      "match": "in_stack_fffffe78",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffe78);",
       "type": "stack_param"
     }
   ],

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SCollisionReturnInfo * __cdecl
-core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_00574750(SCollisionReturnInfo *this_ptr)
+SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_00574750(SCollisionReturnInfo *this_ptr)
 
 {
   return this_ptr;

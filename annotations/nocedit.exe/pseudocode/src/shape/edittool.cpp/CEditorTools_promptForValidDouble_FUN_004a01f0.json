@@ -4,31 +4,31 @@
       {
         "category": "format_error",
         "column": 33,
-        "line": 29,
+        "line": 26,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 30,
+        "line": 27,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 37,
-        "line": 43,
+        "line": 40,
         "message": "format specifies type 'double *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 104,
-        "line": 54,
+        "line": 51,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 55,
+        "line": 52,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -37,18 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 127,
+    "complexity_score": 124,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 49,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 173
+    "total_lines": 170
   },
   "cross_references": [],
   "function": {
@@ -62,7 +62,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0",
-    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0 (CEditorTools *this_ptr,char *prompt_text,double *result_ptr,int enable_range_check, double min_value,double max_value,int show_current_value)"
+    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools *this_ptr,char *prompt_text,double *result_ptr,int enable_range_check,double min_value,double max_value,int show_current_value)"
   },
   "function_calls": [
     {
@@ -260,42 +260,42 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 20,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)result_ptr + 4));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 41,
       "match": "CONCAT44",
       "text": "((local_40 <= (double)CONCAT44(uStack_44,local_48) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 42,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(uStack_44,local_48) <= local_38)))) break;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 47,
+      "line": 44,
       "match": "._4_4_",
       "text": "(this_ptr,\"Please enter a valid integer between %.15g and %.15g.\",(uint)local_40,local_40._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 45,
       "match": "._4_4_",
       "text": "(uint)local_38,local_38._4_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)result_ptr + 4) = uStack_44;",
       "type": "pointer_cast"

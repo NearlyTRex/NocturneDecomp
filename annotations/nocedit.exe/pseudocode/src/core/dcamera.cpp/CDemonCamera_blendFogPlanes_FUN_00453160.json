@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 69,
+    "complexity_score": 67,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 37,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 135
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453160",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00453160 (CDemonCamera *this_ptr,int plane_index,uint blend_alpha)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00453160(CDemonCamera *this_ptr,int plane_index,uint blend_alpha)"
   },
   "function_calls": [
     {
@@ -159,7 +159,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 36,
       "match": "(SFogImagePlane *)((int)",
       "text": "output_buffer = (SFogImagePlane *)((int)output_buffer + 0x140);",
       "type": "pointer_cast"

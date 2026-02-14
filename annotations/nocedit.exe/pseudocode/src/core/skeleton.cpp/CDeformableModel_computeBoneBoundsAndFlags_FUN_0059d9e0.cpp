@@ -2,13 +2,11 @@
 // Address: 0059d9e0
 // Address Range: [[0059d9e0, 0059dbd0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0 (CDeformableModel *this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0(CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0
-          (CDeformableModel *this_ptr)
+void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0(CDeformableModel *this_ptr)
 
 {
   uchar *puVar1;

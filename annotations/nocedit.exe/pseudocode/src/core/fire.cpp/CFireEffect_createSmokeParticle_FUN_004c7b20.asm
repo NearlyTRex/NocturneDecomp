@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20 (CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence, int alpha_value)
+; __cdecl void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr

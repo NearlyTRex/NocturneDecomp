@@ -4,61 +4,61 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 22,
+        "line": 19,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 33,
+        "line": 30,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 35,
+        "line": 32,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 36,
+        "line": 33,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 39,
+        "line": 36,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 40,
+        "line": 37,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 41,
+        "line": 38,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 44,
+        "line": 41,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 45,
+        "line": 42,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 46,
+        "line": 43,
         "message": "member reference base type 'double' is not a structure or union"
       }
     ],
@@ -67,17 +67,17 @@
   },
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 151,
+    "complexity_score": 148,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 38,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "unknown_field"
     ],
-    "total_lines": 217
+    "total_lines": 214
   },
   "cross_references": [
     {
@@ -128,7 +128,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004547d0",
-    "signature": "void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0 (CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx, double plane_ny,double plane_nz,double plane_d)"
+    "signature": "void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d)"
   },
   "function_calls": [
     {
@@ -279,70 +279,70 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
+      "line": 12,
       "match": "SUB84",
       "text": "local_28 = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 26,
+      "line": 23,
       "match": "._0_4_",
       "text": "if ((((((ulonglong)plane_nx & 0x7fffffff00000000) != 0) || (plane_nx._0_4_ != 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 28,
+      "line": 25,
       "match": "._0_4_",
       "text": "(((plane_ny._0_4_ == 0 && (((ulonglong)plane_nz & 0x7fffffff00000000) == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 29,
+      "line": 26,
       "match": "._0_4_",
       "text": "(plane_nz._0_4_ == 0)))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 29,
       "match": "._0_4_",
       "text": "if (((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 33,
+      "line": 30,
       "match": "._0_4_",
       "text": "(((((ulonglong)plane_ny & 0x7fffffff00000000) != 0 || (plane_ny._0_4_ != 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 34,
+      "line": 31,
       "match": "._0_4_",
       "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) == 0 && (plane_nz._0_4_ == 0)))))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 34,
       "match": "._0_4_",
       "text": "if (((((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 35,
       "match": "._0_4_",
       "text": "(((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) && (plane_ny._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 39,
+      "line": 36,
       "match": "._0_4_",
       "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) != 0 || (plane_nz._0_4_ != 0)))) {",
       "type": "unknown_field"

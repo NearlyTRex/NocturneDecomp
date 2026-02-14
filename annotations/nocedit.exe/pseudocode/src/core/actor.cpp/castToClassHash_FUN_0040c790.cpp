@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActor * __cdecl
-core_actor_cpp_castToClassHash_FUN_0040c790(CDemonActor *actor_ptr,uint class_name_hash)
+CDemonActor * __cdecl core_actor_cpp_castToClassHash_FUN_0040c790(CDemonActor *actor_ptr,uint class_name_hash)
 
 {
   int iVar1;

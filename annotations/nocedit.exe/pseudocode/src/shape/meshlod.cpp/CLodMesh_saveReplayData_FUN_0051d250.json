@@ -4,19 +4,19 @@
       {
         "category": "format_error",
         "column": 20,
-        "line": 39,
+        "line": 38,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 20,
-        "line": 40,
+        "line": 39,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 41,
+        "line": 40,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -25,16 +25,16 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 92,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 36,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 95
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -156,35 +156,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->adjacent_tri_indices + iVar6),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->adjacent_tri_indices + iVar5),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->adjacent_tri_indices + iVar4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->adjacent_tri_indices + iVar3),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)pCVar1->adjacent_tri_indices + iVar2));",
       "type": "pointer_cast"

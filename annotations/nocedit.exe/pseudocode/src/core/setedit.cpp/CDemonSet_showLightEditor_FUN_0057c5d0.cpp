@@ -294,7 +294,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
         }
       }
     }
-    if ((((byte)g_MouseButtonFlags & 1) != 0) && (local_24 != -1)) {
+    if (((g_MouseButtonFlags.bytes[0] & 1) != 0) && (local_24 != -1)) {
       core_setedit_cpp_CDemonSet_FUN_0057c550(this_ptr);
       core_setedit_cpp_CDemonSet_FUN_0057b500(this_ptr);
     }

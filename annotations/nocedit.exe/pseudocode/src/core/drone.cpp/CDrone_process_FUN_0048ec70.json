@@ -11,19 +11,13 @@
         "category": "undeclared_identifier",
         "column": 71,
         "line": 144,
-        "message": "use of undeclared identifier 'stack0xffffff24'"
+        "message": "use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 225,
+        "line": 223,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 269,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -31,17 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 594,
-    "complexity_score": 341,
+    "complexity_score": 312,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 18,
-    "pseudocode_lines": 261,
-    "suspect_count": 7,
+    "pseudocode_lines": 257,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "warning_type_propagation"
     ],
-    "total_lines": 855
+    "total_lines": 851
   },
   "cross_references": [],
   "function": {
@@ -593,24 +588,17 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffff2c",
-      "text": "float in_stack_ffffff2c;",
-      "type": "stack_param"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_ffffff30",
-      "text": "CDemonActor *in_stack_ffffff30;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 115,
-      "match": "in_stack_ffffff2c",
-      "text": "path_map,pCVar10,fVar12,in_stack_ffffff2c);",
+      "line": 23,
+      "match": "in_stack_ffffff24",
+      "text": "float in_stack_ffffff24;",
       "type": "stack_param"
     },
     {
@@ -622,23 +610,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 233,
-      "match": "in_stack_ffffff30",
-      "text": "in_stack_ffffff30 = (this_ptr->base).victim;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 234,
-      "match": "in_stack_ffffff30",
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_ffffff30);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 262,
-      "match": "in_stack_ffffff30",
-      "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_ffffff30);",
+      "line": 259,
+      "match": "in_stack_ffffff24",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff24);",
       "type": "stack_param"
     }
   ],

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 (CDemonActor *this_ptr,char *context_file,int context_line)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor *this_ptr,char *context_file,int context_line)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

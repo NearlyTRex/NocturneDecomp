@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CMuzzleFlash * __cdecl
-core_fire_cpp_CMuzzleFlash_arrdtor_FUN_004c9990(CMuzzleFlash *objs,uint flags)
+CMuzzleFlash * __cdecl core_fire_cpp_CMuzzleFlash_arrdtor_FUN_004c9990(CMuzzleFlash *objs,uint flags)
 
 {
   CMuzzleFlash *pCVar1;

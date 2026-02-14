@@ -2,13 +2,11 @@
 // Address: 0046fcc0
 // Address Range: [[0046fcc0, 0046fd4b]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0046fcc0 (CActorDestination *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0046fcc0(CActorDestination *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_dest_cpp_CActorDestination_getBoundingBox_FUN_0046fcc0
-          (CActorDestination *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0046fcc0(CActorDestination *this_ptr,CBoundingBox3D *out_box)
 
 {
   CDemonActor *this_ptr_00;

@@ -2,13 +2,11 @@
 // Address: 005563d0
 // Address Range: [[005563d0, 00556461]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_quantize_cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0 (CColorQuantizer *this_ptr,int bitmap_count,CBitmap **bitmap_array)
+// Signature: int __cdecl shape_quantize_cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0(CColorQuantizer *this_ptr,int bitmap_count,CBitmap **bitmap_array)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_quantize_cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0
-          (CColorQuantizer *this_ptr,int bitmap_count,CBitmap **bitmap_array)
+int __cdecl shape_quantize_cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0(CColorQuantizer *this_ptr,int bitmap_count,CBitmap **bitmap_array)
 
 {
   int iVar1;

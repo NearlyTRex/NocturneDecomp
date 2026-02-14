@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_005a3160 (CSmiley *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
+; __cdecl int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_005a3160(CSmiley *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 ;
 ; Parameters:
 ; CSmiley *        Stack[0x4]:4   this_ptr

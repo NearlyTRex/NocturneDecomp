@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 43,
+        "line": 41,
         "message": "use of undeclared identifier 'stack0xffffffc4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 44,
+        "line": 42,
         "message": "use of undeclared identifier 'stack0xffffffc8'"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 166,
+    "complexity_score": 164,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 12,
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 59,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 228
+    "total_lines": 226
   },
   "cross_references": [],
   "function": {
@@ -44,7 +44,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0",
-    "signature": "void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0 (int scanline_y,int x_start,int x_end)"
+    "signature": "void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(int scanline_y,int x_start,int x_end)"
   },
   "function_calls": [
     {
@@ -111,7 +111,7 @@
     {
       "addr": "013bc260",
       "name": "g_CameraDownscaleIterations",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -288,63 +288,63 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_ffffffc0",
       "text": "CVector3i *in_stack_ffffffc0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_ffffffc0",
       "text": "(&g_CurrentLightForCorona->base,local_24,in_stack_ffffffc0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 33,
       "match": "in_stack_ffffffc0",
       "text": "in_stack_ffffffc0 = local_34;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
+      "line": 34,
       "match": "&stack0xffffffc4",
       "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) = auStack_30[(uint)bVar3 * -2];",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) = auStack_30[(uint)bVar3 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 35,
       "match": "&stack0xffffffc8",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_ffffffc0",
       "text": "[((int)in_stack_ffffffc0 >> 0x10) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 44,
       "match": "in_stack_ffffffc0",
       "text": "(int)in_stack_ffffffc0 >> ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f);",
       "type": "stack_param"

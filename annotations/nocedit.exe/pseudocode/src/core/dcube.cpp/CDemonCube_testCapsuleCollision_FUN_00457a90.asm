@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcube_cpp_CDemonCube_testCapsuleCollision_FUN_00457a90 (CDemonCube *this_ptr,SIntersectXZCylinder *capsule_data)
+; __cdecl void __cdecl core_dcube_cpp_CDemonCube_testCapsuleCollision_FUN_00457a90(CDemonCube *this_ptr,SIntersectXZCylinder *capsule_data)
 ;
 ; Parameters:
 ; CDemonCube *     Stack[0x4]:4   this_ptr

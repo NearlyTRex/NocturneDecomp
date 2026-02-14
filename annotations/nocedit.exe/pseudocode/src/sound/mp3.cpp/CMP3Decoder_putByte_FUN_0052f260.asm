@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260 (CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte)
+; __cdecl void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr

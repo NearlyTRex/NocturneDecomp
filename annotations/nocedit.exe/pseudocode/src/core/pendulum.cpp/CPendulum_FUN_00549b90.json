@@ -4,31 +4,31 @@
       {
         "category": "other",
         "column": 11,
-        "line": 38,
+        "line": 36,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 38,
+        "line": 36,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 46,
+        "line": 44,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 46,
+        "line": 44,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 47,
+        "line": 45,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -37,11 +37,11 @@
   },
   "complexity": {
     "assembly_lines": 553,
-    "complexity_score": 387,
+    "complexity_score": 384,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 12,
-    "pseudocode_lines": 177,
+    "pseudocode_lines": 174,
     "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -49,7 +49,7 @@
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 730
+    "total_lines": 727
   },
   "cross_references": [
     {
@@ -385,77 +385,84 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_EBX",
       "text": "int extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 31,
+      "line": 29,
       "match": "._4_4_",
-      "text": "local_24._4_4_ = SUB84(dVar8,0);",
+      "text": "local_24._4_4_ = SUB84(dVar7,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 29,
       "match": "SUB84",
-      "text": "local_24._4_4_ = SUB84(dVar8,0);",
+      "text": "local_24._4_4_ = SUB84(dVar7,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 33,
+      "line": 31,
       "match": "extraout_EBX",
       "text": "*(float *)(extraout_EBX + 0x3a0) =",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 / *(float *)(extraout_EBX + 0x3a4) + *(float *)(extraout_EBX + 0x3a0);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
+      "line": 32,
       "match": "extraout_EBX",
       "text": "in_stack_00000008 / *(float *)(extraout_EBX + 0x3a4) + *(float *)(extraout_EBX + 0x3a0);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
+      "line": 32,
       "match": "extraout_EBX",
       "text": "in_stack_00000008 / *(float *)(extraout_EBX + 0x3a4) + *(float *)(extraout_EBX + 0x3a0);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 35,
+      "line": 33,
       "match": "extraout_EBX",
       "text": "if ((*(int *)(extraout_EBX + 0x43c) != 0) && (1.0 < *(float *)(extraout_EBX + 0x3a0))) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 35,
+      "line": 33,
       "match": "extraout_EBX",
       "text": "if ((*(int *)(extraout_EBX + 0x43c) != 0) && (1.0 < *(float *)(extraout_EBX + 0x3a0))) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 36,
+      "line": 34,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 0x3a0) = *(float *)(extraout_EBX + 0x3a0) + 0.5f;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 34,
       "match": "extraout_EBX",
       "text": "*(float *)(extraout_EBX + 0x3a0) = *(float *)(extraout_EBX + 0x3a0) + 0.5f;",
       "type": "extra_output"
@@ -464,56 +471,49 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 36,
       "match": "extraout_EBX",
-      "text": "*(float *)(extraout_EBX + 0x3a0) = *(float *)(extraout_EBX + 0x3a0) + 0.5f;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
-      "match": "extraout_EBX",
-      "text": "dVar8 = floor((double)*(float *)(extraout_EBX + 0x3a0));",
+      "text": "dVar7 = floor((double)*(float *)(extraout_EBX + 0x3a0));",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 39,
+      "line": 37,
       "match": "._0_4_",
-      "text": "local_24._0_4_ = SUB84(dVar8,0);",
+      "text": "local_24._0_4_ = SUB84(dVar7,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 37,
       "match": "SUB84",
-      "text": "local_24._0_4_ = SUB84(dVar8,0);",
+      "text": "local_24._0_4_ = SUB84(dVar7,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 40,
+      "line": 38,
       "match": "._4_4_",
-      "text": "local_24._4_4_ = (uint)((ulonglong)dVar8 >> 0x20);",
+      "text": "local_24._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 41,
       "match": "fsin",
-      "text": "fVar5 = (float10)fsin(fVar4 * (float10)2 * (float10)3.1415926535000001);",
+      "text": "fVar4 = (float10)fsin(fVar3 * (float10)2 * (float10)3.1415926535000001);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 43,
       "match": "in_stack_00000008",
-      "text": "fVar6 = (float10)(float)this_ptr_00[3].location.area_id + (float10)in_stack_00000008;",
+      "text": "fVar5 = (float10)(float)this_ptr_00[3].location.area_id + (float10)in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 66,
       "match": "in_stack_00000008",
-      "text": "if ((0.0 < in_stack_00000008) && ((float)0.10000000000000001 < (float)fVar4)) {",
+      "text": "if ((0.0 < in_stack_00000008) && ((float)0.10000000000000001 < (float)fVar3)) {",
       "type": "stack_param"
     }
   ]

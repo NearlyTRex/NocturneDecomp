@@ -2,15 +2,13 @@
 // Address: 005a3c90
 // Address Range: [[005a3c90, 005a3fd0]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_computeFFT_FUN_005a3c90 (float *input,int size,float *output_real,float *output_imag)
+// Signature: void __cdecl sound_sndmain_cpp_computeFFT_FUN_005a3c90(float *input,int size,float *output_real,float *output_imag)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005a3fc6) */
 
-void __cdecl
-sound_sndmain_cpp_computeFFT_FUN_005a3c90
-          (float *input,int size,float *output_real,float *output_imag)
+void __cdecl sound_sndmain_cpp_computeFFT_FUN_005a3c90(float *input,int size,float *output_real,float *output_imag)
 
 {
   double dVar1;

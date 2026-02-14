@@ -48,10 +48,9 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
       do {
         pCVar2 = g_CDemonRendererPtr2;
         iVar9 = pCVar3->locked_vertex_indices[0];
-        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].light =
-             (float)pCVar3->locked_vertex_indices[600];
+        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].light = pCVar3->locked_vertex_indices[600];
         pCVar2->vertex_buffer_ptr[iVar9].color = pCVar3->locked_vertex_indices[700];
-        pCVar2->vertex_buffer_ptr[iVar9].fog = (float)pCVar3->locked_vertex_indices[800];
+        pCVar2->vertex_buffer_ptr[iVar9].fog = pCVar3->locked_vertex_indices[800];
         iVar5 = iVar5 + 1;
         pCVar3 = (CCloth *)((pCVar3->model).model_filename + 4);
       } while (iVar5 < this_ptr->locked_vertex_count);
@@ -91,10 +90,9 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
       do {
         pCVar2 = g_CDemonRendererPtr2;
         iVar9 = pCVar3->locked_vertex_indices[0];
-        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].light =
-             (float)pCVar3->locked_vertex_indices[600];
+        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].light = pCVar3->locked_vertex_indices[600];
         pCVar2->vertex_buffer_ptr[iVar9].color = pCVar3->locked_vertex_indices[700];
-        pCVar2->vertex_buffer_ptr[iVar9].fog = (float)pCVar3->locked_vertex_indices[800];
+        pCVar2->vertex_buffer_ptr[iVar9].fog = pCVar3->locked_vertex_indices[800];
         iVar5 = iVar5 + 1;
         pCVar3 = (CCloth *)((pCVar3->model).model_filename + 4);
       } while (iVar5 < this_ptr->locked_vertex_count);

@@ -17,7 +17,7 @@ void __cdecl CBox::setupCorners(CBox *this_ptr,CVector3f *position,CVector3f *or
 
 // Original: core_box.cpp_CBox_setupN_FUN_0041df50
 // Address: 0041df50
-void __cdecl CBox::setupN(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count, CVector3f *point_array,float volume);
+void __cdecl CBox::setupN(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume);
 
 // Original: core_box.cpp_CBox_updateTransform_FUN_0041e0e0
 // Address: 0041e0e0
@@ -81,7 +81,7 @@ float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(CBoundingBox3D *this_ptr)
 
 // Original: core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
 // Address: 00420940
-float __cdecl CBoundingBox3D::doesRayIntersect(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
+float __cdecl CBoundingBox3D::doesRayIntersect(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_box.cpp_CBoundingBox3D_normalize_FUN_00420d70
 // Address: 00420d70

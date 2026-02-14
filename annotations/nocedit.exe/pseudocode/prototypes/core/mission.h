@@ -53,7 +53,7 @@ CDemonActor * __cdecl CDemonMission::loadActor(CDemonMission *this_ptr,_FILE *fi
 
 // Original: core_mission.cpp_CDemonMission_saveActor_FUN_00523af0
 // Address: 00523af0
-void __cdecl CDemonMission::saveActor(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor, char *description);
+void __cdecl CDemonMission::saveActor(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,char *description);
 
 // Original: core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 // Address: 00523b70

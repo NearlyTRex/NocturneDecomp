@@ -2,14 +2,11 @@
 // Address: 0043c290
 // Address Range: [[0043c290, 0043c2ce]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043c290 (CClothList *this_ptr,CVector3f *position,CVector3f *euler, CDeformableModelInstance *model_ptr)
+// Signature: void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043c290(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_cloth_cpp_CClothList_setup_FUN_0043c290
-          (CClothList *this_ptr,CVector3f *position,CVector3f *euler,
-          CDeformableModelInstance *model_ptr)
+void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043c290(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr)
 
 {
   CClothList *pCVar1;

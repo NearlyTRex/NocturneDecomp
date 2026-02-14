@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dest_cpp_CActorDestination_hasCollision_FUN_0046fe70 (CActorDestination *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_dest_cpp_CActorDestination_hasCollision_FUN_0046fe70(CActorDestination *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CActorDestination * Stack[0x4]:4   this_ptr

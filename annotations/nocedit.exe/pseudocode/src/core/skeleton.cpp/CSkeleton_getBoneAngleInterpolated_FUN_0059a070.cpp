@@ -2,14 +2,11 @@
 // Address: 0059a070
 // Address Range: [[0059a070, 0059a0ff]]
 // Convention: __cdecl
-// Signature: CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 (CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2, float interpolation)
+// Signature: CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation)
 
 #include "nocturne.h"
 
-CQuaternion4f * __cdecl
-core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-          (CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,
-          float interpolation)
+CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation)
 
 {
   float fVar1;

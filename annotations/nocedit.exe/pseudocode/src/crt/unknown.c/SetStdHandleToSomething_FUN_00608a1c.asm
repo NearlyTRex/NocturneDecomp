@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_SetStdHandleToSomething_FUN_00608a1c(void)
+; unknown void crt_unknown_c_SetStdHandleToSomething_FUN_00608a1c(HANDLE param_1,uint param_2)
 ;
 ;
 ; XREF[1]:

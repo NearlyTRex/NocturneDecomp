@@ -113,11 +113,11 @@ int __cdecl CDemonSet::calculateSpatialLighting(CDemonSet *this_ptr,CVector3i *w
 
 // Original: core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
 // Address: 0056ddb0
-void __cdecl CDemonSet::lightVertexColor(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index, int skip_lighting_calculation);
+void __cdecl CDemonSet::lightVertexColor(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation);
 
 // Original: core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 // Address: 0056e110
-int __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal, int start_vertex_index,int vertex_count);
+int __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
 
 // Original: core_set.cpp_FUN_0056e180
 // Address: 0056e180
@@ -149,7 +149,7 @@ void __cdecl FUN_0056e960(void);
 
 // Original: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
 // Address: 0056eac0
-float __cdecl CDemonSet::lightVerticies(CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr, int render_flags,int lighting_mode,int flags);
+float __cdecl CDemonSet::lightVerticies(CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr,int render_flags,int lighting_mode,int flags);
 
 // Original: core_set.cpp_CDemonSet_process_FUN_0056f940
 // Address: 0056f940
@@ -193,7 +193,7 @@ void __cdecl FUN_00570700(void);
 
 // Original: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
 // Address: 00570770
-void __cdecl CDemonSet::renderPrimitiveBatch(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count, int render_flags);
+void __cdecl CDemonSet::renderPrimitiveBatch(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags);
 
 // Original: core_set.cpp_CDemonSet_FUN_00570870
 // Address: 00570870

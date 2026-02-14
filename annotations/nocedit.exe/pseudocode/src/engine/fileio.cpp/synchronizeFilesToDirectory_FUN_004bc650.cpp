@@ -2,13 +2,11 @@
 // Address: 004bc650
 // Address Range: [[004bc650, 004bc9ee]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650 (_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
+// Signature: void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
-          (_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
+void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
 
 {
   char cVar1;

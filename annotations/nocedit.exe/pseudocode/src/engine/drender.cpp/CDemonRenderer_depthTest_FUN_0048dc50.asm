@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50 (CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr)
+; __cdecl int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

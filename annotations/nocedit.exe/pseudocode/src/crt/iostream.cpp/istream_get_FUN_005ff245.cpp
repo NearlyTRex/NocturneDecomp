@@ -26,7 +26,7 @@ istream * __cdecl crt_iostream_cpp_istream_get_FUN_005ff245(istream *this_ptr,ch
                   ((this_ptr->_istream_core).layout_info)->offset_to_base + -0x2d);
   if (*(uint *)(iVar3 + 0x10) != *(uint *)(iVar3 + 0x14)) {
     if ((*(uint *)(iVar3 + 0x14) < *(uint *)(iVar3 + 0x10)) ||
-       (iVar4 = (**(code **)(*(int *)(iVar3 + 0x28) + 0x10))(), iVar4 != -1)) {
+       (iVar4 = (**(code **)(*(int *)(iVar3 + 0x28) + 0x10))(iVar3), iVar4 != -1)) {
       pcVar1 = *(char **)(iVar3 + 0x14);
       *(char **)(iVar3 + 0x14) = pcVar1 + 1;
       cVar2 = *pcVar1;

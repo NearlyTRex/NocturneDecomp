@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_msnedit_cpp_CDemonMission_writeIni_FUN_005375d0(CDemonMission *this_ptr,CIniFile *ini_file)
+void __cdecl core_msnedit_cpp_CDemonMission_writeIni_FUN_005375d0(CDemonMission *this_ptr,CIniFile *ini_file)
 
 {
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90

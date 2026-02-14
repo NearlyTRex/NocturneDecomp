@@ -2,11 +2,11 @@
 // Address: 0060b5e8
 // Address Range: [[0060b5e8, 0060b628]]
 // Convention: __watcallRegister
-// Signature: double crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)
+// Signature: double __watcallRegister crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)
 
 #include "nocturne.h"
 
-double FUN_0060b5e8(uint param_1,uint param_2)
+double __watcallRegister FUN_0060b5e8(uint param_1,uint param_2)
 
 {
   uint uVar1;

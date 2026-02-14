@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 520,
-    "complexity_score": 337,
+    "complexity_score": 334,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 232,
+    "pseudocode_lines": 229,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 752
+    "total_lines": 749
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0",
-    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0 (CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3Granule *side_info_array, SMpegFrame *frame)"
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0(CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3Granule *side_info_array ,SMpegFrame *frame)"
   },
   "function_calls": [
     {
@@ -302,70 +302,70 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 65,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar4->table_select + iVar12) = uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 90,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)side_info_array[local_30].subblock_gain + uVar2) = uVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 173,
+      "line": 170,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)side_info_array[local_34].table_select + iVar12 + local_58) = uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
+      "line": 174,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)side_info_array[local_34].subblock_gain + local_58 + 0xc) = uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 179,
+      "line": 176,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)side_info_array[local_34].table_select + local_58 + -8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 180,
+      "line": 177,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)side_info_array[local_34].subblock_gain + local_58 + 0x10) = uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 196,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)side_info_array[local_34].subblock_gain + uVar2 + local_58) = uVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 202,
+      "line": 199,
       "match": "(int *)((int)",
       "text": "iVar12 = *(int *)((int)side_info_array[local_34].table_select + local_58 + -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
+      "line": 207,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)side_info_array[local_34].table_select + local_58 + -4) == 0)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 211,
+      "line": 208,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)side_info_array[local_34].subblock_gain + local_58 + 0xc) = 8;",
       "type": "pointer_cast"

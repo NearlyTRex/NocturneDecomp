@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 517,
-    "complexity_score": 300,
+    "complexity_score": 299,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 37,
-    "pseudocode_lines": 240,
+    "pseudocode_lines": 239,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output"
     ],
-    "total_lines": 757
+    "total_lines": 756
   },
   "cross_references": [],
   "function": {
@@ -460,35 +460,35 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
+      "line": 24,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 53,
+      "line": 52,
       "match": "extraout_ST1",
       "text": "dVar20 = round((double)(extraout_ST1 * fVar17 * fVar18));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 53,
       "match": "ROUND",
       "text": "iVar2 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((int)ROUND(dVar19));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 57,
       "match": "ROUND",
       "text": "iVar6 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((int)ROUND(dVar20));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 58,
       "match": "ROUND",
       "text": "iVar7 = engine_matrix_c_interpolatedCos_FUN_0050c600((int)ROUND(dVar20));",
       "type": "decompiler_intrinsic"

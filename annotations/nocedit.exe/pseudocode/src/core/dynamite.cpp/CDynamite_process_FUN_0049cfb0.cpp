@@ -15,11 +15,13 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_pt
   int iVar2;
   CBoundingBox3D *pCVar3;
   CVector3f *pCVar4;
-  byte auStack_58 [48];
-  float fStack_28;
+  CBoundingBox3D CStack_60;
+  CBoundingBox3D local_48;
+  CVector3f CStack_30;
   float fStack_24;
-  CVector3f CStack_20;
-  float fStack_14;
+  float fStack_20;
+  float fStack_1c;
+  CVector3f CStack_18;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   if (0.0 <= *(float *)this_ptr->unk) {
@@ -43,22 +45,22 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_pt
                         ((delta_time * (float)5 * fVar1) / 3.5f);
       if (iVar2 != 0) {
         pCVar3 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
-                           ((CDemonActor *)this_ptr,(CBoundingBox3D *)(auStack_58 + 0x10));
-        CStack_20.y = (pCVar3->min).x + (pCVar3->max).x;
-        CStack_20.z = (pCVar3->min).y + (pCVar3->max).y;
-        fStack_28 = CStack_20.y * 0.5f;
-        fStack_14 = (pCVar3->min).z + (pCVar3->max).z;
-        fStack_24 = CStack_20.z * 0.5f;
-        CStack_20.x = fStack_14 * 0.5f;
+                           ((CDemonActor *)this_ptr,&local_48);
+        fStack_24 = (pCVar3->min).x + (pCVar3->max).x;
+        fStack_20 = (pCVar3->min).y + (pCVar3->max).y;
+        CStack_30.x = fStack_24 * 0.5f;
+        fStack_1c = (pCVar3->min).z + (pCVar3->max).z;
+        CStack_30.y = fStack_20 * 0.5f;
+        CStack_30.z = fStack_1c * 0.5f;
         pCVar3 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
-                           ((CDemonActor *)this_ptr,(CBoundingBox3D *)auStack_58);
-        CStack_20.z = (pCVar3->max).z;
+                           ((CDemonActor *)this_ptr,&CStack_60);
+        CStack_30.z = (pCVar3->max).z;
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           ((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffff8,&CStack_20);
-        if (&CStack_20 != pCVar4) {
-          CStack_20.x = pCVar4->x;
-          CStack_20.y = pCVar4->y;
-          CStack_20.z = pCVar4->z;
+                           ((CDemonActor *)this_ptr,&CStack_18,&CStack_30);
+        if (&CStack_30 != pCVar4) {
+          CStack_30.x = pCVar4->x;
+          CStack_30.y = pCVar4->y;
+          CStack_30.z = pCVar4->z;
         }
         core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
         return;

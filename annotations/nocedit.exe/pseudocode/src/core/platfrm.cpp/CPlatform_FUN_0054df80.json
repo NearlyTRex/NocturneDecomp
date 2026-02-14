@@ -2,58 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 14,
-        "line": 30,
-        "message": "no member named '_0_8_' in 'SCollisionInfo'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 31,
+        "line": 30,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 31,
+        "line": 30,
         "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 44,
-        "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 45,
-        "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 46,
-        "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 47,
-        "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 48,
-        "message": "C-style cast from 'void *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 62,
-        "message": "C-style cast from 'void *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -61,19 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 170,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
-    "pseudocode_lines": 70,
-    "suspect_count": 8,
+    "pseudocode_lines": 69,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
-      "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 264
+    "total_lines": 263
   },
   "cross_references": [
     {
@@ -226,51 +183,44 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != 0) {",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 23,
-      "match": "._0_8_",
-      "text": "local_88._0_8_ = (ulonglong)(uint)local_88.unk1 << 0x20;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000008",
       "text": "iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x34))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
+      "line": 23,
       "match": "code *",
       "text": "iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x34))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 31,
       "match": "ABS",
       "text": "if ((ABS(fVar3) <= (float)0.01) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 32,
       "match": "ABS",
       "text": "(ABS((this_ptr->base).orient.vec.z) <= (float)0.01)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 35,
       "match": "in_stack_00000008",
-      "text": "(&this_ptr->base,&CStack_1c,(CVector3f *)(in_stack_00000008 + 0x20));",
+      "text": "(&this_ptr->base,&CStack_24,(CVector3f *)(in_stack_00000008 + 0x20));",
       "type": "stack_param"
     }
   ]

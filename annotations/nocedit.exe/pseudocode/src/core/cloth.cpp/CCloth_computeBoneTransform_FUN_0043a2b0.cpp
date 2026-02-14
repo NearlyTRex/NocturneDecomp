@@ -2,13 +2,11 @@
 // Address: 0043a2b0
 // Address Range: [[0043a2b0, 0043a41c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043a2b0 (CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
+// Signature: void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043a2b0(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043a2b0
-          (CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
+void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043a2b0(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 {
   int iVar1;

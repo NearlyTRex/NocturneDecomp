@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_weapon_cpp_CWeapon_getBoundingBox_FUN_005ee0c0(CWeapon *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_weapon_cpp_CWeapon_getBoundingBox_FUN_005ee0c0(CWeapon *this_ptr,CBoundingBox3D *out_box)
 
 {
   CVector3f *pCVar1;

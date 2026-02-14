@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 52,
-        "line": 90,
+        "line": 87,
         "message": "format specifies type 'char *' but the argument has type 'STextureLoadConfig *' [-Werror,-Wformat]"
       }
     ],
@@ -13,11 +13,11 @@
   },
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 315,
+    "complexity_score": 312,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
-    "pseudocode_lines": 165,
+    "pseudocode_lines": 162,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -25,7 +25,7 @@
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 700
+    "total_lines": 697
   },
   "cross_references": [
     {
@@ -46,7 +46,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_loadTextureData_FUN_0046b060",
-    "signature": "void __cdecl shape_design_c_loadTextureData_FUN_0046b060 (STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width, int atlas_height)"
+    "signature": "void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height)"
   },
   "function_calls": [
     {
@@ -554,84 +554,84 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 7,
       "match": "in_stack_00000018",
       "text": "int in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 89,
       "match": "(char *)((int)",
       "text": "iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)local_24 + local_44) == '\\0'));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 100,
       "match": "ROUND",
       "text": "local_38 = (int)ROUND(dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 106,
+      "line": 103,
       "match": "in_stack_00000018",
       "text": "(double)in_stack_00000018 + 0.5);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 104,
       "match": "ROUND",
       "text": "local_34 = (int)ROUND(dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 111,
       "match": "ROUND",
       "text": "local_30 = (int)ROUND(dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 118,
+      "line": 115,
       "match": "in_stack_00000018",
       "text": "(double)in_stack_00000018 + 0.5);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 116,
       "match": "ROUND",
       "text": "local_2c = (int)ROUND(dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 156,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)rgb_buffer + local_14c) = local_184[0];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 157,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)rgb_buffer + local_14c + 1) = local_180[0];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 158,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)rgb_buffer + local_14c + 2) = local_154[0];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
+      "line": 159,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)alpha_buffer + local_150) = local_17c[0];",
       "type": "pointer_cast"

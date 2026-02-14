@@ -2,13 +2,11 @@
 // Address: 00490c37
 // Address Range: [[00490c37, 00490cb4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37
-          (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 {
   bool bVar1;

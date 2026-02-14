@@ -2,14 +2,11 @@
 // Address: 00531680
 // Address Range: [[00531680, 00531d4d]]
 // Convention: __cdecl
-// Signature: uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680 (CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel, int granule,SMpegFrame *frame,int bit_budget)
+// Signature: uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame,int bit_budget)
 
 #include "nocturne.h"
 
-uint __cdecl
-sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680
-          (CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel,
-          int granule,SMpegFrame *frame,int bit_budget)
+uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame,int bit_budget)
 
 {
   SMpegLayer3Granule *pSVar1;
@@ -138,12 +135,12 @@ LAB_00531a14:
   }
   if ((granule_info[channel].table_select[granule * 0x12 + -3] == 0) ||
      (granule_info[channel].table_select[granule * 0x12 + -2] != 2)) {
-    local_20 = *(int *)(&DAT_0067e6cc +
-                       granule_info[channel].subblock_gain[granule * 0x12 + 3] * 4 + local_34 * 0x94
-                       );
-    iVar8 = *(int *)(&DAT_0067e6d0 +
-                    (granule_info[channel].subblock_gain[granule * 0x12 + 4] +
-                    granule_info[channel].subblock_gain[granule * 0x12 + 3]) * 4 + local_34 * 0x94);
+    local_20 = (&INT_0067e6cc)
+               [local_34 * 0x25 + granule_info[channel].subblock_gain[granule * 0x12 + 3]];
+    iVar8 = (&INT_0067e6d0)
+            [local_34 * 0x25 +
+             granule_info[channel].subblock_gain[granule * 0x12 + 4] +
+             granule_info[channel].subblock_gain[granule * 0x12 + 3]];
   }
   else {
     iVar8 = 0x240;

@@ -31,7 +31,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
   if (this_ptr->fire_count == 0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0066e784);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (g_CDemonRendererPtr2,&SMRGLTextureBasic_0066e784);
   this_ptr_00 = &this_ptr->model;
   if (this_ptr->is_fully_burned != 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
@@ -58,8 +59,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
     do {
       iVar8 = *(int *)(pCVar9->fire_effects[0].unk + 4);
       (&DAT_00823c54)[iVar8] =
-           (float)(&DAT_00823c54)[iVar8] +
-           (*(float *)(pCVar9->fire_effects[0].unk + 0x14) * fVar2) / fVar3;
+           (float)(&DAT_00823c54)[iVar8] + (pCVar9->fire_effects[0].unk2 * fVar2) / fVar3;
       iVar6 = iVar6 + 1;
       pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
     } while (iVar6 < this_ptr->fire_count);

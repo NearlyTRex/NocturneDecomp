@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-double __cdecl
-shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d *p1,CVector2d *p2,CVector2d *p3)
+double __cdecl shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d *p1,CVector2d *p2,CVector2d *p3)
 
 {
   double dVar1;

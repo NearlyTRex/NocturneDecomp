@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_manpuz_cpp_CMirrorHack_getActorType_FUN_0050b100(CMirrorHack *this_ptr)
+CDemonActorType * __cdecl core_manpuz_cpp_CMirrorHack_getActorType_FUN_0050b100(CMirrorHack *this_ptr)
 
 {
   return &g_CMirrorHackClassInfo;

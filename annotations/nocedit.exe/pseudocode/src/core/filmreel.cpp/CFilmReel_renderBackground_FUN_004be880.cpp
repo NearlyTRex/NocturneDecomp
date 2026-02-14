@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_filmreel_cpp_CFilmReel_renderBackground_FUN_004be880(CFilmReel *this_ptr,int layer_flag)
+void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_004be880(CFilmReel *this_ptr,int layer_flag)
 
 {
   return;

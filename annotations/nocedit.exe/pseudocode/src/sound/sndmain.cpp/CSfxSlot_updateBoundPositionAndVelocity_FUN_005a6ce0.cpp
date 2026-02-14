@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_005a6ce0(CSfxSlot *this_ptr)
+void __cdecl sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_005a6ce0(CSfxSlot *this_ptr)
 
 {
   int iVar1;

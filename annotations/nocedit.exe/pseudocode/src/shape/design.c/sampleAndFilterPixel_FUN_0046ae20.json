@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 41,
-        "line": 51,
+        "line": 47,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 41,
+        "line": 49,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 43,
         "line": 53,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 43,
-        "line": 57,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 43,
-        "line": 59,
+        "line": 55,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 272,
+    "complexity_score": 268,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 68,
     "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many"
     ],
-    "total_lines": 276
+    "total_lines": 272
   },
   "cross_references": [
     {
@@ -62,7 +62,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_sampleAndFilterPixel_FUN_0046ae20",
-    "signature": "void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20 (void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1, double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height, byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out)"
+    "signature": "void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1,double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height,byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out)"
   },
   "function_calls": [
     {
@@ -385,126 +385,126 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 27,
       "match": "ROUND",
       "text": "local_24 = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 30,
       "match": "ROUND",
       "text": "local_20 = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 33,
       "match": "ROUND",
       "text": "local_1c = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 37,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 40,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 40,
       "match": "SUB84",
       "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 42,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(SUB84(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 42,
       "match": "SUB84",
       "text": "(double)CONCAT44(SUB84(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 43,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(uVar3,(int)((ulonglong)coord_y2 >> 0x20)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 46,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(SUB84(coord_x1,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 46,
       "match": "SUB84",
       "text": "((double)CONCAT44(SUB84(coord_x1,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 48,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(SUB84(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 48,
       "match": "SUB84",
       "text": "(double)CONCAT44(SUB84(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 49,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(uVar3,(int)((ulonglong)coord_x2 >> 0x20)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 63,
       "match": "ROUND",
       "text": "*(int *)atlas_width = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 65,
       "match": "ROUND",
       "text": "*(int *)atlas_height = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 67,
       "match": "ROUND",
       "text": "*(int *)red_out = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 69,
       "match": "ROUND",
       "text": "*(int *)green_out = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"

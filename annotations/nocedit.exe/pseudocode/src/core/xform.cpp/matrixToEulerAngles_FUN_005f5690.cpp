@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f *matrix_in,CVector3f *euler_out)
+CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f *matrix_in,CVector3f *euler_out)
 
 {
   float fVar1;

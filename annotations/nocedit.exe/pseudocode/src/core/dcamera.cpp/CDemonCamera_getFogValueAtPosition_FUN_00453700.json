@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 48,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 21,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 97
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700",
-    "signature": "int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700 (CDemonCamera *this_ptr,CVector3i *world_position)"
+    "signature": "int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position)"
   },
   "function_calls": [
     {
@@ -181,14 +181,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 15,
       "match": "SQRT",
       "text": "((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 18,
       "match": "ROUND",
       "text": "(&g_CameraFogGrid,&this_ptr->camera_origin,world_position,(int)ROUND(dVar5));",
       "type": "decompiler_intrinsic"

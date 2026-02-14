@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50 (CDemonMission *this_ptr,char *property)
+; __cdecl void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,char *property)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

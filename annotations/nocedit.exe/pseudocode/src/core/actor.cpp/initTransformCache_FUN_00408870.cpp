@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorTransformState * __cdecl
-core_actor_cpp_initTransformCache_FUN_00408870(CDemonActorTransformState *transform_cache)
+CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00408870(CDemonActorTransformState *transform_cache)
 
 {
   (transform_cache->position).z = 0.0;

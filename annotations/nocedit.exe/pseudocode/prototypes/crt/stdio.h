@@ -141,7 +141,7 @@ int __cdecl OpenModeStringParser(char *mode_string,char *output_flags);
 
 // Original: crt_stdio.c_OpenFileAndInitialize_FUN_0060190c
 // Address: 0060190c
-_FILE * __cdecl OpenFileAndInitialize(char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,_FILE *file_struct);
+_FILE * __cdecl OpenFileAndInitialize(char *filename,char mode_char,int parsed_mode_flags,int stage1_result,int additional_flags,_FILE *file_struct);
 
 // Original: crt_stdio.c_fopenWithFlags_FUN_00601a20
 // Address: 00601a20
@@ -213,7 +213,7 @@ void __cdecl CalculateZeroPadding(FormatSpec *spec_info);
 
 // Original: crt_stdio.c_FormatWideString_FUN_006031c0
 // Address: 006031c0
-void __cdecl FormatWideString(wchar_t *wide_string_offset,ushort segment,FormatSpec *spec_info, OUTPUT_CALLBACK output_func);
+void __cdecl FormatWideString(wchar_t *wide_string_offset,ushort segment,FormatSpec *spec_info,OUTPUT_CALLBACK output_func);
 
 // Original: crt_stdio.c_ConvertFormatSpec_FUN_00603238
 // Address: 00603238
@@ -397,11 +397,11 @@ int __watcallStack IsRelevantKeyEvent(_INPUT_RECORD *pInputRecord);
 
 // Original: crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc
 // Address: 0060cdbc
-void InitializeConsoleHandles(void);
+void __watcallRegister InitializeConsoleHandles(void);
 
 // Original: crt_stdio.c_GetConsoleInputHandle_FUN_0060ce30
 // Address: 0060ce30
-HANDLE GetConsoleInputHandle(void);
+HANDLE __watcallRegister GetConsoleInputHandle(void);
 
 // Original: crt_stdio.c_GetConsoleOutputHandle_FUN_0060ce3c
 // Address: 0060ce3c

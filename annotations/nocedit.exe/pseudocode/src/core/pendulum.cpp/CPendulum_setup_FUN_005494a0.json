@@ -1,107 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 15,
-        "line": 24,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 25,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 26,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 29,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 30,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 34,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 34,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 36,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 36,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 37,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 39,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 42,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 74,
-        "line": 42,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 45,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 197,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 37,
-    "suspect_count": 15,
+    "pseudocode_lines": 35,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unknown_field"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 49
+    "total_lines": 47
   },
   "cross_references": [],
   "function": {
@@ -182,109 +96,11 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._0_4_",
-      "text": "auStack_44._0_4_ = (pCVar3->min).x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 18,
-      "match": "._4_4_",
-      "text": "auStack_44._4_4_ = (pCVar3->min).y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 19,
-      "match": "._8_4_",
-      "text": "auStack_44._8_4_ = (pCVar3->min).z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 22,
-      "match": "._12_4_",
-      "text": "auStack_44._12_4_ = (pCVar3->max).x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 23,
-      "match": "._16_4_",
-      "text": "auStack_44._16_4_ = (pCVar3->max).y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 27,
-      "match": "._16_4_",
-      "text": "SQRT(((float)auStack_44._16_4_ - (float)auStack_44._4_4_) * (float)0.03125) *",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 27,
-      "match": "._4_4_",
-      "text": "SQRT(((float)auStack_44._16_4_ - (float)auStack_44._4_4_) * (float)0.03125) *",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 26,
       "match": "SQRT",
-      "text": "SQRT(((float)auStack_44._16_4_ - (float)auStack_44._4_4_) * (float)0.03125) *",
+      "text": "SQRT((CStack_4c.max.y - CStack_4c.min.y) * (float)0.03125) * (float)6.2831853070000001;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._4_4_",
-      "text": "fVar1 = ((float)auStack_44._4_4_ + (float)auStack_44._16_4_) * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._16_4_",
-      "text": "fVar1 = ((float)auStack_44._4_4_ + (float)auStack_44._16_4_) * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._8_4_",
-      "text": "fVar2 = ((float)auStack_44._8_4_ + fStack_30) * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._4_4_",
-      "text": "*(uint *)(this_ptr->unk2 + 4) = auStack_44._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._0_4_",
-      "text": "*(float *)this_ptr->unk2 = ((float)auStack_44._0_4_ + (float)auStack_44._12_4_) * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._12_4_",
-      "text": "*(float *)this_ptr->unk2 = ((float)auStack_44._0_4_ + (float)auStack_44._12_4_) * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 38,
-      "match": "._4_4_",
-      "text": "*(uint *)(this_ptr->unk2 + 4) = auStack_44._4_4_;",
-      "type": "unknown_field"
     }
   ],
   "vtable_info": {

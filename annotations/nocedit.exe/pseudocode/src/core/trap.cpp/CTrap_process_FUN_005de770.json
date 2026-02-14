@@ -4,26 +4,14 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 27,
+        "line": 24,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 27,
+        "line": 24,
         "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 51,
-        "message": "use of undeclared identifier 'stack0xfffffff4'"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 65,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
       }
     ],
     "success": false,
@@ -31,19 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 196,
+    "complexity_score": 75,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 66,
-    "suspect_count": 11,
+    "pseudocode_lines": 60,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "unaffected_reg",
-      "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 219
+    "total_lines": 213
   },
   "cross_references": [],
   "function": {
@@ -190,81 +175,11 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBX",
-      "text": "float unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EDI",
-      "text": "float unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 17,
       "match": "code *",
-      "text": "iVar2 = (**(code **)(*(int *)(this_ptr->wolf_in_trap + 0x154) + 0x120))();",
+      "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x120))(iVar2);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xfffffff4",
-      "text": "(&this_ptr->base,(CVector3f *)&stack0xfffffff4,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_EDI",
-      "text": "if ((((local_34.max.y <= unaff_EDI + local_34.min.y) &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI - local_34.min.y <= fStack_18)) &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EBX",
-      "text": "(fStack_1c <= unaff_EBX + local_34.min.y)) &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EBX",
-      "text": "(unaff_EBX - local_34.min.y <= unaff_EBP)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EBP",
-      "text": "(unaff_EBX - local_34.min.y <= unaff_EBP)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 58,
-      "match": "._4_4_",
-      "text": "auStack_88._4_4_ = 10.0;",
-      "type": "unknown_field"
     }
   ],
   "vtable_info": {

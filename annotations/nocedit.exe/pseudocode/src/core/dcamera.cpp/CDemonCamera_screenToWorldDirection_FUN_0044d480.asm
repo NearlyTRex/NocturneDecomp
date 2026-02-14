@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480 (CDemonCamera *this_ptr,CVector3f *output_ptr,int screen_x,int screen_y)
+; __cdecl CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480(CDemonCamera *this_ptr,CVector3f *output_ptr,int screen_x,int screen_y)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

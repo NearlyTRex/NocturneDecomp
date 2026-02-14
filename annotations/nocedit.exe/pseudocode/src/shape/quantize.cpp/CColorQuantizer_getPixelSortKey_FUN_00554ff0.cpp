@@ -2,13 +2,11 @@
 // Address: 00554ff0
 // Address Range: [[00554ff0, 0055508c]]
 // Convention: __cdecl
-// Signature: float __cdecl shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 (CColorQuantizer *this_ptr,SColorBox *box_ptr,uchar *pixel_ptr)
+// Signature: float __cdecl shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer *this_ptr,SColorBox *box_ptr,uchar *pixel_ptr)
 
 #include "nocturne.h"
 
-float __cdecl
-shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0
-          (CColorQuantizer *this_ptr,SColorBox *box_ptr,uchar *pixel_ptr)
+float __cdecl shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer *this_ptr,SColorBox *box_ptr,uchar *pixel_ptr)
 
 {
   int iVar1;

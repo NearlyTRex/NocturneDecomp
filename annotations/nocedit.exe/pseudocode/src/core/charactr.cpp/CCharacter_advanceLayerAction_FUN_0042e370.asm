@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370 (CCharacter *this_ptr,float *remaining_time,int target_bone_index)
+; __cdecl int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter *this_ptr,float *remaining_time,int target_bone_index)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

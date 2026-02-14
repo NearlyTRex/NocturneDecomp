@@ -57,8 +57,8 @@ LAB_00506f71:
           _fprintf(p_Var1,"Time: %s",pcVar5);
           piVar2 = (int *)_errno();
           pcVar5 = strerror(*piVar2);
-          puVar3 = (uint *)_errno();
-          _fprintf(p_Var1,"errno = %d (%s)\n",*puVar3,pcVar5);
+          puVar3 = (uint *)_errno(pcVar5);
+          _fprintf(p_Var1,"errno = %d (%s)\n",*puVar3);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\main.c",0xad);
         }
         core_sound_cpp_CSound_dtor_FUN_005aaeb0();

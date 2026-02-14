@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80 (CZombie *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80(CZombie *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr

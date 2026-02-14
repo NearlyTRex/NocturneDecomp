@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 (CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

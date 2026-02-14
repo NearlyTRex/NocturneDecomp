@@ -1,20 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 117,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 31,
     "suspect_count": 6,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
-      "stack_param",
-      "undefined_data"
+      "undefined_data",
+      "unnamed_param"
     ],
-    "total_lines": 85
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -34,7 +34,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_00608fdc",
-    "signature": "int crt_unknown_c_FUN_00608fdc(void)"
+    "signature": "int crt_unknown_c_FUN_00608fdc(int param_1)"
   },
   "function_calls": [
     {
@@ -119,29 +119,29 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "text": "if ((_FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int FUN_00608fdc(int param_1)",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(_FILE *)((int)",
-      "text": "if ((_FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {",
+      "text": "if ((_FILE *)((int)&g_StaticFilePoolStart + param_1 * 0x1a) <= file_handle) {",
       "type": "pointer_cast"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "text": "if ((_FILE *)((int)&g_StaticFilePoolStart + param_1 * 0x1a) <= file_handle) {",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 26,
       "match": "DAT_00684d12",
       "text": "if (file_handle < (_FILE *)&DAT_00684d12) {",
       "type": "undefined_data"

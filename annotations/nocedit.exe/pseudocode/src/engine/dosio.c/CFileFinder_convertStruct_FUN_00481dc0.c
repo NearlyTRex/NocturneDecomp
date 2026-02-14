@@ -2,13 +2,11 @@
 // Address: 00481dc0
 // Address Range: [[00481dc0, 00481f15]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0 (CFileFinder *finder,LPWIN32_FIND_DATAA find_data)
+// Signature: void __cdecl engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *finder,LPWIN32_FIND_DATAA find_data)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0
-          (CFileFinder *finder,LPWIN32_FIND_DATAA find_data)
+void __cdecl engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *finder,LPWIN32_FIND_DATAA find_data)
 
 {
   BOOL BVar1;

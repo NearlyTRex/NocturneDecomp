@@ -4,85 +4,85 @@
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 96,
+        "line": 95,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 96,
+        "line": 95,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 96,
+        "line": 95,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 96,
+        "line": 95,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 96,
+        "line": 95,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
+        "line": 95,
+        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 32,
         "line": 96,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 97,
+        "line": 96,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 97,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 97,
+        "line": 96,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 111,
+        "line": 110,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 114,
+        "line": 113,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 115,
+        "line": 114,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 135,
+        "line": 134,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 136,
+        "line": 135,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       }
     ],
@@ -91,11 +91,11 @@
   },
   "complexity": {
     "assembly_lines": 876,
-    "complexity_score": 818,
+    "complexity_score": 817,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
-    "pseudocode_lines": 388,
+    "pseudocode_lines": 387,
     "suspect_count": 41,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -103,7 +103,7 @@
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 1264
+    "total_lines": 1263
   },
   "cross_references": [
     {
@@ -1148,28 +1148,49 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_0000000c",
       "text": "CVector3f *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000010",
       "text": "float in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 88,
+      "match": "ABS",
+      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 88,
+      "match": "ABS",
+      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 88,
+      "match": "ABS",
+      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 88,
       "match": "ABS",
       "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
       "type": "decompiler_intrinsic"
@@ -1178,250 +1199,229 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 89,
       "match": "ABS",
-      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
+      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 89,
       "match": "ABS",
-      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
+      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 89,
       "match": "ABS",
-      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
+      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 89,
       "match": "ABS",
       "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
-      "match": "ABS",
-      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
-      "match": "ABS",
-      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
-      "match": "ABS",
-      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 114,
       "match": "SQRT",
       "text": "fVar1 = SQRT(local_18c * local_18c + local_194 * local_194 + local_190 * local_190);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
+      "line": 134,
       "match": "SQRT",
       "text": "fVar1 = SQRT(local_15c * local_15c + local_164 * local_164 + local_160 * local_160);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 170,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 172,
+      "line": 171,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 181,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 182,
+      "line": 188,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 189,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 196,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 197,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 204,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 205,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 206,
+      "line": 212,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 213,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 214,
-      "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 217,
+      "line": 216,
       "match": "in_stack_00000008",
       "text": "(&local_8c,in_stack_00000008,&this_ptr->mirror_transform_matrix);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 224,
+      "line": 223,
       "match": "in_stack_0000000c",
       "text": "(&this_ptr->reflection_matrix,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 234,
+      "line": 233,
       "match": "in_stack_00000008",
       "text": "local_104.x = local_38 + in_stack_00000008->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 235,
+      "line": 234,
       "match": "in_stack_00000008",
       "text": "local_104.y = local_18 + in_stack_00000008->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 236,
+      "line": 235,
       "match": "in_stack_00000008",
       "text": "local_104.z = local_34 + in_stack_00000008->z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 245,
+      "line": 244,
       "match": "in_stack_00000008",
       "text": "local_c8.x = local_30 + in_stack_00000008->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 246,
+      "line": 245,
       "match": "in_stack_00000008",
       "text": "local_c8.y = local_2c + in_stack_00000008->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 247,
+      "line": 246,
       "match": "in_stack_00000008",
       "text": "local_c8.z = local_28 + in_stack_00000008->z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 256,
+      "line": 255,
       "match": "in_stack_00000008",
       "text": "local_ec.x = local_24 + in_stack_00000008->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 257,
+      "line": 256,
       "match": "in_stack_00000008",
       "text": "local_ec.y = local_20 + in_stack_00000008->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 258,
+      "line": 257,
       "match": "in_stack_00000008",
       "text": "local_ec.z = local_1c + in_stack_00000008->z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 321,
+      "line": 320,
       "match": "in_stack_00000010",
       "text": "this_ptr->projection_scale = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 342,
+      "line": 341,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 343,
+      "line": 342,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 371,
+      "line": 370,
       "match": "in_stack_00000008",
       "text": "(&local_17c,in_stack_00000008,&this_ptr->mirror_transform_matrix);",
       "type": "stack_param"

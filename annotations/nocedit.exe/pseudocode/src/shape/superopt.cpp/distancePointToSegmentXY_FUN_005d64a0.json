@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 26,
+        "line": 24,
         "message": "use of undeclared identifier 'stack0xffffffcc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 27,
+        "line": 25,
         "message": "use of undeclared identifier 'stack0xffffffbc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 29,
+        "line": 27,
         "message": "use of undeclared identifier 'stack0xffffffc0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 32,
+        "line": 30,
         "message": "use of undeclared identifier 'stack0xffffffc0'"
       }
     ],
@@ -31,11 +31,11 @@
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 147,
+    "complexity_score": 145,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 25,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -43,7 +43,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 68
+    "total_lines": 66
   },
   "cross_references": [],
   "function": {
@@ -57,7 +57,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0",
-    "signature": "double __cdecl shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0 (CVector3d *segStart,CVector3d *segEnd,CVector3d *point)"
+    "signature": "double __cdecl shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d *segStart,CVector3d *segEnd,CVector3d *point)"
   },
   "function_calls": [
     {
@@ -181,70 +181,70 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_00000004",
       "text": "CVector3d *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(in_stack_00000004,segStart,segEnd);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 19,
+      "line": 17,
       "match": "&stack0xffffffcc",
       "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 20,
+      "line": 18,
       "match": "&stack0xffffffbc",
       "text": "*(uint *)(&stack0xffffffbc + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 22,
+      "line": 20,
       "match": "&stack0xffffffc0",
       "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)(local_30 + (-(uint)bVar2 - (uint)bVar2)) + ((uint)bVar2 * -2 + 1) * 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 23,
       "match": "&stack0xffffffc0",
       "text": "((int)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 25,
       "match": "CONCAT44",
       "text": "dVar1 = segEnd->x - (double)CONCAT44(uStack_34,local_38);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 27,
       "match": "SQRT",
       "text": "return SQRT(local_30[0] * local_30[0] + dVar1 * dVar1);",
       "type": "decompiler_intrinsic"

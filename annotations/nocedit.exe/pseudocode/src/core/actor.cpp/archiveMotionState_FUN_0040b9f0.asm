@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0 (CMotionController *motion_controller,char *property_name)
+; __cdecl void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0(CMotionController *motion_controller,char *property_name)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   motion_controller

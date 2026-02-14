@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_meshlod_cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh *this_ptr,float weld_threshold)
+int __cdecl shape_meshlod_cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh *this_ptr,float weld_threshold)
 
 {
   char *pcVar1;

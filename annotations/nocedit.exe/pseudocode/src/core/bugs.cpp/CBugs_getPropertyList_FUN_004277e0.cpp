@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_bugs_cpp_CBugs_getPropertyList_FUN_004277e0(CBugs *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_bugs_cpp_CBugs_getPropertyList_FUN_004277e0(CBugs *this_ptr,CActorPropertyList *property_list)
 
 {
   CActorProperty *pCVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzleCircle *this_ptr)
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzleCircle *this_ptr)
 
 {
   uint uVar1;

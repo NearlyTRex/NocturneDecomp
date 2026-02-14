@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_00604267(void)
+; unknown void crt_unknown_c_FUN_00604267(uint *param_1,char *param_2,uint param_3,uint param_4,char *param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

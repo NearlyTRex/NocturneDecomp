@@ -2,13 +2,11 @@
 // Address: 00473270
 // Address Range: [[00473270, 00473358]]
 // Convention: __cdecl
-// Signature: ushort * __cdecl core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270 (CDemonLight *this_ptr,CVector3i *projected_coord,uchar x_round_flag,uchar y_round_flag)
+// Signature: ushort * __cdecl core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270(CDemonLight *this_ptr,CVector3i *projected_coord,uchar x_round_flag,uchar y_round_flag)
 
 #include "nocturne.h"
 
-ushort * __cdecl
-core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270
-          (CDemonLight *this_ptr,CVector3i *projected_coord,uchar x_round_flag,uchar y_round_flag)
+ushort * __cdecl core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270(CDemonLight *this_ptr,CVector3i *projected_coord,uchar x_round_flag,uchar y_round_flag)
 
 {
   uint uVar1;

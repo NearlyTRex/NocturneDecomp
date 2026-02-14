@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CEditorTools * __cdecl
-shape_edittool_cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools *this_ptr,uint flags)
+CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools *this_ptr,uint flags)
 
 {
   while (0 < g_WindowStackCount) {

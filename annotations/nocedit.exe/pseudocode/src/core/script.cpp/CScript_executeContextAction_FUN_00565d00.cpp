@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_script_cpp_CScript_executeContextAction_FUN_00565d00(CScript *this_ptr,int column,int line)
+void __cdecl core_script_cpp_CScript_executeContextAction_FUN_00565d00(CScript *this_ptr,int column,int line)
 
 {
   int iVar1;
@@ -39,7 +38,7 @@ core_script_cpp_CScript_executeContextAction_FUN_00565d00(CScript *this_ptr,int 
           core_msnedit_cpp_CDemonMission_FUN_0053c140(g_CDemonMissionPtr,(int)pCVar2);
           return;
         case PARM_TYPE_LABEL:
-          core_script_cpp_CScript_FUN_0055a370(this_ptr);
+          core_script_cpp_CScript_buildParsedLines_FUN_0055a370(this_ptr);
           iVar3 = core_script_cpp_CScript_findLabelIndex_FUN_00560160
                             (this_ptr,CCmdParse_0310aa4c.params[iVar1].parsed_value);
           if (-1 < iVar3) {

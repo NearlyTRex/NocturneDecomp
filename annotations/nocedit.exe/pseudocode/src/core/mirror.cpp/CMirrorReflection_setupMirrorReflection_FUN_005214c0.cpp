@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr)
+void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr)
 
 {
   float fVar1;

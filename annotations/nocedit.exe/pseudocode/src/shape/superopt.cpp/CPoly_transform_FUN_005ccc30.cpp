@@ -2,13 +2,11 @@
 // Address: 005ccc30
 // Address Range: [[005ccc30, 005cd0aa]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_superopt_cpp_CPoly_transform_FUN_005ccc30 (CPoly *this_ptr,CMatrix3x3d *matrix,CVector3d *pivot)
+// Signature: void __cdecl shape_superopt_cpp_CPoly_transform_FUN_005ccc30(CPoly *this_ptr,CMatrix3x3d *matrix,CVector3d *pivot)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CPoly_transform_FUN_005ccc30
-          (CPoly *this_ptr,CMatrix3x3d *matrix,CVector3d *pivot)
+void __cdecl shape_superopt_cpp_CPoly_transform_FUN_005ccc30(CPoly *this_ptr,CMatrix3x3d *matrix,CVector3d *pivot)
 
 {
   int iVar1;

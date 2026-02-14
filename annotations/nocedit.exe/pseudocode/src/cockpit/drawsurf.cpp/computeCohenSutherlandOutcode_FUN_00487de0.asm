@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00487de0 (int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom)
+; __cdecl char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00487de0(int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   point_x

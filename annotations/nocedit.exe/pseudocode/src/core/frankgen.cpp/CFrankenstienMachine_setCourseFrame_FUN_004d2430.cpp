@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr)
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr)
 
 {
   if ((this_ptr->course).len < 1) {

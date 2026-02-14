@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120 (CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max)
+; __cdecl int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   triangle_vertices

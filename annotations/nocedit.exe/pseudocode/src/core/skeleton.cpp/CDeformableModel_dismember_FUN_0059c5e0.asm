@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0 (CDeformableModel *this_ptr,int lod_index,CBodyPart *body_part_ptr,int part_index, int num_parts_to_dismember,int texture_set_index,CVector3i *skinned_vertices)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformableModel *this_ptr,int lod_index,CBodyPart *body_part_ptr,int part_index,int num_parts_to_dismember,int texture_set_index,CVector3i *skinned_vertices)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

@@ -2,13 +2,11 @@
 // Address: 00412470
 // Address Range: [[00412470, 004124c3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_armour_cpp_CArmour_getPropertyList_FUN_00412470 (CArmour *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_armour_cpp_CArmour_getPropertyList_FUN_00412470(CArmour *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_armour_cpp_CArmour_getPropertyList_FUN_00412470
-          (CArmour *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_armour_cpp_CArmour_getPropertyList_FUN_00412470(CArmour *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_CBitFont_openFontFile_FUN_004ccfc0 (CBitFont *this_ptr,char *filename,int width,int height,int load_flags)
+; __cdecl void __cdecl engine_font_cpp_CBitFont_openFontFile_FUN_004ccfc0(CBitFont *this_ptr,char *filename,int width,int height,int load_flags)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

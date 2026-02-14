@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   item_data
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_FUN_005677a0 at 005678b4
+;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 at 005678b4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_00623c23

@@ -2,13 +2,11 @@
 // Address: 005da790
 // Address Range: [[005da790, 005da7bd]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_005da790 (CTeleportDest *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_005da790(CTeleportDest *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_005da790
-          (CTeleportDest *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_005da790(CTeleportDest *this_ptr,CBoundingBox3D *out_box)
 
 {
   (out_box->min).y = -1.0;

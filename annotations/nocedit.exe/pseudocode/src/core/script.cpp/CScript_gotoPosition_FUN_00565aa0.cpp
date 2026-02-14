@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_script_cpp_CScript_gotoPosition_FUN_00565aa0(CScript *this_ptr,int column,int line)
+void __cdecl core_script_cpp_CScript_gotoPosition_FUN_00565aa0(CScript *this_ptr,int column,int line)
 
 {
   int iVar1;

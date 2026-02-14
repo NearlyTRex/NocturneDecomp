@@ -82,7 +82,8 @@ void __cdecl core_setedit_cpp_FUN_005817d0(void *unk)
       uVar4 = uVar4 + 1;
       *(int *)((int)&pCVar1->vertex_buffer_ptr->w_recip + iVar3) = local_24;
       if (7 < (int)uVar4) {
-        engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar1,&DAT_006816c0);
+        engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+                  (pCVar1,&SMRGLTextureBasic_006816c0);
         SStack_64.surface_normal.D = 0;
         SStack_64.surface_normal.C = 0;
         SStack_64.surface_normal.B = 0;

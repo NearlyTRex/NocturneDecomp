@@ -1,36 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 82,
-        "line": 24,
-        "message": "use of undeclared identifier 'stack0xffffdaf8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 26,
-        "message": "use of undeclared identifier 'stack0xffffdaf8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 117,
+    "complexity_score": 75,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 32,
-    "suspect_count": 7,
+    "pseudocode_lines": 30,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 102
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -134,51 +119,30 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_2",
-      "text": "core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,int param_2)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "text": "if (this_ptr_00 != (CDemonActor *)param_2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "text": "(*((this_ptr_00->vtable)._ub)->onActorDeleted)(this_ptr_00,(CDemonActor *)param_2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffdaf8",
-      "text": "core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffdaf8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffdaf8",
-      "text": "(this_ptr_00,(CActorPropertyList *)&stack0xffffdaf8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(int *)((int)",
-      "text": "if ((*(int *)((int)aiStack_24f8 + iVar1) == 5) &&",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 22,
       "match": "param_2",
-      "text": "(param_2 == **(int **)((int)auStack_2490 + iVar1))) {",
+      "text": "(piVar1 = *(int **)(CStack_2510.properties[0].string1 + iVar2 + -8), param_2 == *piVar1",
       "type": "unnamed_param"
     }
   ]

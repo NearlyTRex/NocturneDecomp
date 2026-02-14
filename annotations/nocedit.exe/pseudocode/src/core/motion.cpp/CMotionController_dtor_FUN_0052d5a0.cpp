@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CMotionController * __cdecl
-core_motion_cpp_CMotionController_dtor_FUN_0052d5a0(CMotionController *this_ptr,uint flags)
+CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_0052d5a0(CMotionController *this_ptr,uint flags)
 
 {
   void *ptr;

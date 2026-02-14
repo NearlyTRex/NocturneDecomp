@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLodVert * __cdecl
-shape_meshlod_cpp_CLodVert_copy_FUN_0051ee70(CLodVert *destination,CLodVert *source)
+CLodVert * __cdecl shape_meshlod_cpp_CLodVert_copy_FUN_0051ee70(CLodVert *destination,CLodVert *source)
 
 {
   int iVar1;

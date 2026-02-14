@@ -2,13 +2,11 @@
 // Address: 005b50ec
 // Address Range: [[005b50ec, 005b5321]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec (STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
+// Signature: void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl
-wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
-          (STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
+void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
 
 {
   bool bVar1;
@@ -39,7 +37,7 @@ wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
     g_ScanlinePixelCount = iVar4 * 4;
     puVar9 = g_ZBufferScanlineArray[scanline_y] + uVar2;
     g_CurrentZBufferPtr = (int *)puVar9;
-    if (g_RenderStateFlags == 0x80) {
+    if (g_RenderStateFlags.dword == 0x80) {
       uVar10 = pSVar7->perspective_w;
       iVar8 = (int)((ulonglong)
                     ((longlong)(int)(right_vertex->perspective_w - uVar10) *
@@ -101,19 +99,19 @@ wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
     uVar10 = 0;
     g_StartDepthW = iVar8;
     if ((g_CurrentTextureOpacityData == (void *)0x0) &&
-       (uVar6 = g_StartTextureV, uVar2 = g_StartTextureU, (g_RenderStateFlags & 2U) == 0)) {
+       (uVar6 = g_StartTextureV, uVar2 = g_StartTextureU, (g_RenderStateFlags.dword & 2) == 0)) {
       while( true ) {
-        if (((g_RenderStateFlags & 0x40U) == 0) ||
+        if (((g_RenderStateFlags.dword & 0x40) == 0) ||
            (*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {
           uVar3 = g_ActiveRenderColor;
-          if ((g_RenderStateFlags & 1U) != 0) {
+          if ((g_RenderStateFlags.dword & 1) != 0) {
             uVar3 = g_Hardware32BitPalette
                     [*(byte *)((int)g_CurrentTextureData +
                               (uVar6 >> ((byte)g_TextureShift2 & 0x1f) & (uint)g_TextureMask2) +
                               (uVar2 >> ((byte)g_TextureShift1 & 0x1f) & (uint)g_TextureMask1))];
           }
           *(uint *)((int)g_CurrentScreenPtr + uVar10) = uVar3;
-          if ((g_RenderStateFlags & 0x80U) != 0) {
+          if ((g_RenderStateFlags.dword & 0x80) != 0) {
             *(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;
           }
         }

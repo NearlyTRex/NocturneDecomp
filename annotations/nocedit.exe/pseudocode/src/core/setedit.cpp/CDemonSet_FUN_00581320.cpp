@@ -11,6 +11,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581320(CDemonSet *this_ptr)
 {
   int iVar1;
   int in_stack_00000008;
+  char local_110 [256];
   
   g_CDemonLightInstance.light_enabled_flag = 0;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -21,8 +22,8 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581320(CDemonSet *this_ptr)
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Computing fog for camera %s");
     _sprintf
-              (&stack0xfffffef0,"backdrop\\%s.fog",this_ptr->cameras + in_stack_00000008);
-    remove(&stack0xfffffef0);
+              (local_110,"backdrop\\%s.fog",this_ptr->cameras + in_stack_00000008);
+    remove(local_110);
     do {
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,in_stack_00000008);
       core_set_cpp_CDemonSet_FUN_0056c1a0(this_ptr);

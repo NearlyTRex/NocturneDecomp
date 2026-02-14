@@ -16,7 +16,7 @@ _FILE * __watcallStack fgetcInternal(_FILE *stream,byte *output_byte)
   
   iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));
   if (*(uint *)(iVar1 + 0x10) <= *(uint *)(iVar1 + 0x14)) {
-    iVar4 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x10))();
+    iVar4 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x10))(iVar1);
     if (iVar4 == -1) {
       uVar3 = 0xffffffff;
       goto LAB_00605fd8;

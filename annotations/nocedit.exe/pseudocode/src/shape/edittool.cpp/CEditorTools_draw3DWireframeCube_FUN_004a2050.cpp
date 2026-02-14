@@ -2,16 +2,14 @@
 // Address: 004a2050
 // Address Range: [[004a2050, 004a250a]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
 
 #include "nocturne.h"
 
 /* WARNING: Variable defined which should be unmapped: local_140 */
 /* WARNING: Variable defined which should be unmapped: local_170 */
 
-void __cdecl
-shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
-          (CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
 
 {
   SRenderVertex vertex2;
@@ -63,9 +61,9 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
   
   bVar6 = 0;
   local_140.w_recip = (float)&g_CVectorTypeInfo;
-  local_140.fog = 1.12104e-44;
+  local_140.fog = 8;
   local_140.color = (int)afStack_110;
-  local_140.light = 6.807476e-39;
+  local_140.light = 0x4a2079;
   __arrinit((void *)local_140.color,8,&g_CVectorTypeInfo);
   pfVar3 = afStack_110;
   uVar1 = 0;
@@ -98,7 +96,7 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           local_8c.y = (int)ROUND(pfVar3[1] * 256.0f);
           local_8c.z = (int)ROUND(pfVar3[2] * 256.0f);
           local_140.w_recip = (float)&local_8c;
-          local_140.fog = 0.0;
+          local_140.fog = 0;
           local_140.color = 0x4a213c;
           engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.w_recip);
           local_68 = afStack_110[uVar1 * 3] * 0.2f;
@@ -114,7 +112,7 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           local_8c.y = (int)ROUND(local_40 * 256.0f);
           local_8c.z = (int)ROUND(local_3c * 256.0f);
           local_140.w_recip = (float)&local_8c;
-          local_140.fog = 1.4013e-45;
+          local_140.fog = 1;
           local_140.color = 0x4a221b;
           engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.w_recip);
           pSVar4 = g_RenderVertexBuffer + 1;
@@ -144,7 +142,7 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           local_b0.y = (int)ROUND(pfVar3[1] * 256.0f);
           local_b0.z = (int)ROUND(pfVar3[2] * 256.0f);
           local_140.w_recip = (float)&local_b0;
-          local_140.fog = 0.0;
+          local_140.fog = 0;
           local_140.color = 0x4a228e;
           engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.w_recip);
           local_98 = afStack_110[uVar1 * 3] * 0.2f;
@@ -160,7 +158,7 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           local_b0.y = (int)ROUND(local_28 * 256.0f);
           local_b0.z = (int)ROUND(local_24 * 256.0f);
           local_140.w_recip = (float)&local_b0;
-          local_140.fog = 1.4013e-45;
+          local_140.fog = 1;
           local_140.color = 0x4a235b;
           engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.w_recip);
           pSVar4 = g_RenderVertexBuffer + 1;
@@ -190,7 +188,7 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           local_50.y = (int)ROUND(pfVar3[1] * 256.0f);
           local_50.z = (int)ROUND(pfVar3[2] * 256.0f);
           local_140.w_recip = (float)&local_50;
-          local_140.fog = 0.0;
+          local_140.fog = 0;
           local_140.color = 0x4a23d2;
           engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.w_recip);
           local_80 = afStack_110[uVar1 * 3] * 0.2f;
@@ -206,7 +204,7 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           local_50.y = (int)ROUND(local_58 * 256.0f);
           local_50.z = (int)ROUND(local_54 * 256.0f);
           local_140.w_recip = (float)&local_50;
-          local_140.fog = 1.4013e-45;
+          local_140.fog = 1;
           local_140.color = 0x4a2492;
           engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.w_recip);
           pSVar4 = g_RenderVertexBuffer + 1;

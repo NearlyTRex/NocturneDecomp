@@ -14,7 +14,7 @@ int __cdecl raiseFPE(int fpe_code)
   pcVar1 = (code *)getSignalHandler(2);
   if (((pcVar1 != (code *)0x1) && (pcVar1 != (code *)0x2)) && (pcVar1 != (code *)0x3)) {
     setSignalHandler(2,2);
-    (*pcVar1)();
+    (*pcVar1)(2,fpe_code);
     return 0;
   }
   return -1;

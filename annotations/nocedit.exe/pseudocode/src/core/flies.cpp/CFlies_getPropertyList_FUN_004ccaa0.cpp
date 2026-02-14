@@ -2,13 +2,11 @@
 // Address: 004ccaa0
 // Address Range: [[004ccaa0, 004ccae0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_flies_cpp_CFlies_getPropertyList_FUN_004ccaa0 (CFlies *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_flies_cpp_CFlies_getPropertyList_FUN_004ccaa0(CFlies *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_flies_cpp_CFlies_getPropertyList_FUN_004ccaa0
-          (CFlies *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_flies_cpp_CFlies_getPropertyList_FUN_004ccaa0(CFlies *this_ptr,CActorPropertyList *property_list)
 
 {
   CActorProperty *pCVar1;

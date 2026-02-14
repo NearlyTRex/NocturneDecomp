@@ -2,13 +2,11 @@
 // Address: 005c5170
 // Address Range: [[005c5170, 005c51b0]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170 (CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-void __stack2_esi
-core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170
-          (CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;

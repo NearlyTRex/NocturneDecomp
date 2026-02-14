@@ -2,13 +2,11 @@
 // Address: 004a6a60
 // Address Range: [[004a6a60, 004a6b41]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60 (CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text)
+// Signature: void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60(CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60
-          (CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text)
+void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60(CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text)
 
 {
   char cVar1;

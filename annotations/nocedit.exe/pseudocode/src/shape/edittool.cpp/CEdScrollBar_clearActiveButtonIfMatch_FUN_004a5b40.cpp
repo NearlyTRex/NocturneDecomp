@@ -6,13 +6,12 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(CEdScrollBar *this_ptr)
+void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(CEdScrollBar *this_ptr)
 
 {
-  if ((CEdButton *)this_ptr != g_ActiveButton) {
+  if (this_ptr != g_ActiveControl) {
     return;
   }
-  g_ActiveButton = (CEdButton *)0x0;
+  g_ActiveControl = (void *)0x0;
   return;
 }

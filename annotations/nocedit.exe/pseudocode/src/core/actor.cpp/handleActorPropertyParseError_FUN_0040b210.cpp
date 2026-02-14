@@ -2,13 +2,11 @@
 // Address: 0040b210
 // Address Range: [[0040b210, 0040b287]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b210 (char *property_description,char *property_type)
+// Signature: void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b210(char *property_description,char *property_type)
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_handleActorPropertyParseError_FUN_0040b210
-          (char *property_description,char *property_type)
+void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b210(char *property_description,char *property_type)
 
 {
   CDemonActor *pCVar1;

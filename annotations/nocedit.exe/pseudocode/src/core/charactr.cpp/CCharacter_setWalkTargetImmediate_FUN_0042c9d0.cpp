@@ -2,13 +2,11 @@
 // Address: 0042c9d0
 // Address Range: [[0042c9d0, 0042ca11]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0 (CCharacter *this_ptr,CDemonActor *target)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0(CCharacter *this_ptr,CDemonActor *target)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0
-          (CCharacter *this_ptr,CDemonActor *target)
+void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0(CCharacter *this_ptr,CDemonActor *target)
 
 {
   CCharacter_full_vtable *pCVar1;

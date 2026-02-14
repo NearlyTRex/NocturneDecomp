@@ -53,11 +53,11 @@ void __cdecl CCloth::applyConstraints(CCloth *this_ptr,SClothVertex *vertex);
 
 // Original: core_cloth.cpp_CCloth_process_FUN_0043ab80
 // Address: 0043ab80
-void __cdecl CCloth::process(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y, CDeformableModelInstance *model_ptr);
+void __cdecl CCloth::process(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 
 // Original: core_cloth.cpp_CCloth_step_FUN_0043abb0
 // Address: 0043abb0
-void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y, CDeformableModelInstance *model_ptr);
+void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 
 // Original: core_cloth.cpp_CCloth_renderCollisionBones_FUN_0043b790
 // Address: 0043b790
@@ -101,11 +101,11 @@ void __cdecl CClothList::remove(CClothList *this_ptr,int index);
 
 // Original: core_cloth.cpp_CClothList_setup_FUN_0043c290
 // Address: 0043c290
-void __cdecl CClothList::setup(CClothList *this_ptr,CVector3f *position,CVector3f *euler, CDeformableModelInstance *model_ptr);
+void __cdecl CClothList::setup(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 
 // Original: core_cloth.cpp_CClothList_process_FUN_0043c2d0
 // Address: 0043c2d0
-void __cdecl CClothList::process(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y, CDeformableModelInstance *model_ptr);
+void __cdecl CClothList::process(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y,CDeformableModelInstance *model_ptr);
 
 // Original: core_cloth.cpp_CClothList_render_FUN_0043c320
 // Address: 0043c320

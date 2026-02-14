@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 165,
+    "complexity_score": 138,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 45,
-    "suspect_count": 10,
+    "pseudocode_lines": 43,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 146
+    "total_lines": 144
   },
   "cross_references": [
     {
@@ -177,57 +176,43 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000010",
-      "text": "va_list_t in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(byte *)((int)",
       "text": "bVar4 = *(byte *)((int)&file->_flag + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar4 | 1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000010",
-      "text": "(file,(char *)args.value[0],in_stack_00000010,",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(byte *)((int)",
       "text": "bVar4 = *(byte *)((int)&file->_flag + 1) & 0xfa;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 36,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar4 | 4;",
       "type": "pointer_cast"

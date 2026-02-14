@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 72,
+    "complexity_score": 70,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 25,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 87
+    "total_lines": 85
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40",
-    "signature": "void __cdecl shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40 (float latitude_degrees,float longitude_degrees,float radius)"
+    "signature": "void __cdecl shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40(float latitude_degrees,float longitude_degrees,float radius)"
   },
   "function_calls": [],
   "globals": [
@@ -184,28 +184,28 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 10,
       "match": "fsin",
       "text": "fVar1 = (float10)fsin((float10)longitude_degrees * (float10)0.0055555555555555497 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 12,
       "match": "fcos",
       "text": "fVar2 = (float10)fcos((float10)longitude_degrees * (float10)0.0055555555555555497 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 14,
       "match": "fcos",
       "text": "fVar3 = (float10)fcos((float10)latitude_degrees * (float10)0.0055555555555555497 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 16,
       "match": "fsin",
       "text": "fVar4 = (float10)fsin((float10)latitude_degrees * (float10)0.0055555555555555497 *",
       "type": "decompiler_intrinsic"

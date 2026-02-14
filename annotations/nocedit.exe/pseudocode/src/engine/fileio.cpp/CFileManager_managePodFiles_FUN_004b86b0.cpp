@@ -2,13 +2,11 @@
 // Address: 004b86b0
 // Address Range: [[004b86b0, 004b9f3d]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0 (CFileManager *this_ptr,char *pod_directory_path)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileManager *this_ptr,char *pod_directory_path)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0
-          (CFileManager *this_ptr,char *pod_directory_path)
+void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileManager *this_ptr,char *pod_directory_path)
 
 {
   char cVar1;

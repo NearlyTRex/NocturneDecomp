@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 65,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 48,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 114
+    "total_lines": 112
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5",
-    "signature": "void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)"
+    "signature": "void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -122,7 +122,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 31,
       "match": "(ushort *)((int)",
       "text": "puVar7 = (ushort *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 2);",
       "type": "pointer_cast"

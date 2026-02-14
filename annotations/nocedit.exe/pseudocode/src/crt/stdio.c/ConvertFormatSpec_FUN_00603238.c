@@ -2,30 +2,13 @@
 // Address: 00603238
 // Address Range: [[00603238, 0060389b]]
 // Convention: __cdecl
-// Signature: char * __cdecl crt_stdio_c_ConvertFormatSpec_FUN_00603238 (char *output_buffer,va_list_t *args,FormatSpec *spec_info)
+// Signature: char * __cdecl crt_stdio_c_ConvertFormatSpec_FUN_00603238(char *output_buffer,va_list_t *args,FormatSpec *spec_info)
 
 #include "nocturne.h"
 
 /* NOTE: Ghidra decompilation artifacts in this function:
    
-   FLAG LOGIC INVERSION: Ghidra shows complex inverted flag tests like:
-   if ((spec_info->flags & LONG_MODIFIER) == ~(FAR_PTR|NEAR_PTR|...))
-   These should be read as simple negated tests:
-   if (!(spec_info->flags & LONG_MODIFIER))
-   ESP REGISTER CONFUSION: Ghidra incorrectly treats ESP as a user variable
-   (in_ESP, BADSPACEBASE) causing decompiler uncertainty.
-   VARIABLE MAPPING WARNINGS: "Variable defined which should be unmapped"
-   warnings for value_64bit and mb_char_buffer - these can be ignored.
-   
-   The actual function signatures, variable types, and structure layout are
-   correct. This is a printf format specifier conversion function that handles
-   integers, strings, characters, and pointers with proper 64-bit support.
-   Assembly analysis confirms the logic is straightforward despite the
-   decompiler display issues. */
-
-char * __cdecl
-ConvertFormatSpec
-          (char *output_buffer,va_list_t *args,FormatSpec *spec_info)
+char * __cdecl ConvertFormatSpec(char *output_buffer,va_list_t *args,FormatSpec *spec_info)
 
 {
   byte bVar1;

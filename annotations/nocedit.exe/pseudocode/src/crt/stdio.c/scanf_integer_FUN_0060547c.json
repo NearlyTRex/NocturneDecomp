@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 485,
-    "complexity_score": 403,
+    "complexity_score": 402,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 208,
+    "pseudocode_lines": 207,
     "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -14,7 +14,7 @@
       "undefined_ptr_cast",
       "unknown_field"
     ],
-    "total_lines": 693
+    "total_lines": 692
   },
   "cross_references": [
     {
@@ -321,112 +321,112 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 110,
       "match": "CONCAT44",
       "text": "uVar10 = multiply64(local_3c,CONCAT44(local_28,local_2c));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 112,
+      "line": 111,
       "match": "._4_4_",
       "text": "local_3c._4_4_ = (int)(uVar10 >> 0x20);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 113,
+      "line": 112,
       "match": "._0_4_",
       "text": "local_3c._0_4_ = (uint)uVar10;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 114,
+      "line": 113,
       "match": "._4_4_",
       "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 113,
       "match": "CONCAT44",
       "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 113,
       "match": "CARRY4",
       "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Cast to undefined pointer type",
-      "line": 146,
+      "line": 145,
       "match": "(undefined6 *)",
       "text": "piVar6 = (int *)*(undefined6 *)pcVar2;",
       "type": "undefined_ptr_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 158,
+      "line": 157,
       "match": "._0_4_",
       "text": "local_3c._0_4_ = ~(uint)local_3c + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 169,
       "match": "(uint *)((int)",
       "text": "puVar8[(uint)bVar9 * -2 + 1] = *(uint *)((int)&local_3c + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 183,
+      "line": 182,
       "match": "(uint *)((int)",
       "text": "puVar8[(uint)bVar9 * -2 + 1] = *(uint *)((int)&local_3c + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 205,
+      "line": 204,
       "match": "CONCAT44",
       "text": "uVar10 = multiply64(local_3c,CONCAT44(local_28,local_2c));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 206,
+      "line": 205,
       "match": "._4_4_",
       "text": "local_3c._4_4_ = (int)(uVar10 >> 0x20);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 207,
+      "line": 206,
       "match": "._0_4_",
       "text": "local_3c._0_4_ = (uint)uVar10;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 208,
+      "line": 207,
       "match": "._4_4_",
       "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 208,
+      "line": 207,
       "match": "CONCAT44",
       "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 208,
+      "line": 207,
       "match": "CARRY4",
       "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "decompiler_intrinsic"

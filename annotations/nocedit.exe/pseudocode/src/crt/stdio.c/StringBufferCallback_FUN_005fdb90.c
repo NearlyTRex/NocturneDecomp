@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-StringBufferCallback(StringOutputContext *context,char character)
+void __cdecl StringBufferCallback(StringOutputContext *context,char character)
 
 {
   char *pcVar1;

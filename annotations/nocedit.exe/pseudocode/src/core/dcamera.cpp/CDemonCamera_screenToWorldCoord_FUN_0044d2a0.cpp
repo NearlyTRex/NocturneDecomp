@@ -2,13 +2,11 @@
 // Address: 0044d2a0
 // Address Range: [[0044d2a0, 0044d30b]]
 // Convention: __stack3_esi
-// Signature: void __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0 (CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr)
+// Signature: void __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr)
 
 #include "nocturne.h"
 
-void __stack3_esi
-core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-          (CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr)
+void __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr)
 
 {
   uint uVar1;

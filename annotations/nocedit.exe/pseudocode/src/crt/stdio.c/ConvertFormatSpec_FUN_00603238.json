@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 778,
-    "complexity_score": 605,
+    "complexity_score": 560,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 2,
-    "pseudocode_lines": 420,
-    "suspect_count": 16,
+    "pseudocode_lines": 405,
+    "suspect_count": 14,
     "suspect_types": [
-      "badspacebase",
       "param_count_too_few",
-      "register_param",
       "special_crt_function",
       "unknown_field"
     ],
-    "total_lines": 1198
+    "total_lines": 1183
   },
   "cross_references": [
     {
@@ -34,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
-    "signature": "char * __cdecl crt_stdio_c_ConvertFormatSpec_FUN_00603238 (char *output_buffer,va_list_t *args,FormatSpec *spec_info)"
+    "signature": "char * __cdecl crt_stdio_c_ConvertFormatSpec_FUN_00603238(char *output_buffer,va_list_t *args,FormatSpec *spec_info)"
   },
   "function_calls": [
     {
@@ -204,99 +202,85 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "(in_ESP, BADSPACEBASE) causing decompiler uncertainty.",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "(in_ESP, BADSPACEBASE) causing decompiler uncertainty.",
-      "type": "register_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 80,
+      "line": 63,
       "match": "._0_4_",
       "text": "value_64bit._0_4_ = *puVar2;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 83,
+      "line": 66,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = *puVar2;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 90,
+      "line": 73,
       "match": "._4_4_",
       "text": "else if ((value_64bit._4_4_ & 0x80000000) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 119,
+      "line": 102,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = ~value_64bit._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 119,
+      "line": 102,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = ~value_64bit._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 120,
+      "line": 103,
       "match": "._0_4_",
       "text": "value_64bit._0_4_ = ~(uint)value_64bit + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 122,
+      "line": 105,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = value_64bit._4_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 122,
+      "line": 105,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = value_64bit._4_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 155,
+      "line": 138,
       "match": "._0_4_",
       "text": "value_64bit._0_4_ = *puVar2;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 158,
+      "line": 141,
       "match": "._4_4_",
       "text": "value_64bit._4_4_ = *puVar2;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 349,
+      "line": 332,
       "match": "._4_4_",
       "text": "(uVar6 = value_64bit._4_4_, (uint)value_64bit != 0)) || (uVar6 != 0)))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 405,
+      "line": 388,
       "match": "._4_4_",
       "text": "if (((spec_info->precision == 0) && ((uint)value_64bit == 0)) && (value_64bit._4_4_ == 0)) {",
       "type": "unknown_field"

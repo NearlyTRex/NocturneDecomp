@@ -2,13 +2,11 @@
 // Address: 00488cd0
 // Address Range: [[00488cd0, 0048908d]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0 (CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0
-          (CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
 
 {
   uint uVar1;

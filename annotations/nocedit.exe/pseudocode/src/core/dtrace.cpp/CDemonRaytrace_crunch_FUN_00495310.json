@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 117,
+        "line": 116,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 430,
+    "complexity_score": 429,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 13,
-    "pseudocode_lines": 350,
+    "pseudocode_lines": 349,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 1155
+    "total_lines": 1154
   },
   "cross_references": [
     {
@@ -697,49 +697,49 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 75,
       "match": "ROUND",
       "text": "local_14 = (float *)(int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 83,
       "match": "ROUND",
       "text": "local_14 = (float *)(int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 91,
       "match": "ROUND",
       "text": "local_14 = (float *)(int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 126,
       "match": "(int *)((int)",
       "text": "piVar9 = (int *)((int)&(this_ptr->triangle_list->vertex1).x + local_68);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 314,
+      "line": 313,
       "match": "(float *)((int)",
       "text": "local_14 = (float *)((int)((int)local_3c * iVar7 + (int)local_38) * iVar1 + local_20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 338,
+      "line": 337,
       "match": "(float *)((int)",
       "text": "local_38 = (float *)((int)local_38 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 341,
+      "line": 340,
       "match": "(float *)((int)",
       "text": "local_3c = (float *)((int)local_3c + 1);",
       "type": "pointer_cast"

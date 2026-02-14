@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CElephantGun * __cdecl
-core_elephant_cpp_CElephantGun_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint flags)
+CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint flags)
 
 {
   CElephantGun *ptr;

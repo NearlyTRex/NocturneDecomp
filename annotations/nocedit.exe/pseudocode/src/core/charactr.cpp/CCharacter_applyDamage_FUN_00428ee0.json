@@ -1,34 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 21,
-        "message": "use of undeclared identifier 'stack0xffffffc4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 82,
-        "line": 23,
-        "message": "use of undeclared identifier 'stack0xffffffc4'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 40,
+    "complexity_score": 14,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 15,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 48
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
   },
   "cross_references": [],
   "function": {
@@ -41,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_applyDamage_FUN_00428ee0",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0 (CCharacter *this_ptr,int damage_type,float damage_amount)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0(CCharacter *this_ptr,int damage_type,float damage_amount)"
   },
   "function_calls": [
     {
@@ -114,22 +99,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffc4",
-      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffc4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xffffffc4",
-      "text": "(*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,(SDamageInfo *)&stack0xffffffc4);",
-      "type": "stack_ref"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

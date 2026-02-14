@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-sound_sndwav_cpp_enumerateWavInDevice_FUN_005b1560(UINT device_id,SRecordingDeviceInfo *device_info)
+int __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_005b1560(UINT device_id,SRecordingDeviceInfo *device_info)
 
 {
   char cVar1;

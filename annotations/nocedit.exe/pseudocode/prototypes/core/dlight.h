@@ -97,7 +97,7 @@ void __cdecl CDemonLight::allocateFilter(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
 // Address: 00474770
-void __cdecl CDemonLight::applyFilter(CDemonLight *this_ptr,CDemonFilter *filter_ptr,int filter_index,int filter_pos_x, int filter_pos_y);
+void __cdecl CDemonLight::applyFilter(CDemonLight *this_ptr,CDemonFilter *filter_ptr,int filter_index,int filter_pos_x,int filter_pos_y);
 
 // Original: core_dlight.cpp_captureLightTextures_FUN_00474a90
 // Address: 00474a90

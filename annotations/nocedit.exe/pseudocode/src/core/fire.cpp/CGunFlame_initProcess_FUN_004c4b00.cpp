@@ -19,7 +19,7 @@ void __cdecl core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(CGunFlame *this_pt
   DAT_02d13eb4 = 0;
   for (iVar5 = 0; iVar5 < g_CDemonSetPtr->damage_listener_count; iVar5 = iVar5 + 1) {
     iVar1 = *(int *)(g_CDemonSetPtr->unk4 + iVar4 + -4);
-    iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x120))();
+    iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x120))(iVar1);
     if (iVar2 == 0) {
       iVar2 = core_hero_cpp_FUN_004f2220();
       if (iVar2 != 0) {

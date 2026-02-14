@@ -2,13 +2,11 @@
 // Address: 0048ac40
 // Address Range: [[0048ac40, 0048ad85]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 
 {
   int iVar1;
@@ -50,15 +48,15 @@ engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
         }
       }
       if (this_ptr->face_count == 0) {
-        g_RenderStateFlags = RENDER_TEXTURE_LIT;
+        g_RenderStateFlags.dword = RENDER_TEXTURE_LIT;
         g_RenderStateFlag2 = PREPROCESS_NEAR_PLANE_CORRECT;
         g_ScanlineRenderFunc =
-             core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0;
+             (RenderScanlineFunc *)core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0;
       }
       else {
-        g_RenderStateFlags = 0;
+        g_RenderStateFlags.dword = 0;
         g_RenderStateFlag2 = PREPROCESS_NONE;
-        g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
                 (this_ptr,(polygon_info->base).count,g_VertexIndexBuffer);

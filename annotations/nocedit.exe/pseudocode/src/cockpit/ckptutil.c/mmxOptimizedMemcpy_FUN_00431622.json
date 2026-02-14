@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 204,
+    "complexity_score": 202,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 82,
     "suspect_count": 11,
     "suspect_types": [
       "mmx_assembly",
       "pointer_cast"
     ],
-    "total_lines": 208
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_00431622",
-    "signature": "void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00431622 (void *dest_buffer,void *src_buffer,int byte_count)"
+    "signature": "void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00431622(void *dest_buffer,void *src_buffer,int byte_count)"
   },
   "function_calls": [],
   "globals": [],
@@ -113,70 +113,70 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(uint *)((int)",
       "text": "src_buffer = (uint *)((int)src_buffer + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 26,
       "match": "(uint *)((int)",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 33,
       "match": "(uint *)((int)",
       "text": "src_buffer = (uint *)((int)src_buffer + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 64,
       "match": "(void *)((int)",
       "text": "src_buffer = (void *)((int)src_buffer + uVar5 * 0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 65,
       "match": "(void *)((int)",
       "text": "dest_buffer = (void *)((int)dest_buffer + uVar5 * 8 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 73,
       "match": "(uint *)((int)",
       "text": "src_buffer = (uint *)((int)src_buffer + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 74,
       "match": "(uint *)((int)",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 80,
       "match": "(uint *)((int)",
       "text": "src_buffer = (uint *)((int)src_buffer + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 81,
       "match": "(uint *)((int)",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 1);",
       "type": "pointer_cast"

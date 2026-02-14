@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,float delta_time)
 
 {
@@ -22,6 +24,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
   float10 fVar10;
   float10 fVar11;
   float fVar12;
+  byte auStack_e8 [24];
   CVector3f local_d0;
   float fStack_c4;
   float fStack_c0;
@@ -189,8 +192,9 @@ LAB_004a81e2:
     core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     break;
   case 9:
-    if (this_ptr->dest_actor != 0) {
-      pfVar4 = (float *)(**(code **)(*(int *)(this_ptr->dest_actor + 0x154) + 0x14))();
+    iVar7 = this_ptr->dest_actor;
+    if (iVar7 != 0) {
+      pfVar4 = (float *)(**(code **)(*(int *)(iVar7 + 0x154) + 0x14))(iVar7,auStack_e8);
       fStack_c4 = *pfVar4 + pfVar4[3];
       fStack_c0 = pfVar4[1] + pfVar4[4];
       CStack_88.x = fStack_c4 * 0.5f;

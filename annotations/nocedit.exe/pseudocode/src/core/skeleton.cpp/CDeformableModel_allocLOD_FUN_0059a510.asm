@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510 (CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count )
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

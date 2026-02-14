@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 22,
+        "line": 19,
         "message": "assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 115,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 62,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 218
+    "total_lines": 215
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80",
-    "signature": "void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80 (float *input_samples,void *output_buffer,int bits_per_sample,int num_samples, int output_stride)"
+    "signature": "void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80(float *input_samples,void *output_buffer,int bits_per_sample,int num_samples,int output_stride)"
   },
   "function_calls": [
     {
@@ -267,28 +267,28 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 30,
       "match": "ROUND",
       "text": "local_28 = (byte)(int)ROUND(fVar1 * 127.0f + 128.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 36,
       "match": "(ushort *)((int)",
       "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 52,
       "match": "ROUND",
       "text": "local_20 = (ushort)(int)ROUND(fVar1 * 32766.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 58,
       "match": "(ushort *)((int)",
       "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_cast"

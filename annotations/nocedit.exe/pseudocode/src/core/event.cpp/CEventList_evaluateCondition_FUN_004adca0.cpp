@@ -2,13 +2,11 @@
 // Address: 004adca0
 // Address Range: [[004adca0, 004adcfa]]
 // Convention: __cdecl
-// Signature: int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004adca0 (CEventList *this_ptr,char *condition_expression)
+// Signature: int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList *this_ptr,char *condition_expression)
 
 #include "nocturne.h"
 
-int __cdecl
-core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-          (CEventList *this_ptr,char *condition_expression)
+int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList *this_ptr,char *condition_expression)
 
 {
   int iVar1;

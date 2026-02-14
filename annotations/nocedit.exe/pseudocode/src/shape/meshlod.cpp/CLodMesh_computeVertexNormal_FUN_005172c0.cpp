@@ -2,13 +2,11 @@
 // Address: 005172c0
 // Address Range: [[005172c0, 005173ea]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (CLodMesh *this_ptr,CVector3f *out_normal,int vertex_index)
+// Signature: CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0(CLodMesh *this_ptr,CVector3f *out_normal,int vertex_index)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-          (CLodMesh *this_ptr,CVector3f *out_normal,int vertex_index)
+CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0(CLodMesh *this_ptr,CVector3f *out_normal,int vertex_index)
 
 {
   CLodEdge *pCVar1;

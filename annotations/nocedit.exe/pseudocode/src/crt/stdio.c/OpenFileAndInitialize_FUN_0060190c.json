@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 116,
+    "complexity_score": 113,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 58,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 186
+    "total_lines": 183
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_OpenFileAndInitialize_FUN_0060190c",
-    "signature": "_FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c (char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,_FILE *file_struct)"
+    "signature": "_FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c(char *filename,char mode_char,int parsed_mode_flags,int stage1_result,int additional_flags,_FILE *file_struct)"
   },
   "function_calls": [
     {
@@ -149,21 +149,21 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 36,
       "match": "CONCAT11",
       "text": "uVar2 = CONCAT11(1,bVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 39,
       "match": "CONCAT11",
       "text": "uVar2 = CONCAT11(2,bVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 54,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;",
       "type": "pointer_cast"

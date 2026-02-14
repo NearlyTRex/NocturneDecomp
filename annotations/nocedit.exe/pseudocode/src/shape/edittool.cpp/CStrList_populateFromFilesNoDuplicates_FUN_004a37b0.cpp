@@ -2,13 +2,11 @@
 // Address: 004a37b0
 // Address Range: [[004a37b0, 004a39de]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0 (CStrList *this_ptr,char *directory_path,char *file_pattern)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0(CStrList *this_ptr,char *directory_path,char *file_pattern)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
-          (CStrList *this_ptr,char *directory_path,char *file_pattern)
+void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0(CStrList *this_ptr,char *directory_path,char *file_pattern)
 
 {
   char cVar1;

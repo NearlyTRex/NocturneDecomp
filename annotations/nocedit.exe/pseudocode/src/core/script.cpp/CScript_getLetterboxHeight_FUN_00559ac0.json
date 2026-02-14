@@ -1,0 +1,151 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 23,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "004d8040",
+      "from_addr": "004d80eb",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559b20",
+      "from_addr": "00559ba3",
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_00559b20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00559ac0",
+    "address_range": [
+      [
+        "00559ac0",
+        "00559b17"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0",
+    "signature": "int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(CScript *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0310f4a0",
+      "name": "g_ScriptTimeScale",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 9.607142857142858,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "CALL": 1,
+      "COPY": 36,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 7,
+      "INT_AND": 67,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 5,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 19,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 2,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 15,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 5,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 4,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 4,
+      "SUBPIECE": 2,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 269
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ROUND",
+      "text": "return (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

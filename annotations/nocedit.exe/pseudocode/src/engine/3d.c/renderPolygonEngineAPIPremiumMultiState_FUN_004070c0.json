@@ -1,48 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 44,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 47,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 51,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 54,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 172,
+    "complexity_score": 171,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 18,
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 86,
     "suspect_count": 7,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "register_param"
     ],
-    "total_lines": 230
+    "total_lines": 229
   },
   "cross_references": [],
   "function": {
@@ -179,7 +154,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -268,49 +243,49 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 7,
+      "line": 6,
       "match": "in_EAX",
       "text": "SMRGLHeaderExtended *in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 9,
       "match": "extraout_EAX",
       "text": "SMRGLHeaderExtended *extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 65,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 69,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 87,
+      "line": 86,
       "match": "extraout_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 87,
+      "line": 86,
       "match": "in_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 89,
+      "line": 88,
       "match": "in_EAX",
       "text": "return in_EAX;",
       "type": "register_param"

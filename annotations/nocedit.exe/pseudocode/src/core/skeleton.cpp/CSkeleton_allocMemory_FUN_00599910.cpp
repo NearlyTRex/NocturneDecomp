@@ -2,13 +2,11 @@
 // Address: 00599910
 // Address Range: [[00599910, 00599a4d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910 (CSkeleton *this_ptr,int bone_count,int frame_count)
+// Signature: void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton *this_ptr,int bone_count,int frame_count)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910
-          (CSkeleton *this_ptr,int bone_count,int frame_count)
+void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton *this_ptr,int bone_count,int frame_count)
 
 {
   float fVar1;

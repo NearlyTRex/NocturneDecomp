@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SBodyPartFire * __cdecl
-core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_0041b6b0(SBodyPartFire *objs,uint flags)
+SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_0041b6b0(SBodyPartFire *objs,uint flags)
 
 {
   SBodyPartFire *pSVar1;

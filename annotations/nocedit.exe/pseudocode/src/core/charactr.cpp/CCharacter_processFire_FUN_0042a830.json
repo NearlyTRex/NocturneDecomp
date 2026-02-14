@@ -4,20 +4,8 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 102,
+        "line": 103,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 153,
-        "message": "cannot cast from type 'float' to pointer type 'CDeformableModel *'"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 158,
-        "message": "C-style cast from 'CDeformableModel *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -25,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 410,
+    "complexity_score": 286,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
-    "pseudocode_lines": 195,
-    "suspect_count": 20,
+    "pseudocode_lines": 196,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
-      "unaffected_reg",
       "undefined_data"
     ],
-    "total_lines": 617
+    "total_lines": 618
   },
   "cross_references": [
     {
@@ -382,57 +369,50 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 45,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_00823c54 + iVar5) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 45,
       "match": "DAT_00823c54",
       "text": "*(uint *)((int)&DAT_00823c54 + iVar5) = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 58,
       "match": "DAT_00823c54",
       "text": "(&DAT_00823c54)[iVar5] =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 59,
       "match": "DAT_00823c54",
-      "text": "(float)(&DAT_00823c54)[iVar5] +",
+      "text": "(float)(&DAT_00823c54)[iVar5] + (pCVar9->fire_effects[0].unk2 * fVar2) / fVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(float *)((int)",
       "text": "if ((float)65535 <= *(float *)((int)&DAT_00823c54 + iVar5)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 70,
       "match": "DAT_00823c54",
       "text": "if ((float)65535 <= *(float *)((int)&DAT_00823c54 + iVar5)) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 78,
       "match": "(int *)((int)",
       "text": "[*(int *)((int)pCVar4->bone_to_part_map + iVar5)] == 0) {",
       "type": "pointer_cast"
@@ -442,83 +422,6 @@
       "line": 139,
       "match": "(CLocation *)((int)",
       "text": "pCVar11 = (CLocation *)((int)(pCVar11 + 0x2a) + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 152,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_18->motion_list + 0x14),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 153,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_18->motion_list + 0x14) = fVar1, 3.0f < fVar1)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 154,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_18->motion_list + 0x14) = 3.0f;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 156,
-      "match": "unaff_EBP",
-      "text": "iVar8 = unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 157,
-      "match": "unaff_EBP",
-      "text": "if (0 < *(int *)(unaff_EBP + 0x28558)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 170,
-      "match": "unaff_EBP",
-      "text": "core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(this_ptr,unaff_EBP,iVar5);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 175,
-      "match": "unaff_EBP",
-      "text": "} while (iVar5 < *(int *)(unaff_EBP + 0x28558));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 181,
-      "match": "unaff_EBP",
-      "text": "if (*(int *)(*(int *)(pSStack_14->unk + 4) * 0x24 + unaff_EBP + 0x2857c) ==",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 189,
-      "match": "unaff_EBP",
-      "text": "(this_ptr,unaff_EBP,",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 190,
-      "match": "unaff_EBP",
-      "text": "*(int *)(*(int *)(pSStack_14->unk + 4) * 0x24 + unaff_EBP + 0x2857c));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 193,
-      "match": "(CSkeleton *)((int)",
-      "text": "local_18 = (CSkeleton *)((int)local_18 + 0x18);",
       "type": "pointer_cast"
     }
   ]

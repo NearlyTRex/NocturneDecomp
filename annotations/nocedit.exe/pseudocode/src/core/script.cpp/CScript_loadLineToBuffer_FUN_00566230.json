@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 12,
-        "line": 22,
+        "line": 21,
         "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       }
     ],
@@ -13,24 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 60,
+    "complexity_score": 59,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 44,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 99
+    "total_lines": 98
   },
   "cross_references": [
-    {
-      "addr": "00565130",
-      "from_addr": "00565990",
-      "name": "core_script.cpp_CScript_FUN_00565130",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00564820",
       "from_addr": "00564f07",
@@ -41,6 +35,12 @@
       "addr": "00566390",
       "from_addr": "005663d4",
       "name": "core_script.cpp_CScript_insertText_FUN_00566390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565130",
+      "from_addr": "00565990",
+      "name": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -159,7 +159,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_00643f94",
       "text": "pcVar5 = &DAT_00643f94;",
       "type": "undefined_data"

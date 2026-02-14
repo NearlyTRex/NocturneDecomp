@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_optimizedMemcpy_FUN_00431528(void *dest_buffer,void *src_buffer,int byte_count)
+void __cdecl cockpit_ckptutil_c_optimizedMemcpy_FUN_00431528(void *dest_buffer,void *src_buffer,int byte_count)
 
 {
   longlong lVar1;

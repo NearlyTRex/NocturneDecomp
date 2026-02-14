@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 62,
-        "line": 33,
+        "line": 30,
         "message": "member reference base type 'char[116]' is not a structure or union"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 42,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 24,
     "suspect_count": 1,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 105
+    "total_lines": 102
   },
   "cross_references": [],
   "function": {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70 (CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index, char *extension,char *base_path,int stride,int apply_palette_flag)"
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *extension,char *base_path,int stride,int apply_palette_flag)"
   },
   "function_calls": [
     {
@@ -179,7 +179,7 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 26,
+      "line": 23,
       "match": "._0_4_",
       "text": "end_index,stride,apply_palette_flag,local_74._0_4_);",
       "type": "unknown_field"

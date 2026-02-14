@@ -21,10 +21,10 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0063b6ec = 0.300000000000000
-;   CEdButton* g_ActiveButton
+;   void* g_ActiveControl
 ;   int g_MouseX
 ;   int g_MouseY
-;   uint g_MouseButtonFlags
+;   _BIT_INTEGER g_MouseButtonFlags
 ;   int g_ActiveRenderColor
 ;   float FLOAT_02f7c630
 ;
@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 00536d08
         ;   Label: LAB_00536d08
     XOR EAX,EAX                         ; 00536d0c
-    MOV EDX,dword ptr [0x02cf2b00]      ; 00536d0e | g_ActiveButton
+    MOV EDX,dword ptr [0x02cf2b00]      ; 00536d0e | g_ActiveControl
     MOV dword ptr [ESP + 0x8],EAX       ; 00536d14
     TEST EDX,EDX                        ; 00536d18
     JNZ 0x00536d47                      ; 00536d1a

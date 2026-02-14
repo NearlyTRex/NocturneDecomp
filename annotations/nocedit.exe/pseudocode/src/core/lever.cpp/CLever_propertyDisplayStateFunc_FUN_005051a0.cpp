@@ -2,13 +2,11 @@
 // Address: 005051a0
 // Address Range: [[005051a0, 0050520e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_lever_cpp_CLever_propertyDisplayStateFunc_FUN_005051a0 (CLever *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_lever_cpp_CLever_propertyDisplayStateFunc_FUN_005051a0(CLever *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_lever_cpp_CLever_propertyDisplayStateFunc_FUN_005051a0
-          (CLever *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_lever_cpp_CLever_propertyDisplayStateFunc_FUN_005051a0(CLever *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

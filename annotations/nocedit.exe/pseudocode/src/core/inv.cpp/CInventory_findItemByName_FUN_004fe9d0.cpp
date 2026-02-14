@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActor * __cdecl
-core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0(CInventory *this_ptr,char *item_name)
+CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0(CInventory *this_ptr,char *item_name)
 
 {
   int iVar1;

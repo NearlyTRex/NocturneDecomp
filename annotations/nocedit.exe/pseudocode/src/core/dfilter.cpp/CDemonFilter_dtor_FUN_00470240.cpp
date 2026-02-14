@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonFilter * __cdecl
-core_dfilter_cpp_CDemonFilter_dtor_FUN_00470240(CDemonFilter *this_ptr,uint flags)
+CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_dtor_FUN_00470240(CDemonFilter *this_ptr,uint flags)
 
 {
   core_dfilter_cpp_CDemonFilter_freeMemory_FUN_004702c0(this_ptr);

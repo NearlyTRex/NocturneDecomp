@@ -89,7 +89,8 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
     g_CurrentLineNumber = 0x101;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic failed to create morph target actor!");
   }
-  (*(code *)**(uint **)(*(int *)(this_ptr->unk4 + 0xc54) + 0x154))();
+  (*(code *)**(uint **)(*(int *)(this_ptr->unk4 + 0xc54) + 0x154))
+            (*(int *)(this_ptr->unk4 + 0xc54));
   pCVar1 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(pCVar1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);

@@ -2,13 +2,11 @@
 // Address: 0056db80
 // Address Range: [[0056db80, 0056dda4]]
 // Convention: __cdecl
-// Signature: int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 (CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal)
+// Signature: int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal)
 
 #include "nocturne.h"
 
-int __cdecl
-core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
-          (CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal)
+int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal)
 
 {
   uint *puVar1;

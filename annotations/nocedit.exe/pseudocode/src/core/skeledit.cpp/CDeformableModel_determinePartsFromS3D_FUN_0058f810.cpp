@@ -8,8 +8,7 @@
 
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl
-core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr)
+int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr)
 
 {
   CBoundingBox3D *pCVar1;

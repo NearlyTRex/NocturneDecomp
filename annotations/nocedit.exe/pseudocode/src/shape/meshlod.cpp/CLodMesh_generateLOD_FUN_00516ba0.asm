@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0 (CLodMesh *this_ptr,int target_tri_count,uint display_mode)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,uint display_mode)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

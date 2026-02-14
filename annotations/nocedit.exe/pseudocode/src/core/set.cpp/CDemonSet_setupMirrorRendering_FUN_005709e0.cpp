@@ -2,13 +2,11 @@
 // Address: 005709e0
 // Address Range: [[005709e0, 00570aea]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 (CDemonSet *this_ptr,int mirror_index,int enable_flag)
+// Signature: void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet *this_ptr,int mirror_index,int enable_flag)
 
 #include "nocturne.h"
 
-void __cdecl
-core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
-          (CDemonSet *this_ptr,int mirror_index,int enable_flag)
+void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet *this_ptr,int mirror_index,int enable_flag)
 
 {
   CVector3f *pCVar1;
@@ -39,7 +37,8 @@ core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
             (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection);
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(g_CDemonRendererPtr2,1);
-  (*((g_CurrentSceneCamera->base).vtable)->saveAlphaTransform)();
+  (*((g_CurrentSceneCamera->base).vtable)->saveAlphaTransform)
+            (g_CurrentSceneCamera,mirror_index + 1);
   engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0(g_CDemonRendererPtr2,mirror_index + 1)
   ;
   this_ptr->active_mirror = &this_ptr->mirror_glass_actors[mirror_index]->mirror;

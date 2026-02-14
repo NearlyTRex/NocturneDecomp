@@ -4,62 +4,14 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 138,
+        "line": 133,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 138,
+        "line": 133,
         "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 140,
-        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 143,
-        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 154,
-        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 156,
-        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 157,
-        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 158,
-        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 161,
-        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 161,
-        "message": "member reference base type 'byte[40]' (aka 'unsigned char[40]') is not a structure or union"
       }
     ],
     "success": false,
@@ -67,18 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 573,
-    "complexity_score": 332,
+    "complexity_score": 248,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "pseudocode_lines": 187,
-    "suspect_count": 13,
+    "pseudocode_lines": 188,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 760
+    "total_lines": 761
   },
   "cross_references": [],
   "function": {
@@ -286,93 +237,37 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 131,
+      "line": 126,
       "match": "code *",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x34))();",
+      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x34))(iVar1,&SStack_d0);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 133,
-      "match": "._20_4_",
-      "text": "((float)auStack_c8._20_4_ + *(float *)(iVar1 + 0x24) <=",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 136,
-      "match": "._24_4_",
-      "text": "(float)auStack_c8._24_4_ + *(float *)(iVar1 + 0x24))) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 147,
-      "match": "._28_4_",
-      "text": "fStack_40 = CStack_64.x + (float)auStack_c8._28_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 149,
-      "match": "._28_4_",
-      "text": "(fStack_3c = CStack_64.x - (float)auStack_c8._28_4_, fStack_3c <= fStack_94)) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 150,
-      "match": "._28_4_",
-      "text": "((fStack_38 = CStack_64.z + (float)auStack_c8._28_4_, fStack_98 <= fStack_38 &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 151,
-      "match": "._28_4_",
-      "text": "(fStack_34 = CStack_64.z - (float)auStack_c8._28_4_, fStack_34 <= fStack_8c)))) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 154,
-      "match": "._28_4_",
-      "text": "fVar2 = (float)auStack_c8._28_4_ * (float)auStack_c8._28_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 154,
-      "match": "._28_4_",
-      "text": "fVar2 = (float)auStack_c8._28_4_ * (float)auStack_c8._28_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
       "match": "SQRT",
-      "text": "fStack_28 = SQRT(fVar2 - (fStack_94 - CStack_64.x) * (fStack_94 - CStack_64.x));",
+      "text": "fStack_30 = SQRT(fStack_14 -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 157,
       "match": "SQRT",
-      "text": "fStack_14 = SQRT(fVar2 - (fStack_a0 - CStack_64.x) * (fStack_a0 - CStack_64.x));",
+      "text": "fStack_1c = SQRT(fStack_14 -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 165,
+      "line": 163,
       "match": "SQRT",
-      "text": "fStack_18 = SQRT(fVar2 - (fStack_8c - CStack_64.z) * (fStack_8c - CStack_64.z));",
+      "text": "fStack_20 = SQRT(fStack_14 -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 169,
       "match": "SQRT",
-      "text": "fStack_30 = SQRT(fVar2 - (fStack_98 - CStack_64.z) * (fStack_98 - CStack_64.z));",
+      "text": "fStack_38 = SQRT(fStack_14 -",
       "type": "decompiler_intrinsic"
     }
   ],

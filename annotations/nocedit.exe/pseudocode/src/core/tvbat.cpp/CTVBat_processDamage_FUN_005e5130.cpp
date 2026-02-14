@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_tvbat_cpp_CTVBat_processDamage_FUN_005e5130(CTVBat *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_005e5130(CTVBat *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;

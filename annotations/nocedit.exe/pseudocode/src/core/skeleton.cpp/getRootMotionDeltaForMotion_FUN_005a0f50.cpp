@@ -2,14 +2,11 @@
 // Address: 005a0f50
 // Address Range: [[005a0f50, 005a0fda]]
 // Convention: __cdecl
-// Signature: CDeformableModelInstance * __cdecl core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_005a0f50 (CMotionController *motion_controller,CDeformableModelInstance *deformable_model, int motion_index,float start_frame,float end_frame)
+// Signature: CDeformableModelInstance * __cdecl core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_005a0f50(CMotionController *motion_controller,CDeformableModelInstance *deformable_model,int motion_index,float start_frame,float end_frame)
 
 #include "nocturne.h"
 
-CDeformableModelInstance * __cdecl
-core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_005a0f50
-          (CMotionController *motion_controller,CDeformableModelInstance *deformable_model,
-          int motion_index,float start_frame,float end_frame)
+CDeformableModelInstance * __cdecl core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_005a0f50(CMotionController *motion_controller,CDeformableModelInstance *deformable_model,int motion_index,float start_frame,float end_frame)
 
 {
   float fVar1;

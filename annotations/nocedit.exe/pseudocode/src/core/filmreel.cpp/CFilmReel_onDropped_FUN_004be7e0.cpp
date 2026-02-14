@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_filmreel_cpp_CFilmReel_onDropped_FUN_004be7e0(CFilmReel *this_ptr,CVector3f *drop_position)
+void __cdecl core_filmreel_cpp_CFilmReel_onDropped_FUN_004be7e0(CFilmReel *this_ptr,CVector3f *drop_position)
 
 {
   this_ptr->carrier = (CDemonActor *)0x0;

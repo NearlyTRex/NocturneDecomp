@@ -33,7 +33,7 @@ void __cdecl CBitFont::loadBitmap(CBitFont *this_ptr,char *filename,int width,in
 
 // Original: engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280
 // Address: 004cd280
-void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char, int load_flags,int other);
+void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags,int other);
 
 // Original: engine_font.cpp_CBitFont_loadFromFile_FUN_004cd2c0
 // Address: 004cd2c0
@@ -49,7 +49,7 @@ void __cdecl CBitFont::setInitializedFlag(CBitFont *this_ptr);
 
 // Original: engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
 // Address: 004cd550
-void __cdecl CBitFont::parseCharacterMetrics(CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height, int first_char);
+void __cdecl CBitFont::parseCharacterMetrics(CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height,int first_char);
 
 // Original: engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
 // Address: 004cda20
@@ -69,7 +69,7 @@ int __cdecl CBitFont::drawTextFV(CBitFont *this_ptr,int x,int y,int color_mode,i
 
 // Original: engine_font.cpp_CBitFont_drawTextF_FUN_004cdc70
 // Address: 004cdc70
-int __cdecl CBitFont::drawTextF(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string ,va_list_t args);
+int __cdecl CBitFont::drawTextF(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 
 // Original: engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0
 // Address: 004cdce0
@@ -93,7 +93,7 @@ int __cdecl CBitFont::drawTextCenterFV(CBitFont *this_ptr,int x,int y,int color_
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde70
 // Address: 004cde70
-int __cdecl CBitFont::drawTextCenterF(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value, char *format_string,va_list_t args);
+int __cdecl CBitFont::drawTextCenterF(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
 // Address: 004cdee0
@@ -101,11 +101,11 @@ int __cdecl CBitFont::drawTextCenterInBounds(CBitFont *this_ptr,int left_x,int r
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
 // Address: 004cdf30
-int __cdecl CBitFont::drawTextCenterInBoundsFV(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value, char *format_string,...);
+int __cdecl CBitFont::drawTextCenterInBoundsFV(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string,...);
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf80
 // Address: 004cdf80
-int __cdecl CBitFont::drawTextCenterInBoundsF(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value, char *format_string,va_list_t args);
+int __cdecl CBitFont::drawTextCenterInBoundsF(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0
 // Address: 004cdff0
@@ -117,7 +117,7 @@ void __cdecl CBitFont::printfCenterInClip(CBitFont *this_ptr,int y,int color_mod
 
 // Original: engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090
 // Address: 004ce090
-int __cdecl CBitFont::drawTextCenterInClipF(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string, va_list_t args);
+int __cdecl CBitFont::drawTextCenterInClipF(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args);
 
 // Original: engine_font.cpp_setShadowColor_FUN_004ce0f0
 // Address: 004ce0f0
@@ -153,7 +153,7 @@ int __cdecl CBitFont::getCharWidth(CBitFont *this_ptr,char *text_string);
 
 // Original: engine_font.cpp_CBitFont_wrapText_FUN_004d0010
 // Address: 004d0010
-int __cdecl CBitFont::wrapText(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width, int max_pixel_width);
+int __cdecl CBitFont::wrapText(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width);
 
 // Original: engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0
 // Address: 004d01a0

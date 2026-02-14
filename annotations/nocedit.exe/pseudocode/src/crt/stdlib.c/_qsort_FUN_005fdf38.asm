@@ -30,7 +30,7 @@
 ; void *           Stack[-0x20]:4  local_20
 ;
 ; XREF[10]:
-;   core_script.cpp_CScript_FUN_00567630 at 005676c1
+;   core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 at 005676c1
 ;   core_set.cpp_CDemonSet_FUN_0056fbd0 at 0056fca3
 ;   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0 at 00407113
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 at 0048dadd

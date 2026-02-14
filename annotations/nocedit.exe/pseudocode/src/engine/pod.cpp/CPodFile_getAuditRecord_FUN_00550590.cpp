@@ -2,13 +2,11 @@
 // Address: 00550590
 // Address Range: [[00550590, 005506ba]]
 // Convention: __stack2_esi
-// Signature: void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590 (CPodFile *this_ptr,int record_index,void *output_buffer)
+// Signature: void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile *this_ptr,int record_index,void *output_buffer)
 
 #include "nocturne.h"
 
-void * __stack2_esi
-engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590
-          (CPodFile *this_ptr,int record_index,void *output_buffer)
+void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile *this_ptr,int record_index,void *output_buffer)
 
 {
   _FILE *file;

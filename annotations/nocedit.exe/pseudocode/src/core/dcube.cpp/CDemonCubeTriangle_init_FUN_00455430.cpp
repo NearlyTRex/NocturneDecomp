@@ -2,13 +2,11 @@
 // Address: 00455430
 // Address Range: [[00455430, 00455451]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430 (CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2)
+// Signature: void __cdecl core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430(CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430
-          (CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2)
+void __cdecl core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430(CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2)
 
 {
   this_ptr->vertices[0] = vertex0;

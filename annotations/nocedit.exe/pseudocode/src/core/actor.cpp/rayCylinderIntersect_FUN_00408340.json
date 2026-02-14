@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 162,
+    "complexity_score": 159,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 114,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 506
+    "total_lines": 503
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_actor.cpp_rayCylinderIntersect_FUN_00408340",
-    "signature": "float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00408340 (SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal)"
+    "signature": "float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)"
   },
   "function_calls": [],
   "globals": [],
@@ -350,28 +350,28 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 20,
       "match": "SQRT",
       "text": "fVar2 = SQRT(ray_direction->x * ray_direction->x + ray_direction->z * ray_direction->z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 34,
       "match": "SQRT",
       "text": "if ((fVar1 <= fVar7) || (fVar9 = fVar9 - SQRT(fVar1 - fVar7), fVar2 < fVar9)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 46,
       "match": "SQRT",
       "text": "fVar1 = SQRT(fVar5 * out_normal->z + fVar6 * out_normal->x + out_normal->y * out_normal->y",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 73,
       "match": "SQRT",
       "text": "fVar1 = SQRT(out_normal->z * out_normal->z +",
       "type": "decompiler_intrinsic"

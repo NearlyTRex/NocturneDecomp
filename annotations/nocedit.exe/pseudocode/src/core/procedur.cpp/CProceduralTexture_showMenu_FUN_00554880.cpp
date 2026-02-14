@@ -8,8 +8,7 @@
 
 /* WARNING: Removing unreachable block (ram,0x005548f1) */
 
-void __cdecl
-core_procedur_cpp_CProceduralTexture_showMenu_FUN_00554880(CProceduralTexture *this_ptr)
+void __cdecl core_procedur_cpp_CProceduralTexture_showMenu_FUN_00554880(CProceduralTexture *this_ptr)
 
 {
   uint uVar1;

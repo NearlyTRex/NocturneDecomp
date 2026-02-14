@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00 (CScript *this_ptr,int param_2,char *param_3,char *param_4)
+; __cdecl float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,int param_2,char *param_3,char *param_4)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

@@ -6,28 +6,26 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 51,
+    "complexity_score": 26,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 26,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 79
   },
   "cross_references": [
     {
-      "addr": "0055a6c0",
-      "from_addr": "0055a702",
-      "name": "core_script.cpp_CScript_FUN_0055a6c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00565d00",
       "from_addr": "00565deb",
       "name": "core_script.cpp_CScript_executeContextAction_FUN_00565d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a6c0",
+      "from_addr": "0055a702",
+      "name": "core_script.cpp_CScript_executeInitSection_FUN_0055a6c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,7 +45,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CScript_findLabelIndex_FUN_00560160",
-    "signature": "int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_ptr,char *param_2)"
+    "signature": "int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_ptr,char *label_name)"
   },
   "function_calls": [
     {
@@ -106,27 +104,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "label_name",
         "offset": 8,
         "size": 4,
         "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "text": "int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "text": "str2 = param_2;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

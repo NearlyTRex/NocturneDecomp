@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_3d_c_setRelativeCoord_FUN_00404450(SMRGLHeaderPrimitive *primitive)
+SMRGLHeaderExtended * __cdecl engine_3d_c_setRelativeCoord_FUN_00404450(SMRGLHeaderPrimitive *primitive)
 
 {
   longlong lVar1;

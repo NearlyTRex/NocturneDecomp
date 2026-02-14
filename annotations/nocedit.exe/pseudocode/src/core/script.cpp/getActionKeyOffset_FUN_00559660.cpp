@@ -2,13 +2,11 @@
 // Address: 00559660
 // Address Range: [[00559660, 0055972d]]
 // Convention: __cdecl
-// Signature: int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660 (SActionKeyBindings *action_bindings,char *action_name)
+// Signature: int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660(SActionKeyBindings *action_bindings,char *action_name)
 
 #include "nocturne.h"
 
-int * __cdecl
-core_script_cpp_getActionKeyOffset_FUN_00559660
-          (SActionKeyBindings *action_bindings,char *action_name)
+int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660(SActionKeyBindings *action_bindings,char *action_name)
 
 {
   int iVar1;

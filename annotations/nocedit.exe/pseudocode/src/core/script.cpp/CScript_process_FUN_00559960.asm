@@ -114,7 +114,7 @@ section .text
     PUSH EBX                            ; 00559a0d
     MOV EDI,dword ptr [EBX + 0x48]      ; 00559a0e
     CALL core_script.cpp_CScript_step_FUN_0055a810 ; 00559a11
-        ;   XREF to: 0055a810 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_0055a810(CScript * this_ptr, int param_2)
+        ;   XREF to: 0055a810 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_0055a810(CScript * this_ptr, float * time_remaining)
     ADD ESP,0x8                         ; 00559a16
     TEST EAX,EAX                        ; 00559a19
     JZ 0x005599d3                       ; 00559a1b

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-uint __cdecl
-shape_design_c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygon_index,int second_polygon_index)
+uint __cdecl shape_design_c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygon_index,int second_polygon_index)
 
 {
   float fVar1;

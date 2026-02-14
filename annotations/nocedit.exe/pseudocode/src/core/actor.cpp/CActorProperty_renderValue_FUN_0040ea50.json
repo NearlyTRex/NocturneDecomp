@@ -4,61 +4,61 @@
       {
         "category": "other",
         "column": 30,
-        "line": 28,
+        "line": 26,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 40,
-        "line": 170,
+        "line": 168,
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 170,
+        "line": 168,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 35,
-        "line": 206,
+        "line": 204,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       },
       {
         "category": "format_error",
         "column": 43,
-        "line": 233,
+        "line": 231,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 71,
-        "line": 233,
+        "line": 231,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 8,
-        "line": 250,
+        "line": 248,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 14,
-        "line": 250,
+        "line": 248,
         "message": "expected expression"
       },
       {
         "category": "lvalue_required",
         "column": 58,
-        "line": 267,
+        "line": 265,
         "message": "cannot take the address of an rvalue of type 'int'"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 272,
+        "line": 270,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -67,11 +67,11 @@
   },
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 425,
+    "complexity_score": 423,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
-    "pseudocode_lines": 275,
+    "pseudocode_lines": 273,
     "suspect_count": 13,
     "suspect_types": [
       "format_string_mismatch",
@@ -79,7 +79,7 @@
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 830
+    "total_lines": 828
   },
   "cross_references": [
     {
@@ -129,7 +129,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50",
-    "signature": "void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50 (CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer)"
+    "signature": "void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer)"
   },
   "function_calls": [
     {
@@ -512,84 +512,84 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 76,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)&pCVar4->state_count + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 77,
       "match": "(CMotionList *)((int)",
       "text": "pCVar4 = (CMotionList *)((int)&pCVar4->state_count + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 164,
       "match": "param1",
       "text": "if ((this_ptr->param1).v_int < ((this_ptr->data).v_kfm_ptr)->part_visibility_flags[0]) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 166,
       "match": "param1",
       "text": "(this_ptr->param1).v_int * 10 + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 173,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)piVar7 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
+      "line": 174,
       "match": "(int *)((int)",
       "text": "piVar7 = (int *)((int)piVar7 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 198,
+      "line": 196,
       "match": "param1",
       "text": "if (0 < (this_ptr->param1).v_int) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 199,
+      "line": 197,
       "match": "param2",
       "text": "puVar8 = (this_ptr->param2).v_ptr;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 207,
+      "line": 205,
       "match": "param1",
       "text": "} while (iVar11 < (this_ptr->param1).v_int);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 223,
+      "line": 221,
       "match": "param1",
       "text": "iVar11 = (this_ptr->param1).v_int;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 243,
+      "line": 241,
       "match": "code *",
       "text": "(*(code *)this_ptr->data)();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 260,
+      "line": 258,
       "match": "(uint *)((int)",
       "text": "if ((*(this_ptr->data).v_uint_ptr & *(uint *)((int)&0x00000001 + iVar11)) != 0) {",
       "type": "pointer_cast"
@@ -600,7 +600,7 @@
       "expected_args": 1,
       "format_string": "Unknown CActorProperty type: %d",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 274,
+      "line_number": 272,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Unknown CActorProperty type: %d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

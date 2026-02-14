@@ -2,14 +2,11 @@
 // Address: 0043f0d0
 // Address Range: [[0043f0d0, 0043f16c]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0 (CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,byte *output_stream,int *bytes_remaining, int code_value)
+// Signature: int __cdecl support_codec_cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,byte *output_stream,int *bytes_remaining,int code_value)
 
 #include "nocturne.h"
 
-int __cdecl
-support_codec_cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0
-          (CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,byte *output_stream,int *bytes_remaining,
-          int code_value)
+int __cdecl support_codec_cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,byte *output_stream,int *bytes_remaining,int code_value)
 
 {
   int iVar1;

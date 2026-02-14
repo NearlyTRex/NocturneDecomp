@@ -19,7 +19,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   float g_PerspectiveReciprocal
 ;   BOOL g_MMXSupported
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

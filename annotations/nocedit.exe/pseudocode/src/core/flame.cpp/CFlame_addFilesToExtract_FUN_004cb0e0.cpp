@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_flame_cpp_CFlame_addFilesToExtract_FUN_004cb0e0(CFlame *this_ptr,_FILE *file_handle)
+void __cdecl core_flame_cpp_CFlame_addFilesToExtract_FUN_004cb0e0(CFlame *this_ptr,_FILE *file_handle)
 
 {
   return;

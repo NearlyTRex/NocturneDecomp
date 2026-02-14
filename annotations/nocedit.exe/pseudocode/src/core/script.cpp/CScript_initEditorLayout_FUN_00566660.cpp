@@ -2,13 +2,11 @@
 // Address: 00566660
 // Address Range: [[00566660, 005667f9]]
 // Convention: __cdecl
-// Signature: void __cdecl core_script_cpp_CScript_initEditorLayout_FUN_00566660 (CScript *this_ptr,int x,int y,int width,int height)
+// Signature: void __cdecl core_script_cpp_CScript_initEditorLayout_FUN_00566660(CScript *this_ptr,int x,int y,int width,int height)
 
 #include "nocturne.h"
 
-void __cdecl
-core_script_cpp_CScript_initEditorLayout_FUN_00566660
-          (CScript *this_ptr,int x,int y,int width,int height)
+void __cdecl core_script_cpp_CScript_initEditorLayout_FUN_00566660(CScript *this_ptr,int x,int y,int width,int height)
 
 {
   int iVar1;

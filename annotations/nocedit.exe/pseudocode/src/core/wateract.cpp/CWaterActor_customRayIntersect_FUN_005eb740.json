@@ -1,41 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 43,
-        "line": 52,
-        "message": "member reference base type 'byte[80]' (aka 'unsigned char[80]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 53,
-        "message": "member reference base type 'byte[80]' (aka 'unsigned char[80]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 54,
-        "message": "member reference base type 'byte[80]' (aka 'unsigned char[80]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 144,
+    "complexity_score": 62,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 64,
-    "suspect_count": 7,
-    "suspect_types": [
-      "stack_param",
-      "unknown_field"
-    ],
-    "total_lines": 235
+    "pseudocode_lines": 62,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -49,7 +27,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740",
-    "signature": "float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740 (CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal)"
+    "signature": "float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)"
   },
   "function_calls": [
     {
@@ -175,57 +153,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_ffffff60",
-      "text": "CVector3f *in_stack_ffffff60;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_ffffff64",
-      "text": "CVector3f *in_stack_ffffff64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_ffffff60",
-      "text": "(this_ptr_00,ray_origin_00,in_stack_ffffff60,in_stack_ffffff64);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_ffffff64",
-      "text": "(this_ptr_00,ray_origin_00,in_stack_ffffff60,in_stack_ffffff64);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 45,
-      "match": "._36_4_",
-      "text": "CStack_30.x = -(float)auStack_80._36_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 46,
-      "match": "._40_4_",
-      "text": "CStack_30.y = -(float)auStack_80._40_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 47,
-      "match": "._44_4_",
-      "text": "CStack_30.z = -(float)auStack_80._44_4_;",
-      "type": "unknown_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

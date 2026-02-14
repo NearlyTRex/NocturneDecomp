@@ -2,14 +2,11 @@
 // Address: 00433820
 // Address Range: [[00433820, 004338e4]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_00433820 (uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y, int buffer_width)
+// Signature: void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_00433820(uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y,int buffer_width)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_00433820
-          (uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y,
-          int buffer_width)
+void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_00433820(uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y,int buffer_width)
 
 {
   int iVar1;

@@ -2,13 +2,11 @@
 // Address: 0054b860
 // Address Range: [[0054b860, 0054b90b]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860 (CPackedBitmap *this_ptr,char *filename,int post_load_processing)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap *this_ptr,char *filename,int post_load_processing)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860
-          (CPackedBitmap *this_ptr,char *filename,int post_load_processing)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap *this_ptr,char *filename,int post_load_processing)
 
 {
   _FILE *file_handle;

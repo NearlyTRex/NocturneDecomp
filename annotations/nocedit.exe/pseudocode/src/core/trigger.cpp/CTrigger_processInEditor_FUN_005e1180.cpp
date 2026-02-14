@@ -9,43 +9,41 @@
 void __cdecl core_trigger_cpp_CTrigger_processInEditor_FUN_005e1180(CTrigger *this_ptr)
 
 {
-  int iVar1;
-  float in_stack_00000008;
-  float in_stack_00000010;
-  float in_stack_00000018;
-  float in_stack_00000020;
-  float in_stack_00000028;
-  float in_stack_00000030;
+  float fVar1;
+  int iVar2;
+  float fVar3;
   
   this_ptr->trigger_state = 0;
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if (iVar1 == 0) {
+  fVar3 = (this_ptr->trigger_size).x;
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if (iVar2 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
   else {
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
-    if (iVar1 != 0) {
-      (this_ptr->trigger_size).x = (this_ptr->trigger_size).x - in_stack_00000008;
+    fVar1 = g_CGamePtr->delta_time_float * (float)4;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    if (iVar2 != 0) {
+      (this_ptr->trigger_size).x = (this_ptr->trigger_size).x - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
-    if (iVar1 != 0) {
-      (this_ptr->trigger_size).x = (this_ptr->trigger_size).x + in_stack_00000010;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    if (iVar2 != 0) {
+      (this_ptr->trigger_size).x = (this_ptr->trigger_size).x + fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
-    if (iVar1 != 0) {
-      (this_ptr->trigger_size).y = (this_ptr->trigger_size).y - in_stack_00000018;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    if (iVar2 != 0) {
+      (this_ptr->trigger_size).y = (this_ptr->trigger_size).y - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
-    if (iVar1 != 0) {
-      (this_ptr->trigger_size).y = (this_ptr->trigger_size).y + in_stack_00000020;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    if (iVar2 != 0) {
+      (this_ptr->trigger_size).y = (this_ptr->trigger_size).y + fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
-    if (iVar1 != 0) {
-      (this_ptr->trigger_size).z = (this_ptr->trigger_size).z - in_stack_00000028;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    if (iVar2 != 0) {
+      (this_ptr->trigger_size).z = (this_ptr->trigger_size).z - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
-    if (iVar1 != 0) {
-      (this_ptr->trigger_size).z = (this_ptr->trigger_size).z + in_stack_00000030;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    if (iVar2 != 0) {
+      (this_ptr->trigger_size).z = (this_ptr->trigger_size).z + fVar1;
     }
     if ((int)(this_ptr->trigger_size).x < 0x3c23d70a) {
       (this_ptr->trigger_size).x = 0.01;
@@ -58,7 +56,7 @@ void __cdecl core_trigger_cpp_CTrigger_processInEditor_FUN_005e1180(CTrigger *th
     }
   }
   if (this_ptr->shape == 1) {
-    if (in_stack_00000020 != (this_ptr->trigger_size).x) {
+    if (fVar3 != (this_ptr->trigger_size).x) {
       (this_ptr->trigger_size).z = (this_ptr->trigger_size).x;
     }
     (this_ptr->trigger_size).x = (this_ptr->trigger_size).z;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_CCmdParse_getParamTextLength_FUN_005626d0(CCmdParse *this_ptr,int param_count)
+int __cdecl core_script_cpp_CCmdParse_getParamTextLength_FUN_005626d0(CCmdParse *this_ptr,int param_count)
 
 {
   char cVar1;

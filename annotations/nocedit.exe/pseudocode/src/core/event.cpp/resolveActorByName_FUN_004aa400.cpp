@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActor * __cdecl
-core_event_cpp_resolveActorByName_FUN_004aa400(char *name,uint class_hash,char *class_name)
+CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004aa400(char *name,uint class_hash,char *class_name)
 
 {
   char cVar1;

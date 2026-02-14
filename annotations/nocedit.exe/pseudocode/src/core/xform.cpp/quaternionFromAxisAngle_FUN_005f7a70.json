@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 45,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 18,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 52
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__stack2_esi",
     "name": "core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70",
-    "signature": "CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70 (float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)"
+    "signature": "CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)"
   },
   "function_calls": [],
   "globals": [
@@ -143,14 +143,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
+      "line": 11,
       "match": "fsin",
       "text": "fVar4 = (float10)fsin((float10)angle_radians * (float10)0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 12,
       "match": "fcos",
       "text": "fVar5 = (float10)fcos((float10)angle_radians * (float10)0.5);",
       "type": "decompiler_intrinsic"

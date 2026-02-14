@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-FormatFixedPoint(char *buffer,int fixed_point_value,FormatSpec *spec_info)
+void __cdecl FormatFixedPoint(char *buffer,int fixed_point_value,FormatSpec *spec_info)
 
 {
   char cVar1;

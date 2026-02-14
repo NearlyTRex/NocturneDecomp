@@ -2,13 +2,11 @@
 // Address: 0048caa0
 // Address Range: [[0048caa0, 0048cab0]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 (CDemonRenderer *this_ptr,int enabled)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer *this_ptr,int enabled)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
-          (CDemonRenderer *this_ptr,int enabled)
+void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer *this_ptr,int enabled)
 
 {
   g_VertexProcessingEnabled = enabled;

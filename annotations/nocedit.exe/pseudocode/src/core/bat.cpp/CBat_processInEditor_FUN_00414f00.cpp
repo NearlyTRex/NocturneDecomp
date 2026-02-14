@@ -10,18 +10,24 @@ void __cdecl core_bat_cpp_CBat_processInEditor_FUN_00414f00(CBat *this_ptr)
 
 {
   int iVar1;
-  float in_stack_00000008;
-  float in_stack_00000010;
+  float local_10;
   
-  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  local_10 = 1.0;
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  if (iVar1 != 0) {
+    local_10 = 4.0;
+  }
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  if (iVar1 != 0) {
+    local_10 = local_10 * (float)0.25;
+  }
   iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
   if (iVar1 != 0) {
-    this_ptr->param = this_ptr->param + in_stack_00000008;
+    this_ptr->param = this_ptr->param + local_10;
   }
   iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
   if (iVar1 != 0) {
-    this_ptr->param = this_ptr->param - in_stack_00000010;
+    this_ptr->param = this_ptr->param - local_10;
   }
   core_bat_cpp_CBat_FUN_00414ce0(this_ptr);
   return;

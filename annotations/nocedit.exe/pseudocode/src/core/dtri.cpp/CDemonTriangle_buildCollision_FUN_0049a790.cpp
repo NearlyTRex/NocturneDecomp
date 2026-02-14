@@ -2,13 +2,11 @@
 // Address: 0049a790
 // Address Range: [[0049a790, 0049a7f1]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790 (CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3)
+// Signature: void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-          (CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3)
+void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3)
 
 {
   if (this_ptr != (CDemonTriangle *)vertex1) {

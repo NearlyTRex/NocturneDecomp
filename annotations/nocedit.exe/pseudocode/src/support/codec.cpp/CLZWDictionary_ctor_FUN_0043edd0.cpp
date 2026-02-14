@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLZWDictionary * __cdecl
-support_codec_cpp_CLZWDictionary_ctor_FUN_0043edd0(CLZWDictionary *this_ptr)
+CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_0043edd0(CLZWDictionary *this_ptr)
 
 {
   this_ptr->max_entries = 0;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_ladder_cpp_CLadder_onActorDeleted_FUN_00502e90(CLadder *this_ptr,CDemonActor *deleted_actor)
+void __cdecl core_ladder_cpp_CLadder_onActorDeleted_FUN_00502e90(CLadder *this_ptr,CDemonActor *deleted_actor)
 
 {
   if (deleted_actor != this_ptr->master_actor) {

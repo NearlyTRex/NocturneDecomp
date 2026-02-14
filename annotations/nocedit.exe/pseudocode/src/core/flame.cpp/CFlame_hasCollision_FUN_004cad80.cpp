@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_flame_cpp_CFlame_hasCollision_FUN_004cad80(CFlame *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_flame_cpp_CFlame_hasCollision_FUN_004cad80(CFlame *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

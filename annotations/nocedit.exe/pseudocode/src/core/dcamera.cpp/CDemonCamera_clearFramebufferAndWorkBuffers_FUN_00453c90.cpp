@@ -2,13 +2,11 @@
 // Address: 00453c90
 // Address Range: [[00453c90, 00453d0f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90 (CDemonCamera *this_ptr,int clear_color)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90(CDemonCamera *this_ptr,int clear_color)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90
-          (CDemonCamera *this_ptr,int clear_color)
+void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90(CDemonCamera *this_ptr,int clear_color)
 
 {
   int iVar1;

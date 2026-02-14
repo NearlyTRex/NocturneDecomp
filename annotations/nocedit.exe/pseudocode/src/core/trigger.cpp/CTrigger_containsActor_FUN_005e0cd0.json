@@ -4,14 +4,8 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 39,
+        "line": 38,
         "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CCharacter *'"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 79,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
       }
     ],
     "success": false,
@@ -19,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 95,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 9,
-    "pseudocode_lines": 80,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unknown_field"
-    ],
-    "total_lines": 320
+    "pseudocode_lines": 78,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 318
   },
   "cross_references": [
     {
@@ -197,13 +189,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 72,
-      "match": "._12_4_",
-      "text": "if (((float)auStack_8c._12_4_ <= fStack_2c) && (fStack_2c <= fStack_74)) {",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

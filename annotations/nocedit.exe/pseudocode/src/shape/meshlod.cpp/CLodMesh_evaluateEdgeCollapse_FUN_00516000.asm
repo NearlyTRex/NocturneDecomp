@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000 (CLodMesh *this_ptr,int edge_index,int full_check)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000(CLodMesh *this_ptr,int edge_index,int full_check)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

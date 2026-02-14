@@ -1,20 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 189,
+    "complexity_score": 197,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 34,
-    "suspect_count": 13,
+    "pseudocode_lines": 32,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
-      "stack_param",
+      "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 102
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -34,7 +34,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0060d576",
-    "signature": "uint crt_unknown_c_FUN_0060d576(void)"
+    "signature": "uint crt_unknown_c_FUN_0060d576(_FILE *param_1)"
   },
   "function_calls": [
     {
@@ -103,81 +103,88 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "_FILE *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "uint FUN_0060d576(_FILE *param_1)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = stream_valid(in_stack_00000004,1);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "text": "iVar2 = stream_valid(param_1,1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->_cnt = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = *(int *)((int)&in_stack_00000004->_cnt + *(int *)(in_stack_00000004->_ptr + 4));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = *(int *)((int)&in_stack_00000004->_cnt + *(int *)(in_stack_00000004->_ptr + 4));",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "text": "param_1->_cnt = 0;",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 15,
       "match": "(int *)((int)",
-      "text": "iVar2 = *(int *)((int)&in_stack_00000004->_cnt + *(int *)(in_stack_00000004->_ptr + 4));",
+      "text": "iVar2 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));",
       "type": "pointer_cast"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "text": "iVar2 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "text": "iVar2 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
+      "line": 17,
       "match": "code *",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar2 + 0x28) + 0x10))();",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar2 + 0x28) + 0x10))(iVar2);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->_cnt = 1;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "text": "param_1->_cnt = 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "((int)&in_stack_00000004->_ptr + *(int *)(in_stack_00000004->_ptr + 4)),4);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(FileEmbeddedData *)((int)",
+      "text": "((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "((int)&in_stack_00000004->_ptr + *(int *)(in_stack_00000004->_ptr + 4)),4);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "text": "((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),4);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->_cnt = 0;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "text": "((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "text": "param_1->_cnt = 0;",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 1,

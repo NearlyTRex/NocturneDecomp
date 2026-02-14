@@ -2,14 +2,11 @@
 // Address: 00550ce0
 // Address Range: [[00550ce0, 00550e98]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0 (CPod **pod_array,char *extension,char *output_buffer,int max_results, int result_string_length)
+// Signature: int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,char *extension,char *output_buffer,int max_results,int result_string_length)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_pod_cpp_findFilesByExtension_FUN_00550ce0
-          (CPod **pod_array,char *extension,char *output_buffer,int max_results,
-          int result_string_length)
+int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,char *extension,char *output_buffer,int max_results,int result_string_length)
 
 {
   char cVar1;

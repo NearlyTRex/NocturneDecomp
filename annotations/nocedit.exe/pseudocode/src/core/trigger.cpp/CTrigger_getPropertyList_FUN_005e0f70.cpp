@@ -2,13 +2,11 @@
 // Address: 005e0f70
 // Address Range: [[005e0f70, 005e1172]]
 // Convention: __cdecl
-// Signature: void __cdecl core_trigger_cpp_CTrigger_getPropertyList_FUN_005e0f70 (CTrigger *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_trigger_cpp_CTrigger_getPropertyList_FUN_005e0f70(CTrigger *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_trigger_cpp_CTrigger_getPropertyList_FUN_005e0f70
-          (CTrigger *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_trigger_cpp_CTrigger_getPropertyList_FUN_005e0f70(CTrigger *this_ptr,CActorPropertyList *property_list)
 
 {
   int iVar1;

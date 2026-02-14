@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 (CLodMesh *this_ptr,_FILE *file_handle)
+; __cdecl int __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 95,
+    "complexity_score": 93,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 70,
+    "pseudocode_lines": 68,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 197
+    "total_lines": 195
   },
   "cross_references": [
     {
@@ -53,7 +53,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60",
-    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60 (CMP3Decoder *this_ptr,short *output_buffer,int samples_requested)"
+    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60(CMP3Decoder *this_ptr,short *output_buffer,int samples_requested)"
   },
   "function_calls": [
     {
@@ -169,14 +169,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 45,
       "match": "(short *)((int)",
       "text": "psVar6 = (short *)((int)psVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 46,
       "match": "(short *)((int)",
       "text": "psVar8 = (short *)((int)psVar8 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"

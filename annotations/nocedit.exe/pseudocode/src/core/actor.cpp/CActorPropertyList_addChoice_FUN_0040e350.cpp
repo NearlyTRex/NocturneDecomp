@@ -2,14 +2,11 @@
 // Address: 0040e350
 // Address Range: [[0040e350, 0040e3ac]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350 (CActorPropertyList *this_ptr,char *property_name,CDemonActor **data_ptr,int default_index ,char *choices,CActorPropertyValidatorFunc *callback)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList *this_ptr,char *property_name,CDemonActor **data_ptr,int default_index ,char *choices,CActorPropertyValidatorFunc *callback)
 
 #include "nocturne.h"
 
-CActorProperty * __cdecl
-core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-          (CActorPropertyList *this_ptr,char *property_name,CDemonActor **data_ptr,int default_index
-          ,char *choices,CActorPropertyValidatorFunc *callback)
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList *this_ptr,char *property_name,CDemonActor **data_ptr,int default_index ,char *choices,CActorPropertyValidatorFunc *callback)
 
 {
   char cVar1;

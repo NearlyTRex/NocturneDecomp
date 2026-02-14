@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_bat_cpp_CBat_getPropertyList_FUN_00414dc0(CBat *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_bat_cpp_CBat_getPropertyList_FUN_00414dc0(CBat *this_ptr,CActorPropertyList *property_list)
 
 {
   CActorProperty *pCVar1;

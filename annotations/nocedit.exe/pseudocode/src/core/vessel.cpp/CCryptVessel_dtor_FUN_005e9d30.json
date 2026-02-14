@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 36,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 68
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -115,7 +115,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 17,
       "match": "pCVar1[-3].",
       "text": "((CDemonActor *)&pCVar1[-3].orient_matrix.m[0].z,1);",
       "type": "negative_offset"

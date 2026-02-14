@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)
+; __cdecl int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)
 ;
 ; Parameters:
 ; SBitBuffer *     Stack[0x4]:4   bit_buffer

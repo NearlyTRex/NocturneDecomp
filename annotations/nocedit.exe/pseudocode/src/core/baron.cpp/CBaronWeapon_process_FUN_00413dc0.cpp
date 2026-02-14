@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_baron_cpp_CBaronWeapon_process_FUN_00413dc0(CBaronWeapon *this_ptr,float delta_time)
+void __cdecl core_baron_cpp_CBaronWeapon_process_FUN_00413dc0(CBaronWeapon *this_ptr,float delta_time)
 
 {
   core_baron_cpp_CBaronWeapon_FUN_00413f20(this_ptr);

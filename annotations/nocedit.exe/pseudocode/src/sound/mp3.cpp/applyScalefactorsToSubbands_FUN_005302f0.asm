@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_005302f0 (float *spectral_samples,int *scalefactor_band_indices,SMpegFrame *frame_info, int channel_or_granule_index)
+; __cdecl void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_005302f0(float *spectral_samples,int *scalefactor_band_indices,SMpegFrame *frame_info,int channel_or_granule_index)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   spectral_samples

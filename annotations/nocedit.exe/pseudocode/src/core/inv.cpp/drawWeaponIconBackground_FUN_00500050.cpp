@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_inv_cpp_drawWeaponIconBackground_FUN_00500050(int x1,int y1,int x2,int y2,int alpha)
+void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_00500050(int x1,int y1,int x2,int y2,int alpha)
 
 {
   CDemonRenderer *this_ptr;

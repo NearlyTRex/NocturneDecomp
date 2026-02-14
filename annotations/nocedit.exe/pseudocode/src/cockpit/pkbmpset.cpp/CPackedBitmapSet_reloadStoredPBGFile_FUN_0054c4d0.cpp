@@ -2,13 +2,11 @@
 // Address: 0054c4d0
 // Address Range: [[0054c4d0, 0054c4f7]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0 (CPackedBitmapSet *this_ptr,char *pbg_filename)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0(CPackedBitmapSet *this_ptr,char *pbg_filename)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
-          (CPackedBitmapSet *this_ptr,char *pbg_filename)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0(CPackedBitmapSet *this_ptr,char *pbg_filename)
 
 {
   int unaff_EBX;

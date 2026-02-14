@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMotionList * __cdecl core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860 (CCmdParse *this_ptr,int param_index)
+; __cdecl CMotionList * __cdecl core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860(CCmdParse *this_ptr,int param_index)
 ;
 ; Parameters:
 ; CCmdParse *      Stack[0x4]:4   this_ptr

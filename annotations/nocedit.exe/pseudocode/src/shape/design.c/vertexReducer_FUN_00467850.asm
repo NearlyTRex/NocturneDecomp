@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_vertexReducer_FUN_00467850 (float tolerance,float angle_tolerance,int display_progress)
+; __cdecl void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int display_progress)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   tolerance

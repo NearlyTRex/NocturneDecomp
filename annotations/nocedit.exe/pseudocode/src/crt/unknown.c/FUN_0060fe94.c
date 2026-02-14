@@ -2,11 +2,11 @@
 // Address: 0060fe94
 // Address Range: [[0060fe94, 0060ffa1]]
 // Convention: unknown
-// Signature: int crt_unknown_c_FUN_0060fe94(void)
+// Signature: int crt_unknown_c_FUN_0060fe94(short *param_1,int param_2)
 
 #include "nocturne.h"
 
-int FUN_0060fe94(void)
+int FUN_0060fe94(short *param_1,int param_2)
 
 {
   char **ppcVar1;
@@ -21,8 +21,6 @@ int FUN_0060fe94(void)
   char **dest;
   int iVar8;
   short *psVar9;
-  short *in_stack_00000004;
-  int in_stack_00000008;
   
   dest = (char **)g_EnvironInitialized;
   do {
@@ -30,15 +28,15 @@ int FUN_0060fe94(void)
     if (psVar7 == (short *)0x0) {
       return g_EnvironInitialized - (int)dest >> 2;
     }
-    sVar4 = *in_stack_00000004;
-    psVar9 = in_stack_00000004;
+    sVar4 = *param_1;
+    psVar9 = param_1;
     while (sVar4 != 0) {
-      sVar4 = FUN_00610970();
-      sVar5 = FUN_00610970();
+      sVar4 = FUN_00610970(*psVar7);
+      sVar5 = FUN_00610970(*psVar9);
       if (sVar4 != sVar5) break;
       if (*psVar7 == 0x3d) {
         iVar8 = (int)dest - g_EnvironInitialized >> 2;
-        if (in_stack_00000008 == 0) {
+        if (param_2 == 0) {
           return iVar8 + 1;
         }
         ptr = *dest;

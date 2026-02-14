@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   sound_name
 ;
 ; XREF[2]:
-;   core_script.cpp_CScript_FUN_0055a540 at 0055a673
+;   core_script.cpp_CScript_initRuntime_FUN_0055a540 at 0055a673
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055ea8d
 ;
 ; Referenced Globals:

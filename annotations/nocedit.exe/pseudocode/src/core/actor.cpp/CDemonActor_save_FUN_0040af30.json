@@ -10,7 +10,7 @@
       {
         "category": "format_error",
         "column": 70,
-        "line": 33,
+        "line": 34,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
@@ -19,16 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 58,
+    "complexity_score": 34,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 33,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 127
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 128
   },
   "cross_references": [
     {
@@ -232,20 +230,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBP",
-      "text": "_FILE *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_EBP",
-      "text": "g_ActorDataFile = unaff_EBP;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

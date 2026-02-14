@@ -7,13 +7,13 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_script.cpp_CScript_FUN_00565130 at 0056516f
-;   core_script.cpp_CScript_FUN_00565f70 at 0056605e
-;   core_script.cpp_CScript_FUN_00566080 at 0056614d
-;   core_script.cpp_CScript_FUN_005677a0 at 005679ee
+;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 at 005679ee
+;   core_script.cpp_CScript_checkSyntax_FUN_00566080 at 0056614d
 ;   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 at 00565c5a
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 005648d1
 ;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565e1a
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 0056516f
+;   core_script.cpp_CScript_setParameterValue_FUN_00565f70 at 0056605e
 ;
 ; Referenced Globals:
 ;   CEdScrollBar g_ScriptEditorVScrollBar

@@ -2,13 +2,11 @@
 // Address: 005968b0
 // Address Range: [[005968b0, 0059754b] [0059754f, 0059796e] [00597977, 00598ed7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (CDeformableModelInstance *this_ptr)
+// Signature: void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-          (CDeformableModelInstance *this_ptr)
+void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 
 {
   int *piVar1;
@@ -40,7 +38,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   char *in_stack_ffffccb0;
   CPickList local_1900;
   CPickList local_1558;
-  CPickList local_11b0;
+  byte local_11b0 [936];
   CPickList local_e08;
   char local_a60 [256];
   char local_960 [256];
@@ -556,10 +554,10 @@ LAB_0059722b:
       local_dc.z = (int)-local_100.z;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_d0,&local_dc);
-      local_154.x = 0xFFFFF100;
-      *(uint *)((int)&local_154 + (uint)bVar20 * -8 + 4) = (&DAT_00681a00)[(uint)bVar20 * -2];
-      *(uint *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
-           (&0xFFFFF100)[(uint)bVar20 * -2 + (uint)bVar20 * -2];
+      local_154.x = (int)NAN;
+      *(float *)((int)&local_154 + (uint)bVar20 * -8 + 4) = (&FLOAT_00681a00)[(uint)bVar20 * -2];
+      *(float *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
+           (&NAN)[(uint)bVar20 * -2 + (uint)bVar20 * -2];
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_154);
       local_154.x = 0xf00;
@@ -589,7 +587,7 @@ LAB_0059722b:
       local_380 = 1;
       local_374 = 2;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr2,&DAT_006819e4);
+                (g_CDemonRendererPtr2,&SMRGLTextureBasic_006819e4);
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0xff,0,0xff);
       engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
                 (g_CDemonRendererPtr2,&local_3a4);
@@ -971,22 +969,23 @@ LAB_005975b4:
           }
         }
         if (local_2c == 1) {
-          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_11b0);
+          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_11b0);
           iVar6 = 0;
           string_data = local_28;
           if (0 < local_bc->bone_count) {
             do {
-              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_11b0.base,string_data->bone_name);
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80
+                        ((CStrList *)local_11b0,string_data->bone_name);
               iVar6 = iVar6 + 1;
               string_data = string_data + 1;
             } while (iVar6 < local_bc->bone_count);
           }
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            (&local_11b0,"Select bone",-1,0);
+                            ((CPickList *)local_11b0,"Select bone",-1,0);
           if (-1 < iVar6) {
             local_64 = iVar6;
           }
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_11b0,0);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)local_11b0,0);
         }
         if (local_2c == 2) {
           shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300

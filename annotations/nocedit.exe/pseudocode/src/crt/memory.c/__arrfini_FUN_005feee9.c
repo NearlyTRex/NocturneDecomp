@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl
-__arrfini(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
+void * __cdecl __arrfini(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
 
 {
   WatcomTypeArrayInfo local_destroy_info;

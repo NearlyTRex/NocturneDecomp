@@ -2,15 +2,13 @@
 // Address: 0048e830
 // Address Range: [[0048e830, 0048e8cb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830 (CDrip *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830(CDrip *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0048e859) */
 
-void __cdecl
-core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830
-          (CDrip *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830(CDrip *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

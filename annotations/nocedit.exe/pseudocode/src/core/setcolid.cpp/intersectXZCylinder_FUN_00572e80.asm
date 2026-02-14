@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80 (SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)
+; __cdecl int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)
 ;
 ; Parameters:
 ; SIntersectXZCylinder * Stack[0x4]:4   cylinder

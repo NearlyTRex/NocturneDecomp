@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActor * __cdecl
-core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine *this_ptr)
+CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine *this_ptr)
 
 {
   CDemonActor *pCVar1;

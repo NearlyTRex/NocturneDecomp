@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel *this_ptr,char *filename)
+void __cdecl core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel *this_ptr,char *filename)
 
 {
   CPodFile *pCVar1;

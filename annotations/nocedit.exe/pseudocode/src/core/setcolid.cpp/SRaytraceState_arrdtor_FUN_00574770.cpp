@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SRaytraceState * __cdecl
-core_setcolid_cpp_SRaytraceState_arrdtor_FUN_00574770(SRaytraceState *objs,uint flags)
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_arrdtor_FUN_00574770(SRaytraceState *objs,uint flags)
 
 {
   SRaytraceState *pSVar1;

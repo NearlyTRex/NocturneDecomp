@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 40,
+        "line": 39,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 120,
+    "complexity_score": 119,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 34,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 120
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -198,49 +198,49 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_00000004",
       "text": "uint in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_stack_ffffffd8",
       "text": "uint in_stack_ffffffd8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(double *)((int)",
       "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),sfx_handle,",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_ffffffd8",
       "text": "in_stack_ffffffd8);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 32,
       "match": "SUB84",
       "text": "local_20 = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 36,
       "match": "CONCAT44",
       "text": "return (double)CONCAT44(local_24,local_20);",
       "type": "decompiler_intrinsic"

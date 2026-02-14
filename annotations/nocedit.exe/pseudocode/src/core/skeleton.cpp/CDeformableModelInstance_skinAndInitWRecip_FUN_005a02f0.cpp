@@ -2,13 +2,11 @@
 // Address: 005a02f0
 // Address Range: [[005a02f0, 005a0330]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0 (CDeformableModelInstance *this_ptr,int lod_index)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0(CDeformableModelInstance *this_ptr,int lod_index)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0
-          (CDeformableModelInstance *this_ptr,int lod_index)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0(CDeformableModelInstance *this_ptr,int lod_index)
 
 {
   CDeformableModel *this_ptr_00;

@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 102,
+        "line": 88,
         "message": "no matching function for call to 'engine_font_cpp_CBitFont_drawText_FUN_004cda80'"
       }
     ],
@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 403,
-    "complexity_score": 250,
+    "complexity_score": 131,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 145,
-    "suspect_count": 10,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 548
+    "pseudocode_lines": 131,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 534
   },
   "cross_references": [
     {
@@ -66,7 +64,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000",
-    "signature": "int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000 (char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position, int spacing_flag)"
+    "signature": "int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,int spacing_flag)"
   },
   "function_calls": [
     {
@@ -313,76 +311,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000001c",
-      "text": "int *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000024",
-      "text": "int *in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000002c",
-      "text": "int *in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 126,
-      "match": "in_stack_0000001c",
-      "text": "iVar6 = *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 127,
-      "match": "in_stack_0000001c",
-      "text": "*in_stack_0000001c = iVar6 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 128,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 <= iVar6 + 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 129,
-      "match": "in_stack_0000001c",
-      "text": "*in_stack_0000001c = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 137,
-      "match": "in_stack_00000024",
-      "text": "return *in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 147,
-      "match": "in_stack_0000002c",
-      "text": "return *in_stack_0000002c;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

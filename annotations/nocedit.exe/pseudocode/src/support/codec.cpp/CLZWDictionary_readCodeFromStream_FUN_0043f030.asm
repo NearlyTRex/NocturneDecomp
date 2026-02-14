@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030 (CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_FILE *input_file,int *bytes_remaining)
+; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_FILE *input_file,int *bytes_remaining)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr

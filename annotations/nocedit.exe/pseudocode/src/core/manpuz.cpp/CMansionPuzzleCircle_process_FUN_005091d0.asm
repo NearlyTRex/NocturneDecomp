@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_005091d0 (CMansionPuzzleCircle *this_ptr,float delta_time)
+; __cdecl void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_005091d0(CMansionPuzzleCircle *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr

@@ -20,7 +20,7 @@
 ;   TerminatedCString s_core_dcamera_cpp_00619f34
 ;   TerminatedCString s_core_dcamera_cpp_00619f48
 ;   TerminatedCString s_CDemonCamera_init_Unable_00619f5c
-;   int g_CameraDownscaleIterations
+;   _BIT_INTEGER g_CameraDownscaleIterations
 ;   int g_CameraScreenWidth
 ;   int g_CameraScreenHeight
 ;   char* g_CurrentFilename

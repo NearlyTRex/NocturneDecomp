@@ -12,27 +12,29 @@ void __cdecl core_simbox_cpp_CSimBox_setup_FUN_00588e00(CSimBox *this_ptr)
   CLocation *position;
   UOrientationVector *pUVar1;
   CBoundingBox3D *pCVar2;
-  CBoundingBox3D CStack_24;
-  float fStack_c;
+  CBoundingBox3D CStack_44;
+  CBoundingBox3D CStack_2c;
+  CVector3f CStack_14;
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                     (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffbc);
-  if (&CStack_24 != pCVar2) {
-    CStack_24.min.x = (pCVar2->min).x;
-    CStack_24.min.y = (pCVar2->min).y;
-    CStack_24.min.z = (pCVar2->min).z;
+  pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_44);
+  if (&CStack_2c != pCVar2) {
+    CStack_2c.min.x = (pCVar2->min).x;
+    CStack_2c.min.y = (pCVar2->min).y;
+    CStack_2c.min.z = (pCVar2->min).z;
   }
-  if (&CStack_24.max != &pCVar2->max) {
-    CStack_24.max.x = (pCVar2->max).x;
-    CStack_24.max.y = (pCVar2->max).y;
-    CStack_24.max.z = (pCVar2->max).z;
+  if (&CStack_2c.max != &pCVar2->max) {
+    CStack_2c.max.x = (pCVar2->max).x;
+    CStack_2c.max.y = (pCVar2->max).y;
+    CStack_2c.max.z = (pCVar2->max).z;
   }
-  fStack_c = CStack_24.max.x - CStack_24.min.x;
+  CStack_14.x = CStack_2c.max.x - CStack_2c.min.x;
+  CStack_14.y = CStack_2c.max.y - CStack_2c.min.y;
+  CStack_14.z = CStack_2c.max.z - CStack_2c.min.z;
   position = &(this_ptr->base).location;
   core_box_cpp_CBox_setupCorners_FUN_0041dd20
-            (&this_ptr->box,&position->position,&(this_ptr->base).orient.vec,(CVector3f *)&fStack_c,
+            (&this_ptr->box,&position->position,&(this_ptr->base).orient.vec,&CStack_14,
              this_ptr->weight);
   if ((CLocation *)(this_ptr->unk + 4) != position) {
     *(float *)(this_ptr->unk + 4) = (position->position).x;

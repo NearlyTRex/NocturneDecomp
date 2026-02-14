@@ -2,14 +2,11 @@
 // Address: 00573140
 // Address Range: [[00573140, 0057346c]]
 // Convention: __cdecl
-// Signature: int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 (CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix, SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2)
+// Signature: int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix,SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2)
 
 #include "nocturne.h"
 
-int __cdecl
-core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
-          (CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix,
-          SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2)
+int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix,SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2)
 
 {
   CVector3f *pCVar1;

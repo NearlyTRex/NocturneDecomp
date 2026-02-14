@@ -1,34 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 50,
-        "message": "use of undeclared identifier 'stack0xffffffac'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 54,
-        "message": "use of undeclared identifier 'stack0xfffffff0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 94,
+    "complexity_score": 66,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 69,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 237
+    "pseudocode_lines": 66,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 234
   },
   "cross_references": [
     {
@@ -60,7 +45,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270",
-    "signature": "CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 (CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info, int bounding_box_type)"
+    "signature": "CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type)"
   },
   "function_calls": [
     {
@@ -148,20 +133,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xffffffac",
-      "text": "(*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xfffffff0",
-      "text": "(this_ptr,(CVector3f *)&stack0xfffffff0,pCVar1);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

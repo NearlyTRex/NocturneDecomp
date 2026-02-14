@@ -2,13 +2,11 @@
 // Address: 0054a5f0
 // Address Range: [[0054a5f0, 0054a781]]
 // Convention: __cdecl
-// Signature: void __cdecl core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0 (CPendulum *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0(CPendulum *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0
-          (CPendulum *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0(CPendulum *this_ptr,CActorPropertyList *property_list)
 
 {
   CActorProperty *pCVar1;

@@ -6,36 +6,34 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CVector3f *velocity)
+void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CVector3f *velocity)
 
 {
   CLocation *pCVar1;
   UOrientationVector *pUVar2;
-  bool bVar3;
-  char *pcVar4;
-  CDemonSet *pCVar5;
-  CVector3f *pCVar6;
-  float fVar7;
+  float fVar3;
+  bool bVar4;
+  char *pcVar5;
+  CDemonSet *pCVar6;
+  CVector3f *pCVar7;
+  CVector3f *pCVar8;
   SMotion *str1;
-  int iVar8;
-  float fVar9;
+  uint uVar9;
   CVector3f *pCVar10;
-  uint uVar11;
-  CVector3f *pCVar12;
+  int iVar11;
+  SMotion *pSVar12;
   int iVar13;
-  SMotion *pSVar14;
-  byte bVar15;
+  byte bVar14;
   float afStackY_106c [991];
   float local_c0;
+  float local_b0;
   CVector3f local_a8;
   CVector3f local_9c;
   float local_90;
   float local_8c;
   float local_88;
   char local_84 [4];
-  float afStack_80 [4];
-  float local_70;
+  float afStack_80 [5];
   float fStack_6c;
   float fStack_68;
   float fStack_64;
@@ -48,17 +46,19 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
   CVector3f *local_48;
   CVector3f *local_44;
   float local_40;
+  float fStack_3c;
   int local_38;
   float local_34;
   CLocation *local_30;
   CVector3f *local_2c;
   CLocation *local_28;
   CVector3f *local_24;
-  CVector3f *local_20;
+  int local_20;
   CVector3f *local_1c;
+  float fStack_18;
   float local_14;
   
-  bVar15 = 0;
+  bVar14 = 0;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(&this_ptr->base,&local_a8,velocity);
   if ((this_ptr->base).standing_platform != (CPlatform *)0x0) {
     (this_ptr->base).location.position.y =
@@ -69,18 +69,18 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
     pUVar2 = &(this_ptr->base).orient;
     (this_ptr->base).platform_position_delta.y = (this_ptr->base).platform_position_delta.z;
     (this_ptr->base).platform_position_delta.x = (this_ptr->base).platform_position_delta.y;
-    pCVar12 = &(this_ptr->base).platform_orientation_delta;
-    (pUVar2->vec).x = pCVar12->x + (pUVar2->vec).x;
+    pCVar10 = &(this_ptr->base).platform_orientation_delta;
+    (pUVar2->vec).x = pCVar10->x + (pUVar2->vec).x;
     (this_ptr->base).orient.vec.y =
          (this_ptr->base).platform_orientation_delta.y + (this_ptr->base).orient.vec.y;
     (this_ptr->base).orient.vec.z =
          (this_ptr->base).platform_orientation_delta.z + (this_ptr->base).orient.vec.z;
     (this_ptr->base).platform_orientation_delta.z = 0.0;
     (this_ptr->base).platform_orientation_delta.y = (this_ptr->base).platform_orientation_delta.z;
-    pCVar12->x = (this_ptr->base).platform_orientation_delta.y;
+    pCVar10->x = (this_ptr->base).platform_orientation_delta.y;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   }
-  DAT_00823c50 = (CDemonActor *)0x0;
+  PTR_00823c50 = (CDemonActor *)0x0;
   if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&
      (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
       ((this_ptr->base).location.position.y == this_ptr->closest_distance_threshold)))) {
@@ -93,28 +93,28 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
   if ((this_ptr->model).model_name[0] != '\0') {
     str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&(this_ptr->model).motion_controller);
-    uVar11 = 0xffffffff;
-    pSVar14 = str1;
+    uVar9 = 0xffffffff;
+    pSVar12 = str1;
     do {
-      if (uVar11 == 0) break;
-      uVar11 = uVar11 - 1;
-      pcVar4 = pSVar14->motion_name;
-      pSVar14 = (SMotion *)((int)pSVar14 + (uint)bVar15 * -2 + 1);
-    } while (*pcVar4 != '\0');
-    pCVar12 = (CVector3f *)(~uVar11 - 0xc);
+      if (uVar9 == 0) break;
+      uVar9 = uVar9 - 1;
+      pcVar5 = pSVar12->motion_name;
+      pSVar12 = (SMotion *)((int)pSVar12 + (uint)bVar14 * -2 + 1);
+    } while (*pcVar5 != '\0');
+    iVar11 = ~uVar9 - 0xc;
     local_84[0] = "noCollision"[0];
     local_84[1] = "noCollision"[1];
     local_84[2] = "noCollision"[2];
     local_84[3] = "noCollision"[3];
-    afStack_80[(uint)bVar15 * -2] = *(float *)("noCollision" + (uint)bVar15 * -8 + 4);
-    afStack_80[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1] =
-         *(float *)("noCollision" + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
+    afStack_80[(uint)bVar14 * -2] = *(float *)("noCollision" + (uint)bVar14 * -8 + 4);
+    afStack_80[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
+         *(float *)("noCollision" + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
     iVar13 = 0;
-    local_20 = pCVar12;
-    if (-1 < (int)pCVar12) {
+    local_20 = iVar11;
+    if (-1 < iVar11) {
       do {
-        iVar8 = strnicmp(str1->motion_name,local_84,0xb);
-        if (iVar8 == 0) {
+        iVar11 = strnicmp(str1->motion_name,local_84,0xb);
+        if (iVar11 == 0) {
           (this_ptr->velocity).z = 0.0;
           (this_ptr->velocity).y = (this_ptr->velocity).z;
           (this_ptr->velocity).x = (this_ptr->velocity).y;
@@ -122,41 +122,41 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
         }
         iVar13 = iVar13 + 1;
         str1 = (SMotion *)(str1->motion_name + 1);
-      } while (iVar13 <= (int)local_20);
+      } while (iVar13 <= local_20);
     }
   }
   local_50 = this_ptr->collision_test_points;
-  iVar13 = 0;
+  iVar11 = 0;
   local_44 = this_ptr->collision_test_normals;
   local_48 = this_ptr->collision_test_points + 3;
   do {
-    pCVar6 = local_50 + iVar13 * 3;
-    pCVar12 = local_44;
+    pCVar7 = local_50 + iVar11 * 3;
+    pCVar10 = local_44;
     do {
-      pCVar6->z = 0.0;
-      pCVar6->y = pCVar6->z;
-      pCVar6->x = pCVar6->z;
-      pCVar12->z = 0.0;
-      pCVar6 = pCVar6 + 1;
-      pCVar12->y = pCVar12->z;
-      pCVar12->x = pCVar12->z;
-      pCVar12 = pCVar12 + 1;
-    } while (pCVar6 != local_48);
-    iVar13 = iVar13 + 1;
+      pCVar7->z = 0.0;
+      pCVar7->y = pCVar7->z;
+      pCVar7->x = pCVar7->z;
+      pCVar10->z = 0.0;
+      pCVar7 = pCVar7 + 1;
+      pCVar10->y = pCVar10->z;
+      pCVar10->x = pCVar10->z;
+      pCVar10 = pCVar10 + 1;
+    } while (pCVar7 != local_48);
+    iVar11 = iVar11 + 1;
     local_44 = local_44 + 3;
     local_48 = local_48 + 3;
-  } while (iVar13 < 5);
+  } while (iVar11 < 5);
   pCVar1 = &(this_ptr->base).location;
-  fVar7 = (pCVar1->position).x;
+  local_b0 = (this_ptr->base).location.position.y;
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->base);
   local_38 = 0;
   local_54 = velocity->y;
   local_4c = this_ptr->collision_test_normals;
   local_1c = this_ptr->collision_test_points;
   local_24 = this_ptr->collision_test_points + 1;
-  pCVar12 = this_ptr->collision_test_normals + 2;
+  pCVar10 = this_ptr->collision_test_normals + 2;
   local_2c = this_ptr->collision_test_normals + 1;
-  pCVar6 = this_ptr->collision_test_points + 2;
+  pCVar7 = this_ptr->collision_test_points + 2;
   local_30 = pCVar1;
   local_28 = pCVar1;
   do {
@@ -165,9 +165,9 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
     if (local_34 < this_ptr->collision_cylinder_bottom * this_ptr->size_scale) {
       local_34 = (this_ptr->model).bounding_box.max.y;
     }
-    fVar9 = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
-    if (local_34 < fVar9) {
-      local_34 = this_ptr->size_scale * (float)0.5 + fVar9;
+    fVar3 = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
+    if (local_34 < fVar3) {
+      local_34 = this_ptr->size_scale * (float)0.5 + fVar3;
     }
     local_14 = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
                          (g_CDemonSetPtr,(this_ptr->base).location.position.x,
@@ -176,27 +176,27 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
                           (void *)(this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
                                   (this_ptr->base).location.position.y),
                           (void *)((this_ptr->base).location.position.y + local_34));
-    if (DAT_00823c50 == (CDemonActor *)0x0) {
-      DAT_00823c50 = g_CDemonSetPtr->collision_actor;
+    if (PTR_00823c50 == (CDemonActor *)0x0) {
+      PTR_00823c50 = g_CDemonSetPtr->collision_actor;
     }
-    pCVar10 = local_1c + local_38 * 3;
-    if (pCVar10 != &g_TempNormal0) {
-      pCVar10->x = g_TempNormal0.x;
-      pCVar10->y = g_TempNormal0.y;
-      pCVar10->z = g_TempNormal0.z;
+    pCVar8 = local_1c + local_38 * 3;
+    if (pCVar8 != &g_TempNormal0) {
+      pCVar8->x = g_TempNormal0.x;
+      pCVar8->y = g_TempNormal0.y;
+      pCVar8->z = g_TempNormal0.z;
     }
     if (local_24 != &g_TempNormal1) {
       local_24->x = g_TempNormal1.x;
       local_24->y = g_TempNormal1.y;
       local_24->z = g_TempNormal1.z;
     }
-    if (pCVar6 != &g_TempNormal2) {
-      pCVar6->x = g_TempNormal2.x;
-      pCVar6->y = g_TempNormal2.y;
-      pCVar6->z = g_TempNormal2.z;
+    if (pCVar7 != &g_TempNormal2) {
+      pCVar7->x = g_TempNormal2.x;
+      pCVar7->y = g_TempNormal2.y;
+      pCVar7->z = g_TempNormal2.z;
     }
-    local_c0 = local_14;
     if (0.0 <= local_14) {
+      local_c0 = local_14;
       if (1.0 < local_14) {
         local_c0 = 1.0;
       }
@@ -205,57 +205,57 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
       local_58 = local_a8.z * local_c0;
       (local_28->position).x = (local_28->position).x + local_60;
       (local_28->position).y = (local_28->position).y + local_5c;
-      pCVar5 = g_CDemonSetPtr;
+      pCVar6 = g_CDemonSetPtr;
       (local_28->position).z = (local_28->position).z + local_58;
-      afStack_80[2] = (pCVar5->collision_normal).x;
-      afStack_80[3] = (pCVar5->collision_normal).y;
-      local_70 = (pCVar5->collision_normal).z;
-      fVar9 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                        (&this_ptr->base,this_ptr->collision_cylinder_height,&local_9c);
-      bVar3 = false;
-      pCVar10 = (CVector3f *)((int)local_2c * 0x24 + (int)local_40);
-      this_ptr->closest_distance_threshold = fVar9;
-      if (pCVar10 != &g_TempNormal0) {
-        pCVar10->x = g_TempNormal0.x;
-        pCVar10->y = g_TempNormal0.y;
-        pCVar10->z = g_TempNormal0.z;
+      afStack_80[2] = (pCVar6->collision_normal).x;
+      afStack_80[3] = (pCVar6->collision_normal).y;
+      afStack_80[4] = (pCVar6->collision_normal).z;
+      local_14 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                           (&this_ptr->base,this_ptr->collision_cylinder_height,&local_9c);
+      bVar4 = false;
+      pCVar8 = local_4c + local_38 * 3;
+      this_ptr->closest_distance_threshold = local_14;
+      if (pCVar8 != &g_TempNormal0) {
+        pCVar8->x = g_TempNormal0.x;
+        pCVar8->y = g_TempNormal0.y;
+        pCVar8->z = g_TempNormal0.z;
       }
-      if (local_20 != &g_TempNormal1) {
-        local_20->x = g_TempNormal1.x;
-        local_20->y = g_TempNormal1.y;
-        local_20->z = g_TempNormal1.z;
+      if (local_2c != &g_TempNormal1) {
+        local_2c->x = g_TempNormal1.x;
+        local_2c->y = g_TempNormal1.y;
+        local_2c->z = g_TempNormal1.z;
       }
-      if (pCVar12 != &g_TempNormal2) {
-        pCVar12->x = g_TempNormal2.x;
-        pCVar12->y = g_TempNormal2.y;
-        pCVar12->z = g_TempNormal2.z;
+      if (pCVar10 != &g_TempNormal2) {
+        pCVar10->x = g_TempNormal2.x;
+        pCVar10->y = g_TempNormal2.y;
+        pCVar10->z = g_TempNormal2.z;
       }
       if ((this_ptr->base).location.position.y < this_ptr->closest_distance_threshold) {
         (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
-        local_a8.y = (this_ptr->base).location.position.y;
+        local_b0 = (this_ptr->base).location.position.y;
       }
-      if ((float)0.90000000000000002 < fVar7) break;
-      fVar9 = SQRT(fStack_64 * fStack_64 + fStack_6c * fStack_6c);
-      fStack_68 = 0.0;
-      if (0.0 < fVar9) {
-        fVar9 = 1.0 / fVar9;
-        fStack_6c = fStack_6c * fVar9;
-        fStack_68 = fVar9 * 0.0;
-        fStack_64 = fStack_64 * fVar9;
+      if ((float)0.90000000000000002 < local_c0) break;
+      fVar3 = SQRT(afStack_80[4] * afStack_80[4] + afStack_80[2] * afStack_80[2]);
+      afStack_80[3] = 0.0;
+      if (0.0 < fVar3) {
+        fStack_18 = 1.0 / fVar3;
+        afStack_80[2] = afStack_80[2] * fStack_18;
+        afStack_80[3] = fStack_18 * 0.0;
+        afStack_80[4] = afStack_80[4] * fStack_18;
       }
-      local_30 = (CLocation *)((float)0.90000000000000002 - fVar7);
-      local_9c.x = local_9c.x * (float)local_30;
-      local_9c.y = local_9c.y * (float)local_30;
-      local_9c.z = local_9c.z * (float)local_30;
-      fVar9 = fStack_64 * local_9c.z + fStack_6c * local_9c.x + fStack_68 * local_9c.y;
-      if (0.0 <= fVar9) break;
-      fVar9 = fVar9 * (float)1.2;
-      local_60 = fStack_6c * fVar9;
-      local_5c = fStack_68 * fVar9;
-      local_58 = fStack_64 * fVar9;
-      local_9c.x = local_9c.x - local_60;
-      local_9c.y = local_9c.y - local_5c;
-      local_9c.z = local_9c.z - local_58;
+      fStack_3c = (float)0.90000000000000002 - local_c0;
+      local_a8.x = local_a8.x * fStack_3c;
+      local_a8.y = local_a8.y * fStack_3c;
+      local_a8.z = local_a8.z * fStack_3c;
+      fVar3 = afStack_80[4] * local_a8.z + afStack_80[2] * local_a8.x + afStack_80[3] * local_a8.y;
+      if (0.0 <= fVar3) break;
+      fVar3 = fVar3 * (float)1.2;
+      fStack_6c = afStack_80[2] * fVar3;
+      fStack_68 = afStack_80[3] * fVar3;
+      fStack_64 = afStack_80[4] * fVar3;
+      local_a8.x = local_a8.x - fStack_6c;
+      local_a8.y = local_a8.y - fStack_68;
+      local_a8.z = local_a8.z - fStack_64;
     }
     else {
       local_40 = local_14 + (float)-0.01;
@@ -264,28 +264,28 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
       local_88 = (g_CDemonSetPtr->collision_normal).z * local_40;
       (local_30->position).x = (local_30->position).x - local_90;
       (local_30->position).y = (local_30->position).y - local_8c;
-      bVar3 = true;
+      bVar4 = true;
       (local_30->position).z = (local_30->position).z - local_88;
     }
-    pCVar6 = pCVar6 + 3;
+    pCVar7 = pCVar7 + 3;
     local_24 = local_24 + 3;
-    pCVar12 = pCVar12 + 3;
+    pCVar10 = pCVar10 + 3;
     local_2c = local_2c + 3;
     local_38 = local_38 + 1;
   } while (local_38 < 3);
-  if (bVar3) {
-    fVar7 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                      (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
-    this_ptr->closest_distance_threshold = fVar7;
+  if (bVar4) {
+    local_14 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                         (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
+    this_ptr->closest_distance_threshold = local_14;
   }
-  fVar7 = (this_ptr->base).location.position.y + (float)local_48;
-  (this_ptr->base).location.position.y = fVar7;
-  if (this_ptr->closest_distance_threshold <= fVar7) {
+  fVar3 = (this_ptr->base).location.position.y + local_54;
+  (this_ptr->base).location.position.y = fVar3;
+  if (this_ptr->closest_distance_threshold <= fVar3) {
     if ((this_ptr->is_on_ground != 0) &&
        ((this_ptr->base).location.position.y <
         this_ptr->closest_distance_threshold + (float)0.5)) {
       (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
-      local_a8.y = (this_ptr->base).location.position.y;
+      local_b0 = (this_ptr->base).location.position.y;
     }
   }
   else {
@@ -294,9 +294,9 @@ core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CV
   (this_ptr->velocity).z = 0.0;
   (this_ptr->velocity).y = (this_ptr->velocity).z;
   (this_ptr->velocity).x = (this_ptr->velocity).y;
-  pCVar5 = g_CDemonSetPtr;
+  pCVar6 = g_CDemonSetPtr;
   (this_ptr->velocity).y =
-       ((this_ptr->base).location.position.y - local_a8.y) / g_CGamePtr->delta_time_float;
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(pCVar5);
+       ((this_ptr->base).location.position.y - local_b0) / g_CGamePtr->delta_time_float;
+  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(pCVar6);
   return;
 }

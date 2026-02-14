@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 19,
-        "line": 24,
+        "line": 22,
         "message": "comparison of distinct pointer types ('int *' and 'uint *' (aka 'unsigned int *'))"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 61,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 44,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 189
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_mirror.cpp_computePlaneFromTriangle_FUN_00520fe0",
-    "signature": "void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0 (SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c)"
+    "signature": "void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c)"
   },
   "function_calls": [],
   "globals": [],
@@ -254,7 +254,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 30,
       "match": "SQRT",
       "text": "fVar1 = SQRT((float)out_plane->C * (float)out_plane->C +",
       "type": "decompiler_intrinsic"

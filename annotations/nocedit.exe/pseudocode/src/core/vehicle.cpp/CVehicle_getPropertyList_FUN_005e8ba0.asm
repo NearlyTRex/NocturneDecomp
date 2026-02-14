@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0 (CVehicle *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0(CVehicle *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr

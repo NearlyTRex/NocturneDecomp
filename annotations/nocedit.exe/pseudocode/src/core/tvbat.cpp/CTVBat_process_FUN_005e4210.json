@@ -2,63 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 18,
-        "line": 241,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 242,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 247,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 287,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 288,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 289,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 291,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 292,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 295,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
         "category": "incompatible_types",
         "column": 16,
-        "line": 317,
+        "line": 323,
         "message": "assigning to 'int' from incompatible type 'void'"
       }
     ],
@@ -67,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 522,
+    "complexity_score": 447,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
-    "pseudocode_lines": 317,
-    "suspect_count": 19,
+    "pseudocode_lines": 322,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "unknown_field"
+      "warning_type_propagation"
     ],
-    "total_lines": 1108
+    "total_lines": 1113
   },
   "cross_references": [],
   "function": {
@@ -789,137 +735,81 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
+      "line": 28,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 137,
       "match": "SQRT",
       "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 176,
+      "line": 180,
       "match": "SQRT",
       "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 177,
+      "line": 181,
       "match": "ABS",
       "text": "(this_ptr->max_height <= ABS(local_84))) && ((CVector3f *)&local_58 != &this_ptr->home_pos)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 218,
       "match": "SQRT",
       "text": "SQRT((float10)local_8c * (float10)local_8c +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 216,
+      "line": 220,
       "match": "extraout_ST1",
       "text": "local_24 = (float)extraout_ST1;",
       "type": "extra_output"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 234,
-      "match": "._4_4_",
-      "text": "auStack_164._4_4_ = 1.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 235,
-      "match": "._52_4_",
-      "text": "auStack_164._52_4_ = this_ptr;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 240,
-      "match": "._12_4_",
-      "text": "if (0.0 < (float)auStack_164._12_4_) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 246,
+      "line": 249,
       "match": "fsin",
       "text": "fVar18 = (float10)fsin(fVar17);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 248,
+      "line": 251,
       "match": "fsin",
       "text": "fVar20 = (float10)fsin(fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 249,
+      "line": 252,
       "match": "fcos",
       "text": "fVar17 = (float10)fcos(fVar17);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 250,
+      "line": 253,
       "match": "fcos",
       "text": "fVar19 = (float10)fcos(fVar19);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 280,
-      "match": "._4_4_",
-      "text": "auStack_164._4_4_ = (local_b8 * (float)4) / delta_time + (float)35;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 281,
-      "match": "._4_4_",
-      "text": "if ((float)auStack_164._4_4_ < (float)10) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 282,
-      "match": "._4_4_",
-      "text": "auStack_164._4_4_ = 10.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 284,
-      "match": "._4_4_",
-      "text": "if ((float)60 < (float)auStack_164._4_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 285,
-      "match": "._4_4_",
-      "text": "auStack_164._4_4_ = 60.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 288,
-      "match": "._4_4_",
-      "text": "(int)(((float)auStack_164._4_4_ - (float)this_ptr->unk2) * (float)0.69999999999999996 +",
-      "type": "unknown_field"
     }
   ],
   "vtable_info": {

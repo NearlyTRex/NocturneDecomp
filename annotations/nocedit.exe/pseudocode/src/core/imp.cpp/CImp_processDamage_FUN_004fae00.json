@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 24,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
         "category": "incompatible_types",
         "column": 11,
         "line": 52,
@@ -19,15 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 62,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 5,
     "pseudocode_lines": 47,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 173
   },
   "cross_references": [],
@@ -193,15 +185,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffffdc",
-      "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffdc,&damage_info->impact_direction)",
-      "type": "stack_ref"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

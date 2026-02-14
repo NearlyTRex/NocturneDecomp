@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 68,
+    "complexity_score": 67,
     "cross_reference_count": 10,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 37,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 128
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -85,7 +85,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_setvbuf_FUN_00601490",
-    "signature": "int __cdecl crt_stdio_c_setvbuf_FUN_00601490 (_FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)"
+    "signature": "int __cdecl crt_stdio_c_setvbuf_FUN_00601490(_FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)"
   },
   "function_calls": [
     {
@@ -187,7 +187,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(byte *)((int)",
       "text": "pbVar1 = (byte *)((int)&stream_ptr->_flag + 1);",
       "type": "pointer_cast"

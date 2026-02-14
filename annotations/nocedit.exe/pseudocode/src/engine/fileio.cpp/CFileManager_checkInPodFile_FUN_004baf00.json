@@ -4,31 +4,31 @@
       {
         "category": "other",
         "column": 29,
-        "line": 197,
+        "line": 195,
         "message": "comparison between pointer and integer ('uint' (aka 'unsigned int') and 'char *')"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 198,
+        "line": 196,
         "message": "comparison between pointer and integer ('uint' (aka 'unsigned int') and 'char *')"
       },
       {
         "category": "format_error",
         "column": 35,
-        "line": 285,
+        "line": 283,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 101,
-        "line": 435,
+        "line": 433,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 54,
-        "line": 496,
+        "line": 494,
         "message": "format specifies type 'char *' but the argument has type 'SVersionControlSession *' [-Werror,-Wformat]"
       }
     ],
@@ -37,18 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 1775,
-    "complexity_score": 693,
+    "complexity_score": 691,
     "cross_reference_count": 0,
     "function_call_count": 56,
     "global_count": 80,
-    "pseudocode_lines": 628,
+    "pseudocode_lines": 626,
     "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 2403
+    "total_lines": 2401
   },
   "cross_references": [],
   "function": {
@@ -62,7 +62,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
-    "signature": "int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00 (CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)"
+    "signature": "int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)"
   },
   "function_calls": [
     {
@@ -1339,28 +1339,28 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 86,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)&(local_2600.directory_entries)->name_or_offset + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 167,
       "match": "(SFoundFileInfo *)((int)",
       "text": "pSVar10 = (SFoundFileInfo *)((int)pSVar11 + (uint)bVar13 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 173,
+      "line": 171,
       "match": "pSVar10[-1].",
       "text": "pcVar8 = (char *)((int)&pSVar10[-1].container_size + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 173,
+      "line": 171,
       "match": "(char *)((int)",
       "text": "pcVar8 = (char *)((int)&pSVar10[-1].container_size + 3);",
       "type": "pointer_cast"

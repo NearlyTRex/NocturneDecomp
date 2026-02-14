@@ -2,13 +2,11 @@
 // Address: 005afe80
 // Address Range: [[005afe80, 005b0028]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80 (CDirectSoundDevice *this_ptr,CSfxSlot *slot)
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 #include "nocturne.h"
 
-int __cdecl
-sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
-          (CDirectSoundDevice *this_ptr,CSfxSlot *slot)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
   int iVar1;

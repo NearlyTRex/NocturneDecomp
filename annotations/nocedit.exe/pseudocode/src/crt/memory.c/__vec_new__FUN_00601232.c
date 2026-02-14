@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl
-__vec_new_(void *dest,int element_count,WatcomTypeInfo *type_info)
+void * __cdecl __vec_new_(void *dest,int element_count,WatcomTypeInfo *type_info)
 
 {
   void *pvVar1;

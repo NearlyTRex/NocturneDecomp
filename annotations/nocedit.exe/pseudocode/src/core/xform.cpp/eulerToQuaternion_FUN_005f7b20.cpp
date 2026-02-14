@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CQuaternion4f * __stack_esi
-core_xform_cpp_eulerToQuaternion_FUN_005f7b20(CVector3f *euler_angles,CQuaternion4f *quat_out)
+CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_005f7b20(CVector3f *euler_angles,CQuaternion4f *quat_out)
 
 {
   uint *puVar1;

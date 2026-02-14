@@ -8,8 +8,7 @@
 
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl
-core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *this_ptr,char *command_buffer)
+int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *this_ptr,char *command_buffer)
 
 {
   char cVar1;

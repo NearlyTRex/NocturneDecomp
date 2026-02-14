@@ -20,11 +20,11 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02d83368.base.count
-;   undefined4 DAT_02d83368.surface_normal.A
-;   undefined4 DAT_02d83368.surface_normal.B
-;   undefined4 DAT_02d83368.surface_normal.C
-;   undefined4 DAT_02d83368.surface_normal.D
+;   undefined4 SMRGLHeaderPrimitive_02d83368.base.count
+;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.A
+;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.B
+;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.C
+;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.D
 ;   int INT_02d83380
 ;   int INT_02d83384
 ;   int INT_02d83388
@@ -52,11 +52,11 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 004eb9e4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EDI,0x2d83390                   ; 004eb9ea | INT_02d83390
     XOR ECX,ECX                         ; 004eb9ef
-    MOV dword ptr [0x02d8336c],EDX      ; 004eb9f1 | DAT_02d83368.base.count
-    MOV dword ptr [0x02d83370],ECX      ; 004eb9f7 | DAT_02d83368.surface_normal.A
-    MOV dword ptr [0x02d83374],ECX      ; 004eb9fd | DAT_02d83368.surface_normal.B
-    MOV dword ptr [0x02d83378],ECX      ; 004eba03 | DAT_02d83368.surface_normal.C
-    MOV dword ptr [0x02d8337c],ECX      ; 004eba09 | DAT_02d83368.surface_normal.D
+    MOV dword ptr [0x02d8336c],EDX      ; 004eb9f1 | SMRGLHeaderPrimitive_02d83368.base.count
+    MOV dword ptr [0x02d83370],ECX      ; 004eb9f7 | SMRGLHeaderPrimitive_02d83368.surface_normal.A
+    MOV dword ptr [0x02d83374],ECX      ; 004eb9fd | SMRGLHeaderPrimitive_02d83368.surface_normal.B
+    MOV dword ptr [0x02d83378],ECX      ; 004eba03 | SMRGLHeaderPrimitive_02d83368.surface_normal.C
+    MOV dword ptr [0x02d8337c],ECX      ; 004eba09 | SMRGLHeaderPrimitive_02d83368.surface_normal.D
     MOV dword ptr [0x02d83380],ECX      ; 004eba0f | INT_02d83380
     MOV [0x02d83384],EAX                ; 004eba15 | INT_02d83384
     PUSH EBX                            ; 004eba1a | g_CDemonRendererInstance

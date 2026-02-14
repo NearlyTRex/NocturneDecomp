@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_flame_cpp_CFlame_getBoundingBox_FUN_004cac00(CFlame *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_flame_cpp_CFlame_getBoundingBox_FUN_004cac00(CFlame *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;

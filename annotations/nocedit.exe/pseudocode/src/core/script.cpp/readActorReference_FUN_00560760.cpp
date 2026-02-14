@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_script_cpp_readActorReference_FUN_00560760(_FILE *file_handle,CDemonActor *actor_out)
+void __cdecl core_script_cpp_readActorReference_FUN_00560760(_FILE *file_handle,CDemonActor *actor_out)
 
 {
   char *pcVar1;

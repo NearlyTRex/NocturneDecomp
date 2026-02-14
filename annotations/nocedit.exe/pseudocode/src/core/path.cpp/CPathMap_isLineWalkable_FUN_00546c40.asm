@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40 (CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z, int end_height)
+; __cdecl int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z,int end_height)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr

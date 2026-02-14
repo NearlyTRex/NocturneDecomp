@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050 (CSkeleton *this_ptr,int bone_index,int frame_index)
+; __cdecl CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050(CSkeleton *this_ptr,int bone_index,int frame_index)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0x4]:4   this_ptr

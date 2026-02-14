@@ -2,13 +2,11 @@
 // Address: 0054e4e0
 // Address Range: [[0054e4e0, 0054e52d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_platfrm_cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0 (CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0(CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_platfrm_cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0
-          (CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_platfrm_cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0(CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 129,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 58,
     "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 183
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -33,7 +33,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_00600990",
-    "signature": "undefined4 crt_unknown_c_FUN_00600990(void)"
+    "signature": "undefined4 crt_unknown_c_FUN_00600990(uint *param_1)"
   },
   "function_calls": [],
   "globals": [
@@ -105,22 +105,22 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "uint *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "uint FUN_00600990(uint *param_1)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = uVar6;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "text": "*param_1 = uVar6;",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 36,
       "match": "(byte *)((int)",
       "text": "(byte *)((int)&pHVar4->heap_size + pHVar4->heap_size) < (uint)INT_03f9b1f0)) {",
       "type": "pointer_cast"

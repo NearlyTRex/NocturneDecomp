@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_editParameterValue_FUN_00562920 (char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+; __cdecl int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   value_buffer
@@ -68,10 +68,10 @@
 ;   core_charactr.cpp_FUN_0042f9c0
 ;   core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0
 ;   core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
-;   core_script.cpp_CScript_FUN_00566fa0
-;   core_script.cpp_CScript_FUN_00567630
-;   core_script.cpp_CScript_FUN_005676e0
-;   core_script.cpp_CScript_FUN_005677a0
+;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
+;   core_script.cpp_CScript_collectLabels_FUN_00566fa0
+;   core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630
+;   core_script.cpp_CScript_removeEventXRef_FUN_005676e0
 ;   core_script.cpp_parseBodyPartMask_FUN_00559730
 ;   core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -426,8 +426,8 @@ section .text
     PUSH EAX                            ; 00562c60
     MOV EDX,dword ptr [0x00680d50]      ; 00562c61 | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 00562c67 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566fa0 ; 00562c68
-        ;   XREF to: 00566fa0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566fa0(CScript * this_ptr, CStrList * param_2)
+    CALL core_script.cpp_CScript_collectLabels_FUN_00566fa0 ; 00562c68
+        ;   XREF to: 00566fa0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_collectLabels_FUN_00566fa0(CScript * this_ptr, CStrList * labels_out)
     ADD ESP,0x8                         ; 00562c6d
     PUSH 0x0                            ; 00562c70
     MOV ECX,dword ptr [EBP + 0x14]      ; 00562c72
@@ -606,17 +606,17 @@ section .text
     MOV EDI,ESI                         ; 00562df9
     PUSH EAX                            ; 00562dfb | g_CScriptInstance
     SHL EDI,0x4                         ; 00562dfc
-    CALL core_script.cpp_CScript_FUN_00567630 ; 00562dff
-        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00567630(CScript * this_ptr)
+    CALL core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 ; 00562dff
+        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript * this_ptr)
     SHL EDI,0x2                         ; 00562e04
     ADD ESP,0x4                         ; 00562e07
     SHL EDI,0x2                         ; 00562e0a
     MOV EAX,[0x00680d50]                ; 00562e0d | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_00562e0d
-    CMP ESI,dword ptr [EAX + 0x28]      ; 00562e12 | g_CScriptInstance.unk3
+    CMP ESI,dword ptr [EAX + 0x28]      ; 00562e12 | g_CScriptInstance.xref_count
     JGE 0x00562e4a                      ; 00562e15
         ;   XREF to: 00562e4a (CONDITIONAL_JUMP)  ; LAB_00562e4a
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 00562e17 | g_CScriptInstance.unk4
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 00562e17 | g_CScriptInstance.xref_entries
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 00562e1a
     CMP EAX,0xa                         ; 00562e21
     JNC 0x00562e41                      ; 00562e24
@@ -625,8 +625,8 @@ section .text
         ;   Label: LAB_00562e26
     MOV EBX,dword ptr [0x00680d50]      ; 00562e27 | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 00562e2d | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005676e0 ; 00562e2e
-        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005676e0(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_removeEventXRef_FUN_005676e0 ; 00562e2e
+        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_removeEventXRef_FUN_005676e0(CScript * this_ptr, int index)
     ADD ESP,0x8                         ; 00562e33
     JMP 0x00562e0d                      ; 00562e36
         ;   XREF to: 00562e0d (UNCONDITIONAL_JUMP)  ; LAB_00562e0d
@@ -649,8 +649,8 @@ section .text
     LEA EBX,[ESP + 0x2f90]              ; 00562e4e
     PUSH EBX                            ; 00562e55
     PUSH EAX                            ; 00562e56 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005677a0 ; 00562e57
-        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005677a0(CScript * this_ptr, char * param_2, char * param_3)
+    CALL core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 ; 00562e57
+        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_browseEventXRefs_FUN_005677a0(CScript * this_ptr, char * dialog_title, char * selected_name)
     ADD ESP,0xc                         ; 00562e5c
     TEST EAX,EAX                        ; 00562e5f
     JZ 0x005629b2                       ; 00562e61
@@ -1085,15 +1085,15 @@ section .text
     PUSH ECX                            ; 005632c8 | g_CScriptInstance
     XOR ESI,ESI                         ; 005632c9
     XOR EDI,EDI                         ; 005632cb
-    CALL core_script.cpp_CScript_FUN_00567630 ; 005632cd
-        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00567630(CScript * this_ptr)
+    CALL core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 ; 005632cd
+        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript * this_ptr)
     ADD ESP,0x4                         ; 005632d2
     MOV EAX,[0x00680d50]                ; 005632d5 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_005632d5
-    CMP ESI,dword ptr [EAX + 0x28]      ; 005632da | g_CScriptInstance.unk3
+    CMP ESI,dword ptr [EAX + 0x28]      ; 005632da | g_CScriptInstance.xref_count
     JGE 0x00563312                      ; 005632dd
         ;   XREF to: 00563312 (CONDITIONAL_JUMP)  ; LAB_00563312
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 005632df | g_CScriptInstance.unk4
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 005632df | g_CScriptInstance.xref_entries
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 005632e2
     CMP EAX,0x8                         ; 005632e9
     JNC 0x00563309                      ; 005632ec
@@ -1102,8 +1102,8 @@ section .text
         ;   Label: LAB_005632ee
     MOV EBX,dword ptr [0x00680d50]      ; 005632ef | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 005632f5 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005676e0 ; 005632f6
-        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005676e0(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_removeEventXRef_FUN_005676e0 ; 005632f6
+        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_removeEventXRef_FUN_005676e0(CScript * this_ptr, int index)
     ADD ESP,0x8                         ; 005632fb
     JMP 0x005632d5                      ; 005632fe
         ;   XREF to: 005632d5 (UNCONDITIONAL_JUMP)  ; LAB_005632d5
@@ -1126,8 +1126,8 @@ section .text
     LEA EBX,[ESP + 0x2f90]              ; 00563316
     PUSH EBX                            ; 0056331d
     PUSH EAX                            ; 0056331e | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005677a0 ; 0056331f
-        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005677a0(CScript * this_ptr, char * param_2, char * param_3)
+    CALL core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 ; 0056331f
+        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_browseEventXRefs_FUN_005677a0(CScript * this_ptr, char * dialog_title, char * selected_name)
     ADD ESP,0xc                         ; 00563324
     TEST EAX,EAX                        ; 00563327
     JZ 0x005629b2                       ; 00563329
@@ -1183,16 +1183,16 @@ section .text
         ;   Label: caseD_f
     PUSH ESI                            ; 0056339f | g_CScriptInstance
     XOR EDI,EDI                         ; 005633a0
-    CALL core_script.cpp_CScript_FUN_00567630 ; 005633a2
-        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00567630(CScript * this_ptr)
+    CALL core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 ; 005633a2
+        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript * this_ptr)
     ADD ESP,0x4                         ; 005633a7
     XOR ESI,ESI                         ; 005633aa
     MOV EAX,[0x00680d50]                ; 005633ac | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_005633ac
-    CMP ESI,dword ptr [EAX + 0x28]      ; 005633b1 | g_CScriptInstance.unk3
+    CMP ESI,dword ptr [EAX + 0x28]      ; 005633b1 | g_CScriptInstance.xref_count
     JGE 0x005633e8                      ; 005633b4
         ;   XREF to: 005633e8 (CONDITIONAL_JUMP)  ; LAB_005633e8
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 005633b6 | g_CScriptInstance.unk4
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 005633b6 | g_CScriptInstance.xref_entries
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 005633b9
     CMP EAX,0x5                         ; 005633c0
     JNC 0x005633df                      ; 005633c3
@@ -1201,8 +1201,8 @@ section .text
         ;   Label: LAB_005633c5
     MOV EAX,[0x00680d50]                ; 005633c6 | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 005633cb | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005676e0 ; 005633cc
-        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005676e0(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_removeEventXRef_FUN_005676e0 ; 005633cc
+        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_removeEventXRef_FUN_005676e0(CScript * this_ptr, int index)
     ADD ESP,0x8                         ; 005633d1
     JMP 0x005633ac                      ; 005633d4
         ;   XREF to: 005633ac (UNCONDITIONAL_JUMP)  ; LAB_005633ac
@@ -1225,8 +1225,8 @@ section .text
     LEA EBX,[ESP + 0x2f90]              ; 005633ec
     PUSH EBX                            ; 005633f3
     PUSH EAX                            ; 005633f4 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005677a0 ; 005633f5
-        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005677a0(CScript * this_ptr, char * param_2, char * param_3)
+    CALL core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 ; 005633f5
+        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_browseEventXRefs_FUN_005677a0(CScript * this_ptr, char * dialog_title, char * selected_name)
     ADD ESP,0xc                         ; 005633fa
     TEST EAX,EAX                        ; 005633fd
     JZ 0x005629b2                       ; 005633ff
@@ -1496,15 +1496,15 @@ section .text
     PUSH ECX                            ; 0056368a | g_CScriptInstance
     XOR ESI,ESI                         ; 0056368b
     XOR EDI,EDI                         ; 0056368d
-    CALL core_script.cpp_CScript_FUN_00567630 ; 0056368f
-        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00567630(CScript * this_ptr)
+    CALL core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 ; 0056368f
+        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript * this_ptr)
     ADD ESP,0x4                         ; 00563694
     MOV EAX,[0x00680d50]                ; 00563697 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_00563697
-    CMP ESI,dword ptr [EAX + 0x28]      ; 0056369c | g_CScriptInstance.unk3
+    CMP ESI,dword ptr [EAX + 0x28]      ; 0056369c | g_CScriptInstance.xref_count
     JGE 0x005636d1                      ; 0056369f
         ;   XREF to: 005636d1 (CONDITIONAL_JUMP)  ; LAB_005636d1
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 005636a1 | g_CScriptInstance.unk4
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 005636a1 | g_CScriptInstance.xref_entries
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 005636a4
     CMP EAX,0x4                         ; 005636ab
     JBE 0x005636ca                      ; 005636ae
@@ -1513,8 +1513,8 @@ section .text
         ;   Label: default
     MOV EAX,[0x00680d50]                ; 005636b1 | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 005636b6 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005676e0 ; 005636b7
-        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005676e0(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_removeEventXRef_FUN_005676e0 ; 005636b7
+        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_removeEventXRef_FUN_005676e0(CScript * this_ptr, int index)
     ADD ESP,0x8                         ; 005636bc
     JMP 0x00563697                      ; 005636bf
         ;   XREF to: 00563697 (UNCONDITIONAL_JUMP)  ; LAB_00563697
@@ -1531,8 +1531,8 @@ section .text
     LEA EBX,[ESP + 0x2f90]              ; 005636d5
     PUSH EBX                            ; 005636dc
     PUSH EAX                            ; 005636dd | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005677a0 ; 005636de
-        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005677a0(CScript * this_ptr, char * param_2, char * param_3)
+    CALL core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 ; 005636de
+        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_browseEventXRefs_FUN_005677a0(CScript * this_ptr, char * dialog_title, char * selected_name)
     ADD ESP,0xc                         ; 005636e3
     TEST EAX,EAX                        ; 005636e6
     JZ 0x005629b2                       ; 005636e8
@@ -1549,16 +1549,16 @@ section .text
         ;   Label: caseD_15
     PUSH ESI                            ; 00563702 | g_CScriptInstance
     XOR EDI,EDI                         ; 00563703
-    CALL core_script.cpp_CScript_FUN_00567630 ; 00563705
-        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00567630(CScript * this_ptr)
+    CALL core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 ; 00563705
+        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript * this_ptr)
     ADD ESP,0x4                         ; 0056370a
     XOR ESI,ESI                         ; 0056370d
     MOV EAX,[0x00680d50]                ; 0056370f | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_0056370f
-    CMP ESI,dword ptr [EAX + 0x28]      ; 00563714 | g_CScriptInstance.unk3
+    CMP ESI,dword ptr [EAX + 0x28]      ; 00563714 | g_CScriptInstance.xref_count
     JGE 0x00563747                      ; 00563717
         ;   XREF to: 00563747 (CONDITIONAL_JUMP)  ; LAB_00563747
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 00563719 | g_CScriptInstance.unk4
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 00563719 | g_CScriptInstance.xref_entries
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 0056371c
     TEST EAX,EAX                        ; 00563723
     JBE 0x0056372c                      ; 00563725
@@ -1575,8 +1575,8 @@ section .text
         ;   Label: LAB_00563735
     MOV EBX,dword ptr [0x00680d50]      ; 00563736 | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 0056373c | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005676e0 ; 0056373d
-        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005676e0(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_removeEventXRef_FUN_005676e0 ; 0056373d
+        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_removeEventXRef_FUN_005676e0(CScript * this_ptr, int index)
     ADD ESP,0x8                         ; 00563742
     JMP 0x0056370f                      ; 00563745
         ;   XREF to: 0056370f (UNCONDITIONAL_JUMP)  ; LAB_0056370f
@@ -1586,8 +1586,8 @@ section .text
     LEA EBX,[ESP + 0x2f90]              ; 0056374b
     PUSH EBX                            ; 00563752
     PUSH EAX                            ; 00563753 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005677a0 ; 00563754
-        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005677a0(CScript * this_ptr, char * param_2, char * param_3)
+    CALL core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 ; 00563754
+        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_browseEventXRefs_FUN_005677a0(CScript * this_ptr, char * dialog_title, char * selected_name)
     ADD ESP,0xc                         ; 00563759
     TEST EAX,EAX                        ; 0056375c
     JZ 0x005629b2                       ; 0056375e
@@ -1605,15 +1605,15 @@ section .text
     PUSH EBX                            ; 00563778 | g_CScriptInstance
     XOR ESI,ESI                         ; 00563779
     XOR EDI,EDI                         ; 0056377b
-    CALL core_script.cpp_CScript_FUN_00567630 ; 0056377d
-        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00567630(CScript * this_ptr)
+    CALL core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 ; 0056377d
+        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript * this_ptr)
     ADD ESP,0x4                         ; 00563782
     MOV EAX,[0x00680d50]                ; 00563785 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_00563785
-    CMP ESI,dword ptr [EAX + 0x28]      ; 0056378a | g_CScriptInstance.unk3
+    CMP ESI,dword ptr [EAX + 0x28]      ; 0056378a | g_CScriptInstance.xref_count
     JGE 0x005637bd                      ; 0056378d
         ;   XREF to: 005637bd (CONDITIONAL_JUMP)  ; LAB_005637bd
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 0056378f | g_CScriptInstance.unk4
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 0056378f | g_CScriptInstance.xref_entries
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 00563792
     TEST EAX,EAX                        ; 00563799
     JBE 0x005637a2                      ; 0056379b
@@ -1630,8 +1630,8 @@ section .text
         ;   Label: LAB_005637ab
     MOV EBX,dword ptr [0x00680d50]      ; 005637ac | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 005637b2 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005676e0 ; 005637b3
-        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005676e0(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_removeEventXRef_FUN_005676e0 ; 005637b3
+        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_removeEventXRef_FUN_005676e0(CScript * this_ptr, int index)
     ADD ESP,0x8                         ; 005637b8
     JMP 0x00563785                      ; 005637bb
         ;   XREF to: 00563785 (UNCONDITIONAL_JUMP)  ; LAB_00563785
@@ -1641,8 +1641,8 @@ section .text
     LEA EBX,[ESP + 0x2f90]              ; 005637c1
     PUSH EBX                            ; 005637c8
     PUSH EAX                            ; 005637c9 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005677a0 ; 005637ca
-        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005677a0(CScript * this_ptr, char * param_2, char * param_3)
+    CALL core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 ; 005637ca
+        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_browseEventXRefs_FUN_005677a0(CScript * this_ptr, char * dialog_title, char * selected_name)
     ADD ESP,0xc                         ; 005637cf
     TEST EAX,EAX                        ; 005637d2
     JZ 0x005629b2                       ; 005637d4
@@ -2190,15 +2190,15 @@ section .text
     PUSH EAX                            ; 00563cfb | g_CScriptInstance
     XOR ESI,ESI                         ; 00563cfc
     XOR EDI,EDI                         ; 00563cfe
-    CALL core_script.cpp_CScript_FUN_00567630 ; 00563d00
-        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00567630(CScript * this_ptr)
+    CALL core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 ; 00563d00
+        ;   XREF to: 00567630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript * this_ptr)
     ADD ESP,0x4                         ; 00563d05
     MOV EAX,[0x00680d50]                ; 00563d08 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_00563d08
-    CMP ESI,dword ptr [EAX + 0x28]      ; 00563d0d | g_CScriptInstance.unk3
+    CMP ESI,dword ptr [EAX + 0x28]      ; 00563d0d | g_CScriptInstance.xref_count
     JGE 0x00563d40                      ; 00563d10
         ;   XREF to: 00563d40 (CONDITIONAL_JUMP)  ; LAB_00563d40
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 00563d12 | g_CScriptInstance.unk4
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 00563d12 | g_CScriptInstance.xref_entries
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x100] ; 00563d15
     TEST EAX,EAX                        ; 00563d1c
     JBE 0x00563d25                      ; 00563d1e
@@ -2215,8 +2215,8 @@ section .text
         ;   Label: LAB_00563d2e
     MOV EBX,dword ptr [0x00680d50]      ; 00563d2f | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 00563d35 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005676e0 ; 00563d36
-        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005676e0(CScript * this_ptr, int param_2)
+    CALL core_script.cpp_CScript_removeEventXRef_FUN_005676e0 ; 00563d36
+        ;   XREF to: 005676e0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_removeEventXRef_FUN_005676e0(CScript * this_ptr, int index)
     ADD ESP,0x8                         ; 00563d3b
     JMP 0x00563d08                      ; 00563d3e
         ;   XREF to: 00563d08 (UNCONDITIONAL_JUMP)  ; LAB_00563d08
@@ -2226,8 +2226,8 @@ section .text
     LEA EBX,[ESP + 0x2f90]              ; 00563d44
     PUSH EBX                            ; 00563d4b
     PUSH EAX                            ; 00563d4c | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005677a0 ; 00563d4d
-        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_005677a0(CScript * this_ptr, char * param_2, char * param_3)
+    CALL core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 ; 00563d4d
+        ;   XREF to: 005677a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_browseEventXRefs_FUN_005677a0(CScript * this_ptr, char * dialog_title, char * selected_name)
     ADD ESP,0xc                         ; 00563d52
     TEST EAX,EAX                        ; 00563d55
     JZ 0x005629b2                       ; 00563d57

@@ -2,13 +2,11 @@
 // Address: 00450ac0
 // Address Range: [[00450ac0, 00450e27]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0 (CDemonCamera *this_ptr,CDemonLight *light_source)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemonCamera *this_ptr,CDemonLight *light_source)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
-          (CDemonCamera *this_ptr,CDemonLight *light_source)
+void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemonCamera *this_ptr,CDemonLight *light_source)
 
 {
   float fVar1;
@@ -88,8 +86,8 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
         local_24 = local_3c + local_20;
         local_1c = *pacStack_48 + local_20;
         local_2c = *paiStack_44 + local_20;
-        local_28 = g_ZBufferScanlineArray[local_38 << ((byte)g_CameraDownscaleIterations & 0x1f)] +
-                   (local_20 << ((byte)g_CameraDownscaleIterations & 0x1f));
+        local_28 = g_ZBufferScanlineArray[local_38 << (g_CameraDownscaleIterations.bytes[0] & 0x1f)]
+                   + (local_20 << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
         pCVar6 = local_40 + local_20;
         iVar5 = local_20 - local_30;
         bVar10 = SBORROW4(local_20,local_30);
@@ -127,7 +125,7 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
           local_2c = local_2c + 1;
           local_24 = local_24 + 1;
           local_20 = local_20 + 1;
-          local_28 = local_28 + (1 << ((byte)g_CameraDownscaleIterations & 0x1f));
+          local_28 = local_28 + (1 << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
           local_1c = local_1c + 1;
           iVar5 = local_20 - local_30;
           bVar10 = SBORROW4(local_20,local_30);

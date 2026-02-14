@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-crt_fstream_cpp_filebuf_open_FUN_00608c15(filebuf *this_ptr,char *filename,int mode,int permissions)
+int __cdecl crt_fstream_cpp_filebuf_open_FUN_00608c15(filebuf *this_ptr,char *filename,int mode,int permissions)
 
 {
   int iVar1;

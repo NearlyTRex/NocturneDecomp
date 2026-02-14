@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_isRectangleClipped_FUN_004ccd80 (int rect_width,int rect_height,int rect_x,int rect_y)
+; __cdecl int __cdecl engine_font_cpp_isRectangleClipped_FUN_004ccd80(int rect_width,int rect_height,int rect_x,int rect_y)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   rect_width

@@ -2,13 +2,11 @@
 // Address: 0048c450
 // Address Range: [[0048c450, 0048c492]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 (CDemonRenderer *this_ptr,CVector3f *world_position)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer *this_ptr,CVector3f *world_position)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-          (CDemonRenderer *this_ptr,CVector3f *world_position)
+void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer *this_ptr,CVector3f *world_position)
 
 {
   double dVar1;

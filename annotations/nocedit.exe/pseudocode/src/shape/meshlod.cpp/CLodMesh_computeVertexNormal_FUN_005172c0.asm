@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (CLodMesh *this_ptr,CVector3f *out_normal,int vertex_index)
+; __cdecl CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0(CLodMesh *this_ptr,CVector3f *out_normal,int vertex_index)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

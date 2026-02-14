@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530 (CEditorTools *this_ptr,float progress_min,float progress_max)
+; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

@@ -193,7 +193,7 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
     asm_lines.append("; " + "*" * 77)
     asm_lines.append("; " + " " * 30 + "FUNCTION")
     asm_lines.append("; " + "*" * 77)
-    asm_lines.append("; %s %s" % (func_convention or "__cdecl", safe_signature))
+    asm_lines.append("; %s" % safe_signature)
     asm_lines.append(";")
 
     # Parameters and locals from stack frame

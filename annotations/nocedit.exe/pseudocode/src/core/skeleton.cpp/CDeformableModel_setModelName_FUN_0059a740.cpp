@@ -2,13 +2,11 @@
 // Address: 0059a740
 // Address Range: [[0059a740, 0059a776]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_setModelName_FUN_0059a740 (CDeformableModel *this_ptr,char *model_name)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_setModelName_FUN_0059a740(CDeformableModel *this_ptr,char *model_name)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModel_setModelName_FUN_0059a740
-          (CDeformableModel *this_ptr,char *model_name)
+void __cdecl core_skeleton_cpp_CDeformableModel_setModelName_FUN_0059a740(CDeformableModel *this_ptr,char *model_name)
 
 {
   char cVar1;

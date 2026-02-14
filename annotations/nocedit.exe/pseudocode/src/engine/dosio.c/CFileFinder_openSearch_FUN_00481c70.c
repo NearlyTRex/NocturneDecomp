@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(CFileFinder *this_ptr,char *search_pattern)
+int __cdecl engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(CFileFinder *this_ptr,char *search_pattern)
 
 {
   HANDLE pvVar1;

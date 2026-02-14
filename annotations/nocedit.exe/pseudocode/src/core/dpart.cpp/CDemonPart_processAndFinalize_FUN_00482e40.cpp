@@ -2,13 +2,11 @@
 // Address: 00482e40
 // Address Range: [[00482e40, 00482fa3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40 (CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize)
+// Signature: void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40
-          (CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize)
+void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize)
 
 {
   CVector3i *pCVar1;

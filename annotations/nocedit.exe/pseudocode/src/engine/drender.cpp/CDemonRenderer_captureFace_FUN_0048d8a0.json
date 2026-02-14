@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 88,
+    "complexity_score": 86,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 14,
-    "pseudocode_lines": 73,
+    "pseudocode_lines": 71,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 205
+    "total_lines": 203
   },
   "cross_references": [
     {
@@ -53,7 +53,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0 (CDemonRenderer *this_ptr,STrianglePackedIndices *triangle_indices,int render_flags)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer *this_ptr,STrianglePackedIndices *triangle_indices,int render_flags)"
   },
   "function_calls": [
     {
@@ -216,7 +216,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 44,
       "match": "(uint *)((int)",
       "text": "puVar9 = (uint *)((int)triangle_indices + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CIniFile * __cdecl
-engine_ini_cpp_CIniFile_ctor_FUN_004fba70(CIniFile *this_ptr,char *filename,int read_mode)
+CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004fba70(CIniFile *this_ptr,char *filename,int read_mode)
 
 {
   engine_ini_cpp_CIniFile_init_FUN_004fbaa0(this_ptr->filename,filename);

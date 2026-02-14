@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uint sfx_handle,CSfxSample *output_buffer)
+int __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uint sfx_handle,CSfxSample *output_buffer)
 
 {
   CSfxSlot *pCVar1;

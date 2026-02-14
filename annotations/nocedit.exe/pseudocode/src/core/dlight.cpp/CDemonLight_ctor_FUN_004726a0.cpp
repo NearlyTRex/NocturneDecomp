@@ -2,13 +2,11 @@
 // Address: 004726a0
 // Address Range: [[004726a0, 00472754]]
 // Convention: __cdecl
-// Signature: CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0 (CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)
+// Signature: CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)
 
 #include "nocturne.h"
 
-CDemonLight * __cdecl
-core_dlight_cpp_CDemonLight_ctor_FUN_004726a0
-          (CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)
+CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)
 
 {
   CDemonLight *pCVar1;

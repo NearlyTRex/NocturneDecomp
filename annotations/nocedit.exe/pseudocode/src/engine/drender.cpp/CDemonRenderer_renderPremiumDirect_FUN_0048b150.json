@@ -1,38 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 20,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 23,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 31,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 27,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 25,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 88
+    "total_lines": 86
   },
   "cross_references": [],
   "function": {
@@ -45,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderPremiumDirect_FUN_0048b150",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumDirect_FUN_0048b150 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumDirect_FUN_0048b150(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -75,7 +56,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {

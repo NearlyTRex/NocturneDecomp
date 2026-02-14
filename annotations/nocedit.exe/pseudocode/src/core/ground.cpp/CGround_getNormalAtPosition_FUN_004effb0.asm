@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0 (CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal)
+; __cdecl void __cdecl core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal)
 ;
 ; Parameters:
 ; CGround *        Stack[0x4]:4   this_ptr

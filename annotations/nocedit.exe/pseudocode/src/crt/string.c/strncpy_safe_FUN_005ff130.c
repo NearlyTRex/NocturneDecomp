@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __watcallStack
-strncpy_safe(char *dest,char *src,int length,int maxlen)
+void __watcallStack strncpy_safe(char *dest,char *src,int length,int maxlen)
 
 {
   int iVar1;

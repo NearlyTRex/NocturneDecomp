@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 423,
-    "complexity_score": 193,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 35,
-    "pseudocode_lines": 148,
+    "pseudocode_lines": 147,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 571
+    "total_lines": 570
   },
   "cross_references": [
     {
@@ -361,28 +361,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 79,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)ppCVar3 + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 81,
       "match": "(uint *)((int)",
       "text": "_fprintf(file,\"%d,%d,%d\\n\",*puVar1,*(uint *)((int)ppCVar3 + iVar4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 82,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)ppCVar3 + iVar11));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 93,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_1c),",
       "type": "pointer_cast"

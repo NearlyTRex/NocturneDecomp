@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00 (CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size, int rotation_y,int alpha)
+; __cdecl void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

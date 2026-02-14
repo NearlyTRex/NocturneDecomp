@@ -2,11 +2,11 @@
 // Address: 00560160
 // Address Range: [[00560160, 005601b6]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_ptr,char *param_2)
+// Signature: int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_ptr,char *label_name)
 
 #include "nocturne.h"
 
-int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_ptr,char *param_2)
+int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_ptr,char *label_name)
 
 {
   char *pcVar1;
@@ -21,7 +21,7 @@ int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_pt
     do {
       pcVar1 = *(char **)((int)&this_ptr->parsed_lines->text + iVar4);
       if (*pcVar1 == ':') {
-        str2 = param_2;
+        str2 = label_name;
         pcVar1 = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar1 + 1);
         iVar2 = stricmp(pcVar1,str2);
         if (iVar2 == 0) {

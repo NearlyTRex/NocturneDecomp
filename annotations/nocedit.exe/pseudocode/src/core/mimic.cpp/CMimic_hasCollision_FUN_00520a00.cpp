@@ -8,8 +8,7 @@
 
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl
-core_mimic_cpp_CMimic_hasCollision_FUN_00520a00(CMimic *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_mimic_cpp_CMimic_hasCollision_FUN_00520a00(CMimic *this_ptr,SCollisionInfo *collision_info)
 
 {
   float fVar1;

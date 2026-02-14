@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dstrender_cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5 (uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count)
+; __cdecl void __cdecl core_dstrender_cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   output_buffer

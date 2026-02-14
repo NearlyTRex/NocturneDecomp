@@ -16,12 +16,17 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr)
   CBoundingBox3D *pCVar4;
   float in_stack_00000008;
   int in_stack_0000000c;
-  byte auStack_60 [48];
+  CBoundingBox3D CStack_68;
+  CBoundingBox3D local_50;
+  float fStack_38;
+  float fStack_34;
   float fStack_30;
   float local_2c;
-  float local_28;
-  float local_24;
+  uint local_28;
+  uint local_24;
+  float fStack_20;
   float fStack_1c;
+  float fStack_18;
   
   fVar1 = *(float *)(this_ptr->unk1 + 4);
   fVar3 = in_stack_00000008 / 0.5f;
@@ -50,29 +55,31 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr)
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar2);
     }
     core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);
-    local_24 = 0.0;
-    local_28 = 0.0;
+    local_24 = 0;
+    local_28 = 0;
     local_2c = 0.0;
     pCVar2 = (this_ptr->base).base.carry_hands[0].carry_actor;
     if (pCVar2 == (CDemonActor *)0x0) {
       local_2c = -0.5;
     }
     else {
-      pCVar4 = (*((pCVar2->vtable)._ub)->getBoundingBox)
-                         (pCVar2,(CBoundingBox3D *)(auStack_60 + 0x10));
-      fStack_30 = (pCVar4->max).x - (pCVar4->min).x;
-      local_2c = (pCVar4->max).y - (pCVar4->min).y;
-      local_28 = (pCVar4->max).z - (pCVar4->min).z;
-      local_24 = -local_28;
+      pCVar4 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&local_50);
+      fStack_38 = (pCVar4->max).x - (pCVar4->min).x;
+      fStack_34 = (pCVar4->max).y - (pCVar4->min).y;
+      fStack_30 = (pCVar4->max).z - (pCVar4->min).z;
+      local_2c = -fStack_30;
     }
     core_gabriela_cpp_CGabriella_FUN_004d6f80(this_ptr);
     pCVar2 = (this_ptr->base).base.carry_hands[1].carry_actor;
     if (pCVar2 == (CDemonActor *)0x0) {
-      local_24 = 0.5;
+      local_2c = 0.5;
     }
     else {
-      pCVar4 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,(CBoundingBox3D *)auStack_60);
-      fStack_1c = (pCVar4->max).z - (pCVar4->min).z;
+      pCVar4 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_68);
+      fStack_20 = (pCVar4->max).x - (pCVar4->min).x;
+      fStack_1c = (pCVar4->max).y - (pCVar4->min).y;
+      local_2c = (pCVar4->max).z - (pCVar4->min).z;
+      fStack_18 = local_2c;
     }
     core_gabriela_cpp_CGabriella_FUN_004d6f80(this_ptr);
     core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);

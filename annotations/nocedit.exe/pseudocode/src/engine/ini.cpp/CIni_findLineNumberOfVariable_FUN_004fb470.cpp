@@ -2,13 +2,11 @@
 // Address: 004fb470
 // Address Range: [[004fb470, 004fb653]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470 (CIni *this_ptr,char *section,char *key,char *value,char *filename)
+// Signature: int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470
-          (CIni *this_ptr,char *section,char *key,char *value,char *filename)
+int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 
 {
   byte bVar1;

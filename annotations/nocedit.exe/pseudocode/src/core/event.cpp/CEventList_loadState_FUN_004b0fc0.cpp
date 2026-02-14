@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr,_FILE *file_handle)
+int __cdecl core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50 (CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr)
+; __cdecl int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr

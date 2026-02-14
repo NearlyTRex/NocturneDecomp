@@ -9,33 +9,28 @@
 void __cdecl core_flame_cpp_CFlame_processInEditor_FUN_004caf60(CFlame *this_ptr)
 
 {
-  int iVar1;
-  float in_stack_00000008;
-  float in_stack_00000010;
-  uint uStack00000014;
-  float in_stack_00000018;
-  uint uStack0000001c;
-  float in_stack_00000020;
+  float fVar1;
+  int iVar2;
   
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if (iVar1 != 0) {
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
-    if (iVar1 != 0) {
-      (this_ptr->flame_size).x = (this_ptr->flame_size).x - in_stack_00000008;
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if (iVar2 != 0) {
+    fVar1 = g_CGamePtr->delta_time_float * (float)4;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    if (iVar2 != 0) {
+      (this_ptr->flame_size).x = (this_ptr->flame_size).x - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
-    if (iVar1 != 0) {
-      (this_ptr->flame_size).x = (this_ptr->flame_size).x + in_stack_00000010;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    if (iVar2 != 0) {
+      (this_ptr->flame_size).x = (this_ptr->flame_size).x + fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
-    if (iVar1 != 0) {
-      (this_ptr->flame_size).y = (this_ptr->flame_size).y - in_stack_00000018;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    if (iVar2 != 0) {
+      (this_ptr->flame_size).y = (this_ptr->flame_size).y - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
-    if (iVar1 != 0) {
-      (this_ptr->flame_size).y = (this_ptr->flame_size).y + in_stack_00000020;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    if (iVar2 != 0) {
+      (this_ptr->flame_size).y = (this_ptr->flame_size).y + fVar1;
     }
-    uStack0000001c = 0x3dcccccd;
     if ((int)(this_ptr->flame_size).x < 0x3dcccccd) {
       (this_ptr->flame_size).x = 0.1;
     }
@@ -46,7 +41,6 @@ void __cdecl core_flame_cpp_CFlame_processInEditor_FUN_004caf60(CFlame *this_ptr
       (this_ptr->flame_size).z = 0.1;
     }
     (this_ptr->flame_size).z = (this_ptr->flame_size).x;
-    uStack00000014 = 0x4cb078;
     core_flame_cpp_CFlame_FUN_004cad90(this_ptr);
     return;
   }

@@ -3,27 +3,9 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 32,
-        "line": 30,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 33,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
         "column": 19,
-        "line": 93,
+        "line": 90,
         "message": "no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 101,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
       }
     ],
     "success": false,
@@ -31,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 277,
+    "complexity_score": 274,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
-    "pseudocode_lines": 122,
+    "pseudocode_lines": 119,
     "suspect_count": 14,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "register_param"
     ],
-    "total_lines": 367
+    "total_lines": 364
   },
   "cross_references": [
     {
@@ -68,7 +50,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00",
-    "signature": "int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags,int primitive_stride)"
+    "signature": "int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags,int primitive_stride)"
   },
   "function_calls": [
     {
@@ -148,7 +130,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -317,98 +299,98 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 9,
+      "line": 6,
       "match": "in_EAX",
       "text": "int in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 7,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 8,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 29,
+      "line": 26,
       "match": "in_EAX",
       "text": "in_EAX = 6;",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 51,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 55,
+      "line": 52,
       "match": "extraout_EAX_00",
       "text": "in_EAX = extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 55,
+      "line": 52,
       "match": "in_EAX",
       "text": "in_EAX = extraout_EAX_00;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 82,
+      "line": 79,
       "match": "in_EAX",
       "text": "in_EAX = render_flags;",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 103,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",
-      "line": 107,
+      "line": 104,
       "match": "in_EAX",
       "text": "in_EAX = engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_28,pSVar1->count);",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 116,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 120,
+      "line": 117,
       "match": "extraout_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 120,
+      "line": 117,
       "match": "in_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 124,
+      "line": 121,
       "match": "in_EAX",
       "text": "return in_EAX;",
       "type": "register_param"

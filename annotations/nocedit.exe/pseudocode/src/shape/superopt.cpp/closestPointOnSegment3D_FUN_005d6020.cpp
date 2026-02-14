@@ -2,13 +2,11 @@
 // Address: 005d6020
 // Address Range: [[005d6020, 005d63cb]]
 // Convention: __cdecl
-// Signature: CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020 (CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point)
+// Signature: CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point)
 
 #include "nocturne.h"
 
-CVector2d * __cdecl
-shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020
-          (CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point)
+CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point)
 
 {
   uint uVar1;

@@ -2,13 +2,11 @@
 // Address: 004d2770
 // Address Range: [[004d2770, 004d2870]]
 // Convention: __cdecl
-// Signature: int __cdecl core_frankgen_cpp_CFrankenstienMachine_initializeInEditor_FUN_004d2770 (CFrankenstienMachine *this_ptr)
+// Signature: int __cdecl core_frankgen_cpp_CFrankenstienMachine_initializeInEditor_FUN_004d2770(CFrankenstienMachine *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl
-core_frankgen_cpp_CFrankenstienMachine_initializeInEditor_FUN_004d2770
-          (CFrankenstienMachine *this_ptr)
+int __cdecl core_frankgen_cpp_CFrankenstienMachine_initializeInEditor_FUN_004d2770(CFrankenstienMachine *this_ptr)
 
 {
   int iVar1;

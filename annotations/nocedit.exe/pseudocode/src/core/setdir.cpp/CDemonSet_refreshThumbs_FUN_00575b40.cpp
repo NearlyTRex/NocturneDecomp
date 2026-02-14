@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00575b40(CDemonSet *this_ptr,char *filename)
+void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00575b40(CDemonSet *this_ptr,char *filename)
 
 {
   _FILE *file_handle;

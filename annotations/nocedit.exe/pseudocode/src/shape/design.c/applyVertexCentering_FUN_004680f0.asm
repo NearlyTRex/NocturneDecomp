@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_applyVertexCentering_FUN_004680f0 (SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list, int reference_vertex_id)
+; __cdecl void __cdecl shape_design_c_applyVertexCentering_FUN_004680f0(SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list,int reference_vertex_id)
 ;
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   target_model

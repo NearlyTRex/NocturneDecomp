@@ -2,13 +2,11 @@
 // Address: 00432d90
 // Address Range: [[00432d90, 00432dee]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90 (void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)
+// Signature: void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90
-          (void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)
+void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)
 
 {
   int iVar1;

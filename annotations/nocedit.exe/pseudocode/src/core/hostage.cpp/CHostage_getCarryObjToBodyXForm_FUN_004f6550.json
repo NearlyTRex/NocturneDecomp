@@ -6,18 +6,18 @@
       {
         "category": "other",
         "column": 18,
-        "line": 76,
+        "line": 74,
         "message": "array comparison always evaluates to true [-Wtautological-compare]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 250,
+    "complexity_score": 248,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 120,
+    "pseudocode_lines": 118,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
@@ -25,7 +25,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 403
+    "total_lines": 401
   },
   "cross_references": [],
   "function": {
@@ -38,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550",
-    "signature": "void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550 (CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+    "signature": "void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -564,35 +564,35 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 13,
       "match": "unaff_ESI",
       "text": "uint *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 112,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 119,
+      "line": 117,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = *pfVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 121,
+      "line": 119,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 121,
+      "line": 119,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"

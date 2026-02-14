@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,int creation_flags)
+int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,int creation_flags)
 
 {
   CDemonActor *actor_ptr;

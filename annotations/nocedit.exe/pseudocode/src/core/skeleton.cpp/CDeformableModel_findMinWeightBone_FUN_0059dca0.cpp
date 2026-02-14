@@ -2,13 +2,11 @@
 // Address: 0059dca0
 // Address Range: [[0059dca0, 0059dd5e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0 (CDeformableModel *this_ptr,int lod_level,int triangle_index)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel *this_ptr,int lod_level,int triangle_index)
 
 #include "nocturne.h"
 
-int __cdecl
-core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
-          (CDeformableModel *this_ptr,int lod_level,int triangle_index)
+int __cdecl core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel *this_ptr,int lod_level,int triangle_index)
 
 {
   float *pfVar1;

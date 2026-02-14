@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250 (CDoor *this_ptr,CActorPropertyList *property,char *output_buffer)
+; __cdecl void __cdecl core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250(CDoor *this_ptr,CActorPropertyList *property,char *output_buffer)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr

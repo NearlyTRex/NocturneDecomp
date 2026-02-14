@@ -9,13 +9,11 @@
 float10 __fpustack atan2(float10 y,float10 x)
 
 {
-  float10 fVar1;
-  
   if ((g_UseSoftwareMath & 1) == 0) {
-    fVar1 = (float10)fpatan(y,x);
+    x = (float10)fpatan(y,x);
   }
   else {
-    fVar1 = (float10)FUN_00608e14();
+    FUN_00608e14();
   }
-  return fVar1;
+  return x;
 }

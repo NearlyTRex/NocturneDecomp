@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController *this_ptr)
+int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController *this_ptr)
 
 {
   g_CurrentFilename = "..\\core\\motion.cpp";

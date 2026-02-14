@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_cramtex_cpp_CCramTex_checkTextureCollision_FUN_00448390(CCramTex *this_ptr,CCramTex *other)
+int __cdecl shape_cramtex_cpp_CCramTex_checkTextureCollision_FUN_00448390(CCramTex *this_ptr,CCramTex *other)
 
 {
   if ((((other->width == this_ptr->assigned_map_number) &&

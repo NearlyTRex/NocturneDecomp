@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0 (CDemonCamera *this_ptr,int gamma_value)
+; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera *this_ptr,int gamma_value)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

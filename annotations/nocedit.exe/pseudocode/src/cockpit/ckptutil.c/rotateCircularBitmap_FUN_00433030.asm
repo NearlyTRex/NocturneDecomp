@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030 (void *bitmap_data,int width,int height,int num_iterations)
+; __cdecl void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030(void *bitmap_data,int width,int height,int num_iterations)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   bitmap_data

@@ -2,13 +2,11 @@
 // Address: 00401eb0
 // Address Range: [[00401eb0, 00401f35]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_2d_c_drawTextWrappedColor_FUN_00401eb0 (char *text,int x_start,int y_start,int x_max,int y_max,int color)
+// Signature: void __cdecl engine_2d_c_drawTextWrappedColor_FUN_00401eb0(char *text,int x_start,int y_start,int x_max,int y_max,int color)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_2d_c_drawTextWrappedColor_FUN_00401eb0
-          (char *text,int x_start,int y_start,int x_max,int y_max,int color)
+void __cdecl engine_2d_c_drawTextWrappedColor_FUN_00401eb0(char *text,int x_start,int y_start,int x_max,int y_max,int color)
 
 {
   char cVar1;

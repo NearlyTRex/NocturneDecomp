@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 115,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 20,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 76
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -35,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CScript_processTimer_FUN_005600c0",
-    "signature": "int __cdecl core_script_cpp_CScript_processTimer_FUN_005600c0(CScript *this_ptr,float param_2,float *param_3)"
+    "signature": "int __cdecl core_script_cpp_CScript_processTimer_FUN_005600c0(CScript *this_ptr,float delta_time,float *timer_value)"
   },
   "function_calls": [
     {
@@ -121,83 +119,19 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "delta_time",
         "offset": 8,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "timer_value",
         "offset": 12,
         "size": 4,
         "type": "float *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "core_script_cpp_CScript_processTimer_FUN_005600c0(CScript *this_ptr,float param_2,float *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "core_script_cpp_CScript_processTimer_FUN_005600c0(CScript *this_ptr,float param_2,float *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "text": "if (param_2 < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "text": "this_ptr->cmd_timer = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "text": "if (this_ptr->cmd_timer <= *param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "text": "*param_3 = *param_3 - this_ptr->cmd_timer;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "text": "*param_3 = *param_3 - this_ptr->cmd_timer;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "text": "this_ptr->cmd_timer = this_ptr->cmd_timer - *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_3",
-      "text": "*param_3 = 0.0;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

@@ -2,12 +2,11 @@
 // Address: 00609410
 // Address Range: [[00609410, 006094bc]]
 // Convention: __watcallRegister
-// Signature: void * crt_heap_c_AllocateFromFreeList_FUN_00609410 (ulong size,HeapBlock *free_block,ushort ds_segment)
+// Signature: void * __watcallRegister crt_heap_c_AllocateFromFreeList_FUN_00609410(ulong size,HeapBlock *free_block,ushort ds_segment)
 
 #include "nocturne.h"
 
-void * AllocateFromFreeList
-                 (ulong size,HeapBlock *free_block,ushort ds_segment)
+void * __watcallRegister AllocateFromFreeList(ulong size,HeapBlock *free_block,ushort ds_segment)
 
 {
   uint *puVar1;

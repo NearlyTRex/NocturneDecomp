@@ -1,34 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 19,
-        "message": "use of undeclared identifier 'stack0xffffff70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 22,
-        "message": "use of undeclared identifier 'stack0xffffff80'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 39,
+    "complexity_score": 11,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 14,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 54
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
   },
   "cross_references": [
     {
@@ -48,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30",
-    "signature": "int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30 (CCodec *this_ptr,byte *input,int *input_length,byte *output,int *output_length)"
+    "signature": "int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,byte *input,int *input_length,byte *output,int *output_length)"
   },
   "function_calls": [
     {
@@ -144,20 +129,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 12,
-      "match": "&stack0xffffff70",
-      "text": "((istrstream *)&stack0xffffff70,0,(char *)input,*input_length);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xffffff80",
-      "text": "crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca((istrstream *)&stack0xffffff80,0);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

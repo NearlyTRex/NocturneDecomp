@@ -2,13 +2,11 @@
 // Address: 00524660
 // Address Range: [[00524660, 005246fb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660 (CDemonMission *this_ptr,char *out_buf,char *base_name)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660(CDemonMission *this_ptr,char *out_buf,char *base_name)
 
 #include "nocturne.h"
 
-void __cdecl
-core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660
-          (CDemonMission *this_ptr,char *out_buf,char *base_name)
+void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660(CDemonMission *this_ptr,char *out_buf,char *base_name)
 
 {
   char cVar1;

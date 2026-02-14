@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0 (CInputString *this_ptr,char *source_string,int max_length,int param4,int param5, int render_mode)
+; __cdecl void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)
 ;
 ; Parameters:
 ; CInputString *   Stack[0x4]:4   this_ptr

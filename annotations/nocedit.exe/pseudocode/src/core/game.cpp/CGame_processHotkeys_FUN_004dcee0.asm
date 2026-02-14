@@ -31,7 +31,7 @@
 ;   core_game.cpp_CGame_displayMessage_FUN_004d7f20
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004e36f0
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0
-;   core_script.cpp_CScript_FUN_005602b0
+;   core_script.cpp_CScript_resetDialogState_FUN_005602b0
 ;   core_set.cpp_CDemonSet_FUN_0056b7e0
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -813,8 +813,8 @@ section .text
         ;   XREF to: 004dd1d0 (CONDITIONAL_JUMP)  ; LAB_004dd1d0
     MOV ECX,dword ptr [0x00680d50]      ; 004dd6e7 | g_CScriptInstance | g_CScriptPtr
     PUSH ECX                            ; 004dd6ed | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005602b0 ; 004dd6ee
-        ;   XREF to: 005602b0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005602b0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_resetDialogState_FUN_005602b0 ; 004dd6ee
+        ;   XREF to: 005602b0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_resetDialogState_FUN_005602b0(CScript * this_ptr)
     ADD ESP,0x4                         ; 004dd6f3
     JMP 0x004dd1d0                      ; 004dd6f6
         ;   XREF to: 004dd1d0 (UNCONDITIONAL_JUMP)  ; LAB_004dd1d0

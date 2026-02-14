@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_00585970 (C3DSCamera *this_ptr,CVector3f *world_position,float radius)
+; __cdecl int __cdecl core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_00585970(C3DSCamera *this_ptr,CVector3f *world_position,float radius)
 ;
 ; Parameters:
 ; C3DSCamera *     Stack[0x4]:4   this_ptr

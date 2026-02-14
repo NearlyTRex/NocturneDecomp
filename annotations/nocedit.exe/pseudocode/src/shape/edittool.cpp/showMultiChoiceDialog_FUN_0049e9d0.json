@@ -3,33 +3,9 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 16,
-        "line": 53,
+        "column": 14,
+        "line": 58,
         "message": "assigning to 'CEdButton *' from incompatible type 'void *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 59,
-        "message": "use of undeclared identifier 'stack0xfffffeb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 71,
-        "message": "use of undeclared identifier 'stack0xfffffeb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 95,
-        "message": "use of undeclared identifier 'stack0xfffffeb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 97,
-        "message": "use of undeclared identifier 'stack0xfffffeb0'"
       }
     ],
     "success": false,
@@ -37,17 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 585,
-    "complexity_score": 301,
+    "complexity_score": 249,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 26,
-    "pseudocode_lines": 231,
-    "suspect_count": 6,
-    "suspect_types": [
-      "stack_ref",
-      "unaffected_reg"
-    ],
-    "total_lines": 816
+    "pseudocode_lines": 249,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 834
   },
   "cross_references": [
     {
@@ -79,7 +52,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0",
-    "signature": "int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0 (CStrList *str_list,char *dialog_title,int dialog_mode)"
+    "signature": "int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_list,char *dialog_title,int dialog_mode)"
   },
   "function_calls": [
     {
@@ -303,8 +276,8 @@
     },
     {
       "addr": "02cf2b00",
-      "name": "g_ActiveButton",
-      "type": "CEdButton*",
+      "name": "g_ActiveControl",
+      "type": "void*",
       "value": null
     },
     {
@@ -601,48 +574,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xfffffeb0",
-      "text": "pcVar13 = &stack0xfffffeb0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xfffffeb0",
-      "text": "pcVar13 = &stack0xfffffeb0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 88,
-      "match": "&stack0xfffffeb0",
-      "text": "((CStrList *)dialog_title,iVar11,&stack0xfffffeb0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 90,
-      "match": "&stack0xfffffeb0",
-      "text": "iVar5 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0(&stack0xfffffeb0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 163,
-      "match": "unaff_EBP",
-      "text": "iVar11 = unaff_EBP;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

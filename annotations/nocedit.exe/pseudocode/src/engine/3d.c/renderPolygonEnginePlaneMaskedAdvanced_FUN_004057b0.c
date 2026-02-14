@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_3d_c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0(SMRGLHeaderPrimitive *polygon_info)
 
 {
   int iVar1;
@@ -17,19 +16,19 @@ engine_3d_c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0(SMRGLHeaderPrimi
     if (g_AdvancedClippingEnabled == 0) {
       if (g_MMXSupported == 0) {
         if (g_BitsPerPixel == 0x20) {
-          g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
+          g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
         }
         else {
-          g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
+          g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
         }
       }
       else if (g_BitsPerPixel == 0x20) {
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
       }
       else {
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
-      g_RenderStateFlags = RENDER_PERSPECTIVE_ENHANCED;
+      g_RenderStateFlags.dword = RENDER_PERSPECTIVE_ENHANCED;
       g_RenderStateFlag2 = PREPROCESS_TEXTURE_NORMALIZE_ALT;
       engine_clipper_c_clipPolygonToViewport_FUN_00438420
                 ((polygon_info->base).count,(int *)(polygon_info + 1));
@@ -37,19 +36,19 @@ engine_3d_c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0(SMRGLHeaderPrimi
     }
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
       }
       else {
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
       }
     }
     else if (g_BitsPerPixel == 0x20) {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
     }
     else {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags = RENDER_PLANEMASK;
+    g_RenderStateFlags.dword = RENDER_PLANEMASK;
     g_RenderStateFlag2 = PREPROCESS_TEXTURE_NORMALIZE_ALT;
     engine_clipper_c_clipAndRasterize_FUN_004371b0
               ((polygon_info->base).count,(int *)(polygon_info + 1));

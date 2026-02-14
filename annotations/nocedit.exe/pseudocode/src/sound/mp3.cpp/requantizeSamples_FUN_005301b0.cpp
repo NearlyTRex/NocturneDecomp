@@ -2,14 +2,11 @@
 // Address: 005301b0
 // Address Range: [[005301b0, 005302ea]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_requantizeSamples_FUN_005301b0 (SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples ,SMpegSubbandAllocation *allocation,SMpegFrameHeader *header)
+// Signature: void __cdecl sound_mp3_cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrameHeader *header)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_mp3_cpp_requantizeSamples_FUN_005301b0
-          (SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples
-          ,SMpegSubbandAllocation *allocation,SMpegFrameHeader *header)
+void __cdecl sound_mp3_cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrameHeader *header)
 
 {
   int iVar1;

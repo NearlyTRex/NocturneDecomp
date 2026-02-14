@@ -4,14 +4,8 @@
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 22,
+        "line": 21,
         "message": "use of undeclared identifier 'stack0xfffffef0'; did you mean 'in_stack_fffffef0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 31,
-        "message": "use of undeclared identifier 'stack0xfffffff0'"
       },
       {
         "category": "undeclared_identifier",
@@ -25,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 97,
+    "complexity_score": 87,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 37,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
       "stack_ref"
@@ -48,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCodec_processFiles_FUN_0043ec30",
-    "signature": "int __cdecl support_codec_cpp_CCodec_processFiles_FUN_0043ec30 (CCodec *this_ptr,char *input_file_path,char *output_file_path)"
+    "signature": "int __cdecl support_codec_cpp_CCodec_processFiles_FUN_0043ec30(CCodec *this_ptr,char *input_file_path,char *output_file_path)"
   },
   "function_calls": [
     {
@@ -175,31 +169,24 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_fffffef0",
       "text": "void *in_stack_fffffef0;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 15,
+      "line": 14,
       "match": "&stack0xfffffef0",
       "text": "((ifstream *)&stack0xfffffef0,0,(int)input_file_path,(char *)0x101,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_fffffef0",
       "text": "(SIZE_T)in_stack_fffffef0);",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xfffffff0",
-      "text": "(this_ptr,&_Stack_c8,(int)&stack0xfffffff0,(_FILE *)(local_90 + 0x48));",
-      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",

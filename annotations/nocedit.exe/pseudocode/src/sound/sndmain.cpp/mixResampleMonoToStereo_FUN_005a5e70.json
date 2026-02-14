@@ -4,67 +4,67 @@
       {
         "category": "other",
         "column": 28,
-        "line": 35,
+        "line": 32,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 38,
+        "line": 35,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 42,
+        "line": 39,
         "message": "use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_00000010'?"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 43,
+        "line": 40,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 47,
+        "line": 44,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 53,
+        "line": 50,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 69,
+        "line": 66,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 70,
+        "line": 67,
         "message": "use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_00000010'?"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 71,
+        "line": 68,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 10,
-        "line": 72,
+        "line": 69,
         "message": "use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_00000010'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 10,
-        "line": 74,
+        "line": 71,
         "message": "use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_00000010'?"
       }
     ],
@@ -73,11 +73,11 @@
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 399,
+    "complexity_score": 396,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 61,
     "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -86,7 +86,7 @@
       "unknown_field",
       "warning_deadcode_restart"
     ],
-    "total_lines": 179
+    "total_lines": 176
   },
   "cross_references": [
     {
@@ -107,7 +107,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70",
-    "signature": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70 (short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains, double resample_position,double resample_delta,int samples_to_process)"
+    "signature": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)"
   },
   "function_calls": [
     {
@@ -314,203 +314,203 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "int *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 21,
       "match": "in_stack_0000000c",
       "text": "float *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 22,
       "match": "in_stack_00000010",
       "text": "uint in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 28,
+      "line": 25,
       "match": "._0_4_",
       "text": "if (0 < resample_position._0_4_) {",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 26,
       "match": "in_stack_00000010",
       "text": "dVar12 = floor((double)CONCAT44(sample_data,in_stack_00000010));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 26,
       "match": "CONCAT44",
       "text": "dVar12 = floor((double)CONCAT44(sample_data,in_stack_00000010));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 31,
+      "line": 28,
       "match": "._0_4_",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 28,
       "match": "ROUND",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 30,
       "match": "ROUND",
       "text": "local_34 = (longlong)ROUND(dVar12) & 0xffffffff;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 33,
       "match": "._0_4_",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 33,
       "match": "ROUND",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 35,
       "match": "CONCAT44",
       "text": "dVar12 = floor((double)CONCAT44(channel_gains,channel_buffers));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 40,
+      "line": 37,
       "match": "._0_4_",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 37,
       "match": "ROUND",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 39,
       "match": "ROUND",
       "text": "local_34 = (longlong)ROUND(dVar12) & 0xffffffff;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 41,
       "match": "CONCAT44",
       "text": "(((double)CONCAT44(channel_gains,channel_buffers) - (double)local_34) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 46,
+      "line": 43,
       "match": "._0_4_",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 43,
       "match": "ROUND",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 44,
       "match": "in_stack_0000000c",
       "text": "fVar3 = *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 45,
       "match": "in_stack_0000000c",
       "text": "fVar4 = in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 46,
       "match": "in_stack_00000008",
       "text": "iVar5 = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 47,
       "match": "in_stack_00000008",
       "text": "iVar6 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "sVar2 = *(short *)(in_stack_00000004 + iVar10 * 2);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 52,
       "match": "CARRY4",
       "text": "bVar11 = CARRY4(uVar8,(uint)local_34);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 56,
       "match": "in_stack_00000004",
       "text": "(float)*(short *)(in_stack_00000004 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 62,
+      "line": 59,
       "match": "._0_4_",
       "text": "} while (iVar9 < resample_position._0_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
+      "line": 61,
       "match": "._0_4_",
       "text": "(double)resample_position._0_4_ * (double)CONCAT44(channel_gains,channel_buffers) +",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 61,
       "match": "CONCAT44",
       "text": "(double)resample_position._0_4_ * (double)CONCAT44(channel_gains,channel_buffers) +",
       "type": "decompiler_intrinsic"

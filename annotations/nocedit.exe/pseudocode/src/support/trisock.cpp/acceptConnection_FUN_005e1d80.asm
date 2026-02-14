@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80 (SOCKET *listen_socket,SNetworkAddr *client_addr,SOCKET *new_socket)
+; __cdecl int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(SOCKET *listen_socket,SNetworkAddr *client_addr,SOCKET *new_socket)
 ;
 ; Parameters:
 ; SOCKET *         Stack[0x4]:4   listen_socket

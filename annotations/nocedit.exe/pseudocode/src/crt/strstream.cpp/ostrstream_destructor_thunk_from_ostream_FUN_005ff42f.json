@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 38,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 6,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
       "special_crt_function"
     ],
-    "total_lines": 18
+    "total_lines": 16
   },
   "cross_references": [],
   "function": {
@@ -24,7 +24,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_strstream.cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f",
-    "signature": "void __cdecl crt_strstream_cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f (ostream *this_ptr,int dtor_flags)"
+    "signature": "void __cdecl crt_strstream_cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f(ostream *this_ptr,int dtor_flags)"
   },
   "function_calls": [
     {
@@ -89,7 +89,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 8,
+      "line": 6,
       "match": "this_ptr[-2].",
       "text": "((ostrstream *)&this_ptr[-2]._ios.__xalloc_list,dtor_flags);",
       "type": "negative_offset"

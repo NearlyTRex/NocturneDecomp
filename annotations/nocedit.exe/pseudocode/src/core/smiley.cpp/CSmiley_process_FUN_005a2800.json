@@ -5,55 +5,49 @@
         "category": "undeclared_identifier",
         "column": 69,
         "line": 70,
-        "message": "use of undeclared identifier 'stack0xfffffe34'"
+        "message": "use of undeclared identifier 'stack0xfffffe34'; did you mean 'in_stack_fffffe34'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
         "line": 72,
-        "message": "use of undeclared identifier 'stack0xfffffe34'"
+        "message": "use of undeclared identifier 'stack0xfffffe34'; did you mean 'in_stack_fffffe34'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 119,
+        "line": 118,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 119,
+        "line": 118,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 119,
+        "line": 118,
         "message": "use of undeclared identifier 'iRam00000154'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 237,
+        "line": 233,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 237,
+        "line": 233,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 237,
+        "line": 233,
         "message": "use of undeclared identifier 'iRam00000154'"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 397,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -61,20 +55,20 @@
   },
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 664,
+    "complexity_score": 502,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
-    "pseudocode_lines": 389,
-    "suspect_count": 25,
+    "pseudocode_lines": 377,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
-      "suspect_float",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_type_propagation"
     ],
-    "total_lines": 1236
+    "total_lines": 1224
   },
   "cross_references": [],
   "function": {
@@ -752,17 +746,17 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_fffffe40",
-      "text": "CPathMap *in_stack_fffffe40;",
-      "type": "stack_param"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_fffffe4c",
-      "text": "float in_stack_fffffe4c;",
+      "line": 21,
+      "match": "in_stack_fffffe34",
+      "text": "float in_stack_fffffe34;",
       "type": "stack_param"
     },
     {
@@ -780,150 +774,45 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CPathMap *)pCVar2;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 112,
+      "line": 111,
       "match": "code *",
-      "text": "(**(code **)(iRam00000154 + 0x104))();",
+      "text": "(**(code **)(iRam00000154 + 0x104))(0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
+      "line": 153,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_58.z * local_58.z +",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 159,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CPathMap *)0x5a2ec1;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 162,
+      "line": 160,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 163,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CPathMap *)0x9;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 173,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CPathMap *)0x2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 202,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (*((pCVar4->vtable)._ub)->getPathMap)(pCVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 205,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40,pCVar11,fVar13,in_stack_fffffe4c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 205,
-      "match": "in_stack_fffffe4c",
-      "text": "in_stack_fffffe40,pCVar11,fVar13,in_stack_fffffe4c);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 211,
       "match": "SQRT",
       "text": "if ((SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c) <",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CPathMap *)0x5a3037;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 230,
+      "line": 226,
       "match": "code *",
-      "text": "(**(code **)(iRam00000154 + 0x104))();",
+      "text": "(**(code **)(iRam00000154 + 0x104))(0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 272,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CPathMap *)&local_154;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 288,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CPathMap *)0x1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 300,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CPathMap *)0x1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 311,
-      "match": "2.8026e-45",
-      "text": "fVar13 = 2.8026e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 315,
-      "match": "1.4013e-45",
-      "text": "fVar13 = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 359,
-      "match": "in_stack_fffffe40",
-      "text": "in_stack_fffffe40 = (CPathMap *)(this_ptr->base).victim;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 361,
-      "match": "in_stack_fffffe40",
-      "text": "(g_CDemonSetPtr,(CDemonActor *)in_stack_fffffe40);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 390,
-      "match": "in_stack_fffffe40",
-      "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe40);",
+      "line": 379,
+      "match": "in_stack_fffffe34",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffe34);",
       "type": "stack_param"
     }
   ],

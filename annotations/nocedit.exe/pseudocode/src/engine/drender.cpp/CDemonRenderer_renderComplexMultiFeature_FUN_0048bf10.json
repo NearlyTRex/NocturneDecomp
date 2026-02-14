@@ -1,38 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 33,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 36,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 42,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 40,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 38,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 128
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -52,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
   },
   "function_calls": [
     {
@@ -82,7 +63,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {

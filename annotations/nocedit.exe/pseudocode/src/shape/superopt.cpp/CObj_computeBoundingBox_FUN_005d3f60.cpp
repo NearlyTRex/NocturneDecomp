@@ -2,13 +2,11 @@
 // Address: 005d3f60
 // Address Range: [[005d3f60, 005d4066]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_superopt_cpp_CObj_computeBoundingBox_FUN_005d3f60 (CObj *this_ptr,CVector3d *out_min,CVector3d *out_max)
+// Signature: void __cdecl shape_superopt_cpp_CObj_computeBoundingBox_FUN_005d3f60(CObj *this_ptr,CVector3d *out_min,CVector3d *out_max)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CObj_computeBoundingBox_FUN_005d3f60
-          (CObj *this_ptr,CVector3d *out_min,CVector3d *out_max)
+void __cdecl shape_superopt_cpp_CObj_computeBoundingBox_FUN_005d3f60(CObj *this_ptr,CVector3d *out_min,CVector3d *out_max)
 
 {
   CVert *pCVar1;

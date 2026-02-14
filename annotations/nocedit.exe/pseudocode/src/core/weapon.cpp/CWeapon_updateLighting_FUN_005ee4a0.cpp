@@ -46,11 +46,11 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_p
   if (g_CGamePtr->auto_save_blocked == 0) {
     return;
   }
-  core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(&DAT_03f95d7c,(CColor3f *)&CStack_18.y);
-  DAT_03f95d7c.intensity_multiplier = 0x8000;
-  DAT_03f95d7c.intensity._0_1_ = 0x20;
-  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(&DAT_03f95d7c,3.0);
-  DAT_03f95d7c.corona_mode = 0;
+  core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(&CDemonGlobe_03f95d7c,(CColor3f *)&CStack_18.y);
+  CDemonGlobe_03f95d7c.intensity_multiplier = 0x8000;
+  CDemonGlobe_03f95d7c.intensity.bytes[0] = ' ';
+  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(&CDemonGlobe_03f95d7c,3.0);
+  CDemonGlobe_03f95d7c.corona_mode = 0;
   core_set_cpp_CDemonSet_FUN_0056d110(g_CDemonSetPtr);
   return;
 }

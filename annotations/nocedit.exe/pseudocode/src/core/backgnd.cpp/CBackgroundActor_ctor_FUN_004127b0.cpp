@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBackgroundActor * __cdecl
-core_backgnd_cpp_CBackgroundActor_ctor_FUN_004127b0(CBackgroundActor *this_ptr)
+CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_ctor_FUN_004127b0(CBackgroundActor *this_ptr)
 
 {
   CBackgroundActor *pCVar1;

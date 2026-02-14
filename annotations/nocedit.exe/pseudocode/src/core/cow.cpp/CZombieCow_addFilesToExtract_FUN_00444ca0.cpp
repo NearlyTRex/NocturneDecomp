@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_cow_cpp_CZombieCow_addFilesToExtract_FUN_00444ca0(CZombieCow *this_ptr,_FILE *file_handle)
+void __cdecl core_cow_cpp_CZombieCow_addFilesToExtract_FUN_00444ca0(CZombieCow *this_ptr,_FILE *file_handle)
 
 {
   core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0((CDemonActor *)this_ptr,file_handle);

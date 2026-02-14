@@ -13,11 +13,11 @@ void __cdecl computePlaneFromTriangle(SClipPlane *out_plane,CVector3f *vertex_a,
 
 // Original: core_mirror.cpp_computePlaneIntersection_FUN_00521160
 // Address: 00521160
-void __cdecl computePlaneIntersection(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b, CVector3f *out_intersection);
+void __cdecl computePlaneIntersection(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *out_intersection);
 
 // Original: core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290
 // Address: 00521290
-void __cdecl clipPolygonAgainstPlane(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count, CVector3f *output_vertices,int *output_count);
+void __cdecl clipPolygonAgainstPlane(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count);
 
 // Original: core_mirror.cpp_CMirror_ctor_FUN_005213c0
 // Address: 005213c0
@@ -29,7 +29,7 @@ CMirror * __cdecl CMirror::dtor(CMirror *this_ptr,uint flags);
 
 // Original: core_mirror.cpp_CMirror_setupCorners_FUN_00521400
 // Address: 00521400
-void __cdecl CMirror::setupCorners(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3, CVector3f *corner4);
+void __cdecl CMirror::setupCorners(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
 
 // Original: core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480
 // Address: 00521480

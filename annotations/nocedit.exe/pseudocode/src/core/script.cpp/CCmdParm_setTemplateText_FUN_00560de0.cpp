@@ -2,13 +2,11 @@
 // Address: 00560de0
 // Address Range: [[00560de0, 0056160a]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0 (CCmdParm *this_ptr,char *template_text,int *parse_cursor)
+// Signature: int __cdecl core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm *this_ptr,char *template_text,int *parse_cursor)
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0
-          (CCmdParm *this_ptr,char *template_text,int *parse_cursor)
+int __cdecl core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm *this_ptr,char *template_text,int *parse_cursor)
 
 {
   char cVar1;

@@ -26,12 +26,6 @@
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
-        "category": "other",
-        "column": 27,
-        "line": 128,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 19,
         "line": 152,
@@ -114,6 +108,12 @@
         "column": 37,
         "line": 261,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 264,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -121,12 +121,12 @@
   },
   "complexity": {
     "assembly_lines": 1136,
-    "complexity_score": 625,
+    "complexity_score": 615,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "pseudocode_lines": 355,
-    "suspect_count": 24,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
@@ -225,14 +225,14 @@
       "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150"
     },
     {
-      "addr": "00559b20",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00559b20"
-    },
-    {
       "addr": "00559d80",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_renderEditor_FUN_00559d80"
+    },
+    {
+      "addr": "00559b20",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_00559b20"
     },
     {
       "addr": "0056be80",
@@ -693,7 +693,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -1321,13 +1321,6 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_94 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 121,
-      "match": "._0_1_",
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
-      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",

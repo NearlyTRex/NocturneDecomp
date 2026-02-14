@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_archiveLocation_FUN_0040b480(CLocation *location_ptr,char *property_name)
+void __cdecl core_actor_cpp_archiveLocation_FUN_0040b480(CLocation *location_ptr,char *property_name)
 
 {
   int iVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_pendulum_cpp_CPendulum_hasCollision_FUN_0054a550 (CPendulum *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_pendulum_cpp_CPendulum_hasCollision_FUN_0054a550(CPendulum *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CPendulum *      Stack[0x4]:4   this_ptr

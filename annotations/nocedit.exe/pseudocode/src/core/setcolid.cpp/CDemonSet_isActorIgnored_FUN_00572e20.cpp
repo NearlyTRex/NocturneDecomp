@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(CDemonSet *this_ptr,CDemonActor *actor)
+int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(CDemonSet *this_ptr,CDemonActor *actor)
 
 {
   int iVar1;

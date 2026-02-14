@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl
-shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T size,char *filename,int line_number)
+void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T size,char *filename,int line_number)
 
 {
   SMemHead *dest;

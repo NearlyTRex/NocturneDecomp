@@ -2,13 +2,11 @@
 // Address: 004ef990
 // Address Range: [[004ef990, 004efb60]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990 (CGround *this_ptr,int world_column,int world_row)
+// Signature: void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990(CGround *this_ptr,int world_column,int world_row)
 
 #include "nocturne.h"
 
-void __cdecl
-core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990
-          (CGround *this_ptr,int world_column,int world_row)
+void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990(CGround *this_ptr,int world_column,int world_row)
 
 {
   int iVar1;

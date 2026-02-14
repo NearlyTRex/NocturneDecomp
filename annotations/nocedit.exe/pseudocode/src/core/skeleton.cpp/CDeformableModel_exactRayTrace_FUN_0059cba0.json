@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 77,
+        "line": 74,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 229,
-    "complexity_score": 119,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
-    "pseudocode_lines": 89,
+    "pseudocode_lines": 86,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_many",
       "stack_ref"
     ],
-    "total_lines": 318
+    "total_lines": 315
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0",
-    "signature": "float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0 (CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction, CVector3i *skinned_vertices,byte *part_visibility_flags)"
+    "signature": "float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3i *skinned_vertices,byte *part_visibility_flags)"
   },
   "function_calls": [
     {
@@ -418,7 +418,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 70,
+      "line": 67,
       "match": "&stack0x00000000",
       "text": "if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 3) {",
       "type": "stack_ref"

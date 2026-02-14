@@ -253,7 +253,7 @@ int __cdecl findVertexMatches(int *vertices1,int *vertices2,int count1,int count
 
 // Original: shape_design.c_arePolygonsCoplanar_FUN_00461b70
 // Address: 00461b70
-int __cdecl arePolygonsCoplanar(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,float scale_factor, int tolerance);
+int __cdecl arePolygonsCoplanar(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,float scale_factor,int tolerance);
 
 // Original: shape_design.c_clampedArccos_FUN_00461c50
 // Address: 00461c50
@@ -457,7 +457,7 @@ int __cdecl getVertexCountFromModel(SMRGLHeaderExtended *model_ptr);
 
 // Original: shape_design.c_applyVertexCentering_FUN_004680f0
 // Address: 004680f0
-void __cdecl applyVertexCentering(SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list, int reference_vertex_id);
+void __cdecl applyVertexCentering(SMRGLHeaderExtended *target_model,CVector3i *reference_vertex_list,int reference_vertex_id);
 
 // Original: shape_design.c_centerKeyframeModels_FUN_004681a0
 // Address: 004681a0
@@ -565,7 +565,7 @@ int __cdecl wrapCoordinate(int coordinate,int dimension);
 
 // Original: shape_design.c_samplePixelAndAccumulate_FUN_0046ad00
 // Address: 0046ad00
-void __cdecl samplePixelAndAccumulate(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x, int pixel_y,double weight,double *red_accumulator,double *green_accumulator, double *blue_accumulator,double *alpha_accumulator);
+void __cdecl samplePixelAndAccumulate(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x,int pixel_y,double weight,double *red_accumulator,double *green_accumulator,double *blue_accumulator,double *alpha_accumulator);
 
 // Original: shape_design.c_calculateSamplingWeight_FUN_0046adc0
 // Address: 0046adc0
@@ -573,11 +573,11 @@ double __cdecl calculateSamplingWeight(double current_pos,double start_coord,dou
 
 // Original: shape_design.c_sampleAndFilterPixel_FUN_0046ae20
 // Address: 0046ae20
-void __cdecl sampleAndFilterPixel(void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1, double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height, byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out);
+void __cdecl sampleAndFilterPixel(void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1,double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height,byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out);
 
 // Original: shape_design.c_loadTextureData_FUN_0046b060
 // Address: 0046b060
-void __cdecl loadTextureData(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width, int atlas_height);
+void __cdecl loadTextureData(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height);
 
 // Original: shape_design.c_initializeCramConfig_FUN_0046b6e0
 // Address: 0046b6e0
@@ -585,7 +585,7 @@ void __cdecl initializeCramConfig(SCramConfig *cram_config);
 
 // Original: shape_design.c_quantizePaletteColors_FUN_0046b770
 // Address: 0046b770
-void __cdecl quantizePaletteColors(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag, char *bit_mask);
+void __cdecl quantizePaletteColors(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag,char *bit_mask);
 
 // Original: shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
 // Address: 0046b9a0

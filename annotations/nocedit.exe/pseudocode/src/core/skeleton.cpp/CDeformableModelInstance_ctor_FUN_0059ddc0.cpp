@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDeformableModelInstance * __cdecl
-core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelInstance *this_ptr)
+CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelInstance *this_ptr)
 
 {
   CMotionController *pCVar1;

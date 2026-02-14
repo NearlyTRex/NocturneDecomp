@@ -2,13 +2,11 @@
 // Address: 0040bae0
 // Address Range: [[0040bae0, 0040bd6e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0 (CDeformableModelInstance *model_ptr,char *property_name)
+// Signature: void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance *model_ptr,char *property_name)
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_archivePartStatus_FUN_0040bae0
-          (CDeformableModelInstance *model_ptr,char *property_name)
+void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance *model_ptr,char *property_name)
 
 {
   int iVar1;

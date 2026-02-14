@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CMotionController * __cdecl
-core_motion_cpp_CMotionController_ctor_FUN_0052d570(CMotionController *this_ptr)
+CMotionController * __cdecl core_motion_cpp_CMotionController_ctor_FUN_0052d570(CMotionController *this_ptr)
 
 {
   this_ptr->vtable = &g_CMotionControllerVTable;

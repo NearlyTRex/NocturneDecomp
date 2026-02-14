@@ -2,13 +2,11 @@
 // Address: 0058a260
 // Address Range: [[0058a260, 0058a2a3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260 (CDeformableModelInstance *this_ptr,_FILE *file_handle)
+// Signature: void __cdecl core_skeledit_cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260(CDeformableModelInstance *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260
-          (CDeformableModelInstance *this_ptr,_FILE *file_handle)
+void __cdecl core_skeledit_cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260(CDeformableModelInstance *this_ptr,_FILE *file_handle)
 
 {
   CDeformableModel *this_ptr_00;

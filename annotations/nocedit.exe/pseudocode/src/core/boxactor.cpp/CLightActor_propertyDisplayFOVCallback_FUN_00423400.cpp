@@ -2,13 +2,11 @@
 // Address: 00423400
 // Address Range: [[00423400, 00423434]]
 // Convention: __cdecl
-// Signature: void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayFOVCallback_FUN_00423400 (CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayFOVCallback_FUN_00423400(CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_boxactor_cpp_CLightActor_propertyDisplayFOVCallback_FUN_00423400
-          (CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayFOVCallback_FUN_00423400(CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   CLightActor *pCVar1;

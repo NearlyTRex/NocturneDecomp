@@ -1,26 +1,18 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 25,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 81,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 4,
     "pseudocode_lines": 51,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
       "undefined_data"
     ],
     "total_lines": 207
@@ -186,13 +178,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffffdc",
-      "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);",
-      "type": "stack_ref"
-    },
     {
       "description": "Undefined global data reference",
       "line": 42,

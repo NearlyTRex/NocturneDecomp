@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0 (float *input_samples,float *output_samples,SMpegFrame *frame_info,void *unused_param4)
+; __cdecl void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_samples,float *output_samples,SMpegFrame *frame_info,void *unused_param4)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   input_samples

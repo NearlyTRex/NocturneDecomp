@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 194,
+    "complexity_score": 192,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 17,
     "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 82
+    "total_lines": 80
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_msnedit.cpp_CDemonMission_FUN_0053c970",
-    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c970 (CDemonMission *this_ptr,int param_2,int param_3,int param_4)"
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c970(CDemonMission *this_ptr,int param_2,int param_3,int param_4)"
   },
   "function_calls": [
     {
@@ -175,63 +175,70 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
-      "text": "(CDemonMission *this_ptr,int param_2,int param_3,int param_4)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c970(CDemonMission *this_ptr,int param_2,int param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
-      "text": "(CDemonMission *this_ptr,int param_2,int param_3,int param_4)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c970(CDemonMission *this_ptr,int param_2,int param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
-      "text": "(CDemonMission *this_ptr,int param_2,int param_3,int param_4)",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c970(CDemonMission *this_ptr,int param_2,int param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_2",
       "text": "if ((((param_2 != 0) && (DAT_02f7c53c != 3)) && (DAT_02f7c53c != 4)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 8,
       "match": "DAT_02f7c53c",
       "text": "if ((((param_2 != 0) && (DAT_02f7c53c != 3)) && (DAT_02f7c53c != 4)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 8,
       "match": "DAT_02f7c53c",
       "text": "if ((((param_2 != 0) && (DAT_02f7c53c != 3)) && (DAT_02f7c53c != 4)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_3",
       "text": "(((this_ptr->unk1 < param_3 && (param_3 < this_ptr->unk3)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_3",
       "text": "(((this_ptr->unk1 < param_3 && (param_3 < this_ptr->unk3)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
+      "match": "param_4",
+      "text": "((this_ptr->unk2 < param_4 && (param_4 < this_ptr->unk4)))))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
       "match": "param_4",
       "text": "((this_ptr->unk2 < param_4 && (param_4 < this_ptr->unk4)))))) {",
       "type": "unnamed_param"
@@ -239,41 +246,34 @@
     {
       "description": "Unnamed function parameter",
       "line": 12,
-      "match": "param_4",
-      "text": "((this_ptr->unk2 < param_4 && (param_4 < this_ptr->unk4)))))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
       "match": "param_3",
       "text": "pfVar1 = core_msnedit_cpp_FUN_00535c60(local_14,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_4",
       "text": "pfVar1 = core_msnedit_cpp_FUN_00535c60(local_14,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "text": "*(float *)(param_2 + 0x20) = *pfVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "text": "*(float *)(param_2 + 0x24) = pfVar1[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_2",
       "text": "*(float *)(param_2 + 0x28) = pfVar1[2];",
       "type": "unnamed_param"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -13,7 +13,7 @@
 ;   undefined4 g_VertexIndexBuffer[1]
 ;   undefined4 g_VertexIndexBuffer[2]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

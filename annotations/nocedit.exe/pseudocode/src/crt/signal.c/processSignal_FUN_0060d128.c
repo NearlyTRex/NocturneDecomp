@@ -39,7 +39,7 @@ int __watcallStack processSignal(int signal_number)
 switchD_0060d141_caseD_c:
   if (((pcVar1 != (code *)0x1) && (pcVar1 != (code *)0x2)) && (pcVar1 != (code *)0x3)) {
     setSignalHandler(signal_number,2);
-    (*pcVar1)();
+    (*pcVar1)(signal_number);
   }
   iVar2 = FUN_0060cf80();
   if (iVar2 != 0) {

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBaronWeapon * __cdecl
-core_baron_cpp_CBaronWeapon_dtor_FUN_004140b0(CBaronWeapon *this_ptr,uint flags)
+CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_dtor_FUN_004140b0(CBaronWeapon *this_ptr,uint flags)
 
 {
   CBaronWeapon *ptr;

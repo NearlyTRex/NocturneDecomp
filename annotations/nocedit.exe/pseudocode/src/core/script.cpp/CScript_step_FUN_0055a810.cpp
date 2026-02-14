@@ -2,13 +2,13 @@
 // Address: 0055a810
 // Address Range: [[0055a810, 0055c9e6] [0055ca7e, 0055fef3]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int param_2)
+// Signature: int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int param_2)
+int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining)
 
 {
   CGabriella *this_ptr_00;
@@ -139,10 +139,9 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int para
   C3DSLight *local_118;
   int local_114;
   int local_110;
-  char *local_10c;
+  int local_10c;
   int local_108;
   char *local_104;
-  int local_100;
   int local_fc;
   char *local_f8;
   char *local_f4;
@@ -491,15 +490,15 @@ LAB_0055bb9d:
                     if ((iVar6 == 0) &&
                        ((g_CharacterClassificationTable[(byte)(pcVar17[0x15] + 1)] & 0xe0) == 0)) {
                       local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0x15);
-                      local_10c = (char *)0xffffffff;
+                      local_10c = -1;
                       sscanf
                                 (local_11c,"(%[^,], %[^)])%n",local_190c,local_1a9c,&local_10c);
-                      if ((int)local_10c < 2) {
+                      if (local_10c < 2) {
                         _sprintf
                                   (g_ScriptErrorBuffer,"Error parsing attachActorToPlatform command parms");
                         return -1;
                       }
-                      local_11c = local_11c + (int)local_10c;
+                      local_11c = local_11c + local_10c;
                       core_script_cpp_trimString_FUN_00559360(local_190c);
                       core_script_cpp_trimString_FUN_00559360(local_1a9c);
                       pCVar9 = (CPlatform *)
@@ -752,7 +751,7 @@ LAB_0055c37e:
                                          (local_114 = 
                                                   core_script_cpp_CScript_processTimer_FUN_005600c0
                                                             (this_ptr,this_ptr->dialog_wav_time,
-                                                             (float *)param_2), 0 < local_114)) {
+                                                             time_remaining), 0 < local_114)) {
                                         core_script_cpp_CScript_setSpeaker_FUN_00560140
                                                   (this_ptr,this_ptr->who_is_speaking);
                                       }
@@ -1525,8 +1524,8 @@ LAB_0055a97f:
                                                   local_11c = local_11c + 1;
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     (*(((local_c4->base).base.vtable._ue)->_ue).
-                                                      updateVictim)(local_c4,(float)(uint)(local_c0 
-                                                  == 0));
+                                                      updateVictim)(local_c4,SUB14(local_c0 == 0,0))
+                                                    ;
                                                   }
                                                   }
                                                   else {
@@ -2256,7 +2255,7 @@ LAB_0055e656:
                                                      (local_114 = 
                                                   core_script_cpp_CScript_processTimer_FUN_005600c0
                                                             (this_ptr,this_ptr->dialog_wav_time,
-                                                             (float *)param_2), 0 < local_114)) {
+                                                             time_remaining), 0 < local_114)) {
                                                     core_script_cpp_CScript_setSpeaker_FUN_00560140
                                                               (this_ptr,this_ptr->who_is_speaking);
                                                   }
@@ -3103,7 +3102,7 @@ LAB_0055f91c:
                                                   } while (cVar2 != '\0');
                                                   local_114 = 
                                                   core_script_cpp_CScript_processTimer_FUN_005600c0
-                                                            (this_ptr,local_30,(float *)param_2);
+                                                            (this_ptr,local_30,time_remaining);
                                                   if (0 < local_114) {
                                                     this_ptr->current_message[0] = '\0';
                                                   }
@@ -3176,7 +3175,7 @@ LAB_0055f91c:
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     local_114 = 
                                                   core_script_cpp_CScript_processTimer_FUN_005600c0
-                                                            (this_ptr,local_24,(float *)param_2);
+                                                            (this_ptr,local_24,time_remaining);
                                                   }
                                                   }
                                                   else {
@@ -3358,13 +3357,13 @@ LAB_0055f91c:
     }
   }
 LAB_0055a8bb:
-  if ((g_ScriptEventsEnabled != 2) && (*local_10c != '\0')) {
+  if ((g_ScriptEventsEnabled != 2) && ((char)local_118->light_type != '\0')) {
     _sprintf
-              (g_ScriptErrorBuffer,"Extra characters \"%s\" on line %d",local_10c,local_114);
+              (g_ScriptErrorBuffer,"Extra characters \"%s\" on line %d",local_118,local_120);
     return -1;
   }
 LAB_0055a8d4:
-  if (local_104 == (char *)0x1) {
+  if (local_110 == 1) {
     this_ptr->dialog_wav_time = -1.0;
     iVar6 = g_ScriptEventsEnabled;
     this_ptr->cmd_timer = -1.0;
@@ -3373,9 +3372,9 @@ LAB_0055a8d4:
       return -1;
     }
   }
-  else if (-1 < (int)local_104) {
-    this_ptr->next_cmd = local_100;
-    return (int)local_104;
+  else if (-1 < local_110) {
+    this_ptr->next_cmd = local_10c;
+    return local_110;
   }
-  return (int)local_104;
+  return local_110;
 }

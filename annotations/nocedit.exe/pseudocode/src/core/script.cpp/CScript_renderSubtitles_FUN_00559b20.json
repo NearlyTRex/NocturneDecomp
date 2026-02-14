@@ -1,0 +1,302 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 221,
+    "complexity_score": 71,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 17,
+    "pseudocode_lines": 71,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 292
+  },
+  "cross_references": [
+    {
+      "addr": "004da100",
+      "from_addr": "004da55e",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00559b20",
+    "address_range": [
+      [
+        "00559b20",
+        "00559d70"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_renderSubtitles_FUN_00559b20",
+    "signature": "void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042f9e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0"
+    },
+    {
+      "addr": "00559ac0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0"
+    },
+    {
+      "addr": "00403170",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    },
+    {
+      "addr": "00406d80",
+      "is_variadic": false,
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
+    },
+    {
+      "addr": "004cda80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_004cda80"
+    },
+    {
+      "addr": "004d01d0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
+    },
+    {
+      "addr": "004cfe80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
+    },
+    {
+      "addr": "004d0010",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_wrapText_FUN_004d0010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00641794",
+      "name": "FLOAT_00641794",
+      "type": "float",
+      "value": "0.3500000"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "020a5718",
+      "name": "g_MediumFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "020a571c",
+      "name": "g_TinyFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "020a5724",
+      "name": "g_SmallEditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "020a572c",
+      "name": "g_MicroFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81aac",
+      "name": "DAT_02d81aac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81cc4",
+      "name": "DAT_02d81cc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02fa8cd0",
+      "name": "g_MessageCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031061e0",
+      "name": "g_PreviousLetterboxMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031061e8",
+      "name": "g_ScriptSubtitleLines",
+      "type": "char[10][1024]",
+      "value": null
+    },
+    {
+      "addr": "031065e8",
+      "name": "DAT_031065e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310f4a0",
+      "name": "g_ScriptTimeScale",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.327868852459017,
+    "instruction_count": 183,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 6,
+      "BRANCH": 2,
+      "CALL": 10,
+      "CBRANCH": 13,
+      "COPY": 226,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 48,
+      "INT_AND": 140,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 97,
+      "INT_LEFT": 9,
+      "INT_LESS": 16,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 26,
+      "INT_OR": 23,
+      "INT_SBORROW": 19,
+      "INT_SCARRY": 16,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 46,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 66,
+      "INT_XOR": 3,
+      "INT_ZEXT": 10,
+      "LOAD": 24,
+      "POPCOUNT": 46,
+      "RETURN": 1,
+      "STORE": 53,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 975
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "suspects": []
+}

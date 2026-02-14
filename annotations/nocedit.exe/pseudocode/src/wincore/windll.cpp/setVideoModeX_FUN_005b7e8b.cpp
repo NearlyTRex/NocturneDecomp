@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-wincore_windll_cpp_setVideoModeX_FUN_005b7e8b(int width,int height,int bits_per_pixel,int flags)
+int __cdecl wincore_windll_cpp_setVideoModeX_FUN_005b7e8b(int width,int height,int bits_per_pixel,int flags)
 
 {
   int iVar1;

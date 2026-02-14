@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770 (CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count, int render_flags)
+; __cdecl void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

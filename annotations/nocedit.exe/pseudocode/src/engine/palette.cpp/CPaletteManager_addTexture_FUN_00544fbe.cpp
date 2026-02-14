@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager *this_ptr,char *filename)
+void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager *this_ptr,char *filename)
 
 {
   char cVar1;

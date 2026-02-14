@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_setdir_cpp_CBoundingBox3D_arrdtor_FUN_005768f0(CBoundingBox3D *objs,uint flags)
+CBoundingBox3D * __cdecl core_setdir_cpp_CBoundingBox3D_arrdtor_FUN_005768f0(CBoundingBox3D *objs,uint flags)
 
 {
   CBoundingBox3D *pCVar1;

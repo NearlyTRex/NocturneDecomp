@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_tvbat_cpp_CTVBat_hasCollision_FUN_005e50d0(CTVBat *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_tvbat_cpp_CTVBat_hasCollision_FUN_005e50d0(CTVBat *this_ptr,SCollisionInfo *collision_info)
 
 {
   if ((0.0 < (this_ptr->base).base.hit_points) && (this_ptr->state != 3)) {

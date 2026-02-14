@@ -2,14 +2,11 @@
 // Address: 0048c8d0
 // Address Range: [[0048c8d0, 0048c957]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,RenderScanlineFunc *scanline_renderer )
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,RenderScanlineFunc *scanline_renderer)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,RenderScanlineFunc *scanline_renderer
-          )
+void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,RenderScanlineFunc *scanline_renderer)
 
 {
   int iVar1;
@@ -28,7 +25,7 @@ engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
       return;
     }
   }
-  g_RenderStateFlags = RENDER_TEXTURE_COMPLEX;
+  g_RenderStateFlags.dword = RENDER_TEXTURE_COMPLEX;
   g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
   core_xform_cpp_transformAndClipGeometry_FUN_005f8550((prim->base).count,(int *)(prim + 1));
   if (g_ClippedVertexCount < 3) {

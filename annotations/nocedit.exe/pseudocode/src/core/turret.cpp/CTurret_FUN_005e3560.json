@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 72,
-        "line": 34,
-        "message": "use of undeclared identifier 'stack0xffffffac'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 91,
+    "complexity_score": 78,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 61,
-    "suspect_count": 2,
+    "pseudocode_lines": 63,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_ref"
+      "param_count_too_few"
     ],
-    "total_lines": 135
+    "total_lines": 137
   },
   "cross_references": [
     {
@@ -159,13 +151,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xffffffac",
-      "text": "(this_ptr->guard_zone_box_trigger,(CBoundingBox3D *)&stack0xffffffac);",
-      "type": "stack_ref"
-    },
     {
       "call_site_count": 2,
       "declared_params": 1,

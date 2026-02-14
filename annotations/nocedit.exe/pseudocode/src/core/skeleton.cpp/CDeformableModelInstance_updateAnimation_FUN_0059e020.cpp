@@ -2,13 +2,11 @@
 // Address: 0059e020
 // Address Range: [[0059e020, 0059e062]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 (CDeformableModelInstance *this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
-          (CDeformableModelInstance *this_ptr)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance *this_ptr)
 
 {
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0

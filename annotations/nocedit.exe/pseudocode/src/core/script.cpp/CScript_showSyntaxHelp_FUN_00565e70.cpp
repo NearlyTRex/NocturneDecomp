@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_script_cpp_CScript_showSyntaxHelp_FUN_00565e70(CScript *this_ptr,int column,int line)
+void __cdecl core_script_cpp_CScript_showSyntaxHelp_FUN_00565e70(CScript *this_ptr,int column,int line)
 
 {
   CStrList *this_ptr_00;

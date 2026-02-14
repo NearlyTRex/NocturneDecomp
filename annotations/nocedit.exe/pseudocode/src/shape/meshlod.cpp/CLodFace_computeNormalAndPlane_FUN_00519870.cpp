@@ -2,13 +2,11 @@
 // Address: 00519870
 // Address Range: [[00519870, 00519b49]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos,CVector3f *vertex2_pos)
+// Signature: int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos,CVector3f *vertex2_pos)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870
-          (CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos,CVector3f *vertex2_pos)
+int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos,CVector3f *vertex2_pos)
 
 {
   float *pfVar1;

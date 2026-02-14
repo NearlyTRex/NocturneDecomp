@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl
-parse_timezone_spec(char *tz_string,char *name_buffer,int *offset_seconds)
+char * __cdecl parse_timezone_spec(char *tz_string,char *name_buffer,int *offset_seconds)
 
 {
   byte bVar1;

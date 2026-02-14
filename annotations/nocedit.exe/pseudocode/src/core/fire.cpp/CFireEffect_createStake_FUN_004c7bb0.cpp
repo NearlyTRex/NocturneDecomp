@@ -2,14 +2,11 @@
 // Address: 004c7bb0
 // Address Range: [[004c7bb0, 004c7cfa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0 (CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles, CVector3f *surface_normal,int material_type)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int material_type)
 
 #include "nocturne.h"
 
-void __cdecl
-core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0
-          (CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,
-          CVector3f *surface_normal,int material_type)
+void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int material_type)
 
 {
   bool bVar1;

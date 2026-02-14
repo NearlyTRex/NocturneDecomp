@@ -53,7 +53,7 @@ void __cdecl ::strcpy(char *dest,char *src);
 
 // Original: crt_watcom.c_memavl_FUN_006008f0
 // Address: 006008f0
-uint memavl(void);
+uint __watcallRegister memavl(void);
 
 // Original: crt_watcom.c__memmax_FUN_00600940
 // Address: 00600940

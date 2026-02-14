@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CAlphaBitmap * __cdecl
-engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *this_ptr,uint flags)
+CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *this_ptr,uint flags)
 
 {
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(this_ptr);

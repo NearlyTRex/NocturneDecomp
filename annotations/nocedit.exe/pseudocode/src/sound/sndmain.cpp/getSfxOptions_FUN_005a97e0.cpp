@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-sound_sndmain_cpp_getSfxOptions_FUN_005a97e0(uint sfx_handle,CSfxOptions *output_options)
+int __cdecl sound_sndmain_cpp_getSfxOptions_FUN_005a97e0(uint sfx_handle,CSfxOptions *output_options)
 
 {
   CSfxSlot *this_ptr;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_3d_c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture *anim_texture)
+SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture *anim_texture)
 
 {
   char cVar1;

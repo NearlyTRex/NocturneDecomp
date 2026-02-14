@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CMultiCram * __cdecl
-shape_multicrm_cpp_CMultiCram_getModelCount_FUN_0053ee40(CMultiCram *this_ptr,int *model_count_ptr)
+CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_getModelCount_FUN_0053ee40(CMultiCram *this_ptr,int *model_count_ptr)
 
 {
   this_ptr->model_count = *model_count_ptr;

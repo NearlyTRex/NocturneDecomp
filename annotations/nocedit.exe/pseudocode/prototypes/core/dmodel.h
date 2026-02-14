@@ -41,7 +41,7 @@ void __cdecl CKeyFramedModel::free(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
 // Address: 00477850
-void __cdecl CKeyFramedModel::prepareForRender(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index, int render_flags);
+void __cdecl CKeyFramedModel::prepareForRender(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index,int render_flags);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
 // Address: 00477890
@@ -53,11 +53,11 @@ void __cdecl CKeyFramedModel::rotateAndLightVertices(CKeyFramedModel *this_ptr,C
 
 // Original: core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
 // Address: 00477980
-void __cdecl CKeyFramedModel::submitToRenderer(CKeyFramedModel *this_ptr,int frame_index,int render_flags, CKeyFramedModelInstance *instance);
+void __cdecl CKeyFramedModel::submitToRenderer(CKeyFramedModel *this_ptr,int frame_index,int render_flags);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0
 // Address: 00477bf0
-void __cdecl CKeyFramedModel::allocate(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count, int part_count,int frame_count);
+void __cdecl CKeyFramedModel::allocate(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00477e60
 // Address: 00477e60
@@ -73,15 +73,15 @@ void __cdecl CKeyFramedModel::captureTextures(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
 // Address: 004781d0
-float __cdecl CKeyFramedModel::intersectRay(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *output_normal);
+float __cdecl CKeyFramedModel::intersectRay(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *output_normal);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00478650
 // Address: 00478650
-void __cdecl CKeyFramedModel::intersectCylinder(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder, CVector3f *transform_vector);
+void __cdecl CKeyFramedModel::intersectCylinder(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder,CVector3f *transform_vector);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
 // Address: 00478740
-int __cdecl CKeyFramedModel::getFloorHeight(CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height, CVector3f *transform_vector);
+int __cdecl CKeyFramedModel::getFloorHeight(CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height,CVector3f *transform_vector);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830
 // Address: 00478830
@@ -221,7 +221,7 @@ int __cdecl copyFile(char *source_filename,char *destination_filename,int show_e
 
 // Original: core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50
 // Address: 0047ca50
-int __cdecl CKeyFramedModel::copyTextureFiles(CKeyFramedModel *this_ptr,char *source_drive,char *source_directory, char *destination_drive,char *destination_directory);
+int __cdecl CKeyFramedModel::copyTextureFiles(CKeyFramedModel *this_ptr,char *source_drive,char *source_directory,char *destination_drive,char *destination_directory);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
 // Address: 0047cbc0

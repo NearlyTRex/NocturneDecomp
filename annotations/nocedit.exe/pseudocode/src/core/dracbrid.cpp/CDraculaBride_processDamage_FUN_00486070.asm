@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070 (CDraculaBride *this_ptr,SDamageInfo *damage_info)
+; __cdecl void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDraculaBride *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CDraculaBride *  Stack[0x4]:4   this_ptr

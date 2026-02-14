@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[8]:
-;   core_script.cpp_CScript_FUN_00565130 at 00565a62
-;   core_script.cpp_CScript_FUN_00565f70 at 0056604f
-;   core_script.cpp_CScript_FUN_00566080 at 0056612e
-;   core_script.cpp_CScript_FUN_005677a0 at 005679df
+;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 at 005679df
+;   core_script.cpp_CScript_checkSyntax_FUN_00566080 at 0056612e
 ;   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 at 00565c4b
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564d2a
 ;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565e0b
 ;   core_script.cpp_CScript_initEditorLayout_FUN_00566660 at 005667e3
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 00565a62
+;   core_script.cpp_CScript_setParameterValue_FUN_00565f70 at 0056604f
 ;
 ; Referenced Globals:
 ;   int g_CurrentEditingColumn

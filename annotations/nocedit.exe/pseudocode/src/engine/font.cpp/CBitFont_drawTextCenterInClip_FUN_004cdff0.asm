@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0 (CBitFont *this_ptr,int y,int color_mode,int color_value,char *text)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0(CBitFont *this_ptr,int y,int color_mode,int color_value,char *text)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

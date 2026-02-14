@@ -18,7 +18,8 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6540(CGabriella *this_ptr)
   float *pfVar7;
   float in_stack_00000008;
   int in_stack_0000000c;
-  CVector3f local_134 [12];
+  CVector3f local_134 [10];
+  byte auStack_bc [24];
   float fStack_a4;
   float fStack_a0;
   float fStack_9c;
@@ -80,9 +81,11 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6540(CGabriella *this_ptr)
     }
     else {
       __arrinit(local_134,10,&g_CVectorTypeInfo);
-      iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 8) + 0x154) + 0x4c))();
+      iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 8) + 0x154) + 0x4c))
+                        (*(int *)(this_ptr->unk1 + 8),local_134);
       if (iVar5 < 1) {
-        pfVar7 = (float *)(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 8) + 0x154) + 0x14))();
+        pfVar7 = (float *)(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 8) + 0x154) + 0x14))
+                                    (*(int *)(this_ptr->unk1 + 8),auStack_bc);
         fStack_a4 = *pfVar7 + pfVar7[3];
         fStack_a0 = pfVar7[1] + pfVar7[4];
         CStack_8c.x = fStack_a4 * 0.5f;

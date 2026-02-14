@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CKeyFramedModelInstance * __cdecl
-core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance *this_ptr)
+CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance *this_ptr)
 
 {
   this_ptr->model_name[0] = '\0';

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_boxactor_cpp_CBoxActor_pickup_FUN_004224e0(CBoxActor *this_ptr,CDemonActor *carrier)
+void __cdecl core_boxactor_cpp_CBoxActor_pickup_FUN_004224e0(CBoxActor *this_ptr,CDemonActor *carrier)
 
 {
   this_ptr->carrier_actor = carrier;

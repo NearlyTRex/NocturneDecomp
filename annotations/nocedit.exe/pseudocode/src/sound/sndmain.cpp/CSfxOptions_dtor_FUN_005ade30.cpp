@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CSfxOptions * __cdecl
-sound_sndmain_cpp_CSfxOptions_dtor_FUN_005ade30(CSfxOptions *this_ptr,uint flags)
+CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_005ade30(CSfxOptions *this_ptr,uint flags)
 
 {
   return this_ptr;

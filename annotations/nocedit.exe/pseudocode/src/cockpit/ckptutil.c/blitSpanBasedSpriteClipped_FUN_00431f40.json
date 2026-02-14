@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 243,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "pseudocode_lines": 83,
+    "pseudocode_lines": 80,
     "suspect_count": 15,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 322
+    "total_lines": 319
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40",
-    "signature": "void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00431f40 (void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width ,int height)"
+    "signature": "void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00431f40(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height)"
   },
   "function_calls": [
     {
@@ -289,98 +289,98 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 23,
       "match": "(void *)((int)",
       "text": "sprite_data = (void *)((int)sprite_data + width * screen_y + screen_x);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 32,
       "match": "(int *)((int)",
       "text": "while (piVar3 = (int *)((int)span_data + local_30), iVar9 < *piVar3) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 33,
       "match": "(int *)((int)",
       "text": "iVar4 = *(int *)((int)piVar3 + iVar7 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 34,
       "match": "(int *)((int)",
       "text": "iVar5 = *(int *)((int)piVar3 + iVar7 + 0x44) + iVar4 + -1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 41,
       "match": "(void *)((int)",
       "text": "(*pCVar2)((void *)((iVar4 + local_18) - src_x),(void *)((int)sprite_data + iVar4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 49,
       "match": "(void *)((int)",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 54,
       "match": "(void *)((int)",
       "text": "local_1c = (void *)((int)g_ScreenBufferArray[src_y + screen_y] + screen_x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 60,
       "match": "(int *)((int)",
       "text": "while (piVar3 = (int *)((int)span_data + local_2c), iVar9 < *piVar3) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 61,
       "match": "(int *)((int)",
       "text": "iVar4 = *(int *)((int)piVar3 + iVar7 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 62,
       "match": "(int *)((int)",
       "text": "iVar5 = *(int *)((int)piVar3 + iVar7 + 0x44) + iVar4 + -1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 69,
       "match": "(void *)((int)",
       "text": "(*pCVar2)((void *)((int)local_1c + src_x * -2 + iVar4 * 2),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 70,
       "match": "(void *)((int)",
       "text": "(void *)((int)sprite_data + iVar4),(iVar5 - iVar4) + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 76,
       "match": "(void *)((int)",
       "text": "local_1c = (void *)((int)local_1c + (iVar1 / 2) * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 77,
       "match": "(void *)((int)",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_bugs_cpp_CBugs_hasCollision_FUN_00425610(CBugs *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_bugs_cpp_CBugs_hasCollision_FUN_00425610(CBugs *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; __cdecl void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 ;
 ; Parameters:
 ; SEdgeData *      Stack[0x4]:4   left_edge
@@ -19,7 +19,7 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770 at 005707f2
 ;
 ; Referenced Globals:
-;   int g_CameraDownscaleIterations
+;   _BIT_INTEGER g_CameraDownscaleIterations
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
 ;   SFogImagePlane[16] g_CameraImageDecompressBuffer
 ;   undefined4 DAT_013fff78

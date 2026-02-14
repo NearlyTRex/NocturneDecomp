@@ -2,14 +2,11 @@
 // Address: 0052f850
 // Address Range: [[0052f850, 0052f8c2]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850 (CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices, SMpegSubbandScalefactors *scalefactors,SBitAllocationTable *alloc_info)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SBitAllocationTable *alloc_info)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850
-          (CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,
-          SMpegSubbandScalefactors *scalefactors,SBitAllocationTable *alloc_info)
+void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SBitAllocationTable *alloc_info)
 
 {
   int iVar1;

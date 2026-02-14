@@ -2,13 +2,11 @@
 // Address: 00522a50
 // Address Range: [[00522a50, 00522bef]]
 // Convention: __stack3_esi
-// Signature: CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50 (CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output)
+// Signature: CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output)
 
 #include "nocturne.h"
 
-CVector3i * __stack3_esi
-core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
-          (CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output)
+CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output)
 
 {
   CVector3f *pCVar1;

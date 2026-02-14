@@ -8,8 +8,7 @@
 
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl
-core_batman_cpp_CBatman_getTargetPoints_FUN_00417bb0(CBatman *this_ptr,CVector3f *out_points_array)
+int __cdecl core_batman_cpp_CBatman_getTargetPoints_FUN_00417bb0(CBatman *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

@@ -22,7 +22,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_0042b110(CCharacter *
     do {
       if (((this_ptr->model).part_data.visibility_flags[*(int *)pCVar2->fire_effects[0].unk] != 0)
          && (pCVar1->bone_list[*(int *)(pCVar2->fire_effects[0].unk + 4)].parent_index != -1)) {
-        (*((this_ptr_00->vtable)._ub)->renderTransparent)(this_ptr_00);
+        (*((UActorVTable *)(this_ptr_00->actor_name + 0x154))->_ub->renderTransparent)(this_ptr_00);
       }
       pCVar2 = (CCharacter *)((pCVar2->base).actor_name + 0x18);
       iVar3 = iVar3 + 1;

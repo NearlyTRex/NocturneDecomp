@@ -2,13 +2,11 @@
 // Address: 0059b800
 // Address Range: [[0059b800, 0059b8cf]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_0059b800 (CDeformableModel *this_ptr,CMatrix3x4f *bone_matrices)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_0059b800(CDeformableModel *this_ptr,CMatrix3x4f *bone_matrices)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModel_renderBones_FUN_0059b800
-          (CDeformableModel *this_ptr,CMatrix3x4f *bone_matrices)
+void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_0059b800(CDeformableModel *this_ptr,CMatrix3x4f *bone_matrices)
 
 {
   SRenderVertex *pSVar1;

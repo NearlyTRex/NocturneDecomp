@@ -2,13 +2,11 @@
 // Address: 005dc5e0
 // Address Range: [[005dc5e0, 005dc684]]
 // Convention: __cdecl
-// Signature: int __cdecl core_texlist_cpp_CTextureList_addTextureSelection_FUN_005dc5e0 (CTextureList *this_ptr,char *filename)
+// Signature: int __cdecl core_texlist_cpp_CTextureList_addTextureSelection_FUN_005dc5e0(CTextureList *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl
-core_texlist_cpp_CTextureList_addTextureSelection_FUN_005dc5e0
-          (CTextureList *this_ptr,char *filename)
+int __cdecl core_texlist_cpp_CTextureList_addTextureSelection_FUN_005dc5e0(CTextureList *this_ptr,char *filename)
 
 {
   char cVar1;

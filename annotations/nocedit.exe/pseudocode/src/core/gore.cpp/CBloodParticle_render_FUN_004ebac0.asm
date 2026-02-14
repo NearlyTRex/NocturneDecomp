@@ -34,7 +34,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0065f024 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic DAT_0067b9b0
+;   SMRGLTextureBasic SMRGLTextureBasic_0067b9b0
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
@@ -218,7 +218,7 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004ebcce
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004ebcd3
-    PUSH 0x67b9b0                       ; 004ebcd6 | DAT_0067b9b0
+    PUSH 0x67b9b0                       ; 004ebcd6 | SMRGLTextureBasic_0067b9b0
     MOV EAX,[0x006703ec]                ; 004ebcdb | g_CDemonRendererPtr2
     PUSH EAX                            ; 004ebce0 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004ebce1
@@ -313,7 +313,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004ebe36
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004ebe3b
-    PUSH 0x2d83368                      ; 004ebe3e | DAT_02d83368
+    PUSH 0x2d83368                      ; 004ebe3e | SMRGLHeaderPrimitive_02d83368
     MOV EAX,[0x006703ec]                ; 004ebe43 | g_CDemonRendererPtr2
     PUSH EAX                            ; 004ebe48 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 004ebe49

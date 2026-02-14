@@ -2,14 +2,11 @@
 // Address: 00410b00
 // Address Range: [[00410b00, 00410c14]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00 (CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x, int bottom_y)
+// Signature: void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x,int bottom_y)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00
-          (CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x,
-          int bottom_y)
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x,int bottom_y)
 
 {
   int pixelCount;

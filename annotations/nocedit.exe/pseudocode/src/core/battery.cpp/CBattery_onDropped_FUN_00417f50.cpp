@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_battery_cpp_CBattery_onDropped_FUN_00417f50(CBattery *this_ptr,CVector3f *drop_position)
+void __cdecl core_battery_cpp_CBattery_onDropped_FUN_00417f50(CBattery *this_ptr,CVector3f *drop_position)
 
 {
   this_ptr->carrier = (CDemonActor *)0x0;

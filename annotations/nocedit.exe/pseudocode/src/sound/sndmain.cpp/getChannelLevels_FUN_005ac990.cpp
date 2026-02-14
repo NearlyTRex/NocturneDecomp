@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_getChannelLevels_FUN_005ac990(int channel,float *out_peak,float *out_average)
+void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005ac990(int channel,float *out_peak,float *out_average)
 
 {
   float fVar1;

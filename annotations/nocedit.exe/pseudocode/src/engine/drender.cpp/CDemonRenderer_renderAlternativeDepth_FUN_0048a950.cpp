@@ -2,13 +2,11 @@
 // Address: 0048a950
 // Address Range: [[0048a950, 0048aa49]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 
 {
   int iVar1;
@@ -45,14 +43,14 @@ engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
         this_ptr->face_capture_enabled = local_18;
       }
       if (this_ptr->face_count == 0) {
-        g_RenderStateFlags = RENDER_ALTERNATIVE_DEPTH;
+        g_RenderStateFlags.dword = RENDER_ALTERNATIVE_DEPTH;
         g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
-        g_ScanlineRenderFunc = core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902;
       }
       else {
-        g_RenderStateFlags = 0;
+        g_RenderStateFlags.dword = 0;
         g_RenderStateFlag2 = PREPROCESS_NONE;
-        g_ScanlineRenderFunc = core_dstrender_cpp_renderDepth16BitConditional_FUN_0049077d;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepth16BitConditional_FUN_0049077d;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
                 (this_ptr,(polygon_info->base).count,g_VertexIndexBuffer);

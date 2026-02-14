@@ -2,14 +2,11 @@
 // Address: 004f25c0
 // Address Range: [[004f25c0, 004f2600]]
 // Convention: __cdecl
-// Signature: int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0 (CHero *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point)
+// Signature: int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point)
 
 #include "nocturne.h"
 
-int __cdecl
-core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0
-          (CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,
-          CVector3f *out_intersection_point)
+int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point)
 
 {
   int iVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLZWDictionary * __cdecl
-support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary *this_ptr,uint flags)
+CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary *this_ptr,uint flags)
 
 {
   support_codec_cpp_CLZWDictionary_free_FUN_0043ee10(this_ptr);

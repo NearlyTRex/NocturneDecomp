@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_hpriest_cpp_CHighPriestOfGardath_archive_FUN_004f7bd0(CHighPriestOfGardath *this_ptr)
+void __cdecl core_hpriest_cpp_CHighPriestOfGardath_archive_FUN_004f7bd0(CHighPriestOfGardath *this_ptr)
 
 {
   core_npc_cpp_CNPC_archive_FUN_00544ba0(&this_ptr->base);

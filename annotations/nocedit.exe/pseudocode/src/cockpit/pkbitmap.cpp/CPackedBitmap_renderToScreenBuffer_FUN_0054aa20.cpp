@@ -2,13 +2,11 @@
 // Address: 0054aa20
 // Address Range: [[0054aa20, 0054ab27]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20 (CPackedBitmap *this_ptr,int dest_x,int dest_y)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20(CPackedBitmap *this_ptr,int dest_x,int dest_y)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbitmap_cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-          (CPackedBitmap *this_ptr,int dest_x,int dest_y)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20(CPackedBitmap *this_ptr,int dest_x,int dest_y)
 
 {
   ushort uVar1;

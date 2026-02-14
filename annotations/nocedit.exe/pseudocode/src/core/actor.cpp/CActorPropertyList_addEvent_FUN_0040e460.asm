@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460 (CActorPropertyList *this_ptr,char *property_name,char *data_ptr)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList *this_ptr,char *property_name,char *data_ptr)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

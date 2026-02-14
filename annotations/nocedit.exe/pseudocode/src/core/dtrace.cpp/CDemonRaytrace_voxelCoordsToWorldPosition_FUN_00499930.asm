@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_00499930 (CDemonRaytrace *raytrace_ptr,CVector3f *output_position,CVector3i *voxel_coords)
+; __cdecl CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_00499930(CDemonRaytrace *raytrace_ptr,CVector3f *output_position,CVector3i *voxel_coords)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   raytrace_ptr

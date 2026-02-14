@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fileman_cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230 (CDemonFileManager *this_ptr,char *filename)
+; __cdecl void __cdecl core_fileman_cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230(CDemonFileManager *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CDemonFileManager * Stack[0x4]:4   this_ptr

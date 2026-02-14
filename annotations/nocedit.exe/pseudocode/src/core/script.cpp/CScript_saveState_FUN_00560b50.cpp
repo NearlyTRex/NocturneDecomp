@@ -47,7 +47,7 @@ void __cdecl core_script_cpp_CScript_saveState_FUN_00560b50(CScript *this_ptr,_F
     } while (iVar1 < this_ptr->call_stack_count);
   }
   _fprintf(file_handle,"// CRC\n");
-  core_script_cpp_CScript_FUN_00560d80(this_ptr);
+  core_script_cpp_CScript_computeChecksum_FUN_00560d80(this_ptr);
   _fprintf(file_handle,"%u\n");
   return;
 }

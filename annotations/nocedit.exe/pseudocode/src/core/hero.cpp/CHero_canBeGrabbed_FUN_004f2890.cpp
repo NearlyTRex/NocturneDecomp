@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_hero_cpp_CHero_canBeGrabbed_FUN_004f2890(CHero *this_ptr,CDemonActor *grabber,int grab_type)
+int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004f2890(CHero *this_ptr,CDemonActor *grabber,int grab_type)
 
 {
   CMotionList *this_ptr_00;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_0043f490 (CLZWDecompress *this_ptr,int buffer_size,int initial_bits)
+; __cdecl CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_0043f490(CLZWDecompress *this_ptr,int buffer_size,int initial_bits)
 ;
 ; Parameters:
 ; CLZWDecompress * Stack[0x4]:4   this_ptr

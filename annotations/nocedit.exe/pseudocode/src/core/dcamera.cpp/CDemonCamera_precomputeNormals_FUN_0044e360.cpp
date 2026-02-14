@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonCamera * __cdecl
-core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
+CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
 
 {
   float fVar1;
@@ -142,24 +141,25 @@ core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_
             iVar5 = (int)(0x7fffffff / (longlong)iVar5);
           }
           uVar4 = iVar5 - g_PrecomputedDepthBuffer
-                          [((int)local_1c >> ((byte)g_CameraDownscaleIterations & 0x1f)) * 0x140 +
-                           ((int)uVar10 >> ((byte)g_CameraDownscaleIterations & 0x1f))] >> 0x1f;
+                          [((int)local_1c >> (g_CameraDownscaleIterations.bytes[0] & 0x1f)) * 0x140
+                           + ((int)uVar10 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f))] >> 0x1f
+          ;
           if (0x400 < (int)((iVar5 - g_PrecomputedDepthBuffer
-                                     [((int)local_1c >> ((byte)g_CameraDownscaleIterations & 0x1f))
-                                      * 0x140 + ((int)uVar10 >>
-                                                ((byte)g_CameraDownscaleIterations & 0x1f))] ^ uVar4
-                            ) - uVar4)) {
+                                     [((int)local_1c >>
+                                      (g_CameraDownscaleIterations.bytes[0] & 0x1f)) * 0x140 +
+                                      ((int)uVar10 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f))
+                                     ] ^ uVar4) - uVar4)) {
             iVar6 = 0;
             do {
               uVar4 = iVar5 - g_PrecomputedDepthBuffer
-                              [(((int)local_1c >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
+                              [(((int)local_1c >> (g_CameraDownscaleIterations.bytes[0] & 0x1f)) +
                                *(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +
-                               ((int)uVar10 >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
+                               ((int)uVar10 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f)) +
                                *(int *)((int)g_CameraEdgeOffsetX + iVar6)] >> 0x1f;
               iVar3 = (iVar5 - g_PrecomputedDepthBuffer
-                               [(((int)local_1c >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
+                               [(((int)local_1c >> (g_CameraDownscaleIterations.bytes[0] & 0x1f)) +
                                 *(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +
-                                ((int)uVar10 >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
+                                ((int)uVar10 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f)) +
                                 *(int *)((int)g_CameraEdgeOffsetX + iVar6)] ^ uVar4) - uVar4;
               if (iVar3 < iVar7) {
                 g_CameraEdgeDetectionResults[g_CameraEdgeCount * 3] =

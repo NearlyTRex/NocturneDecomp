@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_platfrm_cpp_CPlatform_addFilesToExtract_FUN_0054f2a0(CPlatform *this_ptr,_FILE *file_handle)
+void __cdecl core_platfrm_cpp_CPlatform_addFilesToExtract_FUN_0054f2a0(CPlatform *this_ptr,_FILE *file_handle)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0

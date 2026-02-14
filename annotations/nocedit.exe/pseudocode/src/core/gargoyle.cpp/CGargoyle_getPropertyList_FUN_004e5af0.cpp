@@ -2,13 +2,11 @@
 // Address: 004e5af0
 // Address Range: [[004e5af0, 004e5b91]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0 (CGargoyle *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0(CGargoyle *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0
-          (CGargoyle *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0(CGargoyle *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 143,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 13,
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 86,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 289
+    "total_lines": 287
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00488230 (CDrawSurface *this_ptr,int x,int start_y,int end_y)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00488230(CDrawSurface *this_ptr,int x,int start_y,int end_y)"
   },
   "function_calls": [
     {
@@ -237,35 +237,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 45,
       "match": "(int *)((int)",
       "text": "puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar3) + iVar5 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 66,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 73,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 81,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
       "type": "pointer_cast"

@@ -12,7 +12,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CScript* g_CScriptPtr = 0310f858
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f7c634
+;   int INT_02f7c634
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
@@ -48,7 +48,7 @@ section .text
         ;   Label: LAB_005374d8
     ADD ESP,0x14                        ; 005374dd
     PUSH 0x1                            ; 005374e0
-    MOV dword ptr [0x02f7c634],EBX      ; 005374e2 | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],EBX      ; 005374e2 | INT_02f7c634
     MOV EBX,dword ptr [0x0067d550]      ; 005374e8 | g_CDemonMissionPtr | g_CDemonMissionInstance
     PUSH EBX                            ; 005374ee | g_CDemonMissionInstance
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 005374ef

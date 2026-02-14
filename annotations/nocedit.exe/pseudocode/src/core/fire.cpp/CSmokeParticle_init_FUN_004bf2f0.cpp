@@ -2,14 +2,11 @@
 // Address: 004bf2f0
 // Address Range: [[004bf2f0, 004bf33e] [004bf35f, 004bf382]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0 (CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence, int alpha_value)
+// Signature: void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 
 #include "nocturne.h"
 
-void __cdecl
-core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0
-          (CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,
-          int alpha_value)
+void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 
 {
   CVector3f *pCVar1;

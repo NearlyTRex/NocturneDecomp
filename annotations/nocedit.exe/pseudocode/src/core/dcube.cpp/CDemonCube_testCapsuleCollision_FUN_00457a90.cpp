@@ -2,13 +2,11 @@
 // Address: 00457a90
 // Address Range: [[00457a90, 00457b5f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_CDemonCube_testCapsuleCollision_FUN_00457a90 (CDemonCube *this_ptr,SIntersectXZCylinder *capsule_data)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_testCapsuleCollision_FUN_00457a90(CDemonCube *this_ptr,SIntersectXZCylinder *capsule_data)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcube_cpp_CDemonCube_testCapsuleCollision_FUN_00457a90
-          (CDemonCube *this_ptr,SIntersectXZCylinder *capsule_data)
+void __cdecl core_dcube_cpp_CDemonCube_testCapsuleCollision_FUN_00457a90(CDemonCube *this_ptr,SIntersectXZCylinder *capsule_data)
 
 {
   CVector3f *pCVar1;

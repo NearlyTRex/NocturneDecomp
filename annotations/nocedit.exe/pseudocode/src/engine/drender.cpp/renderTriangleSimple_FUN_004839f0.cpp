@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count)
+int __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count)
 
 {
   int iVar1;
@@ -227,7 +226,8 @@ LAB_00483cc8:
         iVar4 = iVar10;
       } while (iVar10 < vertex_count);
     }
-    iVar4 = wincore_windll_cpp_drawPolygon2_FUN_005b7610(local_74,vertex_count,g_RenderStateFlags);
+    iVar4 = wincore_windll_cpp_drawPolygon2_FUN_005b7610
+                      (local_74,vertex_count,g_RenderStateFlags.dword);
   }
   return iVar4;
 }

@@ -2,13 +2,11 @@
 // Address: 00554a50
 // Address Range: [[00554a50, 00554cb0]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50 (CColorQuantizer *this_ptr,CBitmap *bitmap)
+// Signature: int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQuantizer *this_ptr,CBitmap *bitmap)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50
-          (CColorQuantizer *this_ptr,CBitmap *bitmap)
+int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQuantizer *this_ptr,CBitmap *bitmap)
 
 {
   byte bVar1;
@@ -94,7 +92,7 @@ shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50
         this_ptr->current_pixel_index = this_ptr->current_pixel_index + 1;
       }
       if (this_ptr->progress_callback != (CColorQuantizer_ProgressCallback *)0x0) {
-        iVar9 = (*this_ptr->progress_callback)("Phase 1",(uint)uVar3,local_30);
+        iVar9 = (*this_ptr->progress_callback)("Phase 1",(int)uVar3,local_30);
         if (iVar9 != 0) {
           return 0;
         }

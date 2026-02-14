@@ -4,49 +4,49 @@
       {
         "category": "other",
         "column": 28,
-        "line": 60,
+        "line": 57,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 166,
+        "line": 163,
         "message": "invalid operands to binary expression ('float' and 'int')"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 201,
+        "line": 198,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 204,
+        "line": 201,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 207,
+        "line": 204,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 211,
+        "line": 208,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 226,
+        "line": 223,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 239,
+        "line": 236,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -55,17 +55,17 @@
   },
   "complexity": {
     "assembly_lines": 665,
-    "complexity_score": 336,
+    "complexity_score": 333,
     "cross_reference_count": 6,
     "function_call_count": 27,
     "global_count": 43,
-    "pseudocode_lines": 266,
+    "pseudocode_lines": 263,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch"
     ],
-    "total_lines": 931
+    "total_lines": 928
   },
   "cross_references": [
     {
@@ -116,7 +116,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0",
-    "signature": "uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0 (void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker, uint flags)"
+    "signature": "uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags)"
   },
   "function_calls": [
     {
@@ -862,7 +862,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 159,
+      "line": 156,
       "match": "SUB41",
       "text": "cVar5 = SUB41(fVar4,0) + '0';",
       "type": "decompiler_intrinsic"
@@ -873,7 +873,7 @@
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 57,
+      "line_number": 54,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -884,7 +884,7 @@
       "expected_args": 1,
       "format_string": "Can't find wav: %s\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 179,
+      "line_number": 176,
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Can't find wav: %s\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -895,7 +895,7 @@
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 223,
+      "line_number": 220,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -906,7 +906,7 @@
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 236,
+      "line_number": 233,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -917,7 +917,7 @@
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 246,
+      "line_number": 243,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

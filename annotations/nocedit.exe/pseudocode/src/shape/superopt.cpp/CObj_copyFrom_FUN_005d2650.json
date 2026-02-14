@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 51,
+        "line": 48,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 51,
+        "line": 48,
         "message": "expected expression"
       }
     ],
@@ -19,18 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 170,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 45,
-    "suspect_count": 11,
+    "pseudocode_lines": 43,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 132
+    "total_lines": 130
   },
   "cross_references": [
     {
@@ -126,81 +125,39 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000010",
-      "text": "int *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000010",
-      "text": "iVar2 = (*this_ptr->vtable->init)(this_ptr,in_stack_00000010[2],*in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000010",
-      "text": "iVar2 = (*this_ptr->vtable->init)(this_ptr,in_stack_00000010[2],*in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 25,
-      "match": "in_stack_0000001c",
-      "text": "puVar4 = *(uint **)(in_stack_0000001c + 4);",
-      "type": "stack_param"
+      "match": "(CVert *)((int)",
+      "text": "pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(CVert *)((int)",
+      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(CVert *)((int)",
-      "text": "pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
+      "text": "pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar7 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)",
-      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
+      "line": 31,
       "match": "(CVert *)((int)",
-      "text": "pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar6 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(int *)((int)",
-      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 4))();",
+      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
+      "line": 41,
       "match": "code *",
-      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 4))();",
+      "text": "(**(code **)(*(int *)(iVar2 + 100) + 4))(iVar2,iVar4,this_ptr);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_0000001c",
-      "text": "this_ptr->flags = *(int *)(in_stack_0000001c + 0x10);",
-      "type": "stack_param"
     }
   ]
 }

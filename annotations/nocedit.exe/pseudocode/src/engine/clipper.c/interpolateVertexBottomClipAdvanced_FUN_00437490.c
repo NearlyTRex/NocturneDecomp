@@ -2,13 +2,11 @@
 // Address: 00437490
 // Address Range: [[00437490, 004375b5]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00437490 (SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
+// Signature: void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00437490(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00437490
-          (SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
+void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00437490(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 
 {
   longlong lVar1;
@@ -45,17 +43,15 @@ engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00437490
   (output->projected_vertex).screen_x = -1;
   (output->projected_vertex).transformed_x =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
-  lVar1 = (longlong)((int)v2->light - (int)v1->light) * (longlong)iVar3;
+  lVar1 = (longlong)(v2->light - v1->light) * (longlong)iVar3;
   uVar4 = (uint)lVar1;
-  output->light =
-       (float)((int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + (int)v1->light);
+  output->light = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->light;
   lVar1 = (longlong)(v2->color - v1->color) * (longlong)iVar3;
   uVar4 = (uint)lVar1;
   output->color = v1->color + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  lVar1 = (longlong)((int)v2->fog - (int)v1->fog) * (longlong)iVar3;
+  lVar1 = (longlong)(v2->fog - v1->fog) * (longlong)iVar3;
   uVar4 = (uint)lVar1;
-  output->fog = (float)((int)v1->fog +
-                       (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4));
+  output->fog = v1->fog + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
   lVar1 = (longlong)(v2->u - v1->u) * (longlong)iVar3;
   uVar4 = (uint)lVar1;
   output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);

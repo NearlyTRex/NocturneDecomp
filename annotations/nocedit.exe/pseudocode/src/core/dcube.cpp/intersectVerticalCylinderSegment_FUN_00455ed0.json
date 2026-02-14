@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 65,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 38,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 190
+    "total_lines": 188
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00455ed0",
-    "signature": "uint __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00455ed0 (CVector3f *segment_start,CVector3f *segment_end,float radius,float *out_height)"
+    "signature": "uint __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00455ed0(CVector3f *segment_start,CVector3f *segment_end,float radius,float *out_height)"
   },
   "function_calls": [],
   "globals": [
@@ -211,14 +211,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 22,
       "match": "SQRT",
       "text": "fVar4 = (-fVar1 - SQRT(fVar3)) / (fVar2 * (float)2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 30,
       "match": "SQRT",
       "text": "fVar1 = (SQRT(fVar3) - fVar1) / (fVar2 * (float)2);",
       "type": "decompiler_intrinsic"

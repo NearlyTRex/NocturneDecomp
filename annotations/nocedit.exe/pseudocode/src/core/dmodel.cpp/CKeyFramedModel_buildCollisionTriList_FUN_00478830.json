@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 38,
+        "line": 37,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 74,
+    "complexity_score": 73,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 9,
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 43,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
     ],
-    "total_lines": 136
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -222,14 +222,14 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 14,
+      "line": 13,
       "match": "collision_triangle_list[-1].",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(int *)((int)",
       "text": "*(int *)((int)this_ptr->poly_vert_list + iVar1 + 4) + -2;",
       "type": "pointer_cast"

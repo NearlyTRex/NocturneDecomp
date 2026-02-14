@@ -2,13 +2,11 @@
 // Address: 00455990
 // Address Range: [[00455990, 00455a2d]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcube_cpp_intersectXZCapsuleWithHeight_FUN_00455990 (SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end)
+// Signature: int __cdecl core_dcube_cpp_intersectXZCapsuleWithHeight_FUN_00455990(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dcube_cpp_intersectXZCapsuleWithHeight_FUN_00455990
-          (SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end)
+int __cdecl core_dcube_cpp_intersectXZCapsuleWithHeight_FUN_00455990(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end)
 
 {
   float fVar1;

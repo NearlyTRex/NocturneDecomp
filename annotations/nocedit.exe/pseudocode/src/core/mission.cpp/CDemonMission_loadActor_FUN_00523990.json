@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 31,
-        "line": 57,
+        "line": 54,
         "message": "format specifies type 'unsigned int *' but the argument has type 'CDemonActor **' [-Werror,-Wformat]"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 160,
+    "complexity_score": 157,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 62,
     "suspect_count": 9,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 212
+    "total_lines": 209
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_loadActor_FUN_00523990",
-    "signature": "CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990 (CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description )"
+    "signature": "CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description )"
   },
   "function_calls": [
     {
@@ -241,37 +241,51 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 7,
       "match": "unaff_ESI",
       "text": "CDemonActor *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 31,
+      "line": 28,
       "match": "unaff_ESI",
       "text": "unaff_ESI = (CDemonActor *)0x0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 31,
       "match": "unaff_ESI",
       "text": "unaff_ESI = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,local_dc)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 33,
       "match": "unaff_ESI",
       "text": "if (unaff_ESI == (CDemonActor *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 43,
+      "line": 40,
       "match": "unaff_ESI",
       "text": "pCVar1 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_ESI",
+      "text": "pCVar1 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 58,
+      "match": "unaff_ESI",
+      "text": "while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {",
       "type": "unaffected_reg"
     },
     {
@@ -284,20 +298,6 @@
     {
       "description": "Unaffected register variable",
       "line": 61,
-      "match": "unaff_ESI",
-      "text": "while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_ESI",
-      "text": "pCVar1 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)
+int __cdecl core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   int y1;
@@ -28,7 +27,7 @@ core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,
     local_1c = 7;
   }
   bVar1 = false;
-  if ((((g_ActiveButton == (CEdButton *)0x0) && (param_2 < g_MouseX)) && (g_MouseX < iVar2)) &&
+  if ((((g_ActiveControl == (void *)0x0) && (param_2 < g_MouseX)) && (g_MouseX < iVar2)) &&
      ((param_3 <= g_MouseY && (g_MouseY < y1)))) {
     bVar1 = true;
     local_1c = 1;
@@ -43,13 +42,13 @@ core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,
     engine_2d_c_drawLine_FUN_004011b0(x1,y1_00,x1,y1);
     engine_2d_c_drawLine_FUN_004011b0(iVar2,y1_00,iVar2,y1);
   }
-  uVar3 = g_MouseButtonFlags & 1;
+  uVar3 = g_MouseButtonFlags.dword & 1;
   if (((param_4 == 0) && (0.0 < FLOAT_02f7c630)) && (FLOAT_02f7c630 < (float)0.29999999999999999)) {
     uVar3 = 0;
   }
   if ((bVar1) && (uVar3 != 0)) {
     if (param_4 != 0) {
-      g_MouseButtonFlags = 0;
+      g_MouseButtonFlags.dword = 0;
     }
     return 1;
   }

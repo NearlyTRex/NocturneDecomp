@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl
-core_msnedit_cpp_CDemonMission_FUN_0053c210(CDemonMission *this_ptr,char *param_2,char *param_3)
+char * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c210(CDemonMission *this_ptr,char *param_2,char *param_3)
 
 {
   char *pcVar1;

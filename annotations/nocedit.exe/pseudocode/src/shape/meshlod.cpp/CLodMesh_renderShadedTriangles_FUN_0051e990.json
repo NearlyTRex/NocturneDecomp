@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 186,
+    "complexity_score": 184,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 64,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 193
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (CLodMesh *this_ptr,int use_palette_coloring)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodMesh *this_ptr,int use_palette_coloring)"
   },
   "function_calls": [
     {
@@ -220,77 +220,77 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 33,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "local_48 = *(uint *)((int)(pCVar2->uv_coords + -2) + iVar4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "local_3c = *(uint *)((int)(pCVar2->uv_coords + -1) + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 36,
       "match": "(uint *)((int)",
       "text": "local_30 = *(uint *)((int)(pCVar2->uv_coords + -1) + iVar4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(float *)((int)",
       "text": "fVar1 = *(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(float *)((int)",
       "text": "fVar6 = (float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x10) * fVar5 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(float *)((int)",
       "text": "((double)((float10)*(float *)((int)pCVar2->edge_perpendiculars +",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 46,
       "match": "ROUND",
       "text": "iStack_20 = (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 48,
       "match": "ROUND",
       "text": "iStack_1c = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 50,
       "match": "ROUND",
       "text": "iStack_20 = (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 52,
       "match": "ROUND",
       "text": "(g_CDemonRendererPtr2,iStack_20,(int)ROUND(dVar8),blue_component);",
       "type": "decompiler_intrinsic"

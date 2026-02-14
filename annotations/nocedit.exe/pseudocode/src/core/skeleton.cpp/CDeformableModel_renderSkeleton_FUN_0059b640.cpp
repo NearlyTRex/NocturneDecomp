@@ -2,13 +2,11 @@
 // Address: 0059b640
 // Address Range: [[0059b640, 0059b7d8] [0059b7f0, 0059b7f7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
-          (CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
+void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
 
 {
   SRenderVertex *pSVar1;
@@ -83,7 +81,7 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
             puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
             puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
           }
-          vertex2.light = (float)in_stack_ffffffa4;
+          vertex2.light = in_stack_ffffffa4;
           auVar11 = in_stack_ffffff84._0_24_;
           vertex2.projected_vertex.transformed_x = auVar11._0_4_;
           vertex2.projected_vertex.transformed_y = auVar11._4_4_;
@@ -94,7 +92,7 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
           vertex2.u = in_stack_ffffff84._24_4_;
           vertex2.v = in_stack_ffffff84._28_4_;
           vertex2.color = in_stack_ffffffa8;
-          vertex2.fog = (float)output;
+          vertex2.fog = (int)output;
           vertex2.w_recip = (float)this_ptr;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff54,vertex2);
         }

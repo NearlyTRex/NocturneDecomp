@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(CGround *this_ptr,int column,int row)
+void __cdecl core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(CGround *this_ptr,int column,int row)
 
 {
   core_texlist_cpp_CTextureList_captureTexture_FUN_005dc270

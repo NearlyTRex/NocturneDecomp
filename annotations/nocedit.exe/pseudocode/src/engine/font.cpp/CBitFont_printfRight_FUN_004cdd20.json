@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 23,
-        "line": 17,
+        "line": 15,
         "message": "assigning to 'char *' from incompatible type 'char *[1]'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 17,
+        "line": 15,
         "message": "use of undeclared identifier 'stack0x0000001c'"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 19,
+        "line": 17,
         "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 51,
+    "complexity_score": 49,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 11,
+    "pseudocode_lines": 9,
     "suspect_count": 3,
     "suspect_types": [
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 44
+    "total_lines": 42
   },
   "cross_references": [],
   "function": {
@@ -48,7 +48,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_printfRight_FUN_004cdd20",
-    "signature": "void __cdecl engine_font_cpp_CBitFont_printfRight_FUN_004cdd20 (CBitFont *this_ptr,int x,int y,int color,char *format,...)"
+    "signature": "void __cdecl engine_font_cpp_CBitFont_printfRight_FUN_004cdd20(CBitFont *this_ptr,int x,int y,int color,char *format,...)"
   },
   "function_calls": [
     {
@@ -142,21 +142,21 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 5,
       "match": "in_stack_00000018",
       "text": "char *in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 10,
+      "line": 8,
       "match": "&stack0x0000001c",
       "text": "local_14.value[0] = (char * [1])&stack0x0000001c;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000018",
       "text": "(this_ptr,x,y,color,(int)format,in_stack_00000018,(va_list_t)&local_14);",
       "type": "stack_param"

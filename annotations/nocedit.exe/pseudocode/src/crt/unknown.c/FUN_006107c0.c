@@ -2,26 +2,24 @@
 // Address: 006107c0
 // Address Range: [[006107c0, 006107ec]]
 // Convention: unknown
-// Signature: short * crt_unknown_c_FUN_006107c0(void)
+// Signature: short * crt_unknown_c_FUN_006107c0(short *param_1,short param_2)
 
 #include "nocturne.h"
 
-short * FUN_006107c0(void)
+short * FUN_006107c0(short *param_1,short param_2)
 
 {
   short sVar1;
-  short *in_stack_00000004;
-  short in_stack_00000008;
   
-  sVar1 = *in_stack_00000004;
+  sVar1 = *param_1;
   while( true ) {
-    if (in_stack_00000008 == sVar1) {
-      return in_stack_00000004;
+    if (param_2 == sVar1) {
+      return param_1;
     }
-    sVar1 = *in_stack_00000004;
-    in_stack_00000004 = in_stack_00000004 + 1;
+    sVar1 = *param_1;
+    param_1 = param_1 + 1;
     if (sVar1 == 0) break;
-    sVar1 = *in_stack_00000004;
+    sVar1 = *param_1;
   }
   return (short *)0x0;
 }

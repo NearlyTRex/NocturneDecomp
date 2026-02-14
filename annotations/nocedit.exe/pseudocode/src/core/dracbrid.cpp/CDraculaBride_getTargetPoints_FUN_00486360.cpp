@@ -2,13 +2,11 @@
 // Address: 00486360
 // Address Range: [[00486360, 00486421]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00486360 (CDraculaBride *this_ptr,CVector3f *out_points_array)
+// Signature: int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00486360(CDraculaBride *this_ptr,CVector3f *out_points_array)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00486360
-          (CDraculaBride *this_ptr,CVector3f *out_points_array)
+int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00486360(CDraculaBride *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

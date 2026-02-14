@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_emitter_cpp_CEmitter_addFilesToExtract_FUN_004a9390(CEmitter *this_ptr,_FILE *file_handle)
+void __cdecl core_emitter_cpp_CEmitter_addFilesToExtract_FUN_004a9390(CEmitter *this_ptr,_FILE *file_handle)
 
 {
   if (this_ptr->emitter_type != 4) {

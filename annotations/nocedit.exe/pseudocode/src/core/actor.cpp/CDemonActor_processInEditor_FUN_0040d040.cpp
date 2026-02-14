@@ -11,43 +11,38 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
 {
   CDemonActor *pCVar1;
   int iVar2;
-  float unaff_EBX;
-  float unaff_retaddr;
-  float in_stack_ffffffec;
-  float fStack_10;
-  float fStack_c;
-  float fStack_8;
+  CSlew CStack_20;
   
   this_ptr->was_created = 0;
   pCVar1 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
   if (pCVar1 == (CDemonActor *)0x0) {
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x29);
     if (iVar2 == 0) {
-      if ((CLocation *)&stack0xffffffec != &this_ptr->location) {
-        in_stack_ffffffec = (this_ptr->location).position.x;
-        fStack_10 = (this_ptr->location).position.y;
-        fStack_c = (this_ptr->location).position.z;
+      if (&CStack_20 != (CSlew *)&this_ptr->location) {
+        CStack_20.position.x = (this_ptr->location).position.x;
+        CStack_20.position.y = (this_ptr->location).position.y;
+        CStack_20.position.z = (this_ptr->location).position.z;
       }
-      if ((UOrientationVector *)&fStack_8 != &this_ptr->orient) {
-        fStack_8 = (this_ptr->orient).vec.x;
-        unaff_EBX = (this_ptr->orient).vec.y;
-        unaff_retaddr = (this_ptr->orient).vec.z;
+      if ((UOrientationVector *)&CStack_20.pitch != &this_ptr->orient) {
+        CStack_20.pitch = (this_ptr->orient).vec.x;
+        CStack_20.yaw = (this_ptr->orient).vec.y;
+        CStack_20.roll = (this_ptr->orient).vec.z;
       }
-      core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffffec);
-      (this_ptr->location).position.x = in_stack_ffffffec;
-      (this_ptr->location).position.y = fStack_10;
-      (this_ptr->location).position.z = fStack_c;
-      if (&this_ptr->orient != (UOrientationVector *)&fStack_8) {
-        (this_ptr->orient).vec.x = fStack_8;
-        (this_ptr->orient).vec.y = unaff_EBX;
-        (this_ptr->orient).vec.z = unaff_retaddr;
+      core_slew_cpp_CSlew_processInput_FUN_005a20b0(&CStack_20);
+      (this_ptr->location).position.x = CStack_20.position.x;
+      (this_ptr->location).position.y = CStack_20.position.y;
+      (this_ptr->location).position.z = CStack_20.position.z;
+      if (&this_ptr->orient != (UOrientationVector *)&CStack_20.pitch) {
+        (this_ptr->orient).vec.x = CStack_20.pitch;
+        (this_ptr->orient).vec.y = CStack_20.yaw;
+        (this_ptr->orient).vec.z = CStack_20.roll;
       }
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22);
     if (iVar2 != 0) {
       core_msnedit_cpp_CDemonMission_FUN_0053c8d0(g_CDemonMissionPtr);
     }
-    if (((byte)g_MouseButtonFlags & 2) != 0) {
+    if ((g_MouseButtonFlags.bytes[0] & 2) != 0) {
       core_msnedit_cpp_CDemonMission_FUN_0053ca00(g_CDemonMissionPtr);
       return;
     }

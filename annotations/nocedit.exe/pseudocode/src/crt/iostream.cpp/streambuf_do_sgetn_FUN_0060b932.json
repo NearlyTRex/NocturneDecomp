@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 91,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 44,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
       "unresolved_funcptr"
     ],
-    "total_lines": 117
+    "total_lines": 115
   },
   "cross_references": [],
   "function": {
@@ -25,7 +25,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_iostream.cpp_streambuf_do_sgetn_FUN_0060b932",
-    "signature": "int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932 (streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)"
+    "signature": "int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932(streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)"
   },
   "function_calls": [],
   "globals": [],
@@ -108,14 +108,14 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
+      "line": 21,
       "match": "code *",
-      "text": "iVar2 = (**(code **)((int)buffer[1].__b_lock + 0x10))();",
+      "text": "iVar2 = (**(code **)((int)buffer[1].__b_lock + 0x10))(buffer);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(void *)((int)",
       "text": "output_buffer = (void *)((int)output_buffer + uVar1);",
       "type": "pointer_cast"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_005a14b0 (CDeformableModelInstance *this_ptr,CVector3f *center_position, CVector3f *orientation_vector,int desired_lod_index)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_005a14b0(CDeformableModelInstance *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int desired_lod_index)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr

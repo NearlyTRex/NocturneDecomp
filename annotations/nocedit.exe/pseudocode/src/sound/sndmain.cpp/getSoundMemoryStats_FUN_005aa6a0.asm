@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0 (int *out_referenced_count,int *out_total_bytes_referenced,int *out_unreferenced_count, int *out_total_bytes_unreferenced,int *out_free_slots,int *out_available_memory)
+; __cdecl void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0(int *out_referenced_count,int *out_total_bytes_referenced,int *out_unreferenced_count,int *out_total_bytes_unreferenced,int *out_free_slots,int *out_available_memory)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   out_referenced_count

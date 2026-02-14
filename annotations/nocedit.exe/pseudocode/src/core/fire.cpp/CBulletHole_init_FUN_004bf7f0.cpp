@@ -2,14 +2,11 @@
 // Address: 004bf7f0
 // Address Range: [[004bf7f0, 004bf9f4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0 (CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal, CDemonActor *hit_actor)
+// Signature: void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor)
 
 #include "nocturne.h"
 
-void __cdecl
-core_fire_cpp_CBulletHole_init_FUN_004bf7f0
-          (CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,
-          CDemonActor *hit_actor)
+void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor)
 
 {
   int iVar1;

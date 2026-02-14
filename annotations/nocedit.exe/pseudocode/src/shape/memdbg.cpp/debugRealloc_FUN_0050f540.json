@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 39,
+        "line": 38,
         "message": "assigning to 'SMemHead *' from incompatible type 'void *'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 71,
+    "complexity_score": 70,
     "cross_reference_count": 35,
     "function_call_count": 12,
     "global_count": 9,
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 55,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 212
+    "total_lines": 211
   },
   "cross_references": [
     {
@@ -62,15 +62,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055a370",
-      "from_addr": "0055a3e4",
-      "name": "core_script.cpp_CScript_FUN_0055a370",
+      "addr": "00567510",
+      "from_addr": "00567539",
+      "name": "core_script.cpp_CScript_addEventXRef_FUN_00567510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00567510",
-      "from_addr": "00567539",
-      "name": "core_script.cpp_CScript_FUN_00567510",
+      "addr": "0055a370",
+      "from_addr": "0055a3e4",
+      "name": "core_script.cpp_CScript_buildParsedLines_FUN_0055a370",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -433,7 +433,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(SMemHead *)((int)",
       "text": "pSVar1 = (SMemHead *)((int)ptr + -0x28);",
       "type": "pointer_cast"

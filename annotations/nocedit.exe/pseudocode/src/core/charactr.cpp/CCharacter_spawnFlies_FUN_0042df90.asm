@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90 (CCharacter *this_ptr,int fly_count,float spawn_radius)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90(CCharacter *this_ptr,int fly_count,float spawn_radius)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

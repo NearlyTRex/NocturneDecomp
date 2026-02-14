@@ -2,13 +2,11 @@
 // Address: 0048f520
 // Address Range: [[0048f520, 0048f55c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_drone_cpp_CDrone_getPropertyList_FUN_0048f520 (CDrone *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_drone_cpp_CDrone_getPropertyList_FUN_0048f520(CDrone *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_drone_cpp_CDrone_getPropertyList_FUN_0048f520
-          (CDrone *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_drone_cpp_CDrone_getPropertyList_FUN_0048f520(CDrone *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

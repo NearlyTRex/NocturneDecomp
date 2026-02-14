@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_biggs_cpp_CBiggs_getTargetPoints_FUN_00418c10(CBiggs *this_ptr,CVector3f *out_points_array)
+int __cdecl core_biggs_cpp_CBiggs_getTargetPoints_FUN_00418c10(CBiggs *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

@@ -2,13 +2,11 @@
 // Address: 0059ab50
 // Address Range: [[0059ab50, 0059ab89]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50 (CDeformableModel *this_ptr,int lod_index,int render_flags)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel *this_ptr,int lod_index,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50
-          (CDeformableModel *this_ptr,int lod_index,int render_flags)
+void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel *this_ptr,int lod_index,int render_flags)
 
 {
   core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0

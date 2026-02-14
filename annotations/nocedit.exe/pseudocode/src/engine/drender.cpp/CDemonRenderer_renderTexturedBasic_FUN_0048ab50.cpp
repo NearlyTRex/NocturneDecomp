@@ -2,13 +2,11 @@
 // Address: 0048ab50
 // Address Range: [[0048ab50, 0048ac30]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
+// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
+int __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
@@ -23,14 +21,14 @@ engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
     }
   }
   if (this_ptr->face_count == 0) {
-    g_RenderStateFlags = RENDER_TEXTURE_BASE;
+    g_RenderStateFlags.dword = RENDER_TEXTURE_BASE;
     g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
-    g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37;
+    g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37;
   }
   else {
-    g_RenderStateFlags = 0;
+    g_RenderStateFlags.dword = 0;
     g_RenderStateFlag2 = PREPROCESS_NONE;
-    g_ScanlineRenderFunc = core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5;
+    g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5;
   }
   iVar2 = this_ptr->face_count;
   if (g_UseExternalRenderer != 0) {

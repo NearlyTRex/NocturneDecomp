@@ -2,13 +2,11 @@
 // Address: 0042df90
 // Address Range: [[0042df90, 0042dfb0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90 (CCharacter *this_ptr,int fly_count,float spawn_radius)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90(CCharacter *this_ptr,int fly_count,float spawn_radius)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90
-          (CCharacter *this_ptr,int fly_count,float spawn_radius)
+void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90(CCharacter *this_ptr,int fly_count,float spawn_radius)
 
 {
   if (this_ptr->fire_count != 0) {

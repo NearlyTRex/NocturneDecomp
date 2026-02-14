@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CVector3d * __stack_esi
-shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly *this_ptr,CVector3d *out_centroid)
+CVector3d * __stack_esi shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly *this_ptr,CVector3d *out_centroid)
 
 {
   CVert *pCVar1;

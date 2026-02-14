@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 112,
+    "complexity_score": 110,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 65,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 217
+    "total_lines": 215
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60",
-    "signature": "void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60 (void *sprite_data,void *span_data)"
+    "signature": "void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60(void *sprite_data,void *span_data)"
   },
   "function_calls": [
     {
@@ -227,28 +227,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(int *)((int)",
       "text": "iVar2 = *(int *)((int)g_ScreenBufferArray + local_38);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(void *)((int)",
       "text": "(*pCVar4)((void *)(iVar2 + iVar3),(void *)((int)sprite_data + iVar3 + iVar5),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 50,
       "match": "(int *)((int)",
       "text": "iVar2 = *(int *)((int)g_ScreenBufferArray + local_40);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(void *)((int)",
       "text": "(*pCVar4)((void *)(iVar3 * 2 + iVar2),(void *)((int)sprite_data + iVar3 + iVar5),",
       "type": "pointer_cast"

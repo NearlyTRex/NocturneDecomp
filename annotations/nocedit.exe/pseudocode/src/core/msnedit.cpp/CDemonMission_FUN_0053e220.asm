@@ -67,7 +67,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EDX      ; 0053e23a
     MOV dword ptr [ESP + 0x8],EDX       ; 0053e23e
     PUSH ESI                            ; 0053e242 | g_CGameInstance
-    MOV dword ptr [0x02f7c634],EDX      ; 0053e243 | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],EDX      ; 0053e243 | INT_02f7c634
     MOV dword ptr [EAX + 0x4],0x1       ; 0053e249
     CALL core_game.cpp_CGame_setGameRes_FUN_004dade0 ; 0053e250
         ;   XREF to: 004dade0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setGameRes_FUN_004dade0(CGame * this_ptr)

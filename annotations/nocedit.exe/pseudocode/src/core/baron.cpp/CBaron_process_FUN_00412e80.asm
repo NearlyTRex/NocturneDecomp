@@ -36,7 +36,7 @@
 ;   double DOUBLE_00615029 = 12.5663706140000
 ;   double DOUBLE_00615031 = 0.333333333333333
 ;   double DOUBLE_00615039 = 32
-;   SMRGLTextureBasic DAT_0066e460
+;   SMRGLTextureBasic SMRGLTextureBasic_0066e460
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
@@ -455,7 +455,7 @@ section .text
         ;   Label: LAB_00413303
     JNZ 0x0041336c                      ; 0041330a
         ;   XREF to: 0041336c (CONDITIONAL_JUMP)  ; LAB_0041336c
-    PUSH 0x66e460                       ; 0041330c | DAT_0066e460
+    PUSH 0x66e460                       ; 0041330c | SMRGLTextureBasic_0066e460
     PUSH 0x3f000000                     ; 00413311
     PUSH 0x3f000000                     ; 00413316
     LEA EAX,[EBP + 0x1fcb4]             ; 0041331b
@@ -468,7 +468,7 @@ section .text
     CALL core_fire.cpp_CFireEffect_FUN_004c90c0 ; 00413336
         ;   XREF to: 004c90c0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_FUN_004c90c0(CFireEffect * this_ptr)
     ADD ESP,0x1c                        ; 0041333b
-    PUSH 0x66e460                       ; 0041333e | DAT_0066e460
+    PUSH 0x66e460                       ; 0041333e | SMRGLTextureBasic_0066e460
     PUSH 0x3f000000                     ; 00413343
     PUSH 0x3f000000                     ; 00413348
     LEA EAX,[EBP + 0x1fcc0]             ; 0041334d

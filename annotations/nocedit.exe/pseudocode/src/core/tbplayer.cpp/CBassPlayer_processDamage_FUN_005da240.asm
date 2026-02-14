@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_005da240 (CBassPlayer *this_ptr,SDamageInfo *damage_info)
+; __cdecl void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_005da240(CBassPlayer *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CBassPlayer *    Stack[0x4]:4   this_ptr

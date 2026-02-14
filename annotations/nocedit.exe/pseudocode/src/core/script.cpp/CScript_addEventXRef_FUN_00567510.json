@@ -1,0 +1,177 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 17,
+        "message": "assigning to 'SScriptXRef *' from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 49,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 78
+  },
+  "cross_references": [
+    {
+      "addr": "0053ea30",
+      "from_addr": "0053eaf1",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053ea30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564090",
+      "from_addr": "00564131",
+      "name": "core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005671a0",
+      "from_addr": "005672fe",
+      "name": "core_script.cpp_CScript_extractCrossReferences_FUN_005671a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00567080",
+      "from_addr": "00567188",
+      "name": "core_script.cpp_CScript_parseCommand_FUN_00567080",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00567510",
+    "address_range": [
+      [
+        "00567510",
+        "00567595"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_addEventXRef_FUN_00567510",
+    "signature": "void __cdecl core_script_cpp_CScript_addEventXRef_FUN_00567510(CScript *this_ptr,SScriptXRef *xref_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f540",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00644057",
+      "name": "s_core_script_cpp_00644057",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064406a",
+      "name": "s_core_script_cpp_0064406a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064407d",
+      "name": "s_Out_of_memory_0064407d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.702127659574469,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 39,
+      "INT_ADD": 23,
+      "INT_AND": 99,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 12,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 30,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 28,
+      "INT_SUB": 19,
+      "INT_XOR": 6,
+      "INT_ZEXT": 2,
+      "LOAD": 16,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 409
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "xref_data",
+        "offset": 8,
+        "size": 4,
+        "type": "SScriptXRef *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(SScriptXRef *)((int)",
+      "text": "xref_data = (SScriptXRef *)((int)xref_data + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(SScriptXRef *)((int)",
+      "text": "pSVar1 = (SScriptXRef *)((int)pSVar1 + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

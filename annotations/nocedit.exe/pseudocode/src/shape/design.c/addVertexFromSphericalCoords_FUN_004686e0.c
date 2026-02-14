@@ -2,13 +2,11 @@
 // Address: 004686e0
 // Address Range: [[004686e0, 004687bf]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_addVertexFromSphericalCoords_FUN_004686e0 (float latitude_degrees,float longitude_degrees,float radius)
+// Signature: void __cdecl shape_design_c_addVertexFromSphericalCoords_FUN_004686e0(float latitude_degrees,float longitude_degrees,float radius)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_design_c_addVertexFromSphericalCoords_FUN_004686e0
-          (float latitude_degrees,float longitude_degrees,float radius)
+void __cdecl shape_design_c_addVertexFromSphericalCoords_FUN_004686e0(float latitude_degrees,float longitude_degrees,float radius)
 
 {
   float10 fVar1;

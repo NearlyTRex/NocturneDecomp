@@ -4,73 +4,73 @@
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 105,
+        "line": 104,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 107,
+        "line": 106,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 105,
+        "line": 104,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 106,
+        "line": 105,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 107,
+        "line": 106,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "incompatible_types",
         "column": 38,
-        "line": 127,
+        "line": 126,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 128,
+        "line": 127,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 65,
-        "line": 128,
+        "line": 127,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
         "column": 38,
-        "line": 127,
+        "line": 126,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 53,
-        "line": 127,
+        "line": 126,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 18,
-        "line": 128,
+        "line": 127,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 128,
+        "line": 127,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -79,17 +79,17 @@
   },
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 199,
+    "complexity_score": 198,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 22,
-    "pseudocode_lines": 129,
+    "pseudocode_lines": 128,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 458
+    "total_lines": 457
   },
   "cross_references": [
     {
@@ -493,42 +493,42 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 93,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_1c),local_4c,",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 97,
       "match": "SUB84",
       "text": "SUB84((double)local_30 * 1.52587890625e-05,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 99,
       "match": "SUB84",
       "text": "SUB84((double)local_2c * 1.52587890625e-05,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 119,
       "match": "SUB84",
       "text": "_fprintf(local_18,\"%g,%g,%g\\n\",SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 120,
       "match": "SUB84",
       "text": "SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 120,
       "match": "SUB84",
       "text": "SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),",
       "type": "decompiler_intrinsic"

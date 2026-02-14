@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 18,
+        "category": "undeclared_identifier",
+        "column": 3,
         "line": 83,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'"
+        "message": "use of undeclared identifier 'PTR_00823c50'"
       },
       {
         "category": "other",
@@ -20,46 +20,16 @@
         "message": "cannot cast from type 'float' to pointer type 'void *'"
       },
       {
-        "category": "other",
-        "column": 22,
+        "category": "undeclared_identifier",
+        "column": 9,
         "line": 179,
-        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'CDemonActor *')"
+        "message": "use of undeclared identifier 'PTR_00823c50'"
       },
       {
-        "category": "incompatible_types",
-        "column": 38,
+        "category": "undeclared_identifier",
+        "column": 7,
         "line": 180,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'struct CDemonActor *'"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 246,
-        "message": "cannot cast from type 'float' to pointer type 'CLocation *'"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 247,
-        "message": "C-style cast from 'CLocation *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 248,
-        "message": "C-style cast from 'CLocation *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 249,
-        "message": "C-style cast from 'CLocation *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 281,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+        "message": "use of undeclared identifier 'PTR_00823c50'"
       }
     ],
     "success": false,
@@ -67,16 +37,15 @@
   },
   "complexity": {
     "assembly_lines": 652,
-    "complexity_score": 387,
+    "complexity_score": 342,
     "cross_reference_count": 36,
     "function_call_count": 7,
     "global_count": 27,
     "pseudocode_lines": 292,
-    "suspect_count": 8,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 944
   },
@@ -411,8 +380,8 @@
     },
     {
       "addr": "00823c50",
-      "name": "DAT_00823c50",
-      "type": "undefined4",
+      "name": "PTR_00823c50",
+      "type": "CDemonActor*",
       "value": null
     },
     {
@@ -866,13 +835,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_00823c50",
-      "text": "DAT_00823c50 = (CDemonActor *)0x0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 77,
       "match": "ABS",
@@ -890,35 +852,14 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(SMotion *)((int)",
-      "text": "pSVar14 = (SMotion *)((int)pSVar14 + (uint)bVar15 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 172,
-      "match": "DAT_00823c50",
-      "text": "if (DAT_00823c50 == (CDemonActor *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 173,
-      "match": "DAT_00823c50",
-      "text": "DAT_00823c50 = g_CDemonSetPtr->collision_actor;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 209,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar10 = (CVector3f *)((int)local_2c * 0x24 + (int)local_40);",
+      "text": "pSVar12 = (SMotion *)((int)pSVar12 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 231,
       "match": "SQRT",
-      "text": "fVar9 = SQRT(fStack_64 * fStack_64 + fStack_6c * fStack_6c);",
+      "text": "fVar3 = SQRT(afStack_80[4] * afStack_80[4] + afStack_80[2] * afStack_80[2]);",
       "type": "decompiler_intrinsic"
     }
   ]

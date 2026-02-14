@@ -2,13 +2,11 @@
 // Address: 0058aa10
 // Address Range: [[0058aa10, 0058aba8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10 (CBoneStructure *this_ptr,_FILE *file,int mirror_flag)
+// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure *this_ptr,_FILE *file,int mirror_flag)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
-          (CBoneStructure *this_ptr,_FILE *file,int mirror_flag)
+void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure *this_ptr,_FILE *file,int mirror_flag)
 
 {
   CMatrix3x4f *matrix;

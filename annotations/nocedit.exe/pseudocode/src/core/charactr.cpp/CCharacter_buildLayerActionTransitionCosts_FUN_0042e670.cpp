@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670(CCharacter *this_ptr)
+void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670(CCharacter *this_ptr)
 
 {
   float fVar1;

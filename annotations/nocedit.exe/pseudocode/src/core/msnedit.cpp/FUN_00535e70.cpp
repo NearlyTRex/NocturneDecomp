@@ -14,9 +14,9 @@ void __cdecl core_msnedit_cpp_FUN_00535e70(void)
   char *pcVar2;
   int iVar3;
   int iVar4;
-  int unaff_EBP;
   int right_pos;
   int bottom_pos;
+  char local_110 [200];
   CEdScrollBar local_48;
   uint local_14;
   
@@ -168,8 +168,8 @@ void __cdecl core_msnedit_cpp_FUN_00535e70(void)
       local_14 = local_14 + 0xb;
       pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr);
       _sprintf
-                (&stack0xfffffef0,"Actor-specific help for selected actor %s (type %s):",this_ptr,pcVar2);
-      engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffef0,g_ClipLeft,local_14);
+                (local_110,"Actor-specific help for selected actor %s (type %s):",this_ptr,pcVar2);
+      engine_2d_c_drawText_FUN_00401fd0(local_110,g_ClipLeft,local_14);
       local_14 = local_14 + 0x16;
       (*((this_ptr->vtable)._ub)->showEditorHelp)(this_ptr,(int *)&local_14);
       uVar1 = local_14;
@@ -192,33 +192,33 @@ void __cdecl core_msnedit_cpp_FUN_00535e70(void)
     if (iVar4 != 0) break;
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
     if (iVar4 != 0) {
-      local_48.orientation = local_48.orientation + 0xb;
+      local_48.scroll_position = local_48.scroll_position + 0xb;
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
     if (iVar4 != 0) {
-      local_48.bounds_top = local_48.bounds_top + -0xb;
+      local_48.scroll_position = local_48.scroll_position - 0xb;
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x51);
     if (iVar4 != 0) {
-      local_48.bounds_bottom = local_48.bounds_bottom + local_48.track_end;
+      local_48.scroll_position = local_48.scroll_position + local_48.max_value;
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x49);
     if (iVar4 != 0) {
-      local_48.track_end = local_48.track_end - local_48.thumb_end;
+      local_48.scroll_position = local_48.scroll_position - local_48.max_value;
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
     if (iVar4 != 0) {
-      local_48.thumb_end = 0;
+      local_48.scroll_position = 0;
     }
-    if ((int)(local_14 - unaff_EBP) < local_48.thumb_end) {
-      local_48.thumb_end = local_14 - unaff_EBP;
+    if (local_48.current_value - local_48.max_value < local_48.scroll_position) {
+      local_48.scroll_position = local_48.current_value - local_48.max_value;
     }
-    if (0x7fffffff < (uint)local_48.thumb_end) {
-      local_48.thumb_end = 0;
+    if (0x7fffffff < (uint)local_48.scroll_position) {
+      local_48.scroll_position = 0;
     }
-    shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&local_48.thumb_end);
+    shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&local_48);
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20((CEdScrollBar *)&local_48.max_value,0);
+  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_48,0);
   return;
 }

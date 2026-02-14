@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,float delta_time)
 
 {
@@ -26,26 +28,29 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   CTommyGun *this_ptr_02;
   CTommyGun *actor;
   int iVar13;
-  int iVar14;
   char *model_name;
-  byte auStack_f4 [84];
+  SDamageInfo SStack_104;
+  SCollisionInfo SStack_c8;
   CBoundingBox3D local_a0;
   float local_88;
   float local_84;
   float local_80;
-  float local_7c;
   float local_70;
   float local_6c;
   float local_68;
-  byte local_58 [8];
-  float local_50;
+  CVector3f CStack_64;
+  CVector3f local_58;
   CVector3f local_4c;
+  float fStack_40;
+  float fStack_3c;
   float fStack_38;
   float local_34;
   float local_30;
   float local_2c;
   float local_28;
   float local_24;
+  int iStack_20;
+  int iStack_1c;
   int iStack_18;
   int local_14;
   
@@ -73,14 +78,14 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
     }
   }
   else {
-    local_50 = 1.0 / delta_time;
-    local_58._0_4_ = local_88 * local_50;
-    local_58._4_4_ = local_84 * local_50;
-    local_50 = local_80 * local_50;
-    if (pCVar8 != (CVector3f *)local_58) {
-      pCVar8->x = (float)local_58._0_4_;
-      *(uint *)(this_ptr->unk1 + 0x5f4) = local_58._4_4_;
-      *(float *)(this_ptr->unk1 + 0x5f8) = local_50;
+    local_58.z = 1.0 / delta_time;
+    local_58.x = local_88 * local_58.z;
+    local_58.y = local_84 * local_58.z;
+    local_58.z = local_80 * local_58.z;
+    if (pCVar8 != &local_58) {
+      pCVar8->x = local_58.x;
+      *(float *)(this_ptr->unk1 + 0x5f4) = local_58.y;
+      *(float *)(this_ptr->unk1 + 0x5f8) = local_58.z;
     }
     local_24 = SQRT(*(float *)(this_ptr->unk1 + 0x5f8) * *(float *)(this_ptr->unk1 + 0x5f8) +
                     *(float *)(this_ptr->unk1 + 0x5f0) * *(float *)(this_ptr->unk1 + 0x5f0) +
@@ -119,52 +124,52 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   (this_ptr->base).location.position.y = fVar3 + 3.7f;
   (this_ptr->base).orient.vec.y = fVar4;
   (*pCVar5->getBoundingBox)(&this_ptr->base,&local_a0);
-  iVar13 = 0;
-  for (iVar14 = 0; iVar14 < g_CDemonSetPtr->damage_listener_count; iVar14 = iVar14 + 1) {
-    pCVar6 = *(CCharacter **)(g_CDemonSetPtr->unk4 + iVar13 + -4);
+  iStack_18 = 0;
+  for (iVar13 = 0; iVar13 < g_CDemonSetPtr->damage_listener_count; iVar13 = iVar13 + 1) {
+    pCVar6 = *(CCharacter **)(g_CDemonSetPtr->unk4 + iStack_18 + -4);
     pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c790
                         (&pCVar6->base,g_CMobsterClassInfo.name_hash);
     if ((pCVar10 == (CDemonActor *)0x0) ||
        (this_ptr != *(CVehicle **)(pCVar10[0x8e].actor_name + 0x10))) {
-      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_f4 + 0x34));
-      iVar11 = (*((pCVar6->base).vtable._ub)->hasCollision)
-                         (&pCVar6->base,(SCollisionInfo *)(auStack_f4 + 0x34));
+      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_c8);
+      iVar11 = (*((pCVar6->base).vtable._ub)->hasCollision)(&pCVar6->base,&SStack_c8);
       if ((iVar11 == 2) &&
-         (((((pCVar6->base).location.position.y <= (this_ptr->base).location.position.y + local_80
-            && ((this_ptr->base).location.position.y + local_a0.max.z <=
-                (pCVar6->base).location.position.y + local_a0.min.x)) &&
+         (((((pCVar6->base).location.position.y <=
+             (this_ptr->base).location.position.y + local_a0.max.y &&
+            ((this_ptr->base).location.position.y + local_a0.min.y <=
+             (pCVar6->base).location.position.y + SStack_c8.cylinder_top_y)) &&
            (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                      (&this_ptr->base,(CVector3f *)(local_58 + 4),&(pCVar6->base).location.position
-                      ), local_a0.max.y <= (float)local_58._4_4_ + local_a0.min.y)) &&
-          (((float)local_58._4_4_ - local_a0.min.y <= local_84 &&
-           (local_88 <= local_4c.x + local_a0.min.y)))))) {
-        if (local_4c.x - local_a0.min.y <= local_7c) {
-          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_f4);
-          auStack_f4._48_4_ = 4;
-          auStack_f4._4_4_ = 999.0;
-          (*(((pCVar6->base).vtable._uc)->_uc).processDamage)(pCVar6,(SDamageInfo *)auStack_f4);
+                      (&this_ptr->base,&CStack_64,&(pCVar6->base).location.position),
+           local_a0.min.x <= CStack_64.x + SStack_c8.cylinder_radius)) &&
+          ((CStack_64.x - SStack_c8.cylinder_radius <= local_a0.max.x &&
+           (local_a0.min.z <= CStack_64.z + SStack_c8.cylinder_radius)))))) {
+        if (CStack_64.z - SStack_c8.cylinder_radius <= local_a0.max.z) {
+          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_104);
+          SStack_104.damage_type = 4;
+          SStack_104.damage_amount = 999.0;
+          (*(((pCVar6->base).vtable._uc)->_uc).processDamage)(pCVar6,&SStack_104);
         }
-        else if ((local_4c.x - local_a0.min.y < local_7c + (float)30) &&
-                (iVar11 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->unk3),
-                iVar11 == 0)) {
+        else if ((CStack_64.z - SStack_c8.cylinder_radius < local_a0.max.z + (float)30)
+                && (iVar11 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->unk3),
+                   iVar11 == 0)) {
           uVar12 = core_vehicle_cpp_CVehicle_FUN_005e8b50(this_ptr);
           *(uint *)this_ptr->unk3 = uVar12;
         }
       }
     }
-    iVar13 = iVar13 + 4;
+    iStack_18 = iStack_18 + 4;
   }
   if (*(int *)(this_ptr->unk3 + 0x18) != 0) goto LAB_005e82f4;
   pCVar7 = g_HeroActors[g_LocalHeroIndex];
-  fStack_38 = (this_ptr->base).location.position.x - (pCVar7->base).base.location.position.x;
-  local_34 = (this_ptr->base).location.position.y - (pCVar7->base).base.location.position.y;
-  local_30 = (this_ptr->base).location.position.z - (pCVar7->base).base.location.position.z;
-  if ((SQRT(local_30 * local_30 + fStack_38 * fStack_38 + local_34 * local_34) <=
+  fStack_40 = (this_ptr->base).location.position.x - (pCVar7->base).base.location.position.x;
+  fStack_3c = (this_ptr->base).location.position.y - (pCVar7->base).base.location.position.y;
+  fStack_38 = (this_ptr->base).location.position.z - (pCVar7->base).base.location.position.z;
+  if ((SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c) <=
        (float)200) || (0x671 < (int)g_CDemonSetPtr->actor_list_ptr)) goto LAB_005e82f4;
   iVar13 = 0;
-  iStack_18 = 0;
-  local_14 = 0;
-  for (iVar14 = 0; iVar14 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar14 = iVar14 + 1) {
+  iStack_20 = 0;
+  iStack_1c = 0;
+  for (iVar11 = 0; iVar11 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar11 = iVar11 + 1) {
     pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c790
                         (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar13 + 8000),
                          g_CMobsterClassInfo.name_hash);
@@ -172,17 +177,17 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
        (pCVar9 = *(CVehicle **)(pCVar10[0x8e].actor_name + 0x10), this_ptr == pCVar9)) {
       if (*(int *)(pCVar10[0x8e].actor_name + 0x14) == 0) {
         pCVar9->last_mobster_left = pCVar10;
-        local_14 = 1;
+        iStack_1c = 1;
       }
       else {
         pCVar9->unk4 = (int)pCVar10;
-        iStack_18 = 1;
+        iStack_20 = 1;
       }
     }
     iVar13 = iVar13 + 4;
   }
-  if ((local_14 != 0) && (iStack_18 != 0)) goto LAB_005e82f4;
-  if (local_14 == 0) {
+  if ((iStack_1c != 0) && (iStack_20 != 0)) goto LAB_005e82f4;
+  if (iStack_1c == 0) {
     pCVar6 = (CCharacter *)this_ptr->last_mobster_left;
     if (pCVar6 != (CCharacter *)0x0) {
       iVar13 = (*(((pCVar6->base).vtable._uc)->_uc).getDeathState)(pCVar6);
@@ -190,8 +195,8 @@ joined_r0x005e8664:
       if (iVar13 == 0) goto LAB_005e82f4;
     }
   }
-  else if ((iStack_18 == 0) && (this_ptr->unk4 != 0)) {
-    iVar13 = (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0x120))();
+  else if ((iStack_20 == 0) && (iVar13 = this_ptr->unk4, iVar13 != 0)) {
+    iVar13 = (**(code **)(*(int *)(iVar13 + 0x154) + 0x120))(iVar13);
     goto joined_r0x005e8664;
   }
   this_ptr_00 = (CMobster *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"..\\core\\vehicle.cpp",0x15d);
@@ -219,7 +224,7 @@ joined_r0x005e8664:
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(this_ptr_01->base).base.model,model_name);
   this_ptr_01->vehicle = &this_ptr->base;
-  if (local_14 == 0) {
+  if (iStack_1c == 0) {
     this_ptr_01->side_of_car = 0;
     this_ptr->last_mobster_left = (CDemonActor *)this_ptr_01;
   }
@@ -235,10 +240,10 @@ joined_r0x005e8664:
   (this_ptr_01->base).base.base.location.position.y = (this_ptr->base).location.position.y;
   (this_ptr_01->base).base.base.location.position.z = (this_ptr->base).location.position.z;
   (this_ptr_01->base).base.base.location.area_id = (this_ptr->base).location.area_id;
-  pUVar1 = &(this_ptr_01->base).base.base.orient;
-  pUVar2 = &(this_ptr->base).orient;
-  if (pUVar1 != pUVar2) {
-    (pUVar1->vec).x = (pUVar2->vec).x;
+  pUVar2 = &(this_ptr_01->base).base.base.orient;
+  pUVar1 = &(this_ptr->base).orient;
+  if (pUVar2 != pUVar1) {
+    (pUVar2->vec).x = (pUVar1->vec).x;
     (this_ptr_01->base).base.base.orient.vec.y = (this_ptr->base).orient.vec.y;
     (this_ptr_01->base).base.base.orient.vec.z = (this_ptr->base).orient.vec.z;
   }
@@ -246,10 +251,10 @@ joined_r0x005e8664:
   (actor->base).base.location.position.y = (this_ptr->base).location.position.y;
   (actor->base).base.location.position.z = (this_ptr->base).location.position.z;
   (actor->base).base.location.area_id = (this_ptr->base).location.area_id;
-  pUVar1 = &(actor->base).base.orient;
-  pUVar2 = &(this_ptr->base).orient;
-  if (pUVar1 != pUVar2) {
-    (pUVar1->vec).x = (pUVar2->vec).x;
+  pUVar2 = &(actor->base).base.orient;
+  pUVar1 = &(this_ptr->base).orient;
+  if (pUVar2 != pUVar1) {
+    (pUVar2->vec).x = (pUVar1->vec).x;
     (actor->base).base.orient.vec.y = (this_ptr->base).orient.vec.y;
     (actor->base).base.orient.vec.z = (this_ptr->base).orient.vec.z;
   }

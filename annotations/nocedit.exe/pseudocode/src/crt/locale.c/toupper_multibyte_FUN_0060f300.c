@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-wchar_t __watcallStack
-toupper_multibyte(char *mb_char,char *output_buffer)
+wchar_t __watcallStack toupper_multibyte(char *mb_char,char *output_buffer)
 
 {
   wchar_t wVar1;

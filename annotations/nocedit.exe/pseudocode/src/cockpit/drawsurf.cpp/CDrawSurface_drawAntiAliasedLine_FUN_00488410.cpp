@@ -2,13 +2,11 @@
 // Address: 00488410
 // Address Range: [[00488410, 004884c9]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410 (CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410
-          (CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
   int iVar1;

@@ -2,13 +2,11 @@
 // Address: 004a58f0
 // Address Range: [[004a58f0, 004a599e]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_draw3DBorder_FUN_004a58f0 (int left,int top,int width,int height,int border_style_flag)
+// Signature: void __cdecl shape_edittool_cpp_draw3DBorder_FUN_004a58f0(int left,int top,int width,int height,int border_style_flag)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_draw3DBorder_FUN_004a58f0
-          (int left,int top,int width,int height,int border_style_flag)
+void __cdecl shape_edittool_cpp_draw3DBorder_FUN_004a58f0(int left,int top,int width,int height,int border_style_flag)
 
 {
   g_ActiveRenderColor = g_HighlightColor;

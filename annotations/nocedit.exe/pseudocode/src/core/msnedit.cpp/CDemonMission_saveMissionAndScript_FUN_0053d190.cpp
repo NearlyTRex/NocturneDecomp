@@ -2,13 +2,11 @@
 // Address: 0053d190
 // Address Range: [[0053d190, 0053d21a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190 (CDemonMission *this_ptr,char *filename)
+// Signature: void __cdecl core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CDemonMission *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-void __cdecl
-core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190
-          (CDemonMission *this_ptr,char *filename)
+void __cdecl core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CDemonMission *this_ptr,char *filename)
 
 {
   CPodFile *pCVar1;
@@ -23,6 +21,6 @@ core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190
   core_mission_cpp_CDemonMission_save_FUN_00522e30(this_ptr,filename);
   makepath
             (local_10c,(char *)0x0,(char *)0x0,this_ptr->mission_name,"scr");
-  core_script_cpp_CScript_FUN_00566180(g_CScriptPtr,local_10c);
+  core_script_cpp_CScript_saveToFile_FUN_00566180(g_CScriptPtr,local_10c);
   return;
 }

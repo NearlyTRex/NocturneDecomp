@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_weapon_cpp_CWeapon_onDropped_FUN_005ee3f0(CWeapon *this_ptr,CVector3f *drop_position)
+void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_005ee3f0(CWeapon *this_ptr,CVector3f *drop_position)
 
 {
   CVector3f *pCVar1;

@@ -2,13 +2,11 @@
 // Address: 00403430
 // Address Range: [[00403430, 00403649]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430 (int width,int height,int bits_per_pixel,int stride,void *frame_buffer)
+// Signature: int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(int width,int height,int bits_per_pixel,int stride,void *frame_buffer)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_2d_c_mapFrameBuffer_FUN_00403430
-          (int width,int height,int bits_per_pixel,int stride,void *frame_buffer)
+int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(int width,int height,int bits_per_pixel,int stride,void *frame_buffer)
 
 {
   int iVar1;

@@ -2,13 +2,11 @@
 // Address: 005724e0
 // Address Range: [[005724e0, 00572506]]
 // Convention: __cdecl
-// Signature: float __cdecl core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_005724e0 (CDemonSet *this_ptr,CVector3f *world_position)
+// Signature: float __cdecl core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_005724e0(CDemonSet *this_ptr,CVector3f *world_position)
 
 #include "nocturne.h"
 
-float __cdecl
-core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_005724e0
-          (CDemonSet *this_ptr,CVector3f *world_position)
+float __cdecl core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_005724e0(CDemonSet *this_ptr,CVector3f *world_position)
 
 {
   float fVar1;

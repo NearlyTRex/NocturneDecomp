@@ -1,138 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 15,
-        "line": 62,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 63,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 64,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 67,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 68,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 69,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 71,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 76,
-        "message": "use of undeclared identifier 'stack0xffffff34'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 89,
-        "message": "C-style cast from 'CKeyFramedModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 90,
-        "message": "C-style cast from 'CKeyFramedModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 85,
-        "line": 91,
-        "message": "use of undeclared identifier 'stack0xffffff34'"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 105,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 108,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 110,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 113,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 114,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 118,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 119,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 120,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 383,
+    "complexity_score": 134,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 138,
-    "suspect_count": 23,
-    "suspect_types": [
-      "stack_ref",
-      "unaffected_reg",
-      "unknown_field"
-    ],
-    "total_lines": 469
+    "pseudocode_lines": 134,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 465
   },
   "cross_references": [
     {
@@ -171,7 +52,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10",
-    "signature": "float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 (CDemonSet *this_ptr,float min_t,CVector3f *ray_origin,CVector3f *ray_target,float max_t)"
+    "signature": "float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDemonSet *this_ptr,float min_t,CVector3f *ray_origin,CVector3f *ray_target,float max_t)"
   },
   "function_calls": [
     {
@@ -486,167 +367,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EBP",
-      "text": "CVector3f *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 55,
-      "match": "._0_4_",
-      "text": "local_88._0_4_ = ray_origin->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 56,
-      "match": "._4_4_",
-      "text": "local_88._4_4_ = ray_origin->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 57,
-      "match": "._8_4_",
-      "text": "local_88._8_4_ = ray_origin->z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._0_4_",
-      "text": "local_7c._0_4_ = ray_origin->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._4_4_",
-      "text": "local_7c._4_4_ = ray_origin->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._8_4_",
-      "text": "local_7c._8_4_ = ray_origin->z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 64,
-      "match": "._4_4_",
-      "text": "auStack_50._4_4_ = ray_origin->x + local_64;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 69,
-      "match": "&stack0xffffff34",
-      "text": "core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)&stack0xffffff34);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xffffff34",
-      "text": "iVar3 = (*((pCVar1->vtable)._ub)->hasCollision)(pCVar1,(SCollisionInfo *)&stack0xffffff34)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 91,
-      "match": "unaff_EBP",
-      "text": "if (&CStack_9c != unaff_EBP) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 92,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP->x = CStack_9c.x;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 93,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP->y = CStack_9c.y;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 94,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP->z = CStack_9c.z;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 98,
-      "match": "._4_4_",
-      "text": "this_ptr->unk2 = local_88._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 101,
-      "match": "._0_4_",
-      "text": "auStack_50._0_4_ = fStack_38 * fVar4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 103,
-      "match": "._4_4_",
-      "text": "auStack_50._4_4_ = fStack_34 * fVar4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 106,
-      "match": "._0_4_",
-      "text": "local_5c.x = (float)auStack_50._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 107,
-      "match": "._4_4_",
-      "text": "local_5c.y = (float)auStack_50._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 111,
-      "match": "._8_4_",
-      "text": "local_88._8_4_ = ray_origin->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 112,
-      "match": "._0_4_",
-      "text": "local_7c._0_4_ = ray_origin->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 113,
-      "match": "._4_4_",
-      "text": "local_7c._4_4_ = ray_origin->z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 116,
-      "match": "._8_4_",
-      "text": "local_7c._8_4_ = ray_origin->x;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister double crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)
+; __watcallRegister double __watcallRegister crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)
 ;
 ;
 ; XREF[1]:

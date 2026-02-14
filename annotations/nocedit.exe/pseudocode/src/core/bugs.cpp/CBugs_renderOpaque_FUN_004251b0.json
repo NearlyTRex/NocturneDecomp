@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 31,
-        "message": "use of undeclared identifier 'stack0xffffffbc'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 108,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
-    "pseudocode_lines": 58,
-    "suspect_count": 4,
+    "pseudocode_lines": 63,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "warning_type_propagation"
     ],
-    "total_lines": 194
+    "total_lines": 199
   },
   "cross_references": [],
   "function": {
@@ -182,32 +174,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "CDemonActor *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xffffffbc",
-      "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffbc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar1 < in_stack_0000000c[0x8d].is_editor_hidden);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_0000000c",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
-      "type": "stack_param"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     }
   ],
   "vtable_info": {

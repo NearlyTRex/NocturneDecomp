@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __edi_esi_ebx
-wincore_windll_cpp_renderScanline_FUN_005b5710(void *left_data,void *right_data,int scanline_y)
+void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(void *left_data,void *right_data,int scanline_y)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005b5710. Too many branches */

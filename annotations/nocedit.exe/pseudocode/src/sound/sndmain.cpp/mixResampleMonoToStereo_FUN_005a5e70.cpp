@@ -2,16 +2,13 @@
 // Address: 005a5e70
 // Address Range: [[005a5e70, 005a5fa9]]
 // Convention: __cdecl
-// Signature: double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70 (short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains, double resample_position,double resample_delta,int samples_to_process)
+// Signature: double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
 
 #include "nocturne.h"
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
-double __cdecl
-sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70
-          (short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,
-          double resample_position,double resample_delta,int samples_to_process)
+double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
 
 {
   int iVar1;

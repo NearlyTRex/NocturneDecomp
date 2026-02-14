@@ -11,30 +11,31 @@ uint FUN_0060fcf4(short *param_1)
 {
   short sVar1;
   short *psVar2;
+  short *in_EAX;
   uint *ptr;
   int iVar3;
   SIZE_T n;
   ulong new_size;
-  short *in_stack_00000004;
+  bool bVar4;
   
   ptr = (uint *)g_EnvironInitialized;
-  if (in_stack_00000004 == (short *)0x0) {
+  if (param_1 == (short *)0x0) {
     return 0xffffffff;
   }
-  if (*in_stack_00000004 != 0) {
-    sVar1 = in_stack_00000004[1];
-    psVar2 = in_stack_00000004;
-    while ((param_1 = psVar2 + 1, sVar1 != 0 && (*param_1 != 0x3d))) {
+  if (*param_1 != 0) {
+    sVar1 = param_1[1];
+    psVar2 = param_1;
+    while ((in_EAX = psVar2 + 1, sVar1 != 0 && (*in_EAX != 0x3d))) {
       sVar1 = psVar2[2];
-      psVar2 = param_1;
+      psVar2 = in_EAX;
     }
   }
-  if (*param_1 == 0) {
+  if (*in_EAX == 0) {
     return 0xffffffff;
   }
-  sVar1 = param_1[1];
+  bVar4 = in_EAX[1] == 0;
   if (g_EnvironInitialized == 0) {
-    if (sVar1 == 0) {
+    if (bVar4) {
       return 0;
     }
     ptr = malloc(9);
@@ -48,8 +49,8 @@ uint FUN_0060fcf4(short *param_1)
     n = 0;
   }
   else {
-    iVar3 = FUN_0060fe94();
-    if (sVar1 == 0) {
+    iVar3 = FUN_0060fe94(param_1,bVar4);
+    if (bVar4) {
       return 0;
     }
     if (iVar3 < 1) {
@@ -79,7 +80,7 @@ uint FUN_0060fcf4(short *param_1)
       n = iVar3 - 1;
     }
   }
-  ptr[n] = in_stack_00000004;
+  ptr[n] = param_1;
   *(byte *)(n + (int)g_EnvironStringArea) = 0;
   return 0;
 }

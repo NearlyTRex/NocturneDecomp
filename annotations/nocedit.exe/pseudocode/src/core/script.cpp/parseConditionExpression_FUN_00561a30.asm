@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_parseConditionExpression_FUN_00561a30 (char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position ,CCmdParm *parm_out,CCmdParse *parse_out)
+; __cdecl int __cdecl core_script_cpp_parseConditionExpression_FUN_00561a30(char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position,CCmdParm *parm_out,CCmdParse *parse_out)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   input_text

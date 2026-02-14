@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(CDeformableModel *this_ptr)
+void __cdecl core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(CDeformableModel *this_ptr)
 
 {
   int iVar1;

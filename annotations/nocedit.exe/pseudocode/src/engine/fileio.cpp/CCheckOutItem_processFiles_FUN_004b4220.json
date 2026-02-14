@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 28,
-        "line": 113,
+        "line": 111,
         "message": "comparison between pointer and integer ('uint' (aka 'unsigned int') and 'char *')"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 114,
+        "line": 112,
         "message": "comparison between pointer and integer ('uint' (aka 'unsigned int') and 'char *')"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 153,
+        "line": 151,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 35,
-        "line": 199,
+        "line": 197,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 103,
-        "line": 344,
+        "line": 342,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 405,
+        "line": 403,
         "message": "format specifies type 'char *' but the argument has type 'SVersionControlSession *' [-Werror,-Wformat]"
       }
     ],
@@ -43,18 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 1287,
-    "complexity_score": 533,
+    "complexity_score": 531,
     "cross_reference_count": 0,
     "function_call_count": 43,
     "global_count": 63,
-    "pseudocode_lines": 478,
+    "pseudocode_lines": 476,
     "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 1765
+    "total_lines": 1763
   },
   "cross_references": [],
   "function": {
@@ -68,7 +68,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
-    "signature": "int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220 (CCheckOutItem *this_ptr,int operation_mode,char *filename)"
+    "signature": "int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,int operation_mode,char *filename)"
   },
   "function_calls": [
     {
@@ -1059,21 +1059,21 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 83,
       "match": "(SFoundFileInfo *)((int)",
       "text": "pSVar8 = (SFoundFileInfo *)((int)pSVar9 + (uint)bVar12 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 89,
+      "line": 87,
       "match": "pSVar8[-1].",
       "text": "pcVar10 = (char *)((int)&pSVar8[-1].container_size + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 87,
       "match": "(char *)((int)",
       "text": "pcVar10 = (char *)((int)&pSVar8[-1].container_size + 3);",
       "type": "pointer_cast"

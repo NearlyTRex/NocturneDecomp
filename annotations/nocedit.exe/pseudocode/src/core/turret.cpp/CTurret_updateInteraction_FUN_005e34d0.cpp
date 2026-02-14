@@ -2,13 +2,11 @@
 // Address: 005e34d0
 // Address Range: [[005e34d0, 005e3530]]
 // Convention: __cdecl
-// Signature: int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0 (CTurret *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state)
+// Signature: int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state )
 
 #include "nocturne.h"
 
-int __cdecl
-core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0
-          (CTurret *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state)
+int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state )
 
 {
   UOrientationVector *pUVar1;

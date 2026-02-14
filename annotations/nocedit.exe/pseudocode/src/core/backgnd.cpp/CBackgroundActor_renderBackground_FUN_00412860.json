@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 20,
-        "message": "use of undeclared identifier 'stack0xffffffe4'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 35,
+    "complexity_score": 18,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 20,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 68
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 66
   },
   "cross_references": [],
   "function": {
@@ -35,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_00412860",
-    "signature": "void __cdecl core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_00412860 (CBackgroundActor *this_ptr,int layer_flag)"
+    "signature": "void __cdecl core_backgnd_cpp_CBackgroundActor_renderBackground_FUN_00412860(CBackgroundActor *this_ptr,int layer_flag)"
   },
   "function_calls": [
     {
@@ -134,15 +125,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 13,
-      "match": "&stack0xffffffe4",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);",
-      "type": "stack_ref"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

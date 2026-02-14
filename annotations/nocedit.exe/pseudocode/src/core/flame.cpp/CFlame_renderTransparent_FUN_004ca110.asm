@@ -20,7 +20,7 @@
 ;   double DOUBLE_0062a136 = 0.5
 ;   float FLOAT_0065e010 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic DAT_0067b100
+;   SMRGLTextureBasic[40] SMRGLTextureBasic_ARRAY_0067b100
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_RenderVertexBuffer[0].u
@@ -385,7 +385,7 @@ section .text
     IDIV ECX                            ; 004ca587
     IMUL EDX,EDX,0x18                   ; 004ca589
     IMUL EAX,dword ptr [EBP + 0x1a8],0xc0 ; 004ca58c
-    ADD EAX,0x67b100                    ; 004ca596 | DAT_0067b100
+    ADD EAX,0x67b100                    ; 004ca596 | SMRGLTextureBasic_ARRAY_0067b100
     ADD EDX,EAX                         ; 004ca59b
     PUSH EDX                            ; 004ca59d
     MOV EBX,dword ptr [0x006703ec]      ; 004ca59e | g_CDemonRendererPtr2

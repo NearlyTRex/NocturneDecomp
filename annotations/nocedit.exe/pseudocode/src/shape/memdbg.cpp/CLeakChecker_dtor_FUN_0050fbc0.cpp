@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLeakChecker * __cdecl
-shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChecker *this_ptr,uint flags)
+CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChecker *this_ptr,uint flags)
 
 {
   SMemHead *pSVar1;

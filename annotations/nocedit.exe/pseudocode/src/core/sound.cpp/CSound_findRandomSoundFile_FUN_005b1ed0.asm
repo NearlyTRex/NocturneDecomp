@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0 (CSound *this_ptr,char *out_result,char *wildcard_pattern)
+; __cdecl void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0(CSound *this_ptr,char *out_result,char *wildcard_pattern)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

@@ -79,14 +79,14 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
   g_ActiveRenderColor = line_color;
   do {
     local_160.w_recip = (float)((uint)corner_index ^ 1);
-    local_160.fog = (float)&local_d0;
+    local_160.fog = (int)&local_d0;
     local_160.color = (int)bbox;
-    local_160.light = 5.953746e-39;
+    local_160.light = 0x40d49f;
     pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (bbox,(CVector3f *)local_160.fog,(uint)local_160.w_recip);
-    local_160.fog = (float)&local_dc;
+    local_160.fog = (int)&local_dc;
     local_160.color = (int)bbox;
-    local_160.light = 5.95378e-39;
+    local_160.light = 0x40d4b7;
     local_160.w_recip = corner_index;
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (bbox,(CVector3f *)local_160.fog,(uint)corner_index);
@@ -106,7 +106,7 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_1c.y = (int)ROUND(local_60 * 256.0f);
     local_1c.z = (int)ROUND(local_5c * 256.0f);
     local_160.w_recip = (float)&local_1c;
-    local_160.fog = (float)g_CDemonRendererPtr1->vertex_buffer_ptr;
+    local_160.fog = (int)g_CDemonRendererPtr1->vertex_buffer_ptr;
     local_160.color = 0x40d594;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
@@ -114,7 +114,7 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_124.y = (int)ROUND(local_e4 * 256.0f);
     local_124.z = (int)ROUND(local_e0 * 256.0f);
     local_160.w_recip = (float)&local_124;
-    local_160.fog = (float)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
+    local_160.fog = (int)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
     local_160.color = 0x40d5d7;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
@@ -142,13 +142,13 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_190,vertex2);
     local_160.w_recip = (float)((uint)corner_index ^ 2);
     local_160.color = (int)bbox;
-    local_160.light = 5.954281e-39;
-    local_160.fog = (float)&local_130;
+    local_160.light = 0x40d61d;
+    local_160.fog = (int)&local_130;
     pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (bbox,&local_130,(uint)local_160.w_recip);
-    local_160.fog = (float)&local_c4;
+    local_160.fog = (int)&local_c4;
     local_160.color = (int)bbox;
-    local_160.light = 5.954315e-39;
+    local_160.light = 0x40d635;
     local_160.w_recip = corner_index;
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (bbox,(CVector3f *)local_160.fog,(uint)corner_index);
@@ -168,7 +168,7 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_28.y = (int)ROUND(local_78 * 256.0f);
     local_28.z = (int)ROUND(local_74 * 256.0f);
     local_160.w_recip = (float)&local_28;
-    local_160.fog = (float)g_CDemonRendererPtr1->vertex_buffer_ptr;
+    local_160.fog = (int)g_CDemonRendererPtr1->vertex_buffer_ptr;
     local_160.color = 0x40d71b;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
@@ -176,7 +176,7 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_b8.y = (int)ROUND(local_6c * 256.0f);
     local_b8.z = (int)ROUND(local_68 * 256.0f);
     local_160.w_recip = (float)&local_b8;
-    local_160.fog = (float)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
+    local_160.fog = (int)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
     local_160.color = 0x40d764;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
@@ -203,14 +203,14 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     vertex2_00.w_recip = local_160.w_recip;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_190,vertex2_00);
     local_160.w_recip = (float)((uint)corner_index ^ 4);
-    local_160.fog = (float)&local_a0;
+    local_160.fog = (int)&local_a0;
     local_160.color = (int)bbox;
-    local_160.light = 5.954842e-39;
+    local_160.light = 0x40d7ad;
     pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (bbox,(CVector3f *)local_160.fog,(uint)local_160.w_recip);
-    local_160.fog = (float)&local_ac;
+    local_160.fog = (int)&local_ac;
     local_160.color = (int)bbox;
-    local_160.light = 5.95487e-39;
+    local_160.light = 0x40d7c1;
     local_160.w_recip = corner_index;
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (bbox,(CVector3f *)local_160.fog,(uint)corner_index);
@@ -230,7 +230,7 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_94.y = (int)ROUND(local_54 * 256.0f);
     local_94.z = (int)ROUND(local_50 * 256.0f);
     local_160.w_recip = (float)&local_94;
-    local_160.fog = (float)g_CDemonRendererPtr1->vertex_buffer_ptr;
+    local_160.fog = (int)g_CDemonRendererPtr1->vertex_buffer_ptr;
     local_160.color = 0x40d8b0;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
@@ -238,7 +238,7 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_118.y = (int)ROUND(local_f0 * 256.0f);
     local_118.z = (int)ROUND(local_ec * 256.0f);
     local_160.w_recip = (float)&local_118;
-    local_160.fog = (float)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
+    local_160.fog = (int)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
     local_160.color = 0x40d8f3;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);

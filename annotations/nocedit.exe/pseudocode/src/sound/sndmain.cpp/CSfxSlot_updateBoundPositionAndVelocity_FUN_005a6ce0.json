@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 110,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 44,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 114
+    "total_lines": 113
   },
   "cross_references": [
     {
@@ -81,42 +81,42 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 15,
       "match": "(float *)((int)",
       "text": "(this_ptr->options).position.y = (double)*(float *)((int)&pCVar2->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->options).position.z + 4) = *(uint *)((int)&pCVar3->z + 4)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->options).position.z + 4) = *(uint *)((int)&pCVar3->z + 4)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = *(uint *)((int)&pCVar3->z + 4)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = *(uint *)((int)&pCVar3->z + 4)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(float *)((int)",
       "text": "(this_ptr->options).velocity.y = (double)*(float *)((int)&pCVar2->x + 4);",
       "type": "pointer_cast"

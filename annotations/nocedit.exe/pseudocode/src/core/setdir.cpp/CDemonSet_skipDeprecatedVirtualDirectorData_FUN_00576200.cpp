@@ -2,13 +2,11 @@
 // Address: 00576200
 // Address Range: [[00576200, 0057629d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200 (CDemonSet *this_ptr,_FILE *file_handle)
+// Signature: void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200(CDemonSet *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl
-core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200
-          (CDemonSet *this_ptr,_FILE *file_handle)
+void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200(CDemonSet *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;

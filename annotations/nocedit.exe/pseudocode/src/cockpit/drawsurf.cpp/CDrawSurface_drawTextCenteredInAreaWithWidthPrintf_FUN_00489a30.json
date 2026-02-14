@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 23,
-        "line": 17,
+        "line": 15,
         "message": "assigning to 'char *' from incompatible type 'char *[1]'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 17,
+        "line": 15,
         "message": "use of undeclared identifier 'stack0x0000001c'"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 18,
+        "line": 16,
         "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 19,
+        "line": 17,
         "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
       }
     ],
@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 43,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 11,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
       "stack_ref"
     ],
-    "total_lines": 53
+    "total_lines": 51
   },
   "cross_references": [
     {
@@ -61,7 +61,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30 (CDrawSurface *this_ptr,int x,int width,int y,int height,char *format,...)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format,...)"
   },
   "function_calls": [
     {
@@ -193,7 +193,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 10,
+      "line": 8,
       "match": "&stack0x0000001c",
       "text": "local_14.value[0] = (char * [1])&stack0x0000001c;",
       "type": "stack_ref"

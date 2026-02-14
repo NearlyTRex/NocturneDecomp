@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00471770 (CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix, CVector3f *aabb_min,CVector3f *aabb_max)
+; __cdecl int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00471770(CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix,CVector3f *aabb_min,CVector3f *aabb_max)
 ;
 ; Parameters:
 ; CDemonGlobe *    Stack[0x4]:4   this_ptr

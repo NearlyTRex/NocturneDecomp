@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00 (CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint)
+; __cdecl int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr

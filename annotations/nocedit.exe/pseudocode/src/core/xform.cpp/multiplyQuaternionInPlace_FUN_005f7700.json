@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 56,
+    "complexity_score": 54,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 19,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 46
+    "total_lines": 44
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700",
-    "signature": "CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_005f7700 (CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr)"
+    "signature": "CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_005f7700(CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr)"
   },
   "function_calls": [
     {
@@ -102,21 +102,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 14,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)quat1_inout + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 18,
       "match": "(uint *)((int)",
       "text": "*puVar2 = *(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"

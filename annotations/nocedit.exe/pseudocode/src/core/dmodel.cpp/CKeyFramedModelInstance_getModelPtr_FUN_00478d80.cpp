@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CKeyFramedModel * __cdecl
-core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance *this_ptr)
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance *this_ptr)
 
 {
   if (this_ptr->model_ptr != (CKeyFramedModel *)0x0) {

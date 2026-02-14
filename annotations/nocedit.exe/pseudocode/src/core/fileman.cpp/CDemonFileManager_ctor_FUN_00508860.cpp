@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonFileManager * __cdecl
-core_fileman_cpp_CDemonFileManager_ctor_FUN_00508860(CDemonFileManager *this_ptr)
+CDemonFileManager * __cdecl core_fileman_cpp_CDemonFileManager_ctor_FUN_00508860(CDemonFileManager *this_ptr)
 
 {
   CFileManager *pCVar1;

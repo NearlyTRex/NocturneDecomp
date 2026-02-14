@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_event_cpp_setEventError_FUN_004aa270(char *source_file,int source_line,char *error_message)
+int __cdecl core_event_cpp_setEventError_FUN_004aa270(char *source_file,int source_line,char *error_message)
 
 {
   char cVar1;

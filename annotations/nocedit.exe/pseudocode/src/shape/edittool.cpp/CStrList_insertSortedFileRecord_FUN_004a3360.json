@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 76,
+        "line": 74,
         "message": "use of undeclared identifier 'stack0x00000014'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 126,
+    "complexity_score": 124,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
-    "pseudocode_lines": 96,
+    "pseudocode_lines": 94,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 286
+    "total_lines": 284
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360",
-    "signature": "void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (CStrList *this_ptr,char *search_key,char *file_path,int file_size)"
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size)"
   },
   "function_calls": [
     {
@@ -310,14 +310,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 49,
       "match": "(char *)((int)",
       "text": "pcVar2 = (char *)((int)pcVar2 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 69,
+      "line": 67,
       "match": "&stack0x00000014",
       "text": "time_ptr = _localtime((time_t *)&stack0x00000014);",
       "type": "stack_ref"

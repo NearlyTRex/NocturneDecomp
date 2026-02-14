@@ -2,13 +2,11 @@
 // Address: 00586fa0
 // Address Range: [[00586fa0, 00587083]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0 (C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode)
+// Signature: void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0(C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode)
 
 #include "nocturne.h"
 
-void __cdecl
-core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0
-          (C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode)
+void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0(C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode)
 
 {
   char cVar1;

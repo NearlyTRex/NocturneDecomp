@@ -9,37 +9,33 @@
 void __cdecl core_boxactor_cpp_CBoxActor_FUN_004218d0(CBoxActor *this_ptr)
 
 {
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  CVector3f CStack_2c;
-  CVector3f CStack_20;
+  CBoundingBox3D CStack_4c;
+  CVector3f CStack_34;
+  CVector3f CStack_28;
+  float fStack_1c;
+  float fStack_18;
   float fStack_14;
-  float fStack_10;
-  float fStack_c;
-  float fStack_8;
+  CVector3f CStack_10;
   
   this_ptr->unk5 = 0;
   if ((0.0 < this_ptr->weight_in_pounds) &&
      ((int *)(this_ptr->base).validation_magic == &g_ActorMagicNumber)) {
     if ((this_ptr->model).model_ptr != (CKeyFramedModel *)0x0) {
-      (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffb4);
-      fStack_14 = fStack_44 + fStack_38;
-      fStack_10 = fStack_40 + fStack_34;
-      CStack_20.x = fStack_14 * 0.5f;
-      CStack_20.y = fStack_10 * 0.5f;
-      fStack_c = fStack_3c + fStack_30;
-      CStack_20.z = fStack_c * 0.5f;
+      (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_4c);
+      fStack_1c = CStack_4c.min.x + CStack_4c.max.x;
+      fStack_18 = CStack_4c.min.y + CStack_4c.max.y;
+      CStack_28.x = fStack_1c * 0.5f;
+      CStack_28.y = fStack_18 * 0.5f;
+      fStack_14 = CStack_4c.min.z + CStack_4c.max.z;
+      CStack_28.z = fStack_14 * 0.5f;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                (&this_ptr->base,&CStack_2c,&CStack_20);
-      fStack_8 = fStack_38 - fStack_44;
+                (&this_ptr->base,&CStack_34,&CStack_28);
+      CStack_10.x = CStack_4c.max.x - CStack_4c.min.x;
+      CStack_10.y = CStack_4c.max.y - CStack_4c.min.y;
+      CStack_10.z = CStack_4c.max.z - CStack_4c.min.z;
       core_box_cpp_CBox_setupCorners_FUN_0041dd20
-                ((CBox *)&this_ptr->sim_box,&CStack_2c,&(this_ptr->base).orient.vec,
-                 (CVector3f *)&fStack_8,this_ptr->weight_in_pounds);
+                ((CBox *)&this_ptr->sim_box,&CStack_34,&(this_ptr->base).orient.vec,&CStack_10,
+                 this_ptr->weight_in_pounds);
       return;
     }
     this_ptr->unk5 = -1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400 (int channel,float freq_start_hz,float freq_end_hz)
+; __cdecl int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   channel

@@ -2,14 +2,11 @@
 // Address: 00517530
 // Address Range: [[00517530, 0051762a]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530 (CLodMesh *this_ptr,int tri_index,int corner_idx,CVector3f *out_gradient,float *out_offset )
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530(CLodMesh *this_ptr,int tri_index,int corner_idx,CVector3f *out_gradient,float *out_offset)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530
-          (CLodMesh *this_ptr,int tri_index,int corner_idx,CVector3f *out_gradient,float *out_offset
-          )
+void __cdecl shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530(CLodMesh *this_ptr,int tri_index,int corner_idx,CVector3f *out_gradient,float *out_offset)
 
 {
   CLodFace *pCVar1;

@@ -8,8 +8,7 @@
 
 /* WARNING: Removing unreachable block (ram,0x005fe232) */
 
-void __cdecl
-_qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
+void __cdecl _qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
 
 {
   byte uVar1;
@@ -30,7 +29,6 @@ _qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
   uint *puVar9;
   uint *puVar10;
   int *b;
-  ushort in_GS;
   byte bVar11;
   int aiStack_16c [32];
   SIZE_T aSStack_ec [32];
@@ -54,10 +52,8 @@ _qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
   void *local_28;
   SIZE_T local_24;
   void *local_20;
-  uint *puStack_18;
   
   bVar11 = 0;
-  puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);
   local_48 = base;
   local_3c = compar;
   if ((((uint)base | size) & 3) == 0) {
@@ -110,48 +106,46 @@ LAB_005fdfad:
         local_24 = num;
         ptr1 = (void *)num;
 LAB_005fe29f:
-        while (local_24 != 0) {
+        for (; local_24 != 0; local_24 = local_24 - 1) {
           ptr1 = (void *)(*local_3c)(local_28,local_44);
           pvVar7 = ptr2_00;
           if (0 < (int)ptr1) break;
           if (ptr1 == (void *)0x0) {
-            if (local_30 == (void *)0x0) {
-              uVar2 = *(uint *)local_2c;
-              *(uint *)local_2c = *(uint *)local_20;
-              *(uint *)local_20 = uVar2;
-              ptr1 = local_20;
-              pvVar7 = local_2c;
+            if (local_38 == 0) {
+              uVar2 = *(uint *)local_34;
+              *(uint *)local_34 = *(uint *)local_28;
+              *(uint *)local_28 = uVar2;
+              ptr1 = local_28;
+              pvVar7 = local_34;
             }
             else {
-              aiStack_16c[1] = 0x5fe2ec;
               memory_swap((void *)0x0,ptr2_00,(SIZE_T)pvVar4);
               ptr1 = extraout_EAX;
             }
-            local_2c = (void *)((int)local_2c + size);
+            local_34 = (void *)((int)local_34 + size);
           }
-          local_20 = (void *)((int)local_20 + size);
+          local_28 = (void *)((int)local_28 + size);
         }
-        while (bytes = local_2c, local_24 != 0) {
+        for (; bytes = local_2c, local_24 != 0; local_24 = local_24 - 1) {
           ptr1 = (void *)(*local_3c)(local_2c,local_44);
           pvVar7 = ptr2_01;
           pvVar4 = bytes;
           if ((int)ptr1 < 0) break;
           if (ptr1 == (void *)0x0) {
-            if (local_30 == (void *)0x0) {
-              pvVar7 = *(void **)local_24;
-              *(uint *)local_24 = *(uint *)local_28;
-              *(void **)local_28 = pvVar7;
-              ptr1 = local_28;
+            if (local_38 == 0) {
+              pvVar7 = *(void **)local_2c;
+              *(uint *)local_2c = *(uint *)local_30;
+              *(void **)local_30 = pvVar7;
+              ptr1 = local_30;
             }
             else {
-              aiStack_16c[1] = 0x5fe38a;
               memory_swap((void *)0x0,ptr2_01,(SIZE_T)bytes);
               ptr1 = extraout_EAX_00;
             }
-            local_28 = (void *)((int)local_28 - size);
+            local_30 = (void *)((int)local_30 - size);
           }
-          pvVar4 = (void *)(local_24 - size);
-          local_24 = (SIZE_T)pvVar4;
+          pvVar4 = (void *)((int)local_2c - size);
+          local_2c = pvVar4;
         }
         if (local_24 != 0) {
           if (local_38 == 0) {
@@ -269,18 +263,17 @@ LAB_005fe46e:
                   puVar10 = (uint *)((int)local_20 - local_40);
                   pvVar4 = (void *)(*local_3c)(puVar10,local_20);
                   if ((int)pvVar4 < 1) break;
-                  if (local_30 == (void *)0x0) {
-                    uVar2 = *puStack_18;
-                    *puStack_18 = *puVar10;
+                  if (local_38 == 0) {
+                    uVar2 = *(uint *)local_20;
+                    *(uint *)local_20 = *puVar10;
                     *puVar10 = uVar2;
                   }
                   else {
-                    aiStack_16c[1] = 0x5fe04b;
                     memory_swap(pvVar4,ptr2,(SIZE_T)pvVar7);
                   }
-                  puStack_18 = (uint *)((int)puStack_18 - local_38);
-                  pvVar7 = (void *)local_40;
-                } while ((uint)local_40 < puStack_18);
+                  local_20 = (void *)((int)local_20 - local_40);
+                  pvVar7 = local_48;
+                } while (local_48 < local_20);
               }
               local_4c = (void *)((int)local_4c + local_40);
             } while (local_4c < local_50);

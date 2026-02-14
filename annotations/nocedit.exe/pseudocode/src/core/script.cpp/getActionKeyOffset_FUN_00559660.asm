@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660 (SActionKeyBindings *action_bindings,char *action_name)
+; __cdecl int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660(SActionKeyBindings *action_bindings,char *action_name)
 ;
 ; Parameters:
 ; SActionKeyBindings * Stack[0x4]:4   action_bindings

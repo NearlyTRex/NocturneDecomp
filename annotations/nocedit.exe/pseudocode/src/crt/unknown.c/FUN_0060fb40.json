@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 172,
+    "complexity_score": 191,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 1,
-    "pseudocode_lines": 67,
-    "suspect_count": 9,
+    "pseudocode_lines": 66,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 282
+    "total_lines": 281
   },
   "cross_references": [],
   "function": {
@@ -25,7 +25,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0060fb40",
-    "signature": "int crt_unknown_c_FUN_0060fb40(void)"
+    "signature": "int crt_unknown_c_FUN_0060fb40(LPWSTR param_1)"
   },
   "function_calls": [
     {
@@ -176,60 +176,74 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "LPWSTR in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "int FUN_0060fb40(LPWSTR param_1)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "text": "if (pWVar2 == in_stack_00000004) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "text": "pWVar2 = (LPWSTR)FUN_006107c0(param_1,0x3d);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "SVar1 = ((int)pWVar2 - (int)in_stack_00000004 >> 1) * 2;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "text": "if (pWVar2 == param_1) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "memcpy(dest,in_stack_00000004,SVar1);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "text": "SVar1 = ((int)pWVar2 - (int)param_1 >> 1) * 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "text": "memcpy(dest,param_1,SVar1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)dest + SVar1) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)dest_00 + SVar1) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "uVar4 = wcslen(in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "text": "iVar3 = FUN_0060fcf4(param_1);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000004",
-      "text": "iVar3 = wcstombs(dest_01,in_stack_00000004,(uVar4 + 1) * 2);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "text": "uVar4 = wcslen(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "text": "iVar3 = wcstombs(dest_01,param_1,(uVar4 + 1) * 2);",
+      "type": "unnamed_param"
     },
     {
       "address": "0060fb40",

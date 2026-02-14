@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CFilmProjector * __cdecl
-core_filmreel_cpp_CFilmProjector_dtor_FUN_004beed0(CFilmProjector *this_ptr,uint flags)
+CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004beed0(CFilmProjector *this_ptr,uint flags)
 
 {
   CFilmProjector *ptr;

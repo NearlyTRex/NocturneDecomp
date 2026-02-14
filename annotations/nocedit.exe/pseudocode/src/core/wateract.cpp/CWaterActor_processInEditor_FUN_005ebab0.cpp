@@ -9,30 +9,27 @@
 void __cdecl core_wateract_cpp_CWaterActor_processInEditor_FUN_005ebab0(CWaterActor *this_ptr)
 
 {
-  int iVar1;
-  float in_stack_00000008;
-  float in_stack_00000010;
-  float in_stack_00000018;
-  uint uStack0000001c;
-  float in_stack_00000020;
+  float fVar1;
+  int iVar2;
   
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if (iVar1 != 0) {
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
-    if (iVar1 != 0) {
-      (this_ptr->size).x = (this_ptr->size).x - in_stack_00000008;
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if (iVar2 != 0) {
+    fVar1 = g_CGamePtr->delta_time_float * (float)4;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    if (iVar2 != 0) {
+      (this_ptr->size).x = (this_ptr->size).x - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
-    if (iVar1 != 0) {
-      (this_ptr->size).x = (this_ptr->size).x + in_stack_00000010;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    if (iVar2 != 0) {
+      (this_ptr->size).x = (this_ptr->size).x + fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
-    if (iVar1 != 0) {
-      (this_ptr->size).z = (this_ptr->size).z - in_stack_00000018;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    if (iVar2 != 0) {
+      (this_ptr->size).z = (this_ptr->size).z - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
-    if (iVar1 != 0) {
-      (this_ptr->size).z = (this_ptr->size).z + in_stack_00000020;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    if (iVar2 != 0) {
+      (this_ptr->size).z = (this_ptr->size).z + fVar1;
     }
     if ((int)(this_ptr->size).x < 0x3f000000) {
       (this_ptr->size).x = 0.5;
@@ -40,7 +37,6 @@ void __cdecl core_wateract_cpp_CWaterActor_processInEditor_FUN_005ebab0(CWaterAc
     if ((this_ptr->size).z < 0.5) {
       (this_ptr->size).z = 0.5;
     }
-    uStack0000001c = 0x42c80000;
     if (0x42c80000 < (int)(this_ptr->size).x) {
       (this_ptr->size).x = 100.0;
     }

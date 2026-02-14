@@ -12,8 +12,7 @@ int __cdecl _fclose(_FILE *file_handle,int force_close_flag)
   uint uVar1;
   long distance_to_move;
   uint uVar2;
-  int in_stack_0000000c;
-  int in_stack_00000010;
+  char acStack_124 [276];
   
   if (file_handle->_flag == 0) {
     uVar1 = 0xffffffff;
@@ -28,7 +27,7 @@ int __cdecl _fclose(_FILE *file_handle,int force_close_flag)
     if (distance_to_move != -1) {
       lseek(file_handle->_handle,distance_to_move,0);
     }
-    if (in_stack_0000000c != 0) {
+    if (force_close_flag != 0) {
       uVar2 = close(file_handle->_handle);
       uVar1 = uVar1 | uVar2;
     }
@@ -37,12 +36,11 @@ int __cdecl _fclose(_FILE *file_handle,int force_close_flag)
       file_handle->_link->__reserve_end = (char *)0x0;
     }
     if ((file_handle->_flag & 0x800) != 0) {
-      _tempnam(&stack0xfffffee0,(uint)*(byte *)&file_handle->_link->__get_ptr)
-      ;
-      remove(&stack0xfffffee0);
+      _tempnam(acStack_124,(uint)*(byte *)&file_handle->_link->__get_ptr);
+      remove(acStack_124);
     }
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle->_handle);
-    if (in_stack_00000010 != 0) {
+    if (force_close_flag != 0) {
       (*PTR_crt_sync_c_InvalidateHandle_FUN_00602448_00684ef4)(file_handle->_handle);
     }
   }

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_fire_cpp_CRainDrop_onCollision_FUN_004c64b0(CRainDrop *this_ptr,CVector3f *collision_normal)
+int __cdecl core_fire_cpp_CRainDrop_onCollision_FUN_004c64b0(CRainDrop *this_ptr,CVector3f *collision_normal)
 
 {
   return 0;

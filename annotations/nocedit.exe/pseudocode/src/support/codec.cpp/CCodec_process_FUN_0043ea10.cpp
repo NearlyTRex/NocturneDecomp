@@ -2,13 +2,11 @@
 // Address: 0043ea10
 // Address Range: [[0043ea10, 0043ea75]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10 (CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
+// Signature: int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
 
 #include "nocturne.h"
 
-int __cdecl
-support_codec_cpp_CCodec_process_FUN_0043ea10
-          (CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
+int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
 
 {
   uint uVar1;

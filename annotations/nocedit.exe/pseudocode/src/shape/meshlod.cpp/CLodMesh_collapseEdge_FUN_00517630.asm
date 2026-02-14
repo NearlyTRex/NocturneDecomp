@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630 (CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,float collapse_weight)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,float collapse_weight)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

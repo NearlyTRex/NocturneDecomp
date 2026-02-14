@@ -2,14 +2,11 @@
 // Address: 004fee00
 // Address Range: [[004fee00, 004ff183] [004ff1ba, 004ff201]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00 (CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size, int rotation_y,int alpha)
+// Signature: void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)
 
 #include "nocturne.h"
 
-void __cdecl
-core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
-          (CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,
-          int rotation_y,int alpha)
+void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)
 
 {
   CVector3f *pCVar1;
@@ -129,7 +126,7 @@ core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
+    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
     g_CDemonSetPtr->rendering_mode = 0;
     return;
   }

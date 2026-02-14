@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 33,
+        "line": 31,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 31,
+        "line": 29,
         "message": "no matching function for call to 'shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 32,
+        "line": 30,
         "message": "use of undeclared identifier 'stack0xffffff90'"
       }
     ],
@@ -25,11 +25,11 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 142,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 40,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -37,7 +37,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 124
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -58,7 +58,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0",
-    "signature": "CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0 (CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)"
+    "signature": "CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)"
   },
   "function_calls": [
     {
@@ -210,56 +210,56 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 9,
       "match": "unaff_ESI",
       "text": "CVector3d *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 23,
       "match": "&stack0xffffff90",
       "text": "((CVector3d *)&stack0xffffff90,plane_point,plane_normal,",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 24,
       "match": "SUB84",
       "text": "SUB84(-plane_normal->x,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 28,
       "match": "SQRT",
       "text": "local_18 = local_18 / SQRT(dVar3 * dVar3 + dVar1 * dVar1 + dVar2 * dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 38,
+      "line": 36,
       "match": "unaff_ESI",
       "text": "pCVar6 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(double *)((int)",
       "text": "pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(CVector3d *)((int)",
       "text": "pCVar6 = (CVector3d *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 44,
+      "line": 42,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

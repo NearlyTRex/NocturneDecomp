@@ -2,14 +2,11 @@
 // Address: 0040e3b0
 // Address Range: [[0040e3b0, 0040e3db]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 (CActorPropertyList *this_ptr,char *property_name,CKeyFramedModelInstance *data_ptr, int allow_none)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList *this_ptr,char *property_name,CKeyFramedModelInstance *data_ptr,int allow_none)
 
 #include "nocturne.h"
 
-CActorProperty * __cdecl
-core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
-          (CActorPropertyList *this_ptr,char *property_name,CKeyFramedModelInstance *data_ptr,
-          int allow_none)
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList *this_ptr,char *property_name,CKeyFramedModelInstance *data_ptr,int allow_none)
 
 {
   CActorProperty *pCVar1;

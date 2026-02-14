@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0(CDoor *this_ptr,CActorProperty *property)
+int __cdecl core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0(CDoor *this_ptr,CActorProperty *property)
 
 {
   CDoor *this_ptr_00;

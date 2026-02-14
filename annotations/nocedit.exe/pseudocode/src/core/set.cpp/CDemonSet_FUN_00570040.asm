@@ -23,7 +23,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_CurrentAlphaValue = 0xff
 ;   CGame* g_CGamePtr = 02d81a9c
-;   SMRGLTextureBasic DAT_006813e4
+;   SMRGLTextureBasic SMRGLTextureBasic_006813e4
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   float g_PerspectiveReciprocal
 ;   undefined4 DAT_02d81c90
@@ -50,7 +50,7 @@ section .text
     PUSH EBP                            ; 00570043
     SUB ESP,0xe4                        ; 00570044
     MOV EBP,dword ptr [ESP + 0xfc]      ; 0057004a
-    PUSH 0x6813e4                       ; 00570051 | DAT_006813e4
+    PUSH 0x6813e4                       ; 00570051 | SMRGLTextureBasic_006813e4
     MOV EDX,dword ptr [0x006703ec]      ; 00570056 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0057005c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0057005d

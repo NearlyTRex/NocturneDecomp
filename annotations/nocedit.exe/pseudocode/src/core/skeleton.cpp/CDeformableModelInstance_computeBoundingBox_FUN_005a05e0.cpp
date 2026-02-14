@@ -2,13 +2,11 @@
 // Address: 005a05e0
 // Address Range: [[005a05e0, 005a0797]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0 (CDeformableModelInstance *this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0
-          (CDeformableModelInstance *this_ptr)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(CDeformableModelInstance *this_ptr)
 
 {
   CBoundingBox3D *pCVar1;

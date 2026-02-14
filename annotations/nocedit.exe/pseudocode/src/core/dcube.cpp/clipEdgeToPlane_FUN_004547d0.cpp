@@ -2,14 +2,11 @@
 // Address: 004547d0
 // Address Range: [[004547d0, 0045495e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0 (CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx, double plane_ny,double plane_nz,double plane_d)
+// Signature: void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcube_cpp_clipEdgeToPlane_FUN_004547d0
-          (CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,
-          double plane_ny,double plane_nz,double plane_d)
+void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d)
 
 {
   double dVar1;

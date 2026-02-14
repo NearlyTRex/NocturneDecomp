@@ -988,6 +988,59 @@ def transform_adjusted_pointer_types(code):
     return result
 
 
+# =============================================================================
+# FUNCTION POINTER ASSIGNMENT CASTS
+# =============================================================================
+#
+# When a function pointer global (e.g. g_ScanlineRenderFunc) is typed as
+# accepting void* parameters but gets assigned a function that uses concrete
+# typed parameters (e.g. SEdgeData*), C requires an explicit cast.
+#
+# This maps known function pointer globals to their typedef names so the
+# transform can insert the cast automatically.
+
+_FUNCPTR_GLOBAL_TYPES = {
+    'g_ScanlineRenderFunc': 'RenderScanlineFunc',
+}
+
+# Matches: g_GlobalName = optional_whitespace function_name_FUN_ADDR ;
+# Handles multi-line case where function name wraps to next line.
+_FUNCPTR_ASSIGN_RE = re.compile(
+    r'(\b(' + '|'.join(re.escape(g) for g in _FUNCPTR_GLOBAL_TYPES) +
+    r')\s*=\s*)'            # group 1: "g_Global = ", group 2: global name
+    r'(\w+_FUN_[0-9a-f]+)'  # group 3: function reference
+    r'\s*;'
+)
+
+
+def transform_funcptr_assignments(code):
+    """Insert casts for function pointer global assignments.
+
+    When a function with typed parameters (e.g. SEdgeData*) is assigned to a
+    global declared with a typedef using void* parameters, C requires an
+    explicit cast. This transform inserts the cast automatically.
+
+    Example:
+        g_ScanlineRenderFunc = renderDepthOnly_FUN_0049072f;
+        ->
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)renderDepthOnly_FUN_0049072f;
+
+    Args:
+        code: Decompiled code string
+
+    Returns:
+        Transformed code with function pointer casts inserted
+    """
+    def _insert_cast(match):
+        prefix = match.group(1)       # "g_ScanlineRenderFunc = "
+        global_name = match.group(2)   # "g_ScanlineRenderFunc"
+        func_ref = match.group(3)      # "renderDepthOnly_FUN_0049072f"
+        typedef_name = _FUNCPTR_GLOBAL_TYPES[global_name]
+        return '%s(%s *)%s;' % (prefix, typedef_name, func_ref)
+
+    return _FUNCPTR_ASSIGN_RE.sub(_insert_cast, code)
+
+
 def apply_all_transforms(code, transforms=None, var_info=None):
     """Apply all or specified transforms to decompiled code.
 
@@ -1009,6 +1062,7 @@ def apply_all_transforms(code, transforms=None, var_info=None):
         ('crt_functions', transform_crt_functions),
         ('file_pointer_casts', transform_file_pointer_casts),
         ('void_pointer_casts', transform_void_pointer_casts),
+        ('funcptr_assignments', transform_funcptr_assignments),
         ('adjusted_pointer_types', transform_adjusted_pointer_types),
     ]
 

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_0043f690(CLZWDecompress *this_ptr)
+int __cdecl support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_0043f690(CLZWDecompress *this_ptr)
 
 {
   return (uint)((this_ptr->lzw_dict).max_entries == 0);

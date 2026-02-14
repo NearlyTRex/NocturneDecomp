@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422640 (CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
+; __cdecl void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422640(CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

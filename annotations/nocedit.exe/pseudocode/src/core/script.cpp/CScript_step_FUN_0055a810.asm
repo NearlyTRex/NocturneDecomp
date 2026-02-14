@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,int param_2)
+; __cdecl int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; float *          Stack[0x8]:4   time_remaining
 ; Local Variables:
 ; undefined4       Stack[-0x3fb8]:4  local_3fb8
 ; undefined4       Stack[-0x3fb4]:4  local_3fb4
@@ -188,10 +188,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_script.cpp_CScript_FUN_0055a4b0 at 0055a4f5
-;   core_script.cpp_CScript_FUN_0055a6c0 at 0055a736
-;   core_script.cpp_CScript_FUN_005602e0 at 0056033d
+;   core_script.cpp_CScript_executeInitSection_FUN_0055a6c0 at 0055a736
 ;   core_script.cpp_CScript_process_FUN_00559960 at 00559a11
+;   core_script.cpp_CScript_skipCinematic_FUN_005602e0 at 0056033d
+;   core_script.cpp_CScript_validateSyntax_FUN_0055a4b0 at 0055a4f5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_00641b91
@@ -393,7 +393,7 @@ section .text
     PUSH EAX                            ; 0055a9b3
     PUSH EBX                            ; 0055a9b4
     CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055a9b5
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * label_name)
     ADD ESP,0x8                         ; 0055a9ba
     MOV ESI,EAX                         ; 0055a9bd
     TEST EAX,EAX                        ; 0055a9bf
@@ -2880,7 +2880,7 @@ section .text
     PUSH dword ptr [EBX + 0x50]         ; 0055c4d9
     PUSH EBX                            ; 0055c4dc
     CALL core_script.cpp_CScript_processTimer_FUN_005600c0 ; 0055c4dd
-        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_processTimer_FUN_005600c0(CScript * this_ptr, float param_2, float * param_3)
+        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_processTimer_FUN_005600c0(CScript * this_ptr, float delta_time, float * timer_value)
     ADD ESP,0xc                         ; 0055c4e2
     MOV dword ptr [ESP + 0x3e94],EAX    ; 0055c4e5
     TEST EAX,EAX                        ; 0055c4ec
@@ -3334,7 +3334,7 @@ section .text
     PUSH EDI                            ; 0055cb1d
     PUSH EBX                            ; 0055cb1e
     CALL core_script.cpp_CScript_skipCommands_FUN_005601c0 ; 0055cb1f
-        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int param_2, int param_3)
+        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int direction, int count)
     ADD ESP,0xc                         ; 0055cb24
     TEST EAX,EAX                        ; 0055cb27
     JL 0x0055cb33                       ; 0055cb29
@@ -4061,7 +4061,7 @@ section .text
     PUSH EBX                            ; 0055d3c4
     MOV dword ptr [ESP + 0x3e94],EAX    ; 0055d3c5
     CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055d3cc
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * label_name)
     ADD ESP,0x8                         ; 0055d3d1
     TEST EAX,EAX                        ; 0055d3d4
     JL 0x0055d3f1                       ; 0055d3d6
@@ -4116,7 +4116,7 @@ section .text
     PUSH EBX                            ; 0055d475
     MOV dword ptr [ESP + 0x3e94],EAX    ; 0055d476
     CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055d47d
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * label_name)
     ADD ESP,0x8                         ; 0055d482
     TEST EAX,EAX                        ; 0055d485
     JL 0x0055d4a2                       ; 0055d487
@@ -4402,7 +4402,7 @@ section .text
     PUSH EDX                            ; 0055d80b
     PUSH EBX                            ; 0055d80c
     CALL core_script.cpp_CScript_skipCommands_FUN_005601c0 ; 0055d80d
-        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int param_2, int param_3)
+        ;   XREF to: 005601c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_005601c0(CScript * this_ptr, int direction, int count)
     MOV ESI,EAX                         ; 0055d812
     ADD ESP,0xc                         ; 0055d814
     MOV EDI,EAX                         ; 0055d817
@@ -5632,7 +5632,7 @@ section .text
     PUSH dword ptr [EBX + 0x50]         ; 0055e713
     PUSH EBX                            ; 0055e716
     CALL core_script.cpp_CScript_processTimer_FUN_005600c0 ; 0055e717
-        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_processTimer_FUN_005600c0(CScript * this_ptr, float param_2, float * param_3)
+        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_processTimer_FUN_005600c0(CScript * this_ptr, float delta_time, float * timer_value)
     ADD ESP,0xc                         ; 0055e71c
     MOV dword ptr [ESP + 0x3e94],EAX    ; 0055e71f
     TEST EAX,EAX                        ; 0055e726
@@ -6440,7 +6440,7 @@ section .text
     PUSH EAX                            ; 0055f0d5
     PUSH EBX                            ; 0055f0d6
     CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 0055f0d7
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * label_name)
     ADD ESP,0x8                         ; 0055f0dc
     TEST EAX,EAX                        ; 0055f0df
     JL 0x0055f0fb                       ; 0055f0e1
@@ -7242,7 +7242,7 @@ section .text
     PUSH dword ptr [ESP + 0x3f7c]       ; 0055f9c1
     PUSH EBX                            ; 0055f9c8
     CALL core_script.cpp_CScript_processTimer_FUN_005600c0 ; 0055f9c9
-        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_processTimer_FUN_005600c0(CScript * this_ptr, float param_2, float * param_3)
+        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_processTimer_FUN_005600c0(CScript * this_ptr, float delta_time, float * timer_value)
     ADD ESP,0xc                         ; 0055f9ce
     MOV dword ptr [ESP + 0x3e94],EAX    ; 0055f9d1
     TEST EAX,EAX                        ; 0055f9d8
@@ -7383,7 +7383,7 @@ section .text
     PUSH dword ptr [ESP + 0x3f88]       ; 0055fb8b
     PUSH EBX                            ; 0055fb92
     CALL core_script.cpp_CScript_processTimer_FUN_005600c0 ; 0055fb93
-        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_processTimer_FUN_005600c0(CScript * this_ptr, float param_2, float * param_3)
+        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_processTimer_FUN_005600c0(CScript * this_ptr, float delta_time, float * timer_value)
     ADD ESP,0xc                         ; 0055fb98
     MOV dword ptr [ESP + 0x3e94],EAX    ; 0055fb9b
     JMP 0x0055a8bb                      ; 0055fba2

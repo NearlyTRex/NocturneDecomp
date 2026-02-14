@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 46,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 21,
-    "suspect_count": 2,
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 58
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_zombie.cpp_CZombie_getGrabbed_FUN_005fc970",
-    "signature": "int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970 (CZombie *this_ptr,CDemonActor *grabber,int grab_type,int param_4)"
+    "signature": "int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970(CZombie *this_ptr,CDemonActor *grabber,int grab_type,int param_4)"
   },
   "function_calls": [],
   "globals": [],
@@ -105,16 +105,9 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
-      "text": "(CZombie *this_ptr,CDemonActor *grabber,int grab_type,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_4",
-      "text": "(this_ptr->base).base.grabbed_type = param_4;",
+      "text": "int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970(CZombie *this_ptr,CDemonActor *grabber,int grab_type,int param_4)",
       "type": "unnamed_param"
     }
   ],

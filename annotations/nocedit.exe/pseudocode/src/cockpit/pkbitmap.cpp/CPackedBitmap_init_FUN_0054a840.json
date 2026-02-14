@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 37,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 9,
     "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 48
+    "total_lines": 45
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840",
-    "signature": "CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_0054a840 (CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color, int stride,int apply_palette_flag)"
+    "signature": "CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_0054a840(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int stride,int apply_palette_flag)"
   },
   "function_calls": [
     {
@@ -136,14 +136,14 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 5,
       "match": "unaff_EBP",
       "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 10,
       "match": "unaff_EBP",
       "text": "(this_ptr,filename,width,height,transparency_color,stride,unaff_EBP);",
       "type": "unaffected_reg"

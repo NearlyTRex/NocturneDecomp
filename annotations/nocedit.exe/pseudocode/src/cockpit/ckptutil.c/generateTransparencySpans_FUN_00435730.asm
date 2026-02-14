@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730 (void *bitmap_buffer,char *filename,int width,int height,void *span_data_buffer, int transparent_color_index)
+; __cdecl void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bitmap_buffer,char *filename,int width,int height,void *span_data_buffer,int transparent_color_index)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   bitmap_buffer

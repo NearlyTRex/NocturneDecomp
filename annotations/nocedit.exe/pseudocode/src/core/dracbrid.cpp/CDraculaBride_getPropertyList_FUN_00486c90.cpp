@@ -2,13 +2,11 @@
 // Address: 00486c90
 // Address Range: [[00486c90, 00486cfa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_getPropertyList_FUN_00486c90 (CDraculaBride *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_getPropertyList_FUN_00486c90(CDraculaBride *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dracbrid_cpp_CDraculaBride_getPropertyList_FUN_00486c90
-          (CDraculaBride *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_dracbrid_cpp_CDraculaBride_getPropertyList_FUN_00486c90(CDraculaBride *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

@@ -2,64 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 17,
-        "line": 47,
-        "message": "C-style cast from 'SCarryHand *' to 'float' is not allowed"
-      },
-      {
-        "category": "format_error",
-        "column": 50,
-        "line": 64,
-        "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
-      },
-      {
         "category": "format_error",
         "column": 56,
-        "line": 64,
+        "line": 60,
         "message": "format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 82,
-        "line": 64,
+        "line": 60,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 84,
-        "message": "cannot cast from type 'float' to pointer type 'SCarryHand *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 85,
-        "message": "use of undeclared identifier 'stack0xfffff6d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 87,
-        "message": "use of undeclared identifier 'stack0xfffff6d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 104,
-        "message": "use of undeclared identifier 'stack0xfffff6d8'; did you mean 'in_stack_fffff6d8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 110,
-        "message": "use of undeclared identifier 'stack0xfffff6d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 137,
-        "message": "use of undeclared identifier 'stack0xfffff6d0'"
       }
     ],
     "success": false,
@@ -67,19 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 290,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 16,
-    "pseudocode_lines": 130,
-    "suspect_count": 14,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
-    ],
-    "total_lines": 423
+    "pseudocode_lines": 123,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 416
   },
   "cross_references": [
     {
@@ -99,7 +46,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0",
-    "signature": "int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 (CCharacter *this_ptr,CActorProperty *property)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCharacter *this_ptr,CActorProperty *property)"
   },
   "function_calls": [
     {
@@ -416,104 +363,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EDI",
-      "text": "char **unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffff6d8",
-      "text": "char **in_stack_fffff6d8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(SCarryHand *)((int)",
-      "text": "local_18 = (SCarryHand *)((int)CStack_38.z + local_24 * 0x44);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 78,
-      "match": "&stack0xfffff6d0",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff6d0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 80,
-      "match": "&stack0xfffff6d0",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff6d0,\"(nothing)\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 94,
-      "match": "unaff_EBP",
-      "text": "if (pCVar6 == *(CCharacter **)(unaff_EBP + 8)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_fffff6d8",
-      "text": "unaff_EDI = in_stack_fffff6d8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 95,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = in_stack_fffff6d8;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 97,
-      "match": "&stack0xfffff6d8",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff6d8,(char *)pCVar6);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 103,
-      "match": "&stack0xfffff6d0",
-      "text": "((CPickList *)&stack0xfffff6d0,\"Select actor to carry.\",(int)local_14,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 113,
-      "match": "unaff_EDI",
-      "text": "(local_20,&CStack_38,(int)*unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 125,
-      "match": "in_stack_fffff6d8",
-      "text": "in_stack_fffff6d8 = (char **)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 130,
-      "match": "&stack0xfffff6d0",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff6d0,0);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00(CVector3f *velocity_source_ptr)
+void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00(CVector3f *velocity_source_ptr)
 
 {
   int iVar1;

@@ -2,13 +2,11 @@
 // Address: 00524920
 // Address Range: [[00524920, 00524a7e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920 (CDemonMission *this_ptr,int index,int param_3,void *param_4)
+// Signature: int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int param_3,void *param_4)
 
 #include "nocturne.h"
 
-int __cdecl
-core_mission_cpp_CDemonMission_createOneHero_FUN_00524920
-          (CDemonMission *this_ptr,int index,int param_3,void *param_4)
+int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int param_3,void *param_4)
 
 {
   CDemonActor *actor_ptr;
@@ -48,11 +46,12 @@ LAB_0052499a:
       }
       else {
         local_14 = param_4;
-        (**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))();
+        (**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))
+                  (param_4,&(this_ptr_00->base).location,&(this_ptr_00->base).orient);
         *(int *)((int)param_4 + 0x2c) = (this_ptr_00->base).location.area_id;
         core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
                   ((CMotionController *)((int)param_4 + 0x158),0,0.0);
-        (**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))();
+        (**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))(param_4,0,0,0);
       }
       core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
                 (g_CDemonMissionPtr,(CDemonActor *)local_14);

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_dosio_c_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,char *filename)
+void __cdecl engine_dosio_c_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,char *filename)
 
 {
   char cVar1;

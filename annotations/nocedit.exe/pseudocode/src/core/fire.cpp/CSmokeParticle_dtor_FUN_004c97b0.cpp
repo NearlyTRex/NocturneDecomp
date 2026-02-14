@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CSmokeParticle * __cdecl
-core_fire_cpp_CSmokeParticle_dtor_FUN_004c97b0(CSmokeParticle *this_ptr,uint flags)
+CSmokeParticle * __cdecl core_fire_cpp_CSmokeParticle_dtor_FUN_004c97b0(CSmokeParticle *this_ptr,uint flags)
 
 {
   return this_ptr;

@@ -2,13 +2,11 @@
 // Address: 00451340
 // Address Range: [[00451340, 004514a4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340 (int row_index,int column_start,int column_end)
+// Signature: void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340(int row_index,int column_start,int column_end)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340
-          (int row_index,int column_start,int column_end)
+void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340(int row_index,int column_start,int column_end)
 
 {
   int iVar1;
@@ -23,8 +21,8 @@ core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340
   pCVar4 = g_PrecomputedWorldPositions + row_index * 0x140 + column_start;
   pcVar5 = g_CoronaBlurOutputBuffer[row_index] + column_start;
   piVar6 = g_CoronaDepthBuffer[row_index] + column_start;
-  puVar2 = g_ZBufferScanlineArray[row_index << ((byte)g_CameraDownscaleIterations & 0x1f)] +
-           (column_start << ((byte)g_CameraDownscaleIterations & 0x1f));
+  puVar2 = g_ZBufferScanlineArray[row_index << (g_CameraDownscaleIterations.bytes[0] & 0x1f)] +
+           (column_start << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
   for (; column_start < column_end; column_start = column_start + 1) {
     if ((((*puVar2 < (uint)*piVar6) &&
          (uVar7 = pCVar4->x - (g_CurrentGlobe->color).r,
@@ -47,7 +45,7 @@ core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340
     pCVar4 = pCVar4 + 1;
     pcVar5 = pcVar5 + 1;
     piVar6 = piVar6 + 1;
-    puVar2 = puVar2 + (1 << ((byte)g_CameraDownscaleIterations & 0x1f));
+    puVar2 = puVar2 + (1 << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
   }
   return;
 }

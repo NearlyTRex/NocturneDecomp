@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_ladder_cpp_CLadder_addFilesToExtract_FUN_00502eb0(CLadder *this_ptr,_FILE *file_handle)
+void __cdecl core_ladder_cpp_CLadder_addFilesToExtract_FUN_00502eb0(CLadder *this_ptr,_FILE *file_handle)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0

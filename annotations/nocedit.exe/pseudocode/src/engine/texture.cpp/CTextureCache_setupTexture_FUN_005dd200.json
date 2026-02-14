@@ -4,12 +4,18 @@
       {
         "category": "other",
         "column": 24,
-        "line": 75,
+        "line": 74,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 24,
+        "line": 75,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 23,
         "line": 76,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
@@ -21,8 +27,8 @@
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 78,
+        "column": 24,
+        "line": 82,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
@@ -33,7 +39,7 @@
       },
       {
         "category": "other",
-        "column": 24,
+        "column": 23,
         "line": 84,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
@@ -45,8 +51,8 @@
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 86,
+        "column": 20,
+        "line": 93,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
@@ -57,7 +63,7 @@
       },
       {
         "category": "other",
-        "column": 20,
+        "column": 19,
         "line": 95,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
@@ -69,8 +75,8 @@
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 97,
+        "column": 20,
+        "line": 104,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
@@ -81,7 +87,7 @@
       },
       {
         "category": "other",
-        "column": 20,
+        "column": 19,
         "line": 106,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
@@ -93,8 +99,8 @@
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 108,
+        "column": 20,
+        "line": 112,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
@@ -105,14 +111,8 @@
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 114,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 19,
-        "line": 115,
+        "line": 114,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -121,18 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 413,
+    "complexity_score": 412,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 22,
-    "pseudocode_lines": 118,
+    "pseudocode_lines": 117,
     "suspect_count": 28,
     "suspect_types": [
       "pointer_cast",
       "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 399
+    "total_lines": 398
   },
   "cross_references": [
     {
@@ -382,189 +382,189 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_Hardware32BitPalette + iVar7) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 43,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar7) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_Hardware32BitPalette + local_14) = uVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 67,
       "match": "._0_4_",
       "text": "g_TextureShift1._0_4_ = 0x13;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 68,
       "match": "._0_4_",
       "text": "g_TextureShift2._0_4_ = 0xe;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 70,
+      "line": 69,
       "match": "._0_4_",
       "text": "g_TextureMask1._0_4_ = 0x1f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 71,
+      "line": 70,
       "match": "._0_4_",
       "text": "g_TextureMask2._0_4_ = 0x3e0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 76,
+      "line": 75,
       "match": "._0_4_",
       "text": "g_TextureShift1._0_4_ = 0x12;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 77,
+      "line": 76,
       "match": "._0_4_",
       "text": "g_TextureShift2._0_4_ = 0xc;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 77,
       "match": "._0_4_",
       "text": "g_TextureMask1._0_4_ = 0x3f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 78,
       "match": "._0_4_",
       "text": "g_TextureMask2._0_4_ = 0xfc0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 87,
+      "line": 86,
       "match": "._0_4_",
       "text": "g_TextureShift1._0_4_ = 0x11;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 88,
+      "line": 87,
       "match": "._0_4_",
       "text": "g_TextureShift2._0_4_ = 10;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 89,
+      "line": 88,
       "match": "._0_4_",
       "text": "g_TextureMask1._0_4_ = 0x7f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 90,
+      "line": 89,
       "match": "._0_4_",
       "text": "g_TextureMask2._0_4_ = 0x3f80;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 97,
       "match": "._0_4_",
       "text": "g_TextureShift1._0_4_ = 0x10;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 99,
+      "line": 98,
       "match": "._0_4_",
       "text": "g_TextureShift2._0_4_ = 8;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 100,
+      "line": 99,
       "match": "._0_4_",
       "text": "g_TextureMask1._0_4_ = 0xff;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 101,
+      "line": 100,
       "match": "._0_4_",
       "text": "g_TextureMask2._0_4_ = 0xff00;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 106,
+      "line": 105,
       "match": "._0_4_",
       "text": "g_TextureShift1._0_4_ = 0xf;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 107,
+      "line": 106,
       "match": "._0_4_",
       "text": "g_TextureShift2._0_4_ = 6;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 108,
+      "line": 107,
       "match": "._0_4_",
       "text": "g_TextureMask1._0_4_ = 0x1ff;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 108,
       "match": "._0_4_",
       "text": "g_TextureMask2._0_4_ = 0x3fe00;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 116,
+      "line": 115,
       "match": "._0_4_",
       "text": "g_TextureShift1._0_4_ = 0xe;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 117,
+      "line": 116,
       "match": "._0_4_",
       "text": "g_TextureShift2._0_4_ = 4;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 118,
+      "line": 117,
       "match": "._0_4_",
       "text": "g_TextureMask1._0_4_ = 0x3ff;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 119,
+      "line": 118,
       "match": "._0_4_",
       "text": "g_TextureMask2._0_4_ = 0xffc00;",
       "type": "unknown_field"

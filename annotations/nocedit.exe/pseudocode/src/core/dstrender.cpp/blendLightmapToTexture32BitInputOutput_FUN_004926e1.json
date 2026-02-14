@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 584,
+    "complexity_score": 581,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 100,
-    "pseudocode_lines": 109,
+    "pseudocode_lines": 106,
     "suspect_count": 46,
     "suspect_types": [
       "decompiler_intrinsic",
       "mmx_assembly",
       "nonstandard_int"
     ],
-    "total_lines": 378
+    "total_lines": 375
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1",
-    "signature": "void __cdecl core_dstrender_cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1 (uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices, int pixel_count)"
+    "signature": "void __cdecl core_dstrender_cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)"
   },
   "function_calls": [],
   "globals": [
@@ -722,315 +722,315 @@
   "suspects": [
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 17,
+      "line": 14,
       "match": "uint5",
       "text": "uint5 uVar10;",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 20,
+      "line": 17,
       "match": "uint5",
       "text": "uint5 uVar13;",
       "type": "nonstandard_int"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 22,
       "match": "CONCAT52",
       "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 22,
       "match": "CONCAT41",
       "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 22,
       "match": "CONCAT21",
       "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 25,
+      "line": 22,
       "match": "uint7",
       "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 25,
+      "line": 22,
       "match": "uint7",
       "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "nonstandard_int"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 31,
       "match": "CONCAT34",
       "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 31,
       "match": "CONCAT25",
       "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 34,
+      "line": 31,
       "match": "int3",
       "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 34,
+      "line": 31,
       "match": "uint7",
       "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
       "type": "nonstandard_int"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 32,
       "match": "CONCAT14",
       "text": "CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 37,
+      "line": 34,
       "match": "uint5",
       "text": "uVar10 = (uint5)uVar4 & 0xffffffff00;",
       "type": "nonstandard_int"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 35,
       "match": "CONCAT34",
       "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 35,
       "match": "CONCAT25",
       "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 38,
+      "line": 35,
       "match": "int3",
       "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 38,
+      "line": 35,
       "match": "uint7",
       "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
       "type": "nonstandard_int"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 36,
       "match": "CONCAT14",
       "text": "CONCAT14((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 41,
+      "line": 38,
       "match": "uint5",
       "text": "uVar13 = (uint5)uVar5 & 0xffffffff00;",
       "type": "nonstandard_int"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 39,
       "match": "CONCAT26",
       "text": "uVar8 = pmulhw(CONCAT26((short)(uVar10 >> 0x18) * (short)(uVar13 >> 0x18),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 40,
       "match": "CONCAT24",
       "text": "CONCAT24((short)(uVar10 >> 8) * (short)(uVar13 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 41,
       "match": "CONCAT22",
       "text": "CONCAT22(((ushort)(CONCAT43(uVar4,CONCAT12((char)(uVar1 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 41,
       "match": "CONCAT43",
       "text": "CONCAT22(((ushort)(CONCAT43(uVar4,CONCAT12((char)(uVar1 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 41,
       "match": "CONCAT12",
       "text": "CONCAT22(((ushort)(CONCAT43(uVar4,CONCAT12((char)(uVar1 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 44,
       "match": "CONCAT41",
       "text": "((ushort)CONCAT41(uVar5,(char)(uVar2 >> 8)) & 0xff),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 60,
       "match": "CONCAT13",
       "text": "CONCAT13((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 61,
       "match": "CONCAT12",
       "text": "CONCAT12((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 62,
       "match": "CONCAT11",
       "text": "CONCAT11((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 67,
       "match": "CONCAT34",
       "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 67,
       "match": "CONCAT25",
       "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 70,
+      "line": 67,
       "match": "int3",
       "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 70,
+      "line": 67,
       "match": "uint7",
       "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
       "type": "nonstandard_int"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 68,
       "match": "CONCAT14",
       "text": "CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 73,
+      "line": 70,
       "match": "uint5",
       "text": "uVar10 = (uint5)uVar4 & 0xffffffff00;",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 74,
+      "line": 71,
       "match": "uint7",
       "text": "uVar7 = (ushort)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 72,
       "match": "CONCAT26",
       "text": "uVar8 = pmulhw(CONCAT26((short)(uVar10 >> 0x18) * (uVar7 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 73,
       "match": "CONCAT24",
       "text": "CONCAT24((short)(uVar10 >> 8) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 74,
       "match": "CONCAT25",
       "text": "(short)(CONCAT25(uVar7,CONCAT14((char)(uVar2 >> 0x10),uVar2))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 74,
       "match": "CONCAT14",
       "text": "(short)(CONCAT25(uVar7,CONCAT14((char)(uVar2 >> 0x10),uVar2))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 76,
       "match": "CONCAT22",
       "text": "CONCAT22(((ushort)(CONCAT43(uVar4,CONCAT12((char)(uVar1 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 76,
       "match": "CONCAT43",
       "text": "CONCAT22(((ushort)(CONCAT43(uVar4,CONCAT12((char)(uVar1 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 76,
       "match": "CONCAT12",
       "text": "CONCAT22(((ushort)(CONCAT43(uVar4,CONCAT12((char)(uVar1 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 95,
       "match": "CONCAT13",
       "text": "CONCAT13((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 96,
       "match": "CONCAT12",
       "text": "CONCAT12((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 97,
       "match": "CONCAT11",
       "text": "CONCAT11((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),",
       "type": "decompiler_intrinsic"

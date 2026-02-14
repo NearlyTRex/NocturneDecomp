@@ -1,54 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 107,
-        "message": "use of undeclared identifier 'stack0xfffffdd0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 164,
-        "message": "use of undeclared identifier 'stack0xfffffdd0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 165,
-        "message": "use of undeclared identifier 'stack0xfffffdd0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 177,
-        "message": "use of undeclared identifier 'stack0xfffffdd0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 72,
-        "line": 177,
-        "message": "use of undeclared identifier 'stack0xfffffdd0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 390,
-    "complexity_score": 294,
+    "complexity_score": 261,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
-    "pseudocode_lines": 199,
-    "suspect_count": 8,
+    "pseudocode_lines": 196,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast",
+      "stack_param"
     ],
-    "total_lines": 589
+    "total_lines": 586
   },
   "cross_references": [
     {
@@ -500,58 +469,37 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_fffffdd4",
-      "text": "CVector3f *in_stack_fffffdd4;",
+      "line": 20,
+      "match": "in_stack_fffffdd0",
+      "text": "CVector3f *in_stack_fffffdd0;",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 100,
-      "match": "&stack0xfffffdd0",
-      "text": "*(uint *)(&stack0xfffffdd0 + iVar12) = 0;",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)afStack_22c + iVar12 + -4) = 0;",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
+      "line": 145,
       "match": "SQRT",
       "text": "local_14 = SQRT(local_5c * local_5c + local_64 * local_64 + local_60 * local_60);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 157,
-      "match": "&stack0xfffffdd0",
-      "text": "*(float *)(&stack0xfffffdd0 + (uint)*puVar2 * 4) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 158,
-      "match": "&stack0xfffffdd0",
-      "text": "*pfVar1 * local_14 + *(float *)(&stack0xfffffdd0 + (uint)*puVar2 * 4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 170,
-      "match": "&stack0xfffffdd0",
-      "text": "if (*(float *)(&stack0xfffffdd0 + iVar9 * 4) < *(float *)(&stack0xfffffdd0 + iVar10)) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 170,
-      "match": "&stack0xfffffdd0",
-      "text": "if (*(float *)(&stack0xfffffdd0 + iVar9 * 4) < *(float *)(&stack0xfffffdd0 + iVar10)) {",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 167,
+      "match": "(float *)((int)",
+      "text": "if (afStack_22c[iVar9 + -1] < *(float *)((int)afStack_22c + iVar10 + -4)) {",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 193,
-      "match": "in_stack_fffffdd4",
-      "text": "(this_ptr,iVar9,in_stack_fffffdd4);",
+      "line": 190,
+      "match": "in_stack_fffffdd0",
+      "text": "(this_ptr,iVar9,in_stack_fffffdd0);",
       "type": "stack_param"
     }
   ]

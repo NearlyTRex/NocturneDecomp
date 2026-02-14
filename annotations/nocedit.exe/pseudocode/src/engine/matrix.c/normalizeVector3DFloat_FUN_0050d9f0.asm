@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0 (CVector3i *input_vector,CVector3i *output_vector)
+; __stack_esi CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i *input_vector,CVector3i *output_vector)
 ;
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   input_vector

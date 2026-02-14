@@ -12,12 +12,11 @@ void __cdecl core_baron_cpp_FUN_00413470(int param_1,CDemonActor *param_2)
   CCharacter *this_ptr;
   CVector3f *pCVar1;
   int iVar2;
-  CVector3f CStack_30;
+  CVector3f local_34;
+  float local_28;
   float local_24;
   float local_20;
-  float local_1c;
-  float local_18;
-  float local_14;
+  CVector3f local_1c;
   
   if ((((param_2 != (CDemonActor *)0x0) && (param_2 != *(CDemonActor **)(param_1 + 0x1fcac))) &&
       (*(CDemonActor **)(param_1 + 0x1fcac) == (CDemonActor *)0x0)) &&
@@ -26,17 +25,18 @@ void __cdecl core_baron_cpp_FUN_00413470(int param_1,CDemonActor *param_2)
                             (param_2,g_CCharacterClassInfo.name_hash), this_ptr == (CCharacter *)0x0
       || (iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr), iVar2 < 1)))) {
     *(CDemonActor **)(param_1 + 0x1fcac) = param_2;
-    local_18 = 0.0;
-    local_14 = 0.0;
+    local_1c.x = 0.0;
+    local_1c.y = 0.0;
+    local_1c.z = -2.0;
     pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                       (*(CDemonActor **)(param_1 + 0x1fcac),&CStack_30,(CVector3f *)&local_18);
+                       (*(CDemonActor **)(param_1 + 0x1fcac),&local_34,&local_1c);
     iVar2 = *(int *)(param_1 + 0x1fcac);
-    local_24 = *(float *)(iVar2 + 0x20) + pCVar1->x;
-    local_20 = *(float *)(iVar2 + 0x24) + pCVar1->y;
-    local_1c = *(float *)(iVar2 + 0x28) + pCVar1->z;
-    *(float *)(param_1 + 0x20) = local_24;
-    *(float *)(param_1 + 0x24) = local_20;
-    *(float *)(param_1 + 0x28) = local_1c;
+    local_28 = *(float *)(iVar2 + 0x20) + pCVar1->x;
+    local_24 = *(float *)(iVar2 + 0x24) + pCVar1->y;
+    local_20 = *(float *)(iVar2 + 0x28) + pCVar1->z;
+    *(float *)(param_1 + 0x20) = local_28;
+    *(float *)(param_1 + 0x24) = local_24;
+    *(float *)(param_1 + 0x28) = local_20;
     iVar2 = *(int *)(param_1 + 0x1fcac);
     if ((uint *)(param_1 + 0x30) != (uint *)(iVar2 + 0x30)) {
       *(uint *)(param_1 + 0x30) = *(uint *)(iVar2 + 0x30);

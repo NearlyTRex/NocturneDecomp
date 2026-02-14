@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gabriela_cpp_CGabriella_getPropertyList_FUN_004d7610 (CGabriella *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_gabriela_cpp_CGabriella_getPropertyList_FUN_004d7610(CGabriella *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr

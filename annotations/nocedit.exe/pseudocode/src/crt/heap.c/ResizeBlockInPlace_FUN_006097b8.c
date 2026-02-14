@@ -2,12 +2,11 @@
 // Address: 006097b8
 // Address Range: [[006097b8, 00609971]]
 // Convention: __watcallRegister
-// Signature: int crt_heap_c_ResizeBlockInPlace_FUN_006097b8 (ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded)
+// Signature: int __watcallRegister crt_heap_c_ResizeBlockInPlace_FUN_006097b8(ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded)
 
 #include "nocturne.h"
 
-int ResizeBlockInPlace
-              (ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded)
+int __watcallRegister ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded)
 
 {
   Heap **ppHVar1;

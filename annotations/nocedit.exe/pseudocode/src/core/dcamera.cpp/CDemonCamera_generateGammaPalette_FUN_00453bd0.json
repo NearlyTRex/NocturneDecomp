@@ -6,11 +6,11 @@
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 144,
+    "complexity_score": 142,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 32,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -18,7 +18,7 @@
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 98
+    "total_lines": 96
   },
   "cross_references": [
     {
@@ -45,7 +45,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0 (CDemonCamera *this_ptr,int gamma_value)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera *this_ptr,int gamma_value)"
   },
   "function_calls": [
     {
@@ -221,56 +221,56 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 10,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
+      "line": 11,
       "match": "extraout_ST2",
       "text": "float10 extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 12,
       "match": "extraout_ST3",
       "text": "float10 extraout_ST3;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
+      "line": 21,
       "match": "extraout_ST2",
       "text": "exp = extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
+      "line": 22,
       "match": "extraout_ST3",
       "text": "dVar5 = round((double)(fVar4 * extraout_ST3));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 23,
       "match": "ROUND",
       "text": "uVar1 = (uint)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_LightmapTexturePalette + iVar2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
+      "line": 28,
       "match": "extraout_ST1",
       "text": "fVar4 = extraout_ST1;",
       "type": "extra_output"

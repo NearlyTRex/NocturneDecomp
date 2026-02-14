@@ -1,30 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 27,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 79,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 34,
-    "suspect_count": 3,
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_ref",
-      "suspect_float"
+      "param_count_too_few"
     ],
-    "total_lines": 115
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -183,20 +174,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffffd8",
-      "text": "((CDemonActor *)this_ptr->unk5,(CVector3f *)&stack0xffffffd8,&local_1c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 24,
-      "match": "5.98883e-39",
-      "text": "local_34 = 5.98883e-39;",
-      "type": "suspect_float"
-    },
     {
       "call_site_count": 1,
       "declared_params": 1,

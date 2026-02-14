@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200 (SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples, SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
+; __cdecl void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
 ;
 ; Parameters:
 ; SMpegSubbandSamples * Stack[0x4]:4   input_samples

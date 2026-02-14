@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl sound_sndmain_cpp_startSfxTrackedDoublePosition_FUN_005a9620 (char *filename,CVector3d *position_source_ptr)
+; __cdecl uint __cdecl sound_sndmain_cpp_startSfxTrackedDoublePosition_FUN_005a9620(char *filename,CVector3d *position_source_ptr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

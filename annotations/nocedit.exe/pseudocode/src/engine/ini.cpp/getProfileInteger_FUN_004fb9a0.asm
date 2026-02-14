@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0 (char *section,char *key,char *default_value,char *filename)
+; __cdecl int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0(char *section,char *key,char *default_value,char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   section

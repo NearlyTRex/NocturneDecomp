@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_dosio_c_removeFileExtension_FUN_00482040(char *source_path,char *destination_buffer)
+void __cdecl engine_dosio_c_removeFileExtension_FUN_00482040(char *source_path,char *destination_buffer)
 
 {
   char *unaff_retaddr;

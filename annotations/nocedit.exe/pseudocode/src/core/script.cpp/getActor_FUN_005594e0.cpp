@@ -2,13 +2,11 @@
 // Address: 005594e0
 // Address Range: [[005594e0, 0055965d]]
 // Convention: __cdecl
-// Signature: CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0 (char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)
+// Signature: CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)
 
 #include "nocturne.h"
 
-CDemonActor * __cdecl
-core_script_cpp_getActor_FUN_005594e0
-          (char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)
+CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)
 
 {
   char cVar1;

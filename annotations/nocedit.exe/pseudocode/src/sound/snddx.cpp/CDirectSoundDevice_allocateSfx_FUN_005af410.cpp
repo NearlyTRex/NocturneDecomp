@@ -2,13 +2,11 @@
 // Address: 005af410
 // Address Range: [[005af410, 005af711]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410 (CDirectSoundDevice *this_ptr,int sample_buffer_id)
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410(CDirectSoundDevice *this_ptr,int sample_buffer_id)
 
 #include "nocturne.h"
 
-int __cdecl
-sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410
-          (CDirectSoundDevice *this_ptr,int sample_buffer_id)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410(CDirectSoundDevice *this_ptr,int sample_buffer_id)
 
 {
   IDirectSoundBuffer *pIVar1;

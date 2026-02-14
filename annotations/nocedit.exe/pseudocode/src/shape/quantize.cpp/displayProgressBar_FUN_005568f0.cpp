@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int total_count,int current_index)
+int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int total_count,int current_index)
 
 {
   char *pcVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0 (CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,void *unused)
+; __cdecl int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,void *unused)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

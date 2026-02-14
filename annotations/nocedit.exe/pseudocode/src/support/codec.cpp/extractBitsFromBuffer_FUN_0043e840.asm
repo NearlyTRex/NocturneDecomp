@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_0043e840 (SBitBuffer *bit_state,int bit_count,byte **output_pos,int *bytes_remaining)
+; __cdecl int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer *bit_state,int bit_count,byte **output_pos,int *bytes_remaining)
 ;
 ; Parameters:
 ; SBitBuffer *     Stack[0x4]:4   bit_state

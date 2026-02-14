@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60(CDeformableModel *this_ptr)
+int __cdecl core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60(CDeformableModel *this_ptr)
 
 {
   int iVar1;

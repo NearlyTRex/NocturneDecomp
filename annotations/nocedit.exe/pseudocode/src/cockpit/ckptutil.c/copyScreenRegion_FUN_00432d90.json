@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 26,
+        "line": 24,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 66,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 29,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 77
+    "total_lines": 75
   },
   "cross_references": [],
   "function": {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90",
-    "signature": "void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90 (void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)"
+    "signature": "void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)"
   },
   "function_calls": [],
   "globals": [
@@ -146,21 +146,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)puVar4 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 26,
       "match": "(uint *)((int)",
       "text": "puVar5 = (uint *)((int)puVar5 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(void *)((int)",
       "text": "dest_buffer = (void *)((int)dest_buffer + bytes_per_row);",
       "type": "pointer_cast"

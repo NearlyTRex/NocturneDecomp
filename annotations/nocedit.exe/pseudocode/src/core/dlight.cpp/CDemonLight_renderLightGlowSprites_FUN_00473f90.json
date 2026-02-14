@@ -43,15 +43,14 @@
   },
   "complexity": {
     "assembly_lines": 495,
-    "complexity_score": 483,
+    "complexity_score": 398,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 19,
     "pseudocode_lines": 218,
-    "suspect_count": 25,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
-      "suspect_float",
       "unknown_field"
     ],
     "total_lines": 713
@@ -957,62 +956,6 @@
       "match": "ROUND",
       "text": "local_b8 = (int)ROUND(local_9c[2] * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 184,
-      "match": "9.18341e-41",
-      "text": "pCVar5->vertex_buffer_ptr->light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 186,
-      "match": "9.18341e-41",
-      "text": "pCVar5->vertex_buffer_ptr->fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 191,
-      "match": "9.18341e-41",
-      "text": "pCVar5->vertex_buffer_ptr[1].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 193,
-      "match": "9.18341e-41",
-      "text": "pCVar5->vertex_buffer_ptr[1].fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 198,
-      "match": "9.18341e-41",
-      "text": "pCVar5->vertex_buffer_ptr[2].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 200,
-      "match": "9.18341e-41",
-      "text": "pCVar5->vertex_buffer_ptr[2].fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 205,
-      "match": "9.18341e-41",
-      "text": "pCVar5->vertex_buffer_ptr[3].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 207,
-      "match": "9.18341e-41",
-      "text": "pCVar5->vertex_buffer_ptr[3].fog = 9.18341e-41;",
-      "type": "suspect_float"
     }
   ]
 }

@@ -2,13 +2,11 @@
 // Address: 0048b030
 // Address Range: [[0048b030, 0048b145]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)
 
 {
   ushort uVar1;
@@ -38,19 +36,19 @@ engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
   g_VertexIndexBuffer[2] = (int)(ushort)(primitive->base).count;
   if (this_ptr->face_count == 0) {
     if (g_BitsPerPixel == 0x20) {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
     }
     else {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags = render_flags;
+    g_RenderStateFlags.dword = render_flags;
     g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740(this_ptr,3,g_VertexIndexBuffer);
     return;
   }
-  g_RenderStateFlags = 0;
+  g_RenderStateFlags.dword = 0;
   g_RenderStateFlag2 = PREPROCESS_NONE;
-  g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+  g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
   engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740(this_ptr,3,g_VertexIndexBuffer);
   return;
 }

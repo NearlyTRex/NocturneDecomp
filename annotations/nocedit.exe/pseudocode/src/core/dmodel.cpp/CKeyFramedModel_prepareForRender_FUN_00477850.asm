@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850 (CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index, int render_flags)
+; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index,int render_flags)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
@@ -57,7 +57,7 @@ section .text
     PUSH EBP                            ; 00477880
     PUSH EBX                            ; 00477881
     CALL core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980 ; 00477882
-        ;   XREF to: 00477980 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel * this_ptr, int frame_index, int render_flags, CKeyFramedModelInstance * instance)
+        ;   XREF to: 00477980 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel * this_ptr, int frame_index, int render_flags)
     ADD ESP,0xc                         ; 00477887
     POP ESI                             ; 0047788a
     POP EDI                             ; 0047788b

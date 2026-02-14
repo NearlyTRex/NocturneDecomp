@@ -1,27 +1,18 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 28,
-        "message": "use of undeclared identifier 'stack0xffffff94'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 37,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 137
   },
   "cross_references": [
@@ -124,13 +115,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xffffff94",
-      "text": "(&stack0xffffff94,\"Deleting invalid polygons (%d deleted so far)\",iVar3);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

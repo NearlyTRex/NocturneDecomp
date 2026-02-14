@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_addQuadPolygon_FUN_004687c0 (int vertex_index_0,int vertex_index_1,int vertex_index_2,int vertex_index_3)
+; __cdecl void __cdecl shape_design_c_addQuadPolygon_FUN_004687c0(int vertex_index_0,int vertex_index_1,int vertex_index_2,int vertex_index_3)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vertex_index_0

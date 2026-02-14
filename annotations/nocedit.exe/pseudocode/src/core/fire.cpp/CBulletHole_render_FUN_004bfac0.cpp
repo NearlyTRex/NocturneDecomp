@@ -78,17 +78,17 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_28);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     g_RenderVertexBuffer[0].color = 0xffff;
-    g_RenderVertexBuffer[0].fog = 9.18341e-41;
-    g_RenderVertexBuffer[1].light = 9.18341e-41;
+    g_RenderVertexBuffer[0].fog = 0xffff;
+    g_RenderVertexBuffer[1].light = 0xffff;
     g_RenderVertexBuffer[1].color = 0xffff;
-    g_RenderVertexBuffer[1].fog = 9.18341e-41;
-    g_RenderVertexBuffer[2].light = 9.18341e-41;
+    g_RenderVertexBuffer[1].fog = 0xffff;
+    g_RenderVertexBuffer[2].light = 0xffff;
     g_RenderVertexBuffer[2].color = 0xffff;
-    g_RenderVertexBuffer[2].fog = 9.18341e-41;
-    g_RenderVertexBuffer[3].light = 9.18341e-41;
+    g_RenderVertexBuffer[2].fog = 0xffff;
+    g_RenderVertexBuffer[3].light = 0xffff;
     g_RenderVertexBuffer[3].color = 0xffff;
-    g_RenderVertexBuffer[3].fog = 9.18341e-41;
-    g_RenderVertexBuffer[0].light = 9.18341e-41;
+    g_RenderVertexBuffer[3].fog = 0xffff;
+    g_RenderVertexBuffer[0].light = 0xffff;
   }
   else {
     core_actor_cpp_CDemonActor_transformVector_FUN_00408e80

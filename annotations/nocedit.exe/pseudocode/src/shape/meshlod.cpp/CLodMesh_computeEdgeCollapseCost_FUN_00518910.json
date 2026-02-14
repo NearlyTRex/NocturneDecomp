@@ -4,31 +4,31 @@
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 82,
+        "line": 81,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 47,
-        "line": 348,
+        "line": 347,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 36,
-        "line": 346,
+        "line": 345,
         "message": "no matching function for call to 'shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400'"
       },
       {
         "category": "incompatible_types",
         "column": 39,
-        "line": 350,
+        "line": 349,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 374,
+        "line": 373,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -37,11 +37,11 @@
   },
   "complexity": {
     "assembly_lines": 846,
-    "complexity_score": 692,
+    "complexity_score": 691,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 48,
-    "pseudocode_lines": 382,
+    "pseudocode_lines": 381,
     "suspect_count": 29,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -49,7 +49,7 @@
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 1228
+    "total_lines": 1227
   },
   "cross_references": [
     {
@@ -934,203 +934,203 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_fffffed8",
       "text": "double in_stack_fffffed8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 74,
       "match": "in_stack_fffffed8",
       "text": "SUB84(in_stack_fffffed8,0));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 74,
       "match": "SUB84",
       "text": "SUB84(in_stack_fffffed8,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 105,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)pCVar6->adjacent_edge_indices + local_60 + -4) <= local_50) break;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 106,
       "match": "(int *)((int)",
       "text": "iVar10 = *(int *)((int)pCVar6->adjacent_edge_indices + local_48 + local_60);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 122,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_MaxNeighborVerts + local_38) = iVar10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 149,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -2) + iVar10 + 4) = local_1c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 151,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 155,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar10 + 4) = iVar7;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 159,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 165,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
+      "line": 176,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar10 + 0xc) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 230,
+      "line": 229,
       "match": "(int *)((int)",
       "text": "pCVar8 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 279,
+      "line": 278,
       "match": "(float *)((int)",
       "text": "pfVar12 = (float *)((int)&g_SamplePointArray[0].x + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 282,
+      "line": 281,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_SamplePointArray[0].y + iVar7) = local_b8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 283,
+      "line": 282,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_SamplePointArray[0].z + iVar7) = local_b4;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 292,
+      "line": 291,
       "match": "in_stack_fffffed8",
       "text": "in_stack_fffffed8 = (double)((0.75f * 1e+10) / (float)g_SamplePointCount);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 294,
+      "line": 293,
       "match": "in_stack_fffffed8",
       "text": "(this_ptr->next_lod,in_stack_fffffed8);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 298,
+      "line": 297,
       "match": "(double *)((int)",
       "text": "pdVar1 = (double *)((int)g_SampleDistances + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 300,
+      "line": 299,
       "match": "in_stack_fffffed8",
       "text": "local_110 = *pdVar1 * in_stack_fffffed8 + local_110;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 312,
+      "line": 311,
       "match": "(int *)((int)",
       "text": "iVar7 = *(int *)((int)g_TempNeighborFaces[0].edge_dot_products + local_18 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 318,
+      "line": 317,
       "match": "(CVector3f *)((int)",
       "text": "pCVar5 = (CVector3f *)((int)(pCVar5 + 0xb) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 341,
+      "line": 340,
       "match": "in_stack_fffffed8",
       "text": "SUB84(in_stack_fffffed8,0));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 341,
+      "line": 340,
       "match": "SUB84",
       "text": "SUB84(in_stack_fffffed8,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 342,
+      "line": 341,
       "match": "CONCAT44",
       "text": "if (local_8c < (double)CONCAT44(uStack_114,local_118)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 343,
+      "line": 342,
       "match": "SUB84",
       "text": "local_108 = SUB84(local_8c,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 354,
+      "line": 353,
       "match": "CONCAT44",
       "text": "(float)(double)CONCAT44(uStack_114,local_118) + fVar2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 367,
+      "line": 366,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_58->collapse_cost + 4) = local_110._4_4_;",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 367,
+      "line": 366,
       "match": "._4_4_",
       "text": "*(uint *)((int)&local_58->collapse_cost + 4) = local_110._4_4_;",
       "type": "unknown_field"

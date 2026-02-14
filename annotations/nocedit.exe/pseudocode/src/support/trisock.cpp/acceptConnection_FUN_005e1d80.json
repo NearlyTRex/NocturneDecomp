@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 31,
+        "line": 29,
         "message": "use of undeclared identifier 'stack0xfffffff0'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 55,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 23,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 74
+    "total_lines": 72
   },
   "cross_references": [],
   "function": {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trisock.cpp_acceptConnection_FUN_005e1d80",
-    "signature": "int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80 (SOCKET *listen_socket,SNetworkAddr *client_addr,SOCKET *new_socket)"
+    "signature": "int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(SOCKET *listen_socket,SNetworkAddr *client_addr,SOCKET *new_socket)"
   },
   "function_calls": [
     {
@@ -132,14 +132,14 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 22,
       "match": "&stack0xfffffff0",
       "text": "((SOCKADDR_IN *)&stack0xfffffff0,&local_20);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 24,
       "match": "(SOCKET *)((int)",
       "text": "new_socket[(uint)bVar3 * -2 + 1] = *(SOCKET *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"

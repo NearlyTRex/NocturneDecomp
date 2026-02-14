@@ -2,13 +2,11 @@
 // Address: 00485bc0
 // Address Range: [[00485bc0, 00485bde]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dracbrid_cpp_CDraculaBride_hasCollision_FUN_00485bc0 (CDraculaBride *this_ptr,SCollisionInfo *collision_info)
+// Signature: int __cdecl core_dracbrid_cpp_CDraculaBride_hasCollision_FUN_00485bc0(CDraculaBride *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dracbrid_cpp_CDraculaBride_hasCollision_FUN_00485bc0
-          (CDraculaBride *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_dracbrid_cpp_CDraculaBride_hasCollision_FUN_00485bc0(CDraculaBride *this_ptr,SCollisionInfo *collision_info)
 
 {
   int iVar1;

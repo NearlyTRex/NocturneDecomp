@@ -2,13 +2,11 @@
 // Address: 0048caf0
 // Address Range: [[0048caf0, 0048cdef]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 (CDemonRenderer *this_ptr,int vertex_index1,int vertex_index2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CDemonRenderer *this_ptr,int vertex_index1,int vertex_index2)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-          (CDemonRenderer *this_ptr,int vertex_index1,int vertex_index2)
+void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CDemonRenderer *this_ptr,int vertex_index1,int vertex_index2)
 
 {
   int iVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 (CEditorTools *this_ptr,char *format_string,...)
+; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870(CEditorTools *this_ptr,char *format_string,...)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

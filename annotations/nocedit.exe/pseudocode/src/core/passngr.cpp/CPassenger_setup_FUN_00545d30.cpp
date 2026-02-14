@@ -50,7 +50,8 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
               ((CDeformableModelInstance *)(*(int *)(this_ptr->unk + 0x60) + 0x158),
                this_ptr->wolf_model_name);
     *(float *)(*(int *)(this_ptr->unk + 0x60) + 0x261c) = this_ptr->wolf_size;
-    (*(code *)**(uint **)(*(int *)(this_ptr->unk + 0x60) + 0x154))();
+    (*(code *)**(uint **)(*(int *)(this_ptr->unk + 0x60) + 0x154))
+              (*(int *)(this_ptr->unk + 0x60));
     this_ptr_02 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             ((CMotionController *)(*(int *)(this_ptr->unk + 0x60) + 0x158));
     iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_02);

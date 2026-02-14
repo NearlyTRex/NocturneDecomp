@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 32,
-        "line": 37,
-        "message": "member reference base type 'int' is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 298,
-    "complexity_score": 102,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 10,
-    "pseudocode_lines": 87,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unknown_field"
-    ],
-    "total_lines": 385
+    "pseudocode_lines": 85,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 383
   },
   "cross_references": [],
   "function": {
@@ -35,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_processCoronaScanline_FUN_004514b0",
-    "signature": "void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0 (int row,int x_start,int x_end,SCorona *corona_buffer)"
+    "signature": "void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona_buffer)"
   },
   "function_calls": [],
   "globals": [
@@ -54,7 +45,7 @@
     {
       "addr": "013bc260",
       "name": "g_CameraDownscaleIterations",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -259,13 +250,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._0_1_",
-      "text": "g_CameraDownscaleIterations._0_1_ = bVar1;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

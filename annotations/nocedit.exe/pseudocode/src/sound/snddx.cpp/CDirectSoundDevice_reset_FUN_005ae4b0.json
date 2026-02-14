@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 63,
+        "line": 65,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 63,
+        "line": 65,
         "message": "expected expression"
       }
     ],
@@ -19,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 87,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 10,
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 74,
     "suspect_count": 1,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 231
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -189,9 +189,9 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 56,
+      "line": 58,
       "match": "code *",
-      "text": "uVar1 = (**(code **)(**(int **)((int)g_DirectSoundHardwareSfxBuffers + iVar4) + 0x48))();",
+      "text": "uVar2 = (**(code **)(*piVar1 + 0x48))(piVar1);",
       "type": "unresolved_funcptr"
     }
   ],

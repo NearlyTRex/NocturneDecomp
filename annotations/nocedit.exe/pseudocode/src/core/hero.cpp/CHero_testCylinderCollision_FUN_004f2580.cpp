@@ -2,13 +2,11 @@
 // Address: 004f2580
 // Address Range: [[004f2580, 004f25b5]]
 // Convention: __cdecl
-// Signature: int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580 (CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
+// Signature: int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580(CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
 
 #include "nocturne.h"
 
-int __cdecl
-core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580
-          (CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
+int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580(CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
 
 {
   int iVar1;

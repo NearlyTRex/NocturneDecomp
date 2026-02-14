@@ -1,35 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 42,
-        "message": "use of undeclared identifier 'stack0xfffffee0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 70,
-        "message": "use of undeclared identifier 'stack0xfffffee0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 154,
+    "complexity_score": 142,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 84,
-    "suspect_count": 6,
+    "pseudocode_lines": 82,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref"
+      "warning_type_propagation"
     ],
-    "total_lines": 262
+    "total_lines": 260
   },
   "cross_references": [],
   "function": {
@@ -43,7 +30,7 @@
     "convention": "__stack2_esi",
     "is_ebp_frame": true,
     "name": "core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40",
-    "signature": "void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 (CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+    "signature": "void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -407,43 +394,36 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xfffffee0",
-      "text": "((CMatrix3x4f *)&stack0xfffffee0,&g_ZeroVector,&local_60);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xfffffee0",
-      "text": "((CMatrix3x4f *)&stack0xfffffee0,",
-      "type": "stack_ref"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 69,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 82,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 83,
       "match": "(CMatrix3x4f *)((int)",
       "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"

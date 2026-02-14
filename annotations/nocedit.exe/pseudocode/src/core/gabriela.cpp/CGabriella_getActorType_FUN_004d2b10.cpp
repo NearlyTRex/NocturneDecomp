@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_gabriela_cpp_CGabriella_getActorType_FUN_004d2b10(CGabriella *this_ptr)
+CDemonActorType * __cdecl core_gabriela_cpp_CGabriella_getActorType_FUN_004d2b10(CGabriella *this_ptr)
 
 {
   return &g_CGabriellaClassInfo;

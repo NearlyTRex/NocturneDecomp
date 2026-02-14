@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_explode_FUN_0042b930 (CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_explode_FUN_0042b930(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

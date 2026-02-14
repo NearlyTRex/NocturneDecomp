@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CTextureCache * __cdecl
-engine_texture_cpp_CTextureCache_ctor_FUN_005dcab0(CTextureCache *this_ptr,int max_texture_count)
+CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_005dcab0(CTextureCache *this_ptr,int max_texture_count)
 
 {
   CTextureCache *pCVar1;

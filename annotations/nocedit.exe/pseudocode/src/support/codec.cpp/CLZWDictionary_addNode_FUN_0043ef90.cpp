@@ -2,13 +2,11 @@
 // Address: 0043ef90
 // Address Range: [[0043ef90, 0043f021]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90 (CLZWDictionary *this_ptr,int code,int parent_index)
+// Signature: int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary *this_ptr,int code,int parent_index)
 
 #include "nocturne.h"
 
-int __cdecl
-support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90
-          (CLZWDictionary *this_ptr,int code,int parent_index)
+int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary *this_ptr,int code,int parent_index)
 
 {
   if (this_ptr->max_entries < this_ptr->dict_size) {

@@ -35,7 +35,7 @@
 ;   float FLOAT_00648b39 = 65535
 ;   double DOUBLE_00648b3d = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic DAT_006816c0
+;   SMRGLTextureBasic SMRGLTextureBasic_006816c0
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -171,7 +171,7 @@ section .text
         ;   Label: LAB_0058192f
     JMP 0x00581879                      ; 00581932
         ;   XREF to: 00581879 (UNCONDITIONAL_JUMP)  ; LAB_00581879
-    PUSH 0x6816c0                       ; 00581937 | DAT_006816c0
+    PUSH 0x6816c0                       ; 00581937 | SMRGLTextureBasic_006816c0
         ;   Label: LAB_00581937
     PUSH EDX                            ; 0058193c | g_CDemonRendererInstance
     MOV EDI,0x4                         ; 0058193d

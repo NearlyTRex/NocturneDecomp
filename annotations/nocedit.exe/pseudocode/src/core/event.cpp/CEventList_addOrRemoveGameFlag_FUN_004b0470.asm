@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004b0470 (CEventList *this_ptr,char *name,int add_flag)
+; __cdecl void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004b0470(CEventList *this_ptr,char *name,int add_flag)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

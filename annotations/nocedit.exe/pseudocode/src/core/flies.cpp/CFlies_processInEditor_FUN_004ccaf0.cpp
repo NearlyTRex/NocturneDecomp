@@ -9,42 +9,38 @@
 void __cdecl core_flies_cpp_CFlies_processInEditor_FUN_004ccaf0(CFlies *this_ptr)
 
 {
-  int iVar1;
-  float in_stack_00000008;
-  float in_stack_00000010;
-  float in_stack_00000018;
-  float in_stack_00000020;
-  float in_stack_00000028;
-  float in_stack_00000030;
+  float fVar1;
+  int iVar2;
   
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if (iVar1 == 0) {
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if (iVar2 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
   else {
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
-    if (iVar1 != 0) {
-      (this_ptr->box_size).x = (this_ptr->box_size).x - in_stack_00000008;
+    fVar1 = g_CGamePtr->delta_time_float * (float)4;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    if (iVar2 != 0) {
+      (this_ptr->box_size).x = (this_ptr->box_size).x - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
-    if (iVar1 != 0) {
-      (this_ptr->box_size).x = (this_ptr->box_size).x + in_stack_00000010;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    if (iVar2 != 0) {
+      (this_ptr->box_size).x = (this_ptr->box_size).x + fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
-    if (iVar1 != 0) {
-      (this_ptr->box_size).y = (this_ptr->box_size).y - in_stack_00000018;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    if (iVar2 != 0) {
+      (this_ptr->box_size).y = (this_ptr->box_size).y - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
-    if (iVar1 != 0) {
-      (this_ptr->box_size).y = (this_ptr->box_size).y + in_stack_00000020;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    if (iVar2 != 0) {
+      (this_ptr->box_size).y = (this_ptr->box_size).y + fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
-    if (iVar1 != 0) {
-      (this_ptr->box_size).z = (this_ptr->box_size).z - in_stack_00000028;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    if (iVar2 != 0) {
+      (this_ptr->box_size).z = (this_ptr->box_size).z - fVar1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
-    if (iVar1 != 0) {
-      (this_ptr->box_size).z = (this_ptr->box_size).z + in_stack_00000030;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    if (iVar2 != 0) {
+      (this_ptr->box_size).z = (this_ptr->box_size).z + fVar1;
     }
     if ((int)(this_ptr->box_size).x < 0x3f000000) {
       (this_ptr->box_size).x = 0.5;

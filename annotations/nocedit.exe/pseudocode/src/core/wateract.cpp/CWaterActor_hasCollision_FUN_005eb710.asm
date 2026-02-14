@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_wateract_cpp_CWaterActor_hasCollision_FUN_005eb710 (CWaterActor *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_wateract_cpp_CWaterActor_hasCollision_FUN_005eb710(CWaterActor *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

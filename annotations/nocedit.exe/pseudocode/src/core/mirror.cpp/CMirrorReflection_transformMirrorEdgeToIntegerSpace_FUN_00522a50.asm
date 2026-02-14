@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack3_esi CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50 (CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output)
+; __stack3_esi CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output)
 ;
 ; Parameters:
 ; CMirrorReflection * Stack[0x4]:4   this_ptr

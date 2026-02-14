@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_boss_c_modelStructNotSupported_FUN_0041db50(SMRGLHeaderExtended *header)
+SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041db50(SMRGLHeaderExtended *header)
 
 {
   g_CurrentFilename = "..\\engine\\boss.c";

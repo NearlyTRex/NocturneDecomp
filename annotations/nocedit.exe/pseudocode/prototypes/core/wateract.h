@@ -57,7 +57,7 @@ int __cdecl CWaterActor::getGroundType(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740
 // Address: 005eb740
-float __cdecl CWaterActor::customRayIntersect(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
+float __cdecl CWaterActor::customRayIntersect(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_wateract.cpp_CWaterActor_getSurfaceProperties_FUN_005eb910
 // Address: 005eb910

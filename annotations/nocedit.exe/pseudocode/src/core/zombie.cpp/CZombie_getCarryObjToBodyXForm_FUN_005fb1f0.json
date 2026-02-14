@@ -1,41 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 65,
-        "message": "use of undeclared identifier 'stack0xfffffe94'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 86,
-        "message": "use of undeclared identifier 'stack0xfffffe94'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 126,
-        "message": "use of undeclared identifier 'stack0xfffffe94'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 230,
+    "complexity_score": 217,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
-    "pseudocode_lines": 140,
-    "suspect_count": 8,
+    "pseudocode_lines": 137,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref"
+      "warning_type_propagation"
     ],
-    "total_lines": 428
+    "total_lines": 425
   },
   "cross_references": [],
   "function": {
@@ -49,7 +30,7 @@
     "convention": "__stack2_esi",
     "is_ebp_frame": true,
     "name": "core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0",
-    "signature": "void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+    "signature": "void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -509,59 +490,52 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xfffffe94",
-      "text": "pfVar7 = (float *)&stack0xfffffe94;",
-      "type": "stack_ref"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xfffffe94",
-      "text": "((CMatrix3x4f *)&stack0xfffffe94,&g_ZeroVector,&local_94);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 119,
-      "match": "&stack0xfffffe94",
-      "text": "((CMatrix3x4f *)&stack0xfffffe94,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 62,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 124,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 125,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }
   ],

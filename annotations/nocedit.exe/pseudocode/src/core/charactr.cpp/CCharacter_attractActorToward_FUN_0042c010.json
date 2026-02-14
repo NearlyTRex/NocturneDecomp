@@ -1,27 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 45,
-        "line": 29,
-        "message": "use of undeclared identifier 'stack0xffffffbc'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 68,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 38,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref"
+      "decompiler_intrinsic"
     ],
     "total_lines": 144
   },
@@ -37,7 +29,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_attractActorToward_FUN_0042c010",
-    "signature": "int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_0042c010 (CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_0042c010(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point)"
   },
   "function_calls": [
     {
@@ -237,15 +229,8 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xffffffbc",
-      "text": "(actor,(CVector3f *)&stack0xffffffbc,target_local_point);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 25,
       "match": "SQRT",
       "text": "local_10 = SQRT(local_24 * local_24 + local_2c * local_2c);",
       "type": "decompiler_intrinsic"

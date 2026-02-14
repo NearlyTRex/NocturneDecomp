@@ -12,7 +12,7 @@ int __cdecl engine_ncursfx_cpp_CMouse_FUN_00544540(CMouse *this_ptr)
   uint in_stack_00000008;
   int in_stack_0000000c;
   
-  if ((g_MouseButtonFlags & in_stack_00000008) != 0) {
+  if ((g_MouseButtonFlags.dword & in_stack_00000008) != 0) {
     if (this_ptr->field_604 == 0) {
       if (in_stack_0000000c == 0) {
         this_ptr->field_604 = 1;
@@ -21,7 +21,7 @@ int __cdecl engine_ncursfx_cpp_CMouse_FUN_00544540(CMouse *this_ptr)
         this_ptr->field_604 = 2;
       }
     }
-    g_MouseButtonFlags = g_MouseButtonFlags & (in_stack_00000008 ^ 0xff);
+    g_MouseButtonFlags.dword = g_MouseButtonFlags.dword & (in_stack_00000008 ^ 0xff);
     return 1;
   }
   return 0;

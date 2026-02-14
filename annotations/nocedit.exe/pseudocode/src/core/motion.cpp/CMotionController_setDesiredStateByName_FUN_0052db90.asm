@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90 (CMotionController *this_ptr,char *state_name,int force_immediate)
+; __cdecl void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90(CMotionController *this_ptr,char *state_name,int force_immediate)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_stdio_c_FormatWideString_FUN_006031c0 (wchar_t *wide_string_offset,ushort segment,FormatSpec *spec_info, OUTPUT_CALLBACK output_func)
+; __cdecl void __cdecl crt_stdio_c_FormatWideString_FUN_006031c0(wchar_t *wide_string_offset,ushort segment,FormatSpec *spec_info,OUTPUT_CALLBACK output_func)
 ;
 ; Parameters:
 ; wchar_t *        Stack[0x4]:4   wide_string_offset

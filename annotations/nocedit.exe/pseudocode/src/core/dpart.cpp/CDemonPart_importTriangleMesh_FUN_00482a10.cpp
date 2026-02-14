@@ -2,14 +2,11 @@
 // Address: 00482a10
 // Address Range: [[00482a10, 00482e3a]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count, CDemonTriangle *triangle_data)
+// Signature: int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,CDemonTriangle *triangle_data)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10
-          (CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,
-          CDemonTriangle *triangle_data)
+int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,CDemonTriangle *triangle_data)
 
 {
   char *pcVar1;

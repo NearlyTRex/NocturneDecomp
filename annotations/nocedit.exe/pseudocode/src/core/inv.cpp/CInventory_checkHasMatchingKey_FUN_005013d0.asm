@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0 (CInventory *this_ptr,uint key_mask,int show_message)
+; __cdecl int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0(CInventory *this_ptr,uint key_mask,int show_message)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

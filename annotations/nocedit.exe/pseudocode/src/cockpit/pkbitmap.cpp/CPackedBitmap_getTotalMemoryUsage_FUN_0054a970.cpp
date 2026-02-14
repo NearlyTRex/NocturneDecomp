@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-cockpit_pkbitmap_cpp_CPackedBitmap_getTotalMemoryUsage_FUN_0054a970(CPackedBitmap *this_ptr)
+int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getTotalMemoryUsage_FUN_0054a970(CPackedBitmap *this_ptr)
 
 {
   if (this_ptr->row_pointers == (void **)0x0) {

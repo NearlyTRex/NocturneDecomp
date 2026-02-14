@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_0048da50 (SFace **face_ptr_a,SFace **face_ptr_b)
+; __cdecl int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_0048da50(SFace **face_ptr_a,SFace **face_ptr_b)
 ;
 ; Parameters:
 ; SFace * *        Stack[0x4]:4   face_ptr_a

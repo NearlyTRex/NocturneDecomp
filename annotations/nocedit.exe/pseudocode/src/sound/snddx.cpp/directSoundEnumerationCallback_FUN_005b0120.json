@@ -4,8 +4,8 @@
       {
         "category": "other",
         "column": 36,
-        "line": 57,
-        "message": "too few arguments to function call, expected 1, have 0"
+        "line": 55,
+        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'LPDIRECTSOUND' (aka 'IDirectSound *')"
       }
     ],
     "success": false,
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 114,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 16,
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 82,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "warning_max_restarts"
     ],
-    "total_lines": 272
+    "total_lines": 270
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120",
-    "signature": "int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120 (LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)"
+    "signature": "int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)"
   },
   "function_calls": [
     {
@@ -264,7 +264,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 59,
       "match": "(uint *)((int)",
       "text": "puVar5 = (uint *)((int)device_guid + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"

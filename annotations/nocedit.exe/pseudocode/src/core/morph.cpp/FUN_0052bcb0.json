@@ -1,85 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 100,
-        "message": "use of undeclared identifier 'stack0xffffb248'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 45,
-        "line": 106,
-        "message": "use of undeclared identifier 'stack0xffffb248'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 116,
-        "message": "use of undeclared identifier 'stack0xffffb248'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 120,
-        "message": "use of undeclared identifier 'stack0xffffb248'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 141,
-        "message": "use of undeclared identifier 'stack0xffffb248'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 183,
-        "message": "use of undeclared identifier 'stack0xffffb248'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 305,
-        "message": "use of undeclared identifier 'stack0xffffb248'"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 423,
-        "message": "C-style cast from 'CMotionList *' to 'float' is not allowed"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 437,
-        "message": "use of undeclared identifier 'stack0xffffb250'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 442,
-        "message": "use of undeclared identifier 'stack0xffffb248'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 673,
+    "complexity_score": 567,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 33,
-    "pseudocode_lines": 433,
-    "suspect_count": 22,
+    "pseudocode_lines": 417,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "warning_type_propagation"
+      "stack_param"
     ],
-    "total_lines": 1453
+    "total_lines": 1437
   },
   "cross_references": [
     {
@@ -467,7 +404,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -1033,158 +970,102 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "CMorph *in_stack_00000004;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000014",
-      "text": "CMorph *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 93,
-      "match": "&stack0xffffb248",
-      "text": "__arrinit(&stack0xffffb248,2,&g_CDeformableModelInstanceTypeInfo);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 99,
-      "match": "&stack0xffffb248",
-      "text": "((CDeformableModelInstance *)&stack0xffffb248,local_228);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 109,
-      "match": "&stack0xffffb248",
-      "text": "((CDeformableModelInstance *)&stack0xffffb248);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 113,
-      "match": "&stack0xffffb248",
-      "text": "((CDeformableModelInstance *)&stack0xffffb248);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 134,
-      "match": "&stack0xffffb248",
-      "text": "local_28 = (CDeformableModelInstance *)&stack0xffffb248;",
-      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 135,
       "match": "(int *)((int)",
       "text": "(local_3c,*(int *)(*(int *)((int)local_8c + local_34) + 0x2c),",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 176,
-      "match": "&stack0xffffb248",
-      "text": "local_40 = (CDeformableModelInstance *)&stack0xffffb248;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 194,
-      "match": "(int *)((int)",
-      "text": "while (iVar10 = iVar13, iVar10 < *(int *)(*(int *)((int)local_8c + local_44) + 0x2c)) {",
+      "line": 139,
+      "match": "(float *)((int)",
+      "text": "pfVar10 = (float *)((int)&local_4a8[0].unk2[0].x + local_48);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 183,
       "match": "(int *)((int)",
-      "text": "iVar13 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
+      "text": "while (iVar11 = iVar14, iVar11 < *(int *)(*(int *)((int)local_8c + local_44) + 0x2c)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 184,
       "match": "(int *)((int)",
-      "text": "(iVar13 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)",
+      "text": "iVar14 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 298,
-      "match": "&stack0xffffb248",
-      "text": "local_2c = (CDeformableModelInstance *)&stack0xffffb248;",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 187,
+      "match": "(int *)((int)",
+      "text": "(iVar14 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 214,
+      "match": "(int *)((int)",
+      "text": "local_50 = *(int *)((int)local_4a8 + local_7c * 4 + iVar14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 260,
+      "match": "(int *)((int)",
+      "text": "piVar7 = (int *)((int)&(local_4db8[1 - local_8].skinned_vertices_buffer)->x + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 339,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_4a8 + (1 - iVar9) * 4 + local_74) = local_50;",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 390,
-      "match": "in_stack_00000014",
-      "text": "core_morph_cpp_CMorph_FUN_0052b430(in_stack_00000014,0);",
+      "line": 375,
+      "match": "in_stack_00000004",
+      "text": "core_morph_cpp_CMorph_FUN_0052b430(in_stack_00000004,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 391,
-      "match": "in_stack_00000014",
-      "text": "core_morph_cpp_CMorph_FUN_0052b430(in_stack_00000014,1);",
+      "line": 376,
+      "match": "in_stack_00000004",
+      "text": "core_morph_cpp_CMorph_FUN_0052b430(in_stack_00000004,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 392,
-      "match": "in_stack_00000014",
-      "text": "core_morph_cpp_CMorph_getReady_FUN_0052b680(in_stack_00000014);",
+      "line": 377,
+      "match": "in_stack_00000004",
+      "text": "core_morph_cpp_CMorph_getReady_FUN_0052b680(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 393,
-      "match": "in_stack_00000014",
-      "text": "core_morph_cpp_CMorph_FUN_0052ca90(in_stack_00000014);",
+      "line": 378,
+      "match": "in_stack_00000004",
+      "text": "core_morph_cpp_CMorph_FUN_0052ca90(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 394,
-      "match": "in_stack_00000014",
-      "text": "core_morph_cpp_CMorph_FUN_0052b350(in_stack_00000014);",
+      "line": 379,
+      "match": "in_stack_00000004",
+      "text": "core_morph_cpp_CMorph_FUN_0052b350(in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 400,
-      "match": "in_stack_00000010",
-      "text": "this_ptr_01 = (CMotionController *)(auStack_4da8 + in_stack_00000010 * 0x22b4 + 8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 430,
-      "match": "&stack0xffffb250",
-      "text": "((CDeformableModelInstance *)&stack0xffffb250,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 435,
-      "match": "&stack0xffffb248",
-      "text": "((CDeformableModelInstance *)&stack0xffffb248,0);",
-      "type": "stack_ref"
     }
   ]
 }

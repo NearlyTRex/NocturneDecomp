@@ -17,8 +17,8 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
   char *pcVar6;
   char *pcVar7;
   uint uVar8;
-  uint unaff_EDI;
   byte bVar9;
+  uint uStack_14;
   
   bVar9 = 0;
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
@@ -29,7 +29,7 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
     SVar2 = 0;
   }
   else {
-    uVar8 = count * count;
+    uVar8 = count * size;
     if (uVar8 == 0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
       return 0;
@@ -37,8 +37,9 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
     if (file->_link->__reserve_end == (char *)0x0) {
       InitializeFileBuffer(file);
     }
+    uStack_14 = 0;
     if ((file->_flag & 0x40) == 0) {
-      pcVar6 = (char *)size;
+      pcVar6 = buffer;
       do {
         if ((file->_cnt == 0) &&
            (iVar4 = FillInputBuffer(file), iVar4 == 0)) break;
@@ -59,9 +60,10 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
           break;
         }
         pcVar7 = pcVar6 + 1;
+        uStack_14 = uStack_14 + 1;
         *pcVar6 = cVar1;
         pcVar6 = pcVar7;
-      } while (pcVar7 != (char *)(uVar8 + size));
+      } while (pcVar7 != (char *)(uVar8 + (int)buffer));
     }
     else {
       do {
@@ -72,7 +74,7 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
               uVar3 = uVar8;
             }
             pcVar6 = file->_ptr;
-            pcVar7 = (char *)size;
+            pcVar7 = buffer;
             for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
               *(uint *)pcVar7 = *(uint *)pcVar6;
               pcVar6 = pcVar6 + ((uint)bVar9 * -2 + 1) * 4;
@@ -84,7 +86,8 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
               pcVar7 = pcVar7 + (uint)bVar9 * -2 + 1;
             }
             uVar8 = uVar8 - uVar3;
-            size = size + uVar3;
+            buffer = (void *)((int)buffer + uVar3);
+            uStack_14 = uStack_14 + uVar3;
             file->_ptr = file->_ptr + uVar3;
             file->_cnt = file->_cnt - uVar3;
           }
@@ -96,8 +99,8 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
           if (((file->_flag & 0x400) == 0) && (0x200 < uVar8)) {
             uVar3 = (uVar8 >> 8 & 0xfffffe) << 8;
           }
-          iVar4 = ReadFileWithDeviceAbstraction
-                            (file->_handle,(void *)size,uVar3);
+          iVar4 = ReadFileWithDeviceAbstraction(file->_handle,buffer,uVar3)
+          ;
           if (iVar4 == -1) {
             *(byte *)&file->_flag = (byte)file->_flag | 0x20;
             goto LAB_005fdb69;
@@ -106,15 +109,16 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
             *(byte *)&file->_flag = (byte)file->_flag | 0x10;
             goto LAB_005fdb69;
           }
-          size = size + iVar4;
+          buffer = (void *)((int)buffer + iVar4);
           uVar8 = uVar8 - iVar4;
+          uStack_14 = uStack_14 + iVar4;
         }
         iVar4 = FillInputBuffer(file);
       } while (iVar4 != 0);
     }
 LAB_005fdb69:
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
-    SVar2 = unaff_EDI / (uint)file;
+    SVar2 = uStack_14 / size;
   }
   return SVar2;
 }

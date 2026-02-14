@@ -1,34 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 19,
-        "message": "use of undeclared identifier 'stack0xffffff74'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 23,
-        "message": "use of undeclared identifier 'stack0xffffff7c'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 40,
+    "complexity_score": 13,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 15,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 61
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 59
   },
   "cross_references": [],
   "function": {
@@ -41,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCodec_finalizeBuffer_FUN_0043ed50",
-    "signature": "int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50 (CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr)"
+    "signature": "int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr)"
   },
   "function_calls": [
     {
@@ -135,22 +120,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 12,
-      "match": "&stack0xffffff74",
-      "text": "((ostrstream *)&stack0xffffff74,0,buffer_ptr,*buffer_size_ptr,2);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xffffff7c",
-      "text": "crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xffffff7c,0);",
-      "type": "stack_ref"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

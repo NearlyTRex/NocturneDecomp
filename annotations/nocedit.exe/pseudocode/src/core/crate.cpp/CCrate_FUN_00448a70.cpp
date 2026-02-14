@@ -10,19 +10,22 @@ void __cdecl core_crate_cpp_CCrate_FUN_00448a70(CCrate *this_ptr)
 
 {
   CLocation *pCVar1;
-  float fStack_8;
+  CBoundingBox3D CStack_28;
+  CVector3f CStack_10;
   
   if ((this_ptr->base).was_created != 1) {
     return;
   }
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s exploding!\n",this_ptr);
-  (*((this_ptr->base).vtable._ub)->getBoundingBox)
-            (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
+  (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_28);
   pCVar1 = &(this_ptr->base).location;
-  if ((CLocation *)&fStack_8 != pCVar1) {
-    fStack_8 = (pCVar1->position).x;
+  if ((CLocation *)&CStack_10 != pCVar1) {
+    CStack_10.x = (pCVar1->position).x;
+    CStack_10.y = (this_ptr->base).location.position.y;
+    CStack_10.z = (this_ptr->base).location.position.z;
   }
-  core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(g_CFireEffectPtr,(CVector3f *)&fStack_8);
+  CStack_10.y = (CStack_28.max.y - CStack_28.min.y) + CStack_10.y;
+  core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(g_CFireEffectPtr,&CStack_10);
   core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
             (g_CDemonMissionPtr,&this_ptr->base,1);
   (this_ptr->base).was_created = 2;

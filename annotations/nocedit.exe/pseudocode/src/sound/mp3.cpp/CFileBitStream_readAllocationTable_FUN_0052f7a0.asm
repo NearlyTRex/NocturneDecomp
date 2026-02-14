@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0 (CFileBitStream *this_ptr,uint *output_array,SBitAllocationTable *alloc_table)
+; __cdecl void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SBitAllocationTable *alloc_table)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr

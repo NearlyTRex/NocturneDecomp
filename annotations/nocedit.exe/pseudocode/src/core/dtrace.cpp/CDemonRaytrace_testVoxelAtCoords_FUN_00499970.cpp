@@ -2,13 +2,11 @@
 // Address: 00499970
 // Address Range: [[00499970, 00499a46]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970 (CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
+// Signature: int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970(CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970
-          (CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
+int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970(CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
 
 {
   SVoxelGrid *pSVar1;

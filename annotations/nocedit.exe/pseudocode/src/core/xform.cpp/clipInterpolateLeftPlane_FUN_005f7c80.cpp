@@ -2,17 +2,15 @@
 // Address: 005f7c80
 // Address Range: [[005f7c80, 005f7d34]]
 // Convention: __cdecl
-// Signature: void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_005f7c80 (SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)
+// Signature: void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_005f7c80(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)
 
 #include "nocturne.h"
 
-void __cdecl
-core_xform_cpp_clipInterpolateLeftPlane_FUN_005f7c80
-          (SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)
+void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_005f7c80(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)
 
 {
   longlong lVar1;
-  byte bVar2;
+  byte uVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -47,15 +45,14 @@ core_xform_cpp_clipInterpolateLeftPlane_FUN_005f7c80
   (vertex_out->projected_vertex).transformed_y =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
        (vertex_a->projected_vertex).transformed_y;
-  bVar2 = (byte)g_RenderStateFlags;
+  uVar2 = g_RenderStateFlags.bytes[0];
   (vertex_out->projected_vertex).screen_x = -1;
-  if ((bVar2 & 4) == 0) {
+  if ((uVar2 & 4) == 0) {
     return;
   }
-  lVar1 = (longlong)((int)vertex_b->light - (int)vertex_a->light) * (longlong)iVar5;
+  lVar1 = (longlong)(vertex_b->light - vertex_a->light) * (longlong)iVar5;
   uVar4 = (uint)lVar1;
   vertex_out->light =
-       (float)((int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-              (int)vertex_a->light);
+       (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + vertex_a->light;
   return;
 }

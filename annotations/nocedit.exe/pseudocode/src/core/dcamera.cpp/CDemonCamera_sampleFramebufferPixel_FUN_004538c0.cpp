@@ -2,13 +2,11 @@
 // Address: 004538c0
 // Address Range: [[004538c0, 00453944]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0 (CDemonCamera *this_ptr,SRenderVertex *vertex)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(CDemonCamera *this_ptr,SRenderVertex *vertex)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0
-          (CDemonCamera *this_ptr,SRenderVertex *vertex)
+void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(CDemonCamera *this_ptr,SRenderVertex *vertex)
 
 {
   uint uVar1;
@@ -17,8 +15,8 @@ core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0
   
   bVar3 = (byte)g_BlueBitPosition;
   if ((int)((vertex->projected_vertex).screen_x & -0x80000000) != 0) {
-    vertex->fog = 0.0;
-    vertex->color = (int)vertex->fog;
+    vertex->fog = 0;
+    vertex->color = vertex->fog;
     vertex->light = vertex->fog;
     return;
   }
@@ -27,8 +25,8 @@ core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0
                    ((vertex->projected_vertex).screen_y >> 0x10) * this_ptr->framebuffer_width) * 4)
   ;
   bVar2 = (byte)g_GreenBitPosition & 0x1f;
-  vertex->light = (float)((uVar1 >> ((byte)g_RedBitPosition & 0x1f) & 0xff) << 8);
+  vertex->light = (uVar1 >> ((byte)g_RedBitPosition & 0x1f) & 0xff) << 8;
   vertex->color = (uVar1 >> bVar2 & 0xff) << 8;
-  vertex->fog = (float)((uVar1 >> (bVar3 & 0x1f) & 0xff) << 8);
+  vertex->fog = (uVar1 >> (bVar3 & 0x1f) & 0xff) << 8;
   return;
 }

@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/windef.h"
+#include "system/winnt.h"
 #include "types/classes/CEventList.h"
 #include "types/classes/CMatrix3x3i.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
@@ -29,6 +30,9 @@ extern DWORD g_JoyButtons;
 
 // RenderScanlineFunc*
 extern RenderScanlineFunc* g_ScanlineRenderFunc;
+
+// _BIT_INTEGER
+extern _BIT_INTEGER g_RenderStateFlags;
 
 // byte
 extern byte g_LeftMousePressed;
@@ -91,7 +95,6 @@ extern int g_CPUModel;
 extern int g_CalibratedCPUSpeed;
 extern int g_BlendMode;
 extern int g_ProcessorType;
-extern int g_RenderStateFlags;
 extern int g_RenderStateFlag2;
 extern int g_SolidRedComponent;
 extern int g_SolidGreenComponent;

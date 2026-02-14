@@ -86,6 +86,7 @@ LAB_005d9adc:
     iVar3 = (*(((this_ptr_01->base).base.base.vtable._uc)->_uc).testDamageLine)
                       ((CCharacter *)this_ptr_01,&local_24,&local_3c,&local_84,(CVector3f *)0x0);
     if (iVar3 == 0) goto LAB_005d9adc;
+    local_14 = 1;
     iVar4 = iVar4 + 1;
     iVar6 = iVar6 + 4;
   } while( true );

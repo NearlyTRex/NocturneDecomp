@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: engine_ini.cpp_CIni_getProfileString_FUN_004fb250
 // Address: 004fb250
-int __cdecl CIni::getProfileString(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer, int buffer_size,char *filename);
+int __cdecl CIni::getProfileString(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 
 // Original: engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
 // Address: 004fb470
@@ -21,7 +21,7 @@ int __cdecl CIni::writeProfileString(CIni *this_ptr,char *section,char *key,char
 
 // Original: engine_ini.cpp_getProfileString_FUN_004fb960
 // Address: 004fb960
-void __cdecl getProfileString(char *section,char *key,char *default_value,char *output_buffer,int buffer_size, char *filename);
+void __cdecl getProfileString(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 
 // Original: engine_ini.cpp_getProfileInteger_FUN_004fb9a0
 // Address: 004fb9a0

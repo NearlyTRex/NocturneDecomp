@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_edittool_cpp_CStrList_findString_FUN_004a3030(CStrList *this_ptr,char *search_string)
+int __cdecl shape_edittool_cpp_CStrList_findString_FUN_004a3030(CStrList *this_ptr,char *search_string)
 
 {
   char *str1;

@@ -2,13 +2,11 @@
 // Address: 00433030
 // Address Range: [[00433030, 00433156]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030 (void *bitmap_data,int width,int height,int num_iterations)
+// Signature: void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030(void *bitmap_data,int width,int height,int num_iterations)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030
-          (void *bitmap_data,int width,int height,int num_iterations)
+void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030(void *bitmap_data,int width,int height,int num_iterations)
 
 {
   byte uVar1;

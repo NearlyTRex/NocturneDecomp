@@ -2,13 +2,11 @@
 // Address: 005a1040
 // Address Range: [[005a1040, 005a10df]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040 (CDeformableModelInstance *this_ptr,CBodyPart *body_part,int part_index)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040(CDeformableModelInstance *this_ptr,CBodyPart *body_part,int part_index)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
-          (CDeformableModelInstance *this_ptr,CBodyPart *body_part,int part_index)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040(CDeformableModelInstance *this_ptr,CBodyPart *body_part,int part_index)
 
 {
   CDeformableModel *this_ptr_00;

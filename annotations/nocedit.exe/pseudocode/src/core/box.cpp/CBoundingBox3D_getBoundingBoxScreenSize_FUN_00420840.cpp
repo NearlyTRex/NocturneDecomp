@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-float __cdecl
-core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(CBoundingBox3D *this_ptr)
+float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(CBoundingBox3D *this_ptr)
 
 {
   int iVar1;

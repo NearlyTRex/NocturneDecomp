@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 73,
+    "complexity_score": 71,
     "cross_reference_count": 74,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 26,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 94
+    "total_lines": 92
   },
   "cross_references": [
     {
@@ -474,7 +474,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830",
-    "signature": "CVector3f * __cdecl core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 (CVector3f *out_euler_angles,CVector3f *in_direction_vector)"
+    "signature": "CVector3f * __cdecl core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f *out_euler_angles,CVector3f *in_direction_vector)"
   },
   "function_calls": [
     {
@@ -571,28 +571,28 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 9,
       "match": "ABS",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 9,
       "match": "ABS",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 17,
       "match": "CONCAT44",
       "text": "out_euler_angles->x = (float)(double)CONCAT44(uStack_14,0x54411744);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 25,
       "match": "SQRT",
       "text": "SQRT((float10)in_direction_vector->x * (float10)in_direction_vector->x +",
       "type": "decompiler_intrinsic"

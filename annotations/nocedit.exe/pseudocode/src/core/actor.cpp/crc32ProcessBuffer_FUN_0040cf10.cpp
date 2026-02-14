@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_crc32ProcessBuffer_FUN_0040cf10(uint *crc_state,byte *buffer,int buffer_length)
+void __cdecl core_actor_cpp_crc32ProcessBuffer_FUN_0040cf10(uint *crc_state,byte *buffer,int buffer_length)
 
 {
   byte input_byte;

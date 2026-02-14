@@ -101,7 +101,7 @@ section .text
         ;   Label: LAB_0044cc11
     PUSH EAX                            ; 0044cc16 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0044cc17
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
     ADD ESP,0x4                         ; 0044cc1c
     PUSH EBX                            ; 0044cc1f
     CALL core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410 ; 0044cc20

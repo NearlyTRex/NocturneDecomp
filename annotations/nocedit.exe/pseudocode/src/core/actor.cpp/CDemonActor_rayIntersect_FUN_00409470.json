@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 127,
+        "line": 123,
         "message": "no matching function for call to 'core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0'"
       },
       {
         "category": "incompatible_types",
         "column": 21,
-        "line": 141,
+        "line": 137,
         "message": "no matching function for call to 'core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 146,
+        "line": 142,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -25,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 245,
+    "complexity_score": 241,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
-    "pseudocode_lines": 150,
+    "pseudocode_lines": 146,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 493
+    "total_lines": 489
   },
   "cross_references": [
     {
@@ -69,7 +69,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470",
-    "signature": "float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470 (CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type, CBoundingBox3D *ray_bbox)"
+    "signature": "float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)"
   },
   "function_calls": [
     {
@@ -458,56 +458,56 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 16,
       "match": "in_stack_ffffff48",
       "text": "ulonglong in_stack_ffffff48;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 63,
       "match": "in_stack_ffffff48",
       "text": "(this_ptr_00,pCVar3,(CVector3f *)in_stack_ffffff48,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 64,
       "match": "in_stack_ffffff48",
       "text": "(CVector3f *)((ulonglong)in_stack_ffffff48 >> 0x20));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 90,
       "match": "NAN",
       "text": "out_hit_normal[1].y = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 91,
       "match": "NAN",
       "text": "out_hit_normal[1].z = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 92,
       "match": "NAN",
       "text": "out_hit_normal[2].x = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 94,
       "match": "NAN",
       "text": "out_hit_normal[1].x = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 139,
+      "line": 135,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {",
       "type": "stack_ref"

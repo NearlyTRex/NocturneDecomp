@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 66,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 51,
-    "suspect_count": 1,
-    "suspect_types": [
-      "format_string_mismatch"
-    ],
-    "total_lines": 174
+    "pseudocode_lines": 52,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 175
   },
   "cross_references": [
     {
@@ -146,17 +144,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "actual_args": 0,
-      "description": "Format \"Error setting hw sfx %d options (sample %s), killi...\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "Error setting hw sfx %d options (sample %s), killing.\\n",
-      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
-      "line_number": 51,
-      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"Error setting hw sfx %d options (sample %s), killing.\\",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

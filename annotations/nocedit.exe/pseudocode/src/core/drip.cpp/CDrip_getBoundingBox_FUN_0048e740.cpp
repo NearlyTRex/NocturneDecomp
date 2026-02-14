@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_drip_cpp_CDrip_getBoundingBox_FUN_0048e740(CDrip *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_0048e740(CDrip *this_ptr,CBoundingBox3D *out_box)
 
 {
   float *pfVar1;

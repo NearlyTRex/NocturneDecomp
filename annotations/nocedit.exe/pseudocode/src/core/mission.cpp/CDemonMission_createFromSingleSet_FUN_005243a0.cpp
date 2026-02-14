@@ -2,13 +2,11 @@
 // Address: 005243a0
 // Address Range: [[005243a0, 00524410]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_005243a0 (CDemonMission *this_ptr,char *set_name)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_005243a0(CDemonMission *this_ptr,char *set_name)
 
 #include "nocturne.h"
 
-void __cdecl
-core_mission_cpp_CDemonMission_createFromSingleSet_FUN_005243a0
-          (CDemonMission *this_ptr,char *set_name)
+void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_005243a0(CDemonMission *this_ptr,char *set_name)
 
 {
   char cVar1;
@@ -27,7 +25,7 @@ core_mission_cpp_CDemonMission_createFromSingleSet_FUN_005243a0
   } while (cVar1 != '\0');
   this_ptr->current_set_index = 0;
   core_mission_cpp_CDemonMission_FUN_00523f50(this_ptr);
-  core_script_cpp_CScript_FUN_00559870(g_CScriptPtr);
+  core_script_cpp_CScript_clear_FUN_00559870(g_CScriptPtr);
   core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
   this_ptr->current_set_index = -1;
   core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(this_ptr,0);

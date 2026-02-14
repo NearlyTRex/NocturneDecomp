@@ -41,7 +41,7 @@ int __cdecl CMansionPuzzleCircle::hasCollision(CMansionPuzzleCircle *this_ptr,SC
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
 // Address: 00509330
-float __cdecl CMansionPuzzleCircle::customRayIntersect(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
+float __cdecl CMansionPuzzleCircle::customRayIntersect(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720
 // Address: 00509720

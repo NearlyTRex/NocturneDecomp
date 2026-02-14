@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 374,
+    "complexity_score": 371,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 279,
+    "pseudocode_lines": 276,
     "suspect_count": 8,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 652
+    "total_lines": 649
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_parseCommandWithTemplates_FUN_00561690",
-    "signature": "int __cdecl core_script_cpp_parseCommandWithTemplates_FUN_00561690 (char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position ,CCmdParm *parm_out,CCmdParse *parse_out,char **templates,int template_count)"
+    "signature": "int __cdecl core_script_cpp_parseCommandWithTemplates_FUN_00561690(char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position,CCmdParm *parm_out,CCmdParse *parse_out,char **templates,int template_count)"
   },
   "function_calls": [
     {
@@ -336,42 +336,42 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 36,
       "match": "(CCmdParse *)((int)",
       "text": "pCVar6 = (CCmdParse *)((int)pCVar6 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 37,
       "match": "(CCmdParse *)((int)",
       "text": "pCVar9 = (CCmdParse *)((int)pCVar9 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 162,
       "match": "(CCmdParm *)((int)",
       "text": "pCVar8 = (CCmdParm *)((int)pCVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 163,
       "match": "(CCmdParm *)((int)",
       "text": "parm_out = (CCmdParm *)((int)parm_out + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
+      "line": 202,
       "match": "(CCmdParm *)((int)",
       "text": "pCVar8 = (CCmdParm *)((int)pCVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 206,
+      "line": 203,
       "match": "(CCmdParm *)((int)",
       "text": "parm_out = (CCmdParm *)((int)parm_out + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0 (CMotionController *this_ptr,int source_motion_index,float source_frame, int target_motion_index)
+; __cdecl int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

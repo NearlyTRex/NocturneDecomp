@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0 (CMotionController *this_ptr,SMotionTransition *transition)
+; __cdecl void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0(CMotionController *this_ptr,SMotionTransition *transition)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

@@ -2,13 +2,11 @@
 // Address: 00417cd0
 // Address Range: [[00417cd0, 00417d23]]
 // Convention: __cdecl
-// Signature: void __cdecl core_batman_cpp_CBatman_getPropertyList_FUN_00417cd0 (CBatman *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_batman_cpp_CBatman_getPropertyList_FUN_00417cd0(CBatman *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_batman_cpp_CBatman_getPropertyList_FUN_00417cd0
-          (CBatman *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_batman_cpp_CBatman_getPropertyList_FUN_00417cd0(CBatman *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

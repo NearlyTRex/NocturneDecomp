@@ -5,8 +5,8 @@
 
 // Original: crt_operation.c_always_zero_FUN_0060fa8b
 // Address: 0060eba0
-int always::zero(void);
+int __watcallRegister always::zero(void);
 
 // Original: crt_operation.c_always_zero_FUN_0060fa8b
 // Address: 0060fa8b
-int always::zero(void);
+int __watcallRegister always::zero(void);

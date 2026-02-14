@@ -9,6 +9,7 @@
 void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *this_ptr)
 
 {
+  CVector3f *world_position;
   SRenderVertex *vertex_ptr;
   longlong lVar1;
   int iVar2;
@@ -40,8 +41,9 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,g_FireEffectSmokeParticleTextures + local_1c);
+    world_position = &this_ptr->position;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,&this_ptr->position);
+              (g_CDemonRendererPtr2,world_position);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
               (g_CDemonRendererPtr2,&g_BillboardCameraRight,(CVector3i *)0x0);
     local_18 = this_ptr->drag_factor;
@@ -84,12 +86,13 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     g_RenderVertexBuffer[2].v = 0x80000;
     g_RenderVertexBuffer[3].u = 0x80000;
     g_RenderVertexBuffer[3].v = 0x80000;
-    local_44.x = (int)ROUND((this_ptr->position).x * 256.0f);
+    local_44.x = (int)ROUND(world_position->x * 256.0f);
     local_44.y = (int)ROUND((this_ptr->position).y * 256.0f);
     local_44.z = (int)ROUND((this_ptr->position).z * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
               (g_CDemonSetPtr,&local_44,&g_BillboardCameraUp,0,4);
-    (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+    (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+              (g_CurrentSceneCamera,world_position,0);
     lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)this_ptr->alpha_value;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

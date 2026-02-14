@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_drip_cpp_CDrip_propertyActionCallback_FUN_0048e8d0(CDrip *this_ptr,CActorProperty *property)
+int __cdecl core_drip_cpp_CDrip_propertyActionCallback_FUN_0048e8d0(CDrip *this_ptr,CActorProperty *property)
 
 {
   CDrip *pCVar2;

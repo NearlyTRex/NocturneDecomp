@@ -4,14 +4,20 @@
       {
         "category": "undeclared_identifier",
         "column": 88,
-        "line": 116,
+        "line": 115,
         "message": "use of undeclared identifier 'DAT_02f7a024'"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 203,
+        "line": 202,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 207,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
@@ -28,20 +34,20 @@
       {
         "category": "other",
         "column": 20,
-        "line": 210,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 228,
+        "line": 227,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 236,
+        "line": 235,
         "message": "use of undeclared identifier 'stack0x00000000'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 236,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
@@ -56,16 +62,16 @@
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
-        "category": "other",
-        "column": 61,
-        "line": 239,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 248,
+        "line": 247,
         "message": "use of undeclared identifier 'stack0x00000000'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 248,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
@@ -81,8 +87,8 @@
       },
       {
         "category": "other",
-        "column": 61,
-        "line": 251,
+        "column": 22,
+        "line": 273,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
@@ -100,19 +106,13 @@
       {
         "category": "other",
         "column": 22,
-        "line": 276,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 280,
+        "line": 279,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 286,
+        "line": 285,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -121,12 +121,12 @@
   },
   "complexity": {
     "assembly_lines": 2710,
-    "complexity_score": 2440,
+    "complexity_score": 2130,
     "cross_reference_count": 1,
     "function_call_count": 96,
     "global_count": 107,
     "pseudocode_lines": 1040,
-    "suspect_count": 136,
+    "suspect_count": 105,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -397,34 +397,34 @@
       "name": "core_msnedit.cpp_FUN_00536cd0"
     },
     {
-      "addr": "005645d0",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_005645d0"
-    },
-    {
-      "addr": "00565130",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00565130"
-    },
-    {
-      "addr": "00565f70",
-      "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00565f70"
-    },
-    {
       "addr": "00566080",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566080"
+      "name": "core_script.cpp_CScript_checkSyntax_FUN_00566080"
     },
     {
-      "addr": "00566bc0",
+      "addr": "005645d0",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00566bc0"
+      "name": "core_script.cpp_CScript_drawEditor_FUN_005645d0"
     },
     {
       "addr": "00566660",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_initEditorLayout_FUN_00566660"
+    },
+    {
+      "addr": "00565130",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_processEditorInput_FUN_00565130"
+    },
+    {
+      "addr": "00565f70",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_setParameterValue_FUN_00565f70"
+    },
+    {
+      "addr": "00566bc0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_updateMouseCursor_FUN_00566bc0"
     },
     {
       "addr": "0056be80",
@@ -963,9 +963,9 @@
     },
     {
       "addr": "00680818",
-      "name": "DAT_00680818",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_00680818",
+      "type": "int",
+      "value": "0x501502f9"
     },
     {
       "addr": "00680830",
@@ -1005,8 +1005,8 @@
     },
     {
       "addr": "02cf2b00",
-      "name": "g_ActiveButton",
-      "type": "CEdButton*",
+      "name": "g_ActiveControl",
+      "type": "void*",
       "value": null
     },
     {
@@ -1024,7 +1024,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -1167,8 +1167,8 @@
     },
     {
       "addr": "02f7c634",
-      "name": "DAT_02f7c634",
-      "type": "undefined4",
+      "name": "INT_02f7c634",
+      "type": "int",
       "value": null
     },
     {
@@ -1908,380 +1908,338 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_2",
-      "text": "core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)",
+      "text": "int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 10,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
+      "line": 12,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_fffff620",
       "text": "CKeys *in_stack_fffff620;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_fffff624",
       "text": "int in_stack_fffff624;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_fffff628",
       "text": "CDemonMission *in_stack_fffff628;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_fffff630",
       "text": "CKeys *in_stack_fffff630;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_fffff634",
       "text": "CDemonMission *in_stack_fffff634;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_fffff638",
       "text": "CKeys *in_stack_fffff638;",
       "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 32,
       "match": "param5",
       "text": "UOrientationVector *param5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 33,
       "match": "in_stack_fffff698",
       "text": "CDemonSet *in_stack_fffff698;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 108,
       "match": "DAT_02f7a024",
       "text": "core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150((CActorPropertyList *)&DAT_02f7a024)",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 127,
       "match": "param_2",
       "text": "if (param_2 != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 128,
       "match": "DAT_02f7c53c",
       "text": "DAT_02f7c53c = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 173,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = 1e+20;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 182,
-      "match": "DAT_02f7c634",
-      "text": "if (DAT_02f7c634 != 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 183,
       "match": "DAT_00680830",
       "text": "puVar8 = &DAT_00680830;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 190,
+      "line": 189,
       "match": "DAT_02f7c53c",
       "text": "switch(DAT_02f7c53c) {",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 201,
+      "line": 200,
       "match": "._0_4_",
       "text": "local_170._0_4_ = g_CDemonCameraInstance.base.position.x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 202,
+      "line": 201,
       "match": "._4_4_",
       "text": "local_170._4_4_ = *local_54;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 203,
+      "line": 202,
       "match": "._8_4_",
       "text": "local_170._8_4_ = *local_58;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 208,
       "match": "(CMatrix3x3i *)((int)",
       "text": "pCVar9 = (CMatrix3x3i *)((int)pCVar9 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 216,
       "match": "(CMatrix3x3f *)((int)",
       "text": "pCVar12 = (CMatrix3x3f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 221,
+      "line": 220,
       "match": "._12_4_",
       "text": "local_170._12_4_ = pCVar4->x;",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 229,
+      "line": 228,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 230,
+      "line": 229,
       "match": "._0_4_",
       "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 231,
+      "line": 230,
       "match": "._4_4_",
       "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 232,
+      "line": 231,
       "match": "._8_4_",
       "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 241,
+      "line": 240,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 242,
+      "line": 241,
       "match": "._0_4_",
       "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 243,
+      "line": 242,
       "match": "._4_4_",
       "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 244,
+      "line": 243,
       "match": "._8_4_",
       "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 267,
+      "line": 266,
       "match": "._0_4_",
       "text": "local_170._0_4_ = local_ac;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 268,
+      "line": 267,
       "match": "._4_4_",
       "text": "local_170._4_4_ = local_a8;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 269,
+      "line": 268,
       "match": "._8_4_",
       "text": "local_170._8_4_ = local_a4;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 273,
+      "line": 272,
       "match": "._12_4_",
       "text": "local_170._12_4_ = (pCVar5->orient).vec.x;",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 279,
+      "line": 278,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 280,
+      "line": 279,
       "match": "._0_4_",
       "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 281,
+      "line": 280,
       "match": "._4_4_",
       "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 282,
+      "line": 281,
       "match": "._8_4_",
       "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 293,
+      "line": 292,
       "match": "._12_4_",
       "text": "local_170._12_4_ = local_7c;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 322,
+      "line": 321,
       "match": "._0_4_",
       "text": "local_170._0_4_ = local_b8;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 323,
+      "line": 322,
       "match": "._4_4_",
       "text": "local_170._4_4_ = local_b4;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 324,
+      "line": 323,
       "match": "._8_4_",
       "text": "local_170._8_4_ = local_b0;",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 328,
+      "line": 327,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 329,
+      "line": 328,
       "match": "._0_4_",
       "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 330,
+      "line": 329,
       "match": "._4_4_",
       "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 331,
+      "line": 330,
       "match": "._8_4_",
       "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 348,
+      "line": 347,
       "match": "DAT_02f7c53c",
       "text": "if (DAT_02f7c53c == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 386,
-      "match": "DAT_02f7c634",
-      "text": "if ((((this_ptr->show_3d_viewport != 0) && (iVar6 = DAT_02f7c634, DAT_02f7c634 == 0)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 386,
-      "match": "DAT_02f7c634",
-      "text": "if ((((this_ptr->show_3d_viewport != 0) && (iVar6 = DAT_02f7c634, DAT_02f7c634 == 0)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 393,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 402,
       "match": "DAT_02f7c538",
-      "text": "if ((DAT_02f7c538 == 0) && (g_ActiveButton == (CEdButton *)0x0)) {",
+      "text": "if ((DAT_02f7c538 == 0) && (g_ActiveControl == (void *)0x0)) {",
       "type": "undefined_data"
     },
     {
@@ -2363,27 +2321,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 497,
-      "match": "DAT_02f7c634",
-      "text": "if (DAT_02f7c634 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 501,
-      "match": "DAT_02f7c634",
-      "text": "if (DAT_02f7c634 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 514,
-      "match": "DAT_02f7c634",
-      "text": "if (DAT_02f7c634 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 515,
       "match": "DAT_02f7c53c",
       "text": "if (DAT_02f7c53c == 4) {",
@@ -2451,62 +2388,6 @@
       "match": "extraout_EAX",
       "text": "iVar11 = extraout_EAX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 646,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 652,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 663,
-      "match": "DAT_02f7c634",
-      "text": "if (DAT_02f7c634 == 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 669,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 675,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 684,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 690,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 734,
-      "match": "DAT_02f7c634",
-      "text": "if ((DAT_02f7c634 == 0) ||",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2677,20 +2558,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 915,
-      "match": "DAT_02f7c634",
-      "text": "if (DAT_02f7c634 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 918,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 922,
       "match": "in_stack_fffff698",
@@ -2727,9 +2594,9 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 961,
+      "line": 962,
       "match": "DAT_02f7c538",
-      "text": "if (((((g_MouseButtonFlags & 1) == 0) && ((local_30 & 1) != 0)) && (DAT_02f7c538 == 0)) &&",
+      "text": "(DAT_02f7c538 == 0)) && (g_ActiveControl == (void *)0x0)) {",
       "type": "undefined_data"
     },
     {
@@ -2745,41 +2612,6 @@
       "match": "in_stack_fffff698",
       "text": "in_stack_fffff698 = (CDemonSet *)g_CKeysPtr;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 969,
-      "match": "DAT_00680818",
-      "text": "if ((local_30 != 0) || (0x3e999999 < (int)DAT_00680818)) goto LAB_0053aea7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 972,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = 0.0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 976,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = 0.0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 980,
-      "match": "DAT_02f7c634",
-      "text": "if (DAT_02f7c634 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 985,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = 0.0;",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
@@ -2807,55 +2639,6 @@
       "line": 999,
       "match": "DAT_02f7a080",
       "text": "if (*(int *)(&DAT_02f7a080 + iVar6) == 0) goto LAB_0053ad72;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1004,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = 1e+10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1011,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = 1e+10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1015,
-      "match": "DAT_02f7c634",
-      "text": "if (DAT_02f7c634 == 0) goto LAB_0053ad72;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1019,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = 1e+10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1026,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = 1e+10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1031,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = g_CGamePtr->delta_time_float + DAT_00680818;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1031,
-      "match": "DAT_00680818",
-      "text": "DAT_00680818 = g_CGamePtr->delta_time_float + DAT_00680818;",
       "type": "undefined_data"
     }
   ]

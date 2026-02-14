@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEdScrollBar_updateWithSelection_FUN_004a6450 (CEdScrollBar *this_ptr,int *selection_index_ptr)
+; __cdecl void __cdecl shape_edittool_cpp_CEdScrollBar_updateWithSelection_FUN_004a6450(CEdScrollBar *this_ptr,int *selection_index_ptr)
 ;
 ; Parameters:
 ; CEdScrollBar *   Stack[0x4]:4   this_ptr

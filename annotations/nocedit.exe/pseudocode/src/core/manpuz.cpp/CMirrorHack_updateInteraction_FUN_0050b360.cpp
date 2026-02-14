@@ -2,14 +2,11 @@
 // Address: 0050b360
 // Address Range: [[0050b360, 0050b3b2]]
 // Convention: __cdecl
-// Signature: int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360 (CMirrorHack *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state )
+// Signature: int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state)
 
 #include "nocturne.h"
 
-int __cdecl
-core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360
-          (CMirrorHack *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state
-          )
+int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state)
 
 {
   UOrientationVector *pUVar1;

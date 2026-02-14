@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_lever_cpp_CLever_getPropertyList_FUN_00505240 (CLever *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_lever_cpp_CLever_getPropertyList_FUN_00505240(CLever *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr

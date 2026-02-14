@@ -2,13 +2,11 @@
 // Address: 005e9bb0
 // Address Range: [[005e9bb0, 005e9bfd]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005e9bb0 (CCryptVessel *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005e9bb0(CCryptVessel *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005e9bb0
-          (CCryptVessel *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005e9bb0(CCryptVessel *this_ptr,CBoundingBox3D *out_box)
 
 {
   CVector3f *pCVar1;

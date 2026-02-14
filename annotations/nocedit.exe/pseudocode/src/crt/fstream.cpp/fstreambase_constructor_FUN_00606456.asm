@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_fstream_cpp_fstreambase_constructor_FUN_00606456 (fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size)
+; __cdecl void __cdecl crt_fstream_cpp_fstreambase_constructor_FUN_00606456(fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size )
 ;
 ; Parameters:
 ; fstreambase *    Stack[0x4]:4   this_ptr

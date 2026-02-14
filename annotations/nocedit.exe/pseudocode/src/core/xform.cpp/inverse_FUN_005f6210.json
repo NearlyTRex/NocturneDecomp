@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 45,
+        "line": 44,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 111,
+    "complexity_score": 110,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 80,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 284
+    "total_lines": 283
   },
   "cross_references": [
     {
@@ -380,14 +380,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 37,
       "match": "SUB84",
       "text": "local_98 = SUB84(dVar5,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0 (CActorPropertyList *this_ptr,char *property_name,CDeformableModelInstance *data_ptr, int allow_none)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList *this_ptr,char *property_name,CDeformableModelInstance *data_ptr,int allow_none)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

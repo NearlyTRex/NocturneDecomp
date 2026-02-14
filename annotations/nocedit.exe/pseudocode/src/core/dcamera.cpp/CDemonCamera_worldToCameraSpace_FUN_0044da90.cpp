@@ -2,13 +2,11 @@
 // Address: 0044da90
 // Address Range: [[0044da90, 0044dbc7]]
 // Convention: __stack2_esi
-// Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90 (CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
+// Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
 
 #include "nocturne.h"
 
-CVector3i * __stack2_esi
-core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90
-          (CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
+CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
 
 {
   int iVar1;

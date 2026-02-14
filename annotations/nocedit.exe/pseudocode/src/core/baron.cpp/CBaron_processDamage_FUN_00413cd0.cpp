@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_baron_cpp_CBaron_processDamage_FUN_00413cd0(CBaron *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_baron_cpp_CBaron_processDamage_FUN_00413cd0(CBaron *this_ptr,SDamageInfo *damage_info)
 
 {
   damage_info->damage_amount = 0.0;

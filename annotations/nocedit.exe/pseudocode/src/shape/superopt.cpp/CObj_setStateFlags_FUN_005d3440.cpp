@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CObj_setStateFlags_FUN_005d3440(CObj *this_ptr,uint set_mask,uint clear_mask)
+void __cdecl shape_superopt_cpp_CObj_setStateFlags_FUN_005d3440(CObj *this_ptr,uint set_mask,uint clear_mask)
 
 {
   CVert *pCVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480(CMirrorReflection *this_ptr)
+void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480(CMirrorReflection *this_ptr)
 
 {
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0 (CDemonSet *this_ptr,CVector3f *position,float radius)
+; __cdecl float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet *this_ptr,CVector3f *position,float radius)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

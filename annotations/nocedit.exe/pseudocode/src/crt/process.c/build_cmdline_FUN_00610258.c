@@ -2,14 +2,11 @@
 // Address: 00610258
 // Address Range: [[00610258, 006103a2]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_process_c_build_cmdline_FUN_00610258 (int argc,char **argv,char *program,char **out_cmdline,char **out_environment, char **out_buffer,int *out_bufsize,int copy_program_flag)
+// Signature: int __cdecl crt_process_c_build_cmdline_FUN_00610258(int argc,char **argv,char *program,char **out_cmdline,char **out_environment,char **out_buffer,int *out_bufsize,int copy_program_flag)
 
 #include "nocturne.h"
 
-int __cdecl
-build_cmdline
-          (int argc,char **argv,char *program,char **out_cmdline,char **out_environment,
-          char **out_buffer,int *out_bufsize,int copy_program_flag)
+int __cdecl build_cmdline(int argc,char **argv,char *program,char **out_cmdline,char **out_environment,char **out_buffer,int *out_bufsize,int copy_program_flag)
 
 {
   char *pcVar1;

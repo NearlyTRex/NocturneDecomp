@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_grave_cpp_CGrave_hasCollision_FUN_004ee9d0(CGrave *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_grave_cpp_CGrave_hasCollision_FUN_004ee9d0(CGrave *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

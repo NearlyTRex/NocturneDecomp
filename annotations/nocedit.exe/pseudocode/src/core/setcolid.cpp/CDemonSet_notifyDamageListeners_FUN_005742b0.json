@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 22,
+        "line": 59,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 22,
+        "line": 59,
         "message": "expected expression"
       }
     ],
@@ -19,16 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 33,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 18,
-    "suspect_count": 1,
+    "pseudocode_lines": 56,
+    "suspect_count": 15,
     "suspect_types": [
+      "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 105
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -48,7 +49,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0",
-    "signature": "void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 (CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position, void *unknown_param)"
+    "signature": "void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position,void *unknown_param)"
   },
   "function_calls": [],
   "globals": [],
@@ -274,10 +275,108 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(uint *)((int)",
+      "text": "local_14 = (uint *)((int)unknown_param + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)",
+      "text": "local_10 = (uint *)((int)unknown_param + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)",
+      "text": "local_1c = (uint *)((int)unknown_param + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)",
+      "text": "local_18 = (uint *)((int)unknown_param + 0x20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "local_20 = (uint *)((int)unknown_param + 0x24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "text": "local_58 = *(uint *)((int)unknown_param + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)",
+      "text": "local_54 = *(uint *)((int)unknown_param + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)",
+      "text": "local_48 = *(uint *)((int)unknown_param + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(uint *)((int)",
+      "text": "local_44 = *(uint *)((int)unknown_param + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)",
+      "text": "local_34 = *(uint *)((int)unknown_param + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(uint *)((int)",
+      "text": "local_30 = *(uint *)((int)unknown_param + 0x2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(uint *)((int)",
+      "text": "local_2c = *(uint *)((int)unknown_param + 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)",
+      "text": "local_28 = *(uint *)((int)unknown_param + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(uint *)((int)",
+      "text": "local_24 = *(uint *)((int)unknown_param + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
+      "line": 52,
       "match": "code *",
-      "text": "(**(code **)((int)pCVar2->damage_listeners[0x55] + 0x118))();",
+      "text": "(**(code **)((int)pCVar2->damage_listeners[0x55] + 0x118))",
       "type": "unresolved_funcptr"
     }
   ]

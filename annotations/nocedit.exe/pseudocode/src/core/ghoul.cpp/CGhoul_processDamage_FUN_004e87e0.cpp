@@ -6,8 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *damage_info)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *damage_info)
 
 {
   CLocation *pCVar1;
@@ -19,11 +20,12 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
   SMotion *pSVar6;
   int iVar7;
   uint uVar8;
-  float fVar9;
   CMotionList *this_ptr_01;
-  int iVar10;
-  double dVar11;
+  int iVar9;
+  double dVar10;
   float spawn_radius;
+  char local_78 [100];
+  float local_14;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk3 + 0x2c));
   if ((*(int *)(this_ptr->unk3 + 0x3c) != 0) &&
@@ -68,16 +70,16 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
     pCVar2 = (CCharacter *)(this_ptr->base).victim;
     (*(((pCVar2->base).vtable._uc)->_uc).releaseFromGrab)(pCVar2);
   }
-  iVar10 = *(int *)(this_ptr->unk3 + 0x28);
+  iVar9 = *(int *)(this_ptr->unk3 + 0x28);
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
-  if ((this_ptr->base).base.model.part_data.visibility_flags[iVar10] == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[iVar9] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   if ((this_ptr->base).base.hit_points <= 0.0) {
-    iVar10 = (this_ptr->base).special_form_flag;
+    iVar9 = (this_ptr->base).special_form_flag;
     (this_ptr->base).base.hit_points = 0.0;
-    if (iVar10 != 0) {
+    if (iVar9 != 0) {
       core_charactr_cpp_CCharacter_shatter_FUN_0042b8e0((CCharacter *)this_ptr);
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
@@ -92,11 +94,11 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
       else {
         this_ptr->lives_left = this_ptr->lives_left + -1;
       }
-      iVar10 = 6;
+      iVar9 = 6;
       if ((this_ptr->base).base.damage_decal_count < 1) {
         iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
         if (iVar7 != 0) {
-          iVar10 = 7;
+          iVar9 = 7;
         }
       }
       else {
@@ -106,7 +108,7 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
           do {
             if ((pCVar5->base).base.damage_decals[0].part_index == *(int *)(this_ptr->unk3 + 0x24))
             {
-              iVar10 = 8;
+              iVar9 = 8;
               break;
             }
             iVar7 = iVar7 + 1;
@@ -115,49 +117,49 @@ core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *d
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,iVar10,1);
-      iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 0x34));
-      if (iVar10 == 0) {
+                (&(this_ptr->base).base.model.motion_controller,iVar9,1);
+      iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 0x34));
+      if (iVar9 == 0) {
         uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"ghoul-die-!-?.wav @1.6");
         *(uint *)(this_ptr->unk3 + 0x34) = uVar8;
       }
-      fVar9 = core_actor_cpp_getRandomFloat_FUN_0040cc10(4.0,10.0);
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(4.0,10.0);
       fVar4 = (float)65536;
       this_ptr->arise_timer = 0xa0000;
       pCVar3 = (this_ptr->base).base.base.vtable._ub;
       spawn_radius = 7.00649e-44;
-      iVar10 = 0x4e8999;
-      dVar11 = round((double)(fVar9 * fVar4));
-      *(int *)(this_ptr->unk1 + 8) = (int)ROUND(dVar11);
-      (*pCVar3->spawnFlies)((CDemonActor *)this_ptr,iVar10,spawn_radius);
+      iVar9 = 0x4e8999;
+      dVar10 = round((double)(local_14 * fVar4));
+      *(int *)(this_ptr->unk1 + 8) = (int)ROUND(dVar10);
+      (*pCVar3->spawnFlies)((CDemonActor *)this_ptr,iVar9,spawn_radius);
     }
   }
   else {
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
-    iVar10 = pSVar6->state_index;
-    if (((iVar10 == 0) || (iVar10 == 0xb || (iVar10 == 0xc || iVar10 == 2))) ||
-       (iVar10 = core_actor_cpp_randomChance_FUN_0040cd10(0.25), iVar10 != 0)) {
+    iVar9 = pSVar6->state_index;
+    if (((iVar9 == 0) || (iVar9 == 0xb || (iVar9 == 0xc || iVar9 == 2))) ||
+       (iVar9 = core_actor_cpp_randomChance_FUN_0040cd10(0.25), iVar9 != 0)) {
       iVar7 = 1;
-      iVar10 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+      iVar9 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&(this_ptr->base).base.model.motion_controller,(iVar10 == 0) + 3,iVar7);
+                (&(this_ptr->base).base.model.motion_controller,(iVar9 == 0) + 3,iVar7);
     }
     else {
-      core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
-      _sprintf(&stack0xffffff88,"guul flinch%d");
+      iVar9 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
+      _sprintf(local_78,"guul flinch%d",iVar9);
       this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&(this_ptr->base).base.model.motion_controller);
-      iVar10 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);
+      iVar9 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);
       this_ptr->unk2[4] = '\0';
       this_ptr->unk2[5] = '\0';
       this_ptr->unk2[6] = -0x80;
       this_ptr->unk2[7] = '?';
-      *(int *)(this_ptr->unk2 + 8) = iVar10;
+      *(int *)(this_ptr->unk2 + 8) = iVar9;
     }
-    iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 0x30));
-    if (iVar10 == 0) {
+    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk3 + 0x30));
+    if (iVar9 == 0) {
       uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"ghoul-mad-!-?.wav");
       *(uint *)(this_ptr->unk3 + 0x30) = uVar8;

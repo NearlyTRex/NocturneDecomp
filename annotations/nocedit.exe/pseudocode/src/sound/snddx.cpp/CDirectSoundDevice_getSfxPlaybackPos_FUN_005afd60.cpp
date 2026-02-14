@@ -2,13 +2,11 @@
 // Address: 005afd60
 // Address Range: [[005afd60, 005afe79]]
 // Convention: __cdecl
-// Signature: double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60 (CDirectSoundDevice *this_ptr,CSfxSlot *slot)
+// Signature: double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 #include "nocturne.h"
 
-double __cdecl
-sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
-          (CDirectSoundDevice *this_ptr,CSfxSlot *slot)
+double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
   CSoundDeviceFull_vtable *pCVar1;

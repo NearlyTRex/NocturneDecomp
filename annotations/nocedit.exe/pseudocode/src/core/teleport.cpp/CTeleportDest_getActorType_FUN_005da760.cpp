@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_teleport_cpp_CTeleportDest_getActorType_FUN_005da760(CTeleportDest *this_ptr)
+CDemonActorType * __cdecl core_teleport_cpp_CTeleportDest_getActorType_FUN_005da760(CTeleportDest *this_ptr)
 
 {
   return &g_CTeleportDestClassInfo;

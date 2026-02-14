@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 20,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 5,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "special_crt_function"
+      "special_crt_function",
+      "unnamed_param"
     ],
     "total_lines": 11
   },
@@ -30,7 +31,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_CallReturnZero6_FUN_0060e880",
-    "signature": "void crt_unknown_c_CallReturnZero6_FUN_0060e880(void)"
+    "signature": "void crt_unknown_c_CallReturnZero6_FUN_0060e880(undefined4 param_1)"
   },
   "function_calls": [
     {
@@ -76,6 +77,20 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void CallReturnZero6(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "text": "(*PTR_unk_ReturnZero6_FUN_0060e850_0068559c)(param_1);",
+      "type": "unnamed_param"
+    },
     {
       "address": "0060e880",
       "crt_type": "runtime support",

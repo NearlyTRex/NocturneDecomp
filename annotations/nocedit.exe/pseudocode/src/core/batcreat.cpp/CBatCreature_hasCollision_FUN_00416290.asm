@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_batcreat_cpp_CBatCreature_hasCollision_FUN_00416290 (CBatCreature *this_ptr,SCollisionInfo *collision_info)
+; __cdecl void __cdecl core_batcreat_cpp_CBatCreature_hasCollision_FUN_00416290(CBatCreature *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr

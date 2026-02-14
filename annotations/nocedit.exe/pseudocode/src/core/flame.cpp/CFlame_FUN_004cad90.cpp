@@ -28,8 +28,8 @@ void __cdecl core_flame_cpp_CFlame_FUN_004cad90(CFlame *this_ptr)
   (this_ptr->globe).intensity_multiplier = iStack_18;
   iVar1 = (iStack_18 + (iStack_18 >> 0x1f) * -0x100) - (uint)((iStack_18 >> 0x1f) << 7 < 0);
   iVar2 = iVar1 >> 0x1f;
-  *(char *)&(this_ptr->globe).intensity =
-       (char)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);
+  (this_ptr->globe).intensity.bytes[0] =
+       (uchar)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
             (&this_ptr->globe,
              (this_ptr->flame_size).y * this_ptr->globe_scalar * (float)2);

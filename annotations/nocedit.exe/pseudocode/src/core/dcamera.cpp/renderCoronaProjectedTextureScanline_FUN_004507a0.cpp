@@ -2,13 +2,11 @@
 // Address: 004507a0
 // Address Range: [[004507a0, 004509a2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0 (int scanline_y,int x_start,int x_end)
+// Signature: void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(int scanline_y,int x_start,int x_end)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0
-          (int scanline_y,int x_start,int x_end)
+void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(int scanline_y,int x_start,int x_end)
 
 {
   uint uVar1;
@@ -29,8 +27,8 @@ core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0
   local_24 = g_TempWorldPositionRow + scanline_y * 0x140 + x_start;
   local_18 = g_CoronaBlurOutputBuffer[scanline_y] + x_start;
   local_1c = g_CoronaDepthBuffer[scanline_y] + x_start;
-  local_20 = g_ZBufferScanlineArray[scanline_y << ((byte)g_CameraDownscaleIterations & 0x1f)] +
-             (x_start << ((byte)g_CameraDownscaleIterations & 0x1f));
+  local_20 = g_ZBufferScanlineArray[scanline_y << (g_CameraDownscaleIterations.bytes[0] & 0x1f)] +
+             (x_start << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
   pCVar2 = g_PrecomputedSurfaceNormals + scanline_y * 0x140 + x_start;
   for (; x_start < x_end; x_start = x_start + 1) {
     if ((*local_20 < (uint)*local_1c) &&
@@ -64,7 +62,7 @@ core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0
     pCVar2 = pCVar2 + 1;
     local_1c = local_1c + 1;
     local_24 = local_24 + 1;
-    local_20 = local_20 + (1 << ((byte)g_CameraDownscaleIterations & 0x1f));
+    local_20 = local_20 + (1 << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
     local_18 = local_18 + 1;
   }
   return;

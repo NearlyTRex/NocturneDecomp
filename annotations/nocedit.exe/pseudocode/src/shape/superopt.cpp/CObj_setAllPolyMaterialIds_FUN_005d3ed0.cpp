@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0(CObj *this_ptr,int material_id)
+void __cdecl shape_superopt_cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0(CObj *this_ptr,int material_id)
 
 {
   int iVar1;
@@ -18,10 +17,10 @@ shape_superopt_cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0(CObj *this_ptr,int ma
   if (this_ptr->poly_count != 0) {
     iVar3 = 0;
     do {
-      iVar1 = iVar3 + 4;
+      iVar1 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar3;
       uVar2 = uVar2 + 1;
       iVar3 = iVar3 + 0x68;
-      (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 0x50))();
+      (**(code **)(*(int *)(iVar1 + 100) + 0x50))(iVar1,material_id);
     } while (uVar2 < (uint)this_ptr->poly_count);
   }
   return;

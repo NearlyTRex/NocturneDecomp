@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 210,
+    "complexity_score": 208,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 110,
+    "pseudocode_lines": 108,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 371
+    "total_lines": 369
   },
   "cross_references": [],
   "function": {
@@ -30,7 +30,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010",
-    "signature": "int __cdecl shape_superopt_cpp_CPoly_rayIntersect_FUN_005d0010 (CPoly *this_ptr,CVector3d *ray_origin,CVector3d *ray_end,CVector3d *out_hit_point)"
+    "signature": "int __cdecl shape_superopt_cpp_CPoly_rayIntersect_FUN_005d0010(CPoly *this_ptr,CVector3d *ray_origin,CVector3d *ray_end,CVector3d *out_hit_point)"
   },
   "function_calls": [],
   "globals": [
@@ -410,63 +410,63 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 55,
       "match": "SQRT",
       "text": "dVar1 = 1.0 / SQRT(local_28 * local_28 + local_30 * local_30 + local_38 * local_38);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 78,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 79,
       "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 88,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 89,
       "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 98,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 102,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&out_hit_point->x + 4) = local_c8[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 104,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&out_hit_point->y + 4) = local_c8[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 106,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&out_hit_point->z + 4) = local_b4;",
       "type": "pointer_cast"

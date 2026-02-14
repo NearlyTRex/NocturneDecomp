@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_chain_cpp_CChain_getPropertyList_FUN_00431120 (CChain *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_chain_cpp_CChain_getPropertyList_FUN_00431120(CChain *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr

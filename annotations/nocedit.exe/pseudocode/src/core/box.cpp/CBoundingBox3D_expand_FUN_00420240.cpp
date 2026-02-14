@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_box_cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D *this_ptr,CVector3f *point)
+void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D *this_ptr,CVector3f *point)
 
 {
   if (point->x < (this_ptr->min).x) {

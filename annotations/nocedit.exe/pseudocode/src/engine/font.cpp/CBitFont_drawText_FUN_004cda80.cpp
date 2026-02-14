@@ -2,13 +2,11 @@
 // Address: 004cda80
 // Address Range: [[004cda80, 004cdbe6]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80 (CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value)
+// Signature: int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_font_cpp_CBitFont_drawText_FUN_004cda80
-          (CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value)
+int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value)
 
 {
   int iVar1;

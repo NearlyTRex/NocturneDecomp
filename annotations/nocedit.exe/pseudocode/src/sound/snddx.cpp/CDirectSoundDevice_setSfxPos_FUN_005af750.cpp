@@ -2,13 +2,11 @@
 // Address: 005af750
 // Address Range: [[005af750, 005afcb4]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750 (CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)
 
 #include "nocturne.h"
 
-int __cdecl
-sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
-          (CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)
 
 {
   int iVar1;
@@ -19,6 +17,7 @@ sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
   CSfxSlot *extraout_EBX;
   uint uVar4;
   double dVar5;
+  uint uVar6;
   ulonglong uStack_cc0;
   float local_cb8;
   char acStack_b2c [408];
@@ -127,11 +126,12 @@ LAB_005af8a8:
     }
   }
   if ((update_flags & 0x10U) != 0) {
+    uVar6 = 0x5af8ee;
     dVar5 = round
                       ((double)((float)(slot->sample->sample_info).sample_rate *
                                (slot->options).base_frequency));
     lStack_40 = (longlong)ROUND(dVar5);
-    uVar2 = (**(code **)(*local_2c + 0x44))();
+    uVar2 = (**(code **)(*local_2c + 0x44))(local_2c,(uint)lStack_40,uVar6);
     if (uVar2 != 0) {
       pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
       _sprintf

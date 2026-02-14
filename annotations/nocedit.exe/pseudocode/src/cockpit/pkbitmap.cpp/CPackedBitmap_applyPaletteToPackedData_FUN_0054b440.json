@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 53,
+    "complexity_score": 51,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 26,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 77
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -47,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440 (CPackedBitmap *this_ptr,uchar *palette_buffer)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(CPackedBitmap *this_ptr,uchar *palette_buffer)"
   },
   "function_calls": [],
   "globals": [],
@@ -111,14 +111,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 14,
       "match": "(byte *)((int)",
       "text": "pbVar6 = (byte *)((int)*this_ptr->row_pointers + (int)pcVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 15,
       "match": "(byte *)((int)",
       "text": "while (pbVar6 < (byte *)((int)pvVar2 + (int)pcVar1)) {",
       "type": "pointer_cast"

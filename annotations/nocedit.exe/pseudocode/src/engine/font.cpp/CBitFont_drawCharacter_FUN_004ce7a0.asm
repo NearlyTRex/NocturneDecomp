@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0 (CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -63,7 +63,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_script.cpp_CScript_FUN_005664d0 at 00566616
+;   core_script.cpp_CScript_drawLine_FUN_005664d0 at 00566616
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80 at 004cdbca
 ;   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850 at 004d08d0
 ;   engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0 at 004d050d

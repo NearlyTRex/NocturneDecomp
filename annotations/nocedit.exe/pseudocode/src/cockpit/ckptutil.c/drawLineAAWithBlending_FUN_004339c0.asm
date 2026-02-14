@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0 (int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode)
+; __cdecl void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x0

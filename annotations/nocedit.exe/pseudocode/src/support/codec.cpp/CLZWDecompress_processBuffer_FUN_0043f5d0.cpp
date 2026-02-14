@@ -2,14 +2,11 @@
 // Address: 0043f5d0
 // Address Range: [[0043f5d0, 0043f68f]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0 (CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length, int enable_callback)
+// Signature: int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length,int enable_callback)
 
 #include "nocturne.h"
 
-int __cdecl
-support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0
-          (CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length,
-          int enable_callback)
+int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length,int enable_callback)
 
 {
   int iVar1;
@@ -38,7 +35,7 @@ LAB_0043f633:
   } while (-1 < iVar1);
   *output_length = *output_length - ((int)local_14 - (int)output);
   if (enable_callback != 0) {
-    iVar1 = (*((this_ptr->base).vtable)->finalizeBuffer)();
+    iVar1 = (*((this_ptr->base).vtable)->finalizeBuffer)(this_ptr,local_14,output_length);
     if (iVar1 == 0) {
       return 0;
     }

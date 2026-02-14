@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_00523f20 (CDemonMission *this_ptr,CDemonActor *actor,int should_delete)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(CDemonMission *this_ptr,CDemonActor *actor,int should_delete)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

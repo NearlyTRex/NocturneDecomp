@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_sound_cpp_CSound_playSound_FUN_005b3a20(CSound *this_ptr,void *user_data,char *sound_name)
+int __cdecl core_sound_cpp_CSound_playSound_FUN_005b3a20(CSound *this_ptr,void *user_data,char *sound_name)
 
 {
   uint uVar1;

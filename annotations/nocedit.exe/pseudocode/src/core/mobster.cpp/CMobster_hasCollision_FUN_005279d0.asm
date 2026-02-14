@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mobster_cpp_CMobster_hasCollision_FUN_005279d0 (CMobster *this_ptr,SCollisionInfo *collision_info)
+; __cdecl void __cdecl core_mobster_cpp_CMobster_hasCollision_FUN_005279d0(CMobster *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr

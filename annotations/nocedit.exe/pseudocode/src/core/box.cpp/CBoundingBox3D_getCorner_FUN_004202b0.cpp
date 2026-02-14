@@ -2,13 +2,11 @@
 // Address: 004202b0
 // Address Range: [[004202b0, 00420318]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0 (CBoundingBox3D *this_ptr,CVector3f *out_point,uint corner_index)
+// Signature: CVector3f * __cdecl core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(CBoundingBox3D *this_ptr,CVector3f *out_point,uint corner_index)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
-          (CBoundingBox3D *this_ptr,CVector3f *out_point,uint corner_index)
+CVector3f * __cdecl core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(CBoundingBox3D *this_ptr,CVector3f *out_point,uint corner_index)
 
 {
   float fVar1;

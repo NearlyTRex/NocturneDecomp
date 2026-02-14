@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_manpuz_cpp_CMirrorHack_startInteraction_FUN_0050b340(CMirrorHack *this_ptr,CDemonActor *user)
+int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_0050b340(CMirrorHack *this_ptr,CDemonActor *user)
 
 {
   if (*(int *)(this_ptr->unk + 0x17c) != 0) {

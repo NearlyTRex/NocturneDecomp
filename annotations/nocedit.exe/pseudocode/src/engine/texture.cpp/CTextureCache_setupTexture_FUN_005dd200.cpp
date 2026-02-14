@@ -8,8 +8,7 @@
 
 /* WARNING: Removing unreachable block (ram,0x005dd2de) */
 
-void __cdecl
-engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *cache,int texture_index)
+void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *cache,int texture_index)
 
 {
   byte *pbVar1;

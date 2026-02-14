@@ -2,13 +2,11 @@
 // Address: 00515ec0
 // Address Range: [[00515ec0, 00515ffe]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0 (CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int create_if_missing)
+// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int create_if_missing)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
-          (CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int create_if_missing)
+int __cdecl shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int create_if_missing)
 
 {
   CLodEdge *pCVar1;

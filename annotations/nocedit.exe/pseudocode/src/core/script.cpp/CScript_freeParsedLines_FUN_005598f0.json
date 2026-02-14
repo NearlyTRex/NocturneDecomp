@@ -1,0 +1,134 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 25,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
+  },
+  "cross_references": [
+    {
+      "addr": "0055a370",
+      "from_addr": "0055a37c",
+      "name": "core_script.cpp_CScript_buildParsedLines_FUN_0055a370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559870",
+      "from_addr": "00559883",
+      "name": "core_script.cpp_CScript_clear_FUN_00559870",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005598f0",
+    "address_range": [
+      [
+        "005598f0",
+        "0055995b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_freeParsedLines_FUN_005598f0",
+    "signature": "void __cdecl core_script_cpp_CScript_freeParsedLines_FUN_005598f0(CScript *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f460",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006416fa",
+      "name": "s_core_script_cpp_006416fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064170d",
+      "name": "s_core_script_cpp_0064170d",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00559883",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_clear_FUN_00559870",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055a37c",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_buildParsedLines_FUN_0055a370",
+        "estimated_params": 5,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 36,
+      "INT_ADD": 19,
+      "INT_AND": 24,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 11,
+      "INT_SUB": 14,
+      "INT_XOR": 2,
+      "LOAD": 12,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 14
+    },
+    "pcode_op_count": 188
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -2,14 +2,11 @@
 // Address: 005151e0
 // Address Range: [[005151e0, 00515836]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0 (int point_count,CVector3f *positions,float *values,CVector3f *normal, CVector3f *out_gradient,float *out_offset)
+// Signature: void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count,CVector3f *positions,float *values,CVector3f *normal,CVector3f *out_gradient,float *out_offset)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0
-          (int point_count,CVector3f *positions,float *values,CVector3f *normal,
-          CVector3f *out_gradient,float *out_offset)
+void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count,CVector3f *positions,float *values,CVector3f *normal,CVector3f *out_gradient,float *out_offset)
 
 {
   float fVar1;

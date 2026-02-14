@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 13,
-        "line": 29,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 57,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 42,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unknown_field"
-    ],
-    "total_lines": 157
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 149
   },
   "cross_references": [
     {
@@ -43,7 +34,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150",
-    "signature": "int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150 (CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point)"
+    "signature": "int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point)"
   },
   "function_calls": [
     {
@@ -175,15 +166,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 22,
-      "match": "._4_4_",
-      "text": "auStack_70._4_4_ = 0;",
-      "type": "unknown_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

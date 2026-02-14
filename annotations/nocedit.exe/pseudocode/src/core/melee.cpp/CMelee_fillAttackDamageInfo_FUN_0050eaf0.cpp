@@ -2,13 +2,11 @@
 // Address: 0050eaf0
 // Address Range: [[0050eaf0, 0050eb43]]
 // Convention: __cdecl
-// Signature: void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0 (CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
+// Signature: void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 #include "nocturne.h"
 
-void __cdecl
-core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0
-          (CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
+void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 {
   float fVar1;

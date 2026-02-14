@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 119,
+        "line": 122,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 119,
+        "line": 122,
         "message": "expected expression"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 505,
+    "complexity_score": 508,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 19,
-    "pseudocode_lines": 290,
+    "pseudocode_lines": 293,
     "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 941
+    "total_lines": 944
   },
   "cross_references": [],
   "function": {
@@ -322,142 +322,142 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 104,
       "match": "DAT_008879bc",
       "text": "DAT_008879bc = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 105,
       "match": "DAT_008879bc",
-      "text": "for (iStack_14 = 0; iVar4 = DAT_008879bc, iStack_14 < g_CDemonSetPtr->damage_listener_count;",
+      "text": "for (iStack_20 = 0; iVar5 = DAT_008879bc, iStack_20 < g_CDemonSetPtr->damage_listener_count;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 108,
       "match": "DAT_00887e70",
       "text": "pSVar10 = DAT_00887e70 + DAT_008879bc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 108,
       "match": "DAT_008879bc",
       "text": "pSVar10 = DAT_00887e70 + DAT_008879bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_008879c0",
-      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar9 + 0x20)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_008879bc",
-      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar9 + 0x20)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_008879c0",
-      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar9 + 0x20))->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_008879bc",
-      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar9 + 0x20))->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_008879c0",
-      "text": "DAT_008879c0[iVar4].y = *(float *)(iVar9 + 0x24);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 109,
       "match": "DAT_008879c0",
-      "text": "DAT_008879c0[iVar4].z = *(float *)(iVar9 + 0x28);",
+      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar9 + 0x20)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_008879bc",
+      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar9 + 0x20)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_008879c0",
+      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar9 + 0x20))->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_008879bc",
+      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar9 + 0x20))->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_008879c0",
+      "text": "DAT_008879c0[iVar5].y = *(float *)(iVar9 + 0x24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 112,
+      "match": "DAT_008879c0",
+      "text": "DAT_008879c0[iVar5].z = *(float *)(iVar9 + 0x28);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 112,
-      "match": "code *",
-      "text": "iVar6 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x34))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_00887e70",
-      "text": "((fStack_9c <= *(float *)(iVar9 + 0x24) + DAT_00887e70[iVar4].cylinder_top_y &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 115,
-      "match": "DAT_00887e70",
-      "text": "((((fStack_a0 <= *(float *)(iVar9 + 0x20) + DAT_00887e70[iVar4].cylinder_radius &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 116,
-      "match": "DAT_00887e70",
-      "text": "(*(float *)(iVar9 + 0x20) - DAT_00887e70[iVar4].cylinder_radius <= fStack_70)) &&",
-      "type": "undefined_data"
+      "match": "code *",
+      "text": "iVar6 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x34))(iVar9,pSVar10);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
       "line": 117,
       "match": "DAT_00887e70",
-      "text": "(fStack_98 <= *(float *)(iVar9 + 0x28) + DAT_00887e70[iVar4].cylinder_radius)) &&",
+      "text": "((local_a8 <= *(float *)(iVar9 + 0x24) + DAT_00887e70[iVar5].cylinder_top_y &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 118,
       "match": "DAT_00887e70",
-      "text": "(*(float *)(iVar9 + 0x28) - DAT_00887e70[iVar4].cylinder_radius <= fStack_68)))))) {",
+      "text": "((((local_ac <= *(float *)(iVar9 + 0x20) + DAT_00887e70[iVar5].cylinder_radius &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 119,
+      "match": "DAT_00887e70",
+      "text": "(*(float *)(iVar9 + 0x20) - DAT_00887e70[iVar5].cylinder_radius <= local_7c)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 120,
+      "match": "DAT_00887e70",
+      "text": "(local_a4 <= *(float *)(iVar9 + 0x28) + DAT_00887e70[iVar5].cylinder_radius)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_00887e70",
+      "text": "(*(float *)(iVar9 + 0x28) - DAT_00887e70[iVar5].cylinder_radius <= local_74)))))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 122,
       "match": "DAT_008879bc",
       "text": "DAT_008879bc = DAT_008879bc + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 122,
       "match": "DAT_008879bc",
       "text": "DAT_008879bc = DAT_008879bc + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 139,
+      "line": 142,
       "match": "SQRT",
       "text": "SQRT(*(float *)(pSVar8->unk + 0x34) * *(float *)(pSVar8->unk + 0x34) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
+      "line": 155,
       "match": "SQRT",
-      "text": "SQRT(local_a4 * local_a4 + local_ac * local_ac + local_a8 * local_a8)) {",
+      "text": "SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4)) {",
       "type": "decompiler_intrinsic"
     }
   ],

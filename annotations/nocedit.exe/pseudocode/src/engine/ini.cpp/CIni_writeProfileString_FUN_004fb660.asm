@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660 (CIni *this_ptr,char *section,char *key,char *value,char *filename)
+; __cdecl int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 ;
 ; Parameters:
 ; CIni *           Stack[0x4]:4   this_ptr

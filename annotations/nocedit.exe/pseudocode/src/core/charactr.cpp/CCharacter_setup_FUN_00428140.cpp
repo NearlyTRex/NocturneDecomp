@@ -22,15 +22,14 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   int iVar7;
   char *pcVar8;
   char *pcVar9;
-  CDeformableModelInstance *model_ptr;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   fVar2 = 9999.0f;
   this_ptr->damage_decal_count = 0;
   this_ptr->closest_distance_threshold = fVar2;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            (&DAT_00823a98,"stake_b.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&DAT_00823a98);
+            (&CKeyFramedModelInstance_00823a98,"stake_b.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&CKeyFramedModelInstance_00823a98);
   pCVar5 = this_ptr;
   do {
     this_ptr_01 = pCVar5->carry_hands[0].carry_actor;
@@ -78,10 +77,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
     if (0 < this_ptr->fire_count) {
       do {
         pCVar6->flames[0].which_flame = 4;
-        pCVar5->fire_effects[0].unk[0x14] = '\0';
-        pCVar5->fire_effects[0].unk[0x15] = '\0';
-        pCVar5->fire_effects[0].unk[0x16] = '\0';
-        pCVar5->fire_effects[0].unk[0x17] = '@';
+        pCVar5->fire_effects[0].unk2 = 2.0;
         iVar4 = iVar4 + 1;
         pCVar5 = (CCharacter *)((pCVar5->base).actor_name + 0x18);
         pCVar6 = (CCharacter *)&(pCVar6->model).transformed_vertices[0x14].y;
@@ -90,14 +86,13 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   }
   this_ptr_00 = &this_ptr->cloth_list;
   core_cloth_cpp_CClothList_load_FUN_0043bfa0(this_ptr_00);
-  model_ptr = &this_ptr->model;
   euler = &(this_ptr->base).orient;
   position = &(this_ptr->base).location;
   core_cloth_cpp_CClothList_setup_FUN_0043c290
-            (this_ptr_00,&position->position,&euler->vec,model_ptr);
+            (this_ptr_00,&position->position,&euler->vec,&this_ptr->model);
   core_cloth_cpp_CClothList_process_FUN_0043c2d0
             (this_ptr_00,&position->position,&euler->vec,0.05,this_ptr->closest_distance_threshold,
-             model_ptr);
+             &this_ptr->model);
   core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670(this_ptr);
   if (this_ptr->descriptive_name[0] != '\0') {
     this_ptr->sfx_handle = 0;

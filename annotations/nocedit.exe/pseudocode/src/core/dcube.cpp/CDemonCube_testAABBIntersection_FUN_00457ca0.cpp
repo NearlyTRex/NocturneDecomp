@@ -2,13 +2,11 @@
 // Address: 00457ca0
 // Address Range: [[00457ca0, 00457cea]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcube_cpp_CDemonCube_testAABBIntersection_FUN_00457ca0 (CDemonCube *this_ptr,CVector3f *aabb_min,CVector3f *aabb_max)
+// Signature: int __cdecl core_dcube_cpp_CDemonCube_testAABBIntersection_FUN_00457ca0(CDemonCube *this_ptr,CVector3f *aabb_min,CVector3f *aabb_max)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dcube_cpp_CDemonCube_testAABBIntersection_FUN_00457ca0
-          (CDemonCube *this_ptr,CVector3f *aabb_min,CVector3f *aabb_max)
+int __cdecl core_dcube_cpp_CDemonCube_testAABBIntersection_FUN_00457ca0(CDemonCube *this_ptr,CVector3f *aabb_min,CVector3f *aabb_max)
 
 {
   uint uVar1;

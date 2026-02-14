@@ -2,13 +2,11 @@
 // Address: 00486070
 // Address Range: [[00486070, 004862ec]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070 (CDraculaBride *this_ptr,SDamageInfo *damage_info)
+// Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDraculaBride *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070
-          (CDraculaBride *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDraculaBride *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;

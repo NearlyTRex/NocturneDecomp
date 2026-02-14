@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680 (CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel, int granule,SMpegFrame *frame,int bit_budget)
+; __cdecl uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame,int bit_budget)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr
@@ -43,8 +43,8 @@
 ;   TerminatedCString s_huffman_decodertable_err_0063afda
 ;   TerminatedCString s_sound_mp3_cpp_0063b00c
 ;   TerminatedCString s_decoder_table_read_error_0063b01d
-;   undefined4 DAT_0067e6cc
-;   undefined4 DAT_0067e6d0
+;   int INT_0067e6cc = 0x6
+;   int INT_0067e6d0 = 0xc
 ;   SHuffmanTableSource[34] g_HuffmanTableSources
 ;   ... and 23 more
 ;
@@ -455,11 +455,11 @@ section .text
     ADD EAX,EDX                         ; 00531b7c
     MOV EBX,dword ptr [ECX + 0x4c]      ; 00531b7e
     SHL EAX,0x2                         ; 00531b81
-    MOV EDX,dword ptr [EAX + EBX*0x4 + 0x67e6cc] ; 00531b84 | DAT_0067e6cc
+    MOV EDX,dword ptr [EAX + EBX*0x4 + 0x67e6cc] ; 00531b84 | INT_0067e6cc
     MOV dword ptr [ESP + 0x28],EDX      ; 00531b8b
     MOV EDX,dword ptr [ECX + 0x50]      ; 00531b8f
     ADD EDX,EBX                         ; 00531b92
-    MOV EBP,dword ptr [EAX + EDX*0x4 + 0x67e6d0] ; 00531b94 | DAT_0067e6d0
+    MOV EBP,dword ptr [EAX + EDX*0x4 + 0x67e6d0] ; 00531b94 | INT_0067e6d0
     JMP 0x005316f9                      ; 00531b9b
         ;   XREF to: 005316f9 (UNCONDITIONAL_JUMP)  ; LAB_005316f9
     CMP ESI,dword ptr [ESP + 0x28]      ; 00531ba0

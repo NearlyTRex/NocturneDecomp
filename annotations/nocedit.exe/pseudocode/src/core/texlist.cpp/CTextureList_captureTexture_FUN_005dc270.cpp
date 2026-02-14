@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_texlist_cpp_CTextureList_captureTexture_FUN_005dc270(CTextureList *this_ptr,uint texture_index)
+void __cdecl core_texlist_cpp_CTextureList_captureTexture_FUN_005dc270(CTextureList *this_ptr,uint texture_index)
 
 {
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80

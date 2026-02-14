@@ -2,13 +2,11 @@
 // Address: 00499a50
 // Address Range: [[00499a50, 00499b3c]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50 (CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
+// Signature: int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50(CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50
-          (CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
+int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50(CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
 
 {
   uint uVar1;

@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 15,
-        "line": 44,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 55,
+    "complexity_score": 41,
     "cross_reference_count": 42,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 40,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unknown_field"
-    ],
-    "total_lines": 124
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -373,7 +364,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "_BIT_INTEGER"
       },
       {
         "is_param": true,
@@ -412,13 +403,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._0_1_",
-      "text": "local_14._0_1_ = (char)uVar2;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

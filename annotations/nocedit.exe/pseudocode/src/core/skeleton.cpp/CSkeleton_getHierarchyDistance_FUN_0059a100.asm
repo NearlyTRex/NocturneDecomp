@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 (CSkeleton *this_ptr,int start_bone_index,int target_bone_index)
+; __cdecl int __cdecl core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton *this_ptr,int start_bone_index,int target_bone_index)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0x4]:4   this_ptr

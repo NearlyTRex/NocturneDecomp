@@ -63,7 +63,7 @@ LAB_0060e48b:
       _strncpy(local_20,pcVar3,(int)pcVar1 - (int)pcVar3);
       local_20[(int)pcVar1 - (int)pcVar3] = '\0';
       flags = strtol(local_20,(char **)0x0,0x10);
-      SetStdHandleToSomething();
+      SetStdHandleToSomething(local_14,file_handle_index);
       setFileDescriptorFlags(file_handle_index,flags);
     }
     putenv_internal("C_FILE_INFO=");

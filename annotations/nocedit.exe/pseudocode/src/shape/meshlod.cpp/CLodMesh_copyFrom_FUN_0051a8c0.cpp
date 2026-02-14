@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLodMesh * __cdecl
-shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh *this_ptr,CLodMesh *source_mesh)
+CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh *this_ptr,CLodMesh *source_mesh)
 
 {
   uint uVar1;

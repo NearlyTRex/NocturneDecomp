@@ -354,6 +354,9 @@ const double g_Mp3AntiAliasCSSource[8] = {
 
 // float constants
 const float g_MovieRecordingTargetFPS = 30.0f;
+const float FLOAT_0067cb08 = 1.0f;
+const float FLOAT_0067cb0c = -1.0f;
+const float FLOAT_0067cb18 = 1.0f;
 const float g_SamplePointWeight = 0.75f;
 
 // float[16][32] constants
@@ -426,9 +429,6 @@ const undefined4 DAT_00678170 = 0x3C003C00;
 const undefined4 DAT_00678190 = 0x3D003D00;
 const undefined4 DAT_006781b0 = 0x3E003E00;
 const undefined4 DAT_006781d0 = 0x3F003F00;
-const undefined4 DAT_0067cb08 = 0x3F800000;
-const undefined4 DAT_0067cb0c = 0xBF800000;
-const undefined4 DAT_0067cb18 = 0x3F800000;
 
 // void* constants
 const void* DAT_00676B0C = (void*)0x00474747; // LAB_00474747

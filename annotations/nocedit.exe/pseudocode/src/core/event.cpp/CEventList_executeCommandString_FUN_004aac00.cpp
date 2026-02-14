@@ -2,13 +2,11 @@
 // Address: 004aac00
 // Address Range: [[004aac00, 004aacb7]]
 // Convention: __cdecl
-// Signature: int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004aac00 (CEventList *this_ptr,char *command_string)
+// Signature: int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004aac00(CEventList *this_ptr,char *command_string)
 
 #include "nocturne.h"
 
-int __cdecl
-core_event_cpp_CEventList_executeCommandString_FUN_004aac00
-          (CEventList *this_ptr,char *command_string)
+int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004aac00(CEventList *this_ptr,char *command_string)
 
 {
   char cVar1;

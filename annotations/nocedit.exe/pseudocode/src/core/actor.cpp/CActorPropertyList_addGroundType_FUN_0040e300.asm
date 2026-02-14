@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300(CActorPropertyList *this_ptr,char *property_name,int *data_ptr)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

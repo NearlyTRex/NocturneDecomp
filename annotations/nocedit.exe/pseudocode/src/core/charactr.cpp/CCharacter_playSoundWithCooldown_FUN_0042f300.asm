@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300 (CCharacter *this_ptr,char *sound_name)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300(CCharacter *this_ptr,char *sound_name)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

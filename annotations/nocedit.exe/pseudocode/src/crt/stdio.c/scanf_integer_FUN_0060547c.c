@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-scanf_integer(scanf_state_t *state,va_list_t *args,int base,int is_signed)
+int __cdecl scanf_integer(scanf_state_t *state,va_list_t *args,int base,int is_signed)
 
 {
   byte bVar1;

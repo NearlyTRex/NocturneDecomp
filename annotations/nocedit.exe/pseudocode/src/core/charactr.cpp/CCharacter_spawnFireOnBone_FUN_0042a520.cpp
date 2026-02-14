@@ -2,13 +2,11 @@
 // Address: 0042a520
 // Address Range: [[0042a520, 0042a827]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520 (CCharacter *this_ptr,int bone_index,int target_bone_index)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,int bone_index,int target_bone_index)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520
-          (CCharacter *this_ptr,int bone_index,int target_bone_index)
+void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,int bone_index,int target_bone_index)
 
 {
   float fVar1;
@@ -112,17 +110,14 @@ core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520
           local_40[iVar6].base.location.position.y = pCVar4->y;
           local_40[iVar6].base.location.position.z = pCVar4->z;
           *(uint *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;
-          pSVar8->unk[0x14] = '\0';
-          pSVar8->unk[0x15] = '\0';
-          pSVar8->unk[0x16] = '\0';
-          pSVar8->unk[0x17] = '?';
+          pSVar8->unk2 = 0.5;
           fVar3 = (float)0.5;
           *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x364) =
-               *(float *)(pSVar8->unk + 0x14) * fVar3;
-          *(uint *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x368) =
-               *(uint *)(pSVar8->unk + 0x14);
+               pSVar8->unk2 * fVar3;
+          *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x368) =
+               pSVar8->unk2;
           *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x36c) =
-               fVar3 * *(float *)(pSVar8->unk + 0x14);
+               fVar3 * pSVar8->unk2;
           iVar5 = iVar5 + 1;
           *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x3b4) =
                this_ptr->fire_spread_rate;

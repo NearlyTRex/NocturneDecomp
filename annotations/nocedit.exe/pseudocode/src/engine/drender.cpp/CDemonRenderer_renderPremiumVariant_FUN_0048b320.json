@@ -1,40 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 33,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 36,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 28,
-        "line": 44,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 83,
+    "complexity_score": 81,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 36,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 124
+    "total_lines": 122
   },
   "cross_references": [],
   "function": {
@@ -47,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
   },
   "function_calls": [
     {
@@ -90,7 +71,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -165,28 +146,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 13,
       "match": "(ushort *)((int)",
       "text": "this_ptr->vertex_buffer_ptr[uVar1].u = (uint)*(ushort *)((int)&(pSVar3->base).count + 2) << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 15,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "} while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(polygon_info->base).count + 2));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(ushort *)((int)",
       "text": "g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(polygon_info->base).type + 2);",
       "type": "pointer_cast"

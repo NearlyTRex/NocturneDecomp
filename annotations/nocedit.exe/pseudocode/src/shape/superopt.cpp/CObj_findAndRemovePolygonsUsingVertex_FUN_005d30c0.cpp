@@ -2,13 +2,11 @@
 // Address: 005d30c0
 // Address Range: [[005d30c0, 005d30e9]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_superopt_cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0 (CObj *this_ptr,CVert *vert_ptr)
+// Signature: int __cdecl shape_superopt_cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0(CObj *this_ptr,CVert *vert_ptr)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_superopt_cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0
-          (CObj *this_ptr,CVert *vert_ptr)
+int __cdecl shape_superopt_cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0(CObj *this_ptr,CVert *vert_ptr)
 
 {
   int iVar1;

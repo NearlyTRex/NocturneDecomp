@@ -6,7 +6,7 @@
 ;
 ; XREF[7]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d815
-;   core_script.cpp_CScript_FUN_00565130 at 005653c1
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 005653c1
 ;   engine_2d.c_clearInputAndWait_FUN_00403260 at 00403260
 ;   engine_keys.cpp_CKeys_clearKeypresses_FUN_00502450 at 00502450
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f320

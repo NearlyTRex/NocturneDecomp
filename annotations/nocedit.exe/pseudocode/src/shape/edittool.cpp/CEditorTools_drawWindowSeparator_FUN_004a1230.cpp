@@ -2,13 +2,11 @@
 // Address: 004a1230
 // Address Range: [[004a1230, 004a132d]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230 (CEditorTools *editor_tools,int line_position)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools *editor_tools,int line_position)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230
-          (CEditorTools *editor_tools,int line_position)
+void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools *editor_tools,int line_position)
 
 {
   int iVar1;

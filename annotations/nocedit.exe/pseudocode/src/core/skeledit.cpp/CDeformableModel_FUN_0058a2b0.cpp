@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CDeformableModel_FUN_0058a2b0(CDeformableModel *this_ptr,_FILE *file_handle)
+void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058a2b0(CDeformableModel *this_ptr,_FILE *file_handle)
 
 {
   char cVar1;

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 315,
+    "complexity_score": 313,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 88,
     "suspect_count": 22,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 232
+    "total_lines": 230
   },
   "cross_references": [
     {
@@ -41,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950",
-    "signature": "void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950 (SBoneTransformData *bone_data,CDeformableModelInstance *instance_ptr)"
+    "signature": "void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransformData *bone_data,CDeformableModelInstance *instance_ptr)"
   },
   "function_calls": [
     {
@@ -198,154 +198,154 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 36,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 45,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 46,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 49,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 51,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 52,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 57,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 60,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 65,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&instance_ptr->transformed_vertices[0].x + iVar3) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 68,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&instance_ptr->transformed_vertices[0].y + iVar3) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 71,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&instance_ptr->transformed_vertices[0].z + iVar3) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 76,
       "match": "(CVector3f *)((int)",
       "text": "(&local_3c,(CVector3f *)((int)&local_30->x + iVar3),local_28 + iVar1);",
       "type": "pointer_cast"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_005f7730 (CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out)
+; __cdecl void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_005f7730(CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out)
 ;
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   quat_in

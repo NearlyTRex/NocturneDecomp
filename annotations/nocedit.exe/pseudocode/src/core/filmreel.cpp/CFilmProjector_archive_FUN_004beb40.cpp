@@ -14,7 +14,6 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjecto
   CDemonActor *pCVar3;
   uint uVar4;
   float in_stack_00000008;
-  float in_stack_00000010;
   
   if ((this_ptr->base).unk1 == 0) {
     if (*(int *)(this_ptr->unk + 0x6c) != 0) {
@@ -58,6 +57,6 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjecto
     }
   }
   *(int *)(this_ptr->unk + 0x6c) = (this_ptr->base).unk1;
-  core_dest_cpp_CActorDestination_process_FUN_0046f9b0(&this_ptr->base,in_stack_00000010);
+  core_dest_cpp_CActorDestination_process_FUN_0046f9b0(&this_ptr->base,in_stack_00000008);
   return;
 }

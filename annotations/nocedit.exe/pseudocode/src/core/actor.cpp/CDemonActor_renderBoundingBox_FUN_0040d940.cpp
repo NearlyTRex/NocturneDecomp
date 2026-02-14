@@ -10,8 +10,7 @@
 /* WARNING: Variable defined which should be unmapped: local_14c */
 /* WARNING: Variable defined which should be unmapped: local_1ac */
 
-void __cdecl
-core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
+void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
 
 {
   SRenderVertex vertex2;
@@ -59,10 +58,10 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
   
   bVar8 = 0;
   local_17c.w_recip = (float)this_ptr;
-  local_17c.fog = 5.955439e-39;
+  local_17c.fog = 0x40d957;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(this_ptr);
   local_17c.w_recip = (float)&local_14c;
-  local_17c.fog = (float)this_ptr;
+  local_17c.fog = (int)this_ptr;
   local_17c.color = 0x40d975;
   this_ptr_00 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&local_14c);
   corner_index = 0.0;
@@ -70,12 +69,12 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
   do {
     local_14c.min.y = (float)((uint)corner_index ^ 1);
     local_14c.min.x = (float)&CStack_b4;
-    local_17c.fog = 5.955552e-39;
+    local_17c.fog = 0x40d9a8;
     local_17c.w_recip = (float)this_ptr_00;
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)local_14c.min.y);
     local_14c.min.x = (float)&CStack_c0;
-    local_17c.fog = 5.95559e-39;
+    local_17c.fog = 0x40d9c3;
     local_17c.w_recip = (float)this_ptr_00;
     local_14c.min.y = corner_index;
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
@@ -154,20 +153,20 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     vertex2.projected_vertex.inv_z = local_17c.projected_vertex.screen_y;
     vertex2.projected_vertex.screen_x = local_17c.u;
     vertex2.projected_vertex.screen_y = local_17c.v;
-    vertex2.u = (int)local_17c.light;
+    vertex2.u = local_17c.light;
     vertex2.light = local_17c.fog;
     vertex2.color = (int)local_17c.w_recip;
-    vertex2.fog = local_14c.min.x;
+    vertex2.fog = (int)local_14c.min.x;
     vertex2.w_recip = local_14c.min.y;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2);
     local_14c.min.y = (float)((uint)corner_index ^ 2);
     local_14c.min.x = (float)&CStack_e4;
-    local_17c.fog = 5.956146e-39;
+    local_17c.fog = 0x40db50;
     local_17c.w_recip = (float)this_ptr_00;
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)local_14c.min.y);
     local_14c.min.x = (float)&CStack_120;
-    local_17c.fog = 5.95618e-39;
+    local_17c.fog = 0x40db68;
     local_17c.w_recip = (float)this_ptr_00;
     local_14c.min.y = corner_index;
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
@@ -246,20 +245,20 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     vertex2_00.projected_vertex.inv_z = local_17c.projected_vertex.screen_y;
     vertex2_00.projected_vertex.screen_x = local_17c.u;
     vertex2_00.projected_vertex.screen_y = local_17c.v;
-    vertex2_00.u = (int)local_17c.light;
+    vertex2_00.u = local_17c.light;
     vertex2_00.light = local_17c.fog;
     vertex2_00.color = (int)local_17c.w_recip;
-    vertex2_00.fog = local_14c.min.x;
+    vertex2_00.fog = (int)local_14c.min.x;
     vertex2_00.w_recip = local_14c.min.y;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2_00);
     local_14c.min.y = (float)((uint)corner_index ^ 4);
     local_14c.min.x = (float)&CStack_84;
-    local_17c.fog = 5.956777e-39;
+    local_17c.fog = 0x40dd12;
     local_17c.w_recip = (float)this_ptr_00;
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)local_14c.min.y);
     local_14c.min.x = (float)&CStack_90;
-    local_17c.fog = 5.956815e-39;
+    local_17c.fog = 0x40dd2d;
     local_17c.w_recip = (float)this_ptr_00;
     local_14c.min.y = corner_index;
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
@@ -338,10 +337,10 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
     vertex2_01.projected_vertex.inv_z = local_17c.projected_vertex.screen_y;
     vertex2_01.projected_vertex.screen_x = local_17c.u;
     vertex2_01.projected_vertex.screen_y = local_17c.v;
-    vertex2_01.u = (int)local_17c.light;
+    vertex2_01.u = local_17c.light;
     vertex2_01.light = local_17c.fog;
     vertex2_01.color = (int)local_17c.w_recip;
-    vertex2_01.fog = local_14c.min.x;
+    vertex2_01.fog = (int)local_14c.min.x;
     vertex2_01.w_recip = local_14c.min.y;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2_01);
   } while ((int)corner_index < 8);

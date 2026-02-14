@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 527,
-    "complexity_score": 255,
+    "complexity_score": 252,
     "cross_reference_count": 27,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 160,
+    "pseudocode_lines": 157,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 687
+    "total_lines": 684
   },
   "cross_references": [
     {
@@ -192,7 +192,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0",
-    "signature": "int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0 (CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction, float min_distance,float max_distance)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)"
   },
   "function_calls": [
     {
@@ -790,63 +790,63 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 44,
       "match": "SQRT",
       "text": "fVar2 = SQRT(direction->x * direction->x + direction->z * direction->z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 48,
       "match": "SQRT",
       "text": "fVar3 = SQRT(local_bc.x * local_bc.x + local_bc.z * local_bc.z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 53,
       "match": "SQRT",
       "text": "if (0.0 < SQRT(direction->z * direction->z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 56,
       "match": "ABS",
       "text": "local_fc = ABS(local_18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 58,
       "match": "ABS",
       "text": "if (((ABS(fVar3 - fVar2) < min_distance + (float)0.01) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 60,
       "match": "ABS",
       "text": "(ABS(local_bc.y) < (float)5)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 67,
       "match": "ABS",
       "text": "ABS(fVar7) * (float)0.31830988619288902 * (float)2 <= fVar3) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 68,
       "match": "ABS",
       "text": "(1.0 < ABS(local_bc.y))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 131,
       "match": "SQRT",
       "text": "local_60 = SQRT(local_d8 * local_d8 + local_e0 * local_e0);",
       "type": "decompiler_intrinsic"

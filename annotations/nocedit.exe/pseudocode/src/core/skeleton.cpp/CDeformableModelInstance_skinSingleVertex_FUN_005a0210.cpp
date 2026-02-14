@@ -2,13 +2,11 @@
 // Address: 005a0210
 // Address Range: [[005a0210, 005a0242]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210 (CDeformableModelInstance *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index)
+// Signature: CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210(CDeformableModelInstance *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210
-          (CDeformableModelInstance *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index)
+CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210(CDeformableModelInstance *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index)
 
 {
   CDeformableModel *this_ptr_00;

@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 22,
-        "message": "use of undeclared identifier 'stack0xfffffff4'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 40,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 25,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 78
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
   },
   "cross_references": [],
   "function": {
@@ -129,15 +120,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xfffffff4",
-      "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffff4,input_local_point);",
-      "type": "stack_ref"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

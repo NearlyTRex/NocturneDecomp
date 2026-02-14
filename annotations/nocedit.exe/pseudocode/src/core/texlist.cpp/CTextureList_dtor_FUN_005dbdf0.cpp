@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CTextureList * __cdecl
-core_texlist_cpp_CTextureList_dtor_FUN_005dbdf0(CTextureList *this_ptr,uint flags)
+CTextureList * __cdecl core_texlist_cpp_CTextureList_dtor_FUN_005dbdf0(CTextureList *this_ptr,uint flags)
 
 {
   return this_ptr;

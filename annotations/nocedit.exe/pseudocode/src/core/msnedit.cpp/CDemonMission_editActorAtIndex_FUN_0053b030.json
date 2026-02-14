@@ -4,50 +4,20 @@
       {
         "category": "format_error",
         "column": 58,
-        "line": 79,
+        "line": 74,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 80,
-        "line": 94,
-        "message": "use of undeclared identifier 'stack0xffffd450'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 82,
-        "line": 95,
-        "message": "use of undeclared identifier 'stack0xffffd450'"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 102,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 143,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+        "category": "format_error",
+        "column": 57,
+        "line": 97,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 74,
-        "line": 150,
+        "line": 143,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 150,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 156,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       }
     ],
     "success": false,
@@ -55,19 +25,16 @@
   },
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 310,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 9,
-    "pseudocode_lines": 160,
-    "suspect_count": 13,
+    "pseudocode_lines": 151,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_ref",
-      "unaffected_reg",
-      "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 584
+    "total_lines": 575
   },
   "cross_references": [
     {
@@ -345,94 +312,24 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_2",
-      "text": "core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EBP",
-      "text": "CDemonActor *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "text": "pcVar9 = *(char **)(param_2 + 0x68);",
+      "text": "void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this_ptr,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 28,
+      "match": "param_2",
+      "text": "pcVar8 = *(char **)(param_2 + 0x68);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
       "match": "param_2",
       "text": "_sprintf(acStack_304,\"Actors relevent to \\\"%s\\\"\",param_2 + 4);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 87,
-      "match": "&stack0xffffd450",
-      "text": "core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffd450);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 88,
-      "match": "&stack0xffffd450",
-      "text": "(*((local_18->vtable)._ub)->getPropertyList)(local_18,(CActorPropertyList *)&stack0xffffd450);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 93,
-      "match": "unaff_EBP",
-      "text": "iVar3 = stricmp(pcVar9,unaff_EBP->actor_name);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 136,
-      "match": "._0_4_",
-      "text": "if (0 < (int)auStack_40._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 143,
-      "match": "unaff_EBP",
-      "text": "(acStack_2fc,\"%s\\tRaises \\\"%s\\\" in \\\"%s\\\"\",unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 149,
-      "match": "._0_4_",
-      "text": "} while (iVar5 < (int)auStack_40._0_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 160,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP->next_actor;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 160,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP->next_actor;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 161,
-      "match": "unaff_EBP",
-      "text": "pCVar4 = unaff_EBP;",
-      "type": "unaffected_reg"
     }
   ]
 }

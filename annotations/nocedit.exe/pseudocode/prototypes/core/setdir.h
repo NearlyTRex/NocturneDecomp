@@ -29,7 +29,7 @@ CZThumb * __cdecl CZThumb::dtor(CZThumb *this_ptr,uint flags);
 
 // Original: core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
 // Address: 00574910
-void __cdecl CZThumb::saveZBufferTable(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,_FILE *file_handle);
+void __cdecl CZThumb::saveZBufferTable(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float unknown_scale,_FILE *file_handle);
 
 // Original: core_setdir.cpp_CZThumb_write_FUN_00574b20
 // Address: 00574b20
@@ -41,7 +41,7 @@ void __cdecl CZThumb::free(CZThumb *this_ptr);
 
 // Original: core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
 // Address: 00574ba0
-float __cdecl CZThumb::calculateActorVisibility(CZThumb *this_ptr,CDemonActor *actor,CVector3i *bounding_box_vertices, SMRGLHeaderPrimitive *primitives,int apply_scaling);
+float __cdecl CZThumb::calculateActorVisibility(CZThumb *this_ptr,CDemonActor *actor,CVector3i *bounding_box_vertices,SMRGLHeaderPrimitive *primitives,int apply_scaling);
 
 // Original: core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30
 // Address: 00574e30

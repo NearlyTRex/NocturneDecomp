@@ -1,34 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 56,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 61,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 83,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 56,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 188
+    "total_lines": 186
   },
   "cross_references": [
     {
@@ -48,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
   },
   "function_calls": [
     {
@@ -84,7 +71,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -175,14 +162,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)g_VertexIndexBuffer + iVar3);",
       "type": "pointer_cast"

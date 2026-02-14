@@ -2,13 +2,11 @@
 // Address: 004a8db0
 // Address Range: [[004a8db0, 004a8fd8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0 (CEmitter *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0
-          (CEmitter *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *this_ptr,CActorPropertyList *property_list)
 
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);

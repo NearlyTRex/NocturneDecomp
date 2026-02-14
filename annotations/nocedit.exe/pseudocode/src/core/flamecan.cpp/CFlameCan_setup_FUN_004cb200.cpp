@@ -13,9 +13,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004cb200(CFlameCan *this_ptr)
   float fVar2;
   CDemonActor_vtable *pCVar3;
   CBoundingBox3D local_38;
-  float fStack_20;
-  float fStack_1c;
-  float afStack_18 [4];
+  float afStack_20 [6];
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
@@ -29,12 +27,12 @@ void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004cb200(CFlameCan *this_ptr)
   *(float *)(this_ptr->unk + 0x24) = (this_ptr->base).location.position.y;
   *(float *)(this_ptr->unk + 0x28) = (this_ptr->base).location.position.z;
   *(int *)(this_ptr->unk + 0x2c) = (this_ptr->base).location.area_id;
-  *(float *)(this_ptr->unk + 0x24) = (fStack_20 - local_38.max.x) + *(float *)(this_ptr->unk + 0x24)
-  ;
-  if ((float *)(this_ptr->unk + 0x158) != afStack_18) {
-    *(float *)(this_ptr->unk + 0x158) = local_38.max.z - local_38.min.z;
-    *(float *)(this_ptr->unk + 0x15c) = fStack_20 - local_38.max.x;
-    *(float *)(this_ptr->unk + 0x160) = fStack_1c - local_38.max.y;
+  *(float *)(this_ptr->unk + 0x24) =
+       (local_38.max.y - local_38.min.y) + *(float *)(this_ptr->unk + 0x24);
+  if ((float *)(this_ptr->unk + 0x158) != afStack_20) {
+    *(float *)(this_ptr->unk + 0x158) = local_38.max.x - local_38.min.x;
+    *(float *)(this_ptr->unk + 0x15c) = local_38.max.y - local_38.min.y;
+    *(float *)(this_ptr->unk + 0x160) = local_38.max.z - local_38.min.z;
   }
   fVar1 = *(float *)(this_ptr->unk + 0x158);
   this_ptr->unk[0x1a8] = '\0';

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CQuaternion4f * __stack_esi
-core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(float angle_radians,CQuaternion4f *quat_out)
+CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(float angle_radians,CQuaternion4f *quat_out)
 
 {
   float10 fVar1;

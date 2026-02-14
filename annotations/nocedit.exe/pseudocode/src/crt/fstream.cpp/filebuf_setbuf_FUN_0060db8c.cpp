@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-streambuf * __watcallStack
-crt_fstream_cpp_filebuf_setbuf_FUN_0060db8c(filebuf *this_ptr,char *buffer_ptr,int buffer_size)
+streambuf * __watcallStack crt_fstream_cpp_filebuf_setbuf_FUN_0060db8c(filebuf *this_ptr,char *buffer_ptr,int buffer_size)
 
 {
   char *buffer_end;

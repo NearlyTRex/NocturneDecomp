@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_ptr,SClothVertex *vertex)
+void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_ptr,SClothVertex *vertex)
 
 {
   float fVar1;

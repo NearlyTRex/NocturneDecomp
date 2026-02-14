@@ -2,13 +2,11 @@
 // Address: 00411ab0
 // Address Range: [[00411ab0, 00411b25]]
 // Convention: __cdecl
-// Signature: int __cdecl core_ammobox_cpp_CAmmoBox_propertyActionFunc_FUN_00411ab0 (CAmmoBox *this_ptr,CActorProperty *property)
+// Signature: int __cdecl core_ammobox_cpp_CAmmoBox_propertyActionFunc_FUN_00411ab0(CAmmoBox *this_ptr,CActorProperty *property)
 
 #include "nocturne.h"
 
-int __cdecl
-core_ammobox_cpp_CAmmoBox_propertyActionFunc_FUN_00411ab0
-          (CAmmoBox *this_ptr,CActorProperty *property)
+int __cdecl core_ammobox_cpp_CAmmoBox_propertyActionFunc_FUN_00411ab0(CAmmoBox *this_ptr,CActorProperty *property)
 
 {
   CAmmoBox *pCVar1;

@@ -1,40 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 39,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 42,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 62,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 84,
+    "complexity_score": 82,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 57,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 191
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -60,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
   },
   "function_calls": [
     {
@@ -102,7 +83,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -202,14 +183,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)g_VertexIndexBuffer + iVar3);",
       "type": "pointer_cast"

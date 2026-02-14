@@ -23,7 +23,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   char[241][320] g_CoronaBlurWorkBuffer
 ;   undefined4 g_LightmapTexturePalette[64]
-;   int g_CameraDownscaleIterations
+;   _BIT_INTEGER g_CameraDownscaleIterations
 ;   int g_CameraEdgeCount
 ;   int[10000] g_CameraEdgeDetectionResults
 ;   undefined4 DAT_013bc26c

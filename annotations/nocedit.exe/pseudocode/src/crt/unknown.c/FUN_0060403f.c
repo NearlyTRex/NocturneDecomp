@@ -2,14 +2,11 @@
 // Address: 0060403f
 // Address Range: [[0060403f, 006040d6]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_unknown_c_FUN_0060403f (undefined4 param_1,float10 *param_2,undefined4 param_3,char *param_4,uint param_5, char *param_6,char *param_7,char *param_8,uint param_9,undefined4 param_10,char *param_11)
+// Signature: void __cdecl crt_unknown_c_FUN_0060403f(undefined4 param_1,float10 *param_2,undefined4 param_3,char *param_4,uint param_5,char *param_6,char *param_7,char *param_8,uint param_9,undefined4 param_10,char *param_11)
 
 #include "nocturne.h"
 
-void __cdecl
-FUN_0060403f
-          (uint param_1,float10 *param_2,uint param_3,char *param_4,uint param_5,
-          char *param_6,char *param_7,char *param_8,uint param_9,uint param_10,char *param_11)
+void __cdecl FUN_0060403f(uint param_1,float10 *param_2,uint param_3,char *param_4,uint param_5,char *param_6,char *param_7,char *param_8,uint param_9,uint param_10,char *param_11)
 
 {
   char *pcVar1;
@@ -119,6 +116,6 @@ LAB_00604135:
   else {
     FUN_00604267();
   }
-  FUN_0060445e(*(ushort *)(unaff_EBP + -0x14));
+  FUN_0060445e();
   return;
 }

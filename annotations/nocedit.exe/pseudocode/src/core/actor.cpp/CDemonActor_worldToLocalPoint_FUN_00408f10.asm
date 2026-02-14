@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 (CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point)
+; __cdecl CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

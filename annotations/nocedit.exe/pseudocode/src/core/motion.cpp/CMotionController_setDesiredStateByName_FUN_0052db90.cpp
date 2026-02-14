@@ -2,13 +2,11 @@
 // Address: 0052db90
 // Address Range: [[0052db90, 0052dbbd]]
 // Convention: __cdecl
-// Signature: void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90 (CMotionController *this_ptr,char *state_name,int force_immediate)
+// Signature: void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90(CMotionController *this_ptr,char *state_name,int force_immediate)
 
 #include "nocturne.h"
 
-void __cdecl
-core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
-          (CMotionController *this_ptr,char *state_name,int force_immediate)
+void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90(CMotionController *this_ptr,char *state_name,int force_immediate)
 
 {
   int desired_state_index;

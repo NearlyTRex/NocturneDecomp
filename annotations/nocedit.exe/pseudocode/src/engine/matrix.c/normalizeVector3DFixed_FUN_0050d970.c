@@ -2,13 +2,11 @@
 // Address: 0050d970
 // Address Range: [[0050d970, 0050d9e5]]
 // Convention: __stack_esi
-// Signature: CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_0050d970 (CVector3i *input_vector,CVector3i *output_vector)
+// Signature: CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(CVector3i *input_vector,CVector3i *output_vector)
 
 #include "nocturne.h"
 
-CVector3i * __stack_esi
-engine_matrix_c_normalizeVector3DFixed_FUN_0050d970
-          (CVector3i *input_vector,CVector3i *output_vector)
+CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(CVector3i *input_vector,CVector3i *output_vector)
 
 {
   int iVar1;

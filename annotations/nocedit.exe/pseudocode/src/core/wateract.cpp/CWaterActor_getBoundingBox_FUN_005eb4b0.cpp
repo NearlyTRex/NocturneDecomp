@@ -2,13 +2,11 @@
 // Address: 005eb4b0
 // Address Range: [[005eb4b0, 005eb503]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005eb4b0 (CWaterActor *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005eb4b0(CWaterActor *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005eb4b0
-          (CWaterActor *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005eb4b0(CWaterActor *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;

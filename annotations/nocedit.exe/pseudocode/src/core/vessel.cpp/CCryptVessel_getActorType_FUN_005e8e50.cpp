@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_vessel_cpp_CCryptVessel_getActorType_FUN_005e8e50(CCryptVessel *this_ptr)
+CDemonActorType * __cdecl core_vessel_cpp_CCryptVessel_getActorType_FUN_005e8e50(CCryptVessel *this_ptr)
 
 {
   return &g_CCryptVesselClassInfo;

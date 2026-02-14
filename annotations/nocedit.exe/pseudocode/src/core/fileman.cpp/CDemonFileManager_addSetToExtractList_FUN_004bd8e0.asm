@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0 (CDemonFileManager *file_manager_ptr,char *set_filename)
+; __cdecl void __cdecl core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager *file_manager_ptr,char *set_filename)
 ;
 ; Parameters:
 ; CDemonFileManager * Stack[0x4]:4   file_manager_ptr

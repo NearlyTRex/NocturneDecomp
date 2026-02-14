@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 21,
-        "line": 39,
+        "line": 37,
         "message": "comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'char *')"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 69,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 42,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 148
+    "total_lines": 146
   },
   "cross_references": [],
   "function": {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20 (CPackedBitmap *this_ptr,int dest_x,int dest_y)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20(CPackedBitmap *this_ptr,int dest_x,int dest_y)"
   },
   "function_calls": [
     {
@@ -176,14 +176,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(int *)((int)",
       "text": "iVar3 = *(int *)((int)this_ptr->row_pointers + local_1c + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 29,
       "match": "(int *)((int)",
       "text": "iVar4 = *(int *)((int)g_ScreenBufferArray + local_20);",
       "type": "pointer_cast"

@@ -4,31 +4,31 @@
       {
         "category": "other",
         "column": 28,
-        "line": 60,
+        "line": 58,
         "message": "member reference base type 'char[307200]' is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 102,
+        "line": 100,
         "message": "use of undeclared identifier 'stack0xffffff84'"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 173,
+        "line": 171,
         "message": "cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 173,
+        "line": 171,
         "message": "cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 174,
+        "line": 172,
         "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'ushort *' (aka 'unsigned short *')"
       }
     ],
@@ -37,18 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 432,
-    "complexity_score": 365,
+    "complexity_score": 363,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 10,
-    "pseudocode_lines": 200,
+    "pseudocode_lines": 198,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 632
+    "total_lines": 630
   },
   "cross_references": [
     {
@@ -75,7 +75,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10",
-    "signature": "void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10 (CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)"
+    "signature": "void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)"
   },
   "function_calls": [
     {
@@ -468,105 +468,105 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 53,
+      "line": 51,
       "match": "._0_4_",
       "text": "g_LightBufferPool[0x18]._0_4_ = rect;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 90,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)rect + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 95,
+      "line": 93,
       "match": "&stack0xffffff84",
       "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar10 * -8) = *puVar7;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 93,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar10 * -8) = *puVar7;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 126,
       "match": "(void *)((int)",
       "text": "local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 129,
       "match": "(CVector3i *)((int)",
       "text": "local_30 = (CVector3i *)((int)&local_50->x + local_58);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 131,
       "match": "(float *)((int)",
       "text": "local_28 = (float *)((int)&local_54->x + local_58);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 132,
       "match": "(int *)((int)",
       "text": "local_20 = (int *)((int)light_source->corona_visibility_buffers + local_4c + local_44);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 133,
       "match": "(uint *)((int)",
       "text": "local_1c = (uint *)((int)light_source->corona_depth_buffer + local_4c + local_44);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 135,
       "match": "(int *)((int)",
       "text": "local_24 = (int *)((int)light_source->corona_lightmap_indices + local_4c + local_44);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 158,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_64 + (uint)bVar10 * -8 + 4) = aiStack_6c[(uint)bVar10 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 159,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_64 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 188,
       "match": "(CVector3i *)((int)",
       "text": "local_18 = (CVector3i *)((int)&local_18->x + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 196,
       "match": "(void *)((int)",
       "text": "local_48 = (void *)((int)local_48 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 197,
       "match": "(void *)((int)",
       "text": "local_2c = (void *)((int)local_2c + 1);",
       "type": "pointer_cast"

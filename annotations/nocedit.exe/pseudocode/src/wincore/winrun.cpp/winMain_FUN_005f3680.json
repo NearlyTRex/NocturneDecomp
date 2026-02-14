@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 31,
-        "line": 113,
+        "line": 111,
         "message": "assigning to 'HBRUSH' (aka 'HBRUSH__ *') from incompatible type 'HGDIOBJ' (aka 'void *')"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 157,
+    "complexity_score": 155,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 39,
-    "pseudocode_lines": 127,
+    "pseudocode_lines": 125,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 373
+    "total_lines": 371
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     ],
     "convention": "__stdcall",
     "name": "wincore_winrun.cpp_winMain_FUN_005f3680",
-    "signature": "int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680 (HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2)"
+    "signature": "int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2)"
   },
   "function_calls": [
     {
@@ -501,7 +501,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(WNDCLASSA *)((int)",
       "text": "stackProbe = (WNDCLASSA *)((int)stackProbe + -0x80);",
       "type": "pointer_cast"

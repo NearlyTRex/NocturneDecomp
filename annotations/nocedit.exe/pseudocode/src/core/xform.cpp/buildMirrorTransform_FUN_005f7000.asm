@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack2_esi CMatrix3x4f * __stack2_esi core_xform_cpp_buildMirrorTransform_FUN_005f7000 (CVector3f *axis_vector,float distance,CMatrix3x4f *matrix_out)
+; __stack2_esi CMatrix3x4f * __stack2_esi core_xform_cpp_buildMirrorTransform_FUN_005f7000(CVector3f *axis_vector,float distance,CMatrix3x4f *matrix_out)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   axis_vector

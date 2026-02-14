@@ -13,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 199,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 19,
     "pseudocode_lines": 59,
-    "suspect_count": 12,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
     "total_lines": 126
   },
@@ -86,31 +85,31 @@
     },
     {
       "addr": "02d8336c",
-      "name": "DAT_02d83368.base.count",
+      "name": "SMRGLHeaderPrimitive_02d83368.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d83370",
-      "name": "DAT_02d83368.surface_normal.A",
+      "name": "SMRGLHeaderPrimitive_02d83368.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d83374",
-      "name": "DAT_02d83368.surface_normal.B",
+      "name": "SMRGLHeaderPrimitive_02d83368.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d83378",
-      "name": "DAT_02d83368.surface_normal.C",
+      "name": "SMRGLHeaderPrimitive_02d83368.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d8337c",
-      "name": "DAT_02d83368.surface_normal.D",
+      "name": "SMRGLHeaderPrimitive_02d83368.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
@@ -292,41 +291,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_02d83368",
-      "text": "DAT_02d83368.base.count = 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_02d83368",
-      "text": "DAT_02d83368.surface_normal.A = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_02d83368",
-      "text": "DAT_02d83368.surface_normal.B = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_02d83368",
-      "text": "DAT_02d83368.surface_normal.C = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_02d83368",
-      "text": "DAT_02d83368.surface_normal.D = 0;",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 34,

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_waypoint_cpp_CWayPoint_getPropertyList_FUN_005ec4d0 (CWayPoint *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_waypoint_cpp_CWayPoint_getPropertyList_FUN_005ec4d0(CWayPoint *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr

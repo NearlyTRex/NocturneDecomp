@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_ammo_cpp_CAmmo_propertyActionCallback_FUN_004112b0(CAmmo *this_ptr,CActorProperty *property)
+int __cdecl core_ammo_cpp_CAmmo_propertyActionCallback_FUN_004112b0(CAmmo *this_ptr,CActorProperty *property)
 
 {
   CAmmo *pCVar1;

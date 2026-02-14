@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_larva_cpp_CLarva_getTargetPoints_FUN_00503c00(CLarva *this_ptr,CVector3f *out_points_array)
+int __cdecl core_larva_cpp_CLarva_getTargetPoints_FUN_00503c00(CLarva *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

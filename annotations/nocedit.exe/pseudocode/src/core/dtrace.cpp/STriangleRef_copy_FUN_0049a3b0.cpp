@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-STriangleRef * __cdecl
-core_dtrace_cpp_STriangleRef_copy_FUN_0049a3b0(STriangleRef *this_ptr,STriangleRef *other)
+STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_copy_FUN_0049a3b0(STriangleRef *this_ptr,STriangleRef *other)
 
 {
   *(uint *)this_ptr->unk = *(uint *)other->unk;

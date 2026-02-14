@@ -2,11 +2,11 @@
 // Address: 00608fdc
 // Address Range: [[00608fdc, 0060903f]]
 // Convention: unknown
-// Signature: int crt_unknown_c_FUN_00608fdc(void)
+// Signature: int crt_unknown_c_FUN_00608fdc(int param_1)
 
 #include "nocturne.h"
 
-int FUN_00608fdc(void)
+int FUN_00608fdc(int param_1)
 
 {
   FileListNode *pFVar1;
@@ -14,7 +14,6 @@ int FUN_00608fdc(void)
   FileListNode *pFVar2;
   int close_flags;
   int iVar3;
-  int in_stack_00000004;
   
   iVar3 = 0;
   pFVar2 = g_AllocatedListHead;
@@ -30,7 +29,7 @@ joined_r0x00609003:
   goto code_r0x0060901c;
   goto LAB_00609029;
 code_r0x0060901c:
-  if ((_FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {
+  if ((_FILE *)((int)&g_StaticFilePoolStart + param_1 * 0x1a) <= file_handle) {
     if (file_handle < (_FILE *)&DAT_00684d12) {
       close_flags = 0;
     }

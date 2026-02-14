@@ -2,13 +2,11 @@
 // Address: 00568f10
 // Address Range: [[00568f10, 00568f4c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_sentinel_cpp_CSentinel_getPropertyList_FUN_00568f10 (CSentinel *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_sentinel_cpp_CSentinel_getPropertyList_FUN_00568f10(CSentinel *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_sentinel_cpp_CSentinel_getPropertyList_FUN_00568f10
-          (CSentinel *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_sentinel_cpp_CSentinel_getPropertyList_FUN_00568f10(CSentinel *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

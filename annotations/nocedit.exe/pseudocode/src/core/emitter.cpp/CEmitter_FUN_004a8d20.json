@@ -1,30 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 23,
-        "message": "use of undeclared identifier 'stack0xffffffd0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 85,
+    "complexity_score": 67,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 20,
-    "suspect_count": 5,
+    "pseudocode_lines": 17,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 36
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -118,22 +110,15 @@
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xffffffd0",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd0);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000008",
-      "text": "(&this_ptr->base,in_stack_00000008,(CVector3f *)&fStack_10);",
+      "text": "(&this_ptr->base,in_stack_00000008,&CStack_18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "return in_stack_00000008;",
       "type": "stack_param"

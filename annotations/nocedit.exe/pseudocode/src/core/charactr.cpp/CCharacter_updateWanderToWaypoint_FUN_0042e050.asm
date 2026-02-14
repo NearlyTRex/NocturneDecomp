@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 (CCharacter *this_ptr,float delta_time,char *pattern)
+; __cdecl int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050(CCharacter *this_ptr,float delta_time,char *pattern)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

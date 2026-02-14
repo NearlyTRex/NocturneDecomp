@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CHealthItem * __cdecl
-core_health_cpp_CHealthItem_dtor_FUN_004f20d0(CHealthItem *this_ptr,uint flags)
+CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004f20d0(CHealthItem *this_ptr,uint flags)
 
 {
   CHealthItem *ptr;

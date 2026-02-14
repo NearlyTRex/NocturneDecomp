@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0 (CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates, int template_count)
+; __cdecl int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates,int template_count)
 ;
 ; Parameters:
 ; CCmdParse *      Stack[0x4]:4   this_ptr
@@ -17,8 +17,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_script.cpp_CScript_FUN_00565f70 at 00565fcf
 ;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565d4c
+;   core_script.cpp_CScript_setParameterValue_FUN_00565f70 at 00565fcf
 ;   core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70 at 00565f27
 ;   core_script.cpp_parseCommandWithTemplates_FUN_00561690 at 005616cd
 ;

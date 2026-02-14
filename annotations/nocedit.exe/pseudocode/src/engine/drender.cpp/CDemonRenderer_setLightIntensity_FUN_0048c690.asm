@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0048c690 (CDemonRenderer *this_ptr,float intensity)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0048c690(CDemonRenderer *this_ptr,float intensity)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-wincore_windll_cpp_restoreZBuffer_FUN_005b7d20(int left,int top,int mode,int right,int bottom)
+int __cdecl wincore_windll_cpp_restoreZBuffer_FUN_005b7d20(int left,int top,int mode,int right,int bottom)
 
 {
   int iVar1;

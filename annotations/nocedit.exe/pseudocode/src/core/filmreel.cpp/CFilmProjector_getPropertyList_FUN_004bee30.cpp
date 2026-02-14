@@ -2,13 +2,11 @@
 // Address: 004bee30
 // Address Range: [[004bee30, 004bee79]]
 // Convention: __cdecl
-// Signature: void __cdecl core_filmreel_cpp_CFilmProjector_getPropertyList_FUN_004bee30 (CFilmProjector *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_filmreel_cpp_CFilmProjector_getPropertyList_FUN_004bee30(CFilmProjector *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_filmreel_cpp_CFilmProjector_getPropertyList_FUN_004bee30
-          (CFilmProjector *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_filmreel_cpp_CFilmProjector_getPropertyList_FUN_004bee30(CFilmProjector *this_ptr,CActorPropertyList *property_list)
 
 {
   core_dest_cpp_CActorDestination_getPropertyList_FUN_0046fe80(&this_ptr->base,property_list);

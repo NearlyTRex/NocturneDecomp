@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00431622 (void *dest_buffer,void *src_buffer,int byte_count)
+; __cdecl void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00431622(void *dest_buffer,void *src_buffer,int byte_count)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest_buffer

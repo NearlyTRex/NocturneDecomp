@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDeformableModel * __cdecl
-core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(CDeformableModel *this_ptr)
+CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(CDeformableModel *this_ptr)
 
 {
   CDeformableModel *pCVar1;

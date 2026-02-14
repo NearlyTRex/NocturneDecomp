@@ -1,141 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 15,
-        "line": 176,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 203,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 203,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 204,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 204,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 209,
-        "message": "member reference base type 'byte[120]' (aka 'unsigned char[120]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 211,
-        "message": "member reference base type 'byte[120]' (aka 'unsigned char[120]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 213,
-        "message": "member reference base type 'byte[120]' (aka 'unsigned char[120]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 214,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 214,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 216,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 73,
-        "line": 216,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 217,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 73,
-        "line": 217,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 219,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 219,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 220,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 220,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 222,
-        "message": "member reference base type 'byte[120]' (aka 'unsigned char[120]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 690,
+    "complexity_score": 459,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 21,
-    "pseudocode_lines": 280,
-    "suspect_count": 38,
+    "pseudocode_lines": 269,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
-      "suspect_float",
-      "unaffected_reg",
-      "unknown_field"
+      "suspect_float"
     ],
-    "total_lines": 987
+    "total_lines": 976
   },
   "cross_references": [
     {
@@ -486,13 +369,6 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBP",
-      "text": "CDemonActor *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
@@ -508,240 +384,100 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 61,
       "match": "in_stack_00000008",
       "text": "this_ptr_00 = (this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor;",
       "type": "stack_param"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 71,
+      "match": "4.2039e-45",
+      "text": "local_48 = 4.2039e-45;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 76,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 98,
       "match": "in_stack_0000000c",
-      "text": "(float)2 * in_stack_0000000c + *pfStack_20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 169,
-      "match": "._4_4_",
-      "text": "auStack_ac._4_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 193,
-      "match": "unaff_EBP",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(unaff_EBP,&CStack_7c,pCVar5);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 196,
-      "match": "._0_4_",
-      "text": "auStack_ac._0_4_ = (float)auStack_d0._0_4_ - CStack_fc.z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 196,
-      "match": "._0_4_",
-      "text": "auStack_ac._0_4_ = (float)auStack_d0._0_4_ - CStack_fc.z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 197,
-      "match": "._4_4_",
-      "text": "auStack_ac._4_4_ = (float)auStack_d0._4_4_ - fStack_f0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 197,
-      "match": "._4_4_",
-      "text": "auStack_ac._4_4_ = (float)auStack_d0._4_4_ - fStack_f0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 202,
-      "match": "._0_4_",
-      "text": "auStack_19c._0_4_ = 0.5235988;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 204,
-      "match": "._0_4_",
-      "text": "auStack_19c._0_4_ = 1.5707964;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 206,
-      "match": "._0_4_",
-      "text": "if (((ABS(aCStack_e8[0].x) <= (float)auStack_19c._0_4_) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 206,
-      "match": "ABS",
-      "text": "if (((ABS(aCStack_e8[0].x) <= (float)auStack_19c._0_4_) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 208,
-      "match": "SQRT",
-      "text": "fVar9 = SQRT(fStack_a4 * fStack_a4 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 209,
-      "match": "._0_4_",
-      "text": "(float)auStack_ac._0_4_ * (float)auStack_ac._0_4_ +",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 209,
-      "match": "._0_4_",
-      "text": "(float)auStack_ac._0_4_ * (float)auStack_ac._0_4_ +",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 210,
-      "match": "._4_4_",
-      "text": "(float)auStack_ac._4_4_ * (float)auStack_ac._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 210,
-      "match": "._4_4_",
-      "text": "(float)auStack_ac._4_4_ * (float)auStack_ac._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 212,
-      "match": "._4_4_",
-      "text": "auStack_ac._4_4_ = (float)auStack_ac._4_4_ * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 212,
-      "match": "._4_4_",
-      "text": "auStack_ac._4_4_ = (float)auStack_ac._4_4_ * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 213,
-      "match": "._0_4_",
-      "text": "auStack_ac._0_4_ = (float)auStack_ac._0_4_ * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 213,
-      "match": "._0_4_",
-      "text": "auStack_ac._0_4_ = (float)auStack_ac._0_4_ * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 215,
-      "match": "._4_4_",
-      "text": "auStack_19c._4_4_ =",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 219,
-      "match": "._0_4_",
-      "text": "(float)auStack_ac._0_4_ * fStack_c4 + (float)auStack_ac._4_4_ * CStack_c0.x));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 219,
-      "match": "._4_4_",
-      "text": "(float)auStack_ac._0_4_ * fStack_c4 + (float)auStack_ac._4_4_ * CStack_c0.x));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 220,
-      "match": "._4_4_",
-      "text": "if ((float)auStack_19c._4_4_ < fStack_14) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 225,
-      "match": "unaff_EBP",
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 230,
-      "match": "._4_4_",
-      "text": "fStack_14 = (float)auStack_19c._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 253,
-      "match": "in_stack_0000000c",
-      "text": "fStack_40 = in_stack_0000000c * (float)3.1415926535000001 * (float)dVar2;",
+      "text": "(float)2 * in_stack_0000000c + *(float *)local_24;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 277,
-      "match": "1.4013e-45",
-      "text": "if (((pfStack_20[7] == 1.4013e-45) && (ABS(pfStack_20[3] - fStack_34) < (float)0.01))",
+      "line": 122,
+      "match": "4.2039e-45",
+      "text": "if ((local_48 == 4.2039e-45) || (iVar1 = (this_ptr->base).aim_mode, iVar1 != 0)) {",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 277,
+      "line": 197,
       "match": "ABS",
-      "text": "if (((pfStack_20[7] == 1.4013e-45) && (ABS(pfStack_20[3] - fStack_34) < (float)0.01))",
+      "text": "if (((ABS(aCStack_f4[0].x) <= fStack_1a8) && (local_30 <= aCStack_f4[0].y)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 278,
-      "match": "ABS",
-      "text": "&& (ABS(pfStack_20[2] - local_30) < (float)0.01)) {",
+      "line": 199,
+      "match": "SQRT",
+      "text": "fVar10 = SQRT(CStack_b8.z * CStack_b8.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 279,
+      "line": 221,
+      "match": "1.4013e-45",
+      "text": "*(float *)(local_24 + 0x1c) = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 239,
+      "match": "in_stack_0000000c",
+      "text": "fStack_44 = in_stack_0000000c * (float)3.1415926535000001 * (float)dVar3;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 265,
+      "match": "1.4013e-45",
+      "text": "if (((*(float *)(local_24 + 0x1c) == 1.4013e-45) &&",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 266,
+      "match": "ABS",
+      "text": "(ABS(*(float *)(local_24 + 0xc) - fStack_38) < (float)0.01)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 267,
+      "match": "ABS",
+      "text": "(ABS(*(float *)(local_24 + 8) - fStack_34) < (float)0.01)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 268,
       "match": "2.8026e-45",
-      "text": "pfStack_20[7] = 2.8026e-45;",
+      "text": "*(float *)(local_24 + 0x1c) = 2.8026e-45;",
       "type": "suspect_float"
     },
     {

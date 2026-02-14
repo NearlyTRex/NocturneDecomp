@@ -2,13 +2,11 @@
 // Address: 0040abc0
 // Address Range: [[0040abc0, 0040ac1f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0 (CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0
-          (CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
+void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 {
   CDemonActor *pCVar1;

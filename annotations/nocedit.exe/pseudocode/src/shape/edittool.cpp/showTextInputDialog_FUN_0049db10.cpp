@@ -2,13 +2,11 @@
 // Address: 0049db10
 // Address Range: [[0049db10, 0049df72]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10 (int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags)
+// Signature: int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10(int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags )
 
 #include "nocturne.h"
 
-int __cdecl
-shape_edittool_cpp_showTextInputDialog_FUN_0049db10
-          (int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags)
+int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10(int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags )
 
 {
   char cVar1;
@@ -119,12 +117,12 @@ LAB_0049de8b:
     iVar2 = 1;
     goto LAB_0049de95;
   }
-  if (&local_fc == g_ActiveButton) {
+  if (&local_fc == g_ActiveControl) {
     iVar2 = 0;
   }
   iVar3 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_1e0);
   if (iVar3 == 0) {
-    if (&local_1e0 == g_ActiveButton) {
+    if (&local_1e0 == g_ActiveControl) {
       iVar2 = 1;
     }
     goto LAB_0049dcd6;

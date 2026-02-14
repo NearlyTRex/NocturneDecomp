@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(CTextureList *this_ptr)
+void __cdecl core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(CTextureList *this_ptr)
 
 {
   char cVar1;

@@ -2,14 +2,11 @@
 // Address: 0044edf0
 // Address Range: [[0044edf0, 0044ef24]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0 (CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source, CVector3i *light_direction)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
-          (CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,
-          CVector3i *light_direction)
+int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction)
 
 {
   longlong lVar1;

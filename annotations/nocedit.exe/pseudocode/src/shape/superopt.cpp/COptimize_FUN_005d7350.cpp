@@ -15,6 +15,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7350(COptimize *this_ptr)
   CPoly *pCVar4;
   int iVar5;
   uint uVar6;
+  uint uVar7;
   
   shape_superopt_cpp_CObj_clearStateFlags_FUN_005d35e0(&this_ptr->obj,0xa000);
   do {
@@ -30,13 +31,13 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7350(COptimize *this_ptr)
     if (uVar6 == (this_ptr->obj).poly_count) {
       return 1;
     }
-    iVar2 = (*this_ptr->vtable->func15)();
+    iVar2 = (*this_ptr->vtable->func15)(this_ptr,0);
     if (iVar2 == 0) {
       shape_superopt_cpp_logToFile_FUN_005c7910("Unable to add polygon for complex pass",0);
       return 0;
     }
-    uVar6 = 0;
-    (*this_ptr->vtable->func13)();
+    uVar7 = 0;
+    (*this_ptr->vtable->func13)(this_ptr,(this_ptr->obj).poly_array + uVar6,this_ptr);
     if ((this_ptr->obj).poly_count != 0) {
       iVar5 = 0;
       do {
@@ -51,9 +52,9 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7350(COptimize *this_ptr)
           *(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1) = bVar1 | 0x80;
           *(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1) = bVar1 & 0xdf | 0x80;
         }
-        uVar6 = uVar6 + 1;
+        uVar7 = uVar7 + 1;
         iVar5 = iVar5 + 0x68;
-      } while (uVar6 < (uint)(this_ptr->obj).poly_count);
+      } while (uVar7 < (uint)(this_ptr->obj).poly_count);
     }
     iVar5 = shape_superopt_cpp_FUN_005c7b20();
     if (iVar5 == 0) {

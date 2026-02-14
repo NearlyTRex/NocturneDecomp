@@ -81,7 +81,7 @@
 ;   float FLOAT_0066576c = 0.2000000
 ;   float FLOAT_00665770 = 0.2000000
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic DAT_0068495c
+;   SMRGLTextureBasic SMRGLTextureBasic_0068495c
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
@@ -403,7 +403,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 005f177e | g_CDemonRendererInstance
     MOV EDX,0x4                         ; 005f1780
     MOV dword ptr [EBX + 0xa8],0x80000  ; 005f1785
-    PUSH 0x68495c                       ; 005f178f | DAT_0068495c
+    PUSH 0x68495c                       ; 005f178f | SMRGLTextureBasic_0068495c
     MOV EBX,dword ptr [EAX]             ; 005f1794 | g_CDemonRendererInstance
     XOR ECX,ECX                         ; 005f1796
     PUSH EAX                            ; 005f1798 | g_CDemonRendererInstance

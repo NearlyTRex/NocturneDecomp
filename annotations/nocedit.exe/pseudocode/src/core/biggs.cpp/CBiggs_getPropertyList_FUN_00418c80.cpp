@@ -2,13 +2,11 @@
 // Address: 00418c80
 // Address Range: [[00418c80, 00418cd3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_biggs_cpp_CBiggs_getPropertyList_FUN_00418c80 (CBiggs *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_biggs_cpp_CBiggs_getPropertyList_FUN_00418c80(CBiggs *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_biggs_cpp_CBiggs_getPropertyList_FUN_00418c80
-          (CBiggs *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_biggs_cpp_CBiggs_getPropertyList_FUN_00418c80(CBiggs *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

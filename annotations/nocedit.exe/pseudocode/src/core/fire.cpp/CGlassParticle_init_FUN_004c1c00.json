@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 194,
+    "complexity_score": 191,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 111,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 185
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CGlassParticle_init_FUN_004c1c00",
-    "signature": "void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00 (CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex, CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)"
+    "signature": "void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)"
   },
   "function_calls": [
     {
@@ -347,49 +347,49 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 93,
       "match": "(SMRGLTextureBasic *)((int)",
       "text": "texture = (SMRGLTextureBasic *)((int)texture + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 94,
       "match": "(SMRGLTextureBasic *)((int)",
       "text": "pSVar3 = (SMRGLTextureBasic *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 100,
       "match": "SQRT",
       "text": "local_28 = SQRT(local_84 * local_84 + local_8c * local_8c + local_88 * local_88) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 105,
       "match": "fcos",
       "text": "fVar5 = (float10)fcos((float10)local_10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 106,
       "match": "fcos",
       "text": "fVar6 = (float10)fcos((float10)local_1c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 107,
       "match": "fsin",
       "text": "fVar7 = (float10)fsin((float10)local_10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 108,
       "match": "fsin",
       "text": "fVar8 = (float10)fsin((float10)local_1c);",
       "type": "decompiler_intrinsic"

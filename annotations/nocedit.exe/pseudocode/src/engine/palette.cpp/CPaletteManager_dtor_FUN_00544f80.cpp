@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CPaletteManager * __cdecl
-engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager *this_ptr,uint flags)
+CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager *this_ptr,uint flags)
 
 {
   g_CurrentDebugFilename = "..\\engine\\palette.cpp";

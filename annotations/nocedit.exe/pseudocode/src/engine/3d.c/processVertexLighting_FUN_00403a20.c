@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_3d_c_processVertexLighting_FUN_00403a20(SVertexBatch *vertex_batch)
+SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00403a20(SVertexBatch *vertex_batch)
 
 {
   int iVar1;

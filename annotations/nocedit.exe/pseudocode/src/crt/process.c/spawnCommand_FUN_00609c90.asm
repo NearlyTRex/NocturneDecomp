@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_process_c_spawnCommand_FUN_00609c90 (int mode,char *cmdPath,char *cmdName,char *args,void *envp,int *result)
+; __watcallStack int __watcallStack crt_process_c_spawnCommand_FUN_00609c90(int mode,char *cmdPath,char *cmdName,char *args,void *envp,int *result)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   mode

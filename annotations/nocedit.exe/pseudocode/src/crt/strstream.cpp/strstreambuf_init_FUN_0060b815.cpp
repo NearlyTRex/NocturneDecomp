@@ -2,13 +2,11 @@
 // Address: 0060b815
 // Address Range: [[0060b815, 0060b8d9]]
 // Convention: __watcallStack
-// Signature: void __watcallStack crt_strstream_cpp_strstreambuf_init_FUN_0060b815 (strstreambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start)
+// Signature: void __watcallStack crt_strstream_cpp_strstreambuf_init_FUN_0060b815(strstreambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start)
 
 #include "nocturne.h"
 
-void __watcallStack
-crt_strstream_cpp_strstreambuf_init_FUN_0060b815
-          (strstreambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start)
+void __watcallStack crt_strstream_cpp_strstreambuf_init_FUN_0060b815(strstreambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start)
 
 {
   char cVar1;

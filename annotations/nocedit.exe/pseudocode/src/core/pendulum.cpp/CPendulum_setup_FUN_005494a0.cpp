@@ -12,36 +12,34 @@ void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_005494a0(CPendulum *this_ptr)
   float fVar1;
   float fVar2;
   CBoundingBox3D *pCVar3;
-  byte auStack_44 [20];
-  float fStack_30;
-  float fStack_8;
+  CBoundingBox3D CStack_4c;
+  CBoundingBox3D local_34;
+  float afStack_10 [3];
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  pCVar3 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                     (&this_ptr->base,(CBoundingBox3D *)(auStack_44 + 0x10));
-  if ((CBoundingBox3D *)auStack_44 != pCVar3) {
-    auStack_44._0_4_ = (pCVar3->min).x;
-    auStack_44._4_4_ = (pCVar3->min).y;
-    auStack_44._8_4_ = (pCVar3->min).z;
+  pCVar3 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_34);
+  if (&CStack_4c != pCVar3) {
+    CStack_4c.min.x = (pCVar3->min).x;
+    CStack_4c.min.y = (pCVar3->min).y;
+    CStack_4c.min.z = (pCVar3->min).z;
   }
-  if ((CVector3f *)(auStack_44 + 0xc) != &pCVar3->max) {
-    auStack_44._12_4_ = (pCVar3->max).x;
-    auStack_44._16_4_ = (pCVar3->max).y;
-    fStack_30 = (pCVar3->max).z;
+  if (&CStack_4c.max != &pCVar3->max) {
+    CStack_4c.max.x = (pCVar3->max).x;
+    CStack_4c.max.y = (pCVar3->max).y;
+    CStack_4c.max.z = (pCVar3->max).z;
   }
   *(float *)this_ptr->unk3 =
-       SQRT(((float)auStack_44._16_4_ - (float)auStack_44._4_4_) * (float)0.03125) *
-       (float)6.2831853070000001;
-  fVar1 = ((float)auStack_44._4_4_ + (float)auStack_44._16_4_) * 0.5f;
-  fVar2 = ((float)auStack_44._8_4_ + fStack_30) * 0.5f;
-  if ((float *)this_ptr->unk2 == &fStack_8) {
-    *(uint *)(this_ptr->unk2 + 4) = auStack_44._4_4_;
+       SQRT((CStack_4c.max.y - CStack_4c.min.y) * (float)0.03125) * (float)6.2831853070000001;
+  fVar1 = (CStack_4c.min.y + CStack_4c.max.y) * 0.5f;
+  fVar2 = (CStack_4c.min.z + CStack_4c.max.z) * 0.5f;
+  if ((float *)this_ptr->unk2 == afStack_10) {
+    *(float *)(this_ptr->unk2 + 4) = CStack_4c.min.y;
     return;
   }
-  *(float *)this_ptr->unk2 = ((float)auStack_44._0_4_ + (float)auStack_44._12_4_) * 0.5f;
+  *(float *)this_ptr->unk2 = (CStack_4c.min.x + CStack_4c.max.x) * 0.5f;
   *(float *)(this_ptr->unk2 + 4) = fVar1;
   *(float *)(this_ptr->unk2 + 8) = fVar2;
-  *(uint *)(this_ptr->unk2 + 4) = auStack_44._4_4_;
+  *(float *)(this_ptr->unk2 + 4) = CStack_4c.min.y;
   return;
 }

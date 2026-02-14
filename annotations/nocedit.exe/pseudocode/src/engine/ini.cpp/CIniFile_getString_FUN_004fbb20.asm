@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004fbb20 (CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size,char *default_value)
+; __cdecl void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004fbb20(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size,char *default_value )
 ;
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   this_ptr

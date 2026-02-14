@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 137,
+    "complexity_score": 135,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 60,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 206
+    "total_lines": 204
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     ],
     "convention": "__stack3_esi",
     "name": "core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50",
-    "signature": "CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50 (CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output)"
+    "signature": "CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output)"
   },
   "function_calls": [
     {
@@ -270,35 +270,35 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 55,
       "match": "ROUND",
       "text": "local_3c = (int)ROUND(local_54.x * 65536.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 56,
       "match": "ROUND",
       "text": "local_38[0] = (int)ROUND(local_54.y * 65536.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 57,
       "match": "ROUND",
       "text": "local_38[1] = (int)ROUND(local_54.z * 65536.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(int *)((int)",
       "text": "piVar2 = (int *)((int)output + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "ROUND",
       "text": "output->x = (int)ROUND(local_54.x * 65536.0f);",
       "type": "decompiler_intrinsic"

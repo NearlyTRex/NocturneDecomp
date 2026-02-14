@@ -2,13 +2,11 @@
 // Address: 0044e790
 // Address Range: [[0044e790, 0044edea]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790 (CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
-          (CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity)
+int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity)
 
 {
   short *psVar1;

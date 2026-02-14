@@ -2,11 +2,11 @@
 // Address: 006008f0
 // Address Range: [[006008f0, 00600930]]
 // Convention: __watcallRegister
-// Signature: uint crt_watcom_c_memavl_FUN_006008f0(void)
+// Signature: uint __watcallRegister crt_watcom_c_memavl_FUN_006008f0(void)
 
 #include "nocturne.h"
 
-uint memavl(void)
+uint __watcallRegister memavl(void)
 
 {
   int *piVar1;

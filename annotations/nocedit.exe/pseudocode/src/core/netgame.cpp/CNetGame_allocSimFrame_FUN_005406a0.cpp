@@ -2,15 +2,13 @@
 // Address: 005406a0
 // Address Range: [[005406a0, 005411b2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0 (CNetGame *this_ptr,SNetworkAddr *source_addr,char *packet_data)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0(CNetGame *this_ptr,SNetworkAddr *source_addr,char *packet_data)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0054104d) */
 
-void __cdecl
-core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
-          (CNetGame *this_ptr,SNetworkAddr *source_addr,char *packet_data)
+void __cdecl core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0(CNetGame *this_ptr,SNetworkAddr *source_addr,char *packet_data)
 
 {
   char cVar1;

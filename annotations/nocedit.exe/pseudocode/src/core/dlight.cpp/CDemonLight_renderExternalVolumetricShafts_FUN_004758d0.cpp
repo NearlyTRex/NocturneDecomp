@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLight *this_ptr)
+void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLight *this_ptr)
 
 {
   float fVar1;
@@ -54,8 +53,8 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
   int local_78;
   int local_70;
   float local_6c;
-  float local_68;
-  float local_64;
+  int local_68;
+  int local_64;
   float local_60;
   float local_5c;
   float local_58;
@@ -181,8 +180,8 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
               local_5c = local_44 *
                          (local_6c - local_1c) * (1.0 / local_6c) * (float)512 *
                          this_ptr->volumetric_intensity;
-              local_68 = (float)(int)ROUND(local_60);
-              local_64 = (float)(int)ROUND(local_5c);
+              local_68 = (int)ROUND(local_60);
+              local_64 = (int)ROUND(local_5c);
               local_f4 = local_28;
               if (local_20 < local_28) {
                 local_f4 = local_20;

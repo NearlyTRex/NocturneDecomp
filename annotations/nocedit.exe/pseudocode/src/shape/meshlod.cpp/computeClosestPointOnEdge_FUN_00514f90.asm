@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90 (CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0, CVector3f *edge_vertex_1)
+; __cdecl CVector3f * __cdecl shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   out_closest_point

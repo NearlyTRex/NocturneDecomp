@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 14,
-        "line": 33,
+        "line": 34,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 33,
+        "line": 34,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 39,
+        "line": 40,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 39,
+        "line": 40,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -31,16 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 99,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 54,
+    "pseudocode_lines": 55,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 191
+    "total_lines": 192
   },
   "cross_references": [],
   "function": {
@@ -155,28 +155,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 38,
       "match": "(byte *)((int)",
       "text": "if ((*(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1) & 0x20) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 44,
       "match": "(byte *)((int)",
       "text": "bVar1 = *(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 45,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1) = bVar1 | 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 46,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1) = bVar1 & 0xdf | 0x80;",
       "type": "pointer_cast"

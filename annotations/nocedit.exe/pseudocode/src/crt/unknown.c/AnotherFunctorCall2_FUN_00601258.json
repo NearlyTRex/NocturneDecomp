@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 89,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 5,
     "suspect_count": 7,
     "suspect_types": [
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 22
+    "total_lines": 18
   },
   "cross_references": [],
   "function": {
@@ -24,7 +24,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_AnotherFunctorCall2_FUN_00601258",
-    "signature": "void crt_unknown_c_AnotherFunctorCall2_FUN_00601258(void)"
+    "signature": "void crt_unknown_c_AnotherFunctorCall2_FUN_00601258(void *param_1,int param_2,WatcomTypeInfo *param_3)"
   },
   "function_calls": [
     {
@@ -71,46 +71,46 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void AnotherFunctorCall2(void *param_1,int param_2,WatcomTypeInfo *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void AnotherFunctorCall2(void *param_1,int param_2,WatcomTypeInfo *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "void AnotherFunctorCall2(void *param_1,int param_2,WatcomTypeInfo *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 5,
-      "match": "in_stack_00000004",
-      "text": "void *in_stack_00000004;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "__arrinit_dispatch(param_1,param_2,param_3);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "text": "__arrinit_dispatch(param_1,param_2,param_3);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_0000000c",
-      "text": "WatcomTypeInfo *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_3",
+      "text": "__arrinit_dispatch(param_1,param_2,param_3);",
+      "type": "unnamed_param"
     },
     {
       "address": "00601258",

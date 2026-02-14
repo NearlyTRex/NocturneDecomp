@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SSocketContext * __cdecl
-support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SSocketContext *socket_ctx)
+SSocketContext * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SSocketContext *socket_ctx)
 
 {
   socket_ctx->socket = 0xffffffff;

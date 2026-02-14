@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_wateract_cpp_CWaterActor_getActorType_FUN_005ea890(CWaterActor *this_ptr)
+CDemonActorType * __cdecl core_wateract_cpp_CWaterActor_getActorType_FUN_005ea890(CWaterActor *this_ptr)
 
 {
   return &g_CWaterActorClassInfo;

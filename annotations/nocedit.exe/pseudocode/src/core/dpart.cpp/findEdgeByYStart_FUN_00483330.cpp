@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SEdgeData * __cdecl
-core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanline_y,SEdgeData *exclude_edge)
+SEdgeData * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanline_y,SEdgeData *exclude_edge)
 
 {
   SEdgeData *pSVar1;

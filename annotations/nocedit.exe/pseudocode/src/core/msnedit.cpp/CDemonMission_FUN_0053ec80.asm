@@ -26,7 +26,7 @@
 ;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
 ;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
-;   core_script.cpp_CScript_FUN_00567bc0
+;   core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -149,8 +149,8 @@ section .text
     PUSH EAX                            ; 0053eda9
     MOV EBX,dword ptr [0x00680d50]      ; 0053edaa | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 0053edb0 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00567bc0 ; 0053edb1
-        ;   XREF to: 00567bc0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00567bc0(CScript * this_ptr, CStrList * param_2)
+    CALL core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 ; 0053edb1
+        ;   XREF to: 00567bc0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0(CScript * this_ptr, CStrList * sounds_out)
     ADD ESP,0x8                         ; 0053edb6
     LEA EAX,[ESP + 0x2504]              ; 0053edb9
     PUSH EAX                            ; 0053edc0

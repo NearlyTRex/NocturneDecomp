@@ -2,13 +2,11 @@
 // Address: 0042e8c0
 // Address Range: [[0042e8c0, 0042ea31]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0 (CCharacter *this_ptr,int layer_action_index)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter *this_ptr,int layer_action_index)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0
-          (CCharacter *this_ptr,int layer_action_index)
+void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter *this_ptr,int layer_action_index)
 
 {
   float fVar1;

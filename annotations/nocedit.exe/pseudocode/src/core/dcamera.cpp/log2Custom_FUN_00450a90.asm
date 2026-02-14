@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister double core_dcamera_cpp_log2Custom_FUN_00450a90(void)
+; __watcallRegister double __watcallRegister core_dcamera_cpp_log2Custom_FUN_00450a90(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x8]:8  local_8

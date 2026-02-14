@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr,float delta_time)
+void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr,float delta_time)
 
 {
   float fVar1;

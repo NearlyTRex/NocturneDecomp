@@ -2,13 +2,11 @@
 // Address: 004ffe70
 // Address Range: [[004ffe70, 004fff99]]
 // Convention: __cdecl
-// Signature: int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70 (CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category)
+// Signature: int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category)
 
 #include "nocturne.h"
 
-int __cdecl
-core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
-          (CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category)
+int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category)
 
 {
   int iVar1;

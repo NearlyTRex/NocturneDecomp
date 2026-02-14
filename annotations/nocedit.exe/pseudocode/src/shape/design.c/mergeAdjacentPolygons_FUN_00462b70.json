@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 141,
+        "line": 140,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 68,
-        "line": 148,
+        "line": 147,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 50,
-        "line": 154,
+        "line": 153,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 52,
-        "line": 170,
+        "line": 169,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -31,18 +31,18 @@
   },
   "complexity": {
     "assembly_lines": 867,
-    "complexity_score": 349,
+    "complexity_score": 348,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
-    "pseudocode_lines": 224,
+    "pseudocode_lines": 223,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 1091
+    "total_lines": 1090
   },
   "cross_references": [
     {
@@ -402,77 +402,77 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_fffffde4",
       "text": "double in_stack_fffffde4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 130,
       "match": "in_stack_fffffde4",
       "text": "in_stack_fffffde4 =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 133,
       "match": "in_stack_fffffde4",
       "text": "SUB84(in_stack_fffffde4,0));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 133,
       "match": "SUB84",
       "text": "SUB84(in_stack_fffffde4,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 134,
       "match": "in_stack_fffffde4",
       "text": "if ((double)local_14 < in_stack_fffffde4) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 141,
+      "line": 140,
       "match": "in_stack_fffffde4",
       "text": "((int)(&local_5c)[local_3c[6]],local_58[0],SUB84(in_stack_fffffde4,0));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 140,
       "match": "SUB84",
       "text": "((int)(&local_5c)[local_3c[6]],local_58[0],SUB84(in_stack_fffffde4,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
+      "line": 146,
       "match": "SUB84",
       "text": "(local_58[0],local_58[1],SUB84(dVar7,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 163,
+      "line": 162,
       "match": "SUB84",
       "text": "(local_58[1],local_58[2],SUB84(dVar7,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 200,
+      "line": 199,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 200,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar4 = (SShapeEditorPolygon *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"

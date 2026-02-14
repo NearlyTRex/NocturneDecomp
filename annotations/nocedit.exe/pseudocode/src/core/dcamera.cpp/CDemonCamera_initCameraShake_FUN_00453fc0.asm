@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0 (CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration, float decay_time)
+; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

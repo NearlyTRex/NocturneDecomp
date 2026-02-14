@@ -2,13 +2,11 @@
 // Address: 0045aa80
 // Address Range: [[0045aa80, 0045b84c]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80 (char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)
+// Signature: void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_design_c_exportModelToBIN_FUN_0045aa80
-          (char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)
+void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)
 
 {
   char cVar1;

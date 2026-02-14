@@ -14,7 +14,7 @@
 ;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 at 0053b11e
 ;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 at 0053b5fe
 ;   core_msnedit.cpp_staticInit_FUN_00535c30 at 00535c35
-;   core_script.cpp_CScript_FUN_005677a0 at 00567ac0
+;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 at 00567ac0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150

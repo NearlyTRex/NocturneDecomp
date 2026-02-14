@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 85,
+    "complexity_score": 84,
     "cross_reference_count": 181,
     "function_call_count": 7,
     "global_count": 23,
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 59,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 240
+    "total_lines": 239
   },
   "cross_references": [
     {
@@ -349,21 +349,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005603c0",
+      "from_addr": "005606ca",
+      "name": "core_script.cpp_CScript_dbLoad_FUN_005603c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00559f80",
       "from_addr": "0055a2a6",
-      "name": "core_script.cpp_CScript_FUN_00559f80",
+      "name": "core_script.cpp_CScript_loadScript_FUN_00559f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00566180",
       "from_addr": "0056621d",
-      "name": "core_script.cpp_CScript_FUN_00566180",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005603c0",
-      "from_addr": "005606ca",
-      "name": "core_script.cpp_CScript_dbLoad_FUN_005603c0",
+      "name": "core_script.cpp_CScript_saveToFile_FUN_00566180",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1365,14 +1365,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_FileRegistry[0].line_number + iVar1));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
       "match": "(uint *)((int)",
       "text": "iVar1 + 0x2f0db68,*(uint *)((int)&g_FileRegistry[0].line_number + iVar1))",
       "type": "pointer_cast"

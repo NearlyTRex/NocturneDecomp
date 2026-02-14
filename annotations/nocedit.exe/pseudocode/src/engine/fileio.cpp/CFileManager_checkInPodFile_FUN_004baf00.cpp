@@ -2,15 +2,13 @@
 // Address: 004baf00
 // Address Range: [[004baf00, 004bc2af]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00 (CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)
+// Signature: int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004bbc51) */
 
-int __cdecl
-engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
-          (CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)
+int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)
 
 {
   char cVar1;

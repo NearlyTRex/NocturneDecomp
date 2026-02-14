@@ -9,8 +9,7 @@
 /* WARNING: Variable defined which should be unmapped: local_6c */
 /* WARNING: Variable defined which should be unmapped: local_9c */
 
-void __cdecl
-shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CVector3f *end_point)
+void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CVector3f *end_point)
 
 {
   SRenderVertex vertex2;
@@ -30,7 +29,7 @@ shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CV
   local_24.y = (int)ROUND(start_point->y * 256.0f);
   local_24.z = (int)ROUND(start_point->z * 256.0f);
   local_6c.w_recip = (float)&local_24;
-  local_6c.fog = 0.0;
+  local_6c.fog = 0;
   local_6c.color = 0x4a1f82;
   engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_6c.w_recip);
   local_18 = start_point->x * 0.8f + end_point->x * 0.2f;
@@ -40,7 +39,7 @@ shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CV
   local_24.y = (int)ROUND(local_14 * 256.0f);
   local_24.z = (int)ROUND(local_10 * 256.0f);
   local_6c.w_recip = (float)&local_24;
-  local_6c.fog = 1.4013e-45;
+  local_6c.fog = 1;
   local_6c.color = 0x4a201b;
   engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_6c.w_recip);
   pSVar2 = g_RenderVertexBuffer + 1;

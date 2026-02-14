@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_CFileManager_addPodAuditRecord_FUN_004b5950 (CFileManager *this_ptr,CPodAuditRecord *audit_data,char *filename_path)
+; __cdecl void __cdecl engine_fileio_cpp_CFileManager_addPodAuditRecord_FUN_004b5950(CFileManager *this_ptr,CPodAuditRecord *audit_data,char *filename_path)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

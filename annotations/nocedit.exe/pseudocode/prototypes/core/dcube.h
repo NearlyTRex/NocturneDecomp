@@ -13,7 +13,7 @@ void __cdecl copyVector3(CVector3f *dest,CVector3f *src);
 
 // Original: core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
 // Address: 004547d0
-void __cdecl clipEdgeToPlane(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx, double plane_ny,double plane_nz,double plane_d);
+void __cdecl clipEdgeToPlane(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
 // Original: core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970
 // Address: 00454970
@@ -77,7 +77,7 @@ uint __cdecl intersectVerticalCylinderSegment(CVector3f *segment_start,CVector3f
 
 // Original: core_dcube.cpp_triangleCylinderCollision_FUN_00456040
 // Address: 00456040
-uint __cdecl triangleCylinderCollision(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius, float *out_height);
+uint __cdecl triangleCylinderCollision(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height);
 
 // Original: core_dcube.cpp_clipTriangleToAABB_FUN_00456400
 // Address: 00456400
@@ -113,7 +113,7 @@ void __cdecl CDemonCube::setBounds(CDemonCube *this_ptr,CVector3f *min_bounds,CV
 
 // Original: core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
 // Address: 00456af0
-void __cdecl CDemonCube::clipTriangleToFrustum(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, uchar texture_id);
+void __cdecl CDemonCube::clipTriangleToFrustum(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id);
 
 // Original: core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
 // Address: 00456ed0
@@ -121,7 +121,7 @@ void __cdecl CDemonCube::buildGeometryFromPolygonData(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
 // Address: 004570a0
-void __cdecl CDemonCube::loadGeometryFromTriangleList(CDemonCube *this_ptr,void *triangle_data,int triangle_count,CVector3f *min_bounds, CVector3f *max_bounds,uchar *ground_types,uint *voxel_data);
+void __cdecl CDemonCube::loadGeometryFromTriangleList(CDemonCube *this_ptr,void *triangle_data,int triangle_count,CVector3f *min_bounds,CVector3f *max_bounds,uchar *ground_types,uint *voxel_data);
 
 // Original: core_dcube.cpp_CDemonCube_save_FUN_00457430
 // Address: 00457430
@@ -137,7 +137,7 @@ void __cdecl CDemonCube::rotateVertices(CDemonCube *this_ptr,uint rendering_mode
 
 // Original: core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0
 // Address: 004578f0
-float __cdecl CDemonCube::rayIntersectTriangles(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal ,uint *hit_material);
+float __cdecl CDemonCube::rayIntersectTriangles(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
 
 // Original: core_dcube.cpp_CDemonCube_testCapsuleCollision_FUN_00457a90
 // Address: 00457a90
@@ -145,7 +145,7 @@ void __cdecl CDemonCube::testCapsuleCollision(CDemonCube *this_ptr,SIntersectXZC
 
 // Original: core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60
 // Address: 00457b60
-int __cdecl CDemonCube::testCylinderGroundCollision(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius, CVector3f *output_height,CVector3f *output_normal,uint *output_material);
+int __cdecl CDemonCube::testCylinderGroundCollision(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
 
 // Original: core_dcube.cpp_CDemonCube_testAABBIntersection_FUN_00457ca0
 // Address: 00457ca0

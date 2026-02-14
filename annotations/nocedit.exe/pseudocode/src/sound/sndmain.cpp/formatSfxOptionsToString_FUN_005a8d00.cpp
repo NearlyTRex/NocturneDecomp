@@ -2,13 +2,11 @@
 // Address: 005a8d00
 // Address Range: [[005a8d00, 005a8e86]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00 (char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)
+// Signature: void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00(char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00
-          (char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)
+void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00(char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)
 
 {
   int iVar1;

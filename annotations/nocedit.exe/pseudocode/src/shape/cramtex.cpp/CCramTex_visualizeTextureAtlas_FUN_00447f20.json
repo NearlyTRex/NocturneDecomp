@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 33,
+        "line": 31,
         "message": "no matching function for call to '__STK'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 57,
+        "line": 55,
         "message": "use of undeclared identifier 'stack0xffffff00'; did you mean 'in_stack_ffffff00'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 64,
+        "line": 62,
         "message": "use of undeclared identifier 'stack0xffffff00'"
       }
     ],
@@ -25,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 167,
+    "complexity_score": 165,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 37,
-    "pseudocode_lines": 102,
+    "pseudocode_lines": 100,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 368
+    "total_lines": 366
   },
   "cross_references": [
     {
@@ -69,7 +69,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20",
-    "signature": "void __cdecl shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20 (CCramTex *this_ptr,int visualization_mode,int completion_mode,int display_mode)"
+    "signature": "void __cdecl shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20(CCramTex *this_ptr,int visualization_mode,int completion_mode,int display_mode)"
   },
   "function_calls": [
     {
@@ -516,35 +516,35 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_ffffff00",
       "text": "int in_stack_ffffff00;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 50,
+      "line": 48,
       "match": "&stack0xffffff00",
       "text": "(&stack0xffffff00,\"CramTex II %s:  N=%d  Map %d/%d  Coverage: %4.1f%%  Shrink: %4.1f%%  Size: %u (%u)\\n\",pcVar6,g_CramTextureCount,",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 57,
+      "line": 55,
       "match": "&stack0xffffff00",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff00,0,0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 78,
       "match": "in_stack_ffffff00",
       "text": "(this_ptr,10,0x36,draw_y,draw_width,in_stack_ffffff00);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 96,
       "match": "(CCramTex *)((int)",
       "text": "local_1c = (CCramTex *)((int)&local_1c->width + 1);",
       "type": "pointer_cast"

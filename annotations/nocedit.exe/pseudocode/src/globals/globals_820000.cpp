@@ -43,7 +43,7 @@ CDemonFilter CDemonFilter_ARRAY_008229ec[8] = {};
 
 // CKeyFramedModelInstance
 CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance = {};
-CKeyFramedModelInstance DAT_00823a98 = {};
+CKeyFramedModelInstance CKeyFramedModelInstance_00823a98 = {};
 
 // SEdge[512]
 SEdge g_TracedEdgeBuffer[512] = {};
@@ -175,7 +175,6 @@ undefined4 DAT_008229ac = {};
 undefined4 DAT_00822f48 = {};
 undefined4 DAT_00822f4c = {};
 undefined4 DAT_00822f50 = {};
-undefined4 DAT_00823c50 = {};
 undefined4 DAT_00823c54 = {};
 undefined4 DAT_00823c58 = {};
 undefined4 DAT_00827504 = {};

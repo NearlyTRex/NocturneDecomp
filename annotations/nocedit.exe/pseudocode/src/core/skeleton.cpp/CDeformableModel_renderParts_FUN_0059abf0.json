@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 26,
-        "line": 135,
+        "line": 132,
         "message": "cannot cast from type 'float' to pointer type 'byte *' (aka 'unsigned char *')"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 136,
+        "line": 133,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 137,
+        "line": 134,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'float' is not allowed"
       }
     ],
@@ -25,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 356,
+    "complexity_score": 353,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
-    "pseudocode_lines": 251,
+    "pseudocode_lines": 248,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 908
+    "total_lines": 905
   },
   "cross_references": [
     {
@@ -57,7 +57,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0 (CDeformableModel *this_ptr,int lod_index,byte *part_visibility_flags, int *texture_set_indices,int render_flags,int special_render_mode)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeformableModel *this_ptr,int lod_index,byte *part_visibility_flags,int *texture_set_indices,int render_flags,int special_render_mode)"
   },
   "function_calls": [
     {
@@ -705,56 +705,56 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 134,
       "match": "SQRT",
       "text": "local_12c.surface_normal.A = (int)((float)127 / SQRT(fVar4));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 151,
+      "line": 148,
       "match": "ROUND",
       "text": "local_28 = (float)(int)ROUND(fVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
+      "line": 150,
       "match": "ROUND",
       "text": "local_2c = (float)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 152,
       "match": "ROUND",
       "text": "local_30 = (float)(int)ROUND(dVar17);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
+      "line": 154,
       "match": "ROUND",
       "text": "(g_CDemonRendererPtr2,(int)local_30,(int)ROUND(dVar16),iVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 177,
+      "line": 174,
       "match": "NAN",
       "text": "local_68 = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 218,
+      "line": 215,
       "match": "NAN",
       "text": "local_64 = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 231,
+      "line": 228,
       "match": "(float *)((int)",
       "text": "(fVar2 = *(float *)((int)this_ptr->index_data_ptr[lod_index] + (int)local_4c),",
       "type": "pointer_cast"

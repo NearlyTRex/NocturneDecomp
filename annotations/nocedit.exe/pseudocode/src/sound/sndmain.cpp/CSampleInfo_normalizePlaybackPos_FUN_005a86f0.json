@@ -4,43 +4,43 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 24,
+        "line": 22,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 25,
+        "line": 23,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 31,
+        "line": 29,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 35,
+        "line": 33,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 39,
+        "line": 37,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 23,
-        "line": 44,
+        "line": 42,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 47,
+        "line": 45,
         "message": "member reference base type 'double' is not a structure or union"
       }
     ],
@@ -49,18 +49,18 @@
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 254,
+    "complexity_score": 252,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 37,
     "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 129
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -86,7 +86,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0",
-    "signature": "double __cdecl sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 (CSampleInfo *this_ptr,double position,uint input_type,uint output_type)"
+    "signature": "double __cdecl sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0(CSampleInfo *this_ptr,double position,uint input_type,uint output_type)"
   },
   "function_calls": [
     {
@@ -197,140 +197,140 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000004",
       "text": "CSfxSample *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_ffffffe0",
       "text": "uint in_stack_ffffffe0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "this_ptr_00 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_ffffffe0",
       "text": "(this_ptr,position,2,in_stack_ffffffe0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 15,
       "match": "SUB84",
       "text": "this_ptr = SUB84(input_value,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 18,
+      "line": 16,
       "match": "._0_4_",
       "text": "position._0_4_ = (CSfxSample *)((ulonglong)input_value >> 0x20);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 18,
       "match": "CONCAT44",
       "text": "dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "dVar2 = (double)ZEXT48(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 24,
+      "line": 22,
       "match": "._0_4_",
       "text": "position._0_4_ = (CSfxSample *)0x0;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "dVar2 = (double)ZEXT48(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 28,
+      "line": 26,
       "match": "._0_4_",
       "text": "position._0_4_ = (CSfxSample *)0x3ff00000;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 30,
       "match": "._0_4_",
       "text": "this_ptr_00 = position._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_00000004",
       "text": "dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004) - dVar2;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 32,
       "match": "CONCAT44",
       "text": "dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004) - dVar2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = SUB84(dVar2,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 35,
       "match": "SUB84",
       "text": "in_stack_00000004 = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 37,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->sample_info,(double)CONCAT44(2,this_ptr),",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 37,
       "match": "CONCAT44",
       "text": "(&in_stack_00000004->sample_info,(double)CONCAT44(2,this_ptr),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 40,
+      "line": 38,
       "match": "._0_4_",
       "text": "(uint)position._0_4_,(uint)this_ptr_00);",
       "type": "unknown_field"

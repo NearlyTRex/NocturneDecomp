@@ -2,13 +2,11 @@
 // Address: 00519b50
 // Address Range: [[00519b50, 0051a026]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (CLodMesh *this_ptr,double max_search_radius)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr,double max_search_radius)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-          (CLodMesh *this_ptr,double max_search_radius)
+void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr,double max_search_radius)
 
 {
   float fVar1;

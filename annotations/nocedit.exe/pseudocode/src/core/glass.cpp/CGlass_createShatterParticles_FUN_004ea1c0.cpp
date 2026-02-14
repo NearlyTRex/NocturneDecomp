@@ -2,14 +2,11 @@
 // Address: 004ea1c0
 // Address Range: [[004ea1c0, 004eaee2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0 (CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v, int subdivision_level)
+// Signature: void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level)
 
 #include "nocturne.h"
 
-void __cdecl
-core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
-          (CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,
-          int subdivision_level)
+void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level)
 
 {
   int iVar1;

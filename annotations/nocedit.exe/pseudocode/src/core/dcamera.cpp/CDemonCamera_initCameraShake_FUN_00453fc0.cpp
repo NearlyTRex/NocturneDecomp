@@ -2,14 +2,11 @@
 // Address: 00453fc0
 // Address Range: [[00453fc0, 0045405a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0 (CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration, float decay_time)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0
-          (CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration,
-          float decay_time)
+void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time)
 
 {
   int iVar1;

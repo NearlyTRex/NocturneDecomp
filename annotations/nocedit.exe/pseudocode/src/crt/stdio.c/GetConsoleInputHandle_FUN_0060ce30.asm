@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister HANDLE crt_stdio_c_GetConsoleInputHandle_FUN_0060ce30(void)
+; __watcallRegister HANDLE __watcallRegister crt_stdio_c_GetConsoleInputHandle_FUN_0060ce30(void)
 ;
 ;
 ; XREF[1]:

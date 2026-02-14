@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_free_FUN_0059df40(CDeformableModelInstance *this_ptr)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_free_FUN_0059df40(CDeformableModelInstance *this_ptr)
 
 {
   if (this_ptr->skinned_vertices_buffer == (CVector3i *)0x0) {

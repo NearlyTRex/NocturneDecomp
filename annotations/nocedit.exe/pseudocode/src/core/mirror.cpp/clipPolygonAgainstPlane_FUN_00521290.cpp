@@ -2,14 +2,11 @@
 // Address: 00521290
 // Address Range: [[00521290, 005213b8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290 (SClipPlane *clip_plane,CVector3f *input_vertices,int input_count, CVector3f *output_vertices,int *output_count)
+// Signature: void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count)
 
 #include "nocturne.h"
 
-void __cdecl
-core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290
-          (SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,
-          CVector3f *output_vertices,int *output_count)
+void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count)
 
 {
   int iVar1;

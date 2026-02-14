@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456040 (CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius, float *out_height)
+; __cdecl uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456040(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height)
 ;
 ; Parameters:
 ; CDemonCubeTriangle * Stack[0x4]:4   triangle

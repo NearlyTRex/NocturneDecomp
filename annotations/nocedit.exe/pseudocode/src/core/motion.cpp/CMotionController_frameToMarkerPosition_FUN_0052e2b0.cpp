@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-float __cdecl
-core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(CMotionController *this_ptr)
+float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(CMotionController *this_ptr)
 
 {
   int iVar1;

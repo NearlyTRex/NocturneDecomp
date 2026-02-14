@@ -4,56 +4,8 @@
       {
         "category": "other",
         "column": 17,
-        "line": 30,
+        "line": 33,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter *'"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 40,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 51,
-        "message": "use of undeclared identifier 'stack0xfffffeb8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 53,
-        "message": "use of undeclared identifier 'stack0xfffffeb8'"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 67,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 68,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 91,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 92,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 93,
-        "message": "member reference base type 'byte[56]' (aka 'unsigned char[56]') is not a structure or union"
       }
     ],
     "success": false,
@@ -61,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 181,
+    "complexity_score": 104,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 9,
-    "pseudocode_lines": 91,
-    "suspect_count": 8,
+    "pseudocode_lines": 89,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "unknown_field"
+      "warning_type_propagation"
     ],
-    "total_lines": 357
+    "total_lines": 355
   },
   "cross_references": [
     {
@@ -397,60 +348,11 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._4_4_",
-      "text": "auStack_44._4_4_ = pCVar1->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xfffffeb8",
-      "text": "__arrinit(&stack0xfffffeb8,10,&g_CVectorTypeInfo);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xfffffeb8",
-      "text": "((CDemonActor *)this_ptr_00,(CVector3f *)&stack0xfffffeb8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._0_4_",
-      "text": "auStack_44._0_4_ = pCVar1->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._4_4_",
-      "text": "auStack_44._4_4_ = pCVar1->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 84,
-      "match": "._48_4_",
-      "text": "auStack_c0._48_4_ = 6;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 85,
-      "match": "._4_4_",
-      "text": "auStack_c0._4_4_ = 100.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 86,
-      "match": "._52_4_",
-      "text": "auStack_c0._52_4_ = this_ptr;",
-      "type": "unknown_field"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     }
   ]
 }

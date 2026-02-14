@@ -2,13 +2,11 @@
 // Address: 005e75f0
 // Address Range: [[005e75f0, 005e764b]]
 // Convention: __cdecl
-// Signature: int __cdecl core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0 (CVampireBoss *this_ptr,SCollisionInfo *collision_info)
+// Signature: int __cdecl core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0(CVampireBoss *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-int __cdecl
-core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0
-          (CVampireBoss *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0(CVampireBoss *this_ptr,SCollisionInfo *collision_info)
 
 {
   int iVar1;

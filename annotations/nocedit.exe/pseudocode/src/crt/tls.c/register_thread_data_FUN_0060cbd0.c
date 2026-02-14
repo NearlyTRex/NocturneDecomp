@@ -20,7 +20,7 @@ BOOL __cdecl register_thread_data(void *tls_data,void *thread_param)
     BVar2 = 0;
   }
   else {
-    iVar1 = CallReturnZero6();
+    iVar1 = CallReturnZero6(thread_param);
     if (iVar1 == 0) {
       ptr->dataBuffer = thread_param;
       ptr->threadDataKey = tls_data;

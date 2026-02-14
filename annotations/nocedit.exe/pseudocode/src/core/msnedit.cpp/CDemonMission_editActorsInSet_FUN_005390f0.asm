@@ -208,7 +208,7 @@ section .text
     MOV EDX,0x1                         ; 005391ed
     MOV [0x02f7c53c],EAX                ; 005391f2 | DAT_02f7c53c
     MOV dword ptr [EBX + 0x10],EAX      ; 005391f7
-    MOV [0x02f7c634],EAX                ; 005391fa | DAT_02f7c634
+    MOV [0x02f7c634],EAX                ; 005391fa | INT_02f7c634
     MOV dword ptr [0x02f7c548],EDX      ; 005391ff | g_CEdCheckInstance.checked_state
     MOV EBX,dword ptr [EBP + 0x92]      ; 00539205
         ;   Label: LAB_00539205
@@ -303,7 +303,7 @@ section .text
     MOV EAX,0x32758e8                   ; 0053932c | DAT_032758e8
     MOV EDX,0x60ad78ec                  ; 00539331
     ADD EAX,0x8                         ; 00539336
-    MOV dword ptr [0x00680818],EDX      ; 00539339 | DAT_00680818
+    MOV dword ptr [0x00680818],EDX      ; 00539339 | INT_00680818
     MOV dword ptr [EBP + 0x36],EAX      ; 0053933f | g_CDemonCameraInstance.base.position.z
     MOV EAX,[0x006810c8]                ; 00539342 | g_CDemonSetPtr
         ;   Label: LAB_00539342
@@ -317,7 +317,7 @@ section .text
     MOV dword ptr [EBP + 0x5e],EAX      ; 00539362
     CALL wincore_winrun.cpp_doNothing_FUN_005f2f80 ; 00539365
         ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing_FUN_005f2f80()
-    MOV EAX,[0x02f7c634]                ; 0053936a | DAT_02f7c634
+    MOV EAX,[0x02f7c634]                ; 0053936a | INT_02f7c634
     MOV dword ptr [EBP + 0x56],ESI      ; 0053936f
     CMP EAX,0x2                         ; 00539372
     JZ 0x0053991f                       ; 00539375
@@ -463,7 +463,7 @@ section .text
     CMP dword ptr [EAX + 0x24],0x0      ; 0053954f
     JZ 0x00539605                       ; 00539553
         ;   XREF to: 00539605 (CONDITIONAL_JUMP)  ; LAB_00539605
-    MOV EDI,dword ptr [0x02f7c634]      ; 00539559 | DAT_02f7c634
+    MOV EDI,dword ptr [0x02f7c634]      ; 00539559 | INT_02f7c634
     TEST EDI,EDI                        ; 0053955f
     JNZ 0x00539605                      ; 00539561
         ;   XREF to: 00539605 (CONDITIONAL_JUMP)  ; LAB_00539605
@@ -505,7 +505,7 @@ section .text
     PUSH ESI                            ; 005395c9
     MOV EDI,dword ptr [0x0067d550]      ; 005395ca | g_CDemonMissionPtr
     PUSH EDI                            ; 005395d0 | g_CDemonMissionInstance
-    MOV dword ptr [0x02f7c634],ESI      ; 005395d1 | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],ESI      ; 005395d1 | INT_02f7c634
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 005395d7
         ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
     ADD ESP,0x8                         ; 005395dc
@@ -517,8 +517,8 @@ section .text
     PUSH EBX                            ; 005395ee
     MOV EAX,[0x00680d50]                ; 005395ef | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 005395f4 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00565f70 ; 005395f5
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00565f70(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_setParameterValue_FUN_00565f70 ; 005395f5
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setParameterValue_FUN_00565f70(CScript * this_ptr, char * value)
     MOV EDX,0xffffffff                  ; 005395fa
     ADD ESP,0x8                         ; 005395ff
     MOV dword ptr [EBP + 0x56],EDX      ; 00539602
@@ -812,15 +812,15 @@ section .text
     PUSH EDX                            ; 00539933 | g_CGoreInstance
     CALL core_gore.cpp_CGore_process_FUN_004ed9e0 ; 00539934
         ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_process_FUN_004ed9e0(CGore * this_ptr)
-    MOV ECX,dword ptr [0x02f7c634]      ; 00539939 | DAT_02f7c634
+    MOV ECX,dword ptr [0x02f7c634]      ; 00539939 | INT_02f7c634
     ADD ESP,0x4                         ; 0053993f
     TEST ECX,ECX                        ; 00539942
     JZ 0x00539955                       ; 00539944
         ;   XREF to: 00539955 (CONDITIONAL_JUMP)  ; LAB_00539955
     MOV EBX,dword ptr [0x00680d50]      ; 00539946 | g_CScriptInstance | g_CScriptPtr
     PUSH EBX                            ; 0053994c | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_005645d0 ; 0053994d
-        ;   XREF to: 005645d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_005645d0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_drawEditor_FUN_005645d0 ; 0053994d
+        ;   XREF to: 005645d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_drawEditor_FUN_005645d0(CScript * this_ptr)
     ADD ESP,0x4                         ; 00539952
     PUSH 0x0                            ; 00539955
         ;   Label: LAB_00539955
@@ -830,15 +830,15 @@ section .text
     PUSH ESI                            ; 00539961 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920 ; 00539962
         ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int width, int height)
-    MOV EDI,dword ptr [0x02f7c634]      ; 00539967 | DAT_02f7c634
+    MOV EDI,dword ptr [0x02f7c634]      ; 00539967 | INT_02f7c634
     ADD ESP,0x10                        ; 0053996d
     TEST EDI,EDI                        ; 00539970
     JZ 0x00539982                       ; 00539972
         ;   XREF to: 00539982 (CONDITIONAL_JUMP)  ; LAB_00539982
     MOV EAX,[0x00680d50]                ; 00539974 | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 00539979 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566bc0 ; 0053997a
-        ;   XREF to: 00566bc0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566bc0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_updateMouseCursor_FUN_00566bc0 ; 0053997a
+        ;   XREF to: 00566bc0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_updateMouseCursor_FUN_00566bc0(CScript * this_ptr)
     ADD ESP,0x4                         ; 0053997f
     PUSH 0x0                            ; 00539982
         ;   Label: LAB_00539982
@@ -885,7 +885,7 @@ section .text
     TEST EAX,EAX                        ; 005399f3
     JNZ 0x00539e00                      ; 005399f5
         ;   XREF to: 00539e00 (CONDITIONAL_JUMP)  ; LAB_00539e00
-    CMP dword ptr [0x02f7c634],0x0      ; 005399fb | DAT_02f7c634
+    CMP dword ptr [0x02f7c634],0x0      ; 005399fb | INT_02f7c634
         ;   Label: LAB_005399fb
     JNZ 0x0053a4cf                      ; 00539a02
         ;   XREF to: 0053a4cf (CONDITIONAL_JUMP)  ; LAB_0053a4cf
@@ -1247,7 +1247,7 @@ section .text
     MOV EAX,[0x0067d550]                ; 00539d57 | g_CDemonMissionInstance | g_CDemonMissionPtr
     MOV EDI,0x2                         ; 00539d5c
     PUSH EAX                            ; 00539d61 | g_CDemonMissionInstance
-    MOV dword ptr [0x02f7c634],EDI      ; 00539d62 | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],EDI      ; 00539d62 | INT_02f7c634
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 00539d68
         ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
         ;   Label: LAB_00539d68
@@ -1756,7 +1756,7 @@ section .text
         ;   Label: LAB_0053a3b1
     JMP 0x00539605                      ; 0053a3b4
         ;   XREF to: 00539605 (UNCONDITIONAL_JUMP)  ; LAB_00539605
-    CMP dword ptr [0x02cf2b00],0x0      ; 0053a3b9 | g_ActiveButton
+    CMP dword ptr [0x02cf2b00],0x0      ; 0053a3b9 | g_ActiveControl
         ;   Label: LAB_0053a3b9
     JNZ 0x00539622                      ; 0053a3c0
         ;   XREF to: 00539622 (CONDITIONAL_JUMP)  ; LAB_00539622
@@ -1853,14 +1853,14 @@ section .text
     PUSH ECX                            ; 0053a4bc
     MOV EBX,dword ptr [0x0067d550]      ; 0053a4bd | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EBX                            ; 0053a4c3 | g_CDemonMissionInstance
-    MOV dword ptr [0x02f7c634],ECX      ; 0053a4c4 | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],ECX      ; 0053a4c4 | INT_02f7c634
     JMP 0x00539d68                      ; 0053a4ca
         ;   XREF to: 00539d68 (UNCONDITIONAL_JUMP)  ; LAB_00539d68
     MOV EDX,dword ptr [0x00680d50]      ; 0053a4cf | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_0053a4cf
     PUSH EDX                            ; 0053a4d5 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00565130 ; 0053a4d6
-        ;   XREF to: 00565130 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00565130(CScript * this_ptr)
+    CALL core_script.cpp_CScript_processEditorInput_FUN_00565130 ; 0053a4d6
+        ;   XREF to: 00565130 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_processEditorInput_FUN_00565130(CScript * this_ptr)
     ADD ESP,0x4                         ; 0053a4db
     MOV EAX,[0x0067cf44]                ; 0053a4de | g_CKeysPtr
     PUSH 0x3c                           ; 0053a4e3
@@ -1871,7 +1871,7 @@ section .text
     TEST EAX,EAX                        ; 0053a4ee
     JZ 0x00539d75                       ; 0053a4f0
         ;   XREF to: 00539d75 (CONDITIONAL_JUMP)  ; LAB_00539d75
-    CMP dword ptr [0x02f7c634],0x1      ; 0053a4f6 | DAT_02f7c634
+    CMP dword ptr [0x02f7c634],0x1      ; 0053a4f6 | INT_02f7c634
     JNZ 0x0053a57d                      ; 0053a4fd
         ;   XREF to: 0053a57d (CONDITIONAL_JUMP)  ; LAB_0053a57d
     PUSH 0x2a                           ; 0053a503
@@ -1900,7 +1900,7 @@ section .text
     MOV ECX,dword ptr [0x0067d550]      ; 0053a53d | g_CDemonMissionInstance | g_CDemonMissionPtr
     XOR EDX,EDX                         ; 0053a543
     PUSH ECX                            ; 0053a545 | g_CDemonMissionInstance
-    MOV dword ptr [0x02f7c634],EDX      ; 0053a546 | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],EDX      ; 0053a546 | INT_02f7c634
     JMP 0x00539d68                      ; 0053a54c
         ;   XREF to: 00539d68 (UNCONDITIONAL_JUMP)  ; LAB_00539d68
     PUSH ESI                            ; 0053a551
@@ -1917,7 +1917,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 0053a566 | g_CDemonMissionPtr
     MOV ESI,0x2                         ; 0053a56c
     PUSH EDI                            ; 0053a571 | g_CDemonMissionInstance
-    MOV dword ptr [0x02f7c634],ESI      ; 0053a572 | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],ESI      ; 0053a572 | INT_02f7c634
     JMP 0x00539d68                      ; 0053a578
         ;   XREF to: 00539d68 (UNCONDITIONAL_JUMP)  ; LAB_00539d68
     PUSH 0x2a                           ; 0053a57d
@@ -1947,7 +1947,7 @@ section .text
     PUSH EDX                            ; 0053a5ba
     MOV ECX,dword ptr [0x0067d550]      ; 0053a5bb | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 0053a5c1 | g_CDemonMissionInstance
-    MOV dword ptr [0x02f7c634],EDX      ; 0053a5c2 | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],EDX      ; 0053a5c2 | INT_02f7c634
     JMP 0x00539d68                      ; 0053a5c8
         ;   XREF to: 00539d68 (UNCONDITIONAL_JUMP)  ; LAB_00539d68
     PUSH EBX                            ; 0053a5cd
@@ -1964,7 +1964,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 0053a5e6 | g_CDemonMissionPtr
     XOR ESI,ESI                         ; 0053a5ec
     PUSH EDI                            ; 0053a5ee | g_CDemonMissionInstance
-    MOV dword ptr [0x02f7c634],ESI      ; 0053a5ef | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],ESI      ; 0053a5ef | INT_02f7c634
     JMP 0x00539d68                      ; 0053a5f5
         ;   XREF to: 00539d68 (UNCONDITIONAL_JUMP)  ; LAB_00539d68
     MOV EDX,dword ptr [EBP + 0x42]      ; 0053a5fa
@@ -1995,7 +1995,7 @@ section .text
         ;   XREF to: 0053d190 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CDemonMission * this_ptr, char * filename)
     JMP 0x00539dc2                      ; 0053a645
         ;   XREF to: 00539dc2 (UNCONDITIONAL_JUMP)  ; LAB_00539dc2
-    CMP dword ptr [0x02f7c634],0x0      ; 0053a64a | DAT_02f7c634
+    CMP dword ptr [0x02f7c634],0x0      ; 0053a64a | INT_02f7c634
         ;   Label: LAB_0053a64a
     JNZ 0x0053ab3c                      ; 0053a651
         ;   XREF to: 0053ab3c (CONDITIONAL_JUMP)  ; LAB_0053ab3c
@@ -2366,7 +2366,7 @@ section .text
     TEST EAX,EAX                        ; 0053a9e0
     JZ 0x0053aa41                       ; 0053a9e2
         ;   XREF to: 0053aa41 (CONDITIONAL_JUMP)  ; LAB_0053aa41
-    MOV EDX,dword ptr [0x02f7c634]      ; 0053a9e4 | DAT_02f7c634
+    MOV EDX,dword ptr [0x02f7c634]      ; 0053a9e4 | INT_02f7c634
     TEST EDX,EDX                        ; 0053a9ea
     JNZ 0x0053aa32                      ; 0053a9ec
         ;   XREF to: 0053aa32 (CONDITIONAL_JUMP)  ; LAB_0053aa32
@@ -2387,7 +2387,7 @@ section .text
     PUSH EBX                            ; 0053aa17
     MOV ESI,dword ptr [0x0067d550]      ; 0053aa18 | g_CDemonMissionPtr
     PUSH ESI                            ; 0053aa1e | g_CDemonMissionInstance
-    MOV dword ptr [0x02f7c634],EBX      ; 0053aa1f | DAT_02f7c634
+    MOV dword ptr [0x02f7c634],EBX      ; 0053aa1f | INT_02f7c634
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 0053aa25
         ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
     ADD ESP,0x8                         ; 0053aa2a
@@ -2396,8 +2396,8 @@ section .text
     MOV EDI,dword ptr [0x00680d50]      ; 0053aa32 | g_CScriptPtr
         ;   Label: LAB_0053aa32
     PUSH EDI                            ; 0053aa38 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566080 ; 0053aa39
-        ;   XREF to: 00566080 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566080(CScript * this_ptr)
+    CALL core_script.cpp_CScript_checkSyntax_FUN_00566080 ; 0053aa39
+        ;   XREF to: 00566080 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_checkSyntax_FUN_00566080(CScript * this_ptr)
     ADD ESP,0x4                         ; 0053aa3e
     MOV EAX,dword ptr [EBP + 0x7a]      ; 0053aa41
         ;   Label: LAB_0053aa41
@@ -2458,8 +2458,8 @@ section .text
     MOV EAX,[0x0067b654]                ; 0053aadb | g_CGamePtr
         ;   Label: LAB_0053aadb
     FLD float ptr [EAX + 0x264]         ; 0053aae0 | g_CGameInstance.delta_time_float
-    FADD float ptr [0x00680818]         ; 0053aae6 | DAT_00680818
-    FSTP float ptr [0x00680818]         ; 0053aaec | DAT_00680818
+    FADD float ptr [0x00680818]         ; 0053aae6 | INT_00680818
+    FSTP float ptr [0x00680818]         ; 0053aaec | INT_00680818
     TEST byte ptr [0x02cf6a94],0x1      ; 0053aaf2 | g_MouseButtonFlags
         ;   Label: LAB_0053aaf2
     JZ 0x0053af0c                       ; 0053aaf9
@@ -2650,7 +2650,7 @@ section .text
     CMP dword ptr [0x02f7c538],0x0      ; 0053ad0c | DAT_02f7c538
     JNZ 0x0053aadb                      ; 0053ad13
         ;   XREF to: 0053aadb (CONDITIONAL_JUMP)  ; LAB_0053aadb
-    CMP dword ptr [0x02cf2b00],0x0      ; 0053ad19 | g_ActiveButton
+    CMP dword ptr [0x02cf2b00],0x0      ; 0053ad19 | g_ActiveControl
     JNZ 0x0053aadb                      ; 0053ad20
         ;   XREF to: 0053aadb (CONDITIONAL_JUMP)  ; LAB_0053aadb
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053ad26
@@ -2678,7 +2678,7 @@ section .text
     CALL core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 ; 0053ad6a
         ;   XREF to: 0053af50 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission * this_ptr, char * property)
     ADD ESP,0x8                         ; 0053ad6f
-    MOV dword ptr [0x00680818],0x501502f9 ; 0053ad72 | DAT_00680818
+    MOV dword ptr [0x00680818],0x501502f9 ; 0053ad72 | INT_00680818
         ;   Label: LAB_0053ad72
     JMP 0x0053aaf2                      ; 0053ad7c
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
@@ -2692,7 +2692,7 @@ section .text
     TEST EAX,EAX                        ; 0053ad90
     JZ 0x0053addb                       ; 0053ad92
         ;   XREF to: 0053addb (CONDITIONAL_JUMP)  ; LAB_0053addb
-    CMP dword ptr [0x02f7c634],0x0      ; 0053ad94 | DAT_02f7c634
+    CMP dword ptr [0x02f7c634],0x0      ; 0053ad94 | INT_02f7c634
     JZ 0x0053ad72                       ; 0053ad9b
         ;   XREF to: 0053ad72 (CONDITIONAL_JUMP)  ; LAB_0053ad72
     LEA EAX,[EBP + 0xfffffa82]          ; 0053ad9d
@@ -2708,10 +2708,10 @@ section .text
     PUSH EAX                            ; 0053adbd
     MOV EAX,[0x00680d50]                ; 0053adbe | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 0053adc3 | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00565f70 ; 0053adc4
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00565f70(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_setParameterValue_FUN_00565f70 ; 0053adc4
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setParameterValue_FUN_00565f70(CScript * this_ptr, char * value)
     ADD ESP,0x8                         ; 0053adc9
-    MOV dword ptr [0x00680818],0x501502f9 ; 0053adcc | DAT_00680818
+    MOV dword ptr [0x00680818],0x501502f9 ; 0053adcc | INT_00680818
     JMP 0x0053aaf2                      ; 0053add6
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     PUSH 0x1d                           ; 0053addb
@@ -2738,7 +2738,7 @@ section .text
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     XOR EAX,EAX                         ; 0053ae10
     MOV dword ptr [EBP + 0x5e],EAX      ; 0053ae12
-    MOV dword ptr [0x00680818],0x501502f9 ; 0053ae15 | DAT_00680818
+    MOV dword ptr [0x00680818],0x501502f9 ; 0053ae15 | INT_00680818
     JMP 0x0053aaf2                      ; 0053ae1f
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     LEA EAX,[EBP + 0xfffffbae]          ; 0053ae24
@@ -2758,7 +2758,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 ; 0053ae4c
         ;   XREF to: 004a1bc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)
     ADD ESP,0x8                         ; 0053ae51
-    MOV dword ptr [0x00680818],0x501502f9 ; 0053ae54 | DAT_00680818
+    MOV dword ptr [0x00680818],0x501502f9 ; 0053ae54 | INT_00680818
     JMP 0x0053aaf2                      ; 0053ae5e
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053ae63
@@ -2775,7 +2775,7 @@ section .text
     TEST EAX,EAX                        ; 0053ae82
     JZ 0x0053aeb4                       ; 0053ae84
         ;   XREF to: 0053aeb4 (CONDITIONAL_JUMP)  ; LAB_0053aeb4
-    CMP dword ptr [0x02f7c634],0x0      ; 0053ae86 | DAT_02f7c634
+    CMP dword ptr [0x02f7c634],0x0      ; 0053ae86 | INT_02f7c634
     JZ 0x0053aea7                       ; 0053ae8d
         ;   XREF to: 0053aea7 (CONDITIONAL_JUMP)  ; LAB_0053aea7
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053ae8f
@@ -2783,12 +2783,12 @@ section .text
     PUSH EDI                            ; 0053ae98
     MOV EAX,[0x00680d50]                ; 0053ae99 | g_CScriptInstance | g_CScriptPtr
     PUSH EAX                            ; 0053ae9e | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00565f70 ; 0053ae9f
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00565f70(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_setParameterValue_FUN_00565f70 ; 0053ae9f
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setParameterValue_FUN_00565f70(CScript * this_ptr, char * value)
     ADD ESP,0x8                         ; 0053aea4
     XOR EDX,EDX                         ; 0053aea7
         ;   Label: LAB_0053aea7
-    MOV dword ptr [0x00680818],EDX      ; 0053aea9 | DAT_00680818
+    MOV dword ptr [0x00680818],EDX      ; 0053aea9 | INT_00680818
     JMP 0x0053aaf2                      ; 0053aeaf
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     MOV EBX,dword ptr [EBP + 0x92]      ; 0053aeb4
@@ -2801,7 +2801,7 @@ section .text
     CMP dword ptr [EBP + 0x5e],0x0      ; 0053aec8
     JNZ 0x0053aea7                      ; 0053aecc
         ;   XREF to: 0053aea7 (CONDITIONAL_JUMP)  ; LAB_0053aea7
-    CMP dword ptr [0x00680818],0x3e99999a ; 0053aece | DAT_00680818
+    CMP dword ptr [0x00680818],0x3e99999a ; 0053aece | INT_00680818
     JGE 0x0053aea7                      ; 0053aed8
         ;   XREF to: 0053aea7 (CONDITIONAL_JUMP)  ; LAB_0053aea7
     PUSH EBX                            ; 0053aeda
@@ -2811,7 +2811,7 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0053aee3
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     XOR EDX,EDX                         ; 0053aee8
-    MOV dword ptr [0x00680818],EDX      ; 0053aeea | DAT_00680818
+    MOV dword ptr [0x00680818],EDX      ; 0053aeea | INT_00680818
     JMP 0x0053aaf2                      ; 0053aef0
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     PUSH ECX                            ; 0053aef5
@@ -2821,7 +2821,7 @@ section .text
         ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
     ADD ESP,0x8                         ; 0053aefc
     XOR EDX,EDX                         ; 0053aeff
-    MOV dword ptr [0x00680818],EDX      ; 0053af01 | DAT_00680818
+    MOV dword ptr [0x00680818],EDX      ; 0053af01 | INT_00680818
     JMP 0x0053aaf2                      ; 0053af07
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     XOR EBX,EBX                         ; 0053af0c

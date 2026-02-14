@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(CDrawSurface *this_ptr)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(CDrawSurface *this_ptr)
 
 {
   cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0

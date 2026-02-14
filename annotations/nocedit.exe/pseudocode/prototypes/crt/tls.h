@@ -37,11 +37,11 @@ void __cdecl initialize::tls_infrastructure(void);
 
 // Original: crt_tls.c_create_thread_local_data_FUN_0060cac0
 // Address: 0060cac0
-LPVOID create::thread_local_data(void);
+LPVOID __watcallRegister create::thread_local_data(void);
 
 // Original: crt_tls.c_getThreadLocalData_FUN_0060caf8
 // Address: 0060caf8
-void * getThreadLocalData(void);
+void * __watcallRegister getThreadLocalData(void);
 
 // Original: crt_tls.c_register_thread_data_FUN_0060cbd0
 // Address: 0060cbd0

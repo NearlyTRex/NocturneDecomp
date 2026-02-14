@@ -15,6 +15,6 @@ void FUN_006047a4(void)
     PTR_crt_thread_c_ExitCriticalSection_FUN_0060b180_00685468 =
          (EXIT_CRITICAL_SECTION_FUNC *)&LAB_0060479c;
   }
-  FUN_0060b190(0x127F);
+  FUN_0060b190();
   return;
 }

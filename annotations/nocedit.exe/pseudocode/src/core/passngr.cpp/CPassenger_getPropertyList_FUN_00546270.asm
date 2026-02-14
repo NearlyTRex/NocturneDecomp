@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_passngr_cpp_CPassenger_getPropertyList_FUN_00546270 (CPassenger *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_passngr_cpp_CPassenger_getPropertyList_FUN_00546270(CPassenger *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CPassenger *     Stack[0x4]:4   this_ptr

@@ -6,13 +6,10 @@
 
 #include "nocturne.h"
 
-void * __watcallStack
-median_of_3(void *a,void *b,void *c,QSORT_COMPARATOR compar)
+void * __watcallStack median_of_3(void *a,void *b,void *c,QSORT_COMPARATOR compar)
 
 {
   int iVar1;
-  void *in_stack_00000018;
-  void *in_stack_00000020;
   
   iVar1 = (*compar)(a,b);
   if (iVar1 < 1) {
@@ -20,7 +17,7 @@ median_of_3(void *a,void *b,void *c,QSORT_COMPARATOR compar)
     if (-1 < iVar1) {
       return a;
     }
-    iVar1 = (*compar)(in_stack_00000018,c);
+    iVar1 = (*compar)(b,c);
     if (0 < iVar1) {
       return c;
     }
@@ -30,10 +27,10 @@ median_of_3(void *a,void *b,void *c,QSORT_COMPARATOR compar)
     if (iVar1 < 1) {
       return a;
     }
-    iVar1 = (*compar)(in_stack_00000018,c);
+    iVar1 = (*compar)(b,c);
     if (iVar1 < 1) {
       return c;
     }
   }
-  return in_stack_00000020;
+  return b;
 }

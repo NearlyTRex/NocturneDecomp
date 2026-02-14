@@ -14,7 +14,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
   float fVar2;
   int iVar3;
   float fVar4;
-  float fStack_14;
+  CVector3f CStack_1c;
   
   iVar3 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar3 != 0) {
@@ -51,9 +51,10 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
     if (iVar3 != 0) {
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"armour.wav");
-      fStack_14 = 0.0;
-      core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0
-                ((CCharacter *)this_ptr,(CVector3f *)&fStack_14,-1.0);
+      CStack_1c.x = 0.0;
+      CStack_1c.y = 0.0;
+      CStack_1c.z = 5.0;
+      core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0((CCharacter *)this_ptr,&CStack_1c,-1.0);
       return;
     }
   }

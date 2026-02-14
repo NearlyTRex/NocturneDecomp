@@ -9,8 +9,7 @@
 /* WARNING: Variable defined which should be unmapped: local_84 */
 /* WARNING: Variable defined which should be unmapped: local_b4 */
 
-void __cdecl
-core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
+void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
 
 {
   SRenderVertex vertex2;
@@ -53,7 +52,7 @@ core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *
   local_54.x = (int)ROUND(local_24 * 256.0f);
   local_54.y = (int)ROUND(local_20 * 256.0f);
   local_54.z = (int)ROUND(local_1c * 256.0f);
-  local_84.fog = (float)g_CDemonRendererPtr1->vertex_buffer_ptr;
+  local_84.fog = (int)g_CDemonRendererPtr1->vertex_buffer_ptr;
   local_84.color = 0x40d3f1;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             ((SProjectedVertex *)local_84.fog,&local_54);
@@ -61,7 +60,7 @@ core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *
   local_30.y = (int)ROUND(local_38 * 256.0f);
   local_30.z = (int)ROUND(local_34 * 256.0f);
   local_84.w_recip = (float)&local_30;
-  local_84.fog = (float)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
+  local_84.fog = (int)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
   local_84.color = 0x40d434;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             ((SProjectedVertex *)local_84.fog,(CVector3i *)local_84.w_recip);

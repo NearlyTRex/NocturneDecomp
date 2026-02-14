@@ -2,13 +2,11 @@
 // Address: 00418420
 // Address Range: [[00418420, 0041845c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_beast_cpp_CBeast_getPropertyList_FUN_00418420 (CBeast *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_beast_cpp_CBeast_getPropertyList_FUN_00418420(CBeast *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_beast_cpp_CBeast_getPropertyList_FUN_00418420
-          (CBeast *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_beast_cpp_CBeast_getPropertyList_FUN_00418420(CBeast *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

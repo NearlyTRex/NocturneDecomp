@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 122,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 44,
     "suspect_count": 6,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 163
+    "total_lines": 160
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00",
-    "signature": "void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00 (CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x, int bottom_y)"
+    "signature": "void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x,int bottom_y)"
   },
   "function_calls": [
     {
@@ -235,35 +235,35 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 10,
       "match": "in_stack_00000020",
       "text": "int in_stack_00000020;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 26,
       "match": "(int *)((int)",
       "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + dest_y * 4),srcIndices,",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 27,
       "match": "in_stack_00000020",
       "text": "srcAlpha,in_stack_00000020,pixelCount);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 38,
       "match": "(int *)((int)",
       "text": "((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_y * 2),srcIndices,",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 39,
       "match": "in_stack_00000020",
       "text": "srcAlpha,in_stack_00000020,pixelCount);",
       "type": "stack_param"

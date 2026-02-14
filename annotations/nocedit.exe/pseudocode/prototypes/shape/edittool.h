@@ -25,7 +25,7 @@ void __cdecl drawDashedLine(int x1,int y1,int x2,int y2,int dash_length);
 
 // Original: shape_edittool.cpp_CInputString_init_FUN_0049d3d0
 // Address: 0049d3d0
-void __cdecl CInputString::init(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5, int render_mode);
+void __cdecl CInputString::init(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode);
 
 // Original: shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0049d460
 // Address: 0049d460
@@ -141,7 +141,7 @@ int __cdecl CEditorTools::showConfirmationDialog(CEditorTools *this_ptr,char *fo
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 // Address: 0049f270
-int __cdecl CEditorTools::showFileSelectionDialog(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag,uint unknown);
+int __cdecl CEditorTools::showFileSelectionDialog(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,int auto_select_flag,uint unknown);
 
 // Original: shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
 // Address: 0049f420
@@ -149,19 +149,19 @@ int __cdecl CEditorTools::showDirectoryBrowser(CEditorTools *this_ptr,char *file
 
 // Original: shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
 // Address: 0049fb70
-int __cdecl CEditorTools::showFilenameInputDialog(CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size, int show_directory);
+int __cdecl CEditorTools::showFilenameInputDialog(CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size,int show_directory);
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020
 // Address: 004a0020
-int __cdecl CEditorTools::promptForValidInteger(CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check, int min_value,int max_value,int show_current_value);
+int __cdecl CEditorTools::promptForValidInteger(CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check,int min_value,int max_value,int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
 // Address: 004a00f0
-int __cdecl CEditorTools::promptForValidFloat(CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check, float min_value,float max_value,int show_current_value);
+int __cdecl CEditorTools::promptForValidFloat(CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check,float min_value,float max_value,int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
 // Address: 004a01f0
-int __cdecl CEditorTools::promptForValidDouble(CEditorTools *this_ptr,char *prompt_text,double *result_ptr,int enable_range_check, double min_value,double max_value,int show_current_value);
+int __cdecl CEditorTools::promptForValidDouble(CEditorTools *this_ptr,char *prompt_text,double *result_ptr,int enable_range_check,double min_value,double max_value,int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300
 // Address: 004a0300
@@ -169,11 +169,11 @@ int __cdecl CEditorTools::promptForValidVector(CEditorTools *editor_tools,char *
 
 // Original: shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 // Address: 004a03d0
-int __cdecl CEditorTools::showTextInputDialog(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size, int dialog_flags);
+int __cdecl CEditorTools::showTextInputDialog(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
 
 // Original: shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_004a0400
 // Address: 004a0400
-int __cdecl CEditorTools::showCheatInputDialog(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size, int dialog_flags);
+int __cdecl CEditorTools::showCheatInputDialog(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
 
 // Original: shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 // Address: 004a0430
@@ -189,7 +189,7 @@ void __cdecl CEditorTools::createCenteredModal(CEditorTools *this_ptr,int min_wi
 
 // Original: shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970
 // Address: 004a0970
-void __cdecl CEditorTools::createModalWindow(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content, int window_flags);
+void __cdecl CEditorTools::createModalWindow(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,int window_flags);
 
 // Original: shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 // Address: 004a0dd0
@@ -229,7 +229,7 @@ void __cdecl CEditorTools::draw3DAxisLabels(CEditorTools *this_ptr,float scale_f
 
 // Original: shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
 // Address: 004a1e90
-void __cdecl CEditorTools::draw3DAxisLabelsAt(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position, CQuaternion4f *label_offset,void *param5);
+void __cdecl CEditorTools::draw3DAxisLabelsAt(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,CQuaternion4f *label_offset,void *param5);
 
 // Original: shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40
 // Address: 004a1f40

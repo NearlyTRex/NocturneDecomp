@@ -2,13 +2,11 @@
 // Address: 0058a4a0
 // Address Range: [[0058a4a0, 0058aa01]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (CBoneStructure *this_ptr,_FILE *file,int *frame_count_out)
+// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure *this_ptr,_FILE *file,int *frame_count_out)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-          (CBoneStructure *this_ptr,_FILE *file,int *frame_count_out)
+void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure *this_ptr,_FILE *file,int *frame_count_out)
 
 {
   char cVar1;

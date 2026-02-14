@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0 (CActorPropertyList *this_ptr,char *property_name,void *data_ptr,char *search_path, char *extension,int allow_none)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0(CActorPropertyList *this_ptr,char *property_name,void *data_ptr,char *search_path,char *extension,int allow_none)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

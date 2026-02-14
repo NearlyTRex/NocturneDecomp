@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_msnedit_cpp_CDemonMission_makeOptimizedPalette_FUN_0053ccc0(CDemonMission *this_ptr)
+void __cdecl core_msnedit_cpp_CDemonMission_makeOptimizedPalette_FUN_0053ccc0(CDemonMission *this_ptr)
 
 {
   g_CurrentFilename = "..\\core\\msnedit.cpp";

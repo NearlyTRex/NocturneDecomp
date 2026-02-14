@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 (CDemonRenderer *this_ptr,int render_alpha)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer *this_ptr,int render_alpha)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

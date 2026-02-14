@@ -2,13 +2,11 @@
 // Address: 00447ab0
 // Address Range: [[00447ab0, 00447c15]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0 (CCramTex *this_ptr,int x,int y,int width,int height,int render_mode)
+// Signature: void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0(CCramTex *this_ptr,int x,int y,int width,int height,int render_mode)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0
-          (CCramTex *this_ptr,int x,int y,int width,int height,int render_mode)
+void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0(CCramTex *this_ptr,int x,int y,int width,int height,int render_mode)
 
 {
   uint uVar1;

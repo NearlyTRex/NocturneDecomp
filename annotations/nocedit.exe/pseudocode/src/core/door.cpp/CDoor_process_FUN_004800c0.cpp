@@ -10,28 +10,23 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
 
 {
   int iVar1;
-  float fVar2;
-  int iVar3;
-  CVector3f *pCVar4;
-  int iVar5;
+  int iVar2;
+  CVector3f *pCVar3;
+  int iVar4;
   char *commands;
-  byte auStack_c8 [40];
-  float fStack_a0;
-  float fStack_9c;
-  float fStack_98;
-  float fStack_94;
-  float fStack_90;
-  float fStack_8c;
-  CVector3f CStack_88;
-  CVector3f CStack_7c;
+  SCollisionInfo SStack_d0;
+  CBoundingBox3D local_a8;
+  CVector3f CStack_90;
+  CVector3f CStack_84;
+  float local_78;
+  float local_74;
   float local_70;
-  float fStack_6c;
-  float fStack_68;
-  CVector3f CStack_64;
+  CVector3f aCStack_6c [2];
+  int iStack_54;
   float local_50;
-  int iStack_4c;
+  CMatrix3x3f *pCStack_4c;
   float fStack_48;
-  CMatrix3x3f *pCStack_44;
+  float fStack_44;
   float fStack_40;
   float fStack_3c;
   float fStack_38;
@@ -42,12 +37,11 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   float fStack_24;
   float fStack_20;
   float fStack_1c;
-  float fStack_18;
+  int iStack_18;
   float fStack_14;
-  int iVar6;
   
-  CStack_7c.y = (this_ptr->base).location.position.x;
-  CStack_7c.z = (this_ptr->base).location.position.y;
+  local_78 = (this_ptr->base).location.position.x;
+  local_74 = (this_ptr->base).location.position.y;
   local_70 = (this_ptr->base).location.position.z;
   local_50 = this_ptr->param;
   if (1 < this_ptr->one_shot) {
@@ -55,9 +49,9 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   }
   switch(this_ptr->door_state) {
   case 0:
-    iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->open_condition);
-    if (iVar6 != 0) {
+    if (iVar4 != 0) {
       this_ptr->door_state = 1;
       if (this_ptr->open_sound[0] != '\0') {
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->open_sound);
@@ -86,9 +80,9 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
     }
     break;
   case 2:
-    iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->close_condition);
-    if ((iVar6 != 0) && (this_ptr->door_state = 3, this_ptr->close_sound[0] != '\0')) {
+    if ((iVar4 != 0) && (this_ptr->door_state = 3, this_ptr->close_sound[0] != '\0')) {
       (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->close_sound);
     }
     this_ptr->param = this_ptr->max_param;
@@ -127,68 +121,75 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
 LAB_004801a8:
   core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
   if ((this_ptr->param != local_50) && (this_ptr->door_type != 3)) {
-    iVar5 = 0;
-    (*((this_ptr->base).vtable._ub)->getBoundingBox)
-              (&this_ptr->base,(CBoundingBox3D *)(auStack_c8 + 0x20));
-    iStack_4c = 0;
-    pCStack_44 = &(this_ptr->base).orient_matrix;
-    for (iVar6 = 0; iVar6 < g_CDemonSetPtr->damage_listener_count; iVar6 = iVar6 + 1) {
-      iVar1 = *(int *)(g_CDemonSetPtr->unk4 + iVar5 + -4);
-      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)auStack_c8);
-      iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x34))();
-      if (((iVar3 == 2) &&
-          ((float)auStack_c8._20_4_ + *(float *)(iVar1 + 0x24) <=
-           (this_ptr->base).location.position.y + fStack_90)) &&
-         ((this_ptr->base).location.position.y + fStack_9c <=
-          (float)auStack_c8._24_4_ + *(float *)(iVar1 + 0x24))) {
-        CStack_7c.x = *(float *)(iVar1 + 0x20) - (this_ptr->base).location.position.x;
-        CStack_7c.y = *(float *)(iVar1 + 0x24) - (this_ptr->base).location.position.y;
-        CStack_7c.z = *(float *)(iVar1 + 0x28) - (this_ptr->base).location.position.z;
-        pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                           (pCStack_44,&CStack_88,&CStack_7c);
-        if (&CStack_64 != pCVar4) {
-          CStack_64.x = pCVar4->x;
-          CStack_64.y = pCVar4->y;
-          CStack_64.z = pCVar4->z;
+    iVar4 = 0;
+    (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_a8);
+    iStack_54 = 0;
+    pCStack_4c = &(this_ptr->base).orient_matrix;
+    iStack_18 = 0;
+    while( true ) {
+      if (g_CDemonSetPtr->damage_listener_count <= iStack_18) break;
+      iVar1 = *(int *)(g_CDemonSetPtr->unk4 + iVar4 + -4);
+      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_d0);
+      iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x34))(iVar1,&SStack_d0);
+      if (((iVar2 == 2) &&
+          (SStack_d0.cylinder_bottom_y + *(float *)(iVar1 + 0x24) <=
+           (this_ptr->base).location.position.y + local_a8.max.y)) &&
+         ((this_ptr->base).location.position.y + local_a8.min.y <=
+          SStack_d0.cylinder_top_y + *(float *)(iVar1 + 0x24))) {
+        CStack_84.x = *(float *)(iVar1 + 0x20) - (this_ptr->base).location.position.x;
+        CStack_84.y = *(float *)(iVar1 + 0x24) - (this_ptr->base).location.position.y;
+        CStack_84.z = *(float *)(iVar1 + 0x28) - (this_ptr->base).location.position.z;
+        pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                           (pCStack_4c,&CStack_90,&CStack_84);
+        if (aCStack_6c != pCVar3) {
+          aCStack_6c[0].x = pCVar3->x;
+          aCStack_6c[0].y = pCVar3->y;
+          aCStack_6c[0].z = pCVar3->z;
         }
-        fStack_40 = CStack_64.x + (float)auStack_c8._28_4_;
-        if (((fStack_a0 <= fStack_40) &&
-            (fStack_3c = CStack_64.x - (float)auStack_c8._28_4_, fStack_3c <= fStack_94)) &&
-           ((fStack_38 = CStack_64.z + (float)auStack_c8._28_4_, fStack_98 <= fStack_38 &&
-            (fStack_34 = CStack_64.z - (float)auStack_c8._28_4_, fStack_34 <= fStack_8c)))) {
-          if (((fStack_a0 <= fStack_3c) && (fStack_40 <= fStack_94)) &&
-             ((fStack_98 <= fStack_34 && (fStack_38 <= fStack_8c)))) goto LAB_0048059d;
-          fVar2 = (float)auStack_c8._28_4_ * (float)auStack_c8._28_4_;
-          fStack_28 = SQRT(fVar2 - (fStack_94 - CStack_64.x) * (fStack_94 - CStack_64.x));
-          fStack_2c = CStack_64.z + fStack_28;
-          fStack_28 = CStack_64.z - fStack_28;
-          if (((fStack_98 <= fStack_2c) && (fStack_2c <= fStack_8c)) ||
-             ((fStack_98 <= fStack_28 && (fStack_28 <= fStack_8c)))) goto LAB_0048059d;
-          fStack_14 = SQRT(fVar2 - (fStack_a0 - CStack_64.x) * (fStack_a0 - CStack_64.x));
-          fStack_1c = CStack_64.z + fStack_14;
-          fStack_14 = CStack_64.z - fStack_14;
-          if (((fStack_98 <= fStack_1c) && (fStack_1c <= fStack_8c)) ||
-             ((fStack_98 <= fStack_14 && (fStack_14 <= fStack_8c)))) goto LAB_0048059d;
-          fStack_18 = SQRT(fVar2 - (fStack_8c - CStack_64.z) * (fStack_8c - CStack_64.z));
-          fStack_20 = CStack_64.x + fStack_18;
-          fStack_18 = CStack_64.x - fStack_18;
-          if (((fStack_a0 <= fStack_20) && (fStack_20 <= fStack_94)) ||
-             ((fStack_a0 <= fStack_18 && (fStack_18 <= fStack_94)))) goto LAB_0048059d;
-          fStack_30 = SQRT(fVar2 - (fStack_98 - CStack_64.z) * (fStack_98 - CStack_64.z));
-          fStack_24 = CStack_64.x + fStack_30;
-          fStack_30 = CStack_64.x - fStack_30;
-          if (((fStack_a0 <= fStack_24) && (fStack_24 <= fStack_94)) ||
-             ((fStack_a0 <= fStack_30 && (fStack_30 <= fStack_94)))) goto LAB_0048059d;
+        fStack_48 = aCStack_6c[0].x + SStack_d0.cylinder_radius;
+        if (((local_a8.min.x <= fStack_48) &&
+            (fStack_44 = aCStack_6c[0].x - SStack_d0.cylinder_radius, fStack_44 <= local_a8.max.x))
+           && ((fStack_40 = aCStack_6c[0].z + SStack_d0.cylinder_radius, local_a8.min.z <= fStack_40
+               && (fStack_3c = aCStack_6c[0].z - SStack_d0.cylinder_radius,
+                  fStack_3c <= local_a8.max.z)))) {
+          if (((local_a8.min.x <= fStack_44) && (fStack_48 <= local_a8.max.x)) &&
+             ((local_a8.min.z <= fStack_3c && (fStack_40 <= local_a8.max.z)))) goto LAB_0048059d;
+          fStack_14 = SStack_d0.cylinder_radius * SStack_d0.cylinder_radius;
+          fStack_30 = SQRT(fStack_14 -
+                           (local_a8.max.x - aCStack_6c[0].x) * (local_a8.max.x - aCStack_6c[0].x));
+          fStack_34 = aCStack_6c[0].z + fStack_30;
+          fStack_30 = aCStack_6c[0].z - fStack_30;
+          if (((local_a8.min.z <= fStack_34) && (fStack_34 <= local_a8.max.z)) ||
+             ((local_a8.min.z <= fStack_30 && (fStack_30 <= local_a8.max.z)))) goto LAB_0048059d;
+          fStack_1c = SQRT(fStack_14 -
+                           (local_a8.min.x - aCStack_6c[0].x) * (local_a8.min.x - aCStack_6c[0].x));
+          fStack_24 = aCStack_6c[0].z + fStack_1c;
+          fStack_1c = aCStack_6c[0].z - fStack_1c;
+          if (((local_a8.min.z <= fStack_24) && (fStack_24 <= local_a8.max.z)) ||
+             ((local_a8.min.z <= fStack_1c && (fStack_1c <= local_a8.max.z)))) goto LAB_0048059d;
+          fStack_20 = SQRT(fStack_14 -
+                           (local_a8.max.z - aCStack_6c[0].z) * (local_a8.max.z - aCStack_6c[0].z));
+          fStack_28 = aCStack_6c[0].x + fStack_20;
+          fStack_20 = aCStack_6c[0].x - fStack_20;
+          if (((local_a8.min.x <= fStack_28) && (fStack_28 <= local_a8.max.x)) ||
+             ((local_a8.min.x <= fStack_20 && (fStack_20 <= local_a8.max.x)))) goto LAB_0048059d;
+          fStack_38 = SQRT(fStack_14 -
+                           (local_a8.min.z - aCStack_6c[0].z) * (local_a8.min.z - aCStack_6c[0].z));
+          fStack_2c = aCStack_6c[0].x + fStack_38;
+          fStack_38 = aCStack_6c[0].x - fStack_38;
+          if (((local_a8.min.x <= fStack_2c) && (fStack_2c <= local_a8.max.x)) ||
+             ((local_a8.min.x <= fStack_38 && (fStack_38 <= local_a8.max.x)))) goto LAB_0048059d;
         }
       }
-      iVar5 = iVar5 + 4;
+      iStack_18 = iStack_18 + 1;
+      iVar4 = iVar4 + 4;
     }
-    if (iStack_4c != 0) {
+    if (iStack_54 != 0) {
 LAB_0048059d:
-      (this_ptr->base).location.position.x = local_70;
-      (this_ptr->base).location.position.y = fStack_6c;
-      (this_ptr->base).location.position.z = fStack_68;
-      this_ptr->param = fStack_48;
+      (this_ptr->base).location.position.x = local_78;
+      (this_ptr->base).location.position.y = local_74;
+      (this_ptr->base).location.position.z = local_70;
+      this_ptr->param = local_50;
       core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
       return;
     }

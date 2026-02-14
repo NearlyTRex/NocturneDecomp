@@ -40,7 +40,8 @@ int __cdecl shape_superopt_cpp_CObj_allocatePolygons_FUN_005d2320(CObj *this_ptr
           pCVar1 = (CPoly *)((int)pCVar1 + (uint)bVar5 * -2 + 1);
           puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);
         }
-        (*(code *)**(uint **)((int)(this_ptr->poly_array->uv_coords + 5) + iVar3 + 4))();
+        iVar2 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar3;
+        (*(code *)**(uint **)(iVar2 + 100))(iVar2,this_ptr);
         iVar3 = iVar3 + 0x68;
         local_10 = local_10 + 1;
       } while (local_10 < (uint)this_ptr->poly_count);

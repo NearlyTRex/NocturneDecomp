@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 34,
-        "line": 79,
+        "line": 77,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 215,
+        "line": 213,
         "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 313,
+    "complexity_score": 311,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 39,
-    "pseudocode_lines": 248,
+    "pseudocode_lines": 246,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 827
+    "total_lines": 825
   },
   "cross_references": [
     {
@@ -56,7 +56,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0",
-    "signature": "void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0 (CDemonMission *this_ptr,_FILE *file_handle)"
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -505,35 +505,35 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 90,
       "match": "(char *)((int)",
       "text": "pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 137,
+      "line": 135,
       "match": "DAT_0067d5c0",
       "text": "puVar8 = &DAT_0067d5c0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 142,
       "match": "DAT_0067d628",
       "text": "puVar8 = &DAT_0067d628;",
       "type": "undefined_data"

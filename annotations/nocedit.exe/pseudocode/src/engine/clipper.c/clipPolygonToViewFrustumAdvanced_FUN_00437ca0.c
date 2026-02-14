@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int vertex_count,int *vertex_indices)
+int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int vertex_count,int *vertex_indices)
 
 {
   uint uVar1;
@@ -414,7 +413,7 @@ engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int vertex_count,
     }
     g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
     wincore_windll_cpp_drawPolygon2_FUN_005b7610
-              (g_ClipperCullingPointers,vertex_count,g_RenderStateFlags);
+              (g_ClipperCullingPointers,vertex_count,g_RenderStateFlags.dword);
     return 1;
   }
   g_ClippedVertexCount = vertex_count;

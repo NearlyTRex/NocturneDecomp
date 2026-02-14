@@ -2,13 +2,11 @@
 // Address: 004143a0
 // Address Range: [[004143a0, 004143dc]]
 // Convention: __cdecl
-// Signature: int __cdecl core_barrier_cpp_CBarrier_hasCollision_FUN_004143a0 (CBarrier *this_ptr,SCollisionInfo *collision_info)
+// Signature: int __cdecl core_barrier_cpp_CBarrier_hasCollision_FUN_004143a0(CBarrier *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-int __cdecl
-core_barrier_cpp_CBarrier_hasCollision_FUN_004143a0
-          (CBarrier *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_barrier_cpp_CBarrier_hasCollision_FUN_004143a0(CBarrier *this_ptr,SCollisionInfo *collision_info)
 
 {
   int iVar1;

@@ -14,8 +14,8 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr,floa
   int iVar3;
   CVector3f *pCVar4;
   CVector3f *pCVar5;
-  float in_stack_00000014;
-  float local_18;
+  CVector3f local_18;
+  int iStack_c;
   
   if ((this_ptr->type == 1) && ((this_ptr->box).is_valid == 0)) {
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -35,7 +35,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr,floa
         (this_ptr->box).angular_velocity.z = (this_ptr->init_rot_vel).z;
       }
       pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                         (&(this_ptr->box).rotation_matrix,(CVector3f *)&local_18,
+                         (&(this_ptr->box).rotation_matrix,&local_18,
                           &(this_ptr->box).linear_velocity_local);
       pCVar5 = &(this_ptr->box).linear_velocity;
       if (pCVar5 != pCVar4) {
@@ -51,23 +51,21 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr,floa
       (this_ptr->base).location.position.x = *(float *)(this_ptr->unk + 4);
       (this_ptr->base).location.position.y = *(float *)(this_ptr->unk + 8);
       (this_ptr->base).location.position.z = *(float *)(this_ptr->unk + 0xc);
-      iVar3 = rand();
+      iStack_c = rand();
       (this_ptr->base).orient.vec.x =
-           ((float)iVar3 * 3.051851e-05f + (float)-0.5) * (float)3.1415926535000001;
-      iVar3 = rand();
+           ((float)iStack_c * 3.051851e-05f + (float)-0.5) * (float)3.1415926535000001;
+      iStack_c = rand();
       (this_ptr->base).orient.vec.z =
-           (float)iVar3 * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
-      iVar3 = rand();
+           (float)iStack_c * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
+      iStack_c = rand();
       pCVar2 = (this_ptr->base).vtable._ub;
       (this_ptr->base).orient.vec.y =
-           (float)iVar3 * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
-      local_18 = 8.133377e-39;
+           (float)iStack_c * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
       (*pCVar2->setup)(&this_ptr->base);
     }
   }
   if ((this_ptr->box).is_valid != 0) {
-    local_18 = 8.133425e-39;
-    core_box_cpp_CBox_process_FUN_0041e2f0(&this_ptr->box,in_stack_00000014);
+    core_box_cpp_CBox_process_FUN_0041e2f0(&this_ptr->box,delta_time);
     (this_ptr->base).location.position.x = (this_ptr->box).position.x;
     (this_ptr->base).location.position.y = (this_ptr->box).position.y;
     (this_ptr->base).location.position.z = (this_ptr->box).position.z;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(CMotionController *this_ptr)
+int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(CMotionController *this_ptr)
 
 {
   SMotion *pSVar1;

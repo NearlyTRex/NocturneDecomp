@@ -2,13 +2,11 @@
 // Address: 0049d510
 // Address Range: [[0049d510, 0049d57c]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0049d510 (CInputString *this_ptr,int start_pos,int end_pos)
+// Signature: void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0049d510(CInputString *this_ptr,int start_pos,int end_pos)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CInputString_deleteRange_FUN_0049d510
-          (CInputString *this_ptr,int start_pos,int end_pos)
+void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0049d510(CInputString *this_ptr,int start_pos,int end_pos)
 
 {
   int iVar1;

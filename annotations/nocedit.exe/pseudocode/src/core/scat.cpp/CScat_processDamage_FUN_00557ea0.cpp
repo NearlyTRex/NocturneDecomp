@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_scat_cpp_CScat_processDamage_FUN_00557ea0(CScat *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_scat_cpp_CScat_processDamage_FUN_00557ea0(CScat *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;

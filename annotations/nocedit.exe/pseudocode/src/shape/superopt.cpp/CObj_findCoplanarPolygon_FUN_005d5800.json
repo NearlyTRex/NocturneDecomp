@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 409,
-    "complexity_score": 286,
+    "complexity_score": 284,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 156,
+    "pseudocode_lines": 154,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 565
+    "total_lines": 563
   },
   "cross_references": [],
   "function": {
@@ -30,7 +30,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800",
-    "signature": "int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800 (CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)"
+    "signature": "int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)"
   },
   "function_calls": [
     {
@@ -275,49 +275,56 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 44,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 44,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 63,
       "match": "(int *)((int)",
       "text": "point = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 76,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(point->position).x + 4) = local_54;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 78,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(point->position).y + 4) = local_4c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 80,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(point->position).z + 4) = local_44;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 83,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(local_18->normal).y + 4) = *(uint *)((int)&local_14->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(local_18->normal).y + 4) = *(uint *)((int)&local_14->y + 4);",
       "type": "pointer_cast"
@@ -326,26 +333,19 @@
       "description": "Complex pointer cast",
       "line": 85,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_18->normal).y + 4) = *(uint *)((int)&local_14->y + 4);",
+      "text": "*(uint *)((int)&(local_18->normal).z + 4) = *(uint *)((int)&local_14->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 85,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(local_18->normal).z + 4) = *(uint *)((int)&local_14->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_18->normal).z + 4) = *(uint *)((int)&local_14->z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 119,
+      "line": 117,
       "match": "(CVector3d *)((int)",
       "text": "pCVar4 = (CVector3d *)((int)(pCVar4 + 4) + 8);",
       "type": "pointer_cast"

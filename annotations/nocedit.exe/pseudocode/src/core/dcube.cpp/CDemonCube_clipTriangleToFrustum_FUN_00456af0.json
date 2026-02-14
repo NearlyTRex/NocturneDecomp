@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 307,
-    "complexity_score": 222,
+    "complexity_score": 219,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 44,
-    "pseudocode_lines": 157,
+    "pseudocode_lines": 154,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 464
+    "total_lines": 461
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0",
-    "signature": "void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0 (CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, uchar texture_id)"
+    "signature": "void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)"
   },
   "function_calls": [
     {
@@ -432,42 +432,42 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 122,
       "match": "(float *)((int)",
       "text": "fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].y + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 123,
       "match": "(float *)((int)",
       "text": "fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].z + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 125,
       "match": "(float *)((int)",
       "text": "g_LoadedVertices[uVar7].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[0].x + iVar10)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 130,
       "match": "(float *)((int)",
       "text": "fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].y + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 131,
       "match": "(float *)((int)",
       "text": "fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].z + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 132,
       "match": "(float *)((int)",
       "text": "g_LoadedVertices[uVar1].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[1].x + iVar10)",
       "type": "pointer_cast"

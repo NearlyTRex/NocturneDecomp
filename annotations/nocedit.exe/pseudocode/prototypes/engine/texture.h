@@ -73,7 +73,7 @@ void __cdecl updateTextureWithPalette(SMRGLTextureBasic *texture_to_load,SMRGLTe
 
 // Original: engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930
 // Address: 005dd930
-void __cdecl loadAndUpdateTexture(SMRGLTextureBasic *tex_to_load,SMRGLTextureBasic *tex_to_update, SRGBColorPalette *palette_data);
+void __cdecl loadAndUpdateTexture(SMRGLTextureBasic *tex_to_load,SMRGLTextureBasic *tex_to_update,SRGBColorPalette *palette_data);
 
 // Original: engine_texture.cpp_enableTextureFiltering_FUN_005dd960
 // Address: 005dd960

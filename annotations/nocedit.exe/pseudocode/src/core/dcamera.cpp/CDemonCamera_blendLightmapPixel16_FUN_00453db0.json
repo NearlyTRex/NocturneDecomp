@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 41,
+    "complexity_score": 39,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 14,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 69
+    "total_lines": 67
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0 (CDemonCamera *this_ptr,int screen_x,int screen_y,int offset)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset)"
   },
   "function_calls": [
     {
@@ -145,14 +145,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 11,
       "match": "(ushort *)((int)",
       "text": "((ushort *)((int)g_ScreenBufferArray[screen_y] + screen_x * 2),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 12,
       "match": "(uint *)((int)",
       "text": "(uint *)((int)this_ptr->framebuffer_aligned +",
       "type": "pointer_cast"

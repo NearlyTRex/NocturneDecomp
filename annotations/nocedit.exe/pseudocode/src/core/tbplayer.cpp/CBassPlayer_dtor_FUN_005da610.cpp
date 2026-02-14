@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBassPlayer * __cdecl
-core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlayer *this_ptr,uint flags)
+CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlayer *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

@@ -6,45 +6,46 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_2d_c_getInputWithPrompt_FUN_004032c0(char *buffer,int max_length,int x,int y,char *prompt)
+int __cdecl engine_2d_c_getInputWithPrompt_FUN_004032c0(char *buffer,int max_length,int x,int y,char *prompt)
 
 {
-  char *pcVar1;
+  uchar *puVar1;
   uint uVar2;
-  int iVar3;
+  _BIT_INTEGER _Var3;
+  int iVar4;
   char local_114 [256];
-  uint local_14;
+  _BIT_INTEGER local_14;
   
   *buffer = '\0';
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  iVar3 = 0;
+  iVar4 = 0;
   do {
     _sprintf(local_114,"%s%s_    ",prompt,buffer);
     engine_2d_c_drawText_FUN_00401fd0(local_114,x,y);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    local_14 = uVar2 & 0xff;
-    if (local_14 == 0xd) {
+    _Var3.dword = uVar2 & 0xff;
+    local_14.dword = _Var3.dword;
+    if (_Var3.dword == 0xd) {
 LAB_0040337b:
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      return local_14;
+      return local_14.dword;
     }
-    if (local_14 == 0x1b) {
+    if (_Var3.dword == 0x1b) {
       *buffer = '\0';
       goto LAB_0040337b;
     }
-    if ((local_14 == 8) && (0 < iVar3)) {
-      iVar3 = iVar3 + -1;
-      buffer[iVar3] = '\0';
+    if ((_Var3.dword == 8) && (0 < iVar4)) {
+      iVar4 = iVar4 + -1;
+      buffer[iVar4] = '\0';
     }
-    if (((0x1f < local_14) && (local_14 < 0x80)) && (iVar3 < max_length)) {
-      pcVar1 = buffer + iVar3;
-      local_14._0_1_ = (char)uVar2;
-      iVar3 = iVar3 + 1;
-      *pcVar1 = (char)local_14;
-      buffer[iVar3] = '\0';
+    if (((0x1f < _Var3.dword) && (_Var3.dword < 0x80)) && (iVar4 < max_length)) {
+      puVar1 = (uchar *)(buffer + iVar4);
+      local_14.bytes[0] = (uchar)uVar2;
+      iVar4 = iVar4 + 1;
+      *puVar1 = local_14.bytes[0];
+      buffer[iVar4] = '\0';
     }
   } while( true );
 }

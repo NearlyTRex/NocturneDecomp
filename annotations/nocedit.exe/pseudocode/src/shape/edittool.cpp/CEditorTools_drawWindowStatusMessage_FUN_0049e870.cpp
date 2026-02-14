@@ -2,13 +2,11 @@
 // Address: 0049e870
 // Address Range: [[0049e870, 0049e93f]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 (CEditorTools *this_ptr,char *format_string,...)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870(CEditorTools *this_ptr,char *format_string,...)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
-          (CEditorTools *this_ptr,char *format_string,...)
+void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870(CEditorTools *this_ptr,char *format_string,...)
 
 {
   va_list_t local_14;

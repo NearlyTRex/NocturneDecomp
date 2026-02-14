@@ -25,7 +25,7 @@ void __cdecl CAlphaBitmap::display(CAlphaBitmap *this_ptr,int x,int y,int alpha)
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00
 // Address: 00410b00
-void __cdecl CAlphaBitmap::render(CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x, int bottom_y);
+void __cdecl CAlphaBitmap::render(CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x,int bottom_y);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_scale_FUN_00410c20
 // Address: 00410c20

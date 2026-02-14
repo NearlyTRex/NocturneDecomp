@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(CInventory *this_ptr,int reset_both)
+void __cdecl core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(CInventory *this_ptr,int reset_both)
 
 {
   if ((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex]) {

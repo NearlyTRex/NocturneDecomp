@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 243,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "pseudocode_lines": 103,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -83,7 +83,7 @@
     },
     {
       "addr": "0066e784",
-      "name": "DAT_0066e784",
+      "name": "SMRGLTextureBasic_0066e784",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -238,38 +238,31 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0066e784",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0066e784);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 42,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_00823c54 + iVar8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 42,
       "match": "DAT_00823c54",
       "text": "*(uint *)((int)&DAT_00823c54 + iVar8) = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 54,
       "match": "DAT_00823c54",
       "text": "(&DAT_00823c54)[iVar8] =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 55,
       "match": "DAT_00823c54",
-      "text": "(float)(&DAT_00823c54)[iVar8] +",
+      "text": "(float)(&DAT_00823c54)[iVar8] + (pCVar9->fire_effects[0].unk2 * fVar2) / fVar3;",
       "type": "undefined_data"
     },
     {

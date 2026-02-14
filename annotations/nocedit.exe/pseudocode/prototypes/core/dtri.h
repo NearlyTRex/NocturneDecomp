@@ -61,7 +61,7 @@ void __cdecl copyVector3(CVector3f *dest_ptr,CVector3f *src_ptr);
 
 // Original: core_dtri.cpp_clipLineToPlane_FUN_0049b6c0
 // Address: 0049b6c0
-void __cdecl clipLineToPlane(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx, double plane_ny,double plane_nz,double plane_d);
+void __cdecl clipLineToPlane(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
 // Original: core_dtri.cpp_clipPolygonToTop_FUN_0049b860
 // Address: 0049b860

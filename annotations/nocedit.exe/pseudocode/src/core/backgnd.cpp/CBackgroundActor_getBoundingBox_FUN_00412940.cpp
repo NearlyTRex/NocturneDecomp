@@ -2,13 +2,11 @@
 // Address: 00412940
 // Address Range: [[00412940, 0041298d]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_00412940 (CBackgroundActor *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_00412940(CBackgroundActor *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_00412940
-          (CBackgroundActor *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_backgnd_cpp_CBackgroundActor_getBoundingBox_FUN_00412940(CBackgroundActor *this_ptr,CBoundingBox3D *out_box)
 
 {
   CVector3f *pCVar1;

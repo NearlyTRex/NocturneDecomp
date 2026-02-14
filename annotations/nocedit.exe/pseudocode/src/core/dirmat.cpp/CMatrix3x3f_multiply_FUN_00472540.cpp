@@ -2,13 +2,11 @@
 // Address: 00472540
 // Address Range: [[00472540, 00472674]]
 // Convention: __stack2_esi
-// Signature: CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_00472540 (CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out)
+// Signature: CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_00472540(CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out)
 
 #include "nocturne.h"
 
-CMatrix3x3f * __stack2_esi
-core_dirmat_cpp_CMatrix3x3f_multiply_FUN_00472540
-          (CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out)
+CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_00472540(CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out)
 
 {
   int iVar1;

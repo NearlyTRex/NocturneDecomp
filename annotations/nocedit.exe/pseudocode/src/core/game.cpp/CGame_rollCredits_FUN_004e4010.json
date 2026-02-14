@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 232,
+    "complexity_score": 199,
     "cross_reference_count": 2,
     "function_call_count": 30,
     "global_count": 18,
-    "pseudocode_lines": 157,
-    "suspect_count": 6,
+    "pseudocode_lines": 159,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 522
+    "total_lines": 524
   },
   "cross_references": [
     {
@@ -460,46 +459,25 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000008",
-      "text": "CGame *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_1134 + iVar7) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 99,
       "match": "NAN",
       "text": "local_1c = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 106,
       "match": "ROUND",
       "text": "local_14 = (float)(int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 157,
-      "match": "in_stack_00000008",
-      "text": "core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_00000008",
-      "text": "local_14 = local_14 - in_stack_00000008->delta_time_float * 32.0f;",
-      "type": "stack_param"
     }
   ]
 }

@@ -4,14 +4,20 @@
       {
         "category": "other",
         "column": 22,
-        "line": 21,
+        "line": 20,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 53,
+        "line": 52,
         "message": "cannot cast from type 'float' to pointer type 'CBoundingBox3D *'"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 53,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
@@ -27,20 +33,14 @@
       },
       {
         "category": "other",
-        "column": 12,
-        "line": 56,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "other",
         "column": 18,
-        "line": 65,
+        "line": 64,
         "message": "cannot cast from type 'float' to pointer type 'CBoundingBox3D *'"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 66,
+        "line": 65,
         "message": "cannot cast from type 'float' to pointer type 'CBoundingBox3D *'"
       }
     ],
@@ -49,16 +49,16 @@
   },
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 117,
+    "complexity_score": 116,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 61,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 206
+    "total_lines": 205
   },
   "cross_references": [
     {
@@ -232,35 +232,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 16,
       "match": "(CBoundingBox3D *)((int)",
       "text": "this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(CBoundingBox3D *)((int)",
       "text": "if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_00) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(CVector3f *)((int)",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_00->min).x;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(CVector3f *)((int)",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_00->min).y;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(CVector3f *)((int)",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_00->min).z;",
       "type": "pointer_cast"

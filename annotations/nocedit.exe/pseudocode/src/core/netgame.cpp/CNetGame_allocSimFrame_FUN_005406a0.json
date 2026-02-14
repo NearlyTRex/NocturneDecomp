@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 33,
-        "line": 366,
+        "line": 364,
         "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 1085,
-    "complexity_score": 578,
+    "complexity_score": 576,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 43,
-    "pseudocode_lines": 403,
+    "pseudocode_lines": 401,
     "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
       "warning_unreachable"
     ],
-    "total_lines": 1488
+    "total_lines": 1486
   },
   "cross_references": [
     {
@@ -45,7 +45,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0 (CNetGame *this_ptr,SNetworkAddr *source_addr,char *packet_data)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0(CNetGame *this_ptr,SNetworkAddr *source_addr,char *packet_data)"
   },
   "function_calls": [
     {
@@ -701,105 +701,105 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 112,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 124,
       "match": "DAT_02f7c8bc",
       "text": "DAT_02f7c8bc = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 136,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 138,
       "match": "DAT_02f7c8c4",
       "text": "DAT_02f7c8c4 = 0xffffffff;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 145,
       "match": "DAT_02f7c8bc",
       "text": "DAT_02f7c8bc = *(uint *)(packet_data + 5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 213,
+      "line": 211,
       "match": "DAT_02f98ad0",
       "text": "if (((this_ptr->connection_type != 0) && (-1 < (int)uVar2)) && (0 < DAT_02f98ad0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 215,
+      "line": 213,
       "match": "DAT_02f98ad0",
       "text": "iVar4 = DAT_02f98ad0 * 0x114;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 215,
       "match": "(int *)((int)",
       "text": "while (*(int *)((int)&DAT_02f98ad8 + iVar5) == *(int *)(packet_data + 5)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 217,
+      "line": 215,
       "match": "DAT_02f98ad8",
       "text": "while (*(int *)((int)&DAT_02f98ad8 + iVar5) == *(int *)(packet_data + 5)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 218,
+      "line": 216,
       "match": "DAT_02f98adc",
       "text": "(&DAT_02f98adc)[iVar5 + uVar2] = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 295,
+      "line": 293,
       "match": "DAT_02f7c8c4",
       "text": "if (DAT_02f7c8c4 < *(int *)(packet_data + 5)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 300,
+      "line": 298,
       "match": "DAT_02f7c8c4",
       "text": "DAT_02f7c8c4 = *(int *)(packet_data + 5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 304,
+      "line": 302,
       "match": "DAT_02f7c8c4",
       "text": "local_5f = DAT_02f7c8c4;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 343,
+      "line": 341,
       "match": "(int *)((int)",
       "text": "if (local_2c == *(int *)((int)&g_SimFrameHistory + iVar5)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 345,
+      "line": 343,
       "match": "(int *)((int)",
       "text": "piVar3 = (int *)((int)&g_SimFrameHistory + iVar5);",
       "type": "pointer_cast"

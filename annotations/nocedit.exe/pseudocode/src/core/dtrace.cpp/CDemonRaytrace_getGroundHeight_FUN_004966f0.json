@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 174,
+    "complexity_score": 172,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 14,
-    "pseudocode_lines": 94,
+    "pseudocode_lines": 92,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float"
     ],
-    "total_lines": 300
+    "total_lines": 298
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0",
-    "signature": "float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0 (CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out)"
+    "signature": "float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out)"
   },
   "function_calls": [
     {
@@ -377,49 +377,49 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 43,
+      "line": 41,
       "match": "6.741156e-39",
       "text": "CStack_6c.z = 6.741156e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 44,
       "match": "ROUND",
       "text": "local_24 = (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 49,
+      "line": 47,
       "match": "6.741194e-39",
       "text": "CStack_6c.y = 6.741194e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 49,
       "match": "ROUND",
       "text": "local_2c = (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 53,
+      "line": 51,
       "match": "6.741221e-39",
       "text": "CStack_6c.x = 6.741221e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 55,
       "match": "ROUND",
       "text": "local_3c = (float)(int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 56,
       "match": "ROUND",
       "text": "local_2c = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"

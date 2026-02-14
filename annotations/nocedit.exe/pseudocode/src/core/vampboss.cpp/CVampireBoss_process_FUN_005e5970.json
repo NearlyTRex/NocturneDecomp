@@ -4,98 +4,116 @@
       {
         "category": "other",
         "column": 16,
-        "line": 248,
+        "line": 246,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 251,
+        "line": 249,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 16,
+        "column": 27,
         "line": 253,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 256,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 27,
-        "line": 257,
+        "column": 49,
+        "line": 259,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 27,
-        "line": 257,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 257,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 265,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 270,
+        "column": 23,
+        "line": 284,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 532,
+        "line": 525,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 535,
+        "line": 528,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 547,
+        "line": 529,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
+        "column": 22,
+        "line": 530,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 531,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 532,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 534,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 534,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 535,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 535,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 539,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
         "column": 20,
-        "line": 599,
+        "line": 593,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 602,
+        "line": 596,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 612,
+        "line": 597,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 650,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -103,19 +121,20 @@
   },
   "complexity": {
     "assembly_lines": 1466,
-    "complexity_score": 889,
+    "complexity_score": 848,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
-    "pseudocode_lines": 659,
-    "suspect_count": 21,
+    "pseudocode_lines": 653,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "warning_type_propagation"
     ],
-    "total_lines": 2125
+    "total_lines": 2119
   },
   "cross_references": [],
   "function": {
@@ -1090,6 +1109,13 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 29,
       "match": "extraout_ST1",
@@ -1100,140 +1126,105 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_fffffdb0",
-      "text": "CVector3f *in_stack_fffffdb0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_fffffdb8",
-      "text": "float in_stack_fffffdb8;",
+      "text": "float in_stack_fffffdb0;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 121,
       "match": "SQRT",
-      "text": "if (SQRT(local_f4 * local_f4 + local_ec * local_ec) < (float)5) {",
+      "text": "fVar21 = SQRT(local_f4 * local_f4 + local_ec * local_ec);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 128,
       "match": "ABS",
       "text": "if ((float10)0 != ABS((float10)(int)local_18)) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 138,
-      "match": "in_stack_fffffdb8",
-      "text": "if ((float)40 < in_stack_fffffdb8) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 167,
-      "match": "in_stack_fffffdb8",
-      "text": "(in_stack_fffffdb8 < (float)24)) && (*(int *)(this_ptr->unk4 + 8) == 0)) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 192,
+      "line": 191,
       "match": "(int *)((int)",
-      "text": "iVar8 = *(int *)((int)this_ptr + (4 - *(int *)(this_ptr->unk4 + 0x14)) * 4 + 0xce908);",
+      "text": "iVar7 = *(int *)((int)this_ptr + (4 - *(int *)(this_ptr->unk4 + 0x14)) * 4 + 0xce908);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 201,
+      "line": 200,
       "match": "SQRT",
-      "text": "SQRT(fVar5 * fVar5 + fVar3 * fVar3) < (float)6)) {",
+      "text": "SQRT(fVar4 * fVar4 + fVar21 * fVar21) < (float)6)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 224,
+      "line": 223,
       "match": "SQRT",
-      "text": "SQRT(fVar5 * fVar5 + fVar3 * fVar3) < (float)4)) {",
+      "text": "SQRT(fVar4 * fVar4 + fVar21 * fVar21) < (float)4)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 236,
+      "line": 235,
       "match": "SQRT",
-      "text": "SQRT((float10)local_e4 * (float10)local_e4 +",
+      "text": "SQRT((float10)local_ec * (float10)local_ec +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 240,
+      "line": 239,
       "match": "extraout_ST1",
-      "text": "local_40 = (float)extraout_ST1;",
+      "text": "local_48 = (CVector3f *)(float)extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 250,
+      "line": 248,
       "match": "ABS",
-      "text": "if (ABS(fVar3) <= ABS((float)local_18)) {",
+      "text": "if (ABS(fVar21) <= ABS(local_20)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 250,
+      "line": 248,
       "match": "ABS",
-      "text": "if (ABS(fVar3) <= ABS((float)local_18)) {",
+      "text": "if (ABS(fVar21) <= ABS(local_20)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 272,
+      "match": "fsin",
+      "text": "fVar16 = (float10)fsin(fVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 274,
+      "match": "fsin",
+      "text": "fVar18 = (float10)fsin(fVar17);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 275,
-      "match": "fsin",
-      "text": "fVar17 = (float10)fsin(fVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 277,
-      "match": "fsin",
-      "text": "fVar19 = (float10)fsin(fVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 278,
       "match": "fcos",
-      "text": "fVar16 = (float10)fcos(fVar16);",
+      "text": "fVar15 = (float10)fcos(fVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 279,
+      "line": 276,
       "match": "fcos",
-      "text": "fVar18 = (float10)fcos(fVar18);",
+      "text": "fVar17 = (float10)fcos(fVar17);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 454,
+      "line": 638,
       "match": "in_stack_fffffdb0",
-      "text": "in_stack_fffffdb0 = &local_100;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 456,
-      "match": "in_stack_fffffdb0",
-      "text": "((CCharacter *)this_ptr,in_stack_fffffdb0,-1.0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 643,
-      "match": "in_stack_fffffdb0",
-      "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffdb0);",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffdb0);",
       "type": "stack_param"
     }
   ],

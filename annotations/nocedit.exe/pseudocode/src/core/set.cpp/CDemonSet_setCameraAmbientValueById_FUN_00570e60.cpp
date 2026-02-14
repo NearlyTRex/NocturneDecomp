@@ -2,13 +2,11 @@
 // Address: 00570e60
 // Address Range: [[00570e60, 00570e9f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60 (CDemonSet *this_ptr,int id,float value)
+// Signature: void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60(CDemonSet *this_ptr,int id,float value)
 
 #include "nocturne.h"
 
-void __cdecl
-core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60
-          (CDemonSet *this_ptr,int id,float value)
+void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60(CDemonSet *this_ptr,int id,float value)
 
 {
   int index;

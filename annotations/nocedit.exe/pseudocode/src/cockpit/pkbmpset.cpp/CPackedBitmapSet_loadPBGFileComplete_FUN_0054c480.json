@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 86,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 13,
     "suspect_count": 6,
     "suspect_types": [
       "param_count_too_many",
       "unnamed_param"
     ],
-    "total_lines": 54
+    "total_lines": 51
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480 (CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3, int param4,int additional_param)"
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4,int additional_param)"
   },
   "function_calls": [
     {
@@ -152,35 +152,35 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param3",
-      "text": "(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,",
+      "text": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4,int additional_param)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 2,
       "match": "param4",
-      "text": "int param4,int additional_param)",
+      "text": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4,int additional_param)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 10,
       "match": "param3",
       "text": "((CPackedBitmap *)this_ptr,pbg_filename,palette_filename,param3,param4,-1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 10,
       "match": "param4",
       "text": "((CPackedBitmap *)this_ptr,pbg_filename,palette_filename,param3,param4,-1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 14,
       "match": "param3",
       "text": "this_ptr->config_param = param3;",
       "type": "unnamed_param"

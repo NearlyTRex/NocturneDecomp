@@ -2,14 +2,11 @@
 // Address: 004917bc
 // Address Range: [[004917bc, 00491bf5] [00491c00, 00491c99]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc (ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dstrender_cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc
-          (ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,
-          byte *lightmap_indices,int pixel_count)
+void __cdecl core_dstrender_cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 {
   ulonglong uVar1;

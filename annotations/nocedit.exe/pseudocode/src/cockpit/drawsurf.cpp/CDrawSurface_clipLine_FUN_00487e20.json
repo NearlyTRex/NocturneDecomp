@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 309,
-    "complexity_score": 309,
+    "complexity_score": 306,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 124,
+    "pseudocode_lines": 121,
     "suspect_count": 18,
     "suspect_types": [
       "register_param"
     ],
-    "total_lines": 433
+    "total_lines": 430
   },
   "cross_references": [
     {
@@ -41,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20",
-    "signature": "int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20 (CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top, int clip_right,int clip_bottom)"
+    "signature": "int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom)"
   },
   "function_calls": [
     {
@@ -340,126 +340,126 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 9,
+      "line": 6,
       "match": "in_EAX",
       "text": "int in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 13,
+      "line": 10,
       "match": "in_EDX",
       "text": "int in_EDX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 58,
+      "line": 55,
       "match": "in_EDX",
       "text": "if (((bVar5 & 8) != 0) && (in_EDX = clip_left, iVar4 != 0)) {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 61,
+      "line": 58,
       "match": "in_EAX",
       "text": "in_EAX = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + *y1;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 65,
+      "line": 62,
       "match": "in_EDX",
       "text": "in_EDX = clip_right;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 69,
+      "line": 66,
       "match": "in_EAX",
       "text": "in_EAX = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + *y1;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 74,
+      "line": 71,
       "match": "in_EAX",
       "text": "in_EAX = clip_top;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 78,
+      "line": 75,
       "match": "in_EDX",
       "text": "in_EDX = *x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 83,
+      "line": 80,
       "match": "in_EAX",
       "text": "in_EAX = clip_bottom;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 87,
+      "line": 84,
       "match": "in_EDX",
       "text": "in_EDX = *x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 91,
+      "line": 88,
       "match": "in_EDX",
       "text": "*x2 = in_EDX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 92,
+      "line": 89,
       "match": "in_EAX",
       "text": "*y2 = in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 93,
+      "line": 90,
       "match": "in_EAX",
       "text": "bVar3 = clip_bottom < in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 94,
+      "line": 91,
       "match": "in_EAX",
       "text": "if (in_EAX < clip_top) {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 105,
+      "line": 102,
       "match": "in_EDX",
       "text": "*x1 = in_EDX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 106,
+      "line": 103,
       "match": "in_EAX",
       "text": "*y1 = in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 107,
+      "line": 104,
       "match": "in_EAX",
       "text": "bVar2 = clip_bottom < in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 108,
+      "line": 105,
       "match": "in_EAX",
       "text": "if (in_EAX < clip_top) {",
       "type": "register_param"

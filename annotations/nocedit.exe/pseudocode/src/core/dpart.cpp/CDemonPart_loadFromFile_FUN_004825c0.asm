@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0 (CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
+; __cdecl void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
 ;
 ; Parameters:
 ; CDemonPart *     Stack[0x4]:4   this_ptr

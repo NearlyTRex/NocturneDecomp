@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 128,
+    "complexity_score": 125,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 110,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 304
+    "total_lines": 301
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_pod.cpp_findFilesByExtension_FUN_00550ce0",
-    "signature": "int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0 (CPod **pod_array,char *extension,char *output_buffer,int max_results, int result_string_length)"
+    "signature": "int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,char *extension,char *output_buffer,int max_results,int result_string_length)"
   },
   "function_calls": [
     {
@@ -248,7 +248,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 61,
       "match": "(int *)((int)",
       "text": "for (local_18 = 0; iVar3 = *(int *)((int)pod_array + local_2c + 4),",
       "type": "pointer_cast"

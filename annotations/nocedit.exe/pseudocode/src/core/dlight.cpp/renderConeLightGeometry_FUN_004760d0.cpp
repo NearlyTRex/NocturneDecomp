@@ -2,13 +2,11 @@
 // Address: 004760d0
 // Address Range: [[004760d0, 004765b8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0 (CVector3f *position,CVector3i *rotation,float fov,float falloff)
+// Signature: void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3i *rotation,float fov,float falloff)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
-          (CVector3f *position,CVector3i *rotation,float fov,float falloff)
+void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3i *rotation,float fov,float falloff)
 
 {
   float fVar1;
@@ -128,27 +126,27 @@ core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,local_68);
       pCVar3 = g_CDemonRendererPtr2;
       g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = local_40;
-      pCVar3->vertex_buffer_ptr->fog = 9.18341e-41;
+      pCVar3->vertex_buffer_ptr->fog = 0xffff;
       pCVar3->vertex_buffer_ptr->color = 0xffff;
-      pCVar3->vertex_buffer_ptr->light = 9.18341e-41;
+      pCVar3->vertex_buffer_ptr->light = 0xffff;
       pCVar3->vertex_buffer_ptr->u = 0xf80000;
       pCVar3->vertex_buffer_ptr->v = 0xf80000;
       pCVar3->vertex_buffer_ptr[1].w_recip = local_40;
-      pCVar3->vertex_buffer_ptr[1].fog = 9.18341e-41;
+      pCVar3->vertex_buffer_ptr[1].fog = 0xffff;
       pCVar3->vertex_buffer_ptr[1].color = 0xffff;
-      pCVar3->vertex_buffer_ptr[1].light = 9.18341e-41;
+      pCVar3->vertex_buffer_ptr[1].light = 0xffff;
       pCVar3->vertex_buffer_ptr[1].u = 0x80000;
       pCVar3->vertex_buffer_ptr[1].v = 0xf80000;
       pCVar3->vertex_buffer_ptr[2].w_recip = fStack_3c;
-      pCVar3->vertex_buffer_ptr[2].fog = 9.18341e-41;
+      pCVar3->vertex_buffer_ptr[2].fog = 0xffff;
       pCVar3->vertex_buffer_ptr[2].color = 0xffff;
-      pCVar3->vertex_buffer_ptr[2].light = 9.18341e-41;
+      pCVar3->vertex_buffer_ptr[2].light = 0xffff;
       pCVar3->vertex_buffer_ptr[2].u = 0x80000;
       pCVar3->vertex_buffer_ptr[2].v = 0x80000;
       pCVar3->vertex_buffer_ptr[3].w_recip = fStack_3c;
-      pCVar3->vertex_buffer_ptr[3].fog = 9.18341e-41;
+      pCVar3->vertex_buffer_ptr[3].fog = 0xffff;
       pCVar3->vertex_buffer_ptr[3].color = 0xffff;
-      pCVar3->vertex_buffer_ptr[3].light = 9.18341e-41;
+      pCVar3->vertex_buffer_ptr[3].light = 0xffff;
       pCVar3->vertex_buffer_ptr[3].u = 0xf80000;
       pCVar3->vertex_buffer_ptr[3].v = 0x80000;
       local_c0.base.count = 4;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMission *this_ptr)
+void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMission *this_ptr)
 
 {
   CDemonActor *this_ptr_00;

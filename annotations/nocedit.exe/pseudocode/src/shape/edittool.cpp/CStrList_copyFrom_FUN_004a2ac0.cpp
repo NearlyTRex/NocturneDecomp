@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CStrList * __cdecl
-shape_edittool_cpp_CStrList_copyFrom_FUN_004a2ac0(CStrList *dest_ptr,CStrList *source_ptr)
+CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_004a2ac0(CStrList *dest_ptr,CStrList *source_ptr)
 
 {
   char *string_data;

@@ -2,13 +2,11 @@
 // Address: 004ba6c0
 // Address Range: [[004ba6c0, 004ba739]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0 (CFileManager *this_ptr,CStrList *pod_list,char *target_filename)
+// Signature: int __cdecl engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0(CFileManager *this_ptr,CStrList *pod_list,char *target_filename)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0
-          (CFileManager *this_ptr,CStrList *pod_list,char *target_filename)
+int __cdecl engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0(CFileManager *this_ptr,CStrList *pod_list,char *target_filename)
 
 {
   char *input_path;

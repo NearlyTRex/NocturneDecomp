@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140 (CEventList *this_ptr,char *expression,int *parse_position)
+; __cdecl int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this_ptr,char *expression,int *parse_position)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

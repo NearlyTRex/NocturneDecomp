@@ -1,0 +1,243 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 114,
+    "complexity_score": 80,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 13,
+    "pseudocode_lines": 55,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 169
+  },
+  "cross_references": [
+    {
+      "addr": "005390f0",
+      "from_addr": "0053aa39",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566080",
+    "address_range": [
+      [
+        "00566080",
+        "0056617a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_checkSyntax_FUN_00566080",
+    "signature": "void __cdecl core_script_cpp_CScript_checkSyntax_FUN_00566080(CScript *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005644e0",
+      "is_variadic": false,
+      "name": "core_script.cpp_clearSelections_FUN_005644e0"
+    },
+    {
+      "addr": "0055a370",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_buildParsedLines_FUN_0055a370"
+    },
+    {
+      "addr": "00566910",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_updateCursorBounds_FUN_00566910"
+    },
+    {
+      "addr": "005669a0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_updateScrollPosition_FUN_005669a0"
+    },
+    {
+      "addr": "0055a4b0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_validateSyntax_FUN_0055a4b0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "004a5770",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_clear_FUN_004a5770"
+    },
+    {
+      "addr": "004a3e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a6ed0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00643f0e",
+      "name": "s_d_sound_files_missing_00643f0e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00643f26",
+      "name": "s_The_following_sound_file_00643f26",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00643f4d",
+      "name": "s_Syntax_check_OK_00643f4d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00643f4e",
+      "name": "s_yntax_check_OK._00643f4e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00643f4f",
+      "name": "s_ntax_check_OK._00643f4f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00643f50",
+      "name": "s_tax_check_OK._00643f50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310f4b0",
+      "name": "g_ScriptPickList",
+      "type": "CPickList",
+      "value": null
+    },
+    {
+      "addr": "0310fd44",
+      "name": "g_CurrentEditingColumn",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0310fd48",
+      "name": "g_CurrentEditingLine",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0310fdc0",
+      "name": "g_ScriptEditorStatusText",
+      "type": "char[1023]",
+      "value": null
+    },
+    {
+      "addr": "0310fdc1",
+      "name": "DAT_0310fdc1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fdc2",
+      "name": "DAT_0310fdc2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fdc3",
+      "name": "DAT_0310fdc3",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053aa39",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.417582417582418,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "CALL": 10,
+      "CBRANCH": 6,
+      "COPY": 65,
+      "INT_ADD": 35,
+      "INT_AND": 50,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 48,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 24,
+      "INT_SUB": 35,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 24,
+      "RETURN": 3,
+      "STORE": 34
+    },
+    "pcode_op_count": 402
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(char *)((int)",
+      "text": "cVar1 = *(char *)((int)piVar2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)",
+      "text": "piVar2 = (int *)((int)piVar2 + 2);",
+      "type": "pointer_cast"
+    }
+  ]
+}

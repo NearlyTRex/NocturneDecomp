@@ -2,13 +2,11 @@
 // Address: 004b2270
 // Address Range: [[004b2270, 004b2391]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270 (char *input_string,STimestampRecord *output_record)
+// Signature: int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(char *input_string,STimestampRecord *output_record)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_parseTimestampRecord_FUN_004b2270
-          (char *input_string,STimestampRecord *output_record)
+int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(char *input_string,STimestampRecord *output_record)
 
 {
   char cVar1;

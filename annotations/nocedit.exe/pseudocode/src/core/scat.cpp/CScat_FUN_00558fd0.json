@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 64,
+        "line": 68,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 64,
+        "line": 68,
         "message": "expected expression"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 132,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 61,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 167
+    "total_lines": 171
   },
   "cross_references": [
     {
@@ -263,37 +263,37 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 43,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 44,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 54,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 55,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
+      "line": 61,
       "match": "code *",
-      "text": "(**(code **)(iVar1 + 0x60))();",
+      "text": "(**(code **)(iVar1 + 0x60))(iVar4,pCVar3,pCVar2);",
       "type": "unresolved_funcptr"
     }
   ]

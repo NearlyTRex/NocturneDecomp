@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 88,
+    "complexity_score": 85,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 25,
     "suspect_count": 5,
     "suspect_types": [
       "extra_output",
       "register_param"
     ],
-    "total_lines": 85
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20",
-    "signature": "int __cdecl engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags)"
+    "signature": "int __cdecl engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags)"
   },
   "function_calls": [
     {
@@ -124,35 +124,35 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 8,
+      "line": 5,
       "match": "in_EAX",
       "text": "int in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 6,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
+      "line": 24,
       "match": "extraout_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 27,
+      "line": 24,
       "match": "in_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 30,
+      "line": 27,
       "match": "in_EAX",
       "text": "return in_EAX;",
       "type": "register_param"

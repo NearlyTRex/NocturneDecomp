@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SIntersectXZCylinder * __cdecl
-core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_005746c0(SIntersectXZCylinder *this_ptr,uint flags)
+SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_005746c0(SIntersectXZCylinder *this_ptr,uint flags)
 
 {
   return this_ptr;

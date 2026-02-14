@@ -2,13 +2,11 @@
 // Address: 0042d090
 // Address Range: [[0042d090, 0042d2fa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090 (CCharacter *this_ptr,float delta_time)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090
-          (CCharacter *this_ptr,float delta_time)
+void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
 
 {
   float fVar1;

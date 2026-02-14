@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_loadCameraFog_FUN_00453e50(SFog *fog,_FILE *file_handle,int file_version)
+void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00453e50(SFog *fog,_FILE *file_handle,int file_version)
 
 {
   char local_108 [256];

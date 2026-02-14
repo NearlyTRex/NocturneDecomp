@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_hostage_cpp_CHostage_renderBackground_FUN_004f6120(CHostage *this_ptr,int layer_flag)
+void __cdecl core_hostage_cpp_CHostage_renderBackground_FUN_004f6120(CHostage *this_ptr,int layer_flag)
 
 {
   int iVar1;
-  int in_stack_0000000c;
   
   iVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (0 < iVar1) {
     iVar1 = stricmp((char *)this_ptr,"ScatDazzle");
     if (iVar1 != 0) {
-      if (in_stack_0000000c != 0) {
+      if (layer_flag != 0) {
         (this_ptr->base).base.render_active = 1;
       }
-      core_npc_cpp_CNPC_renderBackground_FUN_00544b70(&this_ptr->base,in_stack_0000000c);
+      core_npc_cpp_CNPC_renderBackground_FUN_00544b70(&this_ptr->base,layer_flag);
       return;
     }
   }

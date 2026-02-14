@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLightActor * __cdecl
-core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActor *this_ptr,uint flags)
+CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActor *this_ptr,uint flags)
 
 {
   CDemonLight *pCVar1;

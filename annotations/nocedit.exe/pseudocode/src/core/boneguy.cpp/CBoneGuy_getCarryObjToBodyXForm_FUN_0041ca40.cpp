@@ -2,13 +2,13 @@
 // Address: 0041ca40
 // Address Range: [[0041ca40, 0041cc36]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 (CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
-void __stack2_esi
-core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
-          (CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+/* WARNING: Type propagation algorithm not settling */
+
+void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   CDemonActor *this_ptr_00;
@@ -17,6 +17,7 @@ core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
   CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
   byte bVar5;
+  CMatrix3x4f local_120;
   CMatrix3x4f local_f0;
   CMatrix3x4f local_c0;
   CBoundingBox3D local_90;
@@ -39,7 +40,7 @@ core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
   local_60.x = -0.771;
   local_60.y = -2.536;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            ((CMatrix3x4f *)&stack0xfffffee0,&g_ZeroVector,&local_60);
+            (&local_120,&g_ZeroVector,&local_60);
   (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&local_90);
   core_actor_cpp_CVector_ctor_FUN_00410340(&local_54);
   local_54.x = local_90.min.x + local_90.max.x;
@@ -59,16 +60,14 @@ core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
   local_6c.y = 0.209;
   pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_78,&local_6c,
-                      (CMatrix3x4f *)
-                      (this_ptr->base).base.model.bone_transform.bone_world_matrices[iVar2].m);
+                      (this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2);
   if (&local_18 != pCVar1) {
     local_18.x = pCVar1->x;
     local_18.y = pCVar1->y;
     local_18.z = pCVar1->z;
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)&stack0xfffffee0,
-             (CMatrix3x4f *)(this_ptr->base).base.model.bone_transform.bone_world_matrices[iVar2].m,
+            (&local_120,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
              &local_c0);
   pCVar3 = &local_c0;
   pCVar4 = &local_f0;

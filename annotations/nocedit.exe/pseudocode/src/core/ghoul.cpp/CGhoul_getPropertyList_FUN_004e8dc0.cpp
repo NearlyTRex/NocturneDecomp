@@ -2,13 +2,11 @@
 // Address: 004e8dc0
 // Address Range: [[004e8dc0, 004e8e1c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ghoul_cpp_CGhoul_getPropertyList_FUN_004e8dc0 (CGhoul *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_ghoul_cpp_CGhoul_getPropertyList_FUN_004e8dc0(CGhoul *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_ghoul_cpp_CGhoul_getPropertyList_FUN_004e8dc0
-          (CGhoul *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_ghoul_cpp_CGhoul_getPropertyList_FUN_004e8dc0(CGhoul *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

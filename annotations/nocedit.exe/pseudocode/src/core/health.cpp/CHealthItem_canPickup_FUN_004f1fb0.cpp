@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_health_cpp_CHealthItem_canPickup_FUN_004f1fb0(CHealthItem *this_ptr,CDemonActor *picker)
+int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004f1fb0(CHealthItem *this_ptr,CDemonActor *picker)
 
 {
   int iVar1;

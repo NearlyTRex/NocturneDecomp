@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0 (CDeformableModelInstance *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
+; __cdecl float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0(CDeformableModelInstance *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr

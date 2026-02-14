@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 (CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1, int *out_frame2,float *out_blend_weight)
+; __cdecl void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410 (void *output_buffer,void *indexed_input_buffer,int pixel_count)
+; __cdecl void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410(void *output_buffer,void *indexed_input_buffer,int pixel_count)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   output_buffer

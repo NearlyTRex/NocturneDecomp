@@ -113,7 +113,7 @@ char * __cdecl strdup(char *str);
 
 // Original: crt_string.c_wcsdup_FUN_0060a660
 // Address: 0060a660
-WCHAR * wcsdup(WCHAR *str);
+WCHAR * __watcallRegister wcsdup(WCHAR *str);
 
 // Original: crt_string.c_mbstring_termination_check_FUN_0060b630
 // Address: 0060b630

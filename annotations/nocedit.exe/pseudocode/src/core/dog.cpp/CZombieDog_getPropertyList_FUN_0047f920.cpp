@@ -2,13 +2,11 @@
 // Address: 0047f920
 // Address Range: [[0047f920, 0047f95c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920 (CZombieDog *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920(CZombieDog *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920
-          (CZombieDog *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920(CZombieDog *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

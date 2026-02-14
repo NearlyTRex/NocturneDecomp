@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0 (int row,int x_start,int x_end,SCorona *corona_buffer)
+; __cdecl void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona_buffer)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   row
@@ -24,7 +24,7 @@
 ; Referenced Globals:
 ;   CVector3i[15360] g_PrecomputedWorldPositions
 ;   int[76800] g_PrecomputedDepthBuffer
-;   int g_CameraDownscaleIterations
+;   _BIT_INTEGER g_CameraDownscaleIterations
 ;   int[240][320] g_CoronaDepthBuffer
 ;   CDemonGlobe* g_CurrentGlobe
 ;   int g_CoronaVisibilityEnabled

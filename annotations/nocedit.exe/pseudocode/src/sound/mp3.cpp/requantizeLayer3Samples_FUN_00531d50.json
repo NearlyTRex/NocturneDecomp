@@ -3,80 +3,56 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 29,
+        "column": 36,
         "line": 46,
-        "message": "use of undeclared identifier 'DAT_0067e6cc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 51,
         "message": "use of undeclared identifier 'DAT_0067e728'; did you mean 'DAT_0067d728'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 28,
-        "line": 52,
+        "column": 26,
+        "line": 47,
         "message": "use of undeclared identifier 'DAT_0067e728'; did you mean 'DAT_0067d728'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 56,
-        "message": "use of undeclared identifier 'DAT_0067e6cc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 101,
-        "message": "use of undeclared identifier 'DAT_0067e6cc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 108,
+        "line": 102,
         "message": "use of undeclared identifier 'DAT_0067e728'; did you mean 'DAT_0067d728'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 110,
+        "line": 104,
         "message": "use of undeclared identifier 'DAT_0067e728'; did you mean 'DAT_0067d728'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 113,
+        "line": 107,
         "message": "use of undeclared identifier 'DAT_0067e6e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 53,
-        "line": 114,
+        "line": 108,
         "message": "use of undeclared identifier 'DAT_0067e6e8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 41,
-        "line": 115,
-        "message": "use of undeclared identifier 'DAT_0067e6cc'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 31,
-        "line": 120,
+        "line": 114,
         "message": "use of undeclared identifier 'DAT_0067e734'"
       },
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 121,
-        "message": "use of undeclared identifier 'DAT_0067e730'; did you mean 'DAT_0067C730'?"
+        "line": 115,
+        "message": "use of undeclared identifier 'DAT_0067e730'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 122,
+        "line": 116,
         "message": "use of undeclared identifier 'DAT_0067e734'"
       }
     ],
@@ -85,18 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 485,
+    "complexity_score": 439,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 17,
-    "pseudocode_lines": 180,
-    "suspect_count": 29,
+    "pseudocode_lines": 174,
+    "suspect_count": 25,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 574
+    "total_lines": 568
   },
   "cross_references": [
     {
@@ -117,7 +93,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50",
-    "signature": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50 (SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples, int *scalefactor_data,SMpegLayer3Granule *granule_info,int channel_index, SMpegLayer3Granule **granule_array)"
+    "signature": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3Granule *granule_info,int channel_index,SMpegLayer3Granule **granule_array)"
   },
   "function_calls": [
     {
@@ -159,15 +135,15 @@
     },
     {
       "addr": "0067e6cc",
-      "name": "DAT_0067e6cc",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_0067e6cc",
+      "type": "int",
+      "value": "0x6"
     },
     {
       "addr": "0067e6d0",
-      "name": "DAT_0067e6d0",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_0067e6d0",
+      "type": "int",
+      "value": "0xc"
     },
     {
       "addr": "0067e6dc",
@@ -528,21 +504,21 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 16,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 17,
       "match": "extraout_ST1_00",
       "text": "float10 extraout_ST1_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 18,
       "match": "extraout_ST2",
       "text": "float10 extraout_ST2;",
       "type": "extra_output"
@@ -550,181 +526,153 @@
     {
       "description": "Undefined global data reference",
       "line": 39,
-      "match": "DAT_0067e6cc",
-      "text": "local_1c = *(float **)(&DAT_0067e6cc + iVar8 * 0x94);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
       "match": "DAT_0067e728",
-      "text": "local_1c = (float *)(*(int *)(&DAT_0067e728 + iVar4) * 3);",
+      "text": "local_1c = (float *)(*(int *)(&DAT_0067e728 + iVar8 * 0x94) * 3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 40,
       "match": "DAT_0067e728",
-      "text": "local_28 = *(int *)(&DAT_0067e728 + iVar4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_0067e6cc",
-      "text": "local_1c = *(float **)(&DAT_0067e6cc + iVar4);",
+      "text": "local_28 = *(int *)(&DAT_0067e728 + iVar8 * 0x94);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 53,
       "match": "(double *)((int)",
-      "text": "*(double *)((int)g_MpegRequantPowerTable + iVar6) = (double)fVar9;",
+      "text": "*(double *)((int)g_MpegRequantPowerTable + iVar9) = (double)fVar10;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 61,
+      "line": 55,
       "match": "extraout_ST1",
-      "text": "fVar9 = extraout_ST1;",
+      "text": "fVar10 = extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 64,
       "match": "(double *)((int)",
-      "text": "*(double *)((int)g_MpegRequantGainTable + iVar4) = (double)fVar9;",
+      "text": "*(double *)((int)g_MpegRequantGainTable + iVar2) = (double)fVar10;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 72,
+      "line": 66,
       "match": "extraout_ST1_00",
-      "text": "fVar9 = extraout_ST1_00;",
+      "text": "fVar10 = extraout_ST1_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
+      "line": 67,
       "match": "extraout_ST2",
       "text": "base = extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_0067e6cc",
-      "text": "local_1c = *(float **)(&DAT_0067e6cc + iVar7 * 4 + iVar8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 101,
+      "line": 95,
       "match": "DAT_0067e728",
       "text": "iVar1 = *(int *)(&DAT_0067e728 + iVar6);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 97,
       "match": "DAT_0067e728",
-      "text": "local_28 = *(int *)(&DAT_0067e728 + iVar6) - iVar2;",
+      "text": "local_28 = *(int *)(&DAT_0067e728 + iVar6) - iVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 100,
       "match": "DAT_0067e6e8",
-      "text": "if (local_20 != *(float **)(&DAT_0067e6e8 + iVar8)) {",
+      "text": "if (local_20 != *(float **)(&DAT_0067e6e8 + iVar2)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_0067e6e8",
+      "text": "if ((int)local_20 < (int)*(float **)(&DAT_0067e6e8 + iVar2)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 107,
-      "match": "DAT_0067e6e8",
-      "text": "if ((int)local_20 < (int)*(float **)(&DAT_0067e6e8 + iVar8)) {",
+      "match": "DAT_0067e734",
+      "text": "iVar1 = *(int *)(&DAT_0067e734 + iVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 108,
-      "match": "DAT_0067e6cc",
-      "text": "local_1c = *(float **)(&DAT_0067e6cc + iVar6);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_0067e734",
-      "text": "iVar1 = *(int *)(&DAT_0067e734 + iVar8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
       "match": "DAT_0067e730",
-      "text": "iVar2 = *(int *)(&DAT_0067e730 + iVar8);",
+      "text": "iVar3 = *(int *)(&DAT_0067e730 + iVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 109,
       "match": "DAT_0067e734",
-      "text": "local_28 = *(int *)(&DAT_0067e734 + iVar8) - iVar2;",
+      "text": "local_28 = *(int *)(&DAT_0067e734 + iVar2) - iVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 117,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar4 + local_68) == 0) {",
+      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar9 + local_68) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 118,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)output_samples->samples[0] + iVar4 + local_68) = 0;",
+      "text": "*(uint *)((int)output_samples->samples[0] + iVar9 + local_68) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 156,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar9 + local_68) < 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)output_samples->samples[0] + iVar9 + local_68) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
+      "match": "(float *)((int)",
+      "text": "-*(float *)((int)output_samples->samples[0] + iVar9 + local_68);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 162,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar4 + local_68) < 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 163,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)output_samples->samples[0] + iVar4 + local_68) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 164,
-      "match": "(float *)((int)",
-      "text": "-*(float *)((int)output_samples->samples[0] + iVar4 + local_68);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 168,
       "match": "(float *)((int)",
       "text": "local_20 = (float *)((int)local_20 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 163,
       "match": "(float *)((int)",
       "text": "local_38 = (float *)((int)local_38 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
+      "line": 168,
       "match": "(float *)((int)",
       "text": "local_6c = (float *)((int)local_6c + 0x12);",
       "type": "pointer_cast"

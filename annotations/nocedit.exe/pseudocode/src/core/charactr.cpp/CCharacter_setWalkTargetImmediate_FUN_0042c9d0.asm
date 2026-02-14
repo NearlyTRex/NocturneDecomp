@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0 (CCharacter *this_ptr,CDemonActor *target)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0(CCharacter *this_ptr,CDemonActor *target)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

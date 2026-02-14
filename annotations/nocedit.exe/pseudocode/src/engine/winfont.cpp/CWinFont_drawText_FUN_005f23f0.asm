@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0 (CWinFont *this_ptr,int x_position,int y_position,char *text_string,int text_color, int draw_flags)
+; __cdecl int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,int x_position,int y_position,char *text_string,int text_color,int draw_flags)
 ;
 ; Parameters:
 ; CWinFont *       Stack[0x4]:4   this_ptr

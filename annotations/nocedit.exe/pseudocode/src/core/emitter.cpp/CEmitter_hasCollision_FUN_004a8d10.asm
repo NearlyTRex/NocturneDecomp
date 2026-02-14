@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_emitter_cpp_CEmitter_hasCollision_FUN_004a8d10 (CEmitter *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_emitter_cpp_CEmitter_hasCollision_FUN_004a8d10(CEmitter *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFrankenstienMachine *this_ptr)
+int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFrankenstienMachine *this_ptr)
 
 {
   float fVar1;

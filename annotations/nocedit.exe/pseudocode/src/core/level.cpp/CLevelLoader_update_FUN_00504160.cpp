@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *text,int clear_screen)
+void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *text,int clear_screen)
 
 {
   CDemonRenderer *pCVar1;
@@ -144,7 +143,7 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
               (&g_LoadingMoonModel,(CKeyFramedModelInstance *)0x0,0,0x205);
     if (this_ptr->use_custom_viewport != 0) {
-      engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
+      engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
     }
     g_CDemonSetPtr->rendering_mode = 0;
     local_10 = g_ThemeFont;

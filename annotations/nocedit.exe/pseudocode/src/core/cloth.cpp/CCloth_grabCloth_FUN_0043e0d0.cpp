@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char *bone_name,int vertex_index)
+void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char *bone_name,int vertex_index)
 
 {
   int iVar1;

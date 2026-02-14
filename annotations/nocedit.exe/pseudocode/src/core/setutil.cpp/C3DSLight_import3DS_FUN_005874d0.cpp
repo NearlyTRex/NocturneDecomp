@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,_FILE *file_handle)
+void __cdecl core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,_FILE *file_handle)
 
 {
   char cVar1;

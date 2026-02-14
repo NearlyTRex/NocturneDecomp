@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __watcallStack
-convertFileInfo(LPWIN32_FIND_DATAA win32_data,_find_t *dos_info)
+void __watcallStack convertFileInfo(LPWIN32_FIND_DATAA win32_data,_find_t *dos_info)
 
 {
   char cVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-float10 __fpustack_safe
-pentiumFdivpWorkaround(float10 dividend,float10 divisor)
+float10 __fpustack_safe pentiumFdivpWorkaround(float10 dividend,float10 divisor)
 
 {
   float10 fVar1;

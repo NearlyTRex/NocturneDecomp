@@ -59,7 +59,8 @@ void __cdecl core_path_cpp_FUN_00547fc0(void)
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&local_64);
   iStack_7c = 0x54803f;
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_00680bb0);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (g_CDemonRendererPtr2,&SMRGLTextureBasic_00680bb0);
   DAT_030d4fd0.base.count = 4;
   DAT_030d4fd0.surface_normal.A = 0;
   DAT_030d4fd0.surface_normal.B = 0;
@@ -137,21 +138,21 @@ void __cdecl core_path_cpp_FUN_00547fc0(void)
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&pCVar1->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0xffffff7c);
         pCVar1 = g_CDemonRendererPtr2;
-        g_CDemonRendererPtr2->vertex_buffer_ptr->light = local_38;
+        g_CDemonRendererPtr2->vertex_buffer_ptr->light = (int)local_38;
         pCVar1->vertex_buffer_ptr->color = (int)local_40;
-        pCVar1->vertex_buffer_ptr->fog = local_3c;
+        pCVar1->vertex_buffer_ptr->fog = (int)local_3c;
         pCVar1->vertex_buffer_ptr->w_recip = fStack_34;
-        pCVar1->vertex_buffer_ptr[1].light = local_38;
+        pCVar1->vertex_buffer_ptr[1].light = (int)local_38;
         pCVar1->vertex_buffer_ptr[1].color = (int)local_40;
-        pCVar1->vertex_buffer_ptr[1].fog = local_3c;
+        pCVar1->vertex_buffer_ptr[1].fog = (int)local_3c;
         pCVar1->vertex_buffer_ptr[1].w_recip = fStack_34;
-        pCVar1->vertex_buffer_ptr[2].light = local_38;
+        pCVar1->vertex_buffer_ptr[2].light = (int)local_38;
         pCVar1->vertex_buffer_ptr[2].color = (int)local_40;
-        pCVar1->vertex_buffer_ptr[2].fog = local_3c;
+        pCVar1->vertex_buffer_ptr[2].fog = (int)local_3c;
         pCVar1->vertex_buffer_ptr[2].w_recip = fStack_34;
-        pCVar1->vertex_buffer_ptr[3].light = local_38;
+        pCVar1->vertex_buffer_ptr[3].light = (int)local_38;
         pCVar1->vertex_buffer_ptr[3].color = (int)local_40;
-        pCVar1->vertex_buffer_ptr[3].fog = local_3c;
+        pCVar1->vertex_buffer_ptr[3].fog = (int)local_3c;
         pCVar1->vertex_buffer_ptr[3].w_recip = fStack_34;
         engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
                   (pCVar1,&DAT_030d4fd0);

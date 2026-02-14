@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_fstream_cpp_convertModesAndOpenFile_FUN_0060c340 (char *filename,int *iostream_mode,int permissions)
+; __cdecl int __cdecl crt_fstream_cpp_convertModesAndOpenFile_FUN_0060c340(char *filename,int *iostream_mode,int permissions)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

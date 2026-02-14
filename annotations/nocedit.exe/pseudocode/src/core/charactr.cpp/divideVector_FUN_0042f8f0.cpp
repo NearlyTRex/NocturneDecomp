@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_charactr_cpp_divideVector_FUN_0042f8f0(CVector3f *src,CVector3f *dst,float *scalar)
+CVector3f * __cdecl core_charactr_cpp_divideVector_FUN_0042f8f0(CVector3f *src,CVector3f *dst,float *scalar)
 
 {
   dst->x = src->x / *scalar;

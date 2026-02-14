@@ -2,13 +2,11 @@
 // Address: 00468c40
 // Address Range: [[00468c40, 00468d1f]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40 (float latitude_degrees,float longitude_degrees,float radius)
+// Signature: void __cdecl shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40(float latitude_degrees,float longitude_degrees,float radius)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40
-          (float latitude_degrees,float longitude_degrees,float radius)
+void __cdecl shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40(float latitude_degrees,float longitude_degrees,float radius)
 
 {
   float10 fVar1;

@@ -2,13 +2,11 @@
 // Address: 005a0c90
 // Address Range: [[005a0c90, 005a0d02]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90 (CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90(CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90
-          (CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90(CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor)
 
 {
   float fVar1;

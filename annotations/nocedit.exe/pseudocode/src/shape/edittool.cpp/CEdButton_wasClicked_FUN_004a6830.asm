@@ -15,10 +15,10 @@
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0049db10 at 0049df43
 ;
 ; Referenced Globals:
-;   CEdButton* g_ActiveButton
+;   void* g_ActiveControl
 ;   int g_MouseX
 ;   int g_MouseY
-;   uint g_MouseButtonFlags
+;   _BIT_INTEGER g_MouseButtonFlags
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
 
     PUSH EBX                            ; 004a6830
         ;   Label: shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830
-    MOV ECX,dword ptr [0x02cf2b00]      ; 004a6831 | g_ActiveButton
+    MOV ECX,dword ptr [0x02cf2b00]      ; 004a6831 | g_ActiveControl
     MOV EAX,dword ptr [ESP + 0x8]       ; 004a6837
     CMP dword ptr [EAX],0x0             ; 004a683b
     JZ 0x004a686e                       ; 004a683e
@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 004a68a1 (CONDITIONAL_JUMP)  ; LAB_004a68a1
     MOV dword ptr [EAX + 0x18],0x0      ; 004a685a
     MOV EAX,0x1                         ; 004a6861
-    MOV dword ptr [0x02cf2b00],ECX      ; 004a6866 | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],ECX      ; 004a6866 | g_ActiveControl
         ;   Label: LAB_004a6866
     POP EBX                             ; 004a686c
     RET                                 ; 004a686d
@@ -88,14 +88,14 @@ section .text
         ;   XREF to: 004a68c0 (CONDITIONAL_JUMP)  ; LAB_004a68c0
     XOR EAX,EAX                         ; 004a68b6
         ;   Label: LAB_004a68b6
-    MOV dword ptr [0x02cf2b00],ECX      ; 004a68b8 | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],ECX      ; 004a68b8 | g_ActiveControl
     POP EBX                             ; 004a68be
     RET                                 ; 004a68bf
     MOV ECX,EAX                         ; 004a68c0
         ;   Label: LAB_004a68c0
     MOV dword ptr [EAX + 0x18],0x1      ; 004a68c2
     XOR EAX,EAX                         ; 004a68c9
-    MOV dword ptr [0x02cf2b00],ECX      ; 004a68cb | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],ECX      ; 004a68cb | g_ActiveControl
     POP EBX                             ; 004a68d1
     RET                                 ; 004a68d2
 

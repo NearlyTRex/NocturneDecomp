@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_gargoyle_cpp_CGargoyle_hasCollision_FUN_004e5ad0 (CGargoyle *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_gargoyle_cpp_CGargoyle_hasCollision_FUN_004e5ad0(CGargoyle *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CGargoyle *      Stack[0x4]:4   this_ptr

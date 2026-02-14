@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60 (CVector2d *vertices,uint vertex_count,CVector2d *test_point)
+; __cdecl int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60(CVector2d *vertices,uint vertex_count,CVector2d *test_point)
 ;
 ; Parameters:
 ; CVector2d *      Stack[0x4]:4   vertices

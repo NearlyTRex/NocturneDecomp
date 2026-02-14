@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0 (CCharacter *this_ptr,UOrientationVector *orientation)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0(CCharacter *this_ptr,UOrientationVector *orientation)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

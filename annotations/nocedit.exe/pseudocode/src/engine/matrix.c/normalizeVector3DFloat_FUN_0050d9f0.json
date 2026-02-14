@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 27,
+        "line": 25,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 88,
+    "complexity_score": 86,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 31,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 120
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -61,7 +61,7 @@
     "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0",
-    "signature": "CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0 (CVector3i *input_vector,CVector3i *output_vector)"
+    "signature": "CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i *input_vector,CVector3i *output_vector)"
   },
   "function_calls": [],
   "globals": [
@@ -187,35 +187,35 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 17,
       "match": "SQRT",
       "text": "dVar4 = SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 18,
       "match": "SUB84",
       "text": "local_38 = SUB84(dVar4,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 30,
       "match": "ROUND",
       "text": "output_vector->x = (int)ROUND(local_30);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 31,
       "match": "ROUND",
       "text": "output_vector->y = (int)ROUND(local_28);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 32,
       "match": "ROUND",
       "text": "output_vector->z = (int)ROUND(local_20);",
       "type": "decompiler_intrinsic"

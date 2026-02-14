@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time)
+void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time)
 
 {
   CVector3f *input_local_point;

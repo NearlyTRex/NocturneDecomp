@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle,double timeout_seconds)
+int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle,double timeout_seconds)
 
 {
   DWORD DVar1;

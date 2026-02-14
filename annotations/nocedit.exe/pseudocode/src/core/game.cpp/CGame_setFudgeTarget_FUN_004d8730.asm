@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_CGame_setFudgeTarget_FUN_004d8730 (CGame *this_ptr,CVector3f *fudge_target,float fudge_step)
+; __cdecl void __cdecl core_game_cpp_CGame_setFudgeTarget_FUN_004d8730(CGame *this_ptr,CVector3f *fudge_target,float fudge_step)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr

@@ -6,15 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 43,
+    "complexity_score": 28,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 41,
     "pseudocode_lines": 28,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 89
   },
   "cross_references": [
@@ -27,7 +25,7 @@
     {
       "addr": "005645d0",
       "from_addr": "00564725",
-      "name": "core_script.cpp_CScript_FUN_005645d0",
+      "name": "core_script.cpp_CScript_drawEditor_FUN_005645d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,7 +57,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_matrix.c_popViewport_FUN_0050e480",
-    "signature": "void __cdecl engine_matrix_c_popViewport_FUN_0050e480(CDemonRenderer *this_ptr)"
+    "signature": "void __cdecl engine_matrix_c_popViewport_FUN_0050e480(void)"
   },
   "function_calls": [
     {
@@ -322,7 +320,7 @@
       {
         "call_addr": "00564725",
         "call_type": "direct",
-        "caller": "core_script.cpp_CScript_FUN_005645d0",
+        "caller": "core_script.cpp_CScript_drawEditor_FUN_005645d0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "reg_params": [],
@@ -349,7 +347,7 @@
       {
         "call_addr": "00564799",
         "call_type": "direct",
-        "caller": "core_script.cpp_CScript_FUN_005645d0",
+        "caller": "core_script.cpp_CScript_drawEditor_FUN_005645d0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "reg_params": [],
@@ -366,7 +364,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 1,
+    "declared_params": 0,
     "estimated_params": 0
   },
   "pcode_summary": {
@@ -395,32 +393,12 @@
     "pcode_op_count": 149
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 4,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 0,
     "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CDemonRenderer *"
-      }
-    ]
+    "variables": []
   },
-  "suspects": [
-    {
-      "call_site_count": 5,
-      "declared_params": 1,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 0,
-      "fix_type": "remove_params",
-      "match": "declared:1 vs estimated:0",
-      "param_delta": -1,
-      "text": "Function declares 1 params but call sites push 0 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

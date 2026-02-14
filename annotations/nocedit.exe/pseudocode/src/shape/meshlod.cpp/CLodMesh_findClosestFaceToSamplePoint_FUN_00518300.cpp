@@ -2,13 +2,11 @@
 // Address: 00518300
 // Address Range: [[00518300, 005183d2]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (CLodMesh *this_ptr,int sample_point_index)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300(CLodMesh *this_ptr,int sample_point_index)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
-          (CLodMesh *this_ptr,int sample_point_index)
+void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300(CLodMesh *this_ptr,int sample_point_index)
 
 {
   SLodSamplePoint *sample_point;

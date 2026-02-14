@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_getPropertyList_FUN_005c68f0 (CStranger *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_getPropertyList_FUN_005c68f0(CStranger *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

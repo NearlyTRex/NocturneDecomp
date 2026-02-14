@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00483fb0(CDraculaBride *this_ptr)
+CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00483fb0(CDraculaBride *this_ptr)
 
 {
   return &g_CDraculaBrideClassInfo;

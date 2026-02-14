@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_CDemonActor_pickup_FUN_00409020(CDemonActor *this_ptr,CDemonActor *carrier)
+void __cdecl core_actor_cpp_CDemonActor_pickup_FUN_00409020(CDemonActor *this_ptr,CDemonActor *carrier)
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80

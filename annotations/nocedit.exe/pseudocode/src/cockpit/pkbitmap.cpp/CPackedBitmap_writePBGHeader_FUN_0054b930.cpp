@@ -2,13 +2,11 @@
 // Address: 0054b930
 // Address Range: [[0054b930, 0054b9a9]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBGHeader_FUN_0054b930 (CPackedBitmap *this_ptr,_FILE *file_header)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBGHeader_FUN_0054b930(CPackedBitmap *this_ptr,_FILE *file_header)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbitmap_cpp_CPackedBitmap_writePBGHeader_FUN_0054b930
-          (CPackedBitmap *this_ptr,_FILE *file_header)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBGHeader_FUN_0054b930(CPackedBitmap *this_ptr,_FILE *file_header)
 
 {
   int iVar1;

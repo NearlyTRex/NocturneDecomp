@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_005e1750 (uchar *dest_ip,int octet1,int octet2,int octet3,int octet4)
+; __cdecl uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_005e1750(uchar *dest_ip,int octet1,int octet2,int octet3,int octet4)
 ;
 ; Parameters:
 ; uchar *          Stack[0x4]:4   dest_ip

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 (CCharacter *this_ptr,CActorProperty *property)
+; __cdecl int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCharacter *this_ptr,CActorProperty *property)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

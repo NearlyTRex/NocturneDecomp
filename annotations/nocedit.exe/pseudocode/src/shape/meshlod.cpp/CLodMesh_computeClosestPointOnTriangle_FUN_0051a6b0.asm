@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0 (CLodMesh *this_ptr,CVector3f *output_point,CVector3f *target_point,CLodFace *triangle_ptr )
+; __cdecl CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0(CLodMesh *this_ptr,CVector3f *output_point,CVector3f *target_point,CLodFace *triangle_ptr )
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

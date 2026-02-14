@@ -59,6 +59,13 @@ typedef struct _RTL_CRITICAL_SECTION_DEBUG* PRTL_CRITICAL_SECTION_DEBUG;
 // Unsigned Long Integer (compiler-specific size)
 typedef ACCESS_MASK REGSAM;
 
+// Union: _BIT_INTEGER
+typedef union _BIT_INTEGER {
+    uint dword;
+    ushort words[2];
+    uchar bytes[4];
+} _BIT_INTEGER;
+
 // Structure: _EXCEPTION_RECORD
 typedef struct _EXCEPTION_RECORD {
     DWORD ExceptionCode;
@@ -203,21 +210,20 @@ typedef struct _struct_19 {
     LONG HighPart;
 } _struct_19;
 
-// Structure: _struct_20
-typedef struct _struct_20 {
-    DWORD LowPart;
-    LONG HighPart;
-} _struct_20;
-
 // Union: _LARGE_INTEGER
 typedef union _LARGE_INTEGER {
     _struct_19 s;
-    _struct_20 u;
     LONGLONG QuadPart;
 } _LARGE_INTEGER;
 
 // Typedef: LARGE_INTEGER
 typedef _LARGE_INTEGER LARGE_INTEGER;
+
+// Structure: _struct_20
+typedef struct _struct_20 {
+    DWORD LowPart;
+    LONG HighPart;
+} _struct_20;
 
 // Structure: _struct_519
 typedef struct _struct_519 {

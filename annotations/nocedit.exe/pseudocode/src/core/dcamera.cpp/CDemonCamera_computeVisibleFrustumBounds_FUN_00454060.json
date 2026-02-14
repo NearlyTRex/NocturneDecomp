@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 316,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 156,
+    "pseudocode_lines": 154,
     "suspect_count": 15,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 455
+    "total_lines": 453
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060",
-    "signature": "CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060 (CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box)"
+    "signature": "CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box)"
   },
   "function_calls": [
     {
@@ -423,98 +423,98 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 70,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_80 + (uint)bVar3 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 71,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_d4 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 72,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_80 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 73,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_d4 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 79,
       "match": "(int *)((int)",
       "text": "aiStack_70[(uint)bVar3 * -2 + 3] = *(int *)((int)&local_e0 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 81,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_e0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 102,
       "match": "(int *)((int)",
       "text": "aiStack_c4[(uint)bVar3 * -2] = *(int *)((int)&local_bc + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 104,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_bc + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 115,
       "match": "(int *)((int)",
       "text": "aiStack_ac[(uint)bVar3 * -2] = *(int *)((int)&local_ec + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 117,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_ec + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 124,
       "match": "(int *)((int)",
       "text": "aiStack_94[(uint)bVar3 * -2] = *(int *)((int)&local_8c + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 126,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_8c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 138,
       "match": "(int *)((int)",
       "text": "aiStack_70[(uint)bVar3 * -2] = *(int *)((int)&local_44 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 140,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
       "type": "pointer_cast"

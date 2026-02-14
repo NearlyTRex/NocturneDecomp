@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 124,
+    "complexity_score": 121,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 18,
-    "pseudocode_lines": 79,
+    "pseudocode_lines": 76,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 276
+    "total_lines": 273
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910",
-    "signature": "void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,_FILE *file_handle)"
+    "signature": "void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float unknown_scale,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -303,28 +303,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 49,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 71,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 72,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4);",
       "type": "pointer_cast"

@@ -2,13 +2,11 @@
 // Address: 0056a190
 // Address Range: [[0056a190, 0056a464]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 (CDemonSet *this_ptr,float frustum_param,int render_mode)
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet *this_ptr,float frustum_param,int render_mode)
 
 #include "nocturne.h"
 
-void __cdecl
-core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
-          (CDemonSet *this_ptr,float frustum_param,int render_mode)
+void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet *this_ptr,float frustum_param,int render_mode)
 
 {
   int visible_cube_count;

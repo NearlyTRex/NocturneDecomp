@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_005222f0 (CMirrorReflection *this_ptr,CVector3f *output_buffer,CVector3f *input_vector)
+; __cdecl CVector3f * __cdecl core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_005222f0(CMirrorReflection *this_ptr,CVector3f *output_buffer,CVector3f *input_vector)
 ;
 ; Parameters:
 ; CMirrorReflection * Stack[0x4]:4   this_ptr

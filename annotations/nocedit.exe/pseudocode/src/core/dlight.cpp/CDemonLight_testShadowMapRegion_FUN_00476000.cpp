@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00476000(CDemonLight *this_ptr,CRect *rect)
+int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00476000(CDemonLight *this_ptr,CRect *rect)
 
 {
   int iVar1;

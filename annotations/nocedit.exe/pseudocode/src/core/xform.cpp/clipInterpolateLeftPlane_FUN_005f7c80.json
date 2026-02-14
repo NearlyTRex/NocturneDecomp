@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 96,
+    "complexity_score": 93,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 48,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 140
+    "total_lines": 137
   },
   "cross_references": [
     {
@@ -41,14 +41,14 @@
     ],
     "convention": "__cdecl",
     "name": "core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80",
-    "signature": "void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_005f7c80 (SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)"
+    "signature": "void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_005f7c80(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     }
   ],
@@ -124,30 +124,30 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 16,
       "match": "CONCAT44",
       "text": "iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 29,
       "match": "CARRY4",
       "text": "iVar3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 39,
       "match": "CARRY4",
       "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 49,
       "match": "CARRY4",
-      "text": "(float)((int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +",
+      "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + vertex_a->light;",
       "type": "decompiler_intrinsic"
     }
   ]

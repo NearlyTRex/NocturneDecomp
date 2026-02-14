@@ -16,8 +16,9 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
   CGhoul *pCVar3;
   int iVar4;
   float in_stack_00000008;
-  CVector3f CStack_2c;
-  CVector3f *local_20;
+  CVector3f CStack_30;
+  CVector3f *local_24;
+  int local_20;
   int local_1c;
   int local_18;
   float local_14;
@@ -26,7 +27,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
      (fVar1 = *(float *)(this_ptr->unk3 + 0x40) - in_stack_00000008,
      *(float *)(this_ptr->unk3 + 0x40) = fVar1, fVar1 <= 0.0)) {
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,2.0);
-    CStack_2c.z = (float)&(this_ptr->base).base.base.location;
+    local_24 = &(this_ptr->base).base.base.location.position;
     local_18 = 0;
     local_1c = 0;
     *(float *)(this_ptr->unk3 + 0x40) = local_14 + *(float *)(this_ptr->unk3 + 0x40);
@@ -39,7 +40,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
                             (PTR_s_darkPoint_0062df3e_0067b930,this_ptr_00->actor_name,0),
          iVar2 != 0)) {
         iVar2 = 0;
-        local_20 = (CVector3f *)0x1;
+        local_20 = 1;
         for (iVar4 = 0; iVar4 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar4 = iVar4 + 1) {
           pCVar3 = (CGhoul *)
                    core_actor_cpp_castToClassHash_FUN_0040c790
@@ -49,7 +50,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
              (this_ptr_00 == *(CDemonActor **)(pCVar3->unk3 + 0x3c))) goto LAB_004e646f;
           iVar2 = iVar2 + 4;
         }
-        if (local_20 != (CVector3f *)0x0) {
+        if (local_20 != 0) {
           this_ptr_01 = (*((this_ptr_00->vtable)._ub)->getPathMap)(this_ptr_00);
           if (this_ptr_01 == (CPathMap *)0x0) {
             this_ptr_01 = core_path_cpp_FUN_00548500();
@@ -59,11 +60,11 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
             g_CurrentLineNumber = 300;
             core_main_c_displayErrorAndQuit_FUN_00506f10("CGhoul::findDarkWayPoint - Can't get temp path map");
           }
-          CStack_2c.x = 0.0;
-          CStack_2c.y = 0.0;
-          CStack_2c.z = 0.0;
+          CStack_30.x = 0.0;
+          CStack_30.y = 0.0;
+          CStack_30.z = 0.0;
           iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                            (this_ptr_01,local_20,&CStack_2c,
+                            (this_ptr_01,local_24,&CStack_30,
                              (this_ptr->base).base.base.direction_hint);
           if (0 < iVar2) {
             *(CDemonActor **)(this_ptr->unk3 + 0x3c) = this_ptr_00;

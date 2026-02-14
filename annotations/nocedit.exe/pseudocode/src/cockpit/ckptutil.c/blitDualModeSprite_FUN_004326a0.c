@@ -2,13 +2,11 @@
 // Address: 004326a0
 // Address Range: [[004326a0, 0043285a]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0 (void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
+// Signature: void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0
-          (void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
+void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 
 {
   int iVar1;

@@ -2,13 +2,11 @@
 // Address: 005a3810
 // Address Range: [[005a3810, 005a384c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810 (CSmiley *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810(CSmiley *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810
-          (CSmiley *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810(CSmiley *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

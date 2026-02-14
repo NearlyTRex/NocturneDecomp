@@ -12,7 +12,7 @@ char * __cdecl _fgets(char *str,int num,_FILE *stream)
   uint uVar1;
   char *pcVar2;
   char *pcVar3;
-  int iStack_14;
+  int iStack_18;
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(stream->_handle);
   uVar1 = stream->_flag;
@@ -22,13 +22,13 @@ char * __cdecl _fgets(char *str,int num,_FILE *stream)
     num = num + -1;
     pcVar3 = pcVar2;
     if (num < 1) break;
-    iStack_14 = _fgetc(stream);
-    if (iStack_14 == -1) break;
+    iStack_18 = _fgetc(stream);
+    if (iStack_18 == -1) break;
     pcVar3 = pcVar2 + 1;
-    *pcVar2 = (char)iStack_14;
+    *pcVar2 = (char)iStack_18;
     pcVar2 = pcVar3;
-  } while ((char)iStack_14 != '\n');
-  if ((iStack_14 == -1) && ((pcVar3 == str || ((stream->_flag & 0x20) != 0)))) {
+  } while ((char)iStack_18 != '\n');
+  if ((iStack_18 == -1) && ((pcVar3 == str || ((stream->_flag & 0x20) != 0)))) {
     str = (char *)0x0;
   }
   else {

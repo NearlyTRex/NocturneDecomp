@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-long __cdecl
-strtol_internal(char *str,char **endptr,int base,int is_signed)
+long __cdecl strtol_internal(char *str,char **endptr,int base,int is_signed)
 
 {
   char cVar1;

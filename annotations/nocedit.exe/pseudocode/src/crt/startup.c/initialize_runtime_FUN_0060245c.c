@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
+void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
 
 {
   char cVar1;

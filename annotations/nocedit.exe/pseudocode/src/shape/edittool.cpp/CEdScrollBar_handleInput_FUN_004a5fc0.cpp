@@ -15,11 +15,11 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
   
   shape_edittool_cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380(this_ptr);
   shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(this_ptr);
-  if ((CEdButton *)this_ptr != g_ActiveButton) {
-    if (g_ActiveButton != (CEdButton *)0x0) {
+  if (this_ptr != g_ActiveControl) {
+    if (g_ActiveControl != (void *)0x0) {
       return;
     }
-    if (((byte)g_MouseButtonFlags & 1) == 0) {
+    if ((g_MouseButtonFlags.bytes[0] & 1) == 0) {
       return;
     }
     if (g_MouseX < this_ptr->bounds_left) {
@@ -37,7 +37,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
     g_DragStartMouseX = g_MouseX;
     g_DragStartMouseY = g_MouseY;
     g_DragStartScrollPos = this_ptr->scroll_position;
-    g_ActiveButton = (CEdButton *)this_ptr;
+    g_ActiveControl = this_ptr;
     g_DragStartThumbPos = this_ptr->thumb_start;
     iVar1 = g_MouseY;
     if (this_ptr->orientation != 0) {
@@ -69,8 +69,8 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(this_ptr);
     return;
   }
-  if (((byte)g_MouseButtonFlags & 1) == 0) {
-    g_ActiveButton = (CEdButton *)0x0;
+  if ((g_MouseButtonFlags.bytes[0] & 1) == 0) {
+    g_ActiveControl = (void *)0x0;
     return;
   }
   if (g_ScrollAction != 0) {
@@ -99,8 +99,8 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
           this_ptr->scroll_position = this_ptr->scroll_position - this_ptr->max_value;
         }
         else {
-          g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;
-          g_ActiveButton = (CEdButton *)0x0;
+          g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
+          g_ActiveControl = (void *)0x0;
         }
         break;
       case 4:
@@ -108,8 +108,8 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollB
           this_ptr->scroll_position = this_ptr->scroll_position + this_ptr->max_value;
         }
         else {
-          g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;
-          g_ActiveButton = (CEdButton *)0x0;
+          g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
+          g_ActiveControl = (void *)0x0;
         }
       }
     }

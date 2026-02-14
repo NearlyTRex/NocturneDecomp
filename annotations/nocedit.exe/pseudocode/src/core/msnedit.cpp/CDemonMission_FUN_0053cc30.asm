@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cc30 (CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)
+; __cdecl void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cc30(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

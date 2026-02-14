@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0 (CHostage *this_ptr,CDemonActor *grabber,int grab_type)
+; __cdecl int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0(CHostage *this_ptr,CDemonActor *grabber,int grab_type)
 ;
 ; Parameters:
 ; CHostage *       Stack[0x4]:4   this_ptr

@@ -2,13 +2,11 @@
 // Address: 0047a3e0
 // Address Range: [[0047a3e0, 0047a812]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
-          (CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
 
 {
   char cVar1;

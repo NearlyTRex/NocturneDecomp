@@ -2,15 +2,13 @@
 // Address: 00526b20
 // Address Range: [[00526b20, 00526d8b]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi
-core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20
-          (CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   CDemonActor *pCVar1;

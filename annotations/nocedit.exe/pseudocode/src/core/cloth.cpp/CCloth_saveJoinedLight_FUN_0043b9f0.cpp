@@ -2,13 +2,11 @@
 // Address: 0043b9f0
 // Address Range: [[0043b9f0, 0043bad4]]
 // Convention: __cdecl
-// Signature: int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0 (CCloth *this_ptr,CDeformableModelInstance *model_ptr)
+// Signature: int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-int __cdecl
-core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0
-          (CCloth *this_ptr,CDeformableModelInstance *model_ptr)
+int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr,CDeformableModelInstance *model_ptr)
 
 {
   int iVar1;
@@ -37,11 +35,10 @@ core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0
     do {
       pCVar2 = g_CDemonRendererPtr2;
       iVar1 = *(int *)(pcVar5 + 0x3f1bc);
-      pCVar3->locked_vertex_indices[600] = (int)g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].light
-      ;
+      pCVar3->locked_vertex_indices[600] = g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].light;
       pCVar3->locked_vertex_indices[700] = pCVar2->vertex_buffer_ptr[iVar1].color;
       pCVar4 = (CCloth *)((pCVar3->model).model_filename + 4);
-      pCVar3->locked_vertex_indices[800] = (int)pCVar2->vertex_buffer_ptr[iVar1].fog;
+      pCVar3->locked_vertex_indices[800] = pCVar2->vertex_buffer_ptr[iVar1].fog;
       iVar6 = iVar6 + 1;
       pcVar5 = pcVar5 + 4;
       pCVar3 = pCVar4;

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 85,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 49,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 206
+    "total_lines": 205
   },
   "cross_references": [
     {
@@ -192,21 +192,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)this_ptr->zbuffer_data +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(int *)((int)",
       "text": "*(uint *)(*(int *)((int)g_ScreenBufferArray + iVar4 + 4) + iVar1) = uVar2 * 0x10101;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)this_ptr->zbuffer_data +",
       "type": "pointer_cast"

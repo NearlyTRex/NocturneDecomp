@@ -2,14 +2,11 @@
 // Address: 004a0300
 // Address Range: [[004a0300, 004a03ca]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300 (CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value )
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
-          (CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value
-          )
+int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value)
 
 {
   int iVar1;

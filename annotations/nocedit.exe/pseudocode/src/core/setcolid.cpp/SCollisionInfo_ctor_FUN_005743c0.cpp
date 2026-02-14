@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SCollisionInfo * __cdecl
-core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo *this_ptr)
+SCollisionInfo * __cdecl core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo *this_ptr)
 
 {
   this_ptr->result_ptr = (void *)0x0;

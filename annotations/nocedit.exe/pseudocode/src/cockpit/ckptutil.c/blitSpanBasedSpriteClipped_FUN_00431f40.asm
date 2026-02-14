@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00431f40 (void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width ,int height)
+; __cdecl void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00431f40(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   sprite_data

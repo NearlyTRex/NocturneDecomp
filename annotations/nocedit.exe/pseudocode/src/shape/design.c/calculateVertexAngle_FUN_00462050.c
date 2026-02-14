@@ -2,13 +2,11 @@
 // Address: 00462050
 // Address Range: [[00462050, 00462122]]
 // Convention: __cdecl
-// Signature: double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050 (int vertex1_index,int vertex2_index,int vertex3_index)
+// Signature: double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_index,int vertex2_index,int vertex3_index)
 
 #include "nocturne.h"
 
-double __cdecl
-shape_design_c_calculateVertexAngle_FUN_00462050
-          (int vertex1_index,int vertex2_index,int vertex3_index)
+double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_index,int vertex2_index,int vertex3_index)
 
 {
   double dVar1;

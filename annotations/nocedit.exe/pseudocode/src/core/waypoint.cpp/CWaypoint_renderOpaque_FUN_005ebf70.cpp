@@ -15,77 +15,78 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
   CPathMap *this_ptr_01;
   CVector3f *pCVar3;
   CWayPoint *pCVar4;
-  CWayPoint *unaff_EDI;
+  CBoundingBox3D CStack_ac;
   CBoundingBox3D local_94;
-  byte auStack_6c [8];
-  int iStack_64;
-  int iStack_60;
-  float fStack_5c;
-  float fStack_58;
-  CVector3f CStack_54;
-  CVector3f CStack_48;
-  float fStack_3c;
-  CVector3f CStack_30;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
-  CDemonActor *local_14;
+  CVector3i CStack_7c;
+  CVector3i CStack_70;
+  CVector3f CStack_64;
+  CVector3f CStack_58;
+  float fStack_4c;
+  float fStack_48;
+  float fStack_44;
+  CVector3f CStack_40;
+  float fStack_34;
+  float fStack_30;
+  float fStack_2c;
+  CVector3f CStack_28;
+  uint uStack_1c;
+  uint uStack_18;
+  CWayPoint *local_14;
   
   if (((g_CDemonMissionPtr->is_in_editor != 0) &&
       (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar1 == 0)) &&
-     (local_14 = core_actor_cpp_castToClassHash_FUN_0040c790
+     (local_14 = (CWayPoint *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
                            (g_CDemonMissionPtr->selected_actor,g_CWayPointClassInfo.name_hash),
-     local_14 != (CDemonActor *)0x0)) {
+     local_14 != (CWayPoint *)0x0)) {
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     pCVar2 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
                        ((CDemonActor *)this_ptr,&local_94);
-    CStack_48.y = (pCVar2->min).x + (pCVar2->max).x;
-    CStack_48.z = (pCVar2->min).y + (pCVar2->max).y;
-    fStack_5c = CStack_48.y * 0.5f;
-    fStack_3c = (pCVar2->min).z + (pCVar2->max).z;
-    fStack_58 = CStack_48.z * 0.5f;
-    CStack_54.x = fStack_3c * 0.5f;
-    auStack_6c._4_4_ = (uint)ROUND(fStack_5c * 256.0f);
-    iStack_64 = (int)ROUND(fStack_58 * 256.0f);
-    iStack_60 = (int)ROUND(CStack_54.x * 256.0f);
+    fStack_4c = (pCVar2->min).x + (pCVar2->max).x;
+    fStack_48 = (pCVar2->min).y + (pCVar2->max).y;
+    CStack_64.x = fStack_4c * 0.5f;
+    fStack_44 = (pCVar2->min).z + (pCVar2->max).z;
+    CStack_64.y = fStack_48 * 0.5f;
+    CStack_64.z = fStack_44 * 0.5f;
+    CStack_70.x = (int)ROUND(CStack_64.x * 256.0f);
+    CStack_70.y = (int)ROUND(CStack_64.y * 256.0f);
+    CStack_70.z = (int)ROUND(CStack_64.z * 256.0f);
     iVar1 = 0;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,
-               (CVector3i *)(auStack_6c + 4));
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_70);
     pCVar4 = this_ptr;
     if (0 < this_ptr->num_adjacent_waypoints) {
       do {
         this_ptr_00 = *(CWayPoint **)pCVar4->unk;
         if (this_ptr <= this_ptr_00) {
           g_ActiveRenderColor = 2;
-          if ((this_ptr == unaff_EDI) || (this_ptr_00 == unaff_EDI)) {
+          if ((this_ptr == local_14) || (this_ptr_00 == local_14)) {
             g_ActiveRenderColor = 0xfa;
           }
           pCVar2 = (*((this_ptr_00->base).base.vtable._ub)->getBoundingBox)
-                             ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff5c);
-          fStack_24 = (pCVar2->min).x + (pCVar2->max).x;
-          fStack_20 = (pCVar2->min).y + (pCVar2->max).y;
-          CStack_48.x = fStack_24 * 0.5f;
-          CStack_48.y = fStack_20 * 0.5f;
-          fStack_1c = (pCVar2->min).z + (pCVar2->max).z;
-          CStack_48.z = fStack_1c * 0.5f;
+                             ((CDemonActor *)this_ptr_00,&CStack_ac);
+          fStack_34 = (pCVar2->min).x + (pCVar2->max).x;
+          fStack_30 = (pCVar2->min).y + (pCVar2->max).y;
+          CStack_58.x = fStack_34 * 0.5f;
+          CStack_58.y = fStack_30 * 0.5f;
+          fStack_2c = (pCVar2->min).z + (pCVar2->max).z;
+          CStack_58.z = fStack_2c * 0.5f;
           pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                             ((CDemonActor *)this_ptr_00,(CVector3f *)&stack0xffffffe8,&CStack_48);
+                             ((CDemonActor *)this_ptr_00,&CStack_28,&CStack_58);
           pCVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                             ((CDemonActor *)this_ptr,&CStack_30,pCVar3);
-          if (&CStack_54 != pCVar3) {
-            CStack_54.x = pCVar3->x;
-            CStack_54.y = pCVar3->y;
-            CStack_54.z = pCVar3->z;
+                             ((CDemonActor *)this_ptr,&CStack_40,pCVar3);
+          if (&CStack_64 != pCVar3) {
+            CStack_64.x = pCVar3->x;
+            CStack_64.y = pCVar3->y;
+            CStack_64.z = pCVar3->z;
           }
-          auStack_6c._0_4_ = (uint)ROUND(CStack_54.x * 256.0f);
-          auStack_6c._4_4_ = (uint)ROUND(CStack_54.y * 256.0f);
-          iStack_64 = (int)ROUND(CStack_54.z * 256.0f);
+          CStack_7c.x = (int)ROUND(CStack_64.x * 256.0f);
+          CStack_7c.y = (int)ROUND(CStack_64.y * 256.0f);
+          CStack_7c.z = (int)ROUND(CStack_64.z * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                    (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,
-                     (CVector3i *)auStack_6c);
+                    (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_7c);
           engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(0,1);
         }
         iVar1 = iVar1 + 1;
@@ -93,13 +94,15 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
       } while (iVar1 < this_ptr->num_adjacent_waypoints);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-    if ((unaff_EDI != (CWayPoint *)0x0) && (g_CDemonMissionPtr->show_waypoint_coverage != 0)) {
-      if ((this_ptr != unaff_EDI) && (g_CDemonMissionPtr->show_waypoint_coverage != 2)) {
+    if ((local_14 != (CWayPoint *)0x0) && (g_CDemonMissionPtr->show_waypoint_coverage != 0)) {
+      if ((this_ptr != local_14) && (g_CDemonMissionPtr->show_waypoint_coverage != 2)) {
         return 0;
       }
-      local_14 = (CDemonActor *)0xff;
-      if (this_ptr == unaff_EDI) {
-        local_14 = (CDemonActor *)0x0;
+      uStack_1c = 0xff;
+      uStack_18 = 0xff;
+      if (this_ptr == local_14) {
+        uStack_1c = 0;
+        uStack_18 = 0;
       }
       this_ptr_01 = core_path_cpp_FUN_00548500();
       core_path_cpp_CPathMap_FUN_00548750(this_ptr_01);

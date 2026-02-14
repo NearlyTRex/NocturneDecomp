@@ -2,14 +2,11 @@
 // Address: 0048d410
 // Address Range: [[0048d410, 0048d6b2]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face, int render_mode)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
-          (CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,
-          int render_mode)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode)
 
 {
   ushort *puVar1;
@@ -28,16 +25,16 @@ engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
   }
   if (this_ptr->face_count == 0) {
     if (render_mode == 0xc0) {
-      g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9;
     }
     else if (g_BitsPerPixel == 0x20) {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
     }
     else {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
     g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
-    g_RenderStateFlags = render_mode;
+    g_RenderStateFlags = (_BIT_INTEGER)render_mode;
     if (0 < face_count) {
       do {
         while ((g_CullingMode != 0 &&
@@ -64,15 +61,15 @@ engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
           } while (iVar3 < vertices_per_face);
         }
         if ((this_ptr->face_capture_enabled == 0) &&
-           (((this_ptr->face_count != 0 && ((g_RenderStateFlags & 1U) == 0)) ||
-            ((g_RenderStateFlags & 5U) == 0)))) {
+           (((this_ptr->face_count != 0 && ((g_RenderStateFlags.dword & 1) == 0)) ||
+            ((g_RenderStateFlags.dword & 5) == 0)))) {
           core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff98);
           if (2 < g_ClippedVertexCount) {
             engine_3d_c_rasterizeTriangle_FUN_005fcfc0
                       (g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffff98);
           }
         }
-        else if ((g_RenderStateFlags & 0x200U) == 0) {
+        else if ((g_RenderStateFlags.dword & 0x200) == 0) {
           engine_clipper_c_clipAndRasterize_FUN_004371b0(iVar3,(int *)&stack0xffffff98);
         }
         else {
@@ -87,9 +84,9 @@ engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
     }
   }
   else {
-    g_RenderStateFlags = 0;
+    g_RenderStateFlags.dword = 0;
     g_RenderStateFlag2 = PREPROCESS_NONE;
-    g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+    g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     for (; 0 < face_count; face_count = face_count + -1) {
       if ((g_CullingMode == 0) ||
          (pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),

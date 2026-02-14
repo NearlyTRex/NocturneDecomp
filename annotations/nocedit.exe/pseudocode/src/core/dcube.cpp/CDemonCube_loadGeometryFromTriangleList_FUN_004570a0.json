@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 513,
+    "complexity_score": 510,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 41,
-    "pseudocode_lines": 148,
+    "pseudocode_lines": 145,
     "suspect_count": 36,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 414
+    "total_lines": 411
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0",
-    "signature": "void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 (CDemonCube *this_ptr,void *triangle_data,int triangle_count,CVector3f *min_bounds, CVector3f *max_bounds,uchar *ground_types,uint *voxel_data)"
+    "signature": "void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube *this_ptr,void *triangle_data,int triangle_count,CVector3f *min_bounds,CVector3f *max_bounds,uchar *ground_types,uint *voxel_data)"
   },
   "function_calls": [
     {
@@ -466,252 +466,252 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 46,
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)triangle_data + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)triangle_data + iVar6 * 0x38);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 51,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar9) = *puVar7;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 52,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar9) = puVar7[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 53,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar9) = puVar7[2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 55,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar5) = *puVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 56,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar5) = puVar4[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 58,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar5) = puVar4[2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 59,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[1].vertex.x + iVar5) = puVar4[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 60,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[1].vertex.y + iVar5) = puVar4[4];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 64,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + -0x14) = 3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 70,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8) = local_1c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 71,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 4) = local_18;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 72,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 8) = local_14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 73,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 74,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 75,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 77,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 79,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 81,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 82,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[1].vertex.z + iVar5) = uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 83,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 0x40) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 106,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->vertex_buffer->x + iVar8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 107,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 108,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->vertex_buffer->y + iVar8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 109,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 110,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->vertex_buffer->z + iVar8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 111,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 124,
       "match": "(CDemonCubeTriangle *)((int)",
       "text": "((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar8),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 125,
       "match": "(int *)((int)",
       "text": "pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 126,
       "match": "(int *)((int)",
       "text": "pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 127,
       "match": "(int *)((int)",
       "text": "pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 130,
       "match": "(uchar *)((int)",
       "text": "*(uchar *)((int)this_ptr->ground_type_memory + iVar6) = *local_20;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 139,
       "match": "(SVoxelGrid *)((int)",
       "text": "pSVar10 = (SVoxelGrid *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 143,
       "match": "(uint *)((int)",
       "text": "voxel_data = (uint *)((int)voxel_data + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 144,
       "match": "(SVoxelGrid *)((int)",
       "text": "pSVar10 = (SVoxelGrid *)((int)pSVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_script_cpp_CScript_insertText_FUN_00566390(CScript *this_ptr,char *text,int update_cursor)
+void __cdecl core_script_cpp_CScript_insertText_FUN_00566390(CScript *this_ptr,char *text,int update_cursor)
 
 {
   char cVar1;

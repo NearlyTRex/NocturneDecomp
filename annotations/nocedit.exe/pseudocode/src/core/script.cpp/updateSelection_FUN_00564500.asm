@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   core_script.cpp_CScript_FUN_005645d0 at 005645e1
-;   core_script.cpp_CScript_FUN_00565130 at 00565a55
+;   core_script.cpp_CScript_drawEditor_FUN_005645d0 at 005645e1
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564bd0
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 00565a55
 ;
 ; Referenced Globals:
 ;   int g_CurrentEditingColumn

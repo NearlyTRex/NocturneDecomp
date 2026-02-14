@@ -13,13 +13,14 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
   CBoundingBox3D *this_ptr_01;
   int iVar1;
   int iVar2;
+  CBoundingBox3D local_20;
   
   if ((this_ptr->base).base.render_active != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
   this_ptr_01 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
-                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe0);
+                          ((CDemonActor *)this_ptr,&local_20);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
   if (iVar1 != 0) {
     iVar2 = this_ptr->morphing;

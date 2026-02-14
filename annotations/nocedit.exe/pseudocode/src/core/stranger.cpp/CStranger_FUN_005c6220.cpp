@@ -98,7 +98,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(CStranger *this_ptr)
     pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
     if (pSVar7->state_index == 0x2a) {
-      if (pCVar8 != (CCloth *)&stack0xffffffdc) {
+      if (pCVar8 != (CCloth *)&stack0xffffffd8) {
         pCVar5 = pCVar2 + 1;
         (pCVar5->model).model_filename[4] = '\0';
         (pCVar5->model).model_filename[5] = '\0';
@@ -117,7 +117,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(CStranger *this_ptr)
       }
     }
     else if (pSVar7->state_index == 0x2b) {
-      if (pCVar8 != (CCloth *)&stack0xffffffe8) {
+      if (pCVar8 != (CCloth *)&stack0xffffffe4) {
         pCVar5 = pCVar2 + 1;
         (pCVar5->model).model_filename[4] = '\0';
         (pCVar5->model).model_filename[5] = '\0';

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_00488c90 (CDrawSurface *this_ptr,int x_offset,int y_offset,CPackedBitmap *bitmap_ptr)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_00488c90(CDrawSurface *this_ptr,int x_offset,int y_offset,CPackedBitmap *bitmap_ptr)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

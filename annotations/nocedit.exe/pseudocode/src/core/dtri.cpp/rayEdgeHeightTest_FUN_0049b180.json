@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 61,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 36,
+    "pseudocode_lines": 34,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 186
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180",
-    "signature": "int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180 (CVector3f *vertex1,CVector3f *vertex2,float rayRadius,float *outHeight)"
+    "signature": "int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f *vertex1,CVector3f *vertex2,float rayRadius,float *outHeight)"
   },
   "function_calls": [],
   "globals": [
@@ -211,14 +211,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 20,
       "match": "SQRT",
       "text": "fVar4 = (-fVar1 - SQRT(fVar3)) / (fVar2 * (float)2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 27,
       "match": "SQRT",
       "text": "fVar1 = (SQRT(fVar3) - fVar1) / (fVar2 * (float)2);",
       "type": "decompiler_intrinsic"

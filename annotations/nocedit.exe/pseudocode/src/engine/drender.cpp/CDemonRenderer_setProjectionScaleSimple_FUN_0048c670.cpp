@@ -2,13 +2,11 @@
 // Address: 0048c670
 // Address Range: [[0048c670, 0048c685]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670 (CDemonRenderer *this_ptr,float scale_factor)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670(CDemonRenderer *this_ptr,float scale_factor)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
-          (CDemonRenderer *this_ptr,float scale_factor)
+void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670(CDemonRenderer *this_ptr,float scale_factor)
 
 {
   double dVar1;

@@ -2,13 +2,11 @@
 // Address: 004ba620
 // Address Range: [[004ba620, 004ba6b3]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620 (CFileManager *this_ptr,CStrList *pod_list)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(CFileManager *this_ptr,CStrList *pod_list)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620
-          (CFileManager *this_ptr,CStrList *pod_list)
+void __cdecl engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(CFileManager *this_ptr,CStrList *pod_list)
 
 {
   _FILE *file;

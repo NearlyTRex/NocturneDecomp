@@ -100,7 +100,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
   double local_78;
   int *local_70;
   int *local_6c;
-  uint local_68;
+  _BIT_INTEGER local_68;
   C3DSCamera *local_64;
   float local_60;
   float local_5c;
@@ -393,9 +393,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2.u = (int)in_stack_fffffd80;
           vertex2.v = (int)in_stack_fffffd84;
-          vertex2.light = (float)uVar13;
+          vertex2.light = uVar13;
           vertex2.color = uVar14;
-          vertex2.fog = (float)output;
+          vertex2.fog = (int)output;
           vertex2.w_recip = (float)pCVar15;
           g_ActiveRenderColor = iVar7;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2);
@@ -422,9 +422,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_00.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_00.u = (int)in_stack_fffffd80;
           vertex2_00.v = (int)in_stack_fffffd84;
-          vertex2_00.light = (float)uVar13;
+          vertex2_00.light = uVar13;
           vertex2_00.color = uVar14;
-          vertex2_00.fog = (float)output;
+          vertex2_00.fog = (int)output;
           vertex2_00.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_00);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -450,9 +450,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_01.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_01.u = (int)in_stack_fffffd80;
           vertex2_01.v = (int)in_stack_fffffd84;
-          vertex2_01.light = (float)uVar13;
+          vertex2_01.light = uVar13;
           vertex2_01.color = uVar14;
-          vertex2_01.fog = (float)output;
+          vertex2_01.fog = (int)output;
           vertex2_01.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_01);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -478,9 +478,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_02.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_02.u = (int)in_stack_fffffd80;
           vertex2_02.v = (int)in_stack_fffffd84;
-          vertex2_02.light = (float)uVar13;
+          vertex2_02.light = uVar13;
           vertex2_02.color = uVar14;
-          vertex2_02.fog = (float)output;
+          vertex2_02.fog = (int)output;
           vertex2_02.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_02);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -506,9 +506,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_03.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_03.u = (int)in_stack_fffffd80;
           vertex2_03.v = (int)in_stack_fffffd84;
-          vertex2_03.light = (float)uVar13;
+          vertex2_03.light = uVar13;
           vertex2_03.color = uVar14;
-          vertex2_03.fog = (float)output;
+          vertex2_03.fog = (int)output;
           vertex2_03.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_03);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -534,9 +534,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_04.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_04.u = (int)in_stack_fffffd80;
           vertex2_04.v = (int)in_stack_fffffd84;
-          vertex2_04.light = (float)uVar13;
+          vertex2_04.light = uVar13;
           vertex2_04.color = uVar14;
-          vertex2_04.fog = (float)output;
+          vertex2_04.fog = (int)output;
           vertex2_04.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_04);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -562,9 +562,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_05.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_05.u = (int)in_stack_fffffd80;
           vertex2_05.v = (int)in_stack_fffffd84;
-          vertex2_05.light = (float)uVar13;
+          vertex2_05.light = uVar13;
           vertex2_05.color = uVar14;
-          vertex2_05.fog = (float)output;
+          vertex2_05.fog = (int)output;
           vertex2_05.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_05);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -590,9 +590,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_06.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_06.u = (int)in_stack_fffffd80;
           vertex2_06.v = (int)in_stack_fffffd84;
-          vertex2_06.light = (float)uVar13;
+          vertex2_06.light = uVar13;
           vertex2_06.color = uVar14;
-          vertex2_06.fog = (float)output;
+          vertex2_06.fog = (int)output;
           vertex2_06.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_06);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -617,9 +617,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_07.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_07.u = (int)in_stack_fffffd80;
           vertex2_07.v = (int)in_stack_fffffd84;
-          vertex2_07.light = (float)uVar13;
+          vertex2_07.light = uVar13;
           vertex2_07.color = uVar14;
-          vertex2_07.fog = (float)output;
+          vertex2_07.fog = (int)output;
           vertex2_07.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_07);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -645,9 +645,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_08.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_08.u = (int)in_stack_fffffd80;
           vertex2_08.v = (int)in_stack_fffffd84;
-          vertex2_08.light = (float)uVar13;
+          vertex2_08.light = uVar13;
           vertex2_08.color = uVar14;
-          vertex2_08.fog = (float)output;
+          vertex2_08.fog = (int)output;
           vertex2_08.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_08);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -673,9 +673,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_09.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_09.u = (int)in_stack_fffffd80;
           vertex2_09.v = (int)in_stack_fffffd84;
-          vertex2_09.light = (float)uVar13;
+          vertex2_09.light = uVar13;
           vertex2_09.color = uVar14;
-          vertex2_09.fog = (float)output;
+          vertex2_09.fog = (int)output;
           vertex2_09.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_09);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -701,9 +701,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           vertex2_10.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
           vertex2_10.u = (int)in_stack_fffffd80;
           vertex2_10.v = (int)in_stack_fffffd84;
-          vertex2_10.light = (float)uVar13;
+          vertex2_10.light = uVar13;
           vertex2_10.color = uVar14;
-          vertex2_10.fog = (float)output;
+          vertex2_10.fog = (int)output;
           vertex2_10.w_recip = (float)pCVar15;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_10);
         }
@@ -987,7 +987,7 @@ LAB_00583c6f:
       engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-    if (((local_68 & 1) != 0) && ((g_MouseButtonFlags & 1) == 0)) {
+    if (((local_68.dword & 1) != 0) && ((g_MouseButtonFlags.dword & 1) == 0)) {
       local_188 = g_CDemonCameraInstance.base.position.x;
       local_184 = *local_6c;
       local_180 = *local_70;

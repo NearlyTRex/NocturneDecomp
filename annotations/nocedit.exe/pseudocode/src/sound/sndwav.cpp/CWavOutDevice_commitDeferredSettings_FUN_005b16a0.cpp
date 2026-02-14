@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndwav_cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0(CWavOutDevice *this_ptr)
+void __cdecl sound_sndwav_cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0(CWavOutDevice *this_ptr)
 
 {
   return;

@@ -2,19 +2,17 @@
 // Address: 00547dd0
 // Address Range: [[00547dd0, 00547fb9]]
 // Convention: __cdecl
-// Signature: void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0 (int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
+// Signature: void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
 
 #include "nocturne.h"
 
-void __cdecl
-core_path_cpp_debugRenderGridQuad_FUN_00547dd0
-          (int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
+void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
 
 {
   CDemonRenderer *pCVar1;
-  float fVar2;
+  int iVar2;
   int iVar3;
-  float fVar4;
+  int iVar4;
   float10 fVar5;
   float10 fVar6;
   float10 fVar7;
@@ -61,27 +59,27 @@ core_path_cpp_debugRenderGridQuad_FUN_00547dd0
   pCVar1 = g_CDemonRendererPtr2;
   pCVar12 = (CVector3i *)0x547f16;
   round((double)((float)(int)piVar13 - fStack_38));
-  fVar2 = (float)(color << 8);
+  iVar2 = color << 8;
   iVar3 = fog << 8;
-  fVar4 = (float)((int)w_recip << 8);
+  iVar4 = (int)w_recip << 8;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar1->vertex_buffer_ptr[3].projected_vertex,pCVar12);
   pCVar1 = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr->light = fVar2;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->light = iVar2;
   pCVar1->vertex_buffer_ptr->color = iVar3;
-  pCVar1->vertex_buffer_ptr->fog = fVar4;
+  pCVar1->vertex_buffer_ptr->fog = iVar4;
   pCVar1->vertex_buffer_ptr->w_recip = (float)grid_x;
-  pCVar1->vertex_buffer_ptr[1].light = fVar2;
+  pCVar1->vertex_buffer_ptr[1].light = iVar2;
   pCVar1->vertex_buffer_ptr[1].color = iVar3;
-  pCVar1->vertex_buffer_ptr[1].fog = fVar4;
+  pCVar1->vertex_buffer_ptr[1].fog = iVar4;
   pCVar1->vertex_buffer_ptr[1].w_recip = (float)grid_x;
-  pCVar1->vertex_buffer_ptr[2].light = fVar2;
+  pCVar1->vertex_buffer_ptr[2].light = iVar2;
   pCVar1->vertex_buffer_ptr[2].color = iVar3;
-  pCVar1->vertex_buffer_ptr[2].fog = fVar4;
+  pCVar1->vertex_buffer_ptr[2].fog = iVar4;
   pCVar1->vertex_buffer_ptr[2].w_recip = (float)grid_x;
-  pCVar1->vertex_buffer_ptr[3].light = fVar2;
+  pCVar1->vertex_buffer_ptr[3].light = iVar2;
   pCVar1->vertex_buffer_ptr[3].color = iVar3;
-  pCVar1->vertex_buffer_ptr[3].fog = fVar4;
+  pCVar1->vertex_buffer_ptr[3].fog = iVar4;
   pCVar1->vertex_buffer_ptr[3].w_recip = (float)grid_x;
   engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0(pCVar1,&DAT_030d4fd0);
   return;

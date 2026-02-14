@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_dosio_c_makePath_FUN_00481f50 (char *full_path,char *drive,char *directory,char *filename,char *extension)
+; __cdecl void __cdecl engine_dosio_c_makePath_FUN_00481f50(char *full_path,char *drive,char *directory,char *filename,char *extension)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   full_path

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 109,
+    "complexity_score": 107,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 62,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 142
+    "total_lines": 140
   },
   "cross_references": [
     {
@@ -53,7 +53,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 (CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform)"
   },
   "function_calls": [
     {
@@ -147,28 +147,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "puVar10 = (uint *)((int)pCVar6 + (uint)bVar13 * -8 + 0x6b4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)local_14 + (uint)bVar13 * -8 + 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"

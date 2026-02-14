@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 625,
+    "complexity_score": 594,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
-    "pseudocode_lines": 100,
-    "suspect_count": 50,
+    "pseudocode_lines": 99,
+    "suspect_count": 47,
     "suspect_types": [
       "param_count_too_few",
       "special_crt_function",
@@ -14,7 +14,7 @@
       "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 338
+    "total_lines": 337
   },
   "cross_references": [
     {
@@ -34,7 +34,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930",
-    "signature": "uint crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930 (undefined4 param_1,undefined4 param_2,uint unaff_EBX,undefined4 param_4,uint param_5 ,char *param_6,DWORD param_7,undefined4 param_8,undefined4 param_9,int param_10)"
+    "signature": "uint crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930(uint param_1,char *param_2,DWORD param_3,undefined4 param_4,undefined4 param_5,int param_6)"
   },
   "function_calls": [
     {
@@ -209,339 +209,318 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,uint param_4,uint param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,uint param_4,uint param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,uint param_4,uint param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "text": "uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,uint param_4,uint param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "text": "uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,uint param_4,uint param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "text": "uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,uint param_4,uint param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 3,
+      "line": 11,
       "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,uint param_5",
+      "text": "uint unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_1",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,uint param_5",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,uint param_5",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_4",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,uint param_5",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_5",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,uint param_5",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "text": ",char *param_6,DWORD param_7,uint param_8,uint param_9,int param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_7",
-      "text": ",char *param_6,DWORD param_7,uint param_8,uint param_9,int param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_8",
-      "text": ",char *param_6,DWORD param_7,uint param_8,uint param_9,int param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_9",
-      "text": ",char *param_6,DWORD param_7,uint param_8,uint param_9,int param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_10",
-      "text": ",char *param_6,DWORD param_7,uint param_8,uint param_9,int param_10)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 14,
+      "line": 13,
       "match": "unaff_ESI",
       "text": "DWORD unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 14,
       "match": "unaff_EDI",
       "text": "uint unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_5",
-      "text": "if (((int)param_5 < 0) || (g_MaxHandleCount < param_5)) {",
+      "line": 17,
+      "match": "param_1",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_5",
-      "text": "if (((int)param_5 < 0) || (g_MaxHandleCount < param_5)) {",
+      "line": 17,
+      "match": "param_1",
+      "text": "if (((int)param_1 < 0) || (g_MaxHandleCount < param_1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_5",
-      "text": "uVar2 = getFileTypeFlags(param_5);",
+      "line": 22,
+      "match": "param_1",
+      "text": "uVar2 = getFileTypeFlags(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_5",
-      "text": "(*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(param_5);",
+      "line": 27,
+      "match": "param_1",
+      "text": "(*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_5",
-      "text": "(*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_5);",
+      "line": 30,
+      "match": "param_1",
+      "text": "(*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_10",
-      "text": "(iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_10), iVar3 == 0)) {",
+      "line": 37,
+      "match": "param_6",
+      "text": "(iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_6), iVar3 == 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 38,
       "match": "&stack0xfffffff4",
-      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
+      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_2,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 38,
       "match": "unaff_ESI",
-      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
+      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_2,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_6",
-      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
+      "line": 38,
+      "match": "param_2",
+      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_2,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_10",
-      "text": "(*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_10);",
+      "line": 41,
+      "match": "param_6",
+      "text": "(*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 50,
       "match": "unaff_EDI",
-      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,unaff_EBX);",
+      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_2,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 50,
       "match": "unaff_EBX",
-      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,unaff_EBX);",
+      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_2,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_6",
-      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,unaff_EBX);",
+      "line": 50,
+      "match": "param_2",
+      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_2,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 53,
+      "line": 52,
       "match": "unaff_EDI",
       "text": "if (unaff_EDI == 0) break;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_6",
-      "text": "pcVar6 = param_6;",
+      "line": 55,
+      "match": "param_2",
+      "text": "pcVar6 = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 56,
       "match": "unaff_EDI",
       "text": "if (unaff_EDI != 0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 60,
+      "line": 59,
       "match": "unaff_EDI",
-      "text": "lseek(param_10,(uVar7 - unaff_EDI) + 1,1);",
+      "text": "lseek(param_6,(uVar7 - unaff_EDI) + 1,1);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_10",
-      "text": "lseek(param_10,(uVar7 - unaff_EDI) + 1,1);",
+      "line": 59,
+      "match": "param_6",
+      "text": "lseek(param_6,(uVar7 - unaff_EDI) + 1,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_6",
-      "text": "pcVar1 = param_6 + iVar3;",
+      "line": 64,
+      "match": "param_2",
+      "text": "pcVar1 = param_2 + iVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 71,
+      "line": 70,
       "match": "unaff_EDI",
       "text": "} while (uVar7 < unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 73,
+      "line": 72,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI - iVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 73,
+      "line": 72,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI - iVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_6",
-      "text": "param_6 = param_6 + iVar3;",
+      "line": 73,
+      "match": "param_2",
+      "text": "param_2 = param_2 + iVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_6",
-      "text": "param_6 = param_6 + iVar3;",
+      "line": 73,
+      "match": "param_2",
+      "text": "param_2 = param_2 + iVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 75,
+      "line": 74,
       "match": "unaff_EBX",
       "text": "if (((unaff_EBX & 0x2000) != 0) || (unaff_ESI == 0)) break;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 75,
+      "line": 74,
       "match": "unaff_ESI",
       "text": "if (((unaff_EBX & 0x2000) != 0) || (unaff_ESI == 0)) break;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 79,
+      "line": 78,
       "match": "unaff_EDI",
       "text": "uVar2 = unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 81,
+      "line": 80,
       "match": "unaff_EDI",
-      "text": "(iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_5), uVar2 = unaff_EDI, iVar3 == 0)) {",
+      "text": "(iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_1), uVar2 = unaff_EDI, iVar3 == 0)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_5",
-      "text": "(iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_5), uVar2 = unaff_EDI, iVar3 == 0)) {",
+      "line": 80,
+      "match": "param_1",
+      "text": "(iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_1), uVar2 = unaff_EDI, iVar3 == 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 82,
+      "line": 81,
       "match": "&stack0xfffffff4",
-      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,",
+      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_2,param_3,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 81,
+      "match": "param_2",
+      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_2,param_3,(LPDWORD)&stack0xfffffff4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_3",
+      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_2,param_3,(LPDWORD)&stack0xfffffff4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
       "match": "param_6",
-      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,",
+      "text": "(*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_7",
-      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,",
+      "line": 95,
+      "match": "param_2",
+      "text": "uVar2 = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_10",
-      "text": "(*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_10);",
+      "line": 95,
+      "match": "param_3",
+      "text": "uVar2 = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 99,
       "match": "param_6",
-      "text": "uVar2 = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,param_7);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_7",
-      "text": "uVar2 = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,param_7);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_10",
-      "text": "(*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_10);",
+      "text": "(*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_6);",
       "type": "unnamed_param"
     },
     {

@@ -2,13 +2,11 @@
 // Address: 0060ba80
 // Address Range: [[0060ba80, 0060bb5e]]
 // Convention: __watcallStack
-// Signature: int __watcallStack crt_strstream_cpp_strstreambuf_seekoff_FUN_0060ba80 (strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags)
+// Signature: int __watcallStack crt_strstream_cpp_strstreambuf_seekoff_FUN_0060ba80(strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags)
 
 #include "nocturne.h"
 
-int __watcallStack
-crt_strstream_cpp_strstreambuf_seekoff_FUN_0060ba80
-          (strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags)
+int __watcallStack crt_strstream_cpp_strstreambuf_seekoff_FUN_0060ba80(strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags)
 
 {
   int iVar1;

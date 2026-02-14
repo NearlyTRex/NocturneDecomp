@@ -2,14 +2,11 @@
 // Address: 0040e1e0
 // Address Range: [[0040e1e0, 0040e210]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0 (CActorPropertyList *this_ptr,char *property_name,int *data_ptr, CActorPropertyValidatorFunc *callback)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList *this_ptr,char *property_name,int *data_ptr,CActorPropertyValidatorFunc *callback)
 
 #include "nocturne.h"
 
-CActorProperty * __cdecl
-core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
-          (CActorPropertyList *this_ptr,char *property_name,int *data_ptr,
-          CActorPropertyValidatorFunc *callback)
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList *this_ptr,char *property_name,int *data_ptr,CActorPropertyValidatorFunc *callback)
 
 {
   CActorProperty *pCVar1;

@@ -2,13 +2,11 @@
 // Address: 0042e840
 // Address Range: [[0042e840, 0042e8b7]]
 // Convention: __cdecl
-// Signature: float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840 (CCharacter *this_ptr,int state_index)
+// Signature: float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter *this_ptr,int state_index)
 
 #include "nocturne.h"
 
-float __cdecl
-core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
-          (CCharacter *this_ptr,int state_index)
+float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter *this_ptr,int state_index)
 
 {
   float local_18;

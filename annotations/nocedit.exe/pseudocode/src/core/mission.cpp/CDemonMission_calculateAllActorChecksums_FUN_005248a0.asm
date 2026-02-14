@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_calculateAllActorChecksums_FUN_005248a0 (CDemonMission *this_ptr,uint *checksum)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_calculateAllActorChecksums_FUN_005248a0(CDemonMission *this_ptr,uint *checksum)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

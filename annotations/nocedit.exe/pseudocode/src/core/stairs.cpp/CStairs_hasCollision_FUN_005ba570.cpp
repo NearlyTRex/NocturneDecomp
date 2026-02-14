@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_stairs_cpp_CStairs_hasCollision_FUN_005ba570(CStairs *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_stairs_cpp_CStairs_hasCollision_FUN_005ba570(CStairs *this_ptr,SCollisionInfo *collision_info)
 
 {
   if (collision_info->ray_type != 0) {

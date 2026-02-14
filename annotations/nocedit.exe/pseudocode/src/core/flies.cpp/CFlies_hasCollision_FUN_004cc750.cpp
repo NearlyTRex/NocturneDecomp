@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_flies_cpp_CFlies_hasCollision_FUN_004cc750(CFlies *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_flies_cpp_CFlies_hasCollision_FUN_004cc750(CFlies *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

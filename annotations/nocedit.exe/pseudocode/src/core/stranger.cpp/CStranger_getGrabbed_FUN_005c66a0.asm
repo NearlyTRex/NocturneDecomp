@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0 (CStranger *this_ptr,CDemonActor *grabber,int grab_type)
+; __cdecl int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0(CStranger *this_ptr,CDemonActor *grabber,int grab_type)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

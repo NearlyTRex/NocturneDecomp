@@ -2,13 +2,11 @@
 // Address: 004e12b0
 // Address Range: [[004e12b0, 004e1c24]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0 (CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name)
+// Signature: void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name)
 
 #include "nocturne.h"
 
-void __cdecl
-core_game_cpp_CGame_loadGame_FUN_004e12b0
-          (CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name)
+void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name)
 
 {
   char cVar1;
@@ -159,7 +157,7 @@ LAB_004e14f5:
       iVar2 = g_DefaultStreamBufferSize;
       crt_fstream_cpp_openFile_FUN_00600e85
                 ((ifstream *)local_168,local_534,0x121,g_DefaultStreamBufferSize);
-      FUN_00600ee4();
+      FUN_00600ee4(local_168 + 0x44,4);
       if (local_104 != 0) {
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("Can't open saved game file.");

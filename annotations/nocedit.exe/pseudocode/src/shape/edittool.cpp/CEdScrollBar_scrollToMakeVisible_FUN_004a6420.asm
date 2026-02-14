@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEdScrollBar_scrollToMakeVisible_FUN_004a6420 (CEdScrollBar *this_ptr,int target_index)
+; __cdecl void __cdecl shape_edittool_cpp_CEdScrollBar_scrollToMakeVisible_FUN_004a6420(CEdScrollBar *this_ptr,int target_index)
 ;
 ; Parameters:
 ; CEdScrollBar *   Stack[0x4]:4   this_ptr

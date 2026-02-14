@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_inv_cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory *this_ptr,uint key_mask)
+void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory *this_ptr,uint key_mask)
 
 {
   CDemonActor *pCVar1;

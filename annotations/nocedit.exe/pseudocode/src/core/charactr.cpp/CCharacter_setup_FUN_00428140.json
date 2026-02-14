@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 150,
+    "complexity_score": 120,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 110,
-    "suspect_count": 3,
+    "pseudocode_lines": 105,
+    "suspect_count": 1,
     "suspect_types": [
-      "suspect_float",
-      "undefined_data"
+      "suspect_float"
     ],
-    "total_lines": 120
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -137,22 +136,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_00823a98",
-      "text": "(&DAT_00823a98,\"stake_b.kfm\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_00823a98",
-      "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&DAT_00823a98);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 59,
+      "line": 58,
       "match": "5.60519e-45",
       "text": "this_ptr->fire_spread_rate = 5.60519e-45;",
       "type": "suspect_float"

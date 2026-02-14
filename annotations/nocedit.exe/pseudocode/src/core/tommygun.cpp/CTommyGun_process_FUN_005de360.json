@@ -34,7 +34,7 @@
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 78,
+        "line": 79,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -43,12 +43,12 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 226,
+    "complexity_score": 237,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
-    "pseudocode_lines": 71,
-    "suspect_count": 13,
+    "pseudocode_lines": 72,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -56,7 +56,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 208
+    "total_lines": 209
   },
   "cross_references": [],
   "function": {
@@ -394,26 +394,33 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 50,
       "match": "extraout_EBX",
-      "text": "uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))();",
+      "text": "uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 50,
       "match": "code *",
-      "text": "uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))();",
+      "text": "uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 51,
       "match": "extraout_EBX",
+      "text": "(extraout_EBX,\"m-gun-t.wav\");",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 52,
+      "match": "extraout_EBX",
       "text": "*(uint *)(extraout_EBX + 0x580) = uVar3;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 54,
+      "line": 55,
       "match": "extraout_EBX",
       "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(extraout_EBX + 0x57c));",
       "type": "extra_output"

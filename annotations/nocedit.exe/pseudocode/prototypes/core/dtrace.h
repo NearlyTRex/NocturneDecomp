@@ -69,7 +69,7 @@ void __cdecl CDemonRaytrace::allocTris(CDemonRaytrace *this_ptr);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_addTriangle_FUN_00495100
 // Address: 00495100
-void __cdecl CDemonRaytrace::addTriangle(CDemonRaytrace *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, uchar triangle_flags);
+void __cdecl CDemonRaytrace::addTriangle(CDemonRaytrace *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar triangle_flags);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
 // Address: 004952b0
@@ -85,7 +85,7 @@ CVector3f * __cdecl CDemonRaytrace::rayIntersection(CDemonRaytrace *this_ptr,CVe
 
 // Original: core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
 // Address: 00495b70
-float __cdecl CDemonRaytrace::rayVoxelIntersection(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end, CVector3f *out_intersection_point,int *out_intersection_type);
+float __cdecl CDemonRaytrace::rayVoxelIntersection(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *out_intersection_point,int *out_intersection_type);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220
 // Address: 00496220
@@ -101,7 +101,7 @@ float __cdecl CDemonRaytrace::cylinderGroundCheck(CDemonRaytrace *this_ptr,CVect
 
 // Original: core_dtrace.cpp_initCapsuleCollisionData_FUN_00496b90
 // Address: 00496b90
-void __cdecl initCapsuleCollisionData(SCapsuleCollision *out_data,float start_x,float start_z,float dir_x,float dir_z, float radius,void *user_data1,void *user_data2);
+void __cdecl initCapsuleCollisionData(SCapsuleCollision *out_data,float start_x,float start_z,float dir_x,float dir_z,float radius,void *user_data1,void *user_data2);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60
 // Address: 00496c60
@@ -129,7 +129,7 @@ void __cdecl CDemonRaytrace::setPVS(CDemonRaytrace *this_ptr,int visible_cube_co
 
 // Original: core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0
 // Address: 00498fb0
-void __cdecl CDemonRaytrace::savePVS(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array, int **output_indices_array);
+void __cdecl CDemonRaytrace::savePVS(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array,int **output_indices_array);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0
 // Address: 004990f0
@@ -177,7 +177,7 @@ CVector3f * __cdecl CDemonRaytrace::convertCubeIndexToPosition(CDemonRaytrace *t
 
 // Original: core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20
 // Address: 00499c20
-void __cdecl CDemonRaytrace::voxelGridSweepTest(CDemonRaytrace *this_ptr,CVector3f *offset_vector,CVector3f *start_position, CVector3f *end_position,void *light_data);
+void __cdecl CDemonRaytrace::voxelGridSweepTest(CDemonRaytrace *this_ptr,CVector3f *offset_vector,CVector3f *start_position,CVector3f *end_position,void *light_data);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70
 // Address: 00499e70
@@ -185,7 +185,7 @@ void __cdecl CDemonRaytrace::copyVoxelBuffer2ToBuffer1(CDemonRaytrace *this_ptr)
 
 // Original: core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10
 // Address: 00499f10
-void __cdecl CDemonRaytrace::voxelGridSweepTest2(CDemonRaytrace *this_ptr,CVector3f *offset_vector,void *light_data, CVector3f *start_position,CVector3f *end_position);
+void __cdecl CDemonRaytrace::voxelGridSweepTest2(CDemonRaytrace *this_ptr,CVector3f *offset_vector,void *light_data,CVector3f *start_position,CVector3f *end_position);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160
 // Address: 0049a160

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CMatrix3x4f * __stack_esi
-core_xform_cpp_buildXFlipMatrix_FUN_005f6ee0(float x_offset,CMatrix3x4f *matrix_out)
+CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_005f6ee0(float x_offset,CMatrix3x4f *matrix_out)
 
 {
   int iVar1;

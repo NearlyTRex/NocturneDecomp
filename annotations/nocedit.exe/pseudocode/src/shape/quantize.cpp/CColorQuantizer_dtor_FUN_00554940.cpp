@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CColorQuantizer * __cdecl
-shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer *this_ptr,uint flags)
+CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(CColorQuantizer *this_ptr,uint flags)
 
 {
   if (this_ptr->error_buffer_r != (float *)0x0) {

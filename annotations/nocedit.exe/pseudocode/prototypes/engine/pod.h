@@ -97,7 +97,7 @@ void __cdecl CPod::cleanup(CPod *this_ptr);
 
 // Original: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
 // Address: 00550ce0
-int __cdecl findFilesByExtension(CPod **pod_array,char *extension,char *output_buffer,int max_results, int result_string_length);
+int __cdecl findFilesByExtension(CPod **pod_array,char *extension,char *output_buffer,int max_results,int result_string_length);
 
 // Original: engine_pod.cpp_CPod_initSearch_FUN_00550ea0
 // Address: 00550ea0

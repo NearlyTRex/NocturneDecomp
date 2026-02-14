@@ -17,10 +17,9 @@ int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
   CVert *pCVar6;
   int iVar7;
   double *pdVar8;
-  ulonglong *puVar9;
-  double *pdVar10;
+  double *pdVar9;
   double local_e0;
-  ulonglong local_c8;
+  double local_c8;
   double local_c0;
   double local_b8;
   double local_b0;
@@ -47,11 +46,11 @@ int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
     local_60 = pCVar6[iVar5].position.y - pCVar6[iVar7].position.y;
     local_58 = pCVar6[iVar5].position.z - pCVar6[iVar7].position.z;
     pdVar8 = &local_68;
-    pdVar10 = &local_50;
+    pdVar9 = &local_50;
     for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *(uint *)pdVar10 = *(uint *)pdVar8;
+      *(uint *)pdVar9 = *(uint *)pdVar8;
       pdVar8 = (double *)((int)pdVar8 + 4);
-      pdVar10 = (double *)((int)pdVar10 + 4);
+      pdVar9 = (double *)((int)pdVar9 + 4);
     }
     dVar2 = 1.0 / SQRT(local_40 * local_40 + local_50 * local_50 + local_48 * local_48);
     local_b0 = local_50 * dVar2;
@@ -59,17 +58,15 @@ int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
     local_a0 = local_40 * dVar2;
     pCVar1 = pCVar6 + this_ptr->vertex_idx_0;
     iVar7 = this_ptr->vertex_idx_1;
-    dVar3 = pCVar6[iVar7].position.x - (pCVar1->position).x;
-    local_c8._0_4_ = SUB84(dVar3,0);
-    local_c8._4_4_ = (uint)((ulonglong)dVar3 >> 0x20);
+    local_c8 = pCVar6[iVar7].position.x - (pCVar1->position).x;
     local_c0 = pCVar6[iVar7].position.y - (pCVar1->position).y;
     local_b8 = pCVar6[iVar7].position.z - (pCVar1->position).z;
-    puVar9 = &local_c8;
-    pdVar8 = &local_80;
+    pdVar8 = &local_c8;
+    pdVar9 = &local_80;
     for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *(uint *)pdVar8 = *(uint *)puVar9;
-      puVar9 = (ulonglong *)((int)puVar9 + 4);
+      *(uint *)pdVar9 = *(uint *)pdVar8;
       pdVar8 = (double *)((int)pdVar8 + 4);
+      pdVar9 = (double *)((int)pdVar9 + 4);
     }
     local_88 = 1.0 / SQRT(local_70 * local_70 + local_80 * local_80 + local_78 * local_78);
     local_98 = local_80 * local_88;
@@ -81,7 +78,6 @@ int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
       local_e0 = -local_e0;
     }
     if (local_e0 <= 0.99999998999999995) {
-      local_c8 = dVar3;
       (*this_ptr->vtable->computeNormal)(this_ptr);
       dVar2 = (this_ptr->normal).y;
       dVar3 = (this_ptr->normal).x;

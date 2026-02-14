@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 30,
-        "line": 70,
+        "line": 68,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 70,
+        "line": 68,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 105,
-        "line": 72,
+        "line": 70,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 77,
+        "line": 75,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 115,
+        "line": 113,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 118,
+        "line": 116,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       }
     ],
@@ -43,16 +43,16 @@
   },
   "complexity": {
     "assembly_lines": 371,
-    "complexity_score": 193,
+    "complexity_score": 191,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 128,
+    "pseudocode_lines": 126,
     "suspect_count": 6,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 499
+    "total_lines": 497
   },
   "cross_references": [
     {
@@ -90,7 +90,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndmain.cpp_parseWavFile_FUN_005a3fe0",
-    "signature": "int __cdecl sound_sndmain_cpp_parseWavFile_FUN_005a3fe0 (_FILE *file_handle,long *file_offset_ptr,CSfxSample *sfx_sample)"
+    "signature": "int __cdecl sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(_FILE *file_handle,long *file_offset_ptr,CSfxSample *sfx_sample)"
   },
   "function_calls": [
     {
@@ -387,7 +387,14 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 61,
+      "match": "._2_2_",
+      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
       "match": "._2_2_",
       "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
       "type": "unknown_field"
@@ -395,34 +402,27 @@
     {
       "description": "Unknown/mangled field access",
       "line": 63,
-      "match": "._2_2_",
-      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 65,
       "match": "._2_2_",
       "text": "(&local_88,\"Invalid number of channels: %u  (must be 1 or 2)\",(uint)local_24._2_2_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 70,
+      "line": 68,
       "match": "._2_2_",
       "text": "sVar1 = local_24._2_2_ * (short)local_20;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 108,
+      "line": 106,
       "match": "._2_2_",
       "text": "(sfx_sample->sample_info).num_channels = (uint)local_24._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 111,
+      "line": 109,
       "match": "._2_2_",
       "text": "(int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /",
       "type": "unknown_field"

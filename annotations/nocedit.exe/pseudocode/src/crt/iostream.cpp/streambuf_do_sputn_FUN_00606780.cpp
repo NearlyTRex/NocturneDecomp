@@ -2,13 +2,11 @@
 // Address: 00606780
 // Address Range: [[00606780, 00606831]]
 // Convention: __watcallStack
-// Signature: int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_00606780 (streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write)
+// Signature: int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_00606780(streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write)
 
 #include "nocturne.h"
 
-int __watcallStack
-crt_iostream_cpp_streambuf_do_sputn_FUN_00606780
-          (streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write)
+int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_00606780(streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write)
 
 {
   uint uVar1;
@@ -26,7 +24,7 @@ crt_iostream_cpp_streambuf_do_sputn_FUN_00606780
       return local_14;
     }
     if (buffer->__put_base == (char *)0x0) {
-      iVar2 = (**(code **)((int)buffer[1].__b_lock + 0xc))();
+      iVar2 = (**(code **)((int)buffer[1].__b_lock + 0xc))(buffer,*(char *)input_buffer);
       if (iVar2 == -1) {
         return local_14;
       }
@@ -35,7 +33,7 @@ crt_iostream_cpp_streambuf_do_sputn_FUN_00606780
     else {
       uVar1 = (int)buffer->__put_end - (int)buffer->__put_ptr;
       if ((int)uVar1 < 1) {
-        iVar2 = (**(code **)((int)buffer[1].__b_lock + 0xc))();
+        iVar2 = (**(code **)((int)buffer[1].__b_lock + 0xc))(buffer,0xffffffff);
         if (iVar2 == -1) {
           return local_14;
         }

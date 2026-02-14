@@ -26,11 +26,11 @@ void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9d0(CBloodParticle *this_ptr)
   CVector3i local_18;
   
   bVar5 = 0;
-  DAT_02d83368.base.count = 4;
-  DAT_02d83368.surface_normal.A = 0;
-  DAT_02d83368.surface_normal.B = 0;
-  DAT_02d83368.surface_normal.C = 0;
-  DAT_02d83368.surface_normal.D = 0;
+  SMRGLHeaderPrimitive_02d83368.base.count = 4;
+  SMRGLHeaderPrimitive_02d83368.surface_normal.A = 0;
+  SMRGLHeaderPrimitive_02d83368.surface_normal.B = 0;
+  SMRGLHeaderPrimitive_02d83368.surface_normal.C = 0;
+  SMRGLHeaderPrimitive_02d83368.surface_normal.D = 0;
   INT_02d83380 = 0;
   INT_02d83384 = 1;
   INT_02d83388 = 2;

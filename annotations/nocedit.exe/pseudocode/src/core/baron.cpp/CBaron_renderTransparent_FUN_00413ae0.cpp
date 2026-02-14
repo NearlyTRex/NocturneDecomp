@@ -20,7 +20,6 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_pt
   CVector3i CStack_2c;
   float local_1c;
   uint local_18;
-  int iStack_14;
   
   if ((this_ptr->summoned == 0) && ((this_ptr->base).control_type == 2)) {
     return 0;
@@ -69,7 +68,8 @@ LAB_00413b59:
   iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar5 != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,iStack_14);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
+              (g_CDemonRendererPtr2,(int)local_1c);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,1);
     pCVar1 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(pCVar1,-1,0x2e7,1,0);

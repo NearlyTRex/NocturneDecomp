@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_litecone_cpp_CLightCone_process_FUN_00506bc0(CLightCone *this_ptr,float delta_time)
+void __cdecl core_litecone_cpp_CLightCone_process_FUN_00506bc0(CLightCone *this_ptr,float delta_time)
 
 {
   int iVar1;

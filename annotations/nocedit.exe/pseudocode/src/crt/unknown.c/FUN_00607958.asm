@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined4 crt_unknown_c_FUN_00607958(void)
+; unknown undefined4 crt_unknown_c_FUN_00607958(int param_1,int param_2,undefined4 param_3)
 ;
 ;
 ; XREF[1]:

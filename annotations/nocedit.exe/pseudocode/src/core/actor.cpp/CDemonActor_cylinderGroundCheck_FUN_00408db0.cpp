@@ -2,13 +2,11 @@
 // Address: 00408db0
 // Address Range: [[00408db0, 00408e7e]]
 // Convention: __cdecl
-// Signature: float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0 (CDemonActor *this_ptr,float radius,CVector3f *out_normal)
+// Signature: float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0(CDemonActor *this_ptr,float radius,CVector3f *out_normal)
 
 #include "nocturne.h"
 
-float __cdecl
-core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0
-          (CDemonActor *this_ptr,float radius,CVector3f *out_normal)
+float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0(CDemonActor *this_ptr,float radius,CVector3f *out_normal)
 
 {
   CDemonSet *pCVar1;

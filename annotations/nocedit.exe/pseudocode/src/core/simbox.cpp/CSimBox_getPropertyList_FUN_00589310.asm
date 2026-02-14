@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_simbox_cpp_CSimBox_getPropertyList_FUN_00589310 (CSimBox *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_simbox_cpp_CSimBox_getPropertyList_FUN_00589310(CSimBox *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CSimBox *        Stack[0x4]:4   this_ptr

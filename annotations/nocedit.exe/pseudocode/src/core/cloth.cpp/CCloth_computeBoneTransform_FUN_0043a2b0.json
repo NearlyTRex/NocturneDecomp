@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 121,
+    "complexity_score": 119,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 64,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 160
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -41,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0",
-    "signature": "void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043a2b0 (CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)"
+    "signature": "void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043a2b0(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)"
   },
   "function_calls": [
     {
@@ -262,35 +262,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 30,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 31,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 56,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"

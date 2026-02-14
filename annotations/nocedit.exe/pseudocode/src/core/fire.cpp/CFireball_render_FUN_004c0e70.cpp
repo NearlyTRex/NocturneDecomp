@@ -134,18 +134,18 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
     lVar2 = (longlong)this_ptr->timer * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
     g_RenderVertexBuffer[0].w_recip =
          (float)((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-    g_RenderVertexBuffer[0].light = 9.18341e-41;
+    g_RenderVertexBuffer[0].light = 0xffff;
     g_RenderVertexBuffer[0].color = 0xffff;
-    g_RenderVertexBuffer[0].fog = 9.18341e-41;
-    g_RenderVertexBuffer[1].light = 9.18341e-41;
+    g_RenderVertexBuffer[0].fog = 0xffff;
+    g_RenderVertexBuffer[1].light = 0xffff;
     g_RenderVertexBuffer[1].color = 0xffff;
-    g_RenderVertexBuffer[1].fog = 9.18341e-41;
-    g_RenderVertexBuffer[2].light = 9.18341e-41;
+    g_RenderVertexBuffer[1].fog = 0xffff;
+    g_RenderVertexBuffer[2].light = 0xffff;
     g_RenderVertexBuffer[2].color = 0xffff;
-    g_RenderVertexBuffer[2].fog = 9.18341e-41;
-    g_RenderVertexBuffer[3].light = 9.18341e-41;
+    g_RenderVertexBuffer[2].fog = 0xffff;
+    g_RenderVertexBuffer[3].light = 0xffff;
     g_RenderVertexBuffer[3].color = 0xffff;
-    g_RenderVertexBuffer[3].fog = 9.18341e-41;
+    g_RenderVertexBuffer[3].fog = 0xffff;
     g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
     g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
     g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
@@ -212,22 +212,23 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
         local_c8.z = (int)ROUND(256.0f * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_c8);
-        (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+        (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+                  (g_CurrentSceneCamera,this_ptr,0);
         lVar2 = (longlong)this_ptr->timer * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
         g_RenderVertexBuffer[0].w_recip =
              (float)((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        g_RenderVertexBuffer[0].light = 9.18341e-41;
+        g_RenderVertexBuffer[0].light = 0xffff;
         g_RenderVertexBuffer[0].color = 0xffff;
-        g_RenderVertexBuffer[0].fog = 9.18341e-41;
-        g_RenderVertexBuffer[1].light = 9.18341e-41;
+        g_RenderVertexBuffer[0].fog = 0xffff;
+        g_RenderVertexBuffer[1].light = 0xffff;
         g_RenderVertexBuffer[1].color = 0xffff;
-        g_RenderVertexBuffer[1].fog = 9.18341e-41;
-        g_RenderVertexBuffer[2].light = 9.18341e-41;
+        g_RenderVertexBuffer[1].fog = 0xffff;
+        g_RenderVertexBuffer[2].light = 0xffff;
         g_RenderVertexBuffer[2].color = 0xffff;
-        g_RenderVertexBuffer[2].fog = 9.18341e-41;
-        g_RenderVertexBuffer[3].light = 9.18341e-41;
+        g_RenderVertexBuffer[2].fog = 0xffff;
+        g_RenderVertexBuffer[3].light = 0xffff;
         g_RenderVertexBuffer[3].color = 0xffff;
-        g_RenderVertexBuffer[3].fog = 9.18341e-41;
+        g_RenderVertexBuffer[3].fog = 0xffff;
         g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
         g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
         g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;

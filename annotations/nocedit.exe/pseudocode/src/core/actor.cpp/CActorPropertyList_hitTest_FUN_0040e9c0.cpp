@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_actor_cpp_CActorPropertyList_hitTest_FUN_0040e9c0(CActorPropertyList *this_ptr,int x,int y)
+int __cdecl core_actor_cpp_CActorPropertyList_hitTest_FUN_0040e9c0(CActorPropertyList *this_ptr,int x,int y)
 
 {
   int iVar1;

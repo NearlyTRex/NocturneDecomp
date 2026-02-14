@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int vertex_count)
+void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int vertex_count)
 
 {
   longlong lVar1;
@@ -130,12 +129,12 @@ engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int 
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar6;
           g_SoftwareEdgeBuffer[iVar3].v_current =
                pSVar8->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          lVar1 = (longlong)iVar9 * (longlong)((int)pSVar12->light - (int)pSVar8->light);
+          lVar1 = (longlong)iVar9 * (longlong)(pSVar12->light - pSVar8->light);
           uVar6 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           g_SoftwareEdgeBuffer[iVar3].z_gradient = uVar6;
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar6;
           g_SoftwareEdgeBuffer[iVar3].z_current =
-               (int)pSVar8->light + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+               pSVar8->light + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
           lVar1 = (longlong)iVar9 * (longlong)((int)pSVar12->w_recip - (int)pSVar8->w_recip);
           uVar6 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           g_SoftwareEdgeBuffer[iVar3].fog_gradient = uVar6;
@@ -232,7 +231,7 @@ engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int 
       } while (iVar11 < vertex_count);
     }
     g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
-    wincore_windll_cpp_drawPolygon2_FUN_005b7610(local_64,vertex_count,g_RenderStateFlags);
+    wincore_windll_cpp_drawPolygon2_FUN_005b7610(local_64,vertex_count,g_RenderStateFlags.dword);
   }
   return;
 }

@@ -2,16 +2,13 @@
 // Address: 004ce2d0
 // Address Range: [[004ce2d0, 004ce79b]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode )
+// Signature: void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode)
 
 #include "nocturne.h"
 
 /* WARNING: Variable defined which should be unmapped: local_54 */
 
-void __cdecl
-engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0
-          (CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode
-          )
+void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode)
 
 {
   char cVar1;
@@ -50,8 +47,8 @@ engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0
   if (color_mode != -2) {
     if (color_mode < 0) {
       g_QuadVertex0.color = 0xffff;
-      g_QuadVertex0.fog = 9.18341e-41;
-      g_QuadVertex0.light = 9.18341e-41;
+      g_QuadVertex0.fog = 0xffff;
+      g_QuadVertex0.light = 0xffff;
       goto LAB_004ce397;
     }
     iVar6 = color_mode * 3;
@@ -60,8 +57,8 @@ engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0
     uVar3 = (uint)(byte)g_SourcePaletteData[iVar6 + 1];
   }
   g_QuadVertex0.color = uVar3 << 8;
-  g_QuadVertex0.light = (float)(uVar2 << 8);
-  g_QuadVertex0.fog = (float)(uVar4 << 8);
+  g_QuadVertex0.light = uVar2 << 8;
+  g_QuadVertex0.fog = uVar4 << 8;
 LAB_004ce397:
   g_QuadVertex0.projected_vertex.transformed_z = 0x10000;
   g_QuadVertex0.projected_vertex.inv_z = 0x10000;

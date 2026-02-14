@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
+; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   model_ptr

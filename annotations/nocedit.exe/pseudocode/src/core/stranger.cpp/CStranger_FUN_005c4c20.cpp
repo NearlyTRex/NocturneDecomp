@@ -19,9 +19,9 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr)
   int in_stack_0000000c;
   float local_f8;
   float local_f4;
-  float local_ec;
-  float fStack_e4;
-  byte auStack_e0 [48];
+  float fStack_f0;
+  SCollisionInfo SStack_e4;
+  CVector3f local_bc;
   CVector3f local_b0;
   CVector3f local_a4;
   CVector3f local_98;
@@ -57,16 +57,16 @@ LAB_005c4c51:
           ((((int)local_68.z < 0x40c00001 && (this_ptr_00 != this_ptr)) &&
            (iVar2 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
                               ((CCharacter *)this_ptr_00), iVar2 == 0)))))) {
-        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)auStack_e0);
+        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_e4);
         iVar2 = (*((this_ptr_00->base).base.base.vtable._ub)->hasCollision)
-                          ((CDemonActor *)this_ptr_00,(SCollisionInfo *)auStack_e0);
+                          ((CDemonActor *)this_ptr_00,&SStack_e4);
         if ((iVar2 == 2) &&
-           (fStack_e4 = 1.0 - ((local_5c.z - (float)auStack_e0._36_4_) + (float)-1.5) *
-                              (float)0.40000000000000002, local_ec <= fStack_e4)) {
-          if (fStack_e4 < 0.0) {
-            fStack_e4 = 0.0;
+           (fStack_f0 = 1.0 - ((local_68.z - SStack_e4.cylinder_radius) + (float)-1.5) *
+                              (float)0.40000000000000002, local_f8 <= fStack_f0)) {
+          if (fStack_f0 < 0.0) {
+            fStack_f0 = 0.0;
           }
-          local_ec = fStack_e4;
+          local_f8 = fStack_f0;
           iVar4 = iVar4 + 1;
           iVar5 = iVar5 + 4;
           goto LAB_005c4c51;
@@ -110,7 +110,7 @@ LAB_005c4d62:
     local_8c.z = pCVar3->z;
   }
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                     (&(this_ptr->base).base.model,(CVector3f *)(auStack_e0 + 0x24),INT_03f6bad0);
+                     (&(this_ptr->base).base.model,&local_bc,INT_03f6bad0);
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&local_80,pCVar3);
   if (&local_5c != pCVar3) {
@@ -128,7 +128,7 @@ LAB_005c4d62:
   }
   local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&local_5c,&local_98);
   if (((0.0 <= local_18) && (local_18 < 1.0)) &&
-     (fVar1 = 1.0 - (local_18 * local_20 - local_1c) / (local_20 - local_1c), 0.0 < fVar1)) {
+     (fVar1 = 1.0 - (local_18 * local_20 - local_1c) / (local_20 - local_1c), local_f8 < fVar1)) {
     local_f8 = fVar1;
   }
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20

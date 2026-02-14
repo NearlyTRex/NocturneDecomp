@@ -9,7 +9,7 @@ void __cdecl calibrateCPUSpeed(void);
 
 // Original: wincore_winrun.cpp_endPeriod_FUN_005f2db0
 // Address: 005f2db0
-void endPeriod(void);
+void __watcallRegister endPeriod(void);
 
 // Original: wincore_winrun.cpp_getTime_FUN_005f2dc0
 // Address: 005f2dc0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0 (SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples, SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info, SMpegLayer3Granule **granule_array)
+; __cdecl void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
 ;
 ; Parameters:
 ; SMpegStereoSubbandSamples * Stack[0x4]:4   input_lr_samples
@@ -80,8 +80,8 @@
 ;   double DOUBLE_0063b092 = 0.261799387799149
 ;   double DOUBLE_0063b09a = 0.707106782373095
 ;   undefined4 DAT_0067e6c8
-;   undefined4 DAT_0067e6cc
-;   undefined4 DAT_0067e6d0
+;   int INT_0067e6cc = 0x6
+;   int INT_0067e6d0 = 0xc
 ;   undefined4 DAT_0067e6d4
 ;   undefined4 DAT_0067e6f8
 ;   undefined4 DAT_0067e6fc
@@ -332,7 +332,7 @@ section .text
         ;   XREF to: 00532920 (CONDITIONAL_JUMP)  ; LAB_00532920
     INC ESI                             ; 00532905
         ;   Label: LAB_00532905
-    MOV EBX,dword ptr [EAX + 0x67e6cc]  ; 00532906 | DAT_0067e6cc | DAT_0067e6d0
+    MOV EBX,dword ptr [EAX + 0x67e6cc]  ; 00532906 | INT_0067e6cc | INT_0067e6d0
     ADD EAX,0x4                         ; 0053290c
     CMP EDI,EBX                         ; 0053290f
     JGE 0x00532905                      ; 00532911
@@ -343,7 +343,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1f8c]    ; 00532920
         ;   Label: LAB_00532920
     MOV dword ptr [ESP + 0x1f98],ESI    ; 00532927
-    MOV ESI,dword ptr [EAX + 0x67e6c8]  ; 0053292e | DAT_0067e6c8 | DAT_0067e6cc | DAT_0067e6d0
+    MOV ESI,dword ptr [EAX + 0x67e6c8]  ; 0053292e | DAT_0067e6c8 | INT_0067e6cc | INT_0067e6d0
     LEA EAX,[EDX*0x8 + 0x0]             ; 00532934
     ADD EAX,EDX                         ; 0053293b
     SHL EAX,0x2                         ; 0053293d
@@ -361,8 +361,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1ff4]    ; 00532974
         ;   Label: LAB_00532974
     MOV EDI,dword ptr [ESP + 0x1ff4]    ; 0053297b
-    MOV EBX,dword ptr [EAX + 0x67e6c8]  ; 00532982 | DAT_0067e6cc | DAT_0067e6d0
-    MOV EDI,dword ptr [EDI + 0x67e6cc]  ; 00532988 | DAT_0067e6d0 | DAT_0067e6d4
+    MOV EBX,dword ptr [EAX + 0x67e6c8]  ; 00532982 | INT_0067e6cc | INT_0067e6d0
+    MOV EDI,dword ptr [EDI + 0x67e6cc]  ; 00532988 | INT_0067e6d0 | DAT_0067e6d4
     SUB EDI,EBX                         ; 0053298e
     TEST EDI,EDI                        ; 00532990
     JLE 0x00532a21                      ; 00532992
@@ -657,7 +657,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2064]    ; 00532de5
     INC ESI                             ; 00532dec
         ;   Label: LAB_00532dec
-    MOV EDX,dword ptr [EAX + 0x67e6cc]  ; 00532ded | DAT_0067e6cc | DAT_0067e6d0
+    MOV EDX,dword ptr [EAX + 0x67e6cc]  ; 00532ded | INT_0067e6cc | INT_0067e6d0
     ADD EAX,0x4                         ; 00532df3
     CMP EDX,ECX                         ; 00532df6
     JLE 0x00532dec                      ; 00532df8
@@ -666,7 +666,7 @@ section .text
     MOV dword ptr [ESP + 0x2048],ESI    ; 00532e00
         ;   Label: LAB_00532e00
     MOV EBX,dword ptr [ESP + 0x2048]    ; 00532e07
-    MOV ESI,dword ptr [EAX + 0x67e6c8]  ; 00532e0e | DAT_0067e6c8 | DAT_0067e6cc | DAT_0067e6d0
+    MOV ESI,dword ptr [EAX + 0x67e6c8]  ; 00532e0e | DAT_0067e6c8 | INT_0067e6cc | INT_0067e6d0
     CMP EBX,0x8                         ; 00532e14
     JGE 0x005326c0                      ; 00532e17
         ;   XREF to: 005326c0 (CONDITIONAL_JUMP)  ; LAB_005326c0
@@ -682,8 +682,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x2020]    ; 00532e45
         ;   Label: LAB_00532e45
     MOV EDX,dword ptr [ESP + 0x2020]    ; 00532e4c
-    MOV EDI,dword ptr [EDI + 0x67e6cc]  ; 00532e53 | DAT_0067e6cc | DAT_0067e6d0 | DAT_0067e6d4
-    MOV ECX,dword ptr [EDX + 0x67e6c8]  ; 00532e59 | DAT_0067e6cc | DAT_0067e6d0
+    MOV EDI,dword ptr [EDI + 0x67e6cc]  ; 00532e53 | INT_0067e6cc | INT_0067e6d0 | DAT_0067e6d4
+    MOV ECX,dword ptr [EDX + 0x67e6c8]  ; 00532e59 | INT_0067e6cc | INT_0067e6d0
     MOV EAX,dword ptr [ESP + 0x2048]    ; 00532e5f
     SUB EDI,ECX                         ; 00532e66
     SHL EAX,0x2                         ; 00532e68

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *output,CVector3i *input)
+void __cdecl wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *output,CVector3i *input)
 {
 __asm {
         test dword ptr [g_MMXSupported],0xffffffff

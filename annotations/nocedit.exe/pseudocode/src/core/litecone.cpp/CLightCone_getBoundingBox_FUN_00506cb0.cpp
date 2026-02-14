@@ -2,13 +2,11 @@
 // Address: 00506cb0
 // Address Range: [[00506cb0, 00506cf6]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_00506cb0 (CLightCone *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_00506cb0(CLightCone *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_litecone_cpp_CLightCone_getBoundingBox_FUN_00506cb0
-          (CLightCone *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_00506cb0(CLightCone *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;

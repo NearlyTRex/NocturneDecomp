@@ -13,89 +13,89 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90(CDemonAc
   int iVar2;
   SRenderVertex *pSVar3;
   int iVar4;
-  uint uVar5;
+  int iVar5;
   int iVar6;
-  int iVar7;
-  int iVar8;
-  float *pfVar9;
-  float afStack_94 [30];
-  CVector3i CStack_1c;
+  CVector3f *pCVar7;
+  CVector3f local_9c [10];
+  CVector3i CStack_24;
+  int iStack_18;
+  uint uStack_14;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x4ff);
-  __arrinit(&stack0xffffff64,10,&g_CVectorTypeInfo);
-  iVar4 = (*((this_ptr->vtable)._ub)->getTargetPoints)(this_ptr,(CVector3f *)&stack0xffffff64);
-  pfVar9 = afStack_94;
-  iVar7 = 0;
-  if (0 < iVar4) {
+  __arrinit(local_9c,10,&g_CVectorTypeInfo);
+  iStack_18 = (*((this_ptr->vtable)._ub)->getTargetPoints)(this_ptr,local_9c);
+  pCVar7 = local_9c;
+  iVar5 = 0;
+  if (0 < iStack_18) {
     do {
-      uVar5 = (uint)g_ColorCubeLookup[0x7c00];
-      CStack_1c.x = (int)ROUND(*pfVar9 * 256.0f);
-      CStack_1c.y = (int)ROUND(pfVar9[1] * 256.0f);
-      CStack_1c.z = (int)ROUND(pfVar9[2] * 256.0f);
+      uStack_14 = (uint)g_ColorCubeLookup[0x7c00];
+      CStack_24.x = (int)ROUND(pCVar7->x * 256.0f);
+      CStack_24.y = (int)ROUND(*(float *)((int)pCVar7 + 4) * 256.0f);
+      CStack_24.z = (int)ROUND(*(float *)((int)pCVar7 + 8) * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr1->vertex_buffer_ptr[19999].projected_vertex,&CStack_1c);
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr[19999].projected_vertex,&CStack_24);
       pSVar3 = g_CDemonRendererPtr1->vertex_buffer_ptr;
       if ((int)(pSVar3[19999].projected_vertex.screen_x & -0x80000000) == 0) {
-        iVar6 = pSVar3[19999].projected_vertex.screen_x >> 0x10;
-        iVar8 = pSVar3[19999].projected_vertex.screen_y >> 0x10;
-        g_ActiveRenderColor = uVar5;
-        if ((((-1 < iVar6) && (-1 < iVar8)) && (iVar6 < g_WindowWidth)) && (iVar8 < g_WindowHeight))
+        iVar4 = pSVar3[19999].projected_vertex.screen_x >> 0x10;
+        g_ActiveRenderColor = uStack_14;
+        iVar6 = pSVar3[19999].projected_vertex.screen_y >> 0x10;
+        if ((((-1 < iVar4) && (-1 < iVar6)) && (iVar4 < g_WindowWidth)) && (iVar6 < g_WindowHeight))
         {
-          engine_2d_c_plotPixel_FUN_00401140(iVar6,iVar8);
+          engine_2d_c_plotPixel_FUN_00401140(iVar4,iVar6);
         }
-        iVar1 = iVar6 + -1;
-        iVar2 = iVar8 + -1;
+        iVar1 = iVar4 + -1;
+        iVar2 = iVar6 + -1;
         if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
         {
           engine_2d_c_plotPixel_FUN_00401140(iVar1,iVar2);
         }
-        iVar1 = iVar6 + -1;
-        iVar2 = iVar8 + 1;
+        iVar1 = iVar4 + -1;
+        iVar2 = iVar6 + 1;
         if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
         {
           engine_2d_c_plotPixel_FUN_00401140(iVar1,iVar2);
         }
-        iVar1 = iVar6 + 1;
-        iVar2 = iVar8 + -1;
+        iVar1 = iVar4 + 1;
+        iVar2 = iVar6 + -1;
         if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < g_WindowWidth)) && (iVar2 < g_WindowHeight))
         {
           engine_2d_c_plotPixel_FUN_00401140(iVar1,iVar2);
         }
-        iVar1 = iVar6 + 1;
-        iVar2 = iVar8 + 1;
+        iVar1 = iVar4 + 1;
+        iVar2 = iVar6 + 1;
         if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
         {
           engine_2d_c_plotPixel_FUN_00401140(iVar1,iVar2);
         }
-        iVar1 = iVar6 + -2;
-        iVar2 = iVar8 + -2;
+        iVar1 = iVar4 + -2;
+        iVar2 = iVar6 + -2;
         if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
         {
           engine_2d_c_plotPixel_FUN_00401140(iVar1,iVar2);
         }
-        iVar1 = iVar6 + -2;
-        iVar2 = iVar8 + 2;
+        iVar1 = iVar4 + -2;
+        iVar2 = iVar6 + 2;
         if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < g_WindowWidth)) && (iVar2 < g_WindowHeight))
         {
           engine_2d_c_plotPixel_FUN_00401140(iVar1,iVar2);
         }
-        iVar1 = iVar6 + 2;
-        iVar2 = iVar8 + -2;
+        iVar1 = iVar4 + 2;
+        iVar2 = iVar6 + -2;
         if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
         {
           engine_2d_c_plotPixel_FUN_00401140(iVar1,iVar2);
         }
+        iVar4 = iVar4 + 2;
         iVar6 = iVar6 + 2;
-        iVar8 = iVar8 + 2;
-        if (((-1 < iVar6) && (-1 < iVar8)) && ((iVar6 < g_WindowWidth && (iVar8 < g_WindowHeight))))
+        if (((-1 < iVar4) && (-1 < iVar6)) && ((iVar4 < g_WindowWidth && (iVar6 < g_WindowHeight))))
         {
-          engine_2d_c_plotPixel_FUN_00401140(iVar6,iVar8);
+          engine_2d_c_plotPixel_FUN_00401140(iVar4,iVar6);
         }
       }
-      iVar7 = iVar7 + 1;
-      pfVar9 = pfVar9 + 3;
-    } while (iVar7 < iVar4);
+      iVar5 = iVar5 + 1;
+      pCVar7 = (CVector3f *)((int)pCVar7 + 0xc);
+    } while (iVar5 < iStack_18);
   }
   return;
 }

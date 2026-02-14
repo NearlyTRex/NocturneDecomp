@@ -2,14 +2,11 @@
 // Address: 005b3b30
 // Address Range: [[005b3b30, 005b3b71]]
 // Convention: __cdecl
-// Signature: uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30 (CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker, float delay)
+// Signature: uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,float delay)
 
 #include "nocturne.h"
 
-uint __cdecl
-core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30
-          (CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,
-          float delay)
+uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,float delay)
 
 {
   uint uVar1;

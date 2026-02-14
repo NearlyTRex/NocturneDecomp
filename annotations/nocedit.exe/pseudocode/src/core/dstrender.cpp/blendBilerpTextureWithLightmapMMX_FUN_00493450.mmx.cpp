@@ -2,14 +2,11 @@
 // Address: 00493450
 // Address Range: [[00493450, 00493686] [00493690, 004937b5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450 (uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
-          (uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,
-          byte *lightmap_indices,int pixel_count)
+void __cdecl core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
 __asm {
         mov ECX,dword ptr [EBP + 0x18]

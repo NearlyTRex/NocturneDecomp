@@ -2,13 +2,11 @@
 // Address: 00421550
 // Address Range: [[00421550, 004215e1]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550 (CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point)
+// Signature: CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550
-          (CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point)
+CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point)
 
 {
   out_point->x = in_point->x;

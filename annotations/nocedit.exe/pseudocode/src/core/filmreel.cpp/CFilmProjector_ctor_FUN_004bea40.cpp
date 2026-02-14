@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CFilmProjector * __cdecl
-core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector *this_ptr)
+CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector *this_ptr)
 
 {
   char cVar1;

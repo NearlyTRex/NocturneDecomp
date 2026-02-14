@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 85,
+        "line": 78,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 111,
+    "complexity_score": 104,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 79,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 286
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -225,16 +225,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 52,
       "match": "SQRT",
-      "text": "if (((CStack_30.z - SQRT(fStack_34 * fStack_34 + fStack_3c * fStack_3c) <=",
+      "text": "if (((CStack_38.z - SQRT(fStack_3c * fStack_3c + fStack_44 * fStack_44) <=",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 58,
       "match": "ABS",
-      "text": "if (ABS(fVar5) <= (float)0.61086523818055505) {",
+      "text": "if (ABS(fStack_14) <= (float)0.61086523818055505) {",
       "type": "decompiler_intrinsic"
     }
   ]

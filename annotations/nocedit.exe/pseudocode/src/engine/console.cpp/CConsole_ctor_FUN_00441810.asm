@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00441810 (CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
+; __cdecl CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00441810(CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
 ;
 ; Parameters:
 ; CConsole *       Stack[0x4]:4   this_ptr

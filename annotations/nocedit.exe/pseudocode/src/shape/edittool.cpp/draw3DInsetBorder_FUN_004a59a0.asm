@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0 (int left,int top,int right,int bottom,int inner_y,int style)
+; __cdecl void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(int left,int top,int right,int bottom,int inner_y,int style)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   left

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-double __cdecl
-shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon *polygon_ptr)
+double __cdecl shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon *polygon_ptr)
 
 {
   float *pfVar1;

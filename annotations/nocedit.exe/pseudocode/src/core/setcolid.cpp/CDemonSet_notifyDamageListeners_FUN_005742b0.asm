@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 (CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position, void *unknown_param)
+; __cdecl void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position,void *unknown_param)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

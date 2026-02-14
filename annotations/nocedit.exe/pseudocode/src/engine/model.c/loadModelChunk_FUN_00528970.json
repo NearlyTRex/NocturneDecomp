@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 66,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 40,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 165
+    "total_lines": 164
   },
   "cross_references": [
     {
@@ -214,14 +214,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(buffer->base).type + model_size) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 41,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(buffer->base).type + model_size) = 0;",
       "type": "pointer_cast"

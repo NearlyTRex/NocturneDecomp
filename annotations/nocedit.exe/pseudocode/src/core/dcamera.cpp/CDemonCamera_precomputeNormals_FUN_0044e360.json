@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 53,
+        "line": 52,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       }
     ],
@@ -191,7 +191,7 @@
     {
       "addr": "013bc260",
       "name": "g_CameraDownscaleIterations",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -480,119 +480,119 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 56,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_60 + (uint)bVar11 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 57,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_84 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_60 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 66,
       "match": "(int *)((int)",
       "text": "aiStack_68[(uint)bVar11 * -2] = *(int *)((int)&local_54 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 68,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_54 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_TempWorldPositionRow[0].x + local_30) = local_54.x;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 71,
       "match": "(uint *)((int)",
       "text": "*puVar8 = *(uint *)((int)&local_54 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_54 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(int *)((int)",
       "text": "aiStack_68[(uint)bVar11 * -2] = *(int *)((int)&local_78 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_78 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 83,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_PrecomputedWorldPositions[0].x + iVar5) = local_6c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 86,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_PrecomputedDepthBuffer + local_2c) = local_60.z;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 94,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0].x + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 96,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0].y + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 98,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0].z + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 128,
       "match": "(int *)((int)",
       "text": "iVar5 = *(int *)(*(int *)((int)g_ZBufferScanlineArray + local_48) + local_34);",
       "type": "pointer_cast"

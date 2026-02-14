@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextCenteredFormatted_FUN_004023c0 (int left_x,int right_x,int y,char *format_string,...)
+; __cdecl void __cdecl engine_2d_c_drawTextCenteredFormatted_FUN_004023c0(int left_x,int right_x,int y,char *format_string,...)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   left_x

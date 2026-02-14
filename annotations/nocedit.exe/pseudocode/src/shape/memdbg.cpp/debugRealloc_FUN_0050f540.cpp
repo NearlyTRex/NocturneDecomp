@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl
-shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size,char *filename,int line_number)
+void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size,char *filename,int line_number)
 
 {
   SMemHead *pSVar1;

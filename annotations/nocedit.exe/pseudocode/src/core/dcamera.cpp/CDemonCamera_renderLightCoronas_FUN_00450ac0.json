@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 54,
-        "line": 104,
+        "line": 102,
         "message": "use of undeclared identifier 'stack0xffffff9c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 106,
+        "line": 104,
         "message": "use of undeclared identifier 'stack0xffffffa0'"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 271,
+    "complexity_score": 269,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
-    "pseudocode_lines": 136,
+    "pseudocode_lines": 134,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 408
+    "total_lines": 406
   },
   "cross_references": [
     {
@@ -51,7 +51,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0 (CDemonCamera *this_ptr,CDemonLight *light_source)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemonCamera *this_ptr,CDemonLight *light_source)"
   },
   "function_calls": [
     {
@@ -229,7 +229,7 @@
     {
       "addr": "013bc260",
       "name": "g_CameraDownscaleIterations",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -486,84 +486,84 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 46,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_DitherPatternTable + iVar4) = uVar3 & 0xff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->display_width;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_CoronaRightExtent + iVar4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 66,
       "match": "ROUND",
       "text": "g_CoronaDepthShift = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "ROUND",
       "text": "g_CoronaMaxDepth = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 76,
       "match": "(int *)((int)",
       "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_34)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 77,
       "match": "(int *)((int)",
       "text": "local_20 = *(int *)((int)g_CoronaLeftExtent + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 78,
       "match": "(int *)((int)",
       "text": "local_30 = *(int *)((int)g_CoronaRightExtent + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 86,
       "match": "SBORROW4",
       "text": "bVar10 = SBORROW4(local_20,local_30);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 97,
+      "line": 95,
       "match": "&stack0xffffff9c",
       "text": "aiStack_58[(uint)bVar9 * -2] = *(int *)(&stack0xffffff9c + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 99,
+      "line": 97,
       "match": "&stack0xffffffa0",
       "text": "*(int *)(&stack0xffffffa0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 124,
       "match": "SBORROW4",
       "text": "bVar10 = SBORROW4(local_20,local_30);",
       "type": "decompiler_intrinsic"

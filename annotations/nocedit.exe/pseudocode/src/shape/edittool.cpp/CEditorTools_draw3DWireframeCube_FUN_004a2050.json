@@ -4,79 +4,79 @@
       {
         "category": "other",
         "column": 23,
-        "line": 65,
+        "line": 63,
         "message": "C-style cast from 'WatcomTypeInfo *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 100,
+        "line": 98,
         "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 103,
+        "line": 101,
         "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 116,
+        "line": 114,
         "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 119,
+        "line": 117,
         "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 146,
+        "line": 144,
         "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 149,
+        "line": 147,
         "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 162,
+        "line": 160,
         "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 165,
+        "line": 163,
         "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 192,
+        "line": 190,
         "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 195,
+        "line": 193,
         "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 208,
+        "line": 206,
         "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 211,
+        "line": 209,
         "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
       }
     ],
@@ -85,18 +85,17 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 628,
+    "complexity_score": 571,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 9,
-    "pseudocode_lines": 233,
-    "suspect_count": 38,
+    "pseudocode_lines": 231,
+    "suspect_count": 33,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "suspect_float"
+      "pointer_cast"
     ],
-    "total_lines": 555
+    "total_lines": 553
   },
   "cross_references": [
     {
@@ -128,7 +127,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)"
   },
   "function_calls": [
     {
@@ -696,267 +695,232 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 59,
-      "match": "1.12104e-44",
-      "text": "local_140.fog = 1.12104e-44;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 61,
-      "match": "6.807476e-39",
-      "text": "local_140.light = 6.807476e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 67,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_110 + iVar2) = local_1c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 74,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_110 + iVar2 + 4) = local_14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 82,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_110 + iVar2 + 8) = local_18;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 88,
       "match": "ROUND",
       "text": "local_8c.x = (int)ROUND(*pfVar3 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 89,
       "match": "ROUND",
       "text": "local_8c.y = (int)ROUND(pfVar3[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 90,
       "match": "ROUND",
       "text": "local_8c.z = (int)ROUND(pfVar3[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 104,
       "match": "ROUND",
       "text": "local_8c.x = (int)ROUND(local_44 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 105,
       "match": "ROUND",
       "text": "local_8c.y = (int)ROUND(local_40 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 106,
       "match": "ROUND",
       "text": "local_8c.z = (int)ROUND(local_3c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 110,
-      "match": "1.4013e-45",
-      "text": "local_140.fog = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 115,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 116,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 122,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 123,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 134,
       "match": "ROUND",
       "text": "local_b0.x = (int)ROUND(*pfVar3 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 135,
       "match": "ROUND",
       "text": "local_b0.y = (int)ROUND(pfVar3[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 136,
       "match": "ROUND",
       "text": "local_b0.z = (int)ROUND(pfVar3[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
+      "line": 150,
       "match": "ROUND",
       "text": "local_b0.x = (int)ROUND(local_2c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
+      "line": 151,
       "match": "ROUND",
       "text": "local_b0.y = (int)ROUND(local_28 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
+      "line": 152,
       "match": "ROUND",
       "text": "local_b0.z = (int)ROUND(local_24 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 156,
-      "match": "1.4013e-45",
-      "text": "local_140.fog = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 161,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 162,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 168,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 169,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 182,
+      "line": 180,
       "match": "ROUND",
       "text": "local_50.x = (int)ROUND(*pfVar3 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 183,
+      "line": 181,
       "match": "ROUND",
       "text": "local_50.y = (int)ROUND(pfVar3[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
+      "line": 182,
       "match": "ROUND",
       "text": "local_50.z = (int)ROUND(pfVar3[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 198,
+      "line": 196,
       "match": "ROUND",
       "text": "local_50.x = (int)ROUND(local_5c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 199,
+      "line": 197,
       "match": "ROUND",
       "text": "local_50.y = (int)ROUND(local_58 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 200,
+      "line": 198,
       "match": "ROUND",
       "text": "local_50.z = (int)ROUND(local_54 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 202,
-      "match": "1.4013e-45",
-      "text": "local_140.fog = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 207,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
+      "line": 208,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 216,
+      "line": 214,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 215,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"

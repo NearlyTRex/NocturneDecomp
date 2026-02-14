@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CFrankenstienMachine * __cdecl
-core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine *this_ptr,uint flags)
+CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine *this_ptr,uint flags)
 
 {
   CCourse *pCVar1;

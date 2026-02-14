@@ -2,13 +2,11 @@
 // Address: 005a10e0
 // Address Range: [[005a10e0, 005a1155]]
 // Convention: __cdecl
-// Signature: float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0 (CDeformableModelInstance *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
+// Signature: float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0(CDeformableModelInstance *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
 
 #include "nocturne.h"
 
-float __cdecl
-core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0
-          (CDeformableModelInstance *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
+float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0(CDeformableModelInstance *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
 
 {
   CDeformableModel *pCVar1;

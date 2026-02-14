@@ -2,14 +2,11 @@
 // Address: 00595fc0
 // Address Range: [[00595fc0, 0059685b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices )
+// Signature: void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-          (CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices
-          )
+void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices)
 
 {
   _FILE *p_Var1;

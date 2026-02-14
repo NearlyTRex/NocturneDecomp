@@ -14,10 +14,10 @@
 ;   double DOUBLE_00623a76 = 294912
 ;   int g_LastClickTimestamp
 ;   int g_LastClickItemIndex
-;   CEdButton* g_ActiveButton
+;   void* g_ActiveControl
 ;   int g_MouseX
 ;   int g_MouseY
-;   uint g_MouseButtonFlags
+;   _BIT_INTEGER g_MouseButtonFlags
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830
@@ -123,7 +123,7 @@ section .text
     JZ 0x004a444f                       ; 004a4443
         ;   XREF to: 004a444f (CONDITIONAL_JUMP)  ; LAB_004a444f
     MOV dword ptr [EBX + 0x170],0x1     ; 004a4445
-    MOV ECX,dword ptr [0x02cf2b00]      ; 004a444f | g_ActiveButton
+    MOV ECX,dword ptr [0x02cf2b00]      ; 004a444f | g_ActiveControl
         ;   Label: LAB_004a444f
     LEA EAX,[EBX + 0x1dc]               ; 004a4455
     CMP EAX,ECX                         ; 004a445b
@@ -138,7 +138,7 @@ section .text
         ;   Label: LAB_004a4476
     JZ 0x004a4514                       ; 004a447d
         ;   XREF to: 004a4514 (CONDITIONAL_JUMP)  ; LAB_004a4514
-    CMP dword ptr [0x02cf2b00],0x0      ; 004a4483 | g_ActiveButton
+    CMP dword ptr [0x02cf2b00],0x0      ; 004a4483 | g_ActiveControl
     JNZ 0x004a4514                      ; 004a448a
         ;   XREF to: 004a4514 (CONDITIONAL_JUMP)  ; LAB_004a4514
     MOV EDX,dword ptr [0x02cf6a90]      ; 004a4490 | g_MouseY
@@ -242,7 +242,7 @@ section .text
     TEST EAX,EAX                        ; 004a45a8
     JNZ 0x004a452d                      ; 004a45aa
         ;   XREF to: 004a452d (CONDITIONAL_JUMP)  ; LAB_004a452d
-    CMP ESI,dword ptr [0x02cf2b00]      ; 004a45ac | g_ActiveButton
+    CMP ESI,dword ptr [0x02cf2b00]      ; 004a45ac | g_ActiveControl
     JNZ 0x004a4476                      ; 004a45b2
         ;   XREF to: 004a4476 (CONDITIONAL_JUMP)  ; LAB_004a4476
     MOV dword ptr [EBX + 0x3a4],0x1     ; 004a45b8

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *output_buffer)
+void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *output_buffer)
 
 {
   char cVar1;

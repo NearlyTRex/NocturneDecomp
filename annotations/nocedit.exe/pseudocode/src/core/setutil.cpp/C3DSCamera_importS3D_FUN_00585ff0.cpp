@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera *this_ptr,_FILE *file_handle)
+void __cdecl core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;

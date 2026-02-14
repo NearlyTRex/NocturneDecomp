@@ -2,13 +2,11 @@
 // Address: 004a28a0
 // Address Range: [[004a28a0, 004a2912]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 (CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
-          (CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length)
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length)
 
 {
   SProjectedVertex local_40 [2];

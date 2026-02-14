@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0065f024 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic DAT_0067cb28
+;   SMRGLTextureBasic SMRGLTextureBasic_0067cb28
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
@@ -78,7 +78,7 @@ section .text
     ADD ESP,0x8                         ; 004ed44e
     MOV EBP,dword ptr [0x006703ec]      ; 004ed451 | g_CDemonRendererPtr2
     XOR ECX,ECX                         ; 004ed457
-    PUSH 0x67cb28                       ; 004ed459 | DAT_0067cb28
+    PUSH 0x67cb28                       ; 004ed459 | SMRGLTextureBasic_0067cb28
     MOV dword ptr [0x02d833b0],ECX      ; 004ed45e | INT_02d833b0
     MOV dword ptr [0x02d833b4],ECX      ; 004ed464 | INT_02d833b4
     PUSH EBP                            ; 004ed46a | g_CDemonRendererInstance

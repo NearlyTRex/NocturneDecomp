@@ -11,22 +11,17 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005edc80(void)
 {
   int iVar1;
   HRESULT HVar2;
-  IDirectDrawSurface *pIVar3;
-  IUnknown *pIVar4;
   
   if ((g_FullscreenMode == 0) || (g_GraphicsResetFlag == 0)) {
     if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
       (*g_DirectDrawSurface->vtable->Restore)(g_DirectDrawSurface);
       (*g_SoftwareRenderSurface->vtable->Restore)(g_SoftwareRenderSurface);
       if (g_DirectDrawUnknown != (IUnknown *)0x0) {
-        pIVar3 = g_DirectDrawSurface;
-        pIVar4 = g_DirectDrawUnknown;
-        iVar1 = (*g_DirectDrawSurface->vtable->SetPalette)();
+        iVar1 = (*g_DirectDrawSurface->vtable->SetPalette)(g_DirectDrawSurface,g_DirectDrawUnknown);
         if (iVar1 != 0) {
           g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
           g_CurrentLineNumber = 999;
-          core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("videoRestore - Unable to set front buffer palette",pIVar3,pIVar4);
+          core_main_c_displayErrorAndQuit_FUN_00506f10("videoRestore - Unable to set front buffer palette");
           return;
         }
       }

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_glass_cpp_CGlass_hasCollision_FUN_004ea190(CGlass *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_glass_cpp_CGlass_hasCollision_FUN_004ea190(CGlass *this_ptr,SCollisionInfo *collision_info)
 
 {
   if ((this_ptr->shattered != 0) && (this_ptr->mirror_flag == 0)) {

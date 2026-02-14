@@ -2,28 +2,40 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 40,
-        "message": "use of undeclared identifier 'stack0xfffffddc'"
+        "category": "format_error",
+        "column": 35,
+        "line": 38,
+        "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 41,
-        "message": "use of undeclared identifier 'stack0xfffffddc'"
+        "category": "format_error",
+        "column": 45,
+        "line": 38,
+        "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 55,
+        "line": 38,
+        "message": "format specifies type 'unsigned int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 37,
-        "line": 66,
+        "line": 59,
         "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
-        "category": "other",
-        "column": 31,
-        "line": 66,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "format_error",
+        "column": 47,
+        "line": 59,
+        "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 57,
+        "line": 59,
+        "message": "format specifies type 'unsigned int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -31,18 +43,14 @@
   },
   "complexity": {
     "assembly_lines": 252,
-    "complexity_score": 232,
+    "complexity_score": 85,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 19,
-    "pseudocode_lines": 87,
-    "suspect_count": 13,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
-    ],
-    "total_lines": 339
+    "pseudocode_lines": 85,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 337
   },
   "cross_references": [
     {
@@ -300,97 +308,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "DWORD unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "DWORD unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "DWORD in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xfffffddc",
-      "text": "(&stack0xfffffddc,\"%d,%d,%x\",g_JoyXPos,g_JoyYPos,g_JoyButtons);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 34,
-      "match": "&stack0xfffffddc",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffddc,0,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = g_JoyXPos;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = g_JoyYPos;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 66,
-      "match": "unaff_EDI",
-      "text": "g_CGamePtr->x_center = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 70,
-      "match": "unaff_ESI",
-      "text": "pCVar1->y_center = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 71,
-      "match": "unaff_EBX",
-      "text": "pCVar1->y_stick_min = unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_00000004",
-      "text": "if ((int)g_JoyYPos < (int)in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = g_JoyYPos;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

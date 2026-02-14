@@ -87,7 +87,7 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_54);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_FireEffectPopcornTexture);
-  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)(g_CurrentSceneCamera,this_ptr,0);
   g_RenderVertexBuffer[0].u = 0x80000;
   g_RenderVertexBuffer[0].v = 0xf80000;
   g_RenderVertexBuffer[1].u = 0xf80000;

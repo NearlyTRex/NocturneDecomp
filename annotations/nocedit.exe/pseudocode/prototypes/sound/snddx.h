@@ -41,7 +41,7 @@ void __cdecl CDirectSoundDevice::initPropertySet(CDirectSoundDevice *this_ptr);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
 // Address: 005ae830
-int __cdecl CDirectSoundDevice::setMode(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block);
+int __cdecl CDirectSoundDevice::setMode(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50
 // Address: 005aed50
@@ -57,7 +57,7 @@ void __cdecl CDirectSoundDevice::set3DListenerPos(CDirectSoundDevice *this_ptr,d
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70
 // Address: 005aee70
-void __cdecl CDirectSoundDevice::set3DListenerOrient(CDirectSoundDevice *this_ptr,double x_front,double y_front,double z_front,double x_top, double y_top,double z_top);
+void __cdecl CDirectSoundDevice::set3DListenerOrient(CDirectSoundDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0
 // Address: 005aeed0
@@ -69,7 +69,7 @@ void __cdecl CDirectSoundDevice::set3DListenerDistanceFactor(CDirectSoundDevice 
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40
 // Address: 005aef40
-int __cdecl CDirectSoundDevice::allocateSample(CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate, int sample_count);
+int __cdecl CDirectSoundDevice::allocateSample(CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 
 // Original: sound_snddx.cpp_isValidSampleBuffer_FUN_005af150
 // Address: 005af150

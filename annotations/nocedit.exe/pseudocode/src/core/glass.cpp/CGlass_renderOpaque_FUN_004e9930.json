@@ -1,27 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 30,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 117,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 6,
     "pseudocode_lines": 67,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref"
+      "decompiler_intrinsic"
     ],
     "total_lines": 225
   },
@@ -193,31 +185,24 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xffffffd8",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
-      "text": "*(int *)pcVar4 = (int)ROUND(pCVar5->x * 256.0f);",
+      "text": "*(int *)pcVar3 = (int)ROUND(pCVar4->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "ROUND",
-      "text": "*(int *)(pcVar4 + 4) = (int)ROUND(pCVar5->y * 256.0f);",
+      "text": "*(int *)(pcVar3 + 4) = (int)ROUND(pCVar4->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "ROUND",
-      "text": "*(int *)(pcVar4 + 8) = (int)ROUND(pCVar5->z * 256.0f);",
+      "text": "*(int *)(pcVar3 + 8) = (int)ROUND(pCVar4->z * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ],

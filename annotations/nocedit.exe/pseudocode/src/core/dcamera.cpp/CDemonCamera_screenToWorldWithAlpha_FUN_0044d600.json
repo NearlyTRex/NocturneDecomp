@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 85,
+        "line": 83,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 87,
+        "line": 85,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 169,
+    "complexity_score": 167,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 79,
+    "pseudocode_lines": 77,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 230
+    "total_lines": 228
   },
   "cross_references": [],
   "function": {
@@ -42,7 +42,7 @@
     ],
     "convention": "__stack2_esi",
     "name": "core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600",
-    "signature": "CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600 (CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)"
+    "signature": "CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)"
   },
   "function_calls": [
     {
@@ -214,56 +214,56 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(int *)((int)",
       "text": "*(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + iVar4 * 4) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 57,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x58) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 66,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x38) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 74,
       "match": "(uint *)((int)",
       "text": "puVar6 = (uint *)((int)local_10 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 78,
+      "line": 76,
       "match": "&stack0xffffffe8",
       "text": "*puVar6 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar7 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 76,
       "match": "(uint *)((int)",
       "text": "*puVar6 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar7 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 80,
+      "line": 78,
       "match": "&stack0xffffffec",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 78,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
       "type": "pointer_cast"

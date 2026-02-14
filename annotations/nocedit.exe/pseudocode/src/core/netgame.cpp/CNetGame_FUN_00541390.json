@@ -2,105 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 53,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 54,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 55,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 56,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 72,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 77,
-        "line": 84,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 86,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 90,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 110,
-        "message": "use of undeclared identifier 'stack0xfffffecc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 112,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 119,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 129,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 131,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 132,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 134,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
-      },
-      {
-        "category": "undeclared_identifier",
+        "category": "format_error",
         "column": 46,
-        "line": 136,
-        "message": "use of undeclared identifier 'stack0xfffffed0'"
+        "line": 116,
+        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 116,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 61,
-        "line": 282,
+        "line": 289,
         "message": "use of undeclared identifier 'DAT_02f7c640'"
       }
     ],
@@ -109,18 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 837,
-    "complexity_score": 534,
+    "complexity_score": 376,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 64,
-    "pseudocode_lines": 289,
-    "suspect_count": 23,
+    "pseudocode_lines": 296,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 1126
+    "total_lines": 1133
   },
   "cross_references": [
     {
@@ -825,162 +740,50 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xfffffed0",
-      "text": "_sprintf(&stack0xfffffed0,\"Mission: %s\",this_ptr->unk);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xfffffed0",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,0,0xb);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xfffffed0",
-      "text": "_sprintf(&stack0xfffffed0,\"MyGameSettigsId: %d\",DAT_02f7c8c4);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 53,
       "match": "DAT_02f7c8c4",
-      "text": "_sprintf(&stack0xfffffed0,\"MyGameSettigsId: %d\",DAT_02f7c8c4);",
+      "text": "_sprintf((char *)local_130,\"MyGameSettigsId: %d\",DAT_02f7c8c4)",
       "type": "undefined_data"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0xfffffed0",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,400,0xb);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0xfffffed0",
-      "text": "pcVar9 = &stack0xfffffed0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 77,
-      "match": "&stack0xfffffed0",
-      "text": "support_trisock_cpp_formatIPAddress_FUN_005e17c0(local_1c + 0x1c,&stack0xfffffed0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xfffffed0",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,100,iVar5);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 83,
-      "match": "&stack0xfffffed0",
-      "text": "pcVar7 = &stack0xfffffed0;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 108,
       "match": "ROUND",
-      "text": "local_1c = (char *)(int)ROUND(dVar10);",
+      "text": "local_1c = (char *)(int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 103,
-      "match": "&stack0xfffffecc",
-      "text": "_sprintf(&stack0xfffffecc,\"%dms\",local_1c,uVar11);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 105,
-      "match": "&stack0xfffffed0",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,200,iVar5);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 112,
-      "match": "&stack0xfffffed0",
-      "text": "pcVar7 = &stack0xfffffed0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 122,
-      "match": "&stack0xfffffed0",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,300,iVar5);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 124,
-      "match": "&stack0xfffffed0",
-      "text": "(&stack0xfffffed0,\"%d\",*(uint *)(local_1c + 0x14));",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 125,
-      "match": "&stack0xfffffed0",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,400,iVar5);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 127,
-      "match": "&stack0xfffffed0",
-      "text": "_sprintf(&stack0xfffffed0,\"%d\",*(int *)(local_1c + 0x34))",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 129,
-      "match": "&stack0xfffffed0",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,500,iVar5);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 174,
       "match": "DAT_02f7c8c4",
       "text": "this_ptr->players[this_ptr->local_player_index].player_id = DAT_02f7c8c4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 183,
       "match": "DAT_02f7c8c4",
-      "text": "if (DAT_02f7c8c4 != pCVar6->players[0].player_id) {",
+      "text": "if (DAT_02f7c8c4 != pCVar5->players[0].player_id) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 238,
+      "line": 245,
       "match": "DAT_02f7c8c8",
       "text": "DAT_02f7c8c8 = g_CurrentGameTime - 0x1e0000;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 245,
+      "line": 252,
       "match": "DAT_00680a04",
       "text": "if ((this_ptr->connection_type == 2) && (DAT_00680a04 != 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 275,
+      "line": 282,
       "match": "DAT_02f7c640",
       "text": "(g_CEditorToolsPtr,\"Send chat\",&DAT_02f7c640,0x100,1),",
       "type": "undefined_data"

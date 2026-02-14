@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_setutil_cpp_C3DSLight_advanceFilter_FUN_00586e70(C3DSLight *this_ptr,CDemonLight *light)
+void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_00586e70(C3DSLight *this_ptr,CDemonLight *light)
 
 {
   int iVar1;

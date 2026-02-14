@@ -7,8 +7,8 @@
 ; CGame *          Stack[0x4]:4   game_ptr
 ;
 ; XREF[2]:
-;   core_script.cpp_CScript_FUN_00559b20 at 00559d48
 ;   core_script.cpp_CScript_process_FUN_00559960 at 005599a6
+;   core_script.cpp_CScript_renderSubtitles_FUN_00559b20 at 00559d48
 ;
 ; *****************************************************************************
 

@@ -2,15 +2,13 @@
 // Address: 0060c640
 // Address Range: [[0060c640, 0060c64d]]
 // Convention: unknown
-// Signature: void crt_unknown_c_FUN_0060c640(void)
+// Signature: void crt_unknown_c_FUN_0060c640(ulong param_1)
 
 #include "nocturne.h"
 
-void FUN_0060c640(void)
+void FUN_0060c640(ulong param_1)
 
 {
-  ulong in_stack_00000004;
-  
-  malloc(in_stack_00000004);
+  malloc(param_1);
   return;
 }

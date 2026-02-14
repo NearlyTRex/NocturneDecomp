@@ -2,13 +2,11 @@
 // Address: 0045b850
 // Address Range: [[0045b850, 0045b8a2]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_design_c_polygonTextureNameComparator_FUN_0045b850 (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2)
+// Signature: int __cdecl shape_design_c_polygonTextureNameComparator_FUN_0045b850(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_design_c_polygonTextureNameComparator_FUN_0045b850
-          (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2)
+int __cdecl shape_design_c_polygonTextureNameComparator_FUN_0045b850(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2)
 
 {
   int local_14;

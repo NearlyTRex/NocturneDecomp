@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90 (uint texture_count,STextureAtlasEntry *texture_entries,int atlas_width,int atlas_height, int acceptable_coverage_threshold,int acceptable_size,int *output_atlas_width, int *output_atlas_height,int padding_size,int fill_gaps,int visualize,int max_iterations)
+; __cdecl int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(uint texture_count,STextureAtlasEntry *texture_entries,int atlas_width,int atlas_height,int acceptable_coverage_threshold,int acceptable_size,int *output_atlas_width,int *output_atlas_height,int padding_size,int fill_gaps,int visualize,int max_iterations)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   texture_count

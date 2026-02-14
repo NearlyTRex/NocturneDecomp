@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0 (CDirectSoundDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity)
+; __cdecl void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0(CDirectSoundDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity)
 ;
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr

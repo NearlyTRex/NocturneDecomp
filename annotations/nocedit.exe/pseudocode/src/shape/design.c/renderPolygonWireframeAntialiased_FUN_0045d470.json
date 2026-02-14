@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 112,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 55,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 187
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470",
-    "signature": "void __cdecl shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470 (SMRGLHeaderPrimitive *polygon_data,int line_color)"
+    "signature": "void __cdecl shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470(SMRGLHeaderPrimitive *polygon_data,int line_color)"
   },
   "function_calls": [
     {
@@ -216,35 +216,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(int *)((int)",
       "text": "pSVar3 = g_RenderVertexBuffer + *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"

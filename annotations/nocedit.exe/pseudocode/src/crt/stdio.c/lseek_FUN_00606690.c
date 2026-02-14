@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack
-lseek(int file_handle_index,long distance_to_move,int move_method)
+int __watcallStack lseek(int file_handle_index,long distance_to_move,int move_method)
 
 {
   uint uVar1;

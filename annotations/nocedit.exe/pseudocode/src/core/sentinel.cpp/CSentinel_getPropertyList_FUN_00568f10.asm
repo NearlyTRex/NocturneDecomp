@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sentinel_cpp_CSentinel_getPropertyList_FUN_00568f10 (CSentinel *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_sentinel_cpp_CSentinel_getPropertyList_FUN_00568f10(CSentinel *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CSentinel *      Stack[0x4]:4   this_ptr

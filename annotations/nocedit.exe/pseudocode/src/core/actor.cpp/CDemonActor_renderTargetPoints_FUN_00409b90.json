@@ -1,33 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 26,
-        "message": "use of undeclared identifier 'stack0xffffff64'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 79,
-        "line": 27,
-        "message": "use of undeclared identifier 'stack0xffffff64'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 151,
+    "complexity_score": 161,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "pseudocode_lines": 91,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 377
   },
@@ -206,39 +193,46 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffff64",
-      "text": "__arrinit(&stack0xffffff64,10,&g_CVectorTypeInfo);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffff64",
-      "text": "iVar4 = (*((this_ptr->vtable)._ub)->getTargetPoints)(this_ptr,(CVector3f *)&stack0xffffff64);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
-      "text": "CStack_1c.x = (int)ROUND(*pfVar9 * 256.0f);",
+      "text": "CStack_24.x = (int)ROUND(pCVar7->x * 256.0f);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(float *)((int)",
+      "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar7 + 4) * 256.0f);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ROUND",
-      "text": "CStack_1c.y = (int)ROUND(pfVar9[1] * 256.0f);",
+      "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar7 + 4) * 256.0f);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(float *)((int)",
+      "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar7 + 8) * 256.0f);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "ROUND",
-      "text": "CStack_1c.z = (int)ROUND(pfVar9[2] * 256.0f);",
+      "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar7 + 8) * 256.0f);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar7 = (CVector3f *)((int)pCVar7 + 0xc);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

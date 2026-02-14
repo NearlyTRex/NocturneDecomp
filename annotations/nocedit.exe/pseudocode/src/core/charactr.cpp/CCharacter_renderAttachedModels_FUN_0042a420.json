@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 86,
+    "complexity_score": 71,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 3,
     "pseudocode_lines": 46,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 131
   },
@@ -86,7 +85,7 @@
     },
     {
       "addr": "00823a98",
-      "name": "DAT_00823a98",
+      "name": "CKeyFramedModelInstance_00823a98",
       "type": "CKeyFramedModelInstance",
       "value": null
     },
@@ -266,13 +265,6 @@
       "match": "(CMatrix3x3f *)((int)",
       "text": "pCVar5 = (CMatrix3x3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_00823a98",
-      "text": "(&DAT_00823a98,0.0,-1);",
-      "type": "undefined_data"
     }
   ]
 }

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 106,
+    "complexity_score": 104,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 64,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 182
+    "total_lines": 180
   },
   "cross_references": [],
   "function": {
@@ -29,7 +29,7 @@
     ],
     "convention": "__stack2_esi",
     "name": "core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920",
-    "signature": "void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920 (CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+    "signature": "void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -255,14 +255,14 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 64,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 65,
       "match": "(CMatrix3x4f *)((int)",
       "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);",
       "type": "pointer_cast"

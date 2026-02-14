@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932 (streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)
+; __watcallStack int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932(streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)
 ;
 ; Parameters:
 ; streambuf *      Stack[0x4]:4   buffer

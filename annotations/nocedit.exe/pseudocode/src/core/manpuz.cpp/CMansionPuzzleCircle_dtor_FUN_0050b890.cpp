@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CMansionPuzzleCircle * __cdecl
-core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_0050b890(CMansionPuzzleCircle *this_ptr,uint flags)
+CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_0050b890(CMansionPuzzleCircle *this_ptr,uint flags)
 
 {
   SReflector *pSVar1;

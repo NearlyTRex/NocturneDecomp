@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 396,
+    "complexity_score": 394,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 20,
-    "pseudocode_lines": 226,
+    "pseudocode_lines": 224,
     "suspect_count": 16,
     "suspect_types": [
       "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 690
+    "total_lines": 688
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_rasterizePolygon_FUN_005fd4e0",
-    "signature": "void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0 (SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)"
+    "signature": "void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)"
   },
   "function_calls": [
     {
@@ -290,84 +290,98 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 18,
       "match": "extraout_ESI",
       "text": "void *extraout_ESI;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
+      "line": 20,
       "match": "extraout_EDI",
       "text": "SEdgeData *extraout_EDI;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 72,
       "match": "(byte *)((int)",
       "text": "puVar2 = (byte *)((int)&local_18->y_start + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 141,
       "match": "(SEdgeData *)((int)",
       "text": "local_18 = (SEdgeData *)((int)&local_18->y_start + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 217,
+      "line": 215,
       "match": "extraout_EDI",
       "text": "extraout_EDI->x_current = extraout_EDI->x_current + extraout_EDI->x_delta;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 217,
+      "line": 215,
       "match": "extraout_EDI",
       "text": "extraout_EDI->x_current = extraout_EDI->x_current + extraout_EDI->x_delta;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 217,
+      "line": 215,
       "match": "extraout_EDI",
       "text": "extraout_EDI->x_current = extraout_EDI->x_current + extraout_EDI->x_delta;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 218,
+      "line": 216,
       "match": "(SEdgeData *)((int)",
       "text": "local_18 = (SEdgeData *)((int)&local_18->y_start + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 219,
+      "line": 217,
       "match": "extraout_EDI",
       "text": "extraout_EDI->z_current = extraout_EDI->z_current + extraout_EDI->z_delta;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 219,
+      "line": 217,
       "match": "extraout_EDI",
       "text": "extraout_EDI->z_current = extraout_EDI->z_current + extraout_EDI->z_delta;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 219,
+      "line": 217,
       "match": "extraout_EDI",
       "text": "extraout_EDI->z_current = extraout_EDI->z_current + extraout_EDI->z_delta;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 220,
+      "line": 218,
+      "match": "extraout_EDI",
+      "text": "extraout_EDI->light_current = extraout_EDI->light_current + extraout_EDI->light_delta;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 218,
+      "match": "extraout_EDI",
+      "text": "extraout_EDI->light_current = extraout_EDI->light_current + extraout_EDI->light_delta;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 218,
       "match": "extraout_EDI",
       "text": "extraout_EDI->light_current = extraout_EDI->light_current + extraout_EDI->light_delta;",
       "type": "extra_output"
@@ -375,27 +389,13 @@
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 220,
-      "match": "extraout_EDI",
-      "text": "extraout_EDI->light_current = extraout_EDI->light_current + extraout_EDI->light_delta;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 220,
-      "match": "extraout_EDI",
-      "text": "extraout_EDI->light_current = extraout_EDI->light_current + extraout_EDI->light_delta;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 222,
       "match": "extraout_ESI",
       "text": "pvVar12 = extraout_ESI;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 223,
+      "line": 221,
       "match": "extraout_EDI",
       "text": "pSVar5 = extraout_EDI;",
       "type": "extra_output"

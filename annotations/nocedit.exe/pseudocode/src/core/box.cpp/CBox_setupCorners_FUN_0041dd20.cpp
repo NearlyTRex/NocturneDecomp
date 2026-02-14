@@ -2,14 +2,11 @@
 // Address: 0041dd20
 // Address Range: [[0041dd20, 0041df4d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041dd20 (CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume )
+// Signature: void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041dd20(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume)
 
 #include "nocturne.h"
 
-void __cdecl
-core_box_cpp_CBox_setupCorners_FUN_0041dd20
-          (CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume
-          )
+void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041dd20(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume)
 
 {
   float fVar1;

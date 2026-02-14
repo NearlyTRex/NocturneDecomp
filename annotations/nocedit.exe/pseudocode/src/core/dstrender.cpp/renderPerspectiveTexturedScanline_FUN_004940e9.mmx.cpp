@@ -2,13 +2,11 @@
 // Address: 004940e9
 // Address Range: [[004940e9, 004941c2] [004941d0, 004941d5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9
-          (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 {
 __asm {
         mov EAX,dword ptr [ESI + 0x8]

@@ -438,7 +438,7 @@ section .text
         ;   Label: LAB_0052c110
     PUSH EBX                            ; 0052c116 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0052c117
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
     ADD ESP,0x4                         ; 0052c11c
     INC ESI                             ; 0052c11f
     MOV EAX,dword ptr [ESP + 0x4d80]    ; 0052c120
@@ -607,7 +607,7 @@ section .text
         ;   Label: LAB_0052c33d
     PUSH EBX                            ; 0052c343 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0052c344
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
     ADD ESP,0x4                         ; 0052c349
     MOV ESI,dword ptr [ESP + 0x4d98]    ; 0052c34c
     MOV EAX,dword ptr [ESP + 0x4d8c]    ; 0052c353

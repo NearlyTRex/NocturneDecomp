@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 24,
-        "line": 72,
+        "line": 70,
         "message": "assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 95,
+        "line": 93,
         "message": "assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
       }
     ],
@@ -19,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 213,
+    "complexity_score": 211,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 98,
+    "pseudocode_lines": 96,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 237
+    "total_lines": 235
   },
   "cross_references": [],
   "function": {
@@ -41,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030",
-    "signature": "void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030 (void *bitmap_data,int width,int height,int num_iterations)"
+    "signature": "void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030(void *bitmap_data,int width,int height,int num_iterations)"
   },
   "function_calls": [],
   "globals": [],
@@ -185,77 +185,77 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 26,
       "match": "(byte *)((int)",
       "text": "puVar5 = (byte *)((int)bitmap_data + iVar7) + aiStack_28[2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(byte *)((int)",
       "text": "puVar3 = (byte *)((int)bitmap_data + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "puVar6 = (uint *)((int)puVar4 + (aiStack_28[2] - num_iterations));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 62,
       "match": "(uint *)((int)",
       "text": "puVar8 = (uint *)((int)puVar8 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 63,
       "match": "(uint *)((int)",
       "text": "piVar9 = (uint *)((int)piVar9 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 74,
       "match": "(uint *)((int)",
       "text": "puVar8 = (uint *)((int)puVar8 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 75,
       "match": "(uint *)((int)",
       "text": "puVar11 = (uint *)((int)puVar11 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 86,
       "match": "(uint *)((int)",
       "text": "piVar9 = (uint *)((int)piVar9 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 87,
       "match": "(uint *)((int)",
       "text": "puVar8 = (uint *)((int)puVar8 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 89,
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)puVar4 + num_iterations);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 91,
       "match": "(uint *)((int)",
       "text": "puVar6 = (uint *)((int)puVar6 - num_iterations);",
       "type": "pointer_cast"

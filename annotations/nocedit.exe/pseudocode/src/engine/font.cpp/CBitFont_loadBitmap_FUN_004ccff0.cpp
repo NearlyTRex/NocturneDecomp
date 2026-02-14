@@ -2,13 +2,11 @@
 // Address: 004ccff0
 // Address Range: [[004ccff0, 004cd27d]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0 (CBitFont *this_ptr,char *filename,int width,int height,int first_char)
+// Signature: void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr,char *filename,int width,int height,int first_char)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0
-          (CBitFont *this_ptr,char *filename,int width,int height,int first_char)
+void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr,char *filename,int width,int height,int first_char)
 
 {
   char cVar1;

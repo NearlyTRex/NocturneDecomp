@@ -2,15 +2,13 @@
 // Address: 005ac400
 // Address Range: [[005ac400, 005ac985]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400 (int channel,float freq_start_hz,float freq_end_hz)
+// Signature: int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005ac957) */
 
-int __cdecl
-sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
-          (int channel,float freq_start_hz,float freq_end_hz)
+int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz)
 
 {
   float fVar1;

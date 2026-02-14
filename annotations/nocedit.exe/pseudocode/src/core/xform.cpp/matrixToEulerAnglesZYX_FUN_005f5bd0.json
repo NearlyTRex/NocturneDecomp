@@ -4,37 +4,37 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 44,
+        "line": 43,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 52,
+        "line": 51,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 21,
-        "line": 64,
+        "line": 63,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 21,
-        "line": 67,
+        "line": 66,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 21,
-        "line": 69,
+        "line": 68,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 96,
+        "line": 95,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -43,17 +43,17 @@
   },
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 389,
+    "complexity_score": 388,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 159,
+    "pseudocode_lines": 158,
     "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output"
     ],
-    "total_lines": 614
+    "total_lines": 613
   },
   "cross_references": [
     {
@@ -381,154 +381,154 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 10,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 31,
       "match": "SQRT",
       "text": "dVar6 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 36,
       "match": "SUB84",
       "text": "local_88 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 40,
       "match": "SQRT",
       "text": "dVar6 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 44,
       "match": "SUB84",
       "text": "local_80 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 51,
+      "line": 50,
       "match": "extraout_ST1",
       "text": "dVar6 = (double)SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 51,
+      "line": 50,
       "match": "extraout_ST1",
       "text": "dVar6 = (double)SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 50,
       "match": "SQRT",
       "text": "dVar6 = (double)SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 56,
       "match": "SUB84",
       "text": "uStack_3c = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 57,
       "match": "CONCAT44",
       "text": "dVar4 = (double)matrix_ptr->m[2].z * (double)CONCAT44(local_80,uStack_84) * dVar6;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 58,
       "match": "CONCAT44",
       "text": "dVar6 = (double)matrix_ptr[1].m[0].y * (double)CONCAT44(local_80,uStack_84) * dVar6;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 59,
       "match": "SUB84",
       "text": "uStack_34 = SUB84(dVar4,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 61,
       "match": "SUB84",
       "text": "uStack_64 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 68,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44(uStack_34,local_30) < 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 75,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44(uStack_64,local_68) < 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 86,
       "match": "CONCAT44",
       "text": "fVar1 = matrix_ptr->m[0].y * fVar1 * (float)(double)CONCAT44(uStack_3c,local_40);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 88,
       "match": "SUB84",
       "text": "local_b0 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 89,
       "match": "CONCAT44",
       "text": "dVar4 = (double)(matrix_ptr->m[1].z * (float)(double)CONCAT44(uStack_9c,local_a0) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 90,
       "match": "CONCAT44",
       "text": "(float)(double)CONCAT44(uStack_3c,local_40));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 96,
       "match": "CONCAT44",
       "text": "dVar6 = (double)CONCAT44((float)dVar6,local_b0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 131,
       "match": "CONCAT44",
       "text": "fVar1 = -matrix_ptr->m[0].z * (float)(double)CONCAT44(local_88,uStack_8c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 133,
       "match": "CONCAT44",
       "text": "dVar4 = (double)(matrix_ptr->m[0].x * (float)(double)CONCAT44(local_88,uStack_8c));",
       "type": "decompiler_intrinsic"

@@ -221,7 +221,7 @@ void __cdecl CDemonRenderer::pushViewport(CDemonRenderer *this_ptr,int x,int y,i
 
 // Original: engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
 // Address: 0048c8c0
-void __cdecl CDemonRenderer::popViewport(CDemonRenderer *this_ptr);
+void __cdecl CDemonRenderer::popViewport(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
 // Address: 0048c8d0
@@ -285,15 +285,15 @@ void __cdecl CDemonRenderer::enableAdvancedCulling(CDemonRenderer *this_ptr,int 
 
 // Original: engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
 // Address: 0048ce20
-int __cdecl CDemonRenderer::renderFaceBatch(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags);
+int __cdecl CDemonRenderer::renderFaceBatch(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90
 // Address: 0048ce90
-int __cdecl CDemonRenderer::renderPrimitiveBatch(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags);
+int __cdecl CDemonRenderer::renderPrimitiveBatch(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
 // Address: 0048cf00
-int __cdecl CDemonRenderer::renderTriangleFacetList(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags,int primitive_stride);
+int __cdecl CDemonRenderer::renderTriangleFacetList(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags,int primitive_stride);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170
 // Address: 0048d170
@@ -301,7 +301,7 @@ void __cdecl CDemonRenderer::renderFaceList(CDemonRenderer *this_ptr,SInputFace 
 
 // Original: engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
 // Address: 0048d410
-void __cdecl CDemonRenderer::renderGeometryBatch(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face, int render_mode);
+void __cdecl CDemonRenderer::renderGeometryBatch(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode);
 
 // Original: engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
 // Address: 0048d6c0
@@ -337,7 +337,7 @@ void __cdecl CDemonRenderer::captureTexture(CDemonRenderer *this_ptr,SMRGLTextur
 
 // Original: engine_drender.cpp_CDemonRenderer_updateTextureWithPalette_FUN_0048dc20
 // Address: 0048dc20
-void __cdecl CDemonRenderer::updateTextureWithPalette(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture_to_load, SMRGLTextureBasic *texture_to_update);
+void __cdecl CDemonRenderer::updateTextureWithPalette(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture_to_load,SMRGLTextureBasic *texture_to_update);
 
 // Original: engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30
 // Address: 0048dc30

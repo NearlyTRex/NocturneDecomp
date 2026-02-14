@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_flamegun_cpp_CFlameThrower_getActorType_FUN_004cb870(CFlameThrower *this_ptr)
+CDemonActorType * __cdecl core_flamegun_cpp_CFlameThrower_getActorType_FUN_004cb870(CFlameThrower *this_ptr)
 
 {
   return &g_CFlameThrowerClassInfo;

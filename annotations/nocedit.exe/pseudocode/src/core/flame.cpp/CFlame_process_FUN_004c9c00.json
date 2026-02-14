@@ -3,57 +3,27 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 67,
-        "line": 74,
+        "column": 46,
+        "line": 75,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
-        "column": 67,
-        "line": 74,
+        "column": 46,
+        "line": 75,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 75,
+        "line": 76,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 80,
+        "line": 81,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 98,
-        "message": "C-style cast from 'void *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 99,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 103,
-        "message": "C-style cast from 'void *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 130,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 138,
-        "message": "C-style cast from 'void *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -61,16 +31,14 @@
   },
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 287,
+    "complexity_score": 217,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 17,
     "pseudocode_lines": 142,
-    "suspect_count": 13,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast",
-      "unknown_field"
+      "decompiler_intrinsic"
     ],
     "total_lines": 488
   },
@@ -388,94 +356,52 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(char *)((int)",
-      "text": "((char *)((int)&uStack_fc + 4),\"torch.wav * %f\",SUB84((double)local_14,0),",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 68,
       "match": "SUB84",
-      "text": "((char *)((int)&uStack_fc + 4),\"torch.wav * %f\",SUB84((double)local_14,0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(char *)((int)",
-      "text": "(&this_ptr->base,(char *)((int)&uStack_fc + 4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 92,
-      "match": "._4_4_",
-      "text": "uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4c9e5a);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
-      "match": "CONCAT44",
-      "text": "uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4c9e5a);",
+      "text": "(local_f8,\"torch.wav * %f\",SUB84((double)local_14,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 95,
       "match": "ROUND",
-      "text": "fVar2 = (float)SStack_8c.result_ptr + (float)(int)ROUND(dVar5);",
+      "text": "fStack_18 = (float)(int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ABS",
-      "text": "if ((ABS(fStack_38) < fVar2) && (ABS(fStack_30) < fVar2)) {",
+      "text": "if ((ABS(fStack_44) < local_94.cylinder_radius + fStack_1c) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 99,
       "match": "ABS",
-      "text": "if ((ABS(fStack_38) < fVar2) && (ABS(fStack_30) < fVar2)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 123,
-      "match": "._4_4_",
-      "text": "uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4ca068);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
-      "match": "CONCAT44",
-      "text": "uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4ca068);",
+      "text": "(ABS(fStack_3c) < local_94.cylinder_radius + fStack_1c)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 128,
       "match": "ROUND",
-      "text": "local_14 = (float)(int)ROUND(dVar5);",
+      "text": "iStack_24 = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 131,
       "match": "ABS",
-      "text": "if ((ABS(fStack_2c) < fVar2) && (ABS(fStack_24) < fVar2)) {",
+      "text": "if ((ABS(fStack_3c) < SStack_6c.cylinder_top_y + fStack_28) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 132,
       "match": "ABS",
-      "text": "if ((ABS(fStack_2c) < fVar2) && (ABS(fStack_24) < fVar2)) {",
+      "text": "(ABS(fStack_34) < SStack_6c.cylinder_top_y + fStack_28)) {",
       "type": "decompiler_intrinsic"
     }
   ]

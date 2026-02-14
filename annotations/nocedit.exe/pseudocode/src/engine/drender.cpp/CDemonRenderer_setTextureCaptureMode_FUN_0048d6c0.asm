@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0 (CDemonRenderer *this_ptr,int enable_advanced_mode)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(CDemonRenderer *this_ptr,int enable_advanced_mode)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

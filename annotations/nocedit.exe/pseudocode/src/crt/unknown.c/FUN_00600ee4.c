@@ -2,26 +2,24 @@
 // Address: 00600ee4
 // Address Range: [[00600ee4, 00600f32]]
 // Convention: unknown
-// Signature: _FILE * crt_unknown_c_FUN_00600ee4(void)
+// Signature: _FILE * crt_unknown_c_FUN_00600ee4(_FILE *param_1,undefined4 param_2)
 
 #include "nocturne.h"
 
-_FILE * FUN_00600ee4(void)
+_FILE * FUN_00600ee4(_FILE *param_1,uint param_2)
 
 {
   int iVar1;
-  _FILE *in_stack_00000004;
   
-  iVar1 = stream_valid(in_stack_00000004,1);
+  iVar1 = stream_valid(param_1,1);
   if (iVar1 != 0) {
-    iVar1 = (**(code **)(*(int *)(*(int *)((int)&in_stack_00000004->_cnt +
-                                          *(int *)(in_stack_00000004->_ptr + 4)) + 0x28) + 0x18))();
+    iVar1 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));
+    iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,param_2,0,1);
     if (iVar1 == -1) {
       reportStreamError
-                ((FileEmbeddedData *)
-                 ((int)&in_stack_00000004->_ptr + *(int *)(in_stack_00000004->_ptr + 4)),2);
-      return in_stack_00000004;
+                ((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),2);
+      return param_1;
     }
   }
-  return in_stack_00000004;
+  return param_1;
 }

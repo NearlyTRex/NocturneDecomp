@@ -31,7 +31,7 @@
 ;   ... and 18 more
 ;
 ; Called Functions:
-;   core_script.cpp_CScript_FUN_00560d80
+;   core_script.cpp_CScript_computeChecksum_FUN_00560d80
 ;   core_script.cpp_writeActorReference_FUN_005607e0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
@@ -233,8 +233,8 @@ section .text
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00560d5b
     PUSH EBP                            ; 00560d5e
-    CALL core_script.cpp_CScript_FUN_00560d80 ; 00560d5f
-        ;   XREF to: 00560d80 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_FUN_00560d80(CScript * this_ptr)
+    CALL core_script.cpp_CScript_computeChecksum_FUN_00560d80 ; 00560d5f
+        ;   XREF to: 00560d80 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_computeChecksum_FUN_00560d80(CScript * this_ptr)
     ADD ESP,0x4                         ; 00560d64
     PUSH EAX                            ; 00560d67
     PUSH 0x643645                       ; 00560d68 | = "%u\n"

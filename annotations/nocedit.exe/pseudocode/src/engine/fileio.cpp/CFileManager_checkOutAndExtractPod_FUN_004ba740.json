@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 113,
+        "line": 111,
         "message": "use of undeclared identifier 'stack0xfffff964'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 115,
+        "line": 113,
         "message": "use of undeclared identifier 'stack0xfffff964'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 357,
+    "complexity_score": 355,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
-    "pseudocode_lines": 307,
+    "pseudocode_lines": 305,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 1037
+    "total_lines": 1035
   },
   "cross_references": [],
   "function": {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
-    "signature": "int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (CFileManager *this_ptr,CCheckOutItem *checkout_item,_FILE *optional_pod_file)"
+    "signature": "int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740(CFileManager *this_ptr,CCheckOutItem *checkout_item,_FILE *optional_pod_file)"
   },
   "function_calls": [
     {
@@ -648,28 +648,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)&p_Var6->_ptr + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(_FILE *)((int)",
       "text": "p_Var6 = (_FILE *)((int)&p_Var6->_ptr + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 106,
+      "line": 104,
       "match": "&stack0xfffff964",
       "text": "(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
+      "line": 106,
       "match": "&stack0xfffff964",
       "text": "((int *)&stack0xfffff964,g_VersionControlSession.unk1 + 4);",
       "type": "stack_ref"

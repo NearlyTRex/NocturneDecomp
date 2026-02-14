@@ -55,6 +55,7 @@ LAB_004f94e9:
     iVar1 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).checkCylinderCollisionWorld)
                       ((CCharacter *)this_ptr_00,&local_30,1.0,&local_6c);
     if (iVar1 == 0) goto LAB_004f94e9;
+    local_18 = 1;
     iVar3 = iVar3 + 1;
     iVar2 = iVar2 + 4;
   } while( true );

@@ -1,41 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 21,
-        "message": "use of undeclared identifier 'stack0xffffffcc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 85,
-        "line": 22,
-        "message": "use of undeclared identifier 'stack0xffffffcc'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 27,
-        "message": "no matching function for call to 'core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 91,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 21,
-    "suspect_count": 6,
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 73
+    "total_lines": 69
   },
   "cross_references": [],
   "function": {
@@ -48,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0",
-    "signature": "int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0 (CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,void *unused)"
+    "signature": "int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,void *unused)"
   },
   "function_calls": [
     {
@@ -150,44 +130,16 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 7,
       "match": "in_stack_00000018",
-      "text": "CVector3f *in_stack_00000018;",
+      "text": "CBoundingBox3D *in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000020",
-      "text": "CBoundingBox3D *in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffcc",
-      "text": "core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)&stack0xffffffcc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xffffffcc",
-      "text": "bbox_type = (*((this_ptr->vtable)._ub)->hasCollision)(this_ptr,(SCollisionInfo *)&stack0xffffffcc)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000018",
-      "text": "(this_ptr,out_hit_normal,unused,in_stack_00000018,&SStack_2c,bbox_type,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020);",
+      "text": "in_stack_00000018);",
       "type": "stack_param"
     }
   ]

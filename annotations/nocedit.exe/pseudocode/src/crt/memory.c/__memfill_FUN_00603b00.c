@@ -2,11 +2,11 @@
 // Address: 00603b00
 // Address Range: [[00603b00, 00603b30]]
 // Convention: __watcallRegister
-// Signature: void crt_memory_c___memfill_FUN_00603b00(void *dest,uint replicated_value,uint count)
+// Signature: void __watcallRegister crt_memory_c___memfill_FUN_00603b00(void *dest,uint replicated_value,uint count)
 
 #include "nocturne.h"
 
-void __memfill(void *dest,uint replicated_value,uint count)
+void __watcallRegister __memfill(void *dest,uint replicated_value,uint count)
 
 {
   byte *extraout_EAX;

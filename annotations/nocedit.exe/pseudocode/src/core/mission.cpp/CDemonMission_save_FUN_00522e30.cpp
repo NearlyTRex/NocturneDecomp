@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *this_ptr,char *filename)
+void __cdecl core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *this_ptr,char *filename)
 
 {
   _FILE *file_handle;

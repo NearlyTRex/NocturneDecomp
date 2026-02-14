@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_boxactor_cpp_CBoxActor_onPickup_FUN_00422570(CBoxActor *this_ptr,CDemonActor *owner)
+void __cdecl core_boxactor_cpp_CBoxActor_onPickup_FUN_00422570(CBoxActor *this_ptr,CDemonActor *owner)
 
 {
   core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(&this_ptr->base,owner);

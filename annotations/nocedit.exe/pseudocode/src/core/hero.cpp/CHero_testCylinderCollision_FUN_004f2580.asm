@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580 (CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
+; __cdecl int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580(CHero *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr

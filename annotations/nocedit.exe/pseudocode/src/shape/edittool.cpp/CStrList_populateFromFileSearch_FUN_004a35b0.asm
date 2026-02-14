@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0 (CStrList *this_ptr,char *directory_path,char *file_pattern)
+; __cdecl void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0(CStrList *this_ptr,char *directory_path,char *file_pattern)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr

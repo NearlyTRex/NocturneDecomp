@@ -1741,10 +1741,6 @@
       "type":"struct"
     },
     {
-      "name":"CDemonGlobe",
-      "type":"struct"
-    },
-    {
       "name":"CDemonTriangle",
       "type":"struct"
     },
@@ -1778,10 +1774,6 @@
     },
     {
       "name":"CBloodParticle",
-      "type":"struct"
-    },
-    {
-      "name":"CFireball",
       "type":"struct"
     },
     {
@@ -4821,14 +4813,6 @@
       "type":"union"
     },
     {
-      "name":"CLightActor",
-      "type":"struct"
-    },
-    {
-      "name":"CLightActor_ptr_1648",
-      "type":"typedef"
-    },
-    {
       "name":"UPDATE_WINDOW_FUNC",
       "type":"function_definition"
     },
@@ -4945,6 +4929,14 @@
       "type":"function_definition"
     },
     {
+      "name":"MessageHandlerFunc",
+      "type":"function_definition"
+    },
+    {
+      "name":"MessageHandler",
+      "type":"typedef"
+    },
+    {
       "name":"WNDPROC_FUNC",
       "type":"function_definition"
     },
@@ -5007,6 +4999,26 @@
     {
       "name":"WatcomVirtualBaseDescriptor",
       "type":"struct"
+    },
+    {
+      "name":"_BIT_INTEGER",
+      "type":"union"
+    },
+    {
+      "name":"CDemonGlobe",
+      "type":"struct"
+    },
+    {
+      "name":"CFireball",
+      "type":"struct"
+    },
+    {
+      "name":"CLightActor",
+      "type":"struct"
+    },
+    {
+      "name":"CLightActor_ptr_1648",
+      "type":"typedef"
     },
     {
       "name":"_COORD",
@@ -5409,10 +5421,6 @@
       "type":"struct"
     },
     {
-      "name":"_struct_20",
-      "type":"struct"
-    },
-    {
       "name":"_LARGE_INTEGER",
       "type":"union"
     },
@@ -5427,6 +5435,10 @@
     {
       "name":"QUERY_PERFORMANCE_FREQUENCY_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"_struct_20",
+      "type":"struct"
     },
     {
       "name":"_struct_519",
@@ -6153,14 +6165,6 @@
       "type":"struct"
     },
     {
-      "name":"CScript",
-      "type":"struct"
-    },
-    {
-      "name":"CScript_ptr_56",
-      "type":"typedef"
-    },
-    {
       "name":"CSentinel",
       "type":"struct"
     },
@@ -6371,6 +6375,18 @@
     {
       "name":"SRaytraceState",
       "type":"struct"
+    },
+    {
+      "name":"SScriptXRef",
+      "type":"struct"
+    },
+    {
+      "name":"CScript",
+      "type":"struct"
+    },
+    {
+      "name":"CScript_ptr_56",
+      "type":"typedef"
     },
     {
       "name":"utimbuf",
@@ -17958,6 +17974,32 @@
       "type":"function_definition"
     },
     {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"MessageHandlerFunc",
+      "parameters":[
+        {
+          "name":"hWnd",
+          "type":"HWND"
+        },
+        {
+          "name":"message",
+          "type":"UINT"
+        },
+        {
+          "name":"wParam",
+          "type":"WPARAM"
+        },
+        {
+          "name":"lParam",
+          "type":"LPARAM"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/kernel32.h",
       "importable":true,
@@ -20011,19 +20053,19 @@
       "name":"WNDPROC_FUNC",
       "parameters":[
         {
-          "name":"param0",
+          "name":"hWnd",
           "type":"HWND"
         },
         {
-          "name":"param1",
+          "name":"message",
           "type":"UINT"
         },
         {
-          "name":"param2",
+          "name":"wParam",
           "type":"WPARAM"
         },
         {
-          "name":"param3",
+          "name":"lParam",
           "type":"LPARAM"
         }
       ],
@@ -24602,9 +24644,9 @@
         },
         {
           "len":4,
-          "name":"collision_enabled",
+          "name":"unk",
           "offset":9680,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -27755,7 +27797,7 @@
           "len":4,
           "name":"intensity",
           "offset":28,
-          "type":"int"
+          "type":"_BIT_INTEGER"
         },
         {
           "len":4,
@@ -39279,15 +39321,15 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"xref_count",
           "offset":40,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk4",
+          "name":"xref_entries",
           "offset":44,
-          "type":"void*"
+          "type":"SScriptXRef*"
         },
         {
           "len":4,
@@ -50075,10 +50117,16 @@
       "desc":"",
       "fields":[
         {
-          "len":24,
+          "len":20,
           "name":"unk",
           "offset":0,
-          "type":"char[24]"
+          "type":"char[20]"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":20,
+          "type":"float"
         }
       ],
       "importable":true,
@@ -53492,7 +53540,7 @@
           "len":4,
           "name":"light",
           "offset":32,
-          "type":"float"
+          "type":"int"
         },
         {
           "len":4,
@@ -53504,7 +53552,7 @@
           "len":4,
           "name":"fog",
           "offset":40,
-          "type":"float"
+          "type":"int"
         },
         {
           "len":4,
@@ -53744,6 +53792,55 @@
       "importable":true,
       "len":8,
       "name":"SScriptLine",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":256,
+          "name":"name",
+          "offset":0,
+          "type":"char[256]"
+        },
+        {
+          "comment":"(0=event tested, 1=event raised, 2=persistent, 3=game flag, 4=timer, 5/6=counter, 7=actor ref, 8=sfx set, 9=sfx ref, 10=actor var set, 11=actor var ref, 12=ini var)",
+          "len":4,
+          "name":"type",
+          "offset":256,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"actor",
+          "offset":260,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"property_index",
+          "offset":264,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"line_number",
+          "offset":268,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"display_index",
+          "offset":272,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":276,
+      "name":"SScriptXRef",
       "pack":false,
       "type":"struct"
     },
@@ -58983,6 +59080,14 @@
       "type":"typedef"
     },
     {
+      "base":"MessageHandlerFunc*",
+      "cat":"/Nocturne/Typedef/Game",
+      "function_definition":"MessageHandlerFunc",
+      "importable":true,
+      "name":"MessageHandler",
+      "type":"typedef"
+    },
+    {
       "base":"UINT",
       "cat":"/Nocturne/Typedef/System/mmsystem.h",
       "importable":true,
@@ -59382,6 +59487,36 @@
   ],
   "unions":[
     {
+      "alig":1,
+      "cat":"/Nocturne/Union/System/winnt.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dword",
+          "offset":0,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"words",
+          "offset":0,
+          "type":"ushort[2]"
+        },
+        {
+          "len":4,
+          "name":"bytes",
+          "offset":0,
+          "type":"uchar[4]"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"_BIT_INTEGER",
+      "pack":false,
+      "type":"union"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Union/System/winnt.h",
       "desc":"",
@@ -59391,12 +59526,6 @@
           "name":"s",
           "offset":0,
           "type":"_struct_19"
-        },
-        {
-          "len":8,
-          "name":"u",
-          "offset":0,
-          "type":"_struct_20"
         },
         {
           "len":8,

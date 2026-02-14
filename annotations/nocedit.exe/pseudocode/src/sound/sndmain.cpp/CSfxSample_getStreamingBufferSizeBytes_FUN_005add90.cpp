@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-sound_sndmain_cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90(CSfxSample *this_ptr)
+int __cdecl sound_sndmain_cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90(CSfxSample *this_ptr)
 
 {
   int iVar1;

@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 49,
+        "line": 53,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 49,
+        "line": 53,
         "message": "expected expression"
       }
     ],
@@ -19,19 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 271,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 51,
-    "suspect_count": 20,
+    "pseudocode_lines": 58,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 191
+    "total_lines": 198
   },
   "cross_references": [
     {
@@ -147,144 +145,67 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBP",
-      "text": "uint unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000010",
-      "text": "int *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000010",
-      "text": "if ((in_stack_00000010[2] != 0) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000010",
-      "text": "(iVar3 = (*this_ptr->vtable->addPolygons)(this_ptr,in_stack_00000010[2]), iVar3 == 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000010",
-      "text": "puVar5 = (uint *)in_stack_00000010[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000010",
-      "text": "for (uVar4 = (uint)(*in_stack_00000010 * 0x38) >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 33,
       "match": "(CVert *)((int)",
-      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
+      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(uint *)((int)",
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
+      "line": 34,
       "match": "(CVert *)((int)",
-      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -2 + 1);",
+      "text": "pCVar8 = (CVert *)((int)pCVar8 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(CVert *)((int)",
+      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 39,
-      "match": "unaff_EBP",
-      "text": "if (unaff_EBP < (uint)this_ptr->poly_count) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EBP",
-      "text": "iVar3 = unaff_EBP * 0x68;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(int *)((int)",
-      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar3 + 4) + 4))();",
+      "match": "(CVert *)((int)",
+      "text": "pCVar8 = (CVert *)((int)pCVar8 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
+      "line": 46,
       "match": "code *",
-      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar3 + 4) + 4))();",
+      "text": "(**(code **)(*(int *)(iVar4 + 100) + 4))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(int *)((int)",
-      "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(int *)((int)",
-      "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -4) + iVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 49,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 1;",
-      "type": "unaffected_reg"
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -0xc);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 51,
-      "match": "unaff_EBP",
-      "text": "} while (unaff_EBP < (uint)this_ptr->poly_count);",
-      "type": "unaffected_reg"
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -4) + iVar2;",
+      "type": "pointer_cast"
     }
   ]
 }

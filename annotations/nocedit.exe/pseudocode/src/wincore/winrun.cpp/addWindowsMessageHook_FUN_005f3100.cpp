@@ -9,7 +9,7 @@
 void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(void)
 
 {
-  WNDPROC in_stack_00000004;
+  MessageHandler in_stack_00000004;
   
   if (2 < g_NumWindowMessageHandlers) {
     g_CurrentFilename = "..\\wincore\\winrun.cpp";

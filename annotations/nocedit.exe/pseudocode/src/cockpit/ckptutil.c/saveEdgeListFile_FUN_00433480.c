@@ -2,13 +2,11 @@
 // Address: 00433480
 // Address Range: [[00433480, 004335e8]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480 (char *filename,SEdgeList *edge_lists,int edge_list_count)
+// Signature: void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480(char *filename,SEdgeList *edge_lists,int edge_list_count)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480
-          (char *filename,SEdgeList *edge_lists,int edge_list_count)
+void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480(char *filename,SEdgeList *edge_lists,int edge_list_count)
 
 {
   short *psVar1;

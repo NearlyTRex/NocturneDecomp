@@ -2,13 +2,11 @@
 // Address: 004b0330
 // Address Range: [[004b0330, 004b0453]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330 (CEventList *this_ptr,char *name,int add_flag)
+// Signature: void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330(CEventList *this_ptr,char *name,int add_flag)
 
 #include "nocturne.h"
 
-void __cdecl
-core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330
-          (CEventList *this_ptr,char *name,int add_flag)
+void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330(CEventList *this_ptr,char *name,int add_flag)
 
 {
   char cVar1;

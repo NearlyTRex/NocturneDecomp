@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_3d_c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f *input_point)
+SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f *input_point)
 
 {
   g_StoredX = (int)input_point->x;

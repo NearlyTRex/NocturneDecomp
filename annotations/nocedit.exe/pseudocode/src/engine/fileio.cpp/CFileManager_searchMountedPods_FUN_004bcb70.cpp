@@ -2,13 +2,11 @@
 // Address: 004bcb70
 // Address Range: [[004bcb70, 004bcce1]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70 (CFileManager *this_ptr,char *default_wildcard)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70(CFileManager *this_ptr,char *default_wildcard)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70
-          (CFileManager *this_ptr,char *default_wildcard)
+void __cdecl engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70(CFileManager *this_ptr,char *default_wildcard)
 
 {
   char cVar1;

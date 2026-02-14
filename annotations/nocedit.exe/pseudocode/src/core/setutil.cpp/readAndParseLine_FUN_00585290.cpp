@@ -2,13 +2,11 @@
 // Address: 00585290
 // Address Range: [[00585290, 0058530b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setutil_cpp_readAndParseLine_FUN_00585290 (_FILE *file_handle,char *output_buffer,int max_length)
+// Signature: void __cdecl core_setutil_cpp_readAndParseLine_FUN_00585290(_FILE *file_handle,char *output_buffer,int max_length)
 
 #include "nocturne.h"
 
-void __cdecl
-core_setutil_cpp_readAndParseLine_FUN_00585290
-          (_FILE *file_handle,char *output_buffer,int max_length)
+void __cdecl core_setutil_cpp_readAndParseLine_FUN_00585290(_FILE *file_handle,char *output_buffer,int max_length)
 
 {
   char cVar1;

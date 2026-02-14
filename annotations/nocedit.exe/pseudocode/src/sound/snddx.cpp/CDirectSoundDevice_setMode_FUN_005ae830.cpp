@@ -2,16 +2,13 @@
 // Address: 005ae830
 // Address Range: [[005ae830, 005aed41]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830 (CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block)
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 
 #include "nocturne.h"
 
 /* WARNING: Exceeded maximum restarts with more pending */
 
-int __cdecl
-sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830
-          (CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,
-          int *out_samples_per_block)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 
 {
   uint uVar1;
@@ -72,7 +69,7 @@ sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830
         uVar1 = (*g_DirectSound->vtable->CreateSoundBuffer)
                           (g_DirectSound,(LPDSBUFFERDESC)auStack_5c,&pIStack_20,(LPUNKNOWN)0x0);
         if (uVar1 == 0) {
-          (*pIStack_20->vtable->QueryInterface)();
+          (*pIStack_20->vtable->QueryInterface)(pIStack_20,&g_IID_IDirectSound3DBuffer);
           if (piStack_1c == (int *)0x0) {
             if (pIStack_20 != (IDirectSoundBuffer *)0x0) {
               (*pIStack_20->vtable->Release)();
@@ -80,7 +77,7 @@ sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830
             }
           }
           else {
-            (**(code **)*piStack_1c)();
+            (**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet);
             if (pIStack_20 != (IDirectSoundBuffer *)0x0) {
               (*pIStack_20->vtable->Release)();
               pIStack_20 = (IDirectSoundBuffer *)0x0;

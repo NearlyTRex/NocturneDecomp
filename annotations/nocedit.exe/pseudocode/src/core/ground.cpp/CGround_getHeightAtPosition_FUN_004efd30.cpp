@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(CGround *this_ptr,int world_x,int world_z)
+int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(CGround *this_ptr,int world_x,int world_z)
 
 {
   void *pvVar1;

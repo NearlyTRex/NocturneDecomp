@@ -6,29 +6,29 @@
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 108,
+    "complexity_score": 105,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 5,
-    "pseudocode_lines": 78,
+    "pseudocode_lines": 75,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 269
+    "total_lines": 266
   },
   "cross_references": [
-    {
-      "addr": "00565f70",
-      "from_addr": "00565fcf",
-      "name": "core_script.cpp_CScript_FUN_00565f70",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00565d00",
       "from_addr": "00565d4c",
       "name": "core_script.cpp_CScript_executeContextAction_FUN_00565d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565f70",
+      "from_addr": "00565fcf",
+      "name": "core_script.cpp_CScript_setParameterValue_FUN_00565f70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CCmdParse_bestParse_FUN_00561db0",
-    "signature": "int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0 (CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates, int template_count)"
+    "signature": "int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates,int template_count)"
   },
   "function_calls": [
     {
@@ -158,7 +158,7 @@
       {
         "call_addr": "00565fcf",
         "call_type": "direct",
-        "caller": "core_script.cpp_CScript_FUN_00565f70",
+        "caller": "core_script.cpp_CScript_setParameterValue_FUN_00565f70",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -282,7 +282,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 62,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)aiStack_bc + iVar6);",
       "type": "pointer_cast"

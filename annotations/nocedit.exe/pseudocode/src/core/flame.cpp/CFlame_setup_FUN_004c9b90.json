@@ -6,15 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 47,
+    "complexity_score": 22,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 22,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 33
   },
   "cross_references": [
@@ -47,8 +45,8 @@
   "globals": [
     {
       "addr": "0067b100",
-      "name": "DAT_0067b100",
-      "type": "SMRGLTextureBasic",
+      "name": "SMRGLTextureBasic_ARRAY_0067b100",
+      "type": "SMRGLTextureBasic[40]",
       "value": null
     }
   ],
@@ -103,22 +101,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0067b1c0",
-      "text": "pSVar2 = &DAT_0067b1c0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_0067b100",
-      "text": "texture = &DAT_0067b100 + iVar3 * 8;",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

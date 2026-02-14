@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90
 // Address: 00514f90
-CVector3f * __cdecl computeClosestPointOnEdge(CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0, CVector3f *edge_vertex_1);
+CVector3f * __cdecl computeClosestPointOnEdge(CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1);
 
 // Original: shape_meshlod.cpp_computeDistanceSquaredToEdge_FUN_00515110
 // Address: 00515110
@@ -29,7 +29,7 @@ int __cdecl CLodFace::containsEdge(CLodFace *this_ptr,int edge_index);
 
 // Original: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 // Address: 005151e0
-void __cdecl fitLeastSquaresPlane(int point_count,CVector3f *positions,float *values,CVector3f *normal, CVector3f *out_gradient,float *out_offset);
+void __cdecl fitLeastSquaresPlane(int point_count,CVector3f *positions,float *values,CVector3f *normal,CVector3f *out_gradient,float *out_offset);
 
 // Original: shape_meshlod.cpp_CLodMesh_ctor_FUN_00515840
 // Address: 00515840

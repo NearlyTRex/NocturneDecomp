@@ -2,14 +2,11 @@
 // Address: 0046b060
 // Address Range: [[0046b060, 0046b6d9]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_loadTextureData_FUN_0046b060 (STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width, int atlas_height)
+// Signature: void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_design_c_loadTextureData_FUN_0046b060
-          (STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width,
-          int atlas_height)
+void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height)
 
 {
   int iVar1;

@@ -2,14 +2,11 @@
 // Address: 00532200
 // Address Range: [[00532200, 0053253d]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200 (SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples, SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
+// Signature: void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200
-          (SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,
-          SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
+void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
 
 {
   int *piVar1;

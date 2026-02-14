@@ -1608,7 +1608,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CCrate*"
         },
         {
           "name":"local_34",
@@ -1624,7 +1624,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CTrigger*"
         },
         {
           "name":"local_38",
@@ -2020,22 +2020,6 @@
               {
                 "addr":"Stack[-0x254]",
                 "offset":-596,
-                "size":60
-              }
-            ]
-          },
-          "type":"SDamageInfo"
-        },
-        {
-          "name":"local_290",
-          "storage":{
-            "offset":-656,
-            "size":60,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x290]",
-                "offset":-656,
                 "size":60
               }
             ]
@@ -60878,7 +60862,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"time_remaining",
           "storage":{
             "offset":8,
             "size":4,
@@ -60891,7 +60875,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"float*"
         }
       ],
       "ret_storage":{
@@ -61657,7 +61641,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00567010",
+    "name":"core_script.cpp_CScript_parseCommandList_FUN_00567010",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61712,7 +61696,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"commands",
           "storage":{
             "offset":8,
             "size":4,
@@ -61728,7 +61712,7 @@
           "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"xref_data",
           "storage":{
             "offset":12,
             "size":4,
@@ -61741,7 +61725,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"SScriptXRef*"
         }
       ]
     }
@@ -61931,7 +61915,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00567490",
+    "name":"core_script.cpp_CScript_parseActionTemplate_FUN_00567490",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61970,7 +61954,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"text",
           "storage":{
             "offset":8,
             "size":4,
@@ -61983,10 +61967,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"xref_data",
           "storage":{
             "offset":12,
             "size":4,
@@ -61999,7 +61983,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"SScriptXRef*"
         }
       ]
     }
@@ -62015,7 +61999,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00567510",
+    "name":"core_script.cpp_CScript_addEventXRef_FUN_00567510",
     "ret":"void",
     "vars":{
       "params":[
@@ -62036,7 +62020,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"xref_data",
           "storage":{
             "offset":8,
             "size":4,
@@ -62049,7 +62033,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"SScriptXRef*"
         }
       ]
     }

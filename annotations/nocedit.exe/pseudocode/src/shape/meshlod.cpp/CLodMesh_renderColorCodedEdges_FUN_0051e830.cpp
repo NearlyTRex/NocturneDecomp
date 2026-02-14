@@ -2,16 +2,14 @@
 // Address: 0051e830
 // Address Range: [[0051e830, 0051e983]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 (CLodMesh *this_ptr,int backface_culling_enabled)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh *this_ptr,int backface_culling_enabled)
 
 #include "nocturne.h"
 
 /* WARNING: Variable defined which should be unmapped: local_48 */
 /* WARNING: Variable defined which should be unmapped: local_78 */
 
-void __cdecl
-shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
-          (CLodMesh *this_ptr,int backface_culling_enabled)
+void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh *this_ptr,int backface_culling_enabled)
 
 {
   CLodFace *pCVar1;
@@ -45,9 +43,9 @@ shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
               pCVar1 = this_ptr->tri_data;
               pSVar7 = g_CDemonRendererPtr2->vertex_buffer_ptr;
               local_48.w_recip = (float)(pSVar7 + pCVar1[iVar2].vertex_idx_2);
-              local_48.fog = (float)(pSVar7 + pCVar1[iVar2].vertex_idx_1);
+              local_48.fog = (int)(pSVar7 + pCVar1[iVar2].vertex_idx_1);
               local_48.color = (int)(pSVar7 + pCVar1[iVar2].vertex_idx_0);
-              local_48.light = 7.522184e-39;
+              local_48.light = 0x51e8ca;
               iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
                                 ((SRenderVertex *)local_48.color,(SRenderVertex *)local_48.fog,
                                  (SRenderVertex *)local_48.w_recip);

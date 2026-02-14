@@ -2,13 +2,11 @@
 // Address: 00497500
 // Address Range: [[00497500, 00497e46]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500 (CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-          (CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
 
 {
   CDemonRenderer *pCVar1;

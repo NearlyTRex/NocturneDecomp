@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 35,
+    "complexity_score": 33,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 18,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 59
+    "total_lines": 57
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420",
-    "signature": "int __cdecl shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420 (CLodMesh *this_ptr,int vertex_index)"
+    "signature": "int __cdecl shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420(CLodMesh *this_ptr,int vertex_index)"
   },
   "function_calls": [],
   "globals": [],
@@ -101,7 +101,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 14,
       "match": "(int *)((int)",
       "text": "[*(int *)((int)this_ptr->vertex_data[vertex_index].adjacent_edge_indices + iVar2)].",
       "type": "pointer_cast"

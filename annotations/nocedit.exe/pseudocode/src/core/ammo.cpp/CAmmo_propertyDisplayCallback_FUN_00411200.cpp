@@ -2,13 +2,11 @@
 // Address: 00411200
 // Address Range: [[00411200, 00411285]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ammo_cpp_CAmmo_propertyDisplayCallback_FUN_00411200 (CAmmo *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_ammo_cpp_CAmmo_propertyDisplayCallback_FUN_00411200(CAmmo *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_ammo_cpp_CAmmo_propertyDisplayCallback_FUN_00411200
-          (CAmmo *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_ammo_cpp_CAmmo_propertyDisplayCallback_FUN_00411200(CAmmo *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

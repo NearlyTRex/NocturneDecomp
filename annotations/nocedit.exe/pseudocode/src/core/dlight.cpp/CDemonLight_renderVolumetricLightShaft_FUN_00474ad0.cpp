@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight *this_ptr)
+void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight *this_ptr)
 
 {
   SRenderVertex *pSVar1;
@@ -175,24 +174,24 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
                                        (float)local_130.base.type));
             local_30 = (float)(int)ROUND(dVar6);
             pSVar1->w_recip = local_30;
-            this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;
+            this_ptr_00->vertex_buffer_ptr->light = 0xffff;
             this_ptr_00->vertex_buffer_ptr->color = 0xffff;
-            this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;
+            this_ptr_00->vertex_buffer_ptr->fog = 0xffff;
             local_114 = 1;
             this_ptr_00->vertex_buffer_ptr[1].w_recip = local_30;
-            this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;
+            this_ptr_00->vertex_buffer_ptr[1].light = 0xffff;
             this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
-            this_ptr_00->vertex_buffer_ptr[1].fog = 9.18341e-41;
+            this_ptr_00->vertex_buffer_ptr[1].fog = 0xffff;
             local_110 = 2;
             this_ptr_00->vertex_buffer_ptr[2].w_recip = local_30;
-            this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;
+            this_ptr_00->vertex_buffer_ptr[2].light = 0xffff;
             this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
-            this_ptr_00->vertex_buffer_ptr[2].fog = 9.18341e-41;
+            this_ptr_00->vertex_buffer_ptr[2].fog = 0xffff;
             local_10c = 3;
             this_ptr_00->vertex_buffer_ptr[3].w_recip = local_30;
-            this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;
+            this_ptr_00->vertex_buffer_ptr[3].light = 0xffff;
             this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
-            this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;
+            this_ptr_00->vertex_buffer_ptr[3].fog = 0xffff;
             this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
             this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
             this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;

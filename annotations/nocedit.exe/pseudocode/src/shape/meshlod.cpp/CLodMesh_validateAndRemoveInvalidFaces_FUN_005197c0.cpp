@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh *this_ptr)
+void __cdecl shape_meshlod_cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh *this_ptr)
 
 {
   CLodFace *face;

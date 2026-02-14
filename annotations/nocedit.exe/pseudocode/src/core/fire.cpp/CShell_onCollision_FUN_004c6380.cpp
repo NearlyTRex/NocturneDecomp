@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVector3f *collision_normal)
+int __cdecl core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVector3f *collision_normal)
 
 {
   float fVar1;

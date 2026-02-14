@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *this_ptr,uint event_id)
+int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *this_ptr,uint event_id)
 
 {
   CDeformableModelInstance *this_ptr_00;

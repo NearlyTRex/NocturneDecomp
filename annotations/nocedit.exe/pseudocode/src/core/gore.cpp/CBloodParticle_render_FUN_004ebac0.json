@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 4,
-        "line": 135,
+        "line": 136,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 135,
+        "line": 136,
         "message": "called object type 'void' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 217,
+        "line": 218,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
-        "column": 69,
-        "line": 217,
+        "column": 15,
+        "line": 219,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -31,18 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 280,
-    "complexity_score": 701,
+    "complexity_score": 668,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 25,
-    "pseudocode_lines": 216,
-    "suspect_count": 47,
+    "pseudocode_lines": 218,
+    "suspect_count": 44,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 496
+    "total_lines": 498
   },
   "cross_references": [],
   "function": {
@@ -124,7 +123,7 @@
     },
     {
       "addr": "0067b9b0",
-      "name": "DAT_0067b9b0",
+      "name": "SMRGLTextureBasic_0067b9b0",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -238,7 +237,7 @@
     },
     {
       "addr": "02d83368",
-      "name": "DAT_02d83368",
+      "name": "SMRGLHeaderPrimitive_02d83368",
       "type": "SMRGLHeaderPrimitive",
       "value": null
     },
@@ -616,228 +615,207 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_0067b9b0",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0067b9b0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 91,
       "match": "ROUND",
       "text": "local_88.x = (int)ROUND((this_ptr->base).position.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 92,
       "match": "ROUND",
       "text": "local_88.y = (int)ROUND((this_ptr->base).position.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 93,
       "match": "ROUND",
       "text": "local_88.z = (int)ROUND((this_ptr->base).position.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 119,
       "match": "(int *)((int)",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].light + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 120,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].light + iVar3) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 122,
       "match": "(int *)((int)",
       "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].color + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 123,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].color + iVar3) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 126,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar3) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 132,
-      "match": "DAT_02d83368",
-      "text": "(g_CDemonRendererPtr2,&DAT_02d83368);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 159,
+      "line": 160,
       "match": "ROUND",
       "text": "CStack_dc.x = (int)ROUND(local_4c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 161,
       "match": "ROUND",
       "text": "CStack_dc.y = (int)ROUND(local_4c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 161,
+      "line": 162,
       "match": "ROUND",
       "text": "CStack_dc.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 170,
       "match": "ROUND",
       "text": "CStack_ac.x = (int)ROUND(local_4c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 171,
       "match": "ROUND",
       "text": "CStack_ac.y = (int)ROUND(fStack_18 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 172,
       "match": "ROUND",
       "text": "CStack_ac.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 178,
+      "line": 179,
       "match": "ROUND",
       "text": "CStack_64.x = (int)ROUND(fStack_1c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 179,
+      "line": 180,
       "match": "ROUND",
       "text": "CStack_64.y = (int)ROUND(fStack_1c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 180,
+      "line": 181,
       "match": "ROUND",
       "text": "CStack_64.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 186,
+      "line": 187,
       "match": "ROUND",
       "text": "CStack_c4.x = (int)ROUND(fStack_18 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 187,
+      "line": 188,
       "match": "ROUND",
       "text": "CStack_c4.y = (int)ROUND(fStack_1c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 188,
+      "line": 189,
       "match": "ROUND",
       "text": "CStack_c4.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 191,
+      "line": 192,
       "match": "ROUND",
       "text": "local_88.x = (int)ROUND(CStack_e8.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 192,
+      "line": 193,
       "match": "ROUND",
       "text": "local_88.y = (int)ROUND(CStack_e8.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 193,
+      "line": 194,
       "match": "ROUND",
       "text": "local_88.z = (int)ROUND(CStack_e8.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 199,
       "match": "(int *)((int)",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].light + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 200,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].light + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 202,
       "match": "(int *)((int)",
       "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].color + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 202,
+      "line": 203,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].color + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
+      "line": 206,
       "match": "(int *)((int)",
       "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].fog + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 206,
+      "line": 207,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar4) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 214,
-      "match": "DAT_02d83368",
-      "text": "(g_CDemonRendererPtr2,&DAT_02d83368);",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

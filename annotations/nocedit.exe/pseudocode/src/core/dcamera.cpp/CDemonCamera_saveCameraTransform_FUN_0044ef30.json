@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 240,
+    "complexity_score": 237,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 115,
+    "pseudocode_lines": 112,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 312
+    "total_lines": 309
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30 (CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix, CMatrix3x3f *transform_matrix)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix)"
   },
   "function_calls": [
     {
@@ -157,84 +157,84 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 45,
       "match": "ROUND",
       "text": "(int)ROUND((float)(this_ptr->base).position.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 47,
       "match": "ROUND",
       "text": "(int)ROUND((float)(this_ptr->base).position.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 49,
       "match": "ROUND",
       "text": "(int)ROUND((float)(this_ptr->base).position.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 58,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[0].x = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 65,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[0].y = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 72,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[0].z = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 79,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[1].x = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 86,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[1].y = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 93,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[1].z = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 100,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[2].x = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 107,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[2].y = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
+      "line": 113,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[2].z = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"

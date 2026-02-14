@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int crt_unknown_c_FUN_0060fb40(void)
+; unknown int crt_unknown_c_FUN_0060fb40(LPWSTR param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24

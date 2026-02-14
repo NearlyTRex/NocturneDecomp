@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CWaterActor * __cdecl
-core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint flags)
+CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint flags)
 
 {
   SWaterVertex *pSVar1;

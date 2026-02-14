@@ -2,13 +2,11 @@
 // Address: 004336e0
 // Address Range: [[004336e0, 00433817]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0 (void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height)
+// Signature: void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0
-          (void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height)
+void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height)
 
 {
   int iVar1;

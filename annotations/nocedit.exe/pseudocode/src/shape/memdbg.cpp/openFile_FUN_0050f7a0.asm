@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0 (char *filename,char *directory,char *mode,char *source_file,int line_number)
+; __cdecl _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0(char *filename,char *directory,char *mode,char *source_file,int line_number)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

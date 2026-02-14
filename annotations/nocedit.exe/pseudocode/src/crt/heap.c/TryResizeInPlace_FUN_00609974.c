@@ -10,12 +10,13 @@ void * __cdecl TryResizeInPlace(void *ptr,ulong new_size)
 
 {
   int iVar1;
-  ulong *in_ECX;
+  ulong *pExtraNeeded;
   ushort in_DS;
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
   iVar1 = ResizeBlockInPlace
-                    (in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,in_ECX);
+                    (in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,pExtraNeeded
+                    );
   if (iVar1 == 0) {
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
     return ptr;

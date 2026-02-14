@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_CDemonActor_stopUsing_FUN_0040a0d0(CDemonActor *this_ptr,CDemonActor *user)
+void __cdecl core_actor_cpp_CDemonActor_stopUsing_FUN_0040a0d0(CDemonActor *this_ptr,CDemonActor *user)
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80

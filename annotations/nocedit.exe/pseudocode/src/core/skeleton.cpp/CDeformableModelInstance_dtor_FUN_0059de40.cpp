@@ -2,13 +2,11 @@
 // Address: 0059de40
 // Address Range: [[0059de40, 0059deae]]
 // Convention: __cdecl
-// Signature: CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40 (CDeformableModelInstance *this_ptr,uint flags)
+// Signature: CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40(CDeformableModelInstance *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CDeformableModelInstance * __cdecl
-core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-          (CDeformableModelInstance *this_ptr,uint flags)
+CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40(CDeformableModelInstance *this_ptr,uint flags)
 
 {
   CVector3f *pCVar1;

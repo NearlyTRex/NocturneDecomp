@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_anvil_cpp_CAnvil_getPropertyList_FUN_00412030 (CAnvil *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_anvil_cpp_CAnvil_getPropertyList_FUN_00412030(CAnvil *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CAnvil *         Stack[0x4]:4   this_ptr

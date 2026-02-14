@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position)
+void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position)
 
 {
   core_fire_cpp_CExplosion_FUN_004c3970(g_ExplosionPool + g_ExplosionPoolIndex);

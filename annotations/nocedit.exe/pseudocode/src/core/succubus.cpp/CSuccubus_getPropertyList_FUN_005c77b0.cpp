@@ -2,13 +2,11 @@
 // Address: 005c77b0
 // Address Range: [[005c77b0, 005c77ec]]
 // Convention: __cdecl
-// Signature: void __cdecl core_succubus_cpp_CSuccubus_getPropertyList_FUN_005c77b0 (CSuccubus *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_succubus_cpp_CSuccubus_getPropertyList_FUN_005c77b0(CSuccubus *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_succubus_cpp_CSuccubus_getPropertyList_FUN_005c77b0
-          (CSuccubus *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_succubus_cpp_CSuccubus_getPropertyList_FUN_005c77b0(CSuccubus *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

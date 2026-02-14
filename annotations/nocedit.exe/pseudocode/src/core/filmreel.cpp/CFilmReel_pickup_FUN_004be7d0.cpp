@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_filmreel_cpp_CFilmReel_pickup_FUN_004be7d0(CFilmReel *this_ptr,CDemonActor *carrier)
+void __cdecl core_filmreel_cpp_CFilmReel_pickup_FUN_004be7d0(CFilmReel *this_ptr,CDemonActor *carrier)
 
 {
   this_ptr->carrier = carrier;

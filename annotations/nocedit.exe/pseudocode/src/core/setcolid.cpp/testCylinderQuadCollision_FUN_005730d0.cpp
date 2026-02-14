@@ -2,14 +2,11 @@
 // Address: 005730d0
 // Address Range: [[005730d0, 00573132]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setcolid_cpp_testCylinderQuadCollision_FUN_005730d0 (SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, CVector3f *vertex4)
+// Signature: void __cdecl core_setcolid_cpp_testCylinderQuadCollision_FUN_005730d0(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4)
 
 #include "nocturne.h"
 
-void __cdecl
-core_setcolid_cpp_testCylinderQuadCollision_FUN_005730d0
-          (SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,
-          CVector3f *vertex4)
+void __cdecl core_setcolid_cpp_testCylinderQuadCollision_FUN_005730d0(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4)
 
 {
   CDemonTriangle local_48;

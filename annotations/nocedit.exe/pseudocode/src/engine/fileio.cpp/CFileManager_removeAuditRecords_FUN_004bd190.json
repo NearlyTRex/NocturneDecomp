@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 107,
+        "line": 105,
         "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 285,
+    "complexity_score": 283,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 28,
-    "pseudocode_lines": 215,
+    "pseudocode_lines": 213,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 699
+    "total_lines": 697
   },
   "cross_references": [],
   "function": {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190",
-    "signature": "void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190 (CFileManager *this_ptr,char *pod_file_path)"
+    "signature": "void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path)"
   },
   "function_calls": [
     {
@@ -555,42 +555,42 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_0000000c",
       "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 65,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 85,
       "match": "in_stack_0000000c",
       "text": "if (local_58c < in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 112,
       "match": "(CPodAuditRecord *)((int)",
       "text": "pCVar8 = (CPodAuditRecord *)((int)pCVar8 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 212,
+      "line": 210,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c = _mktime(&local_40);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 213,
+      "line": 211,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0xffffffff) goto LAB_004bd3c3;",
       "type": "stack_param"

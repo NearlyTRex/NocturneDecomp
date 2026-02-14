@@ -7,7 +7,7 @@
 ; CMouse *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   uint g_MouseButtonFlags
+;   _BIT_INTEGER g_MouseButtonFlags
 ;
 ; *****************************************************************************
 

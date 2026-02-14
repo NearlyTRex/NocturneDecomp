@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 48,
-        "line": 76,
+        "line": 74,
         "message": "member reference base type 'float' is not a structure or union"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 149,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 79,
+    "pseudocode_lines": 77,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "unknown_field"
     ],
-    "total_lines": 245
+    "total_lines": 243
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170",
-    "signature": "float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170 (CDemonRaytrace *this_ptr,CVector3f *world_position)"
+    "signature": "float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170(CDemonRaytrace *this_ptr,CVector3f *world_position)"
   },
   "function_calls": [
     {
@@ -208,42 +208,42 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 39,
       "match": "ROUND",
       "text": "((float10)(int)ROUND(dVar15) * (float10)(this_ptr->cell_size).y +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 42,
       "match": "ROUND",
       "text": "iStack_34 = (int)ROUND(dVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 49,
       "match": "ROUND",
       "text": "((float10)(int)ROUND(dVar14) * (float10)fVar5 + (float10)fVar6)) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 51,
       "match": "ROUND",
       "text": "local_30 = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 57,
       "match": "ROUND",
       "text": "iVar1 = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 67,
       "match": "._0_1_",
       "text": "g_PrecomputedSurfaceNormals[0x63dc].x._0_1_) != 0)) {",
       "type": "unknown_field"

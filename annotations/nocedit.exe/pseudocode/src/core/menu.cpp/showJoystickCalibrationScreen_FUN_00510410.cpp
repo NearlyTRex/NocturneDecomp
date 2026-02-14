@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_menu_cpp_showJoystickCalibrationScreen_FUN_00510410(char *instruction_text,char *message_text)
+void __cdecl core_menu_cpp_showJoystickCalibrationScreen_FUN_00510410(char *instruction_text,char *message_text)
 
 {
   int iVar1;

@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 196,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 65,
     "suspect_count": 11,
     "suspect_types": [
       "special_crt_function",
@@ -13,7 +13,7 @@
       "undefined_data",
       "undefined_ptr_cast"
     ],
-    "total_lines": 197
+    "total_lines": 196
   },
   "cross_references": [
     {
@@ -163,70 +163,70 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 9,
       "match": "unaff_ESI",
       "text": "byte *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 28,
       "match": "unaff_ESI",
       "text": "unaff_ESI = *(byte **)pcVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 33,
       "match": "unaff_ESI",
       "text": "unaff_ESI = *(byte **)pcVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Cast to undefined pointer type",
-      "line": 40,
+      "line": 39,
       "match": "(undefined6 *)",
       "text": "unaff_ESI = (byte *)*(undefined6 *)pcVar3;",
       "type": "undefined_ptr_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 39,
       "match": "unaff_ESI",
       "text": "unaff_ESI = (byte *)*(undefined6 *)pcVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 48,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = 0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 56,
       "match": "DAT_00685030",
       "text": "if ((((&DAT_00685030)[local_18 & 7] & abStack_40[(int)local_18 >> 3]) == 0) != local_1c) {",
       "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
-      "line": 65,
+      "line": 64,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = (byte)local_18;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 66,
+      "line": 65,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 66,
+      "line": 65,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"

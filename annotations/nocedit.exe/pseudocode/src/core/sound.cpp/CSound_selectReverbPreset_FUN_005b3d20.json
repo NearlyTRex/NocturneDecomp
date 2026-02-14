@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 39,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 84
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20",
-    "signature": "int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20 (CSound *this_ptr,char *title,int *selection_inout)"
+    "signature": "int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20(CSound *this_ptr,char *title,int *selection_inout)"
   },
   "function_calls": [
     {
@@ -151,7 +151,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 12,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)&g_SoundModeTable[0].name + iVar2);",
       "type": "pointer_cast"

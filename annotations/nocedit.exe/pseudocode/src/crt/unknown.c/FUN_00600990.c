@@ -2,11 +2,11 @@
 // Address: 00600990
 // Address Range: [[00600990, 00600a61]]
 // Convention: unknown
-// Signature: undefined4 crt_unknown_c_FUN_00600990(void)
+// Signature: undefined4 crt_unknown_c_FUN_00600990(uint *param_1)
 
 #include "nocturne.h"
 
-uint FUN_00600990(void)
+uint FUN_00600990(uint *param_1)
 
 {
   byte *pbVar1;
@@ -16,13 +16,12 @@ uint FUN_00600990(void)
   byte *pbVar5;
   uint uVar6;
   uint uVar7;
-  uint *in_stack_00000004;
   
   uVar6 = 0;
   pHVar4 = g_MainHeap;
   do {
     if (pHVar4 == (Heap *)0x0) {
-      *in_stack_00000004 = uVar6;
+      *param_1 = uVar6;
       return 0;
     }
     INT_03f9b1f0 = (int)pHVar4[3].heap_base;

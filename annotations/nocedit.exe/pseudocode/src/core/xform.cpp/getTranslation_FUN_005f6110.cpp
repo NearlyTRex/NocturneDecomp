@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_xform_cpp_getTranslation_FUN_005f6110(CMatrix3x4f *matrix_in,CVector3f *vector_out)
+CVector3f * __cdecl core_xform_cpp_getTranslation_FUN_005f6110(CMatrix3x4f *matrix_in,CVector3f *vector_out)
 
 {
   float fVar1;

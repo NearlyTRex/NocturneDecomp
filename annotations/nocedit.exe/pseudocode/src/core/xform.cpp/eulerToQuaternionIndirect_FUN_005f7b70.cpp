@@ -2,13 +2,11 @@
 // Address: 005f7b70
 // Address Range: [[005f7b70, 005f7bb8]]
 // Convention: __stack_esi
-// Signature: CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70 (CVector3f *euler_angles,CQuaternion4f *quat_out)
+// Signature: CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70(CVector3f *euler_angles,CQuaternion4f *quat_out)
 
 #include "nocturne.h"
 
-CQuaternion4f * __stack_esi
-core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70
-          (CVector3f *euler_angles,CQuaternion4f *quat_out)
+CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70(CVector3f *euler_angles,CQuaternion4f *quat_out)
 
 {
   uint *puVar1;

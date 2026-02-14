@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-sound_sndwav_cpp_CWavOutDevice_isSfxPlaying_FUN_005b1750(CWavOutDevice *this_ptr,CSfxSlot *slot)
+int __cdecl sound_sndwav_cpp_CWavOutDevice_isSfxPlaying_FUN_005b1750(CWavOutDevice *this_ptr,CSfxSlot *slot)
 
 {
   return 0;

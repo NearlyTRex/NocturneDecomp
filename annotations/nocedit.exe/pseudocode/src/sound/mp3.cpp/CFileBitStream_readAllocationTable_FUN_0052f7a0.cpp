@@ -2,13 +2,11 @@
 // Address: 0052f7a0
 // Address Range: [[0052f7a0, 0052f84a]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0 (CFileBitStream *this_ptr,uint *output_array,SBitAllocationTable *alloc_table)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SBitAllocationTable *alloc_table)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0
-          (CFileBitStream *this_ptr,uint *output_array,SBitAllocationTable *alloc_table)
+void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SBitAllocationTable *alloc_table)
 
 {
   int iVar1;

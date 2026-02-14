@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor *this_ptr,float volume)
+int __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor *this_ptr,float volume)
 
 {
   CLocation *position;

@@ -2,13 +2,11 @@
 // Address: 00481b50
 // Address Range: [[00481b50, 00481c24]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50 (char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)
+// Signature: void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_dosio_c_reopenFileStream_FUN_00481b50
-          (char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)
+void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)
 
 {
   int iVar1;
@@ -27,7 +25,7 @@ engine_dosio_c_reopenFileStream_FUN_00481b50
       crt_fstream_cpp_openFile_FUN_00600e85
                 (file_stream,local_220.target_path,_file_mode_flags,g_DefaultStreamBufferSize);
       if (local_220.file_offset != 0) {
-        FUN_00600ee4();
+        FUN_00600ee4(&file_stream->_istream_core,local_220.file_offset);
         return;
       }
     }

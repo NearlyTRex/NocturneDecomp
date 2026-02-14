@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_simbox_cpp_CSimBox_propertyDisplayCallback_FUN_00589270 (CSimBox *this_ptr,CActorProperty *property,char *output_buffer)
+; __cdecl void __cdecl core_simbox_cpp_CSimBox_propertyDisplayCallback_FUN_00589270(CSimBox *this_ptr,CActorProperty *property,char *output_buffer)
 ;
 ; Parameters:
 ; CSimBox *        Stack[0x4]:4   this_ptr

@@ -2,13 +2,11 @@
 // Address: 00402730
 // Address Range: [[00402730, 0040279b]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_2d_c_drawTextCenteredColorFormatted_FUN_00402730 (int left_x,int right_x,int y,char *format_string,...)
+// Signature: void __cdecl engine_2d_c_drawTextCenteredColorFormatted_FUN_00402730(int left_x,int right_x,int y,char *format_string,...)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_2d_c_drawTextCenteredColorFormatted_FUN_00402730
-          (int left_x,int right_x,int y,char *format_string,...)
+void __cdecl engine_2d_c_drawTextCenteredColorFormatted_FUN_00402730(int left_x,int right_x,int y,char *format_string,...)
 
 {
   char local_1010 [4096];

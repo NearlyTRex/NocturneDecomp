@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190 (CDemonMission *this_ptr,char *filename)
+; __cdecl void __cdecl core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CDemonMission *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_save_FUN_00522e30
-;   core_script.cpp_CScript_FUN_00566180
+;   core_script.cpp_CScript_saveToFile_FUN_00566180
 ;   crt_file.c_makepath_FUN_005febfc
 ;   engine_pod.cpp_CPod_locateFile_FUN_005512f0
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -73,8 +73,8 @@ section .text
     PUSH EAX                            ; 0053d1e7
     MOV ESI,dword ptr [0x00680d50]      ; 0053d1e8 | g_CScriptPtr
     PUSH ESI                            ; 0053d1ee | g_CScriptInstance
-    CALL core_script.cpp_CScript_FUN_00566180 ; 0053d1ef
-        ;   XREF to: 00566180 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_00566180(CScript * this_ptr, char * param_2)
+    CALL core_script.cpp_CScript_saveToFile_FUN_00566180 ; 0053d1ef
+        ;   XREF to: 00566180 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_saveToFile_FUN_00566180(CScript * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0053d1f4
     ADD ESP,0x104                       ; 0053d1f7
     POP ESI                             ; 0053d1fd

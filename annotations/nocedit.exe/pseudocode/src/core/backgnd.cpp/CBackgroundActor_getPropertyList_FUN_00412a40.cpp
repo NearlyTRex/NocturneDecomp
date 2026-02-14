@@ -2,13 +2,11 @@
 // Address: 00412a40
 // Address Range: [[00412a40, 00412aa4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_backgnd_cpp_CBackgroundActor_getPropertyList_FUN_00412a40 (CBackgroundActor *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_backgnd_cpp_CBackgroundActor_getPropertyList_FUN_00412a40(CBackgroundActor *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_backgnd_cpp_CBackgroundActor_getPropertyList_FUN_00412a40
-          (CBackgroundActor *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_backgnd_cpp_CBackgroundActor_getPropertyList_FUN_00412a40(CBackgroundActor *this_ptr,CActorPropertyList *property_list)
 
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);

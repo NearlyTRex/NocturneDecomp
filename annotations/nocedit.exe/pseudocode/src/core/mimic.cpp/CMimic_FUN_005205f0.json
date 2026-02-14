@@ -1,36 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 65,
-        "message": "use of undeclared identifier 'stack0xffffff0c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 66,
-        "message": "use of undeclared identifier 'stack0xffffff0c'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 148,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
-    "pseudocode_lines": 93,
+    "pseudocode_lines": 94,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref",
-      "undefined_data"
+      "undefined_data",
+      "warning_type_propagation"
     ],
-    "total_lines": 318
+    "total_lines": 319
   },
   "cross_references": [
     {
@@ -425,29 +412,29 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xffffff0c",
-      "text": "(CMatrix3x4f *)&stack0xffffff0c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 59,
-      "match": "&stack0xffffff0c",
-      "text": "pfVar2 = (float *)&stack0xffffff0c;",
-      "type": "stack_ref"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 65,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 77,
       "match": "DAT_02f43978",
       "text": "if ((DAT_02f43978 != 0) &&",
       "type": "undefined_data"

@@ -2,14 +2,11 @@
 // Address: 00434af0
 // Address Range: [[00434af0, 004355b7]]
 // Convention: __cdecl
-// Signature: void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0 (SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y, int gap_tolerance_x,int gap_tolerance_y)
+// Signature: void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
 
 #include "nocturne.h"
 
-void * __cdecl
-cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0
-          (SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,
-          int gap_tolerance_x,int gap_tolerance_y)
+void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
 
 {
   int iVar1;

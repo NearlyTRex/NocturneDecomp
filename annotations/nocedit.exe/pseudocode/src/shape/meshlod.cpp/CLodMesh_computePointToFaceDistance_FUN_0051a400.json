@@ -4,67 +4,67 @@
       {
         "category": "other",
         "column": 11,
-        "line": 35,
+        "line": 33,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 7,
-        "line": 39,
+        "line": 37,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 7,
-        "line": 45,
+        "line": 43,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 53,
+        "line": 51,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 60,
+        "line": 58,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 67,
+        "line": 65,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 72,
+        "line": 70,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 79,
+        "line": 77,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 84,
+        "line": 82,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 89,
+        "line": 87,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 99,
+        "line": 97,
         "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
       }
     ],
@@ -73,17 +73,17 @@
   },
   "complexity": {
     "assembly_lines": 291,
-    "complexity_score": 163,
+    "complexity_score": 161,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 93,
+    "pseudocode_lines": 91,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 384
+    "total_lines": 382
   },
   "cross_references": [
     {
@@ -116,7 +116,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400",
-    "signature": "double __cdecl shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400 (CLodMesh *this_ptr,SLodSamplePoint *sample_point,CLodFace *face)"
+    "signature": "double __cdecl shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh *this_ptr,SLodSamplePoint *sample_point,CLodFace *face)"
   },
   "function_calls": [
     {
@@ -312,42 +312,42 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "CLodMesh *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "pCVar5 = in_stack_00000004->vertex_data;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(int *)((int)",
       "text": "local_38 = pCVar5 + *(int *)((int)&sample_point->distance_to_triangle + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(float *)((int)",
       "text": "(float)this_ptr->tri_count * *(float *)((int)&sample_point[3].distance_to_triangle + 4) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(float *)((int)",
       "text": "((float)this_ptr->tri_count * *(float *)((int)&sample_point[2].distance_to_triangle + 4)",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 90,
+      "line": 88,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,&local_80,(CLodFace *)sample_point);",
       "type": "stack_param"

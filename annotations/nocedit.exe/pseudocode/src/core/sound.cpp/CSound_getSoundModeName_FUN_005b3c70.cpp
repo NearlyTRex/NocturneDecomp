@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl
-core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(CSound *this_ptr,int sound_mode_index)
+char * __cdecl core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(CSound *this_ptr,int sound_mode_index)
 
 {
   if ((-1 < sound_mode_index) && (sound_mode_index < 0x1b)) {

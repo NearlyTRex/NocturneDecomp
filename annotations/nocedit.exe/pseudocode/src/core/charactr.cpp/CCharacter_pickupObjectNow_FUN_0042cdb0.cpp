@@ -2,17 +2,14 @@
 // Address: 0042cdb0
 // Address Range: [[0042cdb0, 0042ce78]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0 (CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
-          (CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time)
+void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time)
 
 {
   SCarryHand *pSVar1;
-  float in_stack_00000024;
   
   if ((hand_index < 0) || (1 < hand_index)) {
     g_CurrentFilename = "..\\core\\charactr.cpp";
@@ -31,8 +28,7 @@ core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
       }
       (*((object->vtable)._ub)->pickup)(object,&this_ptr->base);
       pSVar1->carry_actor = object;
-      core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(this_ptr,hand_index,in_stack_00000024)
-      ;
+      core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(this_ptr,hand_index,blend_time);
       return;
     }
   }

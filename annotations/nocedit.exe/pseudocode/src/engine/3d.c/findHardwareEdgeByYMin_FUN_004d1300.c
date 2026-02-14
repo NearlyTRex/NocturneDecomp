@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SHardwareEdge * __cdecl
-engine_3d_c_findHardwareEdgeByYMin_FUN_004d1300(int y_min,SHardwareEdge *exclude_edge)
+SHardwareEdge * __cdecl engine_3d_c_findHardwareEdgeByYMin_FUN_004d1300(int y_min,SHardwareEdge *exclude_edge)
 
 {
   SHardwareEdge *pSVar1;

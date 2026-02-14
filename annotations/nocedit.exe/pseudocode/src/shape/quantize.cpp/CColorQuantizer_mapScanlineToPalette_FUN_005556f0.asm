@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_quantize_cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 (CColorQuantizer *this_ptr,uchar *src_pixels,uchar *dest_indices,short start_x,short end_x ,short num_palette_entries)
+; __cdecl void __cdecl shape_quantize_cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer *this_ptr,uchar *src_pixels,uchar *dest_indices,short start_x,short end_x,short num_palette_entries)
 ;
 ; Parameters:
 ; CColorQuantizer * Stack[0x4]:4   this_ptr

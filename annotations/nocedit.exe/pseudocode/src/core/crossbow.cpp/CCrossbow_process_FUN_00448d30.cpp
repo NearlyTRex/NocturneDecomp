@@ -10,14 +10,13 @@ void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow *this_pt
 
 {
   CVector3f *pCVar1;
-  float in_stack_0000000c;
-  CVector3f CStack_18;
+  CVector3f aCStack_1c [2];
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
   ;
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     ((CDemonActor *)this_ptr,&CStack_18,pCVar1);
+                     ((CDemonActor *)this_ptr,aCStack_1c,pCVar1);
   (this_ptr->unk2).base.location.position.x = pCVar1->x;
   (this_ptr->unk2).base.location.position.y = pCVar1->y;
   (this_ptr->unk2).base.location.position.z = pCVar1->z;
@@ -35,7 +34,7 @@ void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow *this_pt
     this_ptr->unk1[2] = '\0';
     this_ptr->unk1[3] = '\0';
   }
-  core_flame_cpp_CFlame_process_FUN_004c9c00(&this_ptr->unk2,in_stack_0000000c);
+  core_flame_cpp_CFlame_process_FUN_004c9c00(&this_ptr->unk2,delta_time);
   (this_ptr->base).base.is_transparent = *(int *)this_ptr->unk1;
   return;
 }

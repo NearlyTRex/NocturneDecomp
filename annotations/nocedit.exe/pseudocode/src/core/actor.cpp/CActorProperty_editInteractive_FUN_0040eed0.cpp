@@ -2,15 +2,11 @@
 // Address: 0040eed0
 // Address Range: [[0040eed0, 00410332]]
 // Convention: __cdecl
-// Signature: int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0 (CActorProperty *this_ptr,CDemonActor *actor)
+// Signature: int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorProperty *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_37ec */
-
-int __cdecl
-core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
-          (CActorProperty *this_ptr,CDemonActor *actor)
+int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorProperty *this_ptr,CDemonActor *actor)
 
 {
   byte uVar1;
@@ -66,8 +62,8 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   float local_3c;
   float local_38;
   float local_34;
-  CMotionList *local_30;
-  CMotionList *local_2c;
+  CActorProperty *local_30;
+  CActorProperty *local_2c;
   int local_28;
   CMotionList *local_24;
   int local_20;
@@ -83,14 +79,13 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   _sprintf(local_2a0,"Enter %s for %s",pcVar6,actor);
   switch(this_ptr->type) {
   case PROP_INT:
-    local_2c = (((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr;
+    local_2c = (CActorProperty *)*(this_ptr->data).v_int_ptr;
     while (iVar12 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                               (g_CEditorToolsPtr,local_2a0,(int *)&local_2c,(this_ptr->param1).v_int
                                ,(this_ptr->param2).v_int,(this_ptr->param3).v_int,1), iVar12 != 0) {
       if (((this_ptr->callback).v_action_func == (CActorPropertyActionFunc *)0x0) ||
-         (iVar12 = (*(this_ptr->callback).v_action_func)(actor,(CActorProperty *)local_2c),
-         iVar12 != 0)) {
-        (((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr = local_2c;
+         (iVar12 = (*(this_ptr->callback).v_action_func)(actor,local_2c), iVar12 != 0)) {
+        *(this_ptr->data).v_int_ptr = (int)local_2c;
         if (this_ptr->auto_update_flag != 0) {
           (*((actor->vtable)._ub)->setup)(actor);
         }
@@ -99,15 +94,14 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     }
     break;
   case PROP_FLOAT:
-    local_30 = (((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr;
+    local_30 = (CActorProperty *)*(this_ptr->data).v_int_ptr;
     while (iVar12 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                               (g_CEditorToolsPtr,local_2a0,(float *)&local_30,
                                (this_ptr->param1).v_int,(this_ptr->param2).v_float,
                                (this_ptr->param3).v_float,1), iVar12 != 0) {
       if (((this_ptr->callback).v_action_func == (CActorPropertyActionFunc *)0x0) ||
-         (iVar12 = (*(this_ptr->callback).v_action_func)(actor,(CActorProperty *)local_30),
-         iVar12 != 0)) {
-        (((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr = local_30;
+         (iVar12 = (*(this_ptr->callback).v_action_func)(actor,local_30), iVar12 != 0)) {
+        *(this_ptr->data).v_int_ptr = (int)local_30;
         if (this_ptr->auto_update_flag != 0) {
           (*((actor->vtable)._ub)->setup)(actor);
         }
@@ -313,8 +307,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       if (this_ptr->auto_update_flag != 0) {
         (*((actor->vtable)._ub)->setup)(actor);
       }
-      local_37ec.base.item_count = 0;
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&local_3444.base.capacity,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3444,0);
       return 1;
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3444,0);
@@ -482,8 +475,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       if (this_ptr->auto_update_flag != 0) {
         (*((actor->vtable)._ub)->setup)(actor);
       }
-      local_37ec.base.item_count = 0;
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&local_21fc.base.capacity,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_21fc,0);
       return 1;
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_21fc,0);
@@ -535,8 +527,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       core_cloth_cpp_CClothList_add_FUN_0043c0f0(this_ptr_00,local_64c);
     }
     (*((actor->vtable)._ub)->setup)(actor);
-    local_37ec.base.item_count = 0;
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&local_294c.base.capacity,0);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_294c,0);
     return 1;
   case PROP_ENUM_PAIR:
     iVar12 = -1;
@@ -703,8 +694,6 @@ LAB_0040fdd3:
       if (this_ptr->auto_update_flag == 0) {
         return 1;
       }
-      local_37ec.base.capacity = (int)actor;
-      local_37ec.base.item_count = 0x4102c1;
       (*((actor->vtable)._ub)->setup)(actor);
       return 1;
     }

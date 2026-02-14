@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_mergePolygonsWithValidation_FUN_00465b40 (int polygon1_index,int polygon2_index,float tolerance,int enforce_part_match)
+; __cdecl void __cdecl shape_design_c_mergePolygonsWithValidation_FUN_00465b40(int polygon1_index,int polygon2_index,float tolerance,int enforce_part_match)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   polygon1_index

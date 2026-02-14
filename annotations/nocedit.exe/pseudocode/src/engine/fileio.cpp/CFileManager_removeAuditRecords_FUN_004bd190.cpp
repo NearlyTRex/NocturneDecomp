@@ -2,13 +2,11 @@
 // Address: 004bd190
 // Address Range: [[004bd190, 004bd70b]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190 (CFileManager *this_ptr,char *pod_file_path)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190
-          (CFileManager *this_ptr,char *pod_file_path)
+void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path)
 
 {
   char cVar1;

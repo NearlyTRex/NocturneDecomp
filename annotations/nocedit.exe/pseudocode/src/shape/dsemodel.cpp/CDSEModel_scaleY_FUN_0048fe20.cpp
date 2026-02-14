@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_dsemodel_cpp_CDSEModel_scaleY_FUN_0048fe20(CDSEModel *this_ptr,float scale_factor)
+void __cdecl shape_dsemodel_cpp_CDSEModel_scaleY_FUN_0048fe20(CDSEModel *this_ptr,float scale_factor)
 
 {
   float fVar1;

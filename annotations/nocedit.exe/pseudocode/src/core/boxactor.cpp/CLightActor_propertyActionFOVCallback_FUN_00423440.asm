@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_boxactor_cpp_CLightActor_propertyActionFOVCallback_FUN_00423440 (CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
+; __cdecl int __cdecl core_boxactor_cpp_CLightActor_propertyActionFOVCallback_FUN_00423440(CLightActor *this_ptr,CActorProperty *property,char *output_buffer)
 ;
 ; Parameters:
 ; CLightActor *    Stack[0x4]:4   this_ptr

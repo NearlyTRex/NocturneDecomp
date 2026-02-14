@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_findSharedEdge_FUN_004635b0 (int *edge1_vertices,int *edge2_vertices,int vertex_count,int *shared_edge_type)
+; __cdecl int __cdecl shape_design_c_findSharedEdge_FUN_004635b0(int *edge1_vertices,int *edge2_vertices,int vertex_count,int *shared_edge_type)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   edge1_vertices

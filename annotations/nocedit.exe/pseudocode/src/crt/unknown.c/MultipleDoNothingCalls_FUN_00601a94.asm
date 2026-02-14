@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown _FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94 (undefined4 param_1,undefined4 param_2,undefined4 unaff_EBX,undefined4 param_4, _FILE *param_5)
+; unknown _FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94(_FILE *param_1)
 ;
 ;
 ; XREF[1]:

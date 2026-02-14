@@ -2,13 +2,11 @@
 // Address: 004b82a0
 // Address Range: [[004b82a0, 004b8689]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0 (CFileManager *this_ptr,char *pod_filename)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFileManager *this_ptr,char *pod_filename)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
-          (CFileManager *this_ptr,char *pod_filename)
+void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFileManager *this_ptr,char *pod_filename)
 
 {
   char cVar1;

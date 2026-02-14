@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_drop_FUN_0042bf90 (CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_drop_FUN_0042bf90(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

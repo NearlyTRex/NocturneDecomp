@@ -2,13 +2,11 @@
 // Address: 0040d270
 // Address Range: [[0040d270, 0040d28b]]
 // Convention: __cdecl
-// Signature: int __cdecl core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270 (CDemonActor *this_ptr,int new_value)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270(CDemonActor *this_ptr,int new_value)
 
 #include "nocturne.h"
 
-int __cdecl
-core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270
-          (CDemonActor *this_ptr,int new_value)
+int __cdecl core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270(CDemonActor *this_ptr,int new_value)
 
 {
   int iVar1;

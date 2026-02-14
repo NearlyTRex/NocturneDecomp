@@ -4,37 +4,37 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 15,
+        "line": 13,
         "message": "unknown type name 'undefined3'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 19,
+        "line": 17,
         "message": "use of undeclared identifier 'clear_and_preserve_state'"
       },
       {
         "category": "missing_member",
         "column": 57,
-        "line": 21,
+        "line": 19,
         "message": "no member named '__unbuffered_get_area' in 'filebuf'"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 28,
+        "line": 26,
         "message": "use of undeclared identifier '_file_mode_flags'; did you mean 'file_mode_flags'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 30,
+        "line": 28,
         "message": "use of undeclared identifier 'FUN_00600ee4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 40,
+        "line": 38,
         "message": "use of undeclared identifier '_file_mode_flags'; did you mean 'file_mode_flags'?"
       }
     ],
@@ -43,18 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 78,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 31,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "undefined_type"
     ],
-    "total_lines": 121
+    "total_lines": 119
   },
   "cross_references": [],
   "function": {
@@ -67,7 +67,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_dosio.c_reopenFileStream_FUN_00481b50",
-    "signature": "void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50 (char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)"
+    "signature": "void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)"
   },
   "function_calls": [
     {
@@ -205,21 +205,21 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_0000000d",
       "text": "undefined3 in_stack_0000000d;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved type",
-      "line": 8,
+      "line": 6,
       "match": "undefined3 in_stack_0000000d",
       "text": "undefined3 in_stack_0000000d;",
       "type": "undefined_type"
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 13,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);",
       "type": "pointer_cast"

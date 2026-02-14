@@ -2,13 +2,11 @@
 // Address: 005b3d20
 // Address Range: [[005b3d20, 005b3db8]]
 // Convention: __cdecl
-// Signature: int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20 (CSound *this_ptr,char *title,int *selection_inout)
+// Signature: int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20(CSound *this_ptr,char *title,int *selection_inout)
 
 #include "nocturne.h"
 
-int __cdecl
-core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20
-          (CSound *this_ptr,char *title,int *selection_inout)
+int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20(CSound *this_ptr,char *title,int *selection_inout)
 
 {
   uint *puVar1;

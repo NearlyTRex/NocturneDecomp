@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SOCKADDR_IN * __cdecl
-support_trisock_cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN *dest_addr,SOCKADDR *src_addr)
+SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN *dest_addr,SOCKADDR *src_addr)
 
 {
   uint uVar1;

@@ -4,49 +4,49 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 32,
+        "line": 30,
         "message": "use of undeclared identifier 'stack0xffffffd0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 33,
+        "line": 31,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 34,
+        "line": 32,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 35,
+        "line": 33,
         "message": "use of undeclared identifier 'stack0xffffffe0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 41,
+        "line": 39,
         "message": "use of undeclared identifier 'stack0xffffffc4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 42,
+        "line": 40,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 43,
+        "line": 41,
         "message": "use of undeclared identifier 'stack0xffffffc8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 44,
+        "line": 42,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       }
     ],
@@ -55,18 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 221,
+    "complexity_score": 219,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 5,
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 54,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 185
+    "total_lines": 183
   },
   "cross_references": [
     {
@@ -86,7 +86,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280",
-    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280 (CDemonRaytrace *this_ptr,CVector3f *world_position)"
+    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280(CDemonRaytrace *this_ptr,CVector3f *world_position)"
   },
   "function_calls": [
     {
@@ -264,105 +264,105 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_ffffffc0",
       "text": "CVector3i *in_stack_ffffffc0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_ffffffc0",
       "text": "(this_ptr,world_position,in_stack_ffffffc0);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 23,
       "match": "&stack0xffffffd0",
       "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 26,
+      "line": 24,
       "match": "&stack0xffffffdc",
       "text": "*(uint *)(&stack0xffffffdc + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 27,
+      "line": 25,
       "match": "&stack0xffffffd4",
       "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 28,
+      "line": 26,
       "match": "&stack0xffffffe0",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_ffffffc0",
       "text": "(this_ptr,world_position,in_stack_ffffffc0);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 34,
+      "line": 32,
       "match": "&stack0xffffffc4",
       "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 33,
       "match": "&stack0xffffffe8",
       "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
+      "line": 34,
       "match": "&stack0xffffffc8",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 35,
       "match": "&stack0xffffffec",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"

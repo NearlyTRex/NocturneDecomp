@@ -2,13 +2,11 @@
 // Address: 005d63d0
 // Address Range: [[005d63d0, 005d6492]]
 // Convention: __cdecl
-// Signature: CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0 (CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)
+// Signature: CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)
 
 #include "nocturne.h"
 
-CVector3d * __cdecl
-shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0
-          (CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)
+CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)
 
 {
   double dVar1;

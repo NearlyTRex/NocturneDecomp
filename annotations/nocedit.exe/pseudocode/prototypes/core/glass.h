@@ -57,7 +57,7 @@ int __cdecl CGlass::hasCollision(CGlass *this_ptr,SCollisionInfo *collision_info
 
 // Original: core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
 // Address: 004ea1c0
-void __cdecl CGlass::createShatterParticles(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v, int subdivision_level);
+void __cdecl CGlass::createShatterParticles(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level);
 
 // Original: core_glass.cpp_CGlass_shatter_FUN_004eaef0
 // Address: 004eaef0

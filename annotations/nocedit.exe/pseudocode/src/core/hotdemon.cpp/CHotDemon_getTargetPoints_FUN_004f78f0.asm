@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f78f0 (CHotDemon *this_ptr,CVector3f *out_points_array)
+; __cdecl int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f78f0(CHotDemon *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CHotDemon *      Stack[0x4]:4   this_ptr

@@ -2,15 +2,13 @@
 // Address: 005da370
 // Address Range: [[005da370, 005da502]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370 (CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: void __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi
-core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370
-          (CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+void __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;

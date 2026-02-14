@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270 (CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
+; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270(CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr

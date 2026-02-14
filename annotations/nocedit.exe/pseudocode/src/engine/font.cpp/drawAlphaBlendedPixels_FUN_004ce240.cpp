@@ -2,13 +2,11 @@
 // Address: 004ce240
 // Address Range: [[004ce240, 004ce2cc]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004ce240 (uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color)
+// Signature: void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004ce240(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_font_cpp_drawAlphaBlendedPixels_FUN_004ce240
-          (uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color)
+void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004ce240(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color)
 
 {
   uint uVar1;

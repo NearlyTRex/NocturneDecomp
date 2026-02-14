@@ -2,13 +2,11 @@
 // Address: 00559d80
 // Address Range: [[00559d80, 00559f76]]
 // Convention: __cdecl
-// Signature: void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80 (CScript *this_ptr,int left,int top,int right,int bottom)
+// Signature: void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80(CScript *this_ptr,int left,int top,int right,int bottom)
 
 #include "nocturne.h"
 
-void __cdecl
-core_script_cpp_CScript_renderEditor_FUN_00559d80
-          (CScript *this_ptr,int left,int top,int right,int bottom)
+void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80(CScript *this_ptr,int left,int top,int right,int bottom)
 
 {
   char *text;

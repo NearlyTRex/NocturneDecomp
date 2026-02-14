@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(CMotionController *this_ptr)
+void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(CMotionController *this_ptr)
 
 {
   this_ptr->tween_progress = -1.0;

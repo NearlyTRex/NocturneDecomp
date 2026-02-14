@@ -55,7 +55,7 @@ extern CDemonFilter CDemonFilter_ARRAY_008229ec[8];
 
 // CKeyFramedModelInstance
 extern CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance;
-extern CKeyFramedModelInstance DAT_00823a98;
+extern CKeyFramedModelInstance CKeyFramedModelInstance_00823a98;
 
 // SEdge[512]
 extern SEdge g_TracedEdgeBuffer[512];
@@ -187,7 +187,6 @@ extern undefined4 DAT_008229ac;
 extern undefined4 DAT_00822f48;
 extern undefined4 DAT_00822f4c;
 extern undefined4 DAT_00822f50;
-extern undefined4 DAT_00823c50;
 extern undefined4 DAT_00823c54;
 extern undefined4 DAT_00823c58;
 extern undefined4 DAT_00827504;

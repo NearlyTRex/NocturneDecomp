@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_event_cpp_CEventList_resolveVariable_FUN_004adc10(CEventList *this_ptr,char *identifier)
+int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004adc10(CEventList *this_ptr,char *identifier)
 
 {
   int iVar1;

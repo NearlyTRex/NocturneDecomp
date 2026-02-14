@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 47,
-        "line": 94,
+        "line": 92,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 34,
-        "line": 100,
+        "line": 98,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -19,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 195,
+    "complexity_score": 193,
     "cross_reference_count": 25,
     "function_call_count": 11,
     "global_count": 26,
-    "pseudocode_lines": 100,
+    "pseudocode_lines": 98,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 403
+    "total_lines": 401
   },
   "cross_references": [
     {
@@ -193,7 +193,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530 (CEditorTools *this_ptr,float progress_min,float progress_max)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)"
   },
   "function_calls": [
     {
@@ -585,63 +585,63 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 42,
       "match": "ROUND",
       "text": "if (((int)ROUND(dVar5) != g_WindowStack[g_WindowStackCount + -1].progress_percentage) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 48,
       "match": "ROUND",
       "text": "\"%d%% complete\",(int)ROUND(dVar5),uVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 65,
       "match": "ROUND",
       "text": "iVar4 = (int)ROUND(dVar5) + x1_00;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 81,
       "match": "ROUND",
       "text": "iVar3 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 85,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(SUB84(dVar5,0),uVar8) + 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 85,
       "match": "SUB84",
       "text": "((double)CONCAT44(SUB84(dVar5,0),uVar8) + 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 90,
       "match": "ROUND",
       "text": "(int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar3 / 0x3c,iVar3 % 0x3c,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 90,
       "match": "ROUND",
       "text": "(int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar3 / 0x3c,iVar3 % 0x3c,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 91,
       "match": "SUB84",
       "text": "uVar7,uVar8,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
       "type": "decompiler_intrinsic"

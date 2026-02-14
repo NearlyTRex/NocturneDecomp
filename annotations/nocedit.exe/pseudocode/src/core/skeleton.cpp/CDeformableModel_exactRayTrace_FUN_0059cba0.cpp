@@ -2,14 +2,11 @@
 // Address: 0059cba0
 // Address Range: [[0059cba0, 0059ce3e]]
 // Convention: __cdecl
-// Signature: float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0 (CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction, CVector3i *skinned_vertices,byte *part_visibility_flags)
+// Signature: float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3i *skinned_vertices,byte *part_visibility_flags)
 
 #include "nocturne.h"
 
-float __cdecl
-core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
-          (CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,
-          CVector3i *skinned_vertices,byte *part_visibility_flags)
+float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3i *skinned_vertices,byte *part_visibility_flags)
 
 {
   CVector3f *pCVar1;

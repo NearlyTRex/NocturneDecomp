@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0 (CObj *this_ptr,uint flag_mask,CMatrix3x3d *matrix,CVector3d *pivot)
+; __cdecl void __cdecl shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0(CObj *this_ptr,uint flag_mask,CMatrix3x3d *matrix,CVector3d *pivot)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

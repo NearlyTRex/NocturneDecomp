@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_set_cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(CDemonSet *this_ptr)
+void __cdecl core_set_cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(CDemonSet *this_ptr)
 
 {
   int iVar1;

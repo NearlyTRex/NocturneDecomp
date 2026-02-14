@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr)
+void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr)
 
 {
   char *weapon_class_name;

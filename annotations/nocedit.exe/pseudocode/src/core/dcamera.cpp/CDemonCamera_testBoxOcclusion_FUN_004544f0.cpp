@@ -2,13 +2,11 @@
 // Address: 004544f0
 // Address Range: [[004544f0, 004546f7]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0 (CDemonCamera *this_ptr,CVector3i *corners)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0(CDemonCamera *this_ptr,CVector3i *corners)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0
-          (CDemonCamera *this_ptr,CVector3i *corners)
+int __cdecl core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0(CDemonCamera *this_ptr,CVector3i *corners)
 
 {
   int iVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_chain_cpp_CChain_hasCollision_FUN_00431110(CChain *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_chain_cpp_CChain_hasCollision_FUN_00431110(CChain *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

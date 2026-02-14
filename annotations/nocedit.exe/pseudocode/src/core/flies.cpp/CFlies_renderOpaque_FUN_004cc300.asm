@@ -16,7 +16,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   SMRGLTextureBasic DAT_0067b514
+;   SMRGLTextureBasic SMRGLTextureBasic_0067b514
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_UseExternalRenderer
@@ -167,7 +167,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 004cc493 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x5c],EDX      ; 004cc495
     MOV EAX,dword ptr [EAX]             ; 004cc498 | g_CDemonRendererInstance
-    PUSH 0x67b514                       ; 004cc49a | DAT_0067b514
+    PUSH 0x67b514                       ; 004cc49a | SMRGLTextureBasic_0067b514
     MOV dword ptr [EAX + 0x8c],EDX      ; 004cc49f
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_005dd800 ; 004cc4a5
         ;   XREF to: 005dd800 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_005dd800(SMRGLTextureBasic * texture)

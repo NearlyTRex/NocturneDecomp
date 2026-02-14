@@ -2,13 +2,11 @@
 // Address: 004dc3e0
 // Address Range: [[004dc3e0, 004dccb4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0 (CGame *this_ptr,SPlayerControl *player_control)
+// Signature: void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerControl *player_control)
 
 #include "nocturne.h"
 
-void __cdecl
-core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0
-          (CGame *this_ptr,SPlayerControl *player_control)
+void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerControl *player_control)
 
 {
   float *pfVar1;

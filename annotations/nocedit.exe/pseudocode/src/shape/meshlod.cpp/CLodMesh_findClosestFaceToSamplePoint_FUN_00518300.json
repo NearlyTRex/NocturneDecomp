@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 37,
+        "line": 35,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 85,
+    "complexity_score": 83,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 43,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 134
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -50,7 +50,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (CLodMesh *this_ptr,int sample_point_index)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300(CLodMesh *this_ptr,int sample_point_index)"
   },
   "function_calls": [
     {
@@ -189,21 +189,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(SLodSamplePoint *)((int)",
       "text": "sample_point = (SLodSamplePoint *)((int)this_ptr->tri_data->attribute_indices + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 28,
       "match": "SUB84",
       "text": "face = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(CLodFace *)((int)",
       "text": "pCVar1 = (CLodFace *)((int)pCVar1->attribute_indices + 1);",
       "type": "pointer_cast"

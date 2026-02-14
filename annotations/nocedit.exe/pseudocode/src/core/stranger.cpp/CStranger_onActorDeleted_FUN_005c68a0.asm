@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_onActorDeleted_FUN_005c68a0 (CStranger *this_ptr,CDemonActor *deleted_actor)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_onActorDeleted_FUN_005c68a0(CStranger *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr,CDemonCamera *camera)
+void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr,CDemonCamera *camera)
 
 {
   CVector3i *pCVar1;

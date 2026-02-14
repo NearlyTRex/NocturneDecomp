@@ -24,7 +24,7 @@ void __cdecl core_msnedit_cpp_FUN_005374b0(int unk)
 LAB_005374d8:
   core_script_cpp_CScript_initEditorLayout_FUN_00566660
             (g_CScriptPtr,0,y,g_WindowWidth + -1,g_WindowHeight + -1);
-  DAT_02f7c634 = unk;
+  INT_02f7c634 = unk;
   core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(g_CDemonMissionPtr,1);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;

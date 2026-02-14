@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 70,
+        "line": 68,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 71,
+        "line": 69,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 285,
+    "complexity_score": 283,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 80,
+    "pseudocode_lines": 78,
     "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 260
+    "total_lines": 258
   },
   "cross_references": [
     {
@@ -51,7 +51,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60",
-    "signature": "int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60 (CVector2d *vertices,uint vertex_count,CVector2d *test_point)"
+    "signature": "int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60(CVector2d *vertices,uint vertex_count,CVector2d *test_point)"
   },
   "function_calls": [],
   "globals": [],
@@ -268,126 +268,126 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "uVar1 = *(uint *)((int)&pCVar8->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "uVar3 = *(uint *)((int)&pCVar8->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "uStack_44 = *(uint *)((int)&pCVar6->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(uint *)((int)",
       "text": "uStack_3c = *(uint *)((int)&pCVar6->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 53,
       "match": "CONCAT44",
       "text": "if ((((double)CONCAT44(uStack_4c,local_50) <= test_point->y) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 54,
       "match": "CONCAT44",
       "text": "(test_point->y <= (double)CONCAT44(uStack_3c,local_40))) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 55,
       "match": "CONCAT44",
       "text": "((test_point->y != (double)CONCAT44(uStack_4c,local_50) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 56,
       "match": "CONCAT44",
       "text": "(test_point->y != (double)CONCAT44(uStack_3c,local_40))))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 57,
       "match": "CONCAT44",
       "text": "if ((test_point->x < (double)CONCAT44(uStack_54,local_58)) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 58,
       "match": "CONCAT44",
       "text": "(test_point->x < (double)CONCAT44(uStack_44,local_48))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "CONCAT44",
       "text": "dVar4 = (double)CONCAT44(uStack_44,local_48) - (double)CONCAT44(uStack_54,local_58);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "CONCAT44",
       "text": "dVar4 = (double)CONCAT44(uStack_44,local_48) - (double)CONCAT44(uStack_54,local_58);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 60,
       "match": "CONCAT44",
       "text": "dVar5 = (double)CONCAT44(uStack_3c,local_40) - (double)CONCAT44(uStack_4c,local_50);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 60,
       "match": "CONCAT44",
       "text": "dVar5 = (double)CONCAT44(uStack_3c,local_40) - (double)CONCAT44(uStack_4c,local_50);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 61,
       "match": "SUB84",
       "text": "local_38 = SUB84(dVar4,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 62,
       "match": "SUB84",
       "text": "local_30 = SUB84(dVar5,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 69,
       "match": "CONCAT44",
       "text": "(test_point->y - (double)CONCAT44(uStack_4c,local_50)) * local_60 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 70,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(uStack_54,local_58)) goto LAB_005d5ef4;",
       "type": "decompiler_intrinsic"

@@ -2,13 +2,11 @@
 // Address: 004483e0
 // Address Range: [[004483e0, 00448434]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_cramtex_cpp_CCramTex_setupTextureForPlacement_FUN_004483e0 (CCramTex *this_ptr,CCramTex *source)
+// Signature: void __cdecl shape_cramtex_cpp_CCramTex_setupTextureForPlacement_FUN_004483e0(CCramTex *this_ptr,CCramTex *source)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_cramtex_cpp_CCramTex_setupTextureForPlacement_FUN_004483e0
-          (CCramTex *this_ptr,CCramTex *source)
+void __cdecl shape_cramtex_cpp_CCramTex_setupTextureForPlacement_FUN_004483e0(CCramTex *this_ptr,CCramTex *source)
 
 {
   int iVar1;

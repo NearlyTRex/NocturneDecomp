@@ -2,14 +2,11 @@
 // Address: 0053cad0
 // Address Range: [[0053cad0, 0053cc20]]
 // Convention: __cdecl
-// Signature: int __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cad0 (CDemonMission *this_ptr,int param_2,char *param_3,int *param_4,int param_5,int param_6, int param_7,int param_8)
+// Signature: int __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cad0(CDemonMission *this_ptr,int param_2,char *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8)
 
 #include "nocturne.h"
 
-int __cdecl
-core_msnedit_cpp_CDemonMission_FUN_0053cad0
-          (CDemonMission *this_ptr,int param_2,char *param_3,int *param_4,int param_5,int param_6,
-          int param_7,int param_8)
+int __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cad0(CDemonMission *this_ptr,int param_2,char *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8)
 
 {
   char *pcVar1;

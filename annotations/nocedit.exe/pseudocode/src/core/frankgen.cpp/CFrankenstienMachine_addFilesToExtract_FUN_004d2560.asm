@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_frankgen_cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560 (CFrankenstienMachine *this_ptr,_FILE *file_handle)
+; __cdecl void __cdecl core_frankgen_cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560(CFrankenstienMachine *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr

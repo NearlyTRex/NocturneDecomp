@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dracbrid_cpp_CDraculaBride_hasCollision_FUN_00485bc0 (CDraculaBride *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_dracbrid_cpp_CDraculaBride_hasCollision_FUN_00485bc0(CDraculaBride *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CDraculaBride *  Stack[0x4]:4   this_ptr

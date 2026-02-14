@@ -2,14 +2,11 @@
 // Address: 004b3f50
 // Address Range: [[004b3f50, 004b41b3]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 (CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern, char *dialog_title)
+// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-          (CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,
-          char *dialog_title)
+int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title)
 
 {
   char cVar1;

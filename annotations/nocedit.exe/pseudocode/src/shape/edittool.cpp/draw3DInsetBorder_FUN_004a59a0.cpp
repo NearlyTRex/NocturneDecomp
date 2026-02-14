@@ -2,13 +2,11 @@
 // Address: 004a59a0
 // Address Range: [[004a59a0, 004a5ad1]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0 (int left,int top,int right,int bottom,int inner_y,int style)
+// Signature: void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(int left,int top,int right,int bottom,int inner_y,int style)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0
-          (int left,int top,int right,int bottom,int inner_y,int style)
+void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(int left,int top,int right,int bottom,int inner_y,int style)
 
 {
   int iVar1;

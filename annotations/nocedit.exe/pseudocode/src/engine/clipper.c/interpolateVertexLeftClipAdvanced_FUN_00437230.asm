@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00437230 (SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
+; __cdecl void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00437230(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   v1

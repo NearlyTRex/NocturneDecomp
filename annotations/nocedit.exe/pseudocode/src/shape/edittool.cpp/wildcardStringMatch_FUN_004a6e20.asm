@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20 (char *pattern,char *target_string,int case_sensitive)
+; __cdecl int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20(char *pattern,char *target_string,int case_sensitive)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   pattern

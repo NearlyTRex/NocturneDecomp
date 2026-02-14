@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 130,
+    "complexity_score": 128,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 83,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 230
+    "total_lines": 228
   },
   "cross_references": [
     {
@@ -65,7 +65,7 @@
     ],
     "convention": "__stack2_esi",
     "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820",
-    "signature": "CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)"
+    "signature": "CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -276,28 +276,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(CVector3f *)((int)",
       "text": "(&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 83,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"

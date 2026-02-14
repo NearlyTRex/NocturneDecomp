@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_beast_cpp_CBeast_processDamage_FUN_00418380(CBeast *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_beast_cpp_CBeast_processDamage_FUN_00418380(CBeast *this_ptr,SDamageInfo *damage_info)
 
 {
   damage_info->damage_amount = 0.0;

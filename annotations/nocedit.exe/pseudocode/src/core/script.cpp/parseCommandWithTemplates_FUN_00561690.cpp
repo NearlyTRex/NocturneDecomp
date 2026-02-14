@@ -2,16 +2,13 @@
 // Address: 00561690
 // Address Range: [[00561690, 00561a28]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_parseCommandWithTemplates_FUN_00561690 (char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position ,CCmdParm *parm_out,CCmdParse *parse_out,char **templates,int template_count)
+// Signature: int __cdecl core_script_cpp_parseCommandWithTemplates_FUN_00561690(char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position,CCmdParm *parm_out,CCmdParse *parse_out,char **templates,int template_count)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl
-core_script_cpp_parseCommandWithTemplates_FUN_00561690
-          (char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position
-          ,CCmdParm *parm_out,CCmdParse *parse_out,char **templates,int template_count)
+int __cdecl core_script_cpp_parseCommandWithTemplates_FUN_00561690(char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position,CCmdParm *parm_out,CCmdParse *parse_out,char **templates,int template_count)
 
 {
   char cVar1;

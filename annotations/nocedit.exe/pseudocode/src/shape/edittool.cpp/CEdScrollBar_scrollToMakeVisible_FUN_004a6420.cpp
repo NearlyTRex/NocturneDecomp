@@ -2,13 +2,11 @@
 // Address: 004a6420
 // Address Range: [[004a6420, 004a644d]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEdScrollBar_scrollToMakeVisible_FUN_004a6420 (CEdScrollBar *this_ptr,int target_index)
+// Signature: void __cdecl shape_edittool_cpp_CEdScrollBar_scrollToMakeVisible_FUN_004a6420(CEdScrollBar *this_ptr,int target_index)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEdScrollBar_scrollToMakeVisible_FUN_004a6420
-          (CEdScrollBar *this_ptr,int target_index)
+void __cdecl shape_edittool_cpp_CEdScrollBar_scrollToMakeVisible_FUN_004a6420(CEdScrollBar *this_ptr,int target_index)
 
 {
   int iVar1;

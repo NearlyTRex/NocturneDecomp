@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_2d_c_drawTextCenteredReordered_FUN_00402390(int left_x,int right_x,int y,char *text)
+void __cdecl engine_2d_c_drawTextCenteredReordered_FUN_00402390(int left_x,int right_x,int y,char *text)
 
 {
   engine_2d_c_drawTextCentered_FUN_00402350(text,left_x,right_x,y);

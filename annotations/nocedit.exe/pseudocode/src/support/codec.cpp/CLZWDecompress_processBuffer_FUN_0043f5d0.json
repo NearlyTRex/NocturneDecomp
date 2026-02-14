@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 35,
+        "line": 32,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 41,
+        "line": 38,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 41,
+        "line": 38,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -25,16 +25,16 @@
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 52,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 34,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 130
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -54,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0",
-    "signature": "int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0 (CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length, int enable_callback)"
+    "signature": "int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length,int enable_callback)"
   },
   "function_calls": [
     {
@@ -185,7 +185,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 28,
+      "line": 25,
       "match": "&stack0xffffffe8",
       "text": "(&this_ptr->lzw_dict,&(this_ptr->lzw_dict).bit_state,&stack0xffffffe8,",
       "type": "stack_ref"

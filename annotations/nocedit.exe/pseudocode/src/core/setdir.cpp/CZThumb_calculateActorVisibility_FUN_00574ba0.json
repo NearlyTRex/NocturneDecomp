@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 256,
-    "complexity_score": 159,
+    "complexity_score": 156,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 4,
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 111,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 370
+    "total_lines": 367
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0",
-    "signature": "float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (CZThumb *this_ptr,CDemonActor *actor,CVector3i *bounding_box_vertices, SMRGLHeaderPrimitive *primitives,int apply_scaling)"
+    "signature": "float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0(CZThumb *this_ptr,CDemonActor *actor,CVector3i *bounding_box_vertices,SMRGLHeaderPrimitive *primitives,int apply_scaling)"
   },
   "function_calls": [
     {
@@ -293,28 +293,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "uVar3 = *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 81,
       "match": "(byte *)((int)",
       "text": "if ((*(byte *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 84,
       "match": "(int *)((int)",
       "text": "if (0 < *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 103,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)aiStack_4c + iVar8);",
       "type": "pointer_cast"

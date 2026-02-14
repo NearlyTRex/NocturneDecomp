@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_superopt_cpp_CObj_removePolygonsAtVertex_FUN_005d3050(CObj *this_ptr,int vertex_index)
+int __cdecl shape_superopt_cpp_CObj_removePolygonsAtVertex_FUN_005d3050(CObj *this_ptr,int vertex_index)
 
 {
   int *piVar1;

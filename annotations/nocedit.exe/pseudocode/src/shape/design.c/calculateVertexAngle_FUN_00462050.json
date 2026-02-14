@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 158,
+    "complexity_score": 156,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 56,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 143
+    "total_lines": 141
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_calculateVertexAngle_FUN_00462050",
-    "signature": "double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050 (int vertex1_index,int vertex2_index,int vertex3_index)"
+    "signature": "double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_index,int vertex2_index,int vertex3_index)"
   },
   "function_calls": [
     {
@@ -285,63 +285,63 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_ffffff74",
       "text": "uint in_stack_ffffff74;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_00000004",
       "text": "local_2c = g_LoadedVertices[in_stack_00000004].vertex.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "local_28 = g_LoadedVertices[in_stack_00000004].vertex.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_00000004",
       "text": "local_24 = g_LoadedVertices[in_stack_00000004].vertex.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 33,
       "match": "in_stack_00000004",
       "text": "fStack_20 = g_LoadedVertices[in_stack_00000004].u;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_00000004",
       "text": "fStack_1c = g_LoadedVertices[in_stack_00000004].v;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 54,
       "match": "in_stack_ffffff74",
       "text": "((double)CONCAT44(in_stack_ffffff74,",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 54,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(in_stack_ffffff74,",
       "type": "decompiler_intrinsic"

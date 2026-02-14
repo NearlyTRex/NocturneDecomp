@@ -17,8 +17,7 @@
 /* WARNING: Removing unreachable block (ram,0x005f8887) */
 /* WARNING: Removing unreachable block (ram,0x005f8952) */
 
-SRenderVertex * __cdecl
-core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices)
+SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices)
 
 {
   longlong lVar1;

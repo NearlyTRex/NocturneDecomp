@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack
-crt_fstream_cpp_filebuf_seekoff_FUN_0060dbe8(filebuf *this_ptr,long offset,int direction,int mode)
+int __watcallStack crt_fstream_cpp_filebuf_seekoff_FUN_0060dbe8(filebuf *this_ptr,long offset,int direction,int mode)
 
 {
   int iVar1;

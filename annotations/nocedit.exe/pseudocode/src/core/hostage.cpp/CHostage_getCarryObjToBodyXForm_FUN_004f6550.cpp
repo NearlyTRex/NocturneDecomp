@@ -2,7 +2,7 @@
 // Address: 004f6550
 // Address Range: [[004f6550, 004f69b8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550 (CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
@@ -13,9 +13,7 @@
 /* WARNING: Removing unreachable block (ram,0x004f6911) */
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl
-core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550
-          (CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;

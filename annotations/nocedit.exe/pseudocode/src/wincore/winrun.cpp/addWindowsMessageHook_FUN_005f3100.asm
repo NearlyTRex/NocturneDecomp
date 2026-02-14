@@ -10,7 +10,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int g_NumWindowMessageHandlers
-;   WNDPROC[4] g_WindowMessageHandlers
+;   MessageHandler[4] g_WindowMessageHandlers
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10

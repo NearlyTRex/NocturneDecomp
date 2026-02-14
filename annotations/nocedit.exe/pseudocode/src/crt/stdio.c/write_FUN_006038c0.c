@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __watcallStack
-write(int file_handle_index,void *buffer,int bytes_to_write)
+int __watcallStack write(int file_handle_index,void *buffer,int bytes_to_write)
 
 {
   HANDLE hFile;

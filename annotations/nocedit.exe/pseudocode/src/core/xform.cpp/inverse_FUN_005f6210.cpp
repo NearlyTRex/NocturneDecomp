@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CMatrix3x4f * __stack_esi
-core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out)
+CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out)
 
 {
   int iVar1;

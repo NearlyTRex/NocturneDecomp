@@ -37,7 +37,7 @@ int __cdecl CHero::testCylinderCollision(CHero *this_ptr,SCollisionReturnInfo *c
 
 // Original: core_hero.cpp_CHero_testLineIntersection_FUN_004f25c0
 // Address: 004f25c0
-int __cdecl CHero::testLineIntersection(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point);
+int __cdecl CHero::testLineIntersection(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 
 // Original: core_hero.cpp_CHero_archive_FUN_004f2610
 // Address: 004f2610

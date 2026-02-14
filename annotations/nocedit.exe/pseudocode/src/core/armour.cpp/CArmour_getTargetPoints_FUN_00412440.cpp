@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_armour_cpp_CArmour_getTargetPoints_FUN_00412440(CArmour *this_ptr,CVector3f *out_points_array)
+int __cdecl core_armour_cpp_CArmour_getTargetPoints_FUN_00412440(CArmour *this_ptr,CVector3f *out_points_array)
 
 {
   return 0;

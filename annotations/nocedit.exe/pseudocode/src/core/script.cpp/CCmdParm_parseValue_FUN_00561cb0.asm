@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CCmdParm_parseValue_FUN_00561cb0 (CCmdParm *this_ptr,char *input_text,int *cursor,int end_position)
+; __cdecl int __cdecl core_script_cpp_CCmdParm_parseValue_FUN_00561cb0(CCmdParm *this_ptr,char *input_text,int *cursor,int end_position)
 ;
 ; Parameters:
 ; CCmdParm *       Stack[0x4]:4   this_ptr

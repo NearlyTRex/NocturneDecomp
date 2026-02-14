@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_draw3DPointMarker_FUN_00409930(CVector3f *world_position,int marker_color)
+void __cdecl core_actor_cpp_draw3DPointMarker_FUN_00409930(CVector3f *world_position,int marker_color)
 
 {
   int iVar1;

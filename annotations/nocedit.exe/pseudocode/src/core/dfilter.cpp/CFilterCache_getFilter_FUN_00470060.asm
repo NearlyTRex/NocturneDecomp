@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060 (CFilterCache *this_ptr,char *filter_name,char *filter_filename,int enable_init)
+; __cdecl CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache *this_ptr,char *filter_name,char *filter_filename,int enable_init)
 ;
 ; Parameters:
 ; CFilterCache *   Stack[0x4]:4   this_ptr

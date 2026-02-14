@@ -2,51 +2,15 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 45,
-        "line": 43,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 53,
-        "message": "C-style cast from 'CDrip *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 63,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 66,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 66,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 103,
-        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 108,
+        "line": 117,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 108,
+        "line": 117,
         "message": "expected expression"
       }
     ],
@@ -55,19 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 241,
+    "complexity_score": 195,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
-    "pseudocode_lines": 111,
-    "suspect_count": 11,
+    "pseudocode_lines": 120,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "undefined_data",
-      "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 277
+    "total_lines": 286
   },
   "cross_references": [],
   "function": {
@@ -283,80 +246,45 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 36,
-      "match": "._4_4_",
-      "text": "*(uint *)(this_ptr->unk2 + 4) = local_54._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 56,
-      "match": "._4_4_",
-      "text": "local_54._4_4_ = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._4_4_",
-      "text": "local_54._4_4_ = (float)local_54._4_4_ + (this_ptr->base).location.position.x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._4_4_",
-      "text": "local_54._4_4_ = (float)local_54._4_4_ + (this_ptr->base).location.position.x;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 71,
       "match": "fcos",
-      "text": "fVar7 = (float10)fcos((float10)fVar4);",
+      "text": "fVar6 = (float10)fcos((float10)fStack_14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 72,
       "match": "fcos",
-      "text": "fVar8 = (float10)fcos((float10)fVar3);",
+      "text": "fVar7 = (float10)fcos((float10)fStack_1c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 73,
       "match": "fsin",
-      "text": "fVar9 = (float10)fsin((float10)fVar4);",
+      "text": "fVar8 = (float10)fsin((float10)fStack_14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 74,
       "match": "fsin",
-      "text": "fVar10 = (float10)fsin((float10)fVar3);",
+      "text": "fVar9 = (float10)fsin((float10)fStack_1c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 79,
       "match": "DAT_02c9b170",
       "text": "core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&DAT_02c9b170);",
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 96,
-      "match": "._4_4_",
-      "text": "auStack_a4._4_4_ = this_ptr->damage;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 101,
+      "line": 110,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0x114))();",
+      "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0x114))(iVar2,pCStack_20,0x3f800000,&SStack_b4);",
       "type": "unresolved_funcptr"
     }
   ],

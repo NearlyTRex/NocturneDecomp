@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 147,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 84,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 286
+    "total_lines": 283
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20",
-    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20 (CDemonRaytrace *this_ptr,CVector3f *offset_vector,CVector3f *start_position, CVector3f *end_position,void *light_data)"
+    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20(CDemonRaytrace *this_ptr,CVector3f *offset_vector,CVector3f *start_position,CVector3f *end_position,void *light_data)"
   },
   "function_calls": [
     {
@@ -334,35 +334,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 33,
       "match": "(float *)((int)",
       "text": "local_58.y = *(float *)((int)light_data + 4) - end_position->y;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 34,
       "match": "(float *)((int)",
       "text": "local_58.z = *(float *)((int)light_data + 8) - end_position->z;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 41,
       "match": "ROUND",
       "text": "iStack_2c = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 45,
       "match": "ROUND",
       "text": "iStack_2c = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 49,
       "match": "ROUND",
       "text": "local_28 = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"

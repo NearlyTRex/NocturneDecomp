@@ -17,8 +17,8 @@ int __cdecl shape_superopt_cpp_CObj_hasPolyWithMaterial_FUN_005d4110(CObj *this_
   if (this_ptr->poly_count != 0) {
     iVar2 = 0;
     do {
-      iVar1 = (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar2 + 4) + 0x54))
-                        ();
+      iVar1 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar2;
+      iVar1 = (**(code **)(*(int *)(iVar1 + 100) + 0x54))(iVar1);
       if (iVar1 == material_id) {
         return 1;
       }

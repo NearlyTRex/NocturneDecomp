@@ -66,7 +66,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
         core_sound_cpp_CSound_init_FUN_005b2dd0(g_CSoundPtr);
       }
       else {
-        g_MouseButtonFlags = 0;
+        g_MouseButtonFlags.dword = 0;
         core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
       }
     }
@@ -201,7 +201,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
         }
         iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x43);
         if (iVar4 != 0) {
-          core_script_cpp_CScript_FUN_005602b0(g_CScriptPtr);
+          core_script_cpp_CScript_resetDialogState_FUN_005602b0(g_CScriptPtr);
         }
       }
     }

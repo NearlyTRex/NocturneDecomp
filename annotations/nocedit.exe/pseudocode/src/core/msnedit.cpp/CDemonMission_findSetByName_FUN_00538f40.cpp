@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_msnedit_cpp_CDemonMission_findSetByName_FUN_00538f40(CDemonMission *this_ptr,char *set_name)
+int __cdecl core_msnedit_cpp_CDemonMission_findSetByName_FUN_00538f40(CDemonMission *this_ptr,char *set_name)
 
 {
   int iVar1;

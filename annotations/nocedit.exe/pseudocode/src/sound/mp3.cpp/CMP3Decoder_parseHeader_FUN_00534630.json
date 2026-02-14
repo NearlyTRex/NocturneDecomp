@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 48,
+        "line": 46,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 156,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 16,
-    "pseudocode_lines": 131,
+    "pseudocode_lines": 129,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 463
+    "total_lines": 461
   },
   "cross_references": [
     {
@@ -48,7 +48,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630",
-    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630 (CMP3Decoder *this_ptr,_FILE *file_handle,int file_size)"
+    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size)"
   },
   "function_calls": [
     {
@@ -413,14 +413,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 82,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
+      "line": 128,
       "match": "ROUND",
       "text": "unaff_retaddr->sample_rate = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"

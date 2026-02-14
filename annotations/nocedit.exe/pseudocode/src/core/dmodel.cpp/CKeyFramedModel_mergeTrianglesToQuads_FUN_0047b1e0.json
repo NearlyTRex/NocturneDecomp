@@ -4,115 +4,115 @@
       {
         "category": "other",
         "column": 39,
-        "line": 118,
+        "line": 116,
         "message": "cast from pointer to smaller type 'char' loses information"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 170,
+        "line": 168,
         "message": "use of undeclared identifier 'stack0xffffff14'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 172,
+        "line": 170,
         "message": "use of undeclared identifier 'stack0xffffff18'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 178,
+        "line": 176,
         "message": "use of undeclared identifier 'stack0xffffff20'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 179,
+        "line": 177,
         "message": "use of undeclared identifier 'stack0xffffff24'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 184,
+        "line": 182,
         "message": "use of undeclared identifier 'stack0xffffff2c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 185,
+        "line": 183,
         "message": "use of undeclared identifier 'stack0xffffff30'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 191,
+        "line": 189,
         "message": "use of undeclared identifier 'stack0xffffff38'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 192,
+        "line": 190,
         "message": "use of undeclared identifier 'stack0xffffff3c'"
       },
       {
         "category": "incompatible_types",
         "column": 41,
-        "line": 211,
+        "line": 209,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 66,
+        "line": 210,
+        "message": "use of undeclared identifier 'stack0xffffff10'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 55,
         "line": 212,
         "message": "use of undeclared identifier 'stack0xffffff10'"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
-        "line": 214,
-        "message": "use of undeclared identifier 'stack0xffffff10'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 217,
+        "line": 215,
         "message": "use of undeclared identifier 'stack0xffffff10'"
       },
       {
         "category": "incompatible_types",
         "column": 46,
-        "line": 254,
+        "line": 252,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 280,
+        "line": 278,
         "message": "use of undeclared identifier 'stack0xffffff14'"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 283,
+        "line": 281,
         "message": "use of undeclared identifier 'stack0xffffff18'"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 286,
+        "line": 284,
         "message": "use of undeclared identifier 'stack0xffffff20'"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 289,
+        "line": 287,
         "message": "use of undeclared identifier 'stack0xffffff24'"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 292,
+        "line": 290,
         "message": "use of undeclared identifier 'stack0xffffff2c'"
       }
     ],
@@ -121,18 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 723,
-    "complexity_score": 730,
+    "complexity_score": 728,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
-    "pseudocode_lines": 365,
+    "pseudocode_lines": 363,
     "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 1088
+    "total_lines": 1086
   },
   "cross_references": [
     {
@@ -153,7 +153,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0",
-    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (CKeyFramedModel *this_ptr,float angle_threshold_radians)"
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(CKeyFramedModel *this_ptr,float angle_threshold_radians)"
   },
   "function_calls": [
     {
@@ -755,245 +755,245 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 80,
       "match": "fcos",
       "text": "fVar20 = (float10)fcos((float10)angle_threshold_radians);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 125,
       "match": "(uchar *)((int)",
       "text": "(*(uchar *)((int)local_50 + (int)puVar2) == puVar2[local_48])))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 139,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_TriangleMatchTableA + local_44) * 0xc + 0x18)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 141,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_TriangleMatchTableB + iVar14) * 0xc + 0x18))",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 163,
+      "line": 161,
       "match": "&stack0xffffff14",
       "text": "*(uint *)(&stack0xffffff14 + (uint)bVar19 * -8) = *puVar16;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 165,
+      "line": 163,
       "match": "&stack0xffffff18",
       "text": "*(uint *)(&stack0xffffff18 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 171,
+      "line": 169,
       "match": "&stack0xffffff20",
       "text": "*(uint *)(&stack0xffffff20 + (uint)bVar19 * -8) = *puVar16;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 172,
+      "line": 170,
       "match": "&stack0xffffff24",
       "text": "*(uint *)(&stack0xffffff24 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 177,
+      "line": 175,
       "match": "&stack0xffffff2c",
       "text": "*(uint *)(&stack0xffffff2c + (uint)bVar19 * -8) = *puVar16;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 178,
+      "line": 176,
       "match": "&stack0xffffff30",
       "text": "*(uint *)(&stack0xffffff30 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 184,
+      "line": 182,
       "match": "&stack0xffffff38",
       "text": "*(uint *)(&stack0xffffff38 + (uint)bVar19 * -8) = *puVar16;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 185,
+      "line": 183,
       "match": "&stack0xffffff3c",
       "text": "*(uint *)(&stack0xffffff3c + (uint)bVar19 * -8 + (uint)bVar19 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 204,
+      "line": 202,
       "match": "SUB84",
       "text": "local_108 = SUB84(dVar21,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 205,
+      "line": 203,
       "match": "&stack0xffffff10",
       "text": "local_90 = local_24 + *(int *)((int)&stack0xffffff10 + local_20) * 3;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
+      "line": 203,
       "match": "(int *)((int)",
       "text": "local_90 = local_24 + *(int *)((int)&stack0xffffff10 + local_20) * 3;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 207,
+      "line": 205,
       "match": "&stack0xffffff10",
       "text": "*(int *)((int)&stack0xffffff10 + ((iVar14 + 1) % 4) * 0xc) *",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 205,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&stack0xffffff10 + ((iVar14 + 1) % 4) * 0xc) *",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 210,
+      "line": 208,
       "match": "&stack0xffffff10",
       "text": "*(int *)((int)&stack0xffffff10 + (iVar9 % 4) * 0xc) * 3;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
+      "line": 208,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&stack0xffffff10 + (iVar9 % 4) * 0xc) * 3;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 212,
       "match": "SQRT",
       "text": "fVar7 = SQRT(fVar8 * fVar8 + fVar5 * fVar5 + fVar6 * fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 228,
+      "line": 226,
       "match": "(uint *)((int)",
       "text": "local_18 = (uint *)((int)ppCVar18[2] - (int)ppCVar13[2]);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 230,
+      "line": 228,
       "match": "SQRT",
       "text": "fVar7 = SQRT(fVar8 * fVar8 + fVar5 * fVar5 + fVar6 * fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 247,
+      "line": 245,
       "match": "SUB84",
       "text": "uStack_104 = SUB84(dVar21,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 261,
+      "line": 259,
       "match": "CONCAT44",
       "text": "dVar21 = (double)CONCAT44(uStack_104,local_108) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 262,
+      "line": 260,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(uStack_fc,local_100);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 273,
+      "line": 271,
       "match": "&stack0xffffff14",
       "text": "*puVar16 = *(uint *)(&stack0xffffff14 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 276,
+      "line": 274,
       "match": "&stack0xffffff18",
       "text": "(&stack0xffffff18 + (uint)bVar19 * -8 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 279,
+      "line": 277,
       "match": "&stack0xffffff20",
       "text": "*puVar16 = *(uint *)(&stack0xffffff20 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 282,
+      "line": 280,
       "match": "&stack0xffffff24",
       "text": "(&stack0xffffff24 + (uint)bVar19 * -8 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 285,
+      "line": 283,
       "match": "&stack0xffffff2c",
       "text": "*puVar16 = *(uint *)(&stack0xffffff2c + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 288,
+      "line": 286,
       "match": "&stack0xffffff30",
       "text": "(&stack0xffffff30 + (uint)bVar19 * -8 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 291,
+      "line": 289,
       "match": "&stack0xffffff38",
       "text": "*puVar16 = *(uint *)(&stack0xffffff38 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 294,
+      "line": 292,
       "match": "&stack0xffffff3c",
       "text": "(&stack0xffffff3c + (uint)bVar19 * -8 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 315,
+      "line": 313,
       "match": "(uint *)((int)",
       "text": "local_50 = (uint *)((int)local_50 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 342,
+      "line": 340,
       "match": "(uint *)((int)",
       "text": "local_18 = (uint *)((int)this_ptr->poly_texture_index_list + iVar15);",
       "type": "pointer_cast"

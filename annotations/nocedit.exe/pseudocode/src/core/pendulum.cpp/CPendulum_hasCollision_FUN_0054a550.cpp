@@ -2,13 +2,11 @@
 // Address: 0054a550
 // Address Range: [[0054a550, 0054a58e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_pendulum_cpp_CPendulum_hasCollision_FUN_0054a550 (CPendulum *this_ptr,SCollisionInfo *collision_info)
+// Signature: int __cdecl core_pendulum_cpp_CPendulum_hasCollision_FUN_0054a550(CPendulum *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-int __cdecl
-core_pendulum_cpp_CPendulum_hasCollision_FUN_0054a550
-          (CPendulum *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_pendulum_cpp_CPendulum_hasCollision_FUN_0054a550(CPendulum *this_ptr,SCollisionInfo *collision_info)
 
 {
   CKeyFramedModel *pCVar1;

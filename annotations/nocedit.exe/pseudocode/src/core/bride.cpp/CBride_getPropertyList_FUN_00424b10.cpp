@@ -2,13 +2,11 @@
 // Address: 00424b10
 // Address Range: [[00424b10, 00424b42]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bride_cpp_CBride_getPropertyList_FUN_00424b10 (CBride *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_bride_cpp_CBride_getPropertyList_FUN_00424b10(CBride *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_bride_cpp_CBride_getPropertyList_FUN_00424b10
-          (CBride *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_bride_cpp_CBride_getPropertyList_FUN_00424b10(CBride *this_ptr,CActorPropertyList *property_list)
 
 {
   int in_stack_0000000c;

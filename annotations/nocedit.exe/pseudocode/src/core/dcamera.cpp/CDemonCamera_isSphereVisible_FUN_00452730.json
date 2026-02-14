@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 103,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 46,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 204
+    "total_lines": 202
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00452730",
-    "signature": "int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00452730 (CDemonCamera *this_ptr,CVector3f *position,float radius)"
+    "signature": "int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00452730(CDemonCamera *this_ptr,CVector3f *position,float radius)"
   },
   "function_calls": [],
   "globals": [
@@ -173,35 +173,35 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 17,
       "match": "ROUND",
       "text": "iVar1 = (int)ROUND(256.0f * radius);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 18,
       "match": "ROUND",
       "text": "iVar2 = (int)ROUND(256.0f * radius);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 19,
       "match": "ROUND",
       "text": "uVar10 = (int)ROUND(position->x * 256.0f) - (this_ptr->camera_origin).x;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 20,
       "match": "ROUND",
       "text": "uVar6 = (int)ROUND(position->y * 256.0f) - (this_ptr->camera_origin).y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 21,
       "match": "ROUND",
       "text": "uVar11 = (int)ROUND(position->z * 256.0f) - (this_ptr->camera_origin).z;",
       "type": "decompiler_intrinsic"

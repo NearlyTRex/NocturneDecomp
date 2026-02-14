@@ -2,13 +2,11 @@
 // Address: 004cb6e0
 // Address Range: [[004cb6e0, 004cb74e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0 (CFlameCan *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0(CFlameCan *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0
-          (CFlameCan *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0(CFlameCan *this_ptr,CActorPropertyList *property_list)
 
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);

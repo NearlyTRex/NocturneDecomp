@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_cloth_cpp_CCloth_addFilesToExtract_FUN_0043e0a0(CCloth *this_ptr,_FILE *file_handle)
+void __cdecl core_cloth_cpp_CCloth_addFilesToExtract_FUN_0043e0a0(CCloth *this_ptr,_FILE *file_handle)
 
 {
   _fprintf(file_handle,"models\\%s\n",this_ptr);

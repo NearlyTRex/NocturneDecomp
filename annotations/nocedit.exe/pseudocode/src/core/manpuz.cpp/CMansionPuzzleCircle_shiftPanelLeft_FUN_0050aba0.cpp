@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(CMansionPuzzleCircle *this_ptr)
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(CMansionPuzzleCircle *this_ptr)
 
 {
   char *pcVar1;

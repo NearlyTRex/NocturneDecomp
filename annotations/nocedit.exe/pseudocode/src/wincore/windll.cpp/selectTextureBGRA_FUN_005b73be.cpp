@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-wincore_windll_cpp_selectTextureBGRA_FUN_005b73be(SMRGLTextureBasic *texture_info,int flags)
+int __cdecl wincore_windll_cpp_selectTextureBGRA_FUN_005b73be(SMRGLTextureBasic *texture_info,int flags)
 
 {
   int iVar1;

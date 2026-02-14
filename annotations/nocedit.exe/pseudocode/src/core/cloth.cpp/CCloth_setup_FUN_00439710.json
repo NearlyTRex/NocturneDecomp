@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 716,
-    "complexity_score": 499,
+    "complexity_score": 496,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 1,
-    "pseudocode_lines": 359,
+    "pseudocode_lines": 356,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 1075
+    "total_lines": 1072
   },
   "cross_references": [
     {
@@ -84,7 +84,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_cloth.cpp_CCloth_setup_FUN_00439710",
-    "signature": "void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710 (CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr )"
+    "signature": "void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr)"
   },
   "function_calls": [
     {
@@ -604,91 +604,91 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 87,
       "match": "(int *)((int)",
       "text": "*(int *)((int)this_ptr->vertex_sort_buffer + iVar13) = iVar8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 148,
       "match": "(CVector3f *)((int)",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 156,
       "match": "(CVector3f *)((int)",
       "text": "pCVar12 = (CVector3f *)((int)(pCVar12 + 0x17) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 157,
       "match": "(CVector3f *)((int)",
       "text": "pCVar9 = (CVector3f *)((int)(pCVar9 + 0x17) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 191,
+      "line": 188,
       "match": "(int *)((int)",
       "text": "piVar20 = (int *)((int)(this_ptr->model).vertex_list + iVar13);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 192,
+      "line": 189,
       "match": "(CVector3f *)((int)",
       "text": "pCVar12 = (CVector3f *)((int)(pCVar12 + 0x17) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 193,
+      "line": 190,
       "match": "ROUND",
       "text": "*piVar20 = (int)ROUND((pSVar17->position).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 194,
+      "line": 191,
       "match": "ROUND",
       "text": "piVar20[1] = (int)ROUND((pSVar17->position).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 195,
+      "line": 192,
       "match": "ROUND",
       "text": "piVar20[2] = (int)ROUND((pSVar17->position).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 299,
+      "line": 296,
       "match": "(int *)((int)",
       "text": "for (local_24 = 0; local_24 < *(int *)((int)local_84->vertex_count + local_50);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 301,
+      "line": 298,
       "match": "(int *)((int)",
       "text": "pfVar18 = (float *)(local_44 + *(int *)((int)local_84->vertex_data_ptr + local_50));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 311,
+      "line": 308,
       "match": "(byte *)((int)",
       "text": "(&local_d8,pCVar12,local_58 + *(byte *)((int)pfVar18 + 1));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 312,
+      "line": 309,
       "match": "(float *)((int)",
       "text": "pfVar18 = (float *)((int)pfVar18 + 1);",
       "type": "pointer_cast"

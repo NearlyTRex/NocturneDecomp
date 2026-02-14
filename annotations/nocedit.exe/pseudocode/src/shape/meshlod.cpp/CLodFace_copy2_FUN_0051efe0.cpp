@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CLodFace * __cdecl
-shape_meshlod_cpp_CLodFace_copy2_FUN_0051efe0(CLodFace *destination,CLodFace *source)
+CLodFace * __cdecl shape_meshlod_cpp_CLodFace_copy2_FUN_0051efe0(CLodFace *destination,CLodFace *source)
 
 {
   int iVar1;

@@ -6,94 +6,89 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_ptr)
 
 {
   CBoundingBox3D *pCVar1;
-  float fVar2;
-  int iVar3;
-  CVector3f *pCVar4;
+  int iVar2;
+  CVector3f *pCVar3;
   CVector3i *rotation;
   CKeyFramedModelInstance *this_ptr_00;
-  CDemonActor *in_stack_0000000c;
-  float fStack_70;
-  float in_stack_ffffff98;
-  float in_stack_ffffff9c;
-  float in_stack_ffffffa0;
-  CVector3f CStack_40;
-  CVector3f CStack_34;
-  CVector3f CStack_28;
-  CVector3f CStack_1c;
   CVector3i *position;
+  float in_stack_ffffff88;
+  float in_stack_ffffff8c;
+  float in_stack_ffffff90;
+  CBoundingBox3D local_60;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
+  int iStack_18;
+  CVector3i *pCStack_14;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-  pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                     (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffa0);
-  fVar2 = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar1);
-  in_stack_0000000c[0xc].orient_matrix.m[1].y = fVar2;
-  if (fVar2 != 0.0) {
-    iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-    if ((iVar3 == 0) || (g_CGamePtr->block_auto_save != 0)) {
+  pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_60);
+  iStack_18 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar1);
+  *(int *)(this_ptr->unk3 + 0x18) = iStack_18;
+  if (iStack_18 != 0) {
+    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+    if ((iVar2 == 0) || (g_CGamePtr->block_auto_save != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-                ((CKeyFramedModelInstance *)(in_stack_0000000c + 1),0.0,-1);
-      iVar3 = 0;
-      if (0 < (int)in_stack_0000000c[6].previous_transform_state.position.x) {
-        this_ptr_00 = (CKeyFramedModelInstance *)
-                      &in_stack_0000000c[6].previous_transform_state.dirty_flags;
-        position = (CVector3i *)(in_stack_0000000c[8].actor_name + 0xc);
-        pCVar4 = &in_stack_0000000c[8].location.position;
-        rotation = (CVector3i *)(in_stack_0000000c[8].actor_name + 0x18);
+                (&this_ptr->model,0.0,-1);
+      iVar2 = 0;
+      if (0 < this_ptr->tire_count) {
+        this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr->unk2 + 0x14);
+        pCStack_14 = (CVector3i *)(this_ptr->unk2 + 400);
+        position = (CVector3i *)(this_ptr->unk2 + 0x1a8);
+        rotation = (CVector3i *)(this_ptr->unk2 + 0x19c);
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr2,(CVector3i *)&pCVar4->y,rotation);
+                    (g_CDemonRendererPtr2,position,rotation);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr2,position,(CVector3i *)0x0);
+                    (g_CDemonRendererPtr2,pCStack_14,(CVector3i *)0x0);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                     (this_ptr_00,0.0,-1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-          position = (CVector3i *)&position[0x24].y;
-          iVar3 = iVar3 + 1;
+          pCStack_14 = (CVector3i *)&pCStack_14[0x24].y;
+          iVar2 = iVar2 + 1;
           rotation = (CVector3i *)&rotation[0x24].y;
-          pCVar4 = (CVector3f *)(&pCVar4->y + 0x6c);
+          position = (CVector3i *)&position[0x24].y;
           this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
-        } while (iVar3 < (int)in_stack_0000000c[6].previous_transform_state.position.x);
+        } while (iVar2 < this_ptr->tire_count);
       }
     }
     else {
-      pCVar1 = (*((in_stack_0000000c->vtable)._ub)->getBoundingBox)
-                         (in_stack_0000000c,(CBoundingBox3D *)&fStack_70);
-      fStack_70 = 8.681796e-39;
+      pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                         (&this_ptr->base,(CBoundingBox3D *)&stack0xffffff88);
       core_box_cpp_CBoundingBox3D_render_FUN_004210b0
-                (pCVar1,(int)in_stack_ffffff98,(int)in_stack_ffffff9c,(int)in_stack_ffffffa0);
+                (pCVar1,(int)in_stack_ffffff88,(int)in_stack_ffffff8c,(int)in_stack_ffffff90);
     }
   }
-  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);
-  if ((in_stack_0000000c[0xc].orient_matrix.m[1].y != 0.0) &&
-     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
-     iVar3 == 0)) {
-    CStack_28.z = 6.0;
-    CStack_1c.z = 6.0;
-    CStack_28.x = 1.14;
-    CStack_28.y = -0.164;
-    CStack_1c.x = -1.14;
-    CStack_1c.y = -0.164;
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (in_stack_0000000c,&CStack_40,&CStack_28);
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
+  if ((*(int *)(this_ptr->unk3 + 0x18) != 0) &&
+     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     iVar2 == 0)) {
+    CStack_30.z = 6.0;
+    CStack_24.z = 6.0;
+    CStack_30.x = 1.14;
+    CStack_30.y = -0.164;
+    CStack_24.x = -1.14;
+    CStack_24.y = -0.164;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(&this_ptr->base,&CStack_48,&CStack_30)
+    ;
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
-              (&CStack_40,(CVector3i *)&(in_stack_0000000c->orient).vec,56.0,10.0);
-    pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                       (in_stack_0000000c,&CStack_34,&CStack_1c);
-    if (&CStack_40 != pCVar4) {
-      CStack_40.x = pCVar4->x;
-      CStack_40.y = pCVar4->y;
-      CStack_40.z = pCVar4->z;
+              (&CStack_48,(CVector3i *)&(this_ptr->base).orient.vec,56.0,10.0);
+    pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       (&this_ptr->base,&CStack_3c,&CStack_24);
+    if (&CStack_48 != pCVar3) {
+      CStack_48.x = pCVar3->x;
+      CStack_48.y = pCVar3->y;
+      CStack_48.z = pCVar3->z;
     }
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
-              (&CStack_40,(CVector3i *)&(in_stack_0000000c->orient).vec,56.0,10.0);
-    return (int)fVar2;
+              (&CStack_48,(CVector3i *)&(this_ptr->base).orient.vec,56.0,10.0);
+    return iStack_18;
   }
-  return (int)fVar2;
+  return iStack_18;
 }

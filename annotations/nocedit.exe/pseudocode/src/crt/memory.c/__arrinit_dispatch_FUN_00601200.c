@@ -2,13 +2,11 @@
 // Address: 00601200
 // Address Range: [[00601200, 00601231]]
 // Convention: __cdecl
-// Signature: void * __cdecl crt_memory_c___arrinit_dispatch_FUN_00601200 (void *array_ptr,int element_count,WatcomTypeInfo *type_info)
+// Signature: void * __cdecl crt_memory_c___arrinit_dispatch_FUN_00601200(void *array_ptr,int element_count,WatcomTypeInfo *type_info)
 
 #include "nocturne.h"
 
-void * __cdecl
-__arrinit_dispatch
-          (void *array_ptr,int element_count,WatcomTypeInfo *type_info)
+void * __cdecl __arrinit_dispatch(void *array_ptr,int element_count,WatcomTypeInfo *type_info)
 
 {
   code *pcVar1;
@@ -22,7 +20,7 @@ __arrinit_dispatch
     else {
       pcVar1 = __arrinit;
     }
-    pvVar2 = (void *)(*pcVar1)();
+    pvVar2 = (void *)(*pcVar1)(array_ptr,element_count,type_info);
   }
   return pvVar2;
 }

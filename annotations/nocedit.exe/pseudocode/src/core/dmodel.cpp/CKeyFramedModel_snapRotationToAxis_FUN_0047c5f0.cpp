@@ -2,13 +2,11 @@
 // Address: 0047c5f0
 // Address Range: [[0047c5f0, 0047c92c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (CKeyFramedModel *this_ptr,CVector3f *rotation_angles)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0(CKeyFramedModel *this_ptr,CVector3f *rotation_angles)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
-          (CKeyFramedModel *this_ptr,CVector3f *rotation_angles)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0(CKeyFramedModel *this_ptr,CVector3f *rotation_angles)
 
 {
   float fVar1;

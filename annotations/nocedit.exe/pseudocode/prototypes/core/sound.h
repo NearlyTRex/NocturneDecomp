@@ -25,7 +25,7 @@ void __cdecl CSound::findRandomSoundFile(CSound *this_ptr,char *out_result,char 
 
 // Original: core_sound.cpp_playSfxInternal_FUN_005b1fd0
 // Address: 005b1fd0
-uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker, uint flags);
+uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
 
 // Original: core_sound.cpp_resetTrainSounds_FUN_005b26f0
 // Address: 005b26f0
@@ -37,7 +37,7 @@ void __cdecl processTrainSounds(void);
 
 // Original: core_sound.cpp_stopTrainSounds_FUN_005b2ca0
 // Address: 005b2ca0
-void stopTrainSounds(void);
+void __watcallRegister stopTrainSounds(void);
 
 // Original: core_sound.cpp_CSound_ctor_FUN_005b2ce0
 // Address: 005b2ce0
@@ -101,7 +101,7 @@ uint __cdecl CSound::playActorPositionalSoundWithDelay(CSound *this_ptr,CDemonAc
 
 // Original: core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30
 // Address: 005b3b30
-uint __cdecl CSound::playTrackedActorSoundWithDelay(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker, float delay);
+uint __cdecl CSound::playTrackedActorSoundWithDelay(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,float delay);
 
 // Original: core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 // Address: 005b3b80

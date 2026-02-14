@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SClothVertex * __cdecl
-core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVertex *this_ptr,uint flags)
+SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVertex *this_ptr,uint flags)
 
 {
   CVector3f *pCVar1;

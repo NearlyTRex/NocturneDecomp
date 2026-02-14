@@ -2,14 +2,11 @@
 // Address: 004a0970
 // Address Range: [[004a0970, 004a0dc2]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970 (CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content, int window_flags)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,int window_flags)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970
-          (CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,
-          int window_flags)
+void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,int window_flags)
 
 {
   SWindow *pSVar1;

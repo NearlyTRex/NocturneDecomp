@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonCamera * __cdecl
-core_dcamera_cpp_CDemonCamera_dtor_FUN_0044c090(CDemonCamera *this_ptr,uint flags)
+CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_dtor_FUN_0044c090(CDemonCamera *this_ptr,uint flags)
 
 {
   CDemonCamera *ptr;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0 (CStrList *str_list,char *dialog_title,int dialog_mode)
+; __cdecl int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_list,char *dialog_title,int dialog_mode)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   str_list
@@ -581,7 +581,7 @@ section .text
     JZ 0x0049ef7d                       ; 0049ef79
         ;   XREF to: 0049ef7d (CONDITIONAL_JUMP)  ; LAB_0049ef7d
     MOV EDI,EBX                         ; 0049ef7b
-    CMP ESI,dword ptr [0x02cf2b00]      ; 0049ef7d | g_ActiveButton
+    CMP ESI,dword ptr [0x02cf2b00]      ; 0049ef7d | g_ActiveControl
         ;   Label: LAB_0049ef7d
     JNZ 0x0049ef8c                      ; 0049ef83
         ;   XREF to: 0049ef8c (CONDITIONAL_JUMP)  ; LAB_0049ef8c

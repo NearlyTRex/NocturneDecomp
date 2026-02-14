@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_windll_cpp_renderScanlineSaved_FUN_005b5716 (void *scanline_data,int scanline_y,int render_flags)
+; __cdecl void __cdecl wincore_windll_cpp_renderScanlineSaved_FUN_005b5716(void *scanline_data,int scanline_y,int render_flags)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   scanline_data

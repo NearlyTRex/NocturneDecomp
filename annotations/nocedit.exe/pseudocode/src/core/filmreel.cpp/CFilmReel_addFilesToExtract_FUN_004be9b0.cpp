@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_filmreel_cpp_CFilmReel_addFilesToExtract_FUN_004be9b0(CFilmReel *this_ptr,_FILE *file_handle)
+void __cdecl core_filmreel_cpp_CFilmReel_addFilesToExtract_FUN_004be9b0(CFilmReel *this_ptr,_FILE *file_handle)
 
 {
   CKeyFramedModel *pCVar1;

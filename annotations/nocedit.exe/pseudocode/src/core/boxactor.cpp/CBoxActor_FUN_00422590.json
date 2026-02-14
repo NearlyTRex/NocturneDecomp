@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 28,
+        "line": 29,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 28,
+        "line": 29,
         "message": "expected expression"
       }
     ],
@@ -19,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 46,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 33,
     "suspect_count": 1,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 98
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -151,9 +151,9 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
+      "line": 22,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(this_ptr->constrain_extents_actor + 0x154) + 0x14))();",
+      "text": "(**(code **)(*(int *)(this_ptr->constrain_extents_actor + 0x154) + 0x14))",
       "type": "unresolved_funcptr"
     }
   ]

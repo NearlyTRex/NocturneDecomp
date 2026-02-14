@@ -2,13 +2,11 @@
 // Address: 004becd0
 // Address Range: [[004becd0, 004becfd]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004becd0 (CFilmProjector *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004becd0(CFilmProjector *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004becd0
-          (CFilmProjector *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004becd0(CFilmProjector *this_ptr,CBoundingBox3D *out_box)
 
 {
   (out_box->min).y = 0.0;

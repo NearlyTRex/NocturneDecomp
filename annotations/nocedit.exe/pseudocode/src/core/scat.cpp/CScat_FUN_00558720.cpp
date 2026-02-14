@@ -19,7 +19,8 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
   float in_stack_00000008;
   int in_stack_0000000c;
   float local_13c;
-  CVector3f local_138 [12];
+  CVector3f local_138 [10];
+  byte auStack_c0 [24];
   CVector3f CStack_a8;
   CVector3f CStack_9c;
   float fStack_90;
@@ -94,9 +95,10 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
   }
   if (this_ptr->unk8 == 0) goto LAB_005587bd;
   __arrinit(local_138,10,&g_CVectorTypeInfo);
-  iVar4 = (**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x4c))();
+  iVar4 = (**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x4c))(this_ptr->unk8,local_138);
   if (iVar4 < 1) {
-    pfVar6 = (float *)(**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x14))();
+    pfVar6 = (float *)(**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x14))
+                                (this_ptr->unk8,auStack_c0);
     fStack_90 = *pfVar6 + pfVar6[3];
     fStack_8c = pfVar6[1] + pfVar6[4];
     CStack_78.x = fStack_90 * 0.5f;

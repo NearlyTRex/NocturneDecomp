@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 33,
-        "line": 148,
+        "line": 145,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 312,
-    "complexity_score": 236,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 141,
+    "pseudocode_lines": 138,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "unknown_field"
     ],
-    "total_lines": 453
+    "total_lines": 450
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0",
-    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0 (CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel, int granule,SMpegFrame *frame)"
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame)"
   },
   "function_calls": [
     {
@@ -224,49 +224,49 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 54,
       "match": "CONCAT22",
       "text": "local_1a = CONCAT22(1,(ushort)local_1a);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 68,
       "match": "CONCAT22",
       "text": "local_1a = CONCAT22(2,(ushort)local_1a);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 90,
       "match": "CONCAT22",
       "text": "local_1a = CONCAT22(3,(ushort)local_1a);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 103,
       "match": "CONCAT22",
       "text": "local_1a = CONCAT22(4,(ushort)local_1a);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
+      "line": 115,
       "match": "CONCAT22",
       "text": "local_1a = CONCAT22(5,(ushort)local_1a);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 141,
+      "line": 138,
       "match": "._2_2_",
       "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 138,
       "match": "CONCAT22",
       "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
       "type": "decompiler_intrinsic"

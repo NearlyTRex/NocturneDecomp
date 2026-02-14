@@ -9,7 +9,7 @@
 void __cdecl staticFinal(void)
 
 {
-  FUN_00608fdc();
+  FUN_00608fdc(0);
   FUN_006093e8();
   return;
 }

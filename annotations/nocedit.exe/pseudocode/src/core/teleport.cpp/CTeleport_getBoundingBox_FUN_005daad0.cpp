@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_teleport_cpp_CTeleport_getBoundingBox_FUN_005daad0(CTeleport *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_teleport_cpp_CTeleport_getBoundingBox_FUN_005daad0(CTeleport *this_ptr,CBoundingBox3D *out_box)
 
 {
   float fVar1;

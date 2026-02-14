@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

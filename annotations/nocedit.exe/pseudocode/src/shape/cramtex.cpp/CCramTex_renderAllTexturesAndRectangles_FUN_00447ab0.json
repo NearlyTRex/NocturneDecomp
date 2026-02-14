@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 22,
+        "line": 20,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 72,
+    "complexity_score": 70,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 17,
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 45,
     "suspect_count": 2,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 195
+    "total_lines": 193
   },
   "cross_references": [],
   "function": {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_cramtex.cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0",
-    "signature": "void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0 (CCramTex *this_ptr,int x,int y,int width,int height,int render_mode)"
+    "signature": "void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0(CCramTex *this_ptr,int x,int y,int width,int height,int render_mode)"
   },
   "function_calls": [
     {
@@ -275,14 +275,14 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_ffffffe8",
       "text": "int in_stack_ffffffe8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_ffffffe8",
       "text": "(this_ptr,x,y,width,height,in_stack_ffffffe8);",
       "type": "stack_param"

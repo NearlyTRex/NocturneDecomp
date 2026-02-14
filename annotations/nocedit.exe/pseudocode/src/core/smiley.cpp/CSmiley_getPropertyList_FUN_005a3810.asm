@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810 (CSmiley *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810(CSmiley *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CSmiley *        Stack[0x4]:4   this_ptr

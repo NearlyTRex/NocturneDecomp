@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CMatrix3x4f * __cdecl
-core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005f50c0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b)
+CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005f50c0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b)
 
 {
   int iVar1;

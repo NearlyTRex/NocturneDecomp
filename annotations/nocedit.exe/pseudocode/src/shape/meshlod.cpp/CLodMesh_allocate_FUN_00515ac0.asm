@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0 (CLodMesh *this_ptr,int vertex_count,int tri_count,int submesh_count)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr,int vertex_count,int tri_count,int submesh_count)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

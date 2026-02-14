@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 208,
+    "complexity_score": 206,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 14,
-    "pseudocode_lines": 163,
+    "pseudocode_lines": 161,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 532
+    "total_lines": 530
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670",
-    "signature": "void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset)"
+    "signature": "void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset)"
   },
   "function_calls": [
     {
@@ -305,28 +305,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_NoiseTable + iVar7) = (uVar4 & 0x1f) - 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 36,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)g_ScreenBufferArray + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(uint *)((int)",
       "text": "puVar8 = (uint *)((int)g_ScreenBufferArray[iVar7] + screen_x * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 116,
       "match": "(ushort *)((int)",
       "text": "puVar9 = (ushort *)((int)g_ScreenBufferArray[iVar7] + screen_x * 2);",
       "type": "pointer_cast"

@@ -2,14 +2,11 @@
 // Address: 004c7b20
 // Address Range: [[004c7b20, 004c7b77]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20 (CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence, int alpha_value)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 
 #include "nocturne.h"
 
-void __cdecl
-core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-          (CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,
-          int alpha_value)
+void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 
 {
   CSmokeParticle *this_ptr_00;

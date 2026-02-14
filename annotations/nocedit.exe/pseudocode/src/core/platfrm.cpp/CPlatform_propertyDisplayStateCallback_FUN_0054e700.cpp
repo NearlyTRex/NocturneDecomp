@@ -2,13 +2,11 @@
 // Address: 0054e700
 // Address Range: [[0054e700, 0054e758]]
 // Convention: __cdecl
-// Signature: void __cdecl core_platfrm_cpp_CPlatform_propertyDisplayStateCallback_FUN_0054e700 (CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_propertyDisplayStateCallback_FUN_0054e700(CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_platfrm_cpp_CPlatform_propertyDisplayStateCallback_FUN_0054e700
-          (CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_platfrm_cpp_CPlatform_propertyDisplayStateCallback_FUN_0054e700(CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

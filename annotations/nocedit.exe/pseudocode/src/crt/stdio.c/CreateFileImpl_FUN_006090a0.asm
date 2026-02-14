@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl HANDLE __cdecl crt_stdio_c_CreateFileImpl_FUN_006090a0 (char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)
+; __cdecl HANDLE __cdecl crt_stdio_c_CreateFileImpl_FUN_006090a0(char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

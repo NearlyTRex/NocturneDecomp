@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 31,
+        "line": 30,
         "message": "use of undeclared identifier 'stack0xfffffff4'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 38,
+    "complexity_score": 37,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 76
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -208,7 +208,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 23,
       "match": "&stack0xfffffff4",
       "text": "} while (pbVar4 != &stack0xfffffff4);",
       "type": "stack_ref"

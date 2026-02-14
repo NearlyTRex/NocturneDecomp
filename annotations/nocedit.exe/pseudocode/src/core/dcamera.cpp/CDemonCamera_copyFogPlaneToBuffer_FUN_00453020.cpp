@@ -2,13 +2,11 @@
 // Address: 00453020
 // Address Range: [[00453020, 00453152]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020 (CDemonCamera *this_ptr,int plane_index)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(CDemonCamera *this_ptr,int plane_index)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020
-          (CDemonCamera *this_ptr,int plane_index)
+void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(CDemonCamera *this_ptr,int plane_index)
 
 {
   int iVar1;

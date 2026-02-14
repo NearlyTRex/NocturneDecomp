@@ -2,13 +2,13 @@
 // Address: 0060239a
 // Address Range: [[0060239a, 0060239e]]
 // Convention: __watcallRegister
-// Signature: void entry(void)
+// Signature: void __watcallRegister entry(void)
 
 #include "nocturne.h"
 
 /* WARNING: Unable to track spacebase fully for stack */
 
-void entry(void)
+void __watcallRegister entry(void)
 
 {
   int iVar1;

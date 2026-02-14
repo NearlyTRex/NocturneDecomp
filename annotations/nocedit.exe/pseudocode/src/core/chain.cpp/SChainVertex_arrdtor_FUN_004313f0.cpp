@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SChainVertex * __cdecl
-core_chain_cpp_SChainVertex_arrdtor_FUN_004313f0(SChainVertex *objs,uint flags)
+SChainVertex * __cdecl core_chain_cpp_SChainVertex_arrdtor_FUN_004313f0(SChainVertex *objs,uint flags)
 
 {
   SChainVertex *pSVar1;

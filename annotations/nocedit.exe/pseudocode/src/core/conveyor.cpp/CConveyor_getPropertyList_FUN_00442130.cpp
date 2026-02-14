@@ -2,13 +2,11 @@
 // Address: 00442130
 // Address Range: [[00442130, 004421b5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_conveyor_cpp_CConveyor_getPropertyList_FUN_00442130 (CConveyor *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_conveyor_cpp_CConveyor_getPropertyList_FUN_00442130(CConveyor *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_conveyor_cpp_CConveyor_getPropertyList_FUN_00442130
-          (CConveyor *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_conveyor_cpp_CConveyor_getPropertyList_FUN_00442130(CConveyor *this_ptr,CActorPropertyList *property_list)
 
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290((CDemonActor *)this_ptr,property_list);

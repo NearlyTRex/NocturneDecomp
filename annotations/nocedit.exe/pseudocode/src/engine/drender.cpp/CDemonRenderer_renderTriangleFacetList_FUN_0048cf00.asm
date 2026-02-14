@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags,int primitive_stride)
+; __cdecl int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags,int primitive_stride)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -29,7 +29,7 @@
 ;   int g_CullingMode
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

@@ -17,7 +17,7 @@ CScript * __cdecl core_script_cpp_CScript_ctor_FUN_005597f0(CScript *this_ptr)
   ADJ(pCVar1)->dialog_entry_count = 0;
   ADJ(pCVar1)->dialog_entries = (SDialogEntry *)0x0;
   ADJ(pCVar1)->current_sfx_handle = 0;
-  ADJ(pCVar1)->unk3 = 0;
-  ADJ(pCVar1)->unk4 = (void *)0x0;
+  ADJ(pCVar1)->xref_count = 0;
+  ADJ(pCVar1)->xref_entries = (SScriptXRef *)0x0;
   return ADJ(pCVar1);
 }

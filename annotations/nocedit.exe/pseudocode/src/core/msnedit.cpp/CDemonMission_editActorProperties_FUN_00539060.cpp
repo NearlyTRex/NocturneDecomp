@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int param_2)
+void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int param_2)
 
 {
   if (param_2 != this_ptr->show_3d_viewport) {

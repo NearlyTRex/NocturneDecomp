@@ -26,7 +26,7 @@ CGore g_CGoreInstance = {};
 CPickList g_CPickList = {};
 
 // SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive DAT_02d83368 = {};
+SMRGLHeaderPrimitive SMRGLHeaderPrimitive_02d83368 = {};
 
 // char
 char g_CurrentSaveFile = {};

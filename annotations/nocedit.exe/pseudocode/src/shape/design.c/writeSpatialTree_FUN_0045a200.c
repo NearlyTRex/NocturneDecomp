@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,_FILE *output_file,int node_index)
+void __cdecl shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,_FILE *output_file,int node_index)
 
 {
   double dVar1;

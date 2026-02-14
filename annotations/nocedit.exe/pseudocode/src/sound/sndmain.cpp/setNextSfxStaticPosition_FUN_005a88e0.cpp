@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0(double pos_x,double pos_y,double pos_z)
+void __cdecl sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0(double pos_x,double pos_y,double pos_z)
 
 {
   int iVar1;

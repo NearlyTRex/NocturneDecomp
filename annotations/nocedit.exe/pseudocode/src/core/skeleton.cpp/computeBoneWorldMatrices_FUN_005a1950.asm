@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950 (SBoneTransformData *bone_data,CDeformableModelInstance *instance_ptr)
+; __cdecl void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransformData *bone_data,CDeformableModelInstance *instance_ptr)
 ;
 ; Parameters:
 ; SBoneTransformData * Stack[0x4]:4   bone_data

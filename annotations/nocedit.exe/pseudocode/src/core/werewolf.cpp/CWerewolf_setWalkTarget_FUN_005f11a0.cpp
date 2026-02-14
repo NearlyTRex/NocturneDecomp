@@ -2,13 +2,11 @@
 // Address: 005f11a0
 // Address Range: [[005f11a0, 005f11d5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_005f11a0 (CWerewolf *this_ptr,CDemonActor *target,float speed,float distance)
+// Signature: void __cdecl core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_005f11a0(CWerewolf *this_ptr,CDemonActor *target,float speed,float distance)
 
 #include "nocturne.h"
 
-void __cdecl
-core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_005f11a0
-          (CWerewolf *this_ptr,CDemonActor *target,float speed,float distance)
+void __cdecl core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_005f11a0(CWerewolf *this_ptr,CDemonActor *target,float speed,float distance)
 
 {
   SMotion *pSVar1;

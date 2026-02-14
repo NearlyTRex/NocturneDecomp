@@ -2,13 +2,11 @@
 // Address: 00450440
 // Address Range: [[00450440, 004505dc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440
-          (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 {
   int *piVar1;
@@ -31,13 +29,13 @@ core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440
   
   iVar8 = scanline_y;
   uVar7 = (int)left_edge - g_ClipTop;
-  if (((g_CameraDownscaleIterations != 1) || ((uVar7 & 1) == 0)) &&
-     ((g_CameraDownscaleIterations != 2 || ((uVar7 & 3) == 0)))) {
-    iVar15 = (int)uVar7 >> ((byte)g_CameraDownscaleIterations & 0x1f);
+  if (((g_CameraDownscaleIterations.dword != 1) || ((uVar7 & 1) == 0)) &&
+     ((g_CameraDownscaleIterations.dword != 2 || ((uVar7 & 3) == 0)))) {
+    iVar15 = (int)uVar7 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     iVar13 = (right_edge->x_current >> 0x10) - g_ClipLeft >>
-             ((byte)g_CameraDownscaleIterations & 0x1f);
+             (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     iVar16 = (*(int *)(scanline_y + 8) >> 0x10) - g_ClipLeft >>
-             ((byte)g_CameraDownscaleIterations & 0x1f);
+             (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     iVar14 = iVar13;
     if (iVar16 < iVar13) {
       scanline_y = (int)right_edge;
@@ -54,8 +52,8 @@ core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440
     iVar6 = (iVar16 - iVar14) + 1;
     iVar12 = right_edge->light_current;
     iVar11 = *(int *)(scanline_y + 0x10) - iVar12;
-    bVar4 = (byte)g_CameraDownscaleIterations & 0x1f;
-    puVar2 = g_ZBufferScanlineArray[iVar15 << ((byte)g_CameraDownscaleIterations & 0x1f)];
+    bVar4 = g_CameraDownscaleIterations.bytes[0] & 0x1f;
+    puVar2 = g_ZBufferScanlineArray[iVar15 << (g_CameraDownscaleIterations.bytes[0] & 0x1f)];
     pcVar17 = g_CameraPlaneWorkBuffer.pixels[iVar15] + iVar14;
     iVar16 = (iVar16 - iVar14) * 4;
     do {

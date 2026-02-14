@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0 (CHero *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point)
+; __cdecl int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr

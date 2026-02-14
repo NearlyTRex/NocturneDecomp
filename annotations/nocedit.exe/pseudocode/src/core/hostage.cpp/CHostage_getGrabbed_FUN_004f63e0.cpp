@@ -2,13 +2,11 @@
 // Address: 004f63e0
 // Address Range: [[004f63e0, 004f6442]]
 // Convention: __cdecl
-// Signature: int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0 (CHostage *this_ptr,CDemonActor *grabber,int grab_type)
+// Signature: int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0(CHostage *this_ptr,CDemonActor *grabber,int grab_type)
 
 #include "nocturne.h"
 
-int __cdecl
-core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0
-          (CHostage *this_ptr,CDemonActor *grabber,int grab_type)
+int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0(CHostage *this_ptr,CDemonActor *grabber,int grab_type)
 
 {
   (this_ptr->base).base.grabbed_type = grab_type;

@@ -1,43 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 103,
-        "message": "use of undeclared identifier 'stack0xfffff5d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 109,
-        "message": "use of undeclared identifier 'stack0xfffff5d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 157,
-        "message": "use of undeclared identifier 'stack0xfffff5d0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 474,
-    "complexity_score": 340,
+    "complexity_score": 254,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 35,
-    "pseudocode_lines": 190,
-    "suspect_count": 13,
+    "pseudocode_lines": 189,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 664
+    "total_lines": 663
   },
   "cross_references": [
     {
@@ -309,7 +287,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -525,95 +503,46 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "void *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "CGame *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 87,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)auStack_330 + iVar3) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 96,
-      "match": "&stack0xfffff5d0",
-      "text": "*(uint *)(&stack0xfffff5d0 + local_20) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 102,
-      "match": "&stack0xfffff5d0",
-      "text": "*(uint *)(&stack0xfffff5d0 + local_20) =",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)auStack_a30 + local_20) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 101,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)auStack_a30 + local_20) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
       "match": "(byte *)((int)",
       "text": "pbVar5 = (byte *)((int)local_18 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 145,
+      "line": 144,
       "match": "(int *)((int)",
       "text": "local_28 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 148,
       "match": "(int *)((int)",
       "text": "*(uint *)(iVar3 + *(int *)((int)g_ScreenBufferArray + local_24)) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 150,
-      "match": "&stack0xfffff5d0",
-      "text": "*(uint *)(&stack0xfffff5d0 + (uint)*pbVar5 * 4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 184,
-      "match": "in_stack_0000000c",
-      "text": "core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_0000000c",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 186,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->bitmap_filename[0] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 187,
-      "match": "unaff_EBP",
-      "text": "shape_memdbg_cpp_debugFree_FUN_0050f460(unaff_EBP,\"..\\\\core\\\\game.cpp\",0x1057);",
-      "type": "unaffected_reg"
     }
   ]
 }

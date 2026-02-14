@@ -2,13 +2,11 @@
 // Address: 005d0010
 // Address Range: [[005d0010, 005d033c]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_superopt_cpp_CPoly_rayIntersect_FUN_005d0010 (CPoly *this_ptr,CVector3d *ray_origin,CVector3d *ray_end,CVector3d *out_hit_point)
+// Signature: int __cdecl shape_superopt_cpp_CPoly_rayIntersect_FUN_005d0010(CPoly *this_ptr,CVector3d *ray_origin,CVector3d *ray_end,CVector3d *out_hit_point)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_superopt_cpp_CPoly_rayIntersect_FUN_005d0010
-          (CPoly *this_ptr,CVector3d *ray_origin,CVector3d *ray_end,CVector3d *out_hit_point)
+int __cdecl shape_superopt_cpp_CPoly_rayIntersect_FUN_005d0010(CPoly *this_ptr,CVector3d *ray_origin,CVector3d *ray_end,CVector3d *out_hit_point)
 
 {
   double dVar1;

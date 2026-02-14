@@ -2,13 +2,11 @@
 // Address: 0048c780
 // Address Range: [[0048c780, 0048c7d3]]
 // Convention: __cdecl
-// Signature: float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 (CDemonRenderer *this_ptr,float *output)
+// Signature: float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,float *output)
 
 #include "nocturne.h"
 
-float * __cdecl
-engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-          (CDemonRenderer *this_ptr,float *output)
+float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,float *output)
 
 {
   float fVar1;

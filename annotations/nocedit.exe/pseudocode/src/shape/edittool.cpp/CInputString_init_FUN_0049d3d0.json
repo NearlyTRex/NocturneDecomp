@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 85,
+    "complexity_score": 82,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 32,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param"
     ],
-    "total_lines": 86
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CInputString_init_FUN_0049d3d0",
-    "signature": "void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0 (CInputString *this_ptr,char *source_string,int max_length,int param4,int param5, int render_mode)"
+    "signature": "void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)"
   },
   "function_calls": [
     {
@@ -140,28 +140,28 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param4",
-      "text": "(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,",
+      "text": "void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param5",
-      "text": "(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,",
+      "text": "void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 27,
       "match": "(CInputString *)((int)",
       "text": "pCVar3 = (CInputString *)((int)pCVar3 + (uint)bVar4 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 33,
       "match": "param4",
       "text": "this_ptr->mask_mode = param4;",
       "type": "unnamed_param"

@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 23,
-        "line": 35,
+        "line": 32,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 60,
+        "line": 57,
         "message": "use of undeclared identifier 'stack0xfffffca0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 71,
+        "line": 68,
         "message": "use of undeclared identifier 'stack0xfffffca0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 93,
+        "line": 90,
         "message": "use of undeclared identifier 'stack0xfffffca0'"
       }
     ],
@@ -31,11 +31,11 @@
   },
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 389,
+    "complexity_score": 386,
     "cross_reference_count": 12,
     "function_call_count": 21,
     "global_count": 23,
-    "pseudocode_lines": 209,
+    "pseudocode_lines": 206,
     "suspect_count": 16,
     "suspect_types": [
       "negative_offset",
@@ -43,7 +43,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 647
+    "total_lines": 644
   },
   "cross_references": [
     {
@@ -129,7 +129,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70",
-    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size, int show_directory)"
+    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size,int show_directory)"
   },
   "function_calls": [
     {
@@ -537,112 +537,112 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 15,
       "match": "in_stack_00000018",
       "text": "byte in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_fffffca0",
       "text": "int in_stack_fffffca0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_fffffca4",
       "text": "int in_stack_fffffca4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 37,
       "match": "in_stack_00000018",
       "text": "if ((in_stack_00000018 & 1) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 41,
       "match": "in_stack_fffffca0",
       "text": "(&local_158,pcVar8,0x14,0,in_stack_fffffca0,in_stack_fffffca4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 41,
       "match": "in_stack_fffffca4",
       "text": "(&local_158,pcVar8,0x14,0,in_stack_fffffca0,in_stack_fffffca4);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 53,
+      "line": 50,
       "match": "&stack0xfffffca0",
       "text": "pcVar8 = &stack0xfffffca0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 64,
+      "line": 61,
       "match": "&stack0xfffffca0",
       "text": "pcVar8 = &stack0xfffffca0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 86,
+      "line": 83,
       "match": "&stack0xfffffca0",
       "text": "(g_EditorFont,&stack0xfffffca0,g_ClipLeft,g_ClipTop,INT_02cf2aac,-1);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 132,
       "match": "(CInputString *)((int)",
       "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 139,
+      "line": 136,
       "match": "pCVar7[-1].",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 136,
       "match": "(char *)((int)",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 153,
       "match": "(CInputString *)((int)",
       "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 160,
+      "line": 157,
       "match": "pCVar7[-1].",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 157,
       "match": "(char *)((int)",
       "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
+      "line": 174,
       "match": "(CInputString *)((int)",
       "text": "pCVar6 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"

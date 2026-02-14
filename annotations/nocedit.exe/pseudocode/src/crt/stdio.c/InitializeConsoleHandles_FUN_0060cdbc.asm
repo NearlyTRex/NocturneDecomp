@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void crt_stdio_c_InitializeConsoleHandles_FUN_0060cdbc(void)
+; __watcallRegister void __watcallRegister crt_stdio_c_InitializeConsoleHandles_FUN_0060cdbc(void)
 ;
 ;
 ; XREF[2]:

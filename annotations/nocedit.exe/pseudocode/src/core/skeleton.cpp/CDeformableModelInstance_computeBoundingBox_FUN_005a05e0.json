@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 55,
+        "line": 53,
         "message": "use of undeclared identifier 'stack0xffffffc4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 56,
+        "line": 54,
         "message": "use of undeclared identifier 'stack0xffffffc8'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 151,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 91,
+    "pseudocode_lines": 89,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 253
+    "total_lines": 251
   },
   "cross_references": [
     {
@@ -49,7 +49,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0 (CDeformableModelInstance *this_ptr)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(CDeformableModelInstance *this_ptr)"
   },
   "function_calls": [
     {
@@ -259,35 +259,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(int *)((int)",
       "text": "piVar11 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 48,
+      "line": 46,
       "match": "&stack0xffffffc4",
       "text": "*(int *)((int)&stack0xffffffc4 + (uint)bVar13 * -8) = *piVar12;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 46,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&stack0xffffffc4 + (uint)bVar13 * -8) = *piVar12;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 49,
+      "line": 47,
       "match": "&stack0xffffffc8",
       "text": "*(int *)((int)&stack0xffffffc8 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 47,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&stack0xffffffc8 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =",
       "type": "pointer_cast"

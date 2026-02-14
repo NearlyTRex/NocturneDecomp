@@ -2,13 +2,11 @@
 // Address: 005a0430
 // Address Range: [[005a0430, 005a044a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430 (CDeformableModelInstance *this_ptr)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430
-          (CDeformableModelInstance *this_ptr)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430(CDeformableModelInstance *this_ptr)
 
 {
   CDeformableModelInstance *pCVar1;

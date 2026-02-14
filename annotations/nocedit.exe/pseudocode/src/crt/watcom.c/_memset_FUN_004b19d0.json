@@ -1,24 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 284,
+    "complexity_score": 258,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 59,
-    "suspect_count": 18,
+    "pseudocode_lines": 58,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
-      "unaffected_reg",
       "undefined_data",
       "unresolved_funcptr",
       "warning_indirect_jump",
       "warning_jumptable"
     ],
-    "total_lines": 114
+    "total_lines": 113
   },
   "cross_references": [
     {
@@ -197,115 +196,101 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBX",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(longlong *)((int)",
       "text": "plVar4 = (longlong *)((int)dest + uVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 26,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)plVar4 + -1) = uVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)plVar4 + -3) = uVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(short *)((int)",
       "text": "*(short *)((int)plVar4 + -2) = (short)uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)plVar4 + -5) = uVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)plVar4 + -4) = uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)plVar4 + -7) = uVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(short *)((int)",
       "text": "*(short *)((int)plVar4 + -6) = (short)uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)plVar4 + -4) = uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 50,
       "match": "ROUND",
       "text": "*plVar4 = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Jump table recovery failed",
-      "line": 58,
+      "line": 57,
       "match": "WARNING: Could not recover jumptable",
       "text": "/* WARNING: Could not recover jumptable at 0x004b1a19. Too many branches */",
       "type": "warning_jumptable"
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 59,
+      "line": 58,
       "match": "WARNING: Treating indirect jump as call",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_EBX",
-      "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))(uVar3,uVar2,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 60,
+      "line": 59,
       "match": "code *",
-      "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))(uVar3,uVar2,unaff_EBX);",
+      "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 59,
       "match": "DAT_00679d50",
-      "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))(uVar3,uVar2,unaff_EBX);",
+      "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))();",
       "type": "undefined_data"
     },
     {

@@ -2,34 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 23,
-        "line": 77,
-        "message": "C-style cast from 'SMRGLTextureBasic *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 120,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 126,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 38,
         "line": 154,
         "message": "use of undeclared identifier 'stack0xfffffee8'"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 167,
-        "message": "C-style cast from 'CStairs *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
@@ -50,12 +26,6 @@
         "message": "use of undeclared identifier 'stack0xfffffee8'"
       },
       {
-        "category": "other",
-        "column": 30,
-        "line": 196,
-        "message": "C-style cast from 'CStairs *' to 'float' is not allowed"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 11,
         "line": 200,
@@ -72,12 +42,6 @@
         "column": 38,
         "line": 212,
         "message": "use of undeclared identifier 'stack0xfffffee8'"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 225,
-        "message": "C-style cast from 'CStairs *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
@@ -98,12 +62,6 @@
         "message": "use of undeclared identifier 'stack0xfffffee8'"
       },
       {
-        "category": "other",
-        "column": 30,
-        "line": 254,
-        "message": "C-style cast from 'CStairs *' to 'float' is not allowed"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 11,
         "line": 258,
@@ -114,6 +72,48 @@
         "column": 54,
         "line": 259,
         "message": "use of undeclared identifier '_auStack_148'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 270,
+        "message": "use of undeclared identifier 'stack0xfffffee8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 287,
+        "message": "use of undeclared identifier 'unique0x100014ed'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 288,
+        "message": "use of undeclared identifier '_auStack_148'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 300,
+        "message": "use of undeclared identifier 'stack0xfffffee8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 317,
+        "message": "use of undeclared identifier 'unique0x10001509'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 318,
+        "message": "use of undeclared identifier '_auStack_148'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 50,
+        "line": 354,
+        "message": "use of undeclared identifier '_auStack_148'"
       }
     ],
     "success": false,
@@ -121,18 +121,17 @@
   },
   "complexity": {
     "assembly_lines": 587,
-    "complexity_score": 1197,
+    "complexity_score": 1152,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 10,
     "pseudocode_lines": 432,
-    "suspect_count": 74,
+    "suspect_count": 70,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
-      "suspect_float",
-      "undefined_data"
+      "suspect_float"
     ],
     "total_lines": 1019
   },
@@ -218,7 +217,7 @@
     },
     {
       "addr": "00684178",
-      "name": "DAT_00684178",
+      "name": "SMRGLTextureBasic_00684178",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -458,27 +457,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_00684178",
-      "text": "local_114.fog = (float)&DAT_00684178;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 73,
-      "match": "8.413193e-39",
-      "text": "local_114.light = 8.413193e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
-      "match": "DAT_00684178",
-      "text": "(g_CDemonRendererPtr2,&DAT_00684178);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 82,
       "match": "in_stack_0000000c",
@@ -610,13 +588,6 @@
       "match": "ROUND",
       "text": "CStack_60.z = (int)ROUND(fStack_88 * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 117,
-      "match": "8.413858e-39",
-      "text": "local_114.light = 8.413858e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",

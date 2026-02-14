@@ -2,13 +2,11 @@
 // Address: 00444c00
 // Address Range: [[00444c00, 00444c4e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00444c00 (CZombieCow *this_ptr,CVector3f *out_points_array)
+// Signature: int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00444c00(CZombieCow *this_ptr,CVector3f *out_points_array)
 
 #include "nocturne.h"
 
-int __cdecl
-core_cow_cpp_CZombieCow_getTargetPoints_FUN_00444c00
-          (CZombieCow *this_ptr,CVector3f *out_points_array)
+int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00444c00(CZombieCow *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

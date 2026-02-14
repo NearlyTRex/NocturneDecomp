@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_00420dc0 (CBoundingBox3D *this_ptr,int point_count,CVector3f *points)
+; __cdecl void __cdecl core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_00420dc0(CBoundingBox3D *this_ptr,int point_count,CVector3f *points)
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr

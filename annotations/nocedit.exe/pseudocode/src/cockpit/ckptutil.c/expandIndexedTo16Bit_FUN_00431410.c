@@ -2,13 +2,11 @@
 // Address: 00431410
 // Address Range: [[00431410, 004314f9]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410 (void *output_buffer,void *indexed_input_buffer,int pixel_count)
+// Signature: void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410(void *output_buffer,void *indexed_input_buffer,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410
-          (void *output_buffer,void *indexed_input_buffer,int pixel_count)
+void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410(void *output_buffer,void *indexed_input_buffer,int pixel_count)
 
 {
   byte *pbVar1;

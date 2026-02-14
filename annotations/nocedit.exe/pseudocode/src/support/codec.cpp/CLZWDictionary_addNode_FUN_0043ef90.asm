@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90 (CLZWDictionary *this_ptr,int code,int parent_index)
+; __cdecl int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary *this_ptr,int code,int parent_index)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr

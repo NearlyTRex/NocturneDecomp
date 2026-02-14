@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CQuaternion4f * __cdecl
-core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f *matrix_out,CQuaternion4f *quat_in)
+CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f *matrix_out,CQuaternion4f *quat_in)
 
 {
   float fVar1;

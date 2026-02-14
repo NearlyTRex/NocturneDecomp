@@ -1,40 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 41,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 44,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 26,
-        "line": 53,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 91,
+    "complexity_score": 89,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 44,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 155
+    "total_lines": 153
   },
   "cross_references": [
     {
@@ -60,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)"
   },
   "function_calls": [
     {
@@ -108,7 +89,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -183,28 +164,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(ushort *)((int)",
       "text": "this_ptr->vertex_buffer_ptr[uVar1].u = (uint)*(ushort *)((int)&(pSVar3->base).count + 2) << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "} while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(primitive->base).count + 2));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(ushort *)((int)",
       "text": "g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(primitive->base).type + 2);",
       "type": "pointer_cast"

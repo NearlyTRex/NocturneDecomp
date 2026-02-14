@@ -41,7 +41,7 @@ int __cdecl CColorQuantizer::errorDiffusionBuffers(CColorQuantizer *this_ptr,int
 
 // Original: shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0
 // Address: 005556f0
-void __cdecl CColorQuantizer::mapScanlineToPalette(CColorQuantizer *this_ptr,uchar *src_pixels,uchar *dest_indices,short start_x,short end_x ,short num_palette_entries);
+void __cdecl CColorQuantizer::mapScanlineToPalette(CColorQuantizer *this_ptr,uchar *src_pixels,uchar *dest_indices,short start_x,short end_x,short num_palette_entries);
 
 // Original: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
 // Address: 00555a40
@@ -65,7 +65,7 @@ void __cdecl CColorQuantizer::quantizeBitmap(CColorQuantizer *this_ptr,CBitmap *
 
 // Original: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 // Address: 00556490
-int __cdecl quantizeRawPixelData(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height ,uint bit_depth,int line_number,int show_progress);
+int __cdecl quantizeRawPixelData(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height,uint bit_depth,int line_number,int show_progress);
 
 // Original: shape_quantize.cpp_displayProgressBar_FUN_005568f0
 // Address: 005568f0

@@ -2,13 +2,11 @@
 // Address: 005da240
 // Address Range: [[005da240, 005da27e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_005da240 (CBassPlayer *this_ptr,SDamageInfo *damage_info)
+// Signature: void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_005da240(CBassPlayer *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl
-core_tbplayer_cpp_CBassPlayer_processDamage_FUN_005da240
-          (CBassPlayer *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_005da240(CBassPlayer *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;

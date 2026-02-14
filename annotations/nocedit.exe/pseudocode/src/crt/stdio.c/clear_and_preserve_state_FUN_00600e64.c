@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-uint __cdecl
-clear_and_preserve_state(FileEmbeddedData *embedded_data,uint error_code)
+uint __cdecl clear_and_preserve_state(FileEmbeddedData *embedded_data,uint error_code)
 
 {
   uint uVar1;

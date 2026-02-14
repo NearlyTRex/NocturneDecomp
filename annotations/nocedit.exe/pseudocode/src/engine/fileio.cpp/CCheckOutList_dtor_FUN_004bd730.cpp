@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CCheckOutList * __cdecl
-engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr,uint flags)
+CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr,uint flags)
 
 {
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(this_ptr);

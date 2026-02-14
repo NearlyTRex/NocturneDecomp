@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;
@@ -17,7 +16,8 @@ core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *d
   uint uVar4;
   int iVar5;
   char local_e8 [100];
-  char local_84 [116];
+  char local_84 [100];
+  CVector3f CStack_20;
   
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
@@ -73,7 +73,7 @@ core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *d
     *(uint *)(this_ptr->unk + 4) = uVar4;
   }
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            ((CDemonActor *)this_ptr,(CVector3f *)(local_84 + 0x6c),&damage_info->impact_direction);
+            ((CDemonActor *)this_ptr,&CStack_20,&damage_info->impact_direction);
   core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;

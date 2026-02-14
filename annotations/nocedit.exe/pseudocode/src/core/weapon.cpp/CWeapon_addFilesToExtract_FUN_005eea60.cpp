@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_weapon_cpp_CWeapon_addFilesToExtract_FUN_005eea60(CWeapon *this_ptr,_FILE *file_handle)
+void __cdecl core_weapon_cpp_CWeapon_addFilesToExtract_FUN_005eea60(CWeapon *this_ptr,_FILE *file_handle)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0

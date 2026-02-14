@@ -2,13 +2,11 @@
 // Address: 005e1870
 // Address Range: [[005e1870, 005e18d1]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_buildIPAddress_FUN_005e1870 (uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4)
+// Signature: int __cdecl support_trisock_cpp_buildIPAddress_FUN_005e1870(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4)
 
 #include "nocturne.h"
 
-int __cdecl
-support_trisock_cpp_buildIPAddress_FUN_005e1870
-          (uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4)
+int __cdecl support_trisock_cpp_buildIPAddress_FUN_005e1870(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4)
 
 {
   if (((((-1 < octet1) && (octet1 < 0x100)) && (-1 < octet2)) && ((octet2 < 0x100 && (-1 < octet3)))

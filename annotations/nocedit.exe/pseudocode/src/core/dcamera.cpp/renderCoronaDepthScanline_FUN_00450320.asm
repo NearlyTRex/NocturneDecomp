@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; __cdecl void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 ;
 ; Parameters:
 ; SEdgeData *      Stack[0x4]:4   left_edge
@@ -13,7 +13,7 @@
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0 at 00473995
 ;
 ; Referenced Globals:
-;   int g_CameraDownscaleIterations
+;   _BIT_INTEGER g_CameraDownscaleIterations
 ;   int[240] g_CoronaLeftExtent
 ;   int[240] g_CoronaRightExtent
 ;   int[240][320] g_CoronaDepthBuffer

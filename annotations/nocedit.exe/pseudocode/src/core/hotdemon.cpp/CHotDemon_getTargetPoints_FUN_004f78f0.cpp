@@ -2,13 +2,11 @@
 // Address: 004f78f0
 // Address Range: [[004f78f0, 004f79aa]]
 // Convention: __cdecl
-// Signature: int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f78f0 (CHotDemon *this_ptr,CVector3f *out_points_array)
+// Signature: int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f78f0(CHotDemon *this_ptr,CVector3f *out_points_array)
 
 #include "nocturne.h"
 
-int __cdecl
-core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f78f0
-          (CHotDemon *this_ptr,CVector3f *out_points_array)
+int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f78f0(CHotDemon *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

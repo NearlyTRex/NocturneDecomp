@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,char *window_title)
+void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,char *window_title)
 
 {
   int iVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_plotPixelWithClipping_FUN_0049d190(int x_coord,int y_coord,int use_clipping)
+void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0049d190(int x_coord,int y_coord,int use_clipping)
 
 {
   if (((((-1 < x_coord) && (-1 < y_coord)) && (x_coord < g_WindowWidth)) &&

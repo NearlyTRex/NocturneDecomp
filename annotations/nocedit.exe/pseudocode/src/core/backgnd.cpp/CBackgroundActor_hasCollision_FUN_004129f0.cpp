@@ -2,13 +2,11 @@
 // Address: 004129f0
 // Address Range: [[004129f0, 00412a2e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_backgnd_cpp_CBackgroundActor_hasCollision_FUN_004129f0 (CBackgroundActor *this_ptr,SCollisionInfo *collision_info)
+// Signature: int __cdecl core_backgnd_cpp_CBackgroundActor_hasCollision_FUN_004129f0(CBackgroundActor *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-int __cdecl
-core_backgnd_cpp_CBackgroundActor_hasCollision_FUN_004129f0
-          (CBackgroundActor *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_backgnd_cpp_CBackgroundActor_hasCollision_FUN_004129f0(CBackgroundActor *this_ptr,SCollisionInfo *collision_info)
 
 {
   CKeyFramedModel *pCVar1;

@@ -2,14 +2,11 @@
 // Address: 0047ca50
 // Address Range: [[0047ca50, 0047cbb4]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50 (CKeyFramedModel *this_ptr,char *source_drive,char *source_directory, char *destination_drive,char *destination_directory)
+// Signature: int __cdecl core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50(CKeyFramedModel *this_ptr,char *source_drive,char *source_directory,char *destination_drive,char *destination_directory)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50
-          (CKeyFramedModel *this_ptr,char *source_drive,char *source_directory,
-          char *destination_drive,char *destination_directory)
+int __cdecl core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50(CKeyFramedModel *this_ptr,char *source_drive,char *source_directory,char *destination_drive,char *destination_directory)
 
 {
   int iVar1;

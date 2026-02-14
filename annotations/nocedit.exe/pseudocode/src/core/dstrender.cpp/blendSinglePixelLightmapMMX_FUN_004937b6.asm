@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dstrender_cpp_blendSinglePixelLightmapMMX_FUN_004937b6 (ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
+; __cdecl void __cdecl core_dstrender_cpp_blendSinglePixelLightmapMMX_FUN_004937b6(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
 ;
 ; Parameters:
 ; ushort *         Stack[0x4]:4   output_pixel

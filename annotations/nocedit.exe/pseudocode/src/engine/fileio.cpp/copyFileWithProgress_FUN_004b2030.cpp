@@ -2,14 +2,11 @@
 // Address: 004b2030
 // Address Range: [[004b2030, 004b21f6]]
 // Convention: __cdecl
-// Signature: char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030 (_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes)
+// Signature: char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030(_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename,int file_size_bytes)
 
 #include "nocturne.h"
 
-char * __cdecl
-engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
-          (_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename,
-          int file_size_bytes)
+char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030(_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename,int file_size_bytes)
 
 {
   bool bVar1;

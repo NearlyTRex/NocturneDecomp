@@ -2,13 +2,11 @@
 // Address: 00422340
 // Address Range: [[00422340, 00422389]]
 // Convention: __cdecl
-// Signature: int __cdecl core_boxactor_cpp_CBoxActor_hasCollision_FUN_00422340 (CBoxActor *this_ptr,SCollisionInfo *collision_info)
+// Signature: int __cdecl core_boxactor_cpp_CBoxActor_hasCollision_FUN_00422340(CBoxActor *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-int __cdecl
-core_boxactor_cpp_CBoxActor_hasCollision_FUN_00422340
-          (CBoxActor *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_boxactor_cpp_CBoxActor_hasCollision_FUN_00422340(CBoxActor *this_ptr,SCollisionInfo *collision_info)
 
 {
   CKeyFramedModel *pCVar1;

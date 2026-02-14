@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0 (CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero, int param_6)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int param_6)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

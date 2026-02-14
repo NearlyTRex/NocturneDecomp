@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;

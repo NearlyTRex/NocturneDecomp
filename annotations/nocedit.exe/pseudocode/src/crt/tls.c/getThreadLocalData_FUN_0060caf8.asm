@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void * crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
+; __watcallRegister void * __watcallRegister crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
 ;
 ;
 ; XREF[1]:

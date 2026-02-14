@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 118,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 21,
     "suspect_count": 8,
     "suspect_types": [
       "special_crt_function",
-      "stack_param",
-      "undefined_data"
+      "undefined_data",
+      "unnamed_param"
     ],
-    "total_lines": 60
+    "total_lines": 58
   },
   "cross_references": [
     {
@@ -32,7 +32,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0060501c",
-    "signature": "byte * crt_unknown_c_FUN_0060501c(void)"
+    "signature": "byte * crt_unknown_c_FUN_0060501c(byte *param_1,void *param_2)"
   },
   "function_calls": [
     {
@@ -88,50 +88,50 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "byte *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "byte * FUN_0060501c(byte *param_1,void *param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "byte * FUN_0060501c(byte *param_1,void *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 9,
-      "match": "in_stack_00000008",
-      "text": "void *in_stack_00000008;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "pbVar3 = param_1 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "text": "memset(param_2,0,0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 11,
-      "match": "in_stack_00000004",
-      "text": "pbVar3 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "uVar2 = (uint)*param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "text": "memset(in_stack_00000008,0,0x20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "uVar2 = (uint)*in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "pbVar1 = (byte *)(((int)uVar2 >> 3) + (int)in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "text": "pbVar1 = (byte *)(((int)uVar2 >> 3) + (int)param_2);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 15,
       "match": "DAT_00685030",
       "text": "*pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];",
       "type": "undefined_data"

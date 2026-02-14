@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_ini_cpp_writeProfileString_FUN_004fba40(char *section,char *key,char *value,char *filename)
+void __cdecl engine_ini_cpp_writeProfileString_FUN_004fba40(char *section,char *key,char *value,char *filename)
 
 {
   engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(&g_CIniInstance,section,key,value,filename);

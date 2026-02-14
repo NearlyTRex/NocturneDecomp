@@ -2,13 +2,11 @@
 // Address: 00568dd0
 // Address Range: [[00568dd0, 00568eed]]
 // Convention: __cdecl
-// Signature: int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0 (CSentinel *this_ptr,CVector3f *out_points_array)
+// Signature: int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0(CSentinel *this_ptr,CVector3f *out_points_array)
 
 #include "nocturne.h"
 
-int __cdecl
-core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0
-          (CSentinel *this_ptr,CVector3f *out_points_array)
+int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0(CSentinel *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

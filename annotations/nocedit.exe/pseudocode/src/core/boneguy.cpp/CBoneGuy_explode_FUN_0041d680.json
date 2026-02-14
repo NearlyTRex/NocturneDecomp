@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 124,
+    "complexity_score": 140,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 89,
-    "suspect_count": 3,
+    "pseudocode_lines": 90,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "warning_type_propagation"
     ],
-    "total_lines": 166
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -226,22 +227,29 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 81,
       "match": "(uint *)((int)",
       "text": "puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 49000);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 84,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)&local_48 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 85,
       "match": "(uint *)((int)",
       "text": "*puVar8 = *(uint *)((int)&local_48 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"

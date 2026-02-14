@@ -2,13 +2,11 @@
 // Address: 00453700
 // Address Range: [[00453700, 004537cd]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700 (CDemonCamera *this_ptr,CVector3i *world_position)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700
-          (CDemonCamera *this_ptr,CVector3i *world_position)
+int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position)
 
 {
   float fVar1;

@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 250,
+    "complexity_score": 248,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 18,
     "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -15,7 +15,7 @@
       "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 34
+    "total_lines": 32
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_unknown.c_FUN_006040ed",
-    "signature": "void __cdecl crt_unknown_c_FUN_006040ed (uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5)"
+    "signature": "void __cdecl crt_unknown_c_FUN_006040ed(uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5)"
   },
   "function_calls": [
     {
@@ -118,56 +118,63 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 4,
+      "line": 2,
       "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
+      "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
-      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
+      "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
-      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
+      "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
-      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
+      "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
-      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
+      "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_EAX",
       "text": "uint in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_EAX",
       "text": "if (99 < in_EAX) {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 13,
+      "line": 11,
+      "match": "in_EAX",
+      "text": "in_EAX = (in_EAX & 0xffff) % 100;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
       "match": "in_EAX",
       "text": "in_EAX = (in_EAX & 0xffff) % 100;",
       "type": "register_param"
@@ -175,76 +182,69 @@
     {
       "description": "Inferred register parameter",
       "line": 13,
-      "match": "in_EAX",
-      "text": "in_EAX = (in_EAX & 0xffff) % 100;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
       "match": "in_EAX",
       "text": "FUN_00604104((ushort)in_EAX,unaff_retaddr,(char *)param_1);",
       "type": "register_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "text": "FUN_00604104((ushort)in_EAX,unaff_retaddr,(char *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_EAX",
       "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_EAX",
       "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
       "type": "register_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 14,
       "match": "CONCAT31",
       "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 16,
+      "line": 14,
       "match": "int3",
       "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
       "type": "nonstandard_int"
     },
     {
       "description": "Inferred register parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_EAX",
       "text": "if (9 < (byte)in_EAX) {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_EAX",
       "text": "uVar1 = CONCAT11((char)((ushort)in_EAX % 10),(char)((ushort)in_EAX / 10));",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_EAX",
       "text": "uVar1 = CONCAT11((char)((ushort)in_EAX % 10),(char)((ushort)in_EAX / 10));",
       "type": "register_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 16,
       "match": "CONCAT11",
       "text": "uVar1 = CONCAT11((char)((ushort)in_EAX % 10),(char)((ushort)in_EAX / 10));",
       "type": "decompiler_intrinsic"

@@ -1,67 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 40,
-        "line": 36,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 36,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 37,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 37,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 55,
-        "message": "C-style cast from 'double' to 'byte[8]' (aka 'unsigned char[8]') is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 57,
-        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 74,
-        "line": 57,
-        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 237,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 57,
-    "suspect_count": 16,
+    "pseudocode_lines": 50,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "unaffected_reg",
-      "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 232
+    "total_lines": 225
   },
   "cross_references": [
     {
@@ -309,115 +264,66 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_2",
-      "text": "core_msnedit_cpp_CDemonMission_FUN_0053c340(CDemonMission *this_ptr,int param_2,int param_3)",
+      "text": "CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c340(CDemonMission *this_ptr,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_3",
-      "text": "core_msnedit_cpp_CDemonMission_FUN_0053c340(CDemonMission *this_ptr,int param_2,int param_3)",
+      "text": "CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c340(CDemonMission *this_ptr,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EDI",
-      "text": "float unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 17,
       "match": "param_2",
       "text": "if ((((this_ptr->unk1 < param_2) && (this_ptr->unk2 < param_3)) && (param_2 < this_ptr->unk3 + -1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 17,
       "match": "param_3",
       "text": "if ((((this_ptr->unk1 < param_2) && (this_ptr->unk2 < param_3)) && (param_2 < this_ptr->unk3 + -1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 17,
       "match": "param_2",
       "text": "if ((((this_ptr->unk1 < param_2) && (this_ptr->unk2 < param_3)) && (param_2 < this_ptr->unk3 + -1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 18,
       "match": "param_3",
       "text": ") && (param_3 < this_ptr->unk4 + -1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 23,
       "match": "param_2",
-      "text": "(&g_CDemonCameraInstance,(CVector3f *)(auStack_5c + 0x10),param_2,param_3);",
+      "text": "(&g_CDemonCameraInstance,&local_4c,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 23,
       "match": "param_3",
-      "text": "(&g_CDemonCameraInstance,(CVector3f *)(auStack_5c + 0x10),param_2,param_3);",
+      "text": "(&g_CDemonCameraInstance,&local_4c,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 25,
       "match": "SQRT",
-      "text": "SQRT(local_44.x * local_44.x +",
+      "text": "SQRT(local_4c.z * local_4c.z + local_4c.x * local_4c.x + local_4c.y * local_4c.y);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._16_4_",
-      "text": "(float)auStack_5c._16_4_ * (float)auStack_5c._16_4_ + local_48 * local_48);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._16_4_",
-      "text": "(float)auStack_5c._16_4_ * (float)auStack_5c._16_4_ + local_48 * local_48);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._16_4_",
-      "text": "auStack_5c._16_4_ = (float)auStack_5c._16_4_ * local_20.z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._16_4_",
-      "text": "auStack_5c._16_4_ = (float)auStack_5c._16_4_ * local_20.z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
-      "match": "unaff_EDI",
-      "text": "if (((0.0 < (double)auStack_68) && (fStack_60 <= unaff_EDI)) && ((double)auStack_68 <= 1.0))",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 53,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = fStack_60;",
-      "type": "unaffected_reg"
     }
   ]
 }

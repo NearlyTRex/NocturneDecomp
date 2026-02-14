@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcube_cpp_CDemonCube_setBounds_FUN_00456a90 (CDemonCube *this_ptr,CVector3f *min_bounds,CVector3f *max_bounds)
+; __cdecl void __cdecl core_dcube_cpp_CDemonCube_setBounds_FUN_00456a90(CDemonCube *this_ptr,CVector3f *min_bounds,CVector3f *max_bounds)
 ;
 ; Parameters:
 ; CDemonCube *     Stack[0x4]:4   this_ptr

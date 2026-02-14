@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_beast_cpp_CBeast_getTargetPoints_FUN_004183b0(CBeast *this_ptr,CVector3f *out_points_array)
+int __cdecl core_beast_cpp_CBeast_getTargetPoints_FUN_004183b0(CBeast *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

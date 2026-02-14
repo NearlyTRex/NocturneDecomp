@@ -2,11 +2,11 @@
 // Address: 00606a77
 // Address Range: [[00606a77, 00606a80]]
 // Convention: __watcallRegister
-// Signature: void crt_math_c_function_dispatch_FUN_00606a77(int function_index)
+// Signature: void __watcallRegister crt_math_c_function_dispatch_FUN_00606a77(int function_index)
 
 #include "nocturne.h"
 
-void function_dispatch(int function_index)
+void __watcallRegister function_dispatch(int function_index)
 
 {
                     /* WARNING: Could not recover jumptable at 0x00606a7a. Too many branches */

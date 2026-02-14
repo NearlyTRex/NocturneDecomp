@@ -4,55 +4,55 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 108,
+        "line": 107,
         "message": "assigning to 'CPodDirectoryEntry *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 138,
+        "line": 137,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 216,
+        "line": 215,
         "message": "assigning to 'CPodDirectoryEntry *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 226,
+        "line": 225,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 265,
+        "line": 264,
         "message": "assigning to 'CPodDirectoryEntry *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 273,
+        "line": 272,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 303,
+        "line": 302,
         "message": "assigning to 'CPodDirectoryEntry *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 326,
+        "line": 325,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 365,
+        "line": 364,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       }
     ],
@@ -61,17 +61,17 @@
   },
   "complexity": {
     "assembly_lines": 834,
-    "complexity_score": 539,
+    "complexity_score": 538,
     "cross_reference_count": 15,
     "function_call_count": 14,
     "global_count": 27,
-    "pseudocode_lines": 379,
+    "pseudocode_lines": 378,
     "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 1213
+    "total_lines": 1212
   },
   "cross_references": [
     {
@@ -832,105 +832,105 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 118,
       "match": "(SIZE_T *)((int)",
       "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_18) = size;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 141,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 151,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_18) = local_6c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 152,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_18) = local_68;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 153,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_18) = local_60;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 155,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_18) = this_ptr->filesize;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 159,
       "match": "SBORROW4",
       "text": "bVar11 = SBORROW4(size,local_2c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 307,
+      "line": 306,
       "match": "(SIZE_T *)((int)",
       "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_14) = size;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 330,
+      "line": 329,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset + local_14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 340,
+      "line": 339,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_14) = local_3c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 341,
+      "line": 340,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_14) = local_38;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 342,
+      "line": 341,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_14) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 344,
+      "line": 343,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) = this_ptr->filesize;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 349,
+      "line": 348,
       "match": "SBORROW4",
       "text": "bVar11 = SBORROW4(size,local_1c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 371,
+      "line": 370,
       "match": "(int *)((int)",
       "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name_or_offset + iVar7);",
       "type": "pointer_cast"

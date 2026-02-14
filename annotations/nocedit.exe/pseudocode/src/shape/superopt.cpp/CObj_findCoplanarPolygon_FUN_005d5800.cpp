@@ -2,15 +2,13 @@
 // Address: 005d5800
 // Address Range: [[005d5800, 005d5baf]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800 (CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)
+// Signature: int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005d5b52) */
 
-int __cdecl
-shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800
-          (CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)
+int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)
 
 {
   CVert *point;

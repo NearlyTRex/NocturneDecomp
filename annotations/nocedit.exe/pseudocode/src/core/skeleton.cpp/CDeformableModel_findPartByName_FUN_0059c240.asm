@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240 (CDeformableModel *this_ptr,char *part_name,int error_if_not_found)
+; __cdecl int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240(CDeformableModel *this_ptr,char *part_name,int error_if_not_found)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 251,
+    "complexity_score": 248,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 38,
     "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 135
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -33,7 +33,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c",
-    "signature": "void crt_unknown_c_SetStdHandleToSomething_FUN_00608a1c(void)"
+    "signature": "void crt_unknown_c_SetStdHandleToSomething_FUN_00608a1c(HANDLE param_1,uint param_2)"
   },
   "function_calls": [
     {
@@ -138,123 +138,123 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "text": "HANDLE in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void SetStdHandleToSomething(HANDLE param_1,uint param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void SetStdHandleToSomething(HANDLE param_1,uint param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "if ((int)in_stack_00000008 < 0) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "text": "if ((int)param_2 < 0) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == 0) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "text": "if (param_2 == 0) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "text": "else if (in_stack_00000008 < 2) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "text": "else if (param_2 < 2) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 != 2) goto LAB_00608a6a;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "text": "if (param_2 != 2) goto LAB_00608a6a;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "text": "(*g_SetStdHandleFunc)(nStdHandle,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 24,
-      "match": "in_stack_00000004",
-      "text": "(*g_SetStdHandleFunc)(nStdHandle,in_stack_00000004);",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "if ((int)param_2 < g_CurrentHandleCount) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "if ((int)in_stack_00000008 < g_CurrentHandleCount) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "text": "g_IOControlBlock = realloc(g_IOControlBlock,param_2 * 4 + 4);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000008",
-      "text": "g_IOControlBlock = realloc(g_IOControlBlock,in_stack_00000008 * 4 + 4)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000008",
-      "text": "if (g_CurrentHandleCount < (int)in_stack_00000008) {",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "text": "if (g_CurrentHandleCount < (int)param_2) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_IOControlBlock->standard_handles + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
+      "text": "} while (iVar1 < (int)(param_2 * 4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "text": "g_CurrentHandleCount = param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 37,
-      "match": "in_stack_00000008",
-      "text": "} while (iVar1 < (int)(in_stack_00000008 * 4));",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000008",
-      "text": "g_CurrentHandleCount = in_stack_00000008 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000008",
-      "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 1,

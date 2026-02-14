@@ -14,8 +14,9 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
   CVector3f *pCVar3;
   CPlatform *pCVar4;
   UOrientationVector *pUVar5;
-  float unaff_retaddr;
+  CBoundingBox3D CStack_24;
   float local_c;
+  float fStack_8;
   
   if (this_ptr->carrier != (CDemonActor *)0x0) {
     this_ptr->last_platform = (CDemonActor *)0x0;
@@ -50,9 +51,8 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
     local_c = *(float *)(this_ptr->unk3 + 0x18);
   }
   else {
-    unaff_retaddr =
-         (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                   (&this_ptr->base,(float)this_ptr->unk2,(CVector3f *)0x0);
+    local_c = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                        (&this_ptr->base,(float)this_ptr->unk2,(CVector3f *)0x0);
     pCVar1 = &(this_ptr->base).location;
     if ((CLocation *)this_ptr->unk3 != pCVar1) {
       *(float *)this_ptr->unk3 = (pCVar1->position).x;
@@ -65,7 +65,8 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
       *(float *)(this_ptr->unk3 + 0x10) = (this_ptr->base).orient.vec.y;
       *(float *)(this_ptr->unk3 + 0x14) = (this_ptr->base).orient.vec.z;
     }
-    *(float *)(this_ptr->unk3 + 0x18) = unaff_retaddr;
+    *(float *)(this_ptr->unk3 + 0x18) = local_c;
+    fStack_8 = local_c;
   }
   if ((this_ptr->last_platform == (CDemonActor *)0x0) &&
      (pCVar4 = (this_ptr->base).standing_platform, pCVar4 != (CPlatform *)0x0)) {
@@ -87,14 +88,13 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
       (this_ptr->base).orient.vec.z = (pCVar4->base).orient.vec.z;
     }
     pCVar4 = (this_ptr->base).standing_platform;
-    (*((pCVar4->base).vtable._ub)->getBoundingBox)(&pCVar4->base,(CBoundingBox3D *)&stack0xffffffe8)
-    ;
+    (*((pCVar4->base).vtable._ub)->getBoundingBox)(&pCVar4->base,&CStack_24);
     (this_ptr->base).location.position.y =
-         (unaff_retaddr - local_c) + (this_ptr->base).location.position.y;
+         (CStack_24.max.y - CStack_24.min.y) + (this_ptr->base).location.position.y;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
     return;
   }
-  (this_ptr->base).location.position.y = unaff_retaddr;
+  (this_ptr->base).location.position.y = local_c;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   return;
 }

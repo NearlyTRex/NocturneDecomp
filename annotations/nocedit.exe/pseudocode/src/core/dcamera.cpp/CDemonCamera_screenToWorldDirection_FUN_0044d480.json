@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 54,
+    "complexity_score": 52,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 37,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 179
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480",
-    "signature": "CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480 (CDemonCamera *this_ptr,CVector3f *output_ptr,int screen_x,int screen_y)"
+    "signature": "CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480(CDemonCamera *this_ptr,CVector3f *output_ptr,int screen_x,int screen_y)"
   },
   "function_calls": [],
   "globals": [],
@@ -183,7 +183,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 27,
       "match": "SQRT",
       "text": "fVar2 = SQRT(fVar2 * output_ptr->z + output_ptr->x * output_ptr->x + output_ptr->y * output_ptr->y",
       "type": "decompiler_intrinsic"

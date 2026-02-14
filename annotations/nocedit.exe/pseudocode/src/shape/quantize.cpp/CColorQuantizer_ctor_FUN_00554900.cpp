@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CColorQuantizer * __cdecl
-shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(CColorQuantizer *this_ptr)
+CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(CColorQuantizer *this_ptr)
 
 {
   CColorQuantizer *in_stack_00000004;

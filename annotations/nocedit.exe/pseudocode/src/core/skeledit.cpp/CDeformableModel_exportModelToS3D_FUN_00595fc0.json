@@ -4,115 +4,115 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 64,
+        "line": 61,
         "message": "no matching function for call to '__STK'"
       },
       {
         "category": "incompatible_types",
         "column": 10,
-        "line": 73,
+        "line": 70,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 45,
-        "line": 154,
+        "line": 151,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 154,
+        "line": 151,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 155,
+        "line": 152,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 156,
+        "line": 153,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "incompatible_types",
         "column": 51,
-        "line": 176,
+        "line": 173,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
         "column": 51,
-        "line": 176,
+        "line": 173,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 79,
-        "line": 177,
+        "line": 174,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 178,
+        "line": 175,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 204,
+        "line": 201,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
         "column": 22,
-        "line": 204,
+        "line": 201,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 81,
-        "line": 205,
+        "line": 202,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 206,
+        "line": 203,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 230,
+        "line": 227,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 244,
+        "line": 241,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 256,
+        "line": 253,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 267,
+        "line": 264,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 277,
+        "line": 274,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -121,11 +121,11 @@
   },
   "complexity": {
     "assembly_lines": 784,
-    "complexity_score": 626,
+    "complexity_score": 623,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 37,
-    "pseudocode_lines": 276,
+    "pseudocode_lines": 273,
     "suspect_count": 33,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -133,7 +133,7 @@
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 1060
+    "total_lines": 1057
   },
   "cross_references": [
     {
@@ -154,7 +154,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0",
-    "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices )"
+    "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices)"
   },
   "function_calls": [
     {
@@ -891,224 +891,224 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "CDeformableModel *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 64,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->vertex_count[(int)output_filename] << 2,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 77,
       "match": "in_stack_00000004",
       "text": "iVar6 = (int)in_stack_00000004->lod_info + iVar4 + -4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 80,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_parts) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 81,
       "match": "in_stack_00000004",
       "text": "local_80 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 128,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)aiStack_140 + local_78) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 138,
       "match": "(int *)((int)",
       "text": "*(int *)((int)aiStack_140 + local_4c) = *(int *)((int)aiStack_140 + local_4c) + 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 138,
       "match": "(int *)((int)",
       "text": "*(int *)((int)aiStack_140 + local_4c) = *(int *)((int)aiStack_140 + local_4c) + 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 141,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,&local_a8,(int)output_filename,local_1c,",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
+      "line": 144,
       "match": "SUB84",
       "text": "(local_340,\"%g,%g,%g\",SUB84((double)local_a8.x,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 156,
       "match": "(int *)((int)",
       "text": "for (iVar4 = 0; iVar4 < *(int *)((int)local_60->parts[0].tri_counts + local_50);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 161,
+      "line": 158,
       "match": "in_stack_00000004",
       "text": "puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_50) + local_2c);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 158,
       "match": "(int *)((int)",
       "text": "puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_50) + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 166,
+      "line": 163,
       "match": "in_stack_00000004",
       "text": "(*(int *)((int)in_stack_00000004->index_data_ptr + local_50) + local_28),",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 163,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)in_stack_00000004->index_data_ptr + local_50) + local_28),",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 166,
       "match": "SUB84",
       "text": "(double)puVar2[4] * 0.00390625,SUB84((double)puVar2[7] * 0.00390625,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 186,
+      "line": 183,
       "match": "(int *)((int)",
       "text": "for (iVar4 = 0; iVar4 < *(int *)((int)local_64->parts[0].cap_tri_counts + local_54);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 188,
+      "line": 185,
       "match": "in_stack_00000004",
       "text": "puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_54) + local_38);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 188,
+      "line": 185,
       "match": "(int *)((int)",
       "text": "puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_54) + local_38);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 193,
+      "line": 190,
       "match": "in_stack_00000004",
       "text": "(*(int *)((int)in_stack_00000004->index_data_ptr + local_54) + local_6c),",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 193,
+      "line": 190,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)in_stack_00000004->index_data_ptr + local_54) + local_6c),",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 197,
+      "line": 194,
       "match": "SUB84",
       "text": "SUB84((double)puVar2[7] * 0.00390625,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 215,
+      "line": 212,
       "match": "in_stack_00000004",
       "text": "} while (local_84 < in_stack_00000004->num_parts);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 223,
+      "line": 220,
       "match": "in_stack_00000004",
       "text": "_fprintf(local_70,\"%d,%d,%d,%d,1,0,0\\n\",in_stack_00000004->num_textures,local_c8.item_count,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 229,
+      "line": 226,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_parts) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 230,
+      "line": 227,
       "match": "in_stack_00000004",
       "text": "local_90 = in_stack_00000004->parts;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 231,
+      "line": 228,
       "match": "in_stack_00000004",
       "text": "iVar3 = (int)in_stack_00000004->lod_info + (int)output_filename * 4 + -4;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 237,
+      "line": 234,
       "match": "(uint *)((int)",
       "text": "_fprintf(local_70,\"%d,%d,%d,%d,\\\"%s\\\"\\n\",local_88,*(uint *)((int)aiStack_140 + iVar4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 239,
+      "line": 236,
       "match": "(int *)((int)",
       "text": "local_88 = local_88 + *(int *)((int)aiStack_140 + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 243,
+      "line": 240,
       "match": "in_stack_00000004",
       "text": "} while (iVar6 < in_stack_00000004->num_parts);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 247,
+      "line": 244,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_textures) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 251,
+      "line": 248,
       "match": "in_stack_00000004",
       "text": "} while (iVar6 < in_stack_00000004->num_textures);",
       "type": "stack_param"

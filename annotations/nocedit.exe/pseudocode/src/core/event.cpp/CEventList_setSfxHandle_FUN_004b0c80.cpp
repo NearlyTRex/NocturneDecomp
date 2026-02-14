@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr,char *name,uint sfx_handle)
+void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *this_ptr,char *name,uint sfx_handle)
 
 {
   char cVar1;

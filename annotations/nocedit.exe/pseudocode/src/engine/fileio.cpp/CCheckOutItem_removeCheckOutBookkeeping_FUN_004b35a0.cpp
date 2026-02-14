@@ -2,13 +2,11 @@
 // Address: 004b35a0
 // Address Range: [[004b35a0, 004b391c]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0 (CCheckOutItem *this_ptr,void *unused_param)
+// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,void *unused_param)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
-          (CCheckOutItem *this_ptr,void *unused_param)
+int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,void *unused_param)
 
 {
   char cVar1;

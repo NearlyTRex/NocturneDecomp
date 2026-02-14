@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfaceInfo *surface_info)
+void __cdecl core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfaceInfo *surface_info)
 
 {
   float fVar1;

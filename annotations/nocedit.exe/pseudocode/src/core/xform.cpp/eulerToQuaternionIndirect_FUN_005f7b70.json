@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 62,
+    "complexity_score": 60,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 25,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 65
+    "total_lines": 63
   },
   "cross_references": [],
   "function": {
@@ -29,7 +29,7 @@
     "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70",
-    "signature": "CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70 (CVector3f *euler_angles,CQuaternion4f *quat_out)"
+    "signature": "CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70(CVector3f *euler_angles,CQuaternion4f *quat_out)"
   },
   "function_calls": [
     {
@@ -130,21 +130,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)quat_out + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)&local_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 24,
       "match": "(uint *)((int)",
       "text": "*puVar2 = *(uint *)((int)&local_28 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"

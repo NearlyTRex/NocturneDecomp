@@ -2,13 +2,11 @@
 // Address: 0048d700
 // Address Range: [[0048d700, 0048d79e]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d700 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d700(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d700
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)
+void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d700(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)
 
 {
   int iVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0 (double front_x,double front_y,double front_z,double up_x,double up_y,double up_z, double right_x,double right_y,double right_z)
+; __cdecl void __cdecl sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(double front_x,double front_y,double front_z,double up_x,double up_y,double up_z,double right_x,double right_y,double right_z)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   front_x

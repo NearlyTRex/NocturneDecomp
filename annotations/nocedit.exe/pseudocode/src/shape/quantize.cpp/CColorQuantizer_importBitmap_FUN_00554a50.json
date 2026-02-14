@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 27,
-        "line": 65,
+        "line": 63,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 87,
+        "line": 85,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 215,
+    "complexity_score": 213,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
-    "pseudocode_lines": 100,
+    "pseudocode_lines": 98,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 323
+    "total_lines": 321
   },
   "cross_references": [
     {
@@ -50,7 +50,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50",
-    "signature": "int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50 (CColorQuantizer *this_ptr,CBitmap *bitmap)"
+    "signature": "int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQuantizer *this_ptr,CBitmap *bitmap)"
   },
   "function_calls": [
     {
@@ -260,70 +260,70 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 64,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 65,
       "match": "(uint *)((int)",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 73,
       "match": "SQRT",
       "text": "(SQRT((double)((uint)bVar2 * (uint)bVar2 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 77,
       "match": "ROUND",
       "text": "local_2c = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 80,
+      "line": 78,
       "match": "._1_3_",
       "text": "local_1c = CONCAT31(local_1c._1_3_,(byte)local_2c);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 78,
       "match": "CONCAT31",
       "text": "local_1c = CONCAT31(local_1c._1_3_,(byte)local_2c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 79,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = local_18;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 80,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 81,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 82,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =",
       "type": "pointer_cast"

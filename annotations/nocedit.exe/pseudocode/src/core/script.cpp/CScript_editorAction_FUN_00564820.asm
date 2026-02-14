@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_FUN_00565130 at 00565722
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 00565722
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005647d0 = 0056483f

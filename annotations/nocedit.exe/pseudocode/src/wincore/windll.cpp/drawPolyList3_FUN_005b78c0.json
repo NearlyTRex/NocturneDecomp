@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 94,
+    "complexity_score": 92,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 27,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 113
+    "total_lines": 111
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_windll.cpp_drawPolyList3_FUN_005b78c0",
-    "signature": "int __cdecl wincore_windll_cpp_drawPolyList3_FUN_005b78c0 (void *vertex_buffer,void *polygons,int polygon_count,int render_flags)"
+    "signature": "int __cdecl wincore_windll_cpp_drawPolyList3_FUN_005b78c0(void *vertex_buffer,void *polygons,int polygon_count,int render_flags)"
   },
   "function_calls": [],
   "globals": [
@@ -155,42 +155,42 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(void *)((int)",
       "text": "local_1c = (void *)((int)vertex_buffer + (uint)*(ushort *)polygons * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(void *)((int)",
       "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(ushort *)((int)",
       "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(void *)((int)",
       "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(ushort *)((int)",
       "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 24,
       "match": "(void *)((int)",
       "text": "polygons = (void *)((int)polygons + 6);",
       "type": "pointer_cast"

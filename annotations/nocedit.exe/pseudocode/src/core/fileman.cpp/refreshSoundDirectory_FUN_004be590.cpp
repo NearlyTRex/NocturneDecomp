@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_fileman_cpp_refreshSoundDirectory_FUN_004be590(_FILE *file_list_output,char *source_directory)
+void __cdecl core_fileman_cpp_refreshSoundDirectory_FUN_004be590(_FILE *file_list_output,char *source_directory)
 
 {
   _mkdir("sound");

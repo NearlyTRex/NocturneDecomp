@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 18,
-        "line": 32,
+        "line": 30,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 32,
+        "line": 30,
         "message": "use of undeclared identifier 'PTR_s_Left_front_00684480'; did you mean 's_Left_front_00656fb5'?"
       }
     ],
@@ -19,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 58,
+    "complexity_score": 56,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 10,
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 41,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 148
+    "total_lines": 146
   },
   "cross_references": [],
   "function": {
@@ -41,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0",
-    "signature": "void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0 (CVehicle *this_ptr,CActorPropertyList *property_list)"
+    "signature": "void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0(CVehicle *this_ptr,CActorPropertyList *property_list)"
   },
   "function_calls": [
     {
@@ -220,7 +220,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&PTR_s_Left_front_00684480 + iVar2));",
       "type": "pointer_cast"

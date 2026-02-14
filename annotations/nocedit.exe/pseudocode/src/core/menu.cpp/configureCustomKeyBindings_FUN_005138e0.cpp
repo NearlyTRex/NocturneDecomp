@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
 
 {
@@ -46,8 +44,9 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   char *pcVar33;
   bool bVar34;
   byte bVar35;
-  CPickList CStack_a64;
-  char acStack_4cc [504];
+  CPickList local_a7c;
+  char local_6d4 [512];
+  char acStack_4d4 [512];
   char local_2d4 [512];
   char local_d4 [200];
   int local_c;
@@ -582,10 +581,10 @@ LAB_0051390e:
     g_CustomKeyCount = g_CustomKeyCount + 1;
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff584);
+    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_a7c);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Restore defaults");
     iVar30 = 0;
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff584,pcVar2);
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_a7c.base,pcVar2);
     if (0 < g_CustomKeyCount) {
       pacVar28 = g_CustomKeyNames;
       iVar32 = 0;
@@ -596,17 +595,17 @@ LAB_0051390e:
         iVar32 = iVar32 + 4;
         iVar30 = iVar30 + 1;
         pacVar28 = pacVar28 + 1;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff584,local_d4);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_a7c.base,local_d4);
       } while (iVar30 < g_CustomKeyCount);
     }
-    shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffff584,1);
+    shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_a7c,1);
     iVar32 = 0;
     iVar30 = local_c;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Edit key settings");
     iVar30 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                       ((CPickList *)&stack0xfffff584,pcVar2,iVar30,iVar32);
+                       (&local_a7c,pcVar2,iVar30,iVar32);
     if (iVar30 < 0) {
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff584,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Forward");
       iVar30 = core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(&g_CGamePtr->key_walk,pcVar2);
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Back");
@@ -693,7 +692,7 @@ LAB_0051390e:
       case 0x252:
       case 0x253:
       case 0x254:
-        pcVar2 = CStack_a64.cancel_button.button_text + 0xb4;
+        pcVar2 = local_6d4;
         pcVar31 = g_CustomKeyNames[iVar32];
         do {
           cVar1 = *pcVar31;
@@ -707,7 +706,7 @@ LAB_0051390e:
         pcVar31 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             (" is assigned to the gamepad.  Can't assign a key.");
         iVar30 = -1;
-        pcVar2 = CStack_a64.cancel_button.button_text + 0xb4;
+        pcVar2 = local_6d4;
         do {
           pcVar33 = pcVar2;
           if (iVar30 == 0) break;
@@ -727,7 +726,7 @@ LAB_0051390e:
           pcVar33 = pcVar33 + 2;
         } while (cVar1 != '\0');
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,CStack_a64.cancel_button.button_text + 0xb4);
+                  (g_CEditorToolsPtr,local_6d4);
         break;
       case 0x255:
       case 0x256:
@@ -791,12 +790,12 @@ LAB_00514913:
         iVar30 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
         if (iVar30 != 0) {
           engine_2d_c_clearInputAndWait_FUN_00403260();
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff58c,0);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
           goto LAB_0051390e;
         }
         pcVar31 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("Press new key or button for ");
-        pcVar2 = acStack_4cc;
+        pcVar2 = acStack_4d4;
         do {
           cVar1 = *pcVar31;
           *pcVar2 = cVar1;
@@ -808,7 +807,7 @@ LAB_00514913:
         } while (cVar1 != '\0');
         pcVar31 = g_CustomKeyNames[iVar32];
         iVar30 = -1;
-        pcVar2 = acStack_4cc;
+        pcVar2 = acStack_4d4;
         do {
           pcVar33 = pcVar2;
           if (iVar30 == 0) break;
@@ -828,7 +827,7 @@ LAB_00514913:
           pcVar33 = pcVar33 + 2;
         } while (cVar1 != '\0');
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,acStack_4cc);
+                  (g_CEditorToolsPtr,acStack_4d4);
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,1);
 LAB_00514a04:
         do {
@@ -878,10 +877,10 @@ LAB_00514a9c:
         }
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_a64,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
       goto LAB_0051390e;
     }
     core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(g_CGamePtr);
-    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff584,0);
+    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
   } while( true );
 }

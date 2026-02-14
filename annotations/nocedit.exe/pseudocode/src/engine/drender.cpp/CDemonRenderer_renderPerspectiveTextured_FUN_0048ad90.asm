@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

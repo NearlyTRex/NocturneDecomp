@@ -2,13 +2,11 @@
 // Address: 00496e70
 // Address Range: [[00496e70, 004973a5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70 (CDemonRaytrace *this_ptr,CVector3f *world_pos)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRaytrace *this_ptr,CVector3f *world_pos)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70
-          (CDemonRaytrace *this_ptr,CVector3f *world_pos)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRaytrace *this_ptr,CVector3f *world_pos)
 
 {
   uint uVar1;

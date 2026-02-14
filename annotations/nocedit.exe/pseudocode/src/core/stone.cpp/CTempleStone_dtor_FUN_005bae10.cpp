@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CTempleStone * __cdecl
-core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint flags)
+CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint flags)
 
 {
   CBox *pCVar1;

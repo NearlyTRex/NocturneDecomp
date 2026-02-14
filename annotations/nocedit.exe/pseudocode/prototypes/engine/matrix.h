@@ -109,7 +109,7 @@ void __cdecl pushViewport(int x,int y,int width,int height);
 
 // Original: engine_matrix.c_popViewport_FUN_0050e480
 // Address: 0050e480
-void __cdecl popViewport(CDemonRenderer *this_ptr);
+void __cdecl popViewport(void);
 
 // Original: engine_matrix.c_projectToScreen_FUN_0050e5b0
 // Address: 0050e5b0

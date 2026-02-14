@@ -2,13 +2,11 @@
 // Address: 005ff664
 // Address Range: [[005ff664, 005ff6e1]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_fstream_cpp_ifstream_constructor_FUN_005ff664 (ifstream *this_ptr,int ctor_flags,int fd,char *buffer,int buffer_len)
+// Signature: void __cdecl crt_fstream_cpp_ifstream_constructor_FUN_005ff664(ifstream *this_ptr,int ctor_flags,int fd,char *buffer,int buffer_len)
 
 #include "nocturne.h"
 
-void __cdecl
-crt_fstream_cpp_ifstream_constructor_FUN_005ff664
-          (ifstream *this_ptr,int ctor_flags,int fd,char *buffer,int buffer_len)
+void __cdecl crt_fstream_cpp_ifstream_constructor_FUN_005ff664(ifstream *this_ptr,int ctor_flags,int fd,char *buffer,int buffer_len)
 
 {
   void *pvVar1;

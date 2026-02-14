@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_curtain_cpp_CCurtain_addFilesToExtract_FUN_0044b960(CCurtain *this_ptr,_FILE *file_handle)
+void __cdecl core_curtain_cpp_CCurtain_addFilesToExtract_FUN_0044b960(CCurtain *this_ptr,_FILE *file_handle)
 
 {
   char cVar1;

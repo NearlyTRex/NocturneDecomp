@@ -21,7 +21,7 @@ int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context)
   if (0 < g_NumSearchHandlers) {
     iVar2 = 0;
     do {
-      iVar1 = (**(code **)((int)g_SearchHandlers + iVar2))();
+      iVar1 = (**(code **)((int)g_SearchHandlers + iVar2))(context);
       if (iVar1 != 0) {
         return 1;
       }

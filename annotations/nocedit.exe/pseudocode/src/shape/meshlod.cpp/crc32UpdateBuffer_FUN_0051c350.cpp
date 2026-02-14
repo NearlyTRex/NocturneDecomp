@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_crc32UpdateBuffer_FUN_0051c350(uint *crc_ptr,uchar *data_ptr,int byte_count)
+void __cdecl shape_meshlod_cpp_crc32UpdateBuffer_FUN_0051c350(uint *crc_ptr,uchar *data_ptr,int byte_count)
 
 {
   uint uVar1;

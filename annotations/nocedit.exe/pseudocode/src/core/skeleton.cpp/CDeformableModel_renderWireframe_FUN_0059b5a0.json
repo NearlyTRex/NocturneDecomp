@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 109,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 27,
     "suspect_count": 7,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 94
+    "total_lines": 92
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 (CDeformableModel *this_ptr,int lod_level)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_0059b5a0(CDeformableModel *this_ptr,int lod_level)"
   },
   "function_calls": [
     {
@@ -137,42 +137,42 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 16,
       "match": "(ushort *)((int)",
       "text": "(uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_0 + iVar5),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(ushort *)((int)",
       "text": "(uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(ushort *)((int)",
       "text": "(uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(ushort *)((int)",
       "text": "(uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(ushort *)((int)",
       "text": "puVar1 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_0 + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(ushort *)((int)",
       "text": "puVar2 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5);",
       "type": "pointer_cast"

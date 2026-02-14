@@ -6,35 +6,33 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,int param_2)
+void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,int param_2)
 
 {
   CDemonActor *this_ptr_00;
-  int iVar1;
+  int *piVar1;
   int iVar2;
-  int iStack_24fc;
-  int aiStack_24f8 [26];
-  uint auStack_2490 [2337];
+  int iVar3;
+  CActorPropertyList CStack_2510;
   
   for (this_ptr_00 = this_ptr->first_actor; this_ptr_00 != (CDemonActor *)0x0;
       this_ptr_00 = this_ptr_00->next_actor) {
     if (this_ptr_00 != (CDemonActor *)param_2) {
       (*((this_ptr_00->vtable)._ub)->onActorDeleted)(this_ptr_00,(CDemonActor *)param_2);
-      core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffdaf8);
-      (*((this_ptr_00->vtable)._ub)->getPropertyList)
-                (this_ptr_00,(CActorPropertyList *)&stack0xffffdaf8);
-      iVar2 = 0;
-      if (0 < iStack_24fc) {
-        iVar1 = 0;
+      core_actor_cpp_CActorPropertyList_init_FUN_0040e130(&CStack_2510);
+      (*((this_ptr_00->vtable)._ub)->getPropertyList)(this_ptr_00,&CStack_2510);
+      iVar3 = 0;
+      if (0 < CStack_2510.count) {
+        iVar2 = 0;
         do {
-          if ((*(int *)((int)aiStack_24f8 + iVar1) == 5) &&
-             (param_2 == **(int **)((int)auStack_2490 + iVar1))) {
-            **(int **)((int)auStack_2490 + iVar1) = 0;
+          if ((*(int *)(CStack_2510.properties[0].name + iVar2 + -4) == 5) &&
+             (piVar1 = *(int **)(CStack_2510.properties[0].string1 + iVar2 + -8), param_2 == *piVar1
+             )) {
+            *piVar1 = 0;
           }
-          iVar2 = iVar2 + 1;
-          iVar1 = iVar1 + 0xec;
-        } while (iVar2 < iStack_24fc);
+          iVar3 = iVar3 + 1;
+          iVar2 = iVar2 + 0xec;
+        } while (iVar3 < CStack_2510.count);
       }
     }
   }

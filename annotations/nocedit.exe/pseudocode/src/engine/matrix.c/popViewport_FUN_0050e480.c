@@ -2,11 +2,11 @@
 // Address: 0050e480
 // Address Range: [[0050e480, 0050e5af]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_matrix_c_popViewport_FUN_0050e480(CDemonRenderer *this_ptr)
+// Signature: void __cdecl engine_matrix_c_popViewport_FUN_0050e480(void)
 
 #include "nocturne.h"
 
-void __cdecl engine_matrix_c_popViewport_FUN_0050e480(CDemonRenderer *this_ptr)
+void __cdecl engine_matrix_c_popViewport_FUN_0050e480(void)
 
 {
   g_ViewportStackIndex = g_ViewportStackIndex + -1;

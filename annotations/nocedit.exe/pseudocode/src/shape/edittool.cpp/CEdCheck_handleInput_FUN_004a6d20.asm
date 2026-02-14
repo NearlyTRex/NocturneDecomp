@@ -10,10 +10,10 @@
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053990a
 ;
 ; Referenced Globals:
-;   CEdButton* g_ActiveButton
+;   void* g_ActiveControl
 ;   int g_MouseX
 ;   int g_MouseY
-;   uint g_MouseButtonFlags
+;   _BIT_INTEGER g_MouseButtonFlags
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
 
     PUSH EBX                            ; 004a6d20
         ;   Label: shape_edittool.cpp_CEdCheck_handleInput_FUN_004a6d20
-    MOV ECX,dword ptr [0x02cf2b00]      ; 004a6d21 | g_ActiveButton
+    MOV ECX,dword ptr [0x02cf2b00]      ; 004a6d21 | g_ActiveControl
     MOV EAX,dword ptr [ESP + 0x8]       ; 004a6d27
     CMP dword ptr [EAX + 0x8],0x0       ; 004a6d2b
     JZ 0x004a6d84                       ; 004a6d2f
@@ -54,7 +54,7 @@ section .text
     MOV EAX,0x1                         ; 004a6d76
         ;   Label: LAB_004a6d76
     POP EDI                             ; 004a6d7b
-    MOV dword ptr [0x02cf2b00],ECX      ; 004a6d7c | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],ECX      ; 004a6d7c | g_ActiveControl
     POP EBX                             ; 004a6d82
     RET                                 ; 004a6d83
     MOV EDX,dword ptr [0x02cf6a8c]      ; 004a6d84 | g_MouseX
@@ -87,12 +87,12 @@ section .text
     MOV dword ptr [EAX + 0x4],0x0       ; 004a6dc7
     MOV EAX,0x1                         ; 004a6dce
     POP EDI                             ; 004a6dd3
-    MOV dword ptr [0x02cf2b00],ECX      ; 004a6dd4 | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],ECX      ; 004a6dd4 | g_ActiveControl
     POP EBX                             ; 004a6dda
     RET                                 ; 004a6ddb
     XOR EAX,EAX                         ; 004a6ddc
         ;   Label: LAB_004a6ddc
-    MOV dword ptr [0x02cf2b00],ECX      ; 004a6dde | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],ECX      ; 004a6dde | g_ActiveControl
     POP EBX                             ; 004a6de4
     RET                                 ; 004a6de5
     TEST ECX,ECX                        ; 004a6de6
@@ -107,14 +107,14 @@ section .text
         ;   XREF to: 004a6e01 (CONDITIONAL_JUMP)  ; LAB_004a6e01
     XOR EAX,EAX                         ; 004a6df7
         ;   Label: LAB_004a6df7
-    MOV dword ptr [0x02cf2b00],ECX      ; 004a6df9 | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],ECX      ; 004a6df9 | g_ActiveControl
     POP EBX                             ; 004a6dff
     RET                                 ; 004a6e00
     MOV ECX,EAX                         ; 004a6e01
         ;   Label: LAB_004a6e01
     MOV dword ptr [EAX + 0x20],0x1      ; 004a6e03
     XOR EAX,EAX                         ; 004a6e0a
-    MOV dword ptr [0x02cf2b00],ECX      ; 004a6e0c | g_ActiveButton
+    MOV dword ptr [0x02cf2b00],ECX      ; 004a6e0c | g_ActiveControl
     POP EBX                             ; 004a6e12
     RET                                 ; 004a6e13
 

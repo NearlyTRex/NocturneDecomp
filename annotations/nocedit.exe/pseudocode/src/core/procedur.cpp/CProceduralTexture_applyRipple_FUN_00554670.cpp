@@ -2,13 +2,11 @@
 // Address: 00554670
 // Address Range: [[00554670, 0055487b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670 (CProceduralTexture *this_ptr,float wave_x,float wave_y,float wave_offset)
+// Signature: void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670(CProceduralTexture *this_ptr,float wave_x,float wave_y,float wave_offset)
 
 #include "nocturne.h"
 
-void __cdecl
-core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670
-          (CProceduralTexture *this_ptr,float wave_x,float wave_y,float wave_offset)
+void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670(CProceduralTexture *this_ptr,float wave_x,float wave_y,float wave_offset)
 
 {
   float fVar1;

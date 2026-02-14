@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown unkbyte10 crt_math_c_FUN_00606c57(void)
+; unknown void crt_math_c_FUN_00606c57(void)
 ;
 ; Parameters:
 ; undefined1[10]   Stack[0x0]:10   local_res0

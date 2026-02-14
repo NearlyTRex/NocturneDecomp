@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CSfxSlot * __cdecl
-sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle,int check_hardware_playback)
+CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle,int check_hardware_playback)
 
 {
   int iVar1;

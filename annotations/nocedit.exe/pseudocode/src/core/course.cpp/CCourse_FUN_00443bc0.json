@@ -98,12 +98,6 @@
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
-        "category": "other",
-        "column": 23,
-        "line": 169,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
-      },
-      {
         "category": "missing_member",
         "column": 15,
         "line": 171,
@@ -114,6 +108,12 @@
         "column": 32,
         "line": 172,
         "message": "no member named '_8_8_' in 'SProjectedVertex'"
+      },
+      {
+        "category": "missing_member",
+        "column": 32,
+        "line": 173,
+        "message": "no member named '_0_8_' in 'SProjectedVertex'"
       }
     ],
     "success": false,
@@ -1059,7 +1059,7 @@
       "description": "Unresolved stack parameter",
       "line": 162,
       "match": "in_stack_fffffe90",
-      "text": "vertex1.light = (float)in_stack_fffffe90;",
+      "text": "vertex1.light = (int)in_stack_fffffe90;",
       "type": "stack_param"
     },
     {

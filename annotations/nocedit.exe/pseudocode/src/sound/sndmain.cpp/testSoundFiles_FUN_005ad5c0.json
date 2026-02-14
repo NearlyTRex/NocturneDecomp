@@ -2,94 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 35,
-        "message": "use of undeclared identifier 'stack0xfffff0e0'; did you mean 'in_stack_fffff0e0'?"
+        "category": "format_error",
+        "column": 55,
+        "line": 107,
+        "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
-        "category": "other",
-        "column": 24,
-        "line": 42,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+        "category": "format_error",
+        "column": 55,
+        "line": 112,
+        "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
-        "category": "other",
-        "column": 52,
-        "line": 63,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 69,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 92,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 97,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 108,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 118,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 122,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 147,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 153,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 158,
-        "message": "use of undeclared identifier 'stack0xfffff0d8'"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 161,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 172,
-        "message": "use of undeclared identifier 'stack0xfffff0e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 178,
-        "message": "use of undeclared identifier 'stack0xfffff0e0'; did you mean 'in_stack_fffff0e0'?"
+        "category": "format_error",
+        "column": 67,
+        "line": 112,
+        "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -97,18 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 513,
-    "complexity_score": 375,
+    "complexity_score": 155,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 30,
-    "pseudocode_lines": 170,
-    "suspect_count": 19,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref",
-      "unknown_field"
-    ],
-    "total_lines": 683
+    "pseudocode_lines": 155,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 668
   },
   "cross_references": [
     {
@@ -494,139 +418,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffff0e0",
-      "text": "char *in_stack_fffff0e0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0xfffff0e0",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff0e0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._0_4_",
-      "text": "if (0 < (int)local_34._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_fffff0e0",
-      "text": "in_stack_fffff0e0 = \"sound\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_fffff0e0",
-      "text": "in_stack_fffff0e0 = \"sound\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_fffff0e0",
-      "text": "in_stack_fffff0e0 = (char *)aCStack_f18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._8_4_",
-      "text": "} while (iVar3 < (int)local_34._8_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_fffff0e0",
-      "text": "in_stack_fffff0e0 = (char *)aCStack_f18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_fffff0e0",
-      "text": "in_stack_fffff0e0 = (char *)aCStack_f18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_fffff0e0",
-      "text": "in_stack_fffff0e0 = (char *)pCVar5;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 122,
-      "match": "in_stack_fffff0e0",
-      "text": "in_stack_fffff0e0 = (char *)0x5adadb;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 126,
-      "match": "in_stack_fffff0e0",
-      "text": "in_stack_fffff0e0 = (char *)pCVar6;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 140,
-      "match": "._8_4_",
-      "text": "if (0 < (int)auStack_4c._8_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 146,
-      "match": "._0_4_",
-      "text": "(g_CEditorToolsPtr,(float)(int)ppcVar4,(float)(int)auStack_4c._0_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 151,
-      "match": "&stack0xfffff0d8",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff0d8,pcVar1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 154,
-      "match": "._0_4_",
-      "text": "} while ((int)ppcVar4 < (int)auStack_4c._0_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 159,
-      "match": "in_stack_fffff0e0",
-      "text": "if ((int)in_stack_fffff0e0 < 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 165,
-      "match": "&stack0xfffff0e0",
-      "text": "((CPickList *)&stack0xfffff0e0,\"Possible sound file problems\",-1,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 171,
-      "match": "&stack0xfffff0e0",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff0e0,0);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

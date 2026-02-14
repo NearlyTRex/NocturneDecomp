@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 264,
+    "complexity_score": 262,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 8,
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 112,
     "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
@@ -15,7 +15,7 @@
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 372
+    "total_lines": 370
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0",
-    "signature": "HANDLE __cdecl crt_stdio_c_CreateFileImpl_FUN_006090a0 (char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)"
+    "signature": "HANDLE __cdecl crt_stdio_c_CreateFileImpl_FUN_006090a0(char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)"
   },
   "function_calls": [
     {
@@ -277,72 +277,72 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 10,
       "match": "unaff_EBX",
       "text": "DWORD unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
+      "line": 29,
       "match": "code *",
       "text": "if ((DAT_0068528c == (code *)0x0) ||",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 29,
       "match": "DAT_0068528c",
       "text": "if ((DAT_0068528c == (code *)0x0) ||",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 45,
       "match": "DAT_006854ec",
       "text": "extra_parameter = uVar4 & ~DAT_006854ec;",
       "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
-      "line": 53,
+      "line": 51,
       "match": "unaff_EBX",
       "text": "unaff_EBX = 4;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 56,
+      "line": 54,
       "match": "unaff_EBX",
       "text": "unaff_EBX = 2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 60,
+      "line": 58,
       "match": "unaff_EBX",
       "text": "unaff_EBX = 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 66,
+      "line": 64,
       "match": "&stack0xffffffd8",
       "text": "(LPSECURITY_ATTRIBUTES)&stack0xffffffd8,dwCreationDisposition,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 72,
+      "line": 70,
       "match": "unaff_EBX",
       "text": "unaff_EBX,dwFlagsAndAttributes,(HANDLE)0x0);",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 93,
       "match": "DAT_0068528c",
-      "text": "(*DAT_0068528c)();",
+      "text": "(*DAT_0068528c)(0,handle_index);",
       "type": "undefined_data"
     },
     {

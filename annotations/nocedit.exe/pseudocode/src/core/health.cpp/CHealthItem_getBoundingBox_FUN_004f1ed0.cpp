@@ -2,13 +2,11 @@
 // Address: 004f1ed0
 // Address Range: [[004f1ed0, 004f1f1d]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004f1ed0 (CHealthItem *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004f1ed0(CHealthItem *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_health_cpp_CHealthItem_getBoundingBox_FUN_004f1ed0
-          (CHealthItem *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004f1ed0(CHealthItem *this_ptr,CBoundingBox3D *out_box)
 
 {
   CVector3f *pCVar1;

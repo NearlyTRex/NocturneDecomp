@@ -25,16 +25,15 @@
   },
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 298,
+    "complexity_score": 283,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
     "pseudocode_lines": 138,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "suspect_float",
       "unknown_field"
     ],
     "total_lines": 416
@@ -538,13 +537,6 @@
       "match": "ROUND",
       "text": "local_7c.z = (int)ROUND(FLOAT_026a72e0 * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 72,
-      "match": "9.18341e-41",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr[0x10].light = 9.18341e-41;",
-      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

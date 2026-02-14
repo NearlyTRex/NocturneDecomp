@@ -2,14 +2,11 @@
 // Address: 0042b5b0
 // Address Range: [[0042b5b0, 0042b662]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0 (CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero, int param_6)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int param_6)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-          (CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,
-          int param_6)
+void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int param_6)
 
 {
   int iVar1;

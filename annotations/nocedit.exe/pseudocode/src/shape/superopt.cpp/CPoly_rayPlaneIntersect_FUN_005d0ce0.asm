@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double __cdecl shape_superopt_cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0 (CPoly *this_ptr,CVec *ray_origin,CVec *ray_dir)
+; __cdecl double __cdecl shape_superopt_cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0(CPoly *this_ptr,CVec *ray_origin,CVec *ray_dir)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x8]:4   this_ptr

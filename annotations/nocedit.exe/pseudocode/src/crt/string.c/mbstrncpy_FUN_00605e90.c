@@ -9,7 +9,9 @@
 char * __watcallStack mbstrncpy(char *dest,char *src,int char_count)
 
 {
-  mbstrnbytes(src,char_count);
-  FUN_0060b670();
+  int iVar1;
+  
+  iVar1 = mbstrnbytes(src,char_count);
+  FUN_0060b670(dest,src,iVar1 + 1);
   return dest;
 }

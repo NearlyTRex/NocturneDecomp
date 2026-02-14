@@ -1,35 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 141,
-        "message": "use of undeclared identifier 'DAT_0067e6cc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 144,
-        "message": "use of undeclared identifier 'DAT_0067e6d0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 369,
+    "complexity_score": 341,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 38,
-    "pseudocode_lines": 209,
-    "suspect_count": 15,
+    "pseudocode_lines": 206,
+    "suspect_count": 13,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 779
+    "total_lines": 776
   },
   "cross_references": [
     {
@@ -49,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680",
-    "signature": "uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680 (CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel, int granule,SMpegFrame *frame,int bit_budget)"
+    "signature": "uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame,int bit_budget)"
   },
   "function_calls": [
     {
@@ -163,15 +149,15 @@
     },
     {
       "addr": "0067e6cc",
-      "name": "DAT_0067e6cc",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_0067e6cc",
+      "type": "int",
+      "value": "0x6"
     },
     {
       "addr": "0067e6d0",
-      "name": "DAT_0067e6d0",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_0067e6d0",
+      "type": "int",
+      "value": "0xc"
     },
     {
       "addr": "00680170",
@@ -532,105 +518,91 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 42,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_HuffmanTables[0].table_size + iVar8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 43,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 45,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].unk1 + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 47,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].unk2 + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 49,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 59,
       "match": "(int *)((int)",
       "text": "iVar7 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 67,
       "match": "(uint *)((int)",
       "text": "uVar9 = *(uint *)((int)&g_HuffmanTables[0].table_size + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 82,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_HuffmanTables[0].table_size + iVar8) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 89,
       "match": "(uint *)((int)",
       "text": "} while (uVar9 < *(uint *)((int)&g_HuffmanTables[0].table_size + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 106,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_HuffmanTables[0].table_size + iVar8) = g_HuffmanTables[iVar7].table_size;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 134,
-      "match": "DAT_0067e6cc",
-      "text": "local_20 = *(int *)(&DAT_0067e6cc +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_0067e6d0",
-      "text": "iVar8 = *(int *)(&DAT_0067e6d0 +",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 149,
       "match": "(int *)((int)",
       "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24->table_select + local_30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 152,
       "match": "(int *)((int)",
       "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24->table_select + local_30 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
+      "line": 155,
       "match": "(int *)((int)",
       "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24->table_select + local_30 + 8);",
       "type": "pointer_cast"

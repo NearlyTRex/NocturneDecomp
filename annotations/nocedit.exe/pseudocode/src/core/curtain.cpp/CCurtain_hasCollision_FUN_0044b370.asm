@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_curtain_cpp_CCurtain_hasCollision_FUN_0044b370 (CCurtain *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_curtain_cpp_CCurtain_hasCollision_FUN_0044b370(CCurtain *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr

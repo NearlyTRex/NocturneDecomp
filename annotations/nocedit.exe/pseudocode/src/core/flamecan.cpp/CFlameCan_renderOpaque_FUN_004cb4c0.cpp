@@ -11,13 +11,13 @@ int __cdecl core_flamecan_cpp_CFlameCan_renderOpaque_FUN_004cb4c0(CFlameCan *thi
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
+  CBoundingBox3D CStack_20;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)&(this_ptr->base).orient.vec,(CVector3i *)0x0);
-  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                          (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_20);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   *(int *)(this_ptr->unk + 0x2a4) = iVar1;
   if (iVar1 != 0) {

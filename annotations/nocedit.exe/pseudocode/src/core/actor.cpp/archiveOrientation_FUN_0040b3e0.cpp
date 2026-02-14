@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_archiveOrientation_FUN_0040b3e0(COrientation *orient_ptr,char *property_name)
+void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b3e0(COrientation *orient_ptr,char *property_name)
 
 {
   int iVar1;

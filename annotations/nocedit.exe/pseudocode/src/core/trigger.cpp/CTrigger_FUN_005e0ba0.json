@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 60,
-        "line": 23,
-        "message": "use of undeclared identifier 'stack0xffffffd0'"
+        "column": 5,
+        "line": 29,
+        "message": "use of undeclared identifier '_fStack_10'; did you mean 'fStack_10'?"
       }
     ],
     "success": false,
@@ -13,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 78,
+    "complexity_score": 76,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 26,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "stack_ref"
+      "extra_output"
     ],
-    "total_lines": 72
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -125,30 +124,30 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 7,
       "match": "extraout_EBX",
       "text": "int extraout_EBX;",
       "type": "extra_output"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xffffffd0",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd0);",
-      "type": "stack_ref"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "CONCAT44",
+      "text": "_fStack_10 = CONCAT44(uStack_c,fVar1);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 24,
       "match": "SQRT",
-      "text": "((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) +",
+      "text": "((double)(SQRT(fVar1 * fVar1 + fStack_18 * fStack_18 + fStack_14 * fStack_14)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
+      "line": 26,
       "match": "extraout_EBX",
-      "text": "*(float *)(extraout_EBX + 0x158) = (float)dVar5;",
+      "text": "*(float *)(extraout_EBX + 0x158) = (float)dVar3;",
       "type": "extra_output"
     }
   ]

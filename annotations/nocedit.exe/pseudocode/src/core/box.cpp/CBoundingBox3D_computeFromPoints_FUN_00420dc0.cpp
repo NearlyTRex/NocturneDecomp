@@ -2,13 +2,11 @@
 // Address: 00420dc0
 // Address Range: [[00420dc0, 00420e8f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_00420dc0 (CBoundingBox3D *this_ptr,int point_count,CVector3f *points)
+// Signature: void __cdecl core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_00420dc0(CBoundingBox3D *this_ptr,int point_count,CVector3f *points)
 
 #include "nocturne.h"
 
-void __cdecl
-core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_00420dc0
-          (CBoundingBox3D *this_ptr,int point_count,CVector3f *points)
+void __cdecl core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_00420dc0(CBoundingBox3D *this_ptr,int point_count,CVector3f *points)
 
 {
   CVector3f *pCVar1;

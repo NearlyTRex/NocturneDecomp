@@ -4,74 +4,74 @@
       {
         "category": "other",
         "column": 23,
-        "line": 61,
+        "line": 60,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 64,
+        "line": 63,
         "message": "C-style cast from 'CBoundingBox3D *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 65,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
         "column": 23,
-        "line": 72,
+        "line": 71,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 74,
+        "line": 73,
         "message": "C-style cast from 'CBoundingBox3D *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 37,
+        "line": 75,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
+      },
+      {
+        "category": "other",
+        "column": 23,
         "line": 76,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 77,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 79,
+        "line": 78,
         "message": "C-style cast from 'CBoundingBox3D *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 82,
+        "line": 81,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 83,
+        "line": 82,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 85,
+        "line": 84,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 86,
+        "line": 85,
         "message": "cannot cast from type 'float' to pointer type 'float *'"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 86,
+        "message": "C-style cast from 'float *' to 'float' is not allowed"
       },
       {
         "category": "other",
@@ -81,21 +81,21 @@
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 88,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
         "column": 43,
-        "line": 90,
+        "line": 89,
         "message": "cannot cast from type 'float' to pointer type 'float *'"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 90,
+        "line": 89,
         "message": "cannot cast from type 'float' to pointer type 'float *'"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 90,
+        "message": "C-style cast from 'float *' to 'float' is not allowed"
       },
       {
         "category": "other",
@@ -105,14 +105,14 @@
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 92,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
+        "column": 43,
+        "line": 93,
+        "message": "cannot cast from type 'float' to pointer type 'float *'"
       },
       {
         "category": "other",
-        "column": 43,
-        "line": 94,
+        "column": 68,
+        "line": 93,
         "message": "cannot cast from type 'float' to pointer type 'float *'"
       }
     ],
@@ -121,19 +121,19 @@
   },
   "complexity": {
     "assembly_lines": 442,
-    "complexity_score": 860,
+    "complexity_score": 789,
     "cross_reference_count": 9,
     "function_call_count": 10,
     "global_count": 5,
-    "pseudocode_lines": 340,
-    "suspect_count": 50,
+    "pseudocode_lines": 339,
+    "suspect_count": 43,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 782
+    "total_lines": 781
   },
   "cross_references": [
     {
@@ -425,350 +425,301 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_0000000c",
       "text": "CDemonActor *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 55,
-      "match": "5.955439e-39",
-      "text": "local_17c.fog = 5.955439e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 61,
       "match": "in_stack_00000010",
       "text": "g_ActiveRenderColor = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 66,
-      "match": "5.955552e-39",
-      "text": "local_17c.fog = 5.955552e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 71,
-      "match": "5.95559e-39",
-      "text": "local_17c.fog = 5.95559e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 77,
+      "line": 76,
       "match": "5.955617e-39",
       "text": "local_17c.w_recip = 5.955617e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 82,
+      "line": 81,
       "match": "5.955645e-39",
       "text": "local_17c.w_recip = 5.955645e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 86,
+      "line": 85,
       "match": "5.955673e-39",
       "text": "local_17c.w_recip = 5.955673e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 89,
+      "line": 88,
       "match": "5.955695e-39",
       "text": "local_14c.min.x = 5.955695e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 95,
+      "line": 94,
       "match": "5.955771e-39",
       "text": "local_14c.min.x = 5.955771e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 101,
+      "line": 100,
       "match": "5.955831e-39",
       "text": "local_14c.min.x = 5.955831e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 109,
+      "line": 108,
       "match": "5.95595e-39",
       "text": "local_17c.w_recip = 5.95595e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 114,
+      "line": 113,
       "match": "5.955977e-39",
       "text": "local_17c.w_recip = 5.955977e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 120,
+      "line": 119,
       "match": "5.956015e-39",
       "text": "local_17c.w_recip = 5.956015e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 125,
+      "line": 124,
       "match": "5.956045e-39",
       "text": "local_17c.w_recip = 5.956045e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 132,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 138,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 158,
-      "match": "5.956146e-39",
-      "text": "local_17c.fog = 5.956146e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 163,
-      "match": "5.95618e-39",
-      "text": "local_17c.fog = 5.95618e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 169,
+      "line": 168,
       "match": "5.956207e-39",
       "text": "local_17c.w_recip = 5.956207e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 174,
+      "line": 173,
       "match": "5.956235e-39",
       "text": "local_17c.w_recip = 5.956235e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 178,
+      "line": 177,
       "match": "5.956263e-39",
       "text": "local_17c.w_recip = 5.956263e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 181,
+      "line": 180,
       "match": "5.956285e-39",
       "text": "local_14c.min.x = 5.956285e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 187,
+      "line": 186,
       "match": "5.956365e-39",
       "text": "local_14c.min.x = 5.956365e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 193,
+      "line": 192,
       "match": "5.956445e-39",
       "text": "local_14c.min.x = 5.956445e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 201,
+      "line": 200,
       "match": "5.956585e-39",
       "text": "local_17c.w_recip = 5.956585e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 206,
+      "line": 205,
       "match": "5.956607e-39",
       "text": "local_17c.w_recip = 5.956607e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 212,
+      "line": 211,
       "match": "5.956645e-39",
       "text": "local_17c.w_recip = 5.956645e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 217,
+      "line": 216,
       "match": "5.956672e-39",
       "text": "local_17c.w_recip = 5.956672e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 224,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 231,
+      "line": 230,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 250,
-      "match": "5.956777e-39",
-      "text": "local_17c.fog = 5.956777e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 255,
-      "match": "5.956815e-39",
-      "text": "local_17c.fog = 5.956815e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 261,
+      "line": 260,
       "match": "5.956841e-39",
       "text": "local_17c.w_recip = 5.956841e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 266,
+      "line": 265,
       "match": "5.95687e-39",
       "text": "local_17c.w_recip = 5.95687e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 270,
+      "line": 269,
       "match": "5.956897e-39",
       "text": "local_17c.w_recip = 5.956897e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 273,
+      "line": 272,
       "match": "5.956916e-39",
       "text": "local_14c.min.x = 5.956916e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 279,
+      "line": 278,
       "match": "5.956979e-39",
       "text": "local_14c.min.x = 5.956979e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 285,
+      "line": 284,
       "match": "5.957049e-39",
       "text": "local_14c.min.x = 5.957049e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 292,
+      "line": 291,
       "match": "5.957158e-39",
       "text": "local_17c.w_recip = 5.957158e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 297,
+      "line": 296,
       "match": "5.95718e-39",
       "text": "local_17c.w_recip = 5.95718e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
-      "line": 301,
+      "line": 300,
       "match": "&stack0xffffffe8",
       "text": "local_14c.min.y = (float)&stack0xffffffe8;",
       "type": "stack_ref"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 303,
+      "line": 302,
       "match": "5.957222e-39",
       "text": "local_17c.w_recip = 5.957222e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
-      "line": 306,
+      "line": 305,
       "match": "&stack0xffffffe8",
       "text": "local_14c.min.y = (float)&stack0xffffffe8;",
       "type": "stack_ref"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 308,
+      "line": 307,
       "match": "5.957253e-39",
       "text": "local_17c.w_recip = 5.957253e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 315,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 323,
+      "line": 322,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 341,
+      "line": 340,
       "match": "5.957353e-39",
       "text": "local_14c.min.x = 5.957353e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 342,
+      "line": 341,
       "match": "in_stack_0000000c",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
       "type": "stack_param"

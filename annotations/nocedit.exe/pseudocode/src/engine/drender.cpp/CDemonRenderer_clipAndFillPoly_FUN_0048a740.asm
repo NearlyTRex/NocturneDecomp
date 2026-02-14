@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740 (CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740(CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -26,7 +26,7 @@
 ;   TerminatedCString s_CDemonRenderer_clipAndFi_00621f78
 ;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_ClippedVertexBuffer
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   undefined4 DAT_02d052a1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

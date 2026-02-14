@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 140,
+    "complexity_score": 137,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 15,
-    "pseudocode_lines": 70,
+    "pseudocode_lines": 67,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 223
+    "total_lines": 220
   },
   "cross_references": [],
   "function": {
@@ -29,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30",
-    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30 (CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)"
   },
   "function_calls": [
     {
@@ -251,42 +251,42 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 29,
       "match": "ROUND",
       "text": "g_WaveOutBufferSize = (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 40,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 43,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 46,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 49,
       "match": "(HGLOBAL *)((int)",
       "text": "pvVar4 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 50,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
       "type": "pointer_cast"

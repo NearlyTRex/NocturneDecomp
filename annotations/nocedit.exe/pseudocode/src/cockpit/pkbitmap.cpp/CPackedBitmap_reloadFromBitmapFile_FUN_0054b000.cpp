@@ -2,14 +2,11 @@
 // Address: 0054b000
 // Address Range: [[0054b000, 0054b07a]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000 (CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color, int stride,int apply_palette_flag)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int stride,int apply_palette_flag)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
-          (CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,
-          int stride,int apply_palette_flag)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int stride,int apply_palette_flag)
 
 {
   uchar *bitmap_data;

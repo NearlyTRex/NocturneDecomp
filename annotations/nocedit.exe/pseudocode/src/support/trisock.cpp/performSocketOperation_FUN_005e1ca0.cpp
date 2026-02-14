@@ -2,13 +2,11 @@
 // Address: 005e1ca0
 // Address Range: [[005e1ca0, 005e1d1a]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0 (SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *dest_addr)
+// Signature: int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *dest_addr)
 
 #include "nocturne.h"
 
-int __cdecl
-support_trisock_cpp_performSocketOperation_FUN_005e1ca0
-          (SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *dest_addr)
+int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *dest_addr)
 
 {
   int iVar1;

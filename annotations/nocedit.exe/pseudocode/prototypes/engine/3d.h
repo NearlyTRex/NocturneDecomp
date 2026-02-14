@@ -93,7 +93,7 @@ SMRGLHeaderExtended * __cdecl renderPolygonLitDetailed(SMRGLHeaderPrimitive *pol
 
 // Original: engine_3d.c_oldFunction_FUN_00404420
 // Address: 00404420
-SMRGLHeaderExtended * oldFunction(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __watcallRegister oldFunction(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_setRelativeCoord_FUN_00404450
 // Address: 00404450
@@ -337,7 +337,7 @@ SMRGLHeaderExtended * __cdecl renderPolygonEngineAPIPremiumMultiState(SMRGLHeade
 
 // Original: engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
 // Address: 00407620
-SMRGLHeaderExtended * __cdecl renderPolygonAPIAdaptivePreprocessing(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags, int alpha_blend_flags,int special_render_mode);
+SMRGLHeaderExtended * __cdecl renderPolygonAPIAdaptivePreprocessing(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,int alpha_blend_flags,int special_render_mode);
 
 // Original: engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720
 // Address: 00407720

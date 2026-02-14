@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_advanceGesture_FUN_0042d4d0(CCharacter *this_ptr,float delta_time)
+void __cdecl core_charactr_cpp_CCharacter_advanceGesture_FUN_0042d4d0(CCharacter *this_ptr,float delta_time)
 
 {
   int iVar1;

@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 38,
-        "line": 45,
+        "line": 43,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'uchar *' (aka 'unsigned char *')"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 66,
+        "line": 64,
         "message": "subscripted value is not an array, pointer, or vector"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 138,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
-    "pseudocode_lines": 73,
+    "pseudocode_lines": 71,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
       "warning_deadcode_restart"
     ],
-    "total_lines": 215
+    "total_lines": 213
   },
   "cross_references": [
     {
@@ -51,7 +51,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30 (CDemonCamera *this_ptr,CDemonLight *light_source)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDemonCamera *this_ptr,CDemonLight *light_source)"
   },
   "function_calls": [],
   "globals": [
@@ -214,28 +214,28 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 29,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)light_source->corona_visibility_buffers +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 33,
       "match": "(int *)((int)",
       "text": "piVar4 = (int *)((int)light_source->corona_lightmap_indices +",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 36,
       "match": "DAT_015c2eac",
       "text": "DAT_015c2eac = light_source->precomputed_lighting_textures;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_015c2eac",
       "text": "*pcVar9 = *pcVar9 + DAT_015c2eac[*piVar4];",
       "type": "undefined_data"

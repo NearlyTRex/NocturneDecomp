@@ -208,10 +208,10 @@ LAB_00577d41:
       }
       local_90 = local_90 + 1;
     } while (local_90 < 2);
-    if ((local_9c < 0) || ((g_MouseButtonFlags & 1) == 0)) {
+    if ((local_9c < 0) || ((g_MouseButtonFlags.dword & 1) == 0)) {
       return -1;
     }
-    g_MouseButtonFlags = 0;
+    g_MouseButtonFlags.dword = 0;
     iVar6 = local_9c;
   }
   return iVar6;

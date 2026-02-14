@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 18,
+        "line": 17,
         "message": "assigning to 'CCheckOutItem *' from incompatible type 'void *'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 48,
+    "complexity_score": 47,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 69
+    "total_lines": 68
   },
   "cross_references": [
     {
@@ -128,14 +128,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(CCheckOutItem *)((int)",
       "text": "new_entry = (CCheckOutItem *)((int)new_entry + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 21,
       "match": "(CCheckOutItem *)((int)",
       "text": "pCVar1 = (CCheckOutItem *)((int)pCVar1 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"

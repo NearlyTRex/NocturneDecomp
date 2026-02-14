@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestination *this_ptr,float delta_time)
+void __cdecl core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestination *this_ptr,float delta_time)
 
 {
   CDemonActor *pCVar1;

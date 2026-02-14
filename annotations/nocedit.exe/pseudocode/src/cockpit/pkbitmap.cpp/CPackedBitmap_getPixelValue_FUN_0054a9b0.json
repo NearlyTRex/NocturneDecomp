@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 17,
-        "line": 19,
+        "line": 17,
         "message": "comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'char *')"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 53,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 16,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 75
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0",
-    "signature": "int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0 (CPackedBitmap *this_ptr,int x_coordinate,int row_index)"
+    "signature": "int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0(CPackedBitmap *this_ptr,int x_coordinate,int row_index)"
   },
   "function_calls": [],
   "globals": [],
@@ -108,21 +108,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 11,
+      "line": 9,
       "match": "(ushort *)((int)",
       "text": "for (puVar1 = (ushort *)((int)this_ptr->row_pointers[row_index] + (int)this_ptr->packed_data);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 12,
       "match": "(ushort *)((int)",
       "text": "puVar1 = (ushort *)((int)puVar1 + (puVar1[1] + 3 & 0xfffffffc) + 4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 14,
       "match": "(byte *)((int)",
       "text": "return (uint)*(byte *)((int)puVar1 + (x_coordinate - uVar2) + 4);",
       "type": "pointer_cast"

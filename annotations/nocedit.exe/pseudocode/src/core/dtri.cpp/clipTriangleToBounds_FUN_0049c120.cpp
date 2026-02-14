@@ -2,13 +2,11 @@
 // Address: 0049c120
 // Address Range: [[0049c120, 0049cb2d]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120 (CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max)
+// Signature: int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dtri_cpp_clipTriangleToBounds_FUN_0049c120
-          (CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max)
+int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max)
 
 {
   float fVar1;

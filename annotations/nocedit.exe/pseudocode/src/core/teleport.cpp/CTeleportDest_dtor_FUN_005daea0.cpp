@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CTeleportDest * __cdecl
-core_teleport_cpp_CTeleportDest_dtor_FUN_005daea0(CTeleportDest *this_ptr,uint flags)
+CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_dtor_FUN_005daea0(CTeleportDest *this_ptr,uint flags)
 
 {
   CDemonActor *ptr;

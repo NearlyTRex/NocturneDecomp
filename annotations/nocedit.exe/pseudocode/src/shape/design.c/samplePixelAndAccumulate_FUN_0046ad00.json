@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 78,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 14,
     "suspect_count": 5,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 95
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_samplePixelAndAccumulate_FUN_0046ad00",
-    "signature": "void __cdecl shape_design_c_samplePixelAndAccumulate_FUN_0046ad00 (void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x, int pixel_y,double weight,double *red_accumulator,double *green_accumulator, double *blue_accumulator,double *alpha_accumulator)"
+    "signature": "void __cdecl shape_design_c_samplePixelAndAccumulate_FUN_0046ad00(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x,int pixel_y,double weight,double *red_accumulator,double *green_accumulator,double *blue_accumulator,double *alpha_accumulator)"
   },
   "function_calls": [
     {
@@ -205,28 +205,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 12,
       "match": "(byte *)((int)",
       "text": "*red_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2 + 2) * weight + *red_accumulator;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 13,
       "match": "(byte *)((int)",
       "text": "*green_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2 + 1) * weight + *green_accumulator;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 14,
       "match": "(byte *)((int)",
       "text": "*blue_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2) * weight + *blue_accumulator;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 15,
       "match": "(byte *)((int)",
       "text": "*alpha_accumulator = (double)*(byte *)((int)alpha_buffer + iVar1) * weight + *alpha_accumulator;",
       "type": "pointer_cast"

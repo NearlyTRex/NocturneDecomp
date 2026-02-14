@@ -8,8 +8,8 @@
 ;
 ; XREF[17]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e142f
-;   core_script.cpp_CScript_FUN_00559f80 at 0055a06c
 ;   core_script.cpp_CScript_dbLoad_FUN_005603c0 at 00560444
+;   core_script.cpp_CScript_loadScript_FUN_00559f80 at 0055a06c
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579080
 ;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 005929fc
 ;   crt_stdio.c__fclose_FUN_00601fd0 at 00602014

@@ -73,7 +73,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00580310(CDemonSet *this_ptr)
           } while (iVar4 != 0x500);
           iVar5 = iVar5 + 4;
         } while (iVar5 != 0x3c0);
-        engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
+        engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
         local_20 = local_20 + 0x23;
         local_24 = local_24 + 0x4b030;
         local_18 = local_18 + 1;

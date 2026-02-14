@@ -2,13 +2,11 @@
 // Address: 0051a300
 // Address Range: [[0051a300, 0051a3d5]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300 (CLodMesh *this_ptr,CVector3f *output_closest_point,CVector3f *target_point)
+// Signature: CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300(CLodMesh *this_ptr,CVector3f *output_closest_point,CVector3f *target_point)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
-          (CLodMesh *this_ptr,CVector3f *output_closest_point,CVector3f *target_point)
+CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300(CLodMesh *this_ptr,CVector3f *output_closest_point,CVector3f *target_point)
 
 {
   float fVar1;

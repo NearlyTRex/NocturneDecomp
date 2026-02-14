@@ -9,8 +9,8 @@
       },
       {
         "category": "other",
-        "column": 73,
-        "line": 215,
+        "column": 19,
+        "line": 216,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -19,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 644,
+    "complexity_score": 480,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 8,
-    "pseudocode_lines": 234,
-    "suspect_count": 40,
+    "pseudocode_lines": 235,
+    "suspect_count": 24,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 344
+    "total_lines": 345
   },
   "cross_references": [],
   "function": {
@@ -622,62 +621,6 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 130,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 132,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 133,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 135,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 136,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 138,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 139,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 141,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 176,
       "match": "ROUND",
@@ -760,62 +703,6 @@
       "match": "ROUND",
       "text": "local_c8.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 212,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 214,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 215,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 217,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 218,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 220,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 221,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 223,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
-      "type": "suspect_float"
     }
   ],
   "vtable_info": {

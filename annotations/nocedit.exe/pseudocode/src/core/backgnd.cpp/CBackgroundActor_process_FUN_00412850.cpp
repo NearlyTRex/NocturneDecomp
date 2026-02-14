@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_backgnd_cpp_CBackgroundActor_process_FUN_00412850(CBackgroundActor *this_ptr,float delta_time)
+void __cdecl core_backgnd_cpp_CBackgroundActor_process_FUN_00412850(CBackgroundActor *this_ptr,float delta_time)
 
 {
   return;

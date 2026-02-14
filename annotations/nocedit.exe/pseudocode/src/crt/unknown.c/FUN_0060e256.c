@@ -2,34 +2,34 @@
 // Address: 0060e256
 // Address Range: [[0060e256, 0060e28d]]
 // Convention: unknown
-// Signature: undefined8 crt_unknown_c_FUN_0060e256(uint param_1,uint param_2,uint unaff_EBX,uint param_4)
+// Signature: int crt_unknown_c_FUN_0060e256(void)
 
 #include "nocturne.h"
 
-ulonglong FUN_0060e256(uint param_1,uint param_2,uint unaff_EBX,uint param_4)
+int FUN_0060e256(void)
 
 {
-  int iVar1;
-  bool bVar2;
+  uint in_EAX;
+  uint in_ECX;
+  uint in_EDX;
+  uint unaff_EBX;
+  bool bVar1;
   
-  if ((param_2 & 0x7ff00000) == 0) {
-    param_2 = 0;
+  if ((in_EDX & 0x7ff00000) == 0) {
+    in_EDX = 0;
   }
-  if ((param_4 & 0x7ff00000) == 0) {
-    param_4 = 0;
+  if ((in_ECX & 0x7ff00000) == 0) {
+    in_ECX = 0;
   }
-  iVar1 = 0;
-  if (-1 < (int)(param_4 ^ param_2)) {
-    bVar2 = param_2 < param_4;
-    if (param_2 == param_4) {
-      bVar2 = param_1 < unaff_EBX;
+  if (-1 < (int)(in_ECX ^ in_EDX)) {
+    bVar1 = in_EDX < in_ECX;
+    if (in_EDX == in_ECX) {
+      bVar1 = in_EAX < unaff_EBX;
     }
-    if (param_2 == param_4 && param_1 == unaff_EBX) goto LAB_0060e28a;
-    param_2 = param_2 ^ (param_4 >> 1 | (uint)bVar2 << 0x1f);
+    if (in_EDX == in_ECX && in_EAX == unaff_EBX) {
+      return 0;
+    }
+    in_EDX = in_EDX ^ (in_ECX >> 1 | (uint)bVar1 << 0x1f);
   }
-  bVar2 = CARRY4(param_2,param_2);
-  param_2 = param_2 * 2;
-  iVar1 = (uint)bVar2 * -2 + 1;
-LAB_0060e28a:
-  return CONCAT44(param_2,iVar1);
+  return (uint)CARRY4(in_EDX,in_EDX) * -2 + 1;
 }

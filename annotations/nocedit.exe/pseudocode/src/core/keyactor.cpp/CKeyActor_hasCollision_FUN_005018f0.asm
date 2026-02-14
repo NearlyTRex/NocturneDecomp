@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_keyactor_cpp_CKeyActor_hasCollision_FUN_005018f0 (CKeyActor *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_keyactor_cpp_CKeyActor_hasCollision_FUN_005018f0(CKeyActor *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0 (CDemonActor *this_ptr,float radius,CVector3f *out_normal)
+; __cdecl float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0(CDemonActor *this_ptr,float radius,CVector3f *out_normal)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

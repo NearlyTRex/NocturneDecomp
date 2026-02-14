@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(CVector3f *position_source_ptr)
+void __cdecl sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(CVector3f *position_source_ptr)
 
 {
   int iVar1;

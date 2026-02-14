@@ -2,14 +2,11 @@
 // Address: 0043ee60
 // Address Range: [[0043ee60, 0043eee1]]
 // Convention: __cdecl
-// Signature: void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60 (CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits,int normal_code_width, int fallback_code_width)
+// Signature: void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits,int normal_code_width,int fallback_code_width)
 
 #include "nocturne.h"
 
-void __cdecl
-support_codec_cpp_CLZWDictionary_init_FUN_0043ee60
-          (CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits,int normal_code_width,
-          int fallback_code_width)
+void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits,int normal_code_width,int fallback_code_width)
 
 {
   CLZWDictionaryNode *pCVar1;

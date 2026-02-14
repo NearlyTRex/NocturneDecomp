@@ -2,13 +2,11 @@
 // Address: 005a9910
 // Address Range: [[005a9910, 005a996b]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndmain_cpp_setSfxTrackedDoublePosition_FUN_005a9910 (uint sfx_handle,CVector3d *position_source_ptr)
+// Signature: int __cdecl sound_sndmain_cpp_setSfxTrackedDoublePosition_FUN_005a9910(uint sfx_handle,CVector3d *position_source_ptr)
 
 #include "nocturne.h"
 
-int __cdecl
-sound_sndmain_cpp_setSfxTrackedDoublePosition_FUN_005a9910
-          (uint sfx_handle,CVector3d *position_source_ptr)
+int __cdecl sound_sndmain_cpp_setSfxTrackedDoublePosition_FUN_005a9910(uint sfx_handle,CVector3d *position_source_ptr)
 
 {
   CSfxSlot *this_ptr;

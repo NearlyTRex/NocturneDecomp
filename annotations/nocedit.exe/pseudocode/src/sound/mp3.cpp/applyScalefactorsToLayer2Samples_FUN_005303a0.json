@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 54,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 69
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0",
-    "signature": "void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_005303a0 (float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info)"
+    "signature": "void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_005303a0(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info)"
   },
   "function_calls": [],
   "globals": [
@@ -108,14 +108,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(int *)((int)",
       "text": "piVar4 = (int *)((int)scalefactor_indices + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 18,
       "match": "(float *)((int)",
       "text": "pfVar3 = (float *)((int)sample_array + iVar6);",
       "type": "pointer_cast"

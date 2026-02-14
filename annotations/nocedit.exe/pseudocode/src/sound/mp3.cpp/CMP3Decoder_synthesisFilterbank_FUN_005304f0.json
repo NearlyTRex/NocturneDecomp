@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 41,
-        "line": 110,
+        "line": 108,
         "message": "assigning to 'float *' from 'const float *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 112,
+        "line": 110,
         "message": "assigning to 'float *' from 'const float *' discards qualifiers"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 203,
+    "complexity_score": 201,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 13,
-    "pseudocode_lines": 123,
+    "pseudocode_lines": 121,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output"
     ],
-    "total_lines": 362
+    "total_lines": 360
   },
   "cross_references": [
     {
@@ -50,7 +50,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0",
-    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0 (CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output)"
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0(CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output)"
   },
   "function_calls": [
     {
@@ -348,49 +348,49 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 12,
       "match": "extraout_EBX",
       "text": "float *extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
+      "line": 14,
       "match": "extraout_EBX_00",
       "text": "float *extraout_EBX_00;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 39,
       "match": "fcos",
       "text": "fVar10 = (float10)fcos((float10)iVar7 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 49,
+      "line": 47,
       "match": "extraout_EBX_00",
       "text": "pfVar8 = extraout_EBX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 55,
+      "line": 53,
       "match": "extraout_EBX",
       "text": "pfVar8 = extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 73,
       "match": "ABS",
       "text": "if ((float)1.0000000000000001e-05 < ABS(subband_samples[iVar7])) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
+      "line": 111,
       "match": "ROUND",
       "text": "local_30 = (int)ROUND(fVar2 * 32768.0);",
       "type": "decompiler_intrinsic"

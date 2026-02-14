@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 28,
+        "line": 27,
         "message": "use of undeclared identifier 'stack0xfffffff4'"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 91,
+    "complexity_score": 90,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 25,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 64
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -125,35 +125,35 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_2",
-      "text": "support_trisock_cpp_getSocketName_FUN_005e1df0(SOCKET *socket_handle,SNetworkAddr *param_2)",
+      "text": "int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(SOCKET *socket_handle,SNetworkAddr *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 21,
+      "line": 20,
       "match": "&stack0xfffffff4",
       "text": "((SOCKADDR_IN *)&stack0xfffffff4,&local_1c);",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 21,
       "match": "param_2",
       "text": "pSVar2 = param_2 + -(uint)bVar5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_2",
       "text": "param_2->ip_address = *(uint *)pSVar4;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(uint *)((int)",
       "text": "uVar1 = *(uint *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"

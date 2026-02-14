@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_light_cpp_calculateVertexLighting_FUN_00505830(int unused_param,CVector3i *vertex_position)
+int __cdecl engine_light_cpp_calculateVertexLighting_FUN_00505830(int unused_param,CVector3i *vertex_position)
 
 {
   int iVar1;

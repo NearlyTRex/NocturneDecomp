@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010 (CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width, int max_pixel_width)
+; __cdecl int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -24,7 +24,7 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3f6d
 ;   core_game.cpp_CGame_renderOverlay_FUN_004d8040 at 004d8495
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_00500690 at 00500f47
-;   core_script.cpp_CScript_FUN_00559b20 at 00559c80
+;   core_script.cpp_CScript_renderSubtitles_FUN_00559b20 at 00559c80
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 at 004a0ab5
 ;
 ; Referenced Globals:

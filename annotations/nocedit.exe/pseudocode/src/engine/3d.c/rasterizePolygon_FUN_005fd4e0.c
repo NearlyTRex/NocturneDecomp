@@ -2,13 +2,11 @@
 // Address: 005fd4e0
 // Address Range: [[005fd4e0, 005fd985]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0 (SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
+// Signature: void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_3d_c_rasterizePolygon_FUN_005fd4e0
-          (SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
+void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
 
 {
   longlong lVar1;
@@ -108,7 +106,7 @@ engine_3d_c_rasterizePolygon_FUN_005fd4e0
         g_RasterizerEdgeArray[(int)pvVar13].x_current = (pSVar7->projected_vertex).screen_x;
         g_RasterizerEdgeArray[(int)pvVar13].z_current =
              (pSVar7->projected_vertex).transformed_z << 8;
-        g_RasterizerEdgeArray[(int)pvVar13].light_current = (int)pSVar7->light;
+        g_RasterizerEdgeArray[(int)pvVar13].light_current = pSVar7->light;
         uVar10 = (pSVar11->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
         if (uVar10 < 0x10000) {
           iVar14 = 0;
@@ -128,7 +126,7 @@ engine_3d_c_rasterizePolygon_FUN_005fd4e0
                  (pSVar7->projected_vertex).transformed_z) * 0x100);
         g_RasterizerEdgeArray[(int)pvVar13].z_delta =
              (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        lVar1 = (longlong)iVar14 * (longlong)((int)pSVar11->light - (int)pSVar7->light);
+        lVar1 = (longlong)iVar14 * (longlong)(pSVar11->light - pSVar7->light);
         g_RasterizerEdgeArray[(int)pvVar13].light_delta =
              (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
         uVar10 = (uint)(ushort)((ushort)(pSVar7->projected_vertex).screen_y ^ 0xffff);

@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 16,
-        "line": 57,
+        "line": 56,
         "message": "cannot cast from type 'float' to pointer type 'int *'"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 58,
+        "line": 57,
         "message": "cannot cast from type 'float' to pointer type 'LPDIRECTSOUNDBUFFER' (aka 'IDirectSoundBuffer *')"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 63,
+        "line": 62,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 64,
+        "line": 63,
         "message": "C-style cast from 'LPDIRECTSOUNDBUFFER' (aka 'IDirectSoundBuffer *') to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 74,
+        "line": 73,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 88,
+        "line": 87,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
@@ -88,7 +88,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750",
-    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750 (CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)"
+    "signature": "int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)"
   },
   "function_calls": [
     {
@@ -411,21 +411,21 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 10,
       "match": "extraout_EBX",
       "text": "CSfxSlot *extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 94,
       "match": "ROUND",
       "text": "local_24 = (long)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 96,
+      "line": 95,
       "match": "extraout_EBX",
       "text": "slot = extraout_EBX;",
       "type": "extra_output"
@@ -441,7 +441,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 127,
       "match": "code *",
-      "text": "uVar2 = (**(code **)(*local_2c + 0x44))();",
+      "text": "uVar2 = (**(code **)(*local_2c + 0x44))(local_2c,(uint)lStack_40,uVar6);",
       "type": "unresolved_funcptr"
     },
     {

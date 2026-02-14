@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 156,
+    "complexity_score": 154,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 111,
+    "pseudocode_lines": 109,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 366
+    "total_lines": 364
   },
   "cross_references": [],
   "function": {
@@ -29,7 +29,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_computeComplexFFT_FUN_005a39a0",
-    "signature": "void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0 (float *input_real,float *input_imag,float *output_real,float *output_imag,int size)"
+    "signature": "void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0(float *input_real,float *input_imag,float *output_real,float *output_imag,int size)"
   },
   "function_calls": [],
   "globals": [
@@ -281,28 +281,28 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 63,
       "match": "fcos",
       "text": "fVar3 = (float10)fcos(fVar18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 64,
       "match": "fsin",
       "text": "fVar19 = (float10)fsin(fVar18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "fsin",
       "text": "fVar21 = (float10)fsin(fVar18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 68,
       "match": "fcos",
       "text": "fVar18 = (float10)fcos(fVar18);",
       "type": "decompiler_intrinsic"

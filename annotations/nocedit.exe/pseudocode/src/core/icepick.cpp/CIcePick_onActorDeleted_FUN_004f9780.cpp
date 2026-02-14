@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_icepick_cpp_CIcePick_onActorDeleted_FUN_004f9780(CIcePick *this_ptr,CDemonActor *deleted_actor)
+void __cdecl core_icepick_cpp_CIcePick_onActorDeleted_FUN_004f9780(CIcePick *this_ptr,CDemonActor *deleted_actor)
 
 {
   core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0((CCharacter *)this_ptr,deleted_actor);

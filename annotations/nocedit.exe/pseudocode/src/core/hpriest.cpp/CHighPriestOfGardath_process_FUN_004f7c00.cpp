@@ -2,13 +2,11 @@
 // Address: 004f7c00
 // Address Range: [[004f7c00, 004f7c41]]
 // Convention: __cdecl
-// Signature: void __cdecl core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004f7c00 (CHighPriestOfGardath *this_ptr,float delta_time)
+// Signature: void __cdecl core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004f7c00(CHighPriestOfGardath *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl
-core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004f7c00
-          (CHighPriestOfGardath *this_ptr,float delta_time)
+void __cdecl core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004f7c00(CHighPriestOfGardath *this_ptr,float delta_time)
 
 {
   int iVar1;

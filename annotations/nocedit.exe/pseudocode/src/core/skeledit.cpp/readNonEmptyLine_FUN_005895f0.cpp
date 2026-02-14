@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *file,int require_content)
+int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *file,int require_content)
 
 {
   int iVar1;

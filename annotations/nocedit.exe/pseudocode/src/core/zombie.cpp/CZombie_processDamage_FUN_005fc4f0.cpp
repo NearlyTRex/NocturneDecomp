@@ -6,8 +6,9 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_ptr,SDamageInfo *damage_info)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;

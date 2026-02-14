@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500 (CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count)
+; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500(CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

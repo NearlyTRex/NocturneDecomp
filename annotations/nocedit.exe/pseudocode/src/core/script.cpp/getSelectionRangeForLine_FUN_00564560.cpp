@@ -2,13 +2,11 @@
 // Address: 00564560
 // Address Range: [[00564560, 005645c0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_script_cpp_getSelectionRangeForLine_FUN_00564560 (int line,int *sel_start_col_out,int *sel_end_col_out)
+// Signature: void __cdecl core_script_cpp_getSelectionRangeForLine_FUN_00564560(int line,int *sel_start_col_out,int *sel_end_col_out)
 
 #include "nocturne.h"
 
-void __cdecl
-core_script_cpp_getSelectionRangeForLine_FUN_00564560
-          (int line,int *sel_start_col_out,int *sel_end_col_out)
+void __cdecl core_script_cpp_getSelectionRangeForLine_FUN_00564560(int line,int *sel_start_col_out,int *sel_end_col_out)
 
 {
   int iVar1;

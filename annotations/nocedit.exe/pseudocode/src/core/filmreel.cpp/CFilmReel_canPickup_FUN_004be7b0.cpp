@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_filmreel_cpp_CFilmReel_canPickup_FUN_004be7b0(CFilmReel *this_ptr,CDemonActor *picker)
+int __cdecl core_filmreel_cpp_CFilmReel_canPickup_FUN_004be7b0(CFilmReel *this_ptr,CDemonActor *picker)
 
 {
   int iVar1;

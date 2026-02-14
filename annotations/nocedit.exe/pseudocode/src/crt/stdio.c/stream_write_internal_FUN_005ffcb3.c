@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-_FILE * __cdecl
-stream_write_internal(_FILE *stream,void *buffer,SIZE_T count)
+_FILE * __cdecl stream_write_internal(_FILE *stream,void *buffer,SIZE_T count)
 
 {
   int iVar1;
@@ -40,7 +39,7 @@ stream_write_internal(_FILE *stream,void *buffer,SIZE_T count)
         SVar3 = count;
       }
       else {
-        SVar3 = (**(code **)(*(int *)(iVar1 + 0x28) + 4))();
+        SVar3 = (**(code **)(*(int *)(iVar1 + 0x28) + 4))(iVar1,buffer,count);
       }
       if (SVar3 != count) {
         reportStreamError

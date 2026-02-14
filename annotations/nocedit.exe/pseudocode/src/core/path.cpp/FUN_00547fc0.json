@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 127,
+        "line": 128,
         "message": "use of undeclared identifier 'stack0xffffff80'"
       },
       {
         "category": "undeclared_identifier",
         "column": 81,
-        "line": 138,
+        "line": 139,
         "message": "use of undeclared identifier 'stack0xffffff7c'"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 308,
-    "complexity_score": 408,
+    "complexity_score": 399,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 30,
-    "pseudocode_lines": 158,
-    "suspect_count": 23,
+    "pseudocode_lines": 159,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 466
+    "total_lines": 467
   },
   "cross_references": [
     {
@@ -124,7 +124,7 @@
     },
     {
       "addr": "00680bb0",
-      "name": "DAT_00680bb0",
+      "name": "SMRGLTextureBasic_00680bb0",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -556,112 +556,105 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_00680bb0",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_00680bb0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_030d4fd0",
       "text": "DAT_030d4fd0.base.count = 4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_030d4fd0",
       "text": "DAT_030d4fd0.surface_normal.A = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 59,
       "match": "DAT_030d4fd0",
       "text": "DAT_030d4fd0.surface_normal.B = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_030d4fd0",
       "text": "DAT_030d4fd0.surface_normal.C = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_030d4fd0",
       "text": "DAT_030d4fd0.surface_normal.D = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 76,
       "match": "in_stack_00000008",
       "text": "local_20 = in_stack_00000008 << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 77,
       "match": "in_stack_0000000c",
       "text": "local_28 = (byte *)(in_stack_0000000c << 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 78,
       "match": "in_stack_00000010",
       "text": "local_24 = in_stack_00000010 << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 81,
       "match": "in_stack_00000014",
       "text": "local_1c = in_stack_00000014 << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 84,
       "match": "in_stack_00000004",
       "text": "local_18 = local_2c + in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 111,
       "match": "ROUND",
       "text": "iVar2 = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
+      "line": 121,
       "match": "&stack0xffffff80",
       "text": "puVar9 = &stack0xffffff80;",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 125,
       "match": "ROUND",
       "text": "iStack_7c = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 131,
+      "line": 132,
       "match": "&stack0xffffff7c",
       "text": "(&pCVar1->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0xffffff7c);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 150,
+      "line": 151,
       "match": "DAT_030d4fd0",
       "text": "(pCVar1,&DAT_030d4fd0);",
       "type": "undefined_data"

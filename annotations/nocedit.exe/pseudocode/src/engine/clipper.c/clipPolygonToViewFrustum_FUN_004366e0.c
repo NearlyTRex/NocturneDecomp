@@ -12,8 +12,7 @@
 /* WARNING: Removing unreachable block (ram,0x0043708f) */
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl
-engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *vertex_indices)
+int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *vertex_indices)
 
 {
   longlong lVar1;
@@ -161,7 +160,7 @@ engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *ver
       }
       g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
       wincore_windll_cpp_drawPolygon2_FUN_005b7610
-                (g_ClipperCullingPointers,vertex_count,g_RenderStateFlags);
+                (g_ClipperCullingPointers,vertex_count,g_RenderStateFlags.dword);
       return 1;
     }
     iVar8 = 0;

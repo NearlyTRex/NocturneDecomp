@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_005bfb10 (CStranger *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
+; __cdecl void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_005bfb10(CStranger *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

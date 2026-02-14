@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_beast_cpp_CBeast_hasCollision_FUN_00418400(CBeast *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_beast_cpp_CBeast_hasCollision_FUN_00418400(CBeast *this_ptr,SCollisionInfo *collision_info)
 
 {
   if (collision_info->ray_type != 1) {

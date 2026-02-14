@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 23,
-        "line": 18,
+        "line": 16,
         "message": "C-style cast from 'char **' to 'char *[1]' is not allowed"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 19,
+        "line": 17,
         "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 20,
+        "line": 18,
         "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 54,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 12,
     "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 52
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -55,7 +55,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 (CDrawSurface *this_ptr,int x,int y,int width,char *format,...)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860(CDrawSurface *this_ptr,int x,int y,int width,char *format,...)"
   },
   "function_calls": [
     {
@@ -180,14 +180,14 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 5,
       "match": "in_stack_00000014",
       "text": "char *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000014",
       "text": "_vsprintf(local_1014,in_stack_00000014,(va_list_t)&local_14);",
       "type": "stack_param"

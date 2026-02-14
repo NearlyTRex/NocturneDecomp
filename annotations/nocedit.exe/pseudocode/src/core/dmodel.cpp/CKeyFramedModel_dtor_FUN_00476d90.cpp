@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CKeyFramedModel * __cdecl
-core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel *this_ptr,uint flags)
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel *this_ptr,uint flags)
 
 {
   core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dog_cpp_CZombieDog_processDamage_FUN_0047f820(CZombieDog *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_0047f820(CZombieDog *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
   SMotion *pSVar2;
   uint uVar3;
-  SDamageInfo *in_stack_00000010;
   int iVar4;
   
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -42,6 +40,6 @@ LAB_0047f855:
   uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"dog2.wav");
   *(uint *)(this_ptr->field1_0xbebc + 8) = uVar3;
-  core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,in_stack_00000010);
+  core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;
 }

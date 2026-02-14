@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 79,
+        "line": 78,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 79,
+        "line": 78,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 79,
+        "line": 78,
         "message": "use of undeclared identifier 'PTR_LAB_00457630'"
       }
     ],
@@ -25,11 +25,11 @@
   },
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 244,
+    "complexity_score": 243,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
-    "pseudocode_lines": 99,
+    "pseudocode_lines": 98,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -38,7 +38,7 @@
       "warning_indirect_jump",
       "warning_jumptable"
     ],
-    "total_lines": 327
+    "total_lines": 326
   },
   "cross_references": [
     {
@@ -382,84 +382,84 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 40,
       "match": "ROUND",
       "text": "local_48.x = (int)ROUND(pCVar4->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 41,
       "match": "ROUND",
       "text": "local_48.y = (int)ROUND(pCVar4->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 42,
       "match": "ROUND",
       "text": "local_48.z = (int)ROUND(pCVar4->z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Jump table recovery failed",
-      "line": 70,
+      "line": 69,
       "match": "WARNING: Could not recover jumptable",
       "text": "/* WARNING: Could not recover jumptable at 0x0045776e. Too many branches */",
       "type": "warning_jumptable"
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 71,
+      "line": 70,
       "match": "WARNING: Treating indirect jump as call",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 72,
+      "line": 71,
       "match": "code *",
       "text": "(**(code **)((int)&PTR_LAB_00457630 + local_24))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(float *)((int)",
       "text": "pfVar1 = (float *)((int)pCVar2->vertices + local_18 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(float *)((int)",
       "text": "local_38 = *(float *)((int)pCVar2->vertices + local_18 + 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 79,
       "match": "(float *)((int)",
       "text": "local_34 = *(float *)((int)pCVar2->vertices + local_18 + 0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 84,
       "match": "ROUND",
       "text": "local_28 = (uint)ROUND(local_34);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 85,
       "match": "ROUND",
       "text": "local_2c = (uint)ROUND(local_38);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 86,
       "match": "ROUND",
       "text": "local_30 = (uint)ROUND(local_3c);",
       "type": "decompiler_intrinsic"

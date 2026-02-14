@@ -2,14 +2,11 @@
 // Address: 00495b70
 // Address Range: [[00495b70, 00496219]]
 // Convention: __cdecl
-// Signature: float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70 (CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end, CVector3f *out_intersection_point,int *out_intersection_type)
+// Signature: float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *out_intersection_point,int *out_intersection_type)
 
 #include "nocturne.h"
 
-float __cdecl
-core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-          (CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,
-          CVector3f *out_intersection_point,int *out_intersection_type)
+float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *out_intersection_point,int *out_intersection_type)
 
 {
   int iVar1;

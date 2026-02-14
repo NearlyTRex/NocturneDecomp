@@ -2,13 +2,11 @@
 // Address: 00506d90
 // Address Range: [[00506d90, 00506d92]]
 // Convention: __cdecl
-// Signature: int __cdecl core_litecone_cpp_CLightCone_hasCollision_FUN_00506d90 (CLightCone *this_ptr,SCollisionInfo *collision_info)
+// Signature: int __cdecl core_litecone_cpp_CLightCone_hasCollision_FUN_00506d90(CLightCone *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-int __cdecl
-core_litecone_cpp_CLightCone_hasCollision_FUN_00506d90
-          (CLightCone *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_litecone_cpp_CLightCone_hasCollision_FUN_00506d90(CLightCone *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

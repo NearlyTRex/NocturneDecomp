@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height, int first_char)
+; __cdecl void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height,int first_char)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

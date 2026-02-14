@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (CStrList *this_ptr,char *search_key,char *file_path,int file_size)
+; __cdecl void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr

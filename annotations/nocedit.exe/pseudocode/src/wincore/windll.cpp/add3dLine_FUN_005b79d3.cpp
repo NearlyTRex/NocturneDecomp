@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-wincore_windll_cpp_add3dLine_FUN_005b79d3(void *start_point,void *end_point,int line_style)
+int __cdecl wincore_windll_cpp_add3dLine_FUN_005b79d3(void *start_point,void *end_point,int line_style)
 
 {
   int iVar1;

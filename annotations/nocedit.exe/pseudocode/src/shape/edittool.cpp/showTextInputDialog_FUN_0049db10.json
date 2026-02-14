@@ -4,31 +4,37 @@
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 40,
+        "line": 38,
         "message": "use of undeclared identifier 'stack0xfffffce0'; did you mean 'in_stack_fffffce0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 67,
+        "line": 65,
         "message": "use of undeclared identifier 'stack0xfffffce0'; did you mean 'in_stack_fffffce0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 82,
+        "line": 80,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 79,
-        "line": 103,
+        "line": 101,
         "message": "use of undeclared identifier 'stack0xfffffce0'; did you mean 'in_stack_fffffce0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 85,
-        "line": 106,
+        "line": 104,
+        "message": "use of undeclared identifier 'stack0xfffffce0'; did you mean 'in_stack_fffffce0'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 107,
         "message": "use of undeclared identifier 'stack0xfffffce0'; did you mean 'in_stack_fffffce0'?"
       },
       {
@@ -39,14 +45,8 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 35,
-        "line": 111,
-        "message": "use of undeclared identifier 'stack0xfffffce0'; did you mean 'in_stack_fffffce0'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 85,
-        "line": 114,
+        "line": 112,
         "message": "use of undeclared identifier 'stack0xfffffce0'; did you mean 'in_stack_fffffce0'?"
       }
     ],
@@ -55,18 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 413,
-    "complexity_score": 287,
+    "complexity_score": 285,
     "cross_reference_count": 2,
     "function_call_count": 25,
     "global_count": 23,
-    "pseudocode_lines": 142,
+    "pseudocode_lines": 140,
     "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 555
+    "total_lines": 553
   },
   "cross_references": [
     {
@@ -92,7 +92,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10",
-    "signature": "int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10 (int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags)"
+    "signature": "int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10(int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags )"
   },
   "function_calls": [
     {
@@ -314,8 +314,8 @@
     },
     {
       "addr": "02cf2b00",
-      "name": "g_ActiveButton",
-      "type": "CEdButton*",
+      "name": "g_ActiveControl",
+      "type": "void*",
       "value": null
     },
     {
@@ -525,84 +525,84 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_fffffce0",
       "text": "int in_stack_fffffce0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_fffffce4",
       "text": "int in_stack_fffffce4;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 33,
+      "line": 31,
       "match": "&stack0xfffffce0",
       "text": "((CInputString *)&stack0xfffffce0,pcVar6,(int)input_buffer,dialog_flags,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_fffffce0",
       "text": "in_stack_fffffce0,in_stack_fffffce4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_fffffce4",
       "text": "in_stack_fffffce0,in_stack_fffffce4);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
+      "line": 58,
       "match": "&stack0xfffffce0",
       "text": "((CInputString *)&stack0xfffffce0,g_ClipLeft,g_ClipTop);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 75,
+      "line": 73,
       "match": "&stack0xfffffce0",
       "text": "pcVar6 = &stack0xfffffce0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 96,
+      "line": 94,
       "match": "&stack0xfffffce0",
       "text": "shape_edittool_cpp_CInputString_backspace_FUN_0049d5d0((CInputString *)&stack0xfffffce0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 99,
+      "line": 97,
       "match": "&stack0xfffffce0",
       "text": "shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580((CInputString *)&stack0xfffffce0)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 102,
+      "line": 100,
       "match": "&stack0xfffffce0",
       "text": "((CInputString *)&stack0xfffffce0,(char)iVar3,1);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 102,
       "match": "&stack0xfffffce0",
       "text": "((CInputString *)&stack0xfffffce0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 107,
+      "line": 105,
       "match": "&stack0xfffffce0",
       "text": "shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0049d6c0((CInputString *)&stack0xfffffce0)",
       "type": "stack_ref"

@@ -2,14 +2,11 @@
 // Address: 00431d00
 // Address Range: [[00431d00, 00431f3a]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00431d00 (void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width ,int height)
+// Signature: void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00431d00(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00431d00
-          (void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width
-          ,int height)
+void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00431d00(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height)
 
 {
   int iVar1;

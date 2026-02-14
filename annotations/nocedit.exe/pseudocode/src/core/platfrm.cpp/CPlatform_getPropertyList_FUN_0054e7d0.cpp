@@ -2,13 +2,11 @@
 // Address: 0054e7d0
 // Address Range: [[0054e7d0, 0054e9ef]]
 // Convention: __cdecl
-// Signature: void __cdecl core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0 (CPlatform *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0(CPlatform *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0
-          (CPlatform *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0(CPlatform *this_ptr,CActorPropertyList *property_list)
 
 {
   CActorProperty *pCVar1;

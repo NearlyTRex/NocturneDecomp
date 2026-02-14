@@ -6,8 +6,10 @@
 
 #include "nocturne.h"
 
-void * __cdecl
-__arrinit(void *array_start,int element_count,WatcomTypeInfo *type_info)
+/* WARNING: Variable defined which should be unmapped: loop_counter */
+/* WARNING: Variable defined which should be unmapped: temp_type_info */
+
+void * __cdecl __arrinit(void *array_start,int element_count,WatcomTypeInfo *type_info)
 
 {
   WATCOM_DEFAULT_CONSTRUCTOR_FUNC *pWVar1;

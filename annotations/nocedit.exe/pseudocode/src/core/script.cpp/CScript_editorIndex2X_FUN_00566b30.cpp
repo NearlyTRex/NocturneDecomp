@@ -2,13 +2,11 @@
 // Address: 00566b30
 // Address Range: [[00566b30, 00566bbe]]
 // Convention: __cdecl
-// Signature: uint __cdecl core_script_cpp_CScript_editorIndex2X_FUN_00566b30 (CScript *this_ptr,int line_number,uint buffer_index)
+// Signature: uint __cdecl core_script_cpp_CScript_editorIndex2X_FUN_00566b30(CScript *this_ptr,int line_number,uint buffer_index)
 
 #include "nocturne.h"
 
-uint __cdecl
-core_script_cpp_CScript_editorIndex2X_FUN_00566b30
-          (CScript *this_ptr,int line_number,uint buffer_index)
+uint __cdecl core_script_cpp_CScript_editorIndex2X_FUN_00566b30(CScript *this_ptr,int line_number,uint buffer_index)
 
 {
   int iVar1;

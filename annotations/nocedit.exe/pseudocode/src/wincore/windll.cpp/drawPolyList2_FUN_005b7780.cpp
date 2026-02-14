@@ -2,18 +2,15 @@
 // Address: 005b7780
 // Address Range: [[005b7780, 005b78bc]]
 // Convention: __cdecl
-// Signature: int __cdecl wincore_windll_cpp_drawPolyList2_FUN_005b7780 (void *vertex_buffer,void **polygons,int polygon_count,int render_flags)
+// Signature: int __cdecl wincore_windll_cpp_drawPolyList2_FUN_005b7780(void *vertex_buffer,void **polygons,int polygon_count,int render_flags)
 
 #include "nocturne.h"
 
-int __cdecl
-wincore_windll_cpp_drawPolyList2_FUN_005b7780
-          (void *vertex_buffer,void **polygons,int polygon_count,int render_flags)
+int __cdecl wincore_windll_cpp_drawPolyList2_FUN_005b7780(void *vertex_buffer,void **polygons,int polygon_count,int render_flags)
 
 {
   ushort *puVar1;
   int iVar2;
-  int in_stack_00000018;
   void *local_1c;
   void *local_18;
   void *local_14;
@@ -42,7 +39,7 @@ wincore_windll_cpp_drawPolyList2_FUN_005b7780
       (*g_APIDLL_drawPolygon2)(&local_1c,3,render_flags);
       iVar2 = iVar2 + 1;
       polygons = polygons + 1;
-    } while (iVar2 < in_stack_00000018);
+    } while (iVar2 < polygon_count);
   }
   return 1;
 }

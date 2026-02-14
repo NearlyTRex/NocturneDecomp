@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_isAngleBelowThreshold_FUN_00461d30 (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold)
+; __cdecl int __cdecl shape_design_c_isAngleBelowThreshold_FUN_00461d30(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold)
 ;
 ; Parameters:
 ; SShapeEditorPolygon * Stack[0x4]:4   polygon1

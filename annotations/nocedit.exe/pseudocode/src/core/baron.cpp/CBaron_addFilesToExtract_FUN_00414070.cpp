@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_baron_cpp_CBaron_addFilesToExtract_FUN_00414070(CBaron *this_ptr,_FILE *file_handle)
+void __cdecl core_baron_cpp_CBaron_addFilesToExtract_FUN_00414070(CBaron *this_ptr,_FILE *file_handle)
 
 {
   core_hero_cpp_CHero_addFilesToExtract_FUN_004f3fa0(&this_ptr->base,file_handle);

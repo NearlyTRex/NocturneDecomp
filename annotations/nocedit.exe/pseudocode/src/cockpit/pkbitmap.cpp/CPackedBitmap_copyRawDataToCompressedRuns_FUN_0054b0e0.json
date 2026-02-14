@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 19,
-        "line": 36,
+        "line": 34,
         "message": "comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'char *')"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 73,
+    "complexity_score": 71,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 46,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 123
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -48,7 +48,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0 (CPackedBitmap *this_ptr,uchar *raw_bitmap_data,int row_stride)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0(CPackedBitmap *this_ptr,uchar *raw_bitmap_data,int row_stride)"
   },
   "function_calls": [],
   "globals": [],
@@ -155,14 +155,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(int *)((int)",
       "text": "piVar5 = (int *)((int)this_ptr->row_pointers + local_14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(ushort *)((int)",
       "text": "puVar9 = (ushort *)((int)puVar9 + 1);",
       "type": "pointer_cast"

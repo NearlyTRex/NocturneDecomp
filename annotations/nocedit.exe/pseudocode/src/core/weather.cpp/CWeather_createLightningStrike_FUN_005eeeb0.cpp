@@ -2,13 +2,11 @@
 // Address: 005eeeb0
 // Address Range: [[005eeeb0, 005eeecf]]
 // Convention: __cdecl
-// Signature: void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0 (CWeather *this_ptr,float param_2,int param_3)
+// Signature: void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)
 
 #include "nocturne.h"
 
-void __cdecl
-core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0
-          (CWeather *this_ptr,float param_2,int param_3)
+void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)
 
 {
   float fVar1;

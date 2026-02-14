@@ -2,13 +2,11 @@
 // Address: 0043f270
 // Address Range: [[0043f270, 0043f2cf]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270 (CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
+// Signature: int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270(CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
 
 #include "nocturne.h"
 
-int __cdecl
-support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270
-          (CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
+int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270(CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
 
 {
   int iVar1;

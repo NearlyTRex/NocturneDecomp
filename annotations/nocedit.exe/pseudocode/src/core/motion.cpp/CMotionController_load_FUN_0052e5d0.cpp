@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_motion_cpp_CMotionController_load_FUN_0052e5d0(CMotionController *this_ptr,_FILE *file_handle)
+void __cdecl core_motion_cpp_CMotionController_load_FUN_0052e5d0(CMotionController *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;

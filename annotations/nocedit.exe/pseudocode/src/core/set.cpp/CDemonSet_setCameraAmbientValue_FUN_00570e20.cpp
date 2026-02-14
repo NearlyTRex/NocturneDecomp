@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(CDemonSet *this_ptr,int index,float value)
+void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(CDemonSet *this_ptr,int index,float value)
 
 {
   this_ptr->cameras[index].ambient_value = value;

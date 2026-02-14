@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30 (CDirectSoundDevice *this_ptr,double x,double y,double z)
+; __cdecl void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30(CDirectSoundDevice *this_ptr,double x,double y,double z)
 ;
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr

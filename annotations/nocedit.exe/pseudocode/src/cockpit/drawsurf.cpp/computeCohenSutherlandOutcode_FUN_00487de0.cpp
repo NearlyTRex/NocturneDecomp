@@ -2,13 +2,11 @@
 // Address: 00487de0
 // Address Range: [[00487de0, 00487e11]]
 // Convention: __cdecl
-// Signature: char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00487de0 (int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom)
+// Signature: char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00487de0(int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom)
 
 #include "nocturne.h"
 
-char __cdecl
-cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00487de0
-          (int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom)
+char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00487de0(int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom)
 
 {
   byte bVar1;

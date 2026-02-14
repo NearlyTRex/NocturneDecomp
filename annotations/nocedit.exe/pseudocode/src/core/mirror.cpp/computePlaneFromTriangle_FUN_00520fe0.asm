@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0 (SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c)
+; __cdecl void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c)
 ;
 ; Parameters:
 ; SClipPlane *     Stack[0x4]:4   out_plane

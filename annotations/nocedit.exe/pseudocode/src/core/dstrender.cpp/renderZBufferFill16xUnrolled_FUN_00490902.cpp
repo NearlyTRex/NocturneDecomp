@@ -2,13 +2,11 @@
 // Address: 00490902
 // Address Range: [[00490902, 00490a57]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902
-          (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 {
   uint uVar1;

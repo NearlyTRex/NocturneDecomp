@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ghoul_cpp_CGhoul_getPropertyList_FUN_004e8dc0 (CGhoul *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_ghoul_cpp_CGhoul_getPropertyList_FUN_004e8dc0(CGhoul *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CGhoul *         Stack[0x4]:4   this_ptr

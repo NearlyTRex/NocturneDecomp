@@ -2,13 +2,11 @@
 // Address: 004ba740
 // Address Range: [[004ba740, 004baef6]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (CFileManager *this_ptr,CCheckOutItem *checkout_item,_FILE *optional_pod_file)
+// Signature: int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740(CFileManager *this_ptr,CCheckOutItem *checkout_item,_FILE *optional_pod_file)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
-          (CFileManager *this_ptr,CCheckOutItem *checkout_item,_FILE *optional_pod_file)
+int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740(CFileManager *this_ptr,CCheckOutItem *checkout_item,_FILE *optional_pod_file)
 
 {
   char cVar1;

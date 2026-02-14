@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0 (void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker, uint flags)
+; __cdecl uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   user_data

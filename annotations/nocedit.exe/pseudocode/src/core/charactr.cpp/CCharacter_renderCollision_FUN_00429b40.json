@@ -11,7 +11,7 @@
         "category": "undeclared_identifier",
         "column": 57,
         "line": 74,
-        "message": "use of undeclared identifier 'DAT_00823a78'; did you mean 'DAT_00823a98'?"
+        "message": "use of undeclared identifier 'DAT_00823a78'"
       }
     ],
     "success": false,
@@ -19,16 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 699,
+    "complexity_score": 684,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 19,
     "pseudocode_lines": 259,
-    "suspect_count": 42,
+    "suspect_count": 41,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "suspect_float",
       "undefined_data"
     ],
     "total_lines": 806
@@ -873,13 +872,6 @@
       "match": "ROUND",
       "text": "local_c0.z = (int)ROUND(g_ZeroVector.z * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 220,
-      "match": "9.18341e-41",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->light = 9.18341e-41;",
-      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

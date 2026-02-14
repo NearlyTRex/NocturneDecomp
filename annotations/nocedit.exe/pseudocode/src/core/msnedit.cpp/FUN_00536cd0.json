@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 232,
+    "complexity_score": 231,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 46,
     "suspect_count": 18,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 198
+    "total_lines": 197
   },
   "cross_references": [
     {
@@ -70,8 +70,8 @@
     },
     {
       "addr": "02cf2b00",
-      "name": "g_ActiveButton",
-      "type": "CEdButton*",
+      "name": "g_ActiveControl",
+      "type": "void*",
       "value": null
     },
     {
@@ -89,7 +89,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -235,126 +235,126 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_1",
-      "text": "core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int __cdecl core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_2",
-      "text": "core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int __cdecl core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_3",
-      "text": "core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int __cdecl core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_4",
-      "text": "core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int __cdecl core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 3,
+      "line": 2,
       "match": "param_5",
-      "text": "core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int __cdecl core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "text": "iVar2 = engine_2d_c_getStringWidth_FUN_004018a0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_2",
       "text": "iVar2 = param_2 + iVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_3",
       "text": "y1 = param_3 + 0xb;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_5",
       "text": "if (param_5 == 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_2",
-      "text": "if ((((g_ActiveButton == (CEdButton *)0x0) && (param_2 < g_MouseX)) && (g_MouseX < iVar2)) &&",
+      "text": "if ((((g_ActiveControl == (void *)0x0) && (param_2 < g_MouseX)) && (g_MouseX < iVar2)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_3",
       "text": "((param_3 <= g_MouseY && (g_MouseY < y1)))) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "text": "engine_2d_c_drawText_FUN_00401fd0(param_1,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_2",
       "text": "engine_2d_c_drawText_FUN_00401fd0(param_1,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_3",
       "text": "engine_2d_c_drawText_FUN_00401fd0(param_1,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_3",
       "text": "y1_00 = param_3 + -2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 31,
       "match": "param_2",
       "text": "x1 = param_2 + -2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 39,
       "match": "param_4",
       "text": "if (((param_4 == 0) && (0.0 < FLOAT_02f7c630)) && (FLOAT_02f7c630 < (float)0.29999999999999999)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 43,
       "match": "param_4",
       "text": "if (param_4 != 0) {",
       "type": "unnamed_param"

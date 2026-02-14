@@ -3,117 +3,63 @@
     "errors": [
       {
         "category": "other",
-        "column": 44,
-        "line": 122,
+        "column": 72,
+        "line": 110,
         "message": "C-style cast from 'float *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 43,
-        "line": 124,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 126,
-        "message": "C-style cast from 'CGlass *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 128,
-        "message": "cannot cast from type 'float' to pointer type 'SDamageInfo *'"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 131,
-        "message": "C-style cast from 'CGlass *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 134,
+        "column": 72,
+        "line": 137,
         "message": "C-style cast from 'float *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 136,
-        "message": "C-style cast from 'CGlass *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 138,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 159,
-        "message": "no member named '_8_8_' in 'SDamageInfo'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 36,
-        "line": 159,
-        "message": "use of undeclared identifier 'BADTYPE'"
+        "column": 81,
+        "line": 139,
+        "message": "use of undeclared identifier 'stack0xfffffd84'"
       },
       {
-        "category": "other",
-        "column": 50,
-        "line": 159,
-        "message": "expected '(' for function-style cast or type construction"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 160,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 163,
-        "message": "C-style cast from 'CTrigger *' to 'float' is not allowed"
-      },
-      {
-        "category": "missing_member",
-        "column": 38,
-        "line": 166,
-        "message": "no member named '_8_8_' in 'SDamageInfo'"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 168,
-        "message": "C-style cast from 'CTrigger *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 171,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 173,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 175,
-        "message": "C-style cast from 'CTrigger *' to 'float' is not allowed"
+        "category": "undeclared_identifier",
+        "column": 62,
+        "line": 141,
+        "message": "use of undeclared identifier 'stack0xfffffd84'"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 177,
-        "message": "cannot cast from type 'float' to pointer type 'SDamageInfo *'"
+        "line": 145,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 26,
+        "line": 238,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 280,
+        "message": "cannot cast from type 'float' to pointer type 'CTrigger *'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 281,
+        "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 285,
+        "message": "C-style cast from 'CCrate *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 292,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       }
     ],
     "success": false,
@@ -121,19 +67,19 @@
   },
   "complexity": {
     "assembly_lines": 767,
-    "complexity_score": 631,
+    "complexity_score": 530,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
-    "pseudocode_lines": 371,
-    "suspect_count": 24,
+    "pseudocode_lines": 300,
+    "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
-      "suspect_float",
+      "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 1138
+    "total_lines": 1067
   },
   "cross_references": [],
   "function": {
@@ -490,19 +436,12 @@
     "pcode_op_count": 2970
   },
   "stack_frame": {
-    "frame_size": 668,
-    "local_size": 660,
+    "frame_size": 608,
+    "local_size": 600,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_290",
-        "offset": -656,
-        "size": 60,
-        "type": "SDamageInfo"
-      },
       {
         "is_param": false,
         "name": "local_254",
@@ -683,14 +622,14 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "int"
+        "type": "CTrigger *"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "int"
+        "type": "CCrate *"
       },
       {
         "is_param": false,
@@ -763,171 +702,150 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 14,
       "match": "in_stack_fffffd6c",
       "text": "char *in_stack_fffffd6c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 106,
-      "match": "in_stack_fffffd6c",
-      "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)local_290.unknown);",
+      "line": 15,
+      "match": "in_stack_fffffd70",
+      "text": "float *in_stack_fffffd70;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 103,
+      "match": "in_stack_fffffd6c",
+      "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 103,
+      "match": "in_stack_fffffd70",
+      "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 107,
       "match": "in_stack_fffffd6c",
       "text": "in_stack_fffffd6c = (char *)&local_254.impact_point.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 109,
       "match": "in_stack_fffffd6c",
       "text": "(this_ptr,hit_type,(SDamageInfo *)in_stack_fffffd6c,(CDemonActor *)pCVar6)",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 123,
-      "match": "5.937267e-39",
-      "text": "local_290.impact_direction.x = 5.937267e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 128,
-      "match": "5.937302e-39",
-      "text": "local_290.impact_force = 5.937302e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 144,
-      "match": "in_stack_fffffd6c",
-      "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)local_290.unknown);",
+      "line": 111,
+      "match": "in_stack_fffffd70",
+      "text": "in_stack_fffffd70 = (float *)0x40a6a6;",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 152,
-      "match": "._8_8_",
-      "text": "local_290._8_8_ = (BADTYPE)(float)local_290.ammo_type;",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 130,
+      "match": "in_stack_fffffd6c",
+      "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 155,
+      "line": 130,
+      "match": "in_stack_fffffd70",
+      "text": "(pCVar1,(CVector3f *)in_stack_fffffd6c,(float)in_stack_fffffd70);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 132,
+      "match": "&stack0xfffffd84",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffd84);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 134,
+      "match": "&stack0xfffffd84",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&stack0xfffffd84,(CDemonActor *)pCVar5);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 135,
       "match": "in_stack_fffffd6c",
       "text": "in_stack_fffffd6c = (char *)g_CConsolePtr;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 159,
-      "match": "._8_8_",
-      "text": "local_290._8_8_,pCVar5);",
+      "line": 138,
+      "match": "._4_4_",
+      "text": "(double)uStack_26c._4_4_,pCVar5);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 179,
+      "line": 140,
+      "match": "in_stack_fffffd70",
+      "text": "in_stack_fffffd70 = (float *)0x40a607;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 150,
       "match": "in_stack_fffffd6c",
       "text": "in_stack_fffffd6c = \"CHero\";",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 190,
+      "line": 158,
+      "match": "in_stack_fffffd70",
+      "text": "in_stack_fffffd70 = &local_b0.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 159,
       "match": "in_stack_fffffd6c",
       "text": "in_stack_fffffd6c = (char *)pCVar3;",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 194,
-      "match": "._36_8_",
-      "text": "local_290._36_8_ = (BADTYPE)(float)local_1a0.damage_type;",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 161,
+      "match": "in_stack_fffffd70",
+      "text": "(pCVar3,(CVector3f *)in_stack_fffffd70,2.0,",
+      "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 195,
-      "match": "._36_8_",
-      "text": "if (0.0 < (double)local_290._36_8_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 197,
-      "match": "5.936626e-39",
-      "text": "local_290.impact_point.z = 5.936626e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 198,
-      "match": "._36_8_",
-      "text": "dVar8 = round((double)local_290._36_8_ * 0.5 + 1.0);",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 166,
+      "match": "in_stack_fffffd70",
+      "text": "in_stack_fffffd70 = (float *)0x40a511;",
+      "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 199,
-      "match": "ROUND",
-      "text": "local_290.impact_point.y = (float)(int)ROUND(dVar8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 208,
-      "match": "5.936719e-39",
-      "text": "local_290.damage_amount = 5.936719e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 274,
+      "line": 231,
       "match": "SUB84",
-      "text": "local_290.unknown = SUB84(dVar8,0);",
+      "text": "SUB84((double)local_164.impact_direction.y,0),",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 279,
-      "match": "._0_8_",
-      "text": "local_290._0_8_ = dVar8;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 303,
-      "match": "5.938774e-39",
-      "text": "local_290.impact_point.z = 5.938774e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 310,
-      "match": "5.938814e-39",
-      "text": "local_290.impact_point.y = 5.938814e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 330,
+      "line": 272,
       "match": "SQRT",
       "text": "SQRT(local_68.x * local_68.x + local_74.y * local_74.y + local_74.z * local_74.z);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 364,
-      "match": "5.938571e-39",
-      "text": "local_290.impact_force = 5.938571e-39;",
-      "type": "suspect_float"
     }
   ],
   "vtable_info": {

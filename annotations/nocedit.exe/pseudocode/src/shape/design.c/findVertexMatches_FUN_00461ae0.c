@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_design_c_findVertexMatches_FUN_00461ae0(int *vertices1,int *vertices2,int count1,int count2)
+int __cdecl shape_design_c_findVertexMatches_FUN_00461ae0(int *vertices1,int *vertices2,int count1,int count2)
 
 {
   uint local_20;

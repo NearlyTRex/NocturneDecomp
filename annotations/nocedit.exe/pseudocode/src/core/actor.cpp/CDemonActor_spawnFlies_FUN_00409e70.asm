@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_spawnFlies_FUN_00409e70 (CDemonActor *this_ptr,int fly_count,float spawn_radius)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_spawnFlies_FUN_00409e70(CDemonActor *this_ptr,int fly_count,float spawn_radius)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

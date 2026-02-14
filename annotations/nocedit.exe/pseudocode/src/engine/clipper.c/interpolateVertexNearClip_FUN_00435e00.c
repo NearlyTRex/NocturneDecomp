@@ -2,13 +2,11 @@
 // Address: 00435e00
 // Address Range: [[00435e00, 00435f01]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00435e00 (SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
+// Signature: void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00435e00(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_clipper_c_interpolateVertexNearClip_FUN_00435e00
-          (SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
+void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00435e00(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 
 {
   longlong lVar1;
@@ -46,10 +44,9 @@ engine_clipper_c_interpolateVertexNearClip_FUN_00435e00
   (output->projected_vertex).transformed_x =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
        (v1->projected_vertex).transformed_x;
-  lVar1 = (longlong)((int)v2->light - (int)v1->light) * (longlong)iVar3;
+  lVar1 = (longlong)(v2->light - v1->light) * (longlong)iVar3;
   uVar2 = (uint)lVar1;
-  output->light =
-       (float)((int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + (int)v1->light);
+  output->light = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->light;
   lVar1 = (longlong)((int)v2->w_recip - (int)v1->w_recip) * (longlong)iVar3;
   uVar2 = (uint)lVar1;
   output->w_recip =

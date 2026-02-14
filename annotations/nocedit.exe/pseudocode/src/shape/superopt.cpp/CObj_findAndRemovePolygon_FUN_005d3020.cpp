@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_superopt_cpp_CObj_findAndRemovePolygon_FUN_005d3020(CObj *this_ptr,CPoly *poly_ptr)
+int __cdecl shape_superopt_cpp_CObj_findAndRemovePolygon_FUN_005d3020(CObj *this_ptr,CPoly *poly_ptr)
 
 {
   uint index;

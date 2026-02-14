@@ -2,14 +2,11 @@
 // Address: 005b0f70
 // Address Range: [[005b0f70, 005b12d0]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70 (CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block)
+// Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 
 #include "nocturne.h"
 
-int __cdecl
-sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70
-          (CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,
-          int *out_samples_per_block)
+int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 
 {
   int iVar1;
@@ -121,7 +118,7 @@ sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70
         return 1;
       }
     }
-    iVar7 = (*(code *)**(uint **)bits_per_sample)();
+    iVar7 = (*(code *)**(uint **)bits_per_sample)(bits_per_sample);
     if (iVar7 == 0) {
       return 0;
     }

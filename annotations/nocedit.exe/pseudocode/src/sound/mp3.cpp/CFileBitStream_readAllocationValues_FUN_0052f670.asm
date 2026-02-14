@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation, SBitAllocationTable *alloc_table_info)
+; __cdecl void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SBitAllocationTable *alloc_table_info)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr

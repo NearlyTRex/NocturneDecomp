@@ -54,7 +54,8 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
         if (0.0 < (double)iVar1) {
           sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)iVar1,0);
         }
-        uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))();
+        uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))
+                          (extraout_EBX,"m-gun-t.wav");
         *(uint *)(extraout_EBX + 0x580) = uVar3;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }

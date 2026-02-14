@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50 (CKeyFramedModel *this_ptr,char *source_drive,char *source_directory, char *destination_drive,char *destination_directory)
+; __cdecl int __cdecl core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50(CKeyFramedModel *this_ptr,char *source_drive,char *source_directory,char *destination_drive,char *destination_directory)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr

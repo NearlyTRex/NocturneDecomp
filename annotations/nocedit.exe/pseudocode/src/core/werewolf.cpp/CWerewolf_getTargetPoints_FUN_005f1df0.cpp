@@ -2,13 +2,11 @@
 // Address: 005f1df0
 // Address Range: [[005f1df0, 005f1e3e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0 (CWerewolf *this_ptr,CVector3f *out_points_array)
+// Signature: int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0(CWerewolf *this_ptr,CVector3f *out_points_array)
 
 #include "nocturne.h"
 
-int __cdecl
-core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0
-          (CWerewolf *this_ptr,CVector3f *out_points_array)
+int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0(CWerewolf *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

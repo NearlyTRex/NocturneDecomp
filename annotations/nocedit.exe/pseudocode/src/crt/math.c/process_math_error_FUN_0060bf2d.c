@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-double __cdecl
-process_math_error(int errorFlags,double *value1,double *value2)
+double __cdecl process_math_error(int errorFlags,double *value1,double *value2)
 
 {
   int unaff_EBX;

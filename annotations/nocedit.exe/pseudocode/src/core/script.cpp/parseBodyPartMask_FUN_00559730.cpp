@@ -2,13 +2,11 @@
 // Address: 00559730
 // Address Range: [[00559730, 005597eb]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730 (CCharacter *character,char *part_names,int *part_mask)
+// Signature: int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730(CCharacter *character,char *part_names,int *part_mask)
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_parseBodyPartMask_FUN_00559730
-          (CCharacter *character,char *part_names,int *part_mask)
+int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730(CCharacter *character,char *part_names,int *part_mask)
 
 {
   int *piVar1;
@@ -37,7 +35,7 @@ core_script_cpp_parseBodyPartMask_FUN_00559730
     if (iVar2 < 0) break;
     part_mask[iVar2] = 1;
   }
-  pcVar3 = core_script_cpp_CDeformableModel_getModelFilename_FUN_00567d30(this_ptr);
+  pcVar3 = core_script_cpp_getDeformableModelFilename_FUN_00567d30(this_ptr);
   _sprintf
             (g_ScriptErrorBuffer,"Character %s model %s does not have a part '%s'",character,pcVar3,pcVar4);
   return 0;

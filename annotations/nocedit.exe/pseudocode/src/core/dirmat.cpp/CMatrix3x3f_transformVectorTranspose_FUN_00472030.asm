@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 (CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input)
+; __cdecl CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input)
 ;
 ; Parameters:
 ; CMatrix3x3f *    Stack[0x4]:4   this_ptr

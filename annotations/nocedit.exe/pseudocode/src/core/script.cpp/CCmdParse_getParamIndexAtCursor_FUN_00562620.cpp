@@ -2,13 +2,11 @@
 // Address: 00562620
 // Address Range: [[00562620, 005626c4]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620 (CCmdParse *this_ptr,int cursor_position)
+// Signature: int __cdecl core_script_cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620(CCmdParse *this_ptr,int cursor_position)
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620
-          (CCmdParse *this_ptr,int cursor_position)
+int __cdecl core_script_cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620(CCmdParse *this_ptr,int cursor_position)
 
 {
   char cVar1;

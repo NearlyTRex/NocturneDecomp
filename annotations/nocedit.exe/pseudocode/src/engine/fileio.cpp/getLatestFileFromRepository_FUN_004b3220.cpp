@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,char *filename)
+int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,char *filename)
 
 {
   char cVar1;

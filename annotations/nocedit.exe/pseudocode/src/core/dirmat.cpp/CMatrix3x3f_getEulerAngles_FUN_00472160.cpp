@@ -2,13 +2,11 @@
 // Address: 00472160
 // Address Range: [[00472160, 00472536]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (CMatrix3x3f *this_ptr,CVector3f *euler_angles)
+// Signature: CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(CMatrix3x3f *this_ptr,CVector3f *euler_angles)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-          (CMatrix3x3f *this_ptr,CVector3f *euler_angles)
+CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(CMatrix3x3f *this_ptr,CVector3f *euler_angles)
 
 {
   double dVar1;

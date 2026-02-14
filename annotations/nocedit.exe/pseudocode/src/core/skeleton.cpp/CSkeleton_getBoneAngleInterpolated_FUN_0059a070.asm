@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 (CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2, float interpolation)
+; __cdecl CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0x4]:4   this_ptr

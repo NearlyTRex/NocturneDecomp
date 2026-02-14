@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *collision_normal)
+int __cdecl core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *collision_normal)
 
 {
   int iVar1;

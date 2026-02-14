@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 37,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 10,
     "suspect_count": 2,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 47
+    "total_lines": 45
   },
   "cross_references": [],
   "function": {
@@ -29,7 +29,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_isAngleBelowThreshold_FUN_00461d30",
-    "signature": "int __cdecl shape_design_c_isAngleBelowThreshold_FUN_00461d30 (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold)"
+    "signature": "int __cdecl shape_design_c_isAngleBelowThreshold_FUN_00461d30(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold)"
   },
   "function_calls": [
     {
@@ -127,14 +127,14 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_ffffffe4",
       "text": "SShapeEditorPolygon *in_stack_ffffffe4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_ffffffe4",
       "text": "(polygon2,in_stack_ffffffe4);",
       "type": "stack_param"

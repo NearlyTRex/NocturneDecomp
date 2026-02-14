@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SWaterVertex * __cdecl
-core_wateract_cpp_SWaterVertex_dtor_FUN_005ebce0(SWaterVertex *this_ptr,uint flags)
+SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_dtor_FUN_005ebce0(SWaterVertex *this_ptr,uint flags)
 
 {
   return this_ptr;

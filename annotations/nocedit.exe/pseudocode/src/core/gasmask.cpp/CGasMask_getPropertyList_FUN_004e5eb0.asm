@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gasmask_cpp_CGasMask_getPropertyList_FUN_004e5eb0 (CGasMask *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_gasmask_cpp_CGasMask_getPropertyList_FUN_004e5eb0(CGasMask *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CGasMask *       Stack[0x4]:4   this_ptr

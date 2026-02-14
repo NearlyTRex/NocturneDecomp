@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 (CColorQuantizer *this_ptr,uchar *output_buffer)
+; __cdecl int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer *this_ptr,uchar *output_buffer)
 ;
 ; Parameters:
 ; CColorQuantizer * Stack[0x4]:4   this_ptr

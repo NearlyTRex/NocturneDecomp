@@ -2,13 +2,11 @@
 // Address: 005aeed0
 // Address Range: [[005aeed0, 005aef03]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0 (CDirectSoundDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity)
+// Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0(CDirectSoundDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0
-          (CDirectSoundDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity)
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0(CDirectSoundDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity)
 
 {
   if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {

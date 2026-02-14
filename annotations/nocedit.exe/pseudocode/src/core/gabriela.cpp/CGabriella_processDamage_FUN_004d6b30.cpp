@@ -2,13 +2,11 @@
 // Address: 004d6b30
 // Address Range: [[004d6b30, 004d6bef] [004d6c76, 004d6ce2] [004d6d03, 004d6d30]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30 (CGabriella *this_ptr,SDamageInfo *damage_info)
+// Signature: void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl
-core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30
-          (CGabriella *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;

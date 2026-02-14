@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr,int direction)
+void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr,int direction)
 
 {
   CWeapon *this_ptr_00;
@@ -17,7 +16,6 @@ core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr
   int iVar1;
   int iVar2;
   int iVar3;
-  CWeapon *unaff_EDI;
   CInventory *pCVar4;
   
   core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(this_ptr,1);
@@ -59,7 +57,7 @@ core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr
           if (this_ptr_00 != (CWeapon *)0x0) {
             (*((this_ptr_00->base).vtable._ub)->process)(&this_ptr_00->base,0.1);
           }
-          this_ptr->selected_weapon = unaff_EDI;
+          this_ptr->selected_weapon = this_ptr_01;
           core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);
           return;
         }

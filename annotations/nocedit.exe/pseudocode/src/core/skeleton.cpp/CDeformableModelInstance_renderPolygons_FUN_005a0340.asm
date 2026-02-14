@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340 (CDeformableModelInstance *this_ptr)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance *this_ptr)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr

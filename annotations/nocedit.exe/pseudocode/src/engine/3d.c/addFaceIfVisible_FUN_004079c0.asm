@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_3d_c_addFaceIfVisible_FUN_004079c0 (SMRGLHeaderPrimitive *cull_reference,SMRGLHeaderPrimitive *face_to_queue)
+; __cdecl void __cdecl engine_3d_c_addFaceIfVisible_FUN_004079c0(SMRGLHeaderPrimitive *cull_reference,SMRGLHeaderPrimitive *face_to_queue)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   cull_reference

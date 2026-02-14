@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride128_FUN_004922c8 (ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
+; __cdecl void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride128_FUN_004922c8(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 ;
 ; Parameters:
 ; ulonglong *      Stack[0x4]:4   output_buffer

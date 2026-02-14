@@ -2,13 +2,11 @@
 // Address: 00441810
 // Address Range: [[00441810, 00441879]]
 // Convention: __cdecl
-// Signature: CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00441810 (CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
+// Signature: CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00441810(CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
 
 #include "nocturne.h"
 
-CConsole * __cdecl
-engine_console_cpp_CConsole_ctor_FUN_00441810
-          (CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
+CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00441810(CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
 
 {
   this_ptr->console_width = width;

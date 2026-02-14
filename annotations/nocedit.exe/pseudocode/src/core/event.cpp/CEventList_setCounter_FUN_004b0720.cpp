@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_ptr,char *name,int value)
+void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_ptr,char *name,int value)
 
 {
   char cVar1;

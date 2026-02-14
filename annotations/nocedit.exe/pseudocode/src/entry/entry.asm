@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void entry(void)
+; __watcallRegister void __watcallRegister entry(void)
 ;
 ; Local Variables:
 ; BYTE[8]          Stack[-0x10]:8  runtimeInitParams

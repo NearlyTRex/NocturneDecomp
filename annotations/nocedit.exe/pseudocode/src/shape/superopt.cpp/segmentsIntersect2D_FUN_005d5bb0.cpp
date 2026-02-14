@@ -2,13 +2,11 @@
 // Address: 005d5bb0
 // Address Range: [[005d5bb0, 005d5ddc]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0 (CVector2d *point_a,CVector2d *point_b,CVector2d *point_c,CVector2d *point_d)
+// Signature: int __cdecl shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d *point_a,CVector2d *point_b,CVector2d *point_c,CVector2d *point_d)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
-          (CVector2d *point_a,CVector2d *point_b,CVector2d *point_c,CVector2d *point_d)
+int __cdecl shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d *point_a,CVector2d *point_b,CVector2d *point_c,CVector2d *point_d)
 
 {
   double dVar1;

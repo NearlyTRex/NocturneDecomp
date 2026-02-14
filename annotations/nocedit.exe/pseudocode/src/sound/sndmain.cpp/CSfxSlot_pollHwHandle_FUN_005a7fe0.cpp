@@ -55,7 +55,8 @@ LAB_005a809a:
   if (iVar1 != 0) {
     return;
   }
-  sound_sndmain_cpp_logSoundError_FUN_005adba0("Error setting hw sfx %d options (sample %s), killing.\n");
+  sound_sndmain_cpp_logSoundError_FUN_005adba0
+            ("Error setting hw sfx %d options (sample %s), killing.\n",this_ptr->hardware_buffer_handle,this_ptr->sample);
   sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
   return;
 }

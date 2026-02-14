@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 88,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 46,
     "suspect_count": 3,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 130
+    "total_lines": 128
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0",
-    "signature": "int __cdecl core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0 (CDeformableModel *this_ptr,int lod_level,int triangle_index)"
+    "signature": "int __cdecl core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel *this_ptr,int lod_level,int triangle_index)"
   },
   "function_calls": [],
   "globals": [],
@@ -142,14 +142,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_1a4 + iVar5) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(float *)((int)",
       "text": "if (local_1a4[iVar5] < *(float *)((int)local_1a4 + iVar3)) {",
       "type": "pointer_cast"

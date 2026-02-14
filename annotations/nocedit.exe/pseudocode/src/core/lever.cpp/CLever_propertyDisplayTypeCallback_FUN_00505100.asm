@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_lever_cpp_CLever_propertyDisplayTypeCallback_FUN_00505100 (CLever *this_ptr,CActorProperty *property,char *output_buffer)
+; __cdecl void __cdecl core_lever_cpp_CLever_propertyDisplayTypeCallback_FUN_00505100(CLever *this_ptr,CActorProperty *property,char *output_buffer)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr

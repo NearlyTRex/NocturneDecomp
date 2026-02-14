@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 69,
+        "line": 68,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 70,
+        "line": 69,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 53,
-        "line": 76,
+        "line": 75,
         "message": "use of undeclared identifier 'stack0xffffffc4'"
       }
     ],
@@ -25,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 159,
+    "complexity_score": 158,
     "cross_reference_count": 4,
     "function_call_count": 8,
     "global_count": 7,
-    "pseudocode_lines": 74,
+    "pseudocode_lines": 73,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 229
+    "total_lines": 228
   },
   "cross_references": [
     {
@@ -275,49 +275,49 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 53,
       "match": "ROUND",
       "text": "frame_index = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)(pCVar2 + iVar1) + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 61,
       "match": "&stack0xffffffd4",
       "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar4;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 61,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 63,
+      "line": 62,
       "match": "&stack0xffffffd8",
       "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 62,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 69,
+      "line": 68,
       "match": "&stack0xffffffc4",
       "text": "(&this_ptr->base,(CVector3f *)&stack0xffffffc4,&local_24);",
       "type": "stack_ref"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830 (CDrip *this_ptr,CActorProperty *property,char *output_buffer)
+; __cdecl void __cdecl core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830(CDrip *this_ptr,CActorProperty *property,char *output_buffer)
 ;
 ; Parameters:
 ; CDrip *          Stack[0x4]:4   this_ptr

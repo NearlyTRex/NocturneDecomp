@@ -2,13 +2,11 @@
 // Address: 00461d30
 // Address Range: [[00461d30, 00461d76]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_design_c_isAngleBelowThreshold_FUN_00461d30 (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold)
+// Signature: int __cdecl shape_design_c_isAngleBelowThreshold_FUN_00461d30(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_design_c_isAngleBelowThreshold_FUN_00461d30
-          (SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold)
+int __cdecl shape_design_c_isAngleBelowThreshold_FUN_00461d30(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold)
 
 {
   double dVar1;

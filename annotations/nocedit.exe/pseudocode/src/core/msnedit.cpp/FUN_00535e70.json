@@ -2,16 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 19,
+        "category": "format_error",
+        "column": 83,
         "line": 171,
-        "message": "use of undeclared identifier 'stack0xfffffef0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 172,
-        "message": "use of undeclared identifier 'stack0xfffffef0'"
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -19,16 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 1011,
-    "complexity_score": 274,
+    "complexity_score": 214,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 82,
     "pseudocode_lines": 214,
-    "suspect_count": 5,
-    "suspect_types": [
-      "stack_ref",
-      "unaffected_reg"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1225
   },
   "cross_references": [
@@ -686,41 +677,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 164,
-      "match": "&stack0xfffffef0",
-      "text": "(&stack0xfffffef0,\"Actor-specific help for selected actor %s (type %s):\",this_ptr,pcVar2);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 165,
-      "match": "&stack0xfffffef0",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffef0,g_ClipLeft,local_14);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 206,
-      "match": "unaff_EBP",
-      "text": "if ((int)(local_14 - unaff_EBP) < local_48.thumb_end) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 207,
-      "match": "unaff_EBP",
-      "text": "local_48.thumb_end = local_14 - unaff_EBP;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

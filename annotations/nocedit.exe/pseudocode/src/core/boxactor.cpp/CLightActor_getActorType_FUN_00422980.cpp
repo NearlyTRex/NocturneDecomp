@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_boxactor_cpp_CLightActor_getActorType_FUN_00422980(CLightActor *this_ptr)
+CDemonActorType * __cdecl core_boxactor_cpp_CLightActor_getActorType_FUN_00422980(CLightActor *this_ptr)
 
 {
   return &g_CLightActorClassInfo;

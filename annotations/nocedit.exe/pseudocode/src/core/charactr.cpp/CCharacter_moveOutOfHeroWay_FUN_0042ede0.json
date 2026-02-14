@@ -2,64 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 19,
-        "line": 53,
-        "message": "C-style cast from 'CEnemy *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 58,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
         "category": "incompatible_types",
         "column": 13,
-        "line": 64,
+        "line": 59,
         "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 47,
-        "line": 76,
+        "column": 46,
+        "line": 71,
         "message": "use of undeclared identifier 'DAT_0066e740'; did you mean 'DAT_0066e940'?"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 82,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 83,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 84,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 125,
-        "message": "C-style cast from 'CEnemy *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 126,
-        "message": "C-style cast from 'CEnemy *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 127,
-        "message": "C-style cast from 'CEnemy *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -67,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 245,
+    "complexity_score": 233,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 15,
-    "pseudocode_lines": 160,
-    "suspect_count": 7,
+    "pseudocode_lines": 158,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "undefined_data",
-      "unknown_field"
+      "warning_type_propagation"
     ],
-    "total_lines": 567
+    "total_lines": 565
   },
   "cross_references": [
     {
@@ -397,52 +349,45 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 51,
-      "match": "._8_4_",
-      "text": "auStack_4c._8_4_ = (location->position).x - (this_ptr_00->base).base.location.position.x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_0066e740",
-      "text": "CStack_7c.y = fStack_20 + *(float *)(&DAT_0066e740 + uVar6 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 75,
-      "match": "._8_4_",
-      "text": "auStack_ac._8_4_ = fStack_10c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 76,
-      "match": "._0_4_",
-      "text": "auStack_ac._0_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 77,
-      "match": "._4_4_",
-      "text": "auStack_ac._4_4_ = 0.0;",
-      "type": "unknown_field"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 54,
       "match": "ABS",
-      "text": "if (((ABS(fStack_9c) <= (float)4) && (fStack_110 <= (float)0.52359877558333301)) &&",
+      "text": "if ((iVar3 != 0) && (ABS(fVar1) < (float)0.78539816337500001)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_0066e740",
+      "text": "CStack_80.y = local_24 + *(float *)(&DAT_0066e740 + uVar7 * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 96,
+      "match": "ABS",
+      "text": "if (((ABS(local_a4.y) <= (float)4) && (ABS(fVar1) <= (float)0.52359877558333301)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 96,
+      "match": "ABS",
+      "text": "if (((ABS(local_a4.y) <= (float)4) && (ABS(fVar1) <= (float)0.52359877558333301)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 97,
       "match": "SQRT",
-      "text": "(SQRT(fStack_98 * fStack_98 + fStack_a0 * fStack_a0 + fStack_9c * fStack_9c) <=",
+      "text": "(SQRT(local_a4.z * local_a4.z + local_a4.x * local_a4.x + local_a4.y * local_a4.y) <=",
       "type": "decompiler_intrinsic"
     }
   ]

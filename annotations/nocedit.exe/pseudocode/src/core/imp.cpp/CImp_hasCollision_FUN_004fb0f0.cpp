@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_imp_cpp_CImp_hasCollision_FUN_004fb0f0(CImp *this_ptr,SCollisionInfo *collision_info)
+void __cdecl core_imp_cpp_CImp_hasCollision_FUN_004fb0f0(CImp *this_ptr,SCollisionInfo *collision_info)
 
 {
   core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20((CCharacter *)this_ptr,collision_info);

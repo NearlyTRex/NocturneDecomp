@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 113,
+    "complexity_score": 111,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 16,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 57
+    "total_lines": 55
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0",
-    "signature": "double __cdecl shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0 (SShapeEditorPolygon *normal1_ptr,SShapeEditorPolygon *normal2_ptr)"
+    "signature": "double __cdecl shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0(SShapeEditorPolygon *normal1_ptr,SShapeEditorPolygon *normal2_ptr)"
   },
   "function_calls": [
     {
@@ -159,49 +159,49 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_ffffffe0",
       "text": "uint in_stack_ffffffe0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_ffffffe0",
       "text": "((double)CONCAT44(in_stack_ffffffe0,",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 10,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(in_stack_ffffffe0,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "(double)(*(float *)(in_stack_00000004 + 0xb0) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0xac) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0xa8) *",
       "type": "stack_param"

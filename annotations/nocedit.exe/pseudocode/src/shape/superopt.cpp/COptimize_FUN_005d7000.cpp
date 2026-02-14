@@ -32,9 +32,9 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d7000(COptimize *this_ptr)
   }
   this_ptr->unk6 = (void *)0x0;
   this_ptr->unk5 = 0;
-  (*this_ptr->vtable->func2)();
-  (*this_ptr->vtable->func4)();
-  (*this_ptr->vtable->func6)();
-  (*this_ptr->vtable->func8)();
+  (*this_ptr->vtable->func2)(this_ptr,0xd2f1a9fc,0x3f50624d);
+  (*this_ptr->vtable->func4)(this_ptr,0xd2f1a9fc,0x3f50624d);
+  (*this_ptr->vtable->func6)(this_ptr,0xd2f1a9fc,0x3f50624d);
+  (*this_ptr->vtable->func8)(this_ptr,0x10);
   return;
 }

@@ -1,48 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 71,
-        "message": "use of undeclared identifier 'stack0xffffe080'; did you mean 'in_stack_ffffe080'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 82,
-        "message": "use of undeclared identifier 'stack0xffffe080'; did you mean 'in_stack_ffffe080'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 90,
-        "message": "use of undeclared identifier 'stack0xffffe080'; did you mean 'in_stack_ffffe080'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 93,
-        "message": "use of undeclared identifier 'stack0xffffe080'; did you mean 'in_stack_ffffe080'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 262,
-    "complexity_score": 213,
+    "complexity_score": 146,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 118,
-    "suspect_count": 8,
+    "pseudocode_lines": 121,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_param",
-      "stack_ref"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 380
+    "total_lines": 383
   },
   "cross_references": [
     {
@@ -66,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050",
-    "signature": "int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 (CCharacter *this_ptr,float delta_time,char *pattern)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050(CCharacter *this_ptr,float delta_time,char *pattern)"
   },
   "function_calls": [
     {
@@ -262,60 +235,18 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffe080",
-      "text": "float in_stack_ffffe080;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 37,
       "match": "SQRT",
       "text": "(float)4 <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 63,
       "match": "SQRT",
       "text": "20.0f <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xffffe080",
-      "text": "*(char **)(&stack0xffffe080 + iVar5) = target_string;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xffffe080",
-      "text": "if (*(int *)(&stack0xffffe080 + iVar4) != 0) break;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 83,
-      "match": "&stack0xffffe080",
-      "text": "this_ptr->wander_target = *(CWayPoint **)(&stack0xffffe080 + iVar4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 86,
-      "match": "&stack0xffffe080",
-      "text": "*(uint *)(&stack0xffffe080 + iVar4) = 0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_ffffe080",
-      "text": "path_map,direction,fVar6,in_stack_ffffe080);",
-      "type": "stack_param"
     }
   ]
 }

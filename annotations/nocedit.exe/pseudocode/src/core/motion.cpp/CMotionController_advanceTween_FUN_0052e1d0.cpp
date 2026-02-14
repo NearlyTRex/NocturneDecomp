@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr)
+void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr)
 
 {
   float fVar1;

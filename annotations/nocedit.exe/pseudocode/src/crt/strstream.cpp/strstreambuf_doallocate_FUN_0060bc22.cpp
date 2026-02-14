@@ -43,7 +43,7 @@ int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22(strstr
       new_buffer = shape_memdbg_cpp_malloc_FUN_006021da(new_buffer_size);
     }
     else {
-      new_buffer = (char *)(*this_ptr->__alloc_fn)();
+      new_buffer = (char *)(*this_ptr->__alloc_fn)(new_buffer_size);
     }
     if (new_buffer != (char *)0x0) {
       crt_iostream_cpp_setBuffer_FUN_0060d6a8
@@ -104,7 +104,7 @@ int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22(strstr
           shape_memdbg_cpp_free_FUN_005fe659(ptr);
         }
         else {
-          (*this_ptr->__free_fn)();
+          (*this_ptr->__free_fn)(ptr);
         }
       }
       return 0;

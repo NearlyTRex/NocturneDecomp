@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660 (CStairs *this_ptr,SIntersectXZCylinder *cylinder)
+; __cdecl void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660(CStairs *this_ptr,SIntersectXZCylinder *cylinder)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr

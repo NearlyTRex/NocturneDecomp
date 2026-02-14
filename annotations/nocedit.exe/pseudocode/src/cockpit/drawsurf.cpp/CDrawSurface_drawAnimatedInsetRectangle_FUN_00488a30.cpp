@@ -2,13 +2,11 @@
 // Address: 00488a30
 // Address Range: [[00488a30, 00488a86]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedInsetRectangle_FUN_00488a30 (CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int inset_x,int inset_y)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedInsetRectangle_FUN_00488a30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int inset_x,int inset_y)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedInsetRectangle_FUN_00488a30
-          (CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int inset_x,int inset_y)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedInsetRectangle_FUN_00488a30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int inset_x,int inset_y)
 
 {
   int x1_00;

@@ -23,6 +23,9 @@ DWORD g_JoyButtons = {};
 // RenderScanlineFunc*
 RenderScanlineFunc* g_ScanlineRenderFunc = {};
 
+// _BIT_INTEGER
+_BIT_INTEGER g_RenderStateFlags = {};
+
 // byte
 byte g_LeftMousePressed = {};
 byte g_RightMousePressed = {};
@@ -84,7 +87,6 @@ int g_CPUModel = {};
 int g_CalibratedCPUSpeed = {};
 int g_BlendMode = {};
 int g_ProcessorType = {};
-int g_RenderStateFlags = {};
 int g_RenderStateFlag2 = {};
 int g_SolidRedComponent = {};
 int g_SolidGreenComponent = {};

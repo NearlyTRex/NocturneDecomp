@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 108,
+    "complexity_score": 106,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 93,
+    "pseudocode_lines": 91,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 268
+    "total_lines": 266
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_box.cpp_CBox_updateTransform_FUN_0041e0e0",
-    "signature": "void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0 (CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)"
+    "signature": "void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)"
   },
   "function_calls": [
     {
@@ -189,7 +189,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 89,
       "match": "(CVector3f *)((int)",
       "text": "pCVar13 = (CVector3f *)((int)(pCVar13 + 4) + 4);",
       "type": "pointer_cast"

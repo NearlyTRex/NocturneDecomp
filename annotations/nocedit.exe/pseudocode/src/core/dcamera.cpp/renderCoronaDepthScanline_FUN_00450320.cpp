@@ -2,13 +2,11 @@
 // Address: 00450320
 // Address Range: [[00450320, 00450434]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320
-          (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 {
   int *piVar1;
@@ -22,13 +20,13 @@ core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320
   uint uVar9;
   
   uVar3 = (int)left_edge - g_ClipTop;
-  if (((g_CameraDownscaleIterations != 1) || ((uVar3 & 1) == 0)) &&
-     ((g_CameraDownscaleIterations != 2 || ((uVar3 & 3) == 0)))) {
-    iVar8 = (int)uVar3 >> ((byte)g_CameraDownscaleIterations & 0x1f);
+  if (((g_CameraDownscaleIterations.dword != 1) || ((uVar3 & 1) == 0)) &&
+     ((g_CameraDownscaleIterations.dword != 2 || ((uVar3 & 3) == 0)))) {
+    iVar8 = (int)uVar3 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     uVar7 = (right_edge->x_current >> 0x10) - g_ClipLeft >>
-            ((byte)g_CameraDownscaleIterations & 0x1f);
+            (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     uVar9 = (*(int *)(scanline_y + 8) >> 0x10) - g_ClipLeft >>
-            ((byte)g_CameraDownscaleIterations & 0x1f);
+            (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     pSVar5 = (SEdgeData *)scanline_y;
     uVar3 = uVar7;
     if ((int)uVar9 < (int)uVar7) {

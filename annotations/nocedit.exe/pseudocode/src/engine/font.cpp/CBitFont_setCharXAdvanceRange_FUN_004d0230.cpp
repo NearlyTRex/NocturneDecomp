@@ -2,13 +2,11 @@
 // Address: 004d0230
 // Address Range: [[004d0230, 004d0285]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 (CBitFont *this_ptr,int advance_value,int start_char,int end_char)
+// Signature: void __cdecl engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont *this_ptr,int advance_value,int start_char,int end_char)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230
-          (CBitFont *this_ptr,int advance_value,int start_char,int end_char)
+void __cdecl engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont *this_ptr,int advance_value,int start_char,int end_char)
 
 {
   int iVar1;

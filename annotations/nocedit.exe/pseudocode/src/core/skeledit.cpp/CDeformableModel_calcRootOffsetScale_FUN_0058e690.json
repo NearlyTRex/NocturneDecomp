@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 34,
+        "line": 33,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 354,
-    "complexity_score": 177,
+    "complexity_score": 176,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 12,
-    "pseudocode_lines": 152,
+    "pseudocode_lines": 151,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 506
+    "total_lines": 505
   },
   "cross_references": [],
   "function": {
@@ -357,14 +357,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(int *)((int)",
       "text": "piVar3 = (int *)((int)&this_ptr_01->skinned_vertices_buffer->x + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 135,
       "match": "(int *)((int)",
       "text": "piVar3 = (int *)((int)&this_ptr_01->skinned_vertices_buffer->x + iVar6);",
       "type": "pointer_cast"

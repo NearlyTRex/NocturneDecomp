@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_CLodEdge_addAdjacentFace_FUN_00515ca0(CLodEdge *this_ptr,int tri_index)
+void __cdecl shape_meshlod_cpp_CLodEdge_addAdjacentFace_FUN_00515ca0(CLodEdge *this_ptr,int tri_index)
 
 {
   if (this_ptr->adjacent_tri_count < 0x32) {

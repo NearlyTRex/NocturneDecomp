@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 79,
+    "complexity_score": 77,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 62,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 212
+    "total_lines": 210
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dmodel.cpp_CKeyFramedModel_calculateTriangleNormal_FUN_0047c080",
-    "signature": "CVector3f * __cdecl core_dmodel_cpp_CKeyFramedModel_calculateTriangleNormal_FUN_0047c080 (CKeyFramedModel *this_ptr,CVector3f *output_normal,int frame_index,int poly_index)"
+    "signature": "CVector3f * __cdecl core_dmodel_cpp_CKeyFramedModel_calculateTriangleNormal_FUN_0047c080(CKeyFramedModel *this_ptr,CVector3f *output_normal,int frame_index,int poly_index)"
   },
   "function_calls": [],
   "globals": [],
@@ -181,7 +181,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 53,
       "match": "SQRT",
       "text": "fVar16 = SQRT(fVar17 * output_normal->z + fVar16 * output_normal->y + fVar18 * output_normal->x);",
       "type": "decompiler_intrinsic"

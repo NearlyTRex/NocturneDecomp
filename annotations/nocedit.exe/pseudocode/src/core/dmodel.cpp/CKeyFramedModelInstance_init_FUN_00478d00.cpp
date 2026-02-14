@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CKeyFramedModelInstance * __cdecl
-core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_00478d00(CKeyFramedModelInstance *this_ptr)
+CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_00478d00(CKeyFramedModelInstance *this_ptr)
 
 {
   char *pcVar1;

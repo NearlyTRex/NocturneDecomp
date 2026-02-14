@@ -2,13 +2,11 @@
 // Address: 004cdd20
 // Address Range: [[004cdd20, 004cdd63]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_printfRight_FUN_004cdd20 (CBitFont *this_ptr,int x,int y,int color,char *format,...)
+// Signature: void __cdecl engine_font_cpp_CBitFont_printfRight_FUN_004cdd20(CBitFont *this_ptr,int x,int y,int color,char *format,...)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_font_cpp_CBitFont_printfRight_FUN_004cdd20
-          (CBitFont *this_ptr,int x,int y,int color,char *format,...)
+void __cdecl engine_font_cpp_CBitFont_printfRight_FUN_004cdd20(CBitFont *this_ptr,int x,int y,int color,char *format,...)
 
 {
   char *in_stack_00000018;

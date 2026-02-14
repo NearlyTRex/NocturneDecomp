@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 79,
+        "line": 78,
         "message": "assigning to 'STimestampRecord *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 193,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
-    "pseudocode_lines": 93,
+    "pseudocode_lines": 92,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 311
+    "total_lines": 310
   },
   "cross_references": [
     {
@@ -239,63 +239,63 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000010",
       "text": "uint in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_00000010",
       "text": "(g_CEditorToolsPtr,\"Error reading %s\",in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 57,
       "match": "in_stack_00000010",
       "text": "(g_CEditorToolsPtr,\"Error parsing %s, record %d\",in_stack_00000010,local_18);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 66,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)piVar5 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 67,
       "match": "(int *)((int)",
       "text": "piVar5 = (int *)((int)piVar5 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 68,
       "match": "(char *)((int)",
       "text": "*(char *)((int)&pSVar4->record_start + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 69,
       "match": "(STimestampRecord *)((int)",
       "text": "pSVar4 = (STimestampRecord *)((int)&pSVar4->record_start + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 81,
       "match": "in_stack_00000010",
       "text": "(g_CEditorToolsPtr,\"Out of memory reading %s record %d\",in_stack_00000010,local_18);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 89,
       "match": "(STimestampRecord *)((int)",
       "text": "pSVar6 = (STimestampRecord *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"

@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 1031,
+    "complexity_score": 827,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 181,
-    "suspect_count": 83,
+    "pseudocode_lines": 187,
+    "suspect_count": 62,
     "suspect_types": [
       "decompiler_intrinsic",
+      "register_param",
       "special_crt_function",
-      "unaffected_reg",
-      "unnamed_param"
+      "unaffected_reg"
     ],
-    "total_lines": 445
+    "total_lines": 451
   },
   "cross_references": [
     {
@@ -33,7 +33,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0060dcf6",
-    "signature": "uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint param_4)"
+    "signature": "uint crt_unknown_c_FUN_0060dcf6(void)"
   },
   "function_calls": [
     {
@@ -173,577 +173,430 @@
   },
   "suspects": [
     {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_EAX",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ECX",
+      "text": "uint in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_EDX",
+      "text": "uint in_EDX;",
+      "type": "register_param"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 2,
+      "line": 18,
       "match": "unaff_EBX",
-      "text": "uint FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint param_4)",
+      "text": "uint unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "text": "uint FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "text": "uint FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "text": "uint FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint param_4)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 28,
+      "line": 34,
       "match": "unaff_EBX",
       "text": "if (unaff_EBX == 0) {",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_4",
-      "text": "if ((param_4 & 0x7fffffff) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_4",
-      "text": "param_4 = param_4 & 0x7fffffff | (uint)CARRY4(param_4,param_4) << 0x1f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_4",
-      "text": "param_4 = param_4 & 0x7fffffff | (uint)CARRY4(param_4,param_4) << 0x1f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_4",
-      "text": "param_4 = param_4 & 0x7fffffff | (uint)CARRY4(param_4,param_4) << 0x1f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_4",
-      "text": "param_4 = param_4 & 0x7fffffff | (uint)CARRY4(param_4,param_4) << 0x1f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "CARRY4",
-      "text": "param_4 = param_4 & 0x7fffffff | (uint)CARRY4(param_4,param_4) << 0x1f;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 35,
-      "match": "param_1",
-      "text": "if (param_1 == 0) {",
-      "type": "unnamed_param"
+      "match": "in_ECX",
+      "text": "if ((in_ECX & 0x7fffffff) == 0) {",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "text": "if ((param_2 & 0x7fffffff) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 39,
-      "match": "param_2",
-      "text": "param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;",
-      "type": "unnamed_param"
+      "match": "in_ECX",
+      "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 39,
-      "match": "param_2",
-      "text": "param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;",
-      "type": "unnamed_param"
+      "match": "in_ECX",
+      "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 39,
-      "match": "param_2",
-      "text": "param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;",
-      "type": "unnamed_param"
+      "match": "in_ECX",
+      "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 39,
-      "match": "param_2",
-      "text": "param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;",
-      "type": "unnamed_param"
+      "match": "in_ECX",
+      "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
+      "type": "register_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CARRY4",
-      "text": "param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;",
+      "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
+      "line": 41,
+      "match": "in_EAX",
+      "text": "if (in_EAX == 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
       "line": 42,
-      "match": "param_2",
-      "text": "uVar4 = (int)param_2 >> 0x14 & 0x7ff;",
-      "type": "unnamed_param"
+      "match": "in_EDX",
+      "text": "if ((in_EDX & 0x7fffffff) == 0) {",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_4",
-      "text": "uVar7 = (int)param_4 >> 0x14 & 0x800007ff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "text": "param_2 = param_2 & 0xfffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "text": "param_2 = param_2 & 0xfffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 45,
-      "match": "param_4",
-      "text": "uVar10 = param_4 & 0xfffff;",
-      "type": "unnamed_param"
+      "match": "in_EDX",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "text": "bVar17 = CARRY4(param_1,param_1);",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 45,
+      "match": "in_EDX",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "text": "bVar17 = CARRY4(param_1,param_1);",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 45,
+      "match": "in_EDX",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 45,
+      "match": "in_EDX",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
+      "type": "register_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 45,
       "match": "CARRY4",
-      "text": "bVar17 = CARRY4(param_1,param_1);",
+      "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
+      "line": 48,
+      "match": "in_ECX",
+      "text": "uVar17 = (ushort)((int)in_ECX >> 0x14) & 0x7ff;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 49,
+      "match": "in_EDX",
+      "text": "uVar4 = (int)in_EDX >> 0x14 & 0x7ff;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
       "line": 50,
-      "match": "param_1",
-      "text": "param_1 = param_1 * 2;",
-      "type": "unnamed_param"
+      "match": "in_EDX",
+      "text": "uVar9 = in_EDX & 0xfffff;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "text": "param_1 = param_1 * 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Inferred register parameter",
       "line": 51,
-      "match": "param_2",
-      "text": "param_2 = param_2 * 2 + (uint)bVar17;",
-      "type": "unnamed_param"
+      "match": "in_ECX",
+      "text": "uVar11 = in_ECX & 0xfffff;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "text": "param_2 = param_2 * 2 + (uint)bVar17;",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 55,
+      "match": "in_EAX",
+      "text": "bVar19 = CARRY4(in_EAX,in_EAX);",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_2",
-      "text": "} while ((param_2 & 0x100000) == 0);",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 55,
+      "match": "in_EAX",
+      "text": "bVar19 = CARRY4(in_EAX,in_EAX);",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_2",
-      "text": "param_2 = param_2 | 0x100000;",
-      "type": "unnamed_param"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "CARRY4",
+      "text": "bVar19 = CARRY4(in_EAX,in_EAX);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_2",
-      "text": "param_2 = param_2 | 0x100000;",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 56,
+      "match": "in_EAX",
+      "text": "in_EAX = in_EAX * 2;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_4",
-      "text": "if (((ushort)((int)param_4 >> 0x14) & 0x7ff) == 0) {",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 56,
+      "match": "in_EAX",
+      "text": "in_EAX = in_EAX * 2;",
+      "type": "register_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 68,
       "match": "unaff_EBX",
-      "text": "bVar17 = CARRY4(unaff_EBX,unaff_EBX);",
+      "text": "bVar19 = CARRY4(unaff_EBX,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 68,
       "match": "unaff_EBX",
-      "text": "bVar17 = CARRY4(unaff_EBX,unaff_EBX);",
+      "text": "bVar19 = CARRY4(unaff_EBX,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 68,
       "match": "CARRY4",
-      "text": "bVar17 = CARRY4(unaff_EBX,unaff_EBX);",
+      "text": "bVar19 = CARRY4(unaff_EBX,unaff_EBX);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 62,
+      "line": 69,
       "match": "unaff_EBX",
       "text": "unaff_EBX = unaff_EBX * 2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 62,
+      "line": 69,
       "match": "unaff_EBX",
       "text": "unaff_EBX = unaff_EBX * 2;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "CONCAT22",
-      "text": "uVar7 = CONCAT22((short)(uVar7 >> 0x10),(short)uVar7 + -1);",
-      "type": "decompiler_intrinsic"
+      "description": "Inferred register parameter",
+      "line": 84,
+      "match": "in_EAX",
+      "text": "uVar10 = uVar9 << 0xb | in_EAX >> 0x15;",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_2",
-      "text": "uVar7 = param_2 << 0xb | param_1 >> 0x15;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "text": "uVar7 = param_2 << 0xb | param_1 >> 0x15;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "text": "param_1 = param_1 * 0x800;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "text": "param_1 = param_1 * 0x800;",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 85,
+      "match": "in_EAX",
+      "text": "uVar4 = in_EAX * 0x800;",
+      "type": "register_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 79,
-      "match": "unaff_EBX",
-      "text": "uVar10 = uVar10 << 0xb | unaff_EBX >> 0x15;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 80,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = unaff_EBX * 0x800;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 80,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = unaff_EBX * 0x800;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 86,
-      "match": "param_1",
-      "text": "uVar1 = CONCAT44(uVar4,param_1) / (ulonglong)uVar10;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
-      "match": "CONCAT44",
-      "text": "uVar1 = CONCAT44(uVar4,param_1) / (ulonglong)uVar10;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 88,
       "match": "unaff_EBX",
-      "text": "uVar2 = (ulonglong)unaff_EBX * (uVar1 & 0xffffffff);",
+      "text": "uVar12 = uVar11 << 0xb | unaff_EBX >> 0x15;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 92,
+      "line": 87,
       "match": "unaff_EBX",
-      "text": "lVar3 = lVar3 + CONCAT44(uVar10,unaff_EBX);",
+      "text": "uVar9 = unaff_EBX * 0x800;",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 93,
       "match": "CONCAT44",
-      "text": "lVar3 = lVar3 + CONCAT44(uVar10,unaff_EBX);",
+      "text": "uVar1 = CONCAT44(uVar11,uVar4) / (ulonglong)uVar12;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "text": "uVar9 = param_1 - (uint)lVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 99,
-      "match": "param_1",
-      "text": "(uint)(param_1 < (uint)lVar3 || uVar9 < uVar4); iVar5 != 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
-      "match": "CARRY4",
-      "text": "iVar5 = iVar5 + (uint)(bVar19 || CARRY4(uVar4,(uint)bVar18))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 104,
-      "match": "unaff_EBX",
-      "text": "bVar18 = CARRY4(uVar8,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
-      "match": "CARRY4",
-      "text": "bVar18 = CARRY4(uVar8,unaff_EBX);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 105,
-      "match": "unaff_EBX",
-      "text": "uVar8 = uVar8 + unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
-      "match": "CARRY4",
-      "text": "bVar19 = CARRY4(uVar11,uVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
       "match": "CONCAT44",
-      "text": "uVar1 = CONCAT44(uVar11,uVar8) / (ulonglong)uVar10;",
+      "text": "lVar3 = lVar3 + CONCAT44(uVar12,uVar9);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 119,
-      "match": "unaff_EBX",
-      "text": "uVar2 = (ulonglong)unaff_EBX * (uVar1 & 0xffffffff);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 107,
       "match": "CARRY4",
-      "text": "iVar5 = iVar5 + (uint)(bVar19 || CARRY4(uVar4,(uint)bVar18))) {",
+      "text": "iVar5 = iVar5 + (uint)(bVar21 || CARRY4(uVar4,(uint)bVar20))) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 135,
-      "match": "unaff_EBX",
-      "text": "bVar18 = CARRY4(uVar9,unaff_EBX);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
+      "line": 111,
       "match": "CARRY4",
-      "text": "bVar18 = CARRY4(uVar9,unaff_EBX);",
+      "text": "bVar20 = CARRY4(uVar8,uVar9);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 113,
+      "match": "CARRY4",
+      "text": "bVar21 = CARRY4(uVar13,uVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 123,
+      "match": "CONCAT44",
+      "text": "uVar1 = CONCAT44(uVar13,uVar8) / (ulonglong)uVar12;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 136,
-      "match": "unaff_EBX",
-      "text": "uVar9 = uVar9 + unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
       "match": "CARRY4",
-      "text": "bVar19 = CARRY4(uVar12,uVar10);",
+      "text": "iVar5 = iVar5 + (uint)(bVar21 || CARRY4(uVar4,(uint)bVar20))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
+      "line": 142,
+      "match": "CARRY4",
+      "text": "bVar20 = CARRY4(uVar10,uVar9);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 144,
+      "match": "CARRY4",
+      "text": "bVar21 = CARRY4(uVar14,uVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 159,
       "match": "CARRY4",
       "text": "uVar4 = (uint)CARRY4(uVar4,uVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
+      "line": 161,
       "match": "CARRY4",
-      "text": "uVar4 = (uint)CARRY4(uVar7,uVar4);",
+      "text": "uVar4 = (uint)CARRY4(uVar9,uVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 162,
       "match": "CARRY4",
-      "text": "sVar14 = uVar16 + CARRY4(uVar9,uVar4);",
+      "text": "sVar18 = uVar16 + CARRY4(uVar10,uVar4);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 171,
-      "match": "param_2",
-      "text": "fVar20 = (float10)(double)CONCAT44(param_2,param_1) /",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 178,
+      "match": "in_EDX",
+      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
+      "type": "register_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 171,
-      "match": "param_1",
-      "text": "fVar20 = (float10)(double)CONCAT44(param_2,param_1) /",
-      "type": "unnamed_param"
+      "description": "Inferred register parameter",
+      "line": 178,
+      "match": "in_EAX",
+      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
+      "type": "register_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
-      "match": "CONCAT44",
-      "text": "fVar20 = (float10)(double)CONCAT44(param_2,param_1) /",
-      "type": "decompiler_intrinsic"
+      "description": "Inferred register parameter",
+      "line": 178,
+      "match": "in_ECX",
+      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
+      "type": "register_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 172,
+      "line": 178,
       "match": "unaff_EBX",
-      "text": "(float10)(double)CONCAT44(param_4,unaff_EBX);",
+      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 172,
-      "match": "param_4",
-      "text": "(float10)(double)CONCAT44(param_4,unaff_EBX);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 172,
+      "line": 178,
       "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44(param_4,unaff_EBX);",
+      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 176,
-      "match": "param_2",
-      "text": "((float10)(double)CONCAT44(param_2,param_1),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 176,
-      "match": "param_1",
-      "text": "((float10)(double)CONCAT44(param_2,param_1),",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 176,
+      "line": 178,
       "match": "CONCAT44",
-      "text": "((float10)(double)CONCAT44(param_2,param_1),",
+      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 182,
+      "match": "in_EDX",
+      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 182,
+      "match": "in_EAX",
+      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 182,
+      "match": "in_ECX",
+      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "type": "register_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 177,
+      "line": 182,
       "match": "unaff_EBX",
-      "text": "(double)CONCAT44(param_4,unaff_EBX));",
+      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 177,
-      "match": "param_4",
-      "text": "(double)CONCAT44(param_4,unaff_EBX));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 177,
+      "line": 182,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44(param_4,unaff_EBX));",
+      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 179,
+      "line": 182,
+      "match": "CONCAT44",
+      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 185,
       "match": "SUB84",
-      "text": "uVar4 = SUB84((double)fVar20,0);",
+      "text": "uVar4 = SUB84((double)fVar22,0);",
       "type": "decompiler_intrinsic"
     },
     {

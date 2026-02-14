@@ -1,28 +1,18 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 22,
-        "message": "use of undeclared identifier 'stack0xffffffc0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 81,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 21,
-    "suspect_count": 5,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 82
   },
   "cross_references": [
@@ -43,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_explode_FUN_0042b930",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_explode_FUN_0042b930 (CCharacter *this_ptr,CVector3f *impact_point,float impact_force)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_explode_FUN_0042b930(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)"
   },
   "function_calls": [
     {
@@ -138,41 +128,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000010",
-      "text": "CVector3f *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "float in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xffffffc0",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000010",
-      "text": "core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(this_ptr,in_stack_00000010,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000014",
-      "text": "core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(this_ptr,in_stack_00000010,in_stack_00000014);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown char * crt_unknown_c_FUN_0060b670(void)
+; unknown char * crt_unknown_c_FUN_0060b670(char *param_1,char *param_2,ulong param_3)
 ;
 ;
 ; XREF[1]:

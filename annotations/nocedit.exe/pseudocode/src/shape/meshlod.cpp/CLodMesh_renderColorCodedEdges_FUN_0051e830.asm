@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 (CLodMesh *this_ptr,int backface_culling_enabled)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh *this_ptr,int backface_culling_enabled)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

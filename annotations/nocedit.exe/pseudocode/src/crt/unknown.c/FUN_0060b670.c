@@ -2,32 +2,27 @@
 // Address: 0060b670
 // Address Range: [[0060b670, 0060b6d6]]
 // Convention: unknown
-// Signature: char * crt_unknown_c_FUN_0060b670(void)
+// Signature: char * crt_unknown_c_FUN_0060b670(char *param_1,char *param_2,ulong param_3)
 
 #include "nocturne.h"
 
-char * FUN_0060b670(void)
+char * FUN_0060b670(char *param_1,char *param_2,ulong param_3)
 
 {
   char *dest;
-  char *in_stack_00000004;
-  char *in_stack_00000008;
-  ulong in_stack_0000000c;
   
-  dest = in_stack_00000004;
-  for (; (in_stack_0000000c != 0 && (*in_stack_00000008 != '\0'));
-      in_stack_00000008 = in_stack_00000008 + 1) {
-    in_stack_0000000c = in_stack_0000000c - 1;
-    *dest = *in_stack_00000008;
+  dest = param_1;
+  for (; (param_3 != 0 && (*param_2 != '\0')); param_2 = param_2 + 1) {
+    param_3 = param_3 - 1;
+    *dest = *param_2;
     dest = dest + 1;
   }
-  if ((((*in_stack_00000008 != '\0') && (in_stack_00000004 < dest)) &&
-      (g_MultibyteLocaleActive != 0)) && ((g_LeadByteTable[(byte)in_stack_00000008[-1]] & 1U) != 0))
-  {
+  if ((((*param_2 != '\0') && (param_1 < dest)) && (g_MultibyteLocaleActive != 0)) &&
+     ((g_LeadByteTable[(byte)param_2[-1]] & 1U) != 0)) {
     dest[-1] = '\0';
   }
-  if (in_stack_0000000c != 0) {
-    memset(dest,0,in_stack_0000000c);
+  if (param_3 != 0) {
+    memset(dest,0,param_3);
   }
-  return in_stack_00000004;
+  return param_1;
 }

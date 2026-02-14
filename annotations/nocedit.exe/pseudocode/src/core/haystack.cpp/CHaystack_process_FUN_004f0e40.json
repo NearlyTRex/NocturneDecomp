@@ -4,74 +4,32 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 27,
+        "line": 29,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 13,
-        "line": 202,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 203,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 204,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 205,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 206,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 207,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 18,
-        "line": 216,
+        "line": 221,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 218,
+        "column": 27,
+        "line": 223,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 219,
+        "line": 224,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 220,
+        "column": 29,
+        "line": 225,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 268,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
       }
     ],
     "success": false,
@@ -79,18 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 542,
-    "complexity_score": 390,
+    "complexity_score": 463,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 15,
-    "pseudocode_lines": 275,
-    "suspect_count": 10,
+    "pseudocode_lines": 278,
+    "suspect_count": 17,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
-      "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 817
+    "total_lines": 820
   },
   "cross_references": [],
   "function": {
@@ -511,72 +469,121 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 22,
       "match": "code *",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffff80",
-      "text": "float in_stack_ffffff80;",
+      "line": 23,
+      "match": "in_stack_ffffff70",
+      "text": "float in_stack_ffffff70;",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 195,
-      "match": "._0_4_",
-      "text": "local_6c._0_4_ = (this_ptr->base).base.velocity.x * delta_time;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 196,
-      "match": "._4_4_",
-      "text": "local_6c._4_4_ = (this_ptr->base).base.velocity.y * delta_time;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 197,
-      "match": "._8_4_",
-      "text": "local_6c._8_4_ = delta_time * (this_ptr->base).base.velocity.z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 198,
-      "match": "._0_4_",
-      "text": "local_3c.x = local_3c.x + (float)local_6c._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 199,
-      "match": "._4_4_",
-      "text": "local_3c.y = local_3c.y + (float)local_6c._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 200,
-      "match": "._8_4_",
-      "text": "local_3c.z = local_3c.z + (float)local_6c._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 261,
-      "match": "._0_4_",
-      "text": "local_6c._0_4_ = CStack_7c.w;",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 216,
+      "match": "in_stack_ffffff70",
+      "text": "in_stack_ffffff70 = (float)local_18;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 275,
-      "match": "in_stack_ffffff80",
-      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff80);",
+      "line": 218,
+      "match": "in_stack_ffffff70",
+      "text": "in_stack_ffffff70 = (float)local_18 + 3.141593f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 220,
+      "match": "in_stack_ffffff70",
+      "text": "if ((float)1.57079632675 < in_stack_ffffff70) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 221,
+      "match": "in_stack_ffffff70",
+      "text": "in_stack_ffffff70 = in_stack_ffffff70 + -3.141593f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 221,
+      "match": "in_stack_ffffff70",
+      "text": "in_stack_ffffff70 = in_stack_ffffff70 + -3.141593f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 225,
+      "match": "in_stack_ffffff70",
+      "text": "if (in_stack_ffffff70 < local_28) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 226,
+      "match": "in_stack_ffffff70",
+      "text": "in_stack_ffffff70 = local_28;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 228,
+      "match": "in_stack_ffffff70",
+      "text": "if (local_20 < in_stack_ffffff70) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 229,
+      "match": "in_stack_ffffff70",
+      "text": "in_stack_ffffff70 = local_20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 232,
+      "match": "in_stack_ffffff70",
+      "text": "(this_ptr->base).base.base.orient.vec.y + in_stack_ffffff70;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 268,
+      "match": "(uint *)((int)",
+      "text": "puVar11 = (uint *)((int)&CStack_7c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 269,
+      "match": "(uint *)((int)",
+      "text": "puVar10 = (uint *)((int)&CStack_8c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 270,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_7c + (uint)bVar12 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 271,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar12 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 278,
+      "match": "in_stack_ffffff70",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff70);",
       "type": "stack_param"
     }
   ],

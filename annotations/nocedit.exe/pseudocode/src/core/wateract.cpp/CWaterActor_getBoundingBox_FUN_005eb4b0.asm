@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005eb4b0 (CWaterActor *this_ptr,CBoundingBox3D *out_box)
+; __cdecl CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005eb4b0(CWaterActor *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

@@ -260,7 +260,7 @@ section .text
     JMP 0x005dc9f8                      ; 005dca16
         ;   XREF to: 005dc9f8 (UNCONDITIONAL_JUMP)  ; LAB_005dc9f8
     CALL engine_matrix.c_popViewport_FUN_0050e480 ; 005dca18
-        ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
+        ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480()
         ;   Label: LAB_005dca18
     ADD ESP,0x40                        ; 005dca1d
     POP EBP                             ; 005dca20

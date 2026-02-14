@@ -2,13 +2,11 @@
 // Address: 004d0850
 // Address Range: [[004d0850, 004d110f]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850 (CBitFont *this_ptr,int screen_width,int screen_height)
+// Signature: void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850(CBitFont *this_ptr,int screen_width,int screen_height)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850
-          (CBitFont *this_ptr,int screen_width,int screen_height)
+void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850(CBitFont *this_ptr,int screen_width,int screen_height)
 
 {
   int iVar1;

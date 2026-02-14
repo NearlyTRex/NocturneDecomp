@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 105,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 25,
-    "suspect_count": 6,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
       "special_crt_function",
-      "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 81
+    "total_lines": 80
   },
   "cross_references": [
     {
@@ -136,11 +135,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 7,
-      "match": "in_stack_00000010",
-      "text": "va_list_t *in_stack_00000010;",
-      "type": "stack_param"
+      "match": "code *",
+      "text": "code *pcStack_24;",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -148,20 +147,6 @@
       "match": "code *",
       "text": "code *pcStack_20;",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
-      "match": "code *",
-      "text": "code *pcStack_1c;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000010",
-      "text": "((scanf_state_t *)&pcStack_20,(char **)args.value[0],in_stack_00000010);",
-      "type": "stack_param"
     },
     {
       "call_site_count": 1,

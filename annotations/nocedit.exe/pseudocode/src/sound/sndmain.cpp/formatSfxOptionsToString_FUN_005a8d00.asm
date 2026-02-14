@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00 (char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)
+; __cdecl void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00(char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   output_buffer

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int height_half)
+void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int height_half)
 
 {
   CDemonRenderer *this_ptr;

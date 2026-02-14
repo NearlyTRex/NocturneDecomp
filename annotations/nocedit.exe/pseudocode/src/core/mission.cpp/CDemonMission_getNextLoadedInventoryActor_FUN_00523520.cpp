@@ -2,13 +2,11 @@
 // Address: 00523520
 // Address Range: [[00523520, 005235ae]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520 (CDemonMission *this_ptr,char *actor_name)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission *this_ptr,char *actor_name)
 
 #include "nocturne.h"
 
-void __cdecl
-core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520
-          (CDemonMission *this_ptr,char *actor_name)
+void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission *this_ptr,char *actor_name)
 
 {
   int iVar1;

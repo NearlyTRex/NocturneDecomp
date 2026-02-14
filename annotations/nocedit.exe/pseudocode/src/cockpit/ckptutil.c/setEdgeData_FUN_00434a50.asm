@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00434a50 (SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit)
+; __cdecl void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00434a50(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit)
 ;
 ; Parameters:
 ; SEdge *          Stack[0x4]:4   edge_array

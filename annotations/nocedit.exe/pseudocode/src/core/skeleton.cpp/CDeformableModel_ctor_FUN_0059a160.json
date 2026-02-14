@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 255,
+    "complexity_score": 254,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 39,
     "suspect_count": 21,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 114
+    "total_lines": 113
   },
   "cross_references": [
     {
@@ -125,84 +125,91 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 12,
       "match": "(void *)((int)",
       "text": "((void *)((int)pvVar2 + 0x4bc),100,&g_CBoundingBox3DTypeInfo);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 13,
       "match": "(CDeformableModel *)((int)",
       "text": "pCVar1 = (CDeformableModel *)((int)pvVar2 + -0x814c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(SLod *)((int)",
       "text": "} while (pSVar4 != (SLod *)((int)pvVar2 + -0x8138));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 26,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0x8094) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0x8090) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(void *)((int)",
       "text": "memset((void *)((int)pvVar2 + -0x808c),0,0x7080);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0x100c) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(void *)((int)",
       "text": "memset((void *)((int)pvVar2 + -0x1008),0,0xb40);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)pvVar2 + 0xe10) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + 0xe60) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0x4c0) = 0x3f800000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 35,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pvVar2 + -0x4c4) = *(uint *)((int)pvVar2 + -0x4c0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0x4c4) = *(uint *)((int)pvVar2 + -0x4c0);",
       "type": "pointer_cast"
@@ -211,12 +218,12 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x4c4) = *(uint *)((int)pvVar2 + -0x4c0);",
+      "text": "*(uint *)((int)pvVar2 + -0x4c8) = *(uint *)((int)pvVar2 + -0x4c4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 36,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0x4c8) = *(uint *)((int)pvVar2 + -0x4c4);",
       "type": "pointer_cast"
@@ -224,27 +231,27 @@
     {
       "description": "Complex pointer cast",
       "line": 37,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x4c8) = *(uint *)((int)pvVar2 + -0x4c4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
       "match": "(void *)((int)",
       "text": "memset((void *)((int)pvVar2 + -0x8148),0,0x28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pvVar2 + -8) = *(uint *)((int)pvVar2 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -8) = *(uint *)((int)pvVar2 + -4);",
       "type": "pointer_cast"
@@ -252,20 +259,13 @@
     {
       "description": "Complex pointer cast",
       "line": 40,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -8) = *(uint *)((int)pvVar2 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0xc) = *(uint *)((int)pvVar2 + -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pvVar2 + -0xc) = *(uint *)((int)pvVar2 + -8);",
       "type": "pointer_cast"

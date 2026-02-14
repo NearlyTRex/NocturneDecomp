@@ -14,7 +14,7 @@
 ;   TerminatedCString s_CGame_playerControls_unk_0062b846
 ;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   uint g_MouseButtonFlags
+;   _BIT_INTEGER g_MouseButtonFlags
 ;   char[256] g_KeyboardState
 ;   undefined4 CHAR_ARRAY_02d03e9c
 ;   char[600] g_PrevKeyboardState

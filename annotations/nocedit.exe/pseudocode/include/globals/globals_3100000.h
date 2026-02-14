@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 #include "types/classes/CCmdParse.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEdScrollBar.h"
@@ -29,11 +30,17 @@ extern CPickList g_ScriptPickList;
 // CScript
 extern CScript g_CScriptInstance;
 
+// _BIT_INTEGER
+extern _BIT_INTEGER g_CursorBlinkTimer;
+
 // char[100]
 extern char g_ScriptTempBuffer[100];
 
-// char[1020]
-extern char g_ScriptEditorStatusText[1020];
+// char[1023]
+extern char g_ScriptEditorStatusText[1023];
+
+// char[104]
+extern char g_ScriptFindText[104];
 
 // char[10][1024]
 extern char g_ScriptSubtitleLines[10][1024];
@@ -74,12 +81,8 @@ extern int g_ScriptEventsEnabled;
 extern int g_ScriptInputFlag;
 extern int g_ScriptLoopWarningShown;
 extern int g_ActorLookedUpByVariable;
-extern int INT_0310fd40;
 extern int g_CurrentEditingColumn;
 extern int g_CurrentEditingLine;
 extern int g_SelectionAnchorColumn;
 extern int g_SelectionAnchorLine;
-
-// undefined1
-extern undefined1 DAT_0310fd58;
 

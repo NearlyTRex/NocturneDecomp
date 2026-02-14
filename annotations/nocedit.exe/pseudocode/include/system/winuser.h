@@ -107,7 +107,7 @@ typedef int SPECIAL_DEVICE_WRITE_FUNC(int device_id, void* buffer, int bytes_to_
 typedef SPECIAL_DEVICE_WRITE_FUNC* LPSPECIALDEVICEWRITE;
 
 // Function Definition: WNDPROC_FUNC
-typedef LRESULT WNDPROC_FUNC(HWND param0, UINT param1, WPARAM param2, LPARAM param3);
+typedef LRESULT WNDPROC_FUNC(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 // Typedef: WNDPROC
 // pointer to WNDPROC_FUNC

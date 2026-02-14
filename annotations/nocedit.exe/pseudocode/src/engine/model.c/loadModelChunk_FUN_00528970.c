@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size)
+SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size)
 
 {
   char cVar1;

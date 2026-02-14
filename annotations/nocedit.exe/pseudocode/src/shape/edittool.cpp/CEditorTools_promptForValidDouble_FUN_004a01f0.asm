@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0 (CEditorTools *this_ptr,char *prompt_text,double *result_ptr,int enable_range_check, double min_value,double max_value,int show_current_value)
+; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools *this_ptr,char *prompt_text,double *result_ptr,int enable_range_check,double min_value,double max_value,int show_current_value)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

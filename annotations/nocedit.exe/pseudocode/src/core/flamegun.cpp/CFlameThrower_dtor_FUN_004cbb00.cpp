@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CFlameThrower * __cdecl
-core_flamegun_cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower *this_ptr,uint flags)
+CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_004cbb00(CFlameThrower *this_ptr,uint flags)
 
 {
   CFlameThrower *ptr;

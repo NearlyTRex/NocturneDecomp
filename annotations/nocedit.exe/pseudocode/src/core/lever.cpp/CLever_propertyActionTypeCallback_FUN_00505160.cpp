@@ -2,13 +2,11 @@
 // Address: 00505160
 // Address Range: [[00505160, 00505192]]
 // Convention: __cdecl
-// Signature: int __cdecl core_lever_cpp_CLever_propertyActionTypeCallback_FUN_00505160 (CLever *this_ptr,CActorProperty *property)
+// Signature: int __cdecl core_lever_cpp_CLever_propertyActionTypeCallback_FUN_00505160(CLever *this_ptr,CActorProperty *property)
 
 #include "nocturne.h"
 
-int __cdecl
-core_lever_cpp_CLever_propertyActionTypeCallback_FUN_00505160
-          (CLever *this_ptr,CActorProperty *property)
+int __cdecl core_lever_cpp_CLever_propertyActionTypeCallback_FUN_00505160(CLever *this_ptr,CActorProperty *property)
 
 {
   CLever *pCVar1;

@@ -2,14 +2,11 @@
 // Address: 00561a30
 // Address Range: [[00561a30, 00561c69]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_parseConditionExpression_FUN_00561a30 (char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position ,CCmdParm *parm_out,CCmdParse *parse_out)
+// Signature: int __cdecl core_script_cpp_parseConditionExpression_FUN_00561a30(char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position,CCmdParm *parm_out,CCmdParse *parse_out)
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_parseConditionExpression_FUN_00561a30
-          (char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position
-          ,CCmdParm *parm_out,CCmdParse *parse_out)
+int __cdecl core_script_cpp_parseConditionExpression_FUN_00561a30(char *input_text,char *cmd_name_out,char *prefix_out,char *suffix_out,int cursor_position,CCmdParm *parm_out,CCmdParse *parse_out)
 
 {
   char cVar1;

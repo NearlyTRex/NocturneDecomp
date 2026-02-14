@@ -2,13 +2,11 @@
 // Address: 0052dcb0
 // Address Range: [[0052dcb0, 0052dcdc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_0052dcb0 (CMotionController *this_ptr,CMotionList *motion_list)
+// Signature: void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_0052dcb0(CMotionController *this_ptr,CMotionList *motion_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_motion_cpp_CMotionController_setMotionList_FUN_0052dcb0
-          (CMotionController *this_ptr,CMotionList *motion_list)
+void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_0052dcb0(CMotionController *this_ptr,CMotionList *motion_list)
 
 {
   int iVar1;

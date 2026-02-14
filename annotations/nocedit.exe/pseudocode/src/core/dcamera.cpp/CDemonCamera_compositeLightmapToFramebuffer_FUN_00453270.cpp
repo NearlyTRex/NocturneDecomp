@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(CDemonCamera *this_ptr)
+void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(CDemonCamera *this_ptr)
 
 {
   int *piVar1;
@@ -52,7 +51,7 @@ core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(CDemon
                ((int)g_ScreenBufferArray[uVar9 - g_CameraShakeOffsetY] + g_CameraShakeOffsetX * 2);
       puVar7 = (ulonglong *)
                ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar9 * 4);
-      iVar4 = (int)uVar9 >> ((byte)g_CameraDownscaleIterations & 0x1f);
+      iVar4 = (int)uVar9 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
       pacVar5 = g_CameraPlaneWorkBuffer.pixels + iVar4;
       pacVar8 = g_CoronaBlurWorkBuffer + iVar4;
       if ((uVar9 & 1) == 0) {
@@ -105,7 +104,7 @@ LAB_0045340c:
                ((int)g_ScreenBufferArray[uVar9 - g_CameraShakeOffsetY] + g_CameraShakeOffsetX * 4);
       puVar7 = (ulonglong *)
                ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar9 * 4);
-      iVar4 = (int)uVar9 >> ((byte)g_CameraDownscaleIterations & 0x1f);
+      iVar4 = (int)uVar9 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
       pacVar5 = g_CameraPlaneWorkBuffer.pixels + iVar4;
       pacVar8 = g_CoronaBlurWorkBuffer + iVar4;
       if ((uVar9 & 1) == 0) {

@@ -165,41 +165,26 @@ extern SMRGLPrimitiveQuad* g_BoundingBoxQuadTemplateEnd;
 extern SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6];
 
 // SMRGLTextureBasic
-extern SMRGLTextureBasic DAT_00680bb0;
-extern SMRGLTextureBasic DAT_006813e4;
-extern SMRGLTextureBasic DAT_006816c0;
+extern SMRGLTextureBasic SMRGLTextureBasic_00680bb0;
+extern SMRGLTextureBasic SMRGLTextureBasic_006813e4;
+extern SMRGLTextureBasic SMRGLTextureBasic_006816c0;
 extern SMRGLTextureBasic SMRGLTextureBasic_006817fc;
-extern SMRGLTextureBasic DAT_006819e4;
-extern SMRGLTextureBasic DAT_00684178;
+extern SMRGLTextureBasic SMRGLTextureBasic_006819e4;
+extern SMRGLTextureBasic SMRGLTextureBasic_00684178;
 extern SMRGLTextureBasic DAT_0068423C;
-extern SMRGLTextureBasic DAT_0068434c;
+extern SMRGLTextureBasic SMRGLTextureBasic_0068434c;
 extern SMRGLTextureBasic DAT_006843FC;
-extern SMRGLTextureBasic DAT_006846f0;
-extern SMRGLTextureBasic DAT_00684708;
-extern SMRGLTextureBasic DAT_00684720;
-extern SMRGLTextureBasic DAT_00684738;
-extern SMRGLTextureBasic DAT_00684750;
-extern SMRGLTextureBasic DAT_00684768;
-extern SMRGLTextureBasic DAT_00684780;
-extern SMRGLTextureBasic DAT_00684798;
-extern SMRGLTextureBasic DAT_006847B0;
-extern SMRGLTextureBasic DAT_006847C8;
-extern SMRGLTextureBasic DAT_006847E0;
-extern SMRGLTextureBasic DAT_006847F8;
-extern SMRGLTextureBasic DAT_00684810;
-extern SMRGLTextureBasic DAT_00684828;
-extern SMRGLTextureBasic DAT_00684840;
-extern SMRGLTextureBasic DAT_00684858;
 extern SMRGLTextureBasic SMRGLTextureBasic_00684900;
 extern SMRGLTextureBasic SMRGLTextureBasic_00684918;
 extern SMRGLTextureBasic SMRGLTextureBasic_00684930;
-extern SMRGLTextureBasic DAT_0068495c;
+extern SMRGLTextureBasic SMRGLTextureBasic_0068495c;
 
 // SMRGLTextureBasic*
 extern SMRGLTextureBasic* g_WaterTexturesEnd;
 
 // SMRGLTextureBasic[16]
 extern SMRGLTextureBasic g_WaterTextures[16];
+extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_006846f0[16];
 
 // SPECIAL_CONSOLE_INPUT_HANDLER_FUNC*
 extern SPECIAL_CONSOLE_INPUT_HANDLER_FUNC* g_SpecialConsoleInputHandler;
@@ -331,12 +316,14 @@ extern double g_ClearColor;
 extern dst_rule g_DstStartRule;
 
 // float
+extern float FLOAT_00681a00;
 extern float g_MaxSoftwareLatency;
 
 // int
 extern int INT_00680648;
 extern int g_DynamicRenderMode;
 extern int g_ConfirmNewActorNames;
+extern int INT_00680818;
 extern int g_CNPCClassVersion;
 extern int g_CPassengerClassVersion;
 extern int g_CPendulumClassVersion;
@@ -487,7 +474,6 @@ extern undefined1 DAT_0068500c;
 extern undefined1 DAT_006852db;
 
 // undefined4
-extern undefined4 DAT_00680818;
 extern undefined4 DAT_00680830;
 extern undefined4 DAT_00680834;
 extern undefined4 DAT_00680908;
@@ -498,7 +484,6 @@ extern undefined4 DAT_00680bd8;
 extern undefined4 DAT_00680bdc;
 extern undefined4 DAT_0068125c;
 extern undefined4 DAT_00681260;
-extern undefined4 DAT_00681a00;
 extern undefined4 DAT_00684edc;
 extern undefined4 DAT_00684fd0;
 extern undefined4 DAT_00685094;

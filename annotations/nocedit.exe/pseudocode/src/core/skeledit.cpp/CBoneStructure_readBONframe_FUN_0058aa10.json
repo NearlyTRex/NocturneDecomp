@@ -4,25 +4,37 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 21,
+        "line": 19,
         "message": "no matching function for call to '__STK'"
       },
       {
         "category": "format_error",
         "column": 52,
-        "line": 26,
+        "line": 24,
         "message": "format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 27,
+        "line": 25,
         "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 28,
+        "line": 26,
+        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 30,
+        "line": 36,
+        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 30,
+        "line": 37,
         "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
@@ -33,14 +45,14 @@
       },
       {
         "category": "format_error",
-        "column": 30,
-        "line": 39,
+        "column": 28,
+        "line": 41,
         "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 30,
-        "line": 40,
+        "column": 28,
+        "line": 42,
         "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
@@ -51,32 +63,20 @@
       },
       {
         "category": "format_error",
-        "column": 28,
-        "line": 44,
-        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 28,
+        "column": 54,
         "line": 45,
         "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 54,
+        "column": 26,
+        "line": 46,
+        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 26,
         "line": 47,
-        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 26,
-        "line": 48,
-        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 26,
-        "line": 49,
         "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       }
     ],
@@ -85,17 +85,17 @@
   },
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 678,
+    "complexity_score": 676,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 10,
-    "pseudocode_lines": 78,
+    "pseudocode_lines": 76,
     "suspect_count": 59,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 247
+    "total_lines": 245
   },
   "cross_references": [
     {
@@ -127,7 +127,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10",
-    "signature": "void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10 (CBoneStructure *this_ptr,_FILE *file,int mirror_flag)"
+    "signature": "void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure *this_ptr,_FILE *file,int mirror_flag)"
   },
   "function_calls": [
     {
@@ -286,413 +286,413 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "for (iVar4 = 0; iVar4 < *in_stack_00000004; iVar4 = iVar4 + 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "iVar2 = in_stack_00000004[iVar4 + 0xce5];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "matrix = (CMatrix3x4f *)(in_stack_00000004 + iVar2 * 0x21 + 0x16);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1a,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 29,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x17,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1b,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1f);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x18,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1c,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "iVar1 = _fscanf((_FILE *)this_ptr,\"%f,%f,%f\\n\",in_stack_00000004 + iVar2 * 0x21 + 0x19,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1d,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 + iVar2 * 0x21 + 0x21);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 43,
       "match": "in_stack_00000004",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 52,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 54,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 56,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) =",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000004",
-      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) ^ 0x80;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(byte *)((int)",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 62,
       "match": "in_stack_00000004",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 62,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 63,
       "match": "in_stack_00000004",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 63,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 64,
       "match": "in_stack_00000004",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 64,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 65,
       "match": "in_stack_00000004",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 65,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 66,
       "match": "in_stack_00000004",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 66,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 67,
       "match": "in_stack_00000004",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 67,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
       "type": "pointer_cast"

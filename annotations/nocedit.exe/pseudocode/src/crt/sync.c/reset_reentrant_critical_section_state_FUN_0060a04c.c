@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-reset_reentrant_critical_section_state(ReentrantCriticalSection *rcs)
+void __cdecl reset_reentrant_critical_section_state(ReentrantCriticalSection *rcs)
 
 {
   rcs->ownerThreadId = 0;

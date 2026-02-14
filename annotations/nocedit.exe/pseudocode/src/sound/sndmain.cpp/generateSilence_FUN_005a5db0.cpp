@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_generateSilence_FUN_005a5db0(void *buffer,uint bits_per_sample,uint num_samples)
+void __cdecl sound_sndmain_cpp_generateSilence_FUN_005a5db0(void *buffer,uint bits_per_sample,uint num_samples)
 
 {
   int value;

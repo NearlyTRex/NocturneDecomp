@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004355c0 (SEdge *edge_array,int edge_count,int flip_width)
+; __cdecl void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004355c0(SEdge *edge_array,int edge_count,int flip_width)
 ;
 ; Parameters:
 ; SEdge *          Stack[0x4]:4   edge_array

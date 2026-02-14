@@ -1,29 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 19,
-        "message": "use of undeclared identifier 'stack0xffffffd4'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 51,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 21,
-    "suspect_count": 2,
-    "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref"
-    ],
-    "total_lines": 87
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 89
   },
   "cross_references": [],
   "function": {
@@ -132,22 +122,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 12,
-      "match": "&stack0xffffffd4",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "NAN",
-      "text": "render_flags = -NAN;",
-      "type": "decompiler_intrinsic"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

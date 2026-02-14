@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(SOCKET *socket_handle,int broadcast_flag)
+int __cdecl support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(SOCKET *socket_handle,int broadcast_flag)
 
 {
   int iVar1;

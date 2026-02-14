@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_chain_cpp_CChain_getBoundingBox_FUN_00430eb0(CChain *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_00430eb0(CChain *this_ptr,CBoundingBox3D *out_box)
 
 {
   CBoundingBox3D *pCVar1;

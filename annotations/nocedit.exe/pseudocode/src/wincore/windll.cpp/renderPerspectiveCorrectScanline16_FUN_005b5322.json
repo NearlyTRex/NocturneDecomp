@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 201,
+    "complexity_score": 199,
     "cross_reference_count": 57,
     "function_call_count": 0,
     "global_count": 22,
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 119,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 293
+    "total_lines": 291
   },
   "cross_references": [
     {
@@ -372,7 +372,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322",
-    "signature": "void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322 (STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)"
+    "signature": "void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -499,7 +499,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -564,49 +564,49 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 29,
       "match": "(int *)((int)",
       "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar3 * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 54,
       "match": "CONCAT44",
       "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 60,
       "match": "CONCAT44",
       "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 65,
       "match": "CONCAT44",
       "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 71,
       "match": "CONCAT44",
       "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 104,
       "match": "(byte *)((int)",
       "text": "[*(byte *)((int)g_CurrentTextureData +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 110,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
       "type": "pointer_cast"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dest_cpp_CActorDestination_getPropertyList_FUN_0046fe80 (CActorDestination *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_dest_cpp_CActorDestination_getPropertyList_FUN_0046fe80(CActorDestination *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CActorDestination * Stack[0x4]:4   this_ptr

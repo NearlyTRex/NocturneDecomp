@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 (CColorQuantizer *this_ptr,SColorBox *box_ptr,uchar *pixel_ptr)
+; __cdecl float __cdecl shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer *this_ptr,SColorBox *box_ptr,uchar *pixel_ptr)
 ;
 ; Parameters:
 ; CColorQuantizer * Stack[0x4]:4   this_ptr

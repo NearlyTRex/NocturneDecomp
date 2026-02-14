@@ -17,7 +17,7 @@
 ;   undefined4 DAT_00feffff
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   BOOL g_MMXSupported
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

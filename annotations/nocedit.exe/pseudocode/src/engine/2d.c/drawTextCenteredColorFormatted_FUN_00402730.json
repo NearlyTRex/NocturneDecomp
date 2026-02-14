@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 23,
-        "line": 17,
+        "line": 15,
         "message": "assigning to 'char *' from incompatible type 'char *[1]'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 17,
+        "line": 15,
         "message": "use of undeclared identifier 'stack0x00000014'"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 18,
+        "line": 16,
         "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 19,
+        "line": 17,
         "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
       }
     ],
@@ -31,16 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 27,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 10,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 46
+    "total_lines": 44
   },
   "cross_references": [],
   "function": {
@@ -53,7 +53,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730",
-    "signature": "void __cdecl engine_2d_c_drawTextCenteredColorFormatted_FUN_00402730 (int left_x,int right_x,int y,char *format_string,...)"
+    "signature": "void __cdecl engine_2d_c_drawTextCenteredColorFormatted_FUN_00402730(int left_x,int right_x,int y,char *format_string,...)"
   },
   "function_calls": [
     {
@@ -152,7 +152,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 10,
+      "line": 8,
       "match": "&stack0x00000014",
       "text": "local_10.value[0] = (char * [1])&stack0x00000014;",
       "type": "stack_ref"

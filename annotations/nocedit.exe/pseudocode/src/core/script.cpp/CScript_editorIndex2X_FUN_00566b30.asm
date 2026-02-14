@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl core_script_cpp_CScript_editorIndex2X_FUN_00566b30 (CScript *this_ptr,int line_number,uint buffer_index)
+; __cdecl uint __cdecl core_script_cpp_CScript_editorIndex2X_FUN_00566b30(CScript *this_ptr,int line_number,uint buffer_index)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
@@ -9,12 +9,12 @@
 ; uint             Stack[0xc]:4   buffer_index
 ;
 ; XREF[7]:
-;   core_script.cpp_CScript_FUN_00565130 at 005659ef
-;   core_script.cpp_CScript_FUN_00565f70 at 00566042
-;   core_script.cpp_CScript_FUN_00566cc0 at 00566e47
 ;   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 at 00565c3e
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 005649b4
+;   core_script.cpp_CScript_findText_FUN_00566cc0 at 00566e47
 ;   core_script.cpp_CScript_insertText_FUN_00566390 at 005664aa
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 005659ef
+;   core_script.cpp_CScript_setParameterValue_FUN_00565f70 at 00566042
 ;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910 at 0056696f
 ;
 ; Referenced Globals:

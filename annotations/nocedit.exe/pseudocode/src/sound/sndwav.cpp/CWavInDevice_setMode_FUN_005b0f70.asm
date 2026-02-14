@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70 (CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block)
+; __cdecl int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 ;
 ; Parameters:
 ; CWavInDevice *   Stack[0x4]:4   this_ptr

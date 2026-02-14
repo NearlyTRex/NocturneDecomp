@@ -2,14 +2,11 @@
 // Address: 00493dc4
 // Address Range: [[00493dc4, 004940e8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4 (ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4
-          (ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,
-          byte *lightmap_indices,int pixel_count)
+void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
 __asm {
         mov ECX,dword ptr [EBP + 0x18]

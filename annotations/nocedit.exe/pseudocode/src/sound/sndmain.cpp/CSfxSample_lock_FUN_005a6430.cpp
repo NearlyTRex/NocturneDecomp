@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl
-sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr,int lock_offset,int lock_length)
+void * __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_ptr,int lock_offset,int lock_length)
 
 {
   int iVar1;

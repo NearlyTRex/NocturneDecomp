@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_boxactor_cpp_CBoxActor_addFilesToExtract_FUN_00422900(CBoxActor *this_ptr,_FILE *file_handle)
+void __cdecl core_boxactor_cpp_CBoxActor_addFilesToExtract_FUN_00422900(CBoxActor *this_ptr,_FILE *file_handle)
 
 {
   CKeyFramedModel *pCVar1;

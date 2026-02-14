@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CFrankenstienMachine * __cdecl
-core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004d1720(CFrankenstienMachine *this_ptr)
+CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004d1720(CFrankenstienMachine *this_ptr)
 
 {
   CFrankenstienMachine *pCVar1;

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 71,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 24,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 85
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_addVertexFromSphericalCoordsOctant_FUN_00469140",
-    "signature": "void __cdecl shape_design_c_addVertexFromSphericalCoordsOctant_FUN_00469140 (float heading_angle,float pitch_angle,float radius)"
+    "signature": "void __cdecl shape_design_c_addVertexFromSphericalCoordsOctant_FUN_00469140(float heading_angle,float pitch_angle,float radius)"
   },
   "function_calls": [],
   "globals": [
@@ -183,28 +183,28 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 10,
       "match": "fsin",
       "text": "fVar1 = (float10)fsin((float10)pitch_angle * (float10)0.0055555555555555497 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 12,
       "match": "fcos",
       "text": "fVar2 = (float10)fcos((float10)pitch_angle * (float10)0.0055555555555555497 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 14,
       "match": "fcos",
       "text": "fVar3 = (float10)fcos((float10)heading_angle * (float10)0.0055555555555555497 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 16,
       "match": "fsin",
       "text": "fVar4 = (float10)fsin((float10)heading_angle * (float10)0.0055555555555555497 *",
       "type": "decompiler_intrinsic"

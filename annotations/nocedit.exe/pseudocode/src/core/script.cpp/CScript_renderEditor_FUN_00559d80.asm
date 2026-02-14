@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80 (CScript *this_ptr,int left,int top,int right,int bottom)
+; __cdecl void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80(CScript *this_ptr,int left,int top,int right,int bottom)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

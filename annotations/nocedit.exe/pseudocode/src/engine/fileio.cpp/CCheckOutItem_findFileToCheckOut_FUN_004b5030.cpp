@@ -2,13 +2,11 @@
 // Address: 004b5030
 // Address Range: [[004b5030, 004b5347]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 (CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer)
+// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
-          (CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer)
+int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer)
 
 {
   char cVar1;

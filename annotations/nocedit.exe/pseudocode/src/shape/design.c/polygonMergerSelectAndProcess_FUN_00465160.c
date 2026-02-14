@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_design_c_polygonMergerSelectAndProcess_FUN_00465160(int polygon_index,float tolerance)
+void __cdecl shape_design_c_polygonMergerSelectAndProcess_FUN_00465160(int polygon_index,float tolerance)
 
 {
   if (g_SecondaryPolygonIndex == -1) {

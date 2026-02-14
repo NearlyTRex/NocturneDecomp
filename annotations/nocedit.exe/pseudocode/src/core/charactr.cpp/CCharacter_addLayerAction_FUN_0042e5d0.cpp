@@ -2,14 +2,11 @@
 // Address: 0042e5d0
 // Address Range: [[0042e5d0, 0042e665]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0 (CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name, int direction)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
-          (CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,
-          int direction)
+void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction)
 
 {
   char cVar1;

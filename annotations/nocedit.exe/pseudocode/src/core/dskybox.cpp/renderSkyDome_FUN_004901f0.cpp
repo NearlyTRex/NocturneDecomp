@@ -2,13 +2,11 @@
 // Address: 004901f0
 // Address Range: [[004901f0, 004906a3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0 (SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor)
+// Signature: void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dskybox_cpp_renderSkyDome_FUN_004901f0
-          (SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor)
+void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor)
 
 {
   char cVar1;
@@ -94,25 +92,25 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_74);
   pCVar3 = g_CDemonRendererPtr2;
-  fVar2 = (float)(sky_texture->base).type;
-  g_CDemonRendererPtr2->vertex_buffer_ptr->light = fVar2;
-  pCVar3->vertex_buffer_ptr->color = (int)fVar2;
-  pCVar3->vertex_buffer_ptr->fog = fVar2;
+  iVar6 = (sky_texture->base).type;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->light = iVar6;
+  pCVar3->vertex_buffer_ptr->color = iVar6;
+  pCVar3->vertex_buffer_ptr->fog = iVar6;
   pCVar3->vertex_buffer_ptr->w_recip = 0.0;
-  fVar2 = (float)(sky_texture->base).type;
-  pCVar3->vertex_buffer_ptr[1].light = fVar2;
-  pCVar3->vertex_buffer_ptr[1].color = (int)fVar2;
-  pCVar3->vertex_buffer_ptr[1].fog = (float)(sky_texture->base).type;
+  iVar6 = (sky_texture->base).type;
+  pCVar3->vertex_buffer_ptr[1].light = iVar6;
+  pCVar3->vertex_buffer_ptr[1].color = iVar6;
+  pCVar3->vertex_buffer_ptr[1].fog = (sky_texture->base).type;
   pCVar3->vertex_buffer_ptr[1].w_recip = 0.0;
-  fVar2 = (float)(sky_texture->base).type;
-  pCVar3->vertex_buffer_ptr[2].light = fVar2;
-  pCVar3->vertex_buffer_ptr[2].color = (int)fVar2;
-  pCVar3->vertex_buffer_ptr[2].fog = fVar2;
+  iVar6 = (sky_texture->base).type;
+  pCVar3->vertex_buffer_ptr[2].light = iVar6;
+  pCVar3->vertex_buffer_ptr[2].color = iVar6;
+  pCVar3->vertex_buffer_ptr[2].fog = iVar6;
   pCVar3->vertex_buffer_ptr[2].w_recip = 0.0;
-  fVar2 = (float)(sky_texture->base).type;
-  pCVar3->vertex_buffer_ptr[3].light = fVar2;
-  pCVar3->vertex_buffer_ptr[3].color = (int)fVar2;
-  pCVar3->vertex_buffer_ptr[3].fog = fVar2;
+  iVar6 = (sky_texture->base).type;
+  pCVar3->vertex_buffer_ptr[3].light = iVar6;
+  pCVar3->vertex_buffer_ptr[3].color = iVar6;
+  pCVar3->vertex_buffer_ptr[3].fog = iVar6;
   pCVar3->vertex_buffer_ptr[3].w_recip = 0.0;
   iVar6 = 0;
   engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0

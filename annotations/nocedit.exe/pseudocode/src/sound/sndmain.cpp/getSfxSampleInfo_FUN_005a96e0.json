@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 46,
+    "complexity_score": 45,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 45
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -148,14 +148,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(CSfxSample *)((int)",
       "text": "pCVar3 = (CSfxSample *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 19,
       "match": "(CSfxSample *)((int)",
       "text": "output_buffer = (CSfxSample *)((int)output_buffer + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"

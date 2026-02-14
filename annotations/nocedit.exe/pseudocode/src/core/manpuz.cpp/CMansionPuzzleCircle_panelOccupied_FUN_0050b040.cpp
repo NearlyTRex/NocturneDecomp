@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(CMansionPuzzleCircle *this_ptr)
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(CMansionPuzzleCircle *this_ptr)
 
 {
   int iVar1;

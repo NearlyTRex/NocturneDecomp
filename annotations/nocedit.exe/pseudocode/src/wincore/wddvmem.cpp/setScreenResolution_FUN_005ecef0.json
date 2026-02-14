@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 156,
+    "complexity_score": 155,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 27,
-    "pseudocode_lines": 131,
+    "pseudocode_lines": 130,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 463
+    "total_lines": 462
   },
   "cross_references": [
     {
@@ -361,14 +361,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 62,
       "match": "(void *)((int)",
       "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 113,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;",
       "type": "pointer_cast"

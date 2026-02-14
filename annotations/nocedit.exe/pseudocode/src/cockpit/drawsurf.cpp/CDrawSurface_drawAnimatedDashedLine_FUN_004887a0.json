@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 94,
+    "complexity_score": 92,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 8,
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 62,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 263
+    "total_lines": 261
   },
   "cross_references": [
     {
@@ -54,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 (CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)"
   },
   "function_calls": [
     {
@@ -226,14 +226,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 29,
       "match": "ROUND",
       "text": "iVar2 = (int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(CDrawSurface *)((int)",
       "text": "for (; iVar1 = y1, (int)x < x_00; x = (CDrawSurface *)((int)&x->width + 1)) {",
       "type": "pointer_cast"

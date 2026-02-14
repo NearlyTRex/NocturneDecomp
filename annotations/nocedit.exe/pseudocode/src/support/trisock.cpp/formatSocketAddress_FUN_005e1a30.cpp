@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr)
+void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr)
 
 {
   char cVar1;

@@ -2,13 +2,11 @@
 // Address: 005badd0
 // Address Range: [[005badd0, 005bae09]]
 // Convention: __cdecl
-// Signature: void __cdecl core_stone_cpp_CTempleStone_getPropertyList_FUN_005badd0 (CTempleStone *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_stone_cpp_CTempleStone_getPropertyList_FUN_005badd0(CTempleStone *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_stone_cpp_CTempleStone_getPropertyList_FUN_005badd0
-          (CTempleStone *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_stone_cpp_CTempleStone_getPropertyList_FUN_005badd0(CTempleStone *this_ptr,CActorPropertyList *property_list)
 
 {
   core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(&this_ptr->base,property_list);

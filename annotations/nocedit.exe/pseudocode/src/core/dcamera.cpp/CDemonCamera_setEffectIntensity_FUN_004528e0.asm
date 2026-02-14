@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0 (CDemonCamera *this_ptr,float intensity)
+; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera *this_ptr,float intensity)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

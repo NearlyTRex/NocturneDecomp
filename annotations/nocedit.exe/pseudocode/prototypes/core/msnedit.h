@@ -193,7 +193,7 @@ void __cdecl CDemonMission(CDemonMission *this_ptr,int param_2);
 
 // Original: core_msnedit.cpp_CDemonMission_FUN_0053cad0
 // Address: 0053cad0
-int __cdecl CDemonMission(CDemonMission *this_ptr,int param_2,char *param_3,int *param_4,int param_5,int param_6, int param_7,int param_8);
+int __cdecl CDemonMission(CDemonMission *this_ptr,int param_2,char *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8);
 
 // Original: core_msnedit.cpp_CDemonMission_FUN_0053cc30
 // Address: 0053cc30

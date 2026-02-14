@@ -2,13 +2,11 @@
 // Address: 00490a58
 // Address Range: [[00490a58, 00490c36]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58
-          (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 
 {
   int iVar1;

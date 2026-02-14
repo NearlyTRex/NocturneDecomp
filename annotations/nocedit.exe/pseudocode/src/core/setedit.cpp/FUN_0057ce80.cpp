@@ -125,7 +125,7 @@ void __cdecl core_setedit_cpp_FUN_0057ce80(void)
   }
   _fwrite(g_SourcePaletteData,0x100,3,local_14);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\setedit.cpp",0xbf1);
-  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
+  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
   if (local_1c != (void *)0x0) {
     if (0 < in_stack_0000001c) {
       iVar5 = 0;

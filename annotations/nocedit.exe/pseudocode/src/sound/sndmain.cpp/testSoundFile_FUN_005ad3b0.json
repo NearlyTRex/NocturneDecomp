@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 65,
-        "line": 23,
+        "line": 22,
         "message": "use of undeclared identifier 'stack0xfffffe90'; did you mean 'in_stack_fffffe90'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 24,
+        "line": 23,
         "message": "use of undeclared identifier 'stack0xfffffe90'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 35,
+        "line": 34,
         "message": "use of undeclared identifier 'stack0xfffffe90'; did you mean 'in_stack_fffffe90'?"
       }
     ],
@@ -25,16 +25,15 @@
   },
   "complexity": {
     "assembly_lines": 207,
-    "complexity_score": 182,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 7,
     "pseudocode_lines": 67,
-    "suspect_count": 10,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_ref"
     ],
     "total_lines": 274
   },
@@ -311,50 +310,36 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_fffffe90",
       "text": "uint in_stack_fffffe90;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_fffffe98",
-      "text": "uint in_stack_fffffe98;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 16,
+      "line": 15,
       "match": "&stack0xfffffe90",
       "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 17,
+      "line": 16,
       "match": "&stack0xfffffe90",
       "text": "pcVar4 = &stack0xfffffe90;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 28,
+      "line": 27,
       "match": "&stack0xfffffe90",
       "text": "iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffe90);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_fffffe90",
       "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);",
       "type": "stack_param"
@@ -362,23 +347,9 @@
     {
       "description": "Unresolved stack parameter",
       "line": 60,
-      "match": "in_stack_fffffe98",
-      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe98);",
+      "match": "in_stack_fffffe90",
+      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_EBP",
-      "text": "if ((float)dVar5 < unaff_EBP) break;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 63,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = (float)dVar5;",
-      "type": "unaffected_reg"
     }
   ]
 }

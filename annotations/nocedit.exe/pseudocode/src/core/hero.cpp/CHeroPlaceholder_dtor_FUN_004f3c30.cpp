@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CHeroPlaceholder * __cdecl
-core_hero_cpp_CHeroPlaceholder_dtor_FUN_004f3c30(CHeroPlaceholder *this_ptr,uint flags)
+CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004f3c30(CHeroPlaceholder *this_ptr,uint flags)
 
 {
   CHeroPlaceholder *ptr;

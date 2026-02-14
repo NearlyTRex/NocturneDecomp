@@ -13,8 +13,7 @@
 /* WARNING: Removing unreachable block (ram,0x0047a938) */
 /* WARNING: Removing unreachable block (ram,0x0047a965) */
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel *model_ptr)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel *model_ptr)
 
 {
   int iVar1;

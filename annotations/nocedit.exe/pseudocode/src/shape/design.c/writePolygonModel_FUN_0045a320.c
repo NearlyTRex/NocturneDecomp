@@ -2,13 +2,11 @@
 // Address: 0045a320
 // Address Range: [[0045a320, 0045a601]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_writePolygonModel_FUN_0045a320 (int polygon_index,_FILE *output_file,float scale_factor)
+// Signature: void __cdecl shape_design_c_writePolygonModel_FUN_0045a320(int polygon_index,_FILE *output_file,float scale_factor)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_design_c_writePolygonModel_FUN_0045a320
-          (int polygon_index,_FILE *output_file,float scale_factor)
+void __cdecl shape_design_c_writePolygonModel_FUN_0045a320(int polygon_index,_FILE *output_file,float scale_factor)
 
 {
   char cVar1;

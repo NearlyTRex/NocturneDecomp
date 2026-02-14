@@ -1,42 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 60,
-        "message": "use of undeclared identifier 'stack0xffffff7c'; did you mean 'in_stack_ffffff7c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 65,
-        "message": "use of undeclared identifier 'stack0xffffff88'; did you mean 'in_stack_ffffff88'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 74,
-        "line": 75,
-        "message": "use of undeclared identifier 'stack0xffffff7c'; did you mean 'in_stack_ffffff7c'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 506,
+    "complexity_score": 339,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 31,
-    "pseudocode_lines": 301,
-    "suspect_count": 19,
+    "pseudocode_lines": 294,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 958
+    "total_lines": 951
   },
   "cross_references": [
     {
@@ -304,7 +283,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -620,134 +599,29 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffff7c",
-      "text": "float in_stack_ffffff7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffff80",
-      "text": "float in_stack_ffffff80;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffff84",
-      "text": "float in_stack_ffffff84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffff88",
-      "text": "float in_stack_ffffff88;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xffffff7c",
-      "text": "if ((SClothVertex *)&stack0xffffff7c != pSVar1) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_ffffff7c",
-      "text": "in_stack_ffffff7c = (pSVar1->position).x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_ffffff80",
-      "text": "in_stack_ffffff80 = this_ptr->vertices[0].position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_ffffff84",
-      "text": "in_stack_ffffff84 = this_ptr->vertices[0].position.z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xffffff88",
-      "text": "if ((SClothVertex *)&stack0xffffff88 != pSVar1) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_ffffff88",
-      "text": "in_stack_ffffff88 = (pSVar1->position).x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 68,
-      "match": "&stack0xffffff7c",
-      "text": "core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&stack0xffffff7c,point);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_ffffff7c",
-      "text": "local_4c = in_stack_ffffff7c + in_stack_ffffff88;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_ffffff88",
-      "text": "local_4c = in_stack_ffffff7c + in_stack_ffffff88;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_ffffff80",
-      "text": "local_48 = in_stack_ffffff80 + local_74;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_ffffff84",
-      "text": "local_44 = in_stack_ffffff84 + local_70;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 92,
       "match": "(CVector3i *)((int)",
       "text": "+ iVar8),(CVector3i *)((int)(this_ptr->model).vertex_list + iVar6));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 152,
       "match": "(byte *)((int)",
       "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar8 + 3) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 153,
       "match": "(int *)((int)",
       "text": "iVar4 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar8) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 154,
       "match": "(int *)((int)",
       "text": "iVar7 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar8) >> 0x10;",
       "type": "pointer_cast"

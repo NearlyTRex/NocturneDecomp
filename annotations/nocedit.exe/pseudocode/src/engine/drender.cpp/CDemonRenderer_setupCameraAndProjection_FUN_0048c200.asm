@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix)
+; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

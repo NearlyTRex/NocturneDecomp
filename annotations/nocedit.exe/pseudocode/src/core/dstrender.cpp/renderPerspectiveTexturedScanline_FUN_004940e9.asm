@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; __cdecl void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 ;
 ; Parameters:
 ; SEdgeData *      Stack[0x4]:4   left_edge

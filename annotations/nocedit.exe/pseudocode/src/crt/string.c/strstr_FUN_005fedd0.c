@@ -7,8 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Instruction at (ram,0x005fee62) overlaps instruction at (ram,0x005fee60)
-    */
-
 char * __cdecl strstr(char *haystack_str,char *needle_str)
 
 {

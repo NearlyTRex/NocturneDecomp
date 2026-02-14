@@ -2,13 +2,11 @@
 // Address: 006040ed
 // Address Range: [[006040ed, 00604103]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_unknown_c_FUN_006040ed (uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5)
+// Signature: void __cdecl crt_unknown_c_FUN_006040ed(uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5)
 
 #include "nocturne.h"
 
-void __cdecl
-FUN_006040ed
-          (uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)
+void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)
 
 {
   ushort uVar1;

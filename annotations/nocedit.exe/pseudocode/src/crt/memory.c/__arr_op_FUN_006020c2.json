@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 24,
+    "complexity_score": 51,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 9,
-    "suspect_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
     "suspect_types": [
+      "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 41
+    "total_lines": 43
   },
   "cross_references": [
     {
@@ -48,7 +49,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_memory.c___arr_op_FUN_006020c2",
-    "signature": "void * __cdecl crt_memory_c___arr_op_FUN_006020c2 (void *dest,void *source,int count,int element_size,void *copy_func)"
+    "signature": "void * __cdecl crt_memory_c___arr_op_FUN_006020c2(void *dest,void *source,int count,int element_size,void *copy_func)"
   },
   "function_calls": [],
   "globals": [],
@@ -130,6 +131,20 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(void *)((int)",
+      "text": "source = (void *)((int)source + element_size);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(void *)((int)",
+      "text": "pvVar1 = (void *)((int)pvVar1 + element_size);",
+      "type": "pointer_cast"
+    },
     {
       "address": "006020c2",
       "crt_type": "runtime support",

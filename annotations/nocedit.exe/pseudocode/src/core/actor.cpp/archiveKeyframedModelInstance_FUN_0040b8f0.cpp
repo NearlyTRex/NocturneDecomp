@@ -2,13 +2,11 @@
 // Address: 0040b8f0
 // Address Range: [[0040b8f0, 0040b967]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0 (CKeyFramedModelInstance *model_ptr,char *property_name)
+// Signature: void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(CKeyFramedModelInstance *model_ptr,char *property_name)
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0
-          (CKeyFramedModelInstance *model_ptr,char *property_name)
+void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(CKeyFramedModelInstance *model_ptr,char *property_name)
 
 {
   char cVar1;

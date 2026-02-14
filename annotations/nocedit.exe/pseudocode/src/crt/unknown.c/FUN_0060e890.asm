@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_FUN_0060e890(void)
+; unknown void crt_unknown_c_FUN_0060e890(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 ;
 ;
 ; Referenced Globals:

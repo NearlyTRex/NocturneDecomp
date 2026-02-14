@@ -2,13 +2,11 @@
 // Address: 0042cfe0
 // Address Range: [[0042cfe0, 0042d05c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_0042cfe0 (CCharacter *this_ptr,int hand_index,CVector3f *drop_direction)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_0042cfe0(CCharacter *this_ptr,int hand_index,CVector3f *drop_direction)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_dropCarriedObject_FUN_0042cfe0
-          (CCharacter *this_ptr,int hand_index,CVector3f *drop_direction)
+void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_0042cfe0(CCharacter *this_ptr,int hand_index,CVector3f *drop_direction)
 
 {
   CDemonActor *this_ptr_00;

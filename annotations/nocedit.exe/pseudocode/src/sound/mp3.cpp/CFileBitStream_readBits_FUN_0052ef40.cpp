@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-uint __cdecl
-sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *bitstream,int num_bits)
+uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *bitstream,int num_bits)
 
 {
   SIZE_T SVar1;

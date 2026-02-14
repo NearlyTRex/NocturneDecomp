@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0 (CDemonCamera *this_ptr,CVector3i *output_ptr,CVector3i *input_ptr)
+; __cdecl CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera *this_ptr,CVector3i *output_ptr,CVector3i *input_ptr)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

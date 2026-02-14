@@ -1,29 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 82,
-        "line": 75,
-        "message": "use of undeclared identifier 'stack0xffffffb0'; did you mean 'in_stack_ffffffb0'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 128,
+    "complexity_score": 101,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 40,
-    "pseudocode_lines": 88,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref"
-    ],
-    "total_lines": 306
+    "pseudocode_lines": 101,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 319
   },
   "cross_references": [],
   "function": {
@@ -462,27 +452,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffffb0",
-      "text": "CDemonRenderer *in_stack_ffffffb0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 68,
-      "match": "&stack0xffffffb0",
-      "text": "engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0((SMRGLHeaderPrimitive *)&stack0xffffffb0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_ffffffb0",
-      "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_ffffffb0);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

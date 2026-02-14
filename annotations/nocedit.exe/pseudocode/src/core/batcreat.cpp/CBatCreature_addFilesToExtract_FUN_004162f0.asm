@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_batcreat_cpp_CBatCreature_addFilesToExtract_FUN_004162f0 (CBatCreature *this_ptr,_FILE *file_handle)
+; __cdecl void __cdecl core_batcreat_cpp_CBatCreature_addFilesToExtract_FUN_004162f0(CBatCreature *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr

@@ -2,13 +2,11 @@
 // Address: 0042ded0
 // Address Range: [[0042ded0, 0042df8c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0 (CCharacter *this_ptr,UOrientationVector *orientation)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0(CCharacter *this_ptr,UOrientationVector *orientation)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0
-          (CCharacter *this_ptr,UOrientationVector *orientation)
+void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0(CCharacter *this_ptr,UOrientationVector *orientation)
 
 {
   UOrientationVector *pUVar1;

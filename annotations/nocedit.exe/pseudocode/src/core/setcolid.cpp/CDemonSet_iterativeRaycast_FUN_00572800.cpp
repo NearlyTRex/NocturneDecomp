@@ -2,13 +2,11 @@
 // Address: 00572800
 // Address Range: [[00572800, 00572a0d]]
 // Convention: __cdecl
-// Signature: float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800 (CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction)
+// Signature: float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction)
 
 #include "nocturne.h"
 
-float __cdecl
-core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
-          (CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction)
+float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction)
 
 {
   int iVar1;

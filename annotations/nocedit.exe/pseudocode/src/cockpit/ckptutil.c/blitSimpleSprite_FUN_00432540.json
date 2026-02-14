@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 250,
+    "complexity_score": 150,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 50,
-    "suspect_count": 19,
+    "pseudocode_lines": 55,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 197
+    "total_lines": 202
   },
   "cross_references": [],
   "function": {
@@ -29,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540",
-    "signature": "void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00432540 (void *sprite_data,int dest_x,int dest_y,int width,int height)"
+    "signature": "void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00432540(void *sprite_data,int dest_x,int dest_y,int width,int height)"
   },
   "function_calls": [
     {
@@ -194,60 +193,25 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(void *)((int)",
+      "text": "pvVar3 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(void *)((int)",
-      "text": "(*pCVar1)((void *)((int)pvVar3 + dest_x),sprite_data,width);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(void *)((int)",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 23,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EDI",
-      "text": "} while (unaff_EDI < height);",
-      "type": "unaffected_reg"
+      "match": "(void *)((int)",
+      "text": "pvVar3 = (void *)((int)pvVar3 + iVar2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -258,73 +222,38 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 34,
       "match": "(void *)((int)",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 36,
       "match": "(void *)((int)",
       "text": "pvVar3 = (void *)((int)pvVar3 + (iVar2 / 2) * 2);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_ESI",
-      "text": "} while (unaff_ESI < height);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(void *)((int)",
-      "text": "(*pCVar1)((void *)((int)pvVar3 + dest_x * 4),sprite_data,width);",
+      "text": "pvVar3 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 47,
       "match": "(void *)((int)",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_EBP",
-      "text": "} while (unaff_EBP < height);",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(void *)((int)",
+      "text": "pvVar3 = (void *)((int)pvVar3 +",
+      "type": "pointer_cast"
     }
   ]
 }

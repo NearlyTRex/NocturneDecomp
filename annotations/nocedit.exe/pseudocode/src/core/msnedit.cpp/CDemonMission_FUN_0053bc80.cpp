@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_msnedit_cpp_CDemonMission_FUN_0053bc80(CDemonMission *this_ptr,int param_2,int param_3)
+void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053bc80(CDemonMission *this_ptr,int param_2,int param_3)
 
 {
   int iVar1;

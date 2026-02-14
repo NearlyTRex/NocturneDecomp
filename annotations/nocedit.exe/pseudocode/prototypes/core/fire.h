@@ -21,7 +21,7 @@ void __cdecl CSmokeParticle::reset(CSmokeParticle *this_ptr);
 
 // Original: core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0
 // Address: 004bf2f0
-void __cdecl CSmokeParticle::init(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence, int alpha_value);
+void __cdecl CSmokeParticle::init(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
 
 // Original: core_fire.cpp_CSmokeParticle_process_FUN_004bf390
 // Address: 004bf390
@@ -33,7 +33,7 @@ void __cdecl CSmokeParticle::render(CSmokeParticle *this_ptr);
 
 // Original: core_fire.cpp_CBulletHole_init_FUN_004bf7f0
 // Address: 004bf7f0
-void __cdecl CBulletHole::init(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal, CDemonActor *hit_actor);
+void __cdecl CBulletHole::init(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor);
 
 // Original: core_fire.cpp_CBulletHole_process_FUN_004bfa00
 // Address: 004bfa00
@@ -57,7 +57,7 @@ void __cdecl CStake::init(CStake *this_ptr,CVector3f *position,CVector3f *orient
 
 // Original: core_fire.cpp_CStake_spawn_FUN_004bfe90
 // Address: 004bfe90
-void __cdecl CStake::spawn(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles, CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity);
+void __cdecl CStake::spawn(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity);
 
 // Original: core_fire.cpp_CStake_render_FUN_004c0140
 // Address: 004c0140
@@ -137,7 +137,7 @@ void __cdecl loadGunFlashAssets(void);
 
 // Original: core_fire.cpp_CGlassParticle_init_FUN_004c1c00
 // Address: 004c1c00
-void __cdecl CGlassParticle::init(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex, CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl CGlassParticle::init(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 
 // Original: core_fire.cpp_CGlassParticle_render_FUN_004c1ef0
 // Address: 004c1ef0
@@ -393,15 +393,15 @@ void __cdecl CFireEffect::loadAssets(CFireEffect *this_ptr);
 
 // Original: core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 // Address: 004c7b20
-void __cdecl CFireEffect::createSmokeParticle(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence, int alpha_value);
+void __cdecl CFireEffect::createSmokeParticle(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
 
 // Original: core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0
 // Address: 004c7bb0
-void __cdecl CFireEffect::createStake(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles, CVector3f *surface_normal,int material_type);
+void __cdecl CFireEffect::createStake(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int material_type);
 
 // Original: core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00
 // Address: 004c7d00
-void __cdecl CFireEffect::createGlassParticle(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex, CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl CFireEffect::createGlassParticle(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 
 // Original: core_fire.cpp_CFireEffect_FUN_004c7d60
 // Address: 004c7d60

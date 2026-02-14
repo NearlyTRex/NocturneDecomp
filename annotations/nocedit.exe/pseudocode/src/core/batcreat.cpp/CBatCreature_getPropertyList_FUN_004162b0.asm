@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_batcreat_cpp_CBatCreature_getPropertyList_FUN_004162b0 (CBatCreature *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_batcreat_cpp_CBatCreature_getPropertyList_FUN_004162b0(CBatCreature *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr

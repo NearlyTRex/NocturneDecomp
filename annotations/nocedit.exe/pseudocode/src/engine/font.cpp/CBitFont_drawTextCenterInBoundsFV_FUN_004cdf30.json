@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 23,
-        "line": 18,
+        "line": 15,
         "message": "assigning to 'char *' from incompatible type 'char *[1]'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 18,
+        "line": 15,
         "message": "use of undeclared identifier 'stack0x00000020'"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 21,
+        "line": 18,
         "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 43,
+    "complexity_score": 40,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 10,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
       "stack_ref"
     ],
-    "total_lines": 48
+    "total_lines": 45
   },
   "cross_references": [
     {
@@ -61,7 +61,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
-    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 (CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value, char *format_string,...)"
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string,...)"
   },
   "function_calls": [
     {
@@ -197,7 +197,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 11,
+      "line": 8,
       "match": "&stack0x00000020",
       "text": "local_14.value[0] = (char * [1])&stack0x00000020;",
       "type": "stack_ref"

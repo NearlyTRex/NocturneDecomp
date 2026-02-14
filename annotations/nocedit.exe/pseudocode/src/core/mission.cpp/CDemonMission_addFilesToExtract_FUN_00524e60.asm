@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60 (CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag)
+; __cdecl void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

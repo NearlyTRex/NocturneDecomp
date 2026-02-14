@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 320,
+    "complexity_score": 318,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 4,
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 43,
     "suspect_count": 27,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 166
+    "total_lines": 164
   },
   "cross_references": [
     {
@@ -47,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_windll.cpp_drawPolyList_FUN_005b7640",
-    "signature": "int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640 (void *vertex_buffer,void **polygons,int polygon_count,int render_flags)"
+    "signature": "int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(void *vertex_buffer,void **polygons,int polygon_count,int render_flags)"
   },
   "function_calls": [],
   "globals": [
@@ -175,189 +175,189 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 24,
       "match": "(void *)((int)",
       "text": "local_20 = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x18) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 24,
       "match": "(int *)((int)",
       "text": "local_20 = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x18) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(void *)((int)",
       "text": "local_1c = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x24) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(int *)((int)",
       "text": "local_1c = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x24) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 26,
       "match": "(void *)((int)",
       "text": "local_18 = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x30) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 26,
       "match": "(int *)((int)",
       "text": "local_18 = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x30) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)pvVar1 + 4) == 4) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(void *)((int)",
       "text": "local_14 = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x3c) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(int *)((int)",
       "text": "local_14 = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x3c) * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 30,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_20 + 0x18) = *(uint *)((int)pvVar1 + 0x1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 30,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_20 + 0x18) = *(uint *)((int)pvVar1 + 0x1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 31,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_20 + 0x1c) = *(uint *)((int)pvVar1 + 0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 31,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_20 + 0x1c) = *(uint *)((int)pvVar1 + 0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_1c + 0x18) = *(uint *)((int)pvVar1 + 0x28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_1c + 0x18) = *(uint *)((int)pvVar1 + 0x28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 33,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_1c + 0x1c) = *(uint *)((int)pvVar1 + 0x2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 33,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_1c + 0x1c) = *(uint *)((int)pvVar1 + 0x2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_18 + 0x18) = *(uint *)((int)pvVar1 + 0x34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_18 + 0x18) = *(uint *)((int)pvVar1 + 0x34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_18 + 0x1c) = *(uint *)((int)pvVar1 + 0x38);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_18 + 0x1c) = *(uint *)((int)pvVar1 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)pvVar1 + 4) == 4) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_14 + 0x18) = *(uint *)((int)pvVar1 + 0x40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_14 + 0x18) = *(uint *)((int)pvVar1 + 0x40);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 38,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)pvVar1 + 4) == 4) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_14 + 0x18) = *(uint *)((int)pvVar1 + 0x40);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_14 + 0x18) = *(uint *)((int)pvVar1 + 0x40);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_14 + 0x1c) = *(uint *)((int)pvVar1 + 0x44);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_14 + 0x1c) = *(uint *)((int)pvVar1 + 0x44);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(int *)((int)",
       "text": "(*g_APIDLL_drawPolygon2)(&local_20,*(int *)((int)pvVar1 + 4),render_flags);",
       "type": "pointer_cast"

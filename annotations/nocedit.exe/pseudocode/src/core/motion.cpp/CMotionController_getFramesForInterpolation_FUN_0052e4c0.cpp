@@ -2,14 +2,11 @@
 // Address: 0052e4c0
 // Address Range: [[0052e4c0, 0052e56f] [0052e571, 0052e5c0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 (CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1, int *out_frame2,float *out_blend_weight)
+// Signature: void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight)
 
 #include "nocturne.h"
 
-void __cdecl
-core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
-          (CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,
-          int *out_frame2,float *out_blend_weight)
+void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight)
 
 {
   CMotionList *pCVar1;

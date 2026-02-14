@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 28,
-        "message": "use of undeclared identifier 'stack0xffffffc4'"
-      },
-      {
         "category": "incompatible_types",
         "column": 11,
-        "line": 72,
+        "line": 73,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -26,7 +20,7 @@
     "pseudocode_lines": 67,
     "suspect_count": 1,
     "suspect_types": [
-      "stack_ref"
+      "warning_type_propagation"
     ],
     "total_lines": 252
   },
@@ -226,11 +220,11 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xffffffc4",
-      "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffc4,&damage_info->impact_direction)",
-      "type": "stack_ref"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     }
   ],
   "vtable_info": {

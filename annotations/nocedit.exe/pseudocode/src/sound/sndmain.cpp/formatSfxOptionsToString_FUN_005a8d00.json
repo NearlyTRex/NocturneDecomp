@@ -4,97 +4,97 @@
       {
         "category": "other",
         "column": 38,
-        "line": 20,
+        "line": 18,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 24,
+        "line": 22,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 59,
+        "line": 28,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 27,
+        "line": 29,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 26,
         "line": 30,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
-        "category": "format_error",
-        "column": 27,
-        "line": 31,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 26,
-        "line": 32,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
         "category": "other",
         "column": 26,
-        "line": 33,
+        "line": 31,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 38,
+        "line": 36,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 42,
+        "line": 40,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 59,
-        "line": 49,
+        "line": 47,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 27,
-        "line": 50,
+        "line": 48,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 26,
-        "line": 51,
+        "line": 49,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 52,
+        "line": 50,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 57,
+        "line": 55,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 61,
+        "line": 59,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 41,
-        "line": 79,
+        "line": 77,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 80,
+        "line": 78,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -103,16 +103,16 @@
   },
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 127,
+    "complexity_score": 125,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 11,
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 70,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 255
+    "total_lines": 253
   },
   "cross_references": [],
   "function": {
@@ -125,7 +125,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00",
-    "signature": "void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00 (char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)"
+    "signature": "void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00(char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)"
   },
   "function_calls": [
     {
@@ -283,35 +283,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(uint *)((int)",
       "text": ",*(uint *)((int)&(options->position).x + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 24,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(options->position).y + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(uint *)((int)",
       "text": ",*(uint *)((int)&(options->velocity).x + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(options->velocity).y + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 71,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&options->delay_remaining + 4));",
       "type": "pointer_cast"

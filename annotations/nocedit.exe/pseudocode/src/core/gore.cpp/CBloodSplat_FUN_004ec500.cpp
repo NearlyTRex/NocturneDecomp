@@ -46,13 +46,13 @@ void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec500(CBloodSplat *this_ptr)
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)(this_ptr->unk + 4));
   if (*(int *)(this_ptr->unk + 0x10) == 1) {
-    DAT_02d83368.surface_normal.A = 0;
-    DAT_02d83368.surface_normal.C = 0xffff;
-    DAT_02d83368.surface_normal.B = 0;
-    DAT_02d83368.surface_normal.D = 0;
+    SMRGLHeaderPrimitive_02d83368.surface_normal.A = 0;
+    SMRGLHeaderPrimitive_02d83368.surface_normal.C = 0xffff;
+    SMRGLHeaderPrimitive_02d83368.surface_normal.B = 0;
+    SMRGLHeaderPrimitive_02d83368.surface_normal.D = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr2,&DAT_0067ba28 + *(int *)(this_ptr->unk + 0x28) * 0x10 + local_18
-              );
+              (g_CDemonRendererPtr2,
+               &SMRGLTextureBasic_0067ba28 + *(int *)(this_ptr->unk + 0x28) * 0x10 + local_18);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,(CVector3i *)(this_ptr->unk + 0x18),(CVector3i *)0x0);
     local_78 = 0xbf000000;
@@ -94,12 +94,13 @@ void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec500(CBloodSplat *this_ptr)
       this_ptr->unk[2] = '\0';
       this_ptr->unk[3] = '\0';
     }
-    DAT_02d83368.surface_normal.B = 0xffff;
-    DAT_02d83368.surface_normal.A = 0;
-    DAT_02d83368.surface_normal.C = 0;
-    DAT_02d83368.surface_normal.D = 0;
+    SMRGLHeaderPrimitive_02d83368.surface_normal.B = 0xffff;
+    SMRGLHeaderPrimitive_02d83368.surface_normal.A = 0;
+    SMRGLHeaderPrimitive_02d83368.surface_normal.C = 0;
+    SMRGLHeaderPrimitive_02d83368.surface_normal.D = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr2,&DAT_0067b9c8 + *(int *)(this_ptr->unk + 0x28));
+              (g_CDemonRendererPtr2,
+               SMRGLTextureBasic_ARRAY_0067b9c8 + *(int *)(this_ptr->unk + 0x28));
     local_48 = 0xbf000000;
     local_44 = 0;
     local_40 = 0xbf000000;
@@ -137,70 +138,70 @@ void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec500(CBloodSplat *this_ptr)
   uVar1 = *(uint *)(this_ptr->unk + 0x14);
   if (uVar1 == 0) {
 LAB_004ec747:
-    g_RenderVertexBuffer[0].light = 1.14794e-41;
+    g_RenderVertexBuffer[0].light = 0x2000;
     g_RenderVertexBuffer[0].color = 0;
   }
   else if (uVar1 < 2) {
     g_RenderVertexBuffer[0].color = 0x7f80;
-    g_RenderVertexBuffer[0].light = 0.0;
+    g_RenderVertexBuffer[0].light = 0;
   }
   else {
     if (uVar1 != 2) goto LAB_004ec747;
     g_RenderVertexBuffer[0].color = 0;
-    g_RenderVertexBuffer[0].light = 0.0;
+    g_RenderVertexBuffer[0].light = 0;
   }
-  g_RenderVertexBuffer[0].fog = 0.0;
+  g_RenderVertexBuffer[0].fog = 0;
   uVar1 = *(uint *)(this_ptr->unk + 0x14);
   if (uVar1 == 0) {
 LAB_004ec774:
-    g_RenderVertexBuffer[1].light = 1.14794e-41;
+    g_RenderVertexBuffer[1].light = 0x2000;
     g_RenderVertexBuffer[1].color = 0;
   }
   else if (uVar1 < 2) {
     g_RenderVertexBuffer[1].color = 0x7f80;
-    g_RenderVertexBuffer[1].light = 0.0;
+    g_RenderVertexBuffer[1].light = 0;
   }
   else {
     if (uVar1 != 2) goto LAB_004ec774;
     g_RenderVertexBuffer[1].color = 0;
-    g_RenderVertexBuffer[1].light = 0.0;
+    g_RenderVertexBuffer[1].light = 0;
   }
-  g_RenderVertexBuffer[1].fog = 0.0;
+  g_RenderVertexBuffer[1].fog = 0;
   uVar1 = *(uint *)(this_ptr->unk + 0x14);
   if (uVar1 == 0) {
 LAB_004ec7a1:
-    g_RenderVertexBuffer[2].light = 1.14794e-41;
+    g_RenderVertexBuffer[2].light = 0x2000;
     g_RenderVertexBuffer[2].color = 0;
   }
   else if (uVar1 < 2) {
     g_RenderVertexBuffer[2].color = 0x7f80;
-    g_RenderVertexBuffer[2].light = 0.0;
+    g_RenderVertexBuffer[2].light = 0;
   }
   else {
     if (uVar1 != 2) goto LAB_004ec7a1;
     g_RenderVertexBuffer[2].color = 0;
-    g_RenderVertexBuffer[2].light = 0.0;
+    g_RenderVertexBuffer[2].light = 0;
   }
-  g_RenderVertexBuffer[2].fog = 0.0;
+  g_RenderVertexBuffer[2].fog = 0;
   uVar1 = *(uint *)(this_ptr->unk + 0x14);
   if (uVar1 != 0) {
     if (uVar1 < 2) {
       g_RenderVertexBuffer[3].color = 0x7f80;
-      g_RenderVertexBuffer[3].light = 0.0;
+      g_RenderVertexBuffer[3].light = 0;
       goto LAB_004ec7e0;
     }
     if (uVar1 == 2) {
       g_RenderVertexBuffer[3].color = 0;
-      g_RenderVertexBuffer[3].light = 0.0;
+      g_RenderVertexBuffer[3].light = 0;
       goto LAB_004ec7e0;
     }
   }
-  g_RenderVertexBuffer[3].light = 1.14794e-41;
+  g_RenderVertexBuffer[3].light = 0x2000;
   g_RenderVertexBuffer[3].color = 0;
 LAB_004ec7e0:
-  g_RenderVertexBuffer[3].fog = 0.0;
+  g_RenderVertexBuffer[3].fog = 0;
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr2,&DAT_02d83368);
+            (g_CDemonRendererPtr2,&SMRGLHeaderPrimitive_02d83368);
   if (*(int *)(this_ptr->unk + 0x10) == 1) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     return;

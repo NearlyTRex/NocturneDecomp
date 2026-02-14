@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 24,
+        "line": 22,
         "message": "use of undeclared identifier 'DAT_80000002'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 45,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 28,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 81
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290",
-    "signature": "void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290 (char *key_path,char *value_name,char *value_data)"
+    "signature": "void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290(char *key_path,char *value_name,char *value_data)"
   },
   "function_calls": [
     {
@@ -179,7 +179,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 15,
       "match": "DAT_80000002",
       "text": "((HKEY)&DAT_80000002,key_path,0,\"suck\",0,0x20006,",
       "type": "undefined_data"

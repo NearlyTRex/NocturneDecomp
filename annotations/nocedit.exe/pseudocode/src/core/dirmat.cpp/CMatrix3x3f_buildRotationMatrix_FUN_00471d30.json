@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 106,
+    "complexity_score": 104,
     "cross_reference_count": 46,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 39,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 121
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -305,7 +305,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30",
-    "signature": "void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 (CMatrix3x3f *this_ptr,CVector3f *euler_angles)"
+    "signature": "void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f *this_ptr,CVector3f *euler_angles)"
   },
   "function_calls": [],
   "globals": [],
@@ -396,42 +396,42 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 17,
       "match": "fsin",
       "text": "fVar6 = (float10)fsin((float10)euler_angles->x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 18,
       "match": "fsin",
       "text": "fVar7 = (float10)fsin((float10)euler_angles->z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 19,
       "match": "fsin",
       "text": "fVar8 = (float10)fsin((float10)euler_angles->y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 20,
       "match": "fcos",
       "text": "fVar9 = (float10)fcos((float10)euler_angles->x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 21,
       "match": "fcos",
       "text": "fVar10 = (float10)fcos((float10)euler_angles->z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 22,
       "match": "fcos",
       "text": "fVar11 = (float10)fcos((float10)euler_angles->y);",
       "type": "decompiler_intrinsic"

@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 #include "types/classes/CColor3i.h"
 #include "types/classes/CVector3f.h"
 
@@ -13,7 +14,7 @@ typedef struct CDemonGlobe {
     int quadratic_radius_scaled; // 0x10
     int falloff_value; // 0x14
     float radius_squared; // 0x18
-    int intensity; // 0x1c
+    _BIT_INTEGER intensity; // 0x1c
     int corona_mode; // 0x20
     CVector3f position; // 0x24
     float radius; // 0x30

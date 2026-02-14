@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister uint * crt_stdlib_c_GetRandomSeedPointer_FUN_005feb50(void)
+; __watcallRegister uint * __watcallRegister crt_stdlib_c_GetRandomSeedPointer_FUN_005feb50(void)
 ;
 ;
 ; XREF[2]:

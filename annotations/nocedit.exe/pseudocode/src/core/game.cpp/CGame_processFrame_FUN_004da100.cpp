@@ -103,7 +103,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->setPositionAndOrientation)
                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(CVector3f *)local_b0,
                  (CVector3f *)(local_b0 + 0xc));
-      if (((byte)g_MouseButtonFlags & 1) != 0) {
+      if ((g_MouseButtonFlags.bytes[0] & 1) != 0) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                   (&g_CDemonCameraInstance,g_MouseX,g_MouseY,&local_88);
         input_ptr = &local_70;
@@ -125,7 +125,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         pCVar4 = g_HeroActors[g_LocalHeroIndex];
         (*((pCVar4->base).base.vtable._ub)->setPositionAndOrientation)
                   ((CDemonActor *)pCVar4,&local_7c,&(pCVar4->base).base.orient.vec);
-        g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;
+        g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
       }
     }
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(this_ptr);
@@ -236,7 +236,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           g_DebugRecording = 0;
         }
       }
-      core_script_cpp_CScript_FUN_00559b20(g_CScriptPtr);
+      core_script_cpp_CScript_renderSubtitles_FUN_00559b20(g_CScriptPtr);
       core_game_cpp_CGame_renderOverlay_FUN_004d8040(this_ptr);
       core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(this_ptr);
       if (this_ptr->camera_debug_enabled == 0) {

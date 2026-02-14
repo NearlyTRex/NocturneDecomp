@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030 (CLodMesh *this_ptr,int grid_x,int grid_y,int grid_z)
+; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh *this_ptr,int grid_x,int grid_y,int grid_z)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

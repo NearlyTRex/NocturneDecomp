@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-support_trisock_cpp_setSocketBlocking_FUN_005e1e50(SOCKET *socket_handle,int blocking_mode)
+int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(SOCKET *socket_handle,int blocking_mode)
 
 {
   int iVar1;

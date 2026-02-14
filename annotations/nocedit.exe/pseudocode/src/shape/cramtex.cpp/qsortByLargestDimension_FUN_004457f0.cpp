@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0(CCramTex *entry_a,CCramTex *entry_b)
+int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0(CCramTex *entry_a,CCramTex *entry_b)
 
 {
   int iVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_freeSampleByName_FUN_005aa360(char *sample_name,int kill_active_slots)
+void __cdecl sound_sndmain_cpp_freeSampleByName_FUN_005aa360(char *sample_name,int kill_active_slots)
 
 {
   int iVar1;

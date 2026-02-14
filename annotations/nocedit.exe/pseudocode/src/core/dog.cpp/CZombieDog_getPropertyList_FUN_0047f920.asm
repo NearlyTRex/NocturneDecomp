@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920 (CZombieDog *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920(CZombieDog *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CZombieDog *     Stack[0x4]:4   this_ptr

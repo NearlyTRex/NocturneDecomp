@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0 (int scanline_y,int x_start,int x_end)
+; __cdecl void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(int scanline_y,int x_start,int x_end)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   scanline_y
@@ -28,7 +28,7 @@
 ;   undefined4 g_CoronaCameraRotationMatrix.m[0].z
 ;   undefined4 g_CoronaCameraRotationMatrix.m[1].z
 ;   undefined4 g_CoronaCameraRotationMatrix.m[2].z
-;   int g_CameraDownscaleIterations
+;   _BIT_INTEGER g_CameraDownscaleIterations
 ;   int[240][320] g_CoronaDepthBuffer
 ;   uint*[1200] g_ZBufferScanlineArray
 ;

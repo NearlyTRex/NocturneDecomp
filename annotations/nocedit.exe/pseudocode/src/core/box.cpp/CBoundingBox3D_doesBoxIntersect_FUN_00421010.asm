@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010 (CBoundingBox3D *this_ptr,CBoundingBox3D *other)
+; __cdecl int __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(CBoundingBox3D *this_ptr,CBoundingBox3D *other)
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr

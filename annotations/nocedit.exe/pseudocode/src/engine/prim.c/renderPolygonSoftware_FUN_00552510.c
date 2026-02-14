@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *vertices,int vertex_count)
+void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *vertices,int vertex_count)
 
 {
   longlong lVar1;
@@ -74,7 +73,7 @@ engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *vertices,int ver
   }
   if ((g_UseExternalRenderer != 0) && (g_TexturesDisabled == 0)) {
     g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
-    wincore_windll_cpp_drawPolygon_FUN_005b75e0(vertices,vertex_count,g_RenderStateFlags);
+    wincore_windll_cpp_drawPolygon_FUN_005b75e0(vertices,vertex_count,g_RenderStateFlags.dword);
     return;
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
@@ -156,12 +155,12 @@ engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *vertices,int ver
         lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
         g_SoftwareEdgeBuffer[iVar8].v_current =
              pSVar6->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar5 * (longlong)((int)pSVar3->light - (int)pSVar6->light);
+        lVar1 = (longlong)iVar5 * (longlong)(pSVar3->light - pSVar6->light);
         uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
         g_SoftwareEdgeBuffer[iVar8].z_gradient = uVar4;
         lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
         g_SoftwareEdgeBuffer[iVar8].z_current =
-             (int)pSVar6->light + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+             pSVar6->light + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         lVar1 = (longlong)iVar5 * (longlong)((int)pSVar3->w_recip - (int)pSVar6->w_recip);
         uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
         g_SoftwareEdgeBuffer[iVar8].fog_gradient = uVar4;

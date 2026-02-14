@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl
-support_newmsg_cpp_findLocalizedString_FUN_00544170(char *key,int lower_bound,int upper_bound)
+char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_00544170(char *key,int lower_bound,int upper_bound)
 
 {
   int iVar1;

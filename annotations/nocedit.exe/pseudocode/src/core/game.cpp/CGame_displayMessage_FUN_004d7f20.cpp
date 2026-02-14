@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_game_cpp_CGame_displayMessage_FUN_004d7f20(CGame *this_ptr,char *message,float duration)
+void __cdecl core_game_cpp_CGame_displayMessage_FUN_004d7f20(CGame *this_ptr,char *message,float duration)
 
 {
   char cVar1;

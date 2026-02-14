@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_stone_cpp_CTempleStone_getActorType_FUN_005bad00(CTempleStone *this_ptr)
+CDemonActorType * __cdecl core_stone_cpp_CTempleStone_getActorType_FUN_005bad00(CTempleStone *this_ptr)
 
 {
   return &g_CTempleStoneClassInfo;

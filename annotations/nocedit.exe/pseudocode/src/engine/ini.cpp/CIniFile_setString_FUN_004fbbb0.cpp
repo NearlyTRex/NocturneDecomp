@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_ini_cpp_CIniFile_setString_FUN_004fbbb0(CIniFile *this_ptr,char *key,char *value)
+void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004fbbb0(CIniFile *this_ptr,char *key,char *value)
 
 {
   if (this_ptr->filename[0] == '\0') {

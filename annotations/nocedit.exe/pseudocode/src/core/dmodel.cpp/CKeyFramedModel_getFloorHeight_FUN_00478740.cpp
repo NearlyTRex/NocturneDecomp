@@ -2,14 +2,11 @@
 // Address: 00478740
 // Address Range: [[00478740, 0047882a]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740 (CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height, CVector3f *transform_vector)
+// Signature: int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height,CVector3f *transform_vector)
 
 #include "nocturne.h"
 
-int __cdecl
-core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
-          (CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height,
-          CVector3f *transform_vector)
+int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height,CVector3f *transform_vector)
 
 {
   int iVar1;

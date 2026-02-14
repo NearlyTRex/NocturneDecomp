@@ -2,13 +2,11 @@
 // Address: 005b0390
 // Address Range: [[005b0390, 005b0436]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390 (UINT device_id,SSoundDeviceInfo *device_info)
+// Signature: int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390(UINT device_id,SSoundDeviceInfo *device_info)
 
 #include "nocturne.h"
 
-int __cdecl
-sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390
-          (UINT device_id,SSoundDeviceInfo *device_info)
+int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390(UINT device_id,SSoundDeviceInfo *device_info)
 
 {
   DWORD DVar1;

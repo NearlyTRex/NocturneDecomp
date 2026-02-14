@@ -2,13 +2,11 @@
 // Address: 0043e6c0
 // Address Range: [[0043e6c0, 0043e7d4]]
 // Convention: __cdecl
-// Signature: void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0 (SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)
+// Signature: void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)
 
 #include "nocturne.h"
 
-void __cdecl
-support_codec_cpp_writeBitsToStream_FUN_0043e6c0
-          (SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)
+void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)
 
 {
   int iVar1;

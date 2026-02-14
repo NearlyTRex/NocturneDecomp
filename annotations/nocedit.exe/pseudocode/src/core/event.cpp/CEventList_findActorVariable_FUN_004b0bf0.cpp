@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_event_cpp_CEventList_findActorVariable_FUN_004b0bf0(CEventList *this_ptr,char *name)
+int __cdecl core_event_cpp_CEventList_findActorVariable_FUN_004b0bf0(CEventList *this_ptr,char *name)
 
 {
   int iVar1;

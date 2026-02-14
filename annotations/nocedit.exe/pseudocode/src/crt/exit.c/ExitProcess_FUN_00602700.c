@@ -17,7 +17,7 @@ void __cdecl ExitProcess(int exit_code)
     (*PTR_crt_sync_c_CriticalSectionCleanup_FUN_00602434_00684f20)();
   }
   else if (g_SpecialExitHandler != 0) {
-    (*(code *)g_SpecialExitHandler)();
+    (*(code *)g_SpecialExitHandler)(0,0xff);
   }
   (*g_ExitProcessFunc)(unaff_retaddr);
   return;

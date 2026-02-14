@@ -5,8 +5,8 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 255,
-    "suspect_count": 58,
+    "pseudocode_lines": 245,
+    "suspect_count": 59,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
@@ -14,7 +14,7 @@
       "unknown_field",
       "warning_type_propagation"
     ],
-    "total_lines": 730
+    "total_lines": 720
   },
   "cross_references": [
     {
@@ -40,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_FormatEngine_FUN_00602950",
-    "signature": "int __cdecl crt_stdio_c_FormatEngine_FUN_00602950 (void *output_context,char *format,va_list_t args,OUTPUT_CALLBACK callback)"
+    "signature": "int __cdecl crt_stdio_c_FormatEngine_FUN_00602950(void *output_context,char *format,va_list_t args,OUTPUT_CALLBACK callback)"
   },
   "function_calls": [
     {
@@ -271,392 +271,399 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
+      "line": 21,
       "match": "extraout_EDX",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 49,
+      "line": 46,
       "match": "._16_4_",
       "text": "return local_88._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 59,
+      "line": 56,
       "match": "._0_1_",
       "text": "iVar12._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 60,
+      "line": 57,
       "match": "._1_1_",
       "text": "iVar12._1_1_ = local_88.format_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 61,
+      "line": 58,
       "match": "._2_1_",
       "text": "iVar12._2_1_ = local_88.padding_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 62,
+      "line": 59,
       "match": "._3_1_",
       "text": "iVar12._3_1_ = local_88.padding2[0];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 72,
+      "line": 69,
       "match": "._0_1_",
       "text": "uVar13._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 70,
       "match": "._1_1_",
       "text": "uVar13._1_1_ = local_88.format_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 71,
       "match": "._2_1_",
       "text": "uVar13._2_1_ = local_88.padding_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 72,
       "match": "._3_1_",
       "text": "uVar13._3_1_ = local_88.padding2[0];",
       "type": "unknown_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 89,
+      "line": 86,
       "match": "extraout_EDX",
       "text": "local_1c = extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 90,
+      "line": 87,
       "match": "._30_2_",
       "text": "if (((local_88._30_2_ & 8) == 0) && (local_88.zerofill == ' ')) {",
       "type": "unknown_field"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)",
+      "text": "local_20 = (uint *)((int)local_20 + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
-      "line": 110,
+      "line": 103,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 0x20) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 107,
       "match": "(wchar_t *)((int)",
       "text": "wide_string_offset = (wchar_t *)((int)wide_string_offset + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 123,
       "match": "(wchar_t *)((int)",
       "text": "wide_string_offset = (wchar_t *)((int)wide_string_offset + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 131,
       "match": "(wchar_t *)((int)",
       "text": "wide_string_offset = (wchar_t *)((int)wide_string_offset + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 146,
+      "line": 137,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 8) != 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 154,
+      "line": 144,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 0x20) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 155,
+      "line": 145,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 0x10) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 156,
+      "line": 146,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 0x80) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 157,
+      "line": 147,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 0x40) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 150,
       "match": "._16_4_",
       "text": "*(uint *)*puVar3 = local_88._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 162,
+      "line": 152,
       "match": "._0_1_",
       "text": "iVar11._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 163,
+      "line": 153,
       "match": "._1_1_",
       "text": "iVar11._1_1_ = local_88.format_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
+      "line": 154,
       "match": "._2_1_",
       "text": "iVar11._2_1_ = local_88.padding_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 165,
+      "line": 155,
       "match": "._3_1_",
       "text": "iVar11._3_1_ = local_88.padding2[0];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 172,
+      "line": 162,
       "match": "._16_4_",
       "text": "*(uint *)*puVar3 = local_88._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 174,
+      "line": 164,
       "match": "._0_1_",
       "text": "iVar10._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 175,
+      "line": 165,
       "match": "._1_1_",
       "text": "iVar10._1_1_ = local_88.format_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 176,
+      "line": 166,
       "match": "._2_1_",
       "text": "iVar10._2_1_ = local_88.padding_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 177,
+      "line": 167,
       "match": "._3_1_",
       "text": "iVar10._3_1_ = local_88.padding2[0];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 185,
+      "line": 175,
       "match": "._16_4_",
       "text": "*(int *)*puVar2 = local_88._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 187,
+      "line": 177,
       "match": "._0_1_",
       "text": "iVar9._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 188,
+      "line": 178,
       "match": "._1_1_",
       "text": "iVar9._1_1_ = local_88.format_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 189,
+      "line": 179,
       "match": "._2_1_",
       "text": "iVar9._2_1_ = local_88.padding_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 190,
+      "line": 180,
       "match": "._3_1_",
       "text": "iVar9._3_1_ = local_88.padding2[0];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 196,
+      "line": 186,
       "match": "._16_2_",
       "text": "uVar4 = local_88._16_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 197,
+      "line": 187,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 0x80) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 198,
+      "line": 188,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 0x40) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 203,
+      "line": 193,
       "match": "._0_1_",
       "text": "iVar8._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 204,
+      "line": 194,
       "match": "._1_1_",
       "text": "iVar8._1_1_ = local_88.format_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 205,
+      "line": 195,
       "match": "._2_1_",
       "text": "iVar8._2_1_ = local_88.padding_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 206,
+      "line": 196,
       "match": "._3_1_",
       "text": "iVar8._3_1_ = local_88.padding2[0];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 215,
+      "line": 205,
       "match": "._0_1_",
       "text": "iVar7._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 216,
+      "line": 206,
       "match": "._1_1_",
       "text": "iVar7._1_1_ = local_88.format_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 217,
+      "line": 207,
       "match": "._2_1_",
       "text": "iVar7._2_1_ = local_88.padding_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 218,
+      "line": 208,
       "match": "._3_1_",
       "text": "iVar7._3_1_ = local_88.padding2[0];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 228,
+      "line": 218,
       "match": "._0_1_",
       "text": "iVar6._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 229,
+      "line": 219,
       "match": "._1_1_",
       "text": "iVar6._1_1_ = local_88.format_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 230,
+      "line": 220,
       "match": "._2_1_",
       "text": "iVar6._2_1_ = local_88.padding_char;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 231,
+      "line": 221,
       "match": "._3_1_",
       "text": "iVar6._3_1_ = local_88.padding2[0];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 238,
+      "line": 228,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 0x80) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 239,
+      "line": 229,
       "match": "._30_2_",
       "text": "if ((local_88._30_2_ & 0x40) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 242,
+      "line": 232,
       "match": "._16_4_",
       "text": "*(uint *)*puVar3 = local_88._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 248,
+      "line": 238,
       "match": "._16_4_",
       "text": "*(uint *)*puVar3 = local_88._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 255,
+      "line": 245,
       "match": "._16_4_",
       "text": "*(int *)*puVar2 = local_88._16_4_;",
       "type": "unknown_field"

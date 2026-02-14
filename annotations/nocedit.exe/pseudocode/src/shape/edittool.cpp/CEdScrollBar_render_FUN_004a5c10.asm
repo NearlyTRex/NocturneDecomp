@@ -16,14 +16,14 @@
 ;   core_main.c_showLicenseAgreement_FUN_005070f0 at 0050720a
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c674
 ;   core_msnedit.cpp_FUN_00535e70 at 00536a77
-;   core_script.cpp_CScript_FUN_005645d0 at 00564660
+;   core_script.cpp_CScript_drawEditor_FUN_005645d0 at 00564660
 ;   core_setedit.cpp_CDemonSet_FUN_00577af0 at 00577bde
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40 at 004a4f11
 ;
 ; Referenced Globals:
 ;   int g_ShadowColor
 ;   int g_ShadowHighlightColor
-;   CEdButton* g_ActiveButton
+;   void* g_ActiveControl
 ;   int g_ScrollAction
 ;
 ; Called Functions:
@@ -87,7 +87,7 @@ section .text
     MOV dword ptr [EBP + -0x10],EDX     ; 004a5c7d
     MOV dword ptr [EBP + -0xc],ECX      ; 004a5c80
     MOV EDX,dword ptr [EBX + 0x2c]      ; 004a5c83
-    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5c86 | g_ActiveButton
+    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5c86 | g_ActiveControl
         ;   Label: LAB_004a5c86
     JNZ 0x004a5d9b                      ; 004a5c8c
         ;   XREF to: 004a5d9b (CONDITIONAL_JUMP)  ; LAB_004a5d9b
@@ -110,7 +110,7 @@ section .text
     TEST EAX,EAX                        ; 004a5cba
     JZ 0x004a5db8                       ; 004a5cbc
         ;   XREF to: 004a5db8 (CONDITIONAL_JUMP)  ; LAB_004a5db8
-    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5cc2 | g_ActiveButton
+    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5cc2 | g_ActiveControl
     JNZ 0x004a5da2                      ; 004a5cc8
         ;   XREF to: 004a5da2 (CONDITIONAL_JUMP)  ; LAB_004a5da2
     MOV EDX,dword ptr [0x02cf2b04]      ; 004a5cce | g_ScrollAction
@@ -129,7 +129,7 @@ section .text
     CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5cea
         ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     ADD ESP,0x14                        ; 004a5cef
-    MOV EDX,dword ptr [0x02cf2b00]      ; 004a5cf2 | g_ActiveButton
+    MOV EDX,dword ptr [0x02cf2b00]      ; 004a5cf2 | g_ActiveControl
     PUSH 0x2                            ; 004a5cf8
     CMP EBX,EDX                         ; 004a5cfa
     JNZ 0x004a5da9                      ; 004a5cfc
@@ -149,7 +149,7 @@ section .text
     PUSH EDX                            ; 004a5d1d
     CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5d1e
         ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
-    MOV ECX,dword ptr [0x02cf2b00]      ; 004a5d23 | g_ActiveButton
+    MOV ECX,dword ptr [0x02cf2b00]      ; 004a5d23 | g_ActiveControl
     ADD ESP,0x18                        ; 004a5d29
     CMP EBX,ECX                         ; 004a5d2c
     JNZ 0x004a5db0                      ; 004a5d2e
@@ -169,7 +169,7 @@ section .text
     CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5d4d
         ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     ADD ESP,0x14                        ; 004a5d52
-    MOV EAX,[0x02cf2b00]                ; 004a5d55 | g_ActiveButton
+    MOV EAX,[0x02cf2b00]                ; 004a5d55 | g_ActiveControl
     PUSH 0x3                            ; 004a5d5a
     CMP EBX,EAX                         ; 004a5d5c
     JNZ 0x004a5db4                      ; 004a5d5e
@@ -223,7 +223,7 @@ section .text
         ;   Label: LAB_004a5db4
     JMP 0x004a5d6e                      ; 004a5db6
         ;   XREF to: 004a5d6e (UNCONDITIONAL_JUMP)  ; LAB_004a5d6e
-    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5db8 | g_ActiveButton
+    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5db8 | g_ActiveControl
         ;   Label: LAB_004a5db8
     JNZ 0x004a5e86                      ; 004a5dbe
         ;   XREF to: 004a5e86 (CONDITIONAL_JUMP)  ; LAB_004a5e86
@@ -244,7 +244,7 @@ section .text
     CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5de3
         ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     ADD ESP,0x14                        ; 004a5de8
-    MOV EAX,[0x02cf2b00]                ; 004a5deb | g_ActiveButton
+    MOV EAX,[0x02cf2b00]                ; 004a5deb | g_ActiveControl
     PUSH 0x0                            ; 004a5df0
     CMP EBX,EAX                         ; 004a5df2
     JNZ 0x004a5e8d                      ; 004a5df4
@@ -265,7 +265,7 @@ section .text
     PUSH EDX                            ; 004a5e18
     CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5e19
         ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
-    MOV ECX,dword ptr [0x02cf2b00]      ; 004a5e1e | g_ActiveButton
+    MOV ECX,dword ptr [0x02cf2b00]      ; 004a5e1e | g_ActiveControl
     ADD ESP,0x18                        ; 004a5e24
     CMP EBX,ECX                         ; 004a5e27
     JNZ 0x004a5e94                      ; 004a5e29
@@ -286,7 +286,7 @@ section .text
     CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5e47
         ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     ADD ESP,0x14                        ; 004a5e4c
-    MOV EDI,dword ptr [0x02cf2b00]      ; 004a5e4f | g_ActiveButton
+    MOV EDI,dword ptr [0x02cf2b00]      ; 004a5e4f | g_ActiveControl
     PUSH 0x1                            ; 004a5e55
     CMP EBX,EDI                         ; 004a5e57
     JNZ 0x004a5e98                      ; 004a5e59

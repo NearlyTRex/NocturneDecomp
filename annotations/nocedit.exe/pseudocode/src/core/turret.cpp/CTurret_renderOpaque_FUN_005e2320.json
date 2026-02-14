@@ -1,29 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 20,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 75,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 2,
-    "pseudocode_lines": 35,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref"
-    ],
-    "total_lines": 134
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 135
   },
   "cross_references": [],
   "function": {
@@ -166,29 +156,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 13,
-      "match": "&stack0xffffffd8",
-      "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffd8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "NAN",
-      "text": "fVar4 = -NAN;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
-      "match": "NAN",
-      "text": "fVar4 = -NAN;",
-      "type": "decompiler_intrinsic"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

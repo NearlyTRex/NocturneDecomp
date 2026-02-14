@@ -2,13 +2,11 @@
 // Address: 005e3ca0
 // Address Range: [[005e3ca0, 005e3dcc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_turret_cpp_CTurret_getPropertyList_FUN_005e3ca0 (CTurret *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_turret_cpp_CTurret_getPropertyList_FUN_005e3ca0(CTurret *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_turret_cpp_CTurret_getPropertyList_FUN_005e3ca0
-          (CTurret *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_turret_cpp_CTurret_getPropertyList_FUN_005e3ca0(CTurret *this_ptr,CActorPropertyList *property_list)
 
 {
   core_weapon_cpp_CWeapon_getPropertyList_FUN_005ee9f0(&this_ptr->base,property_list);

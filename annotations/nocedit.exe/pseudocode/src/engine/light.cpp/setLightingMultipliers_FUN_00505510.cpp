@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_light_cpp_setLightingMultipliers_FUN_00505510(int diffuse_multiplier,int specular_multiplier)
+void __cdecl engine_light_cpp_setLightingMultipliers_FUN_00505510(int diffuse_multiplier,int specular_multiplier)
 
 {
   g_DiffuseLightMultiplier = diffuse_multiplier;

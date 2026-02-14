@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(CDrawSurface *this_ptr)
+int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(CDrawSurface *this_ptr)
 
 {
   if (g_CurrentFont != (CBitFont *)0x0) {

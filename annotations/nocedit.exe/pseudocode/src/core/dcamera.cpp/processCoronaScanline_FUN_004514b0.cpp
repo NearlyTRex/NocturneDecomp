@@ -2,16 +2,14 @@
 // Address: 004514b0
 // Address Range: [[004514b0, 004517e2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0 (int row,int x_start,int x_end,SCorona *corona_buffer)
+// Signature: void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_processCoronaScanline_FUN_004514b0
-          (int row,int x_start,int x_end,SCorona *corona_buffer)
+void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona_buffer)
 
 {
-  byte bVar1;
+  byte uVar1;
   uint uVar2;
   int iVar3;
   int iVar4;
@@ -29,12 +27,12 @@ core_dcamera_cpp_processCoronaScanline_FUN_004514b0
   
   pCVar6 = g_PrecomputedWorldPositions + row * 0x140 + x_start;
   piVar14 = g_CoronaDepthBuffer[row] + x_start;
-  puVar13 = g_ZBufferScanlineArray[row << ((byte)g_CameraDownscaleIterations & 0x1f)] +
-            (x_start << ((byte)g_CameraDownscaleIterations & 0x1f));
+  puVar13 = g_ZBufferScanlineArray[row << (g_CameraDownscaleIterations.bytes[0] & 0x1f)] +
+            (x_start << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
   pcVar7 = corona_buffer->intensity[row] + x_start;
-  bVar1 = (byte)g_CameraDownscaleIterations;
+  uVar1 = g_CameraDownscaleIterations.bytes[0];
   do {
-    g_CameraDownscaleIterations._0_1_ = bVar1;
+    g_CameraDownscaleIterations.bytes[0] = uVar1;
     if (x_end <= x_start) {
       iVar3 = corona_buffer->row_min_x[row];
       iVar4 = corona_buffer->row_max_x[row];
@@ -89,9 +87,9 @@ LAB_0045162e:
     piVar14 = piVar14 + 1;
     pCVar6 = pCVar6 + 1;
     *pcVar7 = local_14;
-    puVar13 = puVar13 + (1 << (bVar1 & 0x1f));
+    puVar13 = puVar13 + (1 << (uVar1 & 0x1f));
     x_start = x_start + 1;
     pcVar7 = pcVar7 + 1;
-    bVar1 = (byte)g_CameraDownscaleIterations;
+    uVar1 = g_CameraDownscaleIterations.bytes[0];
   } while( true );
 }

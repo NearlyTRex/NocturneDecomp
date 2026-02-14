@@ -33,7 +33,7 @@ void __cdecl formatSystemError(char *dest_buffer);
 
 // Original: engine_fileio.cpp_copyFileWithProgress_FUN_004b2030
 // Address: 004b2030
-char * __cdecl copyFileWithProgress(_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes);
+char * __cdecl copyFileWithProgress(_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename,int file_size_bytes);
 
 // Original: engine_fileio.cpp_openFileWithRetry_FUN_004b2200
 // Address: 004b2200
@@ -113,7 +113,7 @@ int __cdecl CCheckOutItem::checkOutFileFromRepository(CCheckOutItem *this_ptr,ch
 
 // Original: engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
 // Address: 004b3f50
-int __cdecl CCheckOutItem::selectCheckedOutFile(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern, char *dialog_title);
+int __cdecl CCheckOutItem::selectCheckedOutFile(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title);
 
 // Original: engine_fileio.cpp_CCheckOutItem_revert_FUN_004b41c0
 // Address: 004b41c0
@@ -201,7 +201,7 @@ void __cdecl CFileManager::verifyPodCRC(CFileManager *this_ptr,char *pod_filenam
 
 // Original: engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
 // Address: 004b7d50
-int __cdecl CFileManager::extractFileWithTimestamp(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,char *name_or_offset, int file_size,int file_offset,int checksum,int timestamp);
+int __cdecl CFileManager::extractFileWithTimestamp(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset,int checksum,int timestamp);
 
 // Original: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
 // Address: 004b7f50

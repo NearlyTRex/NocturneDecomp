@@ -2,11 +2,11 @@
 // Address: 006026a8
 // Address Range: [[006026a8, 006026fe]]
 // Convention: __watcallRegister
-// Signature: void crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(void *pParam)
+// Signature: void __watcallRegister crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(void *pParam)
 
 #include "nocturne.h"
 
-void crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(void *pParam)
+void __watcallRegister crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(void *pParam)
 
 {
   ThreadData *pStackBound;

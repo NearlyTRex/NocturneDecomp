@@ -2,11 +2,11 @@
 // Address: 00404420
 // Address Range: [[00404420, 00404445]]
 // Convention: __watcallRegister
-// Signature: SMRGLHeaderExtended * engine_3d_c_oldFunction_FUN_00404420(SMRGLHeaderExtended *primitive)
+// Signature: SMRGLHeaderExtended * __watcallRegister engine_3d_c_oldFunction_FUN_00404420(SMRGLHeaderExtended *primitive)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * engine_3d_c_oldFunction_FUN_00404420(SMRGLHeaderExtended *primitive)
+SMRGLHeaderExtended * __watcallRegister engine_3d_c_oldFunction_FUN_00404420(SMRGLHeaderExtended *primitive)
 
 {
   g_CurrentFilename = "..\\engine\\3d.c";

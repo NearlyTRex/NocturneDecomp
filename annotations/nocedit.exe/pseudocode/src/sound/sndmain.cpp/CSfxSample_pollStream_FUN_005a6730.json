@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 81,
-        "line": 88,
+        "line": 86,
         "message": "C-style cast from 'CSfxSample *' to 'float' is not allowed"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 185,
+        "line": 183,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 223,
+        "line": 221,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       }
     ],
@@ -25,16 +25,16 @@
   },
   "complexity": {
     "assembly_lines": 524,
-    "complexity_score": 265,
+    "complexity_score": 263,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 32,
-    "pseudocode_lines": 230,
+    "pseudocode_lines": 228,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 754
+    "total_lines": 752
   },
   "cross_references": [
     {
@@ -60,7 +60,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730",
-    "signature": "int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730 (CSfxSample *this_ptr,float time_window,float update_interval)"
+    "signature": "int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *this_ptr,float time_window,float update_interval)"
   },
   "function_calls": [
     {
@@ -472,21 +472,21 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "ROUND",
       "text": "SVar8 = (SIZE_T)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 80,
       "match": "ROUND",
       "text": "iVar13 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 81,
       "match": "ROUND",
       "text": "if (iVar4 < (int)ROUND(dVar12)) {",
       "type": "decompiler_intrinsic"

@@ -4,6 +4,7 @@
 struct CDemonActor;
 struct SDialogEntry;
 struct SScriptLine;
+struct SScriptXRef;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -22,8 +23,8 @@ typedef struct CScript {
     int dialog_entry_count; // 0x1c
     struct SDialogEntry* dialog_entries; // 0x20
     uint current_sfx_handle; // 0x24
-    int unk3; // 0x28
-    void* unk4; // 0x2c
+    int xref_count; // 0x28
+    struct SScriptXRef* xref_entries; // 0x2c
     int parsed_line_count; // 0x30
     struct SScriptLine* parsed_lines; // 0x34
     CStrList script_text; // 0x38

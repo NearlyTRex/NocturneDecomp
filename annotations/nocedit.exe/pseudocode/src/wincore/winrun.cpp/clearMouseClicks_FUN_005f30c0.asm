@@ -9,7 +9,7 @@
 ;   shape_design.c_showPointEditor_FUN_0045c6c0 at 0045c6d6
 ;
 ; Referenced Globals:
-;   uint g_MouseButtonFlags
+;   _BIT_INTEGER g_MouseButtonFlags
 ;
 ; *****************************************************************************
 

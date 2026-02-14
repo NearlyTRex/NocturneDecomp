@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20 (CCramTex *this_ptr,int visualization_mode,int completion_mode,int display_mode)
+; __cdecl void __cdecl shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20(CCramTex *this_ptr,int visualization_mode,int completion_mode,int display_mode)
 ;
 ; Parameters:
 ; CCramTex *       Stack[0x4]:4   this_ptr

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *damage_info)
 
 {
   CDemonActor *pCVar1;

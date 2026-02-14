@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_event_cpp_CEventList_evaluateExpression_FUN_004add80(CEventList *this_ptr,char *expression)
+int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_004add80(CEventList *this_ptr,char *expression)
 
 {
   char cVar1;

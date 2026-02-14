@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_mission_cpp_CDemonMission_setMissionName_FUN_00524630(CDemonMission *this_ptr,char *name)
+void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_00524630(CDemonMission *this_ptr,char *name)
 
 {
   char cVar1;

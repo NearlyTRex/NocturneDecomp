@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0 (CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures, int num_parts)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0(CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures,int num_parts)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

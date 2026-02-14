@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   line
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_FUN_00565130 at 00565684
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 00565684
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00565c70 = 00565d10
@@ -32,9 +32,9 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053eb40
 ;   core_script.cpp_CCmdParse_bestParse_FUN_00561db0
 ;   core_script.cpp_clearSelections_FUN_005644e0
+;   core_script.cpp_CScript_buildParsedLines_FUN_0055a370
 ;   core_script.cpp_CScript_editorX2Index_FUN_00566a90
 ;   core_script.cpp_CScript_findLabelIndex_FUN_00560160
-;   core_script.cpp_CScript_FUN_0055a370
 ;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910
 ;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -145,8 +145,8 @@ section .text
     RET                                 ; 00565dcf
     PUSH EBX                            ; 00565dd0
         ;   Label: caseD_5
-    CALL core_script.cpp_CScript_FUN_0055a370 ; 00565dd1
-        ;   XREF to: 0055a370 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_0055a370(CScript * this_ptr)
+    CALL core_script.cpp_CScript_buildParsedLines_FUN_0055a370 ; 00565dd1
+        ;   XREF to: 0055a370 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_buildParsedLines_FUN_0055a370(CScript * this_ptr)
     IMUL EAX,ESI,0x328                  ; 00565dd6
     MOV EDI,0x310ab1c                   ; 00565ddc | DAT_0310ab1c
     ADD EAX,EDI                         ; 00565de1
@@ -155,7 +155,7 @@ section .text
     PUSH EAX                            ; 00565de9
     PUSH EBX                            ; 00565dea
     CALL core_script.cpp_CScript_findLabelIndex_FUN_00560160 ; 00565deb
-        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * param_2)
+        ;   XREF to: 00560160 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00560160(CScript * this_ptr, char * label_name)
     ADD ESP,0x8                         ; 00565df0
     TEST EAX,EAX                        ; 00565df3
     JL 0x00565e27                       ; 00565df5

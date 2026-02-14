@@ -11,6 +11,7 @@ void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_pt
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
+  CBoundingBox3D CStack_1c;
   
   if ((this_ptr->base).pool_me != 0) {
     if (layer_flag != 0) {
@@ -18,7 +19,7 @@ void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_pt
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
-                            ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);
+                            ((CDemonActor *)this_ptr,&CStack_1c);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar1 != 0) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150

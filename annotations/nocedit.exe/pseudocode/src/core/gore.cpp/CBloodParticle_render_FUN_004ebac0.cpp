@@ -87,7 +87,8 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *th
   local_94.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_94);
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0067b9b0);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (g_CDemonRendererPtr2,&SMRGLTextureBasic_0067b9b0);
   iVar3 = (*(uint *)(this_ptr->field1_0x38 + 4) & 3) * 0x400000;
   g_RenderVertexBuffer[0].u = iVar3 + 0x80000;
   iVar4 = (*(int *)(this_ptr->field1_0x38 + 4) >> 2 & 3U) * 0x400000;
@@ -132,11 +133,11 @@ LAB_004ebdb7:
     *(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar3) = 0;
     iVar3 = iVar4;
   } while (iVar4 != 0xc0);
-  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)(g_CurrentSceneCamera,this_ptr,0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr2,0xffff - (int)g_PerspectiveReciprocal);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr2,&DAT_02d83368);
+            (g_CDemonRendererPtr2,&SMRGLHeaderPrimitive_02d83368);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   CStack_e8.x = (this_ptr->base).position.x;
   CStack_e8.y = (this_ptr->base).position.y;
@@ -214,11 +215,12 @@ LAB_004ebdb7:
            (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
       iVar4 = iVar5;
     } while (iVar5 != 0xc0);
-    (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+    (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+              (g_CurrentSceneCamera,this_ptr,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,0xffff - (int)g_PerspectiveReciprocal);
     engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-              (g_CDemonRendererPtr2,&DAT_02d83368);
+              (g_CDemonRendererPtr2,&SMRGLHeaderPrimitive_02d83368);
     iVar3 = iVar3 + 1;
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   } while (iVar3 < 3);

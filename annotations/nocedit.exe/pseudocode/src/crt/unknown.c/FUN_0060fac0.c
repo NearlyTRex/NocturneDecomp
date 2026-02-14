@@ -2,40 +2,36 @@
 // Address: 0060fac0
 // Address Range: [[0060fac0, 0060fb39]]
 // Convention: unknown
-// Signature: int crt_unknown_c_FUN_0060fac0(void)
+// Signature: int crt_unknown_c_FUN_0060fac0(wchar_t *param_1,char *param_2,int param_3)
 
 #include "nocturne.h"
 
-int FUN_0060fac0(void)
+int FUN_0060fac0(wchar_t *param_1,char *param_2,int param_3)
 
 {
   int iVar1;
   int iVar2;
-  wchar_t *in_stack_00000004;
-  char *in_stack_00000008;
-  int in_stack_0000000c;
   
   iVar2 = 0;
-  if (in_stack_00000004 == (wchar_t *)0x0) {
-    while ((iVar1 = iVar2, *in_stack_00000008 != '\0' &&
-           (iVar1 = mbtowc((wchar_t *)0x0,in_stack_00000008,2),
-           iVar1 != -1))) {
-      in_stack_00000008 = mbtowc_next(in_stack_00000008);
+  if (param_1 == (wchar_t *)0x0) {
+    while ((iVar1 = iVar2, *param_2 != '\0' &&
+           (iVar1 = mbtowc((wchar_t *)0x0,param_2,2), iVar1 != -1))) {
+      param_2 = mbtowc_next(param_2);
       iVar2 = iVar2 + 1;
     }
   }
   else {
-    for (; iVar1 = iVar2, in_stack_0000000c != 0; in_stack_0000000c = in_stack_0000000c + -1) {
-      if (*in_stack_00000008 == '\0') {
-        *in_stack_00000004 = L'\0';
+    for (; iVar1 = iVar2, param_3 != 0; param_3 = param_3 + -1) {
+      if (*param_2 == '\0') {
+        *param_1 = L'\0';
         return iVar2;
       }
-      iVar1 = mbtowc(in_stack_00000004,in_stack_00000008,2);
+      iVar1 = mbtowc(param_1,param_2,2);
       if (iVar1 == -1) {
         return -1;
       }
-      in_stack_00000008 = mbtowc_next(in_stack_00000008);
-      in_stack_00000004 = in_stack_00000004 + 1;
+      param_2 = mbtowc_next(param_2);
+      param_1 = param_1 + 1;
       iVar2 = iVar2 + 1;
     }
   }

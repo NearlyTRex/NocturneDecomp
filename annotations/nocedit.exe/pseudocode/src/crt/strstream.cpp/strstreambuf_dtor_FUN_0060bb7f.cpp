@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-strstreambuf * __cdecl
-crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf *this_ptr,uint flags)
+strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf *this_ptr,uint flags)
 
 {
   char *ptr;
@@ -22,7 +21,7 @@ crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf *this_ptr,uint fla
         shape_memdbg_cpp_free_FUN_005fe659(ptr);
       }
       else {
-        (*this_ptr->__free_fn)();
+        (*this_ptr->__free_fn)(ptr);
       }
     }
     this_ptr = (strstreambuf *)

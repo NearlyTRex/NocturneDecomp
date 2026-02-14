@@ -4,91 +4,91 @@
       {
         "category": "other",
         "column": 14,
-        "line": 64,
+        "line": 62,
         "message": "cannot cast from type 'float' to pointer type 'float *'"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 65,
+        "line": 63,
         "message": "C-style cast from 'float *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 66,
+        "line": 64,
         "message": "C-style cast from 'float *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 81,
+        "line": 79,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 22,
+        "line": 80,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 11,
         "line": 82,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 84,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 87,
+        "line": 85,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 87,
+        "line": 85,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 93,
+        "line": 91,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 93,
+        "line": 91,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 119,
+        "line": 117,
         "message": "use of undeclared identifier 'stack0xffffff44'"
       },
       {
         "category": "undeclared_identifier",
         "column": 64,
-        "line": 149,
+        "line": 147,
         "message": "use of undeclared identifier 'stack0xffffff44'"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 152,
+        "line": 150,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "syntax_error",
         "column": 68,
-        "line": 152,
+        "line": 150,
         "message": "expected ')'"
       },
       {
         "category": "undeclared_identifier",
         "column": 57,
-        "line": 152,
+        "line": 150,
         "message": "use of undeclared identifier 'undefined3'"
       }
     ],
@@ -97,11 +97,11 @@
   },
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 315,
+    "complexity_score": 313,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 13,
-    "pseudocode_lines": 145,
+    "pseudocode_lines": 143,
     "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -109,7 +109,7 @@
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 507
+    "total_lines": 505
   },
   "cross_references": [
     {
@@ -135,7 +135,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0",
-    "signature": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0 (SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor)"
+    "signature": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor)"
   },
   "function_calls": [
     {
@@ -611,105 +611,105 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "fsin",
       "text": "fVar7 = (float10)fsin((float10)0.58904862253125001);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 72,
       "match": "._4_4_",
       "text": "local_74._4_4_ = (uint)ROUND(dVar10);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 72,
       "match": "ROUND",
       "text": "local_74._4_4_ = (uint)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 73,
       "match": "._4_4_",
       "text": "local_68 = local_74._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 77,
+      "line": 75,
       "match": "._4_4_",
       "text": "local_74._4_4_ = (uint)ROUND(dVar10);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 75,
       "match": "ROUND",
       "text": "local_74._4_4_ = (uint)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 80,
+      "line": 78,
       "match": "._0_4_",
       "text": "local_74._0_4_ = -local_74._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 80,
+      "line": 78,
       "match": "._0_4_",
       "text": "local_74._0_4_ = -local_74._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 86,
+      "line": 84,
       "match": "._0_4_",
       "text": "local_74._0_4_ = -local_74._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 86,
+      "line": 84,
       "match": "._0_4_",
       "text": "local_74._0_4_ = -local_74._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 112,
+      "line": 110,
       "match": "&stack0xffffff44",
       "text": "(pCVar3,(SMRGLHeaderPrimitive *)&stack0xffffff44,0x2c5);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 120,
       "match": "(float *)((int)",
       "text": "uv_offset = (float *)((int)uv_offset + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 142,
+      "line": 140,
       "match": "&stack0xffffff44",
       "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff44,0x2c5);",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 145,
+      "line": 143,
       "match": "._3_1_",
       "text": "local_30 = (float)CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 143,
       "match": "CONCAT13",
       "text": "local_30 = (float)CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30);",
       "type": "decompiler_intrinsic"

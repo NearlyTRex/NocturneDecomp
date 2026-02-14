@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CCameraView * __cdecl
-core_camview_cpp_CCameraView_dtor_FUN_00427d00(CCameraView *this_ptr,uint flags)
+CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00427d00(CCameraView *this_ptr,uint flags)
 
 {
   void *ptr;

@@ -3102,15 +3102,15 @@ SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6] = {
 };
 
 // SMRGLTextureBasic
-SMRGLTextureBasic DAT_00680bb0 = {
+SMRGLTextureBasic SMRGLTextureBasic_00680bb0 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "HEADLITE.RAW"
 };
-SMRGLTextureBasic DAT_006813e4 = {
+SMRGLTextureBasic SMRGLTextureBasic_006813e4 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BACKGND.RAW"
 };
-SMRGLTextureBasic DAT_006816c0 = {
+SMRGLTextureBasic SMRGLTextureBasic_006816c0 = {
     .base = {.type = 0x00000000, .count = 0x00000000},
     .texture_name = "bbwhite.raw"
 };
@@ -3118,11 +3118,11 @@ SMRGLTextureBasic SMRGLTextureBasic_006817fc = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "HEADLITE.RAW"
 };
-SMRGLTextureBasic DAT_006819e4 = {
+SMRGLTextureBasic SMRGLTextureBasic_006819e4 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "MENUCLD2.RAW"
 };
-SMRGLTextureBasic DAT_00684178 = {
+SMRGLTextureBasic SMRGLTextureBasic_00684178 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
@@ -3130,77 +3130,13 @@ SMRGLTextureBasic DAT_0068423C = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BACKGND.RAW"
 };
-SMRGLTextureBasic DAT_0068434c = {
+SMRGLTextureBasic SMRGLTextureBasic_0068434c = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
 SMRGLTextureBasic DAT_006843FC = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "DIRT.RAW"
-};
-SMRGLTextureBasic DAT_006846f0 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER0.RAW"
-};
-SMRGLTextureBasic DAT_00684708 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER1.RAW"
-};
-SMRGLTextureBasic DAT_00684720 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER2.RAW"
-};
-SMRGLTextureBasic DAT_00684738 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER3.RAW"
-};
-SMRGLTextureBasic DAT_00684750 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER4.RAW"
-};
-SMRGLTextureBasic DAT_00684768 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER5.RAW"
-};
-SMRGLTextureBasic DAT_00684780 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER6.RAW"
-};
-SMRGLTextureBasic DAT_00684798 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER7.RAW"
-};
-SMRGLTextureBasic DAT_006847B0 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER8.RAW"
-};
-SMRGLTextureBasic DAT_006847C8 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER9.RAW"
-};
-SMRGLTextureBasic DAT_006847E0 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER10.RAW"
-};
-SMRGLTextureBasic DAT_006847F8 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER11.RAW"
-};
-SMRGLTextureBasic DAT_00684810 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER12.RAW"
-};
-SMRGLTextureBasic DAT_00684828 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER13.RAW"
-};
-SMRGLTextureBasic DAT_00684840 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER14.RAW"
-};
-SMRGLTextureBasic DAT_00684858 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "WATER15.RAW"
 };
 SMRGLTextureBasic SMRGLTextureBasic_00684900 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
@@ -3214,7 +3150,7 @@ SMRGLTextureBasic SMRGLTextureBasic_00684930 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SNOWFLKE.RAW"
 };
-SMRGLTextureBasic DAT_0068495c = {
+SMRGLTextureBasic SMRGLTextureBasic_0068495c = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "REDSPARK.RAW"
 };
@@ -3224,6 +3160,72 @@ SMRGLTextureBasic* g_WaterTexturesEnd = nullptr;
 
 // SMRGLTextureBasic[16]
 SMRGLTextureBasic g_WaterTextures[16] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER0.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER1.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER2.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER3.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER4.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER5.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER6.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER7.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER8.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER9.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "WATER15.RAW"
+    }
+};
+SMRGLTextureBasic SMRGLTextureBasic_ARRAY_006846f0[16] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "WATER0.RAW"
@@ -3797,12 +3799,14 @@ dst_rule g_DstStartRule = {
 };
 
 // float
+float FLOAT_00681a00 = 0.0f;
 float g_MaxSoftwareLatency = 0.5f;
 
 // int
 int INT_00680648 = 0x2D;
 int g_DynamicRenderMode = 0x1;
 int g_ConfirmNewActorNames = 0x1;
+int INT_00680818 = 0x501502f9;
 int g_CNPCClassVersion = 0x4;
 int g_CPassengerClassVersion = 0x6;
 int g_CPendulumClassVersion = 0x8;
@@ -3959,7 +3963,6 @@ undefined1 DAT_0068500c = 0;
 undefined1 DAT_006852db = 0;
 
 // undefined4
-undefined4 DAT_00680818 = 0x501502F9;
 undefined4 DAT_00680830 = 0;
 undefined4 DAT_00680834 = 0;
 undefined4 DAT_00680908 = 0;
@@ -3970,7 +3973,6 @@ undefined4 DAT_00680bd8 = 0xFFFFFFFF;
 undefined4 DAT_00680bdc = 0;
 undefined4 DAT_0068125c = 0;
 undefined4 DAT_00681260 = 0;
-undefined4 DAT_00681a00 = 0;
 undefined4 DAT_00684edc = 0;
 undefined4 DAT_00684fd0 = 0;
 undefined4 DAT_00685094 = 0;

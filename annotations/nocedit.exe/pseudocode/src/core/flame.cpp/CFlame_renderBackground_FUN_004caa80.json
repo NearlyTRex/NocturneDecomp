@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 28,
-        "message": "use of undeclared identifier 'stack0xffffffc8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 89,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 49,
-    "suspect_count": 3,
+    "pseudocode_lines": 54,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 199
+    "total_lines": 204
   },
   "cross_references": [],
   "function": {
@@ -207,15 +199,8 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xffffffc8",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 31,
       "match": "SQRT",
       "text": "fVar3 = (this_ptr->flame_size).z, 1.0 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)",
       "type": "decompiler_intrinsic"
@@ -224,7 +209,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "SQRT",
-      "text": "SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) < (float)5)) &&",
+      "text": "if ((SQRT(fStack_18 * fStack_18 + fStack_20 * fStack_20 + fStack_1c * fStack_1c) <",
       "type": "decompiler_intrinsic"
     }
   ],

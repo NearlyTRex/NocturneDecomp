@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_batman_cpp_CBatman_hasCollision_FUN_00417cb0(CBatman *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_batman_cpp_CBatman_hasCollision_FUN_00417cb0(CBatman *this_ptr,SCollisionInfo *collision_info)
 
 {
   int iVar1;

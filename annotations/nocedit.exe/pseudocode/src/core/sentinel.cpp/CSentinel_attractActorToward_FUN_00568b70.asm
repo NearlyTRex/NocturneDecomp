@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_00568b70 (CSentinel *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
+; __cdecl int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_00568b70(CSentinel *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 ;
 ; Parameters:
 ; CSentinel *      Stack[0x4]:4   this_ptr

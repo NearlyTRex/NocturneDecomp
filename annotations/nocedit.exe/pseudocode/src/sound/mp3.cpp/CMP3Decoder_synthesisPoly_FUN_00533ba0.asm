@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0 (CMP3Decoder *this_ptr,void *unknown_param2,float *output_buffer,int subband_index, int channel,SMpegFrame *frame_info,void *unknown_param7)
+; __cdecl void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,void *unknown_param2,float *output_buffer,int subband_index,int channel,SMpegFrame *frame_info,void *unknown_param7)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr

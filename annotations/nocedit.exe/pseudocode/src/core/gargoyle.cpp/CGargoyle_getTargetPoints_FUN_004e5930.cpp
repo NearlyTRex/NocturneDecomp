@@ -2,15 +2,13 @@
 // Address: 004e5930
 // Address Range: [[004e5930, 004e5ace]]
 // Convention: __cdecl
-// Signature: int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004e5930 (CGargoyle *this_ptr,CVector3f *out_points_array)
+// Signature: int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004e5930(CGargoyle *this_ptr,CVector3f *out_points_array)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-int __cdecl
-core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004e5930
-          (CGargoyle *this_ptr,CVector3f *out_points_array)
+int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004e5930(CGargoyle *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

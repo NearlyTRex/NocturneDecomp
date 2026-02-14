@@ -45,18 +45,18 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
   local_14.z = (int)ROUND(*(float *)(this_ptr->unk + 0x6c) * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[3].projected_vertex,&local_14);
-  g_RenderVertexBuffer[0].light = 9.18341e-41;
+  g_RenderVertexBuffer[0].light = 0xffff;
   g_RenderVertexBuffer[0].color = 0xffff;
-  g_RenderVertexBuffer[0].fog = 9.18341e-41;
-  g_RenderVertexBuffer[1].light = 9.18341e-41;
+  g_RenderVertexBuffer[0].fog = 0xffff;
+  g_RenderVertexBuffer[1].light = 0xffff;
   g_RenderVertexBuffer[1].color = 0xffff;
-  g_RenderVertexBuffer[1].fog = 9.18341e-41;
-  g_RenderVertexBuffer[2].light = 9.18341e-41;
+  g_RenderVertexBuffer[1].fog = 0xffff;
+  g_RenderVertexBuffer[2].light = 0xffff;
   g_RenderVertexBuffer[2].color = 0xffff;
-  g_RenderVertexBuffer[2].fog = 9.18341e-41;
-  g_RenderVertexBuffer[3].light = 9.18341e-41;
+  g_RenderVertexBuffer[2].fog = 0xffff;
+  g_RenderVertexBuffer[3].light = 0xffff;
   g_RenderVertexBuffer[3].color = 0xffff;
-  g_RenderVertexBuffer[3].fog = 9.18341e-41;
+  g_RenderVertexBuffer[3].fog = 0xffff;
   g_RenderVertexBuffer[0].u = 0x80000;
   g_RenderVertexBuffer[0].v = 0xf80000;
   g_RenderVertexBuffer[1].u = 0xf80000;

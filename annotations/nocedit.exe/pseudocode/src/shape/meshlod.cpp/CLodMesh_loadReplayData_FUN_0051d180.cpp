@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_CLodMesh_loadReplayData_FUN_0051d180(CLodMesh *this_ptr,_FILE *file_handle)
+void __cdecl shape_meshlod_cpp_CLodMesh_loadReplayData_FUN_0051d180(CLodMesh *this_ptr,_FILE *file_handle)
 
 {
   CLodEdge *pCVar1;

@@ -2,13 +2,11 @@
 // Address: 005ba660
 // Address Range: [[005ba660, 005ba694]]
 // Convention: __cdecl
-// Signature: void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660 (CStairs *this_ptr,SIntersectXZCylinder *cylinder)
+// Signature: void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660(CStairs *this_ptr,SIntersectXZCylinder *cylinder)
 
 #include "nocturne.h"
 
-void __cdecl
-core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660
-          (CStairs *this_ptr,SIntersectXZCylinder *cylinder)
+void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660(CStairs *this_ptr,SIntersectXZCylinder *cylinder)
 
 {
   int iVar1;

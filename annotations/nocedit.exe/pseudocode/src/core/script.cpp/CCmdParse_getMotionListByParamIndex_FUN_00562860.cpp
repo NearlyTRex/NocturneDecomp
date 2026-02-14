@@ -2,13 +2,11 @@
 // Address: 00562860
 // Address Range: [[00562860, 00562885]]
 // Convention: __cdecl
-// Signature: CMotionList * __cdecl core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860 (CCmdParse *this_ptr,int param_index)
+// Signature: CMotionList * __cdecl core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860(CCmdParse *this_ptr,int param_index)
 
 #include "nocturne.h"
 
-CMotionList * __cdecl
-core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
-          (CCmdParse *this_ptr,int param_index)
+CMotionList * __cdecl core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860(CCmdParse *this_ptr,int param_index)
 
 {
   CCharacter *pCVar1;

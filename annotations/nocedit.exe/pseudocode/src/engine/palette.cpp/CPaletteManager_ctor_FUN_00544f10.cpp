@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CPaletteManager * __cdecl
-engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr)
+CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr)
 
 {
   void *pvVar1;

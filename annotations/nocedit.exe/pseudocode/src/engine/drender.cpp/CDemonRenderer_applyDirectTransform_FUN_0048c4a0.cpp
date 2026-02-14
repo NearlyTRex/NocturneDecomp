@@ -2,13 +2,11 @@
 // Address: 0048c4a0
 // Address Range: [[0048c4a0, 0048c4ec]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0 (CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-          (CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation)
+void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation)
 
 {
   if (rotation == (CVector3i *)0x0) {

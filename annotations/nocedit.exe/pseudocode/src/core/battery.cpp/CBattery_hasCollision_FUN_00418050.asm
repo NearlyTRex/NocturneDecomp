@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_battery_cpp_CBattery_hasCollision_FUN_00418050 (CBattery *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_battery_cpp_CBattery_hasCollision_FUN_00418050(CBattery *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr

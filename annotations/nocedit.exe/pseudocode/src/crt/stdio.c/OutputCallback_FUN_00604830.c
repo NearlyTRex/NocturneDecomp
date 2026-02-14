@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __watcallStack
-OutputCallback(FORMAT_OUTPUT_CONTEXT *context,int character)
+void __watcallStack OutputCallback(FORMAT_OUTPUT_CONTEXT *context,int character)
 
 {
   _fputc(character,context->output_file);

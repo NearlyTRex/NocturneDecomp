@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 32,
+        "line": 29,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 115,
+    "complexity_score": 112,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 10,
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 87,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 313
+    "total_lines": 310
   },
   "cross_references": [],
   "function": {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0",
-    "signature": "void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0 (void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output, int num_height_rows,int transparency_color)"
+    "signature": "void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0(void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output,int num_height_rows,int transparency_color)"
   },
   "function_calls": [
     {
@@ -300,14 +300,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 35,
       "match": "(byte *)((int)",
       "text": "for (pbVar3 = (byte *)((int)bitmap_data + iVar5 + (start_x + -1) * end_x);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 54,
       "match": "(byte *)((int)",
       "text": "for (pbVar3 = (byte *)((int)bitmap_data + local_14 + iVar5 + (start_x + -1) * end_x);",
       "type": "pointer_cast"

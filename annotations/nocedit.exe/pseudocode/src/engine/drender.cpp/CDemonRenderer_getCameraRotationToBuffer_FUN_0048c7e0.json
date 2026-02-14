@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 52,
+    "complexity_score": 50,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 15,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 35
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -71,7 +71,7 @@
     ],
     "convention": "__stack_esi",
     "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0",
-    "signature": "CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 (CDemonRenderer *this_ptr,CVector3i *output)"
+    "signature": "CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer *this_ptr,CVector3i *output)"
   },
   "function_calls": [
     {
@@ -148,21 +148,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 12,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)output + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 14,
       "match": "(uint *)((int)",
       "text": "*puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 16,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_cast"

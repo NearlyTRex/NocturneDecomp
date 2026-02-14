@@ -8,8 +8,7 @@
 
 /* WARNING: Exceeded maximum restarts with more pending */
 
-void __cdecl
-sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevice *this_ptr)
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevice *this_ptr)
 
 {
   uint error_code;
@@ -40,20 +39,20 @@ sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevi
   error_code = (*g_DirectSound->vtable->CreateSoundBuffer)
                          (g_DirectSound,&DStack_40,&local_18,(LPUNKNOWN)0x0);
   if (error_code == 0) {
-    (*local_18->vtable->QueryInterface)();
+    (*local_18->vtable->QueryInterface)(local_18,&g_IID_IDirectSound3DBuffer,&local_14);
     if (puStack_20 == (uint *)0x0) {
       if ((int *)local_2c._8_4_ != (int *)0x0) {
-        (**(code **)(*(int *)local_2c._8_4_ + 8))();
+        (**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);
       }
     }
     else {
-      (**(code **)*puStack_20)();
+      (**(code **)*puStack_20)(puStack_20,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);
       if (DStack_40.lpwfxFormat != (LPWAVEFORMATEX)0x0) {
-        (**(code **)(*(int *)DStack_40.lpwfxFormat + 8))();
+        (**(code **)(*(int *)DStack_40.lpwfxFormat + 8))(DStack_40.lpwfxFormat);
         DStack_40.lpwfxFormat = (LPWAVEFORMATEX)0x0;
       }
       if ((int *)local_2c._0_4_ != (int *)0x0) {
-        (**(code **)(*(int *)local_2c._0_4_ + 8))();
+        (**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);
         return;
       }
     }

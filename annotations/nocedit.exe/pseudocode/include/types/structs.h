@@ -146,6 +146,7 @@
 #include "types/structs/SScrape.h"
 #include "types/structs/SScreenCoord.h"
 #include "types/structs/SScriptLine.h"
+#include "types/structs/SScriptXRef.h"
 #include "types/structs/SSfxBlock.h"
 #include "types/structs/SSfxEntry.h"
 #include "types/structs/SShapeEditorPolygon.h"

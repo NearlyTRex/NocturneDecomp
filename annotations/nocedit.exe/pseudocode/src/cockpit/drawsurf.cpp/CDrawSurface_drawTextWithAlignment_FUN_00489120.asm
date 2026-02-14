@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 (CDrawSurface *this_ptr,char *text,int x,int width,int y,int height, ETextAlignment alignment_mode)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

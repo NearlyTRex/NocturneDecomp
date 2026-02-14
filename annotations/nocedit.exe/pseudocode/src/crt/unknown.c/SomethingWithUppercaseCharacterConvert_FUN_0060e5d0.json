@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 193,
+    "complexity_score": 197,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -13,9 +13,10 @@
       "param_count_too_few",
       "special_crt_function",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unnamed_param"
     ],
-    "total_lines": 77
+    "total_lines": 76
   },
   "cross_references": [
     {
@@ -35,7 +36,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0",
-    "signature": "char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(void)"
+    "signature": "char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(char *param_1)"
   },
   "function_calls": [
     {
@@ -142,6 +143,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "char * SomethingWithUppercaseCharacterConvert(char *param_1)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 7,
       "match": "extraout_var",
@@ -151,79 +159,72 @@
     {
       "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
       "match": "in_stack_fffffff4",
       "text": "char *in_stack_fffffff4;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "str = in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "text": "str = param_1;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_fffffff4",
       "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
+      "line": 17,
       "match": "extraout_var",
       "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 17,
       "match": "CONCAT22",
       "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 19,
+      "line": 18,
       "match": "&stack0xfffffff4",
       "text": "wchar_to_bytes(wVar1,&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 20,
+      "line": 19,
       "match": "&stack0xfffffff4",
       "text": "iVar2 = mblen(&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 21,
+      "line": 20,
       "match": "&stack0xfffffff4",
       "text": "(&stack0xfffffff4)[iVar2] = 0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 22,
+      "line": 21,
       "match": "&stack0xfffffff4",
       "text": "copyMbChar(str,&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "return in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "text": "return param_1;",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 2,

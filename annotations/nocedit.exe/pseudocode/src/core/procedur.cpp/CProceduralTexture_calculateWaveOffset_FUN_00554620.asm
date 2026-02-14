@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_procedur_cpp_CProceduralTexture_calculateWaveOffset_FUN_00554620 (CProceduralTexture *this_ptr,float wave_radius,float frame_index)
+; __cdecl float __cdecl core_procedur_cpp_CProceduralTexture_calculateWaveOffset_FUN_00554620(CProceduralTexture *this_ptr,float wave_radius,float frame_index)
 ;
 ; Parameters:
 ; CProceduralTexture * Stack[0x4]:4   this_ptr

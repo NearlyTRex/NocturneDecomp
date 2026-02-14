@@ -18,10 +18,11 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d2d0(CDemonSet *this_ptr)
   if (0 < g_MasterLightCount) {
     iVar2 = 0;
     do {
+      iVar1 = *(int *)((int)g_MasterLightList + iVar2);
       g_CurrentDebugLine = 0xa0a;
       g_CurrentDebugFilename = "..\\core\\set.cpp";
-      if (*(int *)((int)g_MasterLightList + iVar2) != 0) {
-        (*(code *)**(uint **)(*(int *)((int)g_MasterLightList + iVar2) + 0x3c))();
+      if (iVar1 != 0) {
+        (*(code *)**(uint **)(iVar1 + 0x3c))(iVar1,2);
       }
       iVar1 = g_MasterLightCount;
       iVar3 = iVar3 + 1;

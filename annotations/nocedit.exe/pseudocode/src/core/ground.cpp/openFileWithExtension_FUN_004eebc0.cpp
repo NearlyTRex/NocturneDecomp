@@ -2,13 +2,11 @@
 // Address: 004eebc0
 // Address Range: [[004eebc0, 004eec9e]]
 // Convention: __cdecl
-// Signature: _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0 (char *base_filename,char *file_extension,char *open_mode)
+// Signature: _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *base_filename,char *file_extension,char *open_mode)
 
 #include "nocturne.h"
 
-_FILE * __cdecl
-core_ground_cpp_openFileWithExtension_FUN_004eebc0
-          (char *base_filename,char *file_extension,char *open_mode)
+_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *base_filename,char *file_extension,char *open_mode)
 
 {
   char cVar1;

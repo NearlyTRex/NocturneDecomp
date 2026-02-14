@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_vehicle_cpp_CVehicle_getBoundingBox_FUN_005e86d0(CVehicle *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_vehicle_cpp_CVehicle_getBoundingBox_FUN_005e86d0(CVehicle *this_ptr,CBoundingBox3D *out_box)
 
 {
   CVector3f *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00452730 (CDemonCamera *this_ptr,CVector3f *position,float radius)
+; __cdecl int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00452730(CDemonCamera *this_ptr,CVector3f *position,float radius)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

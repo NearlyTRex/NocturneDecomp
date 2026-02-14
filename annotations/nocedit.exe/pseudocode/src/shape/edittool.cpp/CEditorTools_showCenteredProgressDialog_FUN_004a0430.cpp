@@ -2,13 +2,11 @@
 // Address: 004a0430
 // Address Range: [[004a0430, 004a052c]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 (CEditorTools *this_ptr,char *message_text)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools *this_ptr,char *message_text)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
-          (CEditorTools *this_ptr,char *message_text)
+void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools *this_ptr,char *message_text)
 
 {
   int iVar1;

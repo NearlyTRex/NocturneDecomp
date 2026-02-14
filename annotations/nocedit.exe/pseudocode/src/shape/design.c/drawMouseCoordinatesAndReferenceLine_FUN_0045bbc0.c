@@ -25,7 +25,7 @@ void __cdecl shape_design_c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0(vo
              (-((float)g_MouseY - (float)g_WindowHeight * (float)0.5) /
              ((float)g_WindowHeight * (float)0.5)) * 0.00390625f
   ;
-  if ((((byte)g_MouseButtonFlags & 1) != 0) && (g_MouseX < 7)) {
+  if (((g_MouseButtonFlags.bytes[0] & 1) != 0) && (g_MouseX < 7)) {
     g_MouseReferenceY = g_MouseY;
     g_StoredWorldYCoordinate = (int)local_1c;
   }

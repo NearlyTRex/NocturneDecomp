@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-fstreambase * __cdecl
-crt_fstream_cpp_fstreambase_dtor_FUN_00606509(fstreambase *this_ptr,uint flags)
+fstreambase * __cdecl crt_fstream_cpp_fstreambase_dtor_FUN_00606509(fstreambase *this_ptr,uint flags)
 
 {
   int iVar1;

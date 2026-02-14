@@ -16,31 +16,31 @@
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 37,
+        "line": 38,
         "message": "use of undeclared identifier 'DAT_02f7a024'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 45,
+        "line": 46,
         "message": "use of undeclared identifier 'DAT_02f7a024'"
       },
       {
         "category": "undeclared_identifier",
         "column": 56,
-        "line": 49,
+        "line": 50,
         "message": "use of undeclared identifier 'DAT_02f7a024'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 52,
+        "line": 53,
         "message": "use of undeclared identifier 'DAT_02f7a024'"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 61,
+        "line": 63,
         "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
       }
     ],
@@ -49,17 +49,16 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 316,
+    "complexity_score": 293,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
-    "pseudocode_lines": 56,
-    "suspect_count": 25,
+    "pseudocode_lines": 58,
+    "suspect_count": 23,
     "suspect_types": [
-      "unaffected_reg",
       "undefined_data"
     ],
-    "total_lines": 255
+    "total_lines": 257
   },
   "cross_references": [
     {
@@ -195,8 +194,8 @@
     },
     {
       "addr": "02cf2b00",
-      "name": "g_ActiveButton",
-      "type": "CEdButton*",
+      "name": "g_ActiveControl",
+      "type": "void*",
       "value": null
     },
     {
@@ -351,13 +350,6 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EDI",
-      "text": "CDemonRenderer *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_02f7a024",
@@ -422,105 +414,98 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_02f7a024",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,0,width);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_02f797e4",
-      "text": "(&DAT_02f797e4,iVar1 + -0xb,1,iVar1 + -1,0xee);",
+      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,0,iVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 33,
       "match": "DAT_02f797e4",
-      "text": "DAT_02f797e4.max_value = 0xf0;",
+      "text": "(&DAT_02f797e4,iVar1 + -0xb,1,iVar1 + -1,0xee);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 34,
       "match": "DAT_02f797e4",
-      "text": "DAT_02f797e4.current_value = INT_02f7c510;",
+      "text": "DAT_02f797e4.max_value = 0xf0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 35,
       "match": "DAT_02f797e4",
-      "text": "DAT_02f797e4.scroll_increment = INT_02f7c510 / INT_02f7a028;",
+      "text": "DAT_02f797e4.current_value = INT_02f7c510;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 36,
       "match": "DAT_02f797e4",
+      "text": "DAT_02f797e4.scroll_increment = INT_02f7c510 / INT_02f7a028;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&DAT_02f797e4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_02f7a024",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,width);",
+      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,iVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_02f797e4",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,width);",
+      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,iVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 42,
       "match": "DAT_02f7c528",
       "text": "DAT_02f7c528 = core_actor_cpp_CActorPropertyList_hitTest_FUN_0040e9c0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 43,
       "match": "DAT_02f7a024",
       "text": "((CActorPropertyList *)&DAT_02f7a024,g_MouseX,g_MouseY);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 46,
       "match": "DAT_02f7a024",
       "text": "((CActorPropertyList *)&DAT_02f7a024,DAT_02f7c528);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 46,
       "match": "DAT_02f7c528",
       "text": "((CActorPropertyList *)&DAT_02f7a024,DAT_02f7c528);",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_EDI",
-      "text": "engine_matrix_c_popViewport_FUN_0050e480(unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&DAT_02f797e4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 58,
       "match": "DAT_02f797e4",
       "text": "shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(&DAT_02f797e4);",
       "type": "undefined_data"

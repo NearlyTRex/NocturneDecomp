@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_haystack_cpp_CHaystack_FUN_004f1970(CHaystack *this_ptr)
 
 {

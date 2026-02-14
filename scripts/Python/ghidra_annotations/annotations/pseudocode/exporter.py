@@ -6,6 +6,7 @@
 
 import os
 import json
+import re
 import time
 from java.util import ArrayList
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -251,7 +252,6 @@ def build_prototypes_from_decompile_results(decompile_results, functions_to_proc
         - signature: Function signature string
         - convention: Calling convention name
     """
-    import re
     from ghidra_annotations.annotations.pseudocode.globals import insert_calling_convention
 
     # Build a map of address -> decompile result for quick lookup
@@ -299,8 +299,8 @@ def build_prototypes_from_decompile_results(decompile_results, functions_to_proc
             c_signature = re.sub(r'(\w+)\(\)$', r'\1(void)', c_signature)
             c_signature = re.sub(r'(\w+)\(\);$', r'\1(void);', c_signature)
 
-        # Insert calling convention for fallback signatures (decompiled signatures already have it)
-        if not used_decompiled_sig and calling_convention and c_signature:
+        # Always insert calling convention (Ghidra omits the default convention)
+        if calling_convention and c_signature:
             c_signature = insert_calling_convention(c_signature, calling_convention)
 
         functions_list.append({
@@ -337,6 +337,36 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     # === PYTHON-ONLY: Transforms and constant replacement ===
     transform_start = time.time()
     decompiled_code = result.raw_decompiled_code
+
+    # Build clean func_signature: insert calling convention and normalize spacing
+    # (Ghidra omits the default convention after cspec changes)
+    convention = result.func_convention
+    if convention and convention.lower() != 'unknown' and result.func_signature:
+        from ghidra_annotations.annotations.pseudocode.globals import insert_calling_convention
+        result.func_signature = insert_calling_convention(
+            result.func_signature, convention)
+    if result.func_signature:
+        result.func_signature = re.sub(r'\s+\(', '(', result.func_signature)
+        result.func_signature = re.sub(r',\s+', ',', result.func_signature)
+
+    # Replace multi-line signature in decompiled code with clean func_signature
+    if decompiled_code and result.func_signature:
+        sig_end = decompiled_code.find('\n\n{')
+        if sig_end != -1:
+            sig_area = decompiled_code[:sig_end]
+            rest = decompiled_code[sig_end:]  # Keep \n\n{...
+            # Preserve WARNING comments before the signature
+            comment_lines = []
+            for line in sig_area.split('\n'):
+                stripped = line.strip()
+                if stripped.startswith('/*') or stripped == '':
+                    comment_lines.append(line)
+                else:
+                    break
+            if comment_lines:
+                decompiled_code = '\n'.join(comment_lines) + '\n' + result.func_signature + rest
+            else:
+                decompiled_code = result.func_signature + rest
 
     # Replace constant references with their actual values
     decompiled_code = replace_constants_in_code(decompiled_code, constants_map)

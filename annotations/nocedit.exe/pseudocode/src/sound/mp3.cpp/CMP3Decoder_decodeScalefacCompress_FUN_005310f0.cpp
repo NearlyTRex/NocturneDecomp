@@ -2,14 +2,11 @@
 // Address: 005310f0
 // Address Range: [[005310f0, 00531474]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0 (CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel, int granule,SMpegFrame *frame)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
-          (CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,
-          int granule,SMpegFrame *frame)
+void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame)
 
 {
   char *pcVar1;

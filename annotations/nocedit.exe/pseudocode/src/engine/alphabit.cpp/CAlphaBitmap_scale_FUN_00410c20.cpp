@@ -2,13 +2,11 @@
 // Address: 00410c20
 // Address Range: [[00410c20, 00410ce5]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20 (CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY)
+// Signature: void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20
-          (CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY)
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY)
 
 {
   int iVar1;

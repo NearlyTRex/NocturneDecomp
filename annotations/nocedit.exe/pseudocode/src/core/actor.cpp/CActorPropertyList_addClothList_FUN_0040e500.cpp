@@ -2,13 +2,11 @@
 // Address: 0040e500
 // Address Range: [[0040e500, 0040e591]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500 (CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500(CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count)
 
 #include "nocturne.h"
 
-CActorProperty * __cdecl
-core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500
-          (CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count)
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500(CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count)
 
 {
   CActorProperty *in_EAX;

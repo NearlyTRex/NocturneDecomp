@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CHighPriestOfGardath * __cdecl
-core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_004f7b70(CHighPriestOfGardath *this_ptr)
+CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_004f7b70(CHighPriestOfGardath *this_ptr)
 
 {
   char cVar1;

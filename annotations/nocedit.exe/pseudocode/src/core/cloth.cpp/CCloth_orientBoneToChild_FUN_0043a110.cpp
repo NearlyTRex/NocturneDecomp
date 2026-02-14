@@ -2,13 +2,11 @@
 // Address: 0043a110
 // Address Range: [[0043a110, 0043a2af]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110 (CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
+// Signature: void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110
-          (CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
+void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 {
   CSkeleton *this_ptr_00;

@@ -2,13 +2,11 @@
 // Address: 0040e2d0
 // Address Range: [[0040e2d0, 0040e2f4]]
 // Convention: __cdecl
-// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0 (CActorPropertyList *this_ptr,char *property_name,void *data_ptr)
+// Signature: CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0(CActorPropertyList *this_ptr,char *property_name,void *data_ptr)
 
 #include "nocturne.h"
 
-CActorProperty * __cdecl
-core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
-          (CActorPropertyList *this_ptr,char *property_name,void *data_ptr)
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0(CActorPropertyList *this_ptr,char *property_name,void *data_ptr)
 
 {
   CActorProperty *pCVar1;

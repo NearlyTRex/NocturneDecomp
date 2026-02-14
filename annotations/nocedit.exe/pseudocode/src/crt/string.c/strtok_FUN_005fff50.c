@@ -22,7 +22,7 @@ char * __cdecl strtok(char *str,char *delimiters)
       return (char *)0x0;
     }
   }
-  FUN_00607080();
+  FUN_00607080(local_28,delimiters);
   while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVar1 & 7]) != 0))) {
     str = (char *)((byte *)str + 1);
   }

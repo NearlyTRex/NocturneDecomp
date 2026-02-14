@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 86,
-        "message": "use of undeclared identifier 'stack0xffffffb0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 186,
+    "complexity_score": 172,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 106,
-    "suspect_count": 7,
+    "pseudocode_lines": 107,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 400
+    "total_lines": 401
   },
   "cross_references": [
     {
@@ -60,7 +52,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0 (CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state )"
   },
   "function_calls": [
     {
@@ -348,49 +340,42 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 28,
       "match": "ABS",
-      "text": "ABS((actor->location).position.y - (this_ptr->base).location.position.y)) ||",
+      "text": "if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 28,
       "match": "ABS",
-      "text": "((float)40 < ABS(fVar1))) || ((float)40 < ABS(fVar4))) {",
+      "text": "if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 29,
       "match": "ABS",
-      "text": "((float)40 < ABS(fVar1))) || ((float)40 < ABS(fVar4))) {",
+      "text": "|| ((float)40 < ABS(local_50.z))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 35,
       "match": "SQRT",
-      "text": "local_2c = SQRT(fVar4 * fVar4 + fVar1 * fVar1);",
+      "text": "local_2c = SQRT(local_50.z * local_50.z + local_50.x * local_50.x);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xffffffb0",
-      "text": "(&this_ptr->base,&local_44,(CVector3f *)&stack0xffffffb0);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 84,
       "match": "ABS",
       "text": "if ((float)0.17453292519444399 < ABS(this_ptr->turn_angle_accumulator)) goto LAB_0042c771;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 88,
       "match": "ABS",
       "text": "if (ABS(this_ptr->turn_angle_accumulator) < (float)0.034906585038888903) {",
       "type": "decompiler_intrinsic"

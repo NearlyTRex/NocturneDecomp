@@ -2,13 +2,11 @@
 // Address: 004825c0
 // Address Range: [[004825c0, 004828aa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0 (CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
+// Signature: void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0
-          (CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
+void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
 
 {
   int *piVar1;

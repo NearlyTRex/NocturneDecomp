@@ -4,31 +4,31 @@
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 50,
+        "line": 48,
         "message": "assigning to 'CHero *' from incompatible type 'void *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 51,
+        "line": 49,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 51,
+        "line": 49,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 55,
+        "line": 54,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 55,
+        "line": 54,
         "message": "expected expression"
       }
     ],
@@ -37,18 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 218,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
-    "pseudocode_lines": 53,
-    "suspect_count": 15,
+    "pseudocode_lines": 52,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 191
+    "total_lines": 190
   },
   "cross_references": [
     {
@@ -68,7 +68,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920",
-    "signature": "int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920 (CDemonMission *this_ptr,int index,int param_3,void *param_4)"
+    "signature": "int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int param_3,void *param_4)"
   },
   "function_calls": [
     {
@@ -263,107 +263,121 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
-      "text": "(CDemonMission *this_ptr,int index,int param_3,void *param_4)",
+      "text": "int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int param_3,void *param_4)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
-      "text": "(CDemonMission *this_ptr,int index,int param_3,void *param_4)",
+      "text": "int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int param_3,void *param_4)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_4",
       "text": "if (param_4 == (void *)0x0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_3",
       "text": "(this_ptr_00,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_4",
       "text": "local_14 = param_4;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(int *)((int)",
-      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))();",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
+      "line": 42,
       "match": "code *",
-      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))();",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_4",
-      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))();",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_4",
+      "text": "(param_4,&(this_ptr_00->base).location,&(this_ptr_00->base).orient);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(int *)((int)",
       "text": "*(int *)((int)param_4 + 0x2c) = (this_ptr_00->base).location.area_id;",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 44,
       "match": "param_4",
       "text": "*(int *)((int)param_4 + 0x2c) = (this_ptr_00->base).location.area_id;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(CMotionController *)((int)",
       "text": "((CMotionController *)((int)param_4 + 0x158),0,0.0);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 46,
       "match": "param_4",
       "text": "((CMotionController *)((int)param_4 + 0x158),0,0.0);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(int *)((int)",
-      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))();",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))(param_4,0,0,0);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
+      "line": 47,
       "match": "code *",
-      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))();",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))(param_4,0,0,0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 47,
       "match": "param_4",
-      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))();",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))(param_4,0,0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_4",
+      "text": "(**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))(param_4,0,0,0);",
       "type": "unnamed_param"
     }
   ]

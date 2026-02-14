@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_glass_cpp_CGlass_addFilesToExtract_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle)
+void __cdecl core_glass_cpp_CGlass_addFilesToExtract_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle)
 
 {
   char cVar1;

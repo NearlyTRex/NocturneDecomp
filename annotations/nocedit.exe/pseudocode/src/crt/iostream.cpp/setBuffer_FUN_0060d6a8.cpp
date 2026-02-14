@@ -2,13 +2,11 @@
 // Address: 0060d6a8
 // Address Range: [[0060d6a8, 0060d724]]
 // Convention: __watcallStack
-// Signature: void __watcallStack crt_iostream_cpp_setBuffer_FUN_0060d6a8 (streambuf *this_ptr,void *new_buffer,void *buffer_end,int ownership_flag)
+// Signature: void __watcallStack crt_iostream_cpp_setBuffer_FUN_0060d6a8(streambuf *this_ptr,void *new_buffer,void *buffer_end,int ownership_flag)
 
 #include "nocturne.h"
 
-void __watcallStack
-crt_iostream_cpp_setBuffer_FUN_0060d6a8
-          (streambuf *this_ptr,void *new_buffer,void *buffer_end,int ownership_flag)
+void __watcallStack crt_iostream_cpp_setBuffer_FUN_0060d6a8(streambuf *this_ptr,void *new_buffer,void *buffer_end,int ownership_flag)
 
 {
   uint *puVar1;

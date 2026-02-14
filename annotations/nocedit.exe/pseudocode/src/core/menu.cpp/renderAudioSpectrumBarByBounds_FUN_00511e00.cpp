@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_00511e00(int x_center,int y_bottom,int y_top)
+void __cdecl core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_00511e00(int x_center,int y_bottom,int y_top)
 
 {
   core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(x_center,y_top,(y_top - y_bottom) + 1);

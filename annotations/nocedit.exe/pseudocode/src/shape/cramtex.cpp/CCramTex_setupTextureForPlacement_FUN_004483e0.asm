@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_cramtex_cpp_CCramTex_setupTextureForPlacement_FUN_004483e0 (CCramTex *this_ptr,CCramTex *source)
+; __cdecl void __cdecl shape_cramtex_cpp_CCramTex_setupTextureForPlacement_FUN_004483e0(CCramTex *this_ptr,CCramTex *source)
 ;
 ; Parameters:
 ; CCramTex *       Stack[0x4]:4   this_ptr

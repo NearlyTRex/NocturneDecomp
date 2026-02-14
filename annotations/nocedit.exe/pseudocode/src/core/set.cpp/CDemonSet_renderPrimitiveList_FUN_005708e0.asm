@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_005708e0 (CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count)
+; __cdecl void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_005708e0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

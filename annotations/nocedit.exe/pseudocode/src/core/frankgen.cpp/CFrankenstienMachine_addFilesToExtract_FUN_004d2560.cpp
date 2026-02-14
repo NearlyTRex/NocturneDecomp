@@ -2,13 +2,11 @@
 // Address: 004d2560
 // Address Range: [[004d2560, 004d25c4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560 (CFrankenstienMachine *this_ptr,_FILE *file_handle)
+// Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560(CFrankenstienMachine *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl
-core_frankgen_cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560
-          (CFrankenstienMachine *this_ptr,_FILE *file_handle)
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560(CFrankenstienMachine *this_ptr,_FILE *file_handle)
 
 {
   core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(&this_ptr->base,file_handle);

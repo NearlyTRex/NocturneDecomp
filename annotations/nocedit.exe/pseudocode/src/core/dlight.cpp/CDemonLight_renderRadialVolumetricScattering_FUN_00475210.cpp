@@ -8,8 +8,7 @@
 
 /* WARNING: Removing unreachable block (ram,0x0047586d) */
 
-void __cdecl
-core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemonLight *this_ptr)
+void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemonLight *this_ptr)
 
 {
   float fVar1;
@@ -163,27 +162,27 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
                    (CVector3i *)local_98);
         this_ptr_00 = g_CDemonRendererPtr2;
         g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = local_44;
-        this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;
+        this_ptr_00->vertex_buffer_ptr->fog = 0xffff;
         this_ptr_00->vertex_buffer_ptr->color = 0xffff;
-        this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;
+        this_ptr_00->vertex_buffer_ptr->light = 0xffff;
         this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
         this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
         this_ptr_00->vertex_buffer_ptr[1].w_recip = local_44;
-        this_ptr_00->vertex_buffer_ptr[1].fog = 9.18341e-41;
+        this_ptr_00->vertex_buffer_ptr[1].fog = 0xffff;
         this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
-        this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;
+        this_ptr_00->vertex_buffer_ptr[1].light = 0xffff;
         this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
         this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
         this_ptr_00->vertex_buffer_ptr[2].w_recip = local_40;
-        this_ptr_00->vertex_buffer_ptr[2].fog = 9.18341e-41;
+        this_ptr_00->vertex_buffer_ptr[2].fog = 0xffff;
         this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
-        this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;
+        this_ptr_00->vertex_buffer_ptr[2].light = 0xffff;
         this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
         this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
         this_ptr_00->vertex_buffer_ptr[3].w_recip = local_40;
-        this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;
+        this_ptr_00->vertex_buffer_ptr[3].fog = 0xffff;
         this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
-        this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;
+        this_ptr_00->vertex_buffer_ptr[3].light = 0xffff;
         this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
         iVar4 = iVar4 + 1;
         this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;

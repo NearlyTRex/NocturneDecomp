@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 28,
+        "line": 27,
         "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 83,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 32,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 103
+    "total_lines": 102
   },
   "cross_references": [],
   "function": {
@@ -140,28 +140,28 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000010",
       "text": "iVar2 = width * in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(byte *)((int)",
       "text": "} while (puVar3 < (byte *)((int)bitmap_data + iVar2));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(void *)((int)",
       "text": "bitmap_data = (void *)((int)bitmap_data + iVar2);",
       "type": "pointer_cast"

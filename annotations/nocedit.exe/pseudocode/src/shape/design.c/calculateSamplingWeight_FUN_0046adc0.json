@@ -4,55 +4,55 @@
       {
         "category": "other",
         "column": 40,
-        "line": 17,
+        "line": 15,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 17,
+        "line": 15,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 18,
+        "line": 16,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 22,
+        "line": 20,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 23,
+        "line": 21,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 23,
+        "line": 21,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 24,
+        "line": 22,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 24,
+        "line": 22,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 25,
+        "line": 23,
         "message": "member reference base type 'double' is not a structure or union"
       }
     ],
@@ -61,18 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 223,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 16,
     "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 60
+    "total_lines": 58
   },
   "cross_references": [
     {
@@ -93,7 +93,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_calculateSamplingWeight_FUN_0046adc0",
-    "signature": "double __cdecl shape_design_c_calculateSamplingWeight_FUN_0046adc0 (double current_pos,double start_coord,double end_coord)"
+    "signature": "double __cdecl shape_design_c_calculateSamplingWeight_FUN_0046adc0(double current_pos,double start_coord,double end_coord)"
   },
   "function_calls": [],
   "globals": [],
@@ -184,133 +184,133 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 5,
       "match": "in_stack_00000004",
       "text": "uint in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 10,
+      "line": 8,
       "match": "._0_4_",
       "text": "local_18 = (double)CONCAT44(end_coord._0_4_,start_coord._4_4_) -",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 10,
+      "line": 8,
       "match": "._4_4_",
       "text": "local_18 = (double)CONCAT44(end_coord._0_4_,start_coord._4_4_) -",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
+      "line": 8,
       "match": "CONCAT44",
       "text": "local_18 = (double)CONCAT44(end_coord._0_4_,start_coord._4_4_) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 11,
+      "line": 9,
       "match": "._0_4_",
       "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 9,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "if ((double)CONCAT44(current_pos._0_4_,in_stack_00000004) <",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 15,
+      "line": 13,
       "match": "._0_4_",
       "text": "if ((double)CONCAT44(current_pos._0_4_,in_stack_00000004) <",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
+      "line": 13,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44(current_pos._0_4_,in_stack_00000004) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 16,
+      "line": 14,
       "match": "._0_4_",
       "text": "(double)CONCAT44(start_coord._0_4_,current_pos._4_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 16,
+      "line": 14,
       "match": "._4_4_",
       "text": "(double)CONCAT44(start_coord._0_4_,current_pos._4_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 14,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(start_coord._0_4_,current_pos._4_4_)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 17,
+      "line": 15,
       "match": "._0_4_",
       "text": "local_18 = ((double)CONCAT44(start_coord._0_4_,current_pos._4_4_) -",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 17,
+      "line": 15,
       "match": "._4_4_",
       "text": "local_18 = ((double)CONCAT44(start_coord._0_4_,current_pos._4_4_) -",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 15,
       "match": "CONCAT44",
       "text": "local_18 = ((double)CONCAT44(start_coord._0_4_,current_pos._4_4_) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004)) * local_18;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 18,
+      "line": 16,
       "match": "._0_4_",
       "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004)) * local_18;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 16,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004)) * local_18;",
       "type": "decompiler_intrinsic"

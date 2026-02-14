@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_icepick_cpp_CIcePick_addFilesToExtract_FUN_004f97c0(CIcePick *this_ptr,_FILE *file_handle)
+void __cdecl core_icepick_cpp_CIcePick_addFilesToExtract_FUN_004f97c0(CIcePick *this_ptr,_FILE *file_handle)
 
 {
   core_hero_cpp_CHero_addFilesToExtract_FUN_004f3fa0(&this_ptr->base,file_handle);

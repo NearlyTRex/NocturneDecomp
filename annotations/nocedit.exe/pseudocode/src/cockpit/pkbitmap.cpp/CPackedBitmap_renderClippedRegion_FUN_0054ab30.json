@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 47,
-        "line": 42,
-        "message": "comparison of distinct pointer types ('char *' and 'ushort *' (aka 'unsigned short *'))"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 136,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 66,
-    "suspect_count": 6,
+    "pseudocode_lines": 64,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 223
+    "total_lines": 221
   },
   "cross_references": [
     {
@@ -43,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30 (CPackedBitmap *this_ptr,int dest_x,int dest_y,int clip_left,int start_row,int clip_right, int end_row)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30(CPackedBitmap *this_ptr,int dest_x,int dest_y,int clip_left,int start_row,int clip_right,int end_row)"
   },
   "function_calls": [
     {
@@ -219,46 +211,32 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
-      "text": "ushort *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 28,
       "match": "(int *)((int)",
       "text": "piVar6 = (int *)((int)this_ptr->row_pointers + local_20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 31,
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)g_ScreenBufferArray + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(ushort *)((int)",
-      "text": "puVar8 = (ushort *)((int)src_buffer + (count + 3 & 0xfffffffc));",
+      "text": "puVar9 = (ushort *)((int)src_buffer + (count + 3 & 0xfffffffc));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(ushort *)((int)",
       "text": "src_buffer = (ushort *)((int)src_buffer + (clip_left - uVar3));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 54,
-      "match": "unaff_ESI",
-      "text": "if (unaff_ESI <= puVar8) goto LAB_0054abe8;",
-      "type": "unaffected_reg"
     }
   ]
 }

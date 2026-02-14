@@ -13,18 +13,17 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,
   char *str1;
   int iVar2;
   int iVar3;
-  _FILE *unaff_EBP;
   char *pcVar4;
   CDemonActor *pCVar5;
-  _FILE *in_stack_0000000c;
-  char acStack_d8 [96];
+  char local_dc [100];
   char local_78 [100];
   _FILE *local_14;
   
   str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr);
+  local_dc[0] = '\0';
   local_78[0] = '\0';
-  _fscanf(file_handle," { %s \"%[^\"]\"\n",&stack0xffffff24,local_78);
-  iVar2 = stricmp(str1,&stack0xffffff24);
+  _fscanf(file_handle," { %s \"%[^\"]\"\n",local_dc,local_78);
+  iVar2 = stricmp(str1,local_dc);
   if (iVar2 != 0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x7b7;
@@ -50,23 +49,23 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,
                     /* this must be where it does the reading of the actual actor text and filling
                        obj details */
   (*((this_ptr->vtable)._ub)->archive)(this_ptr);
-  acStack_d8[0] = '\0';
-  local_78[4] = 0;
-  _fscanf(in_stack_0000000c," } %s \"%[^\"]\"\n",acStack_d8);
-  iVar3 = stricmp(str1,acStack_d8);
+  local_dc[0] = '\0';
+  local_78[0] = '\0';
+  _fscanf(file_handle," } %s \"%[^\"]\"\n",local_dc,local_78);
+  iVar3 = stricmp(str1,local_dc);
   if ((iVar3 != 0) ||
-     (iVar3 = stricmp(this_ptr->actor_name,local_78 + 4), iVar3 != 0)) {
+     (iVar3 = stricmp(this_ptr->actor_name,local_78), iVar3 != 0)) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x7d4;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("End of actor file tag mismatch for class %s name \"%s\"",str1);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("End of actor file tag mismatch for class %s name \"%s\"",str1,this_ptr);
   }
-  if ((in_stack_0000000c->_flag & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x7d9;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("IO Error after reading %s \"%s\"",str1);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("IO Error after reading %s \"%s\"",str1,this_ptr);
   }
   g_CurrentActorBeingProcessed = pCVar5;
   g_ActorReadingMode = iVar2;
-  g_ActorDataFile = unaff_EBP;
+  g_ActorDataFile = local_14;
   return;
 }

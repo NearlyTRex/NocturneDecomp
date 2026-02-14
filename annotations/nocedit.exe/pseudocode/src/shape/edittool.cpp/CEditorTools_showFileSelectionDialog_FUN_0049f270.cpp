@@ -2,14 +2,11 @@
 // Address: 0049f270
 // Address Range: [[0049f270, 0049f41a]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag,uint unknown)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,int auto_select_flag,uint unknown)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-          (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,
-          int auto_select_flag,uint unknown)
+int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,int auto_select_flag,uint unknown)
 
 {
   int iVar1;

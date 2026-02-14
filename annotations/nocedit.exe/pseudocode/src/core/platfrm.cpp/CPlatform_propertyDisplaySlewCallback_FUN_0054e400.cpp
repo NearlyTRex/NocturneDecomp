@@ -2,13 +2,11 @@
 // Address: 0054e400
 // Address Range: [[0054e400, 0054e462]]
 // Convention: __cdecl
-// Signature: void __cdecl core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400 (CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400(CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400
-          (CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
+void __cdecl core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400(CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
   char cVar1;

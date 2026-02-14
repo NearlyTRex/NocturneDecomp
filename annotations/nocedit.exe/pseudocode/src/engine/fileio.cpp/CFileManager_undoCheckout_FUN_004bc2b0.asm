@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0 (CFileManager *this_ptr,CCheckOutItem *checkout_item)
+; __cdecl int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

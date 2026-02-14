@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dstrender_cpp_renderDepth16BitConditional_FUN_0049077d (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; __cdecl void __cdecl core_dstrender_cpp_renderDepth16BitConditional_FUN_0049077d(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 ;
 ;
 ; XREF[1]:

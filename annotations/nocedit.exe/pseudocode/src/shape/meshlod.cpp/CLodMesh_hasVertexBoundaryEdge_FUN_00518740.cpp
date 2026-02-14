@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_meshlod_cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740(CLodMesh *this_ptr,int vertex_idx)
+int __cdecl shape_meshlod_cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740(CLodMesh *this_ptr,int vertex_idx)
 
 {
   int iVar1;

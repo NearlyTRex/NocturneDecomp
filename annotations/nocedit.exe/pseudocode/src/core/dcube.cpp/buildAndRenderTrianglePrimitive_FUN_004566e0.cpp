@@ -2,13 +2,11 @@
 // Address: 004566e0
 // Address Range: [[004566e0, 0045674e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0 (CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
+// Signature: void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0
-          (CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
+void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
 
 {
   SMRGLHeaderPrimitive local_30;

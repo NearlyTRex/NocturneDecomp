@@ -2,11 +2,11 @@
 // Address: 0060b2b8
 // Address Range: [[0060b2b8, 0060b2d3]]
 // Convention: __watcallRegister
-// Signature: ulonglong crt_math_c_multiply64_FUN_0060b2b8(ulonglong a,ulonglong b)
+// Signature: ulonglong __watcallRegister crt_math_c_multiply64_FUN_0060b2b8(ulonglong a,ulonglong b)
 
 #include "nocturne.h"
 
-ulonglong multiply64(ulonglong a,ulonglong b)
+ulonglong __watcallRegister multiply64(ulonglong a,ulonglong b)
 
 {
   if (((int)(a >> 0x20) == 0) && ((int)(b >> 0x20) == 0)) {

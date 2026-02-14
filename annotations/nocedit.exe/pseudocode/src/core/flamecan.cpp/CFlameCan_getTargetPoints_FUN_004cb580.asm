@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_flamecan_cpp_CFlameCan_getTargetPoints_FUN_004cb580 (CFlameCan *this_ptr,CVector3f *out_points_array)
+; __cdecl int __cdecl core_flamecan_cpp_CFlameCan_getTargetPoints_FUN_004cb580(CFlameCan *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CFlameCan *      Stack[0x4]:4   this_ptr

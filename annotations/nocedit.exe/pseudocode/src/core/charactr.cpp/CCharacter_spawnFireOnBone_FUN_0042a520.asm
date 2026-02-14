@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520 (CCharacter *this_ptr,int bone_index,int target_bone_index)
+; __cdecl void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,int bone_index,int target_bone_index)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

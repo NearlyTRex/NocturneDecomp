@@ -2,13 +2,11 @@
 // Address: 004362e0
 // Address Range: [[004362e0, 0043640d]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_clipper_c_clipPolygonTopPlane_FUN_004362e0 (SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
+// Signature: int __cdecl engine_clipper_c_clipPolygonTopPlane_FUN_004362e0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_clipper_c_clipPolygonTopPlane_FUN_004362e0
-          (SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
+int __cdecl engine_clipper_c_clipPolygonTopPlane_FUN_004362e0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 
 {
   SRenderVertex *v2;

@@ -2,13 +2,11 @@
 // Address: 00411b30
 // Address Range: [[00411b30, 00411bfb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30 (CAmmoBox *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30(CAmmoBox *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30
-          (CAmmoBox *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30(CAmmoBox *this_ptr,CActorPropertyList *property_list)
 
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);

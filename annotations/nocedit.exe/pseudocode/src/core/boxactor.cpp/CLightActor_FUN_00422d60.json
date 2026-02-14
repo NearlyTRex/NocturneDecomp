@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 171,
+    "complexity_score": 133,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 96,
-    "suspect_count": 6,
+    "pseudocode_lines": 93,
+    "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
-      "unaffected_reg",
       "undefined_data"
     ],
-    "total_lines": 319
+    "total_lines": 316
   },
   "cross_references": [
     {
@@ -230,36 +229,15 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_EBP",
-      "text": "*(uint *)(unaff_EBP + 0x38) = 0x42600000;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_EBP",
-      "text": "*(uint *)(unaff_EBP + 0x38) = 0x42600000;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 77,
       "match": "DAT_008229ac",
       "text": "iVar3 = DAT_008229ac;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 88,
       "match": "DAT_008229ac",
       "text": "DAT_008229ac = 1;",
       "type": "undefined_data"

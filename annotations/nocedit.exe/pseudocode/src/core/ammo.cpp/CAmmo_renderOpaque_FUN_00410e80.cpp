@@ -11,10 +11,10 @@ int __cdecl core_ammo_cpp_CAmmo_renderOpaque_FUN_00410e80(CAmmo *this_ptr)
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
+  CBoundingBox3D CStack_20;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                          (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_20);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);

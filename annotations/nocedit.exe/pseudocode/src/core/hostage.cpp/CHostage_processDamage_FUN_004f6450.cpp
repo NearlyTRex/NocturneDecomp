@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this_ptr,SDamageInfo *damage_info)
 
 {
   CDeformableModelInstance *this_ptr_00;

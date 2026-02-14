@@ -11,20 +11,17 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delt
 {
   CCharacter *pCVar1;
   CCharacter *this_ptr_00;
-  float unaff_EBX;
-  float unaff_EBP;
   int iVar2;
-  float unaff_EDI;
   int iVar3;
-  byte auStack_88 [84];
+  SDamageInfo SStack_98;
+  SCollisionInfo SStack_5c;
   CBoundingBox3D local_34;
-  float fStack_1c;
-  float fStack_18;
-  float fStack_14;
+  CVector3f CStack_1c;
   
   if (this_ptr->carrier == (CDemonActor *)0x0) {
-    if (this_ptr->wolf_in_trap != 0) {
-      iVar2 = (**(code **)(*(int *)(this_ptr->wolf_in_trap + 0x154) + 0x120))();
+    iVar2 = this_ptr->wolf_in_trap;
+    if (iVar2 != 0) {
+      iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x120))(iVar2);
       if (iVar2 == 0) {
         return;
       }
@@ -40,20 +37,18 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delt
                                g_CWerewolfClassInfo.name_hash);
       if ((this_ptr_00 != (CCharacter *)0x0) &&
          (*(int *)(this_ptr_00[1].base.create_event + 0x4c) == 0)) {
-        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_88 + 0x34));
-        (*((this_ptr_00->base).vtable._ub)->hasCollision)
-                  ((CDemonActor *)this_ptr_00,(SCollisionInfo *)(auStack_88 + 0x34));
+        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_5c);
+        (*((this_ptr_00->base).vtable._ub)->hasCollision)((CDemonActor *)this_ptr_00,&SStack_5c);
         if (((this_ptr_00->base).location.position.y <=
-             (this_ptr->base).location.position.y + fStack_14) &&
-           ((this_ptr->base).location.position.y + local_34.max.z <=
-            (this_ptr_00->base).location.position.y + local_34.min.x)) {
+             (this_ptr->base).location.position.y + local_34.max.y) &&
+           ((this_ptr->base).location.position.y + local_34.min.y <=
+            (this_ptr_00->base).location.position.y + SStack_5c.cylinder_top_y)) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                    (&this_ptr->base,(CVector3f *)&stack0xfffffff4,
-                     &(this_ptr_00->base).location.position);
-          if ((((local_34.max.y <= unaff_EDI + local_34.min.y) &&
-               (unaff_EDI - local_34.min.y <= fStack_18)) &&
-              (fStack_1c <= unaff_EBX + local_34.min.y)) &&
-             (unaff_EBX - local_34.min.y <= unaff_EBP)) {
+                    (&this_ptr->base,&CStack_1c,&(this_ptr_00->base).location.position);
+          if ((((local_34.min.x <= CStack_1c.x + SStack_5c.cylinder_radius) &&
+               (CStack_1c.x - SStack_5c.cylinder_radius <= local_34.max.x)) &&
+              (local_34.min.z <= CStack_1c.z + SStack_5c.cylinder_radius)) &&
+             (CStack_1c.z - SStack_5c.cylinder_radius <= local_34.max.z)) {
             this_ptr->wolf_in_trap = (int)this_ptr_00;
             pCVar1 = this_ptr_00 + 1;
             (pCVar1->base).create_event[0x50] = '\0';
@@ -61,10 +56,9 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delt
             (pCVar1->base).create_event[0x52] = '\0';
             (pCVar1->base).create_event[0x53] = '@';
             *(CTrap **)(this_ptr_00[1].base.create_event + 0x4c) = this_ptr;
-            core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_88);
-            auStack_88._4_4_ = 10.0;
-            (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)
-                      (this_ptr_00,(SDamageInfo *)auStack_88);
+            core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_98);
+            SStack_98.damage_amount = 10.0;
+            (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,&SStack_98);
             return;
           }
         }

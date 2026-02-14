@@ -2,13 +2,11 @@
 // Address: 00469220
 // Address Range: [[00469220, 00469419]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_addQuadPolygonOctant_FUN_00469220 (uint vertex_index_1,uint vertex_index_2,uint vertex_index_3,uint vertex_index_4)
+// Signature: void __cdecl shape_design_c_addQuadPolygonOctant_FUN_00469220(uint vertex_index_1,uint vertex_index_2,uint vertex_index_3,uint vertex_index_4)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_design_c_addQuadPolygonOctant_FUN_00469220
-          (uint vertex_index_1,uint vertex_index_2,uint vertex_index_3,uint vertex_index_4)
+void __cdecl shape_design_c_addQuadPolygonOctant_FUN_00469220(uint vertex_index_1,uint vertex_index_2,uint vertex_index_3,uint vertex_index_4)
 
 {
   int iVar1;

@@ -9,7 +9,6 @@
 void __cdecl CondCallDoNothing(void)
 
 {
-  ushort in_FPUControlWord;
   float10 *in_stack_00000004;
   int in_stack_00000008;
   
@@ -22,7 +21,7 @@ void __cdecl CondCallDoNothing(void)
       FUN_00603c74();
       *in_stack_00000004 = (float10)CONCAT28(0x3fff,0x8000000000000000) * *in_stack_00000004;
     }
-    FUN_0060445e(in_FPUControlWord);
+    FUN_0060445e();
     return;
   }
   return;

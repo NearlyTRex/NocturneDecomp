@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_vessel_cpp_CCryptVessel_pickup_FUN_005e9140(CCryptVessel *this_ptr,CDemonActor *carrier)
+void __cdecl core_vessel_cpp_CCryptVessel_pickup_FUN_005e9140(CCryptVessel *this_ptr,CDemonActor *carrier)
 
 {
   this_ptr->carrier = carrier;

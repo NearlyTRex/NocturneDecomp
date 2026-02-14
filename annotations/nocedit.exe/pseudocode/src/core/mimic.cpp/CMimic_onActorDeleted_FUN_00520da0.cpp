@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_mimic_cpp_CMimic_onActorDeleted_FUN_00520da0(CMimic *this_ptr,CDemonActor *deleted_actor)
+void __cdecl core_mimic_cpp_CMimic_onActorDeleted_FUN_00520da0(CMimic *this_ptr,CDemonActor *deleted_actor)
 
 {
   if (deleted_actor == this_ptr->mirror_plane_actor) {

@@ -16,13 +16,13 @@
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 43,
+        "line": 44,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 43,
+        "line": 44,
         "message": "expected expression"
       }
     ],
@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 98,
+    "complexity_score": 99,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 49,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 152
+    "total_lines": 153
   },
   "cross_references": [],
   "function": {
@@ -213,9 +213,9 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 36,
+      "line": 37,
       "match": "code *",
-      "text": "(*(code *)**(uint **)((int)(this_ptr->poly_array->uv_coords + 5) + iVar3 + 4))();",
+      "text": "(*(code *)**(uint **)(iVar2 + 100))(iVar2,this_ptr);",
       "type": "unresolved_funcptr"
     }
   ],

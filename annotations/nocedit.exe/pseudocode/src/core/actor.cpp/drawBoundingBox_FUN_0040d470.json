@@ -3,45 +3,9 @@
     "errors": [
       {
         "category": "other",
-        "column": 21,
-        "line": 82,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 86,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 87,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 92,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "other",
         "column": 25,
         "line": 108,
         "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 109,
-        "message": "C-style cast from 'struct SRenderVertex *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 112,
-        "message": "cannot cast from type 'float' to pointer type 'SProjectedVertex *'"
       },
       {
         "category": "other",
@@ -57,39 +21,9 @@
       },
       {
         "category": "other",
-        "column": 21,
-        "line": 117,
-        "message": "C-style cast from 'struct SRenderVertex *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 120,
-        "message": "cannot cast from type 'float' to pointer type 'SProjectedVertex *'"
-      },
-      {
-        "category": "other",
         "column": 50,
         "line": 120,
         "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 146,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 149,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 154,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
@@ -99,20 +33,44 @@
       },
       {
         "category": "other",
-        "column": 21,
-        "line": 171,
-        "message": "C-style cast from 'struct SRenderVertex *' to 'float' is not allowed"
+        "column": 50,
+        "line": 174,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 174,
-        "message": "cannot cast from type 'float' to pointer type 'SProjectedVertex *'"
+        "column": 25,
+        "line": 178,
+        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 174,
+        "line": 182,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 232,
+        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 236,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 240,
+        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 244,
         "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
       }
     ],
@@ -121,16 +79,15 @@
   },
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 634,
+    "complexity_score": 569,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 259,
-    "suspect_count": 36,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "suspect_float"
+      "pointer_cast"
     ],
     "total_lines": 611
   },
@@ -753,20 +710,6 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 77,
-      "match": "5.953746e-39",
-      "text": "local_160.light = 5.953746e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 82,
-      "match": "5.95378e-39",
-      "text": "local_160.light = 5.95378e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ROUND",
@@ -837,20 +780,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 138,
-      "match": "5.954281e-39",
-      "text": "local_160.light = 5.954281e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 144,
-      "match": "5.954315e-39",
-      "text": "local_160.light = 5.954315e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 160,
       "match": "ROUND",
@@ -919,20 +848,6 @@
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 201,
-      "match": "5.954842e-39",
-      "text": "local_160.light = 5.954842e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 206,
-      "match": "5.95487e-39",
-      "text": "local_160.light = 5.95487e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

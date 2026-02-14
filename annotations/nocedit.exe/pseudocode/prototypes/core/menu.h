@@ -17,7 +17,7 @@ void __cdecl renderAudioSpectrumBar(int x_center,int y_top,int height_half);
 
 // Original: core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
 // Address: 00510000
-int __cdecl renderMenuAndGetChoice(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position, int spacing_flag);
+int __cdecl renderMenuAndGetChoice(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,int spacing_flag);
 
 // Original: core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410
 // Address: 00510410

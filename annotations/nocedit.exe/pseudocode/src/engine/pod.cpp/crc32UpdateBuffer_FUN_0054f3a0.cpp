@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-uint __cdecl
-engine_pod_cpp_crc32UpdateBuffer_FUN_0054f3a0(uchar *data_buffer,uint byte_count,uint initial_crc)
+uint __cdecl engine_pod_cpp_crc32UpdateBuffer_FUN_0054f3a0(uchar *data_buffer,uint byte_count,uint initial_crc)
 
 {
   uchar data_byte;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910 (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height, float unknown_scale,_FILE *file_handle)
+; __cdecl void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float unknown_scale,_FILE *file_handle)
 ;
 ; Parameters:
 ; CZThumb *        Stack[0x4]:4   this_ptr

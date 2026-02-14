@@ -2,13 +2,11 @@
 // Address: 00416240
 // Address Range: [[00416240, 0041628f]]
 // Convention: __cdecl
-// Signature: int __cdecl core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00416240 (CBatCreature *this_ptr,CVector3f *out_points_array)
+// Signature: int __cdecl core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00416240(CBatCreature *this_ptr,CVector3f *out_points_array)
 
 #include "nocturne.h"
 
-int __cdecl
-core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00416240
-          (CBatCreature *this_ptr,CVector3f *out_points_array)
+int __cdecl core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00416240(CBatCreature *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

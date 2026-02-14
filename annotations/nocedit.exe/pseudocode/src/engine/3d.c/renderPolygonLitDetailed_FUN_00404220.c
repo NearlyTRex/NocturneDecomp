@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *polygon_info)
 
 {
   SMRGLHeaderBasic *pSVar1;
@@ -25,32 +24,32 @@ engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *polygon_
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
 LAB_00404269:
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
       }
       else {
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
       }
     }
     else if (g_BitsPerPixel == 0x20) {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
     }
     else {
 LAB_00404350:
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
   }
   else if (g_MMXSupported == 0) {
     if (g_BitsPerPixel == 0x20) goto LAB_00404269;
-    g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
+    g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
   }
   else {
     if (g_BitsPerPixel != 0x20) goto LAB_00404350;
-    g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+    g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
   }
   engine_3d_c_calculatePolygonLighting_FUN_00403a00(polygon_info);
-  g_RenderStateFlags = RENDER_LIT_DETAILED;
+  g_RenderStateFlags.dword = RENDER_LIT_DETAILED;
   if (g_CurrentAlphaValue < 0xff) {
-    g_RenderStateFlags = RENDER_ALPHA_DETAILED;
+    g_RenderStateFlags.dword = RENDER_ALPHA_DETAILED;
   }
   vertex_count = 0;
   iVar6 = 0;

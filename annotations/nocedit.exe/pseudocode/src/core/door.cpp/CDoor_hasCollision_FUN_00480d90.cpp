@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_door_cpp_CDoor_hasCollision_FUN_00480d90(CDoor *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_door_cpp_CDoor_hasCollision_FUN_00480d90(CDoor *this_ptr,SCollisionInfo *collision_info)
 
 {
   CKeyFramedModel *pCVar1;

@@ -2,13 +2,11 @@
 // Address: 0044c780
 // Address Range: [[0044c780, 0044c855]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780 (CDemonCamera *this_ptr,CRect *rect_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780(CDemonCamera *this_ptr,CRect *rect_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780
-          (CDemonCamera *this_ptr,CRect *rect_ptr)
+void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780(CDemonCamera *this_ptr,CRect *rect_ptr)
 
 {
   int *piVar1;

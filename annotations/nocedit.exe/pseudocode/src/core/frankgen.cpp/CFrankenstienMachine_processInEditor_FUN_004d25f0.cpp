@@ -6,15 +6,12 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_frankgen_cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0(CFrankenstienMachine *this_ptr)
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0(CFrankenstienMachine *this_ptr)
 
 {
   int iVar1;
   CDemonActor *pCVar2;
-  CFrankenstienMachine *unaff_ESI;
-  float unaff_retaddr;
-  float in_stack_00000008;
+  CFrankenstienMachine *this_ptr_00;
   
   switch(this_ptr->which_part) {
   case 1:
@@ -29,19 +26,25 @@ core_frankgen_cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0(CFrankenstie
   case 5:
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
-  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  this_ptr_00 = (CFrankenstienMachine *)0x3f800000;
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  if (iVar1 != 0) {
+    this_ptr_00 = (CFrankenstienMachine *)0x40800000;
+  }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
   if (iVar1 != 0) {
-    unaff_ESI = (CFrankenstienMachine *)((float)unaff_ESI * (float)0.25);
+    this_ptr_00 = (CFrankenstienMachine *)((float)this_ptr_00 * (float)0.25);
   }
-  pCVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(unaff_ESI);
+  pCVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(this_ptr_00);
   iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
   if (iVar1 != 0) {
-    *(float *)(pCVar2[1].actor_name + 4) = *(float *)(pCVar2[1].actor_name + 4) + unaff_retaddr;
+    *(float *)(pCVar2[1].actor_name + 4) = *(float *)(pCVar2[1].actor_name + 4) + (float)this_ptr_00
+    ;
   }
   iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
   if (iVar1 != 0) {
-    *(float *)(pCVar2[1].actor_name + 4) = *(float *)(pCVar2[1].actor_name + 4) - in_stack_00000008;
+    *(float *)(pCVar2[1].actor_name + 4) = *(float *)(pCVar2[1].actor_name + 4) - (float)this_ptr_00
+    ;
   }
   if (*(float *)(pCVar2[1].actor_name + 4) < 0.0) {
     *(float *)(pCVar2[1].actor_name + 4) = 2300.0f + *(float *)(pCVar2[1].actor_name + 4);

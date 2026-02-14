@@ -2,69 +2,51 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 31,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 34,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
+        "category": "other",
+        "column": 26,
         "line": 37,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (STexturedVertex *, STexturedVertex *, int)': type mismatch at 1st parameter ('void *' vs 'STexturedVertex *')"
+        "message": "no matching conversion for C-style cast from 'int' to '_BIT_INTEGER'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 61,
+        "line": 58,
         "message": "use of undeclared identifier 'stack0xffffff98'; did you mean 'in_stack_ffffff98'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 78,
-        "line": 69,
+        "line": 66,
         "message": "use of undeclared identifier 'stack0xffffff98'; did you mean 'in_stack_ffffff98'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 72,
-        "line": 76,
+        "line": 73,
         "message": "use of undeclared identifier 'stack0xffffff98'; did you mean 'in_stack_ffffff98'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 79,
+        "line": 76,
         "message": "use of undeclared identifier 'stack0xffffff98'; did you mean 'in_stack_ffffff98'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 28,
-        "line": 92,
-        "message": "assigning to 'RenderScanlineFunc *' (aka 'void (*)(void *, void *, int)') from incompatible type 'void (SEdgeData *, SEdgeData *, int)': type mismatch at 1st parameter ('void *' vs 'SEdgeData *')"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 106,
+        "line": 103,
+        "message": "use of undeclared identifier 'stack0xffffff98'; did you mean 'in_stack_ffffff98'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 78,
+        "line": 109,
         "message": "use of undeclared identifier 'stack0xffffff98'; did you mean 'in_stack_ffffff98'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 78,
         "line": 112,
-        "message": "use of undeclared identifier 'stack0xffffff98'; did you mean 'in_stack_ffffff98'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 78,
-        "line": 115,
         "message": "use of undeclared identifier 'stack0xffffff98'; did you mean 'in_stack_ffffff98'?"
       }
     ],
@@ -73,18 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 281,
+    "complexity_score": 278,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 12,
-    "pseudocode_lines": 116,
+    "pseudocode_lines": 113,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 401
+    "total_lines": 398
   },
   "cross_references": [],
   "function": {
@@ -97,7 +79,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face, int render_mode)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode)"
   },
   "function_calls": [
     {
@@ -182,7 +164,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -317,105 +299,105 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_ffffff98",
       "text": "int in_stack_ffffff98;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 34,
       "match": "(ushort *)((int)",
       "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 39,
       "match": "(int *)((int)",
       "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 54,
+      "line": 51,
       "match": "&stack0xffffff98",
       "text": "*(uint *)(&stack0xffffff98 + iVar2) = (uint)*puVar1;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 59,
       "match": "&stack0xffffff98",
       "text": "core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 62,
       "match": "in_stack_ffffff98",
       "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffff98);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 69,
+      "line": 66,
       "match": "&stack0xffffff98",
       "text": "engine_clipper_c_clipAndRasterize_FUN_004371b0(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 72,
+      "line": 69,
       "match": "&stack0xffffff98",
       "text": "engine_clipper_c_clipPolygonToViewport_FUN_00438420(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 72,
       "match": "(int *)((int)",
       "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 85,
       "match": "(ushort *)((int)",
       "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 99,
+      "line": 96,
       "match": "&stack0xffffff98",
       "text": "*(uint *)(&stack0xffffff98 + iVar2) = (uint)*puVar1;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 102,
       "match": "&stack0xffffff98",
       "text": "engine_drender_cpp_renderTriangleSimple_FUN_004839f0((CVector3i *)&stack0xffffff98,iVar3);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
+      "line": 105,
       "match": "&stack0xffffff98",
       "text": "core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 108,
       "match": "in_stack_ffffff98",
       "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffff98);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 112,
       "match": "(int *)((int)",
       "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"

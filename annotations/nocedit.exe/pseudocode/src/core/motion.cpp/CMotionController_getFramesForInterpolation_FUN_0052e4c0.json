@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 74,
+    "complexity_score": 71,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 46,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 161
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -51,7 +51,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0",
-    "signature": "void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 (CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1, int *out_frame2,float *out_blend_weight)"
+    "signature": "void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight)"
   },
   "function_calls": [
     {
@@ -200,14 +200,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 21,
       "match": "ROUND",
       "text": "*out_frame1 = (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 40,
       "match": "ROUND",
       "text": "*out_frame2 = (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"

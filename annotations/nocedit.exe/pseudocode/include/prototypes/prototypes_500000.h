@@ -9,7 +9,6 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFileManager.h"
-#include "types/classes/CDemonRenderer.h"
 #include "types/classes/CDemonTriangle.h"
 #include "types/classes/CInventory.h"
 #include "types/classes/CKeyActor.h"
@@ -53,7 +52,7 @@ void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_00500050(int x1,int y1,in
 void __cdecl core_inv_cpp_drawItemIconBackground_FUN_005001e0(int x1,int y1,int x2,int y2,int alpha);
 void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *this_ptr);
-int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0 (CInventory *this_ptr,uint key_mask,int show_message);
+int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0(CInventory *this_ptr,uint key_mask,int show_message);
 void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory *this_ptr,uint key_mask);
 void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_00501500(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_autoUseHealthItem_FUN_00501570(CInventory *this_ptr);
@@ -66,13 +65,13 @@ void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_00501710(CKeyActor *this_pt
 int __cdecl core_keyactor_cpp_CKeyActor_renderOpaque_FUN_005017c0(CKeyActor *this_ptr);
 CBoundingBox3D * __cdecl core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_00501830(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_00501880(CKeyActor *this_ptr);
-int __cdecl core_keyactor_cpp_CKeyActor_hasCollision_FUN_005018f0 (CKeyActor *this_ptr,SCollisionInfo *collision_info);
+int __cdecl core_keyactor_cpp_CKeyActor_hasCollision_FUN_005018f0(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_keyactor_cpp_CKeyActor_canPickup_FUN_00501900(CKeyActor *this_ptr,CDemonActor *picker);
 void __cdecl core_keyactor_cpp_CKeyActor_onPickup_FUN_00501920(CKeyActor *this_ptr,CDemonActor *owner);
-void __cdecl core_keyactor_cpp_CKeyActor_getPropertyList_FUN_00501940 (CKeyActor *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_keyactor_cpp_CKeyActor_getPropertyList_FUN_00501940(CKeyActor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_keyactor_cpp_CKeyActor_addFilesToExtract_FUN_00501990(CKeyActor *this_ptr,_FILE *file_handle);
 CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_005019b0(CKeyActor *this_ptr,uint flags);
-void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00 (CVector3i *vertex_data,SSurfacePackedNormal *data);
+void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SSurfacePackedNormal *data);
 void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *vertex_data,SSurfaceNormal *output);
 void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKeyframeModel *keyframe_model);
 SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *header);
@@ -99,7 +98,7 @@ int __cdecl core_ladder_cpp_CLadder_hasCollision_FUN_00502a40(CLadder *this_ptr,
 void __cdecl core_ladder_cpp_CLadder_FUN_00502a70(CLadder *this_ptr);
 void __cdecl core_ladder_cpp_CLadder_FUN_00502b80(CLadder *this_ptr);
 int __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_00502c90(CLadder *this_ptr);
-void __cdecl core_ladder_cpp_CLadder_getPropertyList_FUN_00502ca0 (CLadder *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_ladder_cpp_CLadder_getPropertyList_FUN_00502ca0(CLadder *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_ladder_cpp_CLadder_processInEditor_FUN_00502d00(CLadder *this_ptr);
 void __cdecl core_ladder_cpp_CLadder_showEditorHelp_FUN_00502e50(CLadder *this_ptr,int *y_pos);
 void __cdecl core_ladder_cpp_CLadder_onActorDeleted_FUN_00502e90(CLadder *this_ptr,CDemonActor *deleted_actor);
@@ -115,12 +114,12 @@ void __cdecl core_larva_cpp_CLarva_archive_FUN_00503960(CLarva *this_ptr);
 char * __cdecl core_larva_cpp_FUN_005039d0(void);
 void __cdecl core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_larva_cpp_CLarva_getTargetPoints_FUN_00503c00(CLarva *this_ptr,CVector3f *out_points_array);
-void __cdecl core_larva_cpp_CLarva_getPropertyList_FUN_00503c50 (CLarva *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_larva_cpp_CLarva_getPropertyList_FUN_00503c50(CLarva *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_larva_cpp_CLarva_addFilesToExtract_FUN_00503c90(CLarva *this_ptr,_FILE *file_handle);
 CDemonActor * __cdecl core_larva_cpp_CLarva_dtor_FUN_00503cc0(CLarva *this_ptr,uint flags);
 void __cdecl core_level_cpp_staticInit_FUN_00503d80(void);
 void __cdecl core_level_cpp_CLevelLoader_reset_FUN_00503db0(CLevelLoader *this_ptr);
-void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0 (CLevelLoader *this_ptr,int total_frames,int use_custom_viewport,int image_variant);
+void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader *this_ptr,int total_frames,int use_custom_viewport,int image_variant);
 void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *text,int clear_screen);
 void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_00504720(CLevelLoader *this_ptr);
 void __cdecl core_level_cpp_CLevelLoader_setVersion_FUN_00504750(CLevelLoader *this_ptr,int value);
@@ -138,11 +137,11 @@ CVector3f * __cdecl core_lever_cpp_CLever_FUN_00504dd0(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_archive_FUN_00504e80(CLever *this_ptr);
 int __cdecl core_lever_cpp_CLever_hasCollision_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_lever_cpp_CLever_FUN_00505080(CLever *this_ptr);
-void __cdecl core_lever_cpp_CLever_propertyDisplayTypeCallback_FUN_00505100 (CLever *this_ptr,CActorProperty *property,char *output_buffer);
-int __cdecl core_lever_cpp_CLever_propertyActionTypeCallback_FUN_00505160 (CLever *this_ptr,CActorProperty *property);
-void __cdecl core_lever_cpp_CLever_propertyDisplayStateFunc_FUN_005051a0 (CLever *this_ptr,CActorProperty *property,char *output_buffer);
-int __cdecl core_lever_cpp_CLever_propertyActionStateCallback_FUN_00505210 (CLever *this_ptr,CActorProperty *property);
-void __cdecl core_lever_cpp_CLever_getPropertyList_FUN_00505240 (CLever *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_lever_cpp_CLever_propertyDisplayTypeCallback_FUN_00505100(CLever *this_ptr,CActorProperty *property,char *output_buffer);
+int __cdecl core_lever_cpp_CLever_propertyActionTypeCallback_FUN_00505160(CLever *this_ptr,CActorProperty *property);
+void __cdecl core_lever_cpp_CLever_propertyDisplayStateFunc_FUN_005051a0(CLever *this_ptr,CActorProperty *property,char *output_buffer);
+int __cdecl core_lever_cpp_CLever_propertyActionStateCallback_FUN_00505210(CLever *this_ptr,CActorProperty *property);
+void __cdecl core_lever_cpp_CLever_getPropertyList_FUN_00505240(CLever *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_lever_cpp_CLever_addFilesToExtract_FUN_00505370(CLever *this_ptr,_FILE *file_handle);
 void __cdecl core_lever_cpp_CLever_showEditorHelp_FUN_00505390(CLever *this_ptr,int *y_pos);
 CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_00505430(CLever *this_ptr,uint flags);
@@ -155,7 +154,7 @@ void __cdecl engine_light_cpp_setLightingMultipliers_FUN_00505510(int diffuse_mu
 int __cdecl engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int world_z);
 int __cdecl engine_light_cpp_calculateLighting_FUN_00505780(int normal_x,int normal_y,int normal_z);
 int __cdecl engine_light_cpp_calculateVertexLighting_FUN_00505830(int unused_param,CVector3i *vertex_position);
-void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_00505850 (int vertex_index,CVector3i *vertex_position);
+void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_00505850(int vertex_index,CVector3i *vertex_position);
 void __cdecl core_lightgun_cpp_staticInit_FUN_00505890(void);
 CLightGun * __cdecl core_lightgun_cpp_factoryFunc_FUN_005058c0(void);
 CDemonActorType * __cdecl core_lightgun_cpp_CLightGun_getActorType_FUN_005058f0(CLightGun *this_ptr);
@@ -177,10 +176,10 @@ CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_00506b10(CLightCone *
 void __cdecl core_litecone_cpp_CLightCone_setup_FUN_00506bb0(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_process_FUN_00506bc0(CLightCone *this_ptr,float delta_time);
 int __cdecl core_litecone_cpp_CLightCone_renderTransparent_FUN_00506c20(CLightCone *this_ptr);
-CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_00506cb0 (CLightCone *this_ptr,CBoundingBox3D *out_box);
+CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_00506cb0(CLightCone *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_litecone_cpp_CLightCone_archive_FUN_00506d00(CLightCone *this_ptr);
-int __cdecl core_litecone_cpp_CLightCone_hasCollision_FUN_00506d90 (CLightCone *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_litecone_cpp_CLightCone_getPropertyList_FUN_00506da0 (CLightCone *this_ptr,CActorPropertyList *property_list);
+int __cdecl core_litecone_cpp_CLightCone_hasCollision_FUN_00506d90(CLightCone *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_litecone_cpp_CLightCone_getPropertyList_FUN_00506da0(CLightCone *this_ptr,CActorPropertyList *property_list);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_00506e30(CLightCone *this_ptr,uint flags);
 void __cdecl core_main_c_staticInit_FUN_00506e80(void);
 void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...);
@@ -200,13 +199,13 @@ CDemonActorType * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getActorType_FUN_
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_00508920(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuzzleCircle *this_ptr);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0(CMansionPuzzleCircle *this_ptr);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_005091d0 (CMansionPuzzleCircle *this_ptr,float delta_time);
-CBoundingBox3D * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_005092e0 (CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_hasCollision_FUN_00509320 (CMansionPuzzleCircle *this_ptr,SCollisionInfo *collision_info);
-float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 (CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720 (CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder);
-int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_005097d0 (CMansionPuzzleCircle *this_ptr,float x_pos,float z_pos,float *out_floor_height);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0 (CMansionPuzzleCircle *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_005091d0(CMansionPuzzleCircle *this_ptr,float delta_time);
+CBoundingBox3D * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_005092e0(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_hasCollision_FUN_00509320(CMansionPuzzleCircle *this_ptr,SCollisionInfo *collision_info);
+float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720(CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder);
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_005097d0(CMansionPuzzleCircle *this_ptr,float x_pos,float z_pos,float *out_floor_height);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0(CMansionPuzzleCircle *this_ptr,SSurfaceInfo *surface_info);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_005098f0(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509b20(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509bf0(CMansionPuzzleCircle *this_ptr);
@@ -233,16 +232,16 @@ CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_ctor_FUN_0050b110(CMirrorHack 
 void __cdecl core_manpuz_cpp_CMirrorHack_setup_FUN_0050b160(CMirrorHack *this_ptr);
 int __cdecl core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_0050b180(CMirrorHack *this_ptr);
 void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_0050b1d0(CMirrorHack *this_ptr,float delta_time);
-CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260 (CMirrorHack *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_manpuz_cpp_CMirrorHack_hasCollision_FUN_0050b2b0 (CMirrorHack *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_manpuz_cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0 (CMirrorHack *this_ptr,SSurfaceInfo *surface_info);
-void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0 (CMirrorHack *this_ptr,SInteractionInfo *out_info);
+CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_manpuz_cpp_CMirrorHack_hasCollision_FUN_0050b2b0(CMirrorHack *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_manpuz_cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0(CMirrorHack *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0(CMirrorHack *this_ptr,SInteractionInfo *out_info);
 int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_0050b340(CMirrorHack *this_ptr,CDemonActor *user);
-int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360 (CMirrorHack *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state );
+int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,COrientation *user_orientation, SInteractionState *interaction_state);
 void __cdecl core_manpuz_cpp_CMirrorHack_stopUsing_FUN_0050b3c0(CMirrorHack *this_ptr,CDemonActor *user);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPropertyList_FUN_0050b3e0 (CMansionPuzzleCircle *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPropertyList_FUN_0050b3e0(CMansionPuzzleCircle *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzleCircle *this_ptr);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_addFilesToExtract_FUN_0050b7d0 (CMansionPuzzleCircle *this_ptr,_FILE *file_handle);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_addFilesToExtract_FUN_0050b7d0(CMansionPuzzleCircle *this_ptr,_FILE *file_handle);
 void __cdecl core_manpuz_cpp_CMirrorHack_addFilesToExtract_FUN_0050b810(CMirrorHack *this_ptr,_FILE *file_handle);
 CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_dtor_FUN_0050b840(CMirrorHack *this_ptr,uint flags);
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_0050b890(CMansionPuzzleCircle *this_ptr,uint flags);
@@ -268,9 +267,9 @@ int __cdecl core_marquee_cpp_CMarquee_renderOpaque_FUN_0050be50(CMarquee *this_p
 void __cdecl core_marquee_cpp_CMarquee_FUN_0050bec0(CMarquee *this_ptr);
 int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *this_ptr);
 void __cdecl core_marquee_cpp_CMarquee_archive_FUN_0050c2f0(CMarquee *this_ptr);
-int __cdecl core_marquee_cpp_CMarquee_hasCollision_FUN_0050c370 (CMarquee *this_ptr,SCollisionInfo *collision_info);
+int __cdecl core_marquee_cpp_CMarquee_hasCollision_FUN_0050c370(CMarquee *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_0050c380(CMarquee *this_ptr,CBoundingBox3D *out_box);
-void __cdecl core_marquee_cpp_CMarquee_getPropertyList_FUN_0050c3e0 (CMarquee *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_marquee_cpp_CMarquee_getPropertyList_FUN_0050c3e0(CMarquee *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_marquee_cpp_CMarquee_addFilesToExtract_FUN_0050c480(CMarquee *this_ptr,_FILE *file_handle);
 CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_0050c4c0(CMarquee *this_ptr,uint flags);
 void __cdecl engine_matrix_c_initializeTrigTables_FUN_0050c530(void);
@@ -285,7 +284,7 @@ void __cdecl engine_matrix_c_transformToCache_FUN_0050cd70(int cacheIndex,CVecto
 void __cdecl engine_matrix_c_projectCachedPoint_FUN_0050cda0(int cacheIndex);
 void __cdecl engine_matrix_c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex *point);
 void __cdecl engine_matrix_c_projectCachedPointUnchecked_FUN_0050ce60(int cache_index);
-void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_0050cee0 (int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z);
+void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z);
 void __cdecl engine_matrix_c_matrixPush_FUN_0050d620(void);
 void __cdecl engine_matrix_c_pop_FUN_0050d720(void);
 int __cdecl engine_matrix_c_calculate3DDistance_FUN_0050d830(int x1,int y1,int z1,int x2,int y2,int z2);
@@ -299,7 +298,7 @@ void __cdecl engine_matrix_c_setCameraRotation_FUN_0050e290(int pitch,int yaw,in
 void __cdecl engine_matrix_c_getCameraOrigin_FUN_0050e2c0(CVector3i *output);
 void __cdecl engine_matrix_c_getCameraRotation_FUN_0050e2f0(CVector3i *output);
 void __cdecl engine_matrix_c_pushViewport_FUN_0050e320(int x,int y,int width,int height);
-void __cdecl engine_matrix_c_popViewport_FUN_0050e480(CDemonRenderer *this_ptr);
+void __cdecl engine_matrix_c_popViewport_FUN_0050e480(void);
 int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value);
 void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_0050e640(int offset_x,int offset_y,int offset_z);
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_0050e6f0(void);
@@ -313,12 +312,12 @@ float __cdecl core_melee_cpp_CMelee_getDamage_FUN_0050ea70(CMelee *this_ptr);
 void __cdecl core_melee_cpp_CMelee_fireProjectile_FUN_0050eaa0(CMelee *this_ptr);
 int __cdecl core_melee_cpp_CMelee_canPickup_FUN_0050eab0(CMelee *this_ptr,CDemonActor *picker);
 int __cdecl core_melee_cpp_CMelee_getAllowedMeleeAttackTypes_FUN_0050eae0(CMelee *this_ptr);
-void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0 (CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
-void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_0050eb50 (CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
+void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
+void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_0050eb50(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 void __cdecl core_melee_cpp_CMelee_FUN_0050ebe0(CMelee *this_ptr);
 void __cdecl core_melee_cpp_CMelee_process_FUN_0050ec10(CMelee *this_ptr,float delta_time);
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_0050ecd0(CMelee *this_ptr);
-void __cdecl core_melee_cpp_CMelee_getPropertyList_FUN_0050ecf0 (CMelee *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_melee_cpp_CMelee_getPropertyList_FUN_0050ecf0(CMelee *this_ptr,CActorPropertyList *property_list);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_0050edf0(CMelee *this_ptr,uint flags);
 void __cdecl shape_memdbg_cpp_staticInit_FUN_0050ee40(void);
 void __cdecl shape_memdbg_cpp_acquireDebugMutex_FUN_0050ee5e(void);
@@ -340,7 +339,7 @@ void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T siz
 void __cdecl shape_memdbg_cpp_debugFree_FUN_0050f460(void *ptr,char *filename,int line_number);
 void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size,char *filename,int line_number);
 void __cdecl shape_memdbg_cpp_debugMemdump_FUN_0050f6c0(_FILE *output_file);
-_FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0 (char *filename,char *directory,char *mode,char *source_file,int line_number);
+_FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0(char *filename,char *directory,char *mode,char *source_file,int line_number);
 int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source_file,int line_number);
 CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_ctor_FUN_0050fba0(CLeakChecker *this_ptr);
 CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChecker *this_ptr,uint flags);

@@ -12,7 +12,6 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemon
   char *pcVar1;
   int iVar2;
   CDemonActor *pCVar3;
-  int unaff_EBP;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -39,7 +38,7 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemon
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Setting up actors");
         core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar1,iVar6);
       }
-      if (iVar5 == unaff_EBP) {
+      if (iVar5 == iVar4 / 2) {
         iVar6 = 0;
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Setting up actors");
         core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar1,iVar6);

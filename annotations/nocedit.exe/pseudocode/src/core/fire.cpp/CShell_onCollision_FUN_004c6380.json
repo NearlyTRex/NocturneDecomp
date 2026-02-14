@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 70,
-        "line": 33,
+        "line": 32,
         "message": "use of undeclared identifier 'DAT_02d141dc'; did you mean 'DAT_02d141e0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 45,
+        "line": 44,
         "message": "use of undeclared identifier 'DAT_02d141dc'; did you mean 'DAT_02d141e0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 52,
+        "line": 51,
         "message": "use of undeclared identifier 'DAT_02d141dc'; did you mean 'DAT_02d141e0'?"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 129,
+    "complexity_score": 128,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 48,
     "suspect_count": 7,
     "suspect_types": [
       "extra_output",
       "undefined_data"
     ],
-    "total_lines": 77
+    "total_lines": 76
   },
   "cross_references": [],
   "function": {
@@ -145,49 +145,49 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_EAX",
       "text": "uint extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 8,
       "match": "extraout_EAX_00",
       "text": "uint extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 25,
       "match": "DAT_02d141dc",
       "text": "iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(&DAT_02d141dc + iVar3));",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
+      "line": 37,
       "match": "extraout_EAX",
       "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 37,
       "match": "DAT_02d141dc",
       "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
+      "line": 44,
       "match": "extraout_EAX_00",
       "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 44,
       "match": "DAT_02d141dc",
       "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;",
       "type": "undefined_data"

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CCryptVessel * __cdecl
-core_vessel_cpp_CCryptVessel_dtor_FUN_005e9d30(CCryptVessel *this_ptr,uint flags)
+CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_005e9d30(CCryptVessel *this_ptr,uint flags)
 
 {
   CDemonActor *pCVar1;

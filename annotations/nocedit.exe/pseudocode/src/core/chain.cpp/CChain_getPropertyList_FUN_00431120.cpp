@@ -2,13 +2,11 @@
 // Address: 00431120
 // Address Range: [[00431120, 0043124d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_chain_cpp_CChain_getPropertyList_FUN_00431120 (CChain *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_chain_cpp_CChain_getPropertyList_FUN_00431120(CChain *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_chain_cpp_CChain_getPropertyList_FUN_00431120
-          (CChain *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_chain_cpp_CChain_getPropertyList_FUN_00431120(CChain *this_ptr,CActorPropertyList *property_list)
 
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);

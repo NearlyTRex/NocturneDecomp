@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_setLookAtTarget_FUN_0042ddd0(CCharacter *this_ptr,CDemonActor *target)
+void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_0042ddd0(CCharacter *this_ptr,CDemonActor *target)
 
 {
   this_ptr->look_at_target = target;

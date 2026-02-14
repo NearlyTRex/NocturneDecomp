@@ -2,13 +2,11 @@
 // Address: 0050b260
 // Address Range: [[0050b260, 0050b2ac]]
 // Convention: __cdecl
-// Signature: CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260 (CMirrorHack *this_ptr,CBoundingBox3D *out_box)
+// Signature: CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260(CMirrorHack *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-CBoundingBox3D * __cdecl
-core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260
-          (CMirrorHack *this_ptr,CBoundingBox3D *out_box)
+CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260(CMirrorHack *this_ptr,CBoundingBox3D *out_box)
 
 {
   CKeyFramedModel *pCVar1;

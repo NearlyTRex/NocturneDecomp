@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SRaytraceState * __cdecl
-core_setcolid_cpp_SRaytraceState_dtor_FUN_005746a0(SRaytraceState *this_ptr,uint flags)
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_005746a0(SRaytraceState *this_ptr,uint flags)
 
 {
   return this_ptr;

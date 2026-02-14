@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_stranger_cpp_CStranger_addFilesToExtract_FUN_005c6910(CStranger *this_ptr,_FILE *file_handle)
+void __cdecl core_stranger_cpp_CStranger_addFilesToExtract_FUN_005c6910(CStranger *this_ptr,_FILE *file_handle)
 
 {
   core_hero_cpp_CHero_addFilesToExtract_FUN_004f3fa0(&this_ptr->base,file_handle);

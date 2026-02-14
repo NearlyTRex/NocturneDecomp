@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-CreateFileVariadic(char *filename,int access_mode,int share_mode,...)
+int __cdecl CreateFileVariadic(char *filename,int access_mode,int share_mode,...)
 
 {
   HANDLE pvVar1;

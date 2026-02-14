@@ -2,13 +2,11 @@
 // Address: 0049f060
 // Address Range: [[0049f060, 0049f0ea]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 (CEditorTools *this_ptr,char *format_string,...)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools *this_ptr,char *format_string,...)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-          (CEditorTools *this_ptr,char *format_string,...)
+int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools *this_ptr,char *format_string,...)
 
 {
   int iVar1;

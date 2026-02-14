@@ -5,25 +5,25 @@
         "category": "lvalue_required",
         "column": 59,
         "line": 34,
-        "message": "cannot take the address of an rvalue of type 'int'"
+        "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "lvalue_required",
         "column": 60,
         "line": 35,
-        "message": "cannot take the address of an rvalue of type 'int'"
+        "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "lvalue_required",
         "column": 59,
         "line": 37,
-        "message": "cannot take the address of an rvalue of type 'int'"
+        "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "lvalue_required",
         "column": 58,
         "line": 38,
-        "message": "cannot take the address of an rvalue of type 'int'"
+        "message": "cannot take the address of an rvalue of type 'float'"
       }
     ],
     "success": false,
@@ -99,21 +99,21 @@
     },
     {
       "addr": "0067cb08",
-      "name": "DAT_0067cb08",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0067cb08",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "0067cb0c",
-      "name": "DAT_0067cb0c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0067cb0c",
+      "type": "float",
+      "value": "-1"
     },
     {
       "addr": "0067cb18",
-      "name": "DAT_0067cb18",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0067cb18",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "0067cb1c",
@@ -319,14 +319,14 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(float *)((int)",
-      "text": "local_40.x = (float)(fVar5 * (float10)*(float *)((int)&0x3F800000 + iVar2) +",
+      "text": "local_40.x = (float)(fVar5 * (float10)*(float *)((int)&1.0f + iVar2) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(float *)((int)",
-      "text": "-fVar6 * (float10)*(float *)((int)&0x3F800000 + iVar2) +",
+      "text": "-fVar6 * (float10)*(float *)((int)&1.0f + iVar2) +",
       "type": "pointer_cast"
     },
     {
@@ -340,14 +340,14 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(float *)((int)",
-      "text": "local_40.z = (float)(fVar6 * (float10)*(float *)((int)&0x3F800000 + iVar2) +",
+      "text": "local_40.z = (float)(fVar6 * (float10)*(float *)((int)&1.0f + iVar2) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(float *)((int)",
-      "text": "fVar5 * (float10)*(float *)((int)&0x3F800000 + iVar2)) +",
+      "text": "fVar5 * (float10)*(float *)((int)&1.0f + iVar2)) +",
       "type": "pointer_cast"
     },
     {

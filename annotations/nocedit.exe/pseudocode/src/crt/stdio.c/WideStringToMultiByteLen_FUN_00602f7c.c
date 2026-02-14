@@ -2,13 +2,11 @@
 // Address: 00602f7c
 // Address Range: [[00602f7c, 00602ff7]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c (wchar_t *wide_string_offset,ushort segment,int max_chars)
+// Signature: int __cdecl crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c(wchar_t *wide_string_offset,ushort segment,int max_chars)
 
 #include "nocturne.h"
 
-int __cdecl
-WideStringToMultiByteLen
-          (wchar_t *wide_string_offset,ushort segment,int max_chars)
+int __cdecl WideStringToMultiByteLen(wchar_t *wide_string_offset,ushort segment,int max_chars)
 
 {
   wchar_t wVar1;

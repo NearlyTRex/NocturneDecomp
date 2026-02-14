@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390 (CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles)
+; __cdecl void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles)
 ;
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   output_matrix

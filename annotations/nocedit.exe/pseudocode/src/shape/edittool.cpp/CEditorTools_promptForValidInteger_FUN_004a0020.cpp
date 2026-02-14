@@ -2,14 +2,11 @@
 // Address: 004a0020
 // Address Range: [[004a0020, 004a00ea]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020 (CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check, int min_value,int max_value,int show_current_value)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check,int min_value,int max_value,int show_current_value)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-          (CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check,
-          int min_value,int max_value,int show_current_value)
+int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check,int min_value,int max_value,int show_current_value)
 
 {
   int iVar1;

@@ -1,43 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 45,
-        "line": 26,
-        "message": "use of undeclared identifier 'stack0xffffff24'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 27,
-        "message": "use of undeclared identifier 'stack0xffffff24'"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 55,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 172,
+    "complexity_score": 61,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 13,
-    "pseudocode_lines": 62,
-    "suspect_count": 9,
-    "suspect_types": [
-      "format_string_mismatch",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
-    ],
-    "total_lines": 215
+    "pseudocode_lines": 61,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 214
   },
   "cross_references": [
     {
@@ -257,77 +233,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBP",
-      "text": "_FILE *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "text": "_FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffff24",
-      "text": "_fscanf(file_handle,\" { %s \\\"%[^\\\"]\\\"\\n\",&stack0xffffff24,local_78);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffff24",
-      "text": "iVar2 = stricmp(str1,&stack0xffffff24);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_0000000c",
-      "text": "_fscanf(in_stack_0000000c,\" } %s \\\"%[^\\\"]\\\"\\n\",acStack_d8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_0000000c",
-      "text": "if ((in_stack_0000000c->_flag & 0x20) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 63,
-      "match": "unaff_EBP",
-      "text": "g_ActorDataFile = unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"End of actor file tag mismatch for class %s name \\...\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "End of actor file tag mismatch for class %s name \\\"%s\\\"",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 54,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"End of actor file tag mismatch for class %s name \\\"%s\\",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"IO Error after reading %s \\\"%s\\\"\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "IO Error after reading %s \\\"%s\\\"",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 59,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"IO Error after reading %s \\\"%s\\\"\",str1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

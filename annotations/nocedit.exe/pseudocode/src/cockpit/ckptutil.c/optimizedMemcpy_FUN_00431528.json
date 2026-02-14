@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 234,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 83,
     "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 207
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -116,98 +116,98 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(uint *)((int)",
       "text": "src_buffer = (uint *)((int)src_buffer + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 26,
       "match": "(uint *)((int)",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(uint *)((int)",
       "text": "src_buffer = (uint *)((int)src_buffer + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 58,
       "match": "ROUND",
       "text": "(longlong)ROUND((float10)*(longlong *)(iVar7 + -0x18 + (int)src_buffer));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 59,
       "match": "ROUND",
       "text": "*(longlong *)(iVar8 + (int)dest_buffer) = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 60,
       "match": "ROUND",
       "text": "*(longlong *)(iVar7 + -8 + (int)dest_buffer) = (longlong)ROUND((float10)lVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 61,
       "match": "ROUND",
       "text": "*(longlong *)(iVar7 + -0x10 + (int)dest_buffer) = (longlong)ROUND((float10)lVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 65,
       "match": "(void *)((int)",
       "text": "src_buffer = (void *)((int)src_buffer + uVar5 * 0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 66,
       "match": "(void *)((int)",
       "text": "dest_buffer = (void *)((int)dest_buffer + uVar5 * 8 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(uint *)((int)",
       "text": "src_buffer = (uint *)((int)src_buffer + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(uint *)((int)",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 81,
       "match": "(uint *)((int)",
       "text": "src_buffer = (uint *)((int)src_buffer + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 82,
       "match": "(uint *)((int)",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 1);",
       "type": "pointer_cast"

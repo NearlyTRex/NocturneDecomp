@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00444c00 (CZombieCow *this_ptr,CVector3f *out_points_array)
+; __cdecl int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00444c00(CZombieCow *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CZombieCow *     Stack[0x4]:4   this_ptr

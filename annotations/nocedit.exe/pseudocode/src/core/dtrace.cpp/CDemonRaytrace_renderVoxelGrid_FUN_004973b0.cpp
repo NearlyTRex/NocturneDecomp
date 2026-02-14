@@ -2,13 +2,11 @@
 // Address: 004973b0
 // Address Range: [[004973b0, 004974ff]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0 (CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0(CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0
-          (CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0(CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z)
 
 {
   float fVar1;

@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 32,
+        "line": 29,
         "message": "assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 158,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
-    "pseudocode_lines": 38,
-    "suspect_count": 11,
+    "pseudocode_lines": 35,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 157
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -43,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_windll.cpp_drawPolyList2_FUN_005b7780",
-    "signature": "int __cdecl wincore_windll_cpp_drawPolyList2_FUN_005b7780 (void *vertex_buffer,void **polygons,int polygon_count,int render_flags)"
+    "signature": "int __cdecl wincore_windll_cpp_drawPolyList2_FUN_005b7780(void *vertex_buffer,void **polygons,int polygon_count,int render_flags)"
   },
   "function_calls": [],
   "globals": [
@@ -164,81 +163,67 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 23,
       "match": "(void *)((int)",
       "text": "local_1c = (void *)((int)vertex_buffer + (uint)*puVar1 * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 24,
       "match": "(void *)((int)",
       "text": "local_18 = (void *)((int)vertex_buffer + (uint)puVar1[1] * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 25,
       "match": "(void *)((int)",
       "text": "local_14 = (void *)((int)vertex_buffer + (uint)puVar1[2] * 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 26,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_1c + 0x18) = (uint)puVar1[3] << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 27,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_1c + 0x1c) = (uint)puVar1[6] << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 28,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_18 + 0x18) = (uint)puVar1[4] << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 29,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_18 + 0x1c) = (uint)puVar1[7] << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 30,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_14 + 0x18) = (uint)puVar1[5] << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 31,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_14 + 0x1c) = (uint)puVar1[8] << 8;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar2 < in_stack_00000018);",
-      "type": "stack_param"
     }
   ]
 }

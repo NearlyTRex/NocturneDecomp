@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 86,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 36,
-    "suspect_count": 4,
+    "pseudocode_lines": 35,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "suspect_float"
     ],
-    "total_lines": 128
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -179,28 +179,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 16,
       "match": "(short *)((int)",
       "text": "(int)*(short *)((int)this_ptr->terrain_data +",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 22,
-      "match": "2.29575e-41",
-      "text": "g_RenderVertexBuffer[iVar2].light = 2.29575e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 25,
-      "match": "2.29575e-41",
-      "text": "g_RenderVertexBuffer[iVar2].fog = 2.29575e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 34,
+      "line": 33,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[iVar2].w_recip = 9.18341e-41;",
       "type": "suspect_float"

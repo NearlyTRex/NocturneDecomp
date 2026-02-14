@@ -2,13 +2,11 @@
 // Address: 0040ea50
 // Address Range: [[0040ea50, 0040ee2b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50 (CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer)
+// Signature: void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
-          (CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer)
+void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer)
 
 {
   char cVar1;

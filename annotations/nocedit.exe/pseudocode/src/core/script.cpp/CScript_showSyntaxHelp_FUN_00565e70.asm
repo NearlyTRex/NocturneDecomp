@@ -15,7 +15,7 @@
 ; undefined1       Stack[-0x200]:1  local_200
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_FUN_00565130 at 005656af
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 005656af
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Not_enough_context_to_sh_00643ebb
@@ -23,7 +23,7 @@
 ;   undefined4 s_t_enough_context_to_show_usage._(_00643ebd
 ;   undefined4 s_enough_context_to_show_usage._(T_00643ebe
 ;   char*[141] g_CommandTemplates
-;   char[1020] g_ScriptEditorStatusText
+;   char[1023] g_ScriptEditorStatusText
 ;   undefined4 DAT_0310fdc1
 ;   undefined4 DAT_0310fdc2
 ;   undefined4 DAT_0310fdc3

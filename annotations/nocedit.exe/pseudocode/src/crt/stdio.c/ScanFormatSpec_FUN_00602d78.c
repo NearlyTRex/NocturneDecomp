@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl
-ScanFormatSpec(char *format,va_list_t *args,FormatSpec *spec_info)
+char * __cdecl ScanFormatSpec(char *format,va_list_t *args,FormatSpec *spec_info)
 
 {
   byte bVar1;

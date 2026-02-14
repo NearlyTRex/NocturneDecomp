@@ -2,13 +2,11 @@
 // Address: 004a6590
 // Address Range: [[004a6590, 004a65d7]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004a6590 (CEdButton *this_ptr,int left,int top,int right,int bottom,char *button_text)
+// Signature: void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004a6590(CEdButton *this_ptr,int left,int top,int right,int bottom,char *button_text)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004a6590
-          (CEdButton *this_ptr,int left,int top,int right,int bottom,char *button_text)
+void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004a6590(CEdButton *this_ptr,int left,int top,int right,int bottom,char *button_text)
 
 {
   char cVar1;

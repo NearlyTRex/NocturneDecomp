@@ -2,13 +2,11 @@
 // Address: 004f79d0
 // Address Range: [[004f79d0, 004f7a0c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_hotdemon_cpp_CHotDemon_getPropertyList_FUN_004f79d0 (CHotDemon *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_hotdemon_cpp_CHotDemon_getPropertyList_FUN_004f79d0(CHotDemon *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_hotdemon_cpp_CHotDemon_getPropertyList_FUN_004f79d0
-          (CHotDemon *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_hotdemon_cpp_CHotDemon_getPropertyList_FUN_004f79d0(CHotDemon *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

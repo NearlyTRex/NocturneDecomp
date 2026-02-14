@@ -2,13 +2,11 @@
 // Address: 004a1380
 // Address Range: [[004a1380, 004a1b23]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380 (CEditorTools *this_ptr,int use_clipping)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools *this_ptr,int use_clipping)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380
-          (CEditorTools *this_ptr,int use_clipping)
+void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools *this_ptr,int use_clipping)
 
 {
   int iVar1;

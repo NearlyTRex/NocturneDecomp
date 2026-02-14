@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 82,
+    "complexity_score": 98,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 5,
-    "pseudocode_lines": 82,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 265
+    "pseudocode_lines": 83,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_type_propagation"
+    ],
+    "total_lines": 266
   },
   "cross_references": [],
   "function": {
@@ -212,7 +214,15 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

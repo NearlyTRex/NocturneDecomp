@@ -2,14 +2,11 @@
 // Address: 005a0fe0
 // Address Range: [[005a0fe0, 005a1037]]
 // Convention: __cdecl
-// Signature: CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0 (CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation, CVector3f *velocity,CDemonActor *source_actor,int unknown)
+// Signature: CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation,CVector3f *velocity,CDemonActor *source_actor,int unknown)
 
 #include "nocturne.h"
 
-CBodyPart * __cdecl
-core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0
-          (CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation,
-          CVector3f *velocity,CDemonActor *source_actor,int unknown)
+CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation,CVector3f *velocity,CDemonActor *source_actor,int unknown)
 
 {
   CBodyPart *body_part;

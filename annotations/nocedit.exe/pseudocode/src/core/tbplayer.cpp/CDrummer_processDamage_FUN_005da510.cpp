@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_tbplayer_cpp_CDrummer_processDamage_FUN_005da510(CDrummer *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_tbplayer_cpp_CDrummer_processDamage_FUN_005da510(CDrummer *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;

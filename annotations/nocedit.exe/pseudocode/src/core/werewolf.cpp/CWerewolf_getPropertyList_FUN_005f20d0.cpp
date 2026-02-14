@@ -2,13 +2,11 @@
 // Address: 005f20d0
 // Address Range: [[005f20d0, 005f21da]]
 // Convention: __cdecl
-// Signature: void __cdecl core_werewolf_cpp_CWerewolf_getPropertyList_FUN_005f20d0 (CWerewolf *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_werewolf_cpp_CWerewolf_getPropertyList_FUN_005f20d0(CWerewolf *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_werewolf_cpp_CWerewolf_getPropertyList_FUN_005f20d0
-          (CWerewolf *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_werewolf_cpp_CWerewolf_getPropertyList_FUN_005f20d0(CWerewolf *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

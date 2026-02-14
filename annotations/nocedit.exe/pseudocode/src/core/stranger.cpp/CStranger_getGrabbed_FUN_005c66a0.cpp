@@ -2,13 +2,11 @@
 // Address: 005c66a0
 // Address Range: [[005c66a0, 005c6742]]
 // Convention: __cdecl
-// Signature: int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0 (CStranger *this_ptr,CDemonActor *grabber,int grab_type)
+// Signature: int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0(CStranger *this_ptr,CDemonActor *grabber,int grab_type)
 
 #include "nocturne.h"
 
-int __cdecl
-core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0
-          (CStranger *this_ptr,CDemonActor *grabber,int grab_type)
+int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0(CStranger *this_ptr,CDemonActor *grabber,int grab_type)
 
 {
   int iVar1;

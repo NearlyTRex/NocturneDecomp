@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonActorType * __cdecl
-core_baron_cpp_CBaronWeapon_getActorType_FUN_00413d30(CBaronWeapon *this_ptr)
+CDemonActorType * __cdecl core_baron_cpp_CBaronWeapon_getActorType_FUN_00413d30(CBaronWeapon *this_ptr)
 
 {
   return &g_CBaronWeaponClassInfo;

@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 30,
-        "line": 34,
-        "message": "member reference base type 'int' is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 79,
+    "complexity_score": 62,
     "cross_reference_count": 25,
     "function_call_count": 7,
     "global_count": 8,
-    "pseudocode_lines": 39,
-    "suspect_count": 3,
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
     "suspect_types": [
-      "unaffected_reg",
-      "unknown_field"
+      "unaffected_reg"
     ],
-    "total_lines": 150
+    "total_lines": 148
   },
   "cross_references": [
     {
@@ -187,7 +179,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740 (CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740(CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices)"
   },
   "function_calls": [
     {
@@ -254,7 +246,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -336,21 +328,14 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 7,
+      "line": 5,
       "match": "unaff_EBP",
       "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 27,
-      "match": "._1_1_",
-      "text": "if ((g_RenderStateFlags._1_1_ & 2) == 0) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 37,
+      "line": 35,
       "match": "unaff_EBP",
       "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,unaff_EBP);",
       "type": "unaffected_reg"

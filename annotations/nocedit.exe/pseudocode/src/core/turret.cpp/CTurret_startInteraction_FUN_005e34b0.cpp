@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_turret_cpp_CTurret_startInteraction_FUN_005e34b0(CTurret *this_ptr,CDemonActor *user)
+int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_005e34b0(CTurret *this_ptr,CDemonActor *user)
 
 {
   if (this_ptr->user != (CDemonActor *)0x0) {

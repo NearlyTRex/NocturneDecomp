@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_vehicle_cpp_CVehicle_renderBackground_FUN_005e8b40(CVehicle *this_ptr,int layer_flag)
+void __cdecl core_vehicle_cpp_CVehicle_renderBackground_FUN_005e8b40(CVehicle *this_ptr,int layer_flag)
 
 {
   return;

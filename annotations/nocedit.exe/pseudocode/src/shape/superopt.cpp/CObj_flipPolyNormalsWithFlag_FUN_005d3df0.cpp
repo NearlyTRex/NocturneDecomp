@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CObj_flipPolyNormalsWithFlag_FUN_005d3df0(CObj *this_ptr,uint flag_mask)
+void __cdecl shape_superopt_cpp_CObj_flipPolyNormalsWithFlag_FUN_005d3df0(CObj *this_ptr,uint flag_mask)
 
 {
   CPoly *this_ptr_00;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_succubus_cpp_CSuccubus_processDamage_FUN_005c7760(CSuccubus *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_succubus_cpp_CSuccubus_processDamage_FUN_005c7760(CSuccubus *this_ptr,SDamageInfo *damage_info)
 
 {
   damage_info->damage_amount = 0.0;

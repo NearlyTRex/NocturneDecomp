@@ -2,13 +2,11 @@
 // Address: 00524e60
 // Address Range: [[00524e60, 00524ee5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60 (CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag)
 
 #include "nocturne.h"
 
-void __cdecl
-core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60
-          (CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag)
+void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag)
 
 {
   CDemonActor *actor_ptr;

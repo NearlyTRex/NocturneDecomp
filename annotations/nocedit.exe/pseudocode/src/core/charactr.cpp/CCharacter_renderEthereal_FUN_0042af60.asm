@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0061713a = 8388608
-;   SMRGLTextureBasic DAT_0066e6b0
+;   SMRGLTextureBasic[6] SMRGLTextureBasic_ARRAY_0066e6b0
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   int INT_00823a90
@@ -90,7 +90,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0042afed
     SUB EAX,EDX                         ; 0042aff4
     SHL EAX,0x3                         ; 0042aff6
-    ADD EAX,0x66e6b0                    ; 0042aff9 | DAT_0066e6b0
+    ADD EAX,0x66e6b0                    ; 0042aff9 | SMRGLTextureBasic_ARRAY_0066e6b0
     PUSH EAX                            ; 0042affe
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_005dd800 ; 0042afff
         ;   XREF to: 005dd800 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_005dd800(SMRGLTextureBasic * texture)

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-engine_prim_c_getTriangleWindingFromIndices_FUN_00552300(STriangleIndices *triangle_indices)
+int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552300(STriangleIndices *triangle_indices)
 
 {
   int iVar1;

@@ -2,14 +2,11 @@
 // Address: 0059fdd0
 // Address Range: [[0059fdd0, 0059ff14]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 (CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight, int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
 #include "nocturne.h"
 
-void __cdecl
-core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
-          (CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,
-          int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
 {
   CVector3f *pCVar1;

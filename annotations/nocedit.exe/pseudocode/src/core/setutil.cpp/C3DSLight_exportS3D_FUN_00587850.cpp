@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_ptr,_FILE *file_handle)
+void __cdecl core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_ptr,_FILE *file_handle)
 
 {
   _fprintf(file_handle,"\"%s\",%d,%g,%g,%g,%g,%g,%g ",this_ptr->name,this_ptr->light_type,

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_iostream_cpp_streambuf_seekoff_FUN_00610ab0 (streambuf *this_ptr,int offset,int direction,int mode)
+; __watcallStack int __watcallStack crt_iostream_cpp_streambuf_seekoff_FUN_00610ab0(streambuf *this_ptr,int offset,int direction,int mode)
 ;
 ; Parameters:
 ; streambuf *      Stack[0x4]:4   this_ptr

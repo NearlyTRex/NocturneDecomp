@@ -1,49 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 24,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 48,
-        "message": "C-style cast from 'CPlatform *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 48,
-        "message": "C-style cast from 'CPlatform *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 48,
-        "message": "C-style cast from 'CPlatform *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 281,
+    "complexity_score": 141,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 3,
-    "pseudocode_lines": 81,
-    "suspect_count": 18,
+    "pseudocode_lines": 71,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 249
+    "total_lines": 239
   },
   "cross_references": [
     {
@@ -189,130 +162,46 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "text": "CDemonActor *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffffd8",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_0000000c",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000000c",
-      "text": "(g_CDemonRendererPtr2,(SMRGLTextureBasic *)(in_stack_0000000c[2].create_event + 0x4c))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000000c",
-      "text": "(g_CDemonRendererPtr2,(SMRGLTextureBasic *)(in_stack_0000000c[2].create_event + 0x4c))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < (int)in_stack_0000000c[8].create_prob) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 38,
-      "match": "in_stack_0000000c",
-      "text": "ppCVar5 = &in_stack_0000000c[2].standing_platform;",
-      "type": "stack_param"
+      "match": "ROUND",
+      "text": "CStack_10.x = (int)ROUND(pCVar5->x * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 39,
       "match": "ROUND",
-      "text": "iStack_8 = (int)ROUND((float)*ppCVar5 * 256.0f);",
+      "text": "CStack_10.y = (int)ROUND(pCVar5->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "CStack_10.z = (int)ROUND(pCVar5->z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar3) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 48,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = 0xffff;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar2 < (int)in_stack_0000000c[8].create_prob);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_0000000c",
-      "text": "(g_CDemonRendererPtr2,(int)in_stack_0000000c[1].location.position.y);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < *(int *)in_stack_0000000c[8].create_event) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_0000000c",
-      "text": "polygon_info = (SMRGLHeaderPrimitive *)&in_stack_0000000c[4].next_actor;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_0000000c",
-      "text": "pCVar4 = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar2 < *(int *)in_stack_0000000c[8].create_event);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_0000000c",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
-      "type": "stack_param"
     }
   ]
 }

@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 23,
-        "line": 23,
+        "line": 21,
         "message": "assigning to 'char *' from incompatible type 'char *[1]'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 23,
+        "line": 21,
         "message": "use of undeclared identifier 'stack0x0000000c'"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 24,
+        "line": 22,
         "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 25,
+        "line": 23,
         "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
       }
     ],
@@ -31,16 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 38,
+    "complexity_score": 36,
     "cross_reference_count": 63,
     "function_call_count": 7,
     "global_count": 11,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 21,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 100
+    "total_lines": 98
   },
   "cross_references": [
     {
@@ -432,7 +432,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 (CEditorTools *this_ptr,char *message)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools *this_ptr,char *message)"
   },
   "function_calls": [
     {
@@ -601,7 +601,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 16,
+      "line": 14,
       "match": "&stack0x0000000c",
       "text": "local_14.value[0] = (char * [1])&stack0x0000000c;",
       "type": "stack_ref"

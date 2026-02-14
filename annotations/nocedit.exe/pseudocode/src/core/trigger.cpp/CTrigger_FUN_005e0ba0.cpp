@@ -10,24 +10,27 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005e0ba0(CTrigger *this_ptr)
 
 {
   float fVar1;
-  float fVar2;
-  float fVar3;
-  CBoundingBox3D *pCVar4;
+  CBoundingBox3D *pCVar2;
   int extraout_EBX;
-  double dVar5;
+  double dVar3;
+  CBoundingBox3D CStack_30;
+  float fStack_18;
+  float fStack_14;
+  float fStack_10;
+  uint uStack_c;
   
   switch(this_ptr->hero_triggers_me) {
   case 0:
   case 1:
-    pCVar4 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                       (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd0);
-    fVar1 = (pCVar4->max).x - (pCVar4->min).x;
-    fVar2 = (pCVar4->max).y - (pCVar4->min).y;
-    fVar3 = (pCVar4->max).z - (pCVar4->min).z;
-    dVar5 = ceil
-                      ((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) +
-                               (float)10));
-    *(float *)(extraout_EBX + 0x158) = (float)dVar5;
+    pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_30);
+    fStack_18 = (pCVar2->max).x - (pCVar2->min).x;
+    fStack_14 = (pCVar2->max).y - (pCVar2->min).y;
+    fVar1 = (pCVar2->max).z - (pCVar2->min).z;
+    _fStack_10 = CONCAT44(uStack_c,fVar1);
+    dVar3 = ceil
+                      ((double)(SQRT(fVar1 * fVar1 + fStack_18 * fStack_18 + fStack_14 * fStack_14)
+                               + (float)10));
+    *(float *)(extraout_EBX + 0x158) = (float)dVar3;
   }
   return;
 }

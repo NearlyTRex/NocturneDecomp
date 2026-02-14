@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 169,
+    "complexity_score": 167,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 62,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 201
+    "total_lines": 199
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880 (CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer)"
   },
   "function_calls": [
     {
@@ -239,56 +239,56 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(int *)((int)",
       "text": "for (local_20 = 0; local_20 < *(int *)((int)this_ptr->vertex_count + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(int *)((int)",
       "text": "pfVar3 = (float *)(local_1c + *(int *)((int)this_ptr->vertex_data_ptr + local_24));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 32,
       "match": "(byte *)((int)",
       "text": "(&local_3c,pCVar2,bone_matrices + *(byte *)((int)pfVar3 + 1));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 47,
       "match": "(byte *)((int)",
       "text": "(&local_54,pCVar2,bone_matrices + *(byte *)((int)pfVar3 + 1));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 51,
       "match": "(float *)((int)",
       "text": "pfVar3 = (float *)((int)pfVar3 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 58,
       "match": "ROUND",
       "text": "*local_18 = (int)ROUND(local_30.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "ROUND",
       "text": "local_18[1] = (int)ROUND(local_30.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 60,
       "match": "ROUND",
       "text": "local_18[2] = (int)ROUND(local_30.z * 256.0f);",
       "type": "decompiler_intrinsic"

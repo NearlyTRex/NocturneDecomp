@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_frankgen_cpp_CFrankenstienMachine_FUN_004d2190(CFrankenstienMachine *this_ptr)
+CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d2190(CFrankenstienMachine *this_ptr)
 
 {
   int iVar1;

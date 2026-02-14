@@ -2,14 +2,11 @@
 // Address: 00407620
 // Address Range: [[00407620, 00407712]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 (SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags, int alpha_blend_flags,int special_render_mode)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,int alpha_blend_flags,int special_render_mode)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
-          (SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,
-          int alpha_blend_flags,int special_render_mode)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,int alpha_blend_flags,int special_render_mode)
 
 {
   int iVar1;
@@ -22,19 +19,19 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
   if (iVar1 != 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
       }
       else {
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
       }
     }
     else if (g_BitsPerPixel == 0x20) {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
     }
     else {
-      g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags = render_flags;
+    g_RenderStateFlags.dword = render_flags;
     if ((render_flags & 0x10U) != 0) {
       g_CurrentLightingValue =
            engine_light_cpp_calculateLighting_FUN_00505780

@@ -2,13 +2,11 @@
 // Address: 004952b0
 // Address Range: [[004952b0, 0049530e]]
 // Convention: __cdecl
-// Signature: CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0 (CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z)
+// Signature: CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z)
 
 #include "nocturne.h"
 
-CDemonCube * __cdecl
-core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-          (CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z)
+CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z)
 
 {
   int iVar1;

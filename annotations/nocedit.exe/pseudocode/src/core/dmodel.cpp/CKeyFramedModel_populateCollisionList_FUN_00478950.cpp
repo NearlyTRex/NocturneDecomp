@@ -2,13 +2,11 @@
 // Address: 00478950
 // Address Range: [[00478950, 00478bf9]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (CKeyFramedModel *this_ptr,CVector3f *transform_vector)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(CKeyFramedModel *this_ptr,CVector3f *transform_vector)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950
-          (CKeyFramedModel *this_ptr,CVector3f *transform_vector)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(CKeyFramedModel *this_ptr,CVector3f *transform_vector)
 
 {
   CVector3i **ppCVar1;

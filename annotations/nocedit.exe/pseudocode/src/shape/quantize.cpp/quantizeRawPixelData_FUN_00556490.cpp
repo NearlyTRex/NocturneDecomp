@@ -2,14 +2,11 @@
 // Address: 00556490
 // Address Range: [[00556490, 005568e1]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490 (uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height ,uint bit_depth,int line_number,int show_progress)
+// Signature: int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height,uint bit_depth,int line_number,int show_progress)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_quantize_cpp_quantizeRawPixelData_FUN_00556490
-          (uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height
-          ,uint bit_depth,int line_number,int show_progress)
+int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height,uint bit_depth,int line_number,int show_progress)
 
 {
   CBitmap *pCVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_prim_c_normalizeTextureCoords_FUN_00552020(SRenderVertex *vertices,int vertex_count)
+void __cdecl engine_prim_c_normalizeTextureCoords_FUN_00552020(SRenderVertex *vertices,int vertex_count)
 
 {
   int iVar1;

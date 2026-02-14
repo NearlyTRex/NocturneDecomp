@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_dmodel_cpp_CKeyFramedModel_backupModel_FUN_00479260(CKeyFramedModel *this_ptr,char *filename)
+int __cdecl core_dmodel_cpp_CKeyFramedModel_backupModel_FUN_00479260(CKeyFramedModel *this_ptr,char *filename)
 
 {
   _FILE *file_ptr;

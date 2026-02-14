@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 63,
+    "complexity_score": 61,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 5,
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 36,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 137
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -41,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 (int start_x,int end_x,int y)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630(int start_x,int end_x,int y)"
   },
   "function_calls": [],
   "globals": [
@@ -140,14 +140,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 12,
+      "line": 10,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 13,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)puVar1 + 2);",
       "type": "pointer_cast"

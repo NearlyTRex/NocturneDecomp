@@ -2,14 +2,14 @@
 // Address: 0060eb57
 // Address Range: [[0060eb57, 0060eb76]]
 // Convention: unknown
-// Signature: ulonglong crt_unknown_c_FUN_0060eb57(uint param_1)
+// Signature: undefined4 crt_unknown_c_FUN_0060eb57(void)
 
 #include "nocturne.h"
 
-ulonglong FUN_0060eb57(uint param_1)
+uint FUN_0060eb57(void)
 
 {
   set_range_error_errno();
-  FUN_0060fa80(0x84);
-  return (ulonglong)(param_1 & 0x80000000) << 0x20 | 0x7ff0000000000000;
+  FUN_0060fa80();
+  return 0;
 }

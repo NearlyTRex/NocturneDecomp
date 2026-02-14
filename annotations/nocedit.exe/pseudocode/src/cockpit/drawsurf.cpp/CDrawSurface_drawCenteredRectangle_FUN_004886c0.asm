@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCenteredRectangle_FUN_004886c0 (CDrawSurface *this_ptr,int center_x,int center_y,int width,int height)
+; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCenteredRectangle_FUN_004886c0(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

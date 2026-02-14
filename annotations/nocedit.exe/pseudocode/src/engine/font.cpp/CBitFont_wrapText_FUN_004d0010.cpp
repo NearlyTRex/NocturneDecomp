@@ -2,14 +2,11 @@
 // Address: 004d0010
 // Address Range: [[004d0010, 004d019e]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010 (CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width, int max_pixel_width)
+// Signature: int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-          (CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,
-          int max_pixel_width)
+int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width)
 
 {
   char cVar1;

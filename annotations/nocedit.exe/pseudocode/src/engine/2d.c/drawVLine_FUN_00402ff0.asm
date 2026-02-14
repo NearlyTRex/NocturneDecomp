@@ -10,7 +10,7 @@
 ;
 ; XREF[7]:
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c694
-;   core_script.cpp_CScript_FUN_005645d0 at 0056471d
+;   core_script.cpp_CScript_drawEditor_FUN_005645d0 at 0056471d
 ;   engine_2d.c_drawRect_FUN_00403120 at 0040314d
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80 at 004a1081
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 at 004a06b9

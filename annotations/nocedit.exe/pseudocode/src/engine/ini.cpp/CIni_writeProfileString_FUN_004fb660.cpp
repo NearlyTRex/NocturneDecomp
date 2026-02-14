@@ -2,13 +2,11 @@
 // Address: 004fb660
 // Address Range: [[004fb660, 004fb955]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660 (CIni *this_ptr,char *section,char *key,char *value,char *filename)
+// Signature: int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_ini_cpp_CIni_writeProfileString_FUN_004fb660
-          (CIni *this_ptr,char *section,char *key,char *value,char *filename)
+int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 
 {
   char cVar1;

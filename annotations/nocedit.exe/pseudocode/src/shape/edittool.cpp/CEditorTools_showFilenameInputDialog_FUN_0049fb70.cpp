@@ -2,14 +2,11 @@
 // Address: 0049fb70
 // Address Range: [[0049fb70, 004a0012]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size, int show_directory)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size,int show_directory)
 
 #include "nocturne.h"
 
-int __cdecl
-shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-          (CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size,
-          int show_directory)
+int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size,int show_directory)
 
 {
   char cVar1;

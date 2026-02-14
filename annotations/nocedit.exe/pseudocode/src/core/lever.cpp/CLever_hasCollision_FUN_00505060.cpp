@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_lever_cpp_CLever_hasCollision_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_lever_cpp_CLever_hasCollision_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info)
 
 {
   return (uint)(this_ptr->enable_collision != 0);

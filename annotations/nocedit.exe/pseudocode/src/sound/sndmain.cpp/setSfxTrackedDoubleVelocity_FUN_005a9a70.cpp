@@ -2,13 +2,11 @@
 // Address: 005a9a70
 // Address Range: [[005a9a70, 005a9ad1]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndmain_cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70 (uint sfx_handle,CVector3d *velocity_source_ptr)
+// Signature: int __cdecl sound_sndmain_cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70(uint sfx_handle,CVector3d *velocity_source_ptr)
 
 #include "nocturne.h"
 
-int __cdecl
-sound_sndmain_cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70
-          (uint sfx_handle,CVector3d *velocity_source_ptr)
+int __cdecl sound_sndmain_cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70(uint sfx_handle,CVector3d *velocity_source_ptr)
 
 {
   CSfxSlot *this_ptr;

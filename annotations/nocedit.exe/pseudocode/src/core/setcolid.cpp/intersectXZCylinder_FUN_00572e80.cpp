@@ -2,13 +2,11 @@
 // Address: 00572e80
 // Address Range: [[00572e80, 005730ca]]
 // Convention: __cdecl
-// Signature: int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80 (SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)
+// Signature: int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)
 
 #include "nocturne.h"
 
-int __cdecl
-core_setcolid_cpp_intersectXZCylinder_FUN_00572e80
-          (SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)
+int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)
 
 {
   float fVar1;

@@ -11,7 +11,7 @@
 ; XREF[11]:
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c69f
 ;   core_netgame.cpp_CNetGame_FUN_00541390 at 0054150e
-;   core_script.cpp_CScript_FUN_005645d0 at 005647c4
+;   core_script.cpp_CScript_drawEditor_FUN_005645d0 at 005647c4
 ;   engine_2d.c_drawRect_FUN_00403120 at 00403142
 ;   engine_2d.c_fillRectColor_FUN_00403170 at 004031d4
 ;   shape_edittool.cpp_CEdButton_paint_FUN_004a65e0 at 004a6810

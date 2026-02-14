@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_stone_cpp_CTempleStone_canPickup_FUN_005bad70(CTempleStone *this_ptr,CDemonActor *picker)
+int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_005bad70(CTempleStone *this_ptr,CDemonActor *picker)
 
 {
   CActorDestination *pCVar1;

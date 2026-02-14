@@ -2,13 +2,11 @@
 // Address: 0042e370
 // Address Range: [[0042e370, 0042e56f]]
 // Convention: __cdecl
-// Signature: int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370 (CCharacter *this_ptr,float *remaining_time,int target_bone_index)
+// Signature: int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter *this_ptr,float *remaining_time,int target_bone_index)
 
 #include "nocturne.h"
 
-int __cdecl
-core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370
-          (CCharacter *this_ptr,float *remaining_time,int target_bone_index)
+int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter *this_ptr,float *remaining_time,int target_bone_index)
 
 {
   float fVar1;

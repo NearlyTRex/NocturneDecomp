@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 38,
-        "line": 82,
+        "line": 80,
         "message": "member reference base type 'char[40]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 82,
+        "line": 80,
         "message": "member reference base type 'char[40]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 75,
-        "line": 107,
+        "line": 105,
         "message": "member reference base type 'char[40]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 108,
+        "line": 106,
         "message": "member reference base type 'char[40]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 108,
+        "line": 106,
         "message": "member reference base type 'char[40]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 123,
+        "line": 121,
         "message": "member reference base type 'char[40]' is not a structure or union"
       }
     ],
@@ -43,18 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 254,
-    "complexity_score": 248,
+    "complexity_score": 246,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 17,
-    "pseudocode_lines": 123,
+    "pseudocode_lines": 121,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 377
+    "total_lines": 375
   },
   "cross_references": [
     {
@@ -74,7 +74,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0",
-    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (CDemonMission *this_ptr,CDemonMission *other)"
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMission *other)"
   },
   "function_calls": [
     {
@@ -360,77 +360,77 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_0000000c",
       "text": "CDemonMission *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 25,
       "match": "(int *)((int)",
       "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 0x2c) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(int *)((int)",
       "text": "(&local_448.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 1));",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 73,
       "match": "._0_4_",
       "text": "local_448.unk3._0_4_,local_448.unk3._4_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 73,
       "match": "._4_4_",
       "text": "local_448.unk3._0_4_,local_448.unk3._4_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 100,
+      "line": 98,
       "match": "._0_4_",
       "text": "(uint)local_448.base.vtable,local_448.unk1,local_448.unk3._0_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 101,
+      "line": 99,
       "match": "._4_4_",
       "text": "local_448.unk3._4_4_,local_448.unk3._8_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 101,
+      "line": 99,
       "match": "._8_4_",
       "text": "local_448.unk3._4_4_,local_448.unk3._8_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 108,
       "match": "in_stack_0000000c",
       "text": "local_448.base.item_count = (int)in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 110,
       "match": "in_stack_0000000c",
       "text": "core_msnedit_cpp_CDemonMission_FUN_0053c140(in_stack_0000000c,(int)actor);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 116,
+      "line": 114,
       "match": "._12_4_",
       "text": "local_448.unk3._12_4_ = local_448.unk3 + 0x14;",
       "type": "unknown_field"

@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 36,
-        "line": 71,
+        "line": 70,
         "message": "called object type 'float' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 71,
+        "line": 70,
         "message": "called object type 'float' is not a function or function pointer"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 724,
-    "complexity_score": 371,
+    "complexity_score": 370,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 23,
-    "pseudocode_lines": 216,
+    "pseudocode_lines": 215,
     "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 940
+    "total_lines": 939
   },
   "cross_references": [
     {
@@ -553,35 +553,42 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_fffffe0c",
       "text": "int in_stack_fffffe0c;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 61,
       "match": "CONCAT22",
       "text": "uVar4 = CONCAT22((short)((ulonglong)dVar9 >> 0x10),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 63,
       "match": "NAN",
       "text": "(ushort)(NAN(dVar9) || NAN(359.5)) << 10 |",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 63,
       "match": "NAN",
       "text": "(ushort)(NAN(dVar9) || NAN(359.5)) << 10 |",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 78,
+      "match": "ABS",
+      "text": "if (((ABS(local_1e8.normal.x) == 0.0) && (ABS(local_1e8.normal.y) == 0.0)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
       "match": "ABS",
       "text": "if (((ABS(local_1e8.normal.x) == 0.0) && (ABS(local_1e8.normal.y) == 0.0)) &&",
       "type": "decompiler_intrinsic"
@@ -589,62 +596,55 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
-      "match": "ABS",
-      "text": "if (((ABS(local_1e8.normal.x) == 0.0) && (ABS(local_1e8.normal.y) == 0.0)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
       "match": "ABS",
       "text": "(ABS(local_1e8.normal.z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 104,
       "match": "in_stack_fffffe0c",
       "text": "in_stack_fffffe0c);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
+      "line": 129,
       "match": "fcos",
       "text": "fVar8 = (float10)fcos((float10)0.52359877560000001);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 144,
       "match": "ABS",
       "text": "if (((ABS(g_ModelPolygonData[first_polygon_index].normal.x) == 0.0) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 145,
       "match": "ABS",
       "text": "(ABS(g_ModelPolygonData[first_polygon_index].normal.y) == 0.0)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
+      "line": 146,
       "match": "ABS",
       "text": "(ABS(g_ModelPolygonData[first_polygon_index].normal.z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 200,
+      "line": 199,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 200,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"

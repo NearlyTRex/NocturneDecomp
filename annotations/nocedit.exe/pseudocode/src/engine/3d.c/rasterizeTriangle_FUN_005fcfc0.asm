@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0 (SRenderVertex *vertex_buffer,int vertex_count,int triangle_count)
+; __cdecl void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count,int triangle_count)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex_buffer
@@ -32,7 +32,7 @@
 ;   int g_ViewportRightFixed
 ;   int g_ViewportBottomFixed
 ;   int g_UseExternalRenderer
-;   int g_RenderStateFlags
+;   _BIT_INTEGER g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;   int g_RenderedTriangleCount
 ;   int g_RasterizerEdgeCount

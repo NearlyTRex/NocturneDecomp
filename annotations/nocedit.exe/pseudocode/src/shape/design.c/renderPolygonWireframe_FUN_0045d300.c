@@ -29,7 +29,7 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
   bVar5 = 0;
   pSVar1 = polygon_data + 1;
   local_d8.w_recip = (float)&polygon_data->surface_normal;
-  local_d8.fog = 6.412388e-39;
+  local_d8.fog = 0x45d321;
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950((SClipPlane *)local_d8.w_recip);
   if (iVar2 != 0) {
     local_d8.w_recip = 6.41241e-39;

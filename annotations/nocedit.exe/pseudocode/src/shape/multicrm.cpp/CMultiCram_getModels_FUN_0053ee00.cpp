@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void * __cdecl
-shape_multicrm_cpp_CMultiCram_getModels_FUN_0053ee00(CMultiCram *this_ptr,CDSEModel **dest_array)
+void * __cdecl shape_multicrm_cpp_CMultiCram_getModels_FUN_0053ee00(CMultiCram *this_ptr,CDSEModel **dest_array)
 
 {
   *dest_array = this_ptr->models[0];

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_strstream_cpp_strstreambuf_seekoff_FUN_0060ba80 (strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags)
+; __watcallStack int __watcallStack crt_strstream_cpp_strstreambuf_seekoff_FUN_0060ba80(strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags)
 ;
 ; Parameters:
 ; strstreambuf *   Stack[0x4]:4   this_ptr

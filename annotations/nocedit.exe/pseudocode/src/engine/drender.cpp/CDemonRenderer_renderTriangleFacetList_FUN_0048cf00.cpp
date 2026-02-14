@@ -2,14 +2,11 @@
 // Address: 0048cf00
 // Address Range: [[0048cf00, 0048d16d]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags,int primitive_stride)
+// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags,int primitive_stride)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,
-          int render_flags,int primitive_stride)
+int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags,int primitive_stride)
 
 {
   SMRGLHeaderBasic *pSVar1;
@@ -27,12 +24,12 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
      (g_CullingMode != 0)) {
     if (this_ptr->face_count == 0) {
       if (g_BitsPerPixel == 0x20) {
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
       }
       else {
-        g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
-      g_RenderStateFlags = primitive_stride;
+      g_RenderStateFlags.dword = primitive_stride;
       in_EAX = 6;
       g_RenderStateFlag2 = 6;
       if (g_UseExternalRenderer == 0) {
@@ -92,15 +89,15 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
         if (0 < iVar3) {
           iVar3 = wincore_windll_cpp_drawPolyList_FUN_005b7640
                             (this_ptr->vertex_buffer_ptr,g_VisibleFacePointers,iVar3,
-                             g_RenderStateFlags);
+                             g_RenderStateFlags.dword);
           return iVar3;
         }
       }
     }
     else {
-      g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
-      g_RenderStateFlags = 0;
-      g_RenderStateFlag2 = g_RenderStateFlags;
+      g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+      g_RenderStateFlags.dword = 0;
+      g_RenderStateFlag2 = g_RenderStateFlags.dword;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
         local_28.x = primitive_array[1].base.type;
         local_28.y = primitive_array[1].surface_normal.B;

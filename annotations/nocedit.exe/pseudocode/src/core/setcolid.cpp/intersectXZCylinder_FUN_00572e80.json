@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 147,
+    "complexity_score": 145,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 65,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 279
+    "total_lines": 277
   },
   "cross_references": [],
   "function": {
@@ -30,7 +30,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_setcolid.cpp_intersectXZCylinder_FUN_00572e80",
-    "signature": "int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80 (SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)"
+    "signature": "int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)"
   },
   "function_calls": [],
   "globals": [
@@ -278,49 +278,49 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 13,
       "match": "(float *)((int)",
       "text": "if ((*(float *)((int)bounds_struct + 0x14) < cylinder->bottom_y) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 14,
       "match": "(float *)((int)",
       "text": "(cylinder->top_y < *(float *)((int)bounds_struct + 0x18))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(float *)((int)",
       "text": "fVar2 = *(float *)((int)bounds_struct + 0x1c) + cylinder->radius;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 31,
       "match": "SQRT",
       "text": "fVar3 = SQRT(fVar5 - fVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 34,
       "match": "ABS",
       "text": "if (ABS(cylinder->normal_x) <= ABS(cylinder->normal_z)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 34,
       "match": "ABS",
       "text": "if (ABS(cylinder->normal_x) <= ABS(cylinder->normal_z)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 54,
       "match": "SQRT",
       "text": "fVar2 = SQRT(fVar1) - fVar2;",
       "type": "decompiler_intrinsic"

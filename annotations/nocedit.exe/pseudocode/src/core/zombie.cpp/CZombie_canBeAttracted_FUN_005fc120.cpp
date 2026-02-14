@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *param_2)
+int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *param_2)
 
 {
   CDeformableModelInstance *this_ptr_00;

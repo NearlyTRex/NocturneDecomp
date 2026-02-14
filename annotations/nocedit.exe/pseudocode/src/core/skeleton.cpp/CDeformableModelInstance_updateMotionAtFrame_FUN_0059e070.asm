@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070 (CDeformableModelInstance *this_ptr,int motion_index,float frame_number)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070(CDeformableModelInstance *this_ptr,int motion_index,float frame_number)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr

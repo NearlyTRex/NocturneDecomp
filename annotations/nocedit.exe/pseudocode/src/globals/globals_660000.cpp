@@ -6173,39 +6173,15 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
 };
 
 // SMRGLTextureBasic
-SMRGLTextureBasic DAT_0066e158 = {
+SMRGLTextureBasic SMRGLTextureBasic_0066e158 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
 };
-SMRGLTextureBasic DAT_0066e460 = {
+SMRGLTextureBasic SMRGLTextureBasic_0066e460 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BLUEGLOW.RAW"
 };
-SMRGLTextureBasic DAT_0066e6b0 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "BOLT1.RAW"
-};
-SMRGLTextureBasic DAT_0066E6C8 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "BOLT2.RAW"
-};
-SMRGLTextureBasic DAT_0066E6E0 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "BOLT3.RAW"
-};
-SMRGLTextureBasic DAT_0066E6F8 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "BOLT4.RAW"
-};
-SMRGLTextureBasic DAT_0066E710 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "BOLT5.RAW"
-};
-SMRGLTextureBasic DAT_0066E728 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "BOLT6.RAW"
-};
-SMRGLTextureBasic DAT_0066e784 = {
+SMRGLTextureBasic SMRGLTextureBasic_0066e784 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "CHAR2.RAW"
 };
@@ -6299,6 +6275,34 @@ SMRGLTextureBasic g_LightTextures[20] = {
     {
         .base = {.type = -1079337026, .count = 0x3EE52B99},
         .texture_name = {0x02, 0x00, 0x00, 0x00, -126, 0x00, 0x00, 0x00, 0x7E, 0x00, 0x00, 0x00, -2, 0x00, 0x00, 0x00}
+    }
+};
+
+// SMRGLTextureBasic[6]
+SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT1.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT2.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT3.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT4.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT5.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT6.RAW"
     }
 };
 

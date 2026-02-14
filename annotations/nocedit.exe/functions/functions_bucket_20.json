@@ -4070,6 +4070,23 @@
     "name":"core_baron.cpp_CBaronWeapon_FUN_00413f20",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CBaron*",
+          "use":63
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -7902,6 +7919,23 @@
     "name":"core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CEnemy*",
+          "use":647
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -60114,7 +60148,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00559b20",
+    "name":"core_script.cpp_CScript_renderSubtitles_FUN_00559b20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61460,7 +61494,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_00566fa0",
+    "name":"core_script.cpp_CScript_collectLabels_FUN_00566fa0",
     "ret":"void",
     "vars":{
       "params":[
@@ -61481,7 +61515,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"labels_out",
           "storage":{
             "offset":8,
             "size":4,
@@ -61510,7 +61544,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_005671a0",
+    "name":"core_script.cpp_CScript_extractCrossReferences_FUN_005671a0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61597,7 +61631,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"text",
           "storage":{
             "offset":8,
             "size":4,
@@ -61610,10 +61644,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"xref_data",
           "storage":{
             "offset":12,
             "size":4,
@@ -61626,7 +61660,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"SScriptXRef*"
         }
       ]
     }
@@ -61642,7 +61676,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_compareActors_FUN_005675a0",
+    "name":"core_script.cpp_compareEventXRefs_FUN_005675a0",
     "ret":"int",
     "vars":{
       "params":[
@@ -61660,7 +61694,7 @@
               }
             ]
           },
-          "type":"CDemonActor*"
+          "type":"SScriptXRef*"
         },
         {
           "name":"b",
@@ -61676,7 +61710,7 @@
               }
             ]
           },
-          "type":"CDemonActor*"
+          "type":"SScriptXRef*"
         }
       ],
       "ret_storage":{
@@ -61702,7 +61736,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CScript_FUN_005677a0",
+    "name":"core_script.cpp_CScript_browseEventXRefs_FUN_005677a0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -61853,7 +61887,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"dialog_title",
           "storage":{
             "offset":8,
             "size":4,
@@ -61869,7 +61903,7 @@
           "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"selected_name",
           "storage":{
             "offset":12,
             "size":4,

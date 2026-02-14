@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SEdgeData *vertex_a,SEdgeData *vertex_b)
+void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SEdgeData *vertex_a,SEdgeData *vertex_b)
 
 {
   longlong lVar1;
@@ -95,7 +94,7 @@ core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SEdgeData *vertex_a,S
       iVar3 = vertex_a->x_current;
     }
     g_EdgeInterpolationArray[iVar2].z_current = iVar3 + uVar5;
-    if ((g_RenderStateFlags._1_1_ & 2) != 0) {
+    if ((g_RenderStateFlags.bytes[1] & 2) != 0) {
       lVar1 = (longlong)iVar7 * (longlong)(pSVar6->v_delta - vertex_a->v_delta);
       uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       g_EdgeInterpolationArray[iVar2].color_delta = uVar5;

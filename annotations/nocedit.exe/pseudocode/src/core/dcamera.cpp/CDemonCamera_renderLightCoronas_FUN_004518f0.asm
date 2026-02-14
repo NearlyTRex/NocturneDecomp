@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 (CDemonCamera *this_ptr,void *p1,int p2)
+; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemonCamera *this_ptr,void *p1,int p2)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

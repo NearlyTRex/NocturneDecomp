@@ -2,13 +2,11 @@
 // Address: 00522310
 // Address Range: [[00522310, 0052255c]]
 // Convention: __cdecl
-// Signature: uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (CMirror *this_ptr,SMRGLHeaderPrimitive *primitive)
+// Signature: uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 
-uint __cdecl
-core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
-          (CMirror *this_ptr,SMRGLHeaderPrimitive *primitive)
+uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive)
 
 {
   SRenderVertex *pSVar1;

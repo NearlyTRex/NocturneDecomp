@@ -1,35 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 36,
-        "message": "use of undeclared identifier 'stack0xffffff44'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 118,
-        "message": "use of undeclared identifier 'stack0xffffff44'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 183,
+    "complexity_score": 178,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 133,
-    "suspect_count": 4,
+    "pseudocode_lines": 138,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_ref"
+      "warning_type_propagation"
     ],
-    "total_lines": 459
+    "total_lines": 464
   },
   "cross_references": [
     {
@@ -410,32 +397,25 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xffffff44",
-      "text": "__arrinit(&stack0xffffff44,4,&g_CVectorTypeInfo);",
-      "type": "stack_ref"
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 77,
       "match": "SQRT",
-      "text": "fStack_b4 = SQRT(local_5c.z * local_5c.z +",
+      "text": "fVar2 = SQRT(CStack_68.z * CStack_68.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 99,
       "match": "ABS",
-      "text": "if ((ABS(local_38.y) <= (float)2) &&",
+      "text": "if (ABS(fStack_40) <= (float)2) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0xffffff44",
-      "text": "((pCVar1->location).position.x - *(float *)(&stack0xffffff44 + local_28 * 0xc)) +",
-      "type": "stack_ref"
     }
   ]
 }

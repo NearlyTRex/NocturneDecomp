@@ -2,13 +2,11 @@
 // Address: 00518870
 // Address Range: [[00518870, 0051890e]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870 (CLodMesh *this_ptr,CVector3f *out_centroid,CLodFace *face)
+// Signature: CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870(CLodMesh *this_ptr,CVector3f *out_centroid,CLodFace *face)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870
-          (CLodMesh *this_ptr,CVector3f *out_centroid,CLodFace *face)
+CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870(CLodMesh *this_ptr,CVector3f *out_centroid,CLodFace *face)
 
 {
   float fVar1;

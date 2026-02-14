@@ -2,13 +2,11 @@
 // Address: 004a2f80
 // Address Range: [[004a2f80, 004a3022]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80 (CStrList *this_ptr,int string_index,char *output_buffer,int field_number)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,int string_index,char *output_buffer,int field_number)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-          (CStrList *this_ptr,int string_index,char *output_buffer,int field_number)
+void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,int string_index,char *output_buffer,int field_number)
 
 {
   char cVar1;

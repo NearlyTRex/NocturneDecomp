@@ -2,13 +2,11 @@
 // Address: 0055ff00
 // Address Range: [[0055ff00, 005600b9]]
 // Convention: __cdecl
-// Signature: float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00 (CScript *this_ptr,int param_2,char *param_3,char *param_4)
+// Signature: float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,int param_2,char *param_3,char *param_4)
 
 #include "nocturne.h"
 
-float __cdecl
-core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
-          (CScript *this_ptr,int param_2,char *param_3,char *param_4)
+float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,int param_2,char *param_3,char *param_4)
 
 {
   char cVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_vessel_cpp_CCryptVessel_onDropped_FUN_005e9150(CCryptVessel *this_ptr,CVector3f *drop_position)
+void __cdecl core_vessel_cpp_CCryptVessel_onDropped_FUN_005e9150(CCryptVessel *this_ptr,CVector3f *drop_position)
 
 {
   (this_ptr->base).orient.vec.x = 0.0;

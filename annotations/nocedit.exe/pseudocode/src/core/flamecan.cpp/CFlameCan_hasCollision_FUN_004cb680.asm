@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_flamecan_cpp_CFlameCan_hasCollision_FUN_004cb680 (CFlameCan *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_flamecan_cpp_CFlameCan_hasCollision_FUN_004cb680(CFlameCan *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CFlameCan *      Stack[0x4]:4   this_ptr

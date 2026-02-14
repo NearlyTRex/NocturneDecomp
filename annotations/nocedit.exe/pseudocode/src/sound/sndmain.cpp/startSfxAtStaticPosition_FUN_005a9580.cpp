@@ -2,13 +2,11 @@
 // Address: 005a9580
 // Address Range: [[005a9580, 005a95d3]]
 // Convention: __cdecl
-// Signature: uint __cdecl sound_sndmain_cpp_startSfxAtStaticPosition_FUN_005a9580 (char *filename,double pos_x,double pos_y,double pos_z)
+// Signature: uint __cdecl sound_sndmain_cpp_startSfxAtStaticPosition_FUN_005a9580(char *filename,double pos_x,double pos_y,double pos_z)
 
 #include "nocturne.h"
 
-uint __cdecl
-sound_sndmain_cpp_startSfxAtStaticPosition_FUN_005a9580
-          (char *filename,double pos_x,double pos_y,double pos_z)
+uint __cdecl sound_sndmain_cpp_startSfxAtStaticPosition_FUN_005a9580(char *filename,double pos_x,double pos_y,double pos_z)
 
 {
   uint uVar1;

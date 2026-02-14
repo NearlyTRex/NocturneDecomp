@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540 (CPickList *this_ptr,int item_index,int hotkey_code)
+; __cdecl void __cdecl shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540(CPickList *this_ptr,int item_index,int hotkey_code)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr

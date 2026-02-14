@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 381,
-    "complexity_score": 193,
+    "complexity_score": 190,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 15,
-    "pseudocode_lines": 138,
+    "pseudocode_lines": 135,
     "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 519
+    "total_lines": 516
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440",
-    "signature": "void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440 (CWinFont *this_ptr,HDC device_context,int x_position,int y_position,char *text_string, int foreground_color,int background_color)"
+    "signature": "void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,int x_position,int y_position,char *text_string,int foreground_color,int background_color)"
   },
   "function_calls": [
     {
@@ -283,21 +283,21 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 16,
       "match": "in_stack_0000002c",
       "text": "int in_stack_0000002c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 55,
       "match": "in_stack_0000002c",
       "text": "if (in_stack_0000002c != -1) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 89,
       "match": "(ushort *)((int)",
       "text": "puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar7] + y_position * 2);",
       "type": "pointer_cast"

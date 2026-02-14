@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580 (CPoly *this_ptr,CPoly *other_poly,CPolyIntersectResult *out_result)
+; __cdecl int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,CPoly *other_poly,CPolyIntersectResult *out_result)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

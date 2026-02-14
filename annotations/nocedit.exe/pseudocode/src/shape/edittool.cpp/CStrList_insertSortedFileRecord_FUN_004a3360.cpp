@@ -2,13 +2,11 @@
 // Address: 004a3360
 // Address Range: [[004a3360, 004a35a7]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (CStrList *this_ptr,char *search_key,char *file_path,int file_size)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
-          (CStrList *this_ptr,char *search_key,char *file_path,int file_size)
+void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size)
 
 {
   char cVar1;

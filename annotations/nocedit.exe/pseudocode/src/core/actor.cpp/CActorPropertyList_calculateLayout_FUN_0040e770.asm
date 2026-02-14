@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770 (CActorPropertyList *this_ptr,int x,int y,int width)
+; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770(CActorPropertyList *this_ptr,int x,int y,int width)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

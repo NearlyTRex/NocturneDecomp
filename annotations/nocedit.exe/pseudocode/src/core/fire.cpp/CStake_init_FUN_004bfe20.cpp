@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_fire_cpp_CStake_init_FUN_004bfe20(CStake *this_ptr,CVector3f *position,CVector3f *orientation)
+void __cdecl core_fire_cpp_CStake_init_FUN_004bfe20(CStake *this_ptr,CVector3f *position,CVector3f *orientation)
 
 {
   CVector3f *pCVar1;

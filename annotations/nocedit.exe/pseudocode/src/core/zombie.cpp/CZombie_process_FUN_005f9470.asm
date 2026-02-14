@@ -2535,7 +2535,7 @@ section .text
         ;   XREF to: 005f9f22 (CONDITIONAL_JUMP)  ; LAB_005f9f22
     MOV ESI,dword ptr [0x02c14d14]      ; 005fb07f | g_CDoorClassInfo.name_hash
     PUSH ESI                            ; 005fb085
-    MOV EAX,[0x00823c50]                ; 005fb086 | DAT_00823c50
+    MOV EAX,[0x00823c50]                ; 005fb086 | PTR_00823c50
     PUSH EAX                            ; 005fb08b
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005fb08c
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

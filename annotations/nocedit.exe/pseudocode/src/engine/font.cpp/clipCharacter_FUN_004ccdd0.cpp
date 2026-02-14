@@ -2,13 +2,11 @@
 // Address: 004ccdd0
 // Address Range: [[004ccdd0, 004cce82]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_font_cpp_clipCharacter_FUN_004ccdd0 (int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width)
+// Signature: int __cdecl engine_font_cpp_clipCharacter_FUN_004ccdd0(int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width )
 
 #include "nocturne.h"
 
-int __cdecl
-engine_font_cpp_clipCharacter_FUN_004ccdd0
-          (int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width)
+int __cdecl engine_font_cpp_clipCharacter_FUN_004ccdd0(int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width )
 
 {
   if (*left_x < g_ClipLeft) {

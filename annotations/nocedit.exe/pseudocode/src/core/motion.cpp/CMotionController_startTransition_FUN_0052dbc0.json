@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 81,
+    "complexity_score": 35,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 36,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 120
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -41,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0",
-    "signature": "void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0 (CMotionController *this_ptr,SMotionTransition *transition)"
+    "signature": "void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0(CMotionController *this_ptr,SMotionTransition *transition)"
   },
   "function_calls": [
     {
@@ -156,34 +154,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "float unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = (float)iVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_ESI",
-      "text": "(this_ptr,transition->to_motion_number,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_ESI",
-      "text": "this_ptr->tween_target_frame = unaff_ESI;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

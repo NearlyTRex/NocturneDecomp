@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 97,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 70,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 221
+    "total_lines": 219
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440",
-    "signature": "void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)"
+    "signature": "void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -67,7 +67,7 @@
     {
       "addr": "013bc260",
       "name": "g_CameraDownscaleIterations",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -222,14 +222,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)puVar2 + iVar16 + (iVar14 << bVar4) * 4) < iVar5) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);",
       "type": "pointer_cast"

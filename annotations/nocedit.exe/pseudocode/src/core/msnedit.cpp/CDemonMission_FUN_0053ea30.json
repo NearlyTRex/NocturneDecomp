@@ -1,40 +1,25 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 80,
-        "line": 25,
-        "message": "use of undeclared identifier 'stack0xffffd9d8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 27,
-        "message": "use of undeclared identifier 'stack0xffffd9d8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 69,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 44,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 147
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 144
   },
   "cross_references": [
     {
       "addr": "00567630",
       "from_addr": "005676a7",
-      "name": "core_script.cpp_CScript_FUN_00567630",
+      "name": "core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,19 +47,19 @@
       "name": "core_actor.cpp_CActorPropertyList_init_FUN_0040e130"
     },
     {
-      "addr": "00567010",
+      "addr": "00567510",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00567010"
+      "name": "core_script.cpp_CScript_addEventXRef_FUN_00567510"
     },
     {
       "addr": "005671a0",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_005671a0"
+      "name": "core_script.cpp_CScript_extractCrossReferences_FUN_005671a0"
     },
     {
-      "addr": "00567510",
+      "addr": "00567010",
       "is_variadic": false,
-      "name": "core_script.cpp_CScript_FUN_00567510"
+      "name": "core_script.cpp_CScript_parseCommandList_FUN_00567010"
     }
   ],
   "globals": [
@@ -151,20 +136,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffd9d8",
-      "text": "core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&stack0xffffd9d8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffd9d8",
-      "text": "(this_ptr_00,(CActorPropertyList *)&stack0xffffd9d8);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

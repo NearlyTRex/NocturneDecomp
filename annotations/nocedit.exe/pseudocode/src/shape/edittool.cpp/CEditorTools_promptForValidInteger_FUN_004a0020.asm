@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020 (CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check, int min_value,int max_value,int show_current_value)
+; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check,int min_value,int max_value,int show_current_value)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047db95
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de38e
 ;   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 at 004d778e
-;   core_script.cpp_CScript_FUN_00565130 at 00565442
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 00565442
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 005629a6
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 0059820d
 ;   core_skeledit.cpp_FUN_0058c190 at 0058cb1a

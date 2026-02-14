@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 117,
+    "complexity_score": 115,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 30,
     "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "special_crt_function",
       "unaffected_reg"
     ],
-    "total_lines": 101
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456",
-    "signature": "void __cdecl crt_fstream_cpp_fstreambase_constructor_FUN_00606456 (fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size)"
+    "signature": "void __cdecl crt_fstream_cpp_fstreambase_constructor_FUN_00606456(fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size )"
   },
   "function_calls": [
     {
@@ -165,42 +165,42 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 9,
       "match": "unaff_ESI",
       "text": "char *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 10,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 15,
       "match": "piVar2[-2].",
       "text": "this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 18,
       "match": "this_ptr_00[-1].",
       "text": "pcVar1 = this_ptr_00[-1].__unbuffered_get_area + 4;",
       "type": "negative_offset"
     },
     {
       "description": "Unaffected register variable",
-      "line": 27,
+      "line": 25,
       "match": "unaff_EDI",
       "text": "((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00,unaff_EDI,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 28,
+      "line": 26,
       "match": "unaff_ESI",
       "text": "unaff_ESI);",
       "type": "unaffected_reg"

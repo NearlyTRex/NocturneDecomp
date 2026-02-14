@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 88,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 26,
     "suspect_count": 5,
     "suspect_types": [
       "register_param",
       "unnamed_param"
     ],
-    "total_lines": 95
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0",
-    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0 (CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count)"
+    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0(CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count)"
   },
   "function_calls": [
     {
@@ -164,35 +164,35 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 7,
+      "line": 5,
       "match": "in_EAX",
       "text": "CActorProperty *in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 24,
+      "line": 22,
       "match": "in_EAX",
       "text": "in_EAX = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_EAX",
       "text": "(in_EAX->param1).v_int = iVar1;",
       "type": "register_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param1",
       "text": "(in_EAX->param1).v_int = iVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 30,
+      "line": 28,
       "match": "in_EAX",
       "text": "return in_EAX;",
       "type": "register_param"

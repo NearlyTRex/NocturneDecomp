@@ -309,6 +309,7 @@
 #include "types/funcdefs/ColorConversionFunc.h"
 #include "types/funcdefs/FileSearchHandler.h"
 #include "types/funcdefs/MRGLBlockHandlerFunc.h"
+#include "types/funcdefs/MessageHandlerFunc.h"
 #include "types/funcdefs/OptimizedMemcpyFunc.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
 

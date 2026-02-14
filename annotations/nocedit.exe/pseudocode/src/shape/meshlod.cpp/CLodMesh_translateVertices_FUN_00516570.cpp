@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_meshlod_cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh *this_ptr,CVector3f *offset)
+void __cdecl shape_meshlod_cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh *this_ptr,CVector3f *offset)
 
 {
   CLodVert *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boxactor_cpp_CLightActor_getPropertyList_FUN_004234e0 (CLightActor *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_boxactor_cpp_CLightActor_getPropertyList_FUN_004234e0(CLightActor *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CLightActor *    Stack[0x4]:4   this_ptr

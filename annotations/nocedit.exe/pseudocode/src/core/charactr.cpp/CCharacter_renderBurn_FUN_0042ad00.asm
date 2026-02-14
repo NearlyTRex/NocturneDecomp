@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00617132 = 65535
 ;   float FLOAT_0065b830 = 3
-;   SMRGLTextureBasic DAT_0066e784
+;   SMRGLTextureBasic SMRGLTextureBasic_0066e784
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_00823c54
 ;   undefined4 DAT_00823c58
@@ -55,7 +55,7 @@ section .text
     POP ESI                             ; 0042ad1c
     POP EBX                             ; 0042ad1d
     RET                                 ; 0042ad1e
-    PUSH 0x66e784                       ; 0042ad1f | DAT_0066e784
+    PUSH 0x66e784                       ; 0042ad1f | SMRGLTextureBasic_0066e784
         ;   Label: LAB_0042ad1f
     MOV ECX,dword ptr [0x006703ec]      ; 0042ad24 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0042ad2a | g_CDemonRendererInstance

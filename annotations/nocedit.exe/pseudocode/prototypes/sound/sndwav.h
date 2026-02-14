@@ -29,7 +29,7 @@ int __cdecl CWavOutDevice::reset(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
 // Address: 005b0a30
-int __cdecl CWavOutDevice::setMode(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block);
+int __cdecl CWavOutDevice::setMode(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10
 // Address: 005b0c10
@@ -57,7 +57,7 @@ int __cdecl CWavInDevice::reset(CWavInDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
 // Address: 005b0f70
-int __cdecl CWavInDevice::setMode(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block);
+int __cdecl CWavInDevice::setMode(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block);
 
 // Original: sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0
 // Address: 005b12e0
@@ -89,7 +89,7 @@ void __cdecl CWavOutDevice::set3DListenerPos(CWavOutDevice *this_ptr,double x,do
 
 // Original: sound_sndwav.cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670
 // Address: 005b1670
-void __cdecl CWavOutDevice::set3DListenerOrient(CWavOutDevice *this_ptr,double x_front,double y_front,double z_front,double x_top, double y_top,double z_top);
+void __cdecl CWavOutDevice::set3DListenerOrient(CWavOutDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680
 // Address: 005b1680
@@ -105,7 +105,7 @@ void __cdecl CWavOutDevice::commitDeferredSettings(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_allocateSample_FUN_005b16b0
 // Address: 005b16b0
-int __cdecl CWavOutDevice::allocateSample(CWavOutDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate, int sample_count);
+int __cdecl CWavOutDevice::allocateSample(CWavOutDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_freeSample_FUN_005b16c0
 // Address: 005b16c0

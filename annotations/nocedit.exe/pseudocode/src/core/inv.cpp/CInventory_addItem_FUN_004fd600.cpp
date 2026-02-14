@@ -2,13 +2,11 @@
 // Address: 004fd600
 // Address Range: [[004fd600, 004fe8f4]]
 // Convention: __cdecl
-// Signature: int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600 (CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
+// Signature: int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
 
 #include "nocturne.h"
 
-int __cdecl
-core_inv_cpp_CInventory_addItem_FUN_004fd600
-          (CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
+int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
 
 {
   char cVar1;

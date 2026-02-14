@@ -2,14 +2,11 @@
 // Address: 004a1e90
 // Address Range: [[004a1e90, 004a1f2c]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90 (CEditorTools *this_ptr,int param2,CQuaternion4f *world_position, CQuaternion4f *label_offset,void *param5)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,CQuaternion4f *label_offset,void *param5)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
-          (CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,
-          CQuaternion4f *label_offset,void *param5)
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,CQuaternion4f *label_offset,void *param5)
 
 {
   CQuaternion4f CStack_28;

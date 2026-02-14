@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_process_c_build_cmdline_FUN_00610258 (int argc,char **argv,char *program,char **out_cmdline,char **out_environment, char **out_buffer,int *out_bufsize,int copy_program_flag)
+; __cdecl int __cdecl crt_process_c_build_cmdline_FUN_00610258(int argc,char **argv,char *program,char **out_cmdline,char **out_environment,char **out_buffer,int *out_bufsize,int copy_program_flag)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   argc

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 72,
+    "complexity_score": 71,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 11,
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 46,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 173
+    "total_lines": 172
   },
   "cross_references": [
     {
@@ -112,7 +112,7 @@
     {
       "addr": "013bc260",
       "name": "g_CameraDownscaleIterations",
-      "type": "int",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -204,14 +204,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(void *)((int)",
       "text": "this_ptr->framebuffer_aligned = (void *)((int)this_ptr->framebuffer_raw + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(void *)((int)",
       "text": "this_ptr->zbuffer_aligned = (void *)((int)this_ptr->zbuffer_raw + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"

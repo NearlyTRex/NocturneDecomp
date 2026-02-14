@@ -2,13 +2,11 @@
 // Address: 004210b0
 // Address Range: [[004210b0, 0042154b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0 (CBoundingBox3D *this_ptr,int param1,int param2,int param3)
+// Signature: void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)
 
 #include "nocturne.h"
 
-void __cdecl
-core_box_cpp_CBoundingBox3D_render_FUN_004210b0
-          (CBoundingBox3D *this_ptr,int param1,int param2,int param3)
+void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)
 
 {
   CDemonRenderer *pCVar1;
@@ -55,30 +53,30 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
   if (pvVar2 == (void *)0x0) {
     g_CurrentTextureData = pvVar2;
     g_CurrentTextureOpacityData = pvVar2;
-    g_CDemonRendererPtr2->vertex_buffer_ptr->light = 4.59163e-41;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->light = 0x7fff;
     pCVar1->vertex_buffer_ptr->color = 0;
-    pCVar1->vertex_buffer_ptr->fog = 0.0;
-    pCVar1->vertex_buffer_ptr[1].light = 0.0;
+    pCVar1->vertex_buffer_ptr->fog = 0;
+    pCVar1->vertex_buffer_ptr[1].light = 0;
     pCVar1->vertex_buffer_ptr[1].color = 0x7fff;
-    pCVar1->vertex_buffer_ptr[1].fog = 0.0;
-    pCVar1->vertex_buffer_ptr[2].light = 0.0;
+    pCVar1->vertex_buffer_ptr[1].fog = 0;
+    pCVar1->vertex_buffer_ptr[2].light = 0;
     pCVar1->vertex_buffer_ptr[2].color = 0;
-    pCVar1->vertex_buffer_ptr[2].fog = 4.59163e-41;
-    pCVar1->vertex_buffer_ptr[3].light = 4.59163e-41;
+    pCVar1->vertex_buffer_ptr[2].fog = 0x7fff;
+    pCVar1->vertex_buffer_ptr[3].light = 0x7fff;
     pCVar1->vertex_buffer_ptr[3].color = 0x7fff;
-    pCVar1->vertex_buffer_ptr[3].fog = 0.0;
-    pCVar1->vertex_buffer_ptr[4].light = 0.0;
+    pCVar1->vertex_buffer_ptr[3].fog = 0;
+    pCVar1->vertex_buffer_ptr[4].light = 0;
     pCVar1->vertex_buffer_ptr[4].color = 0x7fff;
-    pCVar1->vertex_buffer_ptr[4].fog = 4.59163e-41;
-    pCVar1->vertex_buffer_ptr[5].light = 4.59163e-41;
+    pCVar1->vertex_buffer_ptr[4].fog = 0x7fff;
+    pCVar1->vertex_buffer_ptr[5].light = 0x7fff;
     pCVar1->vertex_buffer_ptr[5].color = 0;
-    pCVar1->vertex_buffer_ptr[5].fog = 4.59163e-41;
-    pCVar1->vertex_buffer_ptr[6].light = 4.59163e-41;
+    pCVar1->vertex_buffer_ptr[5].fog = 0x7fff;
+    pCVar1->vertex_buffer_ptr[6].light = 0x7fff;
     pCVar1->vertex_buffer_ptr[6].color = 0x7fff;
-    pCVar1->vertex_buffer_ptr[6].fog = 4.59163e-41;
-    pCVar1->vertex_buffer_ptr[7].light = 0.0;
+    pCVar1->vertex_buffer_ptr[6].fog = 0x7fff;
+    pCVar1->vertex_buffer_ptr[7].light = 0;
     pCVar1->vertex_buffer_ptr[7].color = 0;
-    pCVar1->vertex_buffer_ptr[7].fog = 0.0;
+    pCVar1->vertex_buffer_ptr[7].fog = 0;
   }
   local_50.surface_normal.A = -1;
   local_50.surface_normal.B = 0;

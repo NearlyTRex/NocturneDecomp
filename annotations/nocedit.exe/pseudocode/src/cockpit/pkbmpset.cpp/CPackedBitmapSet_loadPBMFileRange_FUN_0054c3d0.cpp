@@ -2,14 +2,11 @@
 // Address: 0054c3d0
 // Address Range: [[0054c3d0, 0054c470]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0 (CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index, char *base_path)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *base_path)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
-          (CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,
-          char *base_path)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *base_path)
 
 {
   int iVar1;

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 80,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 50,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
     "total_lines": 57
   },
@@ -86,15 +85,8 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "SQRT",
-      "text": "if (SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) < (float)0.5) {",
+      "text": "if (SQRT(fStack_8 * fStack_8 + fStack_10 * fStack_10 + fStack_c * fStack_c) <",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 49,
-      "match": "8.68452e-39",
-      "text": "fStack_28 = 8.68452e-39;",
-      "type": "suspect_float"
     }
   ],
   "vtable_info": {

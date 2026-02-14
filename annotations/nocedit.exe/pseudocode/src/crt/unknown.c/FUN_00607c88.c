@@ -2,23 +2,19 @@
 // Address: 00607c88
 // Address Range: [[00607c88, 00607cbb]]
 // Convention: unknown
-// Signature: undefined4 crt_unknown_c_FUN_00607c88(void)
+// Signature: undefined4 crt_unknown_c_FUN_00607c88(int *param_1,int *param_2)
 
 #include "nocturne.h"
 
-uint FUN_00607c88(void)
+uint FUN_00607c88(int *param_1,int *param_2)
 
 {
   uint uVar1;
-  int *in_stack_00000004;
-  int *in_stack_00000008;
   
   uVar1 = 0;
-  if ((in_stack_00000004[2] < in_stack_00000008[2]) ||
-     ((in_stack_00000004[2] == in_stack_00000008[2] &&
-      ((in_stack_00000004[1] < in_stack_00000008[1] ||
-       ((in_stack_00000004[1] == in_stack_00000008[1] && (*in_stack_00000004 < *in_stack_00000008)))
-       ))))) {
+  if ((param_1[2] < param_2[2]) ||
+     ((param_1[2] == param_2[2] &&
+      ((param_1[1] < param_2[1] || ((param_1[1] == param_2[1] && (*param_1 < *param_2)))))))) {
     uVar1 = 1;
   }
   return uVar1;

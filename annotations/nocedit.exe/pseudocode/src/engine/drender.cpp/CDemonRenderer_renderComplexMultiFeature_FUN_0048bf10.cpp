@@ -2,13 +2,11 @@
 // Address: 0048bf10
 // Address Range: [[0048bf10, 0048bfd6]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10 (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10
-          (CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 
 {
   SMRGLHeaderPrimitive *pSVar1;
@@ -30,16 +28,16 @@ engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10
     if (((uVar2 & 0x80000000) == 0) || ((uVar2 & 0x1f) == 0)) {
       if (this_ptr->face_count == 0) {
         if (g_BitsPerPixel == 0x20) {
-          g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+          g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
         }
         else {
-          g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+          g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlags = RENDER_ENGINE_CORE_COMPLEX;
+        g_RenderStateFlags.dword = RENDER_ENGINE_CORE_COMPLEX;
       }
       else {
-        g_RenderStateFlags = 0;
-        g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+        g_RenderStateFlags.dword = 0;
+        g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       }
       g_RenderStateFlag2 = PREPROCESS_NONE;
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740

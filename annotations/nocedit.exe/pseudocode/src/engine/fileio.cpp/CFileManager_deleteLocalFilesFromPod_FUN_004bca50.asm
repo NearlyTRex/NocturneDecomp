@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50 (CFileManager *this_ptr,char *pod_filename)
+; __cdecl int __cdecl engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50(CFileManager *this_ptr,char *pod_filename)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

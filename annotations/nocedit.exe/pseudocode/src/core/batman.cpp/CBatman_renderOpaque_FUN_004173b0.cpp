@@ -13,7 +13,7 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
   int iVar2;
   CBoundingBox3D *this_ptr_00;
   uint render_flags;
-  double dStack_30;
+  float fStack_30;
   CBoundingBox3D local_2c;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
@@ -26,8 +26,7 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
      ((this_ptr->base).base.render_active == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
-                            ((CDemonActor *)this_ptr,
-                             (CBoundingBox3D *)((int)register0x00000010 + -0x2c));
+                            ((CDemonActor *)this_ptr,&local_2c);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar1 != 0) {
       iVar2 = this_ptr->mist_state;
@@ -37,22 +36,21 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
       }
       else {
         if (iVar2 == 1) {
-          local_2c.min.y = (1.0 - this_ptr->vanish_timer) / 1.0f;
+          fStack_30 = (1.0 - this_ptr->vanish_timer) / 1.0f;
         }
         else {
-          local_2c.min.y = ((float)0.5 - this_ptr->vanish_timer) / 1.0f;
-          if (local_2c.min.y < 0.0) {
-            local_2c.min.y = 0.0;
+          fStack_30 = ((float)0.5 - this_ptr->vanish_timer) / 1.0f;
+          if (fStack_30 < 0.0) {
+            fStack_30 = 0.0;
           }
         }
-        dStack_30 = (double)local_2c.min.y;
-        if (0.0 < dStack_30) {
+        if (0.0 < (double)fStack_30) {
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
           engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
-                    (g_CDemonRendererPtr2,local_2c.min.y);
+                    (g_CDemonRendererPtr2,fStack_30);
           engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
                     (g_CDemonRendererPtr2,1);
-          if (dStack_30 <= 0.5) {
+          if ((double)fStack_30 <= 0.5) {
             render_flags = 0x267;
           }
           else {
@@ -71,7 +69,6 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);
       }
     }
-    dStack_30._0_4_ = this_ptr;
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
     return iVar1;
   }

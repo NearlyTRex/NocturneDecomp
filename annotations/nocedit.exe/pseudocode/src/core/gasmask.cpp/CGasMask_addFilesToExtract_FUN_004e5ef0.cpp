@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_gasmask_cpp_CGasMask_addFilesToExtract_FUN_004e5ef0(CGasMask *this_ptr,_FILE *file_handle)
+void __cdecl core_gasmask_cpp_CGasMask_addFilesToExtract_FUN_004e5ef0(CGasMask *this_ptr,_FILE *file_handle)
 
 {
   CKeyFramedModel *pCVar1;

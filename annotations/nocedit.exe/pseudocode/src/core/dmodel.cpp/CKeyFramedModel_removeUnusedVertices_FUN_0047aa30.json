@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 37,
+        "line": 36,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 337,
-    "complexity_score": 189,
+    "complexity_score": 188,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 164,
+    "pseudocode_lines": 163,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 501
+    "total_lines": 500
   },
   "cross_references": [
     {
@@ -302,14 +302,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 66,
       "match": "(byte *)((int)",
       "text": "local_14 = (byte *)((int)local_14 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 141,
       "match": "(byte *)((int)",
       "text": "puVar8 = (byte *)((int)&(pSVar1->base).base.type + 1);",
       "type": "pointer_cast"

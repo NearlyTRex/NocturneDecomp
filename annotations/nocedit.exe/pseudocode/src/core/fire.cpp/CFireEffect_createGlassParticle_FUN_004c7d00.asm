@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00 (CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex, CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
+; __cdecl void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr

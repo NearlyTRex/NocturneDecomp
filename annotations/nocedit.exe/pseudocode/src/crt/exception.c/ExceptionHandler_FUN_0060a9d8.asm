@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl EXCEPTION_DISPOSITION __cdecl crt_exception_c_ExceptionHandler_FUN_0060a9d8 (EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord, void *DispatcherContext)
+; __cdecl EXCEPTION_DISPOSITION __cdecl crt_exception_c_ExceptionHandler_FUN_0060a9d8(EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord,void *DispatcherContext)
 ;
 ; Parameters:
 ; EXCEPTION_RECORD * Stack[0x4]:4   ExceptionRecord

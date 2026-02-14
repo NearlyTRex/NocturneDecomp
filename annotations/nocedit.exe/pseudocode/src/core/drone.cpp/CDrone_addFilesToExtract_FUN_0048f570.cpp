@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_drone_cpp_CDrone_addFilesToExtract_FUN_0048f570(CDrone *this_ptr,_FILE *file_handle)
+void __cdecl core_drone_cpp_CDrone_addFilesToExtract_FUN_0048f570(CDrone *this_ptr,_FILE *file_handle)
 
 {
   core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0((CDemonActor *)this_ptr,file_handle);

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_dlight_cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight *this_ptr)
+int __cdecl core_dlight_cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight *this_ptr)
 
 {
   int iVar1;

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-sound_sndmain_cpp_setNextSfxTrackedDoublePosition_FUN_005a8970(CVector3d *position_source_ptr)
+void __cdecl sound_sndmain_cpp_setNextSfxTrackedDoublePosition_FUN_005a8970(CVector3d *position_source_ptr)
 
 {
   int iVar1;

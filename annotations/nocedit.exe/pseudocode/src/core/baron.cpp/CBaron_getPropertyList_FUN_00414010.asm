@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_baron_cpp_CBaron_getPropertyList_FUN_00414010 (CBaron *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_baron_cpp_CBaron_getPropertyList_FUN_00414010(CBaron *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr

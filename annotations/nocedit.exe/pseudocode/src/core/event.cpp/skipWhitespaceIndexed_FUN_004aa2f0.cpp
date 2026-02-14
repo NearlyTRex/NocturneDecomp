@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int * __cdecl
-core_event_cpp_skipWhitespaceIndexed_FUN_004aa2f0(char *expression,int *parse_position)
+int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_004aa2f0(char *expression,int *parse_position)
 
 {
   while ((g_CharacterClassificationTable[(byte)(expression[*parse_position] + 1)] & 2) != 0) {

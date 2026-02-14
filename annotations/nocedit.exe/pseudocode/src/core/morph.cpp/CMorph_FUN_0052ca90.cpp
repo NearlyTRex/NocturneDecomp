@@ -10,10 +10,19 @@ void __cdecl core_morph_cpp_CMorph_FUN_0052ca90(CMorph *this_ptr)
 
 {
   int iVar1;
+  float fStack_18;
+  float local_14;
   
+  local_14 = 0.0;
   shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   while( true ) {
+    if (local_14 < 0.0) {
+      local_14 = 0.0;
+    }
+    if (1.0 < local_14) {
+      local_14 = 1.0;
+    }
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,4);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
@@ -25,9 +34,19 @@ void __cdecl core_morph_cpp_CMorph_FUN_0052ca90(CMorph *this_ptr)
     shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar1 != 0) break;
-    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
-    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x33);
-    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x34);
+    fStack_18 = g_CGamePtr->delta_time_float * (float)2;
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    if (iVar1 != 0) {
+      fStack_18 = fStack_18 * (float)0.33333333333333298;
+    }
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x33);
+    if (iVar1 != 0) {
+      local_14 = local_14 - fStack_18;
+    }
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x34);
+    if (iVar1 != 0) {
+      local_14 = local_14 + fStack_18;
+    }
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;

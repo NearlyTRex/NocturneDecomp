@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 24,
-        "line": 61,
+        "line": 59,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 62,
+        "line": 60,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 248,
+    "complexity_score": 246,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 66,
     "suspect_count": 17,
     "suspect_types": [
       "unaffected_reg",
       "warning_unreachable"
     ],
-    "total_lines": 270
+    "total_lines": 268
   },
   "cross_references": [
     {
@@ -49,7 +49,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60",
-    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60 (CDemonRaytrace *this_ptr,SCapsuleCollision *capsule_data)"
+    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60(CDemonRaytrace *this_ptr,SCapsuleCollision *capsule_data)"
   },
   "function_calls": [
     {
@@ -301,70 +301,70 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 21,
+      "line": 19,
       "match": "unaff_EBX",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 22,
+      "line": 20,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 47,
       "match": "unaff_EBX",
       "text": "fVar5 = 1.0 / *(float *)(unaff_EBX + 0x2c);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 49,
       "match": "unaff_EBX",
       "text": "fVar1 = *(float *)(unaff_EBX + 0x14);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 54,
+      "line": 52,
       "match": "unaff_EBX",
       "text": "((double)(((float)capsule_data->user_data2 - *(float *)(unaff_EBX + 0x14)) * fVar5));",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 55,
       "match": "unaff_EDI",
       "text": "fVar6 = ((capsule_data->start_z + capsule_data->dir_z) - *(float *)(unaff_EDI + 0x18)) -",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 59,
+      "line": 57,
       "match": "unaff_EDI",
       "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 63,
+      "line": 61,
       "match": "unaff_EDI",
       "text": "fVar6 = (capsule_data->start_z - *(float *)(unaff_EDI + 0x18)) - capsule_data->radius;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 64,
+      "line": 62,
       "match": "unaff_EDI",
       "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 67,
+      "line": 65,
       "match": "unaff_EDI",
       "text": "fVar2 = *(float *)(unaff_EDI + 0x18);",
       "type": "unaffected_reg"

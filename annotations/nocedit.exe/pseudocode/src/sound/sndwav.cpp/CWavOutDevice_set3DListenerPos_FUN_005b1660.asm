@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (CWavOutDevice *this_ptr,double x,double y,double z)
+; __cdecl void __cdecl sound_sndwav_cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660(CWavOutDevice *this_ptr,double x,double y,double z)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr

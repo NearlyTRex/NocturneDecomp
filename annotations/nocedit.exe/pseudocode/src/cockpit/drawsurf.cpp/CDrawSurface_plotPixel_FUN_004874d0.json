@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 86,
+    "complexity_score": 85,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 12,
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 60,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 210
+    "total_lines": 209
   },
   "cross_references": [
     {
@@ -208,14 +208,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)",
       "type": "pointer_cast"

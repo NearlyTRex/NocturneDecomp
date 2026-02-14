@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(C3DSLight *this_ptr,_FILE *file_handle)
+void __cdecl core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(C3DSLight *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;

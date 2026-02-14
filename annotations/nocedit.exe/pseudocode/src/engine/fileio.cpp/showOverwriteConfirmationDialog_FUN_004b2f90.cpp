@@ -2,13 +2,11 @@
 // Address: 004b2f90
 // Address Range: [[004b2f90, 004b3118]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90 (int *user_choice_ptr,char *dialog_message)
+// Signature: int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(int *user_choice_ptr,char *dialog_message)
 
 #include "nocturne.h"
 
-int __cdecl
-engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-          (int *user_choice_ptr,char *dialog_message)
+int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(int *user_choice_ptr,char *dialog_message)
 
 {
   int iVar1;

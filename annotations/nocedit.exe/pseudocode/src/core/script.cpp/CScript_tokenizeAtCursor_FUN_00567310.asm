@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310 (CScript *this_ptr,char *input_text,CStrList *tokens_out,int *cursor_pos)
+; __cdecl int __cdecl core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310(CScript *this_ptr,char *input_text,CStrList *tokens_out,int *cursor_pos)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_script.cpp_CScript_FUN_005671a0 at 005671df
+;   core_script.cpp_CScript_extractCrossReferences_FUN_005671a0 at 005671df
 ;   core_script.cpp_parseConditionExpression_FUN_00561a30 at 00561a60
 ;
 ; Referenced Globals:

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 264,
+    "complexity_score": 261,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "pseudocode_lines": 74,
+    "pseudocode_lines": 71,
     "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 186
+    "total_lines": 183
   },
   "cross_references": [],
   "function": {
@@ -29,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 (CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight, int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)"
   },
   "function_calls": [
     {
@@ -263,126 +263,126 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_00000018",
       "text": "CDeformableModel_MotionBlendWeightFunc *in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 39,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)&local_ac + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 40,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 41,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_ac + (uint)bVar4 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 42,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 48,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)&local_8c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 49,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)&local_6c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_8c + (uint)bVar4 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 51,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_6c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 57,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)&local_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 58,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)&local_5c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 59,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_7c + (uint)bVar4 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 60,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_5c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 65,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)&local_9c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 66,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)&local_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 67,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_9c + (uint)bVar4 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 68,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_4c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 72,
       "match": "in_stack_00000018",
       "text": "(this_ptr,&local_9c,blend_weight,bone_index,in_stack_00000018);",
       "type": "stack_param"

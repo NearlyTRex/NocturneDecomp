@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 125,
+    "complexity_score": 122,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 87,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 286
+    "total_lines": 283
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480",
-    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480 (CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel, int granule,SMpegFrame *frame)"
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame)"
   },
   "function_calls": [
     {
@@ -173,21 +173,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 44,
       "match": "(int *)((int)",
       "text": "} while (piVar2 != (int *)((int)scalefactor_dest + iVar8 + granule * 0xf8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 68,
       "match": "(int *)((int)",
       "text": "} while (piVar1 != (int *)((int)piVar3 + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 86,
       "match": "(int *)((int)",
       "text": "*(int *)((int)scalefactor_dest + iVar8) = *piVar3;",
       "type": "pointer_cast"

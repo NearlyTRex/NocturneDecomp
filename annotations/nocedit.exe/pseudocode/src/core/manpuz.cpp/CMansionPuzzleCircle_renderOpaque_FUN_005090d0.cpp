@@ -6,24 +6,24 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0(CMansionPuzzleCircle *this_ptr)
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0(CMansionPuzzleCircle *this_ptr)
 
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
   int iVar2;
-  int iStack_c;
+  CBoundingBox3D CStack_2c;
+  CVector3i CStack_14;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                          (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd4);
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_2c);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {
-    iStack_c = (int)ROUND(g_ZeroVector.x * 256.0f);
+    CStack_14.x = (int)ROUND(g_ZeroVector.x * 256.0f);
+    CStack_14.y = (int)ROUND(g_ZeroVector.y * 256.0f);
+    CStack_14.z = (int)ROUND(g_ZeroVector.z * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1000].projected_vertex,
-               (CVector3i *)&iStack_c);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1000].projected_vertex,&CStack_14);
     iVar2 = 0;
     do {
       core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509bf0(this_ptr);

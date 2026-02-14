@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70 (CMobster *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70(CMobster *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr

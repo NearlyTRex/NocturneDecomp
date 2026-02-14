@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CActorPropertyList *property_list)
 
 {
   char *property_name;

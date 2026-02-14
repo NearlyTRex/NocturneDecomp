@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl
-core_event_cpp_CEventList_validateCommands_FUN_004add40(CEventList *this_ptr,char *commands)
+char * __cdecl core_event_cpp_CEventList_validateCommands_FUN_004add40(CEventList *this_ptr,char *commands)
 
 {
   int iVar1;

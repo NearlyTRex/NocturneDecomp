@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dcamera_cpp_updateFogScrollOffset_FUN_0044bfb0(SFogGrid *fog_ptr,int time_major,int time_minor)
+void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_0044bfb0(SFogGrid *fog_ptr,int time_major,int time_minor)
 
 {
   int iVar1;

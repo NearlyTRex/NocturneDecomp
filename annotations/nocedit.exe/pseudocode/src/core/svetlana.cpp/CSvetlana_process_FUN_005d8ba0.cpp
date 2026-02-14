@@ -6,11 +6,12 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_ptr,float delta_time)
 
 {
   UOrientationVector *euler;
-  CLocation *position;
   CDeformableModelInstance *model_ptr;
   CDemonActor *pCVar1;
   CCharacter *this_ptr_00;
@@ -21,14 +22,19 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   CVector3f *pCVar6;
   uint uVar7;
   int iVar8;
-  CDeformableModelInstance *unaff_EDI;
-  byte bVar9;
-  float afStackY_1860 [1519];
-  float fVar10;
+  uint *puVar9;
+  uint *puVar10;
+  byte bVar11;
+  float afStackY_1870 [1520];
+  float fVar12;
   code *blend_callback;
-  float in_stack_ffffff78;
+  float in_stack_ffffff68;
+  CQuaternion4f CStack_94;
   CQuaternion4f CStack_84;
-  byte local_74 [24];
+  float local_74;
+  float local_70;
+  float local_6c;
+  CVector3f local_68;
   CVector3f local_5c;
   CVector3f local_50;
   float local_44;
@@ -37,13 +43,14 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   CVector3f local_38;
   int local_24;
   float local_20;
+  CDeformableModelInstance *pCStack_1c;
   float local_18;
   CCharacter_full_vtable *local_14;
   
-  bVar9 = 0;
+  bVar11 = 0;
   if (((this_ptr->base).base.hit_points < (float)100) &&
-     (fVar10 = (this_ptr->base).base.hit_points + delta_time,
-     (this_ptr->base).base.hit_points = fVar10, (float)100 < fVar10)) {
+     (fVar12 = (this_ptr->base).base.hit_points + delta_time,
+     (this_ptr->base).base.hit_points = fVar12, (float)100 < fVar12)) {
     (this_ptr->base).base.hit_points = 100.0;
   }
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
@@ -52,11 +59,11 @@ switchD_005d8f77_caseD_9:
     return;
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40((CCharacter *)this_ptr,delta_time);
-  fVar10 = (float)(this_ptr->base).no_collision_flag - delta_time;
+  fVar12 = (float)(this_ptr->base).no_collision_flag - delta_time;
   fVar3 = (float)12.566370614;
-  (this_ptr->base).no_collision_flag = (int)fVar10;
+  (this_ptr->base).no_collision_flag = (int)fVar12;
   (this_ptr->base).base.turn_speed = delta_time * fVar3;
-  if (fVar10 < 0.0) {
+  if (fVar12 < 0.0) {
     (this_ptr->base).no_collision_flag = 0;
   }
   pCVar6 = &(this_ptr->base).base.model.accumulated_root_motion;
@@ -203,12 +210,12 @@ switchD_005d8f77_caseD_8:
     local_44 = (this_ptr->base).base.velocity.x * delta_time;
     local_40 = (this_ptr->base).base.velocity.y * delta_time;
     local_3c = delta_time * (this_ptr->base).base.velocity.z;
-    local_74._0_4_ = local_44 + (this_ptr->base).base.position_delta.x;
-    local_74._4_4_ = local_40 + (this_ptr->base).base.position_delta.y;
-    local_5c.x = local_5c.x + (float)local_74._0_4_;
-    local_74._8_4_ = local_3c + (this_ptr->base).base.position_delta.z;
-    local_5c.y = local_5c.y + (float)local_74._4_4_;
-    local_5c.z = local_5c.z + (float)local_74._8_4_;
+    local_74 = local_44 + (this_ptr->base).base.position_delta.x;
+    local_70 = local_40 + (this_ptr->base).base.position_delta.y;
+    local_5c.x = local_5c.x + local_74;
+    local_6c = local_3c + (this_ptr->base).base.position_delta.z;
+    local_5c.y = local_5c.y + local_70;
+    local_5c.z = local_5c.z + local_6c;
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
     iVar4 = pSVar5->state_index;
@@ -226,26 +233,26 @@ switchD_005d8f77_caseD_8:
   }
   if ((this_ptr->base).base.grabbed_type == 0) {
     pCVar6 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                       ((CDemonActor *)this_ptr,(CVector3f *)(local_74 + 0xc),
-                        &(pCVar1->location).position);
+                       ((CDemonActor *)this_ptr,&local_68,&(pCVar1->location).position);
     pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_50,pCVar6);
     local_14 = (CCharacter_full_vtable *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar6->y);
-    fVar10 = (float)local_14;
+    in_stack_ffffff68 = (float)local_14;
     if ((float)local_14 < (float)-1.57079632675) {
-      fVar10 = (float)local_14 + 3.141593f;
+      in_stack_ffffff68 = (float)local_14 + 3.141593f;
     }
-    if ((float)1.57079632675 < fVar10) {
-      fVar10 = fVar10 + -3.141593f;
+    if ((float)1.57079632675 < in_stack_ffffff68) {
+      in_stack_ffffff68 = in_stack_ffffff68 + -3.141593f;
     }
     local_18 = delta_time * (float)3.1415926535000001;
     local_20 = -local_18;
-    if (fVar10 < local_20) {
-      fVar10 = local_20;
+    if (in_stack_ffffff68 < local_20) {
+      in_stack_ffffff68 = local_20;
     }
-    if (local_18 < fVar10) {
-      fVar10 = local_18;
+    if (local_18 < in_stack_ffffff68) {
+      in_stack_ffffff68 = local_18;
     }
-    (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y + fVar10;
+    (this_ptr->base).base.base.orient.vec.y =
+         (this_ptr->base).base.base.orient.vec.y + in_stack_ffffff68;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
   }
   this_ptr_00 = (CCharacter *)(this_ptr->base).base.grabbed_by;
@@ -267,37 +274,34 @@ LAB_005d8e14:
             (&(this_ptr->base).base.model.motion_controller,iVar4,1);
 LAB_005d8e27:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
-            (&(this_ptr->base).base.model);
+  pCStack_1c = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCStack_1c);
   iVar4 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar4 == 0) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar10 = *(float *)(this_ptr->unk6 + 0xc);
+    fVar12 = *(float *)(this_ptr->unk6 + 0xc);
     iVar4 = INT_03f6cb90;
-    core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-              ((CVector3f *)this_ptr->unk6,(CQuaternion4f *)local_74);
-    CStack_84.w = (float)local_74._0_4_;
-    *(uint *)(local_74 + (uint)bVar9 * -8 + -0xc) =
-         *(uint *)(local_74 + (uint)bVar9 * -8 + 4);
-    *(uint *)(local_74 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + -8) =
-         *(uint *)(local_74 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-    *(uint *)
-     ((int)(local_74 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + -8) + ((uint)bVar9 * -2 + 1) * 4) =
-         *(uint *)
-          ((int)(local_74 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) + ((uint)bVar9 * -2 + 1) * 4);
+    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)this_ptr->unk6,&CStack_84);
+    CStack_94.w = CStack_84.w;
+    puVar10 = (uint *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+    puVar9 = (uint *)((int)&CStack_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+    *(uint *)((int)&CStack_94 + (uint)bVar11 * -8 + 4) =
+         *(uint *)((int)&CStack_84 + (uint)bVar11 * -8 + 4);
+    *puVar10 = *puVar9;
+    puVar10[(uint)bVar11 * -2 + 1] = puVar9[(uint)bVar11 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (unaff_EDI,&CStack_84,fVar10,iVar4,blend_callback);
+              (pCStack_1c,&CStack_94,fVar12,iVar4,blend_callback);
   }
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_ffffff78);
+            ((CCharacter *)this_ptr,delta_time,in_stack_ffffff68);
   model_ptr = &(this_ptr->base).base.model;
   euler = &(this_ptr->base).base.base.orient;
-  position = &(this_ptr->base).base.base.location;
+  local_14 = (CCharacter_full_vtable *)&(this_ptr->base).base.base.location;
   core_cloth_cpp_CCloth_process_FUN_0043ab80
-            (&this_ptr->cape_cloth,&position->position,&euler->vec,delta_time,
+            (&this_ptr->cape_cloth,(CVector3f *)local_14,&euler->vec,delta_time,
              (this_ptr->base).base.closest_distance_threshold,model_ptr);
   core_cloth_cpp_CCloth_process_FUN_0043ab80
-            (&this_ptr->hair_cloth,&position->position,&euler->vec,delta_time,
+            (&this_ptr->hair_cloth,(CVector3f *)local_14,&euler->vec,delta_time,
              (this_ptr->base).base.closest_distance_threshold,model_ptr);
   return;
 }

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CVampireBoss * __cdecl
-core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700(CVampireBoss *this_ptr,uint flags)
+CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700(CVampireBoss *this_ptr,uint flags)
 
 {
   CMorph *pCVar1;

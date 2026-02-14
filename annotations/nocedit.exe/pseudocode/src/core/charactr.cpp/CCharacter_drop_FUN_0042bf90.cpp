@@ -2,13 +2,11 @@
 // Address: 0042bf90
 // Address Range: [[0042bf90, 0042c00a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_drop_FUN_0042bf90 (CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_drop_FUN_0042bf90(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_drop_FUN_0042bf90
-          (CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
+void __cdecl core_charactr_cpp_CCharacter_drop_FUN_0042bf90(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
 
 {
   SCarryHand *pSVar1;

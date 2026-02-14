@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_edittool_cpp_CPickList_getItemAtMousePosition_FUN_004a53a0 (CPickList *this_ptr,int mouse_x,int mouse_y)
+; __cdecl int __cdecl shape_edittool_cpp_CPickList_getItemAtMousePosition_FUN_004a53a0(CPickList *this_ptr,int mouse_x,int mouse_y)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr

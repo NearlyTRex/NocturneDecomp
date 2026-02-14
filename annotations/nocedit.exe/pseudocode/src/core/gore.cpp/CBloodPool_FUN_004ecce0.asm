@@ -30,7 +30,7 @@
 ;   double DOUBLE_0062e38a = 8
 ;   float FLOAT_0065f024 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic DAT_0067c028
+;   SMRGLTextureBasic SMRGLTextureBasic_0067c028
 ;   undefined4 g_RenderVertexBuffer[0].light
 ;   undefined4 g_RenderVertexBuffer[0].color
 ;   undefined4 g_RenderVertexBuffer[0].fog
@@ -90,7 +90,7 @@ section .text
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     IMUL EAX,dword ptr [ESI + 0x14],0x2b8 ; 004ecd34
     ADD ESP,0x8                         ; 004ecd3b
-    MOV EBX,0x67c028                    ; 004ecd3e | DAT_0067c028
+    MOV EBX,0x67c028                    ; 004ecd3e | SMRGLTextureBasic_0067c028
     MOV EDX,dword ptr [ESP + 0x3c]      ; 004ecd43
     ADD EBX,EAX                         ; 004ecd47
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ecd49
@@ -255,7 +255,7 @@ section .text
     MOV dword ptr [0x006880c8],EBX      ; 004ecf71 | g_RenderVertexBuffer[3].color
     MOV dword ptr [0x006880cc],EBX      ; 004ecf77 | g_RenderVertexBuffer[3].fog
     MOV dword ptr [0x006880c4],EBX      ; 004ecf7d | g_RenderVertexBuffer[3].light
-    PUSH 0x2d83368                      ; 004ecf83 | DAT_02d83368
+    PUSH 0x2d83368                      ; 004ecf83 | SMRGLHeaderPrimitive_02d83368
         ;   Label: LAB_004ecf83
     MOV ECX,dword ptr [0x006703ec]      ; 004ecf88 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004ecf8e | g_CDemonRendererInstance

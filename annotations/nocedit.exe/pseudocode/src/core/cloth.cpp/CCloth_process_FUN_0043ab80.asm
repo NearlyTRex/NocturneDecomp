@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_CCloth_process_FUN_0043ab80 (CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y, CDeformableModelInstance *model_ptr)
+; __cdecl void __cdecl core_cloth_cpp_CCloth_process_FUN_0043ab80(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr)
 ;
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr

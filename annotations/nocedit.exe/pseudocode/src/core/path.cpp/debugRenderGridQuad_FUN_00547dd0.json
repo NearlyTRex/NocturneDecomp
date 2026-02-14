@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 153,
+    "complexity_score": 151,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
-    "pseudocode_lines": 78,
+    "pseudocode_lines": 76,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float",
       "undefined_data"
     ],
-    "total_lines": 240
+    "total_lines": 238
   },
   "cross_references": [],
   "function": {
@@ -30,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_path.cpp_debugRenderGridQuad_FUN_00547dd0",
-    "signature": "void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0 (int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)"
+    "signature": "void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)"
   },
   "function_calls": [
     {
@@ -249,42 +249,42 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 29,
+      "line": 27,
       "match": "7.759508e-39",
       "text": "fStack_38 = 7.759508e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 34,
       "match": "ROUND",
       "text": "fStack_38 = (float)(int)ROUND(fVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 37,
       "match": "ROUND",
       "text": "fStack_38 = (float)(int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 43,
       "match": "ROUND",
       "text": "round((double)((float)iStack_3c + (float)(int)ROUND(dVar10)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 49,
       "match": "ROUND",
       "text": "iStack_3c = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 77,
       "match": "DAT_030d4fd0",
       "text": "engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0(pCVar1,&DAT_030d4fd0);",
       "type": "undefined_data"

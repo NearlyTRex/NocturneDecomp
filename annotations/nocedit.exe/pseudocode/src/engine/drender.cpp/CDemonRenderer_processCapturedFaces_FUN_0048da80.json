@@ -4,7 +4,7 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 19,
+        "line": 18,
         "message": "unknown type name 'code'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 84,
+    "complexity_score": 83,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 8,
-    "pseudocode_lines": 54,
+    "pseudocode_lines": 53,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 158
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -203,14 +203,14 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 11,
       "match": "code *",
       "text": "code *compar;",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_CapturedFacePointers + iVar5);",
       "type": "pointer_cast"

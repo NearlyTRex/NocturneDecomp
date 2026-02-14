@@ -2,13 +2,11 @@
 // Address: 0047ed00
 // Address Range: [[0047ed00, 0047edc7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00 (CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00(CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files)
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00
-          (CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00(CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files)
 
 {
   char cVar1;

@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 364,
+    "complexity_score": 277,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 7,
-    "pseudocode_lines": 134,
-    "suspect_count": 21,
+    "pseudocode_lines": 132,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
-      "suspect_float",
       "unnamed_param"
     ],
-    "total_lines": 420
+    "total_lines": 418
   },
   "cross_references": [
     {
@@ -56,7 +55,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_box.cpp_CBoundingBox3D_render_FUN_004210b0",
-    "signature": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0 (CBoundingBox3D *this_ptr,int param1,int param2,int param3)"
+    "signature": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)"
   },
   "function_calls": [
     {
@@ -403,143 +402,87 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param1",
-      "text": "(CBoundingBox3D *this_ptr,int param1,int param2,int param3)",
+      "text": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param2",
-      "text": "(CBoundingBox3D *this_ptr,int param1,int param2,int param3)",
+      "text": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param3",
-      "text": "(CBoundingBox3D *this_ptr,int param1,int param2,int param3)",
+      "text": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 28,
       "match": "ROUND",
       "text": "*piVar3 = (int)ROUND(local_1c.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 29,
       "match": "ROUND",
       "text": "piVar3[1] = (int)ROUND(local_1c.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 30,
       "match": "ROUND",
       "text": "piVar3[2] = (int)ROUND(local_1c.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 37,
       "match": "ROUND",
       "text": "local_28 = (int)ROUND((this_ptr->min).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 38,
       "match": "ROUND",
       "text": "local_24 = (int)ROUND((this_ptr->min).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 39,
       "match": "ROUND",
       "text": "local_20 = (int)ROUND((this_ptr->min).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 40,
       "match": "ROUND",
       "text": "local_10 = (int)ROUND((this_ptr->max).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 41,
       "match": "ROUND",
       "text": "local_c = (int)ROUND((this_ptr->max).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 42,
       "match": "ROUND",
       "text": "local_8 = (int)ROUND((this_ptr->max).z * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 51,
-      "match": "4.59163e-41",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->light = 4.59163e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 59,
-      "match": "4.59163e-41",
-      "text": "pCVar1->vertex_buffer_ptr[2].fog = 4.59163e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 60,
-      "match": "4.59163e-41",
-      "text": "pCVar1->vertex_buffer_ptr[3].light = 4.59163e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 65,
-      "match": "4.59163e-41",
-      "text": "pCVar1->vertex_buffer_ptr[4].fog = 4.59163e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 66,
-      "match": "4.59163e-41",
-      "text": "pCVar1->vertex_buffer_ptr[5].light = 4.59163e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 68,
-      "match": "4.59163e-41",
-      "text": "pCVar1->vertex_buffer_ptr[5].fog = 4.59163e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 69,
-      "match": "4.59163e-41",
-      "text": "pCVar1->vertex_buffer_ptr[6].light = 4.59163e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 71,
-      "match": "4.59163e-41",
-      "text": "pCVar1->vertex_buffer_ptr[6].fog = 4.59163e-41;",
-      "type": "suspect_float"
     },
     {
       "call_site_count": 4,

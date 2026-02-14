@@ -2,82 +2,64 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 71,
-        "message": "use of undeclared identifier 'stack0xffffff44'"
+        "category": "other",
+        "column": 47,
+        "line": 111,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 104,
-        "message": "C-style cast from 'CKeys *' to 'float' is not allowed"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 106,
-        "message": "use of undeclared identifier 'stack0xffffff58'; did you mean 'in_stack_ffffff58'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 37,
-        "line": 107,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 138,
-        "message": "use of undeclared identifier 'stack0xffffff54'; did you mean 'in_stack_ffffff54'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 160,
-        "message": "use of undeclared identifier 'stack0xffffff54'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 160,
-        "message": "use of undeclared identifier 'stack0xffffff7c'"
+        "column": 19,
+        "line": 169,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 164,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+        "column": 15,
+        "line": 189,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 192,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 192,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 167,
-        "message": "C-style cast from 'CKeys *' to 'float' is not allowed"
+        "line": 193,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 22,
+        "column": 17,
         "line": 198,
-        "message": "cannot cast from type 'float' to pointer type 'CBoxActor *'"
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 199,
-        "message": "C-style cast from 'CBoxActor *' to 'float' is not allowed"
+        "column": 41,
+        "line": 198,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 200,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+        "column": 36,
+        "line": 204,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 201,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+        "column": 36,
+        "line": 207,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       }
     ],
     "success": false,
@@ -85,23 +67,17 @@
   },
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 748,
+    "complexity_score": 428,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
-    "pseudocode_lines": 228,
-    "suspect_count": 48,
+    "pseudocode_lines": 238,
+    "suspect_count": 18,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "suspect_float",
-      "unaffected_reg",
-      "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 853
+    "total_lines": 863
   },
   "cross_references": [
     {
@@ -483,7 +459,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "uint",
+      "type": "_BIT_INTEGER",
       "value": null
     },
     {
@@ -548,8 +524,8 @@
     },
     {
       "addr": "02f7c634",
-      "name": "DAT_02f7c634",
-      "type": "undefined4",
+      "name": "INT_02f7c634",
+      "type": "int",
       "value": null
     },
     {
@@ -715,340 +691,130 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "CDemonActor *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffff4c",
-      "text": "float in_stack_ffffff4c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffff50",
-      "text": "CKeys *in_stack_ffffff50;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffff54",
-      "text": "float in_stack_ffffff54;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffff58",
-      "text": "double in_stack_ffffff58;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_02f7c634",
-      "text": "DAT_02f7c634 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xffffff44",
-      "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff44);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 96,
-      "match": "in_stack_ffffff4c",
-      "text": "((CVector3f *)CStack_24.z)->x = in_stack_ffffff4c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_ffffff50",
-      "text": "((CVector3f *)CStack_24.z)->y = (float)in_stack_ffffff50;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 98,
-      "match": "in_stack_ffffff54",
-      "text": "((CVector3f *)CStack_24.z)->z = in_stack_ffffff54;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 99,
-      "match": "&stack0xffffff58",
-      "text": "if ((CBoxActor *)&stack0xffffff58 != pCStack_18) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 100,
-      "match": "in_stack_ffffff58",
-      "text": "*(float *)&pCStack_18->base = SUB84(in_stack_ffffff58,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
-      "match": "SUB84",
-      "text": "*(float *)&pCStack_18->base = SUB84(in_stack_ffffff58,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 101,
-      "match": "in_stack_ffffff58",
-      "text": "*(float *)((int)pCStack_18 + 4) = (float)((ulonglong)in_stack_ffffff58 >> 0x20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)pCStack_18 + 4) = (float)((ulonglong)in_stack_ffffff58 >> 0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)pCStack_18 + 8) = fStack_a0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 131,
-      "match": "&stack0xffffff54",
-      "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffff54);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 139,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 140,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)aCStack_3c + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 141,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 142,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)aCStack_3c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 146,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + 4) =",
-      "type": "pointer_cast"
+      "description": "Unknown/mangled field access",
+      "line": 104,
+      "match": "._4_4_",
+      "text": "(pCStack_20->position).x = (float)local_bc._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 147,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)aCStack_3c + (uint)bVar5 * -8 + -8);",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 148,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_24 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_48 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 149,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)aCStack_3c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -4);",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 153,
-      "match": "&stack0xffffff54",
-      "text": "if ((float *)&stack0xffffff54 != &stack0xffffff7c) {",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_48 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 153,
-      "match": "&stack0xffffff7c",
-      "text": "if ((float *)&stack0xffffff54 != &stack0xffffff7c) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 154,
-      "match": "in_stack_ffffff58",
-      "text": "in_stack_ffffff58 = (double)CONCAT44(fStack_7c,fStack_80);",
-      "type": "stack_param"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) =",
+      "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffff58 = (double)CONCAT44(fStack_7c,fStack_80);",
-      "type": "decompiler_intrinsic"
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 156,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 157,
-      "match": "._0_1_",
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
+      "line": 162,
+      "match": "._4_4_",
+      "text": "local_bc._4_4_ = fStack_90;",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 160,
-      "match": "in_stack_ffffff50",
-      "text": "if ((iVar4 != 0) && ((float)in_stack_ffffff50 - g_CGamePtr->delta_time_float < 0.0)) {",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 182,
+      "match": "._0_4_",
+      "text": "local_bc._0_4_ = 0.0;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 189,
-      "match": "in_stack_ffffff58",
-      "text": "in_stack_ffffff58 = (double)fStack_9c;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 185,
+      "match": "._0_4_",
+      "text": "local_bc._0_4_ = (float)local_bc._0_4_ - g_CGamePtr->delta_time_float;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_ffffff58",
-      "text": "if ((0.0 < in_stack_ffffff58) && (in_stack_ffffff58 < 1.0)) {",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 185,
+      "match": "._0_4_",
+      "text": "local_bc._0_4_ = (float)local_bc._0_4_ - g_CGamePtr->delta_time_float;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_ffffff58",
-      "text": "if ((0.0 < in_stack_ffffff58) && (in_stack_ffffff58 < 1.0)) {",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 186,
+      "match": "._0_4_",
+      "text": "if ((float)local_bc._0_4_ < 0.0) {",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 202,
-      "match": "in_stack_ffffff54",
-      "text": "in_stack_ffffff54 = 2.66247e-44;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 191,
+      "match": "._0_4_",
+      "text": "local_bc._0_4_ = (float)local_bc._0_4_ + 0.1f;",
+      "type": "unknown_field"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 202,
-      "match": "2.66247e-44",
-      "text": "in_stack_ffffff54 = 2.66247e-44;",
-      "type": "suspect_float"
+      "description": "Unknown/mangled field access",
+      "line": 191,
+      "match": "._0_4_",
+      "text": "local_bc._0_4_ = (float)local_bc._0_4_ + 0.1f;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 203,
-      "match": "in_stack_ffffff4c",
-      "text": "in_stack_ffffff4c = 7.705812e-39;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 197,
+      "match": "._4_4_",
+      "text": "CStack_78.x = (float)local_bc._4_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 203,
-      "match": "7.705812e-39",
-      "text": "in_stack_ffffff4c = 7.705812e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 204,
-      "match": "in_stack_ffffff50",
-      "text": "in_stack_ffffff50 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 207,
-      "match": "in_stack_ffffff58",
-      "text": "in_stack_ffffff58 = (double)CONCAT44(\"Reset gore?\",g_CEditorToolsPtr);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffff58 = (double)CONCAT44(\"Reset gore?\",g_CEditorToolsPtr);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 208,
-      "match": "in_stack_ffffff54",
-      "text": "in_stack_ffffff54 = 7.705851e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 208,
-      "match": "7.705851e-39",
-      "text": "in_stack_ffffff54 = 7.705851e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 213,
-      "match": "in_stack_ffffff58",
-      "text": "in_stack_ffffff58 = (double)CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 213,
-      "match": "CONCAT44",
-      "text": "in_stack_ffffff58 = (double)CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 214,
-      "match": "in_stack_ffffff54",
-      "text": "in_stack_ffffff54 = 7.705913e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 214,
-      "match": "7.705913e-39",
-      "text": "in_stack_ffffff54 = 7.705913e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 220,
-      "match": "unaff_EDI",
-      "text": "core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,unaff_EDI,1);",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 200,
+      "match": "._4_4_",
+      "text": "CStack_9c.x = (float)local_bc._4_4_;",
+      "type": "unknown_field"
     }
   ]
 }

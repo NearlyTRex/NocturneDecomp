@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_CFileManager_setVersionControlDirectory_FUN_004bc5a0 (CFileManager *this_ptr,char *directory)
+; __cdecl void __cdecl engine_fileio_cpp_CFileManager_setVersionControlDirectory_FUN_004bc5a0(CFileManager *this_ptr,char *directory)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_battery_cpp_CBattery_addFilesToExtract_FUN_00418110(CBattery *this_ptr,_FILE *file_handle)
+void __cdecl core_battery_cpp_CBattery_addFilesToExtract_FUN_00418110(CBattery *this_ptr,_FILE *file_handle)
 
 {
   CKeyFramedModel *pCVar1;

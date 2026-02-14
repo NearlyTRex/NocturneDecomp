@@ -2,15 +2,13 @@
 // Address: 005b0120
 // Address Range: [[005b0120, 005b033e]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120 (LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)
+// Signature: int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)
 
 #include "nocturne.h"
 
 /* WARNING: Exceeded maximum restarts with more pending */
 
-int __cdecl
-sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120
-          (LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)
+int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)
 
 {
   char cVar1;
@@ -54,7 +52,7 @@ sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_390);
     }
     if (local_10 != (LPDIRECTSOUND)0x0) {
-      (*local_10->vtable->Release)();
+      (*local_10->vtable->Release)(local_10);
     }
     if (uVar3 == 0) {
       iVar4 = g_DirectSoundDeviceCount * 0x11c;

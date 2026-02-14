@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_ptr,char *param_2)
+; __cdecl int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_ptr,char *label_name)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   label_name
 ;
 ; XREF[3]:
-;   core_script.cpp_CScript_FUN_0055a6c0 at 0055a702
 ;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565deb
+;   core_script.cpp_CScript_executeInitSection_FUN_0055a6c0 at 0055a702
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055a9b5
 ;
 ; Called Functions:

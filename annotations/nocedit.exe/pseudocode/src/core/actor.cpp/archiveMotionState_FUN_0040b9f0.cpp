@@ -2,13 +2,11 @@
 // Address: 0040b9f0
 // Address Range: [[0040b9f0, 0040badb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0 (CMotionController *motion_controller,char *property_name)
+// Signature: void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0(CMotionController *motion_controller,char *property_name)
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_archiveMotionState_FUN_0040b9f0
-          (CMotionController *motion_controller,char *property_name)
+void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0(CMotionController *motion_controller,char *property_name)
 
 {
   int iVar1;

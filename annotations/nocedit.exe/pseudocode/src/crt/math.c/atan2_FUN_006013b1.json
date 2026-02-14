@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 41,
+    "complexity_score": 40,
     "cross_reference_count": 12,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 11,
+    "pseudocode_lines": 10,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "special_math_intrinsic"
     ],
-    "total_lines": 24
+    "total_lines": 23
   },
   "cross_references": [
     {
@@ -147,9 +147,9 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 8,
+      "line": 6,
       "match": "fpatan",
-      "text": "fVar1 = (float10)fpatan(y,x);",
+      "text": "x = (float10)fpatan(y,x);",
       "type": "decompiler_intrinsic"
     },
     {

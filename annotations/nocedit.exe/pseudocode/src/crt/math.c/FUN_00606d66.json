@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 191,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 16,
-    "suspect_count": 14,
+    "pseudocode_lines": 10,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
       "fpu_register_input",
       "special_crt_function",
-      "stack_param",
-      "undefined_type",
-      "unknown_type",
       "unresolved_funcptr"
     ],
-    "total_lines": 19
+    "total_lines": 13
   },
   "cross_references": [],
   "function": {
@@ -29,7 +25,7 @@
     ],
     "convention": "unknown",
     "name": "crt_math.c_FUN_00606d66",
-    "signature": "unkbyte10 crt_math_c_FUN_00606d66(void)"
+    "signature": "void crt_math_c_FUN_00606d66(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -66,13 +62,6 @@
   },
   "suspects": [
     {
-      "description": "Unknown/unresolved type",
-      "line": 2,
-      "match": "unkbyte10",
-      "text": "unkbyte10 FUN_00606d66(void)",
-      "type": "unknown_type"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 5,
       "match": "code *",
@@ -80,81 +69,39 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unknown/unresolved type",
-      "line": 6,
-      "match": "unkbyte10",
-      "text": "unkbyte10 Var2;",
-      "type": "unknown_type"
-    },
-    {
       "description": "FPU register input (calling convention issue)",
-      "line": 7,
+      "line": 6,
       "match": "in_ST2",
       "text": "float10 in_ST2;",
       "type": "fpu_register_input"
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 8,
+      "line": 7,
       "match": "in_ST3",
       "text": "float10 in_ST3;",
       "type": "fpu_register_input"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000004c",
-      "text": "uint in_stack_0000004c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 10,
-      "match": "undefined6 uStack00000050",
-      "text": "undefined6 uStack00000050;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
+      "line": 9,
       "match": "code *",
       "text": "pcVar1 = (code *)swi(6);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unknown/unresolved type",
-      "line": 16,
-      "match": "unkuint10",
-      "text": "uStack00000056 = (uint)((unkuint10)Var2 >> 0x30);",
-      "type": "unknown_type"
-    },
-    {
       "description": "FPU register input (calling convention issue)",
-      "line": 17,
+      "line": 11,
       "match": "in_ST2",
       "text": "fdiv(in_ST2,in_ST3);",
       "type": "fpu_register_input"
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 17,
+      "line": 11,
       "match": "in_ST3",
       "text": "fdiv(in_ST2,in_ST3);",
       "type": "fpu_register_input"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000004c",
-      "text": "return CONCAT64(uStack00000050,in_stack_0000004c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "CONCAT64",
-      "text": "return CONCAT64(uStack00000050,in_stack_0000004c);",
-      "type": "decompiler_intrinsic"
     },
     {
       "address": "00606d66",

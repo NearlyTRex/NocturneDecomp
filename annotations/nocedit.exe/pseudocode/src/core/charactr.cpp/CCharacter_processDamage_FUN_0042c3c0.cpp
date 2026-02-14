@@ -2,13 +2,11 @@
 // Address: 0042c3c0
 // Address Range: [[0042c3c0, 0042c579]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0 (CCharacter *this_ptr,SDamageInfo *damage_info)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0
-          (CCharacter *this_ptr,SDamageInfo *damage_info)
+void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter *this_ptr,SDamageInfo *damage_info)
 
 {
   float fVar1;

@@ -2,13 +2,11 @@
 // Address: 00434a50
 // Address Range: [[00434a50, 00434aea]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00434a50 (SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit)
+// Signature: void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00434a50(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_ckptutil_c_setEdgeData_FUN_00434a50
-          (SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit)
+void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00434a50(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit)
 
 {
   SEdge *pSVar1;

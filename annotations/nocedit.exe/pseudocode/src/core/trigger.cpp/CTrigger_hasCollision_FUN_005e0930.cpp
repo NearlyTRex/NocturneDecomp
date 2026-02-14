@@ -2,13 +2,11 @@
 // Address: 005e0930
 // Address Range: [[005e0930, 005e0977]]
 // Convention: __cdecl
-// Signature: int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930 (CTrigger *this_ptr,SCollisionInfo *collision_info)
+// Signature: int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930(CTrigger *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-int __cdecl
-core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930
-          (CTrigger *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930(CTrigger *this_ptr,SCollisionInfo *collision_info)
 
 {
   if ((collision_info->ray_type == 1) &&

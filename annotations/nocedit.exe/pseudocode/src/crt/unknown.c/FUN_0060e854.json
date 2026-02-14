@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 20,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 5,
-    "suspect_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 9,
     "suspect_types": [
-      "special_crt_function"
+      "special_crt_function",
+      "unnamed_param"
     ],
-    "total_lines": 21
+    "total_lines": 22
   },
   "cross_references": [],
   "function": {
@@ -23,7 +24,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0060e854",
-    "signature": "void crt_unknown_c_FUN_0060e854(void)"
+    "signature": "void crt_unknown_c_FUN_0060e854(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)"
   },
   "function_calls": [
     {
@@ -76,6 +77,62 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void FUN_0060e854(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void FUN_0060e854(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "void FUN_0060e854(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "text": "void FUN_0060e854(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "text": "(*PTR_crt_thread_c_create_thread_with_sync_FUN_0060f960_00685594)(param_1,param_2,param_3,param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "text": "(*PTR_crt_thread_c_create_thread_with_sync_FUN_0060f960_00685594)(param_1,param_2,param_3,param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_3",
+      "text": "(*PTR_crt_thread_c_create_thread_with_sync_FUN_0060f960_00685594)(param_1,param_2,param_3,param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_4",
+      "text": "(*PTR_crt_thread_c_create_thread_with_sync_FUN_0060f960_00685594)(param_1,param_2,param_3,param_4)",
+      "type": "unnamed_param"
+    },
     {
       "address": "0060e854",
       "crt_type": "runtime support",

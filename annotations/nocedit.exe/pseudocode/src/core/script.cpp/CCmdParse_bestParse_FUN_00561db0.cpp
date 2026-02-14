@@ -2,14 +2,11 @@
 // Address: 00561db0
 // Address Range: [[00561db0, 00561fca]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0 (CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates, int template_count)
+// Signature: int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates,int template_count)
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_CCmdParse_bestParse_FUN_00561db0
-          (CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates,
-          int template_count)
+int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates,int template_count)
 
 {
   int *piVar1;

@@ -2,13 +2,11 @@
 // Address: 00481250
 // Address Range: [[00481250, 004812a8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250 (CDoor *this_ptr,CActorPropertyList *property,char *output_buffer)
+// Signature: void __cdecl core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250(CDoor *this_ptr,CActorPropertyList *property,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl
-core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250
-          (CDoor *this_ptr,CActorPropertyList *property,char *output_buffer)
+void __cdecl core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250(CDoor *this_ptr,CActorPropertyList *property,char *output_buffer)
 
 {
   char cVar1;

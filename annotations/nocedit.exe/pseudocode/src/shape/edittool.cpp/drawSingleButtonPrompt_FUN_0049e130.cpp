@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,char *message,int color)
+void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,char *message,int color)
 
 {
   int iVar1;

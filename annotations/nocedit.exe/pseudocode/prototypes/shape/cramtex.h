@@ -5,7 +5,7 @@
 
 // Original: shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90
 // Address: 00444d90
-int __cdecl generateTextureAtlasLayout(uint texture_count,STextureAtlasEntry *texture_entries,int atlas_width,int atlas_height, int acceptable_coverage_threshold,int acceptable_size,int *output_atlas_width, int *output_atlas_height,int padding_size,int fill_gaps,int visualize,int max_iterations);
+int __cdecl generateTextureAtlasLayout(uint texture_count,STextureAtlasEntry *texture_entries,int atlas_width,int atlas_height,int acceptable_coverage_threshold,int acceptable_size,int *output_atlas_width,int *output_atlas_height,int padding_size,int fill_gaps,int visualize,int max_iterations);
 
 // Original: shape_cramtex.cpp_qsortByLargestDimension_FUN_004457f0
 // Address: 004457f0
@@ -57,7 +57,7 @@ void __cdecl CCramTex::renderAllTexturesAndRectangles(CCramTex *this_ptr,int x,i
 
 // Original: shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20
 // Address: 00447c20
-void __cdecl CCramTex::renderTextureEntry(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width, int draw_height);
+void __cdecl CCramTex::renderTextureEntry(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height);
 
 // Original: shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
 // Address: 00447e80

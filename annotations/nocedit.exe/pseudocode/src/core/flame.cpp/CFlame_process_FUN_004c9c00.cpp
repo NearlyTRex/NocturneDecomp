@@ -16,17 +16,18 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
   int iVar3;
   uint uVar4;
   double dVar5;
-  ulonglong uStack_fc;
-  double dStack_f4;
-  SCollisionInfo SStack_8c;
-  SCollisionInfo SStack_64;
+  char local_f8 [100];
+  SCollisionInfo local_94;
+  SCollisionInfo SStack_6c;
+  float fStack_44;
+  float fStack_40;
+  float fStack_3c;
   float fStack_38;
   float fStack_34;
   float fStack_30;
-  float fStack_2c;
   float fStack_28;
-  float fStack_24;
-  float fStack_20;
+  int iStack_24;
+  float fStack_1c;
   float fStack_18;
   float local_14;
   
@@ -71,38 +72,38 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
       if (iVar3 == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.95,1.05);
         _sprintf
-                  ((char *)((int)&uStack_fc + 4),"torch.wav * %f",SUB84((double)local_14,0),
+                  (local_f8,"torch.wav * %f",SUB84((double)local_14,0),
                    (int)((ulonglong)(double)local_14 >> 0x20));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         iVar3 = 2;
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
         sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar3);
-        uVar4 = (*((this_ptr->base).vtable._ub)->playSound)
-                          (&this_ptr->base,(char *)((int)&uStack_fc + 4));
+        uVar4 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,local_f8);
         this_ptr->sfx_handle = uVar4;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
     }
     if (this_ptr->burn_hero != 0) {
-      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_8c);
+      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_94);
       iVar3 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->hasCollision)
-                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&SStack_8c);
+                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94);
       if (iVar3 == 2) {
         this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
         pCVar1 = &(this_ptr->base).location;
-        fStack_34 = (this_ptr_00->base).base.location.position.x - (pCVar1->position).x;
-        fStack_30 = (this_ptr_00->base).base.location.position.y -
+        fStack_40 = (this_ptr_00->base).base.location.position.x - (pCVar1->position).x;
+        fStack_3c = (this_ptr_00->base).base.location.position.y -
                     (this_ptr->base).location.position.y;
-        fStack_2c = (this_ptr_00->base).base.location.position.z -
+        fStack_38 = (this_ptr_00->base).base.location.position.z -
                     (this_ptr->base).location.position.z;
-        if (((float)-0.5 < fStack_30) && (fStack_30 < (float)SStack_8c.result_ptr)) {
-          uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4c9e5a);
+        if (((float)-0.5 < fStack_3c) && (fStack_3c < local_94.cylinder_radius)) {
           dVar5 = round
                             ((double)(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
                                      (float)0.25));
-          fVar2 = (float)SStack_8c.result_ptr + (float)(int)ROUND(dVar5);
-          uStack_fc = (double)fVar2;
-          if ((ABS(fStack_38) < fVar2) && (ABS(fStack_30) < fVar2)) {
+          fStack_18 = (float)(int)ROUND(dVar5);
+          fStack_1c = (float)(int)fStack_18;
+          local_14 = fStack_18;
+          if ((ABS(fStack_44) < local_94.cylinder_radius + fStack_1c) &&
+             (ABS(fStack_3c) < local_94.cylinder_radius + fStack_1c)) {
             core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
                       (&this_ptr_00->base,&pCVar1->position,0,0.0,0x40000000,1);
           }
@@ -119,25 +120,24 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
       if (0 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c)) {
         this_ptr_01 = *(CCharacter **)(g_CDemonSetPtr->unk4 + this_ptr->enemy_burn_index * 4 + 8000)
         ;
-        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_64);
-        iVar3 = (*((this_ptr_01->base).vtable._ub)->hasCollision)(&this_ptr_01->base,&SStack_64);
+        core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_6c);
+        iVar3 = (*((this_ptr_01->base).vtable._ub)->hasCollision)(&this_ptr_01->base,&SStack_6c);
         if (iVar3 == 2) {
           pCVar1 = &(this_ptr->base).location;
-          fStack_28 = (this_ptr_01->base).location.position.x - (pCVar1->position).x;
+          fStack_38 = (this_ptr_01->base).location.position.x - (pCVar1->position).x;
           fVar2 = (this_ptr_01->base).location.position.y - (this_ptr->base).location.position.y;
-          fStack_20 = (this_ptr_01->base).location.position.z - (this_ptr->base).location.position.z
+          fStack_30 = (this_ptr_01->base).location.position.z - (this_ptr->base).location.position.z
           ;
-          uStack_fc = (double)CONCAT44(uStack_fc._4_4_,0x4ca068);
-          fStack_24 = fVar2;
+          fStack_34 = fVar2;
           dVar5 = round
                             ((double)(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
                                      (float)0.25));
-          local_14 = (float)(int)ROUND(dVar5);
-          if (((float)-0.5 < fVar2) && (fStack_28 < SStack_64.cylinder_radius)) {
-            fStack_18 = (float)(int)local_14;
-            fVar2 = (float)SStack_64.result_ptr + fStack_18;
-            dStack_f4 = (double)fVar2;
-            if ((ABS(fStack_2c) < fVar2) && (ABS(fStack_24) < fVar2)) {
+          iStack_24 = (int)ROUND(dVar5);
+          if (((float)-0.5 < fVar2) && (fStack_38 < SStack_6c.cylinder_bottom_y)) {
+            fStack_28 = (float)iStack_24;
+            if ((ABS(fStack_3c) < SStack_6c.cylinder_top_y + fStack_28) &&
+               (ABS(fStack_34) < SStack_6c.cylinder_top_y + fStack_28)) {
+              fStack_18 = (float)iStack_24;
               core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
                         (this_ptr_01,&pCVar1->position,0,0.0,0x40000000,0);
             }

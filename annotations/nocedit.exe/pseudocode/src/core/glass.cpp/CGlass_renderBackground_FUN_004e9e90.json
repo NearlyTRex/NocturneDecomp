@@ -1,27 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 31,
-        "message": "use of undeclared identifier 'stack0xffffffe0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 115,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "pseudocode_lines": 65,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref"
+      "decompiler_intrinsic"
     ],
     "total_lines": 212
   },
@@ -171,13 +163,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xffffffe0",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);",
-      "type": "stack_ref"
-    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,

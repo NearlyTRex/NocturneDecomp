@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_spike_cpp_CSpike_getPropertyList_FUN_005b8e90 (CSpike *this_ptr,CActorPropertyList *property_list)
+; __cdecl void __cdecl core_spike_cpp_CSpike_getPropertyList_FUN_005b8e90(CSpike *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CSpike *         Stack[0x4]:4   this_ptr

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_FILE *output_stream)
+void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_FILE *output_stream)
 
 {
   int iVar1;

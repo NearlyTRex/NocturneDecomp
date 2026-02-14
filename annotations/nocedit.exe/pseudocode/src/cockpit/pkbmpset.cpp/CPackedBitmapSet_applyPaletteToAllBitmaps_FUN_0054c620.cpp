@@ -2,13 +2,11 @@
 // Address: 0054c620
 // Address Range: [[0054c620, 0054c653]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620 (CPackedBitmapSet *this_ptr,char *palette_data)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620(CPackedBitmapSet *this_ptr,char *palette_data)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbmpset_cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620
-          (CPackedBitmapSet *this_ptr,char *palette_data)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620(CPackedBitmapSet *this_ptr,char *palette_data)
 
 {
   int iVar1;

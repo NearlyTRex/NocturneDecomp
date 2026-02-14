@@ -2,13 +2,11 @@
 // Address: 00408f10
 // Address Range: [[00408f10, 00408f54]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 (CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point)
+// Signature: CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl
-core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-          (CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point)
+CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point)
 
 {
   CVector3f local_10;

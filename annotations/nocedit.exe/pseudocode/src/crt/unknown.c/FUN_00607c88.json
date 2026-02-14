@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 155,
+    "complexity_score": 151,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 11,
     "suspect_count": 13,
     "suspect_types": [
       "special_crt_function",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 47
+    "total_lines": 43
   },
   "cross_references": [
     {
@@ -31,7 +31,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_00607c88",
-    "signature": "undefined4 crt_unknown_c_FUN_00607c88(void)"
+    "signature": "undefined4 crt_unknown_c_FUN_00607c88(int *param_1,int *param_2)"
   },
   "function_calls": [],
   "globals": [],
@@ -68,88 +68,88 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "uint FUN_00607c88(int *param_1,int *param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "text": "int *in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "uint FUN_00607c88(int *param_1,int *param_2)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "text": "if ((param_1[2] < param_2[2]) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "text": "if ((param_1[2] < param_2[2]) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "text": "((param_1[2] == param_2[2] &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "text": "((param_1[2] == param_2[2] &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 10,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004[2] < in_stack_00000008[2]) ||",
-      "type": "stack_param"
+      "match": "param_1",
+      "text": "((param_1[1] < param_2[1] || ((param_1[1] == param_2[1] && (*param_1 < *param_2)))))))) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
       "line": 10,
-      "match": "in_stack_00000008",
-      "text": "if ((in_stack_00000004[2] < in_stack_00000008[2]) ||",
-      "type": "stack_param"
+      "match": "param_2",
+      "text": "((param_1[1] < param_2[1] || ((param_1[1] == param_2[1] && (*param_1 < *param_2)))))))) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "((in_stack_00000004[2] == in_stack_00000008[2] &&",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "text": "((param_1[1] < param_2[1] || ((param_1[1] == param_2[1] && (*param_1 < *param_2)))))))) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "((in_stack_00000004[2] == in_stack_00000008[2] &&",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "text": "((param_1[1] < param_2[1] || ((param_1[1] == param_2[1] && (*param_1 < *param_2)))))))) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "((in_stack_00000004[1] < in_stack_00000008[1] ||",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "text": "((param_1[1] < param_2[1] || ((param_1[1] == param_2[1] && (*param_1 < *param_2)))))))) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "text": "((in_stack_00000004[1] < in_stack_00000008[1] ||",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "((in_stack_00000004[1] == in_stack_00000008[1] && (*in_stack_00000004 < *in_stack_00000008)))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "((in_stack_00000004[1] == in_stack_00000008[1] && (*in_stack_00000004 < *in_stack_00000008)))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "text": "((in_stack_00000004[1] == in_stack_00000008[1] && (*in_stack_00000004 < *in_stack_00000008)))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "((in_stack_00000004[1] == in_stack_00000008[1] && (*in_stack_00000004 < *in_stack_00000008)))",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "text": "((param_1[1] < param_2[1] || ((param_1[1] == param_2[1] && (*param_1 < *param_2)))))))) {",
+      "type": "unnamed_param"
     },
     {
       "address": "00607c88",

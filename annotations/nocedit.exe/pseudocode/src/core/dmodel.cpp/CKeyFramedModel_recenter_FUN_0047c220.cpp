@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_dmodel_cpp_CKeyFramedModel_recenter_FUN_0047c220(CKeyFramedModel *this_ptr,int frame_index)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_recenter_FUN_0047c220(CKeyFramedModel *this_ptr,int frame_index)
 
 {
   CVector3f *pCVar1;

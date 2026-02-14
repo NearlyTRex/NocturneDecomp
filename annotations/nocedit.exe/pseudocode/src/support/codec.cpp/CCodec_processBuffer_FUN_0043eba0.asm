@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_0043eba0 (CCodec *this_ptr,byte *input,int *input_length,byte *output,int *output_length, int enable_callback)
+; __cdecl int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_0043eba0(CCodec *this_ptr,byte *input,int *input_length,byte *output,int *output_length,int enable_callback)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr

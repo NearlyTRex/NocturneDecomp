@@ -4,31 +4,31 @@
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 41,
+        "line": 38,
         "message": "use of undeclared identifier 'stack0xffffffa0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 53,
+        "line": 50,
         "message": "use of undeclared identifier 'stack0xffffffa8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 54,
+        "line": 51,
         "message": "use of undeclared identifier 'stack0xffffffac'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 57,
+        "line": 54,
         "message": "use of undeclared identifier 'stack0xffffffac'"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 71,
+        "line": 68,
         "message": "use of undeclared identifier 'stack0xffffffc0'"
       }
     ],
@@ -37,17 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 144,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 74,
+    "pseudocode_lines": 71,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 228
+    "total_lines": 225
   },
   "cross_references": [
     {
@@ -68,7 +68,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (CDeformableModelInstance *this_ptr,int motion_index,float animation_time, SBoneTransformData *output_bone_data)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SBoneTransformData *output_bone_data)"
   },
   "function_calls": [
     {
@@ -299,42 +299,42 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 34,
+      "line": 31,
       "match": "&stack0xffffffa0",
       "text": "(int *)local_24,&stack0xffffffa0);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 40,
       "match": "(uint *)((int)",
       "text": "puVar9 = (uint *)((int)local_18 + (uint)bVar11 * -8 + 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 46,
+      "line": 43,
       "match": "&stack0xffffffa8",
       "text": "*puVar9 = *(uint *)(&stack0xffffffa8 + (uint)bVar11 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 47,
+      "line": 44,
       "match": "&stack0xffffffac",
       "text": "*puVar10 = *(uint *)(&stack0xffffffac + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 50,
+      "line": 47,
       "match": "&stack0xffffffac",
       "text": "((int)(&stack0xffffffac + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 64,
+      "line": 61,
       "match": "&stack0xffffffc0",
       "text": "if ((SBoneTransformData *)&stack0xffffffc0 != output_bone_data) {",
       "type": "stack_ref"

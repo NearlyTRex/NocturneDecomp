@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CKeyFramedModel * __cdecl
-core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance *this_ptr)
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance *this_ptr)
 
 {
   CKeyFramedModel *pCVar1;

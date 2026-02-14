@@ -2,13 +2,11 @@
 // Address: 0042bd30
 // Address Range: [[0042bd30, 0042bf26]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 (CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 
 #include "nocturne.h"
 
-void __cdecl
-core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-          (CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
+void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 
 {
   SDamageDecal *pSVar1;

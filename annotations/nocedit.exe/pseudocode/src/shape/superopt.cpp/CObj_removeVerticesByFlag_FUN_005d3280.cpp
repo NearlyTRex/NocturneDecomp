@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-shape_superopt_cpp_CObj_removeVerticesByFlag_FUN_005d3280(CObj *this_ptr,uint flag_mask)
+void __cdecl shape_superopt_cpp_CObj_removeVerticesByFlag_FUN_005d3280(CObj *this_ptr,uint flag_mask)
 
 {
   int iVar1;

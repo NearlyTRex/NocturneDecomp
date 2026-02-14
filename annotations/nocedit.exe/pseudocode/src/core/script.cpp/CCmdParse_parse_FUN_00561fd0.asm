@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CCmdParse_parse_FUN_00561fd0 (CCmdParse *this_ptr,char *input_text,char *template_text)
+; __cdecl int __cdecl core_script_cpp_CCmdParse_parse_FUN_00561fd0(CCmdParse *this_ptr,char *input_text,char *template_text)
 ;
 ; Parameters:
 ; CCmdParse *      Stack[0x4]:4   this_ptr
@@ -19,9 +19,9 @@
 ;
 ; XREF[4]:
 ;   core_script.cpp_CCmdParse_bestParse_FUN_00561db0 at 00561ed5
-;   core_script.cpp_CScript_FUN_00567080 at 005670a6
-;   core_script.cpp_CScript_FUN_00567490 at 005674b1
-;   core_script.cpp_CScript_FUN_00567bc0 at 00567c2f
+;   core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 at 00567c2f
+;   core_script.cpp_CScript_parseActionTemplate_FUN_00567490 at 005674b1
+;   core_script.cpp_CScript_parseCommand_FUN_00567080 at 005670a6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_00643b59

@@ -2,13 +2,11 @@
 // Address: 00562920
 // Address Range: [[00562920, 00564006]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_editParameterValue_FUN_00562920 (char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+// Signature: int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_editParameterValue_FUN_00562920
-          (char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
 
 {
   char cVar1;
@@ -136,7 +134,7 @@ core_script_cpp_editParameterValue_FUN_00562920
     break;
   case 5:
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_28b4);
-    core_script_cpp_CScript_FUN_00566fa0(g_CScriptPtr,&local_28b4.base);
+    core_script_cpp_CScript_collectLabels_FUN_00566fa0(g_CScriptPtr,&local_28b4.base);
     iVar8 = 0;
     iVar7 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_28b4.base,value_buffer);
     iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -187,19 +185,20 @@ core_script_cpp_editParameterValue_FUN_00562920
     return 1;
   case 7:
     iVar7 = 0;
-    core_script_cpp_CScript_FUN_00567630(g_CScriptPtr);
+    core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     iVar8 = 0;
-    while (iVar7 < g_CScriptPtr->unk3) {
-      uVar2 = *(uint *)(iVar8 + 0x100 + (int)g_CScriptPtr->unk4);
+    while (iVar7 < g_CScriptPtr->xref_count) {
+      uVar2 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
       if ((uVar2 < 10) || ((10 < uVar2 && (uVar2 != 0xb)))) {
-        core_script_cpp_CScript_FUN_005676e0(g_CScriptPtr,iVar7);
+        core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar7);
       }
       else {
         iVar7 = iVar7 + 1;
         iVar8 = iVar8 + 0x114;
       }
     }
-    iVar7 = core_script_cpp_CScript_FUN_005677a0(g_CScriptPtr,local_7cc,value_buffer);
+    iVar7 = core_script_cpp_CScript_browseEventXRefs_FUN_005677a0
+                      (g_CScriptPtr,local_7cc,value_buffer);
     if (iVar7 != 0) {
       return 1;
     }
@@ -300,18 +299,19 @@ core_script_cpp_editParameterValue_FUN_00562920
   case 0xc:
     iVar7 = 0;
     iVar8 = 0;
-    core_script_cpp_CScript_FUN_00567630(g_CScriptPtr);
-    while (iVar7 < g_CScriptPtr->unk3) {
-      uVar2 = *(uint *)(iVar8 + 0x100 + (int)g_CScriptPtr->unk4);
+    core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
+    while (iVar7 < g_CScriptPtr->xref_count) {
+      uVar2 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
       if ((uVar2 < 8) || ((8 < uVar2 && (uVar2 != 9)))) {
-        core_script_cpp_CScript_FUN_005676e0(g_CScriptPtr,iVar7);
+        core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar7);
       }
       else {
         iVar7 = iVar7 + 1;
         iVar8 = iVar8 + 0x114;
       }
     }
-    iVar7 = core_script_cpp_CScript_FUN_005677a0(g_CScriptPtr,local_7cc,value_buffer);
+    iVar7 = core_script_cpp_CScript_browseEventXRefs_FUN_005677a0
+                      (g_CScriptPtr,local_7cc,value_buffer);
     if (iVar7 != 0) {
       return 1;
     }
@@ -331,19 +331,20 @@ core_script_cpp_editParameterValue_FUN_00562920
   case 0xf:
   case 0x10:
     iVar8 = 0;
-    core_script_cpp_CScript_FUN_00567630(g_CScriptPtr);
+    core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     iVar7 = 0;
-    while (iVar7 < g_CScriptPtr->unk3) {
-      uVar2 = *(uint *)(iVar8 + 0x100 + (int)g_CScriptPtr->unk4);
+    while (iVar7 < g_CScriptPtr->xref_count) {
+      uVar2 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
       if ((uVar2 < 5) || ((5 < uVar2 && (uVar2 != 6)))) {
-        core_script_cpp_CScript_FUN_005676e0(g_CScriptPtr,iVar7);
+        core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar7);
       }
       else {
         iVar7 = iVar7 + 1;
         iVar8 = iVar8 + 0x114;
       }
     }
-    iVar7 = core_script_cpp_CScript_FUN_005677a0(g_CScriptPtr,local_7cc,value_buffer);
+    iVar7 = core_script_cpp_CScript_browseEventXRefs_FUN_005677a0
+                      (g_CScriptPtr,local_7cc,value_buffer);
     if (iVar7 != 0) {
       return 1;
     }
@@ -422,19 +423,20 @@ core_script_cpp_editParameterValue_FUN_00562920
     break;
   case 0x15:
     iVar8 = 0;
-    core_script_cpp_CScript_FUN_00567630(g_CScriptPtr);
+    core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     iVar7 = 0;
-    while (iVar7 < g_CScriptPtr->unk3) {
-      iVar5 = *(int *)(iVar8 + 0x100 + (int)g_CScriptPtr->unk4);
+    while (iVar7 < g_CScriptPtr->xref_count) {
+      iVar5 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
       if ((iVar5 == 0) || (iVar5 == 2)) {
         iVar7 = iVar7 + 1;
         iVar8 = iVar8 + 0x114;
       }
       else {
-        core_script_cpp_CScript_FUN_005676e0(g_CScriptPtr,iVar7);
+        core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar7);
       }
     }
-    iVar7 = core_script_cpp_CScript_FUN_005677a0(g_CScriptPtr,local_7cc,value_buffer);
+    iVar7 = core_script_cpp_CScript_browseEventXRefs_FUN_005677a0
+                      (g_CScriptPtr,local_7cc,value_buffer);
     if (iVar7 != 0) {
       return 1;
     }
@@ -442,18 +444,19 @@ core_script_cpp_editParameterValue_FUN_00562920
   case 0x16:
     iVar7 = 0;
     iVar8 = 0;
-    core_script_cpp_CScript_FUN_00567630(g_CScriptPtr);
-    while (iVar7 < g_CScriptPtr->unk3) {
-      iVar5 = *(int *)(iVar8 + 0x100 + (int)g_CScriptPtr->unk4);
+    core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
+    while (iVar7 < g_CScriptPtr->xref_count) {
+      iVar5 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
       if ((iVar5 == 0) || (iVar5 == 3)) {
         iVar7 = iVar7 + 1;
         iVar8 = iVar8 + 0x114;
       }
       else {
-        core_script_cpp_CScript_FUN_005676e0(g_CScriptPtr,iVar7);
+        core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar7);
       }
     }
-    iVar7 = core_script_cpp_CScript_FUN_005677a0(g_CScriptPtr,local_7cc,value_buffer);
+    iVar7 = core_script_cpp_CScript_browseEventXRefs_FUN_005677a0
+                      (g_CScriptPtr,local_7cc,value_buffer);
     if (iVar7 != 0) {
       return 1;
     }
@@ -612,18 +615,19 @@ core_script_cpp_editParameterValue_FUN_00562920
   case 0x1c:
     iVar7 = 0;
     iVar8 = 0;
-    core_script_cpp_CScript_FUN_00567630(g_CScriptPtr);
-    while (iVar7 < g_CScriptPtr->unk3) {
-      iVar5 = *(int *)(iVar8 + 0x100 + (int)g_CScriptPtr->unk4);
+    core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
+    while (iVar7 < g_CScriptPtr->xref_count) {
+      iVar5 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
       if ((iVar5 == 0) || (iVar5 == 4)) {
         iVar7 = iVar7 + 1;
         iVar8 = iVar8 + 0x114;
       }
       else {
-        core_script_cpp_CScript_FUN_005676e0(g_CScriptPtr,iVar7);
+        core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar7);
       }
     }
-    iVar7 = core_script_cpp_CScript_FUN_005677a0(g_CScriptPtr,local_7cc,value_buffer);
+    iVar7 = core_script_cpp_CScript_browseEventXRefs_FUN_005677a0
+                      (g_CScriptPtr,local_7cc,value_buffer);
     if (iVar7 != 0) {
       return 1;
     }
@@ -728,9 +732,9 @@ core_script_cpp_editParameterValue_FUN_00562920
   case 0x20:
     iVar7 = 0;
     iVar8 = 0;
-    core_script_cpp_CScript_FUN_00567630(g_CScriptPtr);
-    while (iVar7 < g_CScriptPtr->unk3) {
-      switch(*(uint *)(iVar8 + 0x100 + (int)g_CScriptPtr->unk4)) {
+    core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
+    while (iVar7 < g_CScriptPtr->xref_count) {
+      switch(*(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8)) {
       case 0:
       case 1:
       case 2:
@@ -740,10 +744,11 @@ core_script_cpp_editParameterValue_FUN_00562920
         iVar8 = iVar8 + 0x114;
         break;
       default:
-        core_script_cpp_CScript_FUN_005676e0(g_CScriptPtr,iVar7);
+        core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar7);
       }
     }
-    iVar7 = core_script_cpp_CScript_FUN_005677a0(g_CScriptPtr,local_7cc,value_buffer);
+    iVar7 = core_script_cpp_CScript_browseEventXRefs_FUN_005677a0
+                      (g_CScriptPtr,local_7cc,value_buffer);
     if (iVar7 != 0) {
       return 1;
     }

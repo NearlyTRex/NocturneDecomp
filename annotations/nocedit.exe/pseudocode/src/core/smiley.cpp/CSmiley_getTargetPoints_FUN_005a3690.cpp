@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_smiley_cpp_CSmiley_getTargetPoints_FUN_005a3690(CSmiley *this_ptr,CVector3f *out_points_array)
+int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_005a3690(CSmiley *this_ptr,CVector3f *out_points_array)
 
 {
   CVector3f *pCVar1;

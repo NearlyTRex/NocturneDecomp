@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_armour_cpp_CArmour_hasCollision_FUN_00412450(CArmour *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_armour_cpp_CArmour_hasCollision_FUN_00412450(CArmour *this_ptr,SCollisionInfo *collision_info)
 
 {
   int iVar1;

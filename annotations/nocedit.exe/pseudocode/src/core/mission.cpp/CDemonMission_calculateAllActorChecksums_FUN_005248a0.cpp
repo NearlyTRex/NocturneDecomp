@@ -2,13 +2,11 @@
 // Address: 005248a0
 // Address Range: [[005248a0, 005248d2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_calculateAllActorChecksums_FUN_005248a0 (CDemonMission *this_ptr,uint *checksum)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_calculateAllActorChecksums_FUN_005248a0(CDemonMission *this_ptr,uint *checksum)
 
 #include "nocturne.h"
 
-void __cdecl
-core_mission_cpp_CDemonMission_calculateAllActorChecksums_FUN_005248a0
-          (CDemonMission *this_ptr,uint *checksum)
+void __cdecl core_mission_cpp_CDemonMission_calculateAllActorChecksums_FUN_005248a0(CDemonMission *this_ptr,uint *checksum)
 
 {
   CDemonActor *this_ptr_00;

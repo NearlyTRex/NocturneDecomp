@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0 (int src_bit_depth,int src_channels,int src_sample_rate,int src_signed,short *src_buffer, int dst_bit_depth,int dst_channels,int dst_sample_rate,int dst_signed,short *dst_buffer, int num_output_samples)
+; __cdecl void __cdecl sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0(int src_bit_depth,int src_channels,int src_sample_rate,int src_signed,short *src_buffer,int dst_bit_depth,int dst_channels,int dst_sample_rate,int dst_signed,short *dst_buffer,int num_output_samples)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   src_bit_depth

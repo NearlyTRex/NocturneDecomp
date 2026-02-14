@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270 (CDemonSet *this_ptr,float f1,float f2,float f3,float f4)
+; __cdecl void __cdecl core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet *this_ptr,float f1,float f2,float f3,float f4)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

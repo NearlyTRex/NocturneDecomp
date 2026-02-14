@@ -2,13 +2,11 @@
 // Address: 00567310
 // Address Range: [[00567310, 00567482]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310 (CScript *this_ptr,char *input_text,CStrList *tokens_out,int *cursor_pos)
+// Signature: int __cdecl core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310(CScript *this_ptr,char *input_text,CStrList *tokens_out,int *cursor_pos)
 
 #include "nocturne.h"
 
-int __cdecl
-core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310
-          (CScript *this_ptr,char *input_text,CStrList *tokens_out,int *cursor_pos)
+int __cdecl core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310(CScript *this_ptr,char *input_text,CStrList *tokens_out,int *cursor_pos)
 
 {
   char *pcVar1;

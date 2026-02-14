@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CDemonFilter * __cdecl
-core_dfilter_cpp_CFilterCache_findFilter_FUN_004701a0(CFilterCache *this_ptr,char *filter_name)
+CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_004701a0(CFilterCache *this_ptr,char *filter_name)
 
 {
   int iVar1;

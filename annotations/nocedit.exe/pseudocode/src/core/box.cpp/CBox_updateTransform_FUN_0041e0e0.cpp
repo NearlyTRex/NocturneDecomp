@@ -2,13 +2,11 @@
 // Address: 0041e0e0
 // Address Range: [[0041e0e0, 0041e2e2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0 (CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)
+// Signature: void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)
 
 #include "nocturne.h"
 
-void __cdecl
-core_box_cpp_CBox_updateTransform_FUN_0041e0e0
-          (CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)
+void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)
 
 {
   float fVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170 (CEnemy *this_ptr,CActorPropertyList *property_list)
+; __cdecl int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CEnemy *         Stack[0x4]:4   this_ptr

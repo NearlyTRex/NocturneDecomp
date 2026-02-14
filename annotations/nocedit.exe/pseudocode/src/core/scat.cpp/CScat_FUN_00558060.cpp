@@ -84,7 +84,7 @@ LAB_00558263:
           if ((pCVar2 != (CCharacter *)0x0) &&
              ((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==
               pCVar6)) {
-            (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xf0))();
+            (**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xf0))(this_ptr->unk4,1);
             this_ptr->unk4 = 0;
           }
           if (this_ptr->guns_drawn != 0) {

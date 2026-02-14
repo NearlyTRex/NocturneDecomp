@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size, int show_directory)
+; __cdecl int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size,int show_directory)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

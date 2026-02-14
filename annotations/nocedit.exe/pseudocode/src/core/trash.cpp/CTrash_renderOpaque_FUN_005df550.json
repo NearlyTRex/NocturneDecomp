@@ -1,40 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 18,
-        "message": "use of undeclared identifier 'stack0xffffffc4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 28,
-        "message": "use of undeclared identifier 'stack0xfffffff0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 76,
-        "line": 30,
-        "message": "use of undeclared identifier 'stack0xfffffff0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 60,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 3,
-    "pseudocode_lines": 25,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 93
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -172,29 +151,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 11,
-      "match": "&stack0xffffffc4",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xfffffff0",
-      "text": "(&this_ptr->base,(CVector3f *)&stack0xfffffff0,&CStack_1c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffff0",
-      "text": "(g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,(CVector3i *)&stack0xfffffff0);",
-      "type": "stack_ref"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-char * __cdecl
-core_event_cpp_CEventList_validateCondition_FUN_004add00(CEventList *this_ptr,char *expression)
+char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_004add00(CEventList *this_ptr,char *expression)
 
 {
   int iVar1;

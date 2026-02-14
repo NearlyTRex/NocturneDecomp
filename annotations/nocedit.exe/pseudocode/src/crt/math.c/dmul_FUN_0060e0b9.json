@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 449,
+    "complexity_score": 548,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 144,
-    "suspect_count": 29,
+    "pseudocode_lines": 148,
+    "suspect_count": 38,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "nonstandard_int",
       "special_crt_function"
     ],
-    "total_lines": 356
+    "total_lines": 360
   },
   "cross_references": [
     {
@@ -32,7 +33,7 @@
     ],
     "convention": "__watcallRegister",
     "name": "crt_math.c_dmul_FUN_0060e0b9",
-    "signature": "double crt_math_c_dmul_FUN_0060e0b9(double a,double b)"
+    "signature": "double __watcallRegister crt_math_c_dmul_FUN_0060e0b9(double a,double b)"
   },
   "function_calls": [
     {
@@ -138,199 +139,262 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_EDX",
+      "text": "uint extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_EDX_00",
+      "text": "uint extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_EDX_01",
+      "text": "uint extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 32,
       "match": "SUB84",
-      "text": "uVar14 = SUB84(b,0);",
+      "text": "uVar16 = SUB84(b,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 34,
       "match": "SUB84",
-      "text": "uVar15 = SUB84(a,0);",
+      "text": "uVar17 = SUB84(a,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 39,
       "match": "CARRY4",
-      "text": "uVar13 = uVar13 & 0x7fffffff | (uint)CARRY4(uVar13,uVar13) << 0x1f;",
+      "text": "uVar15 = uVar15 & 0x7fffffff | (uint)CARRY4(uVar15,uVar15) << 0x1f;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 45,
       "match": "CARRY4",
-      "text": "uVar10 = uVar10 & 0x7fffffff | (uint)CARRY4(uVar10,uVar10) << 0x1f;",
+      "text": "uVar12 = uVar12 & 0x7fffffff | (uint)CARRY4(uVar12,uVar12) << 0x1f;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 48,
       "match": "CONCAT44",
-      "text": "dVar21 = (double)CONCAT44(uVar13,uVar15) * (double)CONCAT44(uVar10,uVar14);",
+      "text": "dVar6 = (double)CONCAT44(uVar15,uVar17) * (double)CONCAT44(uVar12,uVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 48,
       "match": "CONCAT44",
-      "text": "dVar21 = (double)CONCAT44(uVar13,uVar15) * (double)CONCAT44(uVar10,uVar14);",
+      "text": "dVar6 = (double)CONCAT44(uVar15,uVar17) * (double)CONCAT44(uVar12,uVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 65,
       "match": "CARRY4",
-      "text": "bVar20 = CARRY4(uVar15,uVar15);",
+      "text": "bVar22 = CARRY4(uVar17,uVar17);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 71,
       "match": "CONCAT22",
-      "text": "uVar11 = CONCAT22(uVar9,1);",
+      "text": "uVar13 = CONCAT22(uVar11,1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 73,
       "match": "CONCAT22",
-      "text": "uVar11 = CONCAT22((short)(uVar11 >> 0x10),(short)uVar11 + -1);",
+      "text": "uVar13 = CONCAT22((short)(uVar13 >> 0x10),(short)uVar13 + -1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 74,
       "match": "CARRY4",
-      "text": "bVar20 = CARRY4(uVar14,uVar14);",
+      "text": "bVar22 = CARRY4(uVar16,uVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 80,
       "match": "CONCAT22",
-      "text": "uVar18 = CONCAT22((short)(uVar11 >> 0x10),uVar9);",
+      "text": "uVar20 = CONCAT22((short)(uVar13 >> 0x10),uVar11);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
-      "match": "CARRY4",
-      "text": "uVar15 = (uint)CARRY4((uint)lVar7,(uint)lVar3);",
-      "type": "decompiler_intrinsic"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 83,
+      "match": "extraout_EDX",
+      "text": "return (double)CONCAT44(extraout_EDX,uVar10);",
+      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 83,
       "match": "CONCAT44",
-      "text": "CONCAT44((uint)CARRY4((uint)((ulonglong)lVar2 >> 0x20),(uint)CARRY4(uVar10,(uint)lVar2)) +",
+      "text": "return (double)CONCAT44(extraout_EDX,uVar10);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
-      "match": "CARRY4",
-      "text": "CONCAT44((uint)CARRY4((uint)((ulonglong)lVar2 >> 0x20),(uint)CARRY4(uVar10,(uint)lVar2)) +",
-      "type": "decompiler_intrinsic"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 87,
+      "match": "extraout_EDX_00",
+      "text": "return (double)CONCAT44(extraout_EDX_00,uVar10);",
+      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
-      "match": "CARRY4",
-      "text": "CONCAT44((uint)CARRY4((uint)((ulonglong)lVar2 >> 0x20),(uint)CARRY4(uVar10,(uint)lVar2)) +",
+      "line": 87,
+      "match": "CONCAT44",
+      "text": "return (double)CONCAT44(extraout_EDX_00,uVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "CARRY4",
-      "text": "(uint)(CARRY4(uVar19,uVar11) || CARRY4(uVar14,uVar15)),uVar14 + uVar15);",
+      "text": "uVar17 = (uint)CARRY4((uint)lVar8,(uint)lVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
-      "match": "CARRY4",
-      "text": "(uint)(CARRY4(uVar19,uVar11) || CARRY4(uVar14,uVar15)),uVar14 + uVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
-      "match": "CARRY4",
-      "text": "if (CARRY4(uVar15,uVar15)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 101,
       "match": "CONCAT44",
-      "text": "uVar6 = CONCAT44((uint)(uVar8 >> 0x21),",
+      "text": "CONCAT44((uint)CARRY4((uint)((ulonglong)lVar2 >> 0x20),(uint)CARRY4(uVar12,(uint)lVar2)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 101,
+      "match": "CARRY4",
+      "text": "CONCAT44((uint)CARRY4((uint)((ulonglong)lVar2 >> 0x20),(uint)CARRY4(uVar12,(uint)lVar2)) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 101,
+      "match": "CARRY4",
+      "text": "CONCAT44((uint)CARRY4((uint)((ulonglong)lVar2 >> 0x20),(uint)CARRY4(uVar12,(uint)lVar2)) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 102,
+      "match": "CARRY4",
+      "text": "(uint)(CARRY4(uVar21,uVar13) || CARRY4(uVar16,uVar17)),uVar16 + uVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 102,
+      "match": "CARRY4",
+      "text": "(uint)(CARRY4(uVar21,uVar13) || CARRY4(uVar16,uVar17)),uVar16 + uVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 108,
+      "match": "CARRY4",
+      "text": "if (CARRY4(uVar17,uVar17)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "CONCAT44",
+      "text": "uVar7 = CONCAT44((uint)(uVar9 >> 0x21),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
       "match": "CONCAT22",
-      "text": "uVar18 = CONCAT22(uVar12,sVar17);",
+      "text": "uVar20 = CONCAT22(uVar14,sVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 127,
       "match": "CONCAT31",
-      "text": "uVar18 = CONCAT31((int3)(uVar18 >> 8),1);",
+      "text": "uVar20 = CONCAT31((int3)(uVar20 >> 8),1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 123,
+      "line": 127,
       "match": "int3",
-      "text": "uVar18 = CONCAT31((int3)(uVar18 >> 8),1);",
+      "text": "uVar20 = CONCAT31((int3)(uVar20 >> 8),1);",
       "type": "nonstandard_int"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
-      "match": "CONCAT22",
-      "text": "uVar18 = CONCAT22((short)(uVar18 >> 0x10),-1 - sVar17);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 130,
-      "match": "CONCAT44",
-      "text": "uVar6 = CONCAT44(uVar15 >> bVar5 | 0 << 0x20 - bVar5,",
+      "match": "CONCAT22",
+      "text": "uVar20 = CONCAT22((short)(uVar20 >> 0x10),-1 - sVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 134,
       "match": "CONCAT44",
-      "text": "return (double)CONCAT44((uint)(uVar6 >> 0x20) & 0xfffff |",
+      "text": "uVar7 = CONCAT44(uVar17 >> bVar5 | 0 << 0x20 - bVar5,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
-      "match": "CARRY4",
-      "text": "(uVar18 << 0x15) >> 1 | (uint)CARRY4(uVar18,uVar18) << 0x1f,(int)uVar6",
+      "line": 138,
+      "match": "CONCAT44",
+      "text": "return (double)CONCAT44((uint)(uVar7 >> 0x20) & 0xfffff |",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 139,
-      "match": "CONCAT44",
-      "text": "uVar6 = CONCAT44((uint)(uVar6 >> 0x21),",
+      "match": "CARRY4",
+      "text": "(uVar20 << 0x15) >> 1 | (uint)CARRY4(uVar20,uVar20) << 0x1f,(int)uVar7",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 143,
+      "match": "CONCAT44",
+      "text": "uVar7 = CONCAT44((uint)(uVar7 >> 0x21),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 147,
       "match": "CONCAT22",
-      "text": "uVar18 = CONCAT22(uVar12,sVar17);",
+      "text": "uVar20 = CONCAT22(uVar14,sVar19);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 150,
+      "match": "extraout_EDX_01",
+      "text": "return (double)CONCAT44(extraout_EDX_01,uVar10);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 150,
+      "match": "CONCAT44",
+      "text": "return (double)CONCAT44(extraout_EDX_01,uVar10);",
       "type": "decompiler_intrinsic"
     },
     {

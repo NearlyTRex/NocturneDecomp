@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-CBloodParticle * __cdecl
-core_gore_cpp_CBloodParticle_dtor_FUN_004ee410(CBloodParticle *this_ptr,uint flags)
+CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_dtor_FUN_004ee410(CBloodParticle *this_ptr,uint flags)
 
 {
   CBloodParticle *pCVar1;

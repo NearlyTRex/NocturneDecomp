@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-engine_ini_cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile *this_ptr,char *key,float value)
+void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile *this_ptr,char *key,float value)
 
 {
   char local_64 [4];

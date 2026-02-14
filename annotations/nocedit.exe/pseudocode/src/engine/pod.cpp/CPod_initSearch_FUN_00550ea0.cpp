@@ -2,13 +2,11 @@
 // Address: 00550ea0
 // Address Range: [[00550ea0, 00550eee]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_pod_cpp_CPod_initSearch_FUN_00550ea0 (CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context)
+// Signature: void __cdecl engine_pod_cpp_CPod_initSearch_FUN_00550ea0(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_pod_cpp_CPod_initSearch_FUN_00550ea0
-          (CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context)
+void __cdecl engine_pod_cpp_CPod_initSearch_FUN_00550ea0(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context)
 
 {
   char cVar1;

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   line
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_FUN_00565130 at 0056590f
+;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 0056590f
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_editorX2Index_FUN_00566a90

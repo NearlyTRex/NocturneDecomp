@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_vessel_cpp_CCryptVessel_hasCollision_FUN_005e9b90 (CCryptVessel *this_ptr,SCollisionInfo *collision_info)
+; __cdecl int __cdecl core_vessel_cpp_CCryptVessel_hasCollision_FUN_005e9b90(CCryptVessel *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr

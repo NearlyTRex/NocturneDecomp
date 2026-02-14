@@ -2,13 +2,11 @@
 // Address: 004dccc0
 // Address Range: [[004dccc0, 004dce6e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004dccc0 (CGame *this_ptr,SPlayerControl *player_control)
+// Signature: void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004dccc0(CGame *this_ptr,SPlayerControl *player_control)
 
 #include "nocturne.h"
 
-void __cdecl
-core_game_cpp_CGame_processMouseControls_FUN_004dccc0
-          (CGame *this_ptr,SPlayerControl *player_control)
+void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004dccc0(CGame *this_ptr,SPlayerControl *player_control)
 
 {
   int x;

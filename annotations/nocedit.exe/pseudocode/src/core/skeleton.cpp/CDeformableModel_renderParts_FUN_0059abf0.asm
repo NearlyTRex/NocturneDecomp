@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0 (CDeformableModel *this_ptr,int lod_index,byte *part_visibility_flags, int *texture_set_indices,int render_flags,int special_render_mode)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeformableModel *this_ptr,int lod_index,byte *part_visibility_flags,int *texture_set_indices,int render_flags,int special_render_mode)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

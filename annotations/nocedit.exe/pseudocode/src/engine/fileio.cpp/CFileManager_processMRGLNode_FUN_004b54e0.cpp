@@ -2,13 +2,11 @@
 // Address: 004b54e0
 // Address Range: [[004b54e0, 004b5603]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0 (CFileManager *this_ptr,SMRGLHeaderExtended *mrgl_node)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0(CFileManager *this_ptr,SMRGLHeaderExtended *mrgl_node)
 
 #include "nocturne.h"
 
-void __cdecl
-engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0
-          (CFileManager *this_ptr,SMRGLHeaderExtended *mrgl_node)
+void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0(CFileManager *this_ptr,SMRGLHeaderExtended *mrgl_node)
 
 {
   uint uVar1;

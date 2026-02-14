@@ -2,11 +2,11 @@
 // Address: 00603b37
 // Address Range: [[00603b37, 00603ba2]]
 // Convention: __watcallRegister
-// Signature: void crt_memory_c___stosd_FUN_00603b37(void *dest,uint replicated_value,uint dword_count)
+// Signature: void __watcallRegister crt_memory_c___stosd_FUN_00603b37(void *dest,uint replicated_value,uint dword_count)
 
 #include "nocturne.h"
 
-void __stosd(void *dest,uint replicated_value,uint dword_count)
+void __watcallRegister __stosd(void *dest,uint replicated_value,uint dword_count)
 
 {
   uint *puVar1;

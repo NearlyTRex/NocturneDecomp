@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-ConvertCreationDisposition(DWORD mode_flags,DWORD *creation_disposition)
+void __cdecl ConvertCreationDisposition(DWORD mode_flags,DWORD *creation_disposition)
 
 {
   uint uVar1;

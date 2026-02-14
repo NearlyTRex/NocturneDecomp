@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 45,
+    "complexity_score": 44,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 19,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 50
+    "total_lines": 49
   },
   "cross_references": [],
   "function": {
@@ -106,14 +106,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 17,
       "match": "(CSfxSlot *)((int)",
       "text": "this_ptr = (CSfxSlot *)((int)this_ptr + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(CSfxOptions *)((int)",
       "text": "output_options = (CSfxOptions *)((int)output_options + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"

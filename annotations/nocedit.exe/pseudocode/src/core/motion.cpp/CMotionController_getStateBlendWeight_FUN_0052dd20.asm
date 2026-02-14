@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20 (CMotionController *this_ptr,int desired_state_index)
+; __cdecl float __cdecl core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(CMotionController *this_ptr,int desired_state_index)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

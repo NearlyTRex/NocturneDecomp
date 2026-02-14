@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeformableModel *this_ptr)
+int __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeformableModel *this_ptr)
 
 {
   float *pfVar1;
@@ -25,7 +24,8 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
   SVert *pSVar13;
   CDeformableModel *pCVar14;
   ushort *puVar15;
-  CVector3f *in_stack_fffffdd4;
+  CVector3f *in_stack_fffffdd0;
+  float afStack_22c [99];
   float local_a0;
   float local_9c;
   float local_98;
@@ -57,7 +57,7 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
   int local_30;
   CDeformableModel *local_2c;
   int local_28;
-  int local_24;
+  SLod *local_24;
   CDeformableModelInstance *local_20;
   int local_1c;
   ushort *local_18;
@@ -67,17 +67,15 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
     this_ptr->parts[0].dominant_bone = 0;
     pSVar3 = this_ptr->texture_sets;
     do {
-      local_20 = (CDeformableModelInstance *)this_ptr->lod_info;
+      local_24 = this_ptr->lod_info;
       this_ptr->bone_to_part_map[0] = 0;
-      this_ptr = (CDeformableModel *)local_20;
-    } while (local_20 !=
-             (CDeformableModelInstance *)(pSVar3->textures[2].texture_variants[2].texture_name + 8))
-    ;
+      this_ptr = (CDeformableModel *)local_24;
+    } while (local_24 != (SLod *)(pSVar3->textures[2].texture_variants[2].texture_name + 8));
   }
   else {
     core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(this_ptr);
     pCVar4 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
-    local_24 = pCVar4->bone_count;
+    local_24 = (SLod *)pCVar4->bone_count;
     pCVar5 = (CDeformableModelInstance *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b4,"..\\core\\skeleton.cpp",0x7d2);
     local_20 = (CDeformableModelInstance *)0x0;
     if (pCVar5 != (CDeformableModelInstance *)0x0) {
@@ -99,12 +97,12 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
       iVar9 = 0;
       do {
         local_30 = local_2c->parts[0].tri_counts[0] + iVar9;
-        if (0 < local_24) {
-          iVar10 = local_24 * 4;
+        if (0 < (int)local_24) {
+          iVar10 = (int)local_24 * 4;
           iVar12 = 0;
           do {
             iVar6 = iVar12 + 4;
-            *(uint *)(&stack0xfffffdd0 + iVar12) = 0;
+            *(uint *)((int)afStack_22c + iVar12 + -4) = 0;
             iVar12 = iVar6;
           } while (iVar6 < iVar10);
         }
@@ -161,8 +159,7 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
                 puVar2 = pSVar11->bone_indices;
                 pSVar8 = (SVert *)pSVar8->bone_weights;
                 pSVar11 = (SVert *)pSVar11->bone_indices;
-                *(float *)(&stack0xfffffdd0 + (uint)*puVar2 * 4) =
-                     *pfVar1 * local_14 + *(float *)(&stack0xfffffdd0 + (uint)*puVar2 * 4);
+                afStack_22c[*puVar2 - 1] = *pfVar1 * local_14 + afStack_22c[*puVar2 - 1];
               }
               puVar15 = puVar15 + 1;
             } while (puVar15 != local_18);
@@ -171,15 +168,15 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
         }
         iVar12 = 1;
         iVar9 = 0;
-        if (1 < local_24) {
+        if (1 < (int)local_24) {
           iVar10 = 4;
           do {
-            if (*(float *)(&stack0xfffffdd0 + iVar9 * 4) < *(float *)(&stack0xfffffdd0 + iVar10)) {
+            if (afStack_22c[iVar9 + -1] < *(float *)((int)afStack_22c + iVar10 + -4)) {
               iVar9 = iVar12;
             }
             iVar12 = iVar12 + 1;
             iVar10 = iVar10 + 4;
-          } while (iVar12 < local_24);
+          } while (iVar12 < (int)local_24);
         }
         local_2c->parts[0].dominant_bone = iVar9;
         local_34 = local_34 + 1;
@@ -194,16 +191,16 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
     }
     iVar9 = 0;
     pCVar14 = this_ptr;
-    if (0 < (int)local_20) {
+    if (0 < (int)local_24) {
       do {
         iVar12 = core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
-                           (this_ptr,iVar9,in_stack_fffffdd4);
+                           (this_ptr,iVar9,in_stack_fffffdd0);
         iVar9 = iVar9 + 1;
         pCVar14->bone_to_part_map[0] = iVar12;
         pCVar14 = (CDeformableModel *)pCVar14->lod_info;
-      } while (iVar9 < (int)local_20);
+      } while (iVar9 < (int)local_24);
       return iVar12;
     }
   }
-  return (int)local_20;
+  return (int)local_24;
 }

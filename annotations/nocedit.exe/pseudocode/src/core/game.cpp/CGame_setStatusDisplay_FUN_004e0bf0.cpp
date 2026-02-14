@@ -2,13 +2,11 @@
 // Address: 004e0bf0
 // Address Range: [[004e0bf0, 004e0ccc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0 (CGame *this_ptr,char *name,int value,float duration)
+// Signature: void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame *this_ptr,char *name,int value,float duration)
 
 #include "nocturne.h"
 
-void __cdecl
-core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0
-          (CGame *this_ptr,char *name,int value,float duration)
+void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame *this_ptr,char *name,int value,float duration)
 
 {
   char cVar1;

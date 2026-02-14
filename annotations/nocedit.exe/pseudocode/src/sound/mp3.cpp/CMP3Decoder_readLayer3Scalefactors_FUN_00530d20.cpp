@@ -2,14 +2,11 @@
 // Address: 00530d20
 // Address Range: [[00530d20, 005310ea]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20 (CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel, int granule_index,SMpegFrame *frame)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,int granule_index,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl
-sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20
-          (CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,
-          int granule_index,SMpegFrame *frame)
+void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,int granule_index,SMpegFrame *frame)
 
 {
   uint uVar1;

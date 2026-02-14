@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 166,
+    "complexity_score": 164,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 36,
+    "pseudocode_lines": 34,
     "suspect_count": 11,
     "suspect_types": [
       "special_crt_function",
@@ -13,7 +13,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 127
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -39,7 +39,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_stdio.c_ReadFileWithDeviceAbstraction_FUN_00602880",
-    "signature": "int __watcallStack crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880 (int file_handle_index,void *buffer,int bytes_to_read)"
+    "signature": "int __watcallStack crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880(int file_handle_index,void *buffer,int bytes_to_read)"
   },
   "function_calls": [
     {
@@ -169,70 +169,70 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_ESI",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000010",
       "text": "void *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000014",
       "text": "DWORD in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 14,
       "match": "unaff_ESI",
       "text": "unaff_ESI = -1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000010",
       "text": "iVar1 = (*g_SpecialDeviceReadFuncPtr)(iVar1,in_stack_00000010,in_stack_00000014);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000014",
       "text": "iVar1 = (*g_SpecialDeviceReadFuncPtr)(iVar1,in_stack_00000010,in_stack_00000014);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010,in_stack_00000014,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_00000014",
       "text": "in_stack_00000010,in_stack_00000014,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 29,
+      "line": 27,
       "match": "&stack0xfffffff4",
       "text": "in_stack_00000010,in_stack_00000014,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 38,
+      "line": 36,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005e9bb0 (CCryptVessel *this_ptr,CBoundingBox3D *out_box)
+; __cdecl CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005e9bb0(CCryptVessel *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr

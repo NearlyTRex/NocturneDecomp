@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-core_trash_cpp_CTrash_hasCollision_FUN_005df6d0(CTrash *this_ptr,SCollisionInfo *collision_info)
+int __cdecl core_trash_cpp_CTrash_hasCollision_FUN_005df6d0(CTrash *this_ptr,SCollisionInfo *collision_info)
 
 {
   return 0;

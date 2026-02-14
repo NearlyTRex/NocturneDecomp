@@ -2,13 +2,11 @@
 // Address: 0040e770
 // Address Range: [[0040e770, 0040e840]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770 (CActorPropertyList *this_ptr,int x,int y,int width)
+// Signature: void __cdecl core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770(CActorPropertyList *this_ptr,int x,int y,int width)
 
 #include "nocturne.h"
 
-void __cdecl
-core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770
-          (CActorPropertyList *this_ptr,int x,int y,int width)
+void __cdecl core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770(CActorPropertyList *this_ptr,int x,int y,int width)
 
 {
   int iVar1;

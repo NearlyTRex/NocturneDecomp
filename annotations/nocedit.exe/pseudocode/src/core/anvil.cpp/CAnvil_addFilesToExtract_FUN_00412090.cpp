@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_anvil_cpp_CAnvil_addFilesToExtract_FUN_00412090(CAnvil *this_ptr,_FILE *file_handle)
+void __cdecl core_anvil_cpp_CAnvil_addFilesToExtract_FUN_00412090(CAnvil *this_ptr,_FILE *file_handle)
 
 {
   CKeyFramedModel *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70 (CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride)
+; __cdecl void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr

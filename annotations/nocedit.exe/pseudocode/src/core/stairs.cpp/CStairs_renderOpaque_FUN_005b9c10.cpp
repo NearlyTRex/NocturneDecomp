@@ -74,12 +74,12 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_bc);
     iStack_3c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iStack_3c != 0) {
-      local_114.fog = (float)&DAT_00684178;
+      local_114.fog = (int)&SMRGLTextureBasic_00684178;
       local_114.color = (int)g_CDemonRendererPtr2;
       iVar3 = 0;
-      local_114.light = 8.413193e-39;
+      local_114.light = 0x5b9c8f;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr2,&DAT_00684178);
+                (g_CDemonRendererPtr2,&SMRGLTextureBasic_00684178);
       if (-1 < this_ptr->stair_count) {
         iStack_1c = 0x60;
         iStack_20 = 0x90;
@@ -117,11 +117,11 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           CStack_60.x = (int)ROUND(fStack_90 * 256.0f);
           CStack_60.y = (int)ROUND(fStack_8c * 256.0f);
           CStack_60.z = (int)ROUND(fStack_88 * 256.0f);
-          local_114.fog = (float)&CStack_60;
+          local_114.fog = (int)&CStack_60;
           local_114.color =
                (int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                iStack_20;
-          local_114.light = 8.413858e-39;
+          local_114.light = 0x5b9e6a;
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     ((SProjectedVertex *)local_114.color,(CVector3i *)local_114.fog);
           iVar3 = iVar3 + 1;
@@ -164,10 +164,10 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vertex2.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
           vertex2.u = local_114.projected_vertex.screen_y;
-          vertex2.light = (float)this_ptr;
-          vertex2.color = (int)local_114.light;
-          vertex2.fog = (float)local_114.color;
-          vertex2.w_recip = local_114.fog;
+          vertex2.light = (int)this_ptr;
+          vertex2.color = local_114.light;
+          vertex2.fog = local_114.color;
+          vertex2.w_recip = (float)local_114.fog;
           unique0x1000147d = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -193,10 +193,10 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vertex2_00.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_00.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
           vertex2_00.u = local_114.projected_vertex.screen_y;
-          vertex2_00.light = (float)this_ptr;
-          vertex2_00.color = (int)local_114.light;
-          vertex2_00.fog = (float)local_114.color;
-          vertex2_00.w_recip = local_114.fog;
+          vertex2_00.light = (int)this_ptr;
+          vertex2_00.color = local_114.light;
+          vertex2_00.fog = local_114.color;
+          vertex2_00.w_recip = (float)local_114.fog;
           unique0x10001499 = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_00);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -222,10 +222,10 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vertex2_01.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_01.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
           vertex2_01.u = local_114.projected_vertex.screen_y;
-          vertex2_01.light = (float)this_ptr;
-          vertex2_01.color = (int)local_114.light;
-          vertex2_01.fog = (float)local_114.color;
-          vertex2_01.w_recip = local_114.fog;
+          vertex2_01.light = (int)this_ptr;
+          vertex2_01.color = local_114.light;
+          vertex2_01.fog = local_114.color;
+          vertex2_01.w_recip = (float)local_114.fog;
           unique0x100014b5 = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_01);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -251,10 +251,10 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vertex2_02.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_02.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
           vertex2_02.u = local_114.projected_vertex.screen_y;
-          vertex2_02.light = (float)this_ptr;
-          vertex2_02.color = (int)local_114.light;
-          vertex2_02.fog = (float)local_114.color;
-          vertex2_02.w_recip = local_114.fog;
+          vertex2_02.light = (int)this_ptr;
+          vertex2_02.color = local_114.light;
+          vertex2_02.fog = local_114.color;
+          vertex2_02.w_recip = (float)local_114.fog;
           unique0x100014d1 = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_02);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -280,10 +280,10 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vertex2_03.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_03.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
           vertex2_03.u = local_114.projected_vertex.screen_y;
-          vertex2_03.light = (float)this_ptr;
-          vertex2_03.color = (int)local_114.light;
-          vertex2_03.fog = (float)local_114.color;
-          vertex2_03.w_recip = local_114.fog;
+          vertex2_03.light = (int)this_ptr;
+          vertex2_03.color = local_114.light;
+          vertex2_03.fog = local_114.color;
+          vertex2_03.w_recip = (float)local_114.fog;
           unique0x100014ed = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_03);
           pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -310,10 +310,10 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vertex2_04.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
           vertex2_04.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
           vertex2_04.u = local_114.projected_vertex.screen_y;
-          vertex2_04.light = (float)this_ptr;
-          vertex2_04.color = (int)local_114.light;
-          vertex2_04.fog = (float)local_114.color;
-          vertex2_04.w_recip = local_114.fog;
+          vertex2_04.light = (int)this_ptr;
+          vertex2_04.color = local_114.light;
+          vertex2_04.fog = local_114.color;
+          vertex2_04.w_recip = (float)local_114.fog;
           unique0x10001509 = auVar2;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_04);
           iVar5 = iVar5 + 0xc0;
@@ -347,10 +347,10 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
       vertex2_05.projected_vertex.screen_x = local_114.projected_vertex.inv_z;
       vertex2_05.projected_vertex.screen_y = local_114.projected_vertex.screen_x;
       vertex2_05.u = local_114.projected_vertex.screen_y;
-      vertex2_05.light = (float)this_ptr;
-      vertex2_05.color = (int)local_114.light;
-      vertex2_05.fog = (float)local_114.color;
-      vertex2_05.w_recip = local_114.fog;
+      vertex2_05.light = (int)this_ptr;
+      vertex2_05.color = local_114.light;
+      vertex2_05.fog = local_114.color;
+      vertex2_05.w_recip = (float)local_114.fog;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(_auStack_148,vertex2_05);
       SStack_dc.base.count = 4;
       SStack_dc.surface_normal.D = 0;

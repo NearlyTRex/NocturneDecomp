@@ -9,7 +9,7 @@
 void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec470(CBloodSplat *this_ptr)
 
 {
-  DAT_02d83368.base.count = 4;
+  SMRGLHeaderPrimitive_02d83368.base.count = 4;
   INT_02d83380 = 0;
   INT_02d83384 = 1;
   INT_02d83388 = 2;

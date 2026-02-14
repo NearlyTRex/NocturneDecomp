@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 20,
-        "line": 59,
+        "line": 57,
         "message": "member reference base type 'int' is not a structure or union"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 111,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 71,
+    "pseudocode_lines": 69,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 244
+    "total_lines": 242
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_readBitsFromStream_FUN_0043e530",
-    "signature": "int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530 (SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)"
+    "signature": "int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)"
   },
   "function_calls": [
     {
@@ -140,21 +140,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&file_stream->_handle + *(int *)(file_stream->_ptr + 4)) != 0)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 52,
+      "line": 50,
       "match": "._0_1_",
       "text": "bit_count._0_1_ = (byte)iVar3;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 61,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&file_stream->_handle + *(int *)(file_stream->_ptr + 4)) != 0)) break;",
       "type": "pointer_cast"

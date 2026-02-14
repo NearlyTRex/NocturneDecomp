@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_wateract_cpp_CWaterActor_showEditorHelp_FUN_005ebc10(CWaterActor *this_ptr,int *y_pos)
+void __cdecl core_wateract_cpp_CWaterActor_showEditorHelp_FUN_005ebc10(CWaterActor *this_ptr,int *y_pos)
 
 {
   int iVar1;

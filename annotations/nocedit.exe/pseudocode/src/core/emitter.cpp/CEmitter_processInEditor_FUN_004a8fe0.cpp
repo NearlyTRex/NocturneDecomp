@@ -13,17 +13,16 @@ void __cdecl core_emitter_cpp_CEmitter_processInEditor_FUN_004a8fe0(CEmitter *th
   UOrientationVector *pUVar2;
   int iVar3;
   CVector3f *pCVar4;
-  float unaff_EBX;
-  float in_stack_0000000c;
-  float in_stack_00000014;
-  float in_stack_0000001c;
-  float in_stack_00000024;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  CVector3f CStack_28;
+  CVector3f CStack_60;
+  float fStack_54;
+  float fStack_50;
+  float fStack_4c;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
+  float fStack_24;
+  float fStack_20;
   float fStack_1c;
-  float fStack_18;
   float fStack_14;
   
   if (this_ptr->emitter_type == 3) {
@@ -39,8 +38,11 @@ LAB_004a9009:
     if (g_SlewTargetMode != 0) {
       if (this_ptr != PTR_02cf2b78) {
         PTR_02cf2b78 = this_ptr;
+        CStack_48.x = 0.0;
+        CStack_48.y = 0.0;
+        CStack_48.z = 5.0;
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           (&this_ptr->base,&CStack_28,(CVector3f *)&stack0xffffffc0);
+                           (&this_ptr->base,&CStack_30,&CStack_48);
         if (pCVar4 != &g_EmitterTarget) {
           g_EmitterTarget.x = pCVar4->x;
           g_EmitterTarget.z = pCVar4->z;
@@ -54,13 +56,13 @@ LAB_004a9009:
         }
       }
       pCVar1 = &(this_ptr->base).location;
-      fVar5 = (pCVar1->position).x;
-      fVar6 = (this_ptr->base).location.position.y;
-      fVar7 = (this_ptr->base).location.position.z;
+      fStack_54 = (pCVar1->position).x;
+      fStack_50 = (this_ptr->base).location.position.y;
+      fStack_4c = (this_ptr->base).location.position.z;
       pUVar2 = &(this_ptr->base).orient;
-      fStack_1c = (pUVar2->vec).x;
-      fStack_18 = (this_ptr->base).orient.vec.y;
-      fStack_14 = (this_ptr->base).orient.vec.z;
+      fStack_24 = (pUVar2->vec).x;
+      fStack_20 = (this_ptr->base).orient.vec.y;
+      fStack_1c = (this_ptr->base).orient.vec.z;
       (pCVar1->position).x = g_EmitterTarget.x;
       (this_ptr->base).location.position.y = g_EmitterTarget.y;
       (this_ptr->base).location.position.z = g_EmitterTarget.z;
@@ -83,11 +85,15 @@ LAB_004a9009:
         DAT_02cf2b74 = (this_ptr->base).orient.vec.z;
         DAT_02cf2b70 = (this_ptr->base).orient.vec.y;
       }
-      (this_ptr->base).location.position.x = fVar5;
-      (this_ptr->base).location.position.y = fVar6;
-      (this_ptr->base).location.position.z = fVar7;
+      pCVar1 = &(this_ptr->base).location;
+      (pCVar1->position).x = fStack_54;
+      (this_ptr->base).location.position.y = fStack_50;
+      (this_ptr->base).location.position.z = fStack_4c;
+      CStack_60.x = g_EmitterTarget.x - (pCVar1->position).x;
+      CStack_60.y = g_EmitterTarget.y - (this_ptr->base).location.position.y;
+      CStack_60.z = g_EmitterTarget.z - (this_ptr->base).location.position.z;
       pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                         ((CVector3f *)&stack0xffffffcc,(CVector3f *)&stack0xffffffa8);
+                         (&CStack_3c,&CStack_60);
       pUVar2 = &(this_ptr->base).orient;
       if ((CVector3f *)pUVar2 != pCVar4) {
         (pUVar2->vec).x = pCVar4->x;
@@ -100,29 +106,30 @@ LAB_004a9009:
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
     return;
   }
+  fStack_14 = g_CGamePtr->delta_time_float * (float)4;
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
   if (iVar3 != 0) {
-    (this_ptr->emitter_size).x = (this_ptr->emitter_size).x - unaff_EBX;
+    (this_ptr->emitter_size).x = (this_ptr->emitter_size).x - fStack_14;
   }
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
   if (iVar3 != 0) {
-    (this_ptr->emitter_size).x = (this_ptr->emitter_size).x + (float)this_ptr;
+    (this_ptr->emitter_size).x = (this_ptr->emitter_size).x + fStack_14;
   }
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
   if (iVar3 != 0) {
-    (this_ptr->emitter_size).y = (this_ptr->emitter_size).y - in_stack_0000000c;
+    (this_ptr->emitter_size).y = (this_ptr->emitter_size).y - fStack_14;
   }
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
   if (iVar3 != 0) {
-    (this_ptr->emitter_size).y = (this_ptr->emitter_size).y + in_stack_00000014;
+    (this_ptr->emitter_size).y = (this_ptr->emitter_size).y + fStack_14;
   }
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
   if (iVar3 != 0) {
-    (this_ptr->emitter_size).z = (this_ptr->emitter_size).z - in_stack_0000001c;
+    (this_ptr->emitter_size).z = (this_ptr->emitter_size).z - fStack_14;
   }
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
   if (iVar3 != 0) {
-    (this_ptr->emitter_size).z = (this_ptr->emitter_size).z + in_stack_00000024;
+    (this_ptr->emitter_size).z = (this_ptr->emitter_size).z + fStack_14;
   }
   if ((int)(this_ptr->emitter_size).x < 0x3f000000) {
     (this_ptr->emitter_size).x = 0.5;

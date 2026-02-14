@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-void __cdecl
-core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *this_ptr,char *name,float duration)
+void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *this_ptr,char *name,float duration)
 
 {
   double dVar1;

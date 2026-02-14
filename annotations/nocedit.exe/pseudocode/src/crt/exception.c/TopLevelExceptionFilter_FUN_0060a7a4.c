@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-long __cdecl
-TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
+long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
 
 {
   char cVar1;

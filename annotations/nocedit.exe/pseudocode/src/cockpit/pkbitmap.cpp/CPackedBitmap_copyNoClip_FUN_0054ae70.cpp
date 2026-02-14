@@ -2,13 +2,11 @@
 // Address: 0054ae70
 // Address Range: [[0054ae70, 0054afa2]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70 (CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride)
 
 #include "nocturne.h"
 
-void __cdecl
-cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
-          (CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride)
 
 {
   ushort uVar1;

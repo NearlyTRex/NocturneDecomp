@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl
-engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive *polygon_info)
 
 {
   int iVar1;
@@ -31,7 +30,7 @@ engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive *po
         else {
           pcVar2 = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlags = RENDER_LASTPIXEL;
+        g_RenderStateFlags.dword = RENDER_LASTPIXEL;
         g_RenderStateFlag2 = PREPROCESS_NONE;
         g_ScanlineRenderFunc = pcVar2;
       }
@@ -50,7 +49,7 @@ engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive *po
         else {
           pcVar2 = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlags = RENDER_PLANE_MASKED;
+        g_RenderStateFlags.dword = RENDER_PLANE_MASKED;
         g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
         g_ScanlineRenderFunc = pcVar2;
       }
@@ -70,7 +69,7 @@ engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive *po
       else {
         pcVar2 = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
-      g_RenderStateFlags = 0;
+      g_RenderStateFlags.dword = 0;
       g_RenderStateFlag2 = 0;
       g_ScanlineRenderFunc = pcVar2;
     }

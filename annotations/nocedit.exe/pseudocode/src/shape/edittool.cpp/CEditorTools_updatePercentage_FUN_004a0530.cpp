@@ -2,13 +2,11 @@
 // Address: 004a0530
 // Address Range: [[004a0530, 004a088c]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530 (CEditorTools *this_ptr,float progress_min,float progress_max)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)
 
 #include "nocturne.h"
 
-void __cdecl
-shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-          (CEditorTools *this_ptr,float progress_min,float progress_max)
+void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)
 
 {
   float fVar1;

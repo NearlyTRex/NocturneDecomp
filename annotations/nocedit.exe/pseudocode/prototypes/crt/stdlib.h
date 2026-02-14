@@ -9,7 +9,7 @@ void * __watcallStack median::of_3(void *a,void *b,void *c,QSORT_COMPARATOR comp
 
 // Original: crt_stdlib.c_memory_swap_FUN_005fdf10
 // Address: 005fdf10
-void memory::swap(void *ptr1,void *ptr2,SIZE_T bytes);
+void __watcallRegister memory::swap(void *ptr1,void *ptr2,SIZE_T bytes);
 
 // Original: crt_stdlib.c__qsort_FUN_005fdf38
 // Address: 005fdf38
@@ -17,7 +17,7 @@ void __cdecl ::qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
 
 // Original: crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50
 // Address: 005feb50
-uint * GetRandomSeedPointer(void);
+uint * __watcallRegister GetRandomSeedPointer(void);
 
 // Original: crt_stdlib.c_rand_FUN_005feb5c
 // Address: 005feb5c

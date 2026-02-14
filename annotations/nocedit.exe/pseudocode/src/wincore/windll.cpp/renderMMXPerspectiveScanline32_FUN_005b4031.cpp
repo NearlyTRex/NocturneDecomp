@@ -2,15 +2,13 @@
 // Address: 005b4031
 // Address Range: [[005b4031, 005b41b1] [005b41c0, 005b427c] [005b4280, 005b430b] [005b4310, 005b4339] [005b4340, 005b4464] [005b4470, 005b44d9] [005b44e0, 005b44e5] [005b44f0, 005b45c8] [005b45d0, 005b45f3] [005b4600, 005b4669] [005b4670, 005b47a8] [005b47b6, 005b47cd] [005b47d0, 005b47db] [005b47e0, 005b4822]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
+// Signature: void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl
-wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
-          (STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
+void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
 
 {
   SAlphaEntry SVar1;
@@ -79,7 +77,7 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
     g_ScanlinePixelCount = iVar10 * 4;
     puVar18 = g_ZBufferScanlineArray[scanline_y] + uVar8;
     g_CurrentZBufferPtr = (int *)puVar18;
-    if (g_RenderStateFlags == 0x80) {
+    if (g_RenderStateFlags.dword == 0x80) {
       uVar19 = pSVar16->perspective_w;
       iVar17 = (int)((ulonglong)
                      ((longlong)(int)(right_vertex->perspective_w - uVar19) *
@@ -143,9 +141,9 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
          (int)((ulonglong)
                ((longlong)(right_vertex->vertex_alpha - g_VertexAlphaStart) *
                (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
-    if ((g_RenderStateFlags & 0x200U) == 0) {
-      if ((g_RenderStateFlags & 4U) == 0) {
-        if ((g_RenderStateFlags & 0x10U) == 0) {
+    if ((g_RenderStateFlags.dword & 0x200) == 0) {
+      if ((g_RenderStateFlags.dword & 4) == 0) {
+        if ((g_RenderStateFlags.dword & 0x10) == 0) {
           uVar38 = psllw(g_AlphaTable[0xff],7);
           uVar43 = 0;
         }
@@ -213,7 +211,7 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
     sVar45 = (short)(uVar43 >> 0x20);
     sVar46 = (short)(uVar43 >> 0x30);
     g_StartDepthW = iVar17;
-    if ((g_CurrentTextureOpacityData == (void *)0x0) && ((g_RenderStateFlags & 2U) == 0)) {
+    if ((g_CurrentTextureOpacityData == (void *)0x0) && ((g_RenderStateFlags.dword & 2) == 0)) {
       uVar35 = (ulonglong)_g_SolidColorMode >> 0x10;
       uVar37 = (ushort)(((uint7)(byte)((ulonglong)_g_SolidColorMode >> 0x18) << 0x30) >> 0x28);
       uVar43 = (ulonglong)_g_SolidColorMode >> 8;
@@ -221,7 +219,7 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
       uVar11 = g_StartTextureU;
       uVar8 = g_StartTextureV;
       iVar10 = g_VertexAlphaStart;
-      if ((g_RenderStateFlags & 8U) == 0) {
+      if ((g_RenderStateFlags.dword & 8) == 0) {
         iVar10 = 0;
         g_VertexAlphaDelta = 0;
       }
@@ -229,11 +227,11 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
         uVar47 = (ushort)(uVar38 >> 0x10);
         uVar48 = (ushort)(uVar38 >> 0x20);
         uVar20 = (ushort)(uVar38 >> 0x30);
-        if (((g_RenderStateFlags & 0x40U) == 0) ||
+        if (((g_RenderStateFlags.dword & 0x40) == 0) ||
            (*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) {
-          if ((g_RenderStateFlags & 1U) == 0) {
+          if ((g_RenderStateFlags.dword & 1) == 0) {
             uVar9 = g_SpecialColor;
-            if ((g_RenderStateFlags & 0x200U) == 0) {
+            if ((g_RenderStateFlags.dword & 0x200) == 0) {
               uVar9 = g_ActiveRenderColor;
             }
           }
@@ -265,7 +263,7 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
           bVar6 = (0 < sVar36) * (sVar36 < 0x100) * (char)((ulonglong)uVar23 >> 0x30) -
                   (0xff < sVar36);
           uVar22 = CONCAT13(bVar6,CONCAT12(cVar5,uVar21));
-          if ((g_RenderStateFlags & 8U) != 0) {
+          if ((g_RenderStateFlags.dword & 8) != 0) {
             SVar1 = g_AlphaTable[iVar10 >> 8];
             uVar34 = (ulonglong)SVar1 ^ (ulonglong)g_AlphaTable[0xff];
             uVar9 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)bVar6 << 0x30) >> 0x28),
@@ -292,7 +290,7 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                                                 (char)(uVar24 >> 8) - (0xff < uVar26))));
           }
           *(uint *)((int)g_CurrentScreenPtr + uVar19) = uVar22;
-          if ((g_RenderStateFlags & 0x80U) != 0) {
+          if ((g_RenderStateFlags.dword & 0x80) != 0) {
             *(int *)((int)g_CurrentZBufferPtr + uVar19) = iVar17;
           }
         }
@@ -317,7 +315,7 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
     }
     else {
       iVar10 = g_VertexAlphaStart;
-      if ((g_RenderStateFlags & 0x100U) == 0) {
+      if ((g_RenderStateFlags.dword & 0x100) == 0) {
         iVar10 = g_CurrentAlphaValue << 8;
         g_VertexAlphaDelta = 0;
       }
@@ -329,7 +327,7 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
           uVar47 = (ushort)(uVar38 >> 0x10);
           uVar48 = (ushort)(uVar38 >> 0x20);
           uVar20 = (ushort)(uVar38 >> 0x30);
-          if (((g_RenderStateFlags & 0x40U) == 0) ||
+          if (((g_RenderStateFlags.dword & 0x40) == 0) ||
              (*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) {
             pbVar15 = (byte *)((uVar11 >> g_TextureShift1 & (uint)g_TextureMask1) +
                                (uVar8 >> g_TextureShift2 & (uint)g_TextureMask2) +
@@ -442,7 +440,7 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                                                     (0xff < sVar36))));
               }
               *(uint *)(uVar19 + (int)g_CurrentScreenPtr) = uVar22;
-              if ((g_RenderStateFlags & 0x80U) != 0) {
+              if ((g_RenderStateFlags.dword & 0x80) != 0) {
                 *(int *)(uVar19 + (int)g_CurrentZBufferPtr) = iVar17;
               }
             }
@@ -470,14 +468,14 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
         uVar37 = (ushort)(uVar38 >> 0x10);
         uVar47 = (ushort)(uVar38 >> 0x20);
         uVar48 = (ushort)(uVar38 >> 0x30);
-        if ((((g_RenderStateFlags & 0x40U) == 0) ||
+        if ((((g_RenderStateFlags.dword & 0x40) == 0) ||
             (*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) &&
            (uVar9 = g_Hardware32BitPalette
                     [*(byte *)((uVar11 >> g_TextureShift1 & (uint)g_TextureMask1) +
                                (uVar8 >> g_TextureShift2 & (uint)g_TextureMask2) +
                               (int)g_CurrentTextureData)], uVar9 != 0)) {
           uVar43 = 0;
-          if ((g_RenderStateFlags & 0x20U) != 0) {
+          if ((g_RenderStateFlags.dword & 0x20) != 0) {
             uVar22 = *(uint *)(uVar19 + (int)g_CurrentScreenPtr);
             uVar43 = (ulonglong)
                      CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
@@ -552,7 +550,7 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                                                 (char)((ulonglong)uVar23 >> 8) - (0xff < uVar20))));
           }
           *(uint *)(uVar19 + (int)g_CurrentScreenPtr) = uVar22;
-          if ((g_RenderStateFlags & 0x80U) != 0) {
+          if ((g_RenderStateFlags.dword & 0x80) != 0) {
             *(int *)(uVar19 + (int)g_CurrentZBufferPtr) = iVar17;
           }
         }

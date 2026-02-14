@@ -23,7 +23,7 @@
 ;   int g_PreviousActiveState = -0x1
 ;   int g_MouseX
 ;   int g_MouseY
-;   uint g_MouseButtonFlags
+;   _BIT_INTEGER g_MouseButtonFlags
 ;   char[256] g_KeyboardState
 ;   byte g_LeftMousePressed
 ;   byte g_RightMousePressed

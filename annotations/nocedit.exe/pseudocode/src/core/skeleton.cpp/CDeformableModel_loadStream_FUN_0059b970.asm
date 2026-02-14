@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970 (CDeformableModel *this_ptr,_FILE *file_handle)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970(CDeformableModel *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

@@ -2,13 +2,11 @@
 // Address: 005febfc
 // Address Range: [[005febfc, 005fedcf]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_file_c_makepath_FUN_005febfc (char *path_buffer,char *drive,char *directory,char *filename,char *extension)
+// Signature: void __cdecl crt_file_c_makepath_FUN_005febfc(char *path_buffer,char *drive,char *directory,char *filename,char *extension)
 
 #include "nocturne.h"
 
-void __cdecl
-makepath
-          (char *path_buffer,char *drive,char *directory,char *filename,char *extension)
+void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filename,char *extension)
 
 {
   char cVar1;

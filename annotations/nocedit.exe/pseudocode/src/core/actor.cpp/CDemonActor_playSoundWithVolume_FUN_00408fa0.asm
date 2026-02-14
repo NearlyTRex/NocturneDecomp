@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0 (CDemonActor *this_ptr,char *sound_name,float volume)
+; __cdecl void __cdecl core_actor_cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0(CDemonActor *this_ptr,char *sound_name,float volume)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

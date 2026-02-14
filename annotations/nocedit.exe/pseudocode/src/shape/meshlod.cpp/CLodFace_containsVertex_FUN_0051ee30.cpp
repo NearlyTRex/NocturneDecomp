@@ -6,8 +6,7 @@
 
 #include "nocturne.h"
 
-int __cdecl
-shape_meshlod_cpp_CLodFace_containsVertex_FUN_0051ee30(CLodFace *this_ptr,int vertex_index)
+int __cdecl shape_meshlod_cpp_CLodFace_containsVertex_FUN_0051ee30(CLodFace *this_ptr,int vertex_index)
 
 {
   int iVar1;

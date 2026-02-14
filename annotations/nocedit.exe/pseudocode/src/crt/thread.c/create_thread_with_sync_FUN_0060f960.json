@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 95,
+    "complexity_score": 93,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 10,
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 63,
     "suspect_count": 2,
     "suspect_types": [
       "special_crt_function",
       "stack_ref"
     ],
-    "total_lines": 163
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_thread.c_create_thread_with_sync_FUN_0060f960",
-    "signature": "HANDLE __cdecl crt_thread_c_create_thread_with_sync_FUN_0060f960 (LPVOID thread_param,SIZE_T stack_size_hint,LPVOID sync_param,HANDLE *out_thread_handle)"
+    "signature": "HANDLE __cdecl crt_thread_c_create_thread_with_sync_FUN_0060f960(LPVOID thread_param,SIZE_T stack_size_hint,LPVOID sync_param,HANDLE *out_thread_handle)"
   },
   "function_calls": [
     {
@@ -265,7 +265,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 50,
+      "line": 48,
       "match": "&stack0xffffffb4",
       "text": "pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
       "type": "stack_ref"

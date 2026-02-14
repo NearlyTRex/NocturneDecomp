@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 307,
+        "line": 305,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 589,
-    "complexity_score": 759,
+    "complexity_score": 757,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 56,
-    "pseudocode_lines": 359,
+    "pseudocode_lines": 357,
     "suspect_count": 39,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 948
+    "total_lines": 946
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0",
-    "signature": "void __cdecl core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0 (SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)"
+    "signature": "void __cdecl core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -439,273 +439,273 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(void *)((int)",
       "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 56,
       "match": "CONCAT44",
       "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftU >> 0x1f) << 0x18 | g_PerspectiveLeftU >> 8,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "CONCAT44",
       "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftV >> 0x1f) << 0x18 | g_PerspectiveLeftV >> 8,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 70,
       "match": "CONCAT44",
       "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftW >> 0x1f) << 0x18 | g_PerspectiveLeftW >> 8,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 73,
       "match": "CONCAT44",
       "text": "(uint)(CONCAT44(((int)g_PerspectiveInterpolatedW >> 0x1f) << 0x18 |",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 81,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 85,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 90,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 95,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 100,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 105,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 110,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 117,
+      "line": 115,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 122,
+      "line": 120,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 125,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 130,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 135,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 140,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
+      "line": 145,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
+      "line": 148,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
+      "line": 151,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)(iVar8 + iVar11) >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
+      "line": 164,
       "match": "CONCAT44",
       "text": "(uint)(CONCAT44(((int)g_PerspectiveRightU >> 0x1f) << 0x18 | g_PerspectiveRightU >> 8,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 167,
       "match": "CONCAT44",
       "text": "(uint)(CONCAT44(((int)g_PerspectiveRightV >> 0x1f) << 0x18 | g_PerspectiveRightV >> 8,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 179,
+      "line": 177,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
+      "line": 182,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 190,
+      "line": 188,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 196,
+      "line": 194,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 202,
+      "line": 200,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 209,
+      "line": 207,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 216,
+      "line": 214,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 223,
+      "line": 221,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 230,
+      "line": 228,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 237,
+      "line": 235,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 244,
+      "line": 242,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 251,
+      "line": 249,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 258,
+      "line": 256,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 265,
+      "line": 263,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 270,
+      "line": 268,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 275,
+      "line": 273,
       "match": "CONCAT11",
       "text": "[*(byte *)((uint)CONCAT11((char)((uint)(iVar8 +",
       "type": "decompiler_intrinsic"

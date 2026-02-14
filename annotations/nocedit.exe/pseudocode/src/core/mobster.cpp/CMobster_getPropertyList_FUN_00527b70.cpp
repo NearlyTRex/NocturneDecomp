@@ -2,13 +2,11 @@
 // Address: 00527b70
 // Address Range: [[00527b70, 00527c29]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70 (CMobster *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70(CMobster *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-void __cdecl
-core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70
-          (CMobster *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70(CMobster *this_ptr,CActorPropertyList *property_list)
 
 {
   CDeformableModelInstance *data_ptr;

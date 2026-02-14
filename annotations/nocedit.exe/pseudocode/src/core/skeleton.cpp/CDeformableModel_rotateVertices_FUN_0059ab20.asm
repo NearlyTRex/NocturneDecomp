@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_0059ab20 (CDeformableModel *this_ptr,int lod_index,int *input_vertices)
+; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_0059ab20(CDeformableModel *this_ptr,int lod_index,int *input_vertices)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

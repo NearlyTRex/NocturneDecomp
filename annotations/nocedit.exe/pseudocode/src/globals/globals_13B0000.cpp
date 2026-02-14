@@ -10,10 +10,12 @@ CDemonLight* g_CurrentLightForCorona = {};
 // CMatrix3x3i
 CMatrix3x3i g_CoronaCameraRotationMatrix = {};
 
+// _BIT_INTEGER
+_BIT_INTEGER g_CameraDownscaleIterations = {};
+
 // int
 int g_BackdropSaveActive = {};
 int g_DitherPatternOffset = {};
-int g_CameraDownscaleIterations = {};
 int g_CameraEdgeCount = {};
 
 // int[10000]
